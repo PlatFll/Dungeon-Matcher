@@ -1,8 +1,9 @@
 Dungeon Hybrid Rebuild
 
-Stages 01, 02 and 03 are approved by the user.
-Stage 04 props/dressing is complete for review: open Stage04/Review.html and Stage04/Report.md.
+Stages 01, 02, 03 and 04 are approved by the user.
+Stage 05 full assembled Unity preview is complete for review: open Stage05/Review.html and Stage05/Report.md.
 Stage 01 retains 33 structural modules; Stage 02 adds the modular gate; Stage 03 contains UI piece studies.
-Stage 04 adds ten native prop exports from seven separately generated PixelLab sources, cleaned in LibreSprite.
+Stage 04 adds ten native prop exports from seven separate PixelLab sources, cleaned in LibreSprite.
+Stage 05 combines the approved library with exact integer scaling and a 64x64-cell board; no artwork changes or generation cost.
 All approved artwork and production files are preserved. The requested pack is retained in RequestPack.
-Stage 05 has not started. Stop for user approval; no merge authorized.
+Stop for final visual approval. No production integration or merge authorized.

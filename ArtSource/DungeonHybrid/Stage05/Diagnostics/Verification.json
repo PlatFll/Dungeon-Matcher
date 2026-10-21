@@ -1,0 +1,71 @@
+{
+  "result": "PASS",
+  "unity_preview_tests": 1,
+  "actual_captures": 8,
+  "captures": [
+    {
+      "mode": "SourceCheck",
+      "native_dimensions": [
+        720,
+        1280
+      ],
+      "double_dimensions": [
+        1440,
+        2560
+      ],
+      "exact_double": true
+    },
+    {
+      "mode": "Classic",
+      "native_dimensions": [
+        720,
+        1280
+      ],
+      "double_dimensions": [
+        1440,
+        2560
+      ],
+      "exact_double": true
+    },
+    {
+      "mode": "Alternate",
+      "native_dimensions": [
+        720,
+        1280
+      ],
+      "double_dimensions": [
+        1440,
+        2560
+      ],
+      "exact_double": true
+    },
+    {
+      "mode": "Structure",
+      "native_dimensions": [
+        720,
+        1280
+      ],
+      "double_dimensions": [
+        1440,
+        2560
+      ],
+      "exact_double": true
+    }
+  ],
+  "source_files_unchanged": 1058,
+  "main_user_files_unchanged": 8,
+  "approved_stage04_top_pixel_identical": true,
+  "approved_stage03_64px_grid_pixel_identical": true,
+  "board_recess_no_wall_leakage": true,
+  "character_faces_unchanged": true,
+  "unique_sprite_uses": 127,
+  "unique_png_sources": 127,
+  "new_art_files": 0,
+  "generation_cost": 0,
+  "native_layout": [
+    720,
+    1280
+  ],
+  "integer_scale_policy": "Top, environment and frames 2x; 64px gems/cells and static health samples 1x; no fractional or nonuniform scaling.",
+  "scope": "Art-only Unity Game View with static approved cast and display values. No production combat or device testing."
+}
