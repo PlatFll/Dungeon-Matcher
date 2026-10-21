@@ -1,7 +1,8 @@
 Dungeon Hybrid Rebuild
 
-Stage 01 approved by the user; 33 structural modules retained unchanged.
-Stage 02 complete for review: open Stage02/Review.html; see Stage02/REPORT.txt and AssetLedger.csv.
-The requested pack is preserved in RequestPack; user scope overrides broader later-stage instructions.
-Image 2 is the structural authority; Image 1 informs the new gate architecture. Canonical rendering authority remains Docs/ArtDirection.
-No approved production art was changed. Stage 03 has not started. Stop for user approval; no merge authorized.
+Stages 01, 02 and 03 are approved by the user.
+Stage 04 props/dressing is complete for review: open Stage04/Review.html and Stage04/Report.md.
+Stage 01 retains 33 structural modules; Stage 02 adds the modular gate; Stage 03 contains UI piece studies.
+Stage 04 adds ten native prop exports from seven separately generated PixelLab sources, cleaned in LibreSprite.
+All approved artwork and production files are preserved. The requested pack is retained in RequestPack.
+Stage 05 has not started. Stop for user approval; no merge authorized.
