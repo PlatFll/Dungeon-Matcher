@@ -1,0 +1,45 @@
+{
+  "result": "PASS",
+  "native_modules": 35,
+  "opaque_colors": 13,
+  "alpha": [
+    0,
+    255
+  ],
+  "ase_reopen_export_verified": true,
+  "protected_files": 580,
+  "protected_files_unchanged": true,
+  "main_user_files": 8,
+  "main_user_files_unchanged": true,
+  "approved_gate_and_floor_capture_regions_identical": true,
+  "unity_tests_passed": 2,
+  "captures": [
+    {
+      "study": "Top",
+      "native_size": [
+        360,
+        240
+      ],
+      "double_size": [
+        720,
+        480
+      ],
+      "exact_nearest_neighbor_double": true,
+      "difference_bounds": null
+    },
+    {
+      "study": "BoardHud",
+      "native_size": [
+        576,
+        688
+      ],
+      "double_size": [
+        1152,
+        1376
+      ],
+      "exact_nearest_neighbor_double": true,
+      "difference_bounds": null
+    }
+  ],
+  "scope": "Art-only preview tests, not production gameplay integration or real-device testing."
+}

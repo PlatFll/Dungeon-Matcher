@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "command": "rtk proxy powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "unity_version": "6000.3.19f1",
+  "exit_code": 0,
+  "log": "Diagnostics/UnityValidation.log",
+  "log_sha256": "3cf2f3302dda0aad44e25deaa7c0cdfc76ba871d27d83c68e2668e61d61aad8e",
+  "editor_source_sha256": "b2cc66a01c4b0d04c64b83cd28a8c63db9f3df8dc80ff2c7d83deb6f52bcc031",
+  "separate_runtime_tests": "Diagnostics/UnityTests.xml",
+  "scope": "Art-only Unity editor studies; no production gameplay/device test claim."
+}
