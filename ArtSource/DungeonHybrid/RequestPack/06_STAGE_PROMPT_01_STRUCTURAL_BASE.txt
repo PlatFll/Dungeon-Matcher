@@ -1,0 +1,21 @@
+STAGE 01 — STRUCTURAL BASE
+
+Goal:
+Create or preserve the structural base of the dungeon zone using a clean side-view approach. This stage is about modular structure, not premium decorative generation.
+
+Instructions for Astra:
+- Do not generate a full scene in PixelLab.
+- Build the structural base mostly through existing clean references, manual extraction, or simple tile generation only if necessary.
+- Create modular tile sets for:
+  1. dark dungeon wall brick tiles
+  2. platform / battleground floor tiles
+  3. front ledge / lip tiles
+  4. pillar / support structure tiles
+  5. dark backing tile for portrait frame interior if needed
+- Keep the wall bricks large and readable.
+- Keep floor/platform stones larger and cleaner, with fewer cracks.
+- Avoid pseudo-isometric flooring.
+- Avoid heavy crack noise.
+- Ensure tileability and seam correctness.
+- Clean and normalize in LibreSprite.
+- Assemble a simple test layout in Unity to confirm tiling reads well.
