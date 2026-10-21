@@ -1,0 +1,70 @@
+{
+  "result": "PASS",
+  "approved_files_unchanged": 495,
+  "modules": 10,
+  "source_dimensions": [
+    128,
+    128
+  ],
+  "occupied_bounds": [
+    8,
+    3,
+    112,
+    118
+  ],
+  "palette_count": 11,
+  "raw_palette_count": 9,
+  "binary_alpha": true,
+  "component_clearance_pixels": 2,
+  "modular_reassembly_exact": true,
+  "production_copies_exact": true,
+  "stage01_pixels_outside_gate_unchanged": true,
+  "portrait_and_floor_unchanged": true,
+  "source_pixels_exact_in_all_screens": true,
+  "captures": [
+    {
+      "path": "Previews/Unity-structure-360x240.png",
+      "scale": 1,
+      "source_pixel_differences": 0,
+      "sha256": "6b113df0f9ae52c538c148d941ddaba04eb5b4398e8d36056fda97a6cb787b95"
+    },
+    {
+      "path": "Previews/Unity-structure-720x480.png",
+      "scale": 2,
+      "source_pixel_differences": 0,
+      "sha256": "586af806a535143ae75c283713f38f4fd4ede91e9e6daedea2f445e3e716f381"
+    },
+    {
+      "path": "Previews/Unity-structure-1080x720.png",
+      "scale": 3,
+      "source_pixel_differences": 0,
+      "sha256": "13df13231fa849df6fa6e3cf17dfb9628a1441f1f5eb2758e3d7285523938c91"
+    },
+    {
+      "path": "Previews/Unity-cast-360x240.png",
+      "scale": 1,
+      "source_pixel_differences": 0,
+      "sha256": "805056cb12947ef6609d033c766ffb6e9ed020b9cefbb37cceee2410aa2a9838"
+    },
+    {
+      "path": "Previews/Unity-cast-720x480.png",
+      "scale": 2,
+      "source_pixel_differences": 0,
+      "sha256": "c33e0b916aa13bd1fc6f25af443f244daa0ed1a51fb5dc971e08de367ba3aba8"
+    },
+    {
+      "path": "Previews/Unity-cast-1080x720.png",
+      "scale": 3,
+      "source_pixel_differences": 0,
+      "sha256": "336149bd06c36297b8c23169fcb123cb1f9483e267aaa2c49741ae216edc7ed5"
+    }
+  ],
+  "unity_test": {
+    "result": "Passed",
+    "total": "1",
+    "passed": "1",
+    "failed": "0"
+  },
+  "scope": "Art-only Unity Game View; static reference figures. Not production gameplay or device validation.",
+  "artistic_verdict": "Broader arched opening and chunky blocks establish a stronger focal point. Muted violet stone, quieter iron and simplified reliefs keep attention on the cast. Candidate for user approval; UI hero pieces and props remain later stages."
+}
