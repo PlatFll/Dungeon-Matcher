@@ -4,6 +4,19 @@ The user approved the complete Stage 5 design and authorized integration into th
 
 [Actual in-game gallery](Review.html) | [720x1280 screenshot](Previews/Final/Dungeon-720x1280.png) | [Approved Stage 5](../Stage05/Review.html)
 
+## Bottom corner bases removed — 2026-10-22
+
+Removed the two decorative pillar bases circled by the user at the bottom screen
+corners. The existing quiet wall-edge tiles now continue to the bottom viewport
+boundary. Upper pillars, the extended floor, portrait, board and HUD remain intact;
+no sprite artwork or gameplay code changed.
+
+The existing actual-game integration test passed again at all five screen/safe-area
+profiles, and `Tools/Validate-Unity.ps1` passed. Final screenshots now show this
+revision. Fresh evidence is `PillarBaseRemovalTests.xml` and
+`PillarBaseRemovalValidation.json`. Protected-art, user-file and live-layout checks
+were refreshed. Earlier test receipts remain historical. PR #205 is unmerged.
+
 ## Floor continuity follow-up — 2026-10-22
 
 The user requested a complete floor behind the portrait. The existing top-floor

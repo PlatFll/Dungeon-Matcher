@@ -42,14 +42,12 @@ public sealed partial class DungeonPresentationArt
             for(int y=16;y<floor-22;y+=28)art.Image("Support_Core",structure,x,y);
             art.Image("Support_Foot",structure,x,floor-22);
         }
-        // Continue the same edge masonry, finishing with complete feet.
-        for(int y=floor+34;y<height-24;y+=28)
+        // Continue the quiet edge masonry to the bottom, without decorative bases.
+        for(int y=floor+34;y<height;y+=28)
         {
             art.Image("Support_Corner_Left",structure,0,y);
             art.Image("Support_Corner_Right",structure,width-28,y);
         }
-        art.Image("Support_Foot",structure,0,height-24);
-        art.Image("Support_Foot",structure,width-28,height-24);
         art.Image("Support_Corbel",structure,96,floor+32);
         art.Image("Support_Corbel",structure,210+Mathf.Round((width-360)/2f),floor+32);
         var gate=DungeonPixelLabBattleArt.Rect("Approved hybrid gate",pixelLabContent,0,0,width,height);
