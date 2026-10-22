@@ -35,6 +35,18 @@ public sealed class DungeonPixelPipelineStage16Tests
         {
             Assert.That(im.raycastTarget,Is.False);Assert.That(im.sprite.texture.filterMode,Is.EqualTo(FilterMode.Point));
             var bounds=GameplayPixelLayoutController.ScreenRect(im.rectTransform);
+            if(im.type==Image.Type.Tiled)
+            {
+                // The hybrid board backing repeats below the SpriteRenderer board.
+                // Validate its texel density, not its variable surface dimensions.
+                Assert.That(im.name,Is.EqualTo("Control_Inset"));
+                Assert.That(im.GetComponentInParent<RectMask2D>(),Is.Not.Null);
+                Assert.That(im.pixelsPerUnit*im.pixelsPerUnitMultiplier,Is.EqualTo(1).Within(.001f));
+                var origin=world.worldCamera.WorldToScreenPoint(im.transform.TransformPoint(Vector3.zero));
+                var texel=world.worldCamera.WorldToScreenPoint(im.transform.TransformPoint(Vector3.right));
+                Assert.That(Vector2.Distance(origin,texel),Is.EqualTo(DungeonPixelLabBattleArt.PhysicalPixelScale).Within(.01));
+                continue;
+            }
             Assert.That(bounds.width/im.sprite.rect.width,Is.EqualTo(DungeonPixelLabBattleArt.PhysicalPixelScale).Within(.01));
             Assert.That(bounds.height/im.sprite.rect.height,Is.EqualTo(DungeonPixelLabBattleArt.PhysicalPixelScale).Within(.01));
         }

@@ -20,6 +20,19 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Hybrid dungeon integration (2026-10-22, review pending PR #205)
+
+The user approved all five hybrid art stages and authorized applying the full design
+to the playable Dungeon. The dedicated branch now binds the unchanged gate, props
+and UI modules through the existing Dungeon presentation owners. The approved
+102-asset library remains preserved. Gameplay, characters, gems, saves and other
+zones retain their existing systems; responsive sections, board fit and health rows
+match the fresh production baseline. Actual Game captures show Rattlebones and
+three live enemies at five phone/safe-area profiles. The affected regression suite
+and required Unity validator passed; physical-device testing and a new Android
+build were not performed. [Gameplay review and verification](../ArtSource/DungeonHybrid/Integration/Report.md).
+PR #205 remains unmerged, awaiting final gameplay visual approval.
+
 ## Staged PixelLab dungeon integration (2026-10-20, merged PR #203)
 
 The user approved the final Stage15 library/design for Stage16 integration testing. The dedicated branch now binds all 102 approved native modules into the playable Dungeon through existing presentation owners; all 456 protected art/source files remain unchanged. A user-requested additional 64×64 cell variant was authored in LibreSprite to retain the original 64×64 gems. Dynamic native frame pieces surround the existing responsive board footprint. Integer-scaled scenery and a compact Dungeon fallback address Stage00's environment distortion and 360×640 failure. The board deliberately retains its existing uniform fractional fit where native 512px width cannot fit; the user explicitly chose this policy.

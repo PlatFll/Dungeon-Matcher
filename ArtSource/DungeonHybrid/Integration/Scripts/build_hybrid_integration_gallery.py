@@ -1,0 +1,20 @@
+from pathlib import Path
+P=Path(__file__).resolve().parents[4];R=P/'ArtSource/DungeonHybrid/Integration'
+html='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Approved hybrid dungeon - playable Game preview</title>
+<style>body{margin:24px;background:#11121b;color:#e9e2ed;font:16px system-ui}h1,h2{font-weight:600}a{color:#d8a4ed}section{background:#202131;padding:20px;border-radius:10px;margin:20px 0}label{display:inline-block;margin:8px 24px 8px 0}select{font:inherit;padding:7px;background:#30283e;color:#fff;border:1px solid #88758f}img{image-rendering:pixelated}.scroll{overflow:auto;max-width:100%}.muted{color:#bfb2c6}.row{display:flex;gap:24px;flex-wrap:wrap}</style>
+<h1>Dungeon hybrid art - actual playable scene</h1>
+<p>Rattlebones, three live enemies, 64 original gems, health bars, intent countdowns and working controls in Unity's production Game scene.</p>
+<p><a href="Report.md">Verification report</a> · <a href="../Stage05/Review.html">Approved Stage 5 assembly</a> · <a href="https://github.com/PlatFll/Dungeon-Matcher/pull/205">Unmerged draft PR #205</a></p>
+<section><h2>Actual Unity screenshots</h2>
+<label>Size <select id="size" onchange="show()"><option value="720x1280">720×1280</option><option value="1080x1920">1080×1920</option><option value="1080x2400">1080×2400</option><option value="safe-1080x2400">1080×2400 with safe-area inset</option><option value="360x640">360×640</option></select></label>
+<label>Version <select id="version" onchange="show()"><option value="Final">Approved hybrid art in-game</option><option value="Baseline">Previous production art</option></select></label>
+<label>Display <select id="zoom" onchange="show()"><option value="1">Actual screenshot pixels (1×)</option><option value="2">Nearest-neighbor 2×</option></select></label>
+<p><a id="png" href="Previews/Final/Dungeon-720x1280.png">Open original PNG</a></p>
+<div class="scroll"><img id="shot" width="720" height="1280" src="Previews/Final/Dungeon-720x1280.png" alt="Three live enemies in the Dungeon Game scene"></div>
+<p class="muted">Disposable test profile; the normal wave API fills the two remaining slots with Pan Villager and Knight. The first enemy and weaknesses are live game assignments. Existing encounter definitions and user saves are untouched. The first-run hint replaces the resonance caption as normal; the ability icon dims while energy is insufficient.</p></section>
+<section><h2>Approved visual source</h2><div class="scroll"><img src="../Stage05/Previews/Unity-Classic-720x1280.png" width="720" height="1280" alt="Approved Stage 5 art-only assembly"></div>
+<p>The playable scene keeps its established board, actor, health-row and responsive section geometry. Gate, props and frame pieces use unchanged approved PNGs. The board retains its existing uniform fit; world scenery uses whole physical source pixels. Live controls, numbers and effects remain owned by the gameplay systems.</p></section>
+<p>Integration is ready for gameplay visual review. Nothing has been merged. Unity automation is separate from physical-device testing.</p>
+<script>function show(){let size=document.getElementById('size').value,version=document.getElementById('version').value,z=Number(document.getElementById('zoom').value);let dims=size.replace('safe-','').split('x').map(Number),url='Previews/'+version+'/Dungeon-'+size+'.png';let im=document.getElementById('shot');im.src=url;im.width=dims[0]*z;im.height=dims[1]*z;document.getElementById('png').href=url;}</script></html>'''
+(R/'Review.html').write_text(html,encoding='utf-8');print('Playable Dungeon gallery written.')

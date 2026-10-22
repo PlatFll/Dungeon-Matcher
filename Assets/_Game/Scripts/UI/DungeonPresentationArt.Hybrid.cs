@@ -1,0 +1,75 @@
+using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
+
+public sealed partial class DungeonPresentationArt
+{
+    RectTransform hybridBoardBacking;
+    // The live gems are SpriteRenderers. Keep the inset on the existing world
+    // background canvas, never in the overlay UI canvas above those gems.
+    void RefreshHybridBoardBacking(DungeonPixelLabBattleArt art,GameplayPixelLayoutController layout)
+    {
+        if (!hybridBoardBacking)
+        {
+            hybridBoardBacking=DungeonPixelLabBattleArt.Rect("Hybrid board backing",pixelLabContent,0,0,0,0);
+            hybridBoardBacking.gameObject.AddComponent<RectMask2D>();
+            var fill=art.Image("Control_Inset",hybridBoardBacking,-32,-32);
+            fill.type=Image.Type.Tiled;fill.pixelsPerUnitMultiplier=1;
+            fill.rectTransform.anchorMin=Vector2.zero;fill.rectTransform.anchorMax=Vector2.one;
+            fill.rectTransform.offsetMin=-Vector2.one*32;fill.rectTransform.offsetMax=Vector2.one*32;
+        }
+        var r=GameplayPixelLayoutController.ScreenRect(pixelLabBoardFrame);
+        var v=layout.Current.Viewport;float scale=DungeonPixelLabBattleArt.PhysicalPixelScale;
+        DungeonPixelLabBattleArt.TopRect(hybridBoardBacking,(r.xMin-v.xMin)/scale+13,
+            (v.yMax-r.yMax)/scale+13,r.width/scale-26,r.height/scale-26);
+    }
+
+    // The same world canvas, camera binding, native pixel scale and actor floor
+    // from the production PixelLab integration own this approved library too.
+    void BuildHybridEnvironment(DungeonPixelLabBattleArt art,int width,int height,int floor)
+    {
+        var wall=DungeonPixelLabBattleArt.Rect("Continuous wall",pixelLabContent,0,0,width,height);
+        var walls=art.Manifest.placements.Where(p=>p.layer==0).ToArray();
+        for(int y=0;y<height;y+=48)for(int x=0;x<width;x+=48)
+        {
+            var p=walls.First(p=>p.x==(x%384)&&p.y==(y%240));
+            art.Image(p.name,wall,x,y);
+        }
+        var structure=DungeonPixelLabBattleArt.Rect("Structure",pixelLabContent,0,0,width,height);
+        foreach(int x in new[]{0,96,width-36})
+        {
+            art.Image("Support_Capital",structure,x,0);
+            for(int y=16;y<floor-22;y+=28)art.Image("Support_Core",structure,x,y);
+            art.Image("Support_Foot",structure,x,floor-22);
+        }
+        // Continue the same edge masonry, finishing with complete feet.
+        for(int y=floor+34;y<height-24;y+=28)
+        {
+            art.Image("Support_Corner_Left",structure,0,y);
+            art.Image("Support_Corner_Right",structure,width-28,y);
+        }
+        art.Image("Support_Foot",structure,0,height-24);
+        art.Image("Support_Foot",structure,width-28,height-24);
+        art.Image("Support_Corbel",structure,96,floor+32);
+        art.Image("Support_Corbel",structure,210+Mathf.Round((width-360)/2f),floor+32);
+        var gate=DungeonPixelLabBattleArt.Rect("Approved hybrid gate",pixelLabContent,0,0,width,height);
+        foreach(var p in art.Manifest.placements.Where(p=>p.layer==20))
+            art.Image(p.name,gate,p.x+Mathf.Round((width-360)/2f),p.y+floor-178);
+        var platform=DungeonPixelLabBattleArt.Rect("Standing platform",pixelLabContent,0,0,width,height);
+        for(int x=106,n=0;x<width;x+=32,n++)
+            art.Image(n==0?"Floor_Left":"Floor_Mid_"+(n%3==0?"A":n%3==1?"B":"C"),platform,x,floor);
+        for(int x=0,n=0;x<width;n++)
+        {
+            string name=n==0?"Fascia_Left":"Fascia_Mid_"+(n%2==0?"A":"B");
+            art.Image(name,platform,x,floor+12);x+=(int)art.Sprite(name).rect.width;
+        }
+        var props=DungeonPixelLabBattleArt.Rect("Approved hybrid props",pixelLabContent,0,0,width,height);
+        foreach(var p in art.Manifest.placements.Where(p=>p.layer==24||p.layer==25))
+        {
+            // Left/right wall dressing stays attached to its column; the second
+            // complete chain and center bones follow the centered gate.
+            float dx=p.x>=280?width-360:p.x>=200?Mathf.Round((width-360)/2f):0;
+            art.Image(p.name,props,p.x+dx,p.y+(p.layer==25?floor-178:0));
+        }
+    }
+}

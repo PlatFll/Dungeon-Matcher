@@ -430,6 +430,20 @@ Opened settings and main menu keep their existing skins and menu music selection
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 ### Gameplay pixel layout ownership
 
+- **Approved hybrid Dungeon integration (2026-10-22, pending PR #205):** the same
+  `DungeonPixelLabBattleArt` resource has an optional hybrid module/placement binding.
+  It overrides only approved matching art names, keeping the earlier 102 modules
+  available. `DungeonPresentationArt` builds the selected architecture and props on
+  its existing native world canvas, aligned to the unchanged live floor. Modular
+  controls use the approved Wave/Control/Resonance families with separate ornaments.
+  The board's overfilled dark inset belongs to that world canvas below the live
+  SpriteRenderer board; only its native frame is in overlay UI. The portrait keeps
+  its existing RectMask2D. No gameplay owner or competing layout system is added.
+  Board/section/health-row geometry is unchanged; existing uniform fractional board
+  fit and integer scenery scale remain intentional. Actual-game evidence is in
+  `ArtSource/DungeonHybrid/Integration/`. This supersedes the selected Dungeon art
+  binding only; the earlier library and other-zone paths remain preserved.
+
 - **Dungeon PixelLab Stage16 (2026-10-20, merged PR #203):** `DungeonPixelLabBattleArt`
   binds the 102 approved modules plus an additive 64px cell through Resources.
   The existing `DungeonPresentationArt` owns a non-interactive world-space canvas

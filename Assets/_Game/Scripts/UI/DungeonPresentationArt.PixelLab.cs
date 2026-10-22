@@ -57,6 +57,7 @@ public sealed partial class DungeonPresentationArt
         DungeonPixelLabBattleArt.TopRect(pixelLabBoardFrame,(layout.BoardArea.rect.width-outside)/2,
             (layout.BoardArea.rect.height-outside)/2,outside,outside);
         GameplayPixelGrid.Snap(pixelLabBoardFrame);
+        if (art.UsesHybrid) RefreshHybridBoardBacking(art,layout);
         if(pixelLabPortraitBanner)GameplayPixelGrid.Snap(pixelLabPortraitBanner);
         panelsReady = true;
     }
@@ -75,6 +76,7 @@ public sealed partial class DungeonPresentationArt
 
     void BuildPixelLabEnvironment(DungeonPixelLabBattleArt art,int width,int height,int floor)
     {
+        if (art.UsesHybrid) { BuildHybridEnvironment(art,width,height,floor); return; }
         var wall = DungeonPixelLabBattleArt.Rect("Continuous wall",pixelLabContent,0,0,width,height);
         string[] walls={"Wall_A_Quiet","Wall_B_VioletStone","Wall_A_Quiet","Wall_C_SoftWear","Wall_A_Quiet","Wall_D_DeepStone"};
         for(int y=0;y<height;y+=48)for(int x=0;x<width;x+=48)
@@ -124,7 +126,7 @@ public sealed partial class DungeonPresentationArt
         var backing=art.Image("Recess_Center",mask,0,0,u);backing.type=Image.Type.Tiled;backing.pixelsPerUnitMultiplier=1/u;
         backing.rectTransform.anchorMin=Vector2.zero;backing.rectTransform.anchorMax=Vector2.one;
         backing.rectTransform.offsetMin=-backing.sprite.rect.size*u;backing.rectTransform.offsetMax=-backing.rectTransform.offsetMin;
-        var banner=art.Image("Hanging_Banner",mask,0,3*u,u);
+        var banner=art.Image(art.UsesHybrid?"Banner":"Hanging_Banner",mask,0,3*u,u);
         banner.rectTransform.anchorMin=banner.rectTransform.anchorMax=new Vector2(.5f,1);
         banner.rectTransform.anchoredPosition=new Vector2(-Mathf.Floor(banner.sprite.rect.width/2)*u,-3*u);
         pixelLabPortraitBanner=banner.rectTransform;
