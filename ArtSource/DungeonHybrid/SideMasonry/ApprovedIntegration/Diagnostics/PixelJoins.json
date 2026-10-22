@@ -1,0 +1,119 @@
+{
+  "result": "PASS",
+  "current_unity_tests": 3,
+  "profiles": [
+    {
+      "view": "production",
+      "file": "Dungeon-1080x1920.png",
+      "opaque_pixels_compared": 207720,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    },
+    {
+      "view": "production",
+      "file": "Dungeon-1080x2400.png",
+      "opaque_pixels_compared": 234576,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    },
+    {
+      "view": "production",
+      "file": "Dungeon-360x640.png",
+      "opaque_pixels_compared": 20320,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    },
+    {
+      "view": "production",
+      "file": "Dungeon-720x1280.png",
+      "opaque_pixels_compared": 88684,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    },
+    {
+      "view": "production",
+      "file": "Dungeon-safe-1080x2400.png",
+      "opaque_pixels_compared": 220572,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    },
+    {
+      "view": "production",
+      "file": "Dungeon-safe-sides-1080x2400.png",
+      "opaque_pixels_compared": 217656,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    },
+    {
+      "view": "verified-production",
+      "file": "Dungeon-1080x1920.png",
+      "opaque_pixels_compared": 207720,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    },
+    {
+      "view": "verified-production",
+      "file": "Dungeon-1080x2400.png",
+      "opaque_pixels_compared": 234576,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    },
+    {
+      "view": "verified-production",
+      "file": "Dungeon-360x640.png",
+      "opaque_pixels_compared": 20320,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    },
+    {
+      "view": "verified-production",
+      "file": "Dungeon-720x1280.png",
+      "opaque_pixels_compared": 88684,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    },
+    {
+      "view": "verified-production",
+      "file": "Dungeon-safe-1080x2400.png",
+      "opaque_pixels_compared": 220572,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    },
+    {
+      "view": "verified-production",
+      "file": "Dungeon-safe-sides-1080x2400.png",
+      "opaque_pixels_compared": 217656,
+      "max_channel_rounding": 0,
+      "side_edges_flush": true,
+      "courses_contiguous": true,
+      "layout_equal": true
+    }
+  ],
+  "protected_files_unchanged": 5298,
+  "main_user_files_unchanged": 8,
+  "art_unchanged": true,
+  "generations_spent": 0,
+  "physical_device_tested": false
+}

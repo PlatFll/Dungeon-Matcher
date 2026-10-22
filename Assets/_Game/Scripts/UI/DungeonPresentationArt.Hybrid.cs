@@ -61,10 +61,20 @@ public sealed partial class DungeonPresentationArt
         var edges=DungeonPixelLabBattleArt.Rect("Edge masonry",structure,screenLeft,edgeTop,screenWidth,screenBottom-edgeTop);
         edges.gameObject.AddComponent<RectMask2D>();
         float first=screenBottom-Mathf.Ceil((screenBottom-edgeTop)/28)*28;
-        for(float y=first;y<screenBottom-.01f;y+=28)
+        bool corners=art.Sprite("Masonry_Corner_Left")&&art.Sprite("Masonry_Corner_Right");
+        float sideBottom=screenBottom-(corners?84:0);
+        for(float y=first;y<sideBottom-.01f;y+=28)
         {
             art.Image("Support_Corner_Left",edges,0,y-edgeTop);
             art.Image("Support_Corner_Right",edges,screenWidth-28,y-edgeTop);
+        }
+        if(corners)
+        {
+            // The approved corner replaces the last three side repeats. Its
+            // 2px transparent padding lies outside the physical display.
+            var cornerRoot=DungeonPixelLabBattleArt.Rect("Approved corner masonry",pixelLabContent,0,0,screenLeft+screenWidth,screenBottom);
+            art.Image("Masonry_Corner_Left",cornerRoot,screenLeft,screenBottom-86);
+            art.Image("Masonry_Corner_Right",cornerRoot,screenLeft+screenWidth-58,screenBottom-86);
         }
         art.Image("Support_Corbel",structure,96,floor+32);
         art.Image("Support_Corbel",structure,210+Mathf.Round((width-360)/2f),floor+32);

@@ -1,83 +1,38 @@
 using System.Collections;
-using System.IO;
 using System.Linq;
 using NUnit.Framework;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
 
-// New artwork is previewed in the live scene without selecting it in production resources.
+// The approved pieces must be supplied by production, never an editor decorator.
 public sealed class DungeonHybridMasonryPreviewTests
 {
-    const string Root="ArtSource/DungeonHybrid/SideMasonry/CourseAlignment";
-    const string Art="Assets/_Game/Art/DungeonHybrid/SideMasonry/MatchedCorners/";
-    static void Import()
+    const string Root="ArtSource/DungeonHybrid/SideMasonry/ApprovedIntegration";
+    static void AssertProductionCorners(GameplayPixelLayoutController layout)
     {
-        AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
-        foreach(string file in Directory.GetFiles(Art,"*.png"))
-        {
-            var i=(TextureImporter)AssetImporter.GetAtPath(file.Replace('\\','/'));
-            i.textureType=TextureImporterType.Sprite;i.spriteImportMode=SpriteImportMode.Single;i.spritePixelsPerUnit=64;
-            i.filterMode=FilterMode.Point;i.mipmapEnabled=false;i.textureCompression=TextureImporterCompression.Uncompressed;
-            i.npotScale=TextureImporterNPOTScale.None;i.wrapMode=TextureWrapMode.Clamp;i.alphaIsTransparency=false;i.maxTextureSize=2048;
-            var s=new TextureImporterSettings();i.ReadTextureSettings(s);s.spriteMeshType=SpriteMeshType.FullRect;i.SetTextureSettings(s);i.SaveAndReimport();
-        }
-    }
-    static Image Piece(string name,Transform parent,float x,float y)
-    {
-        var sprite=AssetDatabase.LoadAssetAtPath<Sprite>(Art+name+".png");Assert.That(sprite,Is.Not.Null);
-        var r=DungeonPixelLabBattleArt.Rect(name,parent,x,y,sprite.rect.width,sprite.rect.height);
-        var i=r.gameObject.AddComponent<Image>();i.sprite=sprite;i.raycastTarget=false;return i;
-    }
-    static void Decorate(GameplayPixelLayoutController layout)
-    {
-        var world=GameObject.Find("DungeonPixelLabEnvironment").GetComponent<RectTransform>();
-        if(world.Find("Candidate side masonry"))return;
-        var structure=world.Find("Structure");
-        var old=structure.GetComponentsInChildren<Image>().Where(i=>i.name.StartsWith("Support_Corner_")).ToArray();
-        Assert.That(old,Is.Not.Empty);
-        // Artwork reaches physical screen edges; live UI retains its safe viewport.
+        var world=GameObject.Find("DungeonPixelLabEnvironment").transform;
+        Assert.That(world.Find("Candidate side masonry"),Is.Null);
+        var root=world.Find("Approved corner masonry");Assert.That(root,Is.Not.Null);
+        var art=DungeonPixelLabBattleArt.Current;
+        var sides=world.Find("Structure/Edge masonry").GetComponentsInChildren<Image>();
         float scale=DungeonPixelLabBattleArt.PhysicalPixelScale;
-        var viewport=layout.Current.Viewport;
-        float left=-viewport.xMin/scale,right=(UnityEngine.Device.Screen.width-viewport.xMin)/scale;
-        float bottom=viewport.yMax/scale;
-        var root=DungeonPixelLabBattleArt.Rect("Candidate side masonry",world,0,0,right,bottom);
-        root.SetSiblingIndex(structure.GetSiblingIndex()+1);
-        // The native opaque bottom is row 86, followed by two transparent rows.
-        // Anchor visible stone, not padded canvas, to physical screen y=0.
-        Piece("Masonry_Corner_Left",root,left,bottom-86);
-        Piece("Masonry_Corner_Right",root,right-58,bottom-86);
-        // Replace the bottom three courses, rather than superimposing a second
-        // independent brick grid. Artwork and every upper course stay unchanged.
-        Canvas.ForceUpdateCanvases();
-        foreach(var tile in old)
-        {
-            var r=GameplayPixelLayoutController.ScreenRect(tile.rectTransform);
-            if(r.yMax<=84*scale+.1f)tile.gameObject.SetActive(false);
-        }
-        Assert.That(old.Count(i=>!i.gameObject.activeSelf),Is.EqualTo(6),"Exactly three courses per side are replaced");
         foreach(string side in new[]{"Left","Right"})
         {
-            var upper=old.Where(i=>i.gameObject.activeSelf&&i.name.EndsWith(side))
-                .Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).OrderBy(r=>r.yMin).First();
-            Assert.That(upper.yMin,Is.EqualTo(84*scale).Within(.1f),"Corner and side must share a course boundary");
-        }
-        Canvas.ForceUpdateCanvases();
-        foreach(var image in root.GetComponentsInChildren<Image>())
-        {
+            var name="Masonry_Corner_"+side;
+            var image=root.Find(name).GetComponent<Image>();
+            Assert.That(image.sprite,Is.SameAs(art.Sprite(name)));
+            Assert.That(art.hybridModules.Contains(image.sprite),Is.True,"Sprite must be serialized in the production resource");
             var r=GameplayPixelLayoutController.ScreenRect(image.rectTransform);
-            Assert.That(r.yMin+2*scale,Is.EqualTo(0).Within(.1f),"Opaque stone must meet the physical bottom edge");
-            if(image.name.EndsWith("Left"))Assert.That(r.xMin,Is.EqualTo(0).Within(.1f));
-            else Assert.That(r.xMax,Is.EqualTo(UnityEngine.Device.Screen.width).Within(.1f));
+            Assert.That(r.yMin+2*scale,Is.EqualTo(0).Within(.1f));
+            Assert.That(side=="Left"?r.xMin:r.xMax,Is.EqualTo(side=="Left"?0:UnityEngine.Device.Screen.width).Within(.1f));
+            var upper=sides.Where(i=>i.name.EndsWith(side)).Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).OrderBy(b=>b.yMin).First();
+            Assert.That(upper.yMin,Is.EqualTo(84*scale).Within(.1f),"Production corners must replace three lower repeats, joining the upper row exactly");
         }
-        Assert.That(DungeonPixelLabBattleArt.Current.hybridModules.Any(s=>s.name.StartsWith("Masonry_")),Is.False,"Candidate must remain unbound in production");
+        Assert.That(root.childCount,Is.EqualTo(2));
     }
     [UnityTearDown]public IEnumerator Cleanup()=>new DungeonHybridIntegrationTests().Cleanup();
-    [UnityTest,Explicit("Review matching bottom-corner additions while retaining the approved side stones.")]
-    public IEnumerator CandidateWithThreeLiveEnemies()
-    {
-        Import();
-        return new DungeonHybridIntegrationTests().CaptureScreens(Root,"Candidate",Decorate);
-    }
+    [UnityTest,Explicit("Verify the user-approved corner masonry in the actual production Game scene.")]
+    public IEnumerator ApprovedCornersWithThreeLiveEnemies()
+        =>new DungeonHybridIntegrationTests().CaptureScreens(Root,"Production",AssertProductionCorners);
 }

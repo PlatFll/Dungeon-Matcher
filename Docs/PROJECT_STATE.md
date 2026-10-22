@@ -20,18 +20,22 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Hybrid dungeon integration (2026-10-22, review pending PR #205)
+## Hybrid dungeon integration (2026-10-22, approved for merge in PR #205)
 
-The user approved all five hybrid art stages and authorized applying the full design
-to the playable Dungeon. The dedicated branch now binds the unchanged gate, props
-and UI modules through the existing Dungeon presentation owners. The approved
-102-asset library remains preserved. Gameplay, characters, gems, saves and other
-zones retain their existing systems; responsive sections, board fit and health rows
-match the fresh production baseline. Actual Game captures show Rattlebones and
-three live enemies at five phone/safe-area profiles. The affected regression suite
-and required Unity validator passed; physical-device testing and a new Android
-build were not performed. [Gameplay review and verification](../ArtSource/DungeonHybrid/Integration/Report.md).
-PR #205 remains unmerged, awaiting final gameplay visual approval.
+The user approved the final playable Dungeon visuals, aligned corner masonry and
+merge to main. Production binds 55 hybrid modules plus the two approved corner
+sprites through the existing presentation owners. The original 102-asset library
+and all source artwork remain preserved. The wall covers the physical display,
+including cutout margins; edge masonry uses one bottom-aligned course grid and
+the corners replace lower rows without overlap. The floor extends behind the
+masked, banner-free portrait. Board/UI layout, gameplay, characters, gems, saves
+and other zones retain their existing systems.
+
+Actual Game captures show Rattlebones and three live enemies at six phone and
+safe-area profiles. Final production binding verification is recorded in
+[the approval handoff](../ArtSource/DungeonHybrid/SideMasonry/ApprovedIntegration/Report.md).
+The earlier 69-test integration pass remains historical evidence. No physical-device
+test or new Android build was performed for this revision.
 
 ## Staged PixelLab dungeon integration (2026-10-20, merged PR #203)
 

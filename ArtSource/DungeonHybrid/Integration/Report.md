@@ -88,3 +88,7 @@ The current hybrid wall now covers the physical display beyond the gameplay safe
 ## Aligned edge masonry
 
 The side courses now share a physical-bottom alignment and physical left/right anchors with the corner review pieces. The corner fixture replaces the lower three repeats per side instead of superimposing them. Artwork, board/UI geometry and gameplay are unchanged. Three current Unity fixtures and compiler validation passed. Native source-pixel comparisons cover the complete visible side stones and corner joins in all 12 captures. See [current masonry review](../SideMasonry/CourseAlignment/Review.html) and its report. Remains unmerged; corner additions remain review-only.
+
+## Final visual approval and production binding
+
+The user approved the aligned masonry and merging PR #205. Both exact corner sprites are now included in the production resource and runtime scene. The final verification fixture adds no editor decorations. See [approved production handoff](../SideMasonry/ApprovedIntegration/Report.md) and [actual Game captures](../SideMasonry/ApprovedIntegration/Review.html). Earlier pending-review statements above describe their historical checkpoints.

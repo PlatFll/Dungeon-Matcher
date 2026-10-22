@@ -24,7 +24,7 @@ public sealed class DungeonHybridIntegrationTests
     {
         var art=DungeonPixelLabBattleArt.Current;Assert.That(art,Is.Not.Null);
         Assert.That(art.UsesHybrid,Is.True);
-        Assert.That(art.hybridModules.Length,Is.EqualTo(55));
+        Assert.That(art.hybridModules.Length,Is.EqualTo(57));
         Assert.That(art.hybridModules.All(a=>a && AssetDatabase.GetAssetPath(a).StartsWith("Assets/_Game/Art/DungeonHybrid/")),Is.True);
         Assert.That(art.modules.Count(s=>AssetDatabase.GetAssetPath(s).StartsWith("Assets/_Game/Art/DungeonPixelLab/")),Is.EqualTo(102));
         Assert.That(art.boardCell64.rect.size,Is.EqualTo(new Vector2(64,64)));
