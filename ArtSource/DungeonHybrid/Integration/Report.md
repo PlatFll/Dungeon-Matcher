@@ -74,3 +74,9 @@ This is graphics-enabled Unity automation and visual screenshot review. **No phy
 - Explicit Unity test `DungeonHybridIntegrationTests.DungeonCombatAndPhoneScreens` reproduces the live fixture using a disposable account. The older historical baseline-capture tests are not run.
 
 Stop for final gameplay visual approval. Keep PR #205 unmerged.
+
+## Portrait banner and masonry follow-up
+
+Removed the banner inside the current hybrid player portrait, preserving its masked wall, frame, character and UI. The refreshed `Previews/Final` screenshots reflect this change. The portrait and new masonry candidate fixtures both pass at all five phone/safe-area profiles, with unchanged board/section/health geometry. `Tools/Validate-Unity.ps1` passes again; all protected files and existing main edits are unchanged.
+
+The separate [SideMasonry review](../SideMasonry/Review.html) contains one newly requested PixelLab source (6 generations), four LibreSprite-cleaned native modules, and actual Game captures from an editor-only candidate preview. These new pieces are not selected in production resources and await user review. Prior approved art remains unchanged. See [the masonry report](../SideMasonry/Report.md) for current evidence; no merge.

@@ -17,7 +17,6 @@ public sealed class DungeonHybridIntegrationTests
 {
     [Serializable] public class Geometry {public Rect top,board,bottom;public float ratio;public Rect[] health;}
     const string Root="ArtSource/DungeonHybrid/Integration";
-    const string Phase="Final";
     static void Size(int w,int h)=>typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.NonPublic|BindingFlags.Static).Invoke(null,new object[]{new Vector2Int(w,h)});
     static IEnumerator Until(Func<bool> f)
     {float end=Time.realtimeSinceStartup+45;while(!f()){Assert.That(Time.realtimeSinceStartup,Is.LessThan(end));yield return null;}}
@@ -60,6 +59,7 @@ public sealed class DungeonHybridIntegrationTests
         Assert.That(world.transform.Find("Approved hybrid gate").childCount,Is.EqualTo(10));
         var portrait=layout.TopHud.Find("GeneratedTopBattleLayout/PlayerSection/PixelLabPortraitBackdrop/PortraitMask");
         Assert.That(portrait.GetComponent<RectMask2D>(),Is.Not.Null);
+        Assert.That(portrait.Find("Banner"),Is.Null,"The player portrait must remain banner-free");
         var backing=portrait.GetComponentInChildren<Image>().rectTransform;
         Assert.That(backing.offsetMin.x,Is.LessThan(0));Assert.That(backing.offsetMax.x,Is.GreaterThan(0));
     }
@@ -92,8 +92,12 @@ public sealed class DungeonHybridIntegrationTests
         LogAssert.ignoreFailingMessages=false;
     }
     [UnityTest,Explicit("Hybrid actual Game-scene capture and integration checks.")]
-    public IEnumerator DungeonCombatAndPhoneScreens()
+    public IEnumerator DungeonCombatAndPhoneScreens()=>CaptureScreens(Root,"Final");
+    // Editor-only reuse: an optional candidate decorates the same live layout.
+    public IEnumerator CaptureScreens(string outputRoot,string phase,Action<GameplayPixelLayoutController> decorate=null)
     {
+        Directory.CreateDirectory(outputRoot+"/Diagnostics/"+phase);
+        Directory.CreateDirectory(outputRoot+"/Previews/"+phase);
         EditorUtility.audioMasterMute=true;
         Size(1080,1920);EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
         yield return new EnterPlayMode();
@@ -118,16 +122,17 @@ public sealed class DungeonHybridIntegrationTests
                 GameplayPixelLayoutController.ValidationSafeArea=test.z==1?new Rect(0,84,1080,2200):(Rect?)null;
                 yield return new WaitForSecondsRealtime(1.5f);Canvas.ForceUpdateCanvases();
                 var layout=Object.FindFirstObjectByType<GameplayPixelLayoutController>();
+                decorate?.Invoke(layout);Canvas.ForceUpdateCanvases();
                 string name=test.z==1?"Dungeon-safe-1080x2400":"Dungeon-"+size.x+"x"+size.y;
                 var found=GameplayPixelLayoutValidator.Validate(layout,out string report);
                 foreach(string error in found)errors.Add(name+": "+error);
-                File.WriteAllText(Root+"/Diagnostics/"+Phase+"/"+name+".txt",report+"\nERRORS:\n"+string.Join("\n",found));
+                File.WriteAllText(outputRoot+"/Diagnostics/"+phase+"/"+name+".txt",report+"\nERRORS:\n"+string.Join("\n",found));
                 AssertNativeLayers(layout);
                 var geometry=new Geometry { top=GameplayPixelLayoutController.ScreenRect(layout.TopHud),
                     board=GameplayPixelLayoutController.ScreenRect(layout.BoardArea), bottom=GameplayPixelLayoutController.ScreenRect(layout.BottomHud),
                     ratio=layout.Current.BoardTexelRatio,
                     health=layout.TopHud.GetComponentsInChildren<EnemySlotUI>().Where(s=>s.CurrentEnemy).Select(s=>GameplayPixelLayoutController.ScreenRect(s.CombatBarRect)).ToArray() };
-                File.WriteAllText(Root+"/Diagnostics/"+Phase+"/"+name+"-geometry.json",JsonUtility.ToJson(geometry,true));
+                File.WriteAllText(outputRoot+"/Diagnostics/"+phase+"/"+name+"-geometry.json",JsonUtility.ToJson(geometry,true));
 
                 Assert.That(RunSession.Current.Waves.ActiveEnemies.Count,Is.EqualTo(3));
                 var cellArt=RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>().Where(r=>r.name.StartsWith("CellTile_")).ToArray();
@@ -141,7 +146,7 @@ public sealed class DungeonHybridIntegrationTests
                 Assert.That(Object.FindFirstObjectByType<DungeonSideViewArtPreview>(),Is.Null,"Production may not instantiate the art-only preview.");
                 Assert.That(GameObject.Find("DungeonPixelLabEnvironment"),Is.Not.Null);
                 Assert.That(RunSession.Current.Board.GetComponentsInChildren<Gem>().Length,Is.EqualTo(64));
-                string output=Path.GetFullPath(Root+"/Previews/"+Phase+"/"+name+".png");if(File.Exists(output))File.Delete(output);
+                string output=Path.GetFullPath(outputRoot+"/Previews/"+phase+"/"+name+".png");if(File.Exists(output))File.Delete(output);
                 ScreenCapture.CaptureScreenshot(output);yield return Until(()=>File.Exists(output));yield return null;
                 AssertVisibleGems(output,GameplayPixelLayoutController.ScreenRect(layout.BoardArea));
                 foreach(var text in layout.TopHud.GetComponentsInChildren<TMPro.TMP_Text>().Where(t=>t.name=="PlayerHPText"||t.name=="EnemyHPText"))
@@ -160,7 +165,7 @@ public sealed class DungeonHybridIntegrationTests
             yield return Until(()=>RunSession.Current.Continuation.CanCapture);
             Assert.That(board.CaptureContinuation(id=>id).moves,Is.EqualTo(moves+1));
             var controls=Object.FindFirstObjectByType<RunControlsUI>();controls.OpenSettings();yield return null;Assert.That(controls.IsModalOpen,Is.True);controls.Close();yield return null;
-            File.WriteAllText(Root+"/Diagnostics/"+Phase+"/Gameplay.txt","Actual Game scene, disposable profile. Rattlebones selected. Active wave, 64 gems, accepted swap increments one move, settings opens/closes.\n"+string.Join("\n",errors));
+            File.WriteAllText(outputRoot+"/Diagnostics/"+phase+"/Gameplay.txt","Actual Game scene, disposable profile. Rattlebones selected. Active wave, 64 gems, accepted swap increments one move, settings opens/closes.\n"+string.Join("\n",errors));
         }
         Assert.That(errors,Is.Empty);
         yield return new ExitPlayMode();

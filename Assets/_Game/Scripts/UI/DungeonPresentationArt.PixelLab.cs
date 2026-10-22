@@ -126,7 +126,8 @@ public sealed partial class DungeonPresentationArt
         var backing=art.Image("Recess_Center",mask,0,0,u);backing.type=Image.Type.Tiled;backing.pixelsPerUnitMultiplier=1/u;
         backing.rectTransform.anchorMin=Vector2.zero;backing.rectTransform.anchorMax=Vector2.one;
         backing.rectTransform.offsetMin=-backing.sprite.rect.size*u;backing.rectTransform.offsetMax=-backing.rectTransform.offsetMin;
-        var banner=art.Image(art.UsesHybrid?"Banner":"Hanging_Banner",mask,0,3*u,u);
+        if (art.UsesHybrid) { pixelLabPortraitBanner=null; return; }
+        var banner=art.Image("Hanging_Banner",mask,0,3*u,u);
         banner.rectTransform.anchorMin=banner.rectTransform.anchorMax=new Vector2(.5f,1);
         banner.rectTransform.anchoredPosition=new Vector2(-Mathf.Floor(banner.sprite.rect.width/2)*u,-3*u);
         pixelLabPortraitBanner=banner.rectTransform;
