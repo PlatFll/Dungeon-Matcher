@@ -1,0 +1,40 @@
+{
+  "parts": [
+    {
+      "name": "Masonry_Corner_Left",
+      "width": 58,
+      "height": 88,
+      "colors": 5,
+      "bounds": [
+        0,
+        2,
+        54,
+        86
+      ],
+      "source": "Assets\\_Game\\Art\\DungeonPixelLab\\Support\\Support_Corner_Left.png",
+      "source_sha256": "a074a421a930967d7390ac14bedc830a3253a6a98862c8b0ba44d53777035eb4",
+      "sha256": "ec4863cf1f9f058e7b3bdc5b40af02b02b211a62040ff09e79ce9a559c2a1261",
+      "ase_sha256": "2d04b53c1b89c9cd1ef29cf311e470bf9a300ef5e62deec057fd42ed40843451"
+    },
+    {
+      "name": "Masonry_Corner_Right",
+      "width": 58,
+      "height": 88,
+      "colors": 5,
+      "bounds": [
+        4,
+        2,
+        58,
+        86
+      ],
+      "source": "Assets\\_Game\\Art\\DungeonPixelLab\\Support\\Support_Corner_Right.png",
+      "source_sha256": "495ea8a4972fe1963663c5632aeab55b93233446431fd803b4de94bf8446162a",
+      "sha256": "ff3ffa41e7cf73bc627b2763aaf955240da3f24c9c3a513c6fd37c6688013b55",
+      "ase_sha256": "91886c7f0385f60eecbde2b3ed7a1c22c17cbc4991373fc478d7fe308689320f"
+    }
+  ],
+  "source_palette_exact": true,
+  "top_courses_exact": true,
+  "additional_generations": 0,
+  "previous_candidate": "Rejected by user: retain the existing side stones, add only matching masonry."
+}

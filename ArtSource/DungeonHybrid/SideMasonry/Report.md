@@ -1,3 +1,5 @@
+> **Rejected:** the user requested keeping the original side stones and adding only matching bottom masonry. [Current correction](MatchedCorners/Review.html).
+
 # Dungeon side masonry and portrait banner review
 
 The user requested removing the skeleton banner inside the player portrait and generating side masonry inspired by the supplied mockup. The banner is removed from the current hybrid Dungeon only; the portrait recess, frame, character and live UI remain intact. Existing legacy fallback art is preserved.

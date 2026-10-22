@@ -10,8 +10,8 @@ using UnityEngine.UI;
 // New artwork is previewed in the live scene without selecting it in production resources.
 public sealed class DungeonHybridMasonryPreviewTests
 {
-    const string Root="ArtSource/DungeonHybrid/SideMasonry";
-    const string Art="Assets/_Game/Art/DungeonHybrid/SideMasonry/";
+    const string Root="ArtSource/DungeonHybrid/SideMasonry/MatchedCorners";
+    const string Art="Assets/_Game/Art/DungeonHybrid/SideMasonry/MatchedCorners/";
     static void Import()
     {
         AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
@@ -37,26 +37,18 @@ public sealed class DungeonHybridMasonryPreviewTests
         var structure=world.Find("Structure");
         var old=structure.GetComponentsInChildren<Image>().Where(i=>i.name.StartsWith("Support_Corner_")).ToArray();
         Assert.That(old,Is.Not.Empty);
-        float start=old.Min(i=>-i.rectTransform.anchoredPosition.y);
         // Walls overfill with ceil dimensions. Keep standalone bases fully inside.
         float scale=DungeonPixelLabBattleArt.PhysicalPixelScale;
         float width=Mathf.Floor(layout.Current.Viewport.width/scale),height=Mathf.Floor(layout.Current.Viewport.height/scale);
-        foreach(var image in old)image.gameObject.SetActive(false);
         var root=DungeonPixelLabBattleArt.Rect("Candidate side masonry",world,0,0,width,height);
         root.SetSiblingIndex(structure.GetSiblingIndex()+1);
-        // One native pixel of clearance also avoids camera rounding at safe-area edges.
-        float baseTop=height-87;
-        var repeat=DungeonPixelLabBattleArt.Rect("Masonry repeat window",root,0,start,width,baseTop+2-start);
-        repeat.gameObject.AddComponent<RectMask2D>();
-        for(float y=0;y<repeat.rect.height;y+=16)
-        {
-            Piece("Masonry_Repeat_Left",repeat,1,y);
-            Piece("Masonry_Repeat_Right",repeat,width-25,y);
-        }
-        Piece("Masonry_Base_Left",root,1,baseTop);
-        Piece("Masonry_Base_Right",root,width-49,baseTop);
+        // Additions only: the approved side stones stay visible and untouched.
+        float baseTop=height-89;
+        Piece("Masonry_Corner_Left",root,0,baseTop);
+        Piece("Masonry_Corner_Right",root,width-58,baseTop);
+        Assert.That(old.All(i=>i.gameObject.activeSelf),Is.True,"Preserve every original side-wall tile");
         Canvas.ForceUpdateCanvases();
-        foreach(var image in root.GetComponentsInChildren<Image>().Where(i=>i.name.StartsWith("Masonry_Base_")))
+        foreach(var image in root.GetComponentsInChildren<Image>().Where(i=>i.name.StartsWith("Masonry_Corner_")))
         {
             var r=GameplayPixelLayoutController.ScreenRect(image.rectTransform);
             var v=layout.Current.Viewport;
@@ -68,7 +60,7 @@ public sealed class DungeonHybridMasonryPreviewTests
         Assert.That(DungeonPixelLabBattleArt.Current.hybridModules.Any(s=>s.name.StartsWith("Masonry_")),Is.False,"Candidate must remain unbound in production");
     }
     [UnityTearDown]public IEnumerator Cleanup()=>new DungeonHybridIntegrationTests().Cleanup();
-    [UnityTest,Explicit("Review new PixelLab masonry inside actual combat without selecting it for production.")]
+    [UnityTest,Explicit("Review matching bottom-corner additions while retaining the approved side stones.")]
     public IEnumerator CandidateWithThreeLiveEnemies()
     {
         Import();
