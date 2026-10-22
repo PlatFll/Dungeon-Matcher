@@ -1,6 +1,6 @@
 # Forest Hybrid staged rebuild
 
-Stage 1 approved by the user's instruction to continue. Its files remain unchanged.
-Stage 2 portrait shell is complete and awaiting visual approval.
-Review Stage02/Review.html and Stage02/REPORT.md; earlier evidence remains in Stage01/.
-Do not begin Stage 3, change production bindings, or merge without the user's approval.
+Stages 1 and 2 are user-approved; their files remain unchanged.
+Stage 3 board frame and side supports are complete and awaiting visual approval.
+Review Stage03/Review.html and Stage03/REPORT.md. Earlier evidence remains in Stage01/ and Stage02/.
+Do not begin Stage 4, change production bindings, or merge without the user's approval.

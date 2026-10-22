@@ -1,0 +1,402 @@
+{
+  "status": "PASS",
+  "new_assets": 15,
+  "editable_documents": 16,
+  "binary_alpha": true,
+  "libresprite_roundtrip": true,
+  "repeat_endpoints_match": true,
+  "corner_lighting_upright": true,
+  "board": [
+    48,
+    48,
+    512,
+    512
+  ],
+  "cells": [
+    8,
+    8,
+    64,
+    64
+  ],
+  "source_cell": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+  "source_gems": [
+    "Assets/_Game/Art/Gems/Ruby.png",
+    "Assets/_Game/Art/Gems/Amber_tri.png",
+    "Assets/_Game/Art/Gems/Topaz.png",
+    "Assets/_Game/Art/Gems/Emerald.png",
+    "Assets/_Game/Art/Gems/Sapphire (1).png",
+    "Assets/_Game/Art/Gems/Amethyst.png"
+  ],
+  "source_pixels_match_unity": true,
+  "cell_pixels_changed_by_frame": 0,
+  "resize_cases": [
+    [
+      46,
+      46
+    ],
+    [
+      560,
+      560
+    ],
+    [
+      561,
+      559
+    ],
+    [
+      640,
+      512
+    ],
+    [
+      411,
+      689
+    ]
+  ],
+  "undersize_hidden": [
+    45,
+    45
+  ],
+  "protected_files_unchanged": 1729,
+  "pixellab_generations_stage3": 6,
+  "pixellab_generations_cumulative": 21,
+  "raw_palette": 7,
+  "clean_palette": 6,
+  "captures": [
+    {
+      "size": [
+        608,
+        608
+      ],
+      "sha256": "e700fc37e31867379e4b9395de84041c8c20ce0bec93338568ff3a687a27f5e9",
+      "exact_integer_pixels": true
+    },
+    {
+      "size": [
+        1216,
+        1216
+      ],
+      "sha256": "0935a72903ff9dc134a16605cfb11a632997a4bd29ad5562bb08f7c13575a3fb",
+      "exact_integer_pixels": true
+    },
+    {
+      "size": [
+        1824,
+        1824
+      ],
+      "sha256": "3b8feaf0bfb9898aa55191a8ccb2c66f4cc96a38fee22137692924acc6b1576f",
+      "exact_integer_pixels": true
+    }
+  ],
+  "manifest": [
+    {
+      "name": "Board_Corner_TL",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Board_Corner_TL.png",
+      "size": [
+        23,
+        23
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        22,
+        22
+      ],
+      "sha256": "44976e7837f075fe29f52deb942805776fa8f86f6643fda5990b580237f83eeb",
+      "role": "23x23 chamfered structural block with the native PixelLab spiral carving; centered at (11,11), upright light."
+    },
+    {
+      "name": "Board_Corner_TR",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Board_Corner_TR.png",
+      "size": [
+        23,
+        23
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        22,
+        22
+      ],
+      "sha256": "44976e7837f075fe29f52deb942805776fa8f86f6643fda5990b580237f83eeb",
+      "role": "23x23 chamfered structural block with the native PixelLab spiral carving; centered at (11,11), upright light."
+    },
+    {
+      "name": "Board_Corner_BL",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Board_Corner_BL.png",
+      "size": [
+        23,
+        23
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        22,
+        22
+      ],
+      "sha256": "44976e7837f075fe29f52deb942805776fa8f86f6643fda5990b580237f83eeb",
+      "role": "23x23 chamfered structural block with the native PixelLab spiral carving; centered at (11,11), upright light."
+    },
+    {
+      "name": "Board_Corner_BR",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Board_Corner_BR.png",
+      "size": [
+        23,
+        23
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        22,
+        22
+      ],
+      "sha256": "44976e7837f075fe29f52deb942805776fa8f86f6643fda5990b580237f83eeb",
+      "role": "23x23 chamfered structural block with the native PixelLab spiral carving; centered at (11,11), upright light."
+    },
+    {
+      "name": "Board_Rail_Top",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Board_Rail_Top.png",
+      "size": [
+        32,
+        11
+      ],
+      "palette_count": 5,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        11
+      ],
+      "sha256": "95c35104db059f8c896099e797c6dc3271a5a05c1b2e85e911e0ebbbed650eaf",
+      "role": "11px native rail, centered at 5; exact repeated endpoints and broad quiet timber planes."
+    },
+    {
+      "name": "Board_Rail_Bottom",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Board_Rail_Bottom.png",
+      "size": [
+        32,
+        11
+      ],
+      "palette_count": 4,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        11
+      ],
+      "sha256": "bade07d33eb4a803176164032fcc710d9f22fb2ac6dd44272cee4f20845b6907",
+      "role": "11px native rail, centered at 5; exact repeated endpoints and broad quiet timber planes."
+    },
+    {
+      "name": "Board_Rail_Left",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Board_Rail_Left.png",
+      "size": [
+        11,
+        32
+      ],
+      "palette_count": 5,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        11,
+        32
+      ],
+      "sha256": "cb68c230db17f1e76a418b39c15591b2ba605588333c0440e2d9eff5ab2ef6f6",
+      "role": "11px native rail, centered at 5; exact repeated endpoints and broad quiet timber planes."
+    },
+    {
+      "name": "Board_Rail_Right",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Board_Rail_Right.png",
+      "size": [
+        11,
+        32
+      ],
+      "palette_count": 4,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        11,
+        32
+      ],
+      "sha256": "6be31a43509d18c416c5ca5156fbe1250d0116b0fc31e5b911cea2e0c08c65e5",
+      "role": "11px native rail, centered at 5; exact repeated endpoints and broad quiet timber planes."
+    },
+    {
+      "name": "Board_Connector",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Board_Connector.png",
+      "size": [
+        11,
+        11
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        10,
+        10
+      ],
+      "sha256": "89006f8807de19c1346e7cf24ae0163be36ecf24c30031f44eada7d96676cc9a",
+      "role": "11x11 centered wooden peg; shared material family with the approved portrait."
+    },
+    {
+      "name": "Side_PostRepeat",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Side_PostRepeat.png",
+      "size": [
+        23,
+        64
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        0,
+        22,
+        64
+      ],
+      "sha256": "33cfad9c50653e3047d0a25b9892801472eeebf05dd6218ac4106e9266a575d9",
+      "role": "23x64 sturdy vertical support; intended open repeat ends, exact y-seam equality."
+    },
+    {
+      "name": "Side_PostCap",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Side_PostCap.png",
+      "size": [
+        27,
+        24
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        26,
+        23
+      ],
+      "sha256": "c7dcc4db7c2bc4b6a99671137554937a631a33319b59cb4c8654e0c32137cf43",
+      "role": "Padded 27x24 carved cap; overlaps repeat by four pixels to avoid cut end seams."
+    },
+    {
+      "name": "Side_PostFoot",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Side_PostFoot.png",
+      "size": [
+        31,
+        36
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        30,
+        34
+      ],
+      "sha256": "c7fc5da222fd7a60f5bcb1885b8aa3c3dc78653789320bfba2f87dd518bcb5b3",
+      "role": "31x36 complete spreading base; kept outside all cells, no clipping or flattened crop."
+    },
+    {
+      "name": "Board_Ivy_Upper",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Board_Ivy_Upper.png",
+      "size": [
+        21,
+        30
+      ],
+      "palette_count": 3,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        19,
+        28
+      ],
+      "sha256": "976567fe1ab713a4d9af789961bd2787f82910aeffd92ea06ab695ac0cf2eb44",
+      "role": "Padded source ivy cluster; used only outside cell opening, no bright gem-like colors."
+    },
+    {
+      "name": "Board_Ivy_Lower",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Board_Ivy_Lower.png",
+      "size": [
+        20,
+        31
+      ],
+      "palette_count": 3,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        18,
+        29
+      ],
+      "sha256": "d4d0839ff992d2f4286686ea224cb8b453d36f14ce9651a38df302e4b417cd2a",
+      "role": "Padded source ivy cluster; used only outside cell opening, no bright gem-like colors."
+    },
+    {
+      "name": "Side_Brace",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage03/Side_Brace.png",
+      "size": [
+        23,
+        13
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        22,
+        12
+      ],
+      "sha256": "686dd2d66b923927cd470981074b4d82d87b21fa4e37d259c9bc320ca8d28d96",
+      "role": "23x13 horizontal support brace joining each outer post to the rim; does not enter cells."
+    }
+  ]
+}
