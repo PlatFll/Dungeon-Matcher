@@ -1,0 +1,998 @@
+{
+    "width": 720,
+    "height": 480,
+    "scale": 2,
+    "probes": true,
+    "sources": [
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 288.0,
+                "y": 63.999996185302737,
+                "width": 96.00003051757813,
+                "height": 31.999996185302736
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_FaceA.png",
+            "sprite": "Ground_FaceA",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 119.99999237060547,
+                "height": 47.99998474121094
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_SideExtension.png",
+            "sprite": "Far_SideExtension",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 52.0,
+                "height": 160.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 111.99999237060547,
+                "width": 103.99999237060547,
+                "height": 320.0000305175781
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_CanopyRepeat.png",
+            "sprite": "Far_CanopyRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 432.0000305175781,
+                "width": 95.99999237060547,
+                "height": 47.999969482421878
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 480.0,
+                "y": 63.999996185302737,
+                "width": 96.0,
+                "height": 31.999996185302736
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 63.999996185302737,
+                "width": 95.99999237060547,
+                "height": 31.999996185302736
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_FaceB.png",
+            "sprite": "Ground_FaceB",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 600.0,
+                "y": 0.0,
+                "width": 120.0,
+                "height": 47.99998474121094
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_FaceB.png",
+            "sprite": "Ground_FaceB",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 0.0,
+                "width": 120.0,
+                "height": 47.99998474121094
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_FaceA.png",
+            "sprite": "Ground_FaceA",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 239.99998474121095,
+                "y": 0.0,
+                "width": 120.00001525878906,
+                "height": 47.99998474121094
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Canopy_FringeRepeat.png",
+            "sprite": "Canopy_FringeRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 40.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 480.0,
+                "y": 400.0000305175781,
+                "width": 120.0,
+                "height": 79.99996948242188
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_CanopyRepeat.png",
+            "sprite": "Far_CanopyRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 95.99999237060547,
+                "y": 432.0000305175781,
+                "width": 95.99999237060547,
+                "height": 47.999969482421878
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_CanopyRepeat.png",
+            "sprite": "Far_CanopyRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 288.0,
+                "y": 432.0000305175781,
+                "width": 96.00003051757813,
+                "height": 47.999969482421878
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 95.99999237060547,
+                "y": 79.99999237060547,
+                "width": 95.99999237060547,
+                "height": 32.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_SideExtension.png",
+            "sprite": "Far_SideExtension",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 52.0,
+                "height": 160.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 111.99999237060547,
+                "width": 103.99999237060547,
+                "height": 320.0000305175781
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_TopB.png",
+            "sprite": "Ground_TopB",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 119.99999237060547,
+                "y": 47.99998474121094,
+                "width": 119.99999237060547,
+                "height": 32.00000762939453
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/CombatIdles/Farmer_Idle.png",
+            "sprite": "Farmer_Idle_00",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 112.0,
+                "height": 88.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 206.0,
+                "y": 51.99999237060547,
+                "width": 224.0,
+                "height": 176.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 672.0,
+                "y": 63.999996185302737,
+                "width": 95.99993896484375,
+                "height": 31.999996185302736
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 576.0,
+                "y": 63.999996185302737,
+                "width": 96.0,
+                "height": 31.999996185302736
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_TopA.png",
+            "sprite": "Ground_TopA",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 239.99998474121095,
+                "y": 47.99998474121094,
+                "width": 120.00001525878906,
+                "height": 32.00000762939453
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_CanopyRepeat.png",
+            "sprite": "Far_CanopyRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 191.99998474121095,
+                "y": 432.0000305175781,
+                "width": 96.00001525878906,
+                "height": 47.999969482421878
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 672.0,
+                "y": 79.99999237060547,
+                "width": 95.99993896484375,
+                "height": 32.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/CombatIdles/PanVillager_Idle.png",
+            "sprite": "PanVillager_Idle_00",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 112.0,
+                "height": 88.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 420.0,
+                "y": 51.99999237060547,
+                "width": 224.0,
+                "height": 176.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Canopy_FringeRepeat.png",
+            "sprite": "Canopy_FringeRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 40.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 400.0000305175781,
+                "width": 119.99999237060547,
+                "height": 79.99996948242188
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_TopB.png",
+            "sprite": "Ground_TopB",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 47.99998474121094,
+                "width": 120.0,
+                "height": 32.00000762939453
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_CanopyRepeat.png",
+            "sprite": "Far_CanopyRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 576.0,
+                "y": 432.0000305175781,
+                "width": 96.0,
+                "height": 47.999969482421878
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Tree_Left.png",
+            "sprite": "Tree_Left",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 72.0,
+                "height": 216.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 7.999999523162842,
+                "y": 47.99998474121094,
+                "width": 143.99998474121095,
+                "height": 432.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+            "sprite": "Rattlebones_Idle_00",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 93.99999237060547,
+                "y": 59.99998474121094,
+                "width": 128.0,
+                "height": 128.00001525878907
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Canopy_FringeRepeat.png",
+            "sprite": "Canopy_FringeRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 40.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 600.0,
+                "y": 400.0000305175781,
+                "width": 120.0,
+                "height": 79.99996948242188
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 288.0,
+                "y": 79.99999237060547,
+                "width": 96.00003051757813,
+                "height": 32.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Support_Left.png",
+            "sprite": "Support_Left",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 28.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 122.0,
+                "y": 346.0,
+                "width": 56.0,
+                "height": 48.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_TopA.png",
+            "sprite": "Ground_TopA",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 47.99998474121094,
+                "width": 119.99999237060547,
+                "height": 32.00000762939453
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 79.99999237060547,
+                "width": 95.99999237060547,
+                "height": 32.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_Forest.png",
+            "sprite": "Far_Forest",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 256.0,
+                "height": 160.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 111.99999237060547,
+                "width": 512.0,
+                "height": 320.0000305175781
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_CanopyRepeat.png",
+            "sprite": "Far_CanopyRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 672.0,
+                "y": 432.0000305175781,
+                "width": 95.99993896484375,
+                "height": 47.999969482421878
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Tree_Right.png",
+            "sprite": "Tree_Right",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 64.0,
+                "height": 216.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 584.0,
+                "y": 47.99998474121094,
+                "width": 128.0,
+                "height": 432.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Canopy_FringeRepeat.png",
+            "sprite": "Canopy_FringeRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 40.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 239.99998474121095,
+                "y": 400.0000305175781,
+                "width": 120.00001525878906,
+                "height": 79.99996948242188
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_TopA.png",
+            "sprite": "Ground_TopA",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 480.0,
+                "y": 47.99998474121094,
+                "width": 120.0,
+                "height": 32.00000762939453
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Canopy_FringeRepeat.png",
+            "sprite": "Canopy_FringeRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 40.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 119.99999237060547,
+                "y": 400.0000305175781,
+                "width": 119.99999237060547,
+                "height": 79.99996948242188
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Canopy_Left.png",
+            "sprite": "Canopy_Left",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 96.0,
+                "height": 44.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 392.0000305175781,
+                "width": 191.99998474121095,
+                "height": 87.99996948242188
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Canopy_Right.png",
+            "sprite": "Canopy_Right",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 96.0,
+                "height": 44.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 528.0,
+                "y": 392.0000305175781,
+                "width": 192.0,
+                "height": 87.99996948242188
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_FaceB.png",
+            "sprite": "Ground_FaceB",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 119.99999237060547,
+                "y": 0.0,
+                "width": 119.99999237060547,
+                "height": 47.99998474121094
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 384.0000305175781,
+                "y": 63.999996185302737,
+                "width": 95.99996948242188,
+                "height": 31.999996185302736
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 95.99999237060547,
+                "y": 63.999996185302737,
+                "width": 95.99999237060547,
+                "height": 31.999996185302736
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 191.99998474121095,
+                "y": 79.99999237060547,
+                "width": 96.00001525878906,
+                "height": 32.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 191.99998474121095,
+                "y": 63.999996185302737,
+                "width": 96.00001525878906,
+                "height": 31.999996185302736
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 480.0,
+                "y": 79.99999237060547,
+                "width": 96.0,
+                "height": 32.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_CanopyRepeat.png",
+            "sprite": "Far_CanopyRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 384.0000305175781,
+                "y": 432.0000305175781,
+                "width": 95.99996948242188,
+                "height": 47.999969482421878
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Canopy_FringeRepeat.png",
+            "sprite": "Canopy_FringeRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 40.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 400.0000305175781,
+                "width": 120.0,
+                "height": 79.99996948242188
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_TopB.png",
+            "sprite": "Ground_TopB",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 600.0,
+                "y": 47.99998474121094,
+                "width": 120.0,
+                "height": 32.00000762939453
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_CanopyRepeat.png",
+            "sprite": "Far_CanopyRepeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 480.0,
+                "y": 432.0000305175781,
+                "width": 96.0,
+                "height": 47.999969482421878
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_FaceA.png",
+            "sprite": "Ground_FaceA",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 60.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 480.0,
+                "y": 0.0,
+                "width": 120.0,
+                "height": 47.99998474121094
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Support_Right.png",
+            "sprite": "Support_Right",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 28.0,
+                "height": 24.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 544.0,
+                "y": 346.0,
+                "width": 56.0,
+                "height": 48.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_SideExtension.png",
+            "sprite": "Far_SideExtension",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 52.0,
+                "height": 160.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 616.0,
+                "y": 111.99999237060547,
+                "width": 104.0,
+                "height": 320.0000305175781
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 576.0,
+                "y": 79.99999237060547,
+                "width": 96.0,
+                "height": 32.0
+            }
+        },
+        {
+            "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+            "sprite": "Understory_Repeat",
+            "nativeRect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 48.0,
+                "height": 16.0
+            },
+            "screenRect": {
+                "serializedVersion": "2",
+                "x": 384.0000305175781,
+                "y": 79.99999237060547,
+                "width": 95.99996948242188,
+                "height": 32.0
+            }
+        }
+    ]
+}
