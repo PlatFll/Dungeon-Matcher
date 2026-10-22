@@ -1,0 +1,122 @@
+{
+  "result": "PASS",
+  "tests_passed": 3,
+  "tests_failed": 0,
+  "profiles": [
+    {
+      "view": "production",
+      "file": "Dungeon-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 1,
+      "baseline_geometry_equal": true
+    },
+    {
+      "view": "production",
+      "file": "Dungeon-1080x2400.png",
+      "width": 1080,
+      "height": 2400,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 1,
+      "baseline_geometry_equal": true
+    },
+    {
+      "view": "production",
+      "file": "Dungeon-360x640.png",
+      "width": 360,
+      "height": 640,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 0,
+      "baseline_geometry_equal": true
+    },
+    {
+      "view": "production",
+      "file": "Dungeon-720x1280.png",
+      "width": 720,
+      "height": 1280,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 1,
+      "baseline_geometry_equal": true
+    },
+    {
+      "view": "production",
+      "file": "Dungeon-safe-1080x2400.png",
+      "width": 1080,
+      "height": 2400,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 1,
+      "baseline_geometry_equal": true
+    },
+    {
+      "view": "production",
+      "file": "Dungeon-safe-sides-1080x2400.png",
+      "width": 1080,
+      "height": 2400,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 0,
+      "baseline_geometry_equal": false
+    },
+    {
+      "view": "candidate",
+      "file": "Dungeon-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 1,
+      "baseline_geometry_equal": true
+    },
+    {
+      "view": "candidate",
+      "file": "Dungeon-1080x2400.png",
+      "width": 1080,
+      "height": 2400,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 1,
+      "baseline_geometry_equal": true
+    },
+    {
+      "view": "candidate",
+      "file": "Dungeon-360x640.png",
+      "width": 360,
+      "height": 640,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 0,
+      "baseline_geometry_equal": true
+    },
+    {
+      "view": "candidate",
+      "file": "Dungeon-720x1280.png",
+      "width": 720,
+      "height": 1280,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 1,
+      "baseline_geometry_equal": true
+    },
+    {
+      "view": "candidate",
+      "file": "Dungeon-safe-1080x2400.png",
+      "width": 1080,
+      "height": 2400,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 1,
+      "baseline_geometry_equal": true
+    },
+    {
+      "view": "candidate",
+      "file": "Dungeon-safe-sides-1080x2400.png",
+      "width": 1080,
+      "height": 2400,
+      "all_perimeter_pixels_are_stone": true,
+      "max_perimeter_channel_rounding": 0,
+      "baseline_geometry_equal": false
+    }
+  ],
+  "source_art_unchanged": true,
+  "additional_generations": 0,
+  "android_render_outside_safe_area_already_enabled": true,
+  "physical_device_tested": false,
+  "compiler_validation": "PASS",
+  "protected_files_unchanged": 5298,
+  "main_user_files_unchanged": 8
+}

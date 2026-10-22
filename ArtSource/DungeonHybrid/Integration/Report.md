@@ -80,3 +80,7 @@ Stop for final gameplay visual approval. Keep PR #205 unmerged.
 Removed the banner inside the current hybrid player portrait, preserving its masked wall, frame, character and UI. The refreshed `Previews/Final` screenshots reflect this change. The portrait and new masonry candidate fixtures both pass at all five phone/safe-area profiles, with unchanged board/section/health geometry. `Tools/Validate-Unity.ps1` passes again; all protected files and existing main edits are unchanged.
 
 The separate [SideMasonry review](../SideMasonry/Review.html) contains one newly requested PixelLab source (6 generations), four LibreSprite-cleaned native modules, and actual Game captures from an editor-only candidate preview. These new pieces are not selected in production resources and await user review. Prior approved art remains unchanged. See [the masonry report](../SideMasonry/Report.md) for current evidence; no merge.
+
+## Full-screen background correction
+
+The current hybrid wall now covers the physical display beyond the gameplay safe area, with complementary half tiles completing the repeat. The original scene layout, portrait mask, art pixels and other-zone paths remain unchanged. Current `Previews/Final` captures include six screen/safe-area cases. The corrected corner candidate reaches the physical screen bottom; see [full-screen review](../SideMasonry/ScreenFill/Review.html). Three current Unity fixtures, the compiler validator, image-edge checks and preservation audit passed. No physical-device claim and no merge.

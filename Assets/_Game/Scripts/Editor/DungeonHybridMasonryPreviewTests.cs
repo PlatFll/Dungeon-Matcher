@@ -10,7 +10,7 @@ using UnityEngine.UI;
 // New artwork is previewed in the live scene without selecting it in production resources.
 public sealed class DungeonHybridMasonryPreviewTests
 {
-    const string Root="ArtSource/DungeonHybrid/SideMasonry/MatchedCorners";
+    const string Root="ArtSource/DungeonHybrid/SideMasonry/ScreenFill";
     const string Art="Assets/_Game/Art/DungeonHybrid/SideMasonry/MatchedCorners/";
     static void Import()
     {
@@ -37,25 +37,25 @@ public sealed class DungeonHybridMasonryPreviewTests
         var structure=world.Find("Structure");
         var old=structure.GetComponentsInChildren<Image>().Where(i=>i.name.StartsWith("Support_Corner_")).ToArray();
         Assert.That(old,Is.Not.Empty);
-        // Walls overfill with ceil dimensions. Keep standalone bases fully inside.
+        // Artwork reaches physical screen edges; live UI retains its safe viewport.
         float scale=DungeonPixelLabBattleArt.PhysicalPixelScale;
-        float width=Mathf.Floor(layout.Current.Viewport.width/scale),height=Mathf.Floor(layout.Current.Viewport.height/scale);
-        var root=DungeonPixelLabBattleArt.Rect("Candidate side masonry",world,0,0,width,height);
+        var viewport=layout.Current.Viewport;
+        float left=-viewport.xMin/scale,right=(UnityEngine.Device.Screen.width-viewport.xMin)/scale;
+        float bottom=viewport.yMax/scale;
+        var root=DungeonPixelLabBattleArt.Rect("Candidate side masonry",world,0,0,right,bottom);
         root.SetSiblingIndex(structure.GetSiblingIndex()+1);
-        // Additions only: the approved side stones stay visible and untouched.
-        float baseTop=height-89;
-        Piece("Masonry_Corner_Left",root,0,baseTop);
-        Piece("Masonry_Corner_Right",root,width-58,baseTop);
+        // The native opaque bottom is row 86, followed by two transparent rows.
+        // Anchor visible stone, not padded canvas, to physical screen y=0.
+        Piece("Masonry_Corner_Left",root,left,bottom-86);
+        Piece("Masonry_Corner_Right",root,right-58,bottom-86);
         Assert.That(old.All(i=>i.gameObject.activeSelf),Is.True,"Preserve every original side-wall tile");
         Canvas.ForceUpdateCanvases();
-        foreach(var image in root.GetComponentsInChildren<Image>().Where(i=>i.name.StartsWith("Masonry_Corner_")))
+        foreach(var image in root.GetComponentsInChildren<Image>())
         {
             var r=GameplayPixelLayoutController.ScreenRect(image.rectTransform);
-            var v=layout.Current.Viewport;
-            Assert.That(r.xMin,Is.GreaterThanOrEqualTo(v.xMin-.01f));
-            Assert.That(r.yMin,Is.GreaterThanOrEqualTo(v.yMin-.01f));
-            Assert.That(r.xMax,Is.LessThanOrEqualTo(v.xMax+.01f));
-            Assert.That(r.yMax,Is.LessThanOrEqualTo(v.yMax+.01f));
+            Assert.That(r.yMin+2*scale,Is.EqualTo(0).Within(.1f),"Opaque stone must meet the physical bottom edge");
+            if(image.name.EndsWith("Left"))Assert.That(r.xMin,Is.EqualTo(0).Within(.1f));
+            else Assert.That(r.xMax,Is.EqualTo(UnityEngine.Device.Screen.width).Within(.1f));
         }
         Assert.That(DungeonPixelLabBattleArt.Current.hybridModules.Any(s=>s.name.StartsWith("Masonry_")),Is.False,"Candidate must remain unbound in production");
     }

@@ -30,10 +30,21 @@ public sealed partial class DungeonPresentationArt
     {
         var wall=DungeonPixelLabBattleArt.Rect("Continuous wall",pixelLabContent,0,0,width,height);
         var walls=art.Manifest.placements.Where(p=>p.layer==0).ToArray();
-        for(int y=0;y<height;y+=48)for(int x=0;x<width;x+=48)
+        // Keep the established tile phase and native pitch, but cover physical
+        // screen margins/cutouts as well as the safe gameplay viewport.
+        var v=GetComponent<GameplayPixelLayoutController>().Current.Viewport;
+        float scale=DungeonPixelLabBattleArt.PhysicalPixelScale;
+        int left=Mathf.FloorToInt(-v.xMin/scale/48)*48-48;
+        int top=Mathf.FloorToInt((v.yMax-UnityEngine.Device.Screen.height)/scale/48)*48-48;
+        int right=Mathf.CeilToInt((UnityEngine.Device.Screen.width-v.xMin)/scale/48)*48+48;
+        int bottom=Mathf.CeilToInt(v.yMax/scale/48)*48+48;
+        for(int y=top;y<bottom;y+=48)for(int x=left;x<right;x+=48)
         {
-            var p=walls.First(p=>p.x==(x%384)&&p.y==(y%240));
+            var p=walls.First(p=>p.x==((x%384+384)%384)&&p.y==((y%240+240)%240));
             art.Image(p.name,wall,x,y);
+            // The 360px reference ends with half a tile at x336. Complete its
+            // matching right half when repeating across the full screen.
+            if(p.name=="Wall_Edge_Left")art.Image("Wall_Edge_Right",wall,x+24,y);
         }
         var structure=DungeonPixelLabBattleArt.Rect("Structure",pixelLabContent,0,0,width,height);
         foreach(int x in new[]{0,96,width-36})
@@ -43,7 +54,7 @@ public sealed partial class DungeonPresentationArt
             art.Image("Support_Foot",structure,x,floor-22);
         }
         // Continue the quiet edge masonry to the bottom, without decorative bases.
-        for(int y=floor+34;y<height;y+=28)
+        for(int y=floor+34;y<Mathf.CeilToInt(v.yMax/scale);y+=28)
         {
             art.Image("Support_Corner_Left",structure,0,y);
             art.Image("Support_Corner_Right",structure,width-28,y);

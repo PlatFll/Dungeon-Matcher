@@ -30,7 +30,7 @@ public sealed partial class DungeonPresentationArt
             (2 + DungeonPixelLabBattleArt.EnemyFloorInset) * scale;
         int width = Mathf.CeilToInt(viewport.width / scale), height = Mathf.CeilToInt(viewport.height / scale);
         int floor = Mathf.RoundToInt((viewport.yMax - floorScreen) / scale);
-        string key = viewport + ":" + width + ":" + height + ":" + floor + ":" + scale;
+        string key = UnityEngine.Device.Screen.width + "x" + UnityEngine.Device.Screen.height + ":" + viewport + ":" + width + ":" + height + ":" + floor + ":" + scale;
         if (pixelLabGeometry != key)
         {
             pixelLabGeometry = key;
@@ -40,7 +40,9 @@ public sealed partial class DungeonPresentationArt
             pixelLabWorld.worldCamera = Camera.main; pixelLabWorld.sortingLayerName = "Default"; pixelLabWorld.sortingOrder = -190;
             pixelLabWorld.referencePixelsPerUnit = 64; pixelLabWorld.pixelPerfect = true;
             pixelLabContent = (RectTransform)go.transform; pixelLabContent.pivot = new Vector2(0,1);
-            pixelLabContent.sizeDelta = new Vector2(width,height); go.AddComponent<RectMask2D>();
+            pixelLabContent.sizeDelta = new Vector2(width,height);
+            // Safe-area clipping belongs to live UI, not the full-screen hybrid wall.
+            if (!art.UsesHybrid) go.AddComponent<RectMask2D>();
             BuildPixelLabEnvironment(art, width, height, floor);
             RefreshPixelLabPortrait(art, (RectTransform)player.transform);
         }

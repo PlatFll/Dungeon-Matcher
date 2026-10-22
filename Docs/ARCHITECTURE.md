@@ -438,7 +438,10 @@ Opened settings and main menu keep their existing skins and menu music selection
   controls use the approved Wave/Control/Resonance families with separate ornaments.
   The board's overfilled dark inset belongs to that world canvas below the live
   SpriteRenderer board; only its native frame is in overlay UI. The portrait keeps
-  its existing RectMask2D. No gameplay owner or competing layout system is added.
+  its existing RectMask2D. The hybrid wall overfills the physical screen behind
+  cutout/safe-area margins; only live UI retains the safe viewport. Native half
+  tiles are completed when repeating beyond the reference assembly.
+  No gameplay owner or competing layout system is added.
   Board/section/health-row geometry is unchanged; existing uniform fractional board
   fit and integer scenery scale remain intentional. Actual-game evidence is in
   `ArtSource/DungeonHybrid/Integration/`. This supersedes the selected Dungeon art

@@ -85,6 +85,34 @@ public sealed class DungeonHybridIntegrationTests
         finally {Object.DestroyImmediate(png);}
     }
 
+    static readonly Color32 CoverageSentinel=new Color32(1,254,127,255);
+    static void AssertScreenCoverage(string path,GameplayPixelLayoutController layout)
+    {
+        var world=GameObject.Find("DungeonPixelLabEnvironment");
+        Assert.That(world.GetComponent<RectMask2D>(),Is.Null,"A gameplay safe-area mask must not clip the background");
+        var tiles=world.transform.Find("Continuous wall").GetComponentsInChildren<Image>();
+        // Independently prove the opaque tile rectangles cover the entire physical screen.
+        var rows=tiles.GroupBy(i=>Mathf.RoundToInt(i.rectTransform.anchoredPosition.y));
+        foreach(var row in rows)
+        {
+            var bounds=row.Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).OrderBy(r=>r.xMin).ToArray();
+            Assert.That(bounds[0].xMin,Is.LessThan(0));
+            Assert.That(bounds.Last().xMax,Is.GreaterThan(UnityEngine.Device.Screen.width));
+            for(int i=1;i<bounds.Length;i++)Assert.That(bounds[i].xMin-bounds[i-1].xMax,Is.LessThan(.1f));
+        }
+        var all=tiles.Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).ToArray();
+        Assert.That(all.Min(r=>r.yMin),Is.LessThan(0));
+        Assert.That(all.Max(r=>r.yMax),Is.GreaterThan(UnityEngine.Device.Screen.height));
+        var png=new Texture2D(2,2,TextureFormat.RGBA32,false);
+        try
+        {
+            Assert.That(png.LoadImage(File.ReadAllBytes(path)),Is.True);
+            int empty=png.GetPixels32().Count(c=>Mathf.Abs(c.r-CoverageSentinel.r)<=1&&Mathf.Abs(c.g-CoverageSentinel.g)<=1&&Mathf.Abs(c.b-CoverageSentinel.b)<=1);
+            Assert.That(empty,Is.Zero,"Actual screenshot contains uncovered camera-clear pixels");
+        }
+        finally {Object.DestroyImmediate(png);}
+    }
+
     [UnityTearDown] public IEnumerator Cleanup()
     {
         Time.timeScale=1;RunLaunchOptions.StartingZone=null;GameplayPixelLayoutController.ValidationSafeArea=null;
@@ -116,14 +144,19 @@ public sealed class DungeonHybridIntegrationTests
             foreach(string id in new[]{"pan_villager","knight"})
                 Assert.That(RunSession.Current.Waves.TrySummonEnemy(Resources.Load<ZoneDefinition>("Zones/dungeon").enemies.First(e=>e.EnemyId==id),out _),Is.True);
             yield return new WaitForSecondsRealtime(1);
-            foreach(var test in new[]{new Vector3Int(720,1280,0),new Vector3Int(1080,1920,0),new Vector3Int(1080,2400,0),new Vector3Int(1080,2400,1),new Vector3Int(360,640,0)})
+            foreach(var test in new[]{new Vector3Int(720,1280,0),new Vector3Int(1080,1920,0),new Vector3Int(1080,2400,0),new Vector3Int(1080,2400,1),new Vector3Int(360,640,0),new Vector3Int(1080,2400,2)})
             {
-                var size=new Vector2Int(test.x,test.y);Size(size.x,size.y);
-                GameplayPixelLayoutController.ValidationSafeArea=test.z==1?new Rect(0,84,1080,2200):(Rect?)null;
+                var size=new Vector2Int(test.x,test.y);
+                GameplayPixelLayoutController.ValidationSafeArea=null;
+                Size(size.x,size.y);
+                // GameView applies resizing on a later frame. Do not apply the
+                // new screen's simulated cutout to the previous resolution.
+                yield return Until(()=>UnityEngine.Device.Screen.width==size.x&&UnityEngine.Device.Screen.height==size.y);
+                GameplayPixelLayoutController.ValidationSafeArea=test.z==1?new Rect(0,84,1080,2200):test.z==2?new Rect(54,96,972,2184):(Rect?)null;
                 yield return new WaitForSecondsRealtime(1.5f);Canvas.ForceUpdateCanvases();
                 var layout=Object.FindFirstObjectByType<GameplayPixelLayoutController>();
-                decorate?.Invoke(layout);Canvas.ForceUpdateCanvases();
-                string name=test.z==1?"Dungeon-safe-1080x2400":"Dungeon-"+size.x+"x"+size.y;
+                decorate?.Invoke(layout);Camera.main.backgroundColor=CoverageSentinel;Canvas.ForceUpdateCanvases();
+                string name=test.z==1?"Dungeon-safe-1080x2400":test.z==2?"Dungeon-safe-sides-1080x2400":"Dungeon-"+size.x+"x"+size.y;
                 var found=GameplayPixelLayoutValidator.Validate(layout,out string report);
                 foreach(string error in found)errors.Add(name+": "+error);
                 File.WriteAllText(outputRoot+"/Diagnostics/"+phase+"/"+name+".txt",report+"\nERRORS:\n"+string.Join("\n",found));
@@ -149,6 +182,7 @@ public sealed class DungeonHybridIntegrationTests
                 string output=Path.GetFullPath(outputRoot+"/Previews/"+phase+"/"+name+".png");if(File.Exists(output))File.Delete(output);
                 ScreenCapture.CaptureScreenshot(output);yield return Until(()=>File.Exists(output));yield return null;
                 AssertVisibleGems(output,GameplayPixelLayoutController.ScreenRect(layout.BoardArea));
+                AssertScreenCoverage(output,layout);
                 foreach(var text in layout.TopHud.GetComponentsInChildren<TMPro.TMP_Text>().Where(t=>t.name=="PlayerHPText"||t.name=="EnemyHPText"))
                 { text.ForceMeshUpdate();Assert.That(text.textInfo.lineCount,Is.LessThanOrEqualTo(1),name+" health number wrapping"); }
                 var liveControls=Object.FindFirstObjectByType<RunControlsUI>();
