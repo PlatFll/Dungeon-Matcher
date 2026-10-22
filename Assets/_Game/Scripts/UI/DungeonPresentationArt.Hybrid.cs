@@ -53,11 +53,18 @@ public sealed partial class DungeonPresentationArt
             for(int y=16;y<floor-22;y+=28)art.Image("Support_Core",structure,x,y);
             art.Image("Support_Foot",structure,x,floor-22);
         }
-        // Continue the quiet edge masonry to the bottom, without decorative bases.
-        for(int y=floor+34;y<Mathf.CeilToInt(v.yMax/scale);y+=28)
+        // One bottom-anchored course grid joins the side stones to the corner
+        // additions. The physical screen edges are independent of safe-area UI.
+        float screenLeft=-v.xMin/scale;
+        float screenWidth=UnityEngine.Device.Screen.width/scale;
+        float screenBottom=v.yMax/scale, edgeTop=floor+34;
+        var edges=DungeonPixelLabBattleArt.Rect("Edge masonry",structure,screenLeft,edgeTop,screenWidth,screenBottom-edgeTop);
+        edges.gameObject.AddComponent<RectMask2D>();
+        float first=screenBottom-Mathf.Ceil((screenBottom-edgeTop)/28)*28;
+        for(float y=first;y<screenBottom-.01f;y+=28)
         {
-            art.Image("Support_Corner_Left",structure,0,y);
-            art.Image("Support_Corner_Right",structure,width-28,y);
+            art.Image("Support_Corner_Left",edges,0,y-edgeTop);
+            art.Image("Support_Corner_Right",edges,screenWidth-28,y-edgeTop);
         }
         art.Image("Support_Corbel",structure,96,floor+32);
         art.Image("Support_Corbel",structure,210+Mathf.Round((width-360)/2f),floor+32);

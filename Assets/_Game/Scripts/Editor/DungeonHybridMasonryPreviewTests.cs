@@ -10,7 +10,7 @@ using UnityEngine.UI;
 // New artwork is previewed in the live scene without selecting it in production resources.
 public sealed class DungeonHybridMasonryPreviewTests
 {
-    const string Root="ArtSource/DungeonHybrid/SideMasonry/ScreenFill";
+    const string Root="ArtSource/DungeonHybrid/SideMasonry/CourseAlignment";
     const string Art="Assets/_Game/Art/DungeonHybrid/SideMasonry/MatchedCorners/";
     static void Import()
     {
@@ -48,7 +48,21 @@ public sealed class DungeonHybridMasonryPreviewTests
         // Anchor visible stone, not padded canvas, to physical screen y=0.
         Piece("Masonry_Corner_Left",root,left,bottom-86);
         Piece("Masonry_Corner_Right",root,right-58,bottom-86);
-        Assert.That(old.All(i=>i.gameObject.activeSelf),Is.True,"Preserve every original side-wall tile");
+        // Replace the bottom three courses, rather than superimposing a second
+        // independent brick grid. Artwork and every upper course stay unchanged.
+        Canvas.ForceUpdateCanvases();
+        foreach(var tile in old)
+        {
+            var r=GameplayPixelLayoutController.ScreenRect(tile.rectTransform);
+            if(r.yMax<=84*scale+.1f)tile.gameObject.SetActive(false);
+        }
+        Assert.That(old.Count(i=>!i.gameObject.activeSelf),Is.EqualTo(6),"Exactly three courses per side are replaced");
+        foreach(string side in new[]{"Left","Right"})
+        {
+            var upper=old.Where(i=>i.gameObject.activeSelf&&i.name.EndsWith(side))
+                .Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).OrderBy(r=>r.yMin).First();
+            Assert.That(upper.yMin,Is.EqualTo(84*scale).Within(.1f),"Corner and side must share a course boundary");
+        }
         Canvas.ForceUpdateCanvases();
         foreach(var image in root.GetComponentsInChildren<Image>())
         {

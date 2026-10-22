@@ -441,6 +441,9 @@ Opened settings and main menu keep their existing skins and menu music selection
   its existing RectMask2D. The hybrid wall overfills the physical screen behind
   cutout/safe-area margins; only live UI retains the safe viewport. Native half
   tiles are completed when repeating beyond the reference assembly.
+  Side masonry uses a physical-bottom course grid and physical left/right edges,
+  independently of the safe UI viewport. Corner review additions replace lower
+  courses on that grid instead of overlapping them.
   No gameplay owner or competing layout system is added.
   Board/section/health-row geometry is unchanged; existing uniform fractional board
   fit and integer scenery scale remain intentional. Actual-game evidence is in

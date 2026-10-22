@@ -84,3 +84,7 @@ The separate [SideMasonry review](../SideMasonry/Review.html) contains one newly
 ## Full-screen background correction
 
 The current hybrid wall now covers the physical display beyond the gameplay safe area, with complementary half tiles completing the repeat. The original scene layout, portrait mask, art pixels and other-zone paths remain unchanged. Current `Previews/Final` captures include six screen/safe-area cases. The corrected corner candidate reaches the physical screen bottom; see [full-screen review](../SideMasonry/ScreenFill/Review.html). Three current Unity fixtures, the compiler validator, image-edge checks and preservation audit passed. No physical-device claim and no merge.
+
+## Aligned edge masonry
+
+The side courses now share a physical-bottom alignment and physical left/right anchors with the corner review pieces. The corner fixture replaces the lower three repeats per side instead of superimposing them. Artwork, board/UI geometry and gameplay are unchanged. Three current Unity fixtures and compiler validation passed. Native source-pixel comparisons cover the complete visible side stones and corner joins in all 12 captures. See [current masonry review](../SideMasonry/CourseAlignment/Review.html) and its report. Remains unmerged; corner additions remain review-only.
