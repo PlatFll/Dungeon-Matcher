@@ -56,6 +56,10 @@ public sealed partial class DungeonPresentationArt
         foreach(var p in art.Manifest.placements.Where(p=>p.layer==20))
             art.Image(p.name,gate,p.x+Mathf.Round((width-360)/2f),p.y+floor-178);
         var platform=DungeonPixelLabBattleArt.Rect("Standing platform",pixelLabContent,0,0,width,height);
+        // Continue the existing tile phase beneath the portrait to the viewport edge.
+        // Keep the enemy-side floor, masked recess and actor baseline unchanged.
+        for(int x=74,n=0;x>-32;x-=32,n++)
+            art.Image("Floor_Mid_"+(n%3==0?"A":n%3==1?"C":"B"),platform,x,floor);
         for(int x=106,n=0;x<width;x+=32,n++)
             art.Image(n==0?"Floor_Left":"Floor_Mid_"+(n%3==0?"A":n%3==1?"B":"C"),platform,x,floor);
         for(int x=0,n=0;x<width;n++)

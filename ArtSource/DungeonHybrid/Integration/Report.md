@@ -4,6 +4,24 @@ The user approved the complete Stage 5 design and authorized integration into th
 
 [Actual in-game gallery](Review.html) | [720x1280 screenshot](Previews/Final/Dungeon-720x1280.png) | [Approved Stage 5](../Stage05/Review.html)
 
+## Floor continuity follow-up — 2026-10-22
+
+The user requested a complete floor behind the portrait. The existing top-floor
+strip began at native x=106, leaving wall/support surfaces visible in the gutters
+beside the portrait. Four additional repeats of the unchanged approved floor tiles
+now continue the same tile grid to the left viewport edge beneath the opaque masked
+portrait. Existing enemy-side tiles, floor height, fascia, portrait, HUD and actor
+positions are unchanged. No source artwork was edited.
+
+The existing actual-game integration test was rerun after this four-line rendering
+change: **one test passed**, covering all five screen/safe-area profiles with three
+live enemies, Guide/Settings and an accepted swap. `Tools/Validate-Unity.ps1` passed
+again. Final screenshot files now show this correction; earlier captures remain in
+Git history. `FloorExtensionTests.xml` and `FloorExtensionValidation.json` record
+the fresh checks. The 69-test result below describes the preceding integration run;
+unaffected gameplay checks were not repeated. Preservation/layout/pixel checks
+were refreshed and passed. PR #205 remains unmerged.
+
 ## Delivered
 
 - The production `Game` scene now consumes the approved hybrid gate, architecture, props and HUD pieces through the existing Dungeon presentation resource. The ten gate pieces, 35 UI modules and ten prop exports remain unchanged; the existing 102-asset library remains available beneath this optional binding.
