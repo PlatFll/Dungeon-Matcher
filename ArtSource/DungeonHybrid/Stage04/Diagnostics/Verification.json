@@ -1,0 +1,135 @@
+{
+  "result": "PASS",
+  "native_exports": 10,
+  "families": [
+    {
+      "family": "Torch",
+      "raw_sha256": "16e255f94d9bb2d42c1fb781999e682b3022986e7d745d8549c3955146f31045",
+      "clean_sha256": "5dbd0ac0f95595849868b1540e5f56d993c713a1cd8d1167ccbde5800c77aa96",
+      "raw_colors": 16,
+      "clean_colors": 10,
+      "source_silhouette_preserved": true
+    },
+    {
+      "family": "Chain",
+      "raw_sha256": "e839f6002d44dd6ae181af1bf8a5cec69b9bb6e73b428519929b967cb697647e",
+      "clean_sha256": "b61024a0b8e96cfdba58d4ba6bce548622638803026811113141d2ad83404dca",
+      "raw_colors": 8,
+      "clean_colors": 6,
+      "source_silhouette_preserved": true
+    },
+    {
+      "family": "Banner",
+      "raw_sha256": "eb36d44b6a7a9bc8db0f0be2efd27e75345fb29ceb9d3c0ad91c06cf86a95b15",
+      "clean_sha256": "58455187f595dccbfae7463ad08b12fcaf893c52118b7f18ae0e5d94a464c78e",
+      "raw_colors": 12,
+      "clean_colors": 11,
+      "source_silhouette_preserved": true
+    },
+    {
+      "family": "Barrel",
+      "raw_sha256": "f5833f3f0e38885c3dcbe23cec82f9845e2721e3d4bf2c3f2b56bcb68b864947",
+      "clean_sha256": "880f07dbe670ac3253eaa76fbd43e89674bb7e93b22fdc9121831c9974d53df0",
+      "raw_colors": 14,
+      "clean_colors": 9,
+      "source_silhouette_preserved": true
+    },
+    {
+      "family": "Jar",
+      "raw_sha256": "96d29355ed3d0711f77ff3c7e5816f2cd8f31f9b29103466bbb26588a2382d1d",
+      "clean_sha256": "c770d22abbbd323bba95d8d437befd5300cc73bb4e258a88895fc1993c334431",
+      "raw_colors": 12,
+      "clean_colors": 6,
+      "source_silhouette_preserved": true
+    },
+    {
+      "family": "Bones",
+      "raw_sha256": "524030316221fdbda61e503e69cd28b10f35596f329447355ca17646f8b8b504",
+      "clean_sha256": "4462b558b8819689ebeca5161d9f9f86277a201d6d863535fc2cf941ce154e4f",
+      "raw_colors": 10,
+      "clean_colors": 6,
+      "source_silhouette_preserved": true
+    },
+    {
+      "family": "Rubble",
+      "raw_sha256": "596a1c713dd5a5f2bd887edaccd83f40d265c7e6583b5112a430d6238f4f7923",
+      "clean_sha256": "662842cc5dbdc4cf50e7400c5feb66707047a41b5de10d6047220cf72a20e808",
+      "raw_colors": 8,
+      "clean_colors": 5,
+      "source_silhouette_preserved": true
+    }
+  ],
+  "alpha": [
+    0,
+    255
+  ],
+  "ase_reopen_exact": true,
+  "protected_files": 765,
+  "protected_files_unchanged": true,
+  "main_user_files": 8,
+  "main_user_files_unchanged": true,
+  "unity_tests_passed": 1,
+  "unity_game_view_captures": 15,
+  "captures": [
+    {
+      "mode": "baseline",
+      "scale": 2,
+      "exact_nearest_neighbor": true
+    },
+    {
+      "mode": "baseline",
+      "scale": 3,
+      "exact_nearest_neighbor": true
+    },
+    {
+      "mode": "classic",
+      "scale": 2,
+      "exact_nearest_neighbor": true
+    },
+    {
+      "mode": "classic",
+      "scale": 3,
+      "exact_nearest_neighbor": true
+    },
+    {
+      "mode": "classic-cast",
+      "scale": 2,
+      "exact_nearest_neighbor": true
+    },
+    {
+      "mode": "classic-cast",
+      "scale": 3,
+      "exact_nearest_neighbor": true
+    },
+    {
+      "mode": "alternate",
+      "scale": 2,
+      "exact_nearest_neighbor": true
+    },
+    {
+      "mode": "alternate",
+      "scale": 3,
+      "exact_nearest_neighbor": true
+    },
+    {
+      "mode": "alternate-cast",
+      "scale": 2,
+      "exact_nearest_neighbor": true
+    },
+    {
+      "mode": "alternate-cast",
+      "scale": 3,
+      "exact_nearest_neighbor": true
+    }
+  ],
+  "baseline_exactly_matches_approved_stage03": true,
+  "gate_upper_region_and_fascia_pixels_unchanged": true,
+  "face_clearance_checks": true,
+  "chain_repeat_counts_checked": [
+    0,
+    1,
+    2,
+    6
+  ],
+  "scope": "Art-only Unity Game View study with static approved cast. No production combat/device test claim."
+}

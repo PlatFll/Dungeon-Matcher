@@ -1,0 +1,21 @@
+DUNGEON HYBRID REBUILD — STAGE 02 REVIEW
+2026-10-21 | feature/dungeon-zone-hybrid-pixellab-rebuild | Draft PR #205
+
+Scope and result
+Stage 02 only: gate/arch focal set, generated with PixelLab and edited/exported in LibreSprite. Ten separate native modules are assembled in Assets/_Game/Scenes/ArtPreview_DungeonHybrid_Stage02.unity. They retain a common 128x128 registration, use cropped canvases with 2px clearance, and occupy 104x115 pixels as an assembly. Review.html shows native pieces, the raw/clean comparison, and six actual Unity Game View captures.
+
+Kept
+All 33 Stage 01 structural assets, their scene and tooling, and the complete 102-asset PR #203 library. The production Game scene, old gate, all gameplay/UI systems, characters, gems, other zones and build settings are unchanged. The new scene opens a copy of Stage 01; it never saves over the approved scene.
+
+PixelLab and LibreSprite
+One Pro Flash source used the actual approved Rattlebones PNG through style_image, after the user's explicit upload approval. Outline/detail/shading were copied; palette was not. The request, seed, job and input hash are in Sources/PixelLabRequest.json and Diagnostics/ReferenceAudit.json. Actual charge: 6 generations; no retries or extra generations. Raw output is preserved unchanged.
+LibreSprite native pixel edits normalized the stone/iron ramps, replaced fragmented side carvings with connected skull reliefs, and filled a small internal gap behind the lower bars. No resampling. The outer bounds were preserved. The final 11-color palette uses distinct material roles, rather than imposing a lower global color count (raw: 9). Every source/export has binary transparency.
+Scripts/CleanupGate.js performs the pixel edits. Scripts/build_assets.py prepares coordinate masks; Scripts/SeparateGate.js separates the pieces in LibreSprite. This build's batch Sprite.crop did not apply, so the verified LibreSprite CLI --crop performs the exact crop. Every piece is saved as ASE, reopened and exported as PNG. The recess and jamb underlays prevent holes when optional parts are removed. Two disconnected jamb fragments initially classified as iron were reassigned to the jamb without changing the assembled pixels.
+
+Validation
+Ten PNG exports equal their Unity copies, have 2px clearance and reassemble exactly to Gate_Clean.png. Point filtering, FullRect, 64 PPU, uncompressed/unmipped imports verified. Six real Unity Game View captures at 360x240, 720x480 and 1080x720 (with and without static cast) match the source pixels exactly. 1 explicit Unity test passed; 0 failed. Tools/Validate-Unity.ps1 passed with Unity 6000.3.19f1. 495 protected approved source/export/import/reference/Stage01 files are unchanged. The separate main checkout's eight pre-existing user edits are preserved. Diagnostics holds hashes, tests and validation evidence.
+These are art-only scene tests, not production combat, Android build or physical-device tests.
+
+Artistic verdict and next boundary
+The broader opening, large blocks and skull keystone make the gate a stronger focal point while quiet stone and iron preserve character readability. The full silhouette fits with clear space above for the existing top plaques; the same floor and portrait clipping remain intact. No identified clipping or seam defect remains in the assembled study. UI hero pieces and props are deliberately deferred to their own stages. The candidate awaits the user's visual approval.
+No production replacement and no merge. STOP before Stage 03.

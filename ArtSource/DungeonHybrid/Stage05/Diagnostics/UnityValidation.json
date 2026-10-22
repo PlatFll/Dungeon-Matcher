@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "unity_version": "6000.3.19f1",
+  "exit_code": 0,
+  "log": "Diagnostics/UnityValidation.log",
+  "log_sha256": "2956863b375f1d7db5390a2054287e2e73d5d858b5502382b6c83f7d9d19509b",
+  "source": "Assets/_Game/Scripts/Editor/DungeonHybridStage05Tests.cs",
+  "source_sha256": "449d7e29212b428702f5ab2ffb5a97f06433bacee69044eab8f2106023fd4830",
+  "test_results": "Diagnostics/UnityTests.xml",
+  "test_results_sha256": "91e7a12aad7bea2e18583fcd900809a4290b12962c3b3d11b645370e63e50792",
+  "scope": "Repository Unity compilation validator and separate explicit art-preview capture test. No production combat or real-device testing."
+}

@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "command": "rtk proxy powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "unity_version": "6000.3.19f1",
+  "exit_code": 0,
+  "log": "Diagnostics/UnityValidation.log",
+  "log_sha256": "1b9c9ef0a6780011a6ffcbd4440e74482221bc0879780a205819a3427272f641",
+  "editor_source_sha256": "c5a31fd5a32c950d927b9965159552728a5eaac3011c023903762ae6b8a604d2",
+  "separate_runtime_tests": "Diagnostics/UnityTests.xml",
+  "scope": "Art-only prop dressing study, not production combat or device testing."
+}

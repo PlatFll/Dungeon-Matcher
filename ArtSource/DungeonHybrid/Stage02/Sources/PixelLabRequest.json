@@ -1,0 +1,65 @@
+{
+  "request": {
+    "width": 128,
+    "height": 128,
+    "no_background": true,
+    "max_colors": 16,
+    "palette": [
+      "#0A0D11",
+      "#10131F",
+      "#151423",
+      "#241F3A",
+      "#302940",
+      "#382D55",
+      "#4E3D6C",
+      "#67537D",
+      "#83718D",
+      "#28283F",
+      "#35324F",
+      "#55606E",
+      "#8D725C",
+      "#B7A393",
+      "#8A5622",
+      "#B07A43"
+    ],
+    "palette_name": "Dungeon Matcher muted violet stone, dark iron, restrained stone-skull and bronze hardware",
+    "style_image": {
+      "url": "upload:f3b0e649-e346-4833-91d2-d891b8e5e0b8",
+      "usage_description": "This is the actual approved Rattlebones sprite: primary rendering authority for crisp native pixel clusters, clean one-pixel contours, economical top-left shading and whimsical chunky readability. It is NOT a subject, anatomy, crown, clothes or palette template. Generate architecture, not a character."
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    },
+    "description": "ONE isolated modular dungeon GATE + ARCH architecture family for Dungeon Matcher, front-on 2D sidescroller background. Native 128x128 pixels, every visible pixel an intentional hard pixel. Full gate centered, roughly 116px wide and 120px high with transparent clearance on all outer edges, both bases on the same straight horizontal line. A large tall rounded stone arch assembled from about 11 large chunky violet-gray voussoir blocks, thick straight square side jambs with stepped capitals and squat square plinths. Broad connected flat stone planes, sparse top-left highlights, deep dark joints, very few small chips; no crack overload. A small friendly carved STONE SKULL KEYSTONE centered at the apex, dark eye/nose cavities, muted lavender-gray not bright white, readable 14-18px face. Two understated square skull relief stones on the side jambs. Inside: very dark recessed doorway opening and a separate-looking straight iron portcullis with 7 thick evenly spaced upright bars and TWO sturdy horizontal crossbars, small bronze lock at right; no diagonal gate perspective. Architecture should feel substantial, ancient, whimsical and a little grand, matching a clean fantasy match-3 UI world. Clean native pixel art, strong clear silhouette, quiet surfaces, restrained controlled shading like the supplied Rattlebones style. Include only this one closed gate assembly, no scene, no floor, no wall backdrop, no chains, no torches, no banners, no text, no UI, no character. Transparent outside the architectural silhouette, dark void inside the opening. Keep geometry symmetric while top-left light is directional. Avoid painterly detail, blurry gradients, anti-aliased smear, noisy textures, tiny scattered pixels, isometric projection and faux 3D bevels."
+  },
+  "job": {
+    "background_job_id": "c16c966f-9fb4-4ea1-ab97-7e0ff463d873",
+    "image_id": "956f78c4-41df-58fe-bd2e-d18fc65326db",
+    "status": "processing",
+    "source_image_id": "956f78c4-41df-58fe-bd2e-d18fc65326db",
+    "job_id": "c16c966f-9fb4-4ea1-ab97-7e0ff463d873",
+    "description": "ONE isolated modular dungeon GATE + ARCH architecture family for Dungeon Matcher, front-on 2D sidescroller background. Native 128x128 pixels, every visible pixel an intentional hard pixel. Full gate centered, roughly 116px wide and 120px high with transparent clearance on all outer edges, both bases on the same straight horizontal line. A large tall rounded stone arch assembled from about 11 large chunky violet-gray voussoir blocks, thick straight square side jambs with stepped capitals and squat square plinths. Broad connected flat stone planes, sparse top-left highlights, deep dark joints, very few small chips; no crack overload. A small friendly carved STONE SKULL KEYSTONE centered at the apex, dark eye/nose cavities, muted lavender-gray not bright white, readable 14-18px face. Two understated square skull relief stones on the side jambs. Inside: very dark recessed doorway opening and a separate-looking straight iron portcullis with 7 thick evenly spaced upright bars and TWO sturdy horizontal crossbars, small bronze lock at right; no diagonal gate perspective. Architecture should feel substantial, ancient, whimsical and a little grand, matching a clean fantasy match-3 UI world. Clean native pixel art, strong clear silhouette, quiet surfaces, restrained controlled shading like the supplied Rattlebones style. Include only this one closed gate assembly, no scene, no floor, no wall backdrop, no chains, no torches, no banners, no text, no UI, no character. Transparent outside the architectural silhouette, dark void inside the opening. Keep geometry symmetric while top-left light is directional. Avoid painterly detail, blurry gradients, anti-aliased smear, noisy textures, tiny scattered pixels, isometric projection and faux 3D bevels.",
+    "seed": 0,
+    "image_size": {
+      "width": 128,
+      "height": 128
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/c16c966f-9fb4-4ea1-ab97-7e0ff463d873/download"
+  },
+  "quote": {
+    "image": 6,
+    "rotations": 0,
+    "total": 6,
+    "provisional": true
+  },
+  "actual_charge": 6,
+  "approved_reference_upload": "User explicitly approved sending current Rattlebones PNG to PixelLab in this task.",
+  "reference_sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+}

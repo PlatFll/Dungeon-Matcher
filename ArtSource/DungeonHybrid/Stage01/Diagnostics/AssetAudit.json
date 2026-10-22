@@ -1,0 +1,1115 @@
+{
+  "result": "PASS",
+  "retained": 33,
+  "new_generations": 0,
+  "golden_hashes_verified": 6,
+  "assets": [
+    {
+      "name": "Fascia_Anchor",
+      "family": "Fascia",
+      "size": [
+        64,
+        24
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Fascia/Fascia_Anchor.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage04/Fascia_Anchor.aseprite",
+      "sha256": "cff23dfbf13658a87411d35c378b72c18b5a33656db407ef96fe844a3b8e4972",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "03",
+            "job_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage03/Floor_Raw_PixelLab.png",
+            "sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+            "size": [
+              128,
+              128
+            ],
+            "status": "CAPSTONE_CLUSTER_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation",
+        "reuse_note": "Stage04 reused the approved Stage03 sidescroller source; no second charge."
+      }
+    },
+    {
+      "name": "Fascia_Left",
+      "family": "Fascia",
+      "size": [
+        42,
+        24
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Fascia/Fascia_Left.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage04/Fascia_Left.aseprite",
+      "sha256": "f2abcd65c4c9feff7c78938f4036f529748c9775af61a3c627f0911ec84a3d18",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "03",
+            "job_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage03/Floor_Raw_PixelLab.png",
+            "sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+            "size": [
+              128,
+              128
+            ],
+            "status": "CAPSTONE_CLUSTER_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation",
+        "reuse_note": "Stage04 reused the approved Stage03 sidescroller source; no second charge."
+      }
+    },
+    {
+      "name": "Fascia_Mid_A",
+      "family": "Fascia",
+      "size": [
+        64,
+        24
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Fascia/Fascia_Mid_A.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage04/Fascia_Mid_A.aseprite",
+      "sha256": "2a91b5bdbe21433125b9567e06fb1480e000ccf2d62dc30672759fc2e6c986fc",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "03",
+            "job_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage03/Floor_Raw_PixelLab.png",
+            "sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+            "size": [
+              128,
+              128
+            ],
+            "status": "CAPSTONE_CLUSTER_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation",
+        "reuse_note": "Stage04 reused the approved Stage03 sidescroller source; no second charge."
+      }
+    },
+    {
+      "name": "Fascia_Mid_B",
+      "family": "Fascia",
+      "size": [
+        64,
+        24
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Fascia/Fascia_Mid_B.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage04/Fascia_Mid_B.aseprite",
+      "sha256": "f0045953c3a3c74d2c3c5c048d9f64adcaa441a71b6fddbc2667274f68e2f420",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "03",
+            "job_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage03/Floor_Raw_PixelLab.png",
+            "sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+            "size": [
+              128,
+              128
+            ],
+            "status": "CAPSTONE_CLUSTER_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation",
+        "reuse_note": "Stage04 reused the approved Stage03 sidescroller source; no second charge."
+      }
+    },
+    {
+      "name": "Fascia_Right",
+      "family": "Fascia",
+      "size": [
+        62,
+        24
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Fascia/Fascia_Right.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage04/Fascia_Right.aseprite",
+      "sha256": "f30b0785992f4e36c3f34c4119ffd0ddf02c423c97d87f3f523fe745399d7d56",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "03",
+            "job_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage03/Floor_Raw_PixelLab.png",
+            "sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+            "size": [
+              128,
+              128
+            ],
+            "status": "CAPSTONE_CLUSTER_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation",
+        "reuse_note": "Stage04 reused the approved Stage03 sidescroller source; no second charge."
+      }
+    },
+    {
+      "name": "Floor_Left",
+      "family": "FloorTop",
+      "size": [
+        32,
+        12
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/FloorTop/Floor_Left.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Left.aseprite",
+      "sha256": "706a072b387ecedfd6e4b2b6d0e36d31db4eb9898c95aa00b961059d25fab48d",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "03",
+            "job_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage03/Floor_Raw_PixelLab.png",
+            "sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+            "size": [
+              128,
+              128
+            ],
+            "status": "CAPSTONE_CLUSTER_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Floor_Mid_A",
+      "family": "FloorTop",
+      "size": [
+        32,
+        12
+      ],
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/FloorTop/Floor_Mid_A.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Mid_A.aseprite",
+      "sha256": "bcc3920b48b50fc838d5fcaf512d659577bf81dd46868bf1b94bcbf945f77380",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "03",
+            "job_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage03/Floor_Raw_PixelLab.png",
+            "sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+            "size": [
+              128,
+              128
+            ],
+            "status": "CAPSTONE_CLUSTER_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Floor_Mid_B",
+      "family": "FloorTop",
+      "size": [
+        32,
+        12
+      ],
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/FloorTop/Floor_Mid_B.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Mid_B.aseprite",
+      "sha256": "3def697617f0b214301f30fa806129b6b152a37b87aec839be037ef210ef9c84",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "03",
+            "job_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage03/Floor_Raw_PixelLab.png",
+            "sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+            "size": [
+              128,
+              128
+            ],
+            "status": "CAPSTONE_CLUSTER_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Floor_Mid_C",
+      "family": "FloorTop",
+      "size": [
+        32,
+        12
+      ],
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/FloorTop/Floor_Mid_C.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Mid_C.aseprite",
+      "sha256": "33c04a1cf00d0d77ddbe5e781bbdec4cc2afebcfb39f333ec8c15c145ffd2300",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "03",
+            "job_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage03/Floor_Raw_PixelLab.png",
+            "sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+            "size": [
+              128,
+              128
+            ],
+            "status": "CAPSTONE_CLUSTER_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Floor_Right",
+      "family": "FloorTop",
+      "size": [
+        30,
+        12
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/FloorTop/Floor_Right.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Right.aseprite",
+      "sha256": "a12a69b05c799cc4f466d59ec8e8271f62c260aa11ecb3a7351651c6dce7534f",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "03",
+            "job_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage03/Floor_Raw_PixelLab.png",
+            "sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+            "size": [
+              128,
+              128
+            ],
+            "status": "CAPSTONE_CLUSTER_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Recess_Center",
+      "family": "PortraitRecess",
+      "size": [
+        56,
+        26
+      ],
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/PortraitRecess/Recess_Center.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage02/Recess_Center.aseprite",
+      "sha256": "a8ddd831b0e5094f8ed33602949f67b70efe401673ad2e739b052df3bfde796b",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "02",
+            "job_id": "3b3f7253-bca9-4463-8f33-3576ee32077a",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage02/Recess_Raw_PixelLab.png",
+            "sha256": "a086a98f02e9cad14bf2d272866e6694df9a4196a3a0aeb9ef8720da793cb273",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Recess_Inset",
+      "family": "PortraitRecess",
+      "size": [
+        80,
+        167
+      ],
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/PortraitRecess/Recess_Inset.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage02/Recess_Inset.aseprite",
+      "sha256": "69ee2709d8fc8394134d68c7e3223d016ad5d7c39e4177914c7800411519a6b9",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "02",
+            "job_id": "3b3f7253-bca9-4463-8f33-3576ee32077a",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage02/Recess_Raw_PixelLab.png",
+            "sha256": "a086a98f02e9cad14bf2d272866e6694df9a4196a3a0aeb9ef8720da793cb273",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Support_Capital",
+      "family": "Support",
+      "size": [
+        28,
+        16
+      ],
+      "colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Support/Support_Capital.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Capital.aseprite",
+      "sha256": "2b77bb2181742ccd2316c8566d0e72b616e108dbe1cbe48321e3105566948e43",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "06",
+            "job_id": "92555034-f78c-4284-8577-3c2b62b63b35",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage06/Pillar_Raw_PixelLab.png",
+            "sha256": "901a711c6f84cbd4f15584edcb8de16dfe3ecdf54cdc71c6d497720ac9529678",
+            "size": [
+              64,
+              96
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Support_Corbel",
+      "family": "Support",
+      "size": [
+        28,
+        20
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Support/Support_Corbel.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Corbel.aseprite",
+      "sha256": "e51f3e3cd09ed3a744c34601fbb5e01968a2522770a23d165f3f0e6871c9a889",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "06",
+            "job_id": "92555034-f78c-4284-8577-3c2b62b63b35",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage06/Pillar_Raw_PixelLab.png",
+            "sha256": "901a711c6f84cbd4f15584edcb8de16dfe3ecdf54cdc71c6d497720ac9529678",
+            "size": [
+              64,
+              96
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Support_Core",
+      "family": "Support",
+      "size": [
+        28,
+        28
+      ],
+      "colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Support/Support_Core.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Core.aseprite",
+      "sha256": "e88e6e8f8a0b35d7dec0a443bac6281ce463dd50603491e2bd688256f8867f1d",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "06",
+            "job_id": "92555034-f78c-4284-8577-3c2b62b63b35",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage06/Pillar_Raw_PixelLab.png",
+            "sha256": "901a711c6f84cbd4f15584edcb8de16dfe3ecdf54cdc71c6d497720ac9529678",
+            "size": [
+              64,
+              96
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Support_Corner_Left",
+      "family": "Support",
+      "size": [
+        28,
+        28
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Support/Support_Corner_Left.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Corner_Left.aseprite",
+      "sha256": "a074a421a930967d7390ac14bedc830a3253a6a98862c8b0ba44d53777035eb4",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "06",
+            "job_id": "92555034-f78c-4284-8577-3c2b62b63b35",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage06/Pillar_Raw_PixelLab.png",
+            "sha256": "901a711c6f84cbd4f15584edcb8de16dfe3ecdf54cdc71c6d497720ac9529678",
+            "size": [
+              64,
+              96
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Support_Corner_Right",
+      "family": "Support",
+      "size": [
+        28,
+        28
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Support/Support_Corner_Right.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Corner_Right.aseprite",
+      "sha256": "495ea8a4972fe1963663c5632aeab55b93233446431fd803b4de94bf8446162a",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "06",
+            "job_id": "92555034-f78c-4284-8577-3c2b62b63b35",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage06/Pillar_Raw_PixelLab.png",
+            "sha256": "901a711c6f84cbd4f15584edcb8de16dfe3ecdf54cdc71c6d497720ac9529678",
+            "size": [
+              64,
+              96
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Support_Edge_Foot",
+      "family": "Support",
+      "size": [
+        28,
+        8
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Support/Support_Edge_Foot.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Edge_Foot.aseprite",
+      "sha256": "67717fef8fd34b81f5977b8c598e8d908ca84cec878cd9863b3aaa82e9d48a29",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "06",
+            "job_id": "92555034-f78c-4284-8577-3c2b62b63b35",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage06/Pillar_Raw_PixelLab.png",
+            "sha256": "901a711c6f84cbd4f15584edcb8de16dfe3ecdf54cdc71c6d497720ac9529678",
+            "size": [
+              64,
+              96
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Support_Foot",
+      "family": "Support",
+      "size": [
+        28,
+        24
+      ],
+      "colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Support/Support_Foot.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Foot.aseprite",
+      "sha256": "e3a79a3544937bf8ee5605549a82719d3f24a90fec99ed47cdbde000f9e91bc5",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "06",
+            "job_id": "92555034-f78c-4284-8577-3c2b62b63b35",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage06/Pillar_Raw_PixelLab.png",
+            "sha256": "901a711c6f84cbd4f15584edcb8de16dfe3ecdf54cdc71c6d497720ac9529678",
+            "size": [
+              64,
+              96
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_A_Quiet",
+      "family": "Wall",
+      "size": [
+        48,
+        48
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_A_Quiet.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_A_Quiet.aseprite",
+      "sha256": "4fe1b5464a2c11a0f9abb3b3f4d943519847e2bf2730ccb654dbb6abba0a47a1",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_B_VioletStone",
+      "family": "Wall",
+      "size": [
+        48,
+        48
+      ],
+      "colors": 6,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_B_VioletStone.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_B_VioletStone.aseprite",
+      "sha256": "caf3fc147718d58b5fde5414ed8f4679bf7d81ea74c79665637cf50cc499fc89",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_C_SoftWear",
+      "family": "Wall",
+      "size": [
+        48,
+        48
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_C_SoftWear.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_C_SoftWear.aseprite",
+      "sha256": "b13e91030a5d457c3bf1f0534e5e0256643518a197cefea999cea9c1f664753d",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_Corner_BL",
+      "family": "Wall",
+      "size": [
+        24,
+        24
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Corner_BL.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_Corner_BL.aseprite",
+      "sha256": "c462b2fea844cf4745d19865329aaf89dad5492d16f50988de1f97a73505b8f8",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_Corner_BR",
+      "family": "Wall",
+      "size": [
+        24,
+        24
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Corner_BR.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_Corner_BR.aseprite",
+      "sha256": "623a52b38de9e065a8973252f49afec0fb911831f43ad6a554084c119631d41e",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_Corner_RightBottom16",
+      "family": "Wall",
+      "size": [
+        24,
+        16
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Corner_RightBottom16.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_Corner_RightBottom16.aseprite",
+      "sha256": "be55998fea39137fc3fb0d1133404ef86d3cfbe2147f8d9ffbcc7fdf14bd1659",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_Corner_TL",
+      "family": "Wall",
+      "size": [
+        24,
+        24
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Corner_TL.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_Corner_TL.aseprite",
+      "sha256": "c462b2fea844cf4745d19865329aaf89dad5492d16f50988de1f97a73505b8f8",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_Corner_TR",
+      "family": "Wall",
+      "size": [
+        24,
+        24
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Corner_TR.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_Corner_TR.aseprite",
+      "sha256": "623a52b38de9e065a8973252f49afec0fb911831f43ad6a554084c119631d41e",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_D_DeepStone",
+      "family": "Wall",
+      "size": [
+        48,
+        48
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_D_DeepStone.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_D_DeepStone.aseprite",
+      "sha256": "70bc7e42636958013b0178c5355e28d82b8d9c333f44d827e5e49c788597c103",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_Edge_Bottom",
+      "family": "Wall",
+      "size": [
+        48,
+        24
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Edge_Bottom.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_Edge_Bottom.aseprite",
+      "sha256": "99ca774c745f8f869b7a7b01edf501b881a945e5b32d7ec6ad39015d0a1b61b1",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_Edge_Bottom16",
+      "family": "Wall",
+      "size": [
+        48,
+        16
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Edge_Bottom16.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_Edge_Bottom16.aseprite",
+      "sha256": "11dab94d491a336eea890dab5ba519a85b23cd772e87a8897482c78933a63871",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_Edge_Left",
+      "family": "Wall",
+      "size": [
+        24,
+        48
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Edge_Left.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_Edge_Left.aseprite",
+      "sha256": "a1bccb97c711edbffc2704f11a43a8f0f2e0b25959235864dae1a6e799178440",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_Edge_Right",
+      "family": "Wall",
+      "size": [
+        24,
+        48
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Edge_Right.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_Edge_Right.aseprite",
+      "sha256": "9508886cf29c970cf80bb872cb6aaac93e97f9dfeadff66a5359c18134cd4431",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    },
+    {
+      "name": "Wall_Edge_Top",
+      "family": "Wall",
+      "size": [
+        48,
+        24
+      ],
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "unity_path": "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Edge_Top.png",
+      "editable_path": "ArtSource/DungeonPixelLab/Native/Stage01/Wall_Edge_Top.aseprite",
+      "sha256": "99ca774c745f8f869b7a7b01edf501b881a945e5b32d7ec6ad39015d0a1b61b1",
+      "fresh_libresprite_pixels_equal": true,
+      "decision": "RETAIN_UNCHANGED",
+      "lineage": {
+        "raw_sources": [
+          {
+            "stage": "01",
+            "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+            "path": "ArtSource/DungeonPixelLab/Sources/Stage01/Wall_Raw_PixelLab.png",
+            "sha256": "28670048415f6927708d9e1e8fb2c53119784518b1389e6d1da5ef68b63cffcc",
+            "size": [
+              64,
+              64
+            ],
+            "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+          }
+        ],
+        "method": "PixelLab family source adapted into approved native LibreSprite modules; not a direct unedited generation"
+      }
+    }
+  ]
+}

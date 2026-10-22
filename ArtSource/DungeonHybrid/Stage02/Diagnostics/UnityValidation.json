@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "unity_version": "6000.3.19f1",
+  "exit_code": 0,
+  "log": "Diagnostics/UnityValidation.log",
+  "log_sha256": "2a3cc2a7c1738d391d37466538dcf897c57cacf0dd1f7721f7f9fd9728bacf90",
+  "editor_source_sha256": "af57750bd572db1c1dbb5bf241dbc8160d434cc7fc8e3eb064379a068c3f350e",
+  "separate_runtime_test": "Diagnostics/UnityTests.xml",
+  "note": "Art-only preview. No production gameplay or device claim."
+}

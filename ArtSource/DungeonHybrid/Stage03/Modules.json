@@ -1,0 +1,529 @@
+{
+  "parts": [
+    {
+      "name": "Wave_Corner_TL",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_TL.png",
+      "sha256": "a9c8e057354776992028121dafe1ce77581ed2f10945e24b86aba50a1ff93317",
+      "source_sha256": "320c4a687dff2f69a183e74b014e1330be86baa5c970d710fc0077f166e07927",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Wave_Corner_TR",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_TR.png",
+      "sha256": "a9c8e057354776992028121dafe1ce77581ed2f10945e24b86aba50a1ff93317",
+      "source_sha256": "320c4a687dff2f69a183e74b014e1330be86baa5c970d710fc0077f166e07927",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Wave_Corner_BL",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_BL.png",
+      "sha256": "a9c8e057354776992028121dafe1ce77581ed2f10945e24b86aba50a1ff93317",
+      "source_sha256": "320c4a687dff2f69a183e74b014e1330be86baa5c970d710fc0077f166e07927",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Wave_Corner_BR",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_BR.png",
+      "sha256": "a9c8e057354776992028121dafe1ce77581ed2f10945e24b86aba50a1ff93317",
+      "source_sha256": "320c4a687dff2f69a183e74b014e1330be86baa5c970d710fc0077f166e07927",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Wave_Rail_Top",
+      "width": 16,
+      "height": 5,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Top.png",
+      "sha256": "db73fb6f5d04dcada503d0c93abf144644784b41a3fe636f42e35d8c0a60233c",
+      "source_sha256": "194e9568fcdc46fed6b33247fe0e49e59f6e787cbc3f78a25a9e6f27a03d99f5",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        16,
+        5
+      ]
+    },
+    {
+      "name": "Wave_Rail_Bottom",
+      "width": 16,
+      "height": 5,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Bottom.png",
+      "sha256": "db73fb6f5d04dcada503d0c93abf144644784b41a3fe636f42e35d8c0a60233c",
+      "source_sha256": "194e9568fcdc46fed6b33247fe0e49e59f6e787cbc3f78a25a9e6f27a03d99f5",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        16,
+        5
+      ]
+    },
+    {
+      "name": "Wave_Rail_Left",
+      "width": 5,
+      "height": 16,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Left.png",
+      "sha256": "697e5c9232cb6f1bcf2e3ff5f43e6c85f320bb115cda68b49ecee8f168ef15fb",
+      "source_sha256": "dd0365c2d3e8795cc8d36d7e2d4c64fbd8e7af4ffbc906d258a6e0110f381279",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        5,
+        16
+      ]
+    },
+    {
+      "name": "Wave_Rail_Right",
+      "width": 5,
+      "height": 16,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Right.png",
+      "sha256": "697e5c9232cb6f1bcf2e3ff5f43e6c85f320bb115cda68b49ecee8f168ef15fb",
+      "source_sha256": "dd0365c2d3e8795cc8d36d7e2d4c64fbd8e7af4ffbc906d258a6e0110f381279",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        5,
+        16
+      ]
+    },
+    {
+      "name": "Wave_Clamp",
+      "width": 5,
+      "height": 5,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Clamp.png",
+      "sha256": "2aef71a72c00c3ea9abcb5e51c823bc94646675f5480d87cc76cc71558455553",
+      "source_sha256": "413e39fb6a5e51e0834affcb54fe4ff79fe7ec502e97e9d4d5d8254858475fa2",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "Wave_Inset",
+      "width": 16,
+      "height": 16,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Inset.png",
+      "sha256": "1204efe2b29bc00247018cb1aa09eb2b9436754b9187e02ef5c59929e86a4b54",
+      "source_sha256": "1e3fef9b0d1e95cb219caef505dd0d67e02aecb6ee6be57721b7352594799715",
+      "colors": 1,
+      "bounds": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "Control_Corner_TL",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TL.png",
+      "sha256": "8899895a4b46abc0cd178506715c1df69495cc32da170baad4b933d9f80ff311",
+      "source_sha256": "e986fea996de7d1d91049a3ec49d20641a7f1b49d213230587922e5001a569ac",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Control_Corner_TR",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TR.png",
+      "sha256": "8899895a4b46abc0cd178506715c1df69495cc32da170baad4b933d9f80ff311",
+      "source_sha256": "e986fea996de7d1d91049a3ec49d20641a7f1b49d213230587922e5001a569ac",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Control_Corner_BL",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BL.png",
+      "sha256": "8899895a4b46abc0cd178506715c1df69495cc32da170baad4b933d9f80ff311",
+      "source_sha256": "e986fea996de7d1d91049a3ec49d20641a7f1b49d213230587922e5001a569ac",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Control_Corner_BR",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BR.png",
+      "sha256": "8899895a4b46abc0cd178506715c1df69495cc32da170baad4b933d9f80ff311",
+      "source_sha256": "e986fea996de7d1d91049a3ec49d20641a7f1b49d213230587922e5001a569ac",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Control_Rail_Top",
+      "width": 16,
+      "height": 5,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Top.png",
+      "sha256": "db73fb6f5d04dcada503d0c93abf144644784b41a3fe636f42e35d8c0a60233c",
+      "source_sha256": "194e9568fcdc46fed6b33247fe0e49e59f6e787cbc3f78a25a9e6f27a03d99f5",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        16,
+        5
+      ]
+    },
+    {
+      "name": "Control_Rail_Bottom",
+      "width": 16,
+      "height": 5,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Bottom.png",
+      "sha256": "db73fb6f5d04dcada503d0c93abf144644784b41a3fe636f42e35d8c0a60233c",
+      "source_sha256": "194e9568fcdc46fed6b33247fe0e49e59f6e787cbc3f78a25a9e6f27a03d99f5",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        16,
+        5
+      ]
+    },
+    {
+      "name": "Control_Rail_Left",
+      "width": 5,
+      "height": 16,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Left.png",
+      "sha256": "697e5c9232cb6f1bcf2e3ff5f43e6c85f320bb115cda68b49ecee8f168ef15fb",
+      "source_sha256": "dd0365c2d3e8795cc8d36d7e2d4c64fbd8e7af4ffbc906d258a6e0110f381279",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        5,
+        16
+      ]
+    },
+    {
+      "name": "Control_Rail_Right",
+      "width": 5,
+      "height": 16,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Right.png",
+      "sha256": "697e5c9232cb6f1bcf2e3ff5f43e6c85f320bb115cda68b49ecee8f168ef15fb",
+      "source_sha256": "dd0365c2d3e8795cc8d36d7e2d4c64fbd8e7af4ffbc906d258a6e0110f381279",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        5,
+        16
+      ]
+    },
+    {
+      "name": "Control_Clamp",
+      "width": 5,
+      "height": 5,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Clamp.png",
+      "sha256": "e0bc56ad75f0c50d3f9704792d36969411fc1e33bd2a10e071486cc6c9524244",
+      "source_sha256": "f6724afbeaf4b8061c4fa0ee9c6dac711eff87e84e145abc0a0a47d801d3ad8d",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "Control_Inset",
+      "width": 16,
+      "height": 16,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Inset.png",
+      "sha256": "1204efe2b29bc00247018cb1aa09eb2b9436754b9187e02ef5c59929e86a4b54",
+      "source_sha256": "1e3fef9b0d1e95cb219caef505dd0d67e02aecb6ee6be57721b7352594799715",
+      "colors": 1,
+      "bounds": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "Resonance_Corner_TL",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Corner_TL.png",
+      "sha256": "8899895a4b46abc0cd178506715c1df69495cc32da170baad4b933d9f80ff311",
+      "source_sha256": "e986fea996de7d1d91049a3ec49d20641a7f1b49d213230587922e5001a569ac",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Resonance_Corner_TR",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Corner_TR.png",
+      "sha256": "8899895a4b46abc0cd178506715c1df69495cc32da170baad4b933d9f80ff311",
+      "source_sha256": "e986fea996de7d1d91049a3ec49d20641a7f1b49d213230587922e5001a569ac",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Resonance_Corner_BL",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Corner_BL.png",
+      "sha256": "8899895a4b46abc0cd178506715c1df69495cc32da170baad4b933d9f80ff311",
+      "source_sha256": "e986fea996de7d1d91049a3ec49d20641a7f1b49d213230587922e5001a569ac",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Resonance_Corner_BR",
+      "width": 9,
+      "height": 9,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Corner_BR.png",
+      "sha256": "8899895a4b46abc0cd178506715c1df69495cc32da170baad4b933d9f80ff311",
+      "source_sha256": "e986fea996de7d1d91049a3ec49d20641a7f1b49d213230587922e5001a569ac",
+      "colors": 7,
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Resonance_Rail_Top",
+      "width": 16,
+      "height": 5,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Rail_Top.png",
+      "sha256": "db73fb6f5d04dcada503d0c93abf144644784b41a3fe636f42e35d8c0a60233c",
+      "source_sha256": "194e9568fcdc46fed6b33247fe0e49e59f6e787cbc3f78a25a9e6f27a03d99f5",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        16,
+        5
+      ]
+    },
+    {
+      "name": "Resonance_Rail_Bottom",
+      "width": 16,
+      "height": 5,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Rail_Bottom.png",
+      "sha256": "db73fb6f5d04dcada503d0c93abf144644784b41a3fe636f42e35d8c0a60233c",
+      "source_sha256": "194e9568fcdc46fed6b33247fe0e49e59f6e787cbc3f78a25a9e6f27a03d99f5",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        16,
+        5
+      ]
+    },
+    {
+      "name": "Resonance_Rail_Left",
+      "width": 5,
+      "height": 16,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Rail_Left.png",
+      "sha256": "697e5c9232cb6f1bcf2e3ff5f43e6c85f320bb115cda68b49ecee8f168ef15fb",
+      "source_sha256": "dd0365c2d3e8795cc8d36d7e2d4c64fbd8e7af4ffbc906d258a6e0110f381279",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        5,
+        16
+      ]
+    },
+    {
+      "name": "Resonance_Rail_Right",
+      "width": 5,
+      "height": 16,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Rail_Right.png",
+      "sha256": "697e5c9232cb6f1bcf2e3ff5f43e6c85f320bb115cda68b49ecee8f168ef15fb",
+      "source_sha256": "dd0365c2d3e8795cc8d36d7e2d4c64fbd8e7af4ffbc906d258a6e0110f381279",
+      "colors": 4,
+      "bounds": [
+        0,
+        0,
+        5,
+        16
+      ]
+    },
+    {
+      "name": "Resonance_Clamp",
+      "width": 7,
+      "height": 7,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Clamp.png",
+      "sha256": "c584f9b8ce955018f3b6e59c4eb44759bd2118da2cef356273b9a1864cccaf95",
+      "source_sha256": "6ec40065d0ce63f50dbd897ad63a88de7eea04ef672743e612daab06d6bd15b1",
+      "colors": 5,
+      "bounds": [
+        0,
+        0,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Resonance_Inset",
+      "width": 16,
+      "height": 16,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Inset.png",
+      "sha256": "1204efe2b29bc00247018cb1aa09eb2b9436754b9187e02ef5c59929e86a4b54",
+      "source_sha256": "1e3fef9b0d1e95cb219caef505dd0d67e02aecb6ee6be57721b7352594799715",
+      "colors": 1,
+      "bounds": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "Wave_Skull",
+      "width": 15,
+      "height": 18,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Skull.png",
+      "sha256": "ccfa57fbe8f2b7df5e2f58e23b73bfbcf99940446008ee7070189914f7103487",
+      "source_sha256": "2043934551b6e29d26f1f2b39a3fad4f670ce3402aae43d273e4a8c5e0b5cbc8",
+      "colors": 9,
+      "bounds": [
+        1,
+        0,
+        14,
+        18
+      ]
+    },
+    {
+      "name": "Wave_Wing_Left",
+      "width": 7,
+      "height": 15,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Wing_Left.png",
+      "sha256": "211583e1248d7832f26591b69fe8312181cdcefc4a48ade741cfbd23d0a481ce",
+      "source_sha256": "769d94087f33d44a5387dc6c02a20c858aabcde203b4aea620260257b149bfbe",
+      "colors": 3,
+      "bounds": [
+        0,
+        0,
+        7,
+        15
+      ]
+    },
+    {
+      "name": "Wave_Wing_Right",
+      "width": 7,
+      "height": 15,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Wing_Right.png",
+      "sha256": "c6e2f0fc35e3aad21667fc4671df4701882cd05db74bf94e8543f004ab0713b0",
+      "source_sha256": "8d23a8a3c65eddf157fbe37b8cf2f7d1beac457a84b50f70d2018629db1ffda0",
+      "colors": 3,
+      "bounds": [
+        0,
+        0,
+        7,
+        15
+      ]
+    },
+    {
+      "name": "Resonance_Wing_Left",
+      "width": 7,
+      "height": 15,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Wing_Left.png",
+      "sha256": "a7ee9ddf6c60946e7d411c06687f6bf64e00e4ecc3d729e5fe99c38eae623b04",
+      "source_sha256": "3f0c90783982790c6cfc7ae64ea8a440417d1cf3f1bf80159eaf23b4772f2125",
+      "colors": 5,
+      "bounds": [
+        0,
+        0,
+        7,
+        15
+      ]
+    },
+    {
+      "name": "Resonance_Wing_Right",
+      "width": 7,
+      "height": 15,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Wing_Right.png",
+      "sha256": "0525e4a81d58890d634635e284ceb618479594226d1d9a0dd9f5e52105e9598b",
+      "source_sha256": "27c5e9932a51d9ef0558994115cd771f509df9b697b5b1e5197f32228f1ac019",
+      "colors": 5,
+      "bounds": [
+        0,
+        0,
+        7,
+        15
+      ]
+    }
+  ]
+}

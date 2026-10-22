@@ -5,11 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>Approved Dungeon artwork and native UI construction, used by the existing presentation owners.</summary>
-public sealed class DungeonPixelLabBattleArt : ScriptableObject
+public sealed partial class DungeonPixelLabBattleArt : ScriptableObject
 {
     public Sprite[] modules;
     public TextAsset placementManifest;
     public Sprite boardCell64;
+    public Sprite[] hybridModules;
+    public TextAsset hybridPlacementManifest;
+    public bool UsesHybrid => hybridPlacementManifest && hybridModules != null && hybridModules.Length > 0;
     // Stand halfway across the 12-texel floor strip, keeping HP below the feet.
     public const int EnemyFloorInset = 6;
     Dictionary<string, Sprite> lookup;
@@ -17,11 +20,15 @@ public sealed class DungeonPixelLabBattleArt : ScriptableObject
         ? Resources.Load<DungeonPixelLabBattleArt>("UI/BattlePresentation/DungeonPixelLab") : null;
     public Sprite Sprite(string name)
     {
-        lookup ??= modules.ToDictionary(s => s.name, s => s);
+        if (lookup == null)
+        {
+            lookup = modules.ToDictionary(s => s.name, s => s);
+            if (UsesHybrid) foreach (var sprite in hybridModules) lookup[sprite.name] = sprite;
+        }
         return lookup.TryGetValue(name, out var s) ? s : null;
     }
     DungeonSideViewArtPreview.Manifest manifest;
-    public DungeonSideViewArtPreview.Manifest Manifest => manifest ??= JsonUtility.FromJson<DungeonSideViewArtPreview.Manifest>(placementManifest.text);
+    public DungeonSideViewArtPreview.Manifest Manifest => manifest ??= JsonUtility.FromJson<DungeonSideViewArtPreview.Manifest>((UsesHybrid ? hybridPlacementManifest : placementManifest).text);
     public static int PhysicalPixelScale => Mathf.Max(1, Mathf.RoundToInt(UnityEngine.Device.Screen.width / 360f));
     public static float Unit(Canvas canvas) => PhysicalPixelScale / canvas.rootCanvas.scaleFactor;
     public static RectTransform Rect(string name, Transform parent, float x, float y, float width, float height)
@@ -56,6 +63,7 @@ public sealed class DungeonPixelLabBattleArt : ScriptableObject
     public void Panel(RectTransform root, string prefix, string backing, int inset, float pitch)
     {
         float unit = Unit(root.GetComponentInParent<Canvas>());
+        if (UsesHybrid) DecorateHybridPanel(root, prefix, unit);
         if (root.Find("PixelLab" + prefix + "Frame"))
         {
             var existing=root.Find("PixelLabInteriorMask") as RectTransform;
@@ -89,7 +97,8 @@ public sealed class DungeonPixelLabBattleArt : ScriptableObject
         float nativeWidth = top.rect.width / unit;
         float x = p.x + (name == "Wave" ? (nativeWidth - 360) / 2 : nativeWidth - 360);
         TopRect(root, Mathf.Round(x) * unit, p.y * unit, p.width * unit, p.height * unit);
-        Panel(root,"Plaque","Plaque_Inset",7,72);
+        string family = UsesHybrid ? (name == "Wave" ? "Wave" : "Control") : "Plaque";
+        Panel(root,family,family+"_Inset",UsesHybrid?6:7,UsesHybrid?1000:72);
         GameplayPixelGrid.Snap(root);
         var text=root.GetComponentInChildren<TMPro.TMP_Text>();
         if(text)
@@ -97,7 +106,7 @@ public sealed class DungeonPixelLabBattleArt : ScriptableObject
             text.rectTransform.anchorMin=Vector2.zero;text.rectTransform.anchorMax=Vector2.one;
             text.rectTransform.offsetMin=new Vector2(7,3)*unit;text.rectTransform.offsetMax=-text.rectTransform.offsetMin;
             text.textWrappingMode=TMPro.TextWrappingModes.NoWrap;
-            PixelTextFitter.ApplyNativeMenu(text,16*unit);
+            PixelTextFitter.ApplyNativeMenu(text,(UsesHybrid && name == "Wave" ? 24 : 16)*unit);
         }
         var gear=root.Find("Plaque_Gear") as RectTransform;
         if(gear) {var s=Sprite("Plaque_Gear");TopRect(gear,Mathf.Floor((root.rect.width/unit-s.rect.width)/2)*unit,Mathf.Floor((root.rect.height/unit-s.rect.height)/2)*unit,s.rect.width*unit,s.rect.height*unit);GameplayPixelGrid.Snap(gear);}
@@ -107,7 +116,7 @@ public sealed class DungeonPixelLabBattleArt : ScriptableObject
     {
         PlaceControl(root, name, top);
         if (root.TryGetComponent<Image>(out var image)) { image.sprite = null; image.color = Color.clear; }
-        Panel(root, "Plaque", "Plaque_Inset", 7, 72);
+        // PlaceControl already builds the correct approved modular family.
         if (name == "Settings" && !root.Find("Plaque_Gear"))
         {
             float unit = Unit(root.GetComponentInParent<Canvas>()); var s = Sprite("Plaque_Gear");

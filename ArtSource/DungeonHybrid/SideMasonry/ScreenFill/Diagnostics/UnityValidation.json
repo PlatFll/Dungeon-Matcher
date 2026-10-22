@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "exit_code": 0,
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "unity_version": "6000.3.19f1",
+  "log_path": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-fd223dde-60f7-4f51-a690-2e41a3cd575e.log",
+  "log_sha256": "84753de6f7e0dadffb6f475a2b2e3d5342d52543baa9f8cdb15e61cc397f007c",
+  "sources": {
+    "Assets/_Game/Scripts/UI/DungeonPresentationArt.Hybrid.cs": "a3b40ec6d18d4b76695919d8eff00d9d732d96d68825d8f63721bcaea5364200",
+    "Assets/_Game/Scripts/UI/DungeonPresentationArt.PixelLab.cs": "3eef57386e4596b37509f9128ff8e3694281b2b0769a2d26b0065d32ed337a1b",
+    "Assets/_Game/Scripts/Editor/DungeonHybridIntegrationTests.cs": "b77895e62893b03f23b8c5fd267b13aae29ed3ea54b9b6acb6cf09c678b53e5b",
+    "Assets/_Game/Scripts/Editor/DungeonHybridMasonryPreviewTests.cs": "a65ae4bafca5a1f3686c32128a4f18e82367bdc8fa50e9315318feea992f99f3"
+  }
+}

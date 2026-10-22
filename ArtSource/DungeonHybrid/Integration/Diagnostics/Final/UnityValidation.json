@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "unity": "6000.3.19f1",
+  "exit_code": 0,
+  "log": "Diagnostics/Final/UnityValidation.log",
+  "log_sha256": "a41397d5ff04a7882ecee1c29e693b688940d9cc8536bb9222076e09d1ac446d",
+  "tested_sources": {
+    "Assets/_Game/Scripts/UI/DungeonPixelLabBattleArt.cs": "939b2a9709e50153491ba4b86a5f99156e19ad10cb5711227f3f2ab2a53364a7",
+    "Assets/_Game/Scripts/UI/DungeonPixelLabBattleArt.Hybrid.cs": "dbefdbdfda98b7ef48b42a3ae71397c4f9c042a2b882705caf78a4406d7e1a50",
+    "Assets/_Game/Scripts/UI/DungeonPresentationArt.PixelLab.cs": "71bd12060373323527b84ac3af48619d684eaf5bc268813b619820e4845bd139",
+    "Assets/_Game/Scripts/UI/DungeonPresentationArt.Hybrid.cs": "4b6a41defc329c72b586902e60279d8225e6012a45361ec62b38ed3f41cb6cb0",
+    "Assets/_Game/Scripts/UI/RunControlsUI.cs": "325527cb4521a23e215d60725f19440ab3ad1915d4647c8cf2bfde5aefb6fa84",
+    "Assets/_Game/Scripts/Editor/DungeonHybridIntegrationTests.cs": "83d894f269c7cff84778eeef039a0d9c0452d5cf7a97be2146b691cd8b7dab1a",
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage16Tests.cs": "abc43f0e19f54ac17c6265c857058e09cef8a3111a3a7035c3e17111713145d6"
+  }
+}

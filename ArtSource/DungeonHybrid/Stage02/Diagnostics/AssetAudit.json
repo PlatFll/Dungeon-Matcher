@@ -1,0 +1,273 @@
+{
+  "result": "PASS",
+  "source_canvas": [
+    128,
+    128
+  ],
+  "source_bounds": [
+    8,
+    3,
+    112,
+    118
+  ],
+  "opaque_colors": 11,
+  "alpha": [
+    0,
+    255
+  ],
+  "pieces": [
+    {
+      "name": "Gate_Recess",
+      "offset": [
+        25,
+        26
+      ],
+      "width": 69,
+      "height": 94,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage02/Gate_Recess.png",
+      "layer": 0,
+      "bounds": [
+        2,
+        2,
+        67,
+        92
+      ],
+      "opaque_colors": 1,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "6540784188e260327cd5b460e74641e86c8f0047bbdd3ec530b63cb7844829dc",
+      "source": "Native/Gate_Recess.aseprite",
+      "aseprite_sha256": "97c9a579986d66abb4a50c34844db954d9adaf4259ff376ca017c6778670ddc2"
+    },
+    {
+      "name": "Gate_Iron",
+      "offset": [
+        31,
+        31
+      ],
+      "width": 57,
+      "height": 87,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage02/Gate_Iron.png",
+      "layer": 1,
+      "bounds": [
+        2,
+        2,
+        55,
+        85
+      ],
+      "opaque_colors": 3,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "c24ec4a259d1ee49854c2f909451efae27daa17fbf0fccfde4586fe9f0124326",
+      "source": "Native/Gate_Iron.aseprite",
+      "aseprite_sha256": "eb7259b4c964251304cd2063e757e98d8cf96e5acefaedad6d350523cfea4a23"
+    },
+    {
+      "name": "Gate_Lock",
+      "offset": [
+        78,
+        68
+      ],
+      "width": 13,
+      "height": 18,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage02/Gate_Lock.png",
+      "layer": 2,
+      "bounds": [
+        2,
+        2,
+        11,
+        16
+      ],
+      "opaque_colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "8e08fed8cb67c5347fc30bdb9c6b9589e162022d1f462e9dda6605ff31cc3738",
+      "source": "Native/Gate_Lock.aseprite",
+      "aseprite_sha256": "ad3d93b2a1955dab052917819e80430c03ffe4788336d3890c6006bb2f6728cf"
+    },
+    {
+      "name": "Arch_Left",
+      "offset": [
+        10,
+        8
+      ],
+      "width": 41,
+      "height": 46,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage02/Arch_Left.png",
+      "layer": 3,
+      "bounds": [
+        2,
+        2,
+        39,
+        44
+      ],
+      "opaque_colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "693ce461c08a8602210129a6745e7b053a4ba67a9b09d97612bd1fab8c314714",
+      "source": "Native/Arch_Left.aseprite",
+      "aseprite_sha256": "463c4a61e38dde7b799112790f221cf16dffde35a9a80c4a9ce041a6dbc170a7"
+    },
+    {
+      "name": "Arch_Right",
+      "offset": [
+        70,
+        8
+      ],
+      "width": 40,
+      "height": 46,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage02/Arch_Right.png",
+      "layer": 4,
+      "bounds": [
+        2,
+        2,
+        38,
+        44
+      ],
+      "opaque_colors": 8,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "f09ccbc20ab5516f2d950888d73293ecf26903a4d795a6064f522f1054142984",
+      "source": "Native/Arch_Right.aseprite",
+      "aseprite_sha256": "caafb0703a8c91a0b4b602c652d18cba80f6ab1d6b40609d0f287ba186538e54"
+    },
+    {
+      "name": "Jamb_Left",
+      "offset": [
+        6,
+        50
+      ],
+      "width": 24,
+      "height": 70,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage02/Jamb_Left.png",
+      "layer": 5,
+      "bounds": [
+        2,
+        2,
+        22,
+        68
+      ],
+      "opaque_colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "62539388e6446a5eff8d7287b744caeb3607703718cd2e87a728b547dc1d03cf",
+      "source": "Native/Jamb_Left.aseprite",
+      "aseprite_sha256": "93ff800e3d1de81f5234ad1af4aa67829057d1987918148abb3846896aee2d0f"
+    },
+    {
+      "name": "Jamb_Right",
+      "offset": [
+        87,
+        50
+      ],
+      "width": 27,
+      "height": 70,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage02/Jamb_Right.png",
+      "layer": 6,
+      "bounds": [
+        2,
+        2,
+        25,
+        68
+      ],
+      "opaque_colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "6a2b01afa83373c16b9b1f519a5fd42226fabeb7fa9635cbcc13acdfeec4d364",
+      "source": "Native/Jamb_Right.aseprite",
+      "aseprite_sha256": "efa0f04e7144740f856b90d291f5f51b525c458194641ac6e9eb775df4bebb2e"
+    },
+    {
+      "name": "Skull_Keystone",
+      "offset": [
+        47,
+        1
+      ],
+      "width": 27,
+      "height": 29,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage02/Skull_Keystone.png",
+      "layer": 7,
+      "bounds": [
+        2,
+        2,
+        25,
+        27
+      ],
+      "opaque_colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "2cc1c10a91b0ba4c243aa80cb06f1c8fc903e50971c6952d2422338d51291201",
+      "source": "Native/Skull_Keystone.aseprite",
+      "aseprite_sha256": "92538aeee6cfa58c7c5f8f7dff8e4ea03407de19ae1085c1801764f93e1ea3db"
+    },
+    {
+      "name": "Relief_Left",
+      "offset": [
+        10,
+        65
+      ],
+      "width": 19,
+      "height": 23,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage02/Relief_Left.png",
+      "layer": 8,
+      "bounds": [
+        2,
+        2,
+        17,
+        21
+      ],
+      "opaque_colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "e216f694fb47cd9ec989a0b9633237d6a1f81478bc35950ffa36f75a8b538254",
+      "source": "Native/Relief_Left.aseprite",
+      "aseprite_sha256": "0535f3d063b0ac64f350361767b1741f5e0ae1a6207822e22fd97f53e69caca4"
+    },
+    {
+      "name": "Relief_Right",
+      "offset": [
+        92,
+        65
+      ],
+      "width": 19,
+      "height": 23,
+      "path": "Assets/_Game/Art/DungeonHybrid/Stage02/Relief_Right.png",
+      "layer": 9,
+      "bounds": [
+        2,
+        2,
+        17,
+        21
+      ],
+      "opaque_colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "e216f694fb47cd9ec989a0b9633237d6a1f81478bc35950ffa36f75a8b538254",
+      "source": "Native/Relief_Right.aseprite",
+      "aseprite_sha256": "fa8a30ca2dc761d4ca88cce490171fbfe949c50de31e0fa06a96f86dd62b8f4d"
+    }
+  ],
+  "exact_modular_reassembly": true,
+  "raw_sha256": "f0efa42a2c543781309a0bf776a5fdd1e49e9ff130cb16dd7102857df3d81fb3",
+  "clean_sha256": "3061576d6748fff66d4ec291a819b1c56dc5c323f9951ccd12c61933f22c682a"
+}

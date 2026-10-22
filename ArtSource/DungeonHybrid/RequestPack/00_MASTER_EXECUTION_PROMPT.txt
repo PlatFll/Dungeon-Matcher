@@ -1,0 +1,65 @@
+You are working on Dungeon Matcher.
+
+Create and use a fresh branch named:
+feature/dungeon-zone-hybrid-pixellab-rebuild
+
+Your mission is to rebuild the dungeon zone art pipeline using a hybrid workflow:
+- PixelLab for premium hero assets and focal pieces
+- LibreSprite for cleanup, palette/shading normalization, tiling, modularization, and repairs
+- Unity for assembly and art-only validation
+
+IMPORTANT: Do NOT regenerate the whole zone as one giant image. That workflow has already proven unreliable and causes blur, structural drift, and inconsistent backgrounds.
+
+Use this production philosophy:
+1. Keep the zone structurally simple, readable, and buildable.
+2. Preserve the side-view / flat battleground readability.
+3. Use large clean wall/floor shapes with fewer cracks and less noisy texture.
+4. Use PixelLab only where it adds real value: gate, props, banners, chains, torches, frame pieces, and premium UI elements.
+5. After each generated asset, clean it in LibreSprite to match Dungeon Matcher style.
+6. Rebuild the zone from modular parts in Unity.
+7. Validate every asset before approval.
+8. Do not merge. Stop for review after each milestone.
+
+## Golden workflow
+A. Structural base:
+- Wall tiles
+- Floor/platform tiles
+- Support/pillar tiles
+- Plain backing tiles
+These should be clean, simple, modular, and mostly not dependent on PixelLab scene generation.
+
+B. Hero architecture:
+- Main gate / archway
+- Key top-HUD focal architecture
+- Board frame hero pieces
+- Character portrait frame pieces
+These may use PixelLab generation, followed by LibreSprite cleanup.
+
+C. Props / dressing:
+- Torches
+- Chains
+- Banners
+- Barrels
+- Vases / jars
+- Bones / skull piles
+- Small rubble / debris
+These should be generated one-by-one, not as part of a large full scene.
+
+## Visual goals
+- Match the readability of Rattlebones and the gems.
+- Avoid over-detailed pseudo-isometric floors.
+- Prefer flatter side-view readability.
+- Use larger brick shapes.
+- Minimize crack noise.
+- Keep silhouettes and shapes stable.
+- Clean up only shading/coloring/detail handling, not the core visual identity.
+
+## Output expectation
+Produce:
+1. Modular asset library
+2. Cleaned / approved spritesheets or isolated assets
+3. Unity art-only scene using the rebuilt modular assets
+4. Review outputs and comparison previews
+5. A usage ledger showing what was generated vs kept vs cleaned manually
+
+Read the rest of the files in this pack and execute in order.

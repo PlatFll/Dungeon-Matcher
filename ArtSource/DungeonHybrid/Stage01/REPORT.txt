@@ -1,0 +1,29 @@
+DUNGEON HYBRID REBUILD — STAGE 01 REVIEW
+2026-10-21 | feature/dungeon-zone-hybrid-pixellab-rebuild
+Base: ae0a97438cb6b5fc05a88d801dd9504b54e8468f (latest main when started; includes merged PRs 203 and 204).
+
+Decision
+Retain all 33 existing structural modules. No asset regeneration, recolor, resampling or pixel repair is justified. They already provide the clean Image 2 foundation: quiet large brick courses, a flat side-view platform, broad fascia planes and modular supports. The actual Rattlebones/Farmer/Pan references stay clearly readable over this restrained background. New premium architecture remains Stage 02 and later.
+
+Kept
+14 wall/repeat/closure modules; 5 flat floor-top modules; 5 fascia modules; 7 support modules; 2 portrait-recess modules. AssetLedger.csv lists every source. Source files remain in ArtSource/DungeonPixelLab/Native and Assets/_Game/Art/DungeonPixelLab. Fresh LibreSprite exports in Reexports are review evidence only, not replacement imports.
+
+Changed
+Only additive review tooling and an isolated art-only Unity scene. Placement.json selects the approved structural placement, preserving the previous removal of the right corbel. Portrait backing repeats beyond an interior RectMask2D. Native character stills are static style/scale probes, not new gameplay bindings. Production Game scene, existing art preview, runtime code, UI, gameplay and other zones are untouched.
+
+Validation
+33 actual LibreSprite document exports equal production RGBA exactly; 4–6 opaque colors per retained asset; binary alpha only. All six canonical reference/source hashes match the live golden register. 64 exact edge comparisons and support join masks pass. A continuous opaque wall covers the study and the floor's contact plane is continuous. All six actual Unity Game View screenshots equal native sources with zero different pixels at 1x/2x/3x. Portrait mask clipping matches precisely. 1 explicit Unity test passed, 0 failed. 425 protected source/export/import/reference files match the initial hashes.
+
+This is an art-only editor validation study, not live combat, safe-area/mobile layout validation or a real-device test. Full gameplay integration is not authorized in Stage 01. No PixelLab requests or generation spending occurred.
+
+Open Stage01/Review.html for native PNGs, zoomable assets and actual Unity captures.
+Unity scene: Assets/_Game/Scenes/ArtPreview_DungeonHybrid_Stage01.unity
+Editor menu: Dungeon Matcher > Art Preview > Hybrid Stage 01 structural study
+Unity test filter: DungeonHybridStage01Tests.StructuralStudyNativeScreens
+Reproduce asset audit: python ArtSource/DungeonHybrid/Stage01/audit_assets.py --libresprite <absolute LibreSprite executable>
+After the Unity test: python ArtSource/DungeonHybrid/Stage01/verify_preview.py
+Scene preview uses a 3:2 Game View (360x240, 720x480 or 1080x720); it is not a responsive production layout.
+
+STOP: Stage 02 requires user approval. Do not merge this branch.
+
+Required Tools/Validate-Unity.ps1: PASS, Unity 6000.3.19f1, exit 0. See Diagnostics/ValidationReceipt.json.

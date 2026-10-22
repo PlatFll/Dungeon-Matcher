@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-21 23:30:36Z" end-time="2026-10-21 23:30:36Z" duration="0.7310497">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="832" result="Failed" site="Child" start-time="2026-10-21 23:30:36Z" end-time="2026-10-21 23:30:36Z" duration="0.731050" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1988" name="Assembly-CSharp-Editor.dll" fullname="C:/Users/USER/.codex/worktrees/dungeon-top-hud-pixellab/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="832" result="Failed" site="Child" start-time="2026-10-21 23:30:36Z" end-time="2026-10-21 23:30:36Z" duration="0.720695" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="48972" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1569" name="DungeonHybridStage05Tests" fullname="DungeonHybridStage05Tests" classname="DungeonHybridStage05Tests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-21 23:30:36Z" end-time="2026-10-21 23:30:36Z" duration="0.713458" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1570" name="FullAssemblyNativeScreens" fullname="DungeonHybridStage05Tests.FullAssemblyNativeScreens" methodname="FullAssemblyNativeScreens" classname="DungeonHybridStage05Tests" runstate="Explicit" seed="639305515" result="Failed" label="Error" start-time="2026-10-21 23:30:36Z" end-time="2026-10-21 23:30:36Z" duration="0.701090" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="_SKIPREASON" value="Builds the full art-only dungeon and captures Unity Game View at native and doubled resolution." />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object]]></message>
+            <stack-trace><![CDATA[  at DungeonHybridStage05Tests.Build () [0x00287] in C:\Users\USER\.codex\worktrees\dungeon-top-hud-pixellab\Dungeon Matcher\Assets\_Game\Scripts\Editor\DungeonHybridStage05Tests.cs:108
+  at DungeonHybridStage05Tests+<FullAssemblyNativeScreens>d__15.MoveNext () [0x00026] in C:\Users\USER\.codex\worktrees\dungeon-top-hud-pixellab\Dungeon Matcher\Assets\_Game\Scripts\Editor\DungeonHybridStage05Tests.cs:128
+  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@bd7f943e9647\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44 ]]></stack-trace>
+          </failure>
+          <output><![CDATA[Saving results to: C:/Users/USER/AppData/LocalLow/Blank/Dungeon Matcher\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

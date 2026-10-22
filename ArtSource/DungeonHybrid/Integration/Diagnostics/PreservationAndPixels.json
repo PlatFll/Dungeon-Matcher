@@ -1,0 +1,50 @@
+{
+  "result": "PASS",
+  "protected_files_unchanged": 5298,
+  "main_user_files_unchanged": 8,
+  "regression_passed": 69,
+  "regression_failed": 0,
+  "captures": [
+    {
+      "name": "Dungeon-1080x1920",
+      "width": 1080,
+      "height": 1920,
+      "geometry_unchanged": true,
+      "visible_gem_fraction": 0.4129
+    },
+    {
+      "name": "Dungeon-1080x2400",
+      "width": 1080,
+      "height": 2400,
+      "geometry_unchanged": true,
+      "visible_gem_fraction": 0.4129
+    },
+    {
+      "name": "Dungeon-360x640",
+      "width": 360,
+      "height": 640,
+      "geometry_unchanged": true,
+      "visible_gem_fraction": 0.411
+    },
+    {
+      "name": "Dungeon-720x1280",
+      "width": 720,
+      "height": 1280,
+      "geometry_unchanged": true,
+      "visible_gem_fraction": 0.4141
+    },
+    {
+      "name": "Dungeon-safe-1080x2400",
+      "width": 1080,
+      "height": 2400,
+      "geometry_unchanged": true,
+      "visible_gem_fraction": 0.4129
+    }
+  ],
+  "approved_art_unchanged": true,
+  "game_scene_serialization_unchanged": true,
+  "gameplay_source_unchanged": true,
+  "new_art_files": 0,
+  "generation_cost": 0,
+  "scope": "Actual Game scene, live three-enemy disposable fixture, five screen/safe-area profiles. No merge; no real-device or Android build claim."
+}

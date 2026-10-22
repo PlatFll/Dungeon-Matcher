@@ -1,0 +1,31 @@
+STAGE 02 — GATE AND ARCH HERO SET
+
+Use PixelLab for this stage.
+
+Goal:
+Generate a premium dungeon gate/arch set that becomes the focal point of the top HUD background.
+
+Generate individually or as a tightly related set:
+- gate door
+- arch blocks
+- skull keystone / top ornament
+- optional side decorative stones
+
+Requirements:
+- native pixel art
+- clean readable silhouette
+- centered dungeon gate focal piece
+- premium but controlled detail
+- same family as Dungeon Matcher’s fantasy UI
+- no blur
+- no anti-aliased smearing
+- no giant baked scene
+- side-view readability
+- designed to be assembled into the top background, not used as a standalone full scene
+
+After generation:
+- clean in LibreSprite
+- normalize colors and shading
+- remove excess detail clusters
+- export modular pieces
+- test assembled placement in Unity

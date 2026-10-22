@@ -20,6 +20,23 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Hybrid dungeon integration (2026-10-22, approved for merge in PR #205)
+
+The user approved the final playable Dungeon visuals, aligned corner masonry and
+merge to main. Production binds 55 hybrid modules plus the two approved corner
+sprites through the existing presentation owners. The original 102-asset library
+and all source artwork remain preserved. The wall covers the physical display,
+including cutout margins; edge masonry uses one bottom-aligned course grid and
+the corners replace lower rows without overlap. The floor extends behind the
+masked, banner-free portrait. Board/UI layout, gameplay, characters, gems, saves
+and other zones retain their existing systems.
+
+Actual Game captures show Rattlebones and three live enemies at six phone and
+safe-area profiles. Final production binding verification is recorded in
+[the approval handoff](../ArtSource/DungeonHybrid/SideMasonry/ApprovedIntegration/Report.md).
+The earlier 69-test integration pass remains historical evidence. No physical-device
+test or new Android build was performed for this revision.
+
 ## Staged PixelLab dungeon integration (2026-10-20, merged PR #203)
 
 The user approved the final Stage15 library/design for Stage16 integration testing. The dedicated branch now binds all 102 approved native modules into the playable Dungeon through existing presentation owners; all 456 protected art/source files remain unchanged. A user-requested additional 64×64 cell variant was authored in LibreSprite to retain the original 64×64 gems. Dynamic native frame pieces surround the existing responsive board footprint. Integer-scaled scenery and a compact Dungeon fallback address Stage00's environment distortion and 360×640 failure. The board deliberately retains its existing uniform fractional fit where native 512px width cannot fit; the user explicitly chose this policy.

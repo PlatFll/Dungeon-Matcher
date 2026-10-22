@@ -183,9 +183,11 @@ public sealed class RunControlsUI : MonoBehaviour
             {
                 float u=DungeonPixelLabBattleArt.Unit(canvas);var r=(RectTransform)slots[i].transform;
                 r.sizeDelta=new Vector2(47,43)*u;r.anchoredPosition=new Vector2(i==0?-87.5f:88.5f,0)*u;
-                if(!r.Find("PixelLabResonanceFrame"))
-                { slots[i].image.sprite=null;slots[i].image.color=Color.clear;nativeArt.Panel(r,"Resonance","Supply_Inset",7,10000); }
-                nativeArt.Panel(r,"Resonance","Supply_Inset",7,10000);
+                string family=nativeArt.UsesHybrid?"Control":"Resonance";
+                string inset=nativeArt.UsesHybrid?"Control_Inset":"Supply_Inset";
+                if(!r.Find("PixelLab"+family+"Frame"))
+                { slots[i].image.sprite=null;slots[i].image.color=Color.clear; }
+                nativeArt.Panel(r,family,inset,nativeArt.UsesHybrid?6:7,10000);
                 if(icons[i].TryGetComponent<NativePixelUiSurface>(out var nativeIcon))nativeIcon.enabled=false;
                 GameplayPixelGrid.Snap(r);GameplayPixelGrid.FitImage(icons[i],new Vector2(28,28)*u);
             }

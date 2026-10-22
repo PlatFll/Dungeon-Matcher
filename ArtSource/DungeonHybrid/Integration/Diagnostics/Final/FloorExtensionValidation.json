@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "unity": "6000.3.19f1",
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "exit_code": 0,
+  "log": "Diagnostics/Final/FloorExtensionValidation.log",
+  "log_sha256": "b9f9986f1d2ecce68025744ced27115df73c02ad1819fd44ab976863a3a56072",
+  "source_sha256": "b61ee9e0feaf2f4469eec4f7b951673a544fdee21013136b447db55721a9b218",
+  "live_test": "DungeonHybridIntegrationTests.DungeonCombatAndPhoneScreens",
+  "passed": 1,
+  "failed": 0,
+  "scope": "Fresh five-profile live capture, existing native rendering and layout checks, three enemies, visible gems and guide/settings/swap checks. Prior 69-test regression evidence remains historical."
+}

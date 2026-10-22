@@ -1,0 +1,23 @@
+from pathlib import Path
+P=Path(__file__).resolve().parents[4];R=P/'ArtSource/DungeonHybrid/Stage05'
+html="""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dungeon Hybrid Stage 05 — full assembled Unity preview</title>
+<style>body{margin:28px;background:#11121b;color:#e0d8e3;font:16px system-ui}h1,h2{font-weight:600}section{padding:20px;margin:22px 0;background:#1e2030;border-radius:10px}img{image-rendering:pixelated}a{color:#dd9bea}.scroll{overflow:auto}label{display:inline-block;margin:8px 20px 14px 0}select{font:inherit;background:#302940;color:#eee8f1;border:1px solid #83718d;padding:8px}.muted{color:#b5a9bc}.row{display:flex;gap:24px;flex-wrap:wrap}</style>
+<h1>Stage 05 · Full assembled dungeon</h1>
+<p>Approved modular art combined in an isolated Unity scene. No artwork edits, new generation, gameplay integration or merge.</p>
+<p><a href="Report.md">Verification report</a> · <a href="AssetLedger.csv">Exact source ledger</a> · <a href="../Stage04/Review.html">Approved Stage 04 props</a> · <a href="../Stage03/Review.html">Approved Stage 03 UI</a></p>
+<section><h2>Actual Unity Game View</h2>
+<label>View <select id="mode" onchange="render()"><option value="Classic">Full preview — skull, bones, barrel</option><option value="Alternate">Full preview — jar and rubble</option><option value="Structure">Clean environment and empty board</option><option value="SourceCheck">Source comparison — no health/fill overlays</option></select></label>
+<label>Pixel zoom <select id="scale" onchange="render()"><option value="1">720×1280 — native assembly</option><option value="2">1440×2560 — exact 2×</option></select></label>
+<p><a id="original" href="Previews/Unity-Classic-720x1280.png">Open original screenshot</a></p>
+<div class="scroll"><img id="preview" src="Previews/Unity-Classic-720x1280.png" width="720" height="1280" alt="Actual Unity full dungeon art preview"></div>
+<p class="muted">Rattlebones, Farmer and Pan are static approved reference sprites. Health and resonance values are demonstration values; this scene has no gameplay or input owner.</p></section>
+<section><h2>Assembly and pixel checks</h2>
+<p>The approved top study is reused at 2×. The board contains 64 native 64×64 cells and unchanged gems at 1×. Its approved corners, rails and connectors fit around the grid at 2×, matching the surrounding UI. Lower HUD and scenery also use 2×. Every source pixel remains an exact whole-pixel block.</p>
+<p>The board recess overfills behind a mask, covering the space between frame and grid without exposing wall fragments. The portrait's original clipped recess is preserved. Extended wall tiles and complete edge masonry fill the lower scene.</p>
+<p>Eight actual Unity captures cover the four views at both resolutions. Pixel comparisons confirm exact 2× replication and unchanged approved top/grid rendering. Unity layout checks and the repository validator passed. See the report for preserved-file counts and test scope.</p></section>
+<section><h2>Approved artwork references</h2><div class="row"><div><p>Native prop catalog</p><img src="../Stage04/Previews/Native-assets.png" width="720" height="260"></div><div><p>Actual golden references at 1×</p><img src="../Stage04/Previews/Golden-native.png" width="400" height="130"></div></div></section>
+<p>Stage 05 is complete for visual review. The dedicated branch and PR remain unmerged.</p>
+<script>function render(){const mode=document.getElementById('mode').value,s=Number(document.getElementById('scale').value);const url='Previews/Unity-'+mode+'-'+720*s+'x'+1280*s+'.png';let im=document.getElementById('preview');im.src=url;im.width=720*s;im.height=1280*s;document.getElementById('original').href=url}</script></html>"""
+(R/'Review.html').write_text(html,encoding='utf-8')
+print('Stage05 full-assembly gallery written.')

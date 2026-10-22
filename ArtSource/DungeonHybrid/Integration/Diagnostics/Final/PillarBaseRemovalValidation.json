@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "unity": "6000.3.19f1",
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "exit_code": 0,
+  "log": "Diagnostics/Final/PillarBaseRemovalValidation.log",
+  "log_sha256": "803d565af0b0da75dae61d70811e38c0958c77229e260117dc7fc817b30f47bb",
+  "source_sha256": "dc934c5ea6fc51462feb46f50b59f79be84f3694e845507b23dedd60ddc06059",
+  "live_test": "DungeonHybridIntegrationTests.DungeonCombatAndPhoneScreens",
+  "passed": 1,
+  "failed": 0,
+  "scope": "Fresh five-profile live capture after removing the two bottom corner bases. Existing gameplay, layout, masking, native-pixel and guide/settings/swap checks passed. Earlier test results remain historical."
+}

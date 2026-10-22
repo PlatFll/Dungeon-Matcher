@@ -30,7 +30,7 @@ public sealed partial class DungeonPresentationArt
             (2 + DungeonPixelLabBattleArt.EnemyFloorInset) * scale;
         int width = Mathf.CeilToInt(viewport.width / scale), height = Mathf.CeilToInt(viewport.height / scale);
         int floor = Mathf.RoundToInt((viewport.yMax - floorScreen) / scale);
-        string key = viewport + ":" + width + ":" + height + ":" + floor + ":" + scale;
+        string key = UnityEngine.Device.Screen.width + "x" + UnityEngine.Device.Screen.height + ":" + viewport + ":" + width + ":" + height + ":" + floor + ":" + scale;
         if (pixelLabGeometry != key)
         {
             pixelLabGeometry = key;
@@ -40,7 +40,9 @@ public sealed partial class DungeonPresentationArt
             pixelLabWorld.worldCamera = Camera.main; pixelLabWorld.sortingLayerName = "Default"; pixelLabWorld.sortingOrder = -190;
             pixelLabWorld.referencePixelsPerUnit = 64; pixelLabWorld.pixelPerfect = true;
             pixelLabContent = (RectTransform)go.transform; pixelLabContent.pivot = new Vector2(0,1);
-            pixelLabContent.sizeDelta = new Vector2(width,height); go.AddComponent<RectMask2D>();
+            pixelLabContent.sizeDelta = new Vector2(width,height);
+            // Safe-area clipping belongs to live UI, not the full-screen hybrid wall.
+            if (!art.UsesHybrid) go.AddComponent<RectMask2D>();
             BuildPixelLabEnvironment(art, width, height, floor);
             RefreshPixelLabPortrait(art, (RectTransform)player.transform);
         }
@@ -57,6 +59,7 @@ public sealed partial class DungeonPresentationArt
         DungeonPixelLabBattleArt.TopRect(pixelLabBoardFrame,(layout.BoardArea.rect.width-outside)/2,
             (layout.BoardArea.rect.height-outside)/2,outside,outside);
         GameplayPixelGrid.Snap(pixelLabBoardFrame);
+        if (art.UsesHybrid) RefreshHybridBoardBacking(art,layout);
         if(pixelLabPortraitBanner)GameplayPixelGrid.Snap(pixelLabPortraitBanner);
         panelsReady = true;
     }
@@ -75,6 +78,7 @@ public sealed partial class DungeonPresentationArt
 
     void BuildPixelLabEnvironment(DungeonPixelLabBattleArt art,int width,int height,int floor)
     {
+        if (art.UsesHybrid) { BuildHybridEnvironment(art,width,height,floor); return; }
         var wall = DungeonPixelLabBattleArt.Rect("Continuous wall",pixelLabContent,0,0,width,height);
         string[] walls={"Wall_A_Quiet","Wall_B_VioletStone","Wall_A_Quiet","Wall_C_SoftWear","Wall_A_Quiet","Wall_D_DeepStone"};
         for(int y=0;y<height;y+=48)for(int x=0;x<width;x+=48)
@@ -124,6 +128,7 @@ public sealed partial class DungeonPresentationArt
         var backing=art.Image("Recess_Center",mask,0,0,u);backing.type=Image.Type.Tiled;backing.pixelsPerUnitMultiplier=1/u;
         backing.rectTransform.anchorMin=Vector2.zero;backing.rectTransform.anchorMax=Vector2.one;
         backing.rectTransform.offsetMin=-backing.sprite.rect.size*u;backing.rectTransform.offsetMax=-backing.rectTransform.offsetMin;
+        if (art.UsesHybrid) { pixelLabPortraitBanner=null; return; }
         var banner=art.Image("Hanging_Banner",mask,0,3*u,u);
         banner.rectTransform.anchorMin=banner.rectTransform.anchorMax=new Vector2(.5f,1);
         banner.rectTransform.anchoredPosition=new Vector2(-Mathf.Floor(banner.sprite.rect.width/2)*u,-3*u);
