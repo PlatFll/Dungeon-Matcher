@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-23 00:10:25Z" end-time="2026-10-23 00:10:26Z" duration="0.4149558">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="839" result="Failed" site="Child" start-time="2026-10-23 00:10:25Z" end-time="2026-10-23 00:10:26Z" duration="0.414956" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="2002" name="Assembly-CSharp-Editor.dll" fullname="C:/Users/USER/.codex/worktrees/forest-zone-hybrid-rebuild/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="839" result="Failed" site="Child" start-time="2026-10-23 00:10:25Z" end-time="2026-10-23 00:10:26Z" duration="0.373699" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="46836" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+      <test-suite type="TestFixture" id="1697" name="ForestHybridStage05Tests" fullname="ForestHybridStage05Tests" classname="ForestHybridStage05Tests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-23 00:10:25Z" end-time="2026-10-23 00:10:26Z" duration="0.362586" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+        <test-case id="1698" name="FullAssemblyNativeScreens" fullname="ForestHybridStage05Tests.FullAssemblyNativeScreens" methodname="FullAssemblyNativeScreens" classname="ForestHybridStage05Tests" runstate="Explicit" seed="1414112471" result="Failed" start-time="2026-10-23 00:10:20Z" end-time="2026-10-23 00:10:26Z" duration="6.203614" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="_SKIPREASON" value="Final Forest art-only assembly, exact whole-pixel scales and shared HUD preservation." />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Understory_Repeat
+  Expected: less than or equal to 720.01999999999998d
+  But was:  767.999939f
+]]></message>
+            <stack-trace><![CDATA[at ForestHybridStage05Tests+<CaptureAndCheck>d__24.MoveNext () [0x003bd] in C:\Users\USER\.codex\worktrees\forest-zone-hybrid-rebuild\Dungeon Matcher\Assets\_Game\Scripts\Editor\ForestHybridStage05Tests.cs:208
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@bd7f943e9647\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+Saving results to: C:/Users/USER/AppData/LocalLow/Blank/Dungeon Matcher\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
