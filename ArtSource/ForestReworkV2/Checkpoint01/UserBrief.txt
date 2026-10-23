@@ -1,0 +1,152 @@
+Create a new branch for the magical forest zone rework.
+
+BRANCH NAME:
+feature/magical-forest-zone-rework-v2
+
+GOAL:
+Rework the magical forest battle scene so it matches Dungeon Matcher’s current polished dungeon-zone structure and readability, while making the forest feel more magical, cleaner, and less goofy than the previous forest mockup.
+
+IMPORTANT HIGH-LEVEL RULES:
+1. Keep the overall game layout and gameplay readability consistent with the current dungeon scene.
+2. Keep the bottom HUD, settings menu, general buttons, and unified lower UI system the same across zones.
+3. Only rework the forest zone’s:
+   - top battle background
+   - player portrait frame styling for this zone
+   - enemy-side battle background
+   - board outer frame styling for this zone
+   - decorative zone-specific environmental art
+4. Do NOT redesign the core gameplay board tiles or gem shapes.
+5. Do NOT make the scene over-detailed, blurry, noisy, or cluttered.
+6. The forest should feel magical, atmospheric, readable, and premium.
+7. The board frame should be surrounded mainly by leaves/vines/wood accents in a deliberate clean way, not random props stuck onto the frame.
+8. Add subtle decorative leaf clusters that can later support gentle ambient motion, like leaves moving slightly in wind.
+9. The background should feel like a magical forest, not just a normal forest:
+   - soft mystical glow
+   - ancient woodland mood
+   - hints of enchanted runes/lights
+   - layered depth
+   - subtle fantasy ambience
+10. Preserve clean silhouette separation so characters and UI remain easy to read.
+
+VISUAL TARGET:
+Use the current dungeon-zone production screen as the structural/quality benchmark.
+Use the magical forest mockup as inspiration for theme, mood, and content.
+But simplify and polish the forest to match the cleaner, more controlled production style of the dungeon zone.
+
+WHAT NEEDS TO CHANGE FROM THE CURRENT FOREST VERSION:
+- Remove the goofy/random-looking board frame decorations.
+- Replace them with a cleaner wood-and-leaf frame language.
+- Make the magical forest background feel more enchanted and premium.
+- Improve cohesion between top HUD area and board area.
+- Make the zone feel intentionally art-directed, not procedurally decorated.
+- Avoid visual noise.
+
+ART DIRECTION:
+FOREST TOP AREA:
+- Ancient forest clearing
+- Large tree trunks framing the scene
+- Soft distant background depth
+- Subtle glowing magical accents
+- Hanging lanterns are allowed if they feel natural
+- Optional faint blue magical wisps/fireflies
+- A magical ruin / stone bridge / distant waterfall may appear in the far background, but simplified and not too busy
+- Ground where enemies stand should be readable and flatter than the dungeon’s old cracked floor problems
+- Keep enemy standing area clean and readable
+
+PLAYER FRAME:
+- Forest-themed variant of the player frame
+- Material language: aged wood, carved wood, restrained vine growth, leaf accents
+- Do not overdecorate
+- Keep portrait readability first
+- It must still feel like the same game family as the dungeon frame
+
+BOARD FRAME:
+- Wooden forest-themed frame with leaves/vines wrapping around it in a controlled way
+- Emphasize natural framing using leaf clusters and branch/wood shaping
+- Avoid random mushrooms/ornaments all over the frame
+- Use a few strong accents, not many weak ones
+- Leaves should feel intentionally placed and capable of future ambient animation
+- Keep corners, edges, and tiling clean and modular
+
+SIDE DECOR:
+- Use restrained magical forest decor:
+  - leaves
+  - vines
+  - lanterns
+  - runic carvings
+  - small mushrooms near corners only if tasteful
+- Avoid clutter
+
+BOTTOM UI:
+- KEEP AS IS.
+- Do not redesign the lower HUD, resonance panel, potion/bomb button structure, or unified lower menu style.
+- Zone should integrate with the existing bottom HUD, not replace it.
+
+PRODUCTION WORKFLOW:
+1. Review the current dungeon production scene and the forest mockup references.
+2. Identify which current shared UI elements remain unchanged.
+3. Define the forest-specific asset list.
+4. Build/rebuild forest assets in a modular way.
+5. Use PixelLab only where it is genuinely useful for generating or refining zone assets.
+6. Use LibreSprite to clean up, reduce noise, unify shading, and enforce pixel consistency.
+7. Rebuild the zone in Unity.
+8. Validate alignment, seams, palette consistency, and readability.
+9. Stop for review before any final merge.
+
+ASSET LIST TO BUILD OR REWORK:
+A. Forest top background
+B. Forest enemy ground / standing platform
+C. Forest player portrait frame variant
+D. Forest board outer frame variant
+E. Leaf/vine decorative overlay set
+F. Optional lantern / rune / magical accent assets
+G. Any support tiles needed for clean assembly
+
+PIXELLAB USAGE RULES:
+- Use PixelLab selectively, not blindly.
+- Best uses:
+  1. background concept refinement
+  2. forest-specific decorative assets
+  3. wood/leaf frame motif exploration
+  4. magical ambience support elements
+- Do NOT rely on PixelLab to assemble the final entire scene automatically.
+- Generated assets must be cleaned and standardized afterward.
+
+LIBRESPRITE CLEANUP RULES:
+- Clean every accepted asset to fit our pixel style.
+- Reduce noise.
+- Simplify over-rendered details.
+- Remove blurry / mushy / clustered shading.
+- Keep shading readable and deliberate.
+- Preserve shape language.
+- Keep silhouettes clean.
+- Ensure all tiles and frame parts align.
+
+STYLE VALIDATION RULES:
+Before approving each asset, verify:
+1. Does it match the style family of Dungeon Matcher?
+2. Does it feel cleaner and more intentional than the previous forest version?
+3. Is it readable at gameplay distance?
+4. Does it avoid random/goofy decoration?
+5. Does it preserve premium pixel-art clarity?
+6. Does it fit with Rattlebones, the gems, and the current dungeon production quality?
+
+TARGET MATCH STANDARD:
+Do not mark an asset final unless it feels at least 90% consistent with the established game style and production quality.
+
+REVIEW STOP POINTS:
+Stop after these checkpoints:
+1. Forest art direction board and asset plan
+2. Top background blockout
+3. Player frame variant
+4. Board frame variant
+5. Integrated Unity scene preview
+6. Final validation pass
+
+OUTPUT I WANT FROM YOU:
+- short report of what you kept unchanged
+- short report of what you rebuilt
+- preview images of the forest zone
+- explicit notes on what PixelLab was used for
+- explicit notes on what LibreSprite cleaned up
+- do not merge yet
