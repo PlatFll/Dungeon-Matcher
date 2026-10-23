@@ -1,0 +1,1 @@
+var names=["Far_EnchantedSanctuary", "Depth_SideRepeat", "Depth_CanopyRepeat", "Depth_UnderstoryRepeat", "Distant_Wisp"];names.forEach(function(n){app.open("ArtSource/ForestReworkV2/Checkpoint02/Native/"+n+".aseprite").sprite.saveAs(".utmp/forest-v2-c2/reopened/"+n+".png",true);});
