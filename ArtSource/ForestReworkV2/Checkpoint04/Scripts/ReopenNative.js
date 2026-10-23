@@ -1,0 +1,1 @@
+var names=["Board_Rail_Top", "Board_Rail_Left", "Board_Rail_Bottom", "Board_Rail_Right", "Board_Corner_TL", "Board_Corner_TR", "Board_Corner_BL", "Board_Corner_BR", "Board_Foliage_UL", "Board_Foliage_LR"];names.forEach(function(n){app.open("ArtSource/ForestReworkV2/Checkpoint04/Native/"+n+".aseprite").sprite.saveAs(".utmp/forest-v2-c4/reopened/"+n+".png",true);});
