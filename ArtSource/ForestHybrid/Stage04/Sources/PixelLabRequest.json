@@ -1,0 +1,48 @@
+{
+  "description": "A small isolated modular prop sheet for Dungeon Matcher's magical forest. Three SEPARATE objects with generous transparent space, no scenery, no characters, no text: LEFT HALF a compact hanging hexagonal forest lantern (about 24 pixels wide by 44 high including short chain) with aged brown carved-wood cage, dark metal cap, small warm honey/cream light window, one tiny leaf; UPPER RIGHT a squat two-mushroom cluster (about 28x22 pixels), muted terracotta red caps with just 2 cream spots, pale short stems and dark green ground leaves; LOWER RIGHT a small upright carved wooden rune plaque (about 20x30 pixels) with a single dim turquoise angular spiral marking, stout simple wood surround. Front-on 2D sidescroller props. Every shape has full transparent padding. Strong clean dark contours, broad connected 2-3 tone material clusters, top-left light, zero gradients or antialiasing, no light halos, no pixel noise or tiny hatchwork. Friendly chunky fantasy, quiet environmental accents supporting the actual golden sprite's rendering discipline. The lantern is the only bright accent, mushrooms and rune must remain subordinate. Native single pixels and restrained wood/leaf material ramps matching the supplied palette. No ornate gold, skulls, crowns, gems, faces, UI or extra items.",
+  "width": 96,
+  "height": 96,
+  "no_background": true,
+  "max_colors": 16,
+  "seed": 63444,
+  "palette": [
+    "#172326",
+    "#2b2d27",
+    "#414035",
+    "#69523a",
+    "#8a6845",
+    "#b3915f",
+    "#203c35",
+    "#486a45",
+    "#81905b",
+    "#6b3e35",
+    "#a95d43",
+    "#d8bb86",
+    "#d58c3e",
+    "#f4c86a",
+    "#fff0b0",
+    "#63a69d"
+  ],
+  "palette_name": "Dungeon Matcher Forest wood, ivy, terracotta, honey light, muted rune",
+  "style_image": {
+    "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+    "input": "base64",
+    "usage_description": "Actual current approved Rattlebones 64x64 golden image. Copy only crisp native contours, compact chunky connected shading, economical top-left lighting. Do not copy anatomy, skeleton features, crown or royal palette. Objects are independent forest props."
+  },
+  "style_options": {
+    "color_palette": false,
+    "outline": true,
+    "detail": true,
+    "shading": true
+  },
+  "quote": {
+    "generations": 5,
+    "dimensions": [
+      96,
+      96
+    ]
+  },
+  "job_id": "f94be040-e170-4c7f-87c6-23986cbfc42d",
+  "provider": "PixelLab"
+}

@@ -1,0 +1,56 @@
+{
+  "background_job_id": "281ce172-abdb-46d3-b3bb-5c10bdfa4eda",
+  "image_id": "3111be7d-eacf-508e-b73d-c44f8d428e68",
+  "status": "completed",
+  "source_image_id": "3111be7d-eacf-508e-b73d-c44f8d428e68",
+  "job_id": "281ce172-abdb-46d3-b3bb-5c10bdfa4eda",
+  "description": "One empty modular-looking square board frame shell for Dungeon Matcher Magical Forest, 128x128 native pixel art. Front view. Warm sturdy carved hardwood, straight horizontal and vertical rails about 9 pixels thick, four matching roughly 23x23 corner blocks with simple chunky curled wood-knot carvings, not metal or gem corners. Corner centers align on the centerline of both rails. Mostly straight structural wood, NOT a wavy mass of vines. A few small ivy leaves on the OUTSIDE of the top-left and bottom-right corners only. Broad matte connected light/base/shadow planes, restrained long wood grain, top-left lighting, deep dark outline. Quiet old woodland shrine character. Keep all complete corners and leaves within the canvas with 4px transparent margin. The central opening and outer background must BOTH be transparent. NO cells, NO gems, NO characters, NO text, NO health bars, NO lanterns, NO mushrooms, NO scenery. Match provided Rattlebones outline, clean clusters and rendering economy, never its palette/anatomy. Use supplied muted wood/leaf palette; leaves less bright than game gems. Source will be disassembled into native modular corners/rails and cleaned by hand.",
+  "seed": 63433,
+  "image_size": {
+    "width": 128,
+    "height": 128
+  },
+  "output_count": 1,
+  "estimated_generations": 6,
+  "pricing_provisional": true,
+  "poll_tool": "get_image",
+  "download_path": "/mcp/images/281ce172-abdb-46d3-b3bb-5c10bdfa4eda/download",
+  "frames": 1,
+  "download_url": "https://api.pixellab.ai/mcp/images/281ce172-abdb-46d3-b3bb-5c10bdfa4eda/download",
+  "download_urls": [
+    "https://api.pixellab.ai/mcp/images/281ce172-abdb-46d3-b3bb-5c10bdfa4eda/download"
+  ],
+  "asset": {
+    "id": "3111be7d-eacf-508e-b73d-c44f8d428e68",
+    "type": "image",
+    "status": "saved"
+  },
+  "charged_generations": 6,
+  "reference": {
+    "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+    "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "field": "style_image.base64",
+    "role": "outline/detail/shading only"
+  },
+  "guide": {
+    "version": "1.17.2",
+    "sha256": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4"
+  },
+  "palette": [
+    "#172326",
+    "#2b2d27",
+    "#414035",
+    "#69523a",
+    "#8a6845",
+    "#b3915f",
+    "#203c35",
+    "#486a45",
+    "#81905b"
+  ],
+  "style_options": {
+    "color_palette": false,
+    "outline": true,
+    "detail": true,
+    "shading": true
+  }
+}

@@ -1,0 +1,39 @@
+I want you to execute the attached **Astra Forest Zone Rebuild Pack**.
+
+First, extract the ZIP and read:
+- `README_FIRST.md`
+- `01_BRANCH_AND_RULES.md`
+- `02_ART_DIRECTION_SUMMARY.md`
+- `03_REFERENCE_USAGE_GUIDE.md`
+- `04_ASSET_PRODUCTION_ORDER.md`
+- all files under `prompts/`
+
+Use the two included references:
+- `references/01_forest_mockup_reference.png`
+- `references/02_current_dungeon_zone_reference.png`
+
+## Objective
+Build the **Magical Forest zone** so it matches the style system and clean readability of our current dungeon zone, but visually expresses the magical forest mockup.
+
+## Non-negotiable rules
+1. Keep the **bottom HUD, resonance bar, settings, and global shared buttons unchanged across zones**.
+2. This task is only for **forest-zone-specific backgrounds, frames, props, and environmental dressing**.
+3. Use the **current dungeon zone** as the benchmark for asset cleanliness, readability, pixel discipline, and in-game assembly.
+4. Use the **forest mockup** as the theme target, but simplify it enough so it feels native beside our actual sprites and gems.
+5. Do not flatten the final zone into one painted image. Build modular assets and assemble them in Unity.
+6. Use PixelLab only where it helps produce better forest assets; then clean and unify them in LibreSprite.
+7. Do not merge anything. Work on a new branch and stop for review at each checkpoint.
+
+## Branch
+Create and work on:
+`feature/forest-zone-hybrid-rebuild`
+
+## Execution order
+Start with `prompts/01_STAGE_01_FOUNDATION.md`.
+After each stage, show:
+- native-size asset previews
+- an in-engine or scene screenshot
+- what was kept vs newly made
+- any PixelLab generations spent
+
+Then stop for approval before the next stage.

@@ -1,0 +1,380 @@
+{
+  "status": "PASS",
+  "assets": 15,
+  "binary_alpha": true,
+  "native_roundtrip": true,
+  "ground_variant_seams": true,
+  "full_background_coverage": true,
+  "cast_foot_baseline": 210,
+  "protected_files_unchanged": 954,
+  "pixel_lab_calls": 1,
+  "pixel_lab_generations": 9,
+  "raw_far_colors": 24,
+  "clean_far_colors": 9,
+  "unity_test": {
+    "id": "2",
+    "testcasecount": "1",
+    "result": "Passed",
+    "total": "1",
+    "passed": "1",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-10-22 06:22:10Z",
+    "end-time": "2026-10-22 06:22:11Z",
+    "duration": "0.501157"
+  },
+  "captures": [
+    {
+      "path": "ArtSource/ForestHybrid/Stage01/Previews/Unity-structure-360x240.png",
+      "size": [
+        360,
+        240
+      ],
+      "integer_pixel_match": true,
+      "sha256": "9820470f66e80cbe2bcad4ea23a824ea7e6ba13a01b4cb3a5d1bc2e01415a9bf"
+    },
+    {
+      "path": "ArtSource/ForestHybrid/Stage01/Previews/Unity-structure-720x480.png",
+      "size": [
+        720,
+        480
+      ],
+      "integer_pixel_match": true,
+      "sha256": "eeea3498443438c8be72d53c2ef3d1e32967bbf6f1a571ea0daeaa860c3e368c"
+    },
+    {
+      "path": "ArtSource/ForestHybrid/Stage01/Previews/Unity-structure-1080x720.png",
+      "size": [
+        1080,
+        720
+      ],
+      "integer_pixel_match": true,
+      "sha256": "895ba9793a58371274b46bf7d9ebf0933c574af0c44294c5726c45aa37e7ccc9"
+    },
+    {
+      "path": "ArtSource/ForestHybrid/Stage01/Previews/Unity-cast-360x240.png",
+      "size": [
+        360,
+        240
+      ],
+      "integer_pixel_match": true,
+      "sha256": "33a1b81f6d0410a59d035cb9921cab162062ae3d13cc92772d63bedf12b6258c"
+    },
+    {
+      "path": "ArtSource/ForestHybrid/Stage01/Previews/Unity-cast-720x480.png",
+      "size": [
+        720,
+        480
+      ],
+      "integer_pixel_match": true,
+      "sha256": "7c5918dd1bf9be234e67c34344b919dfb5f081319df8709f91bf7fe69604ef96"
+    },
+    {
+      "path": "ArtSource/ForestHybrid/Stage01/Previews/Unity-cast-1080x720.png",
+      "size": [
+        1080,
+        720
+      ],
+      "integer_pixel_match": true,
+      "sha256": "4610e9a65203792d135a6314c6a20b3e1e23b7e201424ac45ac9476df8b05c83"
+    }
+  ],
+  "manifest": [
+    {
+      "name": "Far_CanopyRepeat",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_CanopyRepeat.png",
+      "width": 48,
+      "height": 24,
+      "opaque_colors": 2,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        48,
+        24
+      ],
+      "sha256": "48796165e69bc5f66741b4aaa1a985c0936b0230310375f30f79ff6a9f47b4c6",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Far_CanopyRepeat.aseprite",
+      "role": "Quiet opaque extension behind top controls; repeat connections intentional."
+    },
+    {
+      "name": "Canopy_FringeRepeat",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Canopy_FringeRepeat.png",
+      "width": 60,
+      "height": 40,
+      "opaque_colors": 2,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        60,
+        37
+      ],
+      "sha256": "de0c9a6868091fe46948de83cf5455e963ef4fb6ac599f7c06489a9d90a4300c",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Canopy_FringeRepeat.aseprite",
+      "role": "Stepped canopy overlap hides the straight boundary of the distant scenery layer."
+    },
+    {
+      "name": "Far_SideExtension",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_SideExtension.png",
+      "width": 52,
+      "height": 160,
+      "opaque_colors": 3,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        52,
+        160
+      ],
+      "sha256": "97118b2f9320cc875fe55c0074112c8a439ee5f627700668939c83794e0d6586",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Far_SideExtension.aseprite",
+      "role": "Separate quiet side-depth sprite; covered joins under foreground trunks."
+    },
+    {
+      "name": "Understory_Repeat",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Understory_Repeat.png",
+      "width": 48,
+      "height": 16,
+      "opaque_colors": 3,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        48,
+        16
+      ],
+      "sha256": "6d75ed25b3390299a5fbd1ec841f36585cb8bfb7eb5a7f0749fc80167759f9a2",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Understory_Repeat.aseprite",
+      "role": "Low contrast distant bank; horizontal repeat."
+    },
+    {
+      "name": "Ground_TopA",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_TopA.png",
+      "width": 60,
+      "height": 16,
+      "opaque_colors": 6,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        60,
+        16
+      ],
+      "sha256": "becd9ca261dd82053936d8702302eed9b8e131f34e878d34828ab508b00fe283",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Ground_TopA.aseprite",
+      "role": "Flat 60x16 repeat; continuous horizontal standing lane at local y=10."
+    },
+    {
+      "name": "Ground_FaceA",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_FaceA.png",
+      "width": 60,
+      "height": 24,
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        60,
+        24
+      ],
+      "sha256": "02ba9750965cf617ee6a56b665d92dcacc79652728f396254d997d72b450682a",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Ground_FaceA.aseprite",
+      "role": "Separate soil/root fascia; top and side joins fixed."
+    },
+    {
+      "name": "Ground_TopB",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_TopB.png",
+      "width": 60,
+      "height": 16,
+      "opaque_colors": 6,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        60,
+        16
+      ],
+      "sha256": "eff1a7918c7fb36846761c1bc17caa4f9d33c5c9a222cfe014b349abc5691bf0",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Ground_TopB.aseprite",
+      "role": "Flat 60x16 repeat; continuous horizontal standing lane at local y=10."
+    },
+    {
+      "name": "Ground_FaceB",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Ground_FaceB.png",
+      "width": 60,
+      "height": 24,
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        60,
+        24
+      ],
+      "sha256": "d67f319d40c4e19fdb4112b94a94c8cd4b6c3acb6b9d28034e92f69d54c1ec77",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Ground_FaceB.aseprite",
+      "role": "Separate soil/root fascia; top and side joins fixed."
+    },
+    {
+      "name": "Tree_Left",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Tree_Left.png",
+      "width": 72,
+      "height": 216,
+      "opaque_colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        4,
+        5,
+        69,
+        212
+      ],
+      "sha256": "27b525543da3a4307b7cadcf57c076e7502dabe9a456cc465d7221b7b0f56426",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Tree_Left.aseprite",
+      "role": "Native left foreground trunk; full branch and root silhouette within padded canvas."
+    },
+    {
+      "name": "Tree_Right",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Tree_Right.png",
+      "width": 64,
+      "height": 216,
+      "opaque_colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        5,
+        62,
+        212
+      ],
+      "sha256": "b780fca6b4e431f45d986b6655a6a7b2117de5522b41d1f881261722c1969940",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Tree_Right.aseprite",
+      "role": "Independently shaped right foreground trunk; top-left lighting preserved."
+    },
+    {
+      "name": "Canopy_Left",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Canopy_Left.png",
+      "width": 96,
+      "height": 44,
+      "opaque_colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        95,
+        43
+      ],
+      "sha256": "73088d100f22ef6384e1327fa849efc775710cf5adbe8456033020440e39b9b4",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Canopy_Left.aseprite",
+      "role": "Separate foliage roof mass; all leaves in frame, coarse connected clusters."
+    },
+    {
+      "name": "Canopy_Right",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Canopy_Right.png",
+      "width": 96,
+      "height": 44,
+      "opaque_colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        95,
+        43
+      ],
+      "sha256": "ada06dd4d1ff03c9377acde6016a5cdbf536ad54c173e704183786182f559869",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Canopy_Right.aseprite",
+      "role": "Separate foliage roof mass; all leaves in frame, coarse connected clusters."
+    },
+    {
+      "name": "Support_Left",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Support_Left.png",
+      "width": 28,
+      "height": 24,
+      "opaque_colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        2,
+        27,
+        22
+      ],
+      "sha256": "4d596fb1f10b21c137d945123b5de488636c9029ab67aa3ec19b09c1f9e577bc",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Support_Left.aseprite",
+      "role": "Simple wood hook/anchor context; lantern asset deferred to Stage 4."
+    },
+    {
+      "name": "Support_Right",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Support_Right.png",
+      "width": 28,
+      "height": 24,
+      "opaque_colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        2,
+        25,
+        22
+      ],
+      "sha256": "cbb5a995286f6bf05078cdc66405cec909bdf835a122f77d2636311ed1647483",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Support_Right.aseprite",
+      "role": "Simple wood hook/anchor context; lantern asset deferred to Stage 4."
+    },
+    {
+      "name": "Far_Forest",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage01/Far_Forest.png",
+      "width": 256,
+      "height": 160,
+      "opaque_colors": 9,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        160
+      ],
+      "sha256": "43777426fb22b04ccbf6b1d2e68ad0308cf608294847e413ffe938a1b1c1b162",
+      "editable": "ArtSource/ForestHybrid/Stage01/Native/Far_Forest.aseprite",
+      "role": "PixelLab far-depth source; deliberate value/palette consolidation, geometry preserved at 256x160."
+    }
+  ]
+}

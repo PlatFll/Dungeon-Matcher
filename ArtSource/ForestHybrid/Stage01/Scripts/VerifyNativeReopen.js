@@ -1,0 +1,2 @@
+var names=["Far_CanopyRepeat", "Canopy_FringeRepeat", "Far_SideExtension", "Understory_Repeat", "Ground_TopA", "Ground_FaceA", "Ground_TopB", "Ground_FaceB", "Tree_Left", "Tree_Right", "Canopy_Left", "Canopy_Right", "Support_Left", "Support_Right", "Far_Forest"];
+names.forEach(function(n){var doc=app.open('ArtSource/ForestHybrid/Stage01/Native/'+n+'.aseprite');doc.sprite.saveAs('.utmp/forest-stage01/reopened/'+n+'.png',true);});
