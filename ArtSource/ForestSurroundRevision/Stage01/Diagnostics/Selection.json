@@ -1,0 +1,63 @@
+{
+  "modules": [
+    {
+      "name": "Root_A",
+      "raw": "Root_0.png",
+      "size": [
+        60,
+        155
+      ],
+      "colors": 10,
+      "repair": "Native tapered top and bottom tip extensions; source body retained exactly apart from material recolor",
+      "raw_offset": [
+        -1,
+        5
+      ]
+    },
+    {
+      "name": "Root_B",
+      "raw": "Root_2.png",
+      "size": [
+        59,
+        157
+      ],
+      "colors": 9,
+      "repair": "Native tapered top and bottom tip extensions; source body retained exactly apart from material recolor",
+      "raw_offset": [
+        -2,
+        6
+      ]
+    },
+    {
+      "name": "Root_C",
+      "raw": "Root_3.png",
+      "size": [
+        59,
+        156
+      ],
+      "colors": 10,
+      "repair": "Native tapered top and bottom tip extensions; source body retained exactly apart from material recolor",
+      "raw_offset": [
+        -3,
+        7
+      ]
+    }
+  ],
+  "palette": {
+    "0c1014": "020101 080705 050101 150e0c 030303 020301 010000 0a0605 140d0b 030101 090605 160f0c 050201 070605 140d0a",
+    "241e1a": "281c18 221716 301f17 2e221f 261a17 2a1e1a 241814 231815 2a1f1c",
+    "3b2c20": "432f22 34251d 38271e 403025 452e1d 3a271c 432c1b 34241c 423226",
+    "563c26": "63472d 593c25 533c2b 5c4028 65482e 513825 553921 4f3929 5e422b 68482b 6a4a2d 5e432c 543a27",
+    "765131": "6e4d2e 8a653c 7a5835 8e673c 6f4e2f 835f38 765331 825e39 8d663c 775635 8c663c",
+    "997344": "966e40 a47a4a b18651 966e42 a57c4c b28753 987042 af8551 a37846 b08552 997042",
+    "b08a57": "bb9058 c29459 c09358 c4965c bc9057 c2955b",
+    "233f2b": "37472a 3b512a",
+    "4c7037": "4e6328 595333",
+    "718b45": "637636 7e7a46 677638 627535 7e7c48 657637 768427"
+  },
+  "rejected": {
+    "Root_1": "Busier multiple junctions and clipped horizontal offshoot; prefer broad simpler curves."
+  },
+  "job": "ea44142f-325e-425d-a0cb-b998eff12784",
+  "cost_generations": 10
+}

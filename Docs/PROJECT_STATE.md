@@ -20,6 +20,23 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+
+## Forest surround revision — Stage 1 board-side roots (2026-10-24, review only)
+
+The user locked the current upper forest/HUD and requested root-dominant board
+surrounds, with lower-side and magical accent work deferred to separate approvals.
+`feature/forest-zone-side-surround-revision` branches from PR #208 at `783e86bf`.
+A separate art-only scene replaces eight board-side bough instances with four
+placements of three native PixelLab/LibreSprite root assets. Broad exposed bark,
+open curves and sparse new leaves replace the bush-wall layer; approved frame ivy
+and existing lower boughs/rocks remain. One PixelLab call cost 10 generations.
+Unity compilation and review tests passed at 720×1360 and 1440×2720. Top HUD/battle,
+board/gems/frame, entire bottom region, shared geometry and 296 existing image
+bindings/rectangles are exact. All 1,680 protected source files are unchanged.
+See [Stage 1 report](../ArtSource/ForestSurroundRevision/Stage01/README.md).
+No production integration, gameplay change, device test or merge. Stop for Stage 1
+visual approval; Stage 2 and animation have not started.
+
 ## Enchanted Forest staged pack — Stage 5 revision 02 (2026-10-24, review only)
 
 Stages 1–4 are user-approved. The first Stage 5 dressing was rejected: thin sparse
