@@ -20,20 +20,22 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Enchanted Forest staged pack — Stage 4 (2026-10-24, review only)
+## Enchanted Forest staged pack — Stage 5 (2026-10-24, review only)
 
-The user approved Stages 1–3, including the fuller-foliage portrait and magical
-accents. Stage 4 now adds a modular board-frame review: native timber rails and
-corners, cleaned PixelLab ivy corners and connected approved side foliage.
-One four-concept PixelLab batch cost 10 generations; LibreSprite supplies thirteen
-editable native pieces. The 512×512 board/64×64 cells, 580×580 frame target and
-98×220 portrait are unchanged. The existing shared frame fitter is reused without
-runtime edits. Unity compilation, frame-resize/no-gap checks and 720×1360 /
-1440×2720 captures passed; top area, cells/gems and lower HUD are pixel-identical.
-See [Stage 4 review](../ArtSource/EnchantedForestStaged/Stage04/README.md).
-The scene is art-only and excluded from builds. Production, other zones and
-gameplay remain untouched. No live combat or device test is claimed. Draft
-PR #208 remains stacked on #207. Stop before Stage 5; no merge authorized.
+The user approved Stages 1–4, including the woodland background, fuller-foliage
+portrait, magical accents and modular board frame. Stage 5 adds side dressing
+as six reusable root/stone, leaf-sprig and mushroom sprites in eight placements.
+Two PixelLab source families cost 20 generations; LibreSprite provides cleaned
+native editable sources and exact PNG exports. Dressing stays behind the approved
+frame and outside gameplay/UI regions. The 512×512 board/64×64 cells, 580×580 frame
+target and 98×220 portrait are unchanged, with no shared/runtime code changes.
+Unity compilation and Stage 5 render tests passed at 720×1360 and 1440×2720.
+The approved frame pixels, top area, tiles/gems and lower HUD are pixel-identical;
+all 280 prior image bindings/rectangles and 596 protected source files are exact.
+See [Stage 5 review](../ArtSource/EnchantedForestStaged/Stage05/README.md).
+The scene is art-only and excluded from builds. Production and other zones remain
+unchanged. No live combat/device test is claimed. Draft PR #208 remains stacked
+on #207. Stop before Stage 6; no merge authorized.
 
 ## Shared zone geometry and Forest frame review (2026-10-24, unmerged PR #207)
 
