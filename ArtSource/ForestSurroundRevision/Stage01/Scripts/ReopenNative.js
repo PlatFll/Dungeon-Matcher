@@ -1,0 +1,1 @@
+try{["Root_A", "Root_B", "Root_C"].forEach(function(n){app.open('ArtSource/ForestSurroundRevision/Stage01/Native/'+n+'.aseprite').sprite.saveAs('.utmp/forest-surround-stage01/reopened/'+n+'.png',true);});console.log('FOREST_ROOT_NATIVE_COMPLETE');}catch(e){console.log('FAILED '+e);}app.command.Exit();

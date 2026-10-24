@@ -1,0 +1,29 @@
+Use the files in this pack and execute the forest revision in a staged way.
+
+Main goal: preserve the current forest zone's top HUD / upper battle area, and revise only the rest so the board surroundings and lower HUD surroundings match the target mockup more closely.
+
+Before changing anything:
+1. Create a new branch for this revision.
+2. Read every file in this pack.
+3. Treat `references/01_current_astra_forest_generation.png` as the base to preserve.
+4. Treat `references/02_target_mockup_forest.png` as the target for the board-side and lower-side environmental dressing.
+
+Non-negotiable rule:
+- Do NOT redesign or replace the top HUD / upper battle section.
+- Keep the top section visually intact.
+- Only improve the board surroundings and the lower HUD side surroundings.
+
+Execution method:
+- Work in stages.
+- Generate or revise assets in small focused groups.
+- Validate each stage before moving on.
+- Present review evidence after each stop point.
+- Do not merge anything.
+
+Desired outcome:
+A revised magical forest scene where:
+- the top HUD remains as good as the current Astra version,
+- the board surround and lower side area feel closer to the mockup,
+- the side art uses thicker roots and fewer bushy leaf masses,
+- the lower zone feels more alive with mushrooms, flowers, stones, vines, and subtle wisps,
+- the whole result stays crisp and aligned with the game's established pixel-art style.

@@ -20,6 +20,40 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+
+## Forest surround revision — Stage 2 lower sides (2026-10-24, review only)
+
+The user accepted continuing from Stage 1 and authorized the next pack stage.
+Two separate PixelLab/LibreSprite lower-side clusters replace only the lowest
+bough/stone instance on each side of a new art-only scene. Exposed woody roots,
+mossy stone feet, red/pale mushrooms, small flowers and short vines fill the sides.
+Board-foot connectors remain above the new roots for a continuous natural join.
+Stage 2 cost 20 subscription generations; no new wisps or animation were created.
+Unity compilation and final captures passed at 720×1360 / 1440×2720. Entire top,
+battle and approved Stage 1 board-side art is pixel-identical through row 1080;
+bottom HUD controls/text, shared sizes and all 292 prior image bindings/rectangles
+remain exact. All 1,744 protected source files remain unchanged.
+See [Stage 2 report](../ArtSource/ForestSurroundRevision/Stage02/README.md).
+Draft PR #209 continues on the dedicated revision branch. No production runtime
+integration, gameplay edit, device test or merge. Stop for Stage 2 approval.
+
+
+## Forest surround revision — Stage 1 board-side roots (2026-10-24, review only)
+
+The user locked the current upper forest/HUD and requested root-dominant board
+surrounds, with lower-side and magical accent work deferred to separate approvals.
+`feature/forest-zone-side-surround-revision` branches from PR #208 at `783e86bf`.
+A separate art-only scene replaces eight board-side bough instances with four
+placements of three native PixelLab/LibreSprite root assets. Broad exposed bark,
+open curves and sparse new leaves replace the bush-wall layer; approved frame ivy
+and existing lower boughs/rocks remain. One PixelLab call cost 10 generations.
+Unity compilation and review tests passed at 720×1360 and 1440×2720. Top HUD/battle,
+board/gems/frame, entire bottom region, shared geometry and 296 existing image
+bindings/rectangles are exact. All 1,680 protected source files are unchanged.
+See [Stage 1 report](../ArtSource/ForestSurroundRevision/Stage01/README.md).
+No production integration, gameplay change, device test or merge. Stop for Stage 1
+visual approval; Stage 2 and animation have not started.
+
 ## Enchanted Forest staged pack — Stage 5 revision 02 (2026-10-24, review only)
 
 Stages 1–4 are user-approved. The first Stage 5 dressing was rejected: thin sparse

@@ -1,0 +1,37 @@
+{
+  "start_commit": "783e86bf0a54a867a881a02efb503af10a668e0e",
+  "branch": "feature/forest-zone-side-surround-revision",
+  "scope": "Stage 1 board-side roots only. Top, board/UI, bottom HUD surroundings locked.",
+  "generation_balance_before": 780.2,
+  "golden_hashes": {
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca",
+    "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+  },
+  "protected_files": 1680,
+  "pack_base_pixel_matches": true,
+  "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+  "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+  "status": "Stage 1 review candidate, not approved",
+  "generation_balance_after": 770.2,
+  "generations_spent": 10,
+  "credits_dollars_spent": 0,
+  "job_id": "ea44142f-325e-425d-a0cb-b998eff12784",
+  "style_input": "upload:e26a7431-416a-4522-9f75-eef110a00945",
+  "reference_inputs": [
+    "upload:b23252a0-0a36-436c-a72d-41e324097af1",
+    "upload:e576bb2c-68b7-4f0e-ad07-92abcbf103e6"
+  ],
+  "references": {
+    "ArtSource\\ForestSurroundRevision\\Stage01\\References\\01_current_astra_forest_generation.png": "5d84983df340780c2d922d9a7e349609b0f2ea2ba6bc3cac0696e292a91f84a0",
+    "ArtSource\\ForestSurroundRevision\\Stage01\\References\\02_target_mockup_forest.png": "360eee737d1ded2e5e98b9490a2c034c811fcf5da13933bc005e977fc98de9da",
+    "ArtSource\\ForestSurroundRevision\\Stage01\\References\\Target-Left-Roots.png": "8b3c1923f2d21ba40010a8dc91f95355e169fde65d6c8c2862c2fe3746f18d37",
+    "ArtSource\\ForestSurroundRevision\\Stage01\\References\\Target-Right-Roots.png": "b643fe7e97d7d3db9d6097b855e737fa07eaef0ff116cb5cb3e47f0504b83371"
+  },
+  "outputs": {
+    "Assets\\_Game\\Art\\ForestSurroundRevision\\Stage01\\Root_A.png": "cd493eb2a31aa146a8184a4b9e7a7570f36b95058021903e3d9319ae36cc4999",
+    "Assets\\_Game\\Art\\ForestSurroundRevision\\Stage01\\Root_B.png": "5212507dd263428522adb17ad158f3b01ed41bcff78667a94e2ace459dd5b9fe",
+    "Assets\\_Game\\Art\\ForestSurroundRevision\\Stage01\\Root_C.png": "df5938b540f41f81f46e8375d31937fdcda56e4f03029da17b9b24e718024c7a"
+  }
+}

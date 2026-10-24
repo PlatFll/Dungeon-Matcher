@@ -1,0 +1,34 @@
+{
+  "request": {
+    "description": "An individual modular enchanted ancient TREE ROOT / GNARLED WOODY BOUGH sprite, a tall sinuous S-shaped root wrapping around the outside of a vertical match-3 board. ROOT AND EXPOSED BARK ARE THE MAIN VOLUME: about 80 percent visible warm weathered brown wood, two thick twisting intertwined woody limbs with large open negative-space hollows between them, a broad curling elbow projecting to one side. Main root thickness 10-15 native pixels, chunky broad trunk planes and a few long connected bark ridges, readable wood grain rather than hairline scratches. Dark undersides, restrained warm top-left light, 4 useful wood tones. Small moss patches on upper surfaces and only TWO or THREE small green leaf tufts at joints (under 15 percent foliage), at most one tiny flower cluster. NO hedge, NO dense foliage wall, NO leaf carpet, NO canopy. No mushrooms, stones, wisps, frame, board, UI, text, full scene or backdrop. One complete separate natural curved root structure on transparent background, all tips and contours fully inside canvas with minimum 3 pixel clear padding on every edge. Front-facing flat 2D sidescroller environmental sprite, no perspective. Design long main curves and broad woody masses like the exposed roots in the supplied reference crops, but render with clean native crisp connected pixel clusters and restrained detail in Dungeon Matcher's style. Complete rounded/tapered natural ends, no cut-off rectangular ends. Deliberately asymmetric organic silhouette, suitable for layered modular placement.",
+    "width": 64,
+    "height": 144,
+    "max_colors": 24,
+    "no_background": true,
+    "style_image_url": "upload:e26a7431-416a-4522-9f75-eef110a00945",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:b23252a0-0a36-436c-a72d-41e324097af1",
+        "usage": "Composition authority only for thick exposed curving wood and root hollows. REDUCE foliage greatly; generate ONLY one root module, not this whole strip."
+      },
+      {
+        "url": "upload:e576bb2c-68b7-4f0e-ad07-92abcbf103e6",
+        "usage": "Exposed bark texture, large twisting root silhouette and warm muted brown material. No board or UI."
+      }
+    ]
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: ea44142f-325e-425d-a0cb-b998eff12784\njob_id: ea44142f-325e-425d-a0cb-b998eff12784\nmodel: pro\ndescription: An individual modular enchanted ancient TREE ROOT / GNARLED WOODY BOUGH sprite, a tall sinuous S-shaped root wrapping around the outside of a vertical match-3 board. ROOT AND EXPOSED BARK ARE THE MAIN VOLUME: about 80 percent visible warm weathered brown wood, two thick twisting intertwined woody limbs with large open negative-space hollows between them, a broad curling elbow projecting to one side. Main root thickness 10-15 native pixels, chunky broad trunk planes and a few long connected bark ridges, readable wood grain rather than hairline scratches. Dark undersides, restrained warm top-left light, 4 useful wood tones. Small moss patches on upper surfaces and only TWO or THREE small green leaf tufts at joints (under 15 percent foliage), at most one tiny flower cluster. NO hedge, NO dense foliage wall, NO leaf carpet, NO canopy. No mushrooms, stones, wisps, frame, board, UI, text, full scene or backdrop. One complete separate natural curved root structure on transparent background, all tips and contours fully inside canvas with minimum 3 pixel clear padding on every edge. Front-facing flat 2D sidescroller environmental sprite, no perspective. Design long main curves and broad woody masses like the exposed roots in the supplied reference crops, but render with clean native crisp connected pixel clusters and restrained detail in Dungeon Matcher's style. Complete rounded/tapered natural ends, no cut-off rectangular ends. Deliberately asymmetric organic silhouette, suitable for layered modular placement.\nsize: 64x144px\ntransparent: True\ncandidates: 4\nreferences: 2\nstyle_image: yes (outline, detail, shading)\nmax colours: 24 per image\nasset_id: 363f6397-437f-5ccd-8521-ddbd15bf2153\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"ea44142f-325e-425d-a0cb-b998eff12784\")"
+      }
+    ],
+    "isError": false
+  }
+}
