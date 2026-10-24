@@ -1,0 +1,185 @@
+{
+  "unity_compile": "Passed",
+  "compile_log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-069441fa-032b-424a-88b1-75fc3bc07548.log",
+  "test_result": "Passed",
+  "test": "ForestUnifiedCornerTests.UnifiedCornerReview",
+  "resolutions": [
+    [
+      720,
+      1360
+    ],
+    [
+      1440,
+      2720
+    ]
+  ],
+  "pixel_doubling_exact": true,
+  "top_hud_battle_and_upper_board_sides_pixel_identical": true,
+  "board_grid_and_opaque_frame_pixel_identical": true,
+  "bottom_hud_controls_and_text_pixel_identical": true,
+  "unchanged_image_bindings": 290,
+  "protected_source_files": 1799,
+  "changes_outside_authorized_dressing": 0,
+  "board": [
+    512,
+    512
+  ],
+  "cells": [
+    64,
+    64
+  ],
+  "portrait_native": [
+    98,
+    220
+  ],
+  "frame": [
+    580,
+    580
+  ],
+  "native_modules": [
+    {
+      "name": "Stone_Left",
+      "dimensions": [
+        85,
+        101
+      ],
+      "bounds": [
+        2,
+        2,
+        83,
+        99
+      ],
+      "opaque_colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        4682
+      ],
+      "libresprite_reopen_exact": true,
+      "sha256": "06d968b4c64029d9779de9b513c4bd8d17fd2b0bb5a5ac65d2be9a2e298b8ea9"
+    },
+    {
+      "name": "Stone_Right",
+      "dimensions": [
+        86,
+        105
+      ],
+      "bounds": [
+        2,
+        2,
+        84,
+        103
+      ],
+      "opaque_colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        5213
+      ],
+      "libresprite_reopen_exact": true,
+      "sha256": "deb4916e3f601a76a77829d636545398a3b0cf088e1d812682883ef3aa414e28"
+    },
+    {
+      "name": "Mushrooms_Red",
+      "dimensions": [
+        24,
+        24
+      ],
+      "bounds": [
+        2,
+        2,
+        22,
+        22
+      ],
+      "opaque_colors": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        301
+      ],
+      "libresprite_reopen_exact": true,
+      "sha256": "de6f55f2a680500e86dc37ca444f13af7960543ff8cb3036b818fff70cb7d23c"
+    },
+    {
+      "name": "Mushrooms_Pale",
+      "dimensions": [
+        24,
+        26
+      ],
+      "bounds": [
+        2,
+        2,
+        22,
+        24
+      ],
+      "opaque_colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        316
+      ],
+      "libresprite_reopen_exact": true,
+      "sha256": "55493ec4b3facfdaa346947d5b9dbb81e1d3f9ac17aa65b5b6511c3fb05d0033"
+    },
+    {
+      "name": "Moss_Sprig",
+      "dimensions": [
+        22,
+        22
+      ],
+      "bounds": [
+        2,
+        2,
+        20,
+        20
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        198
+      ],
+      "libresprite_reopen_exact": true,
+      "sha256": "202e54016c685b540a6e141abb64e32b95a4de2344b0122ef112becc2955505e"
+    }
+  ],
+  "one_main_stone_instance_per_side": true,
+  "old_upper_and_lower_stone_layers_disabled": true,
+  "production_integrated": false,
+  "real_device_test": false,
+  "balance_before": 750.2,
+  "balance_after": 697.2,
+  "generations_spent": 53,
+  "credits_dollars_spent": 0,
+  "breakdown": {
+    "rejected_tall_formations": 20,
+    "revised_broad_formations": 20,
+    "oversized_accent_studies": 10,
+    "native_small_accents": 3
+  },
+  "artistic_verdict": "Closer to target: a grounded compact stone mass per side, continuous wrapping roots, small attached mushrooms and moss; old separated upper and lower stones absent. User review pending.",
+  "painted_hud_pixels_unchanged": true,
+  "transparent_ui_margins": "New environment may show through the unpainted outside margins of the unchanged controls.",
+  "scene_object_audit": {
+    "existing": 1857,
+    "changed_existing": [
+      "2145403166",
+      "1194465419",
+      "789295361",
+      "2145403163",
+      "551586951"
+    ],
+    "added": 34,
+    "deleted": []
+  }
+}

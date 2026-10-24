@@ -21,22 +21,27 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 
-## Forest surround revision — Stage 2 lower sides (2026-10-24, review only)
+## Forest surround revision — unified lower corners (2026-10-24, review only)
 
-The user accepted continuing from Stage 1 and authorized the next pack stage.
-Two separate PixelLab/LibreSprite lower-side clusters replace only the lowest
-bough/stone instance on each side of a new art-only scene. Exposed woody roots,
-mossy stone feet, red/pale mushrooms, small flowers and short vines fill the sides.
-Board-foot connectors remain above the new roots for a continuous natural join.
-Stage 2 cost 20 subscription generations; no new wisps or animation were created.
-Unity compilation and final captures passed at 720×1360 / 1440×2720. Entire top,
-battle and approved Stage 1 board-side art is pixel-identical through row 1080;
-bottom HUD controls/text, shared sizes and all 292 prior image bindings/rectangles
-remain exact. All 1,744 protected source files remain unchanged.
-See [Stage 2 report](../ArtSource/ForestSurroundRevision/Stage02/README.md).
-Draft PR #209 continues on the dedicated revision branch. No production runtime
-integration, gameplay edit, device test or merge. Stop for Stage 2 approval.
+The user rejected Stage 2's separated upper and lower stone groups and requested
+one grounded formation per side. The new art-only review disables both old stone
+groups, retains the woody connectors and adds two cohesive PixelLab/LibreSprite
+stone-root formations with separate small red/pale mushrooms and moss. Earlier
+sources and scenes remain intact; the rejected composition is history, not approval.
 
+This revision cost 53 subscription generations (including rejected studies),
+zero USD credits. Native sources reopen exactly; all five modules have binary
+alpha and two-pixel clearance. Each main formation has one connected silhouette.
+Unity compilation and captures pass at 720×1360 and 1440×2720 with exact pixel
+doubling. Top HUD/battle, board cells, opaque frame art, all painted bottom HUD
+pixels, control interiors and text remain identical. Transparent frame margins
+can reveal new scenery. All 290 prior image bindings/rectangles and 1,799 existing
+source files are unchanged. Shared board/portrait dimensions are preserved.
+
+See [unified-corner report](../ArtSource/ForestSurroundRevision/UnifiedCorners/README.md)
+and its actual Unity before/after gallery. Draft PR #209 stays on the dedicated
+revision branch. No production runtime integration, gameplay edit, device test,
+next-stage work or merge. Stop for the user's review of this focused correction.
 
 ## Forest surround revision — Stage 1 board-side roots (2026-10-24, review only)
 
@@ -51,8 +56,8 @@ Unity compilation and review tests passed at 720×1360 and 1440×2720. Top HUD/b
 board/gems/frame, entire bottom region, shared geometry and 296 existing image
 bindings/rectangles are exact. All 1,680 protected source files are unchanged.
 See [Stage 1 report](../ArtSource/ForestSurroundRevision/Stage01/README.md).
-No production integration, gameplay change, device test or merge. Stop for Stage 1
-visual approval; Stage 2 and animation have not started.
+Stage 1 was carried forward into Stage 2; the focused lower-corner revision above
+owns the current review gate. No production integration or animation is approved.
 
 ## Enchanted Forest staged pack — Stage 5 revision 02 (2026-10-24, review only)
 

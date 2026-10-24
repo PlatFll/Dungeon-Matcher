@@ -1,0 +1,37 @@
+{
+  "start_commit": "327c272c029fc0b805716e7f0743e339f2914970",
+  "branch": "feature/forest-zone-side-surround-revision",
+  "scope": "Only unified left/right lower-board and bottom-HUD corner formations; remove both old upper and lower stone layers",
+  "balance_before": 750.2,
+  "golden_hashes": {
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca",
+    "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+  },
+  "guide_sha256": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+  "register_sha256": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+  "protected_files": 1799,
+  "status": "Unified corner revision candidate; awaiting user visual approval",
+  "balance_after": 697.2,
+  "generations_spent": 53,
+  "credits_dollars_spent": 0,
+  "breakdown": {
+    "rejected_tall_formations": 20,
+    "revised_broad_formations": 20,
+    "oversized_accent_studies": 10,
+    "native_small_accents": 3
+  },
+  "outputs": {
+    "Assets\\_Game\\Art\\ForestSurroundRevision\\UnifiedCorners\\Moss_Sprig.png": "202e54016c685b540a6e141abb64e32b95a4de2344b0122ef112becc2955505e",
+    "Assets\\_Game\\Art\\ForestSurroundRevision\\UnifiedCorners\\Mushrooms_Pale.png": "55493ec4b3facfdaa346947d5b9dbb81e1d3f9ac17aa65b5b6511c3fb05d0033",
+    "Assets\\_Game\\Art\\ForestSurroundRevision\\UnifiedCorners\\Mushrooms_Red.png": "de6f55f2a680500e86dc37ca444f13af7960543ff8cb3036b818fff70cb7d23c",
+    "Assets\\_Game\\Art\\ForestSurroundRevision\\UnifiedCorners\\Stone_Left.png": "06d968b4c64029d9779de9b513c4bd8d17fd2b0bb5a5ac65d2be9a2e298b8ea9",
+    "Assets\\_Game\\Art\\ForestSurroundRevision\\UnifiedCorners\\Stone_Right.png": "deb4916e3f601a76a77829d636545398a3b0cf088e1d812682883ef3aa414e28"
+  },
+  "references": {
+    "ArtSource\\ForestSurroundRevision\\UnifiedCorners\\References\\Target-Lower-Left.png": "c44b09b404dcd12c28d7ed83c5a48fdffa2465efbd68ba7d89b4cdbb3c9e7039",
+    "ArtSource\\ForestSurroundRevision\\UnifiedCorners\\References\\Target-Lower-Right.png": "3792ad5b6d33fcb63ec3cb4de7fac0361ec4ee1d6463a323040e199507835e9d",
+    "ArtSource\\ForestSurroundRevision\\UnifiedCorners\\References\\Target.png": "360eee737d1ded2e5e98b9490a2c034c811fcf5da13933bc005e977fc98de9da"
+  }
+}

@@ -1,0 +1,1 @@
+try{["Stone_Left", "Stone_Right", "Mushrooms_Red", "Mushrooms_Pale", "Moss_Sprig"].forEach(function(n){app.open('ArtSource/ForestSurroundRevision/UnifiedCorners/Native/'+n+'.aseprite').sprite.saveAs('.utmp/forest-unified-corners/reopened/'+n+'.png',true);});console.log('FOREST_UNIFIED_NATIVE_COMPLETE');}catch(e){console.log('FAILED '+e);}app.command.Exit();
