@@ -1,0 +1,256 @@
+{
+  "job": "e1a19a4d-2393-4fa0-b238-c729f37afaac",
+  "candidate": 2,
+  "source_sha256": "a676a432bccc6b07bfd15ee4fc1db078dc1f78003ab57639f89036d5e0f39f6a",
+  "cost": 10,
+  "palette_map": {
+    "050e10": "0c1014",
+    "050b0a": "0c1014",
+    "0a140f": "0c1014",
+    "1e1912": "0c1014",
+    "2f2119": "3b2c20",
+    "38281c": "3b2c20",
+    "493323": "563c26",
+    "583e28": "563c26",
+    "634d33": "765131",
+    "77593c": "765131",
+    "7a704e": "9a6d41",
+    "182a1c": "233f2b",
+    "2b402a": "2b402a",
+    "354e2e": "3c5f33",
+    "455c31": "4c7037",
+    "526933": "52733a",
+    "617438": "65863e",
+    "74833f": "7a9845"
+  },
+  "native_wood": "11px broad-grain rails and 23px mitred corners match existing frame ports",
+  "foliage_extractions": [
+    {
+      "name": "Board_Ivy_TL",
+      "source_crop": [
+        0,
+        0,
+        52,
+        60
+      ],
+      "padding": 2
+    },
+    {
+      "name": "Board_Ivy_TR",
+      "source_crop": [
+        76,
+        0,
+        128,
+        64
+      ],
+      "padding": 2
+    },
+    {
+      "name": "Board_Ivy_BL",
+      "source_crop": [
+        0,
+        90,
+        56,
+        128
+      ],
+      "padding": 2
+    },
+    {
+      "name": "Board_Ivy_BR",
+      "source_crop": [
+        78,
+        90,
+        128,
+        128
+      ],
+      "padding": 2
+    }
+  ],
+  "shared_opening": 256,
+  "shared_frame_target": 290,
+  "review_scale": 2,
+  "modules": [
+    {
+      "name": "Board_Rail_Top",
+      "size": [
+        32,
+        11
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        11
+      ],
+      "colors": 5
+    },
+    {
+      "name": "Board_Rail_Left",
+      "size": [
+        11,
+        32
+      ],
+      "bounds": [
+        0,
+        0,
+        11,
+        32
+      ],
+      "colors": 5
+    },
+    {
+      "name": "Board_Rail_Right",
+      "size": [
+        11,
+        32
+      ],
+      "bounds": [
+        0,
+        0,
+        11,
+        32
+      ],
+      "colors": 4
+    },
+    {
+      "name": "Board_Rail_Bottom",
+      "size": [
+        32,
+        11
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        11
+      ],
+      "colors": 4
+    },
+    {
+      "name": "Board_Corner_TL",
+      "size": [
+        23,
+        23
+      ],
+      "bounds": [
+        6,
+        6,
+        23,
+        23
+      ],
+      "colors": 5
+    },
+    {
+      "name": "Board_Corner_TR",
+      "size": [
+        23,
+        23
+      ],
+      "bounds": [
+        0,
+        6,
+        17,
+        23
+      ],
+      "colors": 5
+    },
+    {
+      "name": "Board_Corner_BL",
+      "size": [
+        23,
+        23
+      ],
+      "bounds": [
+        6,
+        0,
+        23,
+        17
+      ],
+      "colors": 5
+    },
+    {
+      "name": "Board_Corner_BR",
+      "size": [
+        23,
+        23
+      ],
+      "bounds": [
+        0,
+        0,
+        17,
+        17
+      ],
+      "colors": 4
+    },
+    {
+      "name": "Board_Ivy_TL",
+      "size": [
+        56,
+        64
+      ],
+      "bounds": [
+        5,
+        7,
+        51,
+        62
+      ],
+      "colors": 8
+    },
+    {
+      "name": "Board_Ivy_TR",
+      "size": [
+        56,
+        68
+      ],
+      "bounds": [
+        2,
+        7,
+        50,
+        61
+      ],
+      "colors": 8
+    },
+    {
+      "name": "Board_Ivy_BL",
+      "size": [
+        60,
+        42
+      ],
+      "bounds": [
+        9,
+        2,
+        52,
+        37
+      ],
+      "colors": 8
+    },
+    {
+      "name": "Board_Ivy_BR",
+      "size": [
+        54,
+        42
+      ],
+      "bounds": [
+        10,
+        2,
+        45,
+        38
+      ],
+      "colors": 8
+    },
+    {
+      "name": "Board_Side_Swag",
+      "size": [
+        44,
+        202
+      ],
+      "bounds": [
+        2,
+        2,
+        39,
+        200
+      ],
+      "colors": 13
+    }
+  ]
+}

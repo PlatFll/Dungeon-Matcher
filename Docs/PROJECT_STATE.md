@@ -20,21 +20,20 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Enchanted Forest staged pack — Stage 3 (2026-10-24, review only)
+## Enchanted Forest staged pack — Stage 4 (2026-10-24, review only)
 
-The user approved Stage 1's woodland background and Stage 2's fuller-foliage
-portrait correction. Stage 3 now adds a separate review set: branch lantern,
-carved rune plaque, cyan wisp, warm mote and hanging leaves. Two PixelLab families
-cost 20 generations; LibreSprite saves nine native modules with binary alpha.
-The approved art and 98×220 portrait, its mask and shared geometry remain exact.
-Unity compilation and EnchantedForestStage03Tests.DecorationReview passed at
-720×480 and 1440×960. Hiding the new decor restores the approved screenshot
-pixel for pixel; all 84 previous image bindings and rectangles are preserved.
-The separate scene is excluded from builds. Production Forest, characters,
-gameplay, gems, board sizing and lower HUD remain untouched; no device/combat
-test is claimed. See [Stage 3 review](../ArtSource/EnchantedForestStaged/Stage03/README.md).
-Stop for user approval before Stage 4; no merge authorized. Draft PR #208 remains
-stacked on PR #207 for the existing shared geometry correction.
+The user approved Stages 1–3, including the fuller-foliage portrait and magical
+accents. Stage 4 now adds a modular board-frame review: native timber rails and
+corners, cleaned PixelLab ivy corners and connected approved side foliage.
+One four-concept PixelLab batch cost 10 generations; LibreSprite supplies thirteen
+editable native pieces. The 512×512 board/64×64 cells, 580×580 frame target and
+98×220 portrait are unchanged. The existing shared frame fitter is reused without
+runtime edits. Unity compilation, frame-resize/no-gap checks and 720×1360 /
+1440×2720 captures passed; top area, cells/gems and lower HUD are pixel-identical.
+See [Stage 4 review](../ArtSource/EnchantedForestStaged/Stage04/README.md).
+The scene is art-only and excluded from builds. Production, other zones and
+gameplay remain untouched. No live combat or device test is claimed. Draft
+PR #208 remains stacked on #207. Stop before Stage 5; no merge authorized.
 
 ## Shared zone geometry and Forest frame review (2026-10-24, unmerged PR #207)
 
