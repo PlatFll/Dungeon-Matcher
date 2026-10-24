@@ -1,0 +1,38 @@
+{
+  "start_commit": "0b3da0af525d102e839800bb664ccb9ebe40d575",
+  "branch": "feature/forest-zone-side-surround-revision",
+  "scope": "Stage 2 lower HUD side surrounds only",
+  "stage1_approval": "User: continue after Stage 1 review, 2026-10-24",
+  "balance_before": 770.2,
+  "golden_hashes": {
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca",
+    "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+  },
+  "guide_sha256": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+  "register_sha256": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+  "protected_files": 1744,
+  "status": "Stage 2 review candidate; Stage 1 approved",
+  "balance_after": 750.2,
+  "generations_spent": 20,
+  "credits_dollars_spent": 0,
+  "jobs": [
+    "92d8cf23-fa22-47b6-8358-f93d26e84440",
+    "56dfaf8f-42f3-480e-b22f-4b73130715b5"
+  ],
+  "style_input": "upload:e26a7431-416a-4522-9f75-eef110a00945",
+  "reference_inputs": [
+    "upload:cfaebf9e-affd-4ba6-a08f-92579740be46",
+    "upload:2d16380f-c1e0-4e0f-93fa-00717d09efdf"
+  ],
+  "references": {
+    "ArtSource\\ForestSurroundRevision\\Stage02\\References\\Target-Lower-Left.png": "c44b09b404dcd12c28d7ed83c5a48fdffa2465efbd68ba7d89b4cdbb3c9e7039",
+    "ArtSource\\ForestSurroundRevision\\Stage02\\References\\Target-Lower-Right.png": "3792ad5b6d33fcb63ec3cb4de7fac0361ec4ee1d6463a323040e199507835e9d",
+    "ArtSource\\ForestSurroundRevision\\Stage02\\References\\Target.png": "360eee737d1ded2e5e98b9490a2c034c811fcf5da13933bc005e977fc98de9da"
+  },
+  "outputs": {
+    "Assets\\_Game\\Art\\ForestSurroundRevision\\Stage02\\Lower_Left.png": "2c05487b5d1d4d82824f60acc1c228bebdef0ade4df282e30084b5767a69f1f5",
+    "Assets\\_Game\\Art\\ForestSurroundRevision\\Stage02\\Lower_Right.png": "bdde93f4ad73fbee125602d48561a666f81cffef8fa3f16705ea9546f9a7ca8c"
+  }
+}

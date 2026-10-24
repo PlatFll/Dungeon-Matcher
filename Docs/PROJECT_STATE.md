@@ -21,6 +21,23 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 
+## Forest surround revision — Stage 2 lower sides (2026-10-24, review only)
+
+The user accepted continuing from Stage 1 and authorized the next pack stage.
+Two separate PixelLab/LibreSprite lower-side clusters replace only the lowest
+bough/stone instance on each side of a new art-only scene. Exposed woody roots,
+mossy stone feet, red/pale mushrooms, small flowers and short vines fill the sides.
+Board-foot connectors remain above the new roots for a continuous natural join.
+Stage 2 cost 20 subscription generations; no new wisps or animation were created.
+Unity compilation and final captures passed at 720×1360 / 1440×2720. Entire top,
+battle and approved Stage 1 board-side art is pixel-identical through row 1080;
+bottom HUD controls/text, shared sizes and all 292 prior image bindings/rectangles
+remain exact. All 1,744 protected source files remain unchanged.
+See [Stage 2 report](../ArtSource/ForestSurroundRevision/Stage02/README.md).
+Draft PR #209 continues on the dedicated revision branch. No production runtime
+integration, gameplay edit, device test or merge. Stop for Stage 2 approval.
+
+
 ## Forest surround revision — Stage 1 board-side roots (2026-10-24, review only)
 
 The user locked the current upper forest/HUD and requested root-dominant board
