@@ -1,5 +1,9 @@
 # Enchanted Forest — Stage 2 portrait review
 
+**Current revision:** the user requested fuller original PixelLab foliage. See
+[Foliage correction review](FoliageRevision/README.md). The sparse first candidate
+below remains preserved as history.
+
 Stage 1 was approved by the user. Stage 2 is a new candidate awaiting review.
 **Stop before Stage 3. Do not merge.** Draft PR #208 remains stacked on PR #207.
 

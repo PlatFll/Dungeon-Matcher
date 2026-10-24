@@ -24,12 +24,14 @@ The newer rules in this status and the owning design/architecture documents supe
 
 The user approved Stage 1's woodland background. The feature/forest-zone-staged-rebuild
 branch now adds a separate Stage 2 portrait candidate: modular timber rails/corners,
-four restrained ivy accents and a clipped dark recess, using one PixelLab source
+fuller source-derived ivy swags and a clipped dark recess, reusing the existing PixelLab source
 and LibreSprite native editing. The new art-only Unity preview retains the exact
 98×220 portrait area, 12-pixel inset and shared geometry fixes inherited from PR #207.
 Approved scenery, characters, UI content, board sizing, lower HUD and production
 Forest remain untouched. Unity compilation, resize/mask and pixel comparisons passed.
-See [Stage 2 review](../ArtSource/EnchantedForestStaged/Stage02/README.md).
+The user rejected the first sparse foliage; its correction is in
+[Stage 2 foliage review](../ArtSource/EnchantedForestStaged/Stage02/FoliageRevision/README.md).
+No additional generation credits were spent.
 Stop for user approval before Stage 3; no merge authorized.
 
 ## Shared zone geometry and Forest frame review (2026-10-24, unmerged PR #207)
