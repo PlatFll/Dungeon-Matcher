@@ -20,22 +20,23 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Enchanted Forest staged pack — Stage 5 (2026-10-24, review only)
+## Enchanted Forest staged pack — Stage 5 revision 02 (2026-10-24, review only)
 
-The user approved Stages 1–4, including the woodland background, fuller-foliage
-portrait, magical accents and modular board frame. Stage 5 adds side dressing
-as six reusable root/stone, leaf-sprig and mushroom sprites in eight placements.
-Two PixelLab source families cost 20 generations; LibreSprite provides cleaned
-native editable sources and exact PNG exports. Dressing stays behind the approved
-frame and outside gameplay/UI regions. The 512×512 board/64×64 cells, 580×580 frame
-target and 98×220 portrait are unchanged, with no shared/runtime code changes.
-Unity compilation and Stage 5 render tests passed at 720×1360 and 1440×2720.
-The approved frame pixels, top area, tiles/gems and lower HUD are pixel-identical;
-all 280 prior image bindings/rectangles and 596 protected source files are exact.
-See [Stage 5 review](../ArtSource/EnchantedForestStaged/Stage05/README.md).
-The scene is art-only and excluded from builds. Production and other zones remain
-unchanged. No live combat/device test is claimed. Draft PR #208 remains stacked
-on #207. Stop before Stage 6; no merge authorized.
+Stages 1–4 are user-approved. The first Stage 5 dressing was rejected: thin sparse
+branches and undersized stones. Revision 02 replaces it in a separate art-review
+scene with four native bough modules and four large mossy boulders, sixteen layered
+placements behind the approved board/frame/HUD. PixelLab used the user's current
+reference and close crops plus Rattlebones; 30 generations for this correction.
+LibreSprite provides exact native cleanup and eight editable sources. No stretching
+or warping; the rejected first pass remains history rather than approved art.
+Unity compilation and revision tests passed at 720×1360 and 1440×2720. Approved
+frame/ivy pixels, top battle area, board tiles/gems, HUD controls/text and all 280
+existing image bindings/rectangles remain exact. Board is still 512×512 with
+64×64 cells; frame target 580×580; portrait 98×220 native. No shared runtime edits.
+See [Stage 5 revision](../ArtSource/EnchantedForestStaged/Stage05/Revision02/README.md).
+The separate scene is excluded from builds. Production, gameplay and other zones
+are unchanged; no combat/device test is claimed. Draft PR #208 remains stacked
+on #207. Stop for revision approval before Stage 6; do not merge.
 
 ## Shared zone geometry and Forest frame review (2026-10-24, unmerged PR #207)
 

@@ -1,0 +1,176 @@
+{
+  "revision_cost": 30,
+  "jobs": [
+    "9e5ba07b-6dc0-463d-8f83-cb2f66e71ab6",
+    "ec00737f-f850-4fc1-9690-7456ed5022ff",
+    "dc9c4942-7670-4219-a2b2-9a6643b514c0"
+  ],
+  "rejected": "Tall 64x192 bough study: too fine and narrow, clipped top/bottom. Prior Stage 5 rejected by user.",
+  "palette_groups": {
+    "0c1014": "050904 030503 040604 040804 050804 12130c 0f0e0a 000301 020404 010103 030404 0b110e 000302 020304 010100 0d1310 010202 010305 030705 0e1512",
+    "172920": "081507 061105 071406 0d1609 0d1d0d",
+    "233f2b": "142413 1b2c17 192916 162715 273719 2d3c1b 33411e 243419 33421e 28371a",
+    "3c5f33": "32411d 3d4d22 3a4821 465526 405024 405123 41542b 44562a 495b2b 43562a 44572a",
+    "4c7037": "465826 4e622b 53662d 51642d 566b31",
+    "65863e": "5e7436 627838 607436 6a803b",
+    "7a9845": "6e8540 718741 728943 7e8d3c 808e3d 7f8d3d",
+    "241e1a": "1d1411",
+    "3b2c20": "271c19 231916 251c18 231a17 352a1f",
+    "563c26": "372b21 2d221c 382b22 2d241c 3e2f25 2c211c 403527 413527 403426 3d3225",
+    "765131": "483928 56472f 4c3e2a 423226 4a3c29 4c3d2c 574630 6c573d 6c563d 53412d",
+    "9a6d41": "685738 645636 635636 7f6246 877550 89744e 7c6245",
+    "52733a": "595531 6e703f 566a32 566a36 5e805f 556930 5e785b",
+    "e7d9b5": "eae9e5 dadadb bddeef fbfafb",
+    "d4bb85": "f2e093",
+    "a6a56c": "b0aa7c 929f8b",
+    "9b93bf": "ad9ad6 94b6e2 a4bbcf",
+    "686071": "776187",
+    "23313a": "19272b 142022 202a2f 1a272c",
+    "314651": "283a4a 253645 304350 263746 2f4252",
+    "49616d": "394d60 3b5063 3a4e60 394e60",
+    "5d7982": "4a6373 455c6a 516b7c 425a6a 4f6979 486272",
+    "739096": "668492 648291 688796 658391",
+    "8a9d9a": "78989d",
+    "96513a": "6f4734 bc8265",
+    "c9a477": "b89177 ba896d b6967c e0ae8a"
+  },
+  "modules": [
+    {
+      "name": "Bough_A",
+      "source": "Broad_01",
+      "source_sha256": "77cc5f22acf9aa5c97b61704d0872e25e9089a4319d0331df908f9f9eb0e7524",
+      "source_rectangle": [
+        6,
+        6,
+        58,
+        90
+      ],
+      "padding": 2,
+      "dimensions": [
+        56,
+        88
+      ],
+      "opaque_colors": 13
+    },
+    {
+      "name": "Bough_B",
+      "source": "Broad_04",
+      "source_sha256": "b78283b7c32ed5db2fccf101ddb278035ba7bba28a497c1abdc639e3da92fc9a",
+      "source_rectangle": [
+        6,
+        8,
+        58,
+        90
+      ],
+      "padding": 2,
+      "dimensions": [
+        56,
+        86
+      ],
+      "opaque_colors": 15
+    },
+    {
+      "name": "Bough_C",
+      "source": "Broad_06",
+      "source_sha256": "f238f7747babe1eb3522feff0bf0f059a8722041a2efdb445758a628f6919b29",
+      "source_rectangle": [
+        6,
+        7,
+        58,
+        90
+      ],
+      "padding": 2,
+      "dimensions": [
+        56,
+        87
+      ],
+      "opaque_colors": 13
+    },
+    {
+      "name": "Bough_D",
+      "source": "Broad_08",
+      "source_sha256": "143cbbd2157f90030e4452abd59e5d4ed2e26b25330556e094e527b72914333a",
+      "source_rectangle": [
+        6,
+        7,
+        58,
+        90
+      ],
+      "padding": 2,
+      "dimensions": [
+        56,
+        87
+      ],
+      "opaque_colors": 16
+    },
+    {
+      "name": "Boulder_A",
+      "source": "Rock_08",
+      "source_sha256": "b451d3acf0c18d3d50d11af3f7248eeb68dc3cd9291db37e0756ca4dca0a7457",
+      "source_rectangle": [
+        6,
+        6,
+        60,
+        60
+      ],
+      "padding": 2,
+      "dimensions": [
+        58,
+        58
+      ],
+      "opaque_colors": 18
+    },
+    {
+      "name": "Boulder_B",
+      "source": "Rock_12",
+      "source_sha256": "c18476579dd7e6e99d47a97209ad4f017dd340a59896cfe9f8fc58cc5dc487f1",
+      "source_rectangle": [
+        5,
+        6,
+        60,
+        59
+      ],
+      "padding": 2,
+      "dimensions": [
+        59,
+        57
+      ],
+      "opaque_colors": 15
+    },
+    {
+      "name": "Boulder_C",
+      "source": "Rock_04",
+      "source_sha256": "fd3a65336ff3c3b402d43be6c2fd387676165cd8f95cf2b6df5c29131c964f18",
+      "source_rectangle": [
+        5,
+        6,
+        60,
+        60
+      ],
+      "padding": 2,
+      "dimensions": [
+        59,
+        58
+      ],
+      "opaque_colors": 16
+    },
+    {
+      "name": "Boulder_D",
+      "source": "Rock_09",
+      "source_sha256": "685356e918b010c87969fc863fafc4ff11cf559f2c5b6ac7127831606f193b65",
+      "source_rectangle": [
+        5,
+        6,
+        60,
+        60
+      ],
+      "padding": 2,
+      "dimensions": [
+        59,
+        58
+      ],
+      "opaque_colors": 17
+    }
+  ],
+  "geometry": "No warping/resampling. Complete source silhouettes with added padding. Modular overlap joins behind approved frame; board/HUD occlude underlap."
+}

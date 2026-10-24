@@ -1,0 +1,1 @@
+try{["Bough_A", "Bough_B", "Bough_C", "Bough_D", "Boulder_A", "Boulder_B", "Boulder_C", "Boulder_D"].forEach(function(n){app.open('ArtSource/EnchantedForestStaged/Stage05/Revision02/Native/'+n+'.aseprite').sprite.saveAs('.utmp/enchanted-stage05-r2/reopened/'+n+'.png',true);});console.log('STAGE05R2_NATIVE_COMPLETE');}catch(e){console.log('FAILED '+e);}app.command.Exit();

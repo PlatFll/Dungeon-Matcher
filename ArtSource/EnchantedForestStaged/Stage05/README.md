@@ -1,3 +1,5 @@
+> **Rejected by the user:** insufficient branch/leaf mass and rocks too small. See [Revision 02](Revision02/README.md) for the replacement candidate. Original evidence below is retained as history.
+
 # Enchanted Forest Stage 5 — side life dressing
 
 Review candidate, 2026-10-24. Stages 1–4 are approved. Stop before Stage 6;
