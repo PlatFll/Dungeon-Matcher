@@ -1,0 +1,69 @@
+{
+  "generation": {
+    "request": {
+      "description": "A SINGLE long squat rectangular mudstone masonry block for a 2D enchanted forest platform divider, straight-on FRONT elevation. Place one horizontal slab centered on a transparent 64x64 canvas, about 56 pixels wide by 20 pixels tall; large unused transparent space above and below. Flat straight long top and bottom, gently chipped square corners. Broad quiet flat olive-gray stone face, a single low-contrast turning plane, narrow top-left stone bevel and dark bottom seam. Very sparse moss patch at top edge. Restrained 8-color palette. Chunky Dungeon Matcher native pixels like supplied rendering reference, but STONE ONLY: do not copy character elements, bone anatomy, cyan eyes or crown. No scattered texture, no big diagonal cracks, no boulder pile, no plants framing the object, no shadows outside the silhouette, no perspective, no blur or dithering.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "max_colors": 8,
+      "palette": [
+        "#171E1C",
+        "#293029",
+        "#3C4135",
+        "#535641",
+        "#6A6C50",
+        "#838463",
+        "#3C5F33",
+        "#718B45"
+      ],
+      "palette_name": "Forest mudstone",
+      "style_image": {
+        "url": "upload:e26a7431-416a-4522-9f75-eef110a00945",
+        "usage_description": "Use only crisp native contours, broad 2-3-tone connected shading and disciplined small palette. Draw a simple environmental masonry slab, no character anatomy or props."
+      },
+      "style_options": {
+        "color_palette": false,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "seed": 24010263
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"2a29bbf8-5c00-47df-a1b2-653298016059\",\n  \"image_id\": \"20b9663b-5e42-5a6e-ad87-2e58275ae09e\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"20b9663b-5e42-5a6e-ad87-2e58275ae09e\",\n  \"job_id\": \"2a29bbf8-5c00-47df-a1b2-653298016059\",\n  \"description\": \"A SINGLE long squat rectangular mudstone masonry block for a 2D enchanted forest platform divider, straight-on FRONT elevation. Place one horizontal slab centered on a transparent 64x64 canvas, about 56 pixels wide by 20 pixels tall; large unused transparent space above and below. Flat straight long top and bottom, gently chipped square corners. Broad quiet flat olive-gray stone face, a single low-contrast turning plane, narrow top-left stone bevel and dark bottom seam. Very sparse moss patch at top edge. Restrained 8-color palette. Chunky Dungeon Matcher native pixels like supplied rendering reference, but STONE ONLY: do not copy character elements, bone anatomy, cyan eyes or crown. No scattered texture, no big diagonal cracks, no boulder pile, no plants framing the object, no shadows outside the silhouette, no perspective, no blur or dithering.\",\n  \"seed\": 24010263,\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/2a29bbf8-5c00-47df-a1b2-653298016059/download\"\n}\nPoll get_image(job_id=\"2a29bbf8-5c00-47df-a1b2-653298016059\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "2a29bbf8-5c00-47df-a1b2-653298016059",
+        "image_id": "20b9663b-5e42-5a6e-ad87-2e58275ae09e",
+        "status": "processing",
+        "source_image_id": "20b9663b-5e42-5a6e-ad87-2e58275ae09e",
+        "job_id": "2a29bbf8-5c00-47df-a1b2-653298016059",
+        "description": "A SINGLE long squat rectangular mudstone masonry block for a 2D enchanted forest platform divider, straight-on FRONT elevation. Place one horizontal slab centered on a transparent 64x64 canvas, about 56 pixels wide by 20 pixels tall; large unused transparent space above and below. Flat straight long top and bottom, gently chipped square corners. Broad quiet flat olive-gray stone face, a single low-contrast turning plane, narrow top-left stone bevel and dark bottom seam. Very sparse moss patch at top edge. Restrained 8-color palette. Chunky Dungeon Matcher native pixels like supplied rendering reference, but STONE ONLY: do not copy character elements, bone anatomy, cyan eyes or crown. No scattered texture, no big diagonal cracks, no boulder pile, no plants framing the object, no shadows outside the silhouette, no perspective, no blur or dithering.",
+        "seed": 24010263,
+        "image_size": {
+          "width": 64,
+          "height": 64
+        },
+        "output_count": 1,
+        "estimated_generations": 5,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/2a29bbf8-5c00-47df-a1b2-653298016059/download"
+      },
+      "isError": false
+    }
+  },
+  "cancelled_pro_job": {
+    "content": [
+      {
+        "type": "text",
+        "text": "job b320fe0f-6805-4d99-a5b2-993efa5cca8d cancelled (was processing). concurrency slot released — you can start new work."
+      }
+    ],
+    "isError": false
+  }
+}

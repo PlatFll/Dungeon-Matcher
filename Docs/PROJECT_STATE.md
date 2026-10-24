@@ -21,27 +21,33 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 
-## Forest surround revision — unified lower corners (2026-10-24, review only)
+## Forest surround polish — Stage 1 separator (2026-10-24, review only)
 
-The user rejected Stage 2's separated upper and lower stone groups and requested
-one grounded formation per side. The new art-only review disables both old stone
-groups, retains the woody connectors and adds two cohesive PixelLab/LibreSprite
-stone-root formations with separate small red/pale mushrooms and moss. Earlier
-sources and scenes remain intact; the rejected composition is history, not approval.
+The latest six-stage revision begins with the battle/board separator only. A new
+isolated Unity scene adds nine broad mudstone blocks from three 40×16 native
+PixelLab/LibreSprite tiles. The original scene, source artwork, UI and gameplay
+remain intact. The only changed screenshot region is y=448–480 at 720×1360;
+existing portrait foliage stays in front. All 294 existing visible image bindings
+and rectangles, plus 6,697 source/scene/script/resource/settings files, are preserved.
+Unity compilation and review captures passed at 720×1360 and 1440×2720 with
+exact pixel doubling. The native sources reopen to identical PNG pixels.
 
-This revision cost 53 subscription generations (including rejected studies),
-zero USD credits. Native sources reopen exactly; all five modules have binary
-alpha and two-pixel clearance. Each main formation has one connected silhouette.
-Unity compilation and captures pass at 720×1360 and 1440×2720 with exact pixel
-doubling. Top HUD/battle, board cells, opaque frame art, all painted bottom HUD
-pixels, control interiors and text remain identical. Transparent frame margins
-can reveal new scenery. All 290 prior image bindings/rectangles and 1,799 existing
-source files are unchanged. Shared board/portrait dimensions are preserved.
+The account balance decreased by 7 subscription generations: two delivered Pixen
+studies at 1 each and a further 5-generation debit after the cancelled Pro Flash
+attempt. No finished Flash result or refund confirmation was returned. The earlier
+Pro job also stalled and was cancelled. USD credits used: zero. Exact receipts,
+cancellation/error results and the observed balance are retained in the report.
 
-See [unified-corner report](../ArtSource/ForestSurroundRevision/UnifiedCorners/README.md)
-and its actual Unity before/after gallery. Draft PR #209 stays on the dedicated
-revision branch. No production runtime integration, gameplay edit, device test,
-next-stage work or merge. Stop for the user's review of this focused correction.
+The current lower-corner assets remain the base, but the user identified weak
+root joins and pasted-on mushroom/greenery attachments. Those issues are still
+outstanding and belong to the later requested stages; prior technical connectivity
+checks do not constitute visual approval. Keep their sources/history intact.
+
+See [separator report and actual Unity preview](../ArtSource/ForestSurroundRevision/PolishStage01/README.md).
+The [earlier unified-corner report](../ArtSource/ForestSurroundRevision/UnifiedCorners/README.md)
+remains process history. Draft PR #209 stays on the dedicated revision branch.
+No production runtime integration, device test, later-stage work or merge.
+Stop for review before Stage 2 root/branch repair.
 
 ## Forest surround revision — Stage 1 board-side roots (2026-10-24, review only)
 
@@ -56,7 +62,7 @@ Unity compilation and review tests passed at 720×1360 and 1440×2720. Top HUD/b
 board/gems/frame, entire bottom region, shared geometry and 296 existing image
 bindings/rectangles are exact. All 1,680 protected source files are unchanged.
 See [Stage 1 report](../ArtSource/ForestSurroundRevision/Stage01/README.md).
-Stage 1 was carried forward into Stage 2; the focused lower-corner revision above
+Stage 1 was carried forward into Stage 2; the focused separator revision above
 owns the current review gate. No production integration or animation is approved.
 
 ## Enchanted Forest staged pack — Stage 5 revision 02 (2026-10-24, review only)

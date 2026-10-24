@@ -1,0 +1,1 @@
+try{["Mudstone_A", "Mudstone_B", "Mudstone_C"].forEach(function(n){app.open('ArtSource/ForestSurroundRevision/PolishStage01/Native/'+n+'.aseprite').sprite.saveAs('.utmp/forest-separator/reopened/'+n+'.png',true);});console.log('FOREST_SEPARATOR_NATIVE_COMPLETE');}catch(e){console.log('FAILED '+e);}app.command.Exit();

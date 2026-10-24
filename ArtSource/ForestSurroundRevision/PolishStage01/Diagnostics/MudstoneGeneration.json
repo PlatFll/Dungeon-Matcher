@@ -1,0 +1,32 @@
+{
+  "generation": {
+    "request": {
+      "description": "A long narrow HORIZONTAL carved MUDSTONE SLAB, one rectangular stone brick. Front view for 2D platform edge. Very wide and very short, about three times wider than tall. Center one slab in transparent canvas, generous empty space above and below. Straight flat horizontal top and bottom, squared subtly chipped corners, broad quiet olive-gray face, minimal sage-green moss at top left only. Simple dark contour, narrow top-left bevel, 3 broad low-contrast flat olive-gray tones. Chunky crisp pixel art. No diagonals, no cracks, no speckles, no boulder, no plants surrounding it, no perspective, no background. Rectangular structural masonry tile, simple flat front elevation.",
+      "width": 64,
+      "height": 32,
+      "detail": "low detail",
+      "outline": "single color outline",
+      "view": "side",
+      "no_background": true,
+      "seed": 24010264
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: a21ef4e6-9058-47dc-807f-f5bf5fcde4cf\njob_id: a21ef4e6-9058-47dc-807f-f5bf5fcde4cf\nmodel: pixen\ndescription: A long narrow HORIZONTAL carved MUDSTONE SLAB, one rectangular stone brick. Front view for 2D platform edge. Very wide and very short, about three times wider than tall. Center one slab in transparent canvas, generous empty space above and below. Straight flat horizontal top and bottom, squared subtly chipped corners, broad quiet olive-gray face, minimal sage-green moss at top left only. Simple dark contour, narrow top-left bevel, 3 broad low-contrast flat olive-gray tones. Chunky crisp pixel art. No diagonals, no cracks, no speckles, no boulder, no plants surrounding it, no perspective, no background. Rectangular structural masonry tile, simple flat front elevation.\nsize: 64x32px\ntransparent: True\nasset_id: a65c669f-8915-571d-83f5-65e60ad0b5b7\nasset_status: pending (saved when generation completes)\nseed: 24010264\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"a21ef4e6-9058-47dc-807f-f5bf5fcde4cf\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "cancelled_flash": {
+    "content": [
+      {
+        "type": "text",
+        "text": "job 2a29bbf8-5c00-47df-a1b2-653298016059 cancelled (was processing). concurrency slot released — you can start new work."
+      }
+    ],
+    "isError": false
+  }
+}
