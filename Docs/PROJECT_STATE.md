@@ -20,15 +20,17 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Enchanted Forest staged pack — Stage 1 (2026-10-24, review only)
+## Enchanted Forest staged pack — Stage 2 (2026-10-24, review only)
 
-The new feature/forest-zone-staged-rebuild branch preserves PR #207's shared
-geometry fixes and artwork. Its first review candidate adds a native top woodland
-background, separate ground and three wisp cores, with one PixelLab source cleaned
-in LibreSprite. The new isolated Unity preview uses unchanged character/UI samples.
-Production Forest, board/portrait sizing and lower HUD remain untouched.
-See [Stage 1 review](../ArtSource/EnchantedForestStaged/Stage01/README.md).
-Stop for user approval before Stage 2; no merge authorized.
+The user approved Stage 1's woodland background. The feature/forest-zone-staged-rebuild
+branch now adds a separate Stage 2 portrait candidate: modular timber rails/corners,
+four restrained ivy accents and a clipped dark recess, using one PixelLab source
+and LibreSprite native editing. The new art-only Unity preview retains the exact
+98×220 portrait area, 12-pixel inset and shared geometry fixes inherited from PR #207.
+Approved scenery, characters, UI content, board sizing, lower HUD and production
+Forest remain untouched. Unity compilation, resize/mask and pixel comparisons passed.
+See [Stage 2 review](../ArtSource/EnchantedForestStaged/Stage02/README.md).
+Stop for user approval before Stage 3; no merge authorized.
 
 ## Shared zone geometry and Forest frame review (2026-10-24, unmerged PR #207)
 

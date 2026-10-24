@@ -1,0 +1,141 @@
+{
+  "changed_existing_objects": [
+    {
+      "id": 533110804,
+      "name": "RightEdge",
+      "changes": [
+        "-   m_Sprite: {fileID: 21300000, guid: e9fb9c4372ac526abe9b9c97cee618a8, type: 3}",
+        "+   m_Sprite: {fileID: 21300000, guid: 3e466cbecc8459538d75aea923773119, type: 3}"
+      ]
+    },
+    {
+      "id": 826161710,
+      "name": "TopLeftCorner",
+      "changes": [
+        "-   m_Sprite: {fileID: 21300000, guid: 682001a1c52656ada52a16521162b3dc, type: 3}",
+        "+   m_Sprite: {fileID: 21300000, guid: fe067636040153c69f55f0f5b5b8c18c, type: 3}"
+      ]
+    },
+    {
+      "id": 746607159,
+      "name": "OverfilledBacking",
+      "changes": [
+        "-   m_Sprite: {fileID: 21300000, guid: 5a397e1f750735e48aecabc3bd7a95d3, type: 3}",
+        "+   m_Sprite: {fileID: 21300000, guid: 09766a1a97c753b086ddc0d13a1baf9c, type: 3}"
+      ]
+    },
+    {
+      "id": 542878378,
+      "name": "Enchanted Forest stage 02 art-only portrait",
+      "changes": [
+        "-   m_Name: Enchanted Forest stage 01 art review",
+        "+   m_Name: Enchanted Forest stage 02 art-only portrait"
+      ]
+    },
+    {
+      "id": 1455676093,
+      "name": "ModularFrame",
+      "changes": [
+        "-   nativeConnector: {fileID: 21300000, guid: 2d81dffcfab158f3809d6d4621b7aee5, type: 3}",
+        "+   nativeConnector: {fileID: 21300000, guid: 056313bf7ed4554eb81d0308b1ae42a1, type: 3}"
+      ]
+    },
+    {
+      "id": 1964544847,
+      "name": "Connector_0",
+      "changes": [
+        "-   m_Sprite: {fileID: 21300000, guid: 2d81dffcfab158f3809d6d4621b7aee5, type: 3}",
+        "+   m_Sprite: {fileID: 21300000, guid: 056313bf7ed4554eb81d0308b1ae42a1, type: 3}"
+      ]
+    },
+    {
+      "id": 1722837907,
+      "name": "Connector_1",
+      "changes": [
+        "-   m_Sprite: {fileID: 21300000, guid: 2d81dffcfab158f3809d6d4621b7aee5, type: 3}",
+        "+   m_Sprite: {fileID: 21300000, guid: 056313bf7ed4554eb81d0308b1ae42a1, type: 3}"
+      ]
+    },
+    {
+      "id": 1073704013,
+      "name": "BottomRightCorner",
+      "changes": [
+        "-   m_Sprite: {fileID: 21300000, guid: 696ba3e174cd5b8695506dd761837179, type: 3}",
+        "+   m_Sprite: {fileID: 21300000, guid: b3b39e6ec46755f7883b4ff56108eaad, type: 3}"
+      ]
+    },
+    {
+      "id": 1526097096,
+      "name": "BottomLeftCorner",
+      "changes": [
+        "-   m_Sprite: {fileID: 21300000, guid: 32cfd7e8d4945d3997895f79bce6230f, type: 3}",
+        "+   m_Sprite: {fileID: 21300000, guid: a5308b773a9a5c8386674aaf8ef9f1a5, type: 3}"
+      ]
+    },
+    {
+      "id": 1969718646,
+      "name": "TopEdge",
+      "changes": [
+        "-   m_Sprite: {fileID: 21300000, guid: 6b72a30b6f4b52be8915cb85511ffe82, type: 3}",
+        "+   m_Sprite: {fileID: 21300000, guid: a5d6b9ea452f553a8124215ec24f503c, type: 3}"
+      ]
+    },
+    {
+      "id": 1631438232,
+      "name": "ForestPortrait",
+      "changes": [
+        "+   - {fileID: 2098796919}",
+        "+   - {fileID: 251143991}",
+        "+   - {fileID: 257877094}",
+        "+   - {fileID: 563743997}"
+      ]
+    },
+    {
+      "id": 1799685680,
+      "name": "TopRightCorner",
+      "changes": [
+        "-   m_Sprite: {fileID: 21300000, guid: dad4517459d75e748028f3be198db0cb, type: 3}",
+        "+   m_Sprite: {fileID: 21300000, guid: 7a4f70bc02895623890af862c3dd4341, type: 3}"
+      ]
+    },
+    {
+      "id": 1600720523,
+      "name": "LeftEdge",
+      "changes": [
+        "-   m_Sprite: {fileID: 21300000, guid: ca6f69646bd15997a198566cc3aafe3d, type: 3}",
+        "+   m_Sprite: {fileID: 21300000, guid: e90adc474ee959fc815a88caec7be0b9, type: 3}"
+      ]
+    },
+    {
+      "id": 697511613,
+      "name": "Upper connected vine",
+      "changes": [
+        "-   m_IsActive: 1",
+        "+   m_IsActive: 0"
+      ]
+    },
+    {
+      "id": 1081032492,
+      "name": "Lower connected vine",
+      "changes": [
+        "-   m_IsActive: 1",
+        "+   m_IsActive: 0"
+      ]
+    },
+    {
+      "id": 484314956,
+      "name": "BottomEdge",
+      "changes": [
+        "-   m_Sprite: {fileID: 21300000, guid: 1ea09937c925525fa8e1e4dcc7506523, type: 3}",
+        "+   m_Sprite: {fileID: 21300000, guid: 1c6eed2d7216597f92d3623d642c9aa1, type: 3}"
+      ]
+    }
+  ],
+  "new_object_types": {
+    "CanvasRenderer": 4,
+    "GameObject": 4,
+    "RectTransform": 4,
+    "MonoBehaviour": 4
+  },
+  "removed_objects": 0
+}
