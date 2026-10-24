@@ -1,0 +1,40 @@
+{
+  "existing_objects": 1947,
+  "new_objects": 55,
+  "deleted_objects": 0,
+  "existing_changes": [
+    {
+      "id": "1268497416",
+      "name": "Continuous lower root joins 2x",
+      "change": "Disabled superseded lower dressing"
+    },
+    {
+      "id": "1463859235",
+      "name": "Unified lower corner formations 2x",
+      "change": "Disabled superseded lower dressing"
+    },
+    {
+      "id": "2145403166",
+      "change": "Three new dressing layers inserted; existing child order preserved"
+    }
+  ],
+  "corner_joins": {
+    "Left": {
+      "combined_components": [
+        8567
+      ],
+      "single_anchored_formation": true
+    },
+    "Right": {
+      "combined_components": [
+        8663
+      ],
+      "single_anchored_formation": true
+    }
+  },
+  "current_goldens_verified": {
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+  }
+}
