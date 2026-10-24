@@ -1,0 +1,161 @@
+{
+  "modules": [
+    {
+      "name": "Lantern_Mount",
+      "dimensions": [
+        48,
+        64
+      ],
+      "bounds": [
+        4,
+        3,
+        38,
+        33
+      ],
+      "colors": 7,
+      "binary_alpha": true,
+      "native_reopen_exact": true,
+      "sha256": "d55d69a51d25411be270e02b7e901f335274580cb53797e38b78a70ee0a5bd0b"
+    },
+    {
+      "name": "Lantern_Body",
+      "dimensions": [
+        48,
+        64
+      ],
+      "bounds": [
+        18,
+        28,
+        40,
+        62
+      ],
+      "colors": 6,
+      "binary_alpha": true,
+      "native_reopen_exact": true,
+      "sha256": "7da97ab1af30d925f94b7355b4f269baf6c6282c1722051201d417e73724a2c0"
+    },
+    {
+      "name": "Lantern_Light",
+      "dimensions": [
+        48,
+        64
+      ],
+      "bounds": [
+        23,
+        38,
+        35,
+        53
+      ],
+      "colors": 3,
+      "binary_alpha": true,
+      "native_reopen_exact": true,
+      "sha256": "0d0bfa30dd981a74d1d367b1e91b17a6f3cfd06f7b86ca916b9a0e980469ed6b"
+    },
+    {
+      "name": "Rune_Plaque",
+      "dimensions": [
+        32,
+        48
+      ],
+      "bounds": [
+        8,
+        6,
+        25,
+        41
+      ],
+      "colors": 11,
+      "binary_alpha": true,
+      "native_reopen_exact": true,
+      "sha256": "6543b44c8f402599ecb3cb3aaa27587dadc60bbbf3c6db847f1aa455829e4cbe"
+    },
+    {
+      "name": "Rune_Glyph",
+      "dimensions": [
+        32,
+        48
+      ],
+      "bounds": [
+        12,
+        24,
+        21,
+        35
+      ],
+      "colors": 1,
+      "binary_alpha": true,
+      "native_reopen_exact": true,
+      "sha256": "5fc6aa9feae8618e0c17011d316edc6c0756124eb03bd4e30caf681b6c34dce3"
+    },
+    {
+      "name": "Wisp_Core",
+      "dimensions": [
+        18,
+        22
+      ],
+      "bounds": [
+        5,
+        3,
+        12,
+        17
+      ],
+      "colors": 1,
+      "binary_alpha": true,
+      "native_reopen_exact": true,
+      "sha256": "b230eaedf3cb5ea1e06412ccefa0d3947dbc99b4e1b26fd3b0246e9747449de8"
+    },
+    {
+      "name": "Wisp_Aura",
+      "dimensions": [
+        18,
+        22
+      ],
+      "bounds": [
+        3,
+        1,
+        14,
+        19
+      ],
+      "colors": 2,
+      "binary_alpha": true,
+      "native_reopen_exact": true,
+      "sha256": "72fa8a28de1163e20d65722762607d7dd0100bfd16c847a235316b92b3ed5c9b"
+    },
+    {
+      "name": "Firefly_Mote",
+      "dimensions": [
+        8,
+        8
+      ],
+      "bounds": [
+        1,
+        1,
+        6,
+        6
+      ],
+      "colors": 3,
+      "binary_alpha": true,
+      "native_reopen_exact": true,
+      "sha256": "aab51493c0e97529e2766c76c08a7fbca1453d6709fb4c59a33358edd866dc1d"
+    },
+    {
+      "name": "Hanging_Leaf_Strand",
+      "dimensions": [
+        38,
+        47
+      ],
+      "bounds": [
+        5,
+        2,
+        30,
+        43
+      ],
+      "colors": 10,
+      "binary_alpha": true,
+      "native_reopen_exact": true,
+      "sha256": "88f72e46ce36a0de5830a3a4707abcf57c1631206b79daddd5eee7f21824c2e2"
+    }
+  ],
+  "generated_shape_masks_preserved": true,
+  "wisp_core_preserved": true,
+  "libresprite_author_exit": 0,
+  "libresprite_reopen_exit": 0
+}

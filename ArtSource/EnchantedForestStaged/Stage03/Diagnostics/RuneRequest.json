@@ -1,0 +1,48 @@
+{
+  "request": {
+    "description": "ONE small carved woodland rune plaque per candidate, isolated native pixel-art forest decoration for Dungeon Matcher. Canvas32x48 with generous transparent padding. A narrow upright dark timber tablet about16x22 pixels, hanging by a short simple rope loop from its top, no ground post. Slight worn bark edges, sturdy readable wooden shape, a small joined fork-and-stem ancient rune carved in the center, 2px strokes in restrained desaturated turquoise with just a few light cyan pixels. Glyph is one connected ornamental plant/antler-like sigil, NOT a number, letter, triangle, square, circle or gameplay status icon. No skull, gem, face, mushroom, crystal or fire. One tiny olive leaf attached to rope if natural, but keep clear uncluttered shape. Match supplied forest mockup's timber/shrine materials. Apply Rattlebones reference ONLY for crisp contour and broad economical shading language, never its colors/anatomy. Top-left light on wood; three wood shades, a dark contour, readable cyan carving. No blurred glow, soft AA, gradient, noisy grain, tiny loose pixels or full scenery. No UI frame or words. Every part including rope fully within canvas, native size, not an illustration.",
+    "width": 32,
+    "height": 48,
+    "no_background": true,
+    "max_colors": 14,
+    "palette": [
+      "#0c1014",
+      "#233f2b",
+      "#3c5f33",
+      "#4c7037",
+      "#65863e",
+      "#3b2c20",
+      "#563c26",
+      "#765131",
+      "#9a6d41",
+      "#bb9061",
+      "#235b5c",
+      "#55a6a2",
+      "#54f1ec",
+      "#e7dabb"
+    ],
+    "palette_name": "Dungeon Matcher enchanted timber and turquoise",
+    "seed": 2403027,
+    "style_image_url": "upload:e26a7431-416a-4522-9f75-eef110a00945",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:9a4070b7-99d3-4883-ad49-fc60c51ae88e",
+        "usage": "Forest shrine timber, rope and restrained enchanted atmosphere only. Produce one small hanging carved rune tablet, not a UI or complete scene."
+      }
+    ]
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 1c4721d2-0801-4e2c-8b1a-df015555ca4d\njob_id: 1c4721d2-0801-4e2c-8b1a-df015555ca4d\nmodel: pro\ndescription: ONE small carved woodland rune plaque per candidate, isolated native pixel-art forest decoration for Dungeon Matcher. Canvas32x48 with generous transparent padding. A narrow upright dark timber tablet about16x22 pixels, hanging by a short simple rope loop from its top, no ground post. Slight worn bark edges, sturdy readable wooden shape, a small joined fork-and-stem ancient rune carved in the center, 2px strokes in restrained desaturated turquoise with just a few light cyan pixels. Glyph is one connected ornamental plant/antler-like sigil, NOT a number, letter, triangle, square, circle or gameplay status icon. No skull, gem, face, mushroom, crystal or fire. One tiny olive leaf attached to rope if natural, but keep clear uncluttered shape. Match supplied forest mockup's timber/shrine materials. Apply Rattlebones reference ONLY for crisp contour and broad economical shading language, never its colors/anatomy. Top-left light on wood; three wood shades, a dark contour, readable cyan carving. No blurred glow, soft AA, gradient, noisy grain, tiny loose pixels or full scenery. No UI frame or words. Every part including rope fully within canvas, native size, not an illustration.\nsize: 32x48px\ntransparent: True\ncandidates: 36\nreferences: 1\nstyle_image: yes (outline, detail, shading)\npalette: 14 colours (Dungeon Matcher enchanted timber and turquoise)\nmax colours: 14 per image\nseed: 2403027\nasset_id: 295c5bbf-9cee-56eb-8b1f-3dd5aa17ed15\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"1c4721d2-0801-4e2c-8b1a-df015555ca4d\")"
+      }
+    ],
+    "isError": false
+  }
+}

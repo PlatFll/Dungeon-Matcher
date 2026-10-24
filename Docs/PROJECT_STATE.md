@@ -20,19 +20,21 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Enchanted Forest staged pack — Stage 2 (2026-10-24, review only)
+## Enchanted Forest staged pack — Stage 3 (2026-10-24, review only)
 
-The user approved Stage 1's woodland background. The feature/forest-zone-staged-rebuild
-branch now adds a separate Stage 2 portrait candidate: modular timber rails/corners,
-fuller source-derived ivy swags and a clipped dark recess, reusing the existing PixelLab source
-and LibreSprite native editing. The new art-only Unity preview retains the exact
-98×220 portrait area, 12-pixel inset and shared geometry fixes inherited from PR #207.
-Approved scenery, characters, UI content, board sizing, lower HUD and production
-Forest remain untouched. Unity compilation, resize/mask and pixel comparisons passed.
-The user rejected the first sparse foliage; its correction is in
-[Stage 2 foliage review](../ArtSource/EnchantedForestStaged/Stage02/FoliageRevision/README.md).
-No additional generation credits were spent.
-Stop for user approval before Stage 3; no merge authorized.
+The user approved Stage 1's woodland background and Stage 2's fuller-foliage
+portrait correction. Stage 3 now adds a separate review set: branch lantern,
+carved rune plaque, cyan wisp, warm mote and hanging leaves. Two PixelLab families
+cost 20 generations; LibreSprite saves nine native modules with binary alpha.
+The approved art and 98×220 portrait, its mask and shared geometry remain exact.
+Unity compilation and EnchantedForestStage03Tests.DecorationReview passed at
+720×480 and 1440×960. Hiding the new decor restores the approved screenshot
+pixel for pixel; all 84 previous image bindings and rectangles are preserved.
+The separate scene is excluded from builds. Production Forest, characters,
+gameplay, gems, board sizing and lower HUD remain untouched; no device/combat
+test is claimed. See [Stage 3 review](../ArtSource/EnchantedForestStaged/Stage03/README.md).
+Stop for user approval before Stage 4; no merge authorized. Draft PR #208 remains
+stacked on PR #207 for the existing shared geometry correction.
 
 ## Shared zone geometry and Forest frame review (2026-10-24, unmerged PR #207)
 

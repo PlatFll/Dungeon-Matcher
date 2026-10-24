@@ -1,0 +1,175 @@
+{
+  "lantern": {
+    "job": "687faea8-a616-4719-99a6-e37be543f19b",
+    "selected_index": 2,
+    "source_sha256": "4815060a123d6be937abe7402e094fd3a5e9abed5104378fd074d58d7f975208",
+    "cleanup_map": {
+      "020101": "0c1014",
+      "010000": "0c1014",
+      "030000": "0c1014",
+      "170f0a": "0c1014",
+      "594332": "563c26",
+      "43322a": "3b2c20",
+      "402917": "3b2c20",
+      "6b553e": "765131",
+      "876c47": "9a6d41",
+      "30241d": "3b2c20",
+      "7b6243": "765131",
+      "967d4f": "9a6d41",
+      "ad8d53": "bb9061"
+    },
+    "light_underlay": "#9a6d41",
+    "sway_hinge_png_top_left": [
+      28,
+      28
+    ]
+  },
+  "rune": {
+    "job": "1c4721d2-0801-4e2c-8b1a-df015555ca4d",
+    "selected_index": 15,
+    "source_sha256": "905a72e94400ee6c14db6c418fff17dfc2b86f40451ee3ce08b1856c08d07405",
+    "cleanup": "plate highlight #bb9061 to #9a6d41 below row18; retain rope highlights; separate glyph over carved shadow #235b5c"
+  },
+  "wisp": "Stage01/Wisp_Near.png native core preserved, separate hard-pixel emission skirt",
+  "vine": {
+    "source": "Assets\\_Game\\Art\\EnchantedForestStaged\\Stage02\\FoliageRevision\\Ivy_CrownRight.png",
+    "crop": [
+      34,
+      31,
+      68,
+      74
+    ],
+    "padding": 2,
+    "cleanup": "remove cropped end of preceding upper leaf; retain complete lower leaf shapes"
+  },
+  "mote": "8x8 native authoring using selected lantern glass ramp",
+  "generated_cost": 20,
+  "modules": [
+    {
+      "name": "Lantern_Mount",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": [
+        4,
+        3,
+        38,
+        33
+      ],
+      "colors": 7
+    },
+    {
+      "name": "Lantern_Body",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": [
+        18,
+        28,
+        40,
+        62
+      ],
+      "colors": 6
+    },
+    {
+      "name": "Lantern_Light",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": [
+        23,
+        38,
+        35,
+        53
+      ],
+      "colors": 3
+    },
+    {
+      "name": "Rune_Plaque",
+      "size": [
+        32,
+        48
+      ],
+      "bounds": [
+        8,
+        6,
+        25,
+        41
+      ],
+      "colors": 11
+    },
+    {
+      "name": "Rune_Glyph",
+      "size": [
+        32,
+        48
+      ],
+      "bounds": [
+        12,
+        24,
+        21,
+        35
+      ],
+      "colors": 1
+    },
+    {
+      "name": "Wisp_Core",
+      "size": [
+        18,
+        22
+      ],
+      "bounds": [
+        5,
+        3,
+        12,
+        17
+      ],
+      "colors": 1
+    },
+    {
+      "name": "Wisp_Aura",
+      "size": [
+        18,
+        22
+      ],
+      "bounds": [
+        3,
+        1,
+        14,
+        19
+      ],
+      "colors": 2
+    },
+    {
+      "name": "Firefly_Mote",
+      "size": [
+        8,
+        8
+      ],
+      "bounds": [
+        1,
+        1,
+        6,
+        6
+      ],
+      "colors": 3
+    },
+    {
+      "name": "Hanging_Leaf_Strand",
+      "size": [
+        38,
+        47
+      ],
+      "bounds": [
+        5,
+        2,
+        30,
+        43
+      ],
+      "colors": 10
+    }
+  ]
+}
