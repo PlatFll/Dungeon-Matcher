@@ -1,0 +1,22 @@
+Use the attached pack and follow it exactly.
+
+We are rebuilding the **Enchanted Forest battle zone** for Dungeon Matcher in stages.
+
+Main instructions:
+1. Create a new branch named `feature/forest-zone-staged-rebuild`.
+2. Do NOT touch the shared bottom HUD style system except where this pack explicitly says to preserve or reuse it.
+3. Use `reference/enchanted_forest_match_3_battle_reference.png` as the primary visual target.
+4. Use PixelLab carefully and economically. Generate only what is needed for the current stage. Do NOT try to generate the entire zone in one shot.
+5. After each PixelLab generation, use LibreSprite to clean up the result, align palette/shading to our game style, and make the asset production-ready.
+6. Keep all assets crisp at native scale. No blur, no anti-aliasing, no muddy gradients.
+7. Preserve the overall composition language from the reference: magical living forest, leaf-wrapped framing, hanging lanterns, glowing runes/wisps, mushrooms, roots/vines, and a richer living border around the board.
+8. The board-adjacent decorations should feel organic and alive, with leaves/branches/vines that can later support subtle wind animation.
+9. The atmosphere should feel more magical than generic forest: soft glowing wisps, faint rune glow, enchanted foliage, and a mystical deep-background read.
+10. Stop for review at every stage listed in `12_REVIEW_STOP_POINTS.md`.
+
+Execution order:
+- Read `01_BRANCH_AND_RULES.md`
+- Read `02_ART_DIRECTION_SUMMARY.md`
+- Read `03_STAGE_ORDER.md`
+- Execute each prompt file in `/prompts` in order
+- Validate each stage with `11_VALIDATION_CHECKLIST.md`

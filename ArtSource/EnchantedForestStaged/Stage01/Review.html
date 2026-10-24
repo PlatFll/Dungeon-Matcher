@@ -1,0 +1,25 @@
+<!doctype html><meta charset="utf-8"><title>Enchanted Forest · Stage 1</title>
+<style>
+body{background:#101c21;color:#dfebe8;font:16px system-ui;margin:28px auto;max-width:1480px;padding:0 20px}h1{font-size:26px}h2{font-size:20px}
+p{max-width:1000px;line-height:1.6}.muted{color:#a5b9b4}.row{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}figure{margin:0 0 20px}figcaption{margin:8px 0 12px;color:#b8d1c7}
+img{image-rendering:pixelated;image-rendering:crisp-edges;display:block}button{background:#24423d;color:white;border:1px solid #456359;padding:9px 16px;cursor:pointer;margin:8px}
+.panel{padding:20px;background:#14262b;border:1px solid #29433e;border-radius:10px;margin:20px 0}.wide{overflow:auto}a{color:#9ed3c5}.module{background:repeating-conic-gradient(#20323b 0% 25%,#17272f 0% 50%) 0/12px 12px;padding:10px}.badge{color:#c7d889}
+</style>
+<h1>Enchanted Forest — Stage 1: top background</h1>
+<p class="badge">Review candidate · feature/forest-zone-staged-rebuild · no merge</p>
+<p>One PixelLab environment source, cleaned in LibreSprite. Deep teal woodland, a distant bridge and waterfall, warm lantern ambiance and a quiet flat clearing. The existing portrait, controls and three enemies are readability samples. This is an art-only Unity scene, not live combat.</p>
+<div class="panel"><h2>Native background comparison</h2>
+<button onclick="zoom(1)">Native 1×</button><button onclick="zoom(2)">Nearest-neighbor 2×</button><button onclick="zoom(3)">Nearest-neighbor 3×</button>
+<div class="row wide"><figure><figcaption>Raw PixelLab · 28 colors</figcaption><img class="asset" width="360" height="240" src="Raw/PixelLab-TopBackground.png"></figure>
+<figure><figcaption>LibreSprite cleanup · 27 colors</figcaption><img class="asset" width="360" height="240" src="Previews/Top_Background_Clean.png"></figure></div>
+<p class="muted">Merged one redundant dark tone, adjusted waterfall/floor values, and consolidated 189 tiny disconnected highlight pixels in selected foliage regions. No resampling or blur.</p></div>
+<div class="panel"><h2>Actual Unity capture with unchanged readability samples</h2>
+<div class="wide"><img width="720" height="480" src="Previews/Unity-Stage01-720x480.png"></div>
+<p><a href="Previews/Unity-Stage01-1440x960.png">Open 4× source-pixel capture</a> · <a href="Previews/Unity-Environment-360x240.png">Unity background at native 1×</a></p></div>
+<div class="panel"><h2>Separate native modules</h2><div class="row"><figure><figcaption>Grove_Background · 360×200</figcaption><div class="module"><img width="360" height="200" src="Exports/Grove_Background.png"></div></figure><figure><figcaption>Combat_Ground · 360×40</figcaption><div class="module"><img width="360" height="40" src="Exports/Combat_Ground.png"></div></figure><figure><figcaption>Wisp_Far_A · 16×16</figcaption><div class="module"><img width="16" height="16" src="Exports/Wisp_Far_A.png"></div></figure><figure><figcaption>Wisp_Far_B · 16×20</figcaption><div class="module"><img width="16" height="20" src="Exports/Wisp_Far_B.png"></div></figure><figure><figcaption>Wisp_Near · 18×22</figcaption><div class="module"><img width="18" height="22" src="Exports/Wisp_Near.png"></div></figure></div>
+<p>Grove and ground are independent opaque plates. Three wisp cores are separate transparent sprites with canvas clearance for later motion. The lantern and waterfall remain static scenery in Stage 1; final decorative and animation preparation stages have not started.</p></div>
+<details class="panel"><summary>Pack reference and scope</summary><p>Primary mood/composition reference; later board and HUD surroundings are not part of this stage.</p><img style="width:470px;height:auto" src="../Brief/reference/enchanted_forest_match_3_battle_reference.png"></details>
+<div class="panel"><h2>Validation and next stop</h2><p>Unity compilation and the dedicated art-scene check passed. The 360×240 Unity background is pixel-identical to the LibreSprite export; 1440×960 is an exact 2× enlargement of the 720×480 capture. All 24,100 pre-existing tracked files matched their starting hashes before adding the task-status documentation. Opaque scenery and binary-alpha wisp sprites; no filtering, compression or native resampling. No live combat or device test is claimed.</p>
+<p>All existing asset files, shared board/player dimensions, lower HUD and production bindings are preserved. Stop here for Stage 1 approval. Stage 2 (player frame) has not begun.</p>
+<p><a href="Diagnostics/NativeValidation.json">Native measurements</a> · <a href="README.md">Handoff notes</a></p></div>
+<script>function zoom(s){document.querySelectorAll('.asset').forEach(i=>{i.width=360*s;i.height=240*s})}</script>

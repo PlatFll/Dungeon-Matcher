@@ -1,0 +1,110 @@
+{
+  "status": "candidate awaiting Stage 1 approval",
+  "dimensions": [
+    360,
+    240
+  ],
+  "palette_count": 27,
+  "modules": [
+    {
+      "name": "Grove_Background",
+      "width": 360,
+      "height": 200,
+      "colors": 27,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        360,
+        200
+      ],
+      "sha256": "1760a067f908eec2379ced4a9c7a54d3d4290db7d9de133f8fdd1c8e023465d7"
+    },
+    {
+      "name": "Combat_Ground",
+      "width": 360,
+      "height": 40,
+      "colors": 19,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        360,
+        40
+      ],
+      "sha256": "7a2115a126a1e357344c18357b90e9dcc9960ebec86cf92ab05c6d04b91c0cad"
+    },
+    {
+      "name": "Wisp_Far_A",
+      "width": 16,
+      "height": 16,
+      "colors": 2,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        5,
+        6,
+        8,
+        11
+      ],
+      "sha256": "bbea31ce79e2dc7e66e07274ab46c2b8a0474bb7cc6b26e4376f004d9486a52a"
+    },
+    {
+      "name": "Wisp_Far_B",
+      "width": 16,
+      "height": 20,
+      "colors": 2,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        7,
+        5,
+        10,
+        11
+      ],
+      "sha256": "9e73d88268bad36750b13411f317390c869597c5af116ac5cdcb73cdd047061e"
+    },
+    {
+      "name": "Wisp_Near",
+      "width": 18,
+      "height": 22,
+      "colors": 1,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        5,
+        3,
+        12,
+        17
+      ],
+      "sha256": "b230eaedf3cb5ea1e06412ccefa0d3947dbc99b4e1b26fd3b0246e9747449de8"
+    }
+  ],
+  "reopened_exact": true,
+  "reassembled_exact": true,
+  "pixellab_jobs": [
+    "793ad468-b410-4198-b50b-54ed0785c7f5"
+  ],
+  "charged_generations": 15,
+  "reference_hashes": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca",
+    "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306",
+    "Assets/_Game/Art/CombatIdles/Farmer_Idle.png": "f1ee772c518c6106617dcf782de95c431e6d90dd6d079a6a5d1d097ce1f10164",
+    "Assets/_Game/Art/CombatIdles/PanVillager_Idle.png": "cf2f8bcb3d7066e5837e933e105ed9ff70cd50780bf48d26cb8df9185833e51d",
+    "ArtSource/EnchantedForestStaged/Brief/reference/enchanted_forest_match_3_battle_reference.png": "b1926c0af6c31240e68d830a00241892d9b72ca0e18e0921ad97ea4f84fecf77"
+  }
+}
