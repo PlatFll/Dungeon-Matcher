@@ -345,8 +345,8 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         {
             // Preserve source pixels. The surrounding slot continues to own placement.
             // Native caps and badge retain their pixels. Only the repeatable
-            // center span contracts on the compact Dungeon viewport.
-            bool compact=DungeonPixelLabBattleArt.Current && UnityEngine.Device.Screen.width<448;
+            // center span contracts on the shared compact viewport.
+            bool compact=UnityEngine.Device.Screen.width<448;
             rootWidth = Mathf.Max(rootWidth, compact ? (enemySlot ? 60 : 80) : 104);
 
             generatedRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rootWidth);

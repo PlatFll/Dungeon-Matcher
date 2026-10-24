@@ -20,6 +20,17 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Shared zone geometry and Forest frame review (2026-10-24, unmerged PR #207)
+
+The requested Forest rim correction follows the unchanged 512px tile opening.
+Existing gameplay layout owners now use Dungeon board sizing and one portrait
+registration across all five zones. Zone decoration no longer shrinks the grid;
+legacy lower HUD enclosures retain their existing size. Approved image assets
+and previous review scenes are preserved. The new Forest artwork is still an
+art-only review; production Forest art integration and merge remain unapproved.
+See [the frame-fit review](../ArtSource/ForestReworkV2/FrameFit/README.md) for
+actual Unity previews, cross-zone measurements and verification limits.
+
 ## Hybrid dungeon integration (2026-10-22, approved for merge in PR #205)
 
 The user approved the final playable Dungeon visuals, aligned corner masonry and

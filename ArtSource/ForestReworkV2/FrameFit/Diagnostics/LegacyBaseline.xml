@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Failed(Child)" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-24 03:00:24Z" end-time="2026-10-24 03:00:27Z" duration="3.0413991">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="843" result="Failed" site="Child" start-time="2026-10-24 03:00:24Z" end-time="2026-10-24 03:00:27Z" duration="3.041399" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="2010" name="Assembly-CSharp-Editor.dll" fullname="C:/Users/USER/.codex/worktrees/forest-zone-hybrid-rebuild/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="843" result="Failed" site="Child" start-time="2026-10-24 03:00:24Z" end-time="2026-10-24 03:00:27Z" duration="3.009430" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="41508" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+      <test-suite type="TestFixture" id="1711" name="ForestVisualPlayTests" fullname="ForestVisualPlayTests" classname="ForestVisualPlayTests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2026-10-24 03:00:24Z" end-time="2026-10-24 03:00:27Z" duration="2.989057" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+        <test-case id="1712" name="CaptureActualForestGameplayAndChannelIntent" fullname="ForestVisualPlayTests.CaptureActualForestGameplayAndChannelIntent" methodname="CaptureActualForestGameplayAndChannelIntent" classname="ForestVisualPlayTests" runstate="Runnable" seed="642253810" result="Failed" start-time="2026-10-24 03:00:07Z" end-time="2026-10-24 03:00:14Z" duration="6.497440" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected string length 15 but was 19. Strings differ at index 0.
+  Expected: "forest-woodland"
+  But was:  "presentation-forest"
+  -----------^
+]]></message>
+            <stack-trace><![CDATA[at ForestVisualPlayTests+<CaptureActualForestGameplayAndChannelIntent>d__0.MoveNext () [0x00277] in C:\Users\USER\.codex\worktrees\forest-zone-hybrid-rebuild\Dungeon Matcher\Assets\_Game\Scripts\Editor\ForestVisualPlayTests.cs:31
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@bd7f943e9647\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+Spawned Orc Trailguard in EnemySlot1. Category: Normal. Gem type: Sapphire. Wave 1, Level 1, HP 90, Damage 15, Follow-up Damage 0, Attack Interval 4.50s, Special Turns 3
+Initialized player RattleBones. HP: 100/100.
+Pixel layout validated: Screen 720x1280; safe=(x:0.00, y:0.00, width:720.00, height:1280.00); constraints=(x:0.00, y:0.00, width:720.00, height:1280.00); logical viewport=(712.00, 1272.00); physical viewport=(x:4.00, y:4.00, width:712.00, height:1272.00); canvas scale=1; logical/physical=1; Top=(x:4.00, y:796.00, width:712.00, height:480.00); BoardArea=(x:57.00, y:184.00, width:605.00, height:605.00); Bottom=(x:4.00, y:4.00, width:712.00, height:174.00); gaps=7,6; cutouts=0; bottom display clearance=4; safe clearance=4; board texel ratio=1.040633; origin=(360.00, 486.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(59.93, 190.72, 9.90), max=(660.07, 788.50, 10.10), source=(410.00, 414.00), ratios=(1.46, 1.44)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:662.00, y:184.00, width:54.00, height:605.00), source=(30.00, 403.00), ratios=(1.8,1.501241)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:4.00, y:184.00, width:53.00, height:605.00), source=(30.00, 403.00), ratios=(1.766667,1.501241)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarScenery bounds=(x:4.00, y:1009.00, width:712.00, height:267.00), source=(470.00, 160.00), ratios=(1.514894,1.66875)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitMidScenery bounds=(x:4.00, y:924.00, width:712.00, height:85.00), source=(470.00, 51.00), ratios=(1.514894,1.666667)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:4.00, y:796.00, width:712.00, height:128.00), source=(470.00, 77.00), ratios=(1.514894,1.662338)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:37.00, y:833.00, width:160.00, height:373.00), source=(105.00, 224.00), ratios=(1.52381,1.665179)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:81.00, y:1096.00, width:75.00, height:110.00), source=(49.00, 66.00), ratios=(1.530612,1.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:86.00, y:983.00, width:64.00, height:64.00), source=(64.00, 64.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:59.00, y:957.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:180.00, y:957.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:45.00, y:957.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:102.00, y:1051.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:16.00, y:806.00, width:205.00, height:430.00), source=(135.00, 258.00), ratios=(1.518519,1.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Orc Trailguard_Level_1/VisualRoot bounds=(x:240.00, y:898.00, width:144.00, height:88.00), source=(144.00, 88.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:259.00, y:857.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:365.00, y:857.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:245.00, y:857.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:295.00, y:815.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/CasterSlotSigil bounds=(x:379.00, y:863.00, width:12.00, height:12.00), source=(12.00, 12.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:242.00, y:1163.00, width:238.00, height:80.00), source=(157.00, 48.00), ratios=(1.515924,1.666667)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:631.00, y:1159.00, width:68.00, height:67.00), source=(45.00, 40.00), ratios=(1.511111,1.675)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:504.00, y:1161.00, width:120.00, height:65.00), source=(79.00, 39.00), ratios=(1.518987,1.666667)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:4.00, y:4.00, width:712.00, height:174.00), source=(470.00, 135.00), ratios=(1.514894,1.288889)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:272.00, y:58.00, width:176.00, height:66.00), source=(176.00, 66.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:286.00, y:69.00, width:148.00, height:44.00), source=(148.00, 44.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:286.00, y:123.00, width:147.00, height:24.00), source=(147.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:193.00, y:60.00, width:70.00, height:63.00), source=(70.00, 63.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:204.00, y:68.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:457.00, y:60.00, width:70.00, height:63.00), source=(70.00, 63.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:468.00, y:68.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+
+Spawned Elven Mender in EnemySlot2. Category: Special. Gem type: Ruby. Wave 1, Level 1, HP 75, Damage 5, Follow-up Damage 0, Attack Interval 5.00s, Special Turns 2
+Board entrance complete.
+Spawned Elven Scout in EnemySlot3. Category: Normal. Gem type: Emerald. Wave 1, Level 1, HP 60, Damage 5, Follow-up Damage 0, Attack Interval 3.00s, Special Turns 3
+Wave 1 started using rule 'Heal response'. Planned: 3. Spawned: 3.
+]]></output>
+        </test-case>
+        <test-case id="1714" name="CaptureMatriarchRitual" fullname="ForestVisualPlayTests.CaptureMatriarchRitual" methodname="CaptureMatriarchRitual" classname="ForestVisualPlayTests" runstate="Runnable" seed="1770515872" result="Failed" start-time="2026-10-24 03:00:14Z" end-time="2026-10-24 03:00:20Z" duration="6.798536" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Briar Matriarch_Level_6 move intent must remain above the rendered sprite at 09-matriarch
+  Expected: greater than 1669.0f
+  But was:  1653.0f
+]]></message>
+            <stack-trace><![CDATA[at ForestVisualPlayTests.CheckLayout (System.String output, System.String label) [0x001bd] in C:\Users\USER\.codex\worktrees\forest-zone-hybrid-rebuild\Dungeon Matcher\Assets\_Game\Scripts\Editor\ForestVisualPlayTests.cs:136
+at ForestVisualPlayTests+<CaptureMilestone>d__4.MoveNext () [0x003a1] in C:\Users\USER\.codex\worktrees\forest-zone-hybrid-rebuild\Dungeon Matcher\Assets\_Game\Scripts\Editor\ForestVisualPlayTests.cs:109
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@bd7f943e9647\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+Spawned Briar Matriarch in EnemySlot1. Category: Boss. Gem type: Topaz. Wave 1, Level 6, HP 240, Damage 10, Follow-up Damage 0, Attack Interval 5.00s, Special Turns 3
+Initialized player Gideon Glass. HP: 90/90.
+Pixel layout validated: Screen 1080x1920; safe=(x:0.00, y:0.00, width:1080.00, height:1920.00); constraints=(x:0.00, y:0.00, width:1080.00, height:1920.00); logical viewport=(532.00, 952.00); physical viewport=(x:8.00, y:8.00, width:1064.00, height:1904.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1144.00, width:1064.00, height:768.00); BoardArea=(x:140.00, y:332.00, width:800.00, height:800.00); Bottom=(x:8.00, y:8.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=8; safe clearance=8; board texel ratio=1.376044; origin=(540.00, 732.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(143.22, 341.55, 9.90), max=(936.78, 1132.00, 10.10), source=(410.00, 414.00), ratios=(1.94, 1.91)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:940.00, y:332.00, width:132.00, height:800.00), source=(30.00, 403.00), ratios=(4.4,1.985112)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:332.00, width:132.00, height:800.00), source=(30.00, 403.00), ratios=(4.4,1.985112)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarScenery bounds=(x:8.00, y:1485.00, width:1064.00, height:427.00), source=(470.00, 160.00), ratios=(2.26383,2.66875)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitMidScenery bounds=(x:8.00, y:1349.00, width:1064.00, height:136.00), source=(470.00, 51.00), ratios=(2.26383,2.666667)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:8.00, y:1144.00, width:1064.00, height:205.00), source=(470.00, 77.00), ratios=(2.26383,2.662338)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:58.00, y:1203.00, width:238.00, height:597.00), source=(105.00, 224.00), ratios=(2.266667,2.665179)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1624.00, width:112.00, height:176.00), source=(49.00, 66.00), ratios=(2.285714,2.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:83.00, y:1396.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:103.00, y:1344.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:259.00, y:1344.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:75.00, y:1344.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:147.00, y:1596.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:26.00, y:1160.00, width:306.00, height:688.00), source=(135.00, 258.00), ratios=(2.266667,2.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Briar Matriarch_Level_6/VisualRoot bounds=(x:257.00, y:1309.00, width:432.00, height:360.00), source=(144.00, 120.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:396.00, y:1266.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:552.00, y:1266.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:368.00, y:1266.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:440.00, y:1182.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/CasterSlotSigil bounds=(x:566.00, y:1278.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:363.00, y:1731.00, width:356.00, height:128.00), source=(157.00, 48.00), ratios=(2.267516,2.666667)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:1725.00, width:102.00, height:107.00), source=(45.00, 40.00), ratios=(2.266667,2.675)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:1728.00, width:179.00, height:104.00), source=(79.00, 39.00), ratios=(2.265823,2.666667)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:8.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:98.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:392.00, y:120.00, width:296.00, height:88.00), source=(148.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:228.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Spawned Elven Scout in EnemySlot2. Category: Normal. Gem type: Amber. Wave 1, Level 1, HP 60, Damage 5, Follow-up Damage 0, Attack Interval 3.00s, Special Turns 3
+Board entrance complete.
+Spawned Orc Trailguard in EnemySlot3. Category: Normal. Gem type: Sapphire. Wave 1, Level 1, HP 90, Damage 15, Follow-up Damage 0, Attack Interval 4.50s, Special Turns 3
+Wave 1 started using rule 'Matriarch first lesson'. Planned: 3. Spawned: 3.
+]]></output>
+        </test-case>
+        <test-case id="1713" name="CaptureWardenWarning" fullname="ForestVisualPlayTests.CaptureWardenWarning" methodname="CaptureWardenWarning" classname="ForestVisualPlayTests" runstate="Runnable" seed="995607927" result="Failed" start-time="2026-10-24 03:00:20Z" end-time="2026-10-24 03:00:27Z" duration="6.203650" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Barkhide Warden_Level_3 move intent must remain above the rendered sprite at 08-warden
+  Expected: greater than 1573.0f
+  But was:  1557.0f
+]]></message>
+            <stack-trace><![CDATA[at ForestVisualPlayTests.CheckLayout (System.String output, System.String label) [0x001bd] in C:\Users\USER\.codex\worktrees\forest-zone-hybrid-rebuild\Dungeon Matcher\Assets\_Game\Scripts\Editor\ForestVisualPlayTests.cs:136
+at ForestVisualPlayTests+<CaptureMilestone>d__4.MoveNext () [0x003a1] in C:\Users\USER\.codex\worktrees\forest-zone-hybrid-rebuild\Dungeon Matcher\Assets\_Game\Scripts\Editor\ForestVisualPlayTests.cs:109
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@bd7f943e9647\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+Spawned Barkhide Warden in EnemySlot1. Category: Miniboss. Gem type: Emerald. Wave 1, Level 3, HP 150, Damage 15, Follow-up Damage 0, Attack Interval 4.50s, Special Turns 2
+Initialized player Gideon Glass. HP: 90/90.
+Pixel layout validated: Screen 1080x1920; safe=(x:0.00, y:0.00, width:1080.00, height:1920.00); constraints=(x:0.00, y:0.00, width:1080.00, height:1920.00); logical viewport=(532.00, 952.00); physical viewport=(x:8.00, y:8.00, width:1064.00, height:1904.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1144.00, width:1064.00, height:768.00); BoardArea=(x:140.00, y:332.00, width:800.00, height:800.00); Bottom=(x:8.00, y:8.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=8; safe clearance=8; board texel ratio=1.376044; origin=(540.00, 732.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(143.22, 341.55, 9.90), max=(936.78, 1132.00, 10.10), source=(410.00, 414.00), ratios=(1.94, 1.91)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:940.00, y:332.00, width:132.00, height:800.00), source=(30.00, 403.00), ratios=(4.4,1.985112)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:332.00, width:132.00, height:800.00), source=(30.00, 403.00), ratios=(4.4,1.985112)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarScenery bounds=(x:8.00, y:1485.00, width:1064.00, height:427.00), source=(470.00, 160.00), ratios=(2.26383,2.66875)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitMidScenery bounds=(x:8.00, y:1349.00, width:1064.00, height:136.00), source=(470.00, 51.00), ratios=(2.26383,2.666667)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:8.00, y:1144.00, width:1064.00, height:205.00), source=(470.00, 77.00), ratios=(2.26383,2.662338)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:58.00, y:1203.00, width:238.00, height:597.00), source=(105.00, 224.00), ratios=(2.266667,2.665179)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1624.00, width:112.00, height:176.00), source=(49.00, 66.00), ratios=(2.285714,2.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:83.00, y:1396.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:103.00, y:1344.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:259.00, y:1344.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:75.00, y:1344.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:147.00, y:1596.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:26.00, y:1160.00, width:306.00, height:688.00), source=(135.00, 258.00), ratios=(2.266667,2.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Barkhide Warden_Level_3/VisualRoot bounds=(x:257.00, y:1309.00, width:432.00, height:264.00), source=(144.00, 88.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:396.00, y:1266.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:552.00, y:1266.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:368.00, y:1266.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:440.00, y:1182.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/CasterSlotSigil bounds=(x:566.00, y:1278.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:363.00, y:1731.00, width:356.00, height:128.00), source=(157.00, 48.00), ratios=(2.267516,2.666667)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:1725.00, width:102.00, height:107.00), source=(45.00, 40.00), ratios=(2.266667,2.675)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:1728.00, width:179.00, height:104.00), source=(79.00, 39.00), ratios=(2.265823,2.666667)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:8.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:98.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:392.00, y:120.00, width:296.00, height:88.00), source=(148.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:228.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Spawned Elven Scout in EnemySlot2. Category: Normal. Gem type: Amethyst. Wave 1, Level 1, HP 60, Damage 5, Follow-up Damage 0, Attack Interval 3.00s, Special Turns 3
+Wave 1 started using rule 'Warden and Scout'. Planned: 2. Spawned: 2.
+Board entrance complete.
+Saving results to: C:/Users/USER/AppData/LocalLow/Blank/Dungeon Matcher\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

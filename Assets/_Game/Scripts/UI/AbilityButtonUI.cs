@@ -86,6 +86,11 @@ public sealed class AbilityButtonUI : MonoBehaviour
             }
             return;
         }
+        // The shared compact viewport keeps native controls just inside the
+        // display; normal-size zone HUD positions remain unchanged.
+        var legacyRect = (RectTransform)transform;
+        if (legacyRect.parent is RectTransform legacyHud)
+            legacyRect.anchoredPosition = new Vector2(0, legacyHud.rect.height <= 80 ? -8 : -17);
         var theme=GameplayThemeSkin.Current;
         if(theme==null || appliedTheme==theme) return;
         appliedTheme=theme;

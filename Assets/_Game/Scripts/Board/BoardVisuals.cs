@@ -105,8 +105,10 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private Texture2D runtimeTexture;
     private Sprite runtimeSquareSprite;
-    public float LayoutLocalWidth => OuterLocalWidth + 2 * (GameplayThemeSkin.Current?.boardPerimeterPadding ?? 0);
-    public float LayoutLocalHeight => OuterLocalHeight + 2 * (GameplayThemeSkin.Current?.boardPerimeterPadding ?? 0);
+    // Layout is gameplay geometry, not a property of the active decoration.
+    // Preserve the established Dungeon board footprint for every skin.
+    public float LayoutLocalWidth { get { EnsureBoardReference(); return board == null ? 0 : GameplayPixelLayoutController.BoardLayoutExtent(board.LocalBoardWidth); } }
+    public float LayoutLocalHeight { get { EnsureBoardReference(); return board == null ? 0 : GameplayPixelLayoutController.BoardLayoutExtent(board.LocalBoardHeight); } }
 
     public float OuterLocalWidth
     {

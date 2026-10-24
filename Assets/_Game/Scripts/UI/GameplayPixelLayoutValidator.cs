@@ -13,7 +13,7 @@ public static class GameplayPixelLayoutValidator
         var errors = new List<string>();
         var g = owner.Current;
         bool pixelLab = DungeonPixelLabBattleArt.Current != null;
-        bool compact = pixelLab && g.Bottom.height == 80;
+        bool compact = g.Bottom.height == 80;
         Rect top = GameplayPixelLayoutController.ScreenRect(owner.TopHud);
         Rect board = GameplayPixelLayoutController.ScreenRect(owner.BoardArea);
         Rect bottom = GameplayPixelLayoutController.ScreenRect(owner.BottomHud);
@@ -30,20 +30,15 @@ public static class GameplayPixelLayoutValidator
             $"fractional board scale={g.FractionalBoardScale}\n";
         Require(g.Fits, "No feasible layout", errors);
         var player = owner.TopHud.Find("GeneratedTopBattleLayout/PlayerSection") as RectTransform;
-        Rect playerRegistration=BattlePresentationSkin.ReferencePlayerRect;
-        float referenceHeight=BattlePresentationSkin.ReferenceTopHeight;
-        Require(player != null && Near(player.rect.height, BattlePresentationSkin.UsesReferenceKit ? Mathf.Round(g.Top.height*playerRegistration.height/referenceHeight) : Mathf.Min(PlayerAreaThreeSliceFrameController.PreferredHeight, g.Top.height) - 44),
-            "Player frame changed with battle height", errors);
+        Rect expectedPlayer = owner.SharedPlayerRect(owner.TopHud.rect.size);
+        Require(player != null && Near(player.rect.width, expectedPlayer.width) && Near(player.rect.height, expectedPlayer.height),
+            "Player frame differs from shared cross-zone dimensions", errors);
         if (player != null)
         {
             Rect playerBounds = GameplayPixelLayoutController.ScreenRect(player);
-            if(BattlePresentationSkin.UsesReferenceKit)
-            {
-                float expectedY=top.yMin+(Mathf.Round(g.Top.height*(referenceHeight-playerRegistration.yMax)/referenceHeight)+Mathf.Round(g.Top.height*playerRegistration.height/referenceHeight)*.5f)*g.Scale;
-                Require(Near(playerBounds.center.y,expectedY),"Player panel differs from registered reference position",errors);
-            }
-            else Require(Mathf.Abs(playerBounds.center.y - top.center.y) <= g.Scale / 2f + Epsilon,
-                "Player frame is not vertically centered in battle area", errors);
+            Require(Near(playerBounds.xMin, top.xMin + expectedPlayer.x * g.Scale) &&
+                Near(playerBounds.yMin, top.yMin + expectedPlayer.y * g.Scale),
+                "Player frame differs from shared registration", errors);
             var playerContent = player.Find("PlayerPanel") as RectTransform;
             Require(playerContent != null, "Missing player content container", errors);
             if (playerContent != null)
