@@ -1,0 +1,8 @@
+{
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "exit_code": 0,
+  "result": "Unity validation succeeded with Unity 6000.3.19f1",
+  "local_log": "C:\\Users\\USER\\.codex\\worktrees\\forest-zone-hybrid-rebuild\\Dungeon Matcher\\ArtSource\\ForestSurroundRevision\\PolishStage02\\Diagnostics\\UnityCompile.log",
+  "log_sha256": "44cac7dd47a362f0e5eeec908c4ab31f9f22c61a99e1424ba8fcf0ba83509146",
+  "editor_source_sha256": "ff0bcc9797dc79e38c9dcf2d1f2073e428047165710d3ab201362ceba31e3db9"
+}

@@ -21,33 +21,37 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 
-## Forest surround polish — Stage 1 separator (2026-10-24, review only)
+## Forest surround polish — Stage 2 root joins (2026-10-24, review only)
 
-The latest six-stage revision begins with the battle/board separator only. A new
-isolated Unity scene adds nine broad mudstone blocks from three 40×16 native
-PixelLab/LibreSprite tiles. The original scene, source artwork, UI and gameplay
-remain intact. The only changed screenshot region is y=448–480 at 720×1360;
-existing portrait foliage stays in front. All 294 existing visible image bindings
-and rectangles, plus 6,697 source/scene/script/resource/settings files, are preserved.
-Unity compilation and review captures passed at 720×1360 and 1440×2720 with
-exact pixel doubling. The native sources reopen to identical PNG pixels.
+The user advanced from the Stage 1 separator to the lower root/branch repair.
+Two focused PixelLab edits and LibreSprite cleanup replace the flared bough ends
+with continuous bark curves around the existing stone anchors. Four new native
+modules separate the two roots from the preserved stone surfaces; old sources
+and previous scenes remain intact. The new art-review scene disables only the
+two superseded bough instances and two combined stone/root instances.
 
-The account balance decreased by 7 subscription generations: two delivered Pixen
-studies at 1 each and a further 5-generation debit after the cancelled Pro Flash
-attempt. No finished Flash result or refund confirmation was returned. The earlier
-Pro job also stalled and was cancelled. USD credits used: zero. Exact receipts,
-cancellation/error results and the observed balance are retained in the report.
+Unity compilation and the review test passed at 720×1360 and 1440×2720 with exact
+pixel doubling. Screenshot differences are confined to the authorized lower
+root/anchor masks. The approved separator, top scene, board/frame, HUD/text and
+existing mushroom/moss accents remain pixel-identical. All 303 prior visible
+Image bindings/rectangles and 6,708 existing source/scene/script/resource/settings
+files are unchanged. LibreSprite save/reopen exports match exactly; both roots
+have binary alpha, native scale and a single connected silhouette.
 
-The current lower-corner assets remain the base, but the user identified weak
-root joins and pasted-on mushroom/greenery attachments. Those issues are still
-outstanding and belong to the later requested stages; prior technical connectivity
-checks do not constitute visual approval. Keep their sources/history intact.
+Stage 2 used 2 subscription generations (690.20 → 688.20), zero USD credits.
+The latest polish pass total is 9 debited, including Stage 1's documented
+5-generation debit after its cancelled Flash job. See the exact receipts in
+the stage reports. The Stage 1 divider remains approved and unchanged.
 
-See [separator report and actual Unity preview](../ArtSource/ForestSurroundRevision/PolishStage01/README.md).
-The [earlier unified-corner report](../ArtSource/ForestSurroundRevision/UnifiedCorners/README.md)
-remains process history. Draft PR #209 stays on the dedicated revision branch.
-No production runtime integration, device test, later-stage work or merge.
-Stop for review before Stage 2 root/branch repair.
+Current review: [root-join report and Unity comparison](../ArtSource/ForestSurroundRevision/PolishStage02/README.md).
+[Separator history](../ArtSource/ForestSurroundRevision/PolishStage01/README.md) and
+[earlier unified-corner history](../ArtSource/ForestSurroundRevision/UnifiedCorners/README.md)
+remain available. Mushroom/greenery attachment and lower-area enrichment are
+still later-stage work. This revision does not claim to complete those tasks.
+
+Draft PR #209 stays on the dedicated revision branch. No production runtime
+integration, real-device testing, animation or merge. Stop for Stage 2 approval
+before starting Stage 3 rock/mushroom/foliage integration.
 
 ## Forest surround revision — Stage 1 board-side roots (2026-10-24, review only)
 
@@ -62,7 +66,7 @@ Unity compilation and review tests passed at 720×1360 and 1440×2720. Top HUD/b
 board/gems/frame, entire bottom region, shared geometry and 296 existing image
 bindings/rectangles are exact. All 1,680 protected source files are unchanged.
 See [Stage 1 report](../ArtSource/ForestSurroundRevision/Stage01/README.md).
-Stage 1 was carried forward into Stage 2; the focused separator revision above
+Stage 1 was carried forward into Stage 2; the focused root-join revision above
 owns the current review gate. No production integration or animation is approved.
 
 ## Enchanted Forest staged pack — Stage 5 revision 02 (2026-10-24, review only)
