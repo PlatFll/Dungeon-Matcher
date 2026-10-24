@@ -1,0 +1,27 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"background_job_id\": \"e73e2738-f93c-4ade-91bc-b33efab095b5\",\n  \"image_id\": \"013f4596-64e3-513e-b978-7d9d95651a5b\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"013f4596-64e3-513e-b978-7d9d95651a5b\",\n  \"job_id\": \"e73e2738-f93c-4ade-91bc-b33efab095b5\",\n  \"description\": \"A single distant background support layer for a premium whimsical native pixel-art side-scrolling forest battle game, 256 by 160 native pixels. NOT a full game scene. Ancient enchanted woodland sanctuary, wide landscape. Three broad layers of tall slender trees in cool deep blue-green shadow, distant moss-covered small stone bridge at center-right and a narrow pale turquoise waterfall behind it. A calm dark lower third where foreground fighters can read. Mystical atmosphere conveyed by two or three broad connected light planes around the distant waterfall, no blurred glow. Mostly quiet silhouettes and large clean clusters. Very sparse leaves as large clumps, NO individual leaf noise or speckled texture. Side view, no ground plane receding into perspective. Leave near foreground empty: no characters, animals, monsters, gems, coins, UI, lettering, ornaments, mushrooms, lanterns, frames or giant foreground trunks. Edges should remain dark and low-contrast to disappear behind separate foreground trees. Colors are subdued; reserved pale turquoise limited to the small distant waterfall, no pure white. Crisp native pixels, economical matte shading, controlled top-left lighting. Match supplied rendering reference in cluster discipline and deliberate edges, but use only the forest palette and no skeleton anatomy or royal motifs.\",\n  \"seed\": 74723,\n  \"image_size\": {\n    \"width\": 256,\n    \"height\": 160\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 9,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/e73e2738-f93c-4ade-91bc-b33efab095b5/download\"\n}\nPoll get_image(job_id=\"e73e2738-f93c-4ade-91bc-b33efab095b5\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    }
+  ],
+  "structuredContent": {
+    "background_job_id": "e73e2738-f93c-4ade-91bc-b33efab095b5",
+    "image_id": "013f4596-64e3-513e-b978-7d9d95651a5b",
+    "status": "processing",
+    "source_image_id": "013f4596-64e3-513e-b978-7d9d95651a5b",
+    "job_id": "e73e2738-f93c-4ade-91bc-b33efab095b5",
+    "description": "A single distant background support layer for a premium whimsical native pixel-art side-scrolling forest battle game, 256 by 160 native pixels. NOT a full game scene. Ancient enchanted woodland sanctuary, wide landscape. Three broad layers of tall slender trees in cool deep blue-green shadow, distant moss-covered small stone bridge at center-right and a narrow pale turquoise waterfall behind it. A calm dark lower third where foreground fighters can read. Mystical atmosphere conveyed by two or three broad connected light planes around the distant waterfall, no blurred glow. Mostly quiet silhouettes and large clean clusters. Very sparse leaves as large clumps, NO individual leaf noise or speckled texture. Side view, no ground plane receding into perspective. Leave near foreground empty: no characters, animals, monsters, gems, coins, UI, lettering, ornaments, mushrooms, lanterns, frames or giant foreground trunks. Edges should remain dark and low-contrast to disappear behind separate foreground trees. Colors are subdued; reserved pale turquoise limited to the small distant waterfall, no pure white. Crisp native pixels, economical matte shading, controlled top-left lighting. Match supplied rendering reference in cluster discipline and deliberate edges, but use only the forest palette and no skeleton anatomy or royal motifs.",
+    "seed": 74723,
+    "image_size": {
+      "width": 256,
+      "height": 160
+    },
+    "output_count": 1,
+    "estimated_generations": 9,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/e73e2738-f93c-4ade-91bc-b33efab095b5/download"
+  },
+  "isError": false
+}

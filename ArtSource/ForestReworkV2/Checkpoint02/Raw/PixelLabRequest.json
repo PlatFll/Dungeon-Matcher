@@ -1,0 +1,36 @@
+{
+  "description": "A single distant background support layer for a premium whimsical native pixel-art side-scrolling forest battle game, 256 by 160 native pixels. NOT a full game scene. Ancient enchanted woodland sanctuary, wide landscape. Three broad layers of tall slender trees in cool deep blue-green shadow, distant moss-covered small stone bridge at center-right and a narrow pale turquoise waterfall behind it. A calm dark lower third where foreground fighters can read. Mystical atmosphere conveyed by two or three broad connected light planes around the distant waterfall, no blurred glow. Mostly quiet silhouettes and large clean clusters. Very sparse leaves as large clumps, NO individual leaf noise or speckled texture. Side view, no ground plane receding into perspective. Leave near foreground empty: no characters, animals, monsters, gems, coins, UI, lettering, ornaments, mushrooms, lanterns, frames or giant foreground trunks. Edges should remain dark and low-contrast to disappear behind separate foreground trees. Colors are subdued; reserved pale turquoise limited to the small distant waterfall, no pure white. Crisp native pixels, economical matte shading, controlled top-left lighting. Match supplied rendering reference in cluster discipline and deliberate edges, but use only the forest palette and no skeleton anatomy or royal motifs.",
+  "width": 256,
+  "height": 160,
+  "max_colors": 14,
+  "no_background": false,
+  "seed": 74723,
+  "palette": [
+    "#12232f",
+    "#182f3b",
+    "#1d3e49",
+    "#284c56",
+    "#345d64",
+    "#47777b",
+    "#619494",
+    "#8eb4ad",
+    "#203a32",
+    "#2e4b3b",
+    "#406349",
+    "#5a7b55",
+    "#344a49",
+    "#546e64"
+  ],
+  "palette_name": "Dungeon Matcher quiet enchanted woodland",
+  "style_image": {
+    "usage_description": "Primary Dungeon Matcher rendering authority: crisp native contours and broad connected matte shading. Do not copy skeleton identity, anatomy, palette, pose, crown or UI.",
+    "base64_from_file": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+    "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+  },
+  "style_options": {
+    "color_palette": false,
+    "outline": true,
+    "detail": true,
+    "shading": true
+  }
+}

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
 {
-    public static float PreferredHeight => CombatMoveClock.Unified ? 354f : 290f;
     private const string ProfileResourcePath =
         "UI/PlayerAreaFrameProfile";
 
@@ -24,24 +23,12 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
     private const string GeneratedFrameName =
         "PlayerAreaThreeSliceFrame";
 
-    private const float FallbackPlayerSectionWidth =
-        146f;
-
-    private const float SectionOuterInset =
-        6f;
-
-    private const float SectionGap =
-        12f;
-
-    private const float PlayerFrameLeftInset =
-        16f;
-
     private RectTransform topHud;
     private RectTransform playerSection;
     private RectTransform enemySection;
     private PlayerAreaFrameProfile profile;
     private bool configured;
-    private float lastLayoutHeight;
+    private float lastLayoutHeight, lastLayoutWidth;
     private bool missingArtWarningShown;
 
     private void Awake()
@@ -66,7 +53,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
         {
             TryConfigure();
         }
-        if (configured && playerSection != null && playerSection.parent is RectTransform root && root.rect.height != lastLayoutHeight)
+        if (configured && playerSection != null && playerSection.parent is RectTransform root && (root.rect.height != lastLayoutHeight || root.rect.width != lastLayoutWidth))
             ApplySectionGeometry(root);
     }
 
@@ -124,79 +111,13 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
         RectTransform generatedLayout)
     {
         lastLayoutHeight = generatedLayout.rect.height;
-        if(BattlePresentationSkin.UsesReferenceKit)
-        {
-            float height=BattlePresentationSkin.ReferenceTopHeight;
-            float x=generatedLayout.rect.width/470f,y=lastLayoutHeight/height;
-            Rect source=BattlePresentationSkin.ReferencePlayerRect;
-            GameplayPixelLayoutController.SetRect(playerSection,new Rect(Mathf.Round(source.x*x),Mathf.Round((height-source.yMax)*y),Mathf.Round(source.width*x),Mathf.Round(source.height*y)));
-            GameplayPixelLayoutController.SetRect(enemySection,new Rect(Mathf.Round(140*x),6,Mathf.Round(330*x)-6,lastLayoutHeight-12));
-            return;
-        }
-        float playerHeight = Mathf.Min(PreferredHeight, lastLayoutHeight);
-        float extraTopInset = Mathf.Floor((lastLayoutHeight - playerHeight) / 2f);
-        float playerWidth =
-            profile != null
-                ? profile.PlayerSectionWidth
-                : FallbackPlayerSectionWidth;
-
-        playerWidth =
-            Mathf.Max(
-                1f,
-                playerWidth
-            );
-
-        float maximumPlayerWidth =
-            Mathf.Max(
-                1f,
-                generatedLayout.rect.width -
-                SectionOuterInset * 2f -
-                SectionGap -
-                120f
-            );
-
-        playerWidth =
-            Mathf.Min(
-                playerWidth,
-                maximumPlayerWidth
-            );
-
-        playerSection.anchorMin =
-            new Vector2(0f, 1f);
-        playerSection.anchorMax =
-            new Vector2(0f, 1f);
-        playerSection.pivot =
-            new Vector2(0.5f, 0.5f);
-        playerSection.offsetMin =
-            new Vector2(
-                PlayerFrameLeftInset,
-                -playerHeight + 16f + 6f - extraTopInset
-            );
-        playerSection.offsetMax =
-            new Vector2(
-                PlayerFrameLeftInset +
-                playerWidth,
-                -(16f + 6f) - extraTopInset
-            );
-
-        enemySection.anchorMin =
-            new Vector2(0f, 0f);
-        enemySection.anchorMax =
-            new Vector2(1f, 1f);
-        enemySection.pivot =
-            new Vector2(0.5f, 0.5f);
-        enemySection.offsetMin =
-            new Vector2(
-                SectionOuterInset +
-                playerWidth +
-                SectionGap,
-                SectionOuterInset
-            );
-        enemySection.offsetMax =
-            new Vector2(
-                -SectionOuterInset,
-                -SectionOuterInset
-            );
+        lastLayoutWidth = generatedLayout.rect.width;
+        var owner = GetComponentInParent<GameplayPixelLayoutController>();
+        if (owner == null) return;
+        GameplayPixelLayoutController.SetRect(playerSection, owner.SharedPlayerRect(generatedLayout.rect.size));
+        float x = generatedLayout.rect.width / 470f;
+        GameplayPixelLayoutController.SetRect(enemySection, new Rect(Mathf.Round(140 * x), 6,
+            Mathf.Round(330 * x) - 6, lastLayoutHeight - 12));
     }
 
     private void RemoveLegacyPlayerFrame()
@@ -263,8 +184,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
             return;
         }
 
-        float frameWidth =
-            profile.PlayerSectionWidth;
+        float frameWidth = profile.PlayerSectionWidth;
 
         float topHeight =
             GetNativeUiHeight(
@@ -330,8 +250,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
                 topHeight
             );
 
-        topImage.type =
-            Image.Type.Simple;
+        ConfigureResizableStrip(topImage, profile.TopPiece);
 
         Image bottomImage =
             CreateImage(
@@ -357,8 +276,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
                 bottomHeight
             );
 
-        bottomImage.type =
-            Image.Type.Simple;
+        ConfigureResizableStrip(bottomImage, profile.BottomPiece);
 
         Image middleImage =
             CreateImage(
@@ -387,10 +305,29 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
                 -topHeight
             );
 
-        middleImage.type =
-            Image.Type.Tiled;
+        ConfigureResizableStrip(middleImage, profile.MiddlePiece);
 
         middleRect.SetAsFirstSibling();
+    }
+
+    private readonly System.Collections.Generic.List<Sprite> resizedStripSources = new System.Collections.Generic.List<Sprite>();
+    private void ConfigureResizableStrip(Image image, Sprite source)
+    {
+        // Runtime nine-slice registration uses the original texture unchanged.
+        // Native endcaps remain intact, and Image.Tiled repeats the straight rail.
+        var sliced = Sprite.Create(source.texture, source.rect, source.pivot / source.rect.size,
+            source.pixelsPerUnit, 0, SpriteMeshType.FullRect, new Vector4(16, 0, 16, 0));
+        sliced.name = source.name + "_Responsive";
+        resizedStripSources.Add(sliced); image.sprite = sliced; image.type = Image.Type.Tiled;
+        var rect = image.rectTransform;
+        rect.anchorMin = new Vector2(0, rect.anchorMin.y);
+        rect.anchorMax = new Vector2(1, rect.anchorMax.y);
+        rect.offsetMin = new Vector2(0, rect.offsetMin.y);
+        rect.offsetMax = new Vector2(0, rect.offsetMax.y);
+    }
+    private void OnDestroy()
+    {
+        foreach (var sprite in resizedStripSources) if (sprite) Destroy(sprite);
     }
 
     private void RemoveGeneratedFrame()

@@ -298,9 +298,18 @@ no production invocation. See [the Court contract](DROWNED_COURT.md).
 
 ### Forest combat and zone travel
 
-The Forest theme reserves 384 logical pixels for its battle panel so the approved
-96-pixel apex and readable counters clear the top controls at the supported
-portrait shapes. `EnemyMoveIntentView` reserves the actual Fortified/Warded label
+Board and portrait dimensions are owned by the shared gameplay layout, independent
+of the active zone. `BoardVisuals.LayoutLocalWidth/Height` use the established
+Dungeon board reservation; theme perimeter padding and battle-height preferences
+cannot shrink the playable grid. `GameplayPixelLayoutController.CalculateShared`
+preserves Dungeon's responsive uniform board fit, including the compact fallback.
+The player frame uses one shared registration; older three-slice skins tile their
+straight rails instead of retaining a different fixed width. Legacy lower HUDs
+retain their 176px minimum by borrowing space from the battle region, never the
+board or portrait. Native modular frames can follow an explicit opening through
+`ResponsiveModularFrameFitter.FollowOpening`, deriving the inset from their real
+corner/rail dimensions. Ornament thickness may differ; grid and portrait slots do not.
+The former Forest-specific 384px reservation is superseded by this shared contract. `EnemyMoveIntentView` reserves the actual Fortified/Warded label
 width through `EnemyWeaknessIndicatorUI`; the weakness gem and active status are
 centered together beneath HP. Disabling/removing the intent view releases that
 width. These layout rules do not resize character art or affect combat state.

@@ -1,0 +1,1 @@
+var names=["DirectionStudy", "LeafSweep_A", "LeafSweep_B", "TimberJoinStudy"];names.forEach(function(n){var s=app.open("ArtSource/ForestReworkV2/Checkpoint01/Native/"+n+".aseprite").sprite;s.saveAs(".utmp/forest-v2-direction/"+n+"-reopened.png",true);});

@@ -1,0 +1,194 @@
+{
+  "assets": [
+    {
+      "name": "Portrait_Corner_BL",
+      "size": [
+        15,
+        15
+      ],
+      "opaque_colors": 5,
+      "alpha": "binary",
+      "bounds": [
+        3,
+        0,
+        15,
+        12
+      ],
+      "sha256": "250899b781488245cd72c8154d07d476c495326358ed63f16081cc6302003991",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Portrait_Corner_BR",
+      "size": [
+        15,
+        15
+      ],
+      "opaque_colors": 4,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        0,
+        12,
+        12
+      ],
+      "sha256": "0e1b3ce724063aadfcce9c0a33b75d63ac52183a6f01fed58842474a77d6fe64",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Portrait_Corner_TL",
+      "size": [
+        15,
+        15
+      ],
+      "opaque_colors": 5,
+      "alpha": "binary",
+      "bounds": [
+        3,
+        3,
+        15,
+        15
+      ],
+      "sha256": "4e5b283ddd9bb70e755e79b376abbdb217b741f2a520d2aa8a0eff3cad744848",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Portrait_Corner_TR",
+      "size": [
+        15,
+        15
+      ],
+      "opaque_colors": 5,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        3,
+        12,
+        15
+      ],
+      "sha256": "cd71ab1a9fea1ba35c9a2567bf0224b97a4b457fde37e25c065d76f67bbb64cb",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Portrait_Join",
+      "size": [
+        7,
+        7
+      ],
+      "opaque_colors": 4,
+      "alpha": "binary",
+      "bounds": [
+        1,
+        1,
+        6,
+        6
+      ],
+      "sha256": "4221b6a25341b2cb9d97fb4bb91b6780971d7929e32d55a092690268dec5514e",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Portrait_Rail_Bottom",
+      "size": [
+        32,
+        9
+      ],
+      "opaque_colors": 4,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        0,
+        32,
+        9
+      ],
+      "sha256": "fac9eb95857bac25431fae4d25d8725819bb2a707e283131b3c4defe0161a7b0",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Portrait_Rail_Left",
+      "size": [
+        9,
+        32
+      ],
+      "opaque_colors": 5,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        0,
+        9,
+        32
+      ],
+      "sha256": "a7116763dcaf75cf06067df2304600259eee0ffddab4d53cf186e2cbc851ac1c",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Portrait_Rail_Right",
+      "size": [
+        9,
+        32
+      ],
+      "opaque_colors": 4,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        0,
+        9,
+        32
+      ],
+      "sha256": "55610101fc047df4d805d00c1e2917cd30586b1069b75d69fce22cf96280bb1e",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Portrait_Rail_Top",
+      "size": [
+        32,
+        9
+      ],
+      "opaque_colors": 5,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        0,
+        32,
+        9
+      ],
+      "sha256": "3bbd0e0f3438b5c24cf6ed220234f5d9e76a43657fe1239687dd1ab14dbd6b8b",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Portrait_Vine_Lower",
+      "size": [
+        25,
+        27
+      ],
+      "opaque_colors": 4,
+      "alpha": "binary",
+      "bounds": [
+        4,
+        6,
+        24,
+        25
+      ],
+      "sha256": "0d34f5d33de8f9df9ab32bc44d9741535232f13789101599907713ebdd279806",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Portrait_Vine_Upper",
+      "size": [
+        30,
+        24
+      ],
+      "opaque_colors": 4,
+      "alpha": "binary",
+      "bounds": [
+        2,
+        2,
+        28,
+        18
+      ],
+      "sha256": "2d0500bbe9f9f2cc6e2f63a06355b2fa738a6edda24711f1e88dc5531760a62f",
+      "libresprite_reopen_exact": true
+    }
+  ],
+  "total_material_colors": 8,
+  "corner_rail_ports": 8,
+  "seamless_rail_endpoints": true
+}

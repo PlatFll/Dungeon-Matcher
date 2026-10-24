@@ -1,0 +1,52 @@
+{
+  "status": "Checkpoint 5 assembled art-only scene, awaiting visual review",
+  "source_approval": "User approved checkpoint 4 and requested full assembly with approved artwork and lower HUD unchanged",
+  "protected_existing_files_unchanged": 23456,
+  "reused_image_source_count": 110,
+  "new_art_assets": 0,
+  "pixel_checks": {
+    "dimensions": [
+      720,
+      1360
+    ],
+    "exact_2x": [
+      1440,
+      2720
+    ],
+    "approved_top_720x480_exact": true,
+    "original_board_and_64px_cells_gems_exact": true,
+    "approved_board_frame_changed_pixels": 0,
+    "shared_lower_HUD_pixels_exact": true,
+    "lower_region_exception": "Removed old board ivy reveals exact original continuous backing; all other pixels identical",
+    "removed_legacy_vine_alpha_pixels_below_1104": 476,
+    "portrait_mask": [
+      40,
+      40,
+      188,
+      432
+    ],
+    "portrait_mask_spill_pixels": 0,
+    "mask_probe_changed_pixels_inside": 42881,
+    "camera_gap_pixels": 0,
+    "static_forest_roster_samples": 3,
+    "empty_cells_exact": true,
+    "unity_tests_passed": 1
+  },
+  "unity": {
+    "validator_exit": 0,
+    "validator_log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-eabbafe3-b302-4337-8117-387847150513.log",
+    "preview_test": "ForestReworkV2Checkpoint05Tests.FullAssemblyReview",
+    "test_process_exit": 0
+  },
+  "generation_spend_this_checkpoint": 0,
+  "libresprite": "No new drawing or editing. Uses exact approved LibreSprite exports from checkpoints 2-4 and earlier retained assets. All source hashes preserved.",
+  "scope": "New review scene and editor fixture only. Shared lower HUD and production bindings unchanged.",
+  "not_performed": [
+    "live combat",
+    "phone safe-area integration",
+    "Android build",
+    "real-device testing",
+    "checkpoint 6 final validation"
+  ],
+  "next": "Stop for user review. Do not merge."
+}

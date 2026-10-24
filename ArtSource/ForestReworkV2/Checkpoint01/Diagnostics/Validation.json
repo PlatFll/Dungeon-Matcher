@@ -1,0 +1,67 @@
+{
+  "checks": {
+    "libresprite_plan_and_reopen_exact": true,
+    "board_pixel_exact": true,
+    "entire_lower_hud_pixel_exact": true,
+    "portrait_pixel_exact": true,
+    "wave_pixel_exact": true,
+    "guide_pixel_exact": true,
+    "settings_pixel_exact": true,
+    "retained_actor_hp_countdown_pixels": 35066,
+    "new_foliage_inside_board_pixels": 0,
+    "protected_files_unchanged": 8125,
+    "unity_run": "Not run: checkpoint-one source/art-direction study; no Assets, scene, C#, or import changes.",
+    "device_testing": "Not performed.",
+    "new_pixellab_generations": 0,
+    "status": "Direction candidate, awaiting checkpoint-one review. Not production-approved."
+  },
+  "native_studies": {
+    "DirectionStudy": {
+      "size": [
+        720,
+        1360
+      ],
+      "opaque_colors": 206,
+      "alpha": [
+        255
+      ],
+      "sha256": "d062d392dd8434e1ece864cd74a5ee841d9e798052c78b0d45ac903f7b29fdf3"
+    },
+    "LeafSweep_A": {
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "77db85a5e353473bf24fac2541afd893d1b390b2d1ece05f6ac0896a04ad8420"
+    },
+    "LeafSweep_B": {
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "0bd325a06c8ca7f77206f481b8f4531618fed946550cec840d333a4f3e34c451"
+    },
+    "TimberJoinStudy": {
+      "size": [
+        21,
+        21
+      ],
+      "opaque_colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "21c354ef109c4b4daca7dd87a509da5d4c1a952d34af5804baa5cce41990109b"
+    }
+  }
+}

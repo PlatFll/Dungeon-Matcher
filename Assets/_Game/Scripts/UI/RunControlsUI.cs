@@ -197,6 +197,12 @@ public sealed class RunControlsUI : MonoBehaviour
                 slotRect.anchoredPosition=new Vector2(i==0?-132:132,0);
                 GameplayPixelGrid.Snap(slotRect);
             }
+            else
+            {
+                var slotRect = (RectTransform)slots[i].transform;
+                slotRect.anchoredPosition = new Vector2(i == 0 ? -136 : 136,
+                    ((RectTransform)slotRect.parent).rect.height <= 80 ? -8 : -17);
+            }
             slots[i].interactable=session.CanUse(kind)||(i==1&&session.Board.IsSelectingTarget);
             icons[i].color=count>0?Color.white:new Color(0.3f,0.3f,0.3f,0.6f);
             cooldownFills[i].fillAmount=count==0?1:cooldown/(CombatMoveClock.MoveEffects ? 2 : BalanceV1.Current.consumableCooldown);
@@ -208,8 +214,11 @@ public sealed class RunControlsUI : MonoBehaviour
         }
         hint.rectTransform.anchoredPosition=new Vector2(0,-((RectTransform)hint.transform.parent).rect.height*.5f+31);
         UpdateLesson();
-        hint.rectTransform.sizeDelta=new Vector2(430,28);
+        hint.rectTransform.sizeDelta=new Vector2(Mathf.Min(430,((RectTransform)hint.transform.parent).rect.width-12),28);
         hint.fontSize=9;
+        // The compact strip has room for native controls and their energy bar,
+        // but not the optional lesson caption over the buttons. Guide stays available.
+        hint.gameObject.SetActive(DungeonPixelLabBattleArt.Current != null || ((RectTransform)hint.transform.parent).rect.height > 80);
         hint.text=session.Board.IsSelectingTarget?"Preview, then confirm. Tap Bomb to cancel.\nBarricades take 1 hit; specials can extend the blast.":lesson ?? (session.IsPractice?"Practice: no stock spent or progression earned.":"");
         if(resonance!=null)
         {
