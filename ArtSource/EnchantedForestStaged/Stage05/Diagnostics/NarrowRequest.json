@@ -1,0 +1,31 @@
+{
+  "request": {
+    "description": "ONE narrow upright enchanted woodland SIDE DRESSING sprite, fully isolated on transparent background. Side-view natural woodland prop for the outer edge of a pixel-art match-three board. Native canvas 48 pixels wide by 72 high. Entire silhouette inside x3..44, y3..68. A slim curving mossy oak ROOT rising along the LEFT edge and bending gently inward, 4 broad pointed olive-green leaves attached on one or two short branches near the upper third; at the base a small irregular blue-gray stone and TWO small warm russet or amber mushrooms with cream stems and only 2-3 restrained cream cap spots. Dominant simple root curve, clear negative space between leaves, low grounded foot cluster. Full natural intact ends, not a sliced tree trunk. Material treatment matching the reference forest: understated dark brown wood, olive leafy growth, dull slate stone, tiny warm mushroom accents. Compact and intentional, not a tangle. Crisp native pixel sprite with dark clear contour, broad connected material planes, economical 2-3 tones each, top-left light, no internal texture noise, no gradients, blur, dithering or antialiasing. No scene, tile, board, UI, text, character, face, lantern, jewels, gem, skull, flower, or magic effect. Rattlebones reference is rendering discipline only; do not copy anatomy, skeleton elements or royal colors. Native small sprite, not a large illustration reduced to pixels.",
+    "width": 48,
+    "height": 72,
+    "max_colors": 18,
+    "no_background": true,
+    "seed": 2410052,
+    "style_image_url": "upload:e26a7431-416a-4522-9f75-eef110a00945",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:9a4070b7-99d3-4883-ad49-fc60c51ae88e",
+        "usage": "Use the calm connected roots/pointed leaves/mushroom/stone side dressing OUTSIDE the board as identity. One isolated narrow side prop at true native48x72. No complete scene or game UI."
+      }
+    ]
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: fcbf1348-144e-4d58-876d-6bce3a39e0db\njob_id: fcbf1348-144e-4d58-876d-6bce3a39e0db\nmodel: pro\ndescription: ONE narrow upright enchanted woodland SIDE DRESSING sprite, fully isolated on transparent background. Side-view natural woodland prop for the outer edge of a pixel-art match-three board. Native canvas 48 pixels wide by 72 high. Entire silhouette inside x3..44, y3..68. A slim curving mossy oak ROOT rising along the LEFT edge and bending gently inward, 4 broad pointed olive-green leaves attached on one or two short branches near the upper third; at the base a small irregular blue-gray stone and TWO small warm russet or amber mushrooms with cream stems and only 2-3 restrained cream cap spots. Dominant simple root curve, clear negative space between leaves, low grounded foot cluster. Full natural intact ends, not a sliced tree trunk. Material treatment matching the reference forest: understated dark brown wood, olive leafy growth, dull slate stone, tiny warm mushroom accents. Compact and intentional, not a tangle. Crisp native pixel sprite with dark clear contour, broad connected material planes, economical 2-3 tones each, top-left light, no internal texture noise, no gradients, blur, dithering or antialiasing. No scene, tile, board, UI, text, character, face, lantern, jewels, gem, skull, flower, or magic effect. Rattlebones reference is rendering discipline only; do not copy anatomy, skeleton elements or royal colors. Native small sprite, not a large illustration reduced to pixels.\nsize: 48x72px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nmax colours: 18 per image\nseed: 2410052\nasset_id: f1dd06fc-03e6-5acd-a767-8dd850a42fcb\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"fcbf1348-144e-4d58-876d-6bce3a39e0db\")"
+      }
+    ],
+    "isError": false
+  }
+}

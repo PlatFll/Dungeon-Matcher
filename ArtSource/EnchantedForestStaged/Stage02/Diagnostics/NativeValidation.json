@@ -1,0 +1,302 @@
+{
+  "passed": true,
+  "module_count": 14,
+  "combined_opaque_colors": 14,
+  "palette": [
+    "#0c1014",
+    "#101d1b",
+    "#15211d",
+    "#1c261e",
+    "#233f2b",
+    "#3b2c20",
+    "#4c7037",
+    "#563c26",
+    "#65863e",
+    "#765131",
+    "#7a9845",
+    "#9a6d41",
+    "#bb9061",
+    "#e7dabb"
+  ],
+  "binary_alpha": true,
+  "libresprite_reopened_identical": true,
+  "all_eight_corner_ports_match": true,
+  "four_rail_repeat_seams_match": true,
+  "modules": [
+    {
+      "name": "Portrait_Corner_BL",
+      "size": [
+        15,
+        15
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        0,
+        15,
+        12
+      ],
+      "png_sha256": "b811b624302a211623c264dce53dddd8666510dcc0c3642c334a40e99ee2084b",
+      "aseprite_sha256": "b60f54d2585f993f068595d9891b9e4c9f86ba9435d8c52f05a75d869af943e6"
+    },
+    {
+      "name": "Portrait_Corner_BR",
+      "size": [
+        15,
+        15
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        12,
+        12
+      ],
+      "png_sha256": "3a4e44c7e2a4044a28d8e9044246a40ec35f6c8d2ae33838f6cbe2ff5cdca95b",
+      "aseprite_sha256": "6eb9996487d5075df0d95f81d11c1e5151bba733cbd2aca686d3888e67cea480"
+    },
+    {
+      "name": "Portrait_Corner_TL",
+      "size": [
+        15,
+        15
+      ],
+      "colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        3,
+        15,
+        15
+      ],
+      "png_sha256": "9c71993d28f997f652bcfc5b9a11013d9b8081119e92486c695e92c713e19ba5",
+      "aseprite_sha256": "3f65a3da3bc3d141f2a163beb1b6607c7052308e56f93ab88f1362bfd04c921a"
+    },
+    {
+      "name": "Portrait_Corner_TR",
+      "size": [
+        15,
+        15
+      ],
+      "colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        3,
+        12,
+        15
+      ],
+      "png_sha256": "e68143818b08b94fca3f37ea7f9e323b9616c47a9e0176d0aff01fc9b0c6abaf",
+      "aseprite_sha256": "91242c8ae8aff07f634a91af3140538e493434b848fcbe025ef9707394109048"
+    },
+    {
+      "name": "Portrait_Inset",
+      "size": [
+        32,
+        32
+      ],
+      "colors": 3,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "png_sha256": "2ee36633bf5c0c8117ef7cb72f0e3896323f551d2ac3c9fb9c70707e30da7b3e",
+      "aseprite_sha256": "4c98e7017a88e51812aa1e36ed15892a1c6d9920a207ed9dad299eca53ba24bb"
+    },
+    {
+      "name": "Portrait_Ivy_LeftReturn",
+      "size": [
+        25,
+        44
+      ],
+      "colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        2,
+        23,
+        41
+      ],
+      "png_sha256": "057b2a92e0d75dc0edd4dc0fc7dcd4a741842bfc64da5673cbf2a2db9a40727c",
+      "aseprite_sha256": "13cbef84cdad89fd5bfc76d76188bd988b91c6f1532c91caf9383af9fb16e2e3"
+    },
+    {
+      "name": "Portrait_Ivy_LowerRight",
+      "size": [
+        31,
+        45
+      ],
+      "colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        4,
+        2,
+        29,
+        42
+      ],
+      "png_sha256": "908495778ac8d9563caa4a60f0fbaa97c871fafbbfd377392d704a3ecc92b450",
+      "aseprite_sha256": "bd50394001e3c310bfaae471e15f099fd7ff3be1710e4a09e0f09f6b5e2bb375"
+    },
+    {
+      "name": "Portrait_Ivy_UpperLeft",
+      "size": [
+        43,
+        27
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        40,
+        24
+      ],
+      "png_sha256": "860d1e9a36e6bbc049bbd92dbf2dacd337857c5bbec5d86450a24af2af090afd",
+      "aseprite_sha256": "bdd8d15a3143e87a4b571d4f8b296653c41593fb287193a354e3a2e9c33169a2"
+    },
+    {
+      "name": "Portrait_Ivy_UpperRight",
+      "size": [
+        26,
+        50
+      ],
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        2,
+        24,
+        47
+      ],
+      "png_sha256": "397d0a5928be5b72bb8ee6e5686a0dfe93153d0b627284d6e8b4f68e22181327",
+      "aseprite_sha256": "a8d8b54cd9b837465c48f13105498e9d431c788c674b305e66023d1e6926d604"
+    },
+    {
+      "name": "Portrait_Join",
+      "size": [
+        7,
+        7
+      ],
+      "colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        6,
+        6
+      ],
+      "png_sha256": "9a3ea1e28981acabd50c22c1bd3fe96575b93fdda4e6994123834bc7f6e7b471",
+      "aseprite_sha256": "752d2ac388c8c24e663e63c4ab0edb157efc1defafb0ba19333c5966d3a991f9"
+    },
+    {
+      "name": "Portrait_Rail_Bottom",
+      "size": [
+        32,
+        9
+      ],
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        9
+      ],
+      "png_sha256": "8b3670ed26995f08f374a2c426445e3e0c5c4d0d67bd65777cf0ec0099245991",
+      "aseprite_sha256": "893647d852037568ace14b8fc846aace0903f1eca80a46c4de5b07daf7a36107"
+    },
+    {
+      "name": "Portrait_Rail_Left",
+      "size": [
+        9,
+        32
+      ],
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        32
+      ],
+      "png_sha256": "eff8ee1c741229c7cb2a1a1d4a0d2fe627926999c4abb1f0c85e56679315236b",
+      "aseprite_sha256": "49d65b2ab7f2274a4bdccf24151b27fdf757a341d4d75ee045bad8c43c8046a1"
+    },
+    {
+      "name": "Portrait_Rail_Right",
+      "size": [
+        9,
+        32
+      ],
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        32
+      ],
+      "png_sha256": "25d8f89f2187a57e71a3da6032f7edfb33d0f5f49734b3fe2f26a1230f5e5200",
+      "aseprite_sha256": "b25a27f7196cb2e12567f8f8938276358c5b0e461db18a480d4a2596bdacbc5e"
+    },
+    {
+      "name": "Portrait_Rail_Top",
+      "size": [
+        32,
+        9
+      ],
+      "colors": 6,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        9
+      ],
+      "png_sha256": "64cd8172fd89f4da1f3286a684f619f1defa758b6f2bfb9a352761d8a8636cab",
+      "aseprite_sha256": "5910eb6cf8cc0e8b7510c8a02998938614e9d8996d541ce4570c6be2f07c5bee"
+    }
+  ]
+}

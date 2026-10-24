@@ -1,0 +1,55 @@
+{
+  "existing_object_changes": [
+    {
+      "name": "Portrait_Ivy_UpperLeft",
+      "diff": [
+        "-   m_IsActive: 1",
+        "+   m_IsActive: 0"
+      ]
+    },
+    {
+      "name": "Enchanted Forest stage 02 fuller foliage review",
+      "diff": [
+        "-   m_Name: Enchanted Forest stage 02 art-only portrait",
+        "+   m_Name: Enchanted Forest stage 02 fuller foliage review"
+      ]
+    },
+    {
+      "name": "Portrait_Ivy_LeftReturn",
+      "diff": [
+        "-   m_IsActive: 1",
+        "+   m_IsActive: 0"
+      ]
+    },
+    {
+      "name": "Portrait_Ivy_LowerRight",
+      "diff": [
+        "-   m_IsActive: 1",
+        "+   m_IsActive: 0"
+      ]
+    },
+    {
+      "name": "ForestPortrait",
+      "diff": [
+        "+   - {fileID: 1750604599}",
+        "+   - {fileID: 2019987588}",
+        "+   - {fileID: 810917043}",
+        "+   - {fileID: 1245033788}"
+      ]
+    },
+    {
+      "name": "Portrait_Ivy_UpperRight",
+      "diff": [
+        "-   m_IsActive: 1",
+        "+   m_IsActive: 0"
+      ]
+    }
+  ],
+  "new_components": {
+    "GameObject": 4,
+    "RectTransform": 4,
+    "MonoBehaviour": 4,
+    "CanvasRenderer": 4
+  },
+  "removed_existing_objects": 0
+}

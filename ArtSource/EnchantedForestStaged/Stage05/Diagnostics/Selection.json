@@ -1,0 +1,150 @@
+{
+  "cost": 20,
+  "jobs": [
+    "a580e155-e745-40f2-b768-909dc5ea59f2",
+    "fcbf1348-144e-4d58-876d-6bce3a39e0db"
+  ],
+  "selected": [
+    "Narrow_00",
+    "Narrow_13",
+    "LargeStudy_00 mushroom cutouts"
+  ],
+  "palette_maps": {
+    "Narrow_00": {
+      "05090b": "0c1014",
+      "0c1713": "172920",
+      "29271f": "3b2c20",
+      "3a3326": "563c26",
+      "594931": "765131",
+      "717933": "65863e",
+      "4e572b": "3c5f33",
+      "3e5c2d": "3c5f33",
+      "627d38": "65863e",
+      "253521": "233f2b",
+      "3d4f6b": "3b505a",
+      "8598a5": "8a9d9a",
+      "2e1109": "4a2820",
+      "956337": "96513a",
+      "c97b2b": "be7043",
+      "b7b184": "d4bb85",
+      "6a8760": "52733a",
+      "ffffff": "eddbb2"
+    },
+    "Narrow_13": {
+      "050a0c": "0c1014",
+      "131f19": "172920",
+      "2c2b21": "3b2c20",
+      "403929": "563c26",
+      "5d4a31": "765131",
+      "727a33": "65863e",
+      "536331": "4c7037",
+      "637e37": "65863e",
+      "324e27": "233f2b",
+      "475228": "3c5f33",
+      "3d4f6b": "3b505a",
+      "8598a5": "8a9d9a",
+      "c57726": "be7043",
+      "6d8760": "52733a",
+      "2e1109": "4a2820",
+      "e3954b": "d89355",
+      "936434": "96513a",
+      "b5b081": "d4bb85"
+    }
+  },
+  "mushroom_palette": {
+    "aa4d35": "96513a",
+    "632d23": "593126",
+    "f2c19a": "eddbb2",
+    "693d2e": "765131",
+    "d4a87a": "c9a477",
+    "b48f6e": "a7835e",
+    "c47452": "bd7350"
+  },
+  "modules": [
+    {
+      "name": "Root_Stone_Left",
+      "size": [
+        48,
+        148
+      ],
+      "bounds": [
+        3,
+        6,
+        44,
+        144
+      ],
+      "colors": 16
+    },
+    {
+      "name": "Root_Stone_Right",
+      "size": [
+        48,
+        148
+      ],
+      "bounds": [
+        5,
+        5,
+        44,
+        144
+      ],
+      "colors": 17
+    },
+    {
+      "name": "Leaf_Sprig_Left",
+      "size": [
+        32,
+        34
+      ],
+      "bounds": [
+        2,
+        2,
+        30,
+        32
+      ],
+      "colors": 8
+    },
+    {
+      "name": "Leaf_Sprig_Right",
+      "size": [
+        33,
+        35
+      ],
+      "bounds": [
+        2,
+        2,
+        31,
+        33
+      ],
+      "colors": 9
+    },
+    {
+      "name": "Mushroom_Pair",
+      "size": [
+        50,
+        45
+      ],
+      "bounds": [
+        2,
+        2,
+        48,
+        43
+      ],
+      "colors": 8
+    },
+    {
+      "name": "Mushroom_Tall",
+      "size": [
+        40,
+        43
+      ],
+      "bounds": [
+        2,
+        2,
+        38,
+        41
+      ],
+      "colors": 8
+    }
+  ],
+  "notes": "Native 48x72 root studies keep their crowns and foot groups; exact hand-authored pixel curves extend them to padded 48x148 canvases. Mushroom cutouts preserve complete warm silhouettes from the large study. Sprigs are separate reusable cutouts. No source art is resampled. All new dressing sits behind the approved frame."
+}

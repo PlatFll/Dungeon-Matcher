@@ -1,0 +1,31 @@
+{
+  "request": {
+    "description": "ONE square enchanted forest BOARD OUTER FRAME per candidate, isolated transparent center and transparent background, native pixel-art game UI. A sturdy square dark warm oak timber frame with straight clean inner edges, about 10-11 pixels thick wooden rails, properly joined mitered corners. Four complete corners and all four edges fully visible with padding. Surround the timber with lush but intentional large pointed olive leaves and curling thin woody vines, connected growth wrapping the rails. Strong leafy clusters at upper-left and upper-right and both lower corners; lighter connected leaf growth along side rails, top/bottom middle stretches mostly clean so they can tile. Match the rich foliage SHAPES and wood of the provided woodland board/portrait reference, not sparse sticks, not scattered glued-on props. Clear generous empty rectangular center for an 8x8 match-three board: zero leaves crossing the straight inner opening. No gems, grid, tiles, text, skulls, mushrooms, insects, flowers, lamps, faces, jewels, no board backing. No growing giant root maze. Calm chunky broad planes, olive dark green/soft yellow green leaves, warm restrained brown wood, dark clear native contours, top-left lighting, 2-3 meaningful tones per material. Premium enchanted woodland shrine, crisp hard single-pixel contours, controlled cluster shapes, no painterly shading, blur, dithering or antialiasing. Overall canvas128x128; compact ornamental prototype that will be separated into native corners, repeatable rails and leaf overlays in LibreSprite. All leaves complete within canvas with 2-pixel clear padding.",
+    "width": 128,
+    "height": 128,
+    "no_background": true,
+    "max_colors": 18,
+    "seed": 2410041,
+    "style_image_url": "upload:e26a7431-416a-4522-9f75-eef110a00945",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:9a4070b7-99d3-4883-ad49-fc60c51ae88e",
+        "usage": "Use the wooden BOARD surround below the battlefield: sturdy straight inner timber rails plus connected leafy vines around the outer corners and sides. This is the foliage/art identity authority. Do not copy any board contents, game characters, background scenery, HUD, or text."
+      }
+    ]
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: e1a19a4d-2393-4fa0-b238-c729f37afaac\njob_id: e1a19a4d-2393-4fa0-b238-c729f37afaac\nmodel: pro\ndescription: ONE square enchanted forest BOARD OUTER FRAME per candidate, isolated transparent center and transparent background, native pixel-art game UI. A sturdy square dark warm oak timber frame with straight clean inner edges, about 10-11 pixels thick wooden rails, properly joined mitered corners. Four complete corners and all four edges fully visible with padding. Surround the timber with lush but intentional large pointed olive leaves and curling thin woody vines, connected growth wrapping the rails. Strong leafy clusters at upper-left and upper-right and both lower corners; lighter connected leaf growth along side rails, top/bottom middle stretches mostly clean so they can tile. Match the rich foliage SHAPES and wood of the provided woodland board/portrait reference, not sparse sticks, not scattered glued-on props. Clear generous empty rectangular center for an 8x8 match-three board: zero leaves crossing the straight inner opening. No gems, grid, tiles, text, skulls, mushrooms, insects, flowers, lamps, faces, jewels, no board backing. No growing giant root maze. Calm chunky broad planes, olive dark green/soft yellow green leaves, warm restrained brown wood, dark clear native contours, top-left lighting, 2-3 meaningful tones per material. Premium enchanted woodland shrine, crisp hard single-pixel contours, controlled cluster shapes, no painterly shading, blur, dithering or antialiasing. Overall canvas128x128; compact ornamental prototype that will be separated into native corners, repeatable rails and leaf overlays in LibreSprite. All leaves complete within canvas with 2-pixel clear padding.\nsize: 128x128px\ntransparent: True\ncandidates: 4\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nmax colours: 18 per image\nseed: 2410041\nasset_id: 965a3071-9527-5de0-878b-ced9b7e499f6\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"e1a19a4d-2393-4fa0-b238-c729f37afaac\")"
+      }
+    ],
+    "isError": false
+  }
+}

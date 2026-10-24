@@ -1,0 +1,29 @@
+STAGE 1 — TOP BATTLE BACKGROUND
+
+Goal:
+Build the enchanted forest top battle background so it feels magical, alive, and coherent with the attached reference image, but slightly simplified to match our game's clean production style.
+
+Use:
+- `reference/enchanted_forest_match_3_battle_reference.png`
+
+Instructions:
+1. Use PixelLab to generate the top forest battle background only, not the full scene.
+2. Focus on the area behind the enemies and around the top HUD.
+3. Capture these key traits from the reference:
+   - deep layered forest background
+   - magical woodland clearing
+   - soft distant depth
+   - bridge/waterfall/deer-like scenic storytelling if readable
+   - hanging lantern ambiance
+   - subtle blue magical glow accents
+4. Simplify background texture density so it reads clearly at game scale.
+5. Keep the combat floor / enemy standing area readable and flatter than the distant background.
+6. After generation, clean the result in LibreSprite:
+   - remove fuzziness
+   - reduce noisy micro-detail
+   - keep silhouettes readable
+   - align palette to our current game style
+7. Present one main candidate and optional alternate if needed.
+
+Important:
+Do NOT generate board frame decorations yet. This stage is only the top forest background and enemy-area environment.

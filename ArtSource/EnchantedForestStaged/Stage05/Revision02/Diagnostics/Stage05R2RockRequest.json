@@ -1,0 +1,31 @@
+{
+  "request": {
+    "description": "A SUBSTANTIAL mossy forest BOULDER CLUSTER for the lower corner of an enchanted woodland game, one standalone sprite on transparent background, native64x64. Two large irregular cool slate/blue-gray stones, the largest 38-45 pixels wide and 30-36 pixels tall, form a weighty stepped rock mass. Thick gnarled brown ROOT embraces the stone from the lower side. Lush broad olive-green moss cushions cascade over top edges and tufts of broad pointed leaves emerge from crevices. One or two small warm russet mushrooms tucked into the foot, a tiny pale flower optional. Rock silhouette dominates, foliage frames and overlaps it naturally. Rich and thick as the boulders in the bottom corners of the provided reference. Fill most of the canvas leaving 2px transparent padding. Grounded full connected grouping, no detached pebbles, no tiny token stone, no skinny twig, no isolated giant mushroom. Broad stone planes, 3-4 stone tones, wood broad ridges, clean chunky leaf clusters, strong native pixel contour, controlled top-left light. Beautiful pixel-art game environment prop matching reference and Rattlebones crisp rendering discipline. No painterly softness, gradients, blur, antialiasing, random highlight speckles, outline around every internal leaf, or noisy texture. No flat base platform, UI, grid, characters, faces, letters, symbols, glowing crystals. One object per candidate, no atlas.",
+    "width": 64,
+    "height": 64,
+    "max_colors": 24,
+    "no_background": true,
+    "seed": 24100522,
+    "style_image_url": "upload:e26a7431-416a-4522-9f75-eef110a00945",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:ccad42aa-fac2-4989-b3f9-e7688f2da2d6",
+        "usage": "Copy the rich massive mossy-rock and root group character at the lower corners. Actual broad rock planes and abundant surrounding leaves are essential."
+      }
+    ]
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: ec00737f-f850-4fc1-9690-7456ed5022ff\njob_id: ec00737f-f850-4fc1-9690-7456ed5022ff\nmodel: pro\ndescription: A SUBSTANTIAL mossy forest BOULDER CLUSTER for the lower corner of an enchanted woodland game, one standalone sprite on transparent background, native64x64. Two large irregular cool slate/blue-gray stones, the largest 38-45 pixels wide and 30-36 pixels tall, form a weighty stepped rock mass. Thick gnarled brown ROOT embraces the stone from the lower side. Lush broad olive-green moss cushions cascade over top edges and tufts of broad pointed leaves emerge from crevices. One or two small warm russet mushrooms tucked into the foot, a tiny pale flower optional. Rock silhouette dominates, foliage frames and overlaps it naturally. Rich and thick as the boulders in the bottom corners of the provided reference. Fill most of the canvas leaving 2px transparent padding. Grounded full connected grouping, no detached pebbles, no tiny token stone, no skinny twig, no isolated giant mushroom. Broad stone planes, 3-4 stone tones, wood broad ridges, clean chunky leaf clusters, strong native pixel contour, controlled top-left light. Beautiful pixel-art game environment prop matching reference and Rattlebones crisp rendering discipline. No painterly softness, gradients, blur, antialiasing, random highlight speckles, outline around every internal leaf, or noisy texture. No flat base platform, UI, grid, characters, faces, letters, symbols, glowing crystals. One object per candidate, no atlas.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nmax colours: 24 per image\nseed: 24100522\nasset_id: d5a360f5-3d9e-5f81-9b65-e0cdf8a8f5ec\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"ec00737f-f850-4fc1-9690-7456ed5022ff\")"
+      }
+    ],
+    "isError": false
+  }
+}

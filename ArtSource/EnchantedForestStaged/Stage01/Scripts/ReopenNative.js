@@ -1,0 +1,1 @@
+try{["Grove_Background", "Combat_Ground", "Wisp_Far_A", "Wisp_Far_B", "Wisp_Near", "Top_Background_Clean"].forEach(function(n){app.open('ArtSource/EnchantedForestStaged/Stage01/Native/'+n+'.aseprite').sprite.saveAs('.utmp/enchanted-stage01/'+n+'-reopened.png',true);});console.log('ENCHANTED_NATIVE_COMPLETE');}catch(e){console.log('FAILED '+e);}app.command.Exit();

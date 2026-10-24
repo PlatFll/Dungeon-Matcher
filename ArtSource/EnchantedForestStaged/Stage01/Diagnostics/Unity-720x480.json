@@ -1,0 +1,908 @@
+{
+    "width": 720,
+    "height": 480,
+    "images": [
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BR.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 600.0,
+                "y": 382.0,
+                "width": 18.0,
+                "height": 18.000030517578126
+            }
+        },
+        {
+            "name": "Existing attack countdown icon",
+            "path": "Assets/_Game/Resources/UI/CombatStatuses/Sword.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 294.0,
+                "y": 212.0,
+                "width": 24.0,
+                "height": 24.0
+            }
+        },
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Inset.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 229.99998474121095,
+                "y": 372.0,
+                "width": 246.00001525878907,
+                "height": 104.0
+            }
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Left.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 254.0,
+                "y": 400.0000305175781,
+                "width": 10.0,
+                "height": 48.0
+            }
+        },
+        {
+            "name": "Combat_Ground",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Combat_Ground.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 720.0,
+                "height": 79.99999237060547
+            }
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_TL.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 249.99998474121095,
+                "y": 438.0,
+                "width": 18.000015258789064,
+                "height": 18.000030517578126
+            }
+        },
+        {
+            "name": "Fill",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthFill.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 429.0000305175781,
+                "y": 37.99999237060547,
+                "width": 83.99996948242188,
+                "height": 7.999992370605469
+            }
+        },
+        {
+            "name": "Connector_0",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Join.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 23.999998092651368,
+                "y": 236.0,
+                "width": 13.999994277954102,
+                "height": 13.999984741210938
+            }
+        },
+        {
+            "name": "Badge",
+            "path": "Assets/_Game/Resources/UI/Finalized/PlayerBadge.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 50.000003814697269,
+                "y": 61.99998474121094,
+                "width": 23.999996185302736,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "Start",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthStart.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 562.0000610351563,
+                "y": 29.999984741210939,
+                "width": 15.99993896484375,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Top.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 258.0,
+                "y": 442.0,
+                "width": 190.00003051757813,
+                "height": 10.000030517578125
+            }
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TR.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 600.0,
+                "y": 426.0000305175781,
+                "width": 18.0,
+                "height": 17.999969482421876
+            }
+        },
+        {
+            "name": "Upper connected vine",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Vine_Upper.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 35.9999885559082,
+                "y": 430.0000305175781,
+                "width": 60.000003814697269,
+                "height": 48.0
+            }
+        },
+        {
+            "name": "Wisp_Near",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Wisp_Near.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 658.0,
+                "y": 113.99999237060547,
+                "width": 36.0,
+                "height": 44.00000762939453
+            }
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Rail_Top.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 29.99999237060547,
+                "y": 440.0,
+                "width": 168.0,
+                "height": 18.0
+            }
+        },
+        {
+            "name": "Grove_Background",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Grove_Background.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 79.99999237060547,
+                "width": 720.0,
+                "height": 400.0
+            }
+        },
+        {
+            "name": "Badge",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalBadge.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 402.0,
+                "y": 29.999984741210939,
+                "width": 24.000030517578126,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_TR.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 438.0,
+                "y": 438.0,
+                "width": 18.0,
+                "height": 18.000030517578126
+            }
+        },
+        {
+            "name": "Elven_Scout unchanged",
+            "path": "Assets/_Game/Art/Forest/Elven_Scout.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 204.0,
+                "y": 51.99999237060547,
+                "width": 224.0,
+                "height": 176.0
+            }
+        },
+        {
+            "name": "Orc_Trailguard unchanged",
+            "path": "Assets/_Game/Art/Forest/Orc_Trailguard.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 350.0,
+                "y": 51.99999237060547,
+                "width": 224.0,
+                "height": 176.0
+            }
+        },
+        {
+            "name": "Wisp_Far_B",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Wisp_Far_B.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 516.0,
+                "y": 256.0,
+                "width": 32.0,
+                "height": 40.0
+            }
+        },
+        {
+            "name": "Existing attack countdown icon",
+            "path": "Assets/_Game/Resources/UI/CombatStatuses/Sword.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 586.0,
+                "y": 212.0,
+                "width": 24.0,
+                "height": 24.0
+            }
+        },
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Inset.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 620.0000610351563,
+                "y": 362.0000305175781,
+                "width": 101.99993896484375,
+                "height": 101.99996948242188
+            }
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TL.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 640.0,
+                "y": 426.0000305175781,
+                "width": 18.0,
+                "height": 17.999969482421876
+            }
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Bottom.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 258.0,
+                "y": 396.0000305175781,
+                "width": 190.00003051757813,
+                "height": 9.999969482421875
+            }
+        },
+        {
+            "name": "End",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthEnd.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 510.0000305175781,
+                "y": 29.999984741210939,
+                "width": 15.999969482421875,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "Middle",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthMiddle.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 432.0000305175781,
+                "y": 29.999984741210939,
+                "width": 78.0,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "Track",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthTrack.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 429.0000305175781,
+                "y": 37.99999237060547,
+                "width": 83.99996948242188,
+                "height": 7.999992370605469
+            }
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Right.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 604.0,
+                "y": 390.0,
+                "width": 10.0,
+                "height": 46.0
+            }
+        },
+        {
+            "name": "Existing attack countdown icon",
+            "path": "Assets/_Game/Resources/UI/CombatStatuses/Sword.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 440.0,
+                "y": 212.0,
+                "width": 24.0,
+                "height": 24.0
+            }
+        },
+        {
+            "name": "Hanging skull",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Skull.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 338.0,
+                "y": 364.0,
+                "width": 30.000030517578126,
+                "height": 36.000030517578128
+            }
+        },
+        {
+            "name": "NativeIcon",
+            "path": "Assets/_Game/Art/DungeonPixelLab/TopPlaques/Plaque_Gear.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 656.0,
+                "y": 398.0,
+                "width": 30.0,
+                "height": 30.0
+            }
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Corner_BR.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 181.99998474121095,
+                "y": 23.99999237060547,
+                "width": 30.000015258789064,
+                "height": 30.0
+            }
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Left.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 494.0,
+                "y": 390.0,
+                "width": 10.0,
+                "height": 46.0
+            }
+        },
+        {
+            "name": "End",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthEnd.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 364.0,
+                "y": 29.999984741210939,
+                "width": 16.0,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TL.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 490.0000305175781,
+                "y": 426.0000305175781,
+                "width": 17.999969482421876,
+                "height": 17.999969482421876
+            }
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Top.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 498.0,
+                "y": 430.0000305175781,
+                "width": 112.0,
+                "height": 9.999969482421875
+            }
+        },
+        {
+            "name": "Badge",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalBadge.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 255.99998474121095,
+                "y": 29.999984741210939,
+                "width": 24.000015258789064,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "End",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthEnd.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 656.0,
+                "y": 29.999984741210939,
+                "width": 16.0,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "End",
+            "path": "Assets/_Game/Resources/UI/Finalized/PlayerHealthEnd.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 172.0,
+                "y": 61.99998474121094,
+                "width": 16.0,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BR.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 684.0000610351563,
+                "y": 382.0,
+                "width": 17.99993896484375,
+                "height": 18.000030517578126
+            }
+        },
+        {
+            "name": "Track",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthTrack.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 283.0,
+                "y": 37.99999237060547,
+                "width": 84.0,
+                "height": 7.999992370605469
+            }
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Bottom.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 498.0,
+                "y": 386.0,
+                "width": 112.0,
+                "height": 10.000030517578125
+            }
+        },
+        {
+            "name": "Middle",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthMiddle.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 578.0,
+                "y": 29.999984741210939,
+                "width": 78.0,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_BR.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 438.0,
+                "y": 392.0000305175781,
+                "width": 18.0,
+                "height": 17.999969482421876
+            }
+        },
+        {
+            "name": "Track",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthTrack.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 575.0,
+                "y": 37.99999237060547,
+                "width": 84.0,
+                "height": 7.999992370605469
+            }
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Corner_BL.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 15.999999046325684,
+                "y": 23.99999237060547,
+                "width": 29.99999237060547,
+                "height": 30.0
+            }
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Corner_TL.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 15.999999046325684,
+                "y": 434.0,
+                "width": 29.99999237060547,
+                "height": 30.0
+            }
+        },
+        {
+            "name": "Connector_1",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Join.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 190.0,
+                "y": 236.0,
+                "width": 14.0,
+                "height": 13.999984741210938
+            }
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Rail_Right.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 188.0,
+                "y": 37.99999237060547,
+                "width": 18.0,
+                "height": 412.0
+            }
+        },
+        {
+            "name": "Badge",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalBadge.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 548.0,
+                "y": 29.999984741210939,
+                "width": 24.0,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "Wisp_Far_A",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Wisp_Far_A.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 320.0,
+                "y": 206.0,
+                "width": 32.0,
+                "height": 32.0
+            }
+        },
+        {
+            "name": "Middle",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthMiddle.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 286.0,
+                "y": 29.999984741210939,
+                "width": 78.0,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Right.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 441.9999694824219,
+                "y": 400.0000305175781,
+                "width": 10.00006103515625,
+                "height": 48.0
+            }
+        },
+        {
+            "name": "Middle",
+            "path": "Assets/_Game/Resources/UI/Finalized/PlayerHealthMiddle.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 79.99999237060547,
+                "y": 61.99998474121094,
+                "width": 92.00000762939453,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "Fill",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthFill.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 575.0,
+                "y": 37.99999237060547,
+                "width": 84.0,
+                "height": 7.999992370605469
+            }
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BL.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 640.0,
+                "y": 382.0,
+                "width": 18.0,
+                "height": 18.000030517578126
+            }
+        },
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Inset.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 470.0,
+                "y": 362.0000305175781,
+                "width": 168.0,
+                "height": 101.99996948242188
+            }
+        },
+        {
+            "name": "Start",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthStart.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 416.0000305175781,
+                "y": 29.999984741210939,
+                "width": 16.0,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TR.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 684.0000610351563,
+                "y": 426.0000305175781,
+                "width": 17.99993896484375,
+                "height": 17.999969482421876
+            }
+        },
+        {
+            "name": "Left ornament",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Wing_Left.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 244.0,
+                "y": 410.0,
+                "width": 14.0,
+                "height": 30.0
+            }
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Rail_Left.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 21.99999237060547,
+                "y": 37.99999237060547,
+                "width": 18.000003814697267,
+                "height": 412.0
+            }
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Top.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 648.0,
+                "y": 430.0000305175781,
+                "width": 46.0,
+                "height": 9.999969482421875
+            }
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Bottom.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 648.0,
+                "y": 386.0,
+                "width": 46.0,
+                "height": 10.000030517578125
+            }
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Rail_Bottom.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 29.99999237060547,
+                "y": 29.999984741210939,
+                "width": 168.0,
+                "height": 18.0
+            }
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_BL.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 249.99998474121095,
+                "y": 392.0000305175781,
+                "width": 18.000015258789064,
+                "height": 17.999969482421876
+            }
+        },
+        {
+            "name": "Fill",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthFill.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 77.0,
+                "y": 69.99999237060547,
+                "width": 98.0,
+                "height": 8.000007629394532
+            }
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Corner_TR.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 181.99998474121095,
+                "y": 434.0,
+                "width": 30.000015258789064,
+                "height": 30.0
+            }
+        },
+        {
+            "name": "Elven_Mender unchanged",
+            "path": "Assets/_Game/Art/Forest/Elven_Mender.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 496.0,
+                "y": 51.99999237060547,
+                "width": 224.0,
+                "height": 176.0
+            }
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Right.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 688.0,
+                "y": 390.0,
+                "width": 10.0,
+                "height": 46.0
+            }
+        },
+        {
+            "name": "Start",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthStart.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 270.0,
+                "y": 29.999984741210939,
+                "width": 16.0,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Left.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 644.0,
+                "y": 390.0,
+                "width": 10.0,
+                "height": 46.0
+            }
+        },
+        {
+            "name": "Start",
+            "path": "Assets/_Game/Resources/UI/Finalized/PlayerHealthStart.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 63.999996185302737,
+                "y": 61.99998474121094,
+                "width": 15.999996185302735,
+                "height": 24.00000762939453
+            }
+        },
+        {
+            "name": "Existing affinity gem",
+            "path": "Assets/_Game/Art/Gems/Small gems/Gems32/Emerald32.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 82.0,
+                "y": 268.0,
+                "width": 64.0,
+                "height": 64.0
+            }
+        },
+        {
+            "name": "Track",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthTrack.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 77.0,
+                "y": 69.99999237060547,
+                "width": 98.0,
+                "height": 8.000007629394532
+            }
+        },
+        {
+            "name": "Rattlebones unchanged",
+            "path": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 50.000003814697269,
+                "y": 115.99999237060547,
+                "width": 128.0,
+                "height": 128.0
+            }
+        },
+        {
+            "name": "Lower connected vine",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint03/Portrait_Vine_Lower.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 184.00001525878907,
+                "y": 25.999988555908204,
+                "width": 49.999969482421878,
+                "height": 54.000003814697269
+            }
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BL.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 490.0000305175781,
+                "y": 382.0,
+                "width": 17.999969482421876,
+                "height": 18.000030517578126
+            }
+        },
+        {
+            "name": "Antler pennant candidate",
+            "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_AntlerPennant.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 85.99999237060547,
+                "y": 352.0,
+                "width": 55.99999237060547,
+                "height": 88.0
+            }
+        },
+        {
+            "name": "Right ornament",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Wing_Right.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 448.0000305175781,
+                "y": 410.0,
+                "width": 13.999969482421875,
+                "height": 30.0
+            }
+        },
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Inset.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": -24.000019073486329,
+                "y": -16.00001335144043,
+                "width": 276.0000305175781,
+                "height": 520.0
+            }
+        },
+        {
+            "name": "Fill",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthFill.png",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 283.0,
+                "y": 37.99999237060547,
+                "width": 84.0,
+                "height": 7.999992370605469
+            }
+        }
+    ]
+}

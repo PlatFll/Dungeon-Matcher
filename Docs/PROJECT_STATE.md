@@ -20,6 +20,24 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Enchanted Forest staged pack — Stage 5 revision 02 (2026-10-24, review only)
+
+Stages 1–4 are user-approved. The first Stage 5 dressing was rejected: thin sparse
+branches and undersized stones. Revision 02 replaces it in a separate art-review
+scene with four native bough modules and four large mossy boulders, sixteen layered
+placements behind the approved board/frame/HUD. PixelLab used the user's current
+reference and close crops plus Rattlebones; 30 generations for this correction.
+LibreSprite provides exact native cleanup and eight editable sources. No stretching
+or warping; the rejected first pass remains history rather than approved art.
+Unity compilation and revision tests passed at 720×1360 and 1440×2720. Approved
+frame/ivy pixels, top battle area, board tiles/gems, HUD controls/text and all 280
+existing image bindings/rectangles remain exact. Board is still 512×512 with
+64×64 cells; frame target 580×580; portrait 98×220 native. No shared runtime edits.
+See [Stage 5 revision](../ArtSource/EnchantedForestStaged/Stage05/Revision02/README.md).
+The separate scene is excluded from builds. Production, gameplay and other zones
+are unchanged; no combat/device test is claimed. Draft PR #208 remains stacked
+on #207. Stop for revision approval before Stage 6; do not merge.
+
 ## Shared zone geometry and Forest frame review (2026-10-24, unmerged PR #207)
 
 The requested Forest rim correction follows the unchanged 512px tile opening.

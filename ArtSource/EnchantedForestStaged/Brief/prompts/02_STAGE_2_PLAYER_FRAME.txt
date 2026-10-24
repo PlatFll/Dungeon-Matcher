@@ -1,0 +1,22 @@
+STAGE 2 — PLAYER FRAME / PORTRAIT PANEL
+
+Goal:
+Create the forest-themed player portrait frame that matches the reference image and our game's UI logic.
+
+Use:
+- `reference/enchanted_forest_match_3_battle_reference.png`
+
+Instructions:
+1. Generate the player frame area separately.
+2. It should feel like a vertical wooden shrine frame built from bark/wood planks, wrapped with leaves and subtle flowers/vines.
+3. Preserve clear readable frame boundaries for gameplay UI.
+4. The inner background of the portrait panel should feel distinct from the outer scene. It should not visually merge with the world background.
+5. Keep the gem slot area readable and consistent.
+6. Clean in LibreSprite:
+   - simplify noisy bark texture
+   - sharpen edge readability
+   - keep corners strong and modular where practical
+7. Prepare if possible as modular parts: corners, side segments, top, bottom, inner fill.
+
+Important:
+This panel should feel handcrafted and enchanted, not rustic-goofy.

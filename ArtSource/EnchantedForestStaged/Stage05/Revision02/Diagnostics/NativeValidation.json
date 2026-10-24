@@ -1,0 +1,146 @@
+{
+  "modules": [
+    {
+      "name": "Bough_A",
+      "dimensions": [
+        56,
+        88
+      ],
+      "bounds": [
+        2,
+        2,
+        54,
+        86
+      ],
+      "opaque_colors": 13,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "d61a135dd7bed9413d61052edfab19fb5dd8e4e62deb3fb836ace6f676dc07f6"
+    },
+    {
+      "name": "Bough_B",
+      "dimensions": [
+        56,
+        86
+      ],
+      "bounds": [
+        2,
+        2,
+        54,
+        84
+      ],
+      "opaque_colors": 15,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "59f5046f9432e8ce90d73f88f929809fac200265f4cfbb7f8670eb52a0169c21"
+    },
+    {
+      "name": "Bough_C",
+      "dimensions": [
+        56,
+        87
+      ],
+      "bounds": [
+        2,
+        2,
+        54,
+        85
+      ],
+      "opaque_colors": 13,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "481517d9ceb24e06e14a88c4a6ab68fe95b7335e7e7fd6a82e0dcab1fbec8adf"
+    },
+    {
+      "name": "Bough_D",
+      "dimensions": [
+        56,
+        87
+      ],
+      "bounds": [
+        2,
+        2,
+        54,
+        85
+      ],
+      "opaque_colors": 16,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "fcf619dff213d196196d7bc42c8e7df4d45d97406b655d1c0a395a9242a08224"
+    },
+    {
+      "name": "Boulder_A",
+      "dimensions": [
+        58,
+        58
+      ],
+      "bounds": [
+        2,
+        2,
+        56,
+        56
+      ],
+      "opaque_colors": 18,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "65579a239b1b44988d9b6564fe7563b9f6931f40dcf18171b9a9e5a2b89eec55"
+    },
+    {
+      "name": "Boulder_B",
+      "dimensions": [
+        59,
+        57
+      ],
+      "bounds": [
+        2,
+        2,
+        57,
+        55
+      ],
+      "opaque_colors": 15,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "107a7ffa57417b90909f04034251ff59536b9b7bc529a84b863e65ae8e6f2d78"
+    },
+    {
+      "name": "Boulder_C",
+      "dimensions": [
+        59,
+        58
+      ],
+      "bounds": [
+        2,
+        2,
+        57,
+        56
+      ],
+      "opaque_colors": 16,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "da8b2d0c0892e9d69d5157de9c5b8c9c2c1d14538451e5cf0fcd219035c9cdcf"
+    },
+    {
+      "name": "Boulder_D",
+      "dimensions": [
+        59,
+        58
+      ],
+      "bounds": [
+        2,
+        2,
+        57,
+        56
+      ],
+      "opaque_colors": 17,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "d2d3af7a4bf6ed7169e3325ce8e9db201396a8289fc5821ab8d159fd411a6aab"
+    }
+  ],
+  "overlay_instances": 16,
+  "binary_alpha": true,
+  "padded_canvas": true,
+  "all_source_masks_preserved": true,
+  "battle_overlap": false,
+  "intentional_board_underlap": true
+}
