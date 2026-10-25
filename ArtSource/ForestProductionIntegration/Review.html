@@ -1,0 +1,8 @@
+<!doctype html><meta charset="utf-8"><title>Approved zones — actual Game scene</title>
+<style>body{background:#171923;color:#eee;font:16px system-ui;margin:24px}a{color:#b4befe}header{max-width:1100px}select{padding:8px;background:#252838;color:white}main{display:flex;gap:24px;align-items:start;margin-top:22px}figure{margin:0;width:45%;max-width:540px}img{width:100%;height:auto;image-rendering:pixelated}figcaption{margin-bottom:10px}small{color:#bec3d6}</style>
+<header><h1>Approved zones in the playable Game scene</h1><p>Real Rattlebones, three live enemies, interactive gems and native modular environments. No art-review scene or mockup overlay is used.</p>
+<p>25 layout cases passed across all five zones. Board and portrait dimensions stay shared. Source artwork is unchanged; zero generations used. Android and device status: see <a href="README.md">verification report</a>.</p>
+<select id="size"><option>720x1280</option><option>1080x1920</option><option>1080x2400</option><option>1080x2400-safe</option><option>360x640</option></select></header>
+<main><figure><figcaption>Magical Forest — production</figcaption><img id="forest"></figure><figure><figcaption>Dungeon — production</figcaption><img id="dungeon"></figure></main>
+<p><a href="../ForestSurroundRevision/LowerFireflies/Previews/Unity-Final-720x1360.png">Approved Forest art-only reference</a> · <a href="PhoneMatrix/Geometry.json">All 25 measured layouts</a></p>
+<script>function show(){forest.src='PhoneMatrix/magical-forest-'+size.value+'.png';dungeon.src='PhoneMatrix/dungeon-'+size.value+'.png'}size.onchange=show;show()</script>

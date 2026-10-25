@@ -7,6 +7,7 @@ using UnityEngine.UI;
 /// <summary>Approved Dungeon artwork and native UI construction, used by the existing presentation owners.</summary>
 public sealed partial class DungeonPixelLabBattleArt : ScriptableObject
 {
+    public ForestBattleAssembly forestAssembly;
     public Sprite[] modules;
     public TextAsset placementManifest;
     public Sprite boardCell64;
@@ -17,13 +18,15 @@ public sealed partial class DungeonPixelLabBattleArt : ScriptableObject
     public const int EnemyFloorInset = 6;
     Dictionary<string, Sprite> lookup;
     public static DungeonPixelLabBattleArt Current => BattlePresentationSkin.Folder == "Dungeon"
-        ? Resources.Load<DungeonPixelLabBattleArt>("UI/BattlePresentation/DungeonPixelLab") : null;
+        ? Resources.Load<DungeonPixelLabBattleArt>("UI/BattlePresentation/DungeonPixelLab")
+        : BattlePresentationSkin.Folder == "Forest" ? Resources.Load<DungeonPixelLabBattleArt>("UI/BattlePresentation/ForestPixelLab") : null;
     public Sprite Sprite(string name)
     {
         if (lookup == null)
         {
             lookup = modules.ToDictionary(s => s.name, s => s);
             if (UsesHybrid) foreach (var sprite in hybridModules) lookup[sprite.name] = sprite;
+            if (forestAssembly) foreach (var module in forestAssembly.modules) lookup[module.key] = module.sprite;
         }
         return lookup.TryGetValue(name, out var s) ? s : null;
     }

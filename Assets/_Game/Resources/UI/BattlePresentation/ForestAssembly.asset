@@ -1,0 +1,1769 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed06f5572072a84a92328a23e9bf543, type: 3}
+  m_Name: ForestAssembly
+  m_EditorClassIdentifier: Assembly-CSharp::ForestBattleAssembly
+  approvedScene: Assets/_Game/Scenes/ArtPreview_ForestSurround_Fireflies.unity
+  portrait:
+    serializedVersion: 2
+    x: 8
+    y: 8
+    width: 98
+    height: 220
+  boardOpening:
+    serializedVersion: 2
+    x: 52
+    y: 264
+    width: 256
+    height: 256
+  modules:
+  - key: Portrait_Corner_TL
+    sprite: {fileID: 21300000, guid: fe067636040153c69f55f0f5b5b8c18c, type: 3}
+  - key: Portrait_Corner_TR
+    sprite: {fileID: 21300000, guid: 7a4f70bc02895623890af862c3dd4341, type: 3}
+  - key: Portrait_Corner_BL
+    sprite: {fileID: 21300000, guid: a5308b773a9a5c8386674aaf8ef9f1a5, type: 3}
+  - key: Portrait_Corner_BR
+    sprite: {fileID: 21300000, guid: b3b39e6ec46755f7883b4ff56108eaad, type: 3}
+  - key: Portrait_Rail_Top
+    sprite: {fileID: 21300000, guid: a5d6b9ea452f553a8124215ec24f503c, type: 3}
+  - key: Portrait_Rail_Bottom
+    sprite: {fileID: 21300000, guid: 1c6eed2d7216597f92d3623d642c9aa1, type: 3}
+  - key: Portrait_Rail_Left
+    sprite: {fileID: 21300000, guid: e90adc474ee959fc815a88caec7be0b9, type: 3}
+  - key: Portrait_Rail_Right
+    sprite: {fileID: 21300000, guid: 3e466cbecc8459538d75aea923773119, type: 3}
+  - key: Portrait_Clamp
+    sprite: {fileID: 0}
+  - key: Board_Corner_TL
+    sprite: {fileID: 21300000, guid: 8815533b55a3576fa44901901117db58, type: 3}
+  - key: Board_Corner_TR
+    sprite: {fileID: 21300000, guid: a701081661715e81a01b90ee4f20b62e, type: 3}
+  - key: Board_Corner_BL
+    sprite: {fileID: 21300000, guid: aadbb07b5ff95056b4b090b369ad0afa, type: 3}
+  - key: Board_Corner_BR
+    sprite: {fileID: 21300000, guid: a3b745d2e6e15d61a2c285e597227494, type: 3}
+  - key: Board_Rail_Top
+    sprite: {fileID: 21300000, guid: 6fe0f18003d85ce7ac79f4cc1f3e0fc7, type: 3}
+  - key: Board_Rail_Bottom
+    sprite: {fileID: 21300000, guid: e63678774bf157119cdf0682d7dcc3d4, type: 3}
+  - key: Board_Rail_Left
+    sprite: {fileID: 21300000, guid: 7ab6635998b25493b0fba6c2a2d35a1e, type: 3}
+  - key: Board_Rail_Right
+    sprite: {fileID: 21300000, guid: c364dbb830495f1aaf6a0bd9668b5940, type: 3}
+  - key: Board_Clamp
+    sprite: {fileID: 0}
+  - key: Recess_Center
+    sprite: {fileID: 21300000, guid: 09766a1a97c753b086ddc0d13a1baf9c, type: 3}
+  pieces:
+  - name: Portrait_Inset
+    region: Backdrop
+    sprite: {fileID: 21300000, guid: 5a397e1f750735e48aecabc3bd7a95d3, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 360
+      height: 680
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Grove_Background
+    region: Grove
+    sprite: {fileID: 21300000, guid: 383f0032dc23505d9a7f849167ff2e3a, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 360
+      height: 200
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Subtle waterfall shimmer
+    region: Top
+    sprite: {fileID: 21300000, guid: 97ae40dd024856a59bb1eb23c9322574, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 174
+      y: 8
+      width: 40
+      height: 144
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 97ae40dd024856a59bb1eb23c9322574, type: 3}
+      - {fileID: 21300000, guid: 9e47e5fc018955308ce2eae49d18d004, type: 3}
+      - {fileID: 21300000, guid: 8fea730fc9d153e38cfc2421fa5556ff, type: 3}
+      - {fileID: 21300000, guid: 2015a344a92d511b831d0a3626eed0b8, type: 3}
+      - {fileID: 21300000, guid: a86a6181293d5f8989653d66a5acac24, type: 3}
+      - {fileID: 21300000, guid: 79c35cb78ddb5c8dba2e506dfa9446ae, type: 3}
+      - {fileID: 21300000, guid: aeebc26c565254259b896e2fb74d56f2, type: 3}
+      - {fileID: 21300000, guid: f75fb4abaa2c559f80b57b94a300a84e, type: 3}
+      - {fileID: 21300000, guid: f95e47f798d95678a6ae1e39f85b7e5f, type: 3}
+      - {fileID: 21300000, guid: 41b5f285b3365ff7895b1f0704471d00, type: 3}
+      - {fileID: 21300000, guid: c7af0b7aee6a51e9aa2653a25c29d2cd, type: 3}
+      - {fileID: 21300000, guid: 025024ad151b5161b104e58710b631b9, type: 3}
+      - {fileID: 21300000, guid: 4a1bf92bf2915424afd09ca01f481982, type: 3}
+      - {fileID: 21300000, guid: f4910c0284b05f44b48c1002953f67ec, type: 3}
+      - {fileID: 21300000, guid: 0ad7ffa8fdaa526895e907d508463cf1, type: 3}
+      - {fileID: 21300000, guid: 6e26d6256a0556708baa80c513666d3a, type: 3}
+      - {fileID: 21300000, guid: e65c85f813985409a4a1510f44e5531a, type: 3}
+      - {fileID: 21300000, guid: aedf1ac054675048be764eb1554f75da, type: 3}
+      - {fileID: 21300000, guid: 7dede5208db851e9be4f1f5c2c262c70, type: 3}
+      - {fileID: 21300000, guid: ba4e2612085759c394394f4b7ea58791, type: 3}
+      - {fileID: 21300000, guid: 3d203aaa01ae5f41aee1d4a3d6279dcb, type: 3}
+      - {fileID: 21300000, guid: 4491385da69f5df296b937ff0041bda5, type: 3}
+      - {fileID: 21300000, guid: 698c135ce4e85ee5bd7914223fb8f118, type: 3}
+      - {fileID: 21300000, guid: b81e96ffba815e3187a1810294de2f2a, type: 3}
+      kind: 2
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 12
+      gustDuration: 2.8
+      unit: 1
+  - name: Combat_Ground
+    region: Ground
+    sprite: {fileID: 21300000, guid: 46740594aa3043d2af3b3b03dfb3fe44, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 200
+      width: 360
+      height: 40
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Wisp_Far_A
+    region: Top
+    sprite: {fileID: 21300000, guid: b22421bce65a40128fdd28308825ad92, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 121
+      width: 16
+      height: 16
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: b22421bce65a40128fdd28308825ad92, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 1, y: 2}
+      period: 3.9
+      phase: 0.5
+      onFraction: 0.73
+      peak: 0.85
+      driftPeriod: 5.3
+      frameRate: 4.65
+      gustDuration: 2.8
+      unit: 1
+  - name: Wisp_Far_B
+    region: Top
+    sprite: {fileID: 21300000, guid: 20e990892e3b4c749a394ad140d7391d, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 258
+      y: 92
+      width: 16
+      height: 20
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 20e990892e3b4c749a394ad140d7391d, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 2}
+      period: 5.6000004
+      phase: 1.8
+      onFraction: 0.73
+      peak: 0.85
+      driftPeriod: 7.4
+      frameRate: 5.04
+      gustDuration: 2.8
+      unit: 1
+  - name: Wisp_Near
+    region: Top
+    sprite: {fileID: 21300000, guid: 41761481364f4c4ea34328098061901b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 329
+      y: 161
+      width: 18
+      height: 22
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 41761481364f4c4ea34328098061901b, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 1, y: 2}
+      period: 7.3
+      phase: 3.1
+      onFraction: 0.73
+      peak: 0.85
+      driftPeriod: 9.5
+      frameRate: 5.43
+      gustDuration: 2.8
+      unit: 1
+  - name: Mudstone block 0
+    region: Ground
+    sprite: {fileID: 21300000, guid: c59c6f39c05850b78fb1f5852c70af61, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 224
+      width: 40
+      height: 16
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Mudstone block 1
+    region: Ground
+    sprite: {fileID: 21300000, guid: 3943e029db245108a2434fbb8a307123, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 224
+      width: 40
+      height: 16
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Mudstone block 2
+    region: Ground
+    sprite: {fileID: 21300000, guid: b553ad8716765cdc9ddfe8581dedfc9a, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 224
+      width: 40
+      height: 16
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Mudstone block 3
+    region: Ground
+    sprite: {fileID: 21300000, guid: 3943e029db245108a2434fbb8a307123, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 120
+      y: 224
+      width: 40
+      height: 16
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Mudstone block 4
+    region: Ground
+    sprite: {fileID: 21300000, guid: c59c6f39c05850b78fb1f5852c70af61, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 224
+      width: 40
+      height: 16
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Mudstone block 5
+    region: Ground
+    sprite: {fileID: 21300000, guid: b553ad8716765cdc9ddfe8581dedfc9a, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 200
+      y: 224
+      width: 40
+      height: 16
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Mudstone block 6
+    region: Ground
+    sprite: {fileID: 21300000, guid: c59c6f39c05850b78fb1f5852c70af61, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 224
+      width: 40
+      height: 16
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Mudstone block 7
+    region: Ground
+    sprite: {fileID: 21300000, guid: 3943e029db245108a2434fbb8a307123, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 224
+      width: 40
+      height: 16
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Mudstone block 8
+    region: Ground
+    sprite: {fileID: 21300000, guid: b553ad8716765cdc9ddfe8581dedfc9a, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 224
+      width: 40
+      height: 16
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Lantern_Mount
+    region: Top
+    sprite: {fileID: 21300000, guid: 89fbba1dc52b5bf19196a12371978bb6, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 99
+      y: 50
+      width: 48
+      height: 64
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Lantern_Body
+    region: Top
+    sprite: {fileID: 21300000, guid: b886c4c4e4275ffd8d0e27c7a38803b9, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 99
+      y: 50
+      width: 48
+      height: 64
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Lantern_Light
+    region: Top
+    sprite: {fileID: 21300000, guid: 970d25ab279659d28b7a60435ae9c67d, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 99
+      y: 50
+      width: 48
+      height: 64
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Rune_Plaque
+    region: Top
+    sprite: {fileID: 21300000, guid: d2eef5006870578d8197fb578b53e48d, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 62
+      width: 32
+      height: 48
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Rune_Glyph
+    region: Top
+    sprite: {fileID: 21300000, guid: 5f853c9d492252b397b8d6e9f124700d, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 62
+      width: 32
+      height: 48
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Wisp_Aura
+    region: Top
+    sprite: {fileID: 21300000, guid: ab7e69cf4d855c7ab94091e562f2fd7b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 92
+      width: 18
+      height: 22
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: ab7e69cf4d855c7ab94091e562f2fd7b, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 3}
+      period: 8.3
+      phase: 1.6
+      onFraction: 0.8
+      peak: 0.55
+      driftPeriod: 10.9
+      frameRate: 4.98
+      gustDuration: 2.8
+      unit: 1
+  - name: Wisp_Core
+    region: Top
+    sprite: {fileID: 21300000, guid: 6a491f629f7c5d4394289f43b0b8042e, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 92
+      width: 18
+      height: 22
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 6a491f629f7c5d4394289f43b0b8042e, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 3}
+      period: 8.3
+      phase: 1.6
+      onFraction: 0.8
+      peak: 0.85
+      driftPeriod: 10.9
+      frameRate: 4.98
+      gustDuration: 2.8
+      unit: 1
+  - name: Warm firefly
+    region: Top
+    sprite: {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 191
+      y: 82
+      width: 8
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 3, y: 2}
+      period: 3.2
+      phase: 0.9
+      onFraction: 0.5
+      peak: 0.88
+      driftPeriod: 6.7
+      frameRate: 4.77
+      gustDuration: 2.8
+      unit: 1
+  - name: Hanging leaves
+    region: Top
+    sprite: {fileID: 21300000, guid: 6043bb9771835855a20ff4a70c2da8ae, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 312
+      y: 45
+      width: 46
+      height: 55
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 6043bb9771835855a20ff4a70c2da8ae, type: 3}
+      - {fileID: 21300000, guid: 7c25ae38baad5212b5f1b68c235dd441, type: 3}
+      - {fileID: 21300000, guid: 55c468652d675d43b60a06d32b8be103, type: 3}
+      - {fileID: 21300000, guid: 0b304c69323d553a8ef6b7ecf574c087, type: 3}
+      - {fileID: 21300000, guid: a2cf2dce459a56489e2f10fb8bf5481c, type: 3}
+      kind: 1
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 12.5
+      phase: 6.4
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 3.1
+      unit: 1
+  - name: Distant gold firefly
+    region: Top
+    sprite: {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 131
+      width: 8
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 2}
+      period: 2.1
+      phase: 0.4
+      onFraction: 0.43
+      peak: 0.65
+      driftPeriod: 5.1
+      frameRate: 4.62
+      gustDuration: 2.8
+      unit: 1
+  - name: Upper_Mote_A
+    region: Top
+    sprite: {fileID: 21300000, guid: 5b5523e79146576dbba325cd2bf61d5b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 244
+      y: 84
+      width: 17
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 5b5523e79146576dbba325cd2bf61d5b, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 2}
+      period: 4.6
+      phase: 1.1
+      onFraction: 0.68
+      peak: 0.85
+      driftPeriod: 7.2
+      frameRate: 4.83
+      gustDuration: 2.8
+      unit: 1
+  - name: Upper_Mote_B
+    region: Top
+    sprite: {fileID: 21300000, guid: e03b2c632e2655dd81f79437eef03398, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 295
+      y: 97
+      width: 12
+      height: 14
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: e03b2c632e2655dd81f79437eef03398, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 2}
+      period: 2.7
+      phase: 0.3
+      onFraction: 0.68
+      peak: 0.85
+      driftPeriod: 6.4
+      frameRate: 4.59
+      gustDuration: 2.8
+      unit: 1
+  - name: Antler pennant candidate
+    region: PortraitBanner
+    sprite: {fileID: 21300000, guid: ae41a6665c218c74885c58c8bec872b3, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 20
+      width: 28
+      height: 44
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Ivy_CrownLeft
+    region: Portrait
+    sprite: {fileID: 21300000, guid: 785da81a3e6350feb2975b6186dd6648, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 68
+      height: 29
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Ivy_LeftSwag
+    region: Portrait
+    sprite: {fileID: 21300000, guid: 50994286c284540c82ec8036e54fc083, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 25
+      width: 44
+      height: 202
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Ivy_CrownRight
+    region: Portrait
+    sprite: {fileID: 21300000, guid: 29732aac1d02543fb825e04cf39bbf40, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 0
+      width: 68
+      height: 75
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Ivy_RightSwag
+    region: Portrait
+    sprite: {fileID: 21300000, guid: d414ec78e123539b94a933d05404fc83, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 71
+      width: 68
+      height: 169
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Left upper root
+    region: Board
+    sprite: {fileID: 21300000, guid: 8fefbb4b43435d6ebc8e1f909abbd8bb, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 244
+      width: 60
+      height: 155
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Left lower root
+    region: Board
+    sprite: {fileID: 21300000, guid: 2eb782e536b55d4d9cd0a135c125c6b6, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 380
+      width: 59
+      height: 157
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Right upper root
+    region: Board
+    sprite: {fileID: 21300000, guid: 75f289c0b0aa530ca2fcf179f0d9e779, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 301
+      y: 244
+      width: 59
+      height: 156
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Right lower root
+    region: Board
+    sprite: {fileID: 21300000, guid: 8fefbb4b43435d6ebc8e1f909abbd8bb, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 380
+      width: 60
+      height: 155
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Left grounded root sweep
+    region: Lower
+    sprite: {fileID: 21300000, guid: be4868e40662582eae4bfe410ad1fd66, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 588
+      width: 155
+      height: 89
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Right grounded root sweep
+    region: Lower
+    sprite: {fileID: 21300000, guid: 10d9b65615d95f2795263d6ffc848f64, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 588
+      width: 155
+      height: 89
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Left hanging vine
+    region: Lower
+    sprite: {fileID: 21300000, guid: 31221d5ee2985305b06b64f5a2ebd460, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 521
+      width: 71
+      height: 61
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 31221d5ee2985305b06b64f5a2ebd460, type: 3}
+      - {fileID: 21300000, guid: 82e918cae0e557e790e5f55d135ee65d, type: 3}
+      - {fileID: 21300000, guid: 117c23c17a9c56e998c8c0477b2c9be2, type: 3}
+      - {fileID: 21300000, guid: 3c4702e54dcd559c8474c34e169fd4df, type: 3}
+      - {fileID: 21300000, guid: db6932e4507a5ed8976bfd1f3d6f54a3, type: 3}
+      kind: 1
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 9.7
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 3.1
+      unit: 1
+  - name: Right hanging vine
+    region: Lower
+    sprite: {fileID: 21300000, guid: 836bb9aab6af5cffa83e006e10cdb043, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 242
+      y: 521
+      width: 71
+      height: 61
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 836bb9aab6af5cffa83e006e10cdb043, type: 3}
+      - {fileID: 21300000, guid: e9526458cd05585497e24f81a38917ab, type: 3}
+      - {fileID: 21300000, guid: ab7d17439ed45fdc80d59918cba4d712, type: 3}
+      - {fileID: 21300000, guid: ca7918b8399258a2b897ea88de1024f8, type: 3}
+      - {fileID: 21300000, guid: 7fd71144691352a38b7494599bde3840, type: 3}
+      kind: 1
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 11.099999
+      phase: 3.2
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 3.1
+      unit: 1
+  - name: Left rooted fern and flowers
+    region: Lower
+    sprite: {fileID: 21300000, guid: 2c819d2772a95d4999a98a952e997543, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 606
+      width: 43
+      height: 44
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Right rooted fern and flowers
+    region: Lower
+    sprite: {fileID: 21300000, guid: a721e0724b955b45ba6eacd71739dc81, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 254
+      y: 606
+      width: 34
+      height: 35
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Left integrated corner
+    region: Lower
+    sprite: {fileID: 21300000, guid: 3c5f5f5151705f0aa2f43345f4a06ca8, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 500
+      width: 88
+      height: 180
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Right integrated corner
+    region: Lower
+    sprite: {fileID: 21300000, guid: 19e0858557b85f4f8142084ef72a54a9, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 500
+      width: 88
+      height: 180
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Varied forest spirit 0
+    region: Board
+    sprite: {fileID: 21300000, guid: 49c4b2b8768854fda0032d7a09cdadab, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 7
+      y: 304
+      width: 18
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 49c4b2b8768854fda0032d7a09cdadab, type: 3}
+      - {fileID: 21300000, guid: 59e1454d4216530b9b4530a6bf50fb3e, type: 3}
+      - {fileID: 21300000, guid: 7b3eeea7e61b5cce8cd9772429aaf761, type: 3}
+      - {fileID: 21300000, guid: fc8f4f208fed5915916026e1d29ebb94, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 1, y: 2}
+      period: 2.8
+      phase: 0
+      onFraction: 0.6
+      peak: 0.6
+      driftPeriod: 4.7
+      frameRate: 4.5
+      gustDuration: 2.8
+      unit: 1
+  - name: Varied forest spirit 1
+    region: Board
+    sprite: {fileID: 21300000, guid: 32eb0b60525451cbae2728ac32f9e289, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 330
+      y: 319
+      width: 24
+      height: 28
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 32eb0b60525451cbae2728ac32f9e289, type: 3}
+      - {fileID: 21300000, guid: d0016a941a96526ca805976611a0ad37, type: 3}
+      - {fileID: 21300000, guid: 2ca0a9defadc5dba871d848fb0d5c3b8, type: 3}
+      - {fileID: 21300000, guid: 778bff05afc65a03bfcbf85cc026d2d3, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 3}
+      period: 5.9
+      phase: 0.63
+      onFraction: 0.76
+      peak: 0.68
+      driftPeriod: 5.83
+      frameRate: 4.689
+      gustDuration: 2.8
+      unit: 1
+  - name: Varied forest spirit 2
+    region: Board
+    sprite: {fileID: 21300000, guid: 32eb0b60525451cbae2728ac32f9e289, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 3
+      y: 402
+      width: 24
+      height: 28
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 32eb0b60525451cbae2728ac32f9e289, type: 3}
+      - {fileID: 21300000, guid: d0016a941a96526ca805976611a0ad37, type: 3}
+      - {fileID: 21300000, guid: 2ca0a9defadc5dba871d848fb0d5c3b8, type: 3}
+      - {fileID: 21300000, guid: 778bff05afc65a03bfcbf85cc026d2d3, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 1, y: 2}
+      period: 7.3
+      phase: 1.26
+      onFraction: 0.6
+      peak: 0.76
+      driftPeriod: 6.96
+      frameRate: 4.878
+      gustDuration: 2.8
+      unit: 1
+  - name: Varied forest spirit 3
+    region: Board
+    sprite: {fileID: 21300000, guid: 49c4b2b8768854fda0032d7a09cdadab, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 432
+      width: 18
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 49c4b2b8768854fda0032d7a09cdadab, type: 3}
+      - {fileID: 21300000, guid: 59e1454d4216530b9b4530a6bf50fb3e, type: 3}
+      - {fileID: 21300000, guid: 7b3eeea7e61b5cce8cd9772429aaf761, type: 3}
+      - {fileID: 21300000, guid: fc8f4f208fed5915916026e1d29ebb94, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 3}
+      period: 3.1
+      phase: 1.89
+      onFraction: 0.76
+      peak: 0.6
+      driftPeriod: 8.09
+      frameRate: 5.067
+      gustDuration: 2.8
+      unit: 1
+  - name: Varied forest spirit 5
+    region: Lower
+    sprite: {fileID: 21300000, guid: 1b6075ed871554d593ae69494b36851a, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 330
+      y: 550
+      width: 24
+      height: 24
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 1b6075ed871554d593ae69494b36851a, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 3}
+      period: 4.4
+      phase: 3.15
+      onFraction: 0.76
+      peak: 0.76
+      driftPeriod: 10.349999
+      frameRate: 5.445
+      gustDuration: 2.8
+      unit: 1
+  - name: Varied forest spirit 6
+    region: Lower
+    sprite: {fileID: 21300000, guid: 49c4b2b8768854fda0032d7a09cdadab, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 29
+      y: 638
+      width: 18
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 49c4b2b8768854fda0032d7a09cdadab, type: 3}
+      - {fileID: 21300000, guid: 59e1454d4216530b9b4530a6bf50fb3e, type: 3}
+      - {fileID: 21300000, guid: 7b3eeea7e61b5cce8cd9772429aaf761, type: 3}
+      - {fileID: 21300000, guid: fc8f4f208fed5915916026e1d29ebb94, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 1, y: 2}
+      period: 2.3
+      phase: 3.78
+      onFraction: 0.6
+      peak: 0.6
+      driftPeriod: 11.48
+      frameRate: 5.634
+      gustDuration: 2.8
+      unit: 1
+  - name: Board_Ivy_TL
+    region: Board
+    sprite: {fileID: 21300000, guid: aca3521cff9954b3ab43036580b6d635, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 8
+      y: 239
+      width: 56
+      height: 64
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Board_Ivy_TR
+    region: Board
+    sprite: {fileID: 21300000, guid: d2afbcfd56cf5e1489ca53ce90889247, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 302
+      y: 239
+      width: 56
+      height: 68
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Board_Ivy_BL
+    region: Board
+    sprite: {fileID: 21300000, guid: 282629249c5a5ee2acd19f65ec6992ea, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 2
+      y: 503
+      width: 60
+      height: 42
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Board_Ivy_BR
+    region: Board
+    sprite: {fileID: 21300000, guid: 58bd3d8a9e425a009e04df09ae5c9a26, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 503
+      width: 54
+      height: 42
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Left connected ivy
+    region: Board
+    sprite: {fileID: 21300000, guid: 61104f22ee31567abcd692c7105a969a, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 11
+      y: 299
+      width: 44
+      height: 202
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Right connected ivy
+    region: Board
+    sprite: {fileID: 21300000, guid: 61104f22ee31567abcd692c7105a969a, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 306
+      y: 299
+      width: 44
+      height: 202
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames: []
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 0, y: 0}
+      period: 6
+      phase: 0
+      onFraction: 0.7
+      peak: 0.85
+      driftPeriod: 7
+      frameRate: 5
+      gustDuration: 2.8
+      unit: 1
+  - name: Warm lower firefly 1
+    region: Board
+    sprite: {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 22
+      y: 300
+      width: 8
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 1}
+      period: 2.6
+      phase: 0.2
+      onFraction: 0.46
+      peak: 0.78
+      driftPeriod: 5.2
+      frameRate: 1
+      gustDuration: 2.8
+      unit: 1
+  - name: Warm lower firefly 2
+    region: Board
+    sprite: {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 337
+      y: 345
+      width: 8
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 1, y: 2}
+      period: 4.1
+      phase: 2.6
+      onFraction: 0.5
+      peak: 0.82
+      driftPeriod: 5.6699996
+      frameRate: 1
+      gustDuration: 2.8
+      unit: 1
+  - name: Warm lower firefly 3
+    region: Board
+    sprite: {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 10
+      y: 423
+      width: 8
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 2}
+      period: 3.3
+      phase: 1.8
+      onFraction: 0.54
+      peak: 0.7
+      driftPeriod: 6.14
+      frameRate: 1
+      gustDuration: 2.8
+      unit: 1
+  - name: Warm lower firefly 4
+    region: Board
+    sprite: {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 329
+      y: 482
+      width: 8
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 1, y: 1}
+      period: 5
+      phase: 0.6
+      onFraction: 0.58
+      peak: 0.85
+      driftPeriod: 6.6099997
+      frameRate: 1
+      gustDuration: 2.8
+      unit: 1
+  - name: Warm lower firefly 5
+    region: Lower
+    sprite: {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 118
+      y: 539
+      width: 8
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 2}
+      period: 2.8
+      phase: 1.7
+      onFraction: 0.46
+      peak: 0.68
+      driftPeriod: 7.08
+      frameRate: 1
+      gustDuration: 2.8
+      unit: 1
+  - name: Warm lower firefly 6
+    region: Lower
+    sprite: {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 249
+      y: 557
+      width: 8
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 1, y: 2}
+      period: 4.7
+      phase: 3.3
+      onFraction: 0.5
+      peak: 0.76
+      driftPeriod: 7.5499997
+      frameRate: 1
+      gustDuration: 2.8
+      unit: 1
+  - name: Warm lower firefly 7
+    region: Lower
+    sprite: {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 15
+      y: 646
+      width: 8
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 2, y: 1}
+      period: 3.8
+      phase: 0.8
+      onFraction: 0.54
+      peak: 0.84
+      driftPeriod: 8.0199995
+      frameRate: 1
+      gustDuration: 2.8
+      unit: 1
+  - name: Warm lower firefly 8
+    region: Lower
+    sprite: {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 335
+      y: 633
+      width: 8
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    motion:
+      image: {fileID: 0}
+      frames:
+      - {fileID: 21300000, guid: 3b74f8620f2451db965b3613395ba250, type: 3}
+      kind: 0
+      origin: {x: 0, y: 0}
+      amplitude: {x: 1, y: 2}
+      period: 5.6
+      phase: 4.6
+      onFraction: 0.58
+      peak: 0.8
+      driftPeriod: 8.49
+      frameRate: 1
+      gustDuration: 2.8
+      unit: 1

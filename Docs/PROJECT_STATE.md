@@ -21,6 +21,28 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 
+## Approved Forest production integration (2026-10-25)
+
+The user reported that the phone game still showed the old Forest after the
+art-review stack merged. PR #209 had merged source assets and editor-only review
+scenes, not the playable Forest bindings. This correction connects the final
+`ArtPreview_ForestSurround_Fireflies` modules to the actual build-enabled `Game`
+scene through the existing native presentation owner. Separate sprites retain
+their exact pixels; live actors, gems, controls and gameplay remain authoritative.
+The approved 24-pose waterfall, varied spirits, leaf gusts and eight lower warm
+fireflies now run in player builds through `ForestAmbientMotion`.
+
+`Game.unity` no longer references the obsolete `Dungeon_Finalized` scenery.
+Dungeon/Forest bypass unused legacy tilemap instances; other zones retain their
+selected art. The shared layout refreshes enemy slots after resize in every zone.
+Board/portrait dimensions match across all five zones and five phone/safe-area
+cases. All 25 automated cases, an accepted gem swap, Guide/Settings and motion/
+Reduced Motion checks pass. Required Unity validation passed on 2026-10-25.
+Android build evidence and actual in-game captures are in
+[the production report](../ArtSource/ForestProductionIntegration/README.md).
+Physical-device acceptance is still the user's next test. No art was regenerated,
+recolored or deleted; old sources/review scenes remain historical material.
+
 ## Living Forest motion copy (2026-10-25, review only)
 
 The user requested non-destructive motion on the latest forest scene. A separate
@@ -47,8 +69,8 @@ exact pixel doubling pass. Zero generations used. [Latest firefly review](../Art
 The user approved merging this complete Forest asset/review stack into main on
 2026-10-25 through PR #209, including dependencies from PRs #206–208. Final Unity
 compilation passed and the existing frame/motion evidence still matches the
-current sources. The new Forest artwork and motion remain review-scene assets;
-the playable Forest zone has not been rebound to this new library. Dungeon's
+current sources. At that merge the Forest artwork was still review-only; the production correction
+above now binds it to the playable zone. Dungeon's
 latest hybrid art is already integrated and merged through PR #205.
 
 ## Forest surround polish — Stages 3–6 complete (2026-10-24, final review)

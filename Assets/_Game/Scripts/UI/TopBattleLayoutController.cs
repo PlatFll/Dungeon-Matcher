@@ -52,7 +52,7 @@ public sealed class TopBattleLayoutController : MonoBehaviour
     private Vector2 lastNativeEnemyArea;
     private void LateUpdate()
     {
-        if(DungeonPixelLabBattleArt.Current && enemyArea && enemyArea.rect.size!=lastNativeEnemyArea)
+        if(enemyArea && enemyArea.rect.size!=lastNativeEnemyArea)
         {
             lastNativeEnemyArea=enemyArea.rect.size;LayoutEnemyArea();
             if(TryGetComponent<TopBattlePresentationController>(out var presentation))presentation.RefreshPresentation();

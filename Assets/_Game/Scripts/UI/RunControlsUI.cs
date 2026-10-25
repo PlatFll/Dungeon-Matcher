@@ -241,6 +241,15 @@ public sealed class RunControlsUI : MonoBehaviour
             float u=DungeonPixelLabBattleArt.Unit(canvas);
             hint.rectTransform.sizeDelta=new Vector2(Mathf.Min(430,((RectTransform)hint.transform.parent).rect.width-12),28);
             foreach(var c in charges) {var r=(RectTransform)c.transform.parent;r.anchoredPosition=new Vector2(15,-16)*u;GameplayPixelGrid.Snap(r);r.SetAsLastSibling();}
+            var hud=(RectTransform)hint.transform.parent;
+            if(controlArt.forestAssembly && hud.rect.height<=100)
+            {
+                // Compact phones retain the same buttons; fit the caption below them.
+                hint.fontSize=6;hint.rectTransform.sizeDelta=new Vector2(hud.rect.width-12,16);
+                hint.rectTransform.anchoredPosition=new Vector2(0,-hud.rect.height*.5f+8);
+                if(resonance)resonance.gameObject.SetActive(false);
+                if(!session.Board.IsSelectingTarget && lesson==null)hint.text="PHASE RESONANCE: +15% GEM DAMAGE";
+            }
         }
         if(saveError!=null)saveError.transform.parent.gameObject.SetActive(session.NeedsSaveRetry);
         if(session.IsVictory&&!session.Board.IsBusy&&!victoryShown){victoryShown=true;OpenVictory();}
