@@ -1,0 +1,51 @@
+{
+  "provider": "PixelLab",
+  "initialGenerations": 672.2,
+  "finalGenerations": 642.2,
+  "spent": 30,
+  "paidDollarCreditSpent": 0,
+  "jobs": [
+    {
+      "kind": "Pillar",
+      "job": "0b7240e0-f4e5-4c8b-9fc5-29db284d78e7",
+      "nativeSize": [
+        32,
+        128
+      ],
+      "charged": 10,
+      "selected": [
+        0,
+        2
+      ]
+    },
+    {
+      "kind": "Relief",
+      "job": "8a510f3a-d829-4797-86b2-f4fd7d082f21",
+      "nativeSize": [
+        32,
+        32
+      ],
+      "charged": 10,
+      "selected": [
+        8
+      ]
+    },
+    {
+      "kind": "Candles",
+      "job": "21d901e1-c493-4f49-b0b4-82b79750bd25",
+      "nativeSize": [
+        24,
+        24
+      ],
+      "charged": 10,
+      "selected": [
+        0,
+        5,
+        12
+      ]
+    }
+  ],
+  "referenceApproval": "User explicitly approved the architecture mockup and unchanged Rattlebones PNG for PixelLab.",
+  "rattlebonesSHA256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+  "mockupSHA256": "9251ea3653bce28b6d9c923dff3d6058d2f6190757bf8753ed7ad6264a7802e3"
+}

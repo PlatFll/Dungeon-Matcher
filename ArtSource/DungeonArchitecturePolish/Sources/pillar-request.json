@@ -1,0 +1,31 @@
+{
+  "request": {
+    "width": 32,
+    "height": 128,
+    "no_background": true,
+    "max_colors": 12,
+    "description": "One single modular structural stone pillar for Dungeon Matcher, full front orthographic side-scroller view. Entire straight vertical pillar visible on transparent canvas, centered, outer width 28 pixels. Heavy stepped rectangular capital at top, continuous recessed masonry shaft of broad rectangular ashlar blocks, heavy stepped plinth base at bottom. Similar castle pillar architecture as the sides in the supplied mockup, but draw ONLY one isolated pillar object, no UI, no gems, no scene. Muted dark violet gray stone, deep clean shadow grooves, restrained top-left highlights, broad flat quiet stone planes, subtly beveled edges. Crisp chunky native pixels, strong silhouette, minimal wear. Architectural joints at horizontal level lines allow the shaft to repeat and capitals/bases to separate. No ornaments, skulls, chains, flames, vegetation or candles yet. Not cylindrical, not Greek marble, no gradients, no dithering. Do not copy the skeleton character anatomy or colors.",
+    "style_image_url": "upload:293be6c8-df51-4d4a-92d8-d10ac69a5aec",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:e29f5805-3084-4a1f-9f5a-a78febaac978",
+        "usage": "Only the geometric purple stone pillars beside the board: restrained sculpted capital, inset shaft and solid stepped base. Not a layout or interface to reproduce."
+      }
+    ]
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 0b7240e0-f4e5-4c8b-9fc5-29db284d78e7\njob_id: 0b7240e0-f4e5-4c8b-9fc5-29db284d78e7\nmodel: pro\ndescription: One single modular structural stone pillar for Dungeon Matcher, full front orthographic side-scroller view. Entire straight vertical pillar visible on transparent canvas, centered, outer width 28 pixels. Heavy stepped rectangular capital at top, continuous recessed masonry shaft of broad rectangular ashlar blocks, heavy stepped plinth base at bottom. Similar castle pillar architecture as the sides in the supplied mockup, but draw ONLY one isolated pillar object, no UI, no gems, no scene. Muted dark violet gray stone, deep clean shadow grooves, restrained top-left highlights, broad flat quiet stone planes, subtly beveled edges. Crisp chunky native pixels, strong silhouette, minimal wear. Architectural joints at horizontal level lines allow the shaft to repeat and capitals/bases to separate. No ornaments, skulls, chains, flames, vegetation or candles yet. Not cylindrical, not Greek marble, no gradients, no dithering. Do not copy the skeleton character anatomy or colors.\nsize: 32x128px\ntransparent: True\ncandidates: 4\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nmax colours: 12 per image\nasset_id: 3623be60-bd4c-52e8-aa46-196ccf97bef0\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"0b7240e0-f4e5-4c8b-9fc5-29db284d78e7\")"
+      }
+    ],
+    "isError": false
+  },
+  "startingBalance": 672.2
+}
