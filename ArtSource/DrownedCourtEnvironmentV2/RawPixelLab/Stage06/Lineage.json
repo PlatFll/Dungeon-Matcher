@@ -1,0 +1,249 @@
+{
+  "stage": "06",
+  "date": "2026-10-25",
+  "balance_before": 584.2,
+  "planned_cost": 16,
+  "reference_hashes": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+  },
+  "jobs": [
+    {
+      "name": "PillarSeed",
+      "request": {
+        "width": 64,
+        "height": 128,
+        "seed": 66061,
+        "description": "ONE slender continuous ancient underwater palace column, whole cap to base, FRONT view orthographic 2D. Column occupies only about 22-24 pixels of the 64-pixel-wide transparent canvas, centered, height about 112. Tall teal stone rectangular shaft with broad block courses, tiny carved slit, quiet weathered fluting, modest stepped cap and stable square foot. Two integral short shelf ledges provide attachment sockets for future coral; one dark small vent cut into a mortar joint. No vegetation yet, no coral yet, no banner, no icons, no text, no extra detached objects, no scene. It must be a sturdy connected narrow structural pillar for a mobile board margin, broad calm native pixel planes, restrained top-left bevel light, chunky clean outline, no bevel noise. Deep blue/teal stone matches subdued underwater royal ruins. Leave transparent clearance on all four sides; entire cap and base visible. Native pixel art, not painted or soft.",
+        "max_colors": 18,
+        "no_background": true,
+        "palette": [
+          "#0a0d11",
+          "#081e2b",
+          "#0f3141",
+          "#164759",
+          "#205b69",
+          "#286b78",
+          "#367d86",
+          "#518f94",
+          "#192e2e",
+          "#28483b",
+          "#426343",
+          "#6d8450",
+          "#2f203d",
+          "#63334f",
+          "#944a68",
+          "#c5728b",
+          "#ded4af",
+          "#968e71"
+        ],
+        "palette_name": "Drowned Court teal stone and restrained marine growth",
+        "style_image": {
+          "base64": "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",
+          "usage_description": "Primary rendering reference only: crisp native pixels, broad connected shading, clean outlines and restrained detail. Do not copy skeleton anatomy, equipment or palette."
+        },
+        "style_options": {
+          "color_palette": false,
+          "outline": true,
+          "detail": true,
+          "shading": true
+        }
+      },
+      "receipt": {
+        "background_job_id": "076979b7-fb51-459a-b71e-85884ba15253",
+        "image_id": "30ca8731-40a2-53f9-af99-8cc2608a41d1",
+        "status": "processing",
+        "source_image_id": "30ca8731-40a2-53f9-af99-8cc2608a41d1",
+        "job_id": "076979b7-fb51-459a-b71e-85884ba15253",
+        "description": "ONE slender continuous ancient underwater palace column, whole cap to base, FRONT view orthographic 2D. Column occupies only about 22-24 pixels of the 64-pixel-wide transparent canvas, centered, height about 112. Tall teal stone rectangular shaft with broad block courses, tiny carved slit, quiet weathered fluting, modest stepped cap and stable square foot. Two integral short shelf ledges provide attachment sockets for future coral; one dark small vent cut into a mortar joint. No vegetation yet, no coral yet, no banner, no icons, no text, no extra detached objects, no scene. It must be a sturdy connected narrow structural pillar for a mobile board margin, broad calm native pixel planes, restrained top-left bevel light, chunky clean outline, no bevel noise. Deep blue/teal stone matches subdued underwater royal ruins. Leave transparent clearance on all four sides; entire cap and base visible. Native pixel art, not painted or soft.",
+        "seed": 66061,
+        "image_size": {
+          "width": 64,
+          "height": 128
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/076979b7-fb51-459a-b71e-85884ba15253/download"
+      },
+      "result": {
+        "job_id": "076979b7-fb51-459a-b71e-85884ba15253",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/076979b7-fb51-459a-b71e-85884ba15253/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/076979b7-fb51-459a-b71e-85884ba15253/download"
+        ],
+        "asset": {
+          "id": "30ca8731-40a2-53f9-af99-8cc2608a41d1",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 6
+      },
+      "raw_sha256": "8d2f22b3899d6b381a7ba18541d1ae140ef8e4bc8b40c9f93250350f3a6e0899"
+    },
+    {
+      "name": "KelpSeed",
+      "request": {
+        "width": 64,
+        "height": 64,
+        "seed": 66062,
+        "description": "ONE narrow, tall cluster of three undulating kelp blades rising from a single small holdfast rooted in a tiny blue-teal stone crack. FRONT view, native pixel art environmental overlay. Occupied silhouette about 20 pixels wide and 48-52 pixels tall, centered on transparent 64 canvas, complete tips and base. Graceful unequal S-curving blades with connected flat leaf ribbons, dark bottle-green and moss-green, sparse olive upper-left edges. One blade tall, two shorter branching from same dark root. Few broad readable planes, crisp connected pixels, no floating parts. Stone base tiny and dark, with a notched ledge that can fit on a larger pillar. No leafy bush, no grass tuft, no tree, no full scene, no bubbles, no glow, no gradient.",
+        "max_colors": 18,
+        "no_background": true,
+        "palette": [
+          "#0a0d11",
+          "#081e2b",
+          "#0f3141",
+          "#164759",
+          "#205b69",
+          "#286b78",
+          "#367d86",
+          "#518f94",
+          "#192e2e",
+          "#28483b",
+          "#426343",
+          "#6d8450",
+          "#2f203d",
+          "#63334f",
+          "#944a68",
+          "#c5728b",
+          "#ded4af",
+          "#968e71"
+        ],
+        "palette_name": "Drowned Court teal stone and restrained marine growth",
+        "style_image": {
+          "base64": "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",
+          "usage_description": "Primary rendering reference only: crisp native pixels, broad connected shading, clean outlines and restrained detail. Do not copy skeleton anatomy, equipment or palette."
+        },
+        "style_options": {
+          "color_palette": false,
+          "outline": true,
+          "detail": true,
+          "shading": true
+        }
+      },
+      "receipt": {
+        "background_job_id": "e44493e7-41e3-407a-a632-85eeda8bbe9d",
+        "image_id": "e741a523-49b4-5ccc-9037-7ac10ac0a280",
+        "status": "processing",
+        "source_image_id": "e741a523-49b4-5ccc-9037-7ac10ac0a280",
+        "job_id": "e44493e7-41e3-407a-a632-85eeda8bbe9d",
+        "description": "ONE narrow, tall cluster of three undulating kelp blades rising from a single small holdfast rooted in a tiny blue-teal stone crack. FRONT view, native pixel art environmental overlay. Occupied silhouette about 20 pixels wide and 48-52 pixels tall, centered on transparent 64 canvas, complete tips and base. Graceful unequal S-curving blades with connected flat leaf ribbons, dark bottle-green and moss-green, sparse olive upper-left edges. One blade tall, two shorter branching from same dark root. Few broad readable planes, crisp connected pixels, no floating parts. Stone base tiny and dark, with a notched ledge that can fit on a larger pillar. No leafy bush, no grass tuft, no tree, no full scene, no bubbles, no glow, no gradient.",
+        "seed": 66062,
+        "image_size": {
+          "width": 64,
+          "height": 64
+        },
+        "output_count": 1,
+        "estimated_generations": 5,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/e44493e7-41e3-407a-a632-85eeda8bbe9d/download"
+      },
+      "result": {
+        "job_id": "e44493e7-41e3-407a-a632-85eeda8bbe9d",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/e44493e7-41e3-407a-a632-85eeda8bbe9d/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/e44493e7-41e3-407a-a632-85eeda8bbe9d/download"
+        ],
+        "asset": {
+          "id": "e741a523-49b4-5ccc-9037-7ac10ac0a280",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "raw_sha256": "61942158ba1837078f8583e5c6b4f128da89c5d241937c58f462aeae7dd239d4"
+    },
+    {
+      "name": "CoralSeed",
+      "request": {
+        "width": 64,
+        "height": 64,
+        "seed": 66063,
+        "description": "ONE compact tallish branching pink coral colony attached to a small blue-teal rock shelf. FRONT view 2D native pixel art, occupied about 20-24 pixels wide and 26-32 pixels tall, centered with generous transparent padding. Four or five short rounded irregular branches share one thick connected stalk embedded into a visible stone notch. Muted magenta shadow, dusty coral rose body, a few pale pink upper-left tips. Branch ends chunky and readable, broad connected color planes not dotted texture. One tiny ivory barnacle can attach to the rock only. Keep stone shelf low and small. Entire colony and shelf visible, no floating fragments, no other objects, no bright aquarium colors, no bubbles or sparkles, no painterly anti-aliasing, no UI or scene.",
+        "max_colors": 18,
+        "no_background": true,
+        "palette": [
+          "#0a0d11",
+          "#081e2b",
+          "#0f3141",
+          "#164759",
+          "#205b69",
+          "#286b78",
+          "#367d86",
+          "#518f94",
+          "#192e2e",
+          "#28483b",
+          "#426343",
+          "#6d8450",
+          "#2f203d",
+          "#63334f",
+          "#944a68",
+          "#c5728b",
+          "#ded4af",
+          "#968e71"
+        ],
+        "palette_name": "Drowned Court teal stone and restrained marine growth",
+        "style_image": {
+          "base64": "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",
+          "usage_description": "Primary rendering reference only: crisp native pixels, broad connected shading, clean outlines and restrained detail. Do not copy skeleton anatomy, equipment or palette."
+        },
+        "style_options": {
+          "color_palette": false,
+          "outline": true,
+          "detail": true,
+          "shading": true
+        }
+      },
+      "receipt": {
+        "background_job_id": "ed82f211-046b-4845-8c29-eb91123a68a3",
+        "image_id": "96182d78-35f6-54e3-a515-d4e5db06bbf1",
+        "status": "processing",
+        "source_image_id": "96182d78-35f6-54e3-a515-d4e5db06bbf1",
+        "job_id": "ed82f211-046b-4845-8c29-eb91123a68a3",
+        "description": "ONE compact tallish branching pink coral colony attached to a small blue-teal rock shelf. FRONT view 2D native pixel art, occupied about 20-24 pixels wide and 26-32 pixels tall, centered with generous transparent padding. Four or five short rounded irregular branches share one thick connected stalk embedded into a visible stone notch. Muted magenta shadow, dusty coral rose body, a few pale pink upper-left tips. Branch ends chunky and readable, broad connected color planes not dotted texture. One tiny ivory barnacle can attach to the rock only. Keep stone shelf low and small. Entire colony and shelf visible, no floating fragments, no other objects, no bright aquarium colors, no bubbles or sparkles, no painterly anti-aliasing, no UI or scene.",
+        "seed": 66063,
+        "image_size": {
+          "width": 64,
+          "height": 64
+        },
+        "output_count": 1,
+        "estimated_generations": 5,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/ed82f211-046b-4845-8c29-eb91123a68a3/download"
+      },
+      "result": {
+        "job_id": "ed82f211-046b-4845-8c29-eb91123a68a3",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/ed82f211-046b-4845-8c29-eb91123a68a3/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/ed82f211-046b-4845-8c29-eb91123a68a3/download"
+        ],
+        "asset": {
+          "id": "96182d78-35f6-54e3-a515-d4e5db06bbf1",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "raw_sha256": "aa20de5211b0ae88ee290a0fc351a2e022f131af18c961cda3a211079a10eed9"
+    }
+  ],
+  "balance_after": 568.2,
+  "actual_cost": 16,
+  "cumulative_generations": 74,
+  "selected_status": "CANDIDATE_PENDING_USER_REVIEW",
+  "native_method": "LibreSprite cleanup and native modular construction. Quiet stone ramps; matte pink coral tips. Whole raw studies remain preserved. Outer plant branches translated inward by 3 native pixels; shorter foot wings clear frame corners, no resampling. Kelp lower contact completed in new padding. Separate registered tip/stem pieces for later motion; no animation yet.",
+  "native_manifest": "Native/Stage06/Manifest.json"
+}
