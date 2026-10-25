@@ -30,7 +30,7 @@ board, characters, gems and lower controls remain unchanged. Fifteen new modules
 and four reused parts retain editable LibreSprite sources; PixelLab usage is 30
 generations. Six Game-scene phone/safe-area profiles pass with zero changed
 pixels outside the side architecture. Required Unity validation passes. This
-awaits final visual approval and is not merged; no new device/build test claimed.
+is approved for PR #211 merge and production use; no new device/build test claimed.
 The follow-up uses a separate native torch with a taller flame and straight
 wall bracket on the two side pillars only; upper torches are preserved. Zero
 additional generations; updated gameplay captures retain the protected pixels.

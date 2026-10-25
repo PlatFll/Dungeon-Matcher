@@ -1,6 +1,6 @@
 # Dungeon side architecture — review handoff
 
-Branch: `feature/dungeon-side-architecture-polish`. Based on main `52c0f657`. **Not merged; awaiting visual approval.**
+Branch: `feature/dungeon-side-architecture-polish`. Based on main `52c0f657`. **User approved the final torch correction and authorized PR #211 merge into production on 2026-10-25.**
 
 The actual playable Dungeon uses continuous modular stone columns around the board/lower HUD. Upper battle, portrait, board geometry, gems, character art, HUD and gameplay retain their existing owners and artwork.
 
@@ -43,4 +43,4 @@ review screenshots, reference, exact source hashes, native comparison and test X
 - `Diagnostics/After/*-protected-pixels.txt`: exact image counts.
 - `Diagnostics/ProtectedAfter.json`, `AssetValidation.json`: preservation/native checks.
 
-Artistic verdict: stronger geometric construction and controlled focal details; the colorful board remains dominant. Original art and fallback presentation preserved. Stop for user review; do not merge automatically.
+Artistic verdict: stronger geometric construction and controlled focal details; the colorful board remains dominant. Original art and fallback presentation preserved. User approved this result and explicitly authorized merging PR #211 into the playable Dungeon.
