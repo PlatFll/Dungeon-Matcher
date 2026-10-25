@@ -12,6 +12,8 @@ public sealed partial class DungeonPixelLabBattleArt : ScriptableObject
     public TextAsset placementManifest;
     public Sprite boardCell64;
     public Sprite[] hybridModules;
+    public Sprite[] sideArchitectureModules;
+    public bool UsesSideArchitecture => sideArchitectureModules != null && sideArchitectureModules.Length > 0;
     public TextAsset hybridPlacementManifest;
     public bool UsesHybrid => hybridPlacementManifest && hybridModules != null && hybridModules.Length > 0;
     // Stand halfway across the 12-texel floor strip, keeping HP below the feet.
@@ -26,6 +28,7 @@ public sealed partial class DungeonPixelLabBattleArt : ScriptableObject
         {
             lookup = modules.ToDictionary(s => s.name, s => s);
             if (UsesHybrid) foreach (var sprite in hybridModules) lookup[sprite.name] = sprite;
+            if (UsesSideArchitecture) foreach (var sprite in sideArchitectureModules) lookup[sprite.name] = sprite;
             if (forestAssembly) foreach (var module in forestAssembly.modules) lookup[module.key] = module.sprite;
         }
         return lookup.TryGetValue(name, out var s) ? s : null;

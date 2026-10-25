@@ -103,20 +103,25 @@ public sealed class DungeonHybridIntegrationTests
         var all=tiles.Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).ToArray();
         Assert.That(all.Min(r=>r.yMin),Is.LessThan(0));
         Assert.That(all.Max(r=>r.yMax),Is.GreaterThan(UnityEngine.Device.Screen.height));
-        // Visible side rows are flush to the physical edges and use one grid.
-        float scale=DungeonPixelLabBattleArt.PhysicalPixelScale;
-        var sides=world.transform.Find("Structure/Edge masonry").GetComponentsInChildren<Image>();
-        foreach(string side in new[]{"Left","Right"})
+        if(DungeonPixelLabBattleArt.Current.UsesSideArchitecture)
+            DungeonArchitectureReviewTests.AssertArchitecture(layout);
+        else
         {
-            var bounds=sides.Where(i=>i.name.EndsWith(side)).Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).OrderBy(r=>r.yMin).ToArray();
-            Assert.That(bounds,Is.Not.Empty);
-            foreach(var r in bounds)
+            // Visible side rows are flush to the physical edges and use one grid.
+            float scale=DungeonPixelLabBattleArt.PhysicalPixelScale;
+            var sides=world.transform.Find("Structure/Edge masonry").GetComponentsInChildren<Image>();
+            foreach(string side in new[]{"Left","Right"})
             {
-                Assert.That(side=="Left"?r.xMin:r.xMax,Is.EqualTo(side=="Left"?0:UnityEngine.Device.Screen.width).Within(.1f));
-                Assert.That(r.height,Is.EqualTo(28*scale).Within(.1f));
-                Assert.That(r.yMin/(28*scale),Is.EqualTo(Mathf.Round(r.yMin/(28*scale))).Within(.001f));
+                var bounds=sides.Where(i=>i.name.EndsWith(side)).Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).OrderBy(r=>r.yMin).ToArray();
+                Assert.That(bounds,Is.Not.Empty);
+                foreach(var r in bounds)
+                {
+                    Assert.That(side=="Left"?r.xMin:r.xMax,Is.EqualTo(side=="Left"?0:UnityEngine.Device.Screen.width).Within(.1f));
+                    Assert.That(r.height,Is.EqualTo(28*scale).Within(.1f));
+                    Assert.That(r.yMin/(28*scale),Is.EqualTo(Mathf.Round(r.yMin/(28*scale))).Within(.001f));
+                }
+                for(int i=1;i<bounds.Length;i++)Assert.That(bounds[i].yMin,Is.EqualTo(bounds[i-1].yMax).Within(.1f),"Side rows must meet without overlap or gaps");
             }
-            for(int i=1;i<bounds.Length;i++)Assert.That(bounds[i].yMin,Is.EqualTo(bounds[i-1].yMax).Within(.1f),"Side rows must meet without overlap or gaps");
         }
         var png=new Texture2D(2,2,TextureFormat.RGBA32,false);
         try
@@ -137,7 +142,7 @@ public sealed class DungeonHybridIntegrationTests
     [UnityTest,Explicit("Hybrid actual Game-scene capture and integration checks.")]
     public IEnumerator DungeonCombatAndPhoneScreens()=>CaptureScreens(Root,"Final");
     // Editor-only reuse: an optional candidate decorates the same live layout.
-    public IEnumerator CaptureScreens(string outputRoot,string phase,Action<GameplayPixelLayoutController> decorate=null)
+    public IEnumerator CaptureScreens(string outputRoot,string phase,Action<GameplayPixelLayoutController> decorate=null,Func<GameplayPixelLayoutController,string,IEnumerator> afterCapture=null)
     {
         Directory.CreateDirectory(outputRoot+"/Diagnostics/"+phase);
         Directory.CreateDirectory(outputRoot+"/Previews/"+phase);
@@ -198,6 +203,7 @@ public sealed class DungeonHybridIntegrationTests
                 ScreenCapture.CaptureScreenshot(output);yield return Until(()=>File.Exists(output));yield return null;
                 AssertVisibleGems(output,GameplayPixelLayoutController.ScreenRect(layout.BoardArea));
                 AssertScreenCoverage(output,layout);
+                if(afterCapture!=null)yield return afterCapture(layout,name);
                 foreach(var text in layout.TopHud.GetComponentsInChildren<TMPro.TMP_Text>().Where(t=>t.name=="PlayerHPText"||t.name=="EnemyHPText"))
                 { text.ForceMeshUpdate();Assert.That(text.textInfo.lineCount,Is.LessThanOrEqualTo(1),name+" health number wrapping"); }
                 var liveControls=Object.FindFirstObjectByType<RunControlsUI>();

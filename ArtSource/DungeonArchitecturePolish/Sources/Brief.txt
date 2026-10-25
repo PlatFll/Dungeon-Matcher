@@ -1,0 +1,236 @@
+# Dungeon Matcher — Dungeon Architectural Enhancement
+
+## Objective
+
+Use the attached image as the **visual reference for improving the Dungeon zone's side architecture**.
+
+I want the existing Dungeon to feel slightly richer and more atmospheric, similar to the reference, while remaining quieter and more geometric than our Magical Forest zone.
+
+**This is an environmental asset enhancement, NOT a full Dungeon redesign.**
+
+Use PixelLab to generate the necessary individual assets, LibreSprite to clean and finalize them, and Unity to assemble and validate the result.
+
+## 1. Mandatory preparation
+
+Before making changes:
+
+- Read `AGENTS.md`.
+- Read `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt`.
+- Read `Docs/ArtDirection/Golden_Reference_Register.md`.
+- Inspect the actual approved Rattlebones sprite, existing Dungeon assets, and the latest playable Dungeon scene.
+- Inspect the attached screenshot carefully, particularly the stone architecture to the left and right of the gem board.
+
+Use the latest accepted Dungeon implementation as your foundation.
+
+Work on a new isolated branch named `feature/dungeon-side-architecture-polish`. Preserve all unrelated work.
+
+## 2. What must remain unchanged
+
+**LOCK THESE ELEMENTS:**
+
+- Existing top HUD layout and appearance.
+- WAVE plaque, GUIDE button and settings button.
+- Existing central dungeon doorway and battle presentation.
+- Player portrait frame.
+- Character sprites and animations.
+- All gem artwork and board-cell graphics.
+- Board dimensions, position and gameplay behavior.
+- Bottom HUD, resonance panel, potion and bomb controls.
+- Health bars, countdown indicators and other gameplay UI.
+- Existing game mechanics and other zones.
+
+Do not change their source artwork.
+
+The screenshot is a reference for **environmental architecture only**, not permission to recreate its characters, gems, controls or layout.
+
+## 3. Stage 1 — Generate the side stone pillars
+
+This is the main architectural improvement.
+
+Use PixelLab to create a modular dungeon stone pillar kit based on the attached reference.
+
+### Required components
+
+- Large stone pillar shaft.
+- Decorative pillar capital.
+- Heavy stone pillar base.
+- Horizontal stone ledge and trim connectors.
+- Recessed masonry sections.
+- Carved skull-relief stone blocks.
+- Optional chipped or weathered stone variants.
+
+### Visual requirements
+
+The pillars should:
+
+- Use dark purple and muted violet-gray stone.
+- Have chunky rectangular masonry blocks.
+- Use restrained top-left highlights.
+- Feature deep, clean shadow separations.
+- Have strong geometric silhouettes.
+- Feel like part of the castle's original construction.
+
+**Important:** The pillars must look like continuous structures, not separate stone sprites pasted vertically on the background.
+
+Generate matching modular parts that can be assembled seamlessly into full-height columns.
+
+Place them on the left and right sides of the board area, following the visual arrangement of the reference.
+
+Keep them outside the playable board.
+
+## 4. Stage 2 — Torches and hanging chains
+
+Use PixelLab to generate or improve the following separate environmental assets.
+
+### Torch assets
+
+Create a chunky wrought-iron dungeon wall torch with:
+
+- A dark iron bracket.
+- A readable orange/yellow flame.
+- A small ember detail.
+- Restrained warm lighting on surrounding stone.
+
+The torch should mount naturally onto the stone pillars.
+
+Reuse the existing torch if it already matches the desired quality; otherwise generate an improved candidate.
+
+### Chain assets
+
+Create:
+
+- Repeatable vertical iron chain segments.
+- Chain anchor brackets.
+- A few naturally hanging chain-end variations.
+- Optional heavier chain connectors for the lower side masonry.
+
+Chains should hang from believable attachment points and follow a continuous path.
+
+**Avoid disconnected floating links, overlapping fragments or excessive chain density.**
+
+Keep the chains dark enough that they remain secondary to the gems and characters.
+
+## 5. Stage 3 — Recessed masonry and skull ornaments
+
+Generate supporting architectural components:
+
+- Skull-carved stone reliefs.
+- Dark recessed brick alcoves.
+- Decorative masonry ledges.
+- Simple stone blocks with restrained damage.
+- Small worn-stone transitions.
+
+Integrate the reliefs into the stonework itself.
+
+The skulls should look **carved into the pillars or walls**, not like decorative stickers.
+
+Avoid adding too many. Use them as occasional focal points along the sides.
+
+Do not introduce banners.
+
+## 6. Stage 4 — Unlit candles
+
+Add several small candle groups on appropriate stone ledges.
+
+**All candles must be UNLIT.**
+
+- No candle flames.
+- No glow effects.
+- No candle illumination.
+- No ember particles.
+
+Use small ivory/off-white wax candles of varying heights, with dark wicks and subtle wax-drip details.
+
+Place a few groups around the lower side architecture, as shown in the reference.
+
+The existing wall torches may remain lit.
+
+Ensure candle bases sit correctly on their stone ledges and do not appear to float.
+
+## 7. Stage 5 — PixelLab cleanup and asset construction
+
+For every generated asset:
+
+1. Preserve the raw PixelLab source separately.
+2. Open and clean the selected candidate in LibreSprite.
+3. Simplify unnecessary shading and texture noise.
+4. Normalize material colors against the existing Dungeon art ramps.
+5. Repair stray pixels and damaged contours.
+6. Ensure binary transparency for isolated props.
+7. Fix repeating sections and their seams.
+8. Export at the established native source-pixel scale.
+
+Use PixelLab's appropriate available tools for individual objects, architectural modules, and reference-guided edits.
+
+**Do not generate a whole completed Dungeon screen and slice it afterward.**
+
+Do not impose Rattlebones's exact 15-color palette on environment assets. Match his pixel cleanliness and rendering discipline, while using the established dungeon stone, metal, and lighting ramps.
+
+You may use additional PixelLab generations where they materially improve the assets. Record the actual generation usage.
+
+## 8. Stage 6 — Assemble in Unity
+
+Assemble the new architecture in the existing Dungeon scene using separate sprites and repeatable modules.
+
+Build the scene in this order:
+
+1. Existing background masonry.
+2. New continuous side pillar structures.
+3. Recessed wall panels and carved skull stones.
+4. Chains and their mounting hardware.
+5. Torch brackets and flames.
+6. Stone ledges and unlit candles.
+
+Use the existing Unity presentation systems rather than creating competing UI or environment systems.
+
+Keep the new decorations outside gameplay hit targets, board cells, health bars and important text.
+
+Make sure the architecture works at different supported mobile aspect ratios.
+
+## 9. Validation
+
+Capture real Unity screenshots before and after the changes.
+
+Validate:
+
+- Native-pixel sharpness.
+- No blurry or fractional scaling distortion.
+- Seamless pillar segments.
+- Continuous masonry and chains.
+- Correct torch mounting.
+- Correct candle placement.
+- Candles remain unlit.
+- No banners added.
+- No overlap with the playable board.
+- Consistent colors and shading.
+- No changes to locked UI or gameplay assets.
+
+Inspect the entire screen at actual gameplay size, not only enlarged asset crops.
+
+The architecture should make the Dungeon feel more complete, but **it must not become as visually dense as the Magical Forest**.
+
+If a particular decoration looks noisy or unnecessarily prominent, simplify it rather than adding more detail.
+
+## 10. Final deliverables
+
+Provide:
+
+1. Native PNGs and editable LibreSprite sources for all new assets.
+2. A reusable modular stone-pillar kit.
+3. A working Unity scene with the new architecture.
+4. Actual before-and-after Dungeon gameplay screenshots.
+5. Close-up previews of the left and right architectural sections.
+6. A PixelLab generation usage report.
+7. Confirmation that all protected artwork and shared UI remain unchanged.
+
+Proceed through the stages and run validation after each one.
+
+**Stop after the complete architectural enhancement is assembled and verified. Do not merge to main without my explicit approval.**
+
+### Final visual target
+
+A dungeon with **strong geometric stone pillars, recessed masonry, hanging iron chains, carved skull ornaments, lit wall torches, and small unlit candle groups**.
+
+It should feel ancient, mysterious, atmospheric and deliberately constructed.
+
+Keep the architecture visually restrained so the characters and colorful match-3 gems remain the main focus.

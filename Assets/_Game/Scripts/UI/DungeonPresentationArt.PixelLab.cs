@@ -60,6 +60,7 @@ public sealed partial class DungeonPresentationArt
             (layout.BoardArea.rect.height-outside)/2,outside,outside);
         GameplayPixelGrid.Snap(pixelLabBoardFrame);
         if (art.UsesHybrid) RefreshHybridBoardBacking(art,layout);
+        if (art.UsesSideArchitecture) RefreshSideArchitecture(art,layout,floor);
         if(pixelLabPortraitBanner)GameplayPixelGrid.Snap(pixelLabPortraitBanner);
         panelsReady = true;
     }

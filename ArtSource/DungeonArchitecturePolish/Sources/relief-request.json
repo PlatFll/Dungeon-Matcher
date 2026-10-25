@@ -1,0 +1,31 @@
+{
+  "request": {
+    "width": 32,
+    "height": 32,
+    "no_background": true,
+    "max_colors": 10,
+    "description": "Single square carved-skull relief block for a quiet purple dungeon pillar, full FRONT view. A small simplified skull is carved from exactly the SAME muted violet-gray stone as its thick square beveled masonry slab, INTEGRATED BAS RELIEF with dark eye recesses. NO white bone, NO separate floating skull, NO crown. The relief fits inside a strong rectangular stone block with a quiet flat bevel and one deep recessed outline, 24 pixels wide within a 32 pixel canvas. Low contrast dark purple stone, top-left restrained highlight, broad flat plane shading, clean native pixel clusters, restrained chunky 16-bit mobile dungeon style. Full isolated object, transparent background, no scene, no border jewels or UI. Must belong to the existing side pillars in the reference.",
+    "style_image_url": "upload:293be6c8-df51-4d4a-92d8-d10ac69a5aec",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:e29f5805-3084-4a1f-9f5a-a78febaac978",
+        "usage": "The recessed skull-carved purple blocks in the SIDE pillars are the object/material target. Ignore the game board and UI."
+      }
+    ]
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 8a510f3a-d829-4797-86b2-f4fd7d082f21\njob_id: 8a510f3a-d829-4797-86b2-f4fd7d082f21\nmodel: pro\ndescription: Single square carved-skull relief block for a quiet purple dungeon pillar, full FRONT view. A small simplified skull is carved from exactly the SAME muted violet-gray stone as its thick square beveled masonry slab, INTEGRATED BAS RELIEF with dark eye recesses. NO white bone, NO separate floating skull, NO crown. The relief fits inside a strong rectangular stone block with a quiet flat bevel and one deep recessed outline, 24 pixels wide within a 32 pixel canvas. Low contrast dark purple stone, top-left restrained highlight, broad flat plane shading, clean native pixel clusters, restrained chunky 16-bit mobile dungeon style. Full isolated object, transparent background, no scene, no border jewels or UI. Must belong to the existing side pillars in the reference.\nsize: 32x32px\ntransparent: True\ncandidates: 64\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nmax colours: 10 per image\nasset_id: 1c2bc99b-0a4d-5d82-af98-24b53e12c8fd\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"8a510f3a-d829-4797-86b2-f4fd7d082f21\")"
+      }
+    ],
+    "isError": false
+  },
+  "startingBalance": 672.2
+}
