@@ -1,0 +1,71 @@
+{
+  "request": {
+    "description": "One tiny tasteful ambient clam for a magical submerged ancient court pixel-art game. NOT a character: no eyes, no face, no skeleton, no crown. Low broad scalloped bivalve shell resting on a tiny dark teal rock contact foot. Open upper shell with subtle radial ribs, muted aqua blue outer shell and soft dusty mauve inner mantle, a very small pale pearl. Side-on three-quarter view appropriate to a 2D platform scene. Keep the entire occupied prop small: about 30 pixels wide and 23 pixels tall, centered inside this 64x64 transparent canvas, plenty of empty padding. Dark clear outline, top-left light, chunky connected 2-3-tone material planes, restrained tiny highlights. Native crisp game pixel sprite, no blur, no anti-alias, no noisy individual flecks, no glow halo, no large surrounding reef, no text. Match the style reference's economical rendering and strong contour only, do not copy its subject or colors.",
+    "width": 64,
+    "height": 64,
+    "max_colors": 16,
+    "no_background": true,
+    "palette": [
+      "#0a0d11",
+      "#062432",
+      "#083d50",
+      "#0d5368",
+      "#176c7d",
+      "#258999",
+      "#3aa3ae",
+      "#65c1be",
+      "#352b50",
+      "#66516f",
+      "#9d7b96",
+      "#cfabbc",
+      "#8f9e8d",
+      "#d5d6b0",
+      "#f2e9ce",
+      "#294c36"
+    ],
+    "palette_name": "Drowned Court shell and teal ruin material palette",
+    "seed": 260261,
+    "style_image": {
+      "usage_description": "Rattlebones is rendering authority only: crisp outline, connected simple shading clusters and native pixels. Do not copy anatomy, equipment, or palette.",
+      "reference_path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "receipt": {
+    "background_job_id": "7a4a16e1-426b-43a9-837d-5d792460c7ba",
+    "image_id": "1bb1c9a0-ab8b-59c6-91e1-64fea356cf12",
+    "status": "processing",
+    "source_image_id": "1bb1c9a0-ab8b-59c6-91e1-64fea356cf12",
+    "job_id": "7a4a16e1-426b-43a9-837d-5d792460c7ba",
+    "description": "One tiny tasteful ambient clam for a magical submerged ancient court pixel-art game. NOT a character: no eyes, no face, no skeleton, no crown. Low broad scalloped bivalve shell resting on a tiny dark teal rock contact foot. Open upper shell with subtle radial ribs, muted aqua blue outer shell and soft dusty mauve inner mantle, a very small pale pearl. Side-on three-quarter view appropriate to a 2D platform scene. Keep the entire occupied prop small: about 30 pixels wide and 23 pixels tall, centered inside this 64x64 transparent canvas, plenty of empty padding. Dark clear outline, top-left light, chunky connected 2-3-tone material planes, restrained tiny highlights. Native crisp game pixel sprite, no blur, no anti-alias, no noisy individual flecks, no glow halo, no large surrounding reef, no text. Match the style reference's economical rendering and strong contour only, do not copy its subject or colors.",
+    "seed": 260261,
+    "image_size": {
+      "width": 64,
+      "height": 64
+    },
+    "output_count": 1,
+    "estimated_generations": 5,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/7a4a16e1-426b-43a9-837d-5d792460c7ba/download"
+  },
+  "result": {
+    "job_id": "7a4a16e1-426b-43a9-837d-5d792460c7ba",
+    "asset_id": "1bb1c9a0-ab8b-59c6-91e1-64fea356cf12",
+    "charged_generations": 5,
+    "download": "https://api.pixellab.ai/mcp/images/7a4a16e1-426b-43a9-837d-5d792460c7ba/download"
+  },
+  "authority": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+  }
+}

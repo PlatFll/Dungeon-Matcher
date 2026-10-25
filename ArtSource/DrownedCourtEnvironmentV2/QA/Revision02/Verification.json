@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "preserved_original_files": 27228,
+  "native_assets": 21,
+  "coral_artifact_pixels_removed": 16,
+  "opaque_UI_actor_frame_tile_samples_unchanged": 3148840,
+  "screens": [
+    {
+      "size": "360x640",
+      "protected_pixels": 112372
+    },
+    {
+      "size": "720x1280",
+      "protected_pixels": 449916
+    },
+    {
+      "size": "1080x1920",
+      "protected_pixels": 1012132
+    },
+    {
+      "size": "360x800",
+      "protected_pixels": 112372
+    },
+    {
+      "size": "720x1600",
+      "protected_pixels": 449916
+    },
+    {
+      "size": "1080x2400",
+      "protected_pixels": 1012132
+    }
+  ],
+  "motion_frames": 288,
+  "distinct_motion_frames": 244,
+  "motion_region_change_counts": {
+    "top": 239,
+    "left": 207,
+    "right": 196,
+    "bottom": 240,
+    "clam": 125
+  },
+  "native_animation_clips": 26,
+  "native_animator_controllers": 26,
+  "loop_seams_exact": true,
+  "portrait_mask_contained": true,
+  "pixelLab_generations": 5,
+  "scope": "Review-only Unity scene; sampled actual AnimationClips. No production gameplay, Android or device testing."
+}
