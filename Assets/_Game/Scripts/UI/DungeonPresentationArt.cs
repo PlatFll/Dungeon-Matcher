@@ -39,7 +39,7 @@ public sealed partial class DungeonPresentationArt : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (DungeonPixelLabBattleArt.Current) { UpdatePixelLabDungeon(); return; }
+        if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt art) { if(art.forestAssembly) UpdateForest(); else UpdatePixelLabDungeon(); return; }
         UpdateReferenceSides();
         if (approved != null) UpdateApprovedDungeon();
         if (approved == null && backdrop != null && worldCamera != null && worldCamera.orthographic)

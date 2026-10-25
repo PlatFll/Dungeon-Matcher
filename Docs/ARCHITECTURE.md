@@ -459,6 +459,23 @@ Opened settings and main menu keep their existing skins and menu music selection
   `ArtSource/DungeonHybrid/Integration/`. This supersedes the selected Dungeon art
   binding only; the earlier library and other-zone paths remain preserved.
 
+- **Approved Forest runtime binding (2026-10-25):** The existing
+  `DungeonPixelLabBattleArt` native presentation resource now also selects
+  `ForestPixelLab` for the Forest zone. Its `ForestBattleAssembly` references the
+  final approved separate sprite placements and motion frames, exported from
+  the last review scene without static actors, gems, labels or controls.
+  `DungeonPresentationArt.Forest` maps those modules onto the shared live board,
+  portrait and combat floor. Native art pixels remain integer-scaled; complete
+  sprites move and rails repeat instead of stretching the drawings. The world
+  canvas stays below gems; live modular frames and masked portrait stay in UI.
+  `ForestAmbientMotion` carries the approved 27 cosmetic tracks into builds,
+  obeying scaled time/pause and Reduced Motion without gameplay RNG or ownership.
+  `Game` uses runtime-zone presentation and no longer serializes the obsolete
+  Dungeon_Finalized binding. The tilemap owner skips unused environments for
+  Dungeon/Forest and retains the established other-zone path. Existing enemy-slot
+  geometry refresh now runs after resizing in every zone. Phone evidence and
+  source-preservation records: `ArtSource/ForestProductionIntegration/`.
+
 - **Dungeon PixelLab Stage16 (2026-10-20, merged PR #203):** `DungeonPixelLabBattleArt`
   binds the 102 approved modules plus an additive 64px cell through Resources.
   The existing `DungeonPresentationArt` owns a non-interactive world-space canvas

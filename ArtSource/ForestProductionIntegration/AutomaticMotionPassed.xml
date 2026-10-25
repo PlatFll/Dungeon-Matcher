@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-25 05:01:32Z" end-time="2026-10-25 05:01:46Z" duration="13.8904671">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="865" result="Passed" start-time="2026-10-25 05:01:32Z" end-time="2026-10-25 05:01:46Z" duration="13.890467" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="2051" name="Assembly-CSharp-Editor.dll" fullname="C:/Users/USER/.codex/worktrees/forest-zone-hybrid-rebuild/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="865" result="Passed" start-time="2026-10-25 05:01:32Z" end-time="2026-10-25 05:01:46Z" duration="13.853237" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="8948" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+      <test-suite type="TestFixture" id="1719" name="ForestProductionIntegrationTests" fullname="ForestProductionIntegrationTests" classname="ForestProductionIntegrationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-25 05:01:32Z" end-time="2026-10-25 05:01:46Z" duration="13.842682" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+        <test-case id="1720" name="Quick" fullname="ForestProductionIntegrationTests.Quick" methodname="Quick" classname="ForestProductionIntegrationTests" runstate="Explicit" seed="150671774" result="Passed" start-time="2026-10-25 05:01:25Z" end-time="2026-10-25 05:01:46Z" duration="20.719091" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+Spawned Elven Scout in EnemySlot1. Category: Normal. Gem type: Amethyst. Wave 1, Level 1, HP 60, Damage 5, Follow-up Damage 0, Attack Interval 3.00s, Special Turns 3
+Initialized player RattleBones. HP: 100/100.
+Pixel layout validated: Screen 720x1360; safe=(x:0.00, y:0.00, width:720.00, height:1360.00); constraints=(x:0.00, y:0.00, width:720.00, height:1360.00); logical viewport=(712.00, 1352.00); physical viewport=(x:4.00, y:4.00, width:712.00, height:1352.00); canvas scale=1; logical/physical=1; Top=(x:4.00, y:876.00, width:712.00, height:480.00); BoardArea=(x:57.00, y:257.00, width:605.00, height:605.00); Bottom=(x:4.00, y:4.00, width:712.00, height:240.00); gaps=14,13; cutouts=0; bottom display clearance=4; safe clearance=4; board texel ratio=1.064646; origin=(360.00, 560.00); fractional board scale=True
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PixelLabPortraitBackdrop/PortraitMask/Antler pennant candidate bounds=(x:91.00, y:1199.00, width:56.00, height:88.00), source=(28.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:54.00, y:1038.00, width:128.00, height:128.00), source=(64.00, 64.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:64.00, y:1012.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:175.00, y:1012.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:50.00, y:1012.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:102.00, y:1170.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PixelLabPortraitFrame/TopLeftCorner bounds=(x:21.00, y:1281.00, width:30.00, height:30.00), source=(15.00, 15.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PixelLabPortraitFrame/TopRightCorner bounds=(x:187.00, y:1281.00, width:30.00, height:30.00), source=(15.00, 15.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PixelLabPortraitFrame/BottomLeftCorner bounds=(x:21.00, y:905.00, width:30.00, height:30.00), source=(15.00, 15.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PixelLabPortraitFrame/BottomRightCorner bounds=(x:187.00, y:905.00, width:30.00, height:30.00), source=(15.00, 15.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ForestPortraitFoliage/Ivy_CrownLeft bounds=(x:5.00, y:1271.00, width:136.00, height:58.00), source=(68.00, 29.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ForestPortraitFoliage/Ivy_LeftSwag bounds=(x:5.00, y:891.00, width:88.00, height:404.00), source=(44.00, 202.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ForestPortraitFoliage/Ivy_CrownRight bounds=(x:101.00, y:1181.00, width:136.00, height:150.00), source=(68.00, 75.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ForestPortraitFoliage/Ivy_RightSwag bounds=(x:101.00, y:869.00, width:136.00, height:338.00), source=(68.00, 169.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Elven Scout_Level_1/VisualRoot bounds=(x:168.00, y:944.00, width:288.00, height:176.00), source=(144.00, 88.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:259.00, y:925.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:365.00, y:925.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:245.00, y:925.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:295.00, y:883.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:303.00, y:1145.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:309.00, y:1129.00, width:12.00, height:12.00), source=(12.00, 12.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/WaveTracker/PixelLabWaveFrame/TopLeftCorner bounds=(x:250.00, y:1314.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker/PixelLabWaveFrame/TopRightCorner bounds=(x:438.00, y:1314.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker/PixelLabWaveFrame/BottomLeftCorner bounds=(x:250.00, y:1268.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker/PixelLabWaveFrame/BottomRightCorner bounds=(x:438.00, y:1268.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker/Hybrid ornaments/Wave_Wing_Left bounds=(x:244.00, y:1286.00, width:14.00, height:30.00), source=(7.00, 15.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker/Hybrid ornaments/Wave_Wing_Right bounds=(x:448.00, y:1286.00, width:14.00, height:30.00), source=(7.00, 15.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker/Hybrid ornaments/Wave_Skull bounds=(x:338.00, y:1240.00, width:30.00, height:36.00), source=(15.00, 18.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/Settings/PixelLabControlFrame/TopLeftCorner bounds=(x:636.00, y:1302.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/Settings/PixelLabControlFrame/TopRightCorner bounds=(x:680.00, y:1302.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/Settings/PixelLabControlFrame/BottomLeftCorner bounds=(x:636.00, y:1258.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/Settings/PixelLabControlFrame/BottomRightCorner bounds=(x:680.00, y:1258.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/Settings/Plaque_Gear bounds=(x:652.00, y:1274.00, width:30.00, height:30.00), source=(15.00, 15.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/CombatGuide/PixelLabControlFrame/TopLeftCorner bounds=(x:486.00, y:1302.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/CombatGuide/PixelLabControlFrame/TopRightCorner bounds=(x:596.00, y:1302.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/CombatGuide/PixelLabControlFrame/BottomLeftCorner bounds=(x:486.00, y:1258.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/CombatGuide/PixelLabControlFrame/BottomRightCorner bounds=(x:596.00, y:1258.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/GameArea/ForestBoardFrame/PixelLabBoardFrame/TopLeftCorner bounds=(x:52.00, y:820.00, width:46.00, height:46.00), source=(23.00, 23.00), ratios=(2,2)
+UI art Canvas/SafeArea/GameArea/ForestBoardFrame/PixelLabBoardFrame/TopRightCorner bounds=(x:620.00, y:820.00, width:46.00, height:46.00), source=(23.00, 23.00), ratios=(2,2)
+UI art Canvas/SafeArea/GameArea/ForestBoardFrame/PixelLabBoardFrame/BottomLeftCorner bounds=(x:52.00, y:252.00, width:46.00, height:46.00), source=(23.00, 23.00), ratios=(2,2)
+UI art Canvas/SafeArea/GameArea/ForestBoardFrame/PixelLabBoardFrame/BottomRightCorner bounds=(x:620.00, y:252.00, width:46.00, height:46.00), source=(23.00, 23.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:286.00, y:102.00, width:148.00, height:44.00), source=(148.00, 44.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/PixelLabProgressFrame/TopLeftCorner bounds=(x:262.00, y:194.00, width:10.00, height:10.00), source=(5.00, 5.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/PixelLabProgressFrame/TopRightCorner bounds=(x:448.00, y:194.00, width:10.00, height:10.00), source=(5.00, 5.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/PixelLabProgressFrame/BottomLeftCorner bounds=(x:262.00, y:176.00, width:10.00, height:10.00), source=(5.00, 5.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/PixelLabProgressFrame/BottomRightCorner bounds=(x:448.00, y:176.00, width:10.00, height:10.00), source=(5.00, 5.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/PixelLabResonanceFrame/TopLeftCorner bounds=(x:242.00, y:150.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/PixelLabResonanceFrame/TopRightCorner bounds=(x:460.00, y:150.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/PixelLabResonanceFrame/BottomLeftCorner bounds=(x:242.00, y:80.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/PixelLabResonanceFrame/BottomRightCorner bounds=(x:460.00, y:80.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/Hybrid ornaments/Resonance_Wing_Left bounds=(x:236.00, y:110.00, width:14.00, height:30.00), source=(7.00, 15.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/Hybrid ornaments/Resonance_Wing_Right bounds=(x:470.00, y:110.00, width:14.00, height:30.00), source=(7.00, 15.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/Hybrid ornaments/Upper amethyst bounds=(x:352.00, y:152.00, width:14.00, height:14.00), source=(7.00, 7.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/Hybrid ornaments/Lower amethyst bounds=(x:352.00, y:82.00, width:14.00, height:14.00), source=(7.00, 7.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:161.00, y:100.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/PixelLabControlFrame/TopLeftCorner bounds=(x:138.00, y:149.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/PixelLabControlFrame/TopRightCorner bounds=(x:214.00, y:149.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/PixelLabControlFrame/BottomLeftCorner bounds=(x:138.00, y:81.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/PixelLabControlFrame/BottomRightCorner bounds=(x:214.00, y:81.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:513.00, y:100.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/PixelLabControlFrame/TopLeftCorner bounds=(x:490.00, y:149.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/PixelLabControlFrame/TopRightCorner bounds=(x:566.00, y:149.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/PixelLabControlFrame/BottomLeftCorner bounds=(x:490.00, y:81.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/PixelLabControlFrame/BottomRightCorner bounds=(x:566.00, y:81.00, width:18.00, height:18.00), source=(9.00, 9.00), ratios=(2,2)
+
+Board entrance complete.
+Spawned Orc Trailguard in EnemySlot2. Category: Normal. Gem type: Emerald. Wave 1, Level 1, HP 90, Damage 15, Follow-up Damage 0, Attack Interval 4.50s, Special Turns 3
+Wave 1 started using rule 'Outer path patrol'. Planned: 2. Spawned: 2.
+Spawned Orc Trailguard in EnemySlot3. Category: Normal. Gem type: Sapphire. Wave 1, Level 1, HP 90, Damage 15, Follow-up Damage 0, Attack Interval 4.50s, Special Turns 3
+Summoned Orc Trailguard into EnemySlot3. The summon is now an independent member of wave 1.
+Cascade 1: clearing 6 gems.
+3 Topaz gem(s) were cleared through Match, but no active enemy had that weakness.
+3 Sapphire gem(s) from Match dealt 35 damage to Orc Trailguard.
+Cascade 2: clearing 6 gems.
+3 Ruby gem(s) were cleared through Match, but no active enemy had that weakness.
+3 Amber gem(s) were cleared through Match, but no active enemy had that weakness.
+Cascade 3: clearing 3 gems.
+3 Amethyst gem(s) from Match dealt 45 damage to Elven Scout.
+Cascade 4: clearing 3 gems.
+3 Emerald gem(s) from Match dealt 60 damage to Orc Trailguard.
+Cascade 5: clearing 4 gems.
+3 Amber gem(s) were cleared through Match, but no active enemy had that weakness.
+Board settled.
+Saving results to: C:/Users/USER/AppData/LocalLow/Blank/Dungeon Matcher\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
