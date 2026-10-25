@@ -1,0 +1,19 @@
+{
+    "status": "PASS",
+    "note": "Actual Unity camera renders of a static art-only scene. Existing production cell sprites, colors and measured bounds are copied read-only. The existing fractional cell mapping is preserved, not fixed or recertified. New frame sprites use uniform native scale 1/2/3 at 360/720/1080 widths. No live combat/device test or production integration.",
+    "importedAssets": 14,
+    "captures": 20,
+    "resizeCases": 3,
+    "lockedCells": 64,
+    "importedOpaquePixelsAndAlphaExact": true,
+    "sharedFrameFitterUnmodified": true,
+    "sceneExcludedFromBuild": true,
+    "boardPosition": {
+        "x": 87.45048522949219,
+        "y": 213.45050048828126
+    },
+    "boardSize": {
+        "x": 545.0989990234375,
+        "y": 545.0989990234375
+    }
+}

@@ -1,0 +1,165 @@
+{
+  "stage": "05",
+  "status": "CANDIDATE_PENDING_REVIEW",
+  "assets": [
+    {
+      "name": "AttachmentSocket",
+      "width": 11,
+      "height": 11,
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "a708be404d372e3c51b2681358e76a3b555e9681a0d3c1709f36442d4f4ed2ac"
+    },
+    {
+      "name": "BoardStoneSeed",
+      "width": 128,
+      "height": 64,
+      "colors": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "32d7945b0c2362a3a7afd2bc928601d2beba96ecdf3c38caffc2b13e49e830b4"
+    },
+    {
+      "name": "CornerBL",
+      "width": 25,
+      "height": 25,
+      "colors": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "16068917ed2bfc21f40056db700dae3cb94092fa1b2702a057ef4198cb8024f4"
+    },
+    {
+      "name": "CornerBR",
+      "width": 25,
+      "height": 25,
+      "colors": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "84b8176e279941c8f08d7ca30fa83a3c4ed67339f21ebfe31d37c6f1dd0f8767"
+    },
+    {
+      "name": "CornerTL",
+      "width": 25,
+      "height": 25,
+      "colors": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "324d8f34eb6808f34200f03b420b0c70a2c1916f136e96334799bcceae531a3e"
+    },
+    {
+      "name": "CornerTR",
+      "width": 25,
+      "height": 25,
+      "colors": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "5ee43f556f53a75b6e4df8235447f4c9ffa13ff7204d848815869a7bfd9aaa52"
+    },
+    {
+      "name": "InnerShadow",
+      "width": 1,
+      "height": 1,
+      "colors": 1,
+      "alpha": [
+        255
+      ],
+      "sha256": "add1dbc3d44002de9b1545ed950853ded4117b20449bf15fc52616b6e4077847"
+    },
+    {
+      "name": "Joint",
+      "width": 9,
+      "height": 9,
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "18f197443a43b366ead7eafa82b84fd1e99222d067f8a7ee6fda29971afb8733"
+    },
+    {
+      "name": "RailBottom",
+      "width": 32,
+      "height": 11,
+      "colors": 6,
+      "alpha": [
+        255
+      ],
+      "sha256": "c752db7cab878add0b01d156d25ae0e1b78c55e8013ba41e682cb79cb9052012"
+    },
+    {
+      "name": "RailHorizontalWorn",
+      "width": 32,
+      "height": 11,
+      "colors": 6,
+      "alpha": [
+        255
+      ],
+      "sha256": "ddede5467b68d8b3c7f8a1cf35766e3e76c39b8a8e9119afdb612a726a681c4f"
+    },
+    {
+      "name": "RailLeft",
+      "width": 11,
+      "height": 32,
+      "colors": 6,
+      "alpha": [
+        255
+      ],
+      "sha256": "7c01ec62c3459ce66cd7a9b894abd18e674dce67e335d23ea86ce4a799f26b41"
+    },
+    {
+      "name": "RailRight",
+      "width": 11,
+      "height": 32,
+      "colors": 6,
+      "alpha": [
+        255
+      ],
+      "sha256": "7c01ec62c3459ce66cd7a9b894abd18e674dce67e335d23ea86ce4a799f26b41"
+    },
+    {
+      "name": "RailTop",
+      "width": 32,
+      "height": 11,
+      "colors": 6,
+      "alpha": [
+        255
+      ],
+      "sha256": "c752db7cab878add0b01d156d25ae0e1b78c55e8013ba41e682cb79cb9052012"
+    },
+    {
+      "name": "RailVerticalWorn",
+      "width": 11,
+      "height": 32,
+      "colors": 6,
+      "alpha": [
+        255
+      ],
+      "sha256": "1f055a86622e3cf278a5534ed2f269c9910895cf2ecee23600131f3c246556d6"
+    }
+  ],
+  "corner": 25,
+  "rail_thickness": 11,
+  "connector_pitch": 120,
+  "source_scale_at_720": 2,
+  "inner_overlap": 2,
+  "board_reference_rect": [
+    87.45048522949219,
+    213.45050048828125,
+    545.0989990234375,
+    545.0989990234375
+  ],
+  "notes": "Existing shared fitter follows the unchanged opening. Four native shadow strips overlap below cell edges to seal subpixel gaps; cell images render above frame and shadow. Existing fractional cell mapping is preserved, not certified as fixed."
+}

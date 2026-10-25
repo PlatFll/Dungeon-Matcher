@@ -3,15 +3,15 @@
   "zone": "Drowned Court / Sunken Marches",
   "scope": "New visual environment asset library; all existing gameplay/controls protected",
   "branch_suggestion": "feature/drowned-court-pixellab-environment-v2",
-  "current_stage": "04",
-  "status": "COMPLETE_PENDING_USER_REVIEW",
+  "current_stage": "05",
+  "status": "COMPLETE_PENDING_REVIEW",
   "stages": {
     "00": "COMPLETE_USER_ACCEPTED",
     "01": "COMPLETE_USER_ACCEPTED",
     "02": "COMPLETE_USER_ACCEPTED",
     "03": "COMPLETE_USER_ACCEPTED",
-    "04": "COMPLETE_PENDING_USER_REVIEW",
-    "05": "NOT_STARTED",
+    "04": "COMPLETE_USER_ACCEPTED",
+    "05": "COMPLETE_PENDING_REVIEW",
     "06": "NOT_STARTED",
     "07": "NOT_STARTED",
     "08": "NOT_STARTED",
@@ -22,10 +22,10 @@
   },
   "optional_stage_12_requires_user_approval": true,
   "merge_allowed": false,
-  "total_pixellab_spending": 52,
+  "total_pixellab_spending": 58,
   "user_approved_final_art": false,
-  "active_stage": "04",
+  "active_stage": "05",
   "branch": "feature/drowned-court-pixellab-environment-v2",
   "base_commit": "00e9ebe9d074ecc7cf5e5989286b976f644c8436",
-  "generation_spend": 52
+  "generation_spend": 58
 }

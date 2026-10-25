@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "protected_production_files": 7839,
+  "accepted_stage01_04_files": 435,
+  "authorities_unchanged": 5,
+  "native_roundtrips": 14,
+  "exact_edge_pairings": 26,
+  "combined_opaque_colors": 11,
+  "source_alpha_preserved": true,
+  "before_equals_stage04": true,
+  "unchanged_cell_pixels_compared": 2082448,
+  "upper_and_lower_ui_pixels_unchanged": true,
+  "native_corner_pixels_exact": 12040,
+  "rendered_edge_checks": [
+    {
+      "size": "360x640",
+      "grid_pixel_bounds": [
+        44,
+        261,
+        316,
+        533
+      ],
+      "edge_samples": 1088,
+      "uncovered": 0
+    },
+    {
+      "size": "720x1280",
+      "grid_pixel_bounds": [
+        87,
+        521,
+        633,
+        1067
+      ],
+      "edge_samples": 2184,
+      "uncovered": 0
+    },
+    {
+      "size": "1080x1920",
+      "grid_pixel_bounds": [
+        131,
+        782,
+        949,
+        1600
+      ],
+      "edge_samples": 3272,
+      "uncovered": 0
+    },
+    {
+      "size": "360x800",
+      "grid_pixel_bounds": [
+        44,
+        324,
+        316,
+        596
+      ],
+      "edge_samples": 1088,
+      "uncovered": 0
+    },
+    {
+      "size": "720x1600",
+      "grid_pixel_bounds": [
+        87,
+        647,
+        633,
+        1193
+      ],
+      "edge_samples": 2184,
+      "uncovered": 0
+    },
+    {
+      "size": "1080x2400",
+      "grid_pixel_bounds": [
+        131,
+        971,
+        949,
+        1789
+      ],
+      "edge_samples": 3272,
+      "uncovered": 0
+    }
+  ],
+  "old_scene_object_changes": [
+    "44629732",
+    "292678849",
+    "507039337",
+    "624195148",
+    "671708460",
+    "692546588",
+    "1028803568",
+    "1080241635",
+    "1321874212",
+    "1325882407",
+    "1381404287",
+    "1491452203",
+    "1534786506",
+    "1613691763",
+    "1642810248",
+    "1901875921",
+    "2080446818",
+    "2113159694",
+    "2124879746"
+  ],
+  "unity_captures": 20,
+  "resize_cases": 3,
+  "limitation": "Existing fractional cell mapping preserved; only candidate frame native scale verified. Static art-only scene, not live combat or device testing."
+}
