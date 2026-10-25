@@ -72,11 +72,11 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
                 float sourceGroundOffset = Mathf.Max(0f, image.sprite.rect.height - EnemyReferenceCanvasSize.y) *
                     visual.pivot.y - image.sprite.pivot.y;
                 float canvasGroundOffset = sourceGroundOffset * (visual.rect.height / image.sprite.rect.height);
-                if(DungeonPixelLabBattleArt.Current && GetComponentInParent<EnemySlotUI>() is EnemySlotUI nativeSlot)
+                if(GetComponentInParent<EnemySlotUI>() is EnemySlotUI nativeSlot && nativeSlot.CombatBarRect != null)
                 {
                     float scale=GameplayPixelLayoutController.ScreenRect(visual).height/image.sprite.rect.height;
                     float ground=GameplayPixelLayoutController.ScreenRect(root).center.y-32*scale;
-                    float platform=GameplayPixelLayoutController.ScreenRect(nativeSlot.CombatBarRect).yMax+2*DungeonPixelLabBattleArt.PhysicalPixelScale;
+                    float platform=BattleFloorAnchor.EnemyFeetScreenY(nativeSlot);
                     canvasGroundOffset+=(platform-ground)/image.canvas.rootCanvas.scaleFactor;
                 }
                 enemyRoot.anchoredPosition = enemyRestPosition + Vector2.up * canvasGroundOffset;

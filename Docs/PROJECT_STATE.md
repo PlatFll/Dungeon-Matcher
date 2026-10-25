@@ -21,6 +21,20 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 
+## Shared enemy floor and Drowned Court depth revision (2026-10-26, branch review)
+
+The Drowned Court review scene moves its upper ruins back by 16 native pixels,
+grounded by an added course of the unchanged floor modules. Source artwork,
+characters, UI and previous review scenes are preserved. The new underwater
+environment remains an art-preview candidate, not a new production binding.
+
+The existing presentation owners now apply the approved Dungeon/Forest enemy
+floor registration and HP inset across all five zones. Older enclosure offsets
+are compensated without changing board or portrait geometry. This is a visual
+alignment change only; combat, actions, saves and gem rules are untouched.
+See [Revision03 evidence](../ArtSource/DrownedCourtEnvironmentV2/Revision03Report.md).
+The work remains on draft PR #212, unmerged and pending visual review.
+
 ## Dungeon side architecture (2026-10-25, awaiting visual approval)
 
 The dedicated `feature/dungeon-side-architecture-polish` branch adds native

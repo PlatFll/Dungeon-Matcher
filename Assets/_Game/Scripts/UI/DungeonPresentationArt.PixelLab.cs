@@ -26,8 +26,8 @@ public sealed partial class DungeonPresentationArt
         int scale = DungeonPixelLabBattleArt.PhysicalPixelScale;
         var viewport = layout.Current.Viewport;
         // HP and feet move into the floor strip; retain the scenery's original rear edge.
-        float floorScreen = GameplayPixelLayoutController.ScreenRect(actor.CombatBarRect).yMax +
-            (2 + DungeonPixelLabBattleArt.EnemyFloorInset) * scale;
+        float floorScreen = BattleFloorAnchor.EnemyFeetScreenY(actor) +
+            BattleFloorAnchor.EnemyFloorInset * scale;
         int width = Mathf.CeilToInt(viewport.width / scale), height = Mathf.CeilToInt(viewport.height / scale);
         int floor = Mathf.RoundToInt((viewport.yMax - floorScreen) / scale);
         string key = UnityEngine.Device.Screen.width + "x" + UnityEngine.Device.Screen.height + ":" + viewport + ":" + width + ":" + height + ":" + floor + ":" + scale;

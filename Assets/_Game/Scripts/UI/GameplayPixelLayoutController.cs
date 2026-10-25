@@ -52,6 +52,8 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             Mathf.Round(source.height * canonicalHeight / SharedTopRegistrationHeight));
     }
     private float legacyBottomExtra;
+    // Legacy HUD enclosures borrow height from TopHUD; actors keep the canonical floor.
+    public float BattleFloorCompensation => legacyBottomExtra;
 
     public struct Geometry
     {

@@ -490,9 +490,16 @@ Opened settings and main menu keep their existing skins and menu music selection
   choice; integer native environment pixels do not imply integer board scaling on
   narrow physical screens. Character floor registration follows the live HP row,
   preserving animation pivots; resize changes refresh existing enemy-slot layout.
-  `EnemyFloorInset` lowers the Dungeon HP row and grounded enemies by six native
-  pixels into the floor strip. Scenery compensates for that inset so its rear
-  edge, gate, props and platform remain in the approved positions.
+  `BattleFloorAnchor.EnemyFloorInset` now applies the approved six-native-pixel
+  inset in every zone. `EnemySlotUI` also compensates the older HUD enclosure
+  offset through `GameplayPixelLayoutController.BattleFloorCompensation`, keeping
+  the original board/portrait rectangles. `PixelPerfectBattleCharacterUI` applies
+  the same HP-relative source-floor registration in all five zones, preserving
+  per-sprite pivots, image pixel snapping and the existing character sizing.
+  Dungeon and Forest retain their approved floor line; scenery compensates for
+  the inset so its rear edge, gate, props and platform remain in position.
+  Independent pre-change Game captures and strict cross-zone/unchanged-rectangle
+  assertions live in `SharedEnemyFloorTests` and Drowned Court Revision03 QA.
   Existing ability, consumable, settings, Guide and save/combat owners stay in place.
   Forest/Court and other-zone paths retain the previous implementation. The user
   approved the gameplay visuals; merged PR #203 supersedes the Dungeon binding below.

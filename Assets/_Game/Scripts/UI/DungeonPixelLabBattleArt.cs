@@ -16,8 +16,6 @@ public sealed partial class DungeonPixelLabBattleArt : ScriptableObject
     public bool UsesSideArchitecture => sideArchitectureModules != null && sideArchitectureModules.Length > 0;
     public TextAsset hybridPlacementManifest;
     public bool UsesHybrid => hybridPlacementManifest && hybridModules != null && hybridModules.Length > 0;
-    // Stand halfway across the 12-texel floor strip, keeping HP below the feet.
-    public const int EnemyFloorInset = 6;
     Dictionary<string, Sprite> lookup;
     public static DungeonPixelLabBattleArt Current => BattlePresentationSkin.Folder == "Dungeon"
         ? Resources.Load<DungeonPixelLabBattleArt>("UI/BattlePresentation/DungeonPixelLab")
@@ -35,7 +33,7 @@ public sealed partial class DungeonPixelLabBattleArt : ScriptableObject
     }
     DungeonSideViewArtPreview.Manifest manifest;
     public DungeonSideViewArtPreview.Manifest Manifest => manifest ??= JsonUtility.FromJson<DungeonSideViewArtPreview.Manifest>((UsesHybrid ? hybridPlacementManifest : placementManifest).text);
-    public static int PhysicalPixelScale => Mathf.Max(1, Mathf.RoundToInt(UnityEngine.Device.Screen.width / 360f));
+    public static int PhysicalPixelScale => BattleFloorAnchor.PhysicalPixelScale;
     public static float Unit(Canvas canvas) => PhysicalPixelScale / canvas.rootCanvas.scaleFactor;
     public static RectTransform Rect(string name, Transform parent, float x, float y, float width, float height)
     {
