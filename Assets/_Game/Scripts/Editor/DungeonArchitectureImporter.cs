@@ -10,7 +10,7 @@ public static class DungeonArchitectureImporter
     public static void Import()
     {
         Directory.CreateDirectory(Output);
-        string[] names={"Base","Capital","Shaft","Shaft_Worn","Ledge","Recess","SkullRelief","Candles_Tall","Candles_Mixed","Candles_Short","Shaft_Warm","Shaft_Warm_Faint","Chain_End_Left","Chain_End_Right"};
+        string[] names={"Base","Capital","Shaft","Shaft_Worn","Ledge","Recess","SkullRelief","Candles_Tall","Candles_Mixed","Candles_Short","Shaft_Warm","Shaft_Warm_Faint","Chain_End_Left","Chain_End_Right","Torch_ReferenceStyle"};
         foreach(string name in names)File.Copy(Source+"/"+name+".png",Output+"/Side_"+name+".png",true);
         AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
         foreach(string name in names)
@@ -27,6 +27,6 @@ public static class DungeonArchitectureImporter
         var art=AssetDatabase.LoadAssetAtPath<DungeonPixelLabBattleArt>("Assets/_Game/Resources/UI/BattlePresentation/DungeonPixelLab.asset");
         art.sideArchitectureModules=names.Select(n=>AssetDatabase.LoadAssetAtPath<Sprite>(Output+"/Side_"+n+".png")).ToArray();
         EditorUtility.SetDirty(art);AssetDatabase.SaveAssets();
-        Debug.Log("Dungeon side architecture: 14 new native modules bound; existing 102+57 libraries preserved; approved Torch/Chain reused.");
+        Debug.Log("Dungeon side architecture: 15 new native modules bound; existing 102+57 libraries preserved; upper-HUD Torch unchanged; approved chains reused.");
     }
 }

@@ -26,11 +26,14 @@ The newer rules in this status and the owning design/architecture documents supe
 The dedicated `feature/dungeon-side-architecture-polish` branch adds native
 modular pillars, recessed/skull stone, mounted chains, reused wall torches and
 unlit candle groups to the existing playable Dungeon. Top HUD, battle, portrait,
-board, characters, gems and lower controls remain unchanged. Fourteen new modules
+board, characters, gems and lower controls remain unchanged. Fifteen new modules
 and four reused parts retain editable LibreSprite sources; PixelLab usage is 30
 generations. Six Game-scene phone/safe-area profiles pass with zero changed
 pixels outside the side architecture. Required Unity validation passes. This
 awaits final visual approval and is not merged; no new device/build test claimed.
+The follow-up uses a separate native torch with a taller flame and straight
+wall bracket on the two side pillars only; upper torches are preserved. Zero
+additional generations; updated gameplay captures retain the protected pixels.
 [Review and verification](../ArtSource/DungeonArchitecturePolish/README.md).
 
 ## Approved Forest production integration (2026-10-25)

@@ -46,7 +46,7 @@ public sealed partial class DungeonPresentationArt
             // Existing approved iron sources keep the same native scale and lighting.
             HangSideChain(art,column,9,19,Mathf.Max(0,Mathf.FloorToInt((torchY-19-37)/14)));
             HangSideChain(art,column,9,skullY+37,side==0?2:3,side==0?"Side_Chain_End_Left":"Side_Chain_End_Right");
-            art.Image("Torch",column,4,torchY);
+            art.Image("Side_Torch_ReferenceStyle",column,4,torchY);
             SideCandleShelf(art,column,shelfY,side==0?"Side_Candles_Tall":"Side_Candles_Mixed",21);
             // The lower cluster rests directly on the heavy base, without another floating shelf.
             art.Image(side==0?"Side_Candles_Short":"Side_Candles_Tall",column,4,height-23-(side==0?22:21));

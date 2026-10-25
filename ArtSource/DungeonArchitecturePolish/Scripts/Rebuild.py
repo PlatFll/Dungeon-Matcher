@@ -14,5 +14,6 @@ for name in ['Torch','Chain_Anchor','Chain_Repeat','Chain_End']:
  shutil.copy2(F/'Assets/_Game/Art/DungeonHybrid/Stage04'/f'{name}.png',R/'Exports'/f'{name}.png')
  run(R/'Exports'/f'{name}.png','--save-as',R/'Native'/f'{name}.aseprite')
 run('--script',R/'Scripts/FinishLighting.js')
+run('--script',R/'Scripts/ReviseTorch.js')
 for src in (R/'Exports').glob('*.png'):run(R/'Native'/f'{src.stem}.aseprite','--save-as',src)
-print('Rebuilt 18 independent native/editable files through LibreSprite. No original production PNG was edited.')
+print('Rebuilt 19 independent native/editable files through LibreSprite. No original production PNG was edited.')

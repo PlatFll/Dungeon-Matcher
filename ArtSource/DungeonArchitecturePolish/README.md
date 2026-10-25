@@ -4,9 +4,20 @@ Branch: `feature/dungeon-side-architecture-polish`. Based on main `52c0f657`. **
 
 The actual playable Dungeon uses continuous modular stone columns around the board/lower HUD. Upper battle, portrait, board geometry, gems, character art, HUD and gameplay retain their existing owners and artwork.
 
+## Torch reference correction — 2026-10-25
+
+The user requested side torches closer to the supplied example. A separate 24×54
+LibreSprite copy retains the iron bowl, uses the existing PixelLab Stage 07 flame
+with a taller pointed silhouette, and replaces the curled hanger with a compact
+straight bracket. Its 10-color palette and binary alpha preserve native pixels.
+Only the two side-pillar bindings change; original upper torches remain intact.
+Zero additional generations. Updated six-profile gameplay checks pass with zero
+changed pixels outside the side architecture. `TorchRevision/` keeps the earlier
+review screenshots, reference, exact source hashes, native comparison and test XML.
+
 ## Assets and construction
 
-- 14 new native modules: capital, 15px repeatable shaft, worn shaft, heavy base, ledge, recessed panel, carved skull block, three unlit candle groups, two torch-lit stone variants, two chain endings.
+- 15 new native modules: capital, 15px repeatable shaft, worn shaft, heavy base, ledge, recessed panel, carved skull block, three unlit candle groups, two torch-lit stone variants, two chain endings, reference-style side torch.
 - Four approved DungeonHybrid torch/chain parts reused byte-for-byte. Three PixelLab jobs cost **30 subscription generations** (672.20 → 642.20); no dollar credits spent. Exact requests and lineage remain in `Sources/` and `GenerationUsage.json`.
 - Separate raw sources, immutable selections, editable `.aseprite` documents, PNG exports and LibreSprite scripts retained. No flattened scene is used. `Scripts/Rebuild.py --libresprite <path>` reproduces the kit without generation.
 - Stone uses the established seven-color Dungeon ramp. Torch bounce uses restrained warm planes on the exact shaft grid. Candles use five/six wax colors and dark wicks, with binary alpha and no flames/glow/effects. Source scale unchanged.
@@ -18,7 +29,7 @@ The actual playable Dungeon uses continuous modular stone columns around the boa
 - `DungeonArchitectureReviewTests.After`: **1 passed integration coroutine covering 6 profiles**: 720×1280, 1080×1920, 1080×2400, top/bottom safe area, 360×640 and side-inset safe area.
 - Existing layout/readability checks, integer physical scale for each new sprite, Point sampling, camera coverage, no playable-grid overlap, continuous chains, column/base joins, candle contact, visible HP/intents/gems, Guide safe-area access, Settings, accepted gem swap pass.
 - Six frozen before/after image pairs: **zero changed pixels outside the side architecture**. Existing upper HUD/battle, board and bottom controls are pixel-identical.
-- 18 editable/native pairs match, including opaque pixels and binary alpha. Production PNGs match exports. Shaft variants have identical alpha and seam rows. No hidden opaque pixels outside native canvases.
+- 19 editable/native pairs match, including opaque pixels and binary alpha. Production PNGs match exports. Shaft variants have identical alpha and seam rows. No hidden opaque pixels outside native canvases.
 - 6,780 protected files match the pre-task snapshot. Sole intentional protected change: Dungeon kit binding. Original artwork and other-zone assets unchanged.
 - Required `Tools/Validate-Unity.ps1` **passed**. Test XML and complete validator log in `Diagnostics/`.
 - Automated desktop Unity evidence only. **No physical-device test or new Android build for this revision.**
