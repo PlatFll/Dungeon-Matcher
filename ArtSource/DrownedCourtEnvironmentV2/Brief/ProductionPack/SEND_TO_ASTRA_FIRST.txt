@@ -1,0 +1,9 @@
+I am attaching the Dungeon Matcher Drowned Court PixelLab Production Pack. Extract it and read START_HERE.md, GLOBAL_LOCKS_AND_ART_DIRECTION.md, PIXELLAB_TOOL_SELECTION.md, REFERENCE_MAP_AND_MATERIALS.md, QA_AND_APPROVAL.md, and STAGE_INDEX.csv. Inspect all reference images, especially the full Drowned Court mockup and the current Dungeon and Forest gameplay images.
+
+Read the repo's current AGENTS.md, Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt, Docs/ArtDirection/Golden_Reference_Register.md and Docs/DROWNED_COURT.md. Inspect the actual current character golden PNGs and current Court scene/art bindings. Create a clean isolated branch/worktree based on latest main while preserving any unrelated changes; name it feature/drowned-court-pixellab-environment-v2 unless already occupied.
+
+The task is to remake the Drowned Court's **scenery and zone-specific structural frames** through focused PixelLab assets, native LibreSprite cleanup and Unity composition. The user-supplied mockup is the design target but its characters/gems/buttons must never be regenerated or baked into the scene. Distinct sunken ruins, teal stone, drowned trident-statue, columns, coral/kelp growth, bubbles and ambient lighting. Production quality/pixel restraint must match the current Dungeon/Forest scenes.
+
+Do NOT modify shared bottom HUD, resonance/potion/bomb shells, Guide/Settings controls, existing game character/gem art, AIR/flood gameplay, other zones or the production scene in the preflight stage. The functional wave indicator remains live gameplay text even if the concept mockup reads 'DROWNED COURT'.
+
+Execute **ONLY prompts/00_PREFLIGHT_AND_PIXEL_PIPELINE.md** now. Verify references, tool access, asset ownership, PixelLab capabilities/balance/costs, scene layout, protected hashes, and write a concise plan/asset ledger. Make no paid generation calls during Stage 00. Stop with the preflight results and await my instruction to proceed to Stage 01. Do not merge.

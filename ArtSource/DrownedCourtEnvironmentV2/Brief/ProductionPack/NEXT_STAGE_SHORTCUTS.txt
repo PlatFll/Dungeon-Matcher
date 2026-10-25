@@ -1,0 +1,6 @@
+After Astra finishes each stage, approve by pasting:
+"Approved Stage 00. Execute only prompts/01_DEEP_OCEAN_BACKGROUND.md. Preserve accepted work; show native assets, actual Unity capture and PixelLab ledger, then stop. No merge."
+
+Substitute the appropriate next stage filename from STAGE_INDEX.csv.
+
+For each stage, never silently consider an internal score to be user approval. For Stage 12, say explicitly: "I approve the finished Drowned Court art AND authorize the optional production integration stage; do not merge without asking again."

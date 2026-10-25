@@ -1,0 +1,649 @@
+{
+    "geometry": {
+        "zone": "drowned-court",
+        "height": 1280,
+        "board": {
+            "serializedVersion": "2",
+            "x": 87.45048522949219,
+            "y": 213.45050048828126,
+            "width": 545.0989990234375,
+            "height": 545.0989990234375
+        },
+        "portrait": {
+            "serializedVersion": "2",
+            "x": 21.0,
+            "y": 825.0,
+            "width": 195.0,
+            "height": 406.0
+        },
+        "top": {
+            "serializedVersion": "2",
+            "x": 4.0,
+            "y": 796.0,
+            "width": 712.0,
+            "height": 480.0
+        },
+        "bottom": {
+            "serializedVersion": "2",
+            "x": 4.0,
+            "y": 4.0,
+            "width": 712.0,
+            "height": 174.0
+        },
+        "floorY": 865.0,
+        "legacyScenery": true,
+        "errors": [],
+        "masks": []
+    },
+    "pieces": [
+        {
+            "name": "Canvas/SafeArea/BottomHUD/AbilityButton",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/BattlePresentation/ReferenceDungeon/SharedAbility.png",
+            "sprite": "SharedAbility",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 272.0,
+                "y": 58.0,
+                "width": 176.0,
+                "height": 66.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EmptyEnergyTrack",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/Finalized/EnergyTrack.png",
+            "sprite": "EnergyTrack",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 304.0,
+                "y": 130.0,
+                "width": 107.0,
+                "height": 8.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 2,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFillMask/EnergyFill",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/BattlePresentation/Shared/EnergyFill.png",
+            "sprite": "EnergyFill",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 304.0,
+                "y": 130.0,
+                "width": 107.0,
+                "height": 8.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 2,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 0.1962616890668869,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/BattlePresentation/ReferenceDungeon/SharedEnergy.png",
+            "sprite": "SharedEnergy",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 286.0,
+                "y": 123.0,
+                "width": 147.0,
+                "height": 24.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/HealthPotion",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/BattlePresentation/ReferenceDungeon/SharedPotionHolder.png",
+            "sprite": "SharedPotionHolder",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 193.0,
+                "y": 60.0,
+                "width": 70.0,
+                "height": 63.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/HealthPotion/Label",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 202.0,
+                "y": 61.5,
+                "width": 52.0,
+                "height": 60.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 32.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/HealthPotion/Icon",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/Consumables/Potion.png",
+            "sprite": "Potion",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 204.0,
+                "y": 68.0,
+                "width": 48.0,
+                "height": 48.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/HealthPotion/CountBacking",
+            "kind": "image",
+            "asset": "",
+            "sprite": "",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 240.0,
+                "y": 59.5,
+                "width": 22.0,
+                "height": 16.0
+            },
+            "color": {
+                "r": 0.10980392247438431,
+                "g": 0.08235294371843338,
+                "b": 0.15294118225574494,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/HealthPotion/CountBacking/Charges",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "3",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 240.0,
+                "y": 59.5,
+                "width": 22.0,
+                "height": 16.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 16.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/Bomb",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/BattlePresentation/ReferenceDungeon/SharedPotionHolder.png",
+            "sprite": "SharedPotionHolder",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 457.0,
+                "y": 60.0,
+                "width": 70.0,
+                "height": 63.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/Bomb/Label",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 466.0,
+                "y": 61.5,
+                "width": 52.0,
+                "height": 60.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 32.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/Bomb/Icon",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/Consumables/Bomb.png",
+            "sprite": "Bomb",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 468.0,
+                "y": 68.0,
+                "width": 48.0,
+                "height": 48.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/Bomb/CountBacking",
+            "kind": "image",
+            "asset": "",
+            "sprite": "",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 504.0,
+                "y": 59.5,
+                "width": 22.0,
+                "height": 16.0
+            },
+            "color": {
+                "r": 0.10980392247438431,
+                "g": 0.08235294371843338,
+                "b": 0.15294118225574494,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/Bomb/CountBacking/Charges",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "3",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 504.0,
+                "y": 59.5,
+                "width": 22.0,
+                "height": 16.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 16.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/ConsumableHint",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "Attacks and abilities count moves. Thinking is safe.\nTap Guide or an enemy to inspect.",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 145.0,
+                "y": 21.0,
+                "width": 430.0,
+                "height": 28.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 16.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/TopHUD/WaveTracker",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/BattlePresentation/ReferenceCourt/WaveHeader.png",
+            "sprite": "WaveHeader",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 242.0,
+                "y": 1163.0,
+                "width": 238.0,
+                "height": 80.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/TopHUD/WaveTracker/WaveText",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "WAVE 1",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 260.0,
+                "y": 1181.0,
+                "width": 207.0,
+                "height": 53.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 48.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/TopHUD/CombatGuide",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/BattlePresentation/ReferenceDungeon/SharedGuide.png",
+            "sprite": "SharedGuide",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 504.0,
+                "y": 1161.0,
+                "width": 120.0,
+                "height": 65.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/TopHUD/CombatGuide/Label",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "Guide",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 526.0,
+                "y": 1175.5,
+                "width": 76.0,
+                "height": 36.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 32.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/TopHUD/Settings",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/BattlePresentation/ReferenceDungeon/SharedSettings.png",
+            "sprite": "SharedSettings",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 631.0,
+                "y": 1159.0,
+                "width": 68.0,
+                "height": 67.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/TopHUD/Settings/Label",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 647.0,
+                "y": 1170.5,
+                "width": 36.0,
+                "height": 44.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 32.0,
+            "preserveAspect": false
+        }
+    ]
+}

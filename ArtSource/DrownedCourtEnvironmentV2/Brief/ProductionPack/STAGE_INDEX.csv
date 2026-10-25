@@ -1,0 +1,14 @@
+stage,prompt_file,focus,tool_guidance,initial_status
+00,prompts/00_PREFLIGHT_AND_PIXEL_PIPELINE.md,Preflight/asset audit,No generation; plan only,NOT_STARTED
+01,prompts/01_DEEP_OCEAN_BACKGROUND.md,Depth/water layers,PixelLab scenery studies,NOT_STARTED
+02,prompts/02_SUBMERGED_RUINS_STATUE.md,Trident monarch / ruins,PixelLab hero architecture,NOT_STARTED
+03,prompts/03_COURT_GROUND_DAIS.md,2D floor / standing ledge,Sidescroller tileset/LibreSprite,NOT_STARTED
+04,prompts/04_PORTRAIT_RUIN_FRAME.md,Zone portrait shell/recess,PixelLab focused frame + LibreSprite,NOT_STARTED
+05,prompts/05_BOARD_OUTER_FRAME.md,Board stone frame,PixelLab frame seeds + modular editing,NOT_STARTED
+06,prompts/06_RUINED_BOARD_SIDE_ARCHITECTURE.md,Board side columns/kelp/coral,Individual connected assets,NOT_STARTED
+07,prompts/07_LOWER_REEF_CORNERS.md,Unified lower corner masses,Two connected coral-rock props,NOT_STARTED
+08,prompts/08_REEF_PROPS_ORNAMENTS.md,Reef/shell/starfish props,Small generation as needed,NOT_STARTED
+09,prompts/09_BUBBLES_KELP_ANIMATION.md,Ambient water/kelp,Bubbles + subtle motion,NOT_STARTED
+10,prompts/10_UNITY_ART_ONLY_ASSEMBLY.md,Art-only Unity composition,No paid generation by default,NOT_STARTED
+11,prompts/11_FINAL_ART_QA_AND_APPROVAL.md,QA/hand-off,No production integration,NOT_STARTED
+12,prompts/12_OPTIONAL_PRODUCTION_INTEGRATION.md,OPTIONAL integration to playable Court,EXPLICIT USER APPROVAL REQUIRED,NOT_STARTED

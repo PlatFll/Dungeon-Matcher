@@ -1,0 +1,369 @@
+{
+  "balance": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "credits: $0.00\ngenerations_remaining: 642.20\ngenerations_used: 2457.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use — prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls — most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "capabilities": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"name\": \"Pro Flash\",\n  \"revision\": \"pro-flash-presets-48-128-2026-09-29\",\n  \"grid_recovery\": \"Creation recovers the pixel grid the model drew with Unzoom. An exact grid is kept; drift of at most one pixel is recovered on the expected grid. Images with a background must fill the canvas, so any other size is redrawn with image-to-pixel-art on the generated box only. Sprites without a background keep their own pixels, centred on the canvas, while the drawn pixel is close to the requested one; coarser or oversized sprites are redrawn. Experimental 16x16 creation always uses image-to-pixel-art. Editing and inpainting start at 32x32 and never use image-to-pixel-art conversion.\",\n  \"operations\": {\n    \"create\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": 1\n    },\n    \"edit\": {\n      \"sizes\": [\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 32,\n        \"min_height\": 32,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 1,\n      \"supports_no_background\": true,\n      \"supports_style_options\": false,\n      \"output_count\": 1,\n      \"edit_methods\": [\n        \"text\",\n        \"reference\"\n      ],\n      \"canvas_growth\": false,\n      \"reference_image_fit\": \"native dimensions must fit the edit canvas\"\n    },\n    \"inpaint\": {\n      \"sizes\": [\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 32,\n        \"min_height\": 32,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 1,\n      \"supports_no_background\": true,\n      \"supports_style_options\": false,\n      \"output_count\": 1,\n      \"canvas_growth\": false,\n      \"crop_to_mask_values\": [\n        true\n      ],\n      \"output_methods\": [\n        \"New layer with changes\",\n        \"Modify current layer, only changes\",\n        \"Modify current layer\"\n      ],\n      \"mask\": {\n        \"white_rgb\": \"generate\",\n        \"black_rgb\": \"preserve\",\n        \"alpha\": \"ignored\",\n        \"binary_rgb_required\": true\n      },\n      \"context\": {\n        \"bounding_box_required\": true,\n        \"max_width_multiple\": 3,\n        \"max_height_multiple\": 3,\n        \"native_pixels\": true\n      }\n    },\n    \"character\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": 8,\n      \"n_directions\": [\n        8\n      ],\n      \"includes_first_direction\": true,\n      \"supports_existing_source\": true,\n      \"rotation_canvas\": \"Native source padded to a square, minimum 32 pixels, aligned to four pixels.\"\n    },\n    \"object\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": \"n_directions\",\n      \"n_directions\": [\n        1,\n        8\n      ],\n      \"includes_first_direction\": true,\n      \"supports_existing_source\": true,\n      \"rotation_canvas\": \"Eight views use the square V3 canvas; one direction keeps the native size.\"\n    }\n  },\n  \"style_reference_fit\": \"native dimensions must fit the target canvas; smaller references are centered without resizing\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "name": "Pro Flash",
+        "revision": "pro-flash-presets-48-128-2026-09-29",
+        "grid_recovery": "Creation recovers the pixel grid the model drew with Unzoom. An exact grid is kept; drift of at most one pixel is recovered on the expected grid. Images with a background must fill the canvas, so any other size is redrawn with image-to-pixel-art on the generated box only. Sprites without a background keep their own pixels, centred on the canvas, while the drawn pixel is close to the requested one; coarser or oversized sprites are redrawn. Experimental 16x16 creation always uses image-to-pixel-art. Editing and inpainting start at 32x32 and never use image-to-pixel-art conversion.",
+        "operations": {
+          "create": {
+            "sizes": [
+              {
+                "width": 16,
+                "height": 16
+              },
+              {
+                "width": 24,
+                "height": 24
+              },
+              {
+                "width": 32,
+                "height": 32
+              },
+              {
+                "width": 32,
+                "height": 48
+              },
+              {
+                "width": 48,
+                "height": 48
+              },
+              {
+                "width": 64,
+                "height": 64
+              },
+              {
+                "width": 96,
+                "height": 64
+              },
+              {
+                "width": 96,
+                "height": 96
+              },
+              {
+                "width": 128,
+                "height": 128
+              }
+            ],
+            "experimental_sizes": [
+              {
+                "width": 16,
+                "height": 16
+              }
+            ],
+            "custom_sizes": {
+              "enabled": true,
+              "min_width": 16,
+              "min_height": 16,
+              "max_width": 256,
+              "max_height": 256,
+              "step": 4,
+              "beta": true
+            },
+            "max_reference_images": 0,
+            "supports_no_background": true,
+            "supports_style_options": true,
+            "output_count": 1
+          },
+          "edit": {
+            "sizes": [
+              {
+                "width": 32,
+                "height": 32
+              },
+              {
+                "width": 32,
+                "height": 48
+              },
+              {
+                "width": 64,
+                "height": 64
+              },
+              {
+                "width": 96,
+                "height": 64
+              },
+              {
+                "width": 96,
+                "height": 96
+              },
+              {
+                "width": 128,
+                "height": 128
+              }
+            ],
+            "experimental_sizes": [],
+            "custom_sizes": {
+              "enabled": true,
+              "min_width": 32,
+              "min_height": 32,
+              "max_width": 256,
+              "max_height": 256,
+              "step": 4,
+              "beta": true
+            },
+            "max_reference_images": 1,
+            "supports_no_background": true,
+            "supports_style_options": false,
+            "output_count": 1,
+            "edit_methods": [
+              "text",
+              "reference"
+            ],
+            "canvas_growth": false,
+            "reference_image_fit": "native dimensions must fit the edit canvas"
+          },
+          "inpaint": {
+            "sizes": [
+              {
+                "width": 32,
+                "height": 32
+              },
+              {
+                "width": 32,
+                "height": 48
+              },
+              {
+                "width": 64,
+                "height": 64
+              },
+              {
+                "width": 96,
+                "height": 64
+              },
+              {
+                "width": 96,
+                "height": 96
+              },
+              {
+                "width": 128,
+                "height": 128
+              }
+            ],
+            "experimental_sizes": [],
+            "custom_sizes": {
+              "enabled": true,
+              "min_width": 32,
+              "min_height": 32,
+              "max_width": 256,
+              "max_height": 256,
+              "step": 4,
+              "beta": true
+            },
+            "max_reference_images": 1,
+            "supports_no_background": true,
+            "supports_style_options": false,
+            "output_count": 1,
+            "canvas_growth": false,
+            "crop_to_mask_values": [
+              true
+            ],
+            "output_methods": [
+              "New layer with changes",
+              "Modify current layer, only changes",
+              "Modify current layer"
+            ],
+            "mask": {
+              "white_rgb": "generate",
+              "black_rgb": "preserve",
+              "alpha": "ignored",
+              "binary_rgb_required": true
+            },
+            "context": {
+              "bounding_box_required": true,
+              "max_width_multiple": 3,
+              "max_height_multiple": 3,
+              "native_pixels": true
+            }
+          },
+          "character": {
+            "sizes": [
+              {
+                "width": 16,
+                "height": 16
+              },
+              {
+                "width": 24,
+                "height": 24
+              },
+              {
+                "width": 32,
+                "height": 32
+              },
+              {
+                "width": 32,
+                "height": 48
+              },
+              {
+                "width": 48,
+                "height": 48
+              },
+              {
+                "width": 64,
+                "height": 64
+              },
+              {
+                "width": 96,
+                "height": 64
+              },
+              {
+                "width": 96,
+                "height": 96
+              },
+              {
+                "width": 128,
+                "height": 128
+              }
+            ],
+            "experimental_sizes": [
+              {
+                "width": 16,
+                "height": 16
+              }
+            ],
+            "custom_sizes": {
+              "enabled": true,
+              "min_width": 16,
+              "min_height": 16,
+              "max_width": 256,
+              "max_height": 256,
+              "step": 4,
+              "beta": true
+            },
+            "max_reference_images": 0,
+            "supports_no_background": true,
+            "supports_style_options": true,
+            "output_count": 8,
+            "n_directions": [
+              8
+            ],
+            "includes_first_direction": true,
+            "supports_existing_source": true,
+            "rotation_canvas": "Native source padded to a square, minimum 32 pixels, aligned to four pixels."
+          },
+          "object": {
+            "sizes": [
+              {
+                "width": 16,
+                "height": 16
+              },
+              {
+                "width": 24,
+                "height": 24
+              },
+              {
+                "width": 32,
+                "height": 32
+              },
+              {
+                "width": 32,
+                "height": 48
+              },
+              {
+                "width": 48,
+                "height": 48
+              },
+              {
+                "width": 64,
+                "height": 64
+              },
+              {
+                "width": 96,
+                "height": 64
+              },
+              {
+                "width": 96,
+                "height": 96
+              },
+              {
+                "width": 128,
+                "height": 128
+              }
+            ],
+            "experimental_sizes": [
+              {
+                "width": 16,
+                "height": 16
+              }
+            ],
+            "custom_sizes": {
+              "enabled": true,
+              "min_width": 16,
+              "min_height": 16,
+              "max_width": 256,
+              "max_height": 256,
+              "step": 4,
+              "beta": true
+            },
+            "max_reference_images": 0,
+            "supports_no_background": true,
+            "supports_style_options": true,
+            "output_count": "n_directions",
+            "n_directions": [
+              1,
+              8
+            ],
+            "includes_first_direction": true,
+            "supports_existing_source": true,
+            "rotation_canvas": "Eight views use the square V3 canvas; one direction keeps the native size."
+          }
+        },
+        "style_reference_fit": "native dimensions must fit the target canvas; smaller references are centered without resizing"
+      },
+      "isError": false
+    }
+  },
+  "schemas": [
+    {
+      "name": "mcp__pixellab__animate_image",
+      "description": "PixelLab AI-powered pixel art generation service.\n\nUse of this service is subject to PixelLab's Terms of Service:\nhttps://pixellab.ai/termsofservice\n\nThis MCP server provides programmatic access to generate:\n- Characters with multiple directional views\n- Character animations\n- Isometric tiles\n- Top-down tilesets for game maps\n- Sidescroller tilesets for platformer games\n\nAll generation operations are non-blocking and return job IDs for status tracking.\nRequires PixelLab subscription (with credit fallback support).\n\n**Pixel tools (free, exact, you are the artist)**: one command line, pixelart_workbench(argv=[...]), inspects, edits, draws and animates pixel art by your own decisions; combine it with the AI tools above. Start with pixelart_workbench(argv=['describe', 'start'], mode='low'|'high') — low acts directly with few tokens, high plans out loud and reviews every frame. Animated effects (spells, hits, explosions, auras): vfx_workbench(argv=['describe', 'start']) — same ids, exports to the user's My effects.\n\n**Git access**: Clone and push game project source code with standard git.\nUse `list_projects` to see your projects and their git clone URLs.\n\nAnimate any image from a text description of the motion.\n\nWorks on a loose sprite — unlike animate_character / animate_object, which\nneed an id of something PixelLab generated.\n\nget_image returns frame_count + 1 images: index 0 is your input frame\nunchanged, then the generated ones. Play them in order.\n\nExamples:\n- animate_image(first_frame_base64=<png>, action=\"walking forward\", frame_count=8)\n- pin the ending: animate_image(first_frame_base64=<open>, last_frame_base64=<closed>,\n                                action=\"chest lid closing\", frame_count=6)\n\nLimits: frame max 256x256, and width x height x frame_count <= 524288 — so a\n256x256 frame allows 8 frames, a 64x64 frame allows all 16.\n\nCost scales with total pixels (a 64x64 8-frame animation is 1 generation, a\n128x128 16-frame one is 4). Generation time: ~30-180 seconds (async).\nPoll with get_image(job_id).\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__pixellab__animate_image(args: {\n  // The motion (e.g. 'walking forward', 'flame flickering', 'chest opening'). Describe movement, not appearance.\n  action: string;\n  // Base64 PNG to animate — the first frame. Max 256x256. PREFER first_frame_url; MCP clients routinely truncate large inline base64.\n  first_frame_base64?: string | null;\n  // Alternative to first_frame_base64: an https (or data:) URL to the first frame PNG. PREFER THIS. Give one, not both.\n  first_frame_url?: string | null;\n  // Frames to generate — must be EVEN. 4 for idle loops, 8 for walk/run, 16 for complex actions. Large frames allow fewer frames.\n  frame_count?: number;\n  // Optional final frame, same size as the first, to pin where the motion ends (interpolation instead of open-ended animation).\n  last_frame_base64?: string | null;\n  // Alternative to last_frame_base64: an https (or data:) URL to the final frame PNG. Give one, not both.\n  last_frame_url?: string | null;\n  // Background handling. Default (unset) follows the first frame: a transparent sprite animates on transparency, an opaque image stays opaque.\n  no_background?: boolean | null;\n  // Internal Game Builder project context; the finished image is linked after generation.\n  project_id?: string | null;\n  // Seed for reproducible generation.\n  seed?: number | null;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "mcp__pixellab__create_image_pixen",
+      "description": "PixelLab AI-powered pixel art generation service.\n\nUse of this service is subject to PixelLab's Terms of Service:\nhttps://pixellab.ai/termsofservice\n\nThis MCP server provides programmatic access to generate:\n- Characters with multiple directional views\n- Character animations\n- Isometric tiles\n- Top-down tilesets for game maps\n- Sidescroller tilesets for platformer games\n\nAll generation operations are non-blocking and return job IDs for status tracking.\nRequires PixelLab subscription (with credit fallback support).\n\n**Pixel tools (free, exact, you are the artist)**: one command line, pixelart_workbench(argv=[...]), inspects, edits, draws and animates pixel art by your own decisions; combine it with the AI tools above. Start with pixelart_workbench(argv=['describe', 'start'], mode='low'|'high') — low acts directly with few tokens, high plans out loud and reviews every frame. Animated effects (spells, hits, explosions, auras): vfx_workbench(argv=['describe', 'start']) — same ids, exports to the user's My effects.\n\n**Git access**: Clone and push game project source code with standard git.\nUse `list_projects` to see your projects and their git clone URLs.\n\nGenerate a freeform pixel-art image with the Pixen model.\n\nPixen is the newer of the two fast generators and holds up better on small\nsprites. Pick between the three text-to-image tools like this:\n- create_image_pixflux — when you need an init image (img2img), a palette\n  given as an image, isometric, or shading control.\n- create_image_pixen — this one; cleaner small sprites, bigger canvas.\n- create_image_pro — best quality, returns a set of candidates, costs more;\n  takes a palette as hex colours (1-bit, Game Boy, PICO-8, NES, Lospec).\n\nCanvas: 16-768 per side and each side must be a multiple of 4; total area\n16x16 to 512x512. Below 32 the canvas must be SQUARE, so the small sizes\nare 16x16, 20x20, 24x24 and 28x28.\n\nCost: 1 generation. Generation time: ~10-40 seconds (async).\nPoll with get_image(job_id).\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__pixellab__create_image_pixen(args: {\n  // What to draw (e.g. 'ornate iron key', 'mossy stone wall').\n  description: string;\n  // Detail level (weakly guiding).\n  detail?: \"low detail\" | \"medium detail\" | \"highly detailed\";\n  // Which way the subject faces (weakly guiding).\n  direction?: \"north\" | \"north-east\" | \"east\" | \"south-east\" | \"south\" | \"south-west\" | \"west\" | \"north-west\";\n  // Canvas height in pixels. Must be a multiple of 4; height must equal width when either side is below 32.\n  height?: number;\n  // Return the subject on a transparent background. True for sprites and items, False for scenes. Up to 256x256 of area (65,536 px, e.g. 256x256 or 512x128); larger canvases are refused with it on.\n  no_background?: boolean;\n  // Outline style (weakly guiding).\n  outline?: \"single color black outline\" | \"single color outline\" | \"selective outline\" | \"lineless\";\n  // Internal Game Builder project context; the finished image is linked after generation.\n  project_id?: string | null;\n  // Seed for reproducible generation.\n  seed?: number | null;\n  // Camera angle (weakly guiding).\n  view?: \"side\" | \"low top-down\" | \"high top-down\";\n  // Canvas width in pixels. Must be a multiple of 4; width must equal height when either side is below 32. width x height may not exceed 512x512 = 262,144, so the widest canvases are e.g. 768x340 or 680x384, not 768x384.\n  width?: number;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "mcp__pixellab__create_image_pro",
+      "description": "PixelLab AI-powered pixel art generation service.\n\nUse of this service is subject to PixelLab's Terms of Service:\nhttps://pixellab.ai/termsofservice\n\nThis MCP server provides programmatic access to generate:\n- Characters with multiple directional views\n- Character animations\n- Isometric tiles\n- Top-down tilesets for game maps\n- Sidescroller tilesets for platformer games\n\nAll generation operations are non-blocking and return job IDs for status tracking.\nRequires PixelLab subscription (with credit fallback support).\n\n**Pixel tools (free, exact, you are the artist)**: one command line, pixelart_workbench(argv=[...]), inspects, edits, draws and animates pixel art by your own decisions; combine it with the AI tools above. Start with pixelart_workbench(argv=['describe', 'start'], mode='low'|'high') — low acts directly with few tokens, high plans out loud and reviews every frame. Animated effects (spells, hits, explosions, auras): vfx_workbench(argv=['describe', 'start']) — same ids, exports to the user's My effects.\n\n**Git access**: Clone and push game project source code with standard git.\nUse `list_projects` to see your projects and their git clone URLs.\n\nGenerate pixel art with the Pro model — best quality, several candidates.\n\nThis is \"Create Image (Pro)\". It returns a SET of options in one call rather\nthan a single image, by the larger side: 64 candidates up to 32px, 49 at\n33-35px, 36 at 36-41px, 25 at 42-50px, 16 at 51-64px, 9 at 65-84px, 16 at\n85px, 4 at 86-170px, 1 above that. Cost is per call, not per candidate, so a\nsmall canvas is where it pays off.\n\nUnlike the other two text-to-image tools it accepts labelled references:\n  create_image_pro(\n      description=\"knight in the same armour\",\n      reference_images='[{\"base64\": \"<hero png>\", \"usage\": \"character base\"},\n                         {\"base64\": \"<armour png>\", \"usage\": \"outfit\"}]')\n\nNo facing control: nothing here sets which way the subject looks, and a\nreference does not either. To turn a picture you already have into 8\nfacings, use create_object_pro_flash(first_frame_base64=..., n_directions=8).\n\nFor a console or palette look (1-bit, Game Boy, PICO-8, NES, any palette from\nLospec) pass `palette` as its hex colours, e.g. [\"#081820\", \"#346856\",\n\"#88c070\", \"#e0f8d0\"], plus `palette_name`: the image is drawn for the\npalette and comes back using only those colours. A palette name alone is not\nenough - the colours are what the result is put on. `max_colors` caps the\ncolours in each image (e.g. 6 for an NES-style sprite).\n\nPick between the three: create_image_pixflux for img2img or isometric;\ncreate_image_pixen for clean small sprites at 1 generation; this one when\nquality matters more than cost, or for a palette given as hex colours.\n\nCost: 10-25 generations for the CALL, never multiplied by the candidate count.\nThe rule is one step: the sheet is your canvas times the candidates per side,\nand you pay that sheet's tier. Square canvases work out to 10 for 16-32, 43-64,\n86-128 and 171-256; 15 for 33-42, 65-85, 129-170 and 257-341; 25 above.\nCandidates per call, square canvases by side: 64 for 16-33, 49 for 34-35, 36\nfor 36-41, 25 for 42-51, 16 for 52-65, 9 for 66-85, 4 for 86-171, 1 from 172.\nA NON-SQUARE canvas is not the longest side applied to those ladders, and it is\nnot the area either: both sides are read, and a narrower canvas can fit one more\nper side and so land a tier cheaper. 48x72 returns 16 candidates at 10\ngenerations while 72x72 returns 9 at 15, on the same longest side. Verified\nnon-square costs: 320x180 and 72x56 are 10, 384x216 and 416x176 are 15, 512x288\nand 688x384 are 25. For a size not listed, don't extrapolate from the square\nladders — the submit receipt reports the actual cost and candidate count before\nanything renders.\nGeneration time: ~1-10 minutes (async). Poll with get_image(job_id).\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__pixellab__create_image_pro(args: {\n  // What to draw (e.g. 'ornate iron key with a ruby inlay').\n  description: string;\n  // Canvas height. Max depends on aspect ratio.\n  height?: number;\n  // At most this many colours in each image (2-64), e.g. 6 for an NES-style sprite. With a palette, they are picked from it.\n  max_colors?: number | null;\n  // Return subjects on a transparent background. Defaults True — pro is normally used for assets. Set False for scenes and backdrops.\n  no_background?: boolean;\n  // Target palette, 2 to 256 hex colours as a JSON array, e.g. [\"#081820\", \"#346856\", \"#88c070\", \"#e0f8d0\"] for Game Boy or [\"#000000\", \"#ffffff\"] for 1-bit. The image is drawn for these colours and every pixel of the result is one of them.\n  palette?: Array<string> | null;\n  // Optional name of the palette (e.g. 'Game Boy', 'PICO-8', 'NES'); naming it helps the look.\n  palette_name?: string | null;\n  // Internal Game Builder project context; the finished image is linked after generation.\n  project_id?: string | null;\n  // Up to 4 LABELLED reference images, as a JSON array. Each entry takes a \"url\" (preferred) OR a \"base64\": [{\"url\": \"https://...\", \"usage\": \"character base\"}, {\"url\": \"https://...\", \"usage\": \"outfit and armour\"}]. The \"usage\" note tells the model what to take from each image, which is what makes combining several references work. Prefer urls here especially — four inline images in one argument is four times the payload, and MCP clients truncate large arguments. Sizes are read from the images.\n  reference_images?: Array<{ [key: string]: unknown; }> | null;\n  // Seed for reproducible generation.\n  seed?: number | null;\n  // Which aspects to take from style_image_base64: any of color_palette, outline, detail, shading. Defaults to all four, or all but color_palette when a palette is given.\n  style_copy?: Array<string> | null;\n  // One image whose art style (palette, outline, detail, shading) the result should match. Use style_copy to narrow which of those apply.\n  style_image_base64?: string | null;\n  // Alternative to style_image_base64: an https (or data:) URL to the style PNG. PREFER THIS for anything but a tiny sprite. Give one, not both.\n  style_image_url?: string | null;\n  // Canvas width. Max depends on aspect ratio (512x512 square, 688x384 for 16:9).\n  width?: number;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "mcp__pixellab__create_image_pro_flash",
+      "description": "PixelLab AI-powered pixel art generation service.\n\nUse of this service is subject to PixelLab's Terms of Service:\nhttps://pixellab.ai/termsofservice\n\nThis MCP server provides programmatic access to generate:\n- Characters with multiple directional views\n- Character animations\n- Isometric tiles\n- Top-down tilesets for game maps\n- Sidescroller tilesets for platformer games\n\nAll generation operations are non-blocking and return job IDs for status tracking.\nRequires PixelLab subscription (with credit fallback support).\n\n**Pixel tools (free, exact, you are the artist)**: one command line, pixelart_workbench(argv=[...]), inspects, edits, draws and animates pixel art by your own decisions; combine it with the AI tools above. Start with pixelart_workbench(argv=['describe', 'start'], mode='low'|'high') — low acts directly with few tokens, high plans out loud and reviews every frame. Animated effects (spells, hits, explosions, auras): vfx_workbench(argv=['describe', 'start']) — same ids, exports to the user's My effects.\n\n**Git access**: Clone and push game project source code with standard git.\nUse `list_projects` to see your projects and their git clone URLs.\n\nCreate one Pro Flash pixel-art image with an optional left-box style image.\n\nCustom sizes (Beta) accept width and height from 16 to 256 in multiples of 4 pixels.\nQuery get_pro_flash_capabilities for native presets and provisional cost.\nThe style image accepts {url}, {base64}, or {source_image_id}; prefer URLs\nfor uploaded images. Style art must fit the native canvas without resizing.\nstyle_options selects color_palette, outline, detail and shading independently.\nDefault style uses existing PixelLab art. For a console or palette look (1-bit,\nGame Boy, PICO-8, any palette from Lospec) pass `palette` as its hex colours plus\n`palette_name`: the image is drawn for the palette and every pixel of the result\nis one of its colours; the style image keeps lending its look. Returns one image; the provisional\ngeneration charge varies with the canvas. Failed pixel grids use image-to-\npixel-art with fixer on the generated box. Poll get_image(job_id); use\nsource_image_id after completion.\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__pixellab__create_image_pro_flash(args: {\n  description: string;\n  height?: number;\n  // At most this many colours in the image (2-64). With a palette, they are picked from it.\n  max_colors?: number | null;\n  no_background?: boolean;\n  // Target palette, 2 to 256 hex colours as a JSON array, e.g. [\"#081820\", \"#346856\", \"#88c070\", \"#e0f8d0\"] for Game Boy or [\"#000000\", \"#ffffff\"] for 1-bit. The image is drawn for these colours and every pixel of the result is one of them.\n  palette?: Array<string> | null;\n  // Optional name of the palette (e.g. 'Game Boy', 'PICO-8'); naming it helps the look.\n  palette_name?: string | null;\n  project_id?: string | null;\n  seed?: number;\n  // One URL, encoded image, or owned image ID plus its reference instructions.\n  style_image?: {\n  base64?: string | null;\n  source_image_id?: string | null;\n  url?: string | null;\n  // How this reference should guide appearance.\n  usage_description?: string | null;\n} | null;\n  // Choose which visual traits to copy from the style image.\n  style_options?: { color_palette?: boolean; detail?: boolean; outline?: boolean; shading?: boolean; } | null;\n  // Native sizes: 16x16 (experimental), 24x24, 32x32, 32x48, 48x48, 64x64, 96x64, 96x96, 128x128. Custom size (Beta): integer width 16–256 and height 16–256. Both dimensions must be multiples of 4 pixels. Pixel-grid recovery uses image-to-pixel-art with fixer when needed. No native image resizing.\n  width?: number;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "mcp__pixellab__create_sidescroller_tileset",
+      "description": "PixelLab AI-powered pixel art generation service.\n\nUse of this service is subject to PixelLab's Terms of Service:\nhttps://pixellab.ai/termsofservice\n\nThis MCP server provides programmatic access to generate:\n- Characters with multiple directional views\n- Character animations\n- Isometric tiles\n- Top-down tilesets for game maps\n- Sidescroller tilesets for platformer games\n\nAll generation operations are non-blocking and return job IDs for status tracking.\nRequires PixelLab subscription (with credit fallback support).\n\n**Pixel tools (free, exact, you are the artist)**: one command line, pixelart_workbench(argv=[...]), inspects, edits, draws and animates pixel art by your own decisions; combine it with the AI tools above. Start with pixelart_workbench(argv=['describe', 'start'], mode='low'|'high') — low acts directly with few tokens, high plans out loud and reviews every frame. Animated effects (spells, hits, explosions, auras): vfx_workbench(argv=['describe', 'start']) — same ids, exports to the user's My effects.\n\n**Git access**: Clone and push game project source code with standard git.\nUse `list_projects` to see your projects and their git clone URLs.\n\nGenerate a sidescroller tileset for 2D platformer games with side-view perspective.\n\nThis tool starts an asynchronous tileset generation that returns immediately with a tileset ID.\nUse get_sidescroller_tileset to check status and retrieve the completed tileset.\n\nCost: 2 or 3 generations — NOT 1. (Measured over 1,186 prod charges: mean\n2.6; none cost 1.) Failed jobs are not charged.\n\nCreates tilesets optimized for 2D platformer games:\n- Side-view perspective (not top-down)\n- Transparent background (no background terrain)\n- Platform/ground tiles with flat surfaces (no slopes)\n- Optional decorative transition layer on top of base terrain\n\nUse case: Building 2D platformer games with seamless terrain tiles.\n\n## Creating Connected Tilesets\n\nUse base tile IDs to create multiple tilesets that seamlessly connect:\n\n1. Create first tileset (e.g., stone platform) and wait for completion\n2. Use get_sidescroller_tileset to retrieve the base tile ID\n3. Use that base tile ID when creating the next tileset for visual consistency\n\nExample workflow:\n- Tileset 1: stone brick platform → get base tile ID\n- Tileset 2: wood platform (using stone base tile ID for edge matching)\n- Tileset 3: metal grating platform (using wood base tile ID)\n\nThis ensures visual consistency across platform transitions.\n\nGeneration time: ~100 seconds (async processing)\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__pixellab__create_sidescroller_tileset(args: {\n  // ID of existing tile to use as reference. Use to create connected tilesets\n  base_tile_id?: string | null;\n  // Detail level\n  detail?: \"low detail\" | \"medium detail\" | \"highly detailed\";\n  // Platform/center material (e.g., 'stone brick', 'wooden planks', 'metal grating')\n  lower_description: string;\n  // Outline style\n  outline?: \"single color outline\" | \"selective outline\" | \"lineless\";\n  // Seed for reproducible generation\n  seed?: number | null;\n  // Shading style\n  shading?: \"flat shading\" | \"basic shading\" | \"medium shading\" | \"detailed shading\" | \"highly detailed shading\";\n  // Prompt adherence strength\n  text_guidance_scale?: number;\n  // Tile dimensions as {\"width\": N, \"height\": N}, OR a bare int N for a square tile (same shape create_tiles_pro accepts). 16 or 32 pixels.\n  tile_size?: { height: number; width: number; };\n  // Pattern consistency\n  tile_strength?: number;\n  // Structure strictness and adherence to reference image\n  tileset_adherence?: number;\n  // Structure flexibility, higher values means more flexibility\n  tileset_adherence_freedom?: number;\n  // Platform surface/top layer (e.g., 'grass', 'snow cover', 'moss')\n  transition_description: string;\n  // Size of terrain transition. Controls how much of the surface layer appears (0.0 = no surface layer, 0.25 = light surface layer, 0.5 = heavy surface layer)\n  transition_size?: number;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "mcp__pixellab__edit_image",
+      "description": "PixelLab AI-powered pixel art generation service.\n\nUse of this service is subject to PixelLab's Terms of Service:\nhttps://pixellab.ai/termsofservice\n\nThis MCP server provides programmatic access to generate:\n- Characters with multiple directional views\n- Character animations\n- Isometric tiles\n- Top-down tilesets for game maps\n- Sidescroller tilesets for platformer games\n\nAll generation operations are non-blocking and return job IDs for status tracking.\nRequires PixelLab subscription (with credit fallback support).\n\n**Pixel tools (free, exact, you are the artist)**: one command line, pixelart_workbench(argv=[...]), inspects, edits, draws and animates pixel art by your own decisions; combine it with the AI tools above. Start with pixelart_workbench(argv=['describe', 'start'], mode='low'|'high') — low acts directly with few tokens, high plans out loud and reviews every frame. Animated effects (spells, hits, explosions, auras): vfx_workbench(argv=['describe', 'start']) — same ids, exports to the user's My effects.\n\n**Git access**: Clone and push game project source code with standard git.\nUse `list_projects` to see your projects and their git clone URLs.\n\nEdit an existing image with a text instruction or a reference image (pro).\n\nThis returns YOUR image, edited — the pose, composition and pixel style are\npreserved and only what you asked for changes. Use it to recolour armour, add\nan accessory, change an expression, or restyle frames to match a reference.\n\nTwo modes, picked by what you pass:\n- text edit: edit_image(images_base64=[<png>], description=\"give him a red cape\")\n- reference edit: edit_image(images_base64=[<png>], reference_image_base64=<png>)\n\nPutting a reference outfit on an animation (2+ frames, motion kept)? Use\ntransfer_outfit — it is built for that. Reference mode here is for one image.\n\nRelated tools: create_image_pixflux(init_image_base64=...) regenerates the whole image\ninstead of editing it; create_map_object generates a NEW object matching a\nmap's style and returns a cutout, not your edited image.\n\nFrame limit depends on output size: <=64px 16 frames, <=80px 9, <=128px 4,\nlarger 1 (one fewer in reference mode). Inputs max 512x512.\n\nCost: 10-25 generations (billed by the whole frame grid, so a single\n64x64 edit costs the same as sixteen of them — batch your frames).\nGeneration time: ~30-90 seconds (async). Poll with get_image(job_id).\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__pixellab__edit_image(args: {\n  // What to change (e.g. 'add a red wizard hat', 'make the armor gold'). Required unless reference_image_base64 is given.\n  description?: string | null;\n  // Output height. Defaults to the first input image's height.\n  height?: number | null;\n  // Alternative to images_base64: https, data: or `upload:<id>` (POST /v2/uploads with this same bearer token) URLs to the PNG(s) to edit, in the same one-per-frame list form. PREFER THIS for anything but tiny sprites. Give urls OR base64, not both.\n  image_urls?: Array<string> | null;\n  // Base64 PNG(s) to edit — pass a one-element list for a single image. Several frames get the SAME edit applied consistently (useful for animation frames or a character's directions). Max 512x512 each. PREFER image_urls — MCP clients routinely truncate large inline base64.\n  images_base64?: Array<string> | null;\n  // Background handling. Default (unset) follows the inputs: if any frame has transparency they all stay transparent, otherwise they stay opaque. Pass False to flatten a transparent input onto white.\n  no_background?: boolean | null;\n  // Internal Game Builder project context; the finished image is linked after generation.\n  project_id?: string | null;\n  // Base64 PNG to copy the appearance of (outfit/colors/details) onto the input image, keeping its pose. Switches the tool into reference mode; description then just refines the instruction. To put an outfit on ANIMATION frames, use transfer_outfit instead.\n  reference_image_base64?: string | null;\n  // Alternative to reference_image_base64: an https (or data:) URL to the reference PNG. PREFER THIS for anything but a tiny sprite. Give one, not both.\n  reference_image_url?: string | null;\n  // Seed for reproducible generation.\n  seed?: number | null;\n  // Output width. Defaults to the first input image's width.\n  width?: number | null;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "mcp__pixellab__get_balance",
+      "description": "PixelLab AI-powered pixel art generation service.\n\nUse of this service is subject to PixelLab's Terms of Service:\nhttps://pixellab.ai/termsofservice\n\nThis MCP server provides programmatic access to generate:\n- Characters with multiple directional views\n- Character animations\n- Isometric tiles\n- Top-down tilesets for game maps\n- Sidescroller tilesets for platformer games\n\nAll generation operations are non-blocking and return job IDs for status tracking.\nRequires PixelLab subscription (with credit fallback support).\n\n**Pixel tools (free, exact, you are the artist)**: one command line, pixelart_workbench(argv=[...]), inspects, edits, draws and animates pixel art by your own decisions; combine it with the AI tools above. Start with pixelart_workbench(argv=['describe', 'start'], mode='low'|'high') — low acts directly with few tokens, high plans out loud and reviews every frame. Animated effects (spells, hits, explosions, auras): vfx_workbench(argv=['describe', 'start']) — same ids, exports to the user's My effects.\n\n**Git access**: Clone and push game project source code with standard git.\nUse `list_projects` to see your projects and their git clone URLs.\n\nCheck your account balance: remaining credits (USD) and subscription generations.\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__pixellab__get_balance(args: {}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "mcp__pixellab__get_pro_flash_capabilities",
+      "description": "PixelLab AI-powered pixel art generation service.\n\nUse of this service is subject to PixelLab's Terms of Service:\nhttps://pixellab.ai/termsofservice\n\nThis MCP server provides programmatic access to generate:\n- Characters with multiple directional views\n- Character animations\n- Isometric tiles\n- Top-down tilesets for game maps\n- Sidescroller tilesets for platformer games\n\nAll generation operations are non-blocking and return job IDs for status tracking.\nRequires PixelLab subscription (with credit fallback support).\n\n**Pixel tools (free, exact, you are the artist)**: one command line, pixelart_workbench(argv=[...]), inspects, edits, draws and animates pixel art by your own decisions; combine it with the AI tools above. Start with pixelart_workbench(argv=['describe', 'start'], mode='low'|'high') — low acts directly with few tokens, high plans out loud and reviews every frame. Animated effects (spells, hits, explosions, auras): vfx_workbench(argv=['describe', 'start']) — same ids, exports to the user's My effects.\n\n**Git access**: Clone and push game project source code with standard git.\nUse `list_projects` to see your projects and their git clone URLs.\n\nGet Pro Flash exact native size pairs, controls and one-image output counts.\n\nFree identity-only lookup. Supply operation, width and height together for\na provisional quote split into image/rotations/total. Finishing a selected\npreview bills only rotations; one-direction object finalization costs zero.\nLarger research sizes are not supported generation sizes. Read this before\nselecting dimensions for image, character or object creation, edit or inpaint.\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__pixellab__get_pro_flash_capabilities(args: { height?: number | null; n_directions?: number; operation?: \"create\" | \"edit\" | \"inpaint\" | \"character\" | \"object\"; width?: number | null; }): Promise<CallToolResult>; };\n```"
+    }
+  ]
+}

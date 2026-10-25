@@ -1,0 +1,19 @@
+# Stage XX — Drowned Court checkpoint
+- Branch / base sha:
+- Reference full-image sha / current golden references verified:
+- Stage and requested scope:
+- PixelLab tool capability and quoted cost:
+- Job IDs / billed equivalents used:
+- Raw source paths, original checksums:
+- Accepted native sources, native widths/heights/pivots:
+- What was reused unchanged:
+- What was newly generated/edited:
+- Exact source↔export↔Unity pixel checks:
+- Seams, anchor points and material ramp checks:
+- Unity screen captures (resolution + logical/native pixel zoom):
+- Readability with existing actors/gems:
+- Subjective artistic judgment (not measured math):
+- Defects fixed / still pending:
+- User status: CANDIDATE / APPROVED / REJECTED:
+- Next stage authorized?: NO
+- Merge status: NOT MERGED

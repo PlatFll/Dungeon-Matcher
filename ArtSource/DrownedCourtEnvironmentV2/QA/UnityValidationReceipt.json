@@ -1,0 +1,10 @@
+{
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "version": "6000.3.19f1",
+  "exit_code": 0,
+  "result": "Unity validation succeeded",
+  "source": "DungeonMatcher-UnityValidation-24f92389-637c-4c28-beab-46c67c56b9e9.log",
+  "local_full_log": "QA/UnityValidation.log",
+  "sha256": "d3970807115b30b69f201bf181f079319b6f7dddcada9a0c84d77aebc90ba364",
+  "scope": "Stage00 editor fixture and scaffold; no Android or device test"
+}
