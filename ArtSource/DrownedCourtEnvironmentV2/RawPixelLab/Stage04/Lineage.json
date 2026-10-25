@@ -1,0 +1,157 @@
+{
+  "stage": "04",
+  "date": "2026-10-25",
+  "reference_hashes": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+  },
+  "balance_before": 600.2,
+  "quoted_cost": 10,
+  "actual_cost": 10,
+  "requests": [
+    {
+      "name": "CornerMotif",
+      "width": 64,
+      "height": 64,
+      "style_image": {
+        "input_file": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+        "usage_description": "Actual approved Rattlebones PNG is the rendering reference: strong readable contours, crisp connected native clusters, restrained top-left lighting. Do not draw a character or copy skeleton anatomy, crown, face or costume. Draw the requested underwater stone material."
+      },
+      "style_options": {
+        "color_palette": false,
+        "outline": true,
+        "shading": true,
+        "detail": true
+      },
+      "no_background": true,
+      "max_colors": 16,
+      "palette": [
+        "#0a0d11",
+        "#081e2b",
+        "#0f3141",
+        "#164759",
+        "#205b69",
+        "#286b78",
+        "#367d86",
+        "#518f94",
+        "#2b313a",
+        "#55606e",
+        "#93a1b0",
+        "#ced6cc",
+        "#807a62",
+        "#4b6848",
+        "#804c64",
+        "#be7887"
+      ],
+      "seed": 44041,
+      "description": "ONE small modular TOP LEFT UI FRAME CORNER for an ancient submerged royal palace. A compact chunky L-shaped carved teal-blue stone corner, dull silver square central socket with a simple round rivet, narrow parallel stone rails leave to the RIGHT and DOWN. Small tasteful sea-worn chips and a pair of tiny ivory barnacles firmly embedded on the OUTSIDE upper-left stone edge; no free floating elements. Native sprite: corner drawing about 28x28 pixels with 5-pixel thick rails, centered on a transparent 64x64 canvas. Simple strong silhouette and broad calm shading, cool top-left light, clean dark inside edges. Reusable 2D frontal UI cornerstone, NOT isometric and NOT a whole frame or full panel. No text, heart, gem, skull, character, foliage curtain or heavy gold ornament. This is a quiet compact part for framing the portrait, not a large monument."
+    },
+    {
+      "name": "RecessSeed",
+      "width": 64,
+      "height": 64,
+      "style_image": {
+        "input_file": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+        "usage_description": "Actual approved Rattlebones PNG is the rendering reference: strong readable contours, crisp connected native clusters, restrained top-left lighting. Do not draw a character or copy skeleton anatomy, crown, face or costume. Draw the requested underwater stone material."
+      },
+      "style_options": {
+        "color_palette": false,
+        "outline": true,
+        "shading": true,
+        "detail": true
+      },
+      "no_background": false,
+      "max_colors": 5,
+      "palette": [
+        "#08151e",
+        "#0c1f2b",
+        "#102a38",
+        "#153542",
+        "#1b404d"
+      ],
+      "seed": 44042,
+      "description": "Seamless quiet dark marine-blue masonry material tile for the INNER recess of an underwater character portrait. Flat FRONT ELEVATION, 64x64 native pixel tile filled edge to edge with broad horizontal rectangular submerged stone blocks, staggered joints, around 3-4 calm rows. Nearly black recessed mortar, broad matte deep-blue planes, restrained top-left bevel, very sparse worn chips. Low contrast and dark enough for a tiny ivory skull, red cape, green gem and pink HP bar to remain dominant. No diagonal perspective, no floor, no props, no ornaments, no coral, no banner, no text, no character, no glow, no gradients, no dithering or micro-noise. Exact crisp native pixels. This is a tiling material seed, not a portrait or full UI."
+    }
+  ],
+  "receipts": {
+    "CornerMotif": {
+      "background_job_id": "cb5d47de-0709-4102-89ea-e3b041c989e1",
+      "image_id": "2c781396-07ac-5e8c-bcc9-d932abe9e6f4",
+      "status": "processing",
+      "source_image_id": "2c781396-07ac-5e8c-bcc9-d932abe9e6f4",
+      "job_id": "cb5d47de-0709-4102-89ea-e3b041c989e1",
+      "description": "ONE small modular TOP LEFT UI FRAME CORNER for an ancient submerged royal palace. A compact chunky L-shaped carved teal-blue stone corner, dull silver square central socket with a simple round rivet, narrow parallel stone rails leave to the RIGHT and DOWN. Small tasteful sea-worn chips and a pair of tiny ivory barnacles firmly embedded on the OUTSIDE upper-left stone edge; no free floating elements. Native sprite: corner drawing about 28x28 pixels with 5-pixel thick rails, centered on a transparent 64x64 canvas. Simple strong silhouette and broad calm shading, cool top-left light, clean dark inside edges. Reusable 2D frontal UI cornerstone, NOT isometric and NOT a whole frame or full panel. No text, heart, gem, skull, character, foliage curtain or heavy gold ornament. This is a quiet compact part for framing the portrait, not a large monument.",
+      "seed": 44041,
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/cb5d47de-0709-4102-89ea-e3b041c989e1/download"
+    },
+    "RecessSeed": {
+      "background_job_id": "c71c9d85-d5da-416c-84d5-470b4dde21c9",
+      "image_id": "479f3bbf-ecd9-5214-9a17-c53a8e0dc237",
+      "status": "processing",
+      "source_image_id": "479f3bbf-ecd9-5214-9a17-c53a8e0dc237",
+      "job_id": "c71c9d85-d5da-416c-84d5-470b4dde21c9",
+      "description": "Seamless quiet dark marine-blue masonry material tile for the INNER recess of an underwater character portrait. Flat FRONT ELEVATION, 64x64 native pixel tile filled edge to edge with broad horizontal rectangular submerged stone blocks, staggered joints, around 3-4 calm rows. Nearly black recessed mortar, broad matte deep-blue planes, restrained top-left bevel, very sparse worn chips. Low contrast and dark enough for a tiny ivory skull, red cape, green gem and pink HP bar to remain dominant. No diagonal perspective, no floor, no props, no ornaments, no coral, no banner, no text, no character, no glow, no gradients, no dithering or micro-noise. Exact crisp native pixels. This is a tiling material seed, not a portrait or full UI.",
+      "seed": 44042,
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/c71c9d85-d5da-416c-84d5-470b4dde21c9/download"
+    }
+  },
+  "results": {
+    "CornerMotif": {
+      "job_id": "cb5d47de-0709-4102-89ea-e3b041c989e1",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/cb5d47de-0709-4102-89ea-e3b041c989e1/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/cb5d47de-0709-4102-89ea-e3b041c989e1/download"
+      ],
+      "asset": {
+        "id": "2c781396-07ac-5e8c-bcc9-d932abe9e6f4",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 5
+    },
+    "RecessSeed": {
+      "job_id": "c71c9d85-d5da-416c-84d5-470b4dde21c9",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/c71c9d85-d5da-416c-84d5-470b4dde21c9/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/c71c9d85-d5da-416c-84d5-470b4dde21c9/download"
+      ],
+      "asset": {
+        "id": "479f3bbf-ecd9-5214-9a17-c53a8e0dc237",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 5
+    }
+  },
+  "balance_after": 590.2,
+  "cumulative_generations": 52,
+  "status": "CANDIDATE_PENDING_USER_REVIEW",
+  "cleanup": "LibreSprite native pixel edits; no scaling or interpolation. Exact socket/barnacle source crops, native repeat profiles, four independently lit corner orientations, quiet seamless recess edges.",
+  "raw_sha256": {
+    "CornerMotif": "163c7bff033d8d8044902c475a85a275e7c33f349b0afe0414cf5247e12f6b81",
+    "RecessSeed": "88d106190c149df5bbb724c8e9f2438b00c63322f12cec0ad414c50140061881"
+  }
+}

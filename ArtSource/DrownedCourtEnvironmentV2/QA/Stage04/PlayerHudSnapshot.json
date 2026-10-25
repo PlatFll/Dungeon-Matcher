@@ -1,0 +1,273 @@
+{
+    "portrait": {
+        "serializedVersion": "2",
+        "x": 21.0,
+        "y": 825.0,
+        "width": 195.0,
+        "height": 406.0
+    },
+    "pieces": [
+        {
+            "path": "Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+            "sprite": "Rattlebones_Idle_00",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 86.0,
+                "y": 990.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "path": "Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EmptyHealthFill",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/Finalized/HealthTrack.png",
+            "sprite": "HealthTrack",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 56.0,
+                "y": 971.0,
+                "width": 125.0,
+                "height": 10.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 2,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "path": "Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/CurrentHealthFill",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/Finalized/HealthFill.png",
+            "sprite": "HealthFill",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 56.0,
+                "y": 971.0,
+                "width": 125.0,
+                "height": 10.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 2,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "path": "Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/Forest/Health_Start.png",
+            "sprite": "Health_Start",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 64.0,
+                "y": 964.0,
+                "width": 12.0,
+                "height": 24.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "path": "Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/MiddlePiece",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/Forest/Health_Middle.png",
+            "sprite": "Health_Middle",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 76.0,
+                "y": 964.0,
+                "width": 99.0,
+                "height": 24.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 2,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "path": "Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/Forest/Health_End.png",
+            "sprite": "Health_End",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 175.0,
+                "y": 964.0,
+                "width": 12.0,
+                "height": 24.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "path": "Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/Finalized/PlayerBadge.png",
+            "sprite": "PlayerBadge",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 50.0,
+                "y": 964.0,
+                "width": 24.0,
+                "height": 24.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "path": "Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/PlayerHPText",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "100 / 100",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 57.0,
+                "y": 966.0,
+                "width": 137.0,
+                "height": 20.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 16.0,
+            "preserveAspect": false
+        },
+        {
+            "path": "Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/Gems/Small gems/Gems32/Emerald32.png",
+            "sprite": "Emerald32",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 102.0,
+                "y": 1058.0,
+                "width": 32.0,
+                "height": 32.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        }
+    ],
+    "scope": "Read-only production HUD graphics; no scene or production asset saved."
+}
