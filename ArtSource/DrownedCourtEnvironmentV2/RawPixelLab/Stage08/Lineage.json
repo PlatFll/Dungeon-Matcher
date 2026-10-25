@@ -1,0 +1,107 @@
+{
+  "stage": "08",
+  "date": "2026-10-25",
+  "balance_before": 558.2,
+  "planned_cost": 5,
+  "reference_hashes": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+  },
+  "jobs": [
+    {
+      "name": "SpongePocketSeed",
+      "request": {
+        "description": "ONE TINY compact reef pocket as a native game prop. Mostly a group of THREE short mauve TUBE SPONGES with visible dark cup mouths, different heights, connected at the bottom to a shallow chipped teal stone CREVICE. One very small coral-red fork and two sandy barnacles share that same base. Chunky readable tubes, broad connected shade planes, top-left light; no skinny tall branching coral, no flowers, no kelp. Very small native ornament, intended occupied box at most 26 pixels wide by 28 pixels high, centered at native scale in the 64x64 TRANSPARENT canvas with LARGE empty margins. Keep the object tiny, do NOT zoom it up to fill the image. One connected mass. The flat contact foot is dark teal and fits onto a narrow palace column ledge. Frontal 2D sidescroller prop, not isometric, not an aquarium ornament. Muted mauve/brown-pink with a few warm pink rims, dark contour, sparse ivory barnacles; stone quieter than coral. Match the reference's crisp native rendering and simple connected clusters only, no skeleton anatomy or royal clothing. No full scene, UI, characters, glow, blurry antialias, dither, noisy dots, detached fragments or surrounding floor.",
+        "width": 64,
+        "height": 64,
+        "max_colors": 16,
+        "no_background": true,
+        "palette": [
+          "#0a0d11",
+          "#081e2b",
+          "#0f3141",
+          "#164759",
+          "#205b69",
+          "#286b78",
+          "#367d86",
+          "#518f94",
+          "#192e2e",
+          "#28483b",
+          "#426343",
+          "#6d8450",
+          "#2f203d",
+          "#63334f",
+          "#944a68",
+          "#c5728b",
+          "#ded4af",
+          "#968e71"
+        ],
+        "palette_name": "Dungeon Matcher Drowned Court stone kelp coral and shell",
+        "seed": 88081,
+        "style_image": {
+          "base64": "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",
+          "usage_description": "Current approved Rattlebones native PNG: rendering discipline only, crisp dark contours, broad connected shading, strong small-scale readability. Do not copy anatomy, royal costume, pose or palette."
+        },
+        "style_options": {
+          "color_palette": false,
+          "outline": true,
+          "detail": true,
+          "shading": true
+        }
+      },
+      "receipt": {
+        "background_job_id": "fadc32bc-914e-495e-b950-8a6ec1c2ecd2",
+        "image_id": "848e3580-7830-54ce-84f0-13b3f4c26689",
+        "status": "processing",
+        "source_image_id": "848e3580-7830-54ce-84f0-13b3f4c26689",
+        "job_id": "fadc32bc-914e-495e-b950-8a6ec1c2ecd2",
+        "description": "ONE TINY compact reef pocket as a native game prop. Mostly a group of THREE short mauve TUBE SPONGES with visible dark cup mouths, different heights, connected at the bottom to a shallow chipped teal stone CREVICE. One very small coral-red fork and two sandy barnacles share that same base. Chunky readable tubes, broad connected shade planes, top-left light; no skinny tall branching coral, no flowers, no kelp. Very small native ornament, intended occupied box at most 26 pixels wide by 28 pixels high, centered at native scale in the 64x64 TRANSPARENT canvas with LARGE empty margins. Keep the object tiny, do NOT zoom it up to fill the image. One connected mass. The flat contact foot is dark teal and fits onto a narrow palace column ledge. Frontal 2D sidescroller prop, not isometric, not an aquarium ornament. Muted mauve/brown-pink with a few warm pink rims, dark contour, sparse ivory barnacles; stone quieter than coral. Match the reference's crisp native rendering and simple connected clusters only, no skeleton anatomy or royal clothing. No full scene, UI, characters, glow, blurry antialias, dither, noisy dots, detached fragments or surrounding floor.",
+        "seed": 88081,
+        "image_size": {
+          "width": 64,
+          "height": 64
+        },
+        "output_count": 1,
+        "estimated_generations": 5,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/fadc32bc-914e-495e-b950-8a6ec1c2ecd2/download"
+      },
+      "result": {
+        "job_id": "fadc32bc-914e-495e-b950-8a6ec1c2ecd2",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/fadc32bc-914e-495e-b950-8a6ec1c2ecd2/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/fadc32bc-914e-495e-b950-8a6ec1c2ecd2/download"
+        ],
+        "asset": {
+          "id": "848e3580-7830-54ce-84f0-13b3f4c26689",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "raw_sha256": "094316f84bbcf3f6eb73dd9714a84c31d4a6237fba61c6588401f0cbce449c41",
+      "raw_size": [
+        64,
+        64
+      ],
+      "raw_bounds": [
+        20,
+        21,
+        44,
+        50
+      ]
+    }
+  ],
+  "actual_cost": 5,
+  "balance_after": 553.2,
+  "cumulative_generations": 89,
+  "status": "CANDIDATE_PENDING_USER_REVIEW",
+  "native_method": "LibreSprite material cleanup of blue stone highlight; lossless occupied-region extraction into 28x33 padded native canvas. No resampling. A free native trident trial was rejected from assembly; sources retained.",
+  "native_manifest": "Native/Stage08/Manifest.json"
+}

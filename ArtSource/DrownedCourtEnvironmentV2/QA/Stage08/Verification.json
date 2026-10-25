@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "protected_production_files": 7839,
+  "accepted_stage01_07_files": 829,
+  "authorities_unchanged": 5,
+  "native_roundtrips": 3,
+  "selected_assets": 2,
+  "rejected_unplaced_trials": 1,
+  "placed_details": 1,
+  "combined_opaque_colors": 14,
+  "attachment_contacts": [
+    {
+      "height": 640,
+      "stone_overlap_pixels": 356,
+      "foot_overlap_pixels": 38
+    },
+    {
+      "height": 800,
+      "stone_overlap_pixels": 356,
+      "foot_overlap_pixels": 38
+    }
+  ],
+  "asset_connected_components": {
+    "SpongePocket": [
+      514
+    ],
+    "SpongePocketSeed": [
+      514
+    ],
+    "TridentShard": [
+      174
+    ]
+  },
+  "verified_native_pixels": 14392,
+  "unchanged_frame_pixels": 402044,
+  "screens": [
+    {
+      "size": "360x640",
+      "changed_pixels": 492,
+      "native_pixels": 514,
+      "hidden_pixels": 0,
+      "frame_overlap": 0
+    },
+    {
+      "size": "720x1280",
+      "changed_pixels": 1968,
+      "native_pixels": 2056,
+      "hidden_pixels": 0,
+      "frame_overlap": 0
+    },
+    {
+      "size": "1080x1920",
+      "changed_pixels": 4428,
+      "native_pixels": 4626,
+      "hidden_pixels": 0,
+      "frame_overlap": 0
+    },
+    {
+      "size": "360x800",
+      "changed_pixels": 492,
+      "native_pixels": 514,
+      "hidden_pixels": 0,
+      "frame_overlap": 0
+    },
+    {
+      "size": "720x1600",
+      "changed_pixels": 1968,
+      "native_pixels": 2056,
+      "hidden_pixels": 0,
+      "frame_overlap": 0
+    },
+    {
+      "size": "1080x2400",
+      "changed_pixels": 4428,
+      "native_pixels": 4626,
+      "hidden_pixels": 0,
+      "frame_overlap": 0
+    }
+  ],
+  "old_scene_changes": [
+    "2080446818"
+  ],
+  "unity_captures": 19,
+  "scope": "Static art-only candidate; no animation, production, gameplay, safe-area or device testing. Existing board mapping unchanged."
+}
