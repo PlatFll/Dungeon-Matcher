@@ -1,0 +1,27 @@
+{
+    "status": "PASS",
+    "limitations": "Static art-only camera renders. No new gameplay, live health/countdown UI, safe-area interaction or device test. Tall upper placement uses measured Stage00 anchor deltas; bottom shells retain baseline.",
+    "sourcePixelScales": [
+        1,
+        2,
+        3
+    ],
+    "importedAssets": 10,
+    "placedModules": 13,
+    "captures": 8,
+    "importedOpaquePixelsAndAlphaExact": true,
+    "integerUniformSourceScale": true,
+    "allPlacedCanvasBoundsInsideUpperStage": true,
+    "actorsAndSharedUIAboveArchitecture": true,
+    "artOnly": true,
+    "sceneExcludedFromBuild": true,
+    "actorsAreUnchangedReadOnlyOverlays": true,
+    "sharedBoardSize": {
+        "x": 545.0989990234375,
+        "y": 545.0989990234375
+    },
+    "sharedPortraitSize": {
+        "x": 195.0,
+        "y": 406.0
+    }
+}
