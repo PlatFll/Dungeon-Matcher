@@ -34,6 +34,11 @@ exports are retained. Unity compilation and the copied-scene motion test pass:
 protected board/portrait/HUD pixels unchanged, pause/reduced motion stable.
 This is an editor art preview, not production gameplay integration or device
 testing. [Motion review and validation](../ArtSource/ForestSurroundRevision/LivingForest/README.md).
+The current correction removes both long comet placements on a further copy,
+`ArtPreview_ForestSurround_Waterfall`, and replaces the barely visible shimmer
+with a 24-pose downward water-flow cycle. Its LibreSprite source, 96 matching
+before/after Unity frame pairs and exact scope/hash checks pass. All 6,982 prior
+files are unchanged; zero new generations used. [Current waterfall review](../ArtSource/ForestSurroundRevision/WaterfallCorrection/README.md).
 Draft PR #209 remains unmerged; stop for user visual approval.
 
 ## Forest surround polish — Stages 3–6 complete (2026-10-24, final review)
