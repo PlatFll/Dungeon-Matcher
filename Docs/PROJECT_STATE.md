@@ -39,6 +39,11 @@ The current correction removes both long comet placements on a further copy,
 with a 24-pose downward water-flow cycle. Its LibreSprite source, 96 matching
 before/after Unity frame pairs and exact scope/hash checks pass. All 6,982 prior
 files are unchanged; zero new generations used. [Current waterfall review](../ArtSource/ForestSurroundRevision/WaterfallCorrection/README.md).
+The latest copied review, `ArtPreview_ForestSurround_Fireflies`, adds eight warm
+fireflies around the board and lower roots using the unchanged top-HUD sprite.
+All 19 previous motion tracks and 7,102 baseline files remain intact. Unity
+compilation, 96 matched-time render pairs, UI clearance, Reduced Motion and
+exact pixel doubling pass. Zero generations used. [Latest firefly review](../ArtSource/ForestSurroundRevision/LowerFireflies/README.md).
 Draft PR #209 remains unmerged; stop for user visual approval.
 
 ## Forest surround polish — Stages 3–6 complete (2026-10-24, final review)
