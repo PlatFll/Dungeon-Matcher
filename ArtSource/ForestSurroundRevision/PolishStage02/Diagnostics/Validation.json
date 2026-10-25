@@ -1,0 +1,127 @@
+{
+  "native_modules": [
+    {
+      "name": "Root_Left",
+      "dimensions": [
+        88,
+        180
+      ],
+      "bounds": [
+        2,
+        18,
+        84,
+        173
+      ],
+      "colors": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "component_sizes": [
+        4203
+      ],
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Root_Right",
+      "dimensions": [
+        88,
+        180
+      ],
+      "bounds": [
+        26,
+        18,
+        86,
+        178
+      ],
+      "colors": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "component_sizes": [
+        3518
+      ],
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "StoneAnchor_Left",
+      "dimensions": [
+        85,
+        101
+      ],
+      "bounds": [
+        8,
+        10,
+        82,
+        99
+      ],
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "component_sizes": [
+        3538,
+        81
+      ],
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "StoneAnchor_Right",
+      "dimensions": [
+        86,
+        105
+      ],
+      "bounds": [
+        2,
+        24,
+        84,
+        100
+      ],
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "component_sizes": [
+        2788,
+        1327
+      ],
+      "libresprite_reopen_exact": true
+    }
+  ],
+  "stone_material_preservation": [
+    {
+      "side": "Left",
+      "unchanged_original_stone_pixels": 1868,
+      "assembled_components": [
+        7206
+      ]
+    },
+    {
+      "side": "Right",
+      "unchanged_original_stone_pixels": 3378,
+      "assembled_components": [
+        7399
+      ]
+    }
+  ],
+  "unchanged_existing_files": 6708,
+  "unchanged_image_bindings": 303,
+  "unity_render_test": "Passed",
+  "exact_pixel_doubling": true,
+  "top_hud_battle_separator_and_upper_surrounds_identical": true,
+  "board_and_painted_frame_identical": true,
+  "bottom_hud_controls_text_identical": true,
+  "existing_mushroom_moss_accents_identical": true,
+  "changes_outside_authorized_scope": 0,
+  "changed_bounds": [
+    4,
+    1120,
+    710,
+    1354
+  ],
+  "production_integrated": false,
+  "real_device_test": false
+}

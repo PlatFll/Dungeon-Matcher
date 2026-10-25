@@ -1,0 +1,2 @@
+var names=["Board_Corner_TL", "Board_Corner_TR", "Board_Corner_BL", "Board_Corner_BR", "Board_Rail_Top", "Board_Rail_Bottom", "Board_Rail_Left", "Board_Rail_Right", "Board_Connector", "Side_PostRepeat", "Side_PostCap", "Side_PostFoot", "Board_Ivy_Upper", "Board_Ivy_Lower", "Side_Brace", "BoardFrame_SourceCleanup"];
+names.forEach(function(n){var d=app.open('ArtSource/ForestHybrid/Stage03/Native/'+n+'.aseprite');d.sprite.saveAs('.utmp/forest-stage03/reopened/'+n+'.png',true);});

@@ -1,0 +1,82 @@
+{
+  "unity_compile": "Passed",
+  "compile_log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-3ad1675e-0be2-4aec-a83f-7a54a591438e.log",
+  "test_result": "Passed",
+  "test": "ForestSurroundStage02Tests.LowerSideRootReview",
+  "resolutions": [
+    [
+      720,
+      1360
+    ],
+    [
+      1440,
+      2720
+    ]
+  ],
+  "pixel_doubling_exact": true,
+  "top_hud_battle_and_stage1_board_sides_pixel_identical": true,
+  "bottom_hud_controls_and_text_pixel_identical": true,
+  "unchanged_image_bindings": 292,
+  "protected_source_files": 1744,
+  "changes_outside_authorized_dressing": 0,
+  "board": [
+    512,
+    512
+  ],
+  "cells": [
+    64,
+    64
+  ],
+  "portrait_native": [
+    98,
+    220
+  ],
+  "frame": [
+    580,
+    580
+  ],
+  "native_modules": [
+    {
+      "name": "Lower_Left",
+      "dimensions": [
+        83,
+        124
+      ],
+      "bounds": [
+        2,
+        2,
+        81,
+        122
+      ],
+      "opaque_colors": 19,
+      "binary_alpha": true,
+      "source_body_silhouette_retained": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "2c05487b5d1d4d82824f60acc1c228bebdef0ade4df282e30084b5767a69f1f5"
+    },
+    {
+      "name": "Lower_Right",
+      "dimensions": [
+        83,
+        120
+      ],
+      "bounds": [
+        2,
+        2,
+        81,
+        118
+      ],
+      "opaque_colors": 19,
+      "binary_alpha": true,
+      "source_body_silhouette_retained": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "bdde93f4ad73fbee125602d48561a666f81cffef8fa3f16705ea9546f9a7ca8c"
+    }
+  ],
+  "generations_spent": 20,
+  "production_integrated": false,
+  "real_device_test": false,
+  "balance_before": 770.2,
+  "balance_after": 750.2,
+  "credits_dollars_spent": 0
+}

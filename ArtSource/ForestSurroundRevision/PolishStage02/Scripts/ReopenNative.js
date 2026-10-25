@@ -1,0 +1,1 @@
+try{["Root_Left", "Root_Right", "StoneAnchor_Left", "StoneAnchor_Right"].forEach(function(n){app.open('ArtSource/ForestSurroundRevision/PolishStage02/Native/'+n+'.aseprite').sprite.saveAs('.utmp/forest-root-joins/reopened/'+n+'.png',true);});console.log('FOREST_ROOT_JOIN_NATIVE_COMPLETE');}catch(e){console.log('FAILED '+e);}app.command.Exit();

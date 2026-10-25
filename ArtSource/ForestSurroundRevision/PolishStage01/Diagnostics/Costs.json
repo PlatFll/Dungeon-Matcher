@@ -1,0 +1,40 @@
+{
+  "starting_generations": 697.2,
+  "ending_generations": 690.2,
+  "net_debit": 7,
+  "usd_credits_used": 0,
+  "completed_images": [
+    {
+      "job": "771a994b-8696-4a33-aa68-cb83bcbecc3d",
+      "charge": 1,
+      "selected": false
+    },
+    {
+      "job": "a21ef4e6-9058-47dc-807f-f5bf5fcde4cf",
+      "charge": 1,
+      "selected": true
+    }
+  ],
+  "cancelled_jobs": [
+    {
+      "job": "b320fe0f-6805-4d99-a5b2-993efa5cca8d",
+      "quoted": 10,
+      "output_received": false
+    },
+    {
+      "job": "2a29bbf8-5c00-47df-a1b2-653298016059",
+      "quoted": 5,
+      "output_received": false,
+      "final": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: failed\nid: 2a29bbf8-5c00-47df-a1b2-653298016059\njob_id: 2a29bbf8-5c00-47df-a1b2-653298016059\nerror: unknown error"
+          }
+        ],
+        "isError": false
+      }
+    }
+  ],
+  "account_note": "The account showed a further 5-generation debit after the cancelled Pro Flash request, matching its quote. No finished image or refund confirmation was returned. Net account debit is reported rather than only the two delivered-image charges."
+}

@@ -1,0 +1,3947 @@
+{
+    "width": 1440,
+    "height": 2720,
+    "board": {
+        "serializedVersion": "2",
+        "x": 208.00003051757813,
+        "y": 639.9999389648438,
+        "width": 1024.0,
+        "height": 1024.000244140625
+    },
+    "portrait": {
+        "serializedVersion": "2",
+        "x": 32.00004196166992,
+        "y": 1808.0,
+        "width": 391.9999694824219,
+        "height": 880.0
+    },
+    "frame": {
+        "serializedVersion": "2",
+        "x": 140.00003051757813,
+        "y": 571.9999389648438,
+        "width": 1160.0,
+        "height": 1160.0
+    },
+    "images": [
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Inset.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 992.0,
+                "y": 183.9999542236328,
+                "width": 268.0,
+                "height": 256.00006103515627
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1279.9998779296875,
+                "y": 2524.0,
+                "width": 36.0001220703125,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 980.0000610351563,
+                "y": 2612.0,
+                "width": 35.99993896484375,
+                "height": 36.000244140625
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Bottom.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 996.0,
+                "y": 2532.0,
+                "width": 224.0,
+                "height": 20.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 3,3",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 7,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_BL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 500.0000305175781,
+                "y": 2544.0,
+                "width": 36.000030517578128,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "NativeIcon",
+            "path": "Assets/_Game/Art/DungeonPixelLab/TopPlaques/Plaque_Gear.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1312.0,
+                "y": 2556.0,
+                "width": 60.0,
+                "height": 60.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1184.0,
+                "y": 223.99998474121095,
+                "width": 36.0,
+                "height": 36.00001525878906
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Right.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1208.0,
+                "y": 2540.0,
+                "width": 19.9998779296875,
+                "height": 92.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Rail_Left.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 164.0000457763672,
+                "y": 616.0,
+                "width": 43.99998474121094,
+                "height": 1072.0
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Left.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1040.0,
+                "y": 239.99998474121095,
+                "width": 20.0,
+                "height": 143.99998474121095
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 3,4",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Connector_1",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/Portrait_Join.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 380.0,
+                "y": 2232.0,
+                "width": 28.000030517578126,
+                "height": 28.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Start",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthStart.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 831.9999389648438,
+                "y": 1820.0,
+                "width": 32.0001220703125,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Start",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthStart.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1124.0,
+                "y": 1820.0,
+                "width": 32.0,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Ivy_RightSwag",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/FoliageRevision/Ivy_RightSwag.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 196.0000457763672,
+                "y": 1760.0,
+                "width": 272.0,
+                "height": 676.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 6,7",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Left.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 508.0,
+                "y": 2560.0,
+                "width": 20.0,
+                "height": 96.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Left connected ivy",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Side_Swag.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 44.000030517578128,
+                "y": 715.9999389648438,
+                "width": 175.99998474121095,
+                "height": 807.9999389648438
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Top.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 516.0,
+                "y": 2644.0,
+                "width": 379.99993896484377,
+                "height": 20.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 3,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Top.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 996.0,
+                "y": 2620.0,
+                "width": 224.0,
+                "height": 20.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 7,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Rail_Top.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 184.00006103515626,
+                "y": 1664.0001220703125,
+                "width": 1072.0,
+                "height": 43.9998779296875
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "Track",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthTrack.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 566.0,
+                "y": 1836.0,
+                "width": 168.0,
+                "height": 16.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 4,1",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 3,0",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 5,2",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Existing attack countdown icon",
+            "path": "Assets/_Game/Resources/UI/CombatStatuses/Sword.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 880.0,
+                "y": 2184.0,
+                "width": 48.0,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 7,4",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Rail_Top.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 500.0000305175781,
+                "y": 372.0,
+                "width": 439.9999694824219,
+                "height": 20.000030517578126
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Corner_TR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1208.0,
+                "y": 1640.0,
+                "width": 92.0,
+                "height": 92.0
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Rail_Left.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 528.0,
+                "y": 463.9999694824219,
+                "width": 12.0,
+                "height": 40.000030517578128
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 4,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Fill",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthFill.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 566.0,
+                "y": 1836.0,
+                "width": 168.0,
+                "height": 16.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Wisp_Core",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage03/Wisp_Core.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 900.0,
+                "y": 2264.0,
+                "width": 71.99993896484375,
+                "height": 88.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 4,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 3,7",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 0,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 0,0",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1184.0,
+                "y": 363.9999694824219,
+                "width": 36.0,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Lantern_Body",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage03/Lantern_Body.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 396.0,
+                "y": 2264.0,
+                "width": 192.0,
+                "height": 256.000244140625
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 6,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "NativeIcon",
+            "path": "Assets/_Game/Resources/UI/GlobalMenu/CrownedSkull.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 664.0,
+                "y": 247.99993896484376,
+                "width": 112.0,
+                "height": 128.00009155273438
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Start",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthStart.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 540.0,
+                "y": 1820.0,
+                "width": 32.0,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Bottom.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 516.0,
+                "y": 2552.0,
+                "width": 379.99993896484377,
+                "height": 20.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Upper amethyst",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Clamp.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 704.0,
+                "y": 367.9999694824219,
+                "width": 28.0,
+                "height": 28.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1200.0,
+                "y": 2612.0,
+                "width": 36.0,
+                "height": 36.000244140625
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/Portrait_Rail_Bottom.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 60.000030517578128,
+                "y": 1820.0,
+                "width": 335.9999694824219,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Lower amethyst",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Clamp.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 704.0,
+                "y": 228.0,
+                "width": 28.0,
+                "height": 27.999984741210939
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Right.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1376.0,
+                "y": 2540.0,
+                "width": 19.9998779296875,
+                "height": 92.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Rail_Bottom.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 532.0,
+                "y": 459.99993896484377,
+                "width": 375.99993896484377,
+                "height": 12.00006103515625
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/Portrait_Rail_Right.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 376.0000305175781,
+                "y": 1836.0,
+                "width": 35.999969482421878,
+                "height": 824.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "NativeIcon",
+            "path": "Assets/_Game/Resources/UI/Consumables/Bomb.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1076.0,
+                "y": 263.99993896484377,
+                "width": 96.0,
+                "height": 96.00009155273438
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Board_Ivy_TL",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Ivy_TL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 32.00004196166992,
+                "y": 1508.0,
+                "width": 223.99998474121095,
+                "height": 256.0
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "Existing attack countdown icon",
+            "path": "Assets/_Game/Resources/UI/CombatStatuses/Sword.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 588.0,
+                "y": 2184.0,
+                "width": 48.0,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 7,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 6,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Rune_Plaque",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage03/Rune_Plaque.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1120.0,
+                "y": 2280.0,
+                "width": 128.0,
+                "height": 192.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 1,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 1024.0,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 0,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 1,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 895.9999389648438,
+                "width": 127.99996948242188,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 2,1",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Warm firefly",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage03/Firefly_Mote.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 764.0,
+                "y": 2360.0,
+                "width": 32.0,
+                "height": 32.000244140625
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/Portrait_Rail_Top.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 60.000030517578128,
+                "y": 2640.0,
+                "width": 335.9999694824219,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 3,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Grove_Background",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Grove_Background.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.00004291534423828125,
+                "y": 1920.0,
+                "width": 1440.0,
+                "height": 800.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 5,6",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 1,0",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 1536.0001220703125,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 4,2",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Inset.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 444.0,
+                "y": 183.9999542236328,
+                "width": 552.0,
+                "height": 256.00006103515627
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Existing affinity gem",
+            "path": "Assets/_Game/Art/Gems/Small gems/Gems32/Emerald32.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 164.0000457763672,
+                "y": 2296.0,
+                "width": 127.99998474121094,
+                "height": 128.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Wisp_Far_B",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Wisp_Far_B.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1032.0,
+                "y": 2272.0,
+                "width": 64.0,
+                "height": 80.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Corner_BR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1208.0,
+                "y": 571.9999389648438,
+                "width": 92.0,
+                "height": 92.00006103515625
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "Gem 5,1",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 4,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Combat_Ground",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Combat_Ground.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.00004291534423828125,
+                "y": 1760.0,
+                "width": 1440.0,
+                "height": 160.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Badge",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalBadge.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1096.0,
+                "y": 1820.0,
+                "width": 48.0,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Start",
+            "path": "Assets/_Game/Resources/UI/Finalized/PlayerHealthStart.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 128.00003051757813,
+                "y": 1884.0001220703125,
+                "width": 32.0,
+                "height": 47.9998779296875
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 2,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Top.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1048.0,
+                "y": 372.0,
+                "width": 156.0,
+                "height": 20.000030517578126
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Corner_TL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 524.0,
+                "y": 491.99993896484377,
+                "width": 20.0,
+                "height": 20.000030517578126
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 1,5",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 895.9999389648438,
+                "width": 127.99996948242188,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 1,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 767.9999389648438,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Connector_0",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/Portrait_Join.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 48.000038146972659,
+                "y": 2232.0,
+                "width": 27.99999237060547,
+                "height": 28.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Corner_BR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 920.0,
+                "y": 223.99998474121095,
+                "width": 36.0,
+                "height": 36.00001525878906
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1279.9998779296875,
+                "y": 2612.0,
+                "width": 36.0001220703125,
+                "height": 36.000244140625
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 4,6",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 5,0",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Right connected ivy",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Side_Swag.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1224.0,
+                "y": 715.9999389648438,
+                "width": 176.0,
+                "height": 807.9999389648438
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "Cell 3,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 5,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 6,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 6,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 6,0",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 2,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 7,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 0,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Ivy_CrownRight",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/FoliageRevision/Ivy_CrownRight.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 196.0000457763672,
+                "y": 2420.0,
+                "width": 272.0,
+                "height": 300.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Elven_Mender unchanged",
+            "path": "Assets/_Game/Art/Forest/Elven_Mender.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 992.0,
+                "y": 1864.0001220703125,
+                "width": 448.0,
+                "height": 351.9998779296875
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Middle",
+            "path": "Assets/_Game/Resources/UI/Finalized/PlayerHealthMiddle.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 160.00003051757813,
+                "y": 1884.0001220703125,
+                "width": 184.0,
+                "height": 47.9998779296875
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Fill",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthFill.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1150.0,
+                "y": 1836.0,
+                "width": 167.9998779296875,
+                "height": 16.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 4,0",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 2,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Board_Ivy_BR",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Ivy_BR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1215.9998779296875,
+                "y": 539.9999389648438,
+                "width": 216.0001220703125,
+                "height": 168.00006103515626
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "Cell 5,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 6,5",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 1,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 1408.0001220703125,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Lantern_Light",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage03/Lantern_Light.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 396.0,
+                "y": 2264.0,
+                "width": 192.0,
+                "height": 256.000244140625
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_TL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 500.0000305175781,
+                "y": 2636.0,
+                "width": 36.000030517578128,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "End",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthEnd.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1020.0,
+                "y": 1820.0,
+                "width": 32.0,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Inset.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 180.0000457763672,
+                "y": 183.9999542236328,
+                "width": 268.0,
+                "height": 256.00006103515627
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/Portrait_Inset.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": -47.99995422363281,
+                "y": 1728.0,
+                "width": 552.0,
+                "height": 1040.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Wisp_Far_A",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Wisp_Far_A.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 640.0,
+                "y": 2172.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 2,7",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 3,2",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "End",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthEnd.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1312.0,
+                "y": 1820.0,
+                "width": 31.9998779296875,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Top.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 236.00001525878907,
+                "y": 372.0,
+                "width": 155.99998474121095,
+                "height": 20.000030517578126
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "NativeFill",
+            "path": "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Fill.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 540.0,
+                "y": 475.99993896484377,
+                "width": 424.0,
+                "height": 16.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 3,1",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Badge",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalBadge.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 512.0,
+                "y": 1820.0,
+                "width": 48.0,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 6,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 0,6",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 7,1",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 3,6",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Lantern_Mount",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage03/Lantern_Mount.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 396.0,
+                "y": 2264.0,
+                "width": 192.0,
+                "height": 256.000244140625
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 7,2",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 7,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 4,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "End",
+            "path": "Assets/_Game/Resources/UI/Finalized/PlayerHealthEnd.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 344.0000305175781,
+                "y": 1884.0001220703125,
+                "width": 32.0,
+                "height": 47.9998779296875
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 2,6",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 2,5",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 3,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 1,2",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 1280.0,
+                "width": 127.99996948242188,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 220.00001525878907,
+                "y": 363.9999694824219,
+                "width": 36.00001525878906,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Left ornament",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Wing_Left.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 2580.0,
+                "width": 28.0,
+                "height": 60.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Wisp_Near",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Wisp_Near.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1316.0,
+                "y": 1988.0,
+                "width": 72.0,
+                "height": 88.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Existing attack countdown icon",
+            "path": "Assets/_Game/Resources/UI/CombatStatuses/Sword.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1172.0,
+                "y": 2184.0,
+                "width": 48.0,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 1,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 639.9999389648438,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 3,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1032.0,
+                "y": 363.9999694824219,
+                "width": 36.0,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 4,7",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 4,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Rail_Bottom.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 500.0000305175781,
+                "y": 231.99993896484376,
+                "width": 439.9999694824219,
+                "height": 20.000030517578126
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 372.0000305175781,
+                "y": 363.9999694824219,
+                "width": 36.0,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 1,6",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 767.9999389648438,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 1,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 1536.0001220703125,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_TR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 876.0,
+                "y": 2636.0,
+                "width": 36.0,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 0,4",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1032.0,
+                "y": 223.99998474121095,
+                "width": 36.0,
+                "height": 36.00001525878906
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 1,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 1280.0,
+                "width": 127.99996948242188,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Rail_Top.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 532.0,
+                "y": 495.9999694824219,
+                "width": 375.99993896484377,
+                "height": 11.999969482421875
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 2,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Track",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthTrack.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1150.0,
+                "y": 1836.0,
+                "width": 167.9998779296875,
+                "height": 16.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_TR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1368.0,
+                "y": 2612.0,
+                "width": 36.0,
+                "height": 36.000244140625
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Inset.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 940.0,
+                "y": 2484.0,
+                "width": 336.0,
+                "height": 204.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Rail_Bottom.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 184.00006103515626,
+                "y": 596.0,
+                "width": 1072.0,
+                "height": 43.99993896484375
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Rail_Right.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 883.9999389648438,
+                "y": 2560.0,
+                "width": 20.0,
+                "height": 96.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 220.00001525878907,
+                "y": 223.99998474121095,
+                "width": 36.00001525878906,
+                "height": 36.00001525878906
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Bottom.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1048.0,
+                "y": 231.99993896484376,
+                "width": 156.0,
+                "height": 20.000030517578126
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Inset.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 476.0,
+                "y": 408.0000305175781,
+                "width": 488.0,
+                "height": 151.99990844726563
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 5,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 7,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Right ornament",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Wing_Right.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 940.0,
+                "y": 283.9999694824219,
+                "width": 27.99993896484375,
+                "height": 60.00006103515625
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Right ornament",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Wing_Right.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 895.9999389648438,
+                "y": 2580.0,
+                "width": 28.00006103515625,
+                "height": 60.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 0,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 0,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 4,4",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Rune_Glyph",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage03/Rune_Glyph.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1120.0,
+                "y": 2280.0,
+                "width": 128.0,
+                "height": 192.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Rail_Left.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 492.0,
+                "y": 239.99998474121095,
+                "width": 20.0,
+                "height": 143.99998474121095
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 7,3",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Corner_TL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 484.0000305175781,
+                "y": 363.9999694824219,
+                "width": 35.999969482421878,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 5,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Wisp_Aura",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage03/Wisp_Aura.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 900.0,
+                "y": 2264.0,
+                "width": 71.99993896484375,
+                "height": 88.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 4,5",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Antler pennant candidate",
+            "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_AntlerPennant.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 172.00001525878907,
+                "y": 2464.0,
+                "width": 111.99998474121094,
+                "height": 176.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 0,3",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 3,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Corner_BL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 484.0000305175781,
+                "y": 223.99998474121095,
+                "width": 35.999969482421878,
+                "height": 36.00001525878906
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Bottom.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 236.00001525878907,
+                "y": 231.99993896484376,
+                "width": 155.99998474121095,
+                "height": 20.000030517578126
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Track",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthTrack.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 857.9999389648438,
+                "y": 1836.0,
+                "width": 168.00006103515626,
+                "height": 16.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 2,2",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 6,2",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 4,3",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 5,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 2,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Corner_TL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 140.00003051757813,
+                "y": 1640.0,
+                "width": 91.99996948242188,
+                "height": 92.0
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Inset.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 460.0,
+                "y": 2504.0,
+                "width": 492.0,
+                "height": 208.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Badge",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalBadge.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 804.0,
+                "y": 1820.0,
+                "width": 47.99993896484375,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Fill",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthFill.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 857.9999389648438,
+                "y": 1836.0,
+                "width": 168.00006103515626,
+                "height": 16.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/Portrait_Corner_BL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 32.00004196166992,
+                "y": 1808.0,
+                "width": 59.9999885559082,
+                "height": 60.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 0,7",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 5,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 0,1",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "OverfilledBacking",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Inset.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1240.0,
+                "y": 2484.0,
+                "width": 204.0,
+                "height": 204.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Ivy_CrownLeft",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/FoliageRevision/Ivy_CrownLeft.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.00004291534423828125,
+                "y": 2604.0,
+                "width": 272.0,
+                "height": 116.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/Portrait_Rail_Left.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 44.000030517578128,
+                "y": 1836.0,
+                "width": 36.00000762939453,
+                "height": 824.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Elven_Scout unchanged",
+            "path": "Assets/_Game/Art/Forest/Elven_Scout.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 408.0000305175781,
+                "y": 1864.0001220703125,
+                "width": 447.9999694824219,
+                "height": 351.9998779296875
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/Portrait_Corner_BR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 364.0,
+                "y": 1808.0,
+                "width": 60.0,
+                "height": 60.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 1,1",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 1408.0001220703125,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 2,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Badge",
+            "path": "Assets/_Game/Resources/UI/Finalized/PlayerBadge.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 100.00004577636719,
+                "y": 1884.0001220703125,
+                "width": 48.0,
+                "height": 47.9998779296875
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Right.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 380.0,
+                "y": 239.99998474121095,
+                "width": 20.000030517578126,
+                "height": 143.99998474121095
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Corner_BL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 524.0,
+                "y": 456.0,
+                "width": 20.0,
+                "height": 19.99993896484375
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 6,6",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Rail_Right.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 928.0,
+                "y": 239.99998474121095,
+                "width": 19.99993896484375,
+                "height": 143.99998474121095
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 7,5",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Right.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1192.0,
+                "y": 239.99998474121095,
+                "width": 20.0,
+                "height": 143.99998474121095
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 7,7",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Track",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthTrack.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 154.0000457763672,
+                "y": 1900.0,
+                "width": 195.99998474121095,
+                "height": 16.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 0,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Portrait_Inset",
+            "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Inset.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.00004291534423828125,
+                "y": 0.0,
+                "width": 1440.0,
+                "height": 2720.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 372.0000305175781,
+                "y": 223.99998474121095,
+                "width": 36.0,
+                "height": 36.00001525878906
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 5,5",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1200.0,
+                "y": 2524.0,
+                "width": 36.0,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Ivy_LeftSwag",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/FoliageRevision/Ivy_LeftSwag.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.00004291534423828125,
+                "y": 1811.9998779296875,
+                "width": 175.99998474121095,
+                "height": 808.0001220703125
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Left.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1288.0,
+                "y": 2540.0,
+                "width": 20.0,
+                "height": 92.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 6,4",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 4,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 2,3",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 6,1",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 0,5",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 5,7",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 0,2",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 5,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 6,3",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Rail_Right.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 900.0,
+                "y": 463.9999694824219,
+                "width": 12.0,
+                "height": 40.000030517578128
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 980.0000610351563,
+                "y": 2524.0,
+                "width": 35.99993896484375,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 3,5",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Middle",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthMiddle.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1156.0,
+                "y": 1820.0,
+                "width": 156.0,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Hanging skull",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Skull.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 676.0,
+                "y": 2488.0,
+                "width": 60.00006103515625,
+                "height": 72.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Middle",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthMiddle.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 572.0,
+                "y": 1820.0,
+                "width": 156.0,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "End",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthEnd.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 728.0,
+                "y": 1820.0,
+                "width": 32.0,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 5,3",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Left ornament",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Wing_Left.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 472.0000305175781,
+                "y": 283.9999694824219,
+                "width": 28.0,
+                "height": 60.00006103515625
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 1,7",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 639.9999389648438,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 6,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 5,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Board_Ivy_TR",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Ivy_TR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1208.0,
+                "y": 1491.9998779296875,
+                "width": 224.0,
+                "height": 272.0001220703125
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Bottom.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1296.0,
+                "y": 2532.0,
+                "width": 92.0,
+                "height": 20.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 2,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 2,0",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 4,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 1,4",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 1024.0,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 1,3",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 1152.0,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Top.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1296.0,
+                "y": 2620.0,
+                "width": 92.0,
+                "height": 20.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 7,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 2,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 6,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 1152.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Wave_Corner_BR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 876.0,
+                "y": 2544.0,
+                "width": 36.0,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 7,6",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 767.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Corner_BR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1368.0,
+                "y": 2524.0,
+                "width": 36.0,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 5,4",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 848.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 3,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 639.9999389648438,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 2,4",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 1024.0,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Rattlebones unchanged",
+            "path": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 100.00004577636719,
+                "y": 1992.0001220703125,
+                "width": 255.99998474121095,
+                "height": 255.9998779296875
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 0,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Left.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 988.0,
+                "y": 2540.0,
+                "width": 20.0,
+                "height": 92.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Middle",
+            "path": "Assets/_Game/Resources/UI/Finalized/NormalHealthMiddle.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 864.0000610351563,
+                "y": 1820.0,
+                "width": 155.99993896484376,
+                "height": 48.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 3,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 592.0,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Corner_BR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 895.9999389648438,
+                "y": 456.0,
+                "width": 20.0001220703125,
+                "height": 19.99993896484375
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Corner_BL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 140.00003051757813,
+                "y": 571.9999389648438,
+                "width": 91.99996948242188,
+                "height": 92.00006103515625
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "Cell 1,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0000305175781,
+                "y": 1152.0,
+                "width": 127.99996948242188,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 4,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 720.0,
+                "y": 1280.0,
+                "width": 128.0,
+                "height": 128.0001220703125
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 0,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 208.00003051757813,
+                "y": 1408.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Hanging leaves",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage03/Hanging_Leaf_Strand.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1264.0,
+                "y": 2336.0,
+                "width": 151.9998779296875,
+                "height": 188.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 7,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Control_Rail_Left.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 228.0000457763672,
+                "y": 239.99998474121095,
+                "width": 20.0,
+                "height": 143.99998474121095
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Corner_TR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 895.9999389648438,
+                "y": 491.99993896484377,
+                "width": 20.0001220703125,
+                "height": 20.000030517578126
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Cell 6,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 976.0,
+                "y": 895.9999389648438,
+                "width": 128.0,
+                "height": 128.00006103515626
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Rail_Right.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1232.0,
+                "y": 616.0,
+                "width": 44.0,
+                "height": 1072.0
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/DungeonHybrid/Stage03/Resonance_Corner_TR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 920.0,
+                "y": 363.9999694824219,
+                "width": 36.0,
+                "height": 36.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Board_Ivy_BL",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage04/Board_Ivy_BL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 8.000020980834961,
+                "y": 539.9999389648438,
+                "width": 240.00003051757813,
+                "height": 168.00006103515626
+            },
+            "scale": 4.0,
+            "frame": true
+        },
+        {
+            "name": "Orc_Trailguard unchanged",
+            "path": "Assets/_Game/Art/Forest/Orc_Trailguard.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 700.0,
+                "y": 1864.0001220703125,
+                "width": 448.0,
+                "height": 351.9998779296875
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/Portrait_Corner_TR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 364.0,
+                "y": 2628.0,
+                "width": 60.0,
+                "height": 60.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "Gem 7,0",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1104.0,
+                "y": 1536.0001220703125,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "Fill",
+            "path": "Assets/_Game/Resources/UI/Finalized/HealthFill.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 154.0000457763672,
+                "y": 1900.0,
+                "width": 195.99998474121095,
+                "height": 16.0
+            },
+            "scale": 2.0,
+            "frame": false
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/EnchantedForestStaged/Stage02/Portrait_Corner_TL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 32.00004196166992,
+                "y": 2628.0,
+                "width": 59.9999885559082,
+                "height": 60.0
+            },
+            "scale": 4.0,
+            "frame": false
+        },
+        {
+            "name": "NativeIcon",
+            "path": "Assets/_Game/Resources/UI/Consumables/Potion.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 264.0,
+                "y": 263.99993896484377,
+                "width": 96.0,
+                "height": 96.00009155273438
+            },
+            "scale": 4.0,
+            "frame": false
+        }
+    ]
+}

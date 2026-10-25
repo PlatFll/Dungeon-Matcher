@@ -1,0 +1,11 @@
+{
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "result": "Passed",
+  "exit_code": 0,
+  "unity": "6000.3.19f1",
+  "log_sha256": "9d6413c939b371a44bb16e668fd9b19e6ef0b40c6530be6460e8d83dcb92fad1",
+  "source_hashes": {
+    "Assets/_Game/Scripts/Editor/ForestFinalPolishReviewTests.cs": "be955c68a2b4a88179f4e19170e1797ab520077437608244e3aca49ce981e239",
+    "Assets/_Game/Scripts/ArtPreview/ForestPolishPreviewMotion.cs": "77e1185a0e4c58c6005ac72324e38ac5e36e03ed0d275dfb62d881885b57e0cc"
+  }
+}

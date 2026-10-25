@@ -1,0 +1,31 @@
+{
+  "request": {
+    "description": "One chunky leafy oak BOUGH module, native pixel art64x96 on transparency. A broad mature oak branch bends in a single strong S curve across almost the entire canvas. Wood is 18 pixels thick at the bottom, 14 pixels thick in the center and 10 at the upper end. Draw exactly ONE large bend, with one broad branching fork. At least SIX overlapping fans of LARGE pointed leaves, each fan 15-22 pixels wide, each individual leaf 5-9 pixels long. Thick connected dark olive foliage masses behind lighter leaves. Foliage occupies at least half the sprite. The whole object fills x3..60 and y3..92. Rich, heavy and luxuriant woodland framing like the close reference: bold thick wood and layered large foliage. Three quiet brown wood planes, four olive foliage tones, restrained top-left highlights, dark crisp edges, clean bold clusters. Mature enchanted forest architecture seen from side, not an item icon. Full intact natural silhouette with 3px padding. No miniature texture, no repeated tiny loops, no long skinny stick, no fine fern hairs, no dither or soft shading. Moss on branch bends. One tiny ivory or lavender flower cluster optional; no rocks or mushrooms in this module. No scene, UI, frame, gems, people, text. Match the native pixel clarity of the golden style image and the thick branch SHAPES in the labeled closeup. Do not compress a whole tall tree into the canvas; only one BIG curved leafy bough segment.",
+    "width": 64,
+    "height": 96,
+    "max_colors": 22,
+    "no_background": true,
+    "seed": 24100523,
+    "style_image_url": "upload:e26a7431-416a-4522-9f75-eef110a00945",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:3c57f3f8-c43a-4475-a100-e519bf7c7e8e",
+        "usage": "Thick branch and large leaf shape authority. Reproduce the generous mass and broad leaf fans as a single native64x96 bough module; preserve lushness."
+      }
+    ]
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: dc9c4942-7670-4219-a2b2-9a6643b514c0\njob_id: dc9c4942-7670-4219-a2b2-9a6643b514c0\nmodel: pro\ndescription: One chunky leafy oak BOUGH module, native pixel art64x96 on transparency. A broad mature oak branch bends in a single strong S curve across almost the entire canvas. Wood is 18 pixels thick at the bottom, 14 pixels thick in the center and 10 at the upper end. Draw exactly ONE large bend, with one broad branching fork. At least SIX overlapping fans of LARGE pointed leaves, each fan 15-22 pixels wide, each individual leaf 5-9 pixels long. Thick connected dark olive foliage masses behind lighter leaves. Foliage occupies at least half the sprite. The whole object fills x3..60 and y3..92. Rich, heavy and luxuriant woodland framing like the close reference: bold thick wood and layered large foliage. Three quiet brown wood planes, four olive foliage tones, restrained top-left highlights, dark crisp edges, clean bold clusters. Mature enchanted forest architecture seen from side, not an item icon. Full intact natural silhouette with 3px padding. No miniature texture, no repeated tiny loops, no long skinny stick, no fine fern hairs, no dither or soft shading. Moss on branch bends. One tiny ivory or lavender flower cluster optional; no rocks or mushrooms in this module. No scene, UI, frame, gems, people, text. Match the native pixel clarity of the golden style image and the thick branch SHAPES in the labeled closeup. Do not compress a whole tall tree into the canvas; only one BIG curved leafy bough segment.\nsize: 64x96px\ntransparent: True\ncandidates: 9\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nmax colours: 22 per image\nseed: 24100523\nasset_id: 6905f958-f6e5-510e-92fa-6c93c269dd90\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"dc9c4942-7670-4219-a2b2-9a6643b514c0\")"
+      }
+    ],
+    "isError": false
+  }
+}

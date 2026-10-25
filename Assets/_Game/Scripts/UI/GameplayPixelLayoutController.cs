@@ -27,6 +27,32 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     // slot allocations. Each slot includes its two 3px authored side gaps.
     public const int MinimumViewportWidth = 146 + 6 + 12 + 6 + 2 * 19 + 3 * 80;
 
+    // The established Dungeon registration reserves 20 native units on each
+    // side of a 364-unit board opening. Zone ornaments must not shrink the grid.
+    public static float BoardLayoutExtent(float cells) => cells * (1f + 40f / 364f);
+    public static readonly Rect SharedPlayerRegistration = new Rect(11, 28, 129, 252);
+    public const float SharedTopRegistrationHeight = 298;
+
+    public static Geometry CalculateShared(int width, int height, Rect safe, Vector2 boardPixels)
+    {
+        var result = Calculate(width, height, safe, boardPixels,
+            CombatMoveClock.Unified ? PreferredBattleHeight : MinimumBattleHeight, true);
+        return result.Fits ? result : CalculateCompactDungeon(width, height, safe, boardPixels);
+    }
+
+    public Rect SharedPlayerRect(Vector2 sectionSize)
+    {
+        // Non-reference HUDs retain their native 176px enclosure. That extra
+        // space comes from the battle region, never from the board or portrait.
+        float canonicalHeight = Current.Top.height + legacyBottomExtra;
+        var source = SharedPlayerRegistration;
+        return new Rect(Mathf.Round(source.x * sectionSize.x / 470f),
+            Mathf.Round((SharedTopRegistrationHeight - source.yMax) * canonicalHeight / SharedTopRegistrationHeight),
+            Mathf.Round(source.width * sectionSize.x / 470f),
+            Mathf.Round(source.height * canonicalHeight / SharedTopRegistrationHeight));
+    }
+    private float legacyBottomExtra;
+
     public struct Geometry
     {
         public int Scale;
@@ -125,6 +151,9 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
 
     public static Geometry CalculateCompactDungeon(int width, int height, Rect safe, Vector2 boardPixels)
     {
+        if (width <= 0 || height <= 0 || !Finite(safe.x) || !Finite(safe.y) ||
+            !Finite(safe.width) || !Finite(safe.height) || safe.width <= 0 || safe.height <= 0 ||
+            !Finite(boardPixels.x) || !Finite(boardPixels.y) || boardPixels.x <= 0 || boardPixels.y <= 0) return default;
         safe = Rect.MinMaxRect(Mathf.Ceil(Mathf.Max(0,safe.xMin)),Mathf.Ceil(Mathf.Max(0,safe.yMin)),
             Mathf.Floor(Mathf.Min(width,safe.xMax)),Mathf.Floor(Mathf.Min(height,safe.yMax)));
         float w = Mathf.Floor((safe.width-8)/2)*2, h = Mathf.Floor((safe.height-8)/2)*2;
@@ -172,17 +201,23 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
 #endif
         // The simulator may publish Screen before resizing the actual Canvas.
         // Refit static art once that projection catches up on the next frame.
-        int minimumBattleHeight=Mathf.Max(MinimumBattleHeight,GameplayThemeSkin.Current?.minimumBattleHeight??0);
-        // Native 24px status rows need vertical space alongside the unchanged
-        // player canvas, affinity and shield. The existing geometry owner reserves it.
         bool referenceComposition = BattlePresentationSkin.Folder != null;
-        if(CombatMoveClock.Unified) minimumBattleHeight=Mathf.Max(minimumBattleHeight,PreferredBattleHeight+(referenceComposition ? 0 : 56));
-        if (!force && referenceComposition==lastReferenceComposition && minimumBattleHeight==lastMinimumBattleHeight && screen == lastScreen && safe == lastSafe && source == lastBoard && canvasRect == lastCanvasRect) return;
-        lastReferenceComposition=referenceComposition;
-        lastMinimumBattleHeight=minimumBattleHeight;
+        int minimumBattleHeight = CombatMoveClock.Unified ? PreferredBattleHeight : MinimumBattleHeight;
+        if (!force && referenceComposition == lastReferenceComposition && minimumBattleHeight == lastMinimumBattleHeight && screen == lastScreen && safe == lastSafe && source == lastBoard && canvasRect == lastCanvasRect) return;
+        lastReferenceComposition = referenceComposition;
+        lastMinimumBattleHeight = minimumBattleHeight;
         lastScreen = screen; lastSafe = safe; lastBoard = source; lastCanvasRect = canvasRect;
-        Current = Calculate(Screen.width, Screen.height, safe, source,minimumBattleHeight,referenceComposition);
-        if (!Current.Fits && DungeonPixelLabBattleArt.Current) Current = CalculateCompactDungeon(Screen.width, Screen.height, safe, source);
+        var geometry = CalculateShared(Screen.width, Screen.height, safe, source);
+        legacyBottomExtra = geometry.Fits && !referenceComposition && geometry.Bottom.height >= ReferenceBottomHeight
+            ? Mathf.Max(0, BottomHeight - geometry.Bottom.height) : 0;
+        if (legacyBottomExtra > 0)
+        {
+            geometry.Bottom.height += legacyBottomExtra;
+            geometry.Board.y += legacyBottomExtra;
+            geometry.Top.y += legacyBottomExtra;
+            geometry.Top.height -= legacyBottomExtra;
+        }
+        Current = geometry;
         if (!Current.Fits)
         {
             Debug.LogError($"Gameplay pixel layout cannot fit screen {screen}, safe {safe}, board {source}.", this);

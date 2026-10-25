@@ -1,0 +1,1 @@
+try{["Lower_Left", "Lower_Right"].forEach(function(n){app.open('ArtSource/ForestSurroundRevision/Stage02/Native/'+n+'.aseprite').sprite.saveAs('.utmp/forest-surround-stage02/reopened/'+n+'.png',true);});console.log('FOREST_LOWER_NATIVE_COMPLETE');}catch(e){console.log('FAILED '+e);}app.command.Exit();

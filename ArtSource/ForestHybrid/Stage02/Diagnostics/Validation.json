@@ -1,0 +1,352 @@
+{
+  "status": "PASS",
+  "new_assets": 13,
+  "editable_documents": 14,
+  "binary_alpha": true,
+  "libresprite_roundtrip": true,
+  "rail_repeat_seams": true,
+  "four_corners_identical_upright": true,
+  "frame_geometry": "15px corners / 9px rails / 7px connectors; aligned centers, native tiled rails",
+  "resize_cases": [
+    [
+      30,
+      30
+    ],
+    [
+      128,
+      224
+    ],
+    [
+      135,
+      258
+    ],
+    [
+      163,
+      287
+    ],
+    [
+      129,
+      257
+    ]
+  ],
+  "undersize_hidden": [
+    29,
+    29
+  ],
+  "portrait_rect": [
+    8,
+    24,
+    135,
+    258
+  ],
+  "backing_mask": [
+    20,
+    36,
+    131,
+    270
+  ],
+  "mask_probe_inside_changed_pixels": 21225,
+  "mask_probe_outside_changed_pixels": 0,
+  "protected_files_unchanged": 1155,
+  "pixel_lab_calls": 1,
+  "pixel_lab_generations_stage2": 6,
+  "pixel_lab_generations_cumulative": 15,
+  "raw_opaque_colors": 16,
+  "clean_opaque_colors": 9,
+  "captures": [
+    {
+      "size": [
+        470,
+        288
+      ],
+      "sha256": "938e94456912c9dc2da76ca1fc5aa11a9b8f6423bb10cb161d239881a11c096a",
+      "exact_integer_pixels": true
+    },
+    {
+      "size": [
+        940,
+        576
+      ],
+      "sha256": "a4844b9f723e1d68ae258b66ce224e5738273e1f22571b8ea192e13ee696ca2c",
+      "exact_integer_pixels": true
+    },
+    {
+      "size": [
+        1410,
+        864
+      ],
+      "sha256": "eb9b1e3a4f631b4be0120889fae32e3f0b1dd39a38ad22cea150059d3648d504",
+      "exact_integer_pixels": true
+    }
+  ],
+  "manifest": [
+    {
+      "name": "Portrait_Corner_TL",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Corner_TL.png",
+      "size": [
+        15,
+        15
+      ],
+      "palette_count": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        14,
+        14
+      ],
+      "sha256": "c94283eb0edadfaebb59e4efd4bdf4235ce3d2507ca36e12f81bb6e4dca098c2",
+      "role": "15x15 upright carved peg. Center (7,7), complete padded contour and consistent top-left light."
+    },
+    {
+      "name": "Portrait_Corner_TR",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Corner_TR.png",
+      "size": [
+        15,
+        15
+      ],
+      "palette_count": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        14,
+        14
+      ],
+      "sha256": "c94283eb0edadfaebb59e4efd4bdf4235ce3d2507ca36e12f81bb6e4dca098c2",
+      "role": "15x15 upright carved peg. Center (7,7), complete padded contour and consistent top-left light."
+    },
+    {
+      "name": "Portrait_Corner_BL",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Corner_BL.png",
+      "size": [
+        15,
+        15
+      ],
+      "palette_count": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        14,
+        14
+      ],
+      "sha256": "c94283eb0edadfaebb59e4efd4bdf4235ce3d2507ca36e12f81bb6e4dca098c2",
+      "role": "15x15 upright carved peg. Center (7,7), complete padded contour and consistent top-left light."
+    },
+    {
+      "name": "Portrait_Corner_BR",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Corner_BR.png",
+      "size": [
+        15,
+        15
+      ],
+      "palette_count": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        14,
+        14
+      ],
+      "sha256": "c94283eb0edadfaebb59e4efd4bdf4235ce3d2507ca36e12f81bb6e4dca098c2",
+      "role": "15x15 upright carved peg. Center (7,7), complete padded contour and consistent top-left light."
+    },
+    {
+      "name": "Portrait_Rail_Top",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Rail_Top.png",
+      "size": [
+        16,
+        9
+      ],
+      "palette_count": 5,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        9
+      ],
+      "sha256": "7725604fe0fd0b83beae95300a203731f69098981404431c4bef54c9fb7f4347",
+      "role": "Straight repeatable rail. Native thickness 9, centerline 4; no texture stretching."
+    },
+    {
+      "name": "Portrait_Rail_Bottom",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Rail_Bottom.png",
+      "size": [
+        16,
+        9
+      ],
+      "palette_count": 4,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        9
+      ],
+      "sha256": "6043ecbc6f226f6b8bd37a41ceb3a3144486cf354cb41857b2188bf8cb33b9ce",
+      "role": "Straight repeatable rail. Native thickness 9, centerline 4; no texture stretching."
+    },
+    {
+      "name": "Portrait_Rail_Left",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Rail_Left.png",
+      "size": [
+        9,
+        16
+      ],
+      "palette_count": 5,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        16
+      ],
+      "sha256": "6c037ee8bdbd022bae9cf2b7cc1ab05f415ad424cbfac41871d1460c2653e1a7",
+      "role": "Straight repeatable rail. Native thickness 9, centerline 4; no texture stretching."
+    },
+    {
+      "name": "Portrait_Rail_Right",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Rail_Right.png",
+      "size": [
+        9,
+        16
+      ],
+      "palette_count": 4,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        16
+      ],
+      "sha256": "e9da4415e6154d6e89666b2df919d9650b918879cd29e6d1ef6d6e0097fd9b8e",
+      "role": "Straight repeatable rail. Native thickness 9, centerline 4; no texture stretching."
+    },
+    {
+      "name": "Portrait_Clamp",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Clamp.png",
+      "size": [
+        7,
+        7
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        6,
+        6
+      ],
+      "sha256": "326592876436c2e9ffb00926b40aa5216dd5cbb0392d7ffb1b330a347baf24d2",
+      "role": "Quiet 7x7 square connector; its center (3,3) aligns to every rail centerline."
+    },
+    {
+      "name": "Portrait_Inset",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Inset.png",
+      "size": [
+        32,
+        32
+      ],
+      "palette_count": 3,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "sha256": "48b6cbc1d8c23161d8bc92795058233e748f6dc675335cde484e30d168ec6cc1",
+      "role": "Quiet 32x32 wooden backing, tiled beyond all interior edges then clipped with RectMask2D."
+    },
+    {
+      "name": "Portrait_Leaves_Upper",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Leaves_Upper.png",
+      "size": [
+        20,
+        19
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        18,
+        17
+      ],
+      "sha256": "ef22fdc5c5b8204cb70133360b75d00cbb7263bcf75e29a047c3a028c12464d4",
+      "role": "Source-derived ivy, isolated with full padding; limited to two restrained frame accents."
+    },
+    {
+      "name": "Portrait_Leaves_Lower",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Leaves_Lower.png",
+      "size": [
+        19,
+        19
+      ],
+      "palette_count": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        17,
+        17
+      ],
+      "sha256": "2e42ab14c6ca4472646e9d0a086d2c607d84c544306f9d0ade9e875f9fa3ee8b",
+      "role": "Source-derived ivy, isolated with full padding; limited to two restrained frame accents."
+    },
+    {
+      "name": "Portrait_AntlerPennant",
+      "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_AntlerPennant.png",
+      "size": [
+        28,
+        44
+      ],
+      "palette_count": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        2,
+        25,
+        43
+      ],
+      "sha256": "15f7289a14134e64bc5c6b6e7c4c7cd36a5f3accadf1ace837366e8f1baac277",
+      "role": "28x44 native antler motif from the forest mockup; clear of the separate gem and face."
+    }
+  ]
+}

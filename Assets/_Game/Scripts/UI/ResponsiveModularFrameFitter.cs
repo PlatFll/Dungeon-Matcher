@@ -21,13 +21,35 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
         RefreshFrame();
     }
 
+    [SerializeField] private RectTransform fittedOpening;
+    private readonly Vector3[] openingCorners = new Vector3[4];
+    public void FollowOpening(RectTransform opening)
+    {
+        fittedOpening = opening;
+        RefreshFrame();
+    }
+
+    private void FitOpening(float unit, float corner, float thickness)
+    {
+        if (!fittedOpening || !framedTarget || !framedTarget.parent) return;
+        fittedOpening.GetWorldCorners(openingCorners);
+        var parent = (RectTransform)framedTarget.parent;
+        Vector2 lo = parent.InverseTransformPoint(openingCorners[0]);
+        Vector2 hi = parent.InverseTransformPoint(openingCorners[2]);
+        float inset = (corner + thickness) * .5f * unit;
+        framedTarget.anchorMin = framedTarget.anchorMax = framedTarget.pivot = Vector2.zero;
+        framedTarget.anchoredPosition = lo - parent.rect.min - Vector2.one * inset;
+        framedTarget.sizeDelta = hi - lo + Vector2.one * (2 * inset);
+    }
+
     private void RefreshNativePieces()
     {
         float unit = dungeonPhysicalPixels ? DungeonPixelLabBattleArt.Unit(GetComponentInParent<Canvas>()) : GetReferencePixelsPerSpritePixel(topLeftCorner.GetComponent<Image>().sprite);
         lastPhysicalUnit=unit;
-        float w = Mathf.Round(framedTarget.rect.width / unit), h = Mathf.Round(framedTarget.rect.height / unit);
         float c = topLeftCorner.GetComponent<Image>().sprite.rect.width;
         float t = topEdge.GetComponent<Image>().sprite.rect.height;
+        FitOpening(unit, c, t);
+        float w = Mathf.Round(framedTarget.rect.width / unit), h = Mathf.Round(framedTarget.rect.height / unit);
         // Never squash corners to satisfy an impossible size. The parent owns its
         // minimum size; hide the frame only while its layout has no usable bounds.
         bool fits = w >= 2 * c && h >= 2 * c;
@@ -147,7 +169,7 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
             return;
         }
 
-        if ((dungeonPhysicalPixels && !Mathf.Approximately(lastPhysicalUnit,DungeonPixelLabBattleArt.Unit(GetComponentInParent<Canvas>()))) || !Approximately(
+        if (fittedOpening || (dungeonPhysicalPixels && !Mathf.Approximately(lastPhysicalUnit,DungeonPixelLabBattleArt.Unit(GetComponentInParent<Canvas>()))) || !Approximately(
                 framedTarget.rect.size,
                 lastTargetSize
             ))
@@ -407,7 +429,7 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
             Mathf.Max(
                 0f,
                 framedTarget.rect.height -
-                cornerSize * 2f
+                Mathf.Min(cornerSize, framedTarget.rect.height < cornerSize * 2 ? thickness : cornerSize) * 2f
             );
 
         edge.sizeDelta =

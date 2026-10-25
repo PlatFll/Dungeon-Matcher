@@ -1,0 +1,55 @@
+{
+  "modules": [
+    {
+      "name": "Mudstone_A",
+      "dimensions": [
+        40,
+        16
+      ],
+      "colors": 8,
+      "alpha": [
+        255
+      ],
+      "sha256": "3e7891365cc2c12ee681ff7c7c056aad47a7bb04e263844dacc48f12dc481d97"
+    },
+    {
+      "name": "Mudstone_B",
+      "dimensions": [
+        40,
+        16
+      ],
+      "colors": 7,
+      "alpha": [
+        255
+      ],
+      "sha256": "0b73c88d1ada618631ef8fa329b133691289a8378590994dfc8550628549c38d"
+    },
+    {
+      "name": "Mudstone_C",
+      "dimensions": [
+        40,
+        16
+      ],
+      "colors": 8,
+      "alpha": [
+        255
+      ],
+      "sha256": "8b57498411f086c503275f6aba50dca02bb9426541f6db2e6823096e1373d7ee"
+    }
+  ],
+  "changed_pixel_bounds": [
+    0,
+    448,
+    720,
+    480
+  ],
+  "unchanged_existing_files": 6697,
+  "preserved_image_bindings": 294,
+  "preserved_foreground_pixels_within_band": 1751,
+  "baseline_matches_previous": true,
+  "all_pixels_outside_separator_unchanged": true,
+  "exact_2x_4x_rendering": true,
+  "gap_free_bottom_rows": true,
+  "unity_review_test": "Passed",
+  "status": "Stage 1 candidate; awaiting user review. No production integration or merge."
+}

@@ -1,0 +1,177 @@
+{
+  "assets": [
+    {
+      "name": "Board_Corner_BL",
+      "size": [
+        23,
+        23
+      ],
+      "opaque_colors": 5,
+      "alpha": "binary",
+      "bounds": [
+        6,
+        0,
+        23,
+        17
+      ],
+      "sha256": "0179030a3ee087041c153aedc67bd1f97a24850893865aec3409e924797063f8",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Board_Corner_BR",
+      "size": [
+        23,
+        23
+      ],
+      "opaque_colors": 4,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        0,
+        17,
+        17
+      ],
+      "sha256": "832b230f1f82b24254c94e1f0c55e6478f1b573039bbcf25a9123972ffd5bc52",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Board_Corner_TL",
+      "size": [
+        23,
+        23
+      ],
+      "opaque_colors": 5,
+      "alpha": "binary",
+      "bounds": [
+        6,
+        6,
+        23,
+        23
+      ],
+      "sha256": "80243f7d1e3e72bb94b54df6ba8d9d426f3acb087d5a1452a4094dfcd3cc4bac",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Board_Corner_TR",
+      "size": [
+        23,
+        23
+      ],
+      "opaque_colors": 5,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        6,
+        17,
+        23
+      ],
+      "sha256": "f019d9fa5b86c12b301b454ba5c51c91e70546fcaff4bbfe85c019b0bd1bf3f9",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Board_Foliage_LR",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 4,
+      "alpha": "binary",
+      "bounds": [
+        8,
+        15,
+        60,
+        59
+      ],
+      "sha256": "3aa6c6fad642fe66fb80a40a2da6a70481e51d9137a0175b28736975004aee7f",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Board_Foliage_UL",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 4,
+      "alpha": "binary",
+      "bounds": [
+        4,
+        5,
+        56,
+        49
+      ],
+      "sha256": "02b9de0b587a55e148af9f913bf5dc1476d9b143a680797c4b945a8932ecb939",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Board_Rail_Bottom",
+      "size": [
+        32,
+        11
+      ],
+      "opaque_colors": 4,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        0,
+        32,
+        11
+      ],
+      "sha256": "fca2da62ccf8cc1a14c639c1182c7ce3c7160964b0359d31cc9a462f53668a83",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Board_Rail_Left",
+      "size": [
+        11,
+        32
+      ],
+      "opaque_colors": 5,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        0,
+        11,
+        32
+      ],
+      "sha256": "c8eae34170bf19240893e7942caa35d435f2f2fe866513d14166dc418ed8561e",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Board_Rail_Right",
+      "size": [
+        11,
+        32
+      ],
+      "opaque_colors": 4,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        0,
+        11,
+        32
+      ],
+      "sha256": "ddc28ddecb98a4d79eb49bbff329dea91b78ad3f95e8b04dec03dcec8cce37a1",
+      "libresprite_reopen_exact": true
+    },
+    {
+      "name": "Board_Rail_Top",
+      "size": [
+        32,
+        11
+      ],
+      "opaque_colors": 5,
+      "alpha": "binary",
+      "bounds": [
+        0,
+        0,
+        32,
+        11
+      ],
+      "sha256": "bbe807e20c68036b4e0fa1035ab8f29ac4df6ddb2ef0be5397c7fc7688e822d1",
+      "libresprite_reopen_exact": true
+    }
+  ],
+  "material_colors_total": 8,
+  "exact_corner_ports": 8,
+  "repeat_endpoints_match": true
+}

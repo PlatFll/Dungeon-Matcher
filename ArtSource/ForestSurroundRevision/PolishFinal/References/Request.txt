@@ -1,0 +1,244 @@
+Use the current Magical Forest zone implementation as the base and perform a focused art revision in stages.
+
+REFERENCE IMAGES
+- Image A = current implementation with my hand-drawn annotations
+- Image B = target mockup for the lower-area richness / integration / magical forest density
+
+OVERALL GOAL
+Keep the current forest zone foundation, especially the parts that already look good, but revise the remaining weak areas so the lower half of the scene feels integrated, polished, and alive.
+
+IMPORTANT
+You may use any PixelLab tools and spend as many generations as needed.
+Use PixelLab for generation/variation, LibreSprite for cleanup/pixel corrections, and Unity for assembly/validation.
+Do this in stages and stop after each stage for review screenshots unless the stage is obviously successful and directly continues into the next one.
+
+KEEP / LOCK
+Preserve as much of the good current work as possible:
+- Keep the general top HUD direction and composition
+- Keep the good forest atmosphere
+- Keep the board placement and overall layout
+- Keep the bottom HUD center structure and shared UI language
+- Keep approved icons/buttons unless a tiny integration adjustment is needed
+- Do NOT redesign the whole zone from scratch
+
+MAIN CHANGE REQUESTS
+
+1) TOP/BOTTOM SEPARATOR REWORK
+The horizontal separator between the top battle area and the board area currently feels weak.
+I want it redesigned to be more blocky and tile-like:
+- use big chunky blocks
+- either stylized mudstone blocks or stylized gray stone blocks
+- clearer tile rhythm
+- chunky readable shapes
+- more like a proper structural divider, less like a thin messy strip
+- it should feel intentional and decorative, not accidental
+
+2) FIX THE RED-CIRCLED ROOT/BRANCH CONNECTION PROBLEM
+The lower side roots/branches currently look disconnected and plastered on top of one another.
+That is bad and must be fixed.
+The side growth must:
+- feel like one connected asset system
+- have natural flow
+- connect roots and branches believably
+- not look pasted in separate chunks
+- have better silhouette continuity
+- feel like they are wrapping around / emerging from the environment
+
+3) FIX THE BLUE-CIRCLED MUSHROOM / GREENERY PLASTERED-ON LOOK
+The mushrooms and greenery on/near the rocks currently look like separate stickers placed on top.
+That must be fixed.
+They should:
+- feel embedded into the rock/root asset
+- grow from cracks, soil pockets, root bases, or mossy edges
+- have believable attachment points
+- read as part of the asset, not a layer floating on top
+
+4) ENRICH THE LOWER LEFT + LOWER RIGHT AREAS
+Add more visual richness around the rocks at the bottom left and bottom right, closer to the mockup:
+- thicker roots
+- more connected branches
+- more foliage mass
+- more layered plant life
+- more flower color variety
+- more mushroom variety
+- more decorative forest life
+But do this with discipline:
+- do not clutter the whole scene
+- do not overwhelm the gameplay area
+- keep readable silhouettes
+- keep the board and HUD clean
+
+5) ADD MORE WISPS / FLOATING SPIRITS
+Add more magical forest life around:
+- the board side areas
+- the lower HUD area
+- some around the mid-lower screen
+Like the mockup:
+- small magical wisps / floating spirits
+- blinking in and out or gently hovering if animated
+- subtle glow
+- placed tastefully, not spammed
+- enough to make the zone feel enchanted
+
+STYLE TARGET
+Match the target mockup’s appeal while staying inside our Dungeon Matcher style:
+- crisp pixel art
+- readable shapes
+- strong silhouette design
+- integrated decorative storytelling
+- magical enchanted forest mood
+- rooted / living / overgrown feel
+- cleaner integration than the current version
+- not painterly, not blurry
+- keep it game-ready and modular where possible
+
+DO THIS IN STAGES
+
+STAGE 1 — SEPARATOR REWORK
+Goal:
+Replace/refine the divider between the top HUD battle area and the board area.
+
+Requirements:
+- Build a cleaner stylized structural strip
+- Use large blocky stone/mudstone tiles
+- Make it feel like a constructed boundary
+- Maintain compatibility with the board frame
+- Show 2-3 viable versions if needed, then choose the best one
+
+Validation:
+- must look chunkier
+- must be tile-like
+- must be more readable than current
+- must not break layout
+
+Deliverables:
+- asset crops for separator pieces
+- assembled Unity screenshot
+
+STAGE 2 — SIDE ROOT / BRANCH REBUILD
+Goal:
+Fix the disconnected root/branch systems on both lower sides.
+
+Requirements:
+- rebuild the lower-left and lower-right side growths as coherent connected forms
+- roots and branches should visually connect
+- avoid pasted-on fragments
+- create thicker, cleaner root flow
+- give them natural wrapping around the board-side surroundings
+
+Validation:
+- no disconnected pasted-on look
+- better silhouette continuity
+- matches enchanted forest mood
+
+Deliverables:
+- left-side root cluster asset(s)
+- right-side root cluster asset(s)
+- before/after screenshot
+
+STAGE 3 — ROCK + MUSHROOM + FOLIAGE INTEGRATION
+Goal:
+Fix the rocks so all attached life feels embedded, not pasted on.
+
+Requirements:
+- revise the rock corner formations
+- integrate mushrooms into the asset itself
+- integrate greenery / moss / flowers into the asset itself
+- use attachment logic: roots, cracks, ledges, moss beds, crevices
+- add more flower colors and mushroom color variety
+- keep the asset readable and clean
+
+Validation:
+- mushrooms must look attached and believable
+- foliage must feel part of the rock/root asset
+- no sticker-on-top feel
+
+Deliverables:
+- revised left rock cluster
+- revised right rock cluster
+- close-up previews at native resolution
+
+STAGE 4 — BOTTOM AREA ENRICHMENT
+Goal:
+Push the lower corners and lower HUD surroundings closer to the mockup feel.
+
+Requirements:
+- add more foliage volume around the bottom sides
+- add thicker branch mass
+- add extra small environmental accents
+- keep the central HUD readable
+- enrich the area but do not overcrowd it
+
+Validation:
+- lower scene feels less empty
+- stronger magical forest identity
+- better framing for the bottom HUD
+
+Deliverables:
+- full-scene screenshot
+- notes on what was added and why
+
+STAGE 5 — WISPS / MAGICAL ACCENTS
+Goal:
+Add magical life to the board surroundings and lower area.
+
+Requirements:
+- add more wisps / floating spirits
+- distribute them tastefully around the board edges and bottom
+- some can be near roots / rocks / foliage
+- they should support mood, not distract gameplay
+- if practical, prepare them as separate assets for future animation
+
+Validation:
+- scene feels more enchanted
+- no clutter
+- board readability remains intact
+
+Deliverables:
+- full-scene screenshot
+- native asset previews for wisps
+- if animated, show short preview or frame strip
+
+STAGE 6 — FINAL POLISH + INTEGRATION PASS
+Goal:
+Unify all edited pieces so the final result feels cohesive.
+
+Checklist:
+- separator feels intentional and blocky
+- roots are connected and coherent
+- mushrooms/greenery are integrated into rocks
+- lower corners are richer and more alive
+- wisps add magical atmosphere
+- nothing looks blurry or pasted on
+- no broken pixels
+- no awkward tangents
+- no floating disconnected details
+- maintain clean gameplay readability
+
+WORKFLOW RULES
+- Use PixelLab aggressively where it helps generation and variation
+- Use LibreSprite to clean, simplify, and sharpen
+- Use Unity after each stage to validate in-context
+- If an attempt looks pasted, blurry, or incoherent, redo it
+- Prioritize asset integrity over speed
+- Do not move on from a failed stage without repairing it
+
+REVIEW / STOP POINTS
+After each stage, show:
+1. Before vs after screenshot
+2. Close-up of the changed asset area
+3. What changed
+4. PixelLab generations spent so far
+
+If a stage clearly still looks weak, iterate again before asking for approval.
+
+SUCCESS CONDITION
+The result should keep the strong parts of the current forest screen while making the lower half feel:
+- more integrated
+- more rooted
+- more magical
+- more alive
+- more like the target mockup
+- less pasted together
+
+Start with STAGE 1 only, complete it, show the result, and wait for my review before proceeding unless the stage flow requires an obvious quick follow-up.

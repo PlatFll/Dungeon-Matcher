@@ -1,0 +1,8 @@
+{
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "result": "Passed",
+  "exit_code": 0,
+  "unity": "6000.3.19f1",
+  "log_sha256": "64cf1e2e4e8217be0fed58d91d93a07779fa48d75ab5804548bb37182a92e2a4",
+  "test_source_sha256": "4eeb7c01f2864638d9b301521408c82ef909425e38968cc6d164c642b215977b"
+}

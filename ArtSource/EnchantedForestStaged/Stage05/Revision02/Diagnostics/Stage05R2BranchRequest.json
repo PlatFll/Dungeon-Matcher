@@ -1,0 +1,35 @@
+{
+  "request": {
+    "description": "RICH THICK LEAFY FOREST SIDE ARCHITECTURE, one continuous vertical modular overlay sprite, 64x192 native pixels, transparent background. Match the massive braided branches and dense pointed foliage outside the game board in the cropped reference. Two substantial gnarled oak boughs, each 12-18 native pixels THICK, wind diagonally across one another from bottom to top in broad S curves, with large moss pads and many overlapping connected leaf clusters. Foliage fills both outer sides and follows branch crossings, varied broad pointed leaves, layered dark green shadow masses beneath lighter olive leaves. Silhouette occupies roughly 80 percent of the width and height; visibly dense and weighty with generous branch thickness. Rich woodland architecture supporting an enchanted shrine, mature wood and abundant life, NOT a thin twig, sapling, wire, rope, lonely vine, bare stick, or sparse isolated leaves. Lower section includes a BIG irregular mossy blue-gray rock, about 35 pixels wide, embedded among thick roots. A few understated small warm mushroom caps and tiny pale flowers are secondary. Crisp dark contour, clean connected pixel clusters, beautiful clear top-left light, 3 meaningful shading levels per material, controlled texture only, NO smooth gradients, blur, dithering or antialiasing. Wood warm subdued brown with broad ridges, olive/moss foliage, cool gray teal stone. All assets complete within the canvas with 2 transparent pixels of padding. No rectangular frame, no ground strip, no full scene, no gems, UI, letters, symbols, characters or faces. This is a dense reusable FLANKING MASS, not an icon. Preserve the material richness and silhouette weight of the focused reference crop. Rattlebones sets native crispness, not anatomy or color palette.",
+    "width": 64,
+    "height": 192,
+    "max_colors": 26,
+    "no_background": true,
+    "seed": 24100521,
+    "style_image_url": "upload:e26a7431-416a-4522-9f75-eef110a00945",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:ccad42aa-fac2-4989-b3f9-e7688f2da2d6",
+        "usage": "PRIMARY SHAPE AUTHORITY: thick braided branching wood, dense large connected pointed leaves and substantial mossy rock anchors. Match their weight and dense layered presence. Do not produce thin sparse stems."
+      },
+      {
+        "url": "upload:864c17e6-9eeb-4cde-9cb5-5e3295ae375e",
+        "usage": "Full woodland art direction context. Only side vegetation / roots / rocks are relevant; do not include or modify game UI."
+      }
+    ]
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 9e5ba07b-6dc0-463d-8f83-cb2f66e71ab6\njob_id: 9e5ba07b-6dc0-463d-8f83-cb2f66e71ab6\nmodel: pro\ndescription: RICH THICK LEAFY FOREST SIDE ARCHITECTURE, one continuous vertical modular overlay sprite, 64x192 native pixels, transparent background. Match the massive braided branches and dense pointed foliage outside the game board in the cropped reference. Two substantial gnarled oak boughs, each 12-18 native pixels THICK, wind diagonally across one another from bottom to top in broad S curves, with large moss pads and many overlapping connected leaf clusters. Foliage fills both outer sides and follows branch crossings, varied broad pointed leaves, layered dark green shadow masses beneath lighter olive leaves. Silhouette occupies roughly 80 percent of the width and height; visibly dense and weighty with generous branch thickness. Rich woodland architecture supporting an enchanted shrine, mature wood and abundant life, NOT a thin twig, sapling, wire, rope, lonely vine, bare stick, or sparse isolated leaves. Lower section includes a BIG irregular mossy blue-gray rock, about 35 pixels wide, embedded among thick roots. A few understated small warm mushroom caps and tiny pale flowers are secondary. Crisp dark contour, clean connected pixel clusters, beautiful clear top-left light, 3 meaningful shading levels per material, controlled texture only, NO smooth gradients, blur, dithering or antialiasing. Wood warm subdued brown with broad ridges, olive/moss foliage, cool gray teal stone. All assets complete within the canvas with 2 transparent pixels of padding. No rectangular frame, no ground strip, no full scene, no gems, UI, letters, symbols, characters or faces. This is a dense reusable FLANKING MASS, not an icon. Preserve the material richness and silhouette weight of the focused reference crop. Rattlebones sets native crispness, not anatomy or color palette.\nsize: 64x192px\ntransparent: True\ncandidates: 1\nreferences: 2\nstyle_image: yes (outline, detail, shading)\nmax colours: 26 per image\nseed: 24100521\nasset_id: 55adc535-13c2-598d-b129-4139d7d941c3\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"9e5ba07b-6dc0-463d-8f83-cb2f66e71ab6\")"
+      }
+    ],
+    "isError": false
+  }
+}

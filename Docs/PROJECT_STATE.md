@@ -20,6 +20,121 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+
+## Living Forest motion copy (2026-10-25, review only)
+
+The user requested non-destructive motion on the latest forest scene. A separate
+`ArtPreview_ForestSurround_Living` scene removes the marked right-corner sprig,
+adds occasional native-pixel leaf gusts, varied spirit sizes/fade/drift rhythms,
+moving upper lights and a subtle water-only waterfall shimmer. All 6,746 prior
+source/art/scene/script/resource/settings files remain unchanged. Five PixelLab
+generations produced three selected wisp studies; LibreSprite sources and exact
+exports are retained. Unity compilation and the copied-scene motion test pass:
+288 captures over 24 seconds, exact pixel doubling at 720×1360 / 1440×2720,
+protected board/portrait/HUD pixels unchanged, pause/reduced motion stable.
+This is an editor art preview, not production gameplay integration or device
+testing. [Motion review and validation](../ArtSource/ForestSurroundRevision/LivingForest/README.md).
+The current correction removes both long comet placements on a further copy,
+`ArtPreview_ForestSurround_Waterfall`, and replaces the barely visible shimmer
+with a 24-pose downward water-flow cycle. Its LibreSprite source, 96 matching
+before/after Unity frame pairs and exact scope/hash checks pass. All 6,982 prior
+files are unchanged; zero new generations used. [Current waterfall review](../ArtSource/ForestSurroundRevision/WaterfallCorrection/README.md).
+The latest copied review, `ArtPreview_ForestSurround_Fireflies`, adds eight warm
+fireflies around the board and lower roots using the unchanged top-HUD sprite.
+All 19 previous motion tracks and 7,102 baseline files remain intact. Unity
+compilation, 96 matched-time render pairs, UI clearance, Reduced Motion and
+exact pixel doubling pass. Zero generations used. [Latest firefly review](../ArtSource/ForestSurroundRevision/LowerFireflies/README.md).
+The user approved merging this complete Forest asset/review stack into main on
+2026-10-25 through PR #209, including dependencies from PRs #206–208. Final Unity
+compilation passed and the existing frame/motion evidence still matches the
+current sources. The new Forest artwork and motion remain review-scene assets;
+the playable Forest zone has not been rebound to this new library. Dungeon's
+latest hybrid art is already integrated and merged through PR #205.
+
+## Forest surround polish — Stages 3–6 complete (2026-10-24, final review)
+
+The user approved continuing through every remaining polish stage in one run.
+Nine new native PixelLab/LibreSprite modules finish the lower corner growth,
+root sweeps, leafy hanging vines and four separate spirit-light placements.
+Each side remains one connected stone/root formation; mushrooms, moss and small
+flowers grow from its ledges and root pockets. The new branches leave a clear
+margin around resonance text. The previously approved separator and upper
+root joins are retained. Earlier sources and review scenes remain intact.
+
+Unity compilation and the final review test passed at 720×1360 and 1440×2720,
+with exact pixel doubling. The top battle/HUD, separator, portrait, board/gems/
+frame and bottom controls/text remain pixel-identical. All 303 prior Image
+bindings/rectangles and 6,721 existing art/scene/script/resource/settings files
+are unchanged. The separate scene changes only two superseded lower-layer active
+flags and inserts three dressing layers; no prior scene objects are removed.
+All nine LibreSprite sources reopen to exact PNGs with binary alpha, canvas
+clearance and connected silhouettes. Twelve actual Unity samples verify the
+six-second spirit-light loop, one-pixel hover and static reduced-motion state.
+
+Stages 3–6 used 11 subscription generations (688.20 → 677.20), zero USD credits.
+The latest six-stage polish pass totals 20 debited, including Stage 1's documented
+cancelled-job debit. Selected and rejected raw studies, native sources, request
+receipts and validation evidence are included in the final report.
+
+Previous still-polish checkpoint: [report and Unity gallery](../ArtSource/ForestSurroundRevision/PolishFinal/README.md).
+[Separator history](../ArtSource/ForestSurroundRevision/PolishStage01/README.md),
+[root-join history](../ArtSource/ForestSurroundRevision/PolishStage02/README.md), and
+[earlier unified corners](../ArtSource/ForestSurroundRevision/UnifiedCorners/README.md)
+remain available. Its source scene is `ArtPreview_ForestSurround_FinalPolish`;
+the Living Forest copy above is the current motion-review candidate.
+
+Draft PR #209 remains on the dedicated revision branch. This is an art-review
+scene with static approved actors/UI, excluded from builds; the motion helper
+is editor-only. Production gameplay integration, Android and real-device tests
+are not claimed. All six polish stages are finished. Stop for final visual review;
+do not merge without the user's explicit instruction.
+
+## Forest surround revision — Stage 1 board-side roots (2026-10-24, review only)
+
+The user locked the current upper forest/HUD and requested root-dominant board
+surrounds, with lower-side and magical accent work deferred to separate approvals.
+`feature/forest-zone-side-surround-revision` branches from PR #208 at `783e86bf`.
+A separate art-only scene replaces eight board-side bough instances with four
+placements of three native PixelLab/LibreSprite root assets. Broad exposed bark,
+open curves and sparse new leaves replace the bush-wall layer; approved frame ivy
+and existing lower boughs/rocks remain. One PixelLab call cost 10 generations.
+Unity compilation and review tests passed at 720×1360 and 1440×2720. Top HUD/battle,
+board/gems/frame, entire bottom region, shared geometry and 296 existing image
+bindings/rectangles are exact. All 1,680 protected source files are unchanged.
+See [Stage 1 report](../ArtSource/ForestSurroundRevision/Stage01/README.md).
+Stage 1 was carried forward into the later polish pass; the final Stages 3–6
+checkpoints above own the current review gate. Production integration remains
+unapproved; the spirit animation is confined to the isolated review scene.
+
+## Enchanted Forest staged pack — Stage 5 revision 02 (2026-10-24, review only)
+
+Stages 1–4 are user-approved. The first Stage 5 dressing was rejected: thin sparse
+branches and undersized stones. Revision 02 replaces it in a separate art-review
+scene with four native bough modules and four large mossy boulders, sixteen layered
+placements behind the approved board/frame/HUD. PixelLab used the user's current
+reference and close crops plus Rattlebones; 30 generations for this correction.
+LibreSprite provides exact native cleanup and eight editable sources. No stretching
+or warping; the rejected first pass remains history rather than approved art.
+Unity compilation and revision tests passed at 720×1360 and 1440×2720. Approved
+frame/ivy pixels, top battle area, board tiles/gems, HUD controls/text and all 280
+existing image bindings/rectangles remain exact. Board is still 512×512 with
+64×64 cells; frame target 580×580; portrait 98×220 native. No shared runtime edits.
+See [Stage 5 revision](../ArtSource/EnchantedForestStaged/Stage05/Revision02/README.md).
+The separate scene is excluded from builds. Production, gameplay and other zones
+are unchanged; no combat/device test is claimed. Draft PR #208 remains stacked
+on #207. Stop for revision approval before Stage 6; do not merge.
+
+## Shared zone geometry and Forest frame review (2026-10-24, unmerged PR #207)
+
+The requested Forest rim correction follows the unchanged 512px tile opening.
+Existing gameplay layout owners now use Dungeon board sizing and one portrait
+registration across all five zones. Zone decoration no longer shrinks the grid;
+legacy lower HUD enclosures retain their existing size. Approved image assets
+and previous review scenes are preserved. The new Forest artwork is still an
+art-only review; production Forest art integration and merge remain unapproved.
+See [the frame-fit review](../ArtSource/ForestReworkV2/FrameFit/README.md) for
+actual Unity previews, cross-zone measurements and verification limits.
+
 ## Hybrid dungeon integration (2026-10-22, approved for merge in PR #205)
 
 The user approved the final playable Dungeon visuals, aligned corner masonry and

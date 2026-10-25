@@ -1,0 +1,96 @@
+{
+  "module_count": 4,
+  "opaque_palette_count": 13,
+  "foliage_opaque_pixels_before": 1381,
+  "foliage_opaque_pixels_after": 6761,
+  "new_generations": 0,
+  "native_reopened_identically": true,
+  "all_alpha_binary": true,
+  "all_module_bounds_padded": true,
+  "unchanged_tracked_files": 24256,
+  "protected_sprite_refs_and_rectangles_unchanged": true,
+  "rattlebones_opaque_pixels_unchanged": true,
+  "mask_probe_within_unchanged_opening": true,
+  "integer_capture_exact": true,
+  "unity_test": "Passed",
+  "unity_compile": "Passed",
+  "compile_log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-9deae311-c115-40f4-b7c6-31a24445d0b9.log",
+  "modules": [
+    {
+      "name": "Ivy_CrownLeft",
+      "dimensions": [
+        68,
+        29
+      ],
+      "occupied_bounds": [
+        3,
+        2,
+        57,
+        27
+      ],
+      "colors": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "9c84ac512d71793a11e05140743473b4df6b2772486e1ca57c40d2906df9a8cd"
+    },
+    {
+      "name": "Ivy_CrownRight",
+      "dimensions": [
+        68,
+        75
+      ],
+      "occupied_bounds": [
+        9,
+        1,
+        62,
+        72
+      ],
+      "colors": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "cb1befb583f2848419efd5da43a96923f88d52a1fbdfadbab4e288a877448bc3"
+    },
+    {
+      "name": "Ivy_LeftSwag",
+      "dimensions": [
+        44,
+        202
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        39,
+        200
+      ],
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "93ca5f33c951ac7d8063755c46c059952aba77510c0d140646d38d8d2125d430"
+    },
+    {
+      "name": "Ivy_RightSwag",
+      "dimensions": [
+        68,
+        169
+      ],
+      "occupied_bounds": [
+        6,
+        2,
+        66,
+        167
+      ],
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "e3840c73158af76390e38da4f8c55c122accccdc66374d43b5aba05a52dec87a"
+    }
+  ]
+}

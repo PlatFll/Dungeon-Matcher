@@ -1,0 +1,11 @@
+{
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "result": "Passed",
+  "exit_code": 0,
+  "unity": "6000.3.19f1",
+  "log_sha256": "20fcbed4f8306c76362a46537f983d5dc24a7f8fea5480fb1aeef967096ccdaa",
+  "source_hashes": {
+    "Assets/_Game/Scripts/Editor/LivingForestReviewTests.cs": "bde6089ad3f2759acfb70450dfba5dc0e83edb294b11bb3f2ce25d21853936b5",
+    "Assets/_Game/Scripts/ArtPreview/LivingForestReviewMotion.cs": "9da614ceaa7e76ad977cff7a20626e36f6e78ecc90d5a3a02cc1d25b7141f2a7"
+  }
+}

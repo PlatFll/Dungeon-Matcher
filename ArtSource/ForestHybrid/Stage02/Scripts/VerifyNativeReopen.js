@@ -1,0 +1,2 @@
+var names=["Portrait_Corner_TL", "Portrait_Corner_TR", "Portrait_Corner_BL", "Portrait_Corner_BR", "Portrait_Rail_Top", "Portrait_Rail_Bottom", "Portrait_Rail_Left", "Portrait_Rail_Right", "Portrait_Clamp", "Portrait_Inset", "Portrait_Leaves_Upper", "Portrait_Leaves_Lower", "Portrait_AntlerPennant", "PortraitFrame_SourceCleanup"];
+names.forEach(function(n){var d=app.open('ArtSource/ForestHybrid/Stage02/Native/'+n+'.aseprite');d.sprite.saveAs('.utmp/forest-stage02/reopened/'+n+'.png',true);});

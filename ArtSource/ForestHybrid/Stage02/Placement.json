@@ -1,0 +1,36 @@
+{
+  "width": 470,
+  "height": 288,
+  "portrait": [
+    8,
+    24,
+    135,
+    258
+  ],
+  "inset": 12,
+  "corner": 15,
+  "rail": 9,
+  "connector": 7,
+  "standing_y": 258,
+  "portrait_contents": {
+    "pennant": [
+      53,
+      15
+    ],
+    "gem": [
+      51,
+      78
+    ],
+    "rattlebones": [
+      35,
+      124
+    ],
+    "hp": [
+      15,
+      211,
+      104,
+      24
+    ]
+  },
+  "notes": "Matches existing Forest reference portrait rect (8,24,135,258). Reassemble Stage 1 repeats at native scale to the current 470x288 top HUD reference. No original asset or layout file changed."
+}

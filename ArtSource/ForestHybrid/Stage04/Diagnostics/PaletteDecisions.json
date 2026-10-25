@@ -1,0 +1,48 @@
+{
+  "material_maps": {
+    "Lantern_Hanging": {
+      "6b3e35": "414035",
+      "b3915f": "8a6845",
+      "81905b": "486a45",
+      "fff0b0": "f4c86a"
+    },
+    "Mushroom_Cluster": {
+      "fff0b0": "d8bb86",
+      "d58c3e": "a95d43",
+      "81905b": "486a45"
+    },
+    "Rune_Plaque": {
+      "6b3e35": "69523a",
+      "a95d43": "69523a",
+      "b3915f": "8a6845",
+      "63a69d": "69523a"
+    }
+  },
+  "padding": 2,
+  "no_resampling": true,
+  "manual_changes": [
+    "Lantern cream limited to tiny center light",
+    "Mushroom isolated foliage flecks consolidated",
+    "Two rune marks replaced by one dim connected spiral"
+  ],
+  "source_crops": {
+    "Lantern_Hanging": [
+      9,
+      14,
+      39,
+      76
+    ],
+    "Mushroom_Cluster": [
+      48,
+      14,
+      79,
+      45
+    ],
+    "Rune_Plaque": [
+      53,
+      50,
+      73,
+      85
+    ]
+  }
+}

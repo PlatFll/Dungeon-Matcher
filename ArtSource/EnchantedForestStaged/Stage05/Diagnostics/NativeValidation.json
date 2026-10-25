@@ -1,0 +1,110 @@
+{
+  "modules": [
+    {
+      "name": "Leaf_Sprig_Left",
+      "dimensions": [
+        32,
+        34
+      ],
+      "bounds": [
+        2,
+        2,
+        30,
+        32
+      ],
+      "opaque_colors": 8,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "d6619b6aa22fd172daa810f318b77806070c9e56132421ed69376067b7cd85fd"
+    },
+    {
+      "name": "Leaf_Sprig_Right",
+      "dimensions": [
+        33,
+        35
+      ],
+      "bounds": [
+        2,
+        2,
+        31,
+        33
+      ],
+      "opaque_colors": 9,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "adfa1e2b8b45e914f0e2486c62196b006e7588be29535bece244304b514fe2ab"
+    },
+    {
+      "name": "Mushroom_Pair",
+      "dimensions": [
+        50,
+        45
+      ],
+      "bounds": [
+        2,
+        2,
+        48,
+        43
+      ],
+      "opaque_colors": 8,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "4d67901b4c3bd55931a2acfcb4b889ca4f37b482b13fe2c1f87f15a362e86c5f"
+    },
+    {
+      "name": "Mushroom_Tall",
+      "dimensions": [
+        40,
+        43
+      ],
+      "bounds": [
+        2,
+        2,
+        38,
+        41
+      ],
+      "opaque_colors": 8,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "a064fe381d956bff6c7f36bafb81bfee4a6a83a18e7569e23218b1977a591b54"
+    },
+    {
+      "name": "Root_Stone_Left",
+      "dimensions": [
+        48,
+        148
+      ],
+      "bounds": [
+        3,
+        6,
+        44,
+        144
+      ],
+      "opaque_colors": 16,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "d71d24c2a23ed84efdbc5a4b70b6ff8dcf34bf2f1fbe0d9e3fae7a6920159232"
+    },
+    {
+      "name": "Root_Stone_Right",
+      "dimensions": [
+        48,
+        148
+      ],
+      "bounds": [
+        5,
+        5,
+        44,
+        144
+      ],
+      "opaque_colors": 17,
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "bb416d7cdfed0e5bc3b58bef8a6de7a7e59e8398f90950581385b91048b58eba"
+    }
+  ],
+  "overlay_instances": 8,
+  "binary_alpha": true,
+  "padded_canvas": true,
+  "overlap_board_battle_hud": false
+}

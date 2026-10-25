@@ -1,0 +1,1 @@
+try{["Root_Stone_Left", "Root_Stone_Right", "Leaf_Sprig_Left", "Leaf_Sprig_Right", "Mushroom_Pair", "Mushroom_Tall"].forEach(function(n){app.open('ArtSource/EnchantedForestStaged/Stage05/Native/'+n+'.aseprite').sprite.saveAs('.utmp/enchanted-stage05/reopened/'+n+'.png',true);});console.log('STAGE05_NATIVE_COMPLETE');}catch(e){console.log('FAILED '+e);}app.command.Exit();

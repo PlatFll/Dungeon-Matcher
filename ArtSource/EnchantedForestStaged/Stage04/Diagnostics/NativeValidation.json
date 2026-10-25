@@ -1,0 +1,244 @@
+{
+  "modules": [
+    {
+      "name": "Board_Rail_Top",
+      "dimensions": [
+        32,
+        11
+      ],
+      "opaque_colors": 5,
+      "bounds": [
+        0,
+        0,
+        32,
+        11
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "4a2bd86ae718f644b9ff6a9afb857326269e1e83b0cb2e5e7a81ea83a446050c"
+    },
+    {
+      "name": "Board_Rail_Left",
+      "dimensions": [
+        11,
+        32
+      ],
+      "opaque_colors": 5,
+      "bounds": [
+        0,
+        0,
+        11,
+        32
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "452b9b06c9dc756b071c593099debc66790b81e568302bde393031f72e6fea84"
+    },
+    {
+      "name": "Board_Rail_Right",
+      "dimensions": [
+        11,
+        32
+      ],
+      "opaque_colors": 4,
+      "bounds": [
+        0,
+        0,
+        11,
+        32
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "ca200c39a73ab76be830eb3307e36788e69a4738bbacf43c1fbbb9ebebccb591"
+    },
+    {
+      "name": "Board_Rail_Bottom",
+      "dimensions": [
+        32,
+        11
+      ],
+      "opaque_colors": 4,
+      "bounds": [
+        0,
+        0,
+        32,
+        11
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "20f43e7999dd2f5eaf37641d06ac38c29cbc02bc9e5374128e5f1deaf687326d"
+    },
+    {
+      "name": "Board_Corner_TL",
+      "dimensions": [
+        23,
+        23
+      ],
+      "opaque_colors": 5,
+      "bounds": [
+        6,
+        6,
+        23,
+        23
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "3102637f8cae4b9e8a2923013dc75d739808ab4ce58df09b596822071f58ad2e"
+    },
+    {
+      "name": "Board_Corner_TR",
+      "dimensions": [
+        23,
+        23
+      ],
+      "opaque_colors": 5,
+      "bounds": [
+        0,
+        6,
+        17,
+        23
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "e0ad5a499bc8d1a478c99b8182e5b8edd496844ab717c03f2ac866697a439303"
+    },
+    {
+      "name": "Board_Corner_BL",
+      "dimensions": [
+        23,
+        23
+      ],
+      "opaque_colors": 5,
+      "bounds": [
+        6,
+        0,
+        23,
+        17
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "2651f94e60bfca8051b2f3c492f91ae73b7007a428f1959345a49fb6d6e54e02"
+    },
+    {
+      "name": "Board_Corner_BR",
+      "dimensions": [
+        23,
+        23
+      ],
+      "opaque_colors": 4,
+      "bounds": [
+        0,
+        0,
+        17,
+        17
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "4584cfcd38b023278673a96866ae4ade7ad5f2954540a123957961c7a96c4783"
+    },
+    {
+      "name": "Board_Ivy_TL",
+      "dimensions": [
+        56,
+        64
+      ],
+      "opaque_colors": 8,
+      "bounds": [
+        5,
+        7,
+        51,
+        62
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "096b49e54e9bc0f460cc70688d02977d28af3d5166f21df3f348d47609ac34aa"
+    },
+    {
+      "name": "Board_Ivy_TR",
+      "dimensions": [
+        56,
+        68
+      ],
+      "opaque_colors": 8,
+      "bounds": [
+        2,
+        7,
+        50,
+        61
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "64db59be60d7d5c57de24e1694c811332cd486f41dda75f70d25bb927c7c369b"
+    },
+    {
+      "name": "Board_Ivy_BL",
+      "dimensions": [
+        60,
+        42
+      ],
+      "opaque_colors": 8,
+      "bounds": [
+        9,
+        2,
+        52,
+        37
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "96af0e2b1fec3ef7d80e0462691d9ee91a708ea6a4b154ae9a662fc14f7b3504"
+    },
+    {
+      "name": "Board_Ivy_BR",
+      "dimensions": [
+        54,
+        42
+      ],
+      "opaque_colors": 8,
+      "bounds": [
+        10,
+        2,
+        45,
+        38
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "63113e74272e2ec793a5b9babac6a767fc541f179d074c3dc023ab3336611be0"
+    },
+    {
+      "name": "Board_Side_Swag",
+      "dimensions": [
+        44,
+        202
+      ],
+      "opaque_colors": 13,
+      "bounds": [
+        2,
+        2,
+        39,
+        200
+      ],
+      "binary_alpha": true,
+      "libresprite_reopen_exact": true,
+      "sha256": "93ca5f33c951ac7d8063755c46c059952aba77510c0d140646d38d8d2125d430"
+    }
+  ],
+  "repeat_endpoint_profiles_exact": true,
+  "all_eight_corner_ports_exact": true,
+  "reused_approved_ivy_exact": true,
+  "opaque_foliage_pixels_over_board": 0,
+  "native_opening": [
+    256,
+    256
+  ],
+  "rendered_opening": [
+    512,
+    512
+  ],
+  "corner_size": 23,
+  "rail_thickness": 11,
+  "frame_inset": 17,
+  "frame_target": [
+    290,
+    290
+  ]
+}

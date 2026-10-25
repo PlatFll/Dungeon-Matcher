@@ -1,0 +1,1835 @@
+{
+    "width": 720,
+    "height": 704,
+    "images": [
+        {
+            "name": "Gem 2,2",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 5,0",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 1,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 480.0,
+                "width": 64.00001525878906,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 5,5",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "TopEdge",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint04/Board_Rail_Top.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 77.99999237060547,
+                "y": 622.0,
+                "width": 564.0,
+                "height": 22.0
+            },
+            "scale": 2.0
+        },
+        {
+            "name": "Cell 6,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 4,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 3,2",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 5,6",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 2,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 2,3",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 3,3",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 1,1",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 480.0,
+                "width": 64.00001525878906,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 7,2",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 0,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 224.0,
+                "width": 63.99999237060547,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 0,0",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 544.0,
+                "width": 63.99999237060547,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 4,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 6,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 1,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 224.0,
+                "width": 64.00001525878906,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 1,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 352.0,
+                "width": 64.00001525878906,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 2,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 4,0",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 3,1",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 6,6",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 7,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 5,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 5,3",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 2,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 7,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 2,7",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 3,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 3,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 6,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 5,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 3,0",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 4,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "TopRightCorner",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint04/Board_Corner_TR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 618.0,
+                "y": 610.0,
+                "width": 46.0,
+                "height": 46.0
+            },
+            "scale": 2.0
+        },
+        {
+            "name": "BottomRightCorner",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint04/Board_Corner_BR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 618.0,
+                "y": 47.999996185302737,
+                "width": 46.0,
+                "height": 45.999996185302737
+            },
+            "scale": 2.0
+        },
+        {
+            "name": "LeftEdge",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint04/Board_Rail_Left.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 67.99998474121094,
+                "y": 70.0,
+                "width": 22.000015258789064,
+                "height": 564.0
+            },
+            "scale": 2.0
+        },
+        {
+            "name": "Cell 6,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 2,1",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 5,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 4,7",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 4,1",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 5,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 5,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 6,5",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 5,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 3,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 4,3",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 3,4",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 7,0",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "TopLeftCorner",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint04/Board_Corner_TL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 55.999996185302737,
+                "y": 610.0,
+                "width": 45.9999885559082,
+                "height": 46.0
+            },
+            "scale": 2.0
+        },
+        {
+            "name": "Cell 4,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 7,6",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 1,4",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 288.0,
+                "width": 64.00001525878906,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 0,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 544.0,
+                "width": 63.99999237060547,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 7,1",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 1,3",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 352.0,
+                "width": 64.00001525878906,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 6,0",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 5,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 2,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "BottomEdge",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint04/Board_Rail_Bottom.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 77.99999237060547,
+                "y": 59.99998474121094,
+                "width": 564.0,
+                "height": 22.0
+            },
+            "scale": 2.0
+        },
+        {
+            "name": "Gem 4,5",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 3,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 1,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 416.0000305175781,
+                "width": 64.00001525878906,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 6,4",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 3,7",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 1,5",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 224.0,
+                "width": 64.00001525878906,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 7,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 7,4",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 1,0",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 544.0,
+                "width": 64.00001525878906,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 0,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 288.0,
+                "width": 63.99999237060547,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 1,7",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 95.99999237060547,
+                "width": 64.00001525878906,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 0,7",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 95.99999237060547,
+                "width": 63.99999237060547,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 7,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 1,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 288.0,
+                "width": 64.00001525878906,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 6,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 6,2",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "BottomLeftCorner",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint04/Board_Corner_BL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 55.999996185302737,
+                "y": 47.999996185302737,
+                "width": 45.9999885559082,
+                "height": 45.999996185302737
+            },
+            "scale": 2.0
+        },
+        {
+            "name": "Cell 2,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 6,1",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 0,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 160.0,
+                "width": 63.99999237060547,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 3,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 2,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 6,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 5,2",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 6,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 4,4",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Lower connected foliage",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint04/Board_Foliage_LR.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 538.0,
+                "y": 51.99999237060547,
+                "width": 128.0,
+                "height": 128.0
+            },
+            "scale": 2.0
+        },
+        {
+            "name": "Cell 3,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 7,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 0,4",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 288.0,
+                "width": 63.99999237060547,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 3,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Existing backing",
+            "path": "Assets/_Game/Art/ForestHybrid/Stage02/Portrait_Inset.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 720.0,
+                "height": 704.0
+            },
+            "scale": 2.0
+        },
+        {
+            "name": "Gem 0,5",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 224.0,
+                "width": 63.99999237060547,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 0,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 480.0,
+                "width": 63.99999237060547,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 5,7",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 0,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 95.99999237060547,
+                "width": 63.99999237060547,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "RightEdge",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint04/Board_Rail_Right.png",
+            "type": "Tiled",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 630.0,
+                "y": 70.0,
+                "width": 22.00006103515625,
+                "height": 564.0
+            },
+            "scale": 2.0
+        },
+        {
+            "name": "Gem 3,6",
+            "path": "Assets/_Game/Art/Gems/Amethyst.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 4,6",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 0,2",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 416.0000305175781,
+                "width": 63.99999237060547,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 1,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 544.0,
+                "width": 64.00001525878906,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 1,6",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 160.0,
+                "width": 64.00001525878906,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 2,5",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 0,3",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 352.0,
+                "width": 63.99999237060547,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 7,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 6,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 2,0",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 0,1",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 480.0,
+                "width": 63.99999237060547,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 1,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 160.0,
+                "width": 64.00001525878906,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 0,6",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 160.0,
+                "width": 63.99999237060547,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 7,3",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 1,2",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 416.0000305175781,
+                "width": 64.00001525878906,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 4,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 4,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 7,1",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 6,7",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 7,7",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 1,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 167.99998474121095,
+                "y": 95.99999237060547,
+                "width": 64.00001525878906,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 3,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 0,2",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 416.0000305175781,
+                "width": 63.99999237060547,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 4,6",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 7,5",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 2,0",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 544.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 2,6",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 160.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 6,3",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 488.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 5,1",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 480.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 3,5",
+            "path": "Assets/_Game/Art/Gems/Topaz.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 4,2",
+            "path": "Assets/_Game/Art/Gems/Ruby.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 416.0000305175781,
+                "width": 64.0,
+                "height": 63.999969482421878
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 7,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 552.0,
+                "y": 352.0,
+                "width": 64.0,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 5,4",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 5,4",
+            "path": "Assets/_Game/Art/Gems/Sapphire (1).png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 424.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 0,3",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 103.99999237060547,
+                "y": 352.0,
+                "width": 63.99999237060547,
+                "height": 64.00003051757813
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Cell 4,7",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 360.0,
+                "y": 95.99999237060547,
+                "width": 64.0,
+                "height": 64.00000762939453
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 2,5",
+            "path": "Assets/_Game/Art/Gems/Emerald.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 224.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Gem 2,4",
+            "path": "Assets/_Game/Art/Gems/Amber_tri.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 232.0,
+                "y": 288.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "scale": 1.0
+        },
+        {
+            "name": "Upper connected foliage",
+            "path": "Assets/_Game/Art/ForestReworkV2/Checkpoint04/Board_Foliage_UL.png",
+            "type": "Simple",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 51.99998474121094,
+                "y": 532.0,
+                "width": 128.00001525878907,
+                "height": 128.0
+            },
+            "scale": 2.0
+        }
+    ],
+    "sizes": [
+        {
+            "x": 46.0,
+            "y": 46.0
+        },
+        {
+            "x": 304.0,
+            "y": 304.0
+        },
+        {
+            "x": 305.0,
+            "y": 303.0
+        },
+        {
+            "x": 360.0,
+            "y": 280.0
+        },
+        {
+            "x": 259.0,
+            "y": 411.0
+        }
+    ]
+}

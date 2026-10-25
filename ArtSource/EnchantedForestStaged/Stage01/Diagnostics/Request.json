@@ -1,0 +1,20 @@
+{
+  "description": "Create ONLY an enchanted forest top battle ENVIRONMENT BACKGROUND for Dungeon Matcher, a crisp native pixel art mobile 2D sidescroller RPG. Target canvas 360x240 native pixels. Use the supplied full-game mockup ONLY for the upper forest scenery: tall layered dark teal tree trunks, coherent deep woodland grove, narrow pale turquoise waterfall in the distant upper-middle RIGHT at x220, one mossy stone bridge crossing it around y100, large calm connected foliage masses. Darker undergrowth behind actors in x115..335 y145..202. Flat horizontal earthy/mossy side-on combat ground spans complete width at y204..239, front lip at bottom; no slope or perspective battlefield. Left x0..105 quiet dark tree background will be covered by existing portrait. Top y0..45 quiet darker canopy will be under existing HUD. Near right tree trunk frames edge; sparse blue cyan magical light accents and small warm lantern ambiance along side branches, restrained. Important lighting hierarchy: distant opening readable but not glaring, quiet dark enemy silhouette area, slightly brighter olive-brown standing floor. 20-28 meaningful colors, large controlled shadow clusters, deliberate chunky one-pixel edges, restrained detail like approved Rattlebones style reference, but retain own forest palette. No characters, skeletons, creatures, deer, gem icons, board, grid, frames, text, healthbars or UI. No central bright spotlight or random particles, no dense tiny leaf noise, no blur, AA, dithering, painted texture or gradients. One continuous scenery candidate, not a sheet of variants.",
+  "width": 360,
+  "height": 240,
+  "no_background": false,
+  "max_colors": 28,
+  "style_image_url": "upload:52117b5d-8c1f-4f43-9527-2e20b43547a5",
+  "style_copy": [
+    "outline",
+    "detail",
+    "shading"
+  ],
+  "reference_images": [
+    {
+      "url": "upload:004ebfbd-b415-4d75-aff9-4dee1d04d7d5",
+      "usage": "Composition and mood authority for ONLY the top forest background above the puzzle board. Exclude all characters, portrait, gems, UI and frame assets."
+    }
+  ],
+  "seed": 2401026
+}

@@ -1,0 +1,36 @@
+{
+  "starting_balance": 688.2,
+  "ending_balance": 677.2,
+  "debited_this_continuation": 11,
+  "completed_calls": 11,
+  "usd_credits_used": 0,
+  "latest_polish_pass_total_debited": 20,
+  "selected_raw_sources": [
+    "LeftCorner",
+    "RightCorner",
+    "SweepRightV2",
+    "VineV2",
+    "Wisp",
+    "GrowthLeft",
+    "GrowthRight"
+  ],
+  "rejected_studies": [
+    "SweepLeft",
+    "SweepRight",
+    "SweepLeftV2",
+    "Vine"
+  ],
+  "jobs": {
+    "GrowthLeft": "279e408c-331c-4e59-a3b0-f7f5c88676c0",
+    "GrowthRight": "6fddbb4d-4ff7-4b22-9856-d2c59071d2b9",
+    "LeftCorner": "b4a90ca6-9ef3-44db-ad71-ccf1480e28c3",
+    "RightCorner": "8a236c83-ed3a-4650-a995-6faf6bb1831c",
+    "SweepLeft": "0dd923de-8af0-4327-a815-2e0237f0a947",
+    "SweepLeftV2": "b87530cf-c4b0-44fb-9e94-55bc5b3909f7",
+    "SweepRight": "5f897a20-1e14-4fa5-ac32-bb361fdbc80c",
+    "SweepRightV2": "643e1131-c381-45cf-8021-3255683eb37e",
+    "Vine": "4eb5dad0-0416-4fa1-bc15-638a60a42233",
+    "VineV2": "8494056d-c755-40ac-a240-4fa98d3e7f81",
+    "Wisp": "e84ebfb1-ac25-4033-9021-d02500907487"
+  }
+}

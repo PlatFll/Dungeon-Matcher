@@ -1,0 +1,253 @@
+{
+  "native_modules": [
+    {
+      "name": "Corner_Left",
+      "dimensions": [
+        88,
+        180
+      ],
+      "bounds": [
+        2,
+        18,
+        84,
+        178
+      ],
+      "colors": 31,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        7211
+      ],
+      "source_reopen_exact": true,
+      "sha256": "fa3498e3c5d51d42b45cd77f0831af40254b5ce6894460b0694d4e3fa22d82c9"
+    },
+    {
+      "name": "Corner_Right",
+      "dimensions": [
+        88,
+        180
+      ],
+      "bounds": [
+        4,
+        18,
+        86,
+        178
+      ],
+      "colors": 33,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        7470
+      ],
+      "source_reopen_exact": true,
+      "sha256": "1374153e3bf788e9209f6f4cc5db1865acaf7f7a65d128b48228e5ed530a0726"
+    },
+    {
+      "name": "Growth_Left",
+      "dimensions": [
+        43,
+        44
+      ],
+      "bounds": [
+        4,
+        4,
+        39,
+        40
+      ],
+      "colors": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        711
+      ],
+      "source_reopen_exact": true,
+      "sha256": "fcaa4e6fe25abe722f2acf588d6a36a90443132d975bc3463f89fccfbcbd9e84"
+    },
+    {
+      "name": "Growth_Right",
+      "dimensions": [
+        34,
+        35
+      ],
+      "bounds": [
+        4,
+        4,
+        30,
+        31
+      ],
+      "colors": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        498
+      ],
+      "source_reopen_exact": true,
+      "sha256": "fc9c61467c53ad331a7026f80168d4d5a518e860df56377f6bf85f55303bfd8d"
+    },
+    {
+      "name": "Sweep_Left",
+      "dimensions": [
+        155,
+        89
+      ],
+      "bounds": [
+        4,
+        4,
+        107,
+        75
+      ],
+      "colors": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        3094
+      ],
+      "source_reopen_exact": true,
+      "sha256": "e524338ad453623c4f717625c89516a5269e926e98eaf5451042e05af3241b0f"
+    },
+    {
+      "name": "Sweep_Right",
+      "dimensions": [
+        155,
+        89
+      ],
+      "bounds": [
+        48,
+        4,
+        151,
+        75
+      ],
+      "colors": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        3094
+      ],
+      "source_reopen_exact": true,
+      "sha256": "f9d19c3381b7acea56243d7d2f0964be14cff8ee9556f616863b720c1f3941e7"
+    },
+    {
+      "name": "Vine",
+      "dimensions": [
+        63,
+        53
+      ],
+      "bounds": [
+        4,
+        4,
+        59,
+        49
+      ],
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        1054
+      ],
+      "source_reopen_exact": true,
+      "sha256": "54944e589393acddf6e1841fdada241169335202161ec46e597ff9f0b42c9eb8"
+    },
+    {
+      "name": "Vine_Right",
+      "dimensions": [
+        63,
+        53
+      ],
+      "bounds": [
+        4,
+        4,
+        59,
+        49
+      ],
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        1054
+      ],
+      "source_reopen_exact": true,
+      "sha256": "4cb481c1cb4c20dba71e6f0dd3920ef0ec66c52c2e40596d58e8485e7da99a34"
+    },
+    {
+      "name": "Wisp",
+      "dimensions": [
+        24,
+        24
+      ],
+      "bounds": [
+        6,
+        3,
+        18,
+        21
+      ],
+      "colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "components": [
+        141
+      ],
+      "source_reopen_exact": true,
+      "sha256": "3af089c559d2a7b7083db6226457d10345088a420314bc78faba76849d06623d"
+    }
+  ],
+  "unchanged_existing_files": 6721,
+  "unchanged_image_bindings": 303,
+  "unity_compile_and_review": "Passed",
+  "pixel_doubling_exact": true,
+  "top_hud_battle_separator_unchanged": true,
+  "board_and_frame_unchanged": true,
+  "bottom_hud_and_text_unchanged": true,
+  "changes_outside_dressing": 0,
+  "stage_changed_bounds": {
+    "3": [
+      30,
+      1184,
+      698,
+      1348
+    ],
+    "4": [
+      8,
+      1062,
+      708,
+      1348
+    ],
+    "5": [
+      8,
+      716,
+      708,
+      1348
+    ]
+  },
+  "final_changed_bounds": [
+    8,
+    716,
+    708,
+    1348
+  ],
+  "motion": {
+    "reducedMotionStable": true,
+    "loopCloses": true,
+    "animatedStatesDiffer": true,
+    "frames": 12
+  },
+  "production_integrated": false,
+  "real_device_test": false
+}

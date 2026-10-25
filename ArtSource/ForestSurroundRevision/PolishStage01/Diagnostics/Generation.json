@@ -1,0 +1,37 @@
+{
+  "request": {
+    "description": "One modular rectangular mudstone block for an ancient enchanted forest platform FRONT FASCIA, straight-on 2D sidescroller view. Broad squat stone slab, nearly fills entire 40x16 canvas, long horizontal top and bottom, vertical sides; a single constructed block, not an irregular boulder or scattered rocks. Muted olive-gray mudstone, broad flat face with 2 connected shaded planes, narrow warm top-left bevel, dark bottom seam, tiny sparse moss lip only along top. Large clean pixel clusters and sturdy readable silhouette. No roots, flowers, mushrooms, glyphs, dirt speckles, cracks all over, perspective, background, blur or dithering. Match reference's simple confident native pixel rendering, not its anatomy or colors. Repeatable boundary between forest combat floor and gem board.",
+    "width": 40,
+    "height": 16,
+    "no_background": true,
+    "max_colors": 8,
+    "palette": [
+      "#171E1C",
+      "#293029",
+      "#3C4135",
+      "#535641",
+      "#6A6C50",
+      "#838463",
+      "#3C5F33",
+      "#718B45"
+    ],
+    "palette_name": "Muted forest mudstone",
+    "style_image_url": "upload:e26a7431-416a-4522-9f75-eef110a00945",
+    "style_copy": [
+      "outline",
+      "shading",
+      "detail"
+    ],
+    "seed": 24010261
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: b320fe0f-6805-4d99-a5b2-993efa5cca8d\njob_id: b320fe0f-6805-4d99-a5b2-993efa5cca8d\nmodel: pro\ndescription: One modular rectangular mudstone block for an ancient enchanted forest platform FRONT FASCIA, straight-on 2D sidescroller view. Broad squat stone slab, nearly fills entire 40x16 canvas, long horizontal top and bottom, vertical sides; a single constructed block, not an irregular boulder or scattered rocks. Muted olive-gray mudstone, broad flat face with 2 connected shaded planes, narrow warm top-left bevel, dark bottom seam, tiny sparse moss lip only along top. Large clean pixel clusters and sturdy readable silhouette. No roots, flowers, mushrooms, glyphs, dirt speckles, cracks all over, perspective, background, blur or dithering. Match reference's simple confident native pixel rendering, not its anatomy or colors. Repeatable boundary between forest combat floor and gem board.\nsize: 40x16px\ntransparent: True\ncandidates: 64\nstyle_image: yes (outline, detail, shading)\npalette: 8 colours (Muted forest mudstone)\nmax colours: 8 per image\nseed: 24010261\nasset_id: f33b82d9-a493-5392-a931-5f18bc34399e\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"b320fe0f-6805-4d99-a5b2-993efa5cca8d\")"
+      }
+    ],
+    "isError": false
+  },
+  "starting_balance": 697.2
+}

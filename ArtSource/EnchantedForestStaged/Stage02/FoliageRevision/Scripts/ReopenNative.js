@@ -1,0 +1,1 @@
+try{["Ivy_CrownLeft", "Ivy_LeftSwag", "Ivy_CrownRight", "Ivy_RightSwag"].forEach(function(n){app.open('ArtSource/EnchantedForestStaged/Stage02/FoliageRevision/Native/'+n+'.aseprite').sprite.saveAs('.utmp/enchanted-foliage-revision/reopened/'+n+'.png',true);});console.log('FOLIAGE_NATIVE_COMPLETE');}catch(e){console.log('FAILED '+e);}app.command.Exit();
