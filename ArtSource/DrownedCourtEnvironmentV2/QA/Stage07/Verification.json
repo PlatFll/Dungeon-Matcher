@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "protected_production_files": 7839,
+  "accepted_stage01_06_files": 733,
+  "authorities_unchanged": 5,
+  "native_roundtrips": 7,
+  "combined_opaque_colors": 17,
+  "main_reef_masses": 2,
+  "continuous_reef_column_structures": 2,
+  "contacts": [
+    {
+      "height": 640,
+      "name": "LeftReef",
+      "column_overlap_pixels": 451,
+      "seafloor_overlap_pixels": 69
+    },
+    {
+      "height": 640,
+      "name": "RightReef",
+      "column_overlap_pixels": 167,
+      "seafloor_overlap_pixels": 279
+    },
+    {
+      "height": 800,
+      "name": "LeftReef",
+      "column_overlap_pixels": 424,
+      "seafloor_overlap_pixels": 69
+    },
+    {
+      "height": 800,
+      "name": "RightReef",
+      "column_overlap_pixels": 152,
+      "seafloor_overlap_pixels": 279
+    }
+  ],
+  "asset_connected_components": {
+    "LeftReef": [
+      3849
+    ],
+    "RightReef": [
+      4257
+    ],
+    "RubbleA": [
+      46
+    ],
+    "RubbleB": [
+      30
+    ],
+    "RuinConnector": [
+      448
+    ],
+    "Seafloor": [
+      192
+    ],
+    "SeafloorShort": [
+      48
+    ]
+  },
+  "verified_native_pixels": 323932,
+  "unchanged_frame_pixels": 402044,
+  "unchanged_stage06_pixels": 277480,
+  "screens": [
+    {
+      "size": "360x640",
+      "changed_lower_pixels": 10084,
+      "native_pixels": 10212,
+      "frame_overlap_pixels": 0,
+      "protected_hud_pixels_unchanged": true
+    },
+    {
+      "size": "720x1280",
+      "changed_lower_pixels": 40336,
+      "native_pixels": 40848,
+      "frame_overlap_pixels": 0,
+      "protected_hud_pixels_unchanged": true
+    },
+    {
+      "size": "1080x1920",
+      "changed_lower_pixels": 90756,
+      "native_pixels": 91908,
+      "frame_overlap_pixels": 0,
+      "protected_hud_pixels_unchanged": true
+    },
+    {
+      "size": "360x800",
+      "changed_lower_pixels": 12814,
+      "native_pixels": 12926,
+      "frame_overlap_pixels": 0,
+      "protected_hud_pixels_unchanged": true
+    },
+    {
+      "size": "720x1600",
+      "changed_lower_pixels": 51256,
+      "native_pixels": 51704,
+      "frame_overlap_pixels": 0,
+      "protected_hud_pixels_unchanged": true
+    },
+    {
+      "size": "1080x2400",
+      "changed_lower_pixels": 115326,
+      "native_pixels": 116334,
+      "frame_overlap_pixels": 0,
+      "protected_hud_pixels_unchanged": true
+    }
+  ],
+  "old_scene_changes": [
+    "2080446818"
+  ],
+  "unity_captures": 19,
+  "scope": "Static art-only; no production, gameplay, animation, safe-area or device test. Existing fractional cell mapping remains unchanged."
+}
