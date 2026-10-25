@@ -1,0 +1,1438 @@
+{
+  "stage": "Revision01",
+  "assets": [
+    {
+      "name": "BaseLeft",
+      "width": 31,
+      "height": 18,
+      "sha256": "2dc8459518b365e757c5b0d6c18ddca3e9dacba9cefc2453863e034310522a5f"
+    },
+    {
+      "name": "BaseRight",
+      "width": 31,
+      "height": 18,
+      "sha256": "7e16bba27b3d06d22d82321f67e45caa8eafed556665f6fc3c8b1d2d34fe2418"
+    },
+    {
+      "name": "CapLeft",
+      "width": 31,
+      "height": 16,
+      "sha256": "c0b51878b98b6c6af0036a68bbe916331cff26edb95ec432b9dd25c6a0497f6f"
+    },
+    {
+      "name": "CapRight",
+      "width": 31,
+      "height": 16,
+      "sha256": "692ff3aef2904bead8158cd153dce3a869af474ed672f786c82d3442fdefbb29"
+    },
+    {
+      "name": "ColumnLeftA",
+      "width": 31,
+      "height": 96,
+      "sha256": "746ff9ac83c9b3da8bb51d0502a84e2f0ed63d2a9199dfb0babe7bae1332aedf"
+    },
+    {
+      "name": "ColumnLeftB",
+      "width": 31,
+      "height": 96,
+      "sha256": "c0ce96ccedfbaab39cf8a8dc1f1a74dfcab2f02a569801344471b8cca8bad446"
+    },
+    {
+      "name": "ColumnRightA",
+      "width": 31,
+      "height": 96,
+      "sha256": "d1d8bd973520789b43d5901a0b9b2fd4af5257c77d9d7d5fa5d189b3116f761c"
+    },
+    {
+      "name": "ColumnRightB",
+      "width": 31,
+      "height": 96,
+      "sha256": "f96a3609d40d82d18fff47ebf6ffd2549fd50462e5dda5795d9b6ed4ef4c07e4"
+    },
+    {
+      "name": "QuietLeftA",
+      "width": 31,
+      "height": 32,
+      "sha256": "2ff7763458caf5e3b3055cff4ee61681d91719a1890502a48b3ac50909c038ea"
+    },
+    {
+      "name": "QuietLeftB",
+      "width": 31,
+      "height": 32,
+      "sha256": "2fbb5b4600e734d679adb799cdba108041b8296b05cd56e3d04698a4458a7327"
+    },
+    {
+      "name": "QuietRightA",
+      "width": 31,
+      "height": 32,
+      "sha256": "7140d5e40b6b033ed59633eea4eebc7e1fed6de1b61a1dca9b916b7f9eac6c94"
+    },
+    {
+      "name": "QuietRightB",
+      "width": 31,
+      "height": 32,
+      "sha256": "26d72828b3af8ff03f3b9a91e01ece20b6b53de1c8c4d0a9a579262af452d677"
+    },
+    {
+      "name": "S01_DeepWater",
+      "width": 360,
+      "height": 240,
+      "sha256": "6799c00605df2641e68962ce04d0271e899532d4d236d0735df5b55553490582"
+    },
+    {
+      "name": "S01_FarRuins",
+      "width": 256,
+      "height": 192,
+      "sha256": "daadc786dc3f1ce760c45d872fcd7c97fd87d2a424616556b206971725d3d277"
+    },
+    {
+      "name": "S01_LightShafts",
+      "width": 360,
+      "height": 240,
+      "sha256": "0ca354c9afa2ee50e10412d51507cbf61cc2ec87c3441c01bb2bf114bfa877b5"
+    },
+    {
+      "name": "S01_MidRuins",
+      "width": 256,
+      "height": 192,
+      "sha256": "50db5b55cc5514bd3faae880a33513c3ebf0bce1895d8e4baeba4519e95c9f18"
+    },
+    {
+      "name": "S01_Particles",
+      "width": 360,
+      "height": 240,
+      "sha256": "ea23b93df70ee612e941c995acfedbbd8e4a876910ff67d705e6b5f81dfb15d8"
+    },
+    {
+      "name": "S02_BrokenPillar",
+      "width": 96,
+      "height": 128,
+      "sha256": "dd5cdbb604a98fbe4abc695e5d2d502a793b2d47baf1c1205469f81cd060587b"
+    },
+    {
+      "name": "S02_CourtArch",
+      "width": 160,
+      "height": 128,
+      "sha256": "eca16e3dce23b90e105fc1ff85bf259c048b0d609a13cf0e7cb4c19ae6143137"
+    },
+    {
+      "name": "S02_MonarchStatue",
+      "width": 128,
+      "height": 160,
+      "sha256": "ae7c46868b5ed88cd812b7097e79c5ccf56685dd39062b3c4fa2701d52775563"
+    },
+    {
+      "name": "S02_PillarBase",
+      "width": 64,
+      "height": 24,
+      "sha256": "9ea706dfbeffa20e976d7486789e154483c97c3f7d8c49db333a2e244e3021e4"
+    },
+    {
+      "name": "S02_PillarCapital",
+      "width": 64,
+      "height": 20,
+      "sha256": "2fd4c07fb4186d3428d2ba11df2cf2b1afce9c0684d0fd51aac873f1a414ccb4"
+    },
+    {
+      "name": "S02_PillarSeed",
+      "width": 64,
+      "height": 160,
+      "sha256": "db939aef04d801e412bbaf6961c0fae538d3bbcd5475f849076b87d43a248bf1"
+    },
+    {
+      "name": "S02_PillarShaft",
+      "width": 64,
+      "height": 24,
+      "sha256": "107bef69ec61f1f2b13e04a27a137c2c0364905662356aa5a1d8ff0909ae5c84"
+    },
+    {
+      "name": "S02_PillarShaftWorn",
+      "width": 64,
+      "height": 24,
+      "sha256": "adabbe8808ae0c10e940ffd17daa503d279cecac8512da645adedad7a26247af"
+    },
+    {
+      "name": "S02_RubbleJoint",
+      "width": 32,
+      "height": 24,
+      "sha256": "f90eeb73e6531c25333898b458ac4c520701628346f284c694b991e75bff22b5"
+    },
+    {
+      "name": "S02_RuinedLedge",
+      "width": 64,
+      "height": 16,
+      "sha256": "f73a80d0f4da4a6fa09b7f958cc6a091746eddf1c4d3177e966dbf695699387d"
+    },
+    {
+      "name": "S03_FasciaA",
+      "width": 64,
+      "height": 26,
+      "sha256": "f9ec5958b7984e30eeb4bcbb00b2ce635c450980bcc80f238325873464c48cad"
+    },
+    {
+      "name": "S03_FasciaB",
+      "width": 64,
+      "height": 26,
+      "sha256": "32db0064335be5f3b5209626fe975569c96d1d8cc91744cc87df1a38fef9c329"
+    },
+    {
+      "name": "S03_FasciaC",
+      "width": 64,
+      "height": 26,
+      "sha256": "aa492f71ec277a354a2660e8a67494c44f76edf7729cf5be1e7303bce2df9135"
+    },
+    {
+      "name": "S03_FasciaFill",
+      "width": 8,
+      "height": 26,
+      "sha256": "953fd98bdf289136b8bf904f23c03df856b40bca8cec009183e9349f8f3eee6a"
+    },
+    {
+      "name": "S03_FasciaLeft",
+      "width": 16,
+      "height": 26,
+      "sha256": "379b50cc4fbff0cc7f02638ba091a3eb416e3ccc8dfe9f7127b5d1444959d9ec"
+    },
+    {
+      "name": "S03_FasciaRight",
+      "width": 16,
+      "height": 26,
+      "sha256": "54818ff3c4c232cc75d1c98496013de482588013d33cec451a3dd6983e1cb766"
+    },
+    {
+      "name": "S03_FloorTopA",
+      "width": 64,
+      "height": 16,
+      "sha256": "056ce56c466a13943bd655cc07b5d6e9647d86258933002fbe749fc6bdbba23b"
+    },
+    {
+      "name": "S03_FloorTopB",
+      "width": 64,
+      "height": 16,
+      "sha256": "e69e3da5697c4677da9fb7ecd42e76ded71ce9ba2b48d364c710c87967806596"
+    },
+    {
+      "name": "S03_FloorTopC",
+      "width": 64,
+      "height": 16,
+      "sha256": "256b80233ba79824ea20410b2e0bab5e3bfff61c58ae8ae437bd2fc084882919"
+    },
+    {
+      "name": "S03_FloorTopFill",
+      "width": 8,
+      "height": 16,
+      "sha256": "2680a2889e047dc8489f6cf233cfadcc102a4e081de1b3cda70f93162ad6d4a8"
+    },
+    {
+      "name": "S03_FloorTopLeft",
+      "width": 16,
+      "height": 16,
+      "sha256": "f2e419c3e5384054abd30ce517e1896d75364b9bd981ce5a434ce3d15db53092"
+    },
+    {
+      "name": "S03_FloorTopRight",
+      "width": 16,
+      "height": 16,
+      "sha256": "94c6974a24c581e1235ec792d815420bdee69982366f90d0b1bbf26a2ca72aed"
+    },
+    {
+      "name": "S03_PlatformSeed",
+      "width": 128,
+      "height": 64,
+      "sha256": "7f6c8267afcdbab701ed13f98114fb00f2056dbaac0670f11f313548acb00140"
+    },
+    {
+      "name": "S04_RecessA",
+      "width": 64,
+      "height": 64,
+      "sha256": "a57686e07e44ff5f1919bb46c5fe752e1ebc5abe14d95b8e9677df8408e82cab"
+    },
+    {
+      "name": "S04_RecessB",
+      "width": 64,
+      "height": 64,
+      "sha256": "3baacc92976bb3cb78c888bc0fb79b8b2e8686b30645458a7c21076b38f99bab"
+    },
+    {
+      "name": "S07_LeftReef",
+      "width": 80,
+      "height": 96,
+      "sha256": "df54b8cf3abd881c9b1b80d1e19775c063b7fac611cdf5290aa9d3211aff73c9"
+    },
+    {
+      "name": "S07_RightReef",
+      "width": 80,
+      "height": 96,
+      "sha256": "70dc38dffeff00f245372a1feab433209616d5e5f06a9a52798c636d5280a5f0"
+    },
+    {
+      "name": "S07_RubbleA",
+      "width": 16,
+      "height": 8,
+      "sha256": "fa54d7739271bd9f224fce629bc43f4614e90fb9e0602f99ddff98eba7076fe5"
+    },
+    {
+      "name": "S07_RubbleB",
+      "width": 12,
+      "height": 6,
+      "sha256": "f8e86257deb806297688f5bcd6c4e5a41145542c849af843c45f7c8ddfd9bd25"
+    },
+    {
+      "name": "S07_RuinConnector",
+      "width": 31,
+      "height": 32,
+      "sha256": "da46428b85cadfb554b479c20f011a792d009420645d317a8730fd9fb9466be0"
+    },
+    {
+      "name": "S07_Seafloor",
+      "width": 32,
+      "height": 6,
+      "sha256": "47e09ff655459c4fc59c5eee017e15c1cff19eacfa031bd69f70828e28395bd4"
+    },
+    {
+      "name": "S07_SeafloorShort",
+      "width": 8,
+      "height": 6,
+      "sha256": "091ef89943e6e7a8cef17b9ff5af50d48132755243a369a443d8061d8ec67ab4"
+    },
+    {
+      "name": "ShortLeft",
+      "width": 31,
+      "height": 18,
+      "sha256": "5dfc552343dda8af73c53da39d7d1e25b04ffbb2ed4655ea78078d9453cab92c"
+    },
+    {
+      "name": "ShortRight",
+      "width": 31,
+      "height": 18,
+      "sha256": "6dbdb0a2cfe306d4decfb8b0d311d298da606494472a06ac5358bb9fb209c12a"
+    }
+  ],
+  "recolors": [
+    {
+      "name": "S01_DeepWater",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage01/DeepWater.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage01/DeepWater.png",
+      "width": 360,
+      "height": 240,
+      "map": {
+        "061824": "032332",
+        "08202c": "042f42",
+        "0b2935": "043c53",
+        "0f333e": "05516a",
+        "143f49": "07657e",
+        "1b4d56": "0a7b91",
+        "245e64": "138fa2",
+        "317174": "25a5b4",
+        "0e303e": "074961",
+        "123c49": "0a5970",
+        "174954": "0e6b7f",
+        "1d575f": "187e8d",
+        "071c28": "042736",
+        "0a2733": "053748",
+        "0f343f": "08495a",
+        "16424c": "0d5c6b",
+        "1f525a": "1b7280",
+        "0c2b37": "07465a",
+        "103540": "095c70",
+        "113742": "0b5e73",
+        "16434d": "0c7184",
+        "18454f": "0e7486",
+        "1f535c": "158797",
+        "20555e": "188a9a",
+        "225760": "1c8c9c",
+        "29666c": "299eaa",
+        "2b686e": "2ca2ae",
+        "2c6a70": "30a5b0",
+        "387b7e": "49b9c1",
+        "397d80": "4cbdc4",
+        "458188": "71cbd2"
+      },
+      "source_sha256": "4bd060a410f7d5771cefbafcbf5228f21b584a716d77a917d0412af192e94aab"
+    },
+    {
+      "name": "S01_FarRuins",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage01/FarRuins.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage01/FarRuins.png",
+      "width": 256,
+      "height": 192,
+      "map": {
+        "061824": "032332",
+        "08202c": "042f42",
+        "0b2935": "043c53",
+        "0f333e": "05516a",
+        "143f49": "07657e",
+        "1b4d56": "0a7b91",
+        "245e64": "138fa2",
+        "317174": "25a5b4",
+        "0e303e": "074961",
+        "123c49": "0a5970",
+        "174954": "0e6b7f",
+        "1d575f": "187e8d",
+        "071c28": "042736",
+        "0a2733": "053748",
+        "0f343f": "08495a",
+        "16424c": "0d5c6b",
+        "1f525a": "1b7280",
+        "0c2b37": "07465a",
+        "103540": "095c70",
+        "113742": "0b5e73",
+        "16434d": "0c7184",
+        "18454f": "0e7486",
+        "1f535c": "158797",
+        "20555e": "188a9a",
+        "225760": "1c8c9c",
+        "29666c": "299eaa",
+        "2b686e": "2ca2ae",
+        "2c6a70": "30a5b0",
+        "387b7e": "49b9c1",
+        "397d80": "4cbdc4",
+        "458188": "71cbd2"
+      },
+      "source_sha256": "93ca9da08cf821d6be2582bc3544a660715e1cb687421bd8729ee128556e1458"
+    },
+    {
+      "name": "S01_LightShafts",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage01/LightShafts.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage01/LightShafts.png",
+      "width": 360,
+      "height": 240,
+      "map": {
+        "061824": "032332",
+        "08202c": "042f42",
+        "0b2935": "043c53",
+        "0f333e": "05516a",
+        "143f49": "07657e",
+        "1b4d56": "0a7b91",
+        "245e64": "138fa2",
+        "317174": "25a5b4",
+        "0e303e": "074961",
+        "123c49": "0a5970",
+        "174954": "0e6b7f",
+        "1d575f": "187e8d",
+        "071c28": "042736",
+        "0a2733": "053748",
+        "0f343f": "08495a",
+        "16424c": "0d5c6b",
+        "1f525a": "1b7280",
+        "0c2b37": "07465a",
+        "103540": "095c70",
+        "113742": "0b5e73",
+        "16434d": "0c7184",
+        "18454f": "0e7486",
+        "1f535c": "158797",
+        "20555e": "188a9a",
+        "225760": "1c8c9c",
+        "29666c": "299eaa",
+        "2b686e": "2ca2ae",
+        "2c6a70": "30a5b0",
+        "387b7e": "49b9c1",
+        "397d80": "4cbdc4",
+        "458188": "71cbd2"
+      },
+      "source_sha256": "511cb9a178f4dd9242fb1987ce1d9b6aa526a90df98a1270212b7f81f7beaba7"
+    },
+    {
+      "name": "S01_MidRuins",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage01/MidRuins.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage01/MidRuins.png",
+      "width": 256,
+      "height": 192,
+      "map": {
+        "061824": "032332",
+        "08202c": "042f42",
+        "0b2935": "043c53",
+        "0f333e": "05516a",
+        "143f49": "07657e",
+        "1b4d56": "0a7b91",
+        "245e64": "138fa2",
+        "317174": "25a5b4",
+        "0e303e": "074961",
+        "123c49": "0a5970",
+        "174954": "0e6b7f",
+        "1d575f": "187e8d",
+        "071c28": "042736",
+        "0a2733": "053748",
+        "0f343f": "08495a",
+        "16424c": "0d5c6b",
+        "1f525a": "1b7280",
+        "0c2b37": "07465a",
+        "103540": "095c70",
+        "113742": "0b5e73",
+        "16434d": "0c7184",
+        "18454f": "0e7486",
+        "1f535c": "158797",
+        "20555e": "188a9a",
+        "225760": "1c8c9c",
+        "29666c": "299eaa",
+        "2b686e": "2ca2ae",
+        "2c6a70": "30a5b0",
+        "387b7e": "49b9c1",
+        "397d80": "4cbdc4",
+        "458188": "71cbd2"
+      },
+      "source_sha256": "08ed72c47d317949ac1da0ce30cda637dbae598cdb249f3393ace601eae8832b"
+    },
+    {
+      "name": "S01_Particles",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage01/Particles.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage01/Particles.png",
+      "width": 360,
+      "height": 240,
+      "map": {
+        "061824": "032332",
+        "08202c": "042f42",
+        "0b2935": "043c53",
+        "0f333e": "05516a",
+        "143f49": "07657e",
+        "1b4d56": "0a7b91",
+        "245e64": "138fa2",
+        "317174": "25a5b4",
+        "0e303e": "074961",
+        "123c49": "0a5970",
+        "174954": "0e6b7f",
+        "1d575f": "187e8d",
+        "071c28": "042736",
+        "0a2733": "053748",
+        "0f343f": "08495a",
+        "16424c": "0d5c6b",
+        "1f525a": "1b7280",
+        "0c2b37": "07465a",
+        "103540": "095c70",
+        "113742": "0b5e73",
+        "16434d": "0c7184",
+        "18454f": "0e7486",
+        "1f535c": "158797",
+        "20555e": "188a9a",
+        "225760": "1c8c9c",
+        "29666c": "299eaa",
+        "2b686e": "2ca2ae",
+        "2c6a70": "30a5b0",
+        "387b7e": "49b9c1",
+        "397d80": "4cbdc4",
+        "458188": "71cbd2"
+      },
+      "source_sha256": "1204340c08cada384511d6d6ec3ff95deff31ba0e667d11c0cc70ecd0ad10b1e"
+    },
+    {
+      "name": "S02_BrokenPillar",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage02/BrokenPillar.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage02/BrokenPillar.png",
+      "width": 96,
+      "height": 128,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "f72d6bef49da765c73989caa45dac52040adaa331c33cfbc4851b72e6fb26b46"
+    },
+    {
+      "name": "S02_CourtArch",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage02/CourtArch.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage02/CourtArch.png",
+      "width": 160,
+      "height": 128,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "da6549762f3089cea8f964d11d6135e5ccd62eb459392412b4de2342000e4527"
+    },
+    {
+      "name": "S02_MonarchStatue",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage02/MonarchStatue.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage02/MonarchStatue.png",
+      "width": 128,
+      "height": 160,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "5cdffc6cee97dd26e724962e6c899a9541d66262df05ba89262171dae56c9e30"
+    },
+    {
+      "name": "S02_PillarBase",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage02/PillarBase.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage02/PillarBase.png",
+      "width": 64,
+      "height": 24,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "a132863bc7ac2354a15e6a94c9a689842572931c7a8b64aba75adcd798564474"
+    },
+    {
+      "name": "S02_PillarCapital",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage02/PillarCapital.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage02/PillarCapital.png",
+      "width": 64,
+      "height": 20,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "0ca698864baf6ec932a5f77273c731f3b809165730c9081acfc89fcd13d8394b"
+    },
+    {
+      "name": "S02_PillarSeed",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage02/PillarSeed.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage02/PillarSeed.png",
+      "width": 64,
+      "height": 160,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "f4d5e20fa4265056d6d047ebe48a171722d2527fd4cb63dfb7a51110989b1290"
+    },
+    {
+      "name": "S02_PillarShaft",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage02/PillarShaft.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage02/PillarShaft.png",
+      "width": 64,
+      "height": 24,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "c2b6a116549a505fdd9f430c2e53598883a00037983a88972a25df6606054836"
+    },
+    {
+      "name": "S02_PillarShaftWorn",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage02/PillarShaftWorn.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage02/PillarShaftWorn.png",
+      "width": 64,
+      "height": 24,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "84911e14aa9bacaba147e18d2612158fd08f80f2701850e6d43eebcd1ce085e5"
+    },
+    {
+      "name": "S02_RubbleJoint",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage02/RubbleJoint.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage02/RubbleJoint.png",
+      "width": 32,
+      "height": 24,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "b9ff4305535fb41484d1d3186d237cca35e33bc7254960df4605a87ae5ec1138"
+    },
+    {
+      "name": "S02_RuinedLedge",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage02/RuinedLedge.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage02/RuinedLedge.png",
+      "width": 64,
+      "height": 16,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "ed052ac5f7df20f65f978fa125c47fc006d0e1ecab881ae61127e36ee2ca947b"
+    },
+    {
+      "name": "S03_FasciaA",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FasciaA.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FasciaA.png",
+      "width": 64,
+      "height": 26,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "5d6134de4bfeb8c62b494429e0ff03ceea47508c288f5dabcc0e84e7bdf2f5a5"
+    },
+    {
+      "name": "S03_FasciaB",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FasciaB.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FasciaB.png",
+      "width": 64,
+      "height": 26,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "d9275b22732fbcedefb4be3b100ff26c956383c9b2cc80c69865b42c5617bfaf"
+    },
+    {
+      "name": "S03_FasciaC",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FasciaC.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FasciaC.png",
+      "width": 64,
+      "height": 26,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "9c1a4bd10b88f817ab259bdfb31c8b2d4b0ed58ccad45e6d0d7c6a4c9e20abb3"
+    },
+    {
+      "name": "S03_FasciaFill",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FasciaFill.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FasciaFill.png",
+      "width": 8,
+      "height": 26,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "61aebc7cc1623d684b2427a47a6332ed505fadf8f62281dbbe0df957acfa7364"
+    },
+    {
+      "name": "S03_FasciaLeft",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FasciaLeft.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FasciaLeft.png",
+      "width": 16,
+      "height": 26,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "0647197aebbea320a7bc43b5c530148c64b6f16d3aaa141bf4d0bd249a319980"
+    },
+    {
+      "name": "S03_FasciaRight",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FasciaRight.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FasciaRight.png",
+      "width": 16,
+      "height": 26,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "a93e80c1a75464b89d3e7ecede0c37788dd8d2ad3927019eccc706dc20c7e64d"
+    },
+    {
+      "name": "S03_FloorTopA",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FloorTopA.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FloorTopA.png",
+      "width": 64,
+      "height": 16,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "87d848a934e3bed6901068a62694f381dc86015ebd2220b8218f1297cfd96722"
+    },
+    {
+      "name": "S03_FloorTopB",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FloorTopB.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FloorTopB.png",
+      "width": 64,
+      "height": 16,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "444a64a18d6ccb7065426439e6aec489ffe7195f841080e43305e739e55cf9ea"
+    },
+    {
+      "name": "S03_FloorTopC",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FloorTopC.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FloorTopC.png",
+      "width": 64,
+      "height": 16,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "2805c6ecd762a2414c8ae2834a52bcea592a6c7abc60bb84a9d92eaea41da94d"
+    },
+    {
+      "name": "S03_FloorTopFill",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FloorTopFill.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FloorTopFill.png",
+      "width": 8,
+      "height": 16,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "4131a5b75f660e07d7de7cd85b3ed030841b9228cf9cfc2501109c00486d43a7"
+    },
+    {
+      "name": "S03_FloorTopLeft",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FloorTopLeft.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FloorTopLeft.png",
+      "width": 16,
+      "height": 16,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "64f27f82085741eb2942e6dd16ade6a2060ecd2f34b922897c2f7a6b1caf1c32"
+    },
+    {
+      "name": "S03_FloorTopRight",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/FloorTopRight.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/FloorTopRight.png",
+      "width": 16,
+      "height": 16,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "d06ce4c602992a7639b7f510aed07ac6191c49da1dc778830919fcf1a4419bc8"
+    },
+    {
+      "name": "S03_PlatformSeed",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage03/PlatformSeed.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage03/PlatformSeed.png",
+      "width": 128,
+      "height": 64,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "a8669e7e88942f0ec1f261da068344c3d6b181ef0c8c7a09789a3f19d78a46e5"
+    },
+    {
+      "name": "S04_RecessA",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage04/RecessA.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage04/RecessA.png",
+      "width": 64,
+      "height": 64,
+      "map": {
+        "08151e": "061c29",
+        "0c1f2b": "092a38",
+        "102a38": "0c3a49",
+        "153542": "124a58"
+      },
+      "source_sha256": "5bc7847318a0d25dee3d75052698347ba9a9b0dd841d29c5d7d47839c241d70a"
+    },
+    {
+      "name": "S04_RecessB",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage04/RecessB.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage04/RecessB.png",
+      "width": 64,
+      "height": 64,
+      "map": {
+        "08151e": "061c29",
+        "0c1f2b": "092a38",
+        "102a38": "0c3a49",
+        "153542": "124a58"
+      },
+      "source_sha256": "7c0c8acee422c17a2f4fed3d062516a64fc3d83d4d3a6dc62852800cd54f3ff8"
+    },
+    {
+      "name": "S07_LeftReef",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage07/LeftReef.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage07/LeftReef.png",
+      "width": 80,
+      "height": 96,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "299716329a395d5a0de9b30d0df20f5463d913551a188bf139aa32a611045549"
+    },
+    {
+      "name": "S07_RightReef",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage07/RightReef.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage07/RightReef.png",
+      "width": 80,
+      "height": 96,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "0fca76632e70ec07ffa2cb255f6bc5187c159a1d4f7daa86aad15e5049caee08"
+    },
+    {
+      "name": "S07_RubbleA",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage07/RubbleA.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage07/RubbleA.png",
+      "width": 16,
+      "height": 8,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "6f07bc2c0e142dfa7c3d26955e63a29a93035229736ced9e4ffc2eddab03a110"
+    },
+    {
+      "name": "S07_RubbleB",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage07/RubbleB.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage07/RubbleB.png",
+      "width": 12,
+      "height": 6,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "6765627eb971a4ba337f1f0c0dacd78a2fd0d0bf815d6101a34f65f7e61d8777"
+    },
+    {
+      "name": "S07_RuinConnector",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage07/RuinConnector.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage07/RuinConnector.png",
+      "width": 31,
+      "height": 32,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "2c4b09a4ad82914077081426c93745866c38c0698b89ba51a50657b6775880ab"
+    },
+    {
+      "name": "S07_Seafloor",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage07/Seafloor.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage07/Seafloor.png",
+      "width": 32,
+      "height": 6,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "c791bd12bf4a9de9568ea245e946fa4b8d438e9aedfbe1216683e45f4e9e53ff"
+    },
+    {
+      "name": "S07_SeafloorShort",
+      "source": "ArtSource/DrownedCourtEnvironmentV2/Exports/Stage07/SeafloorShort.png",
+      "oldAsset": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Stage07/SeafloorShort.png",
+      "width": 8,
+      "height": 6,
+      "map": {
+        "081e2b": "062432",
+        "0f3141": "083d50",
+        "164759": "0d5368",
+        "205b69": "176c7d",
+        "286b78": "258999",
+        "367d86": "3aa3ae",
+        "518f94": "65c1be",
+        "1a4b59": "105568",
+        "2c6c76": "237b8b",
+        "397c83": "3695a1",
+        "123d4c": "0a4256",
+        "225b68": "166477",
+        "4b9092": "48a7af"
+      },
+      "source_sha256": "7d5114838e06e26fb11dc2c677b75eac6ba3e3b7856785c30910538060de0ba3"
+    }
+  ],
+  "placements": [
+    {
+      "name": "CapLeft",
+      "x": 0,
+      "y": 243,
+      "width": 31,
+      "height": 16
+    },
+    {
+      "name": "ColumnLeftA",
+      "x": 0,
+      "y": 259,
+      "width": 31,
+      "height": 96
+    },
+    {
+      "name": "ColumnLeftB",
+      "x": 0,
+      "y": 355,
+      "width": 31,
+      "height": 96
+    },
+    {
+      "name": "QuietLeftA",
+      "x": 0,
+      "y": 451,
+      "width": 31,
+      "height": 32
+    },
+    {
+      "name": "QuietLeftB",
+      "x": 0,
+      "y": 483,
+      "width": 31,
+      "height": 32
+    },
+    {
+      "name": "ShortLeft",
+      "x": 0,
+      "y": 515,
+      "width": 31,
+      "height": 18
+    },
+    {
+      "name": "BaseLeft",
+      "x": 0,
+      "y": 533,
+      "width": 31,
+      "height": 18
+    },
+    {
+      "name": "CapRight",
+      "x": 329,
+      "y": 243,
+      "width": 31,
+      "height": 16
+    },
+    {
+      "name": "ColumnRightA",
+      "x": 329,
+      "y": 323,
+      "width": 31,
+      "height": 96
+    },
+    {
+      "name": "ColumnRightB",
+      "x": 329,
+      "y": 419,
+      "width": 31,
+      "height": 96
+    },
+    {
+      "name": "QuietRightA",
+      "x": 329,
+      "y": 259,
+      "width": 31,
+      "height": 32
+    },
+    {
+      "name": "QuietRightB",
+      "x": 329,
+      "y": 291,
+      "width": 31,
+      "height": 32
+    },
+    {
+      "name": "ShortRight",
+      "x": 329,
+      "y": 515,
+      "width": 31,
+      "height": 18
+    },
+    {
+      "name": "BaseRight",
+      "x": 329,
+      "y": 533,
+      "width": 31,
+      "height": 18
+    }
+  ],
+  "placementsTall": [
+    {
+      "name": "CapLeft",
+      "x": 0,
+      "y": 306,
+      "width": 31,
+      "height": 16
+    },
+    {
+      "name": "ColumnLeftA",
+      "x": 0,
+      "y": 322,
+      "width": 31,
+      "height": 96
+    },
+    {
+      "name": "ColumnLeftB",
+      "x": 0,
+      "y": 418,
+      "width": 31,
+      "height": 96
+    },
+    {
+      "name": "QuietLeftA",
+      "x": 0,
+      "y": 514,
+      "width": 31,
+      "height": 32
+    },
+    {
+      "name": "QuietLeftB",
+      "x": 0,
+      "y": 546,
+      "width": 31,
+      "height": 32
+    },
+    {
+      "name": "ShortLeft",
+      "x": 0,
+      "y": 578,
+      "width": 31,
+      "height": 18
+    },
+    {
+      "name": "BaseLeft",
+      "x": 0,
+      "y": 596,
+      "width": 31,
+      "height": 18
+    },
+    {
+      "name": "CapRight",
+      "x": 329,
+      "y": 306,
+      "width": 31,
+      "height": 16
+    },
+    {
+      "name": "ColumnRightA",
+      "x": 329,
+      "y": 386,
+      "width": 31,
+      "height": 96
+    },
+    {
+      "name": "ColumnRightB",
+      "x": 329,
+      "y": 482,
+      "width": 31,
+      "height": 96
+    },
+    {
+      "name": "QuietRightA",
+      "x": 329,
+      "y": 322,
+      "width": 31,
+      "height": 32
+    },
+    {
+      "name": "QuietRightB",
+      "x": 329,
+      "y": 354,
+      "width": 31,
+      "height": 32
+    },
+    {
+      "name": "ShortRight",
+      "x": 329,
+      "y": 578,
+      "width": 31,
+      "height": 18
+    },
+    {
+      "name": "BaseRight",
+      "x": 329,
+      "y": 596,
+      "width": 31,
+      "height": 18
+    }
+  ],
+  "pixelLabGenerations": 0,
+  "status": "REVIEW_CANDIDATE"
+}
