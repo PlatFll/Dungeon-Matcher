@@ -1,0 +1,311 @@
+{
+  "stage": "03",
+  "status": "CANDIDATE_PENDING_USER_REVIEW",
+  "ppu": 64,
+  "native_canvas": [
+    360,
+    240
+  ],
+  "assets": [
+    {
+      "name": "FasciaA",
+      "width": 64,
+      "height": 26,
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        26
+      ],
+      "sha256": "5d6134de4bfeb8c62b494429e0ff03ceea47508c288f5dabcc0e84e7bdf2f5a5"
+    },
+    {
+      "name": "FasciaB",
+      "width": 64,
+      "height": 26,
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        26
+      ],
+      "sha256": "d9275b22732fbcedefb4be3b100ff26c956383c9b2cc80c69865b42c5617bfaf"
+    },
+    {
+      "name": "FasciaC",
+      "width": 64,
+      "height": 26,
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        26
+      ],
+      "sha256": "9c1a4bd10b88f817ab259bdfb31c8b2d4b0ed58ccad45e6d0d7c6a4c9e20abb3"
+    },
+    {
+      "name": "FasciaFill",
+      "width": 8,
+      "height": 26,
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        8,
+        26
+      ],
+      "sha256": "61aebc7cc1623d684b2427a47a6332ed505fadf8f62281dbbe0df957acfa7364"
+    },
+    {
+      "name": "FasciaLeft",
+      "width": 16,
+      "height": 26,
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        16,
+        26
+      ],
+      "sha256": "0647197aebbea320a7bc43b5c530148c64b6f16d3aaa141bf4d0bd249a319980"
+    },
+    {
+      "name": "FasciaRight",
+      "width": 16,
+      "height": 26,
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        16,
+        26
+      ],
+      "sha256": "a93e80c1a75464b89d3e7ecede0c37788dd8d2ad3927019eccc706dc20c7e64d"
+    },
+    {
+      "name": "FloorTopA",
+      "width": 64,
+      "height": 16,
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        16
+      ],
+      "sha256": "87d848a934e3bed6901068a62694f381dc86015ebd2220b8218f1297cfd96722"
+    },
+    {
+      "name": "FloorTopB",
+      "width": 64,
+      "height": 16,
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        16
+      ],
+      "sha256": "444a64a18d6ccb7065426439e6aec489ffe7195f841080e43305e739e55cf9ea"
+    },
+    {
+      "name": "FloorTopC",
+      "width": 64,
+      "height": 16,
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        16
+      ],
+      "sha256": "2805c6ecd762a2414c8ae2834a52bcea592a6c7abc60bb84a9d92eaea41da94d"
+    },
+    {
+      "name": "FloorTopFill",
+      "width": 8,
+      "height": 16,
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        8,
+        16
+      ],
+      "sha256": "4131a5b75f660e07d7de7cd85b3ed030841b9228cf9cfc2501109c00486d43a7"
+    },
+    {
+      "name": "FloorTopLeft",
+      "width": 16,
+      "height": 16,
+      "colors": 6,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "sha256": "64f27f82085741eb2942e6dd16ade6a2060ecd2f34b922897c2f7a6b1caf1c32"
+    },
+    {
+      "name": "FloorTopRight",
+      "width": 16,
+      "height": 16,
+      "colors": 6,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "sha256": "d06ce4c602992a7639b7f510aed07ac6191c49da1dc778830919fcf1a4419bc8"
+    },
+    {
+      "name": "PlatformSeed",
+      "width": 128,
+      "height": 64,
+      "colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        5,
+        13,
+        123,
+        53
+      ],
+      "sha256": "a8669e7e88942f0ec1f261da068344c3d6b181ef0c8c7a09789a3f19d78a46e5"
+    }
+  ],
+  "placements": [
+    {
+      "name": "FloorTopLeft",
+      "x": 0,
+      "y": 198
+    },
+    {
+      "name": "FloorTopA",
+      "x": 16,
+      "y": 198
+    },
+    {
+      "name": "FloorTopB",
+      "x": 80,
+      "y": 198
+    },
+    {
+      "name": "FloorTopC",
+      "x": 144,
+      "y": 198
+    },
+    {
+      "name": "FloorTopB",
+      "x": 208,
+      "y": 198
+    },
+    {
+      "name": "FloorTopA",
+      "x": 272,
+      "y": 198
+    },
+    {
+      "name": "FloorTopFill",
+      "x": 336,
+      "y": 198
+    },
+    {
+      "name": "FloorTopRight",
+      "x": 344,
+      "y": 198
+    },
+    {
+      "name": "FasciaLeft",
+      "x": 0,
+      "y": 214
+    },
+    {
+      "name": "FasciaA",
+      "x": 16,
+      "y": 214
+    },
+    {
+      "name": "FasciaB",
+      "x": 80,
+      "y": 214
+    },
+    {
+      "name": "FasciaC",
+      "x": 144,
+      "y": 214
+    },
+    {
+      "name": "FasciaB",
+      "x": 208,
+      "y": 214
+    },
+    {
+      "name": "FasciaA",
+      "x": 272,
+      "y": 214
+    },
+    {
+      "name": "FasciaFill",
+      "x": 336,
+      "y": 214
+    },
+    {
+      "name": "FasciaRight",
+      "x": 344,
+      "y": 214
+    }
+  ],
+  "floor_baseline": {
+    "global_y": 865,
+    "native_y": 205.5,
+    "walkway_native_y": [
+      198,
+      214
+    ]
+  },
+  "construction": "PixelLab material seed; hand-authored exact joins and native corner variants in LibreSprite. No scaling or resampling. One 360x42 strip assembled from separate modules, behind portrait and actors."
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "protected_production_files": 7839,
+  "accepted_stage01_02_files": 160,
+  "native_roundtrips": 13,
+  "exact_edge_pairings": 50,
+  "combined_opaque_colors": 6,
+  "native_unity_pixels_exact": true,
+  "before_equals_stage02": true,
+  "normal_tall_upper_exact": true,
+  "unchanged_lower_scene_pixels": true,
+  "portrait_interior_unchanged": true,
+  "portrait_mask_serialization_unchanged": true,
+  "portrait_boundary": "Existing one-pixel RectMask2D shader boundary blends new floor; no other portrait changes.",
+  "old_scene_object_changes": [
+    "1270482697",
+    "2080446818"
+  ],
+  "full_floor_opaque": true
+}
