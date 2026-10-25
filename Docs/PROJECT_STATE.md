@@ -44,7 +44,12 @@ fireflies around the board and lower roots using the unchanged top-HUD sprite.
 All 19 previous motion tracks and 7,102 baseline files remain intact. Unity
 compilation, 96 matched-time render pairs, UI clearance, Reduced Motion and
 exact pixel doubling pass. Zero generations used. [Latest firefly review](../ArtSource/ForestSurroundRevision/LowerFireflies/README.md).
-Draft PR #209 remains unmerged; stop for user visual approval.
+The user approved merging this complete Forest asset/review stack into main on
+2026-10-25 through PR #209, including dependencies from PRs #206–208. Final Unity
+compilation passed and the existing frame/motion evidence still matches the
+current sources. The new Forest artwork and motion remain review-scene assets;
+the playable Forest zone has not been rebound to this new library. Dungeon's
+latest hybrid art is already integrated and merged through PR #205.
 
 ## Forest surround polish — Stages 3–6 complete (2026-10-24, final review)
 
