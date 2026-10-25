@@ -1,0 +1,370 @@
+[
+  {
+    "name": "Corner_Right_NoSprig",
+    "width": 88,
+    "height": 180,
+    "frames": 1,
+    "source": "Assets/_Game/Art/ForestSurroundRevision/PolishFinal/Corner_Right.png",
+    "bounds": [
+      [
+        4,
+        18,
+        86,
+        178
+      ]
+    ],
+    "colors": 33
+  },
+  {
+    "name": "Wisp_Mote",
+    "width": 18,
+    "height": 19,
+    "frames": 4,
+    "source": "Raw/Seed.png",
+    "bounds": [
+      [
+        4,
+        4,
+        14,
+        15
+      ],
+      [
+        4,
+        4,
+        14,
+        15
+      ],
+      [
+        4,
+        4,
+        14,
+        15
+      ],
+      [
+        4,
+        4,
+        14,
+        15
+      ]
+    ],
+    "colors": 4
+  },
+  {
+    "name": "Wisp_Curl",
+    "width": 24,
+    "height": 28,
+    "frames": 4,
+    "source": "Raw/Curl.png",
+    "bounds": [
+      [
+        4,
+        4,
+        20,
+        24
+      ],
+      [
+        4,
+        4,
+        21,
+        24
+      ],
+      [
+        4,
+        4,
+        20,
+        24
+      ],
+      [
+        4,
+        4,
+        20,
+        24
+      ]
+    ],
+    "colors": 4
+  },
+  {
+    "name": "Wisp_Comet",
+    "width": 38,
+    "height": 40,
+    "frames": 4,
+    "source": "Raw/Comet.png",
+    "bounds": [
+      [
+        4,
+        4,
+        34,
+        36
+      ],
+      [
+        4,
+        4,
+        35,
+        36
+      ],
+      [
+        4,
+        4,
+        34,
+        36
+      ],
+      [
+        4,
+        4,
+        33,
+        36
+      ]
+    ],
+    "colors": 4
+  },
+  {
+    "name": "Vine_Left",
+    "width": 71,
+    "height": 61,
+    "frames": 5,
+    "source": "Assets/_Game/Art/ForestSurroundRevision/PolishFinal/Vine.png",
+    "bounds": [
+      [
+        8,
+        8,
+        63,
+        53
+      ],
+      [
+        8,
+        8,
+        63,
+        53
+      ],
+      [
+        8,
+        8,
+        63,
+        53
+      ],
+      [
+        7,
+        8,
+        63,
+        53
+      ],
+      [
+        7,
+        8,
+        63,
+        53
+      ]
+    ],
+    "colors": 15
+  },
+  {
+    "name": "Vine_Right",
+    "width": 71,
+    "height": 61,
+    "frames": 5,
+    "source": "Assets/_Game/Art/ForestSurroundRevision/PolishFinal/Vine_Right.png",
+    "bounds": [
+      [
+        8,
+        8,
+        63,
+        53
+      ],
+      [
+        8,
+        8,
+        64,
+        53
+      ],
+      [
+        8,
+        8,
+        64,
+        53
+      ],
+      [
+        8,
+        8,
+        63,
+        53
+      ],
+      [
+        8,
+        8,
+        63,
+        53
+      ]
+    ],
+    "colors": 15
+  },
+  {
+    "name": "Upper_Leaves",
+    "width": 46,
+    "height": 55,
+    "frames": 5,
+    "source": "Assets/_Game/Art/EnchantedForestStaged/Stage03/Hanging_Leaf_Strand.png",
+    "bounds": [
+      [
+        9,
+        6,
+        34,
+        47
+      ],
+      [
+        9,
+        6,
+        35,
+        47
+      ],
+      [
+        9,
+        6,
+        35,
+        47
+      ],
+      [
+        9,
+        6,
+        33,
+        47
+      ],
+      [
+        9,
+        6,
+        33,
+        47
+      ]
+    ],
+    "colors": 10
+  },
+  {
+    "name": "Upper_Mote_A",
+    "width": 17,
+    "height": 19,
+    "frames": 1,
+    "source": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Grove_Background.png",
+    "bounds": [
+      [
+        11,
+        8,
+        13,
+        11
+      ]
+    ],
+    "colors": 2
+  },
+  {
+    "name": "Upper_Mote_B",
+    "width": 12,
+    "height": 14,
+    "frames": 1,
+    "source": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Grove_Background.png",
+    "bounds": [
+      [
+        6,
+        8,
+        8,
+        10
+      ]
+    ],
+    "colors": 2
+  },
+  {
+    "name": "Grove_Motion_Copy",
+    "width": 360,
+    "height": 200,
+    "frames": 1,
+    "source": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Grove_Background.png",
+    "bounds": [
+      [
+        0,
+        0,
+        360,
+        200
+      ]
+    ],
+    "colors": 27
+  },
+  {
+    "name": "Waterfall",
+    "width": 40,
+    "height": 144,
+    "frames": 12,
+    "source": "Assets/_Game/Art/EnchantedForestStaged/Stage01/Grove_Background.png",
+    "bounds": [
+      [
+        12,
+        35,
+        24,
+        128
+      ],
+      [
+        12,
+        36,
+        24,
+        129
+      ],
+      [
+        12,
+        37,
+        24,
+        130
+      ],
+      [
+        12,
+        38,
+        24,
+        131
+      ],
+      [
+        12,
+        39,
+        24,
+        132
+      ],
+      [
+        12,
+        40,
+        24,
+        133
+      ],
+      [
+        12,
+        41,
+        24,
+        134
+      ],
+      [
+        12,
+        42,
+        24,
+        135
+      ],
+      [
+        12,
+        43,
+        24,
+        136
+      ],
+      [
+        12,
+        44,
+        24,
+        137
+      ],
+      [
+        12,
+        45,
+        24,
+        138
+      ],
+      [
+        12,
+        46,
+        24,
+        139
+      ]
+    ],
+    "colors": 1
+  }
+]

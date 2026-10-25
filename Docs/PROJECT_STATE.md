@@ -21,6 +21,21 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 
+## Living Forest motion copy (2026-10-25, review only)
+
+The user requested non-destructive motion on the latest forest scene. A separate
+`ArtPreview_ForestSurround_Living` scene removes the marked right-corner sprig,
+adds occasional native-pixel leaf gusts, varied spirit sizes/fade/drift rhythms,
+moving upper lights and a subtle water-only waterfall shimmer. All 6,746 prior
+source/art/scene/script/resource/settings files remain unchanged. Five PixelLab
+generations produced three selected wisp studies; LibreSprite sources and exact
+exports are retained. Unity compilation and the copied-scene motion test pass:
+288 captures over 24 seconds, exact pixel doubling at 720×1360 / 1440×2720,
+protected board/portrait/HUD pixels unchanged, pause/reduced motion stable.
+This is an editor art preview, not production gameplay integration or device
+testing. [Motion review and validation](../ArtSource/ForestSurroundRevision/LivingForest/README.md).
+Draft PR #209 remains unmerged; stop for user visual approval.
+
 ## Forest surround polish — Stages 3–6 complete (2026-10-24, final review)
 
 The user approved continuing through every remaining polish stage in one run.
@@ -46,11 +61,12 @@ The latest six-stage polish pass totals 20 debited, including Stage 1's document
 cancelled-job debit. Selected and rejected raw studies, native sources, request
 receipts and validation evidence are included in the final report.
 
-Current review: [final report and Unity gallery](../ArtSource/ForestSurroundRevision/PolishFinal/README.md).
+Previous still-polish checkpoint: [report and Unity gallery](../ArtSource/ForestSurroundRevision/PolishFinal/README.md).
 [Separator history](../ArtSource/ForestSurroundRevision/PolishStage01/README.md),
 [root-join history](../ArtSource/ForestSurroundRevision/PolishStage02/README.md), and
 [earlier unified corners](../ArtSource/ForestSurroundRevision/UnifiedCorners/README.md)
-remain available. The current scene is `ArtPreview_ForestSurround_FinalPolish`.
+remain available. Its source scene is `ArtPreview_ForestSurround_FinalPolish`;
+the Living Forest copy above is the current motion-review candidate.
 
 Draft PR #209 remains on the dedicated revision branch. This is an art-review
 scene with static approved actors/UI, excluded from builds; the motion helper
@@ -72,7 +88,7 @@ board/gems/frame, entire bottom region, shared geometry and 296 existing image
 bindings/rectangles are exact. All 1,680 protected source files are unchanged.
 See [Stage 1 report](../ArtSource/ForestSurroundRevision/Stage01/README.md).
 Stage 1 was carried forward into the later polish pass; the final Stages 3–6
-checkpoint above owns the current review gate. Production integration remains
+checkpoints above own the current review gate. Production integration remains
 unapproved; the spirit animation is confined to the isolated review scene.
 
 ## Enchanted Forest staged pack — Stage 5 revision 02 (2026-10-24, review only)

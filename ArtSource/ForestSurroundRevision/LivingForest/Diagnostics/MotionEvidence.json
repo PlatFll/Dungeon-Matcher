@@ -1,0 +1,473 @@
+{
+    "reducedMotionStable": true,
+    "uniformPixels": true,
+    "pauseStable": true,
+    "samples": 288,
+    "protectedImages": 290,
+    "tracks": [
+        {
+            "name": "Forest Unified Corner Review/Approved forest top modules 2x/Stage01 environment/Living forest water/Subtle waterfall shimmer",
+            "kind": "Water",
+            "period": 6.0,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 348.0,
+                "y": 1056.0,
+                "width": 80.0,
+                "height": 288.0
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_00.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_01.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_02.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_03.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_04.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_05.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_06.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_07.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_08.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_09.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_10.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Waterfall_11.png"
+            ],
+            "minAlpha": 1.0,
+            "maxAlpha": 1.0,
+            "positions": 1,
+            "poses": 12,
+            "neutralSamples": 32
+        },
+        {
+            "name": "Forest Unified Corner Review/Approved forest top modules 2x/Stage01 environment/Wisp_Far_A",
+            "kind": "Light",
+            "period": 3.9000000953674318,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 322.0,
+                "y": 1084.0,
+                "width": 32.0,
+                "height": 32.0
+            },
+            "paths": [
+                "Assets/_Game/Art/EnchantedForestStaged/Stage01/Wisp_Far_A.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.8500000238418579,
+            "positions": 15,
+            "poses": 1,
+            "neutralSamples": 288
+        },
+        {
+            "name": "Forest Unified Corner Review/Approved forest top modules 2x/Stage01 environment/Wisp_Far_B",
+            "kind": "Light",
+            "period": 5.600000381469727,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 517.9999389648438,
+                "y": 1132.0,
+                "width": 32.0,
+                "height": 40.0
+            },
+            "paths": [
+                "Assets/_Game/Art/EnchantedForestStaged/Stage01/Wisp_Far_B.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.8500000238418579,
+            "positions": 25,
+            "poses": 1,
+            "neutralSamples": 288
+        },
+        {
+            "name": "Forest Unified Corner Review/Approved forest top modules 2x/Stage01 environment/Wisp_Near",
+            "kind": "Light",
+            "period": 7.300000190734863,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 658.0,
+                "y": 990.0,
+                "width": 36.0,
+                "height": 44.0
+            },
+            "paths": [
+                "Assets/_Game/Art/EnchantedForestStaged/Stage01/Wisp_Near.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.8500000238418579,
+            "positions": 15,
+            "poses": 1,
+            "neutralSamples": 288
+        },
+        {
+            "name": "Forest Unified Corner Review/Approved forest top modules 2x/Stage03 magical accents/Wisp_Aura",
+            "kind": "Light",
+            "period": 8.300000190734864,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 453.9999694824219,
+                "y": 1134.0,
+                "width": 36.00006103515625,
+                "height": 44.0
+            },
+            "paths": [
+                "Assets/_Game/Art/EnchantedForestStaged/Stage03/Wisp_Aura.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.550000011920929,
+            "positions": 26,
+            "poses": 1,
+            "neutralSamples": 288
+        },
+        {
+            "name": "Forest Unified Corner Review/Approved forest top modules 2x/Stage03 magical accents/Wisp_Core",
+            "kind": "Light",
+            "period": 8.300000190734864,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 453.9999694824219,
+                "y": 1134.0,
+                "width": 36.00006103515625,
+                "height": 44.0
+            },
+            "paths": [
+                "Assets/_Game/Art/EnchantedForestStaged/Stage03/Wisp_Core.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.8500000238418579,
+            "positions": 26,
+            "poses": 1,
+            "neutralSamples": 288
+        },
+        {
+            "name": "Forest Unified Corner Review/Approved forest top modules 2x/Stage03 magical accents/Warm firefly",
+            "kind": "Light",
+            "period": 3.200000047683716,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 388.0,
+                "y": 1180.0,
+                "width": 16.0,
+                "height": 16.0001220703125
+            },
+            "paths": [
+                "Assets/_Game/Art/EnchantedForestStaged/Stage03/Firefly_Mote.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.8799999952316284,
+            "positions": 33,
+            "poses": 1,
+            "neutralSamples": 288
+        },
+        {
+            "name": "Forest Unified Corner Review/Approved forest top modules 2x/Living forest upper spirits/Distant gold firefly",
+            "kind": "Light",
+            "period": 2.0999999046325685,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 564.0,
+                "y": 1082.0,
+                "width": 16.0,
+                "height": 16.0
+            },
+            "paths": [
+                "Assets/_Game/Art/EnchantedForestStaged/Stage03/Firefly_Mote.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.6499999761581421,
+            "positions": 25,
+            "poses": 1,
+            "neutralSamples": 288
+        },
+        {
+            "name": "Forest Unified Corner Review/Approved forest top modules 2x/Living forest upper spirits/Upper_Mote_A",
+            "kind": "Light",
+            "period": 4.599999904632568,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 492.0,
+                "y": 1154.0001220703125,
+                "width": 34.0,
+                "height": 37.9998779296875
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Upper_Mote_A_00.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.8500000238418579,
+            "positions": 25,
+            "poses": 1,
+            "neutralSamples": 288
+        },
+        {
+            "name": "Forest Unified Corner Review/Approved forest top modules 2x/Living forest upper spirits/Upper_Mote_B",
+            "kind": "Light",
+            "period": 2.700000047683716,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 594.0,
+                "y": 1140.0,
+                "width": 24.0,
+                "height": 28.0
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Upper_Mote_B_00.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.8500000238418579,
+            "positions": 25,
+            "poses": 1,
+            "neutralSamples": 288
+        },
+        {
+            "name": "Forest Unified Corner Review/Living forest lower spirits/Varied forest spirit 0",
+            "kind": "Light",
+            "period": 2.799999952316284,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 16.00002098083496,
+                "y": 716.0,
+                "width": 35.99998474121094,
+                "height": 38.0
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_00.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_01.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_02.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_03.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.6000000238418579,
+            "positions": 15,
+            "poses": 4,
+            "neutralSamples": 72
+        },
+        {
+            "name": "Forest Unified Corner Review/Living forest lower spirits/Varied forest spirit 1",
+            "kind": "Light",
+            "period": 5.900000095367432,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 664.0,
+                "y": 664.0,
+                "width": 48.0,
+                "height": 56.00006103515625
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Curl_00.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Curl_01.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Curl_02.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Curl_03.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.6800000071525574,
+            "positions": 35,
+            "poses": 4,
+            "neutralSamples": 72
+        },
+        {
+            "name": "Forest Unified Corner Review/Living forest lower spirits/Varied forest spirit 2",
+            "kind": "Light",
+            "period": 7.300000190734863,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 8.000020980834961,
+                "y": 498.0000305175781,
+                "width": 48.0,
+                "height": 55.999969482421878
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Curl_00.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Curl_01.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Curl_02.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Curl_03.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.7599999904632568,
+            "positions": 15,
+            "poses": 4,
+            "neutralSamples": 70
+        },
+        {
+            "name": "Forest Unified Corner Review/Living forest lower spirits/Varied forest spirit 3",
+            "kind": "Light",
+            "period": 3.0999999046325685,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 674.0,
+                "y": 454.0,
+                "width": 35.99993896484375,
+                "height": 38.0
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_00.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_01.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_02.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_03.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.6000000238418579,
+            "positions": 34,
+            "poses": 4,
+            "neutralSamples": 70
+        },
+        {
+            "name": "Forest Unified Corner Review/Living forest lower spirits/Varied forest spirit 4",
+            "kind": "Light",
+            "period": 8.899999618530274,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 10.00002670288086,
+                "y": 196.00001525878907,
+                "width": 75.99998474121094,
+                "height": 79.99998474121094
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Comet_00.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Comet_01.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Comet_02.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Comet_03.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.6800000071525574,
+            "positions": 15,
+            "poses": 4,
+            "neutralSamples": 71
+        },
+        {
+            "name": "Forest Unified Corner Review/Living forest lower spirits/Varied forest spirit 5",
+            "kind": "Light",
+            "period": 4.400000095367432,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 662.0,
+                "y": 205.99998474121095,
+                "width": 47.99993896484375,
+                "height": 47.99998474121094
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/PolishFinal/Wisp.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.7599999904632568,
+            "positions": 30,
+            "poses": 1,
+            "neutralSamples": 288
+        },
+        {
+            "name": "Forest Unified Corner Review/Living forest lower spirits/Varied forest spirit 6",
+            "kind": "Light",
+            "period": 2.299999952316284,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 58.000022888183597,
+                "y": 42.00000762939453,
+                "width": 35.99998474121094,
+                "height": 37.99998474121094
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_00.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_01.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_02.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Mote_03.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.6000000238418579,
+            "positions": 14,
+            "poses": 4,
+            "neutralSamples": 71
+        },
+        {
+            "name": "Forest Unified Corner Review/Living forest lower spirits/Varied forest spirit 7",
+            "kind": "Light",
+            "period": 6.699999809265137,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 638.0,
+                "y": 43.999977111816409,
+                "width": 76.0,
+                "height": 79.99999237060547
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Comet_00.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Comet_01.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Comet_02.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Wisp_Comet_03.png"
+            ],
+            "minAlpha": 0.0,
+            "maxAlpha": 0.6800000071525574,
+            "positions": 24,
+            "poses": 4,
+            "neutralSamples": 73
+        },
+        {
+            "name": "Forest Unified Corner Review/Forest final polish stage 4/Left hanging vine",
+            "kind": "Foliage",
+            "period": 9.699999809265137,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 76.00003051757813,
+                "y": 196.00001525878907,
+                "width": 141.99998474121095,
+                "height": 121.99998474121094
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Vine_Left_00.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Vine_Left_01.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Vine_Left_02.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Vine_Left_03.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Vine_Left_04.png"
+            ],
+            "minAlpha": 1.0,
+            "maxAlpha": 1.0,
+            "positions": 1,
+            "poses": 5,
+            "neutralSamples": 208
+        },
+        {
+            "name": "Forest Unified Corner Review/Forest final polish stage 4/Right hanging vine",
+            "kind": "Foliage",
+            "period": 11.09999942779541,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 483.9999694824219,
+                "y": 196.00001525878907,
+                "width": 142.00003051757813,
+                "height": 121.99998474121094
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Vine_Right_00.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Vine_Right_01.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Vine_Right_02.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Vine_Right_03.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Vine_Right_04.png"
+            ],
+            "minAlpha": 1.0,
+            "maxAlpha": 1.0,
+            "positions": 1,
+            "poses": 5,
+            "neutralSamples": 234
+        },
+        {
+            "name": "Forest Unified Corner Review/Approved forest top modules 2x/Stage03 magical accents/Hanging leaves",
+            "kind": "Foliage",
+            "period": 12.5,
+            "rect": {
+                "serializedVersion": "2",
+                "x": 624.0,
+                "y": 1160.0,
+                "width": 92.0,
+                "height": 110.0
+            },
+            "paths": [
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Upper_Leaves_00.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Upper_Leaves_01.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Upper_Leaves_02.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Upper_Leaves_03.png",
+                "Assets/_Game/Art/ForestSurroundRevision/LivingForest/Upper_Leaves_04.png"
+            ],
+            "minAlpha": 1.0,
+            "maxAlpha": 1.0,
+            "positions": 1,
+            "poses": 5,
+            "neutralSamples": 236
+        }
+    ]
+}
