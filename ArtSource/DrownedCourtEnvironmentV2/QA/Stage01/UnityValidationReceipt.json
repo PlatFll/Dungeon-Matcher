@@ -1,0 +1,9 @@
+{
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "exit_code": 0,
+  "result": "PASS",
+  "unity_version": "6000.3.19f1",
+  "log_path": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-34d56aff-93a0-458c-a3f2-3984ccfe0c76.log",
+  "log_sha256": "f87d1a3ea8e89287fe35aa761778bc89c2f58d847f60d9f5cc65542da826a3f5",
+  "scope": "Unity compilation/import validation. Static camera rendering checked separately. No device or new gameplay test."
+}

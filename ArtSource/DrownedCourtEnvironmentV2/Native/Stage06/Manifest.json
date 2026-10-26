@@ -1,0 +1,634 @@
+{
+  "stage": "06",
+  "status": "CANDIDATE_PENDING_REVIEW",
+  "assets": [
+    {
+      "name": "BarnaclePatch",
+      "width": 9,
+      "height": 13,
+      "colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        2,
+        8,
+        11
+      ],
+      "sha256": "258e2bd245770364a206cd6b69e452d77478778c240b7d14e006e68dce693dd6"
+    },
+    {
+      "name": "ColumnBase",
+      "width": 31,
+      "height": 18,
+      "colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        5,
+        0,
+        26,
+        16
+      ],
+      "sha256": "e5a0b3814a7fc99e501ac236ffe659ce83485e131a39ca7a4f1ba4aa1d649499"
+    },
+    {
+      "name": "ColumnCap",
+      "width": 31,
+      "height": 16,
+      "colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        4,
+        2,
+        26,
+        16
+      ],
+      "sha256": "7d29d53137c63ffb662a2fd3d2fb71adcc7817404cbd6ee062112505b1ffc29b"
+    },
+    {
+      "name": "ColumnShaftA",
+      "width": 31,
+      "height": 32,
+      "colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        9,
+        0,
+        23,
+        32
+      ],
+      "sha256": "2c4b09a4ad82914077081426c93745866c38c0698b89ba51a50657b6775880ab"
+    },
+    {
+      "name": "ColumnShaftB",
+      "width": 31,
+      "height": 32,
+      "colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        9,
+        0,
+        23,
+        32
+      ],
+      "sha256": "799aac82a6bae5417e589adfd033687f4816fae2b6f069fddda6cc82c1ad11d2"
+    },
+    {
+      "name": "ColumnShaftC",
+      "width": 31,
+      "height": 32,
+      "colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        9,
+        0,
+        23,
+        32
+      ],
+      "sha256": "1108706025d74d67d01c464f57d2e68fe774b15a8955281128d8402b75113505"
+    },
+    {
+      "name": "ColumnShaftShort",
+      "width": 31,
+      "height": 18,
+      "colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        9,
+        0,
+        23,
+        18
+      ],
+      "sha256": "95193419cc060b176fcfe6f66e288f035233375745d18d64982655abdf61b98e"
+    },
+    {
+      "name": "CoralColony",
+      "width": 33,
+      "height": 57,
+      "colors": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        2,
+        31,
+        55
+      ],
+      "sha256": "dddede0db76c25b7e0cee48832e38717374dcb9f5877062f8f908c165bdb082d"
+    },
+    {
+      "name": "CoralSeed",
+      "width": 64,
+      "height": 64,
+      "colors": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        15,
+        7,
+        49,
+        60
+      ],
+      "sha256": "845caceacfbfb22cd21c7ba65afae84598ed9fe2077eef5e7845decc712f9556"
+    },
+    {
+      "name": "KelpSeed",
+      "width": 64,
+      "height": 64,
+      "colors": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        14,
+        2,
+        47,
+        64
+      ],
+      "sha256": "0599870fc87ecea65017c56f4e646b8732aaa4ffc5877874528c8bdf94859c54"
+    },
+    {
+      "name": "KelpStem",
+      "width": 31,
+      "height": 48,
+      "colors": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        3,
+        0,
+        30,
+        46
+      ],
+      "sha256": "7ef3ef9b1c2e1b8473f8782d7681354d70f77ff0cb2c0b436a00b6eccec42c98"
+    },
+    {
+      "name": "KelpTall",
+      "width": 31,
+      "height": 68,
+      "colors": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        3,
+        2,
+        30,
+        66
+      ],
+      "sha256": "f081636a5fd1d3652c38e80c988c3d8020edabe3d0145ff79c3b765de432e9f4"
+    },
+    {
+      "name": "KelpTip",
+      "width": 31,
+      "height": 22,
+      "colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        7,
+        2,
+        19,
+        22
+      ],
+      "sha256": "10ff3a67c4c5dfe1474a3fc67dc2124ca301036610b1402a7e3c99b97e4eb8bd"
+    },
+    {
+      "name": "PillarSeed",
+      "width": 64,
+      "height": 128,
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        18,
+        8,
+        45,
+        122
+      ],
+      "sha256": "80b8c1ab819e6eae7f8d359317651f50eb706afd0070b7c50e75de2ecb091553"
+    },
+    {
+      "name": "ShelfLeft",
+      "width": 31,
+      "height": 12,
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        5,
+        2,
+        23,
+        10
+      ],
+      "sha256": "289b485444a1d418c44584703c93c868456cba779c68b3b02075756d9be50323"
+    },
+    {
+      "name": "ShelfRight",
+      "width": 31,
+      "height": 12,
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        9,
+        2,
+        27,
+        10
+      ],
+      "sha256": "2e7de6a19cfc63cd7e0a4d78c87b347a39f9f9ff5c25146ef1a9514f9b4a1fbd"
+    },
+    {
+      "name": "VentOutlet",
+      "width": 11,
+      "height": 11,
+      "colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        2,
+        9,
+        9
+      ],
+      "sha256": "266aa7258cdb6f25e958f54047a8878a3bcfb74b64029233c2aab8cb0f88da7e"
+    }
+  ],
+  "placements": [
+    {
+      "name": "ColumnCap",
+      "x": 0,
+      "y": 243,
+      "width": 31,
+      "height": 16,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftA",
+      "x": 0,
+      "y": 259,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftB",
+      "x": 0,
+      "y": 291,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftA",
+      "x": 0,
+      "y": 323,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftC",
+      "x": 0,
+      "y": 355,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftA",
+      "x": 0,
+      "y": 387,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftB",
+      "x": 0,
+      "y": 419,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftA",
+      "x": 0,
+      "y": 451,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftC",
+      "x": 0,
+      "y": 483,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftShort",
+      "x": 0,
+      "y": 515,
+      "width": 31,
+      "height": 18,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnBase",
+      "x": 0,
+      "y": 533,
+      "width": 31,
+      "height": 18,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnCap",
+      "x": 329,
+      "y": 243,
+      "width": 31,
+      "height": 16,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftA",
+      "x": 329,
+      "y": 259,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftC",
+      "x": 329,
+      "y": 291,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftA",
+      "x": 329,
+      "y": 323,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftB",
+      "x": 329,
+      "y": 355,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftA",
+      "x": 329,
+      "y": 387,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftA",
+      "x": 329,
+      "y": 419,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftB",
+      "x": 329,
+      "y": 451,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftC",
+      "x": 329,
+      "y": 483,
+      "width": 31,
+      "height": 32,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnShaftShort",
+      "x": 329,
+      "y": 515,
+      "width": 31,
+      "height": 18,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ColumnBase",
+      "x": 329,
+      "y": 533,
+      "width": 31,
+      "height": 18,
+      "role": "structure",
+      "attachment": null
+    },
+    {
+      "name": "ShelfLeft",
+      "x": 0,
+      "y": 338,
+      "width": 31,
+      "height": 12,
+      "role": "shelf",
+      "attachment": null
+    },
+    {
+      "name": "ShelfRight",
+      "x": 0,
+      "y": 468,
+      "width": 31,
+      "height": 12,
+      "role": "shelf",
+      "attachment": null
+    },
+    {
+      "name": "ShelfLeft",
+      "x": 329,
+      "y": 338,
+      "width": 31,
+      "height": 12,
+      "role": "shelf",
+      "attachment": null
+    },
+    {
+      "name": "ShelfRight",
+      "x": 329,
+      "y": 471,
+      "width": 31,
+      "height": 12,
+      "role": "shelf",
+      "attachment": null
+    },
+    {
+      "name": "KelpTall",
+      "x": 2,
+      "y": 277,
+      "width": 31,
+      "height": 68,
+      "role": "growth",
+      "attachment": [
+        18,
+        340
+      ]
+    },
+    {
+      "name": "CoralColony",
+      "x": 0,
+      "y": 418,
+      "width": 33,
+      "height": 57,
+      "role": "growth",
+      "attachment": [
+        17,
+        471
+      ]
+    },
+    {
+      "name": "CoralColony",
+      "x": 327,
+      "y": 288,
+      "width": 33,
+      "height": 57,
+      "role": "growth",
+      "attachment": [
+        344,
+        341
+      ]
+    },
+    {
+      "name": "KelpTall",
+      "x": 327,
+      "y": 409,
+      "width": 31,
+      "height": 68,
+      "role": "growth",
+      "attachment": [
+        343,
+        472
+      ]
+    },
+    {
+      "name": "BarnaclePatch",
+      "x": 19,
+      "y": 366,
+      "width": 9,
+      "height": 13,
+      "role": "attached_accent",
+      "attachment": [
+        22,
+        374
+      ]
+    },
+    {
+      "name": "BarnaclePatch",
+      "x": 334,
+      "y": 382,
+      "width": 9,
+      "height": 13,
+      "role": "attached_accent",
+      "attachment": [
+        339,
+        392
+      ]
+    },
+    {
+      "name": "VentOutlet",
+      "x": 11,
+      "y": 394,
+      "width": 11,
+      "height": 11,
+      "role": "attached_accent",
+      "attachment": [
+        16,
+        399
+      ]
+    },
+    {
+      "name": "VentOutlet",
+      "x": 341,
+      "y": 507,
+      "width": 11,
+      "height": 11,
+      "role": "attached_accent",
+      "attachment": [
+        346,
+        512
+      ]
+    }
+  ],
+  "reference_canvas": [
+    360,
+    640
+  ],
+  "native_scale_at_720": 2,
+  "tall_screen_y_offset": 63,
+  "notes": "All side art is behind the unchanged Stage05 frame/cells. Native separate modules. Tall layout shifts these board-attached decorations with the board. Kelp tips are separately registered for a later animation stage; no animation here."
+}

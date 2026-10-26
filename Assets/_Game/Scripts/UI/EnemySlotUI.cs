@@ -583,9 +583,10 @@ public sealed class EnemySlotUI : MonoBehaviour
                 ? presentationProfile.EnemyHealthBarBottomOffset
                 : FallbackEnemyHealthBarBottomOffset;
 
-        if (DungeonPixelLabBattleArt.Current)
-            bottomOffset -= DungeonPixelLabBattleArt.EnemyFloorInset *
-                DungeonPixelLabBattleArt.Unit(enemyHealthBarRect.GetComponentInParent<Canvas>());
+        // Shared native inset: changing the zone must not move the HP row or feet.
+        bottomOffset -= BattleFloorAnchor.EnemyFloorInset *
+            BattleFloorAnchor.Unit(enemyHealthBarRect.GetComponentInParent<Canvas>());
+        bottomOffset -= GetComponentInParent<GameplayPixelLayoutController>()?.BattleFloorCompensation ?? 0f;
 
         Vector2 position =
             enemyHealthBarRect.anchoredPosition;

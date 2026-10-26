@@ -1,0 +1,64 @@
+{
+  "status": "PASS_WITH_TWO_REPRODUCED_LEGACY_TEST_FAILURES",
+  "source": "Assets/_Game/Scenes/ArtPreview_DrownedCourtV2_Revision04.unity",
+  "gameplayScene": "Assets/_Game/Scenes/Game.unity",
+  "modules": 94,
+  "ambientTracks": 15,
+  "phoneZoneCases": 25,
+  "sourceFloorMeasurements": 75,
+  "protectedFiles": 5553,
+  "changedProtectedFiles": [],
+  "additionalPixelLabGenerations": 0,
+  "tests": {
+    "Before.xml": {
+      "result": "Passed",
+      "total": "1",
+      "passed": "1",
+      "failed": "0",
+      "duration": "9.2618239"
+    },
+    "After.xml": {
+      "result": "Passed",
+      "total": "1",
+      "passed": "1",
+      "failed": "0",
+      "duration": "44.6409222"
+    },
+    "Lifecycle.xml": {
+      "result": "Passed",
+      "total": "3",
+      "passed": "3",
+      "failed": "0",
+      "duration": "46.8293856"
+    },
+    "Gameplay.xml": {
+      "total": "11",
+      "passed": "9",
+      "failed": "2",
+      "failures": {
+        "CourtThreeZoneSoakCleansEffectsPreservesRunAndBoundsSaveSize": "  scene objects do not accumulate across trips\n  Expected: less than 814\n  But was:  848\n",
+        "CourtWetResumePreservesAirAndChannelDeadline": "  Expected: 2\n  But was:  1\n"
+      }
+    },
+    "LegacyGameplay.xml": {
+      "total": "2",
+      "passed": "0",
+      "failed": "2",
+      "failures": {
+        "CourtThreeZoneSoakCleansEffectsPreservesRunAndBoundsSaveSize": "  scene objects do not accumulate across trips\n  Expected: less than 814\n  But was:  848\n",
+        "CourtWetResumePreservesAirAndChannelDeadline": "  Expected: 2\n  But was:  1\n"
+      }
+    }
+  },
+  "android": {
+    "result": "Succeeded",
+    "apk": "C:\\Users\\USER\\.codex\\worktrees\\drowned-court-pixellab-v2\\Dungeon Matcher\\.utmp\\CourtProduction\\DungeonMatcher-DrownedCourt.apk",
+    "backend": "IL2CPP",
+    "errors": 0,
+    "warnings": 25,
+    "bytes": 1441269298,
+    "seconds": 513.8055654,
+    "deviceTested": false
+  },
+  "physicalDeviceTested": false
+}

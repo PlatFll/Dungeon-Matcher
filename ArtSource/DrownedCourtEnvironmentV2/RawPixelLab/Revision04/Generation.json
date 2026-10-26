@@ -1,0 +1,112 @@
+{
+  "still": {
+    "description": "A single CLOSED bivalve clam shell resting naturally on the ground for Dungeon Matcher's magical underwater ruins. Original design guided by the labeled shell-shape references: TWO substantial rounded matching shell valves joined tightly along one thin shallow WAVY horizontal seam, upper shell domed, lower shell a rounded bowl, recognizable compact plump clam silhouette with 4-5 broad radial ribs. CLOSED SHUT, not an open mouth; no teeth, no lips, no eyes, no face, no pearl visible, no rock base. Slight three-quarter front view with modest top surface visible, level grounded contact. Muted aqua/teal outer shell, restrained blue highlights and deep purple in the narrow seam. Keep the drawing about 34 pixels wide and 23 pixels tall near the bottom-center of the 64x64 transparent canvas; leave plenty of upper space so it can hinge open later without shifting its base. Strong dark outline, connected simple 2-3-tone shell planes, top-left lighting, true clean native pixels, restrained detail. No blurry gradients, no sparkle/noise, no scenery, no UI, no text, no frame, no watermark. Use Rattlebones only for outline/shading economy, never skeleton anatomy or colors.",
+    "width": 64,
+    "height": 64,
+    "max_colors": 16,
+    "no_background": true,
+    "palette": [
+      "#0a0d11",
+      "#062432",
+      "#083d50",
+      "#0d5368",
+      "#176c7d",
+      "#258999",
+      "#3aa3ae",
+      "#65c1be",
+      "#352b50",
+      "#66516f",
+      "#9d7b96",
+      "#cfabbc",
+      "#8f9e8d",
+      "#d5d6b0",
+      "#f2e9ce",
+      "#294c36"
+    ],
+    "palette_name": "Drowned Court clam material palette",
+    "seed": 260264,
+    "style_image_url": "upload:88e11c6f-c0e0-4f51-a958-d770e7b86910",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:5598f115-fb49-43b6-8faa-4e77c4542657",
+        "usage": "Bivalve anatomy: LEFT CLOSED shell has two rounded interlocking halves with a narrow wavy seam. Use shape logic, not exact pixels, colors, text or watermark. RIGHT OPEN shell indicates the future hinge direction only; generate CLOSED."
+      },
+      {
+        "url": "upload:5874d398-17ae-4e76-a213-45626320ccd8",
+        "usage": "Shape inspiration: plump scalloped closed shell, substantial rounded valves, broad radial ribs, legible narrow violet seam. Create an original small teal variant with much simpler game-native detail; no icon frame or gradient background."
+      }
+    ]
+  },
+  "stillReceipt": [
+    {
+      "type": "text",
+      "text": "id: 0078ce3d-e466-44a9-8758-b9a3a824b86d\njob_id: 0078ce3d-e466-44a9-8758-b9a3a824b86d\nmodel: pro\ndescription: A single CLOSED bivalve clam shell resting naturally on the ground for Dungeon Matcher's magical underwater ruins. Original design guided by the labeled shell-shape references: TWO substantial rounded matching shell valves joined tightly along one thin shallow WAVY horizontal seam, upper shell domed, lower shell a rounded bowl, recognizable compact plump clam silhouette with 4-5 broad radial ribs. CLOSED SHUT, not an open mouth; no teeth, no lips, no eyes, no face, no pearl visible, no rock base. Slight three-quarter front view with modest top surface visible, level grounded contact. Muted aqua/teal outer shell, restrained blue highlights and deep purple in the narrow seam. Keep the drawing about 34 pixels wide and 23 pixels tall near the bottom-center of the 64x64 transparent canvas; leave plenty of upper space so it can hinge open later without shifting its base. Strong dark outline, connected simple 2-3-tone shell planes, top-left lighting, true clean native pixels, restrained detail. No blurry gradients, no sparkle/noise, no scenery, no UI, no text, no frame, no watermark. Use Rattlebones only for outline/shading economy, never skeleton anatomy or colors.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 2\nstyle_image: yes (outline, detail, shading)\npalette: 16 colours (Drowned Court clam material palette)\nmax colours: 16 per image\nseed: 260264\nasset_id: 1421534c-e750-58c3-a6a4-4ab83748e3d9\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"0078ce3d-e466-44a9-8758-b9a3a824b86d\")"
+    }
+  ],
+  "attempts": [
+    {
+      "request": {
+        "first_frame_url": "upload:a02c9a6a-0843-423d-bd9b-aa1b137b06ce",
+        "last_frame_url": "upload:a02c9a6a-0843-423d-bd9b-aa1b137b06ce",
+        "frame_count": 16,
+        "no_background": true,
+        "seed": 2602641,
+        "action": "One natural clam opening and closing cycle. Starts fully CLOSED. Bottom rounded shell stays planted and completely still, exact same ground line and position. Upper ribbed shell lifts and hinges upward/back around its rear hinge like a real bivalve; opens about 60 degrees to reveal a muted mauve interior and one small ivory pearl. Open widest at the middle of the sequence, briefly pause, then the upper shell slowly hinges down to meet the lower valve along the original thin wavy seam. End fully closed exactly like the input. Keep shell width, volume, colors, ribs and perspective consistent. No translation, hopping, squash, stretching, rotation of the entire clam, teeth, eyes, tongue, face, extra objects, particles or camera motion. All shell pixels must remain inside the 64x64 transparent canvas. Crisp native pixel steps."
+      },
+      "receipt": [
+        {
+          "type": "text",
+          "text": "id: 7d16fedd-e69e-40d9-bc5b-1a7c39fc541b\njob_id: 7d16fedd-e69e-40d9-bc5b-1a7c39fc541b\naction: One natural clam opening and closing cycle. Starts fully CLOSED. Bottom rounded shell stays planted and completely still, exact same ground line and position. Upper ribbed shell lifts and hinges upward/back around its rear hinge like a real bivalve; opens about 60 degrees to reveal a muted mauve interior and one small ivory pearl. Open widest at the middle of the sequence, briefly pause, then the upper shell slowly hinges down to meet the lower valve along the original thin wavy seam. End fully closed exactly like the input. Keep shell width, volume, colors, ribs and perspective consistent. No translation, hopping, squash, stretching, rotation of the entire clam, teeth, eyes, tongue, face, extra objects, particles or camera motion. All shell pixels must remain inside the 64x64 transparent canvas. Crisp native pixel steps.\nframes: 16\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 2602641\nasset_id: 5f487818-111d-5fa4-818a-7a0afa734099\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"7d16fedd-e69e-40d9-bc5b-1a7c39fc541b\")"
+        }
+      ],
+      "verdict": "Rejected: pearl drift and unstable open state."
+    },
+    {
+      "request": {
+        "first_frame_url": "upload:a02c9a6a-0843-423d-bd9b-aa1b137b06ce",
+        "last_frame_url": "upload:a02c9a6a-0843-423d-bd9b-aa1b137b06ce",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 2602642,
+        "action": "Subtle grounded bivalve clam breathing: start closed, lift ONLY the front edge of the upper shell by a very small amount (about 4 pixels at maximum), then slowly shut it to the exact original closed silhouette. This is a tiny shallow opening, never an upright open fan. The back hinge stays physically connected to the lower shell at all times. Lower shell, bottom contour, width, radial ribs, palette and ground contact stay perfectly still. A narrow dark mauve slit becomes visible, then closes. No visible pearl, no floating white objects, no bubbles, no eyes, no teeth. Do not translate the shell or make its lid float. Maintain native pixel-art clusters and original colors, no blending or morphing. End exactly like the supplied closed image."
+      },
+      "receipt": [
+        {
+          "type": "text",
+          "text": "id: afa192ba-0321-4e3b-a7b4-cc6e7c3f6561\njob_id: afa192ba-0321-4e3b-a7b4-cc6e7c3f6561\naction: Subtle grounded bivalve clam breathing: start closed, lift ONLY the front edge of the upper shell by a very small amount (about 4 pixels at maximum), then slowly shut it to the exact original closed silhouette. This is a tiny shallow opening, never an upright open fan. The back hinge stays physically connected to the lower shell at all times. Lower shell, bottom contour, width, radial ribs, palette and ground contact stay perfectly still. A narrow dark mauve slit becomes visible, then closes. No visible pearl, no floating white objects, no bubbles, no eyes, no teeth. Do not translate the shell or make its lid float. Maintain native pixel-art clusters and original colors, no blending or morphing. End exactly like the supplied closed image.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 2602642\nasset_id: cb28e822-8a96-548a-bc88-b0a7b0087e75\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"afa192ba-0321-4e3b-a7b4-cc6e7c3f6561\")"
+        }
+      ],
+      "verdict": "Rejected: lid separated too far and added particles."
+    },
+    {
+      "request": {
+        "first_frame_url": "upload:a02c9a6a-0843-423d-bd9b-aa1b137b06ce",
+        "last_frame_url": "upload:4a7a36f7-21ae-47e3-9b9d-66284ea6a118",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 2602643,
+        "action": "The closed clam slowly opens into the supplied final open pose. Interpolate the shell lid rotating upward around its connected central rear hinge. The lower rounded shell and its ground contact remain completely still; the pearl stays seated low inside the lower bowl and is gradually revealed as the lid opens. Never attach the pearl to the lid. Keep the two shell halves physically connected at the hinge, consistent volume, width and native pixel palette. No jump, floating lid, translation, squash, spewing water, particles or bubbles. End exactly at the provided open pose. All artwork stays inside canvas."
+      },
+      "receipt": [
+        {
+          "type": "text",
+          "text": "id: c3cffa45-d066-4098-b2a2-ce698f469459\njob_id: c3cffa45-d066-4098-b2a2-ce698f469459\naction: The closed clam slowly opens into the supplied final open pose. Interpolate the shell lid rotating upward around its connected central rear hinge. The lower rounded shell and its ground contact remain completely still; the pearl stays seated low inside the lower bowl and is gradually revealed as the lid opens. Never attach the pearl to the lid. Keep the two shell halves physically connected at the hinge, consistent volume, width and native pixel palette. No jump, floating lid, translation, squash, spewing water, particles or bubbles. End exactly at the provided open pose. All artwork stays inside canvas.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 2602643\nasset_id: 596e61e2-e446-568c-9cd8-9bcc6d147db6\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c3cffa45-d066-4098-b2a2-ce698f469459\")"
+        }
+      ],
+      "verdict": "Selected motion; cleaned native palette, fixed lower valve and pearl/socket artifacts in LibreSprite."
+    }
+  ],
+  "balance": [
+    {
+      "type": "text",
+      "text": "credits: $0.00\ngenerations_remaining: 535.20\ngenerations_used: 2564.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use — prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls — most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+    }
+  ],
+  "generationsSpent": 13,
+  "packCumulativeGenerations": 107
+}

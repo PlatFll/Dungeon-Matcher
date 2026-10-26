@@ -1,0 +1,20 @@
+{
+  "result": {
+    "job_id": "5a52f95f-8825-486e-ae23-bfe198ae817c",
+    "status": "completed",
+    "frames": 1,
+    "download_url": "https://api.pixellab.ai/mcp/images/5a52f95f-8825-486e-ae23-bfe198ae817c/download",
+    "download_urls": [
+      "https://api.pixellab.ai/mcp/images/5a52f95f-8825-486e-ae23-bfe198ae817c/download"
+    ],
+    "asset": {
+      "id": "a8b1ebb4-8aa6-514c-9efe-9d3248185b2e",
+      "type": "image",
+      "status": "saved"
+    },
+    "charged_generations": 6
+  },
+  "balance_after_text": "credits: $0.00\ngenerations_remaining: 600.20\ngenerations_used: 2499.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use \u2014 prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls \u2014 most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset",
+  "balance_after": 600.2,
+  "actual_cost": 6
+}

@@ -1,0 +1,70 @@
+{
+  "stage": "08",
+  "assets": [
+    {
+      "name": "SpongePocket",
+      "status": "CANDIDATE",
+      "width": 28,
+      "height": 33,
+      "bounds": [
+        2,
+        2,
+        26,
+        31
+      ],
+      "opaque_colors": 13,
+      "binary_alpha": true,
+      "sha256": "9da2a602bc97974e178704fdf54116a8ce92bb6ab24b1fe2a36a58c9c16fcb93"
+    },
+    {
+      "name": "SpongePocketSeed",
+      "status": "CANDIDATE",
+      "width": 64,
+      "height": 64,
+      "bounds": [
+        20,
+        21,
+        44,
+        50
+      ],
+      "opaque_colors": 13,
+      "binary_alpha": true,
+      "sha256": "7b792b5fe0ea790b4162117c28ff514dd6c18614d9b4635f85b37a31ade49a0f"
+    },
+    {
+      "name": "TridentShard",
+      "status": "REJECTED_NOT_PLACED",
+      "width": 18,
+      "height": 26,
+      "bounds": [
+        2,
+        2,
+        16,
+        24
+      ],
+      "opaque_colors": 6,
+      "binary_alpha": true,
+      "sha256": "b858f60c864106d3586988bf7f829e601f04335f908bd7fdd952c2573dcbd422"
+    }
+  ],
+  "placements": [
+    {
+      "name": "SpongePocket",
+      "x": 329,
+      "y": 348,
+      "width": 28,
+      "height": 33
+    }
+  ],
+  "placementsTall": [
+    {
+      "name": "SpongePocket",
+      "x": 329,
+      "y": 411,
+      "width": 28,
+      "height": 33
+    }
+  ],
+  "combined_opaque_colors": 14,
+  "scope": "One selected pocket; source study retained. Trident trial rejected from assembly after native review. Preserved source art and all prior layout."
+}

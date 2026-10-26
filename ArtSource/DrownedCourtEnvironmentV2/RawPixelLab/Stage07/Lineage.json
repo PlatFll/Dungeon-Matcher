@@ -1,0 +1,196 @@
+{
+  "stage": "07",
+  "date": "2026-10-25",
+  "balance_before": 568.2,
+  "planned_cost": 10,
+  "reference_hashes": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+  },
+  "jobs": [
+    {
+      "name": "LeftReef",
+      "request": {
+        "description": "SUBJECT: ONE large cohesive submerged stone-and-reef corner formation for the LOWER LEFT of an ancient drowned royal court. A heavy dark blue-teal boulder foundation fused with a broken palace-column buttress. Tall at the OUTER LEFT, sloping down toward the INNER RIGHT; broad grounded foot, ONE connected silhouette, no separate floating rocks. A small muted magenta branching coral grows from a dark rock crevice near the outside, a restrained sand-colored starfish is attached to a vertical stone face, a few tiny grouped barnacles and two dark green kelp shoots emerge from cracks. Stone is 75 percent of the visible mass. Large angular rock faces, clear chunky shapes, flat top-left highlight planes, three or four stone values. Rich coherent architecture, not an aquarium ornament and not foliage wallpaper. VIEW: frontal 2D sidescroller environment, no isometric pedestal. Native 80x96 pixels, full object fits with 3px transparent margin; intended occupied width about 70px and height about 88px. OUTER left rises near the top, INNER right edge quiet and low to leave HUD clearance. Transparent standalone sprite. Sharp single native pixels, dark contiguous outlines, economical connected clusters like the supplied rendering reference. Reference is for outline/shading discipline only, NO character, crown, skeleton anatomy, text, UI or floor background. No detached stones, no glow, no blur, no dithering, no painted microtexture.",
+        "width": 80,
+        "height": 96,
+        "max_colors": 18,
+        "no_background": true,
+        "palette": [
+          "#0a0d11",
+          "#081e2b",
+          "#0f3141",
+          "#164759",
+          "#205b69",
+          "#286b78",
+          "#367d86",
+          "#518f94",
+          "#192e2e",
+          "#28483b",
+          "#426343",
+          "#6d8450",
+          "#2f203d",
+          "#63334f",
+          "#944a68",
+          "#c5728b",
+          "#ded4af",
+          "#968e71"
+        ],
+        "palette_name": "Dungeon Matcher Drowned Court stone kelp coral and shell",
+        "seed": 77071,
+        "style_image": {
+          "base64": "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",
+          "usage_description": "Current approved Rattlebones native PNG: rendering discipline only, crisp dark contours, broad connected shading, strong small-scale readability. Do not copy anatomy, royal costume, pose or palette."
+        },
+        "style_options": {
+          "color_palette": false,
+          "outline": true,
+          "detail": true,
+          "shading": true
+        }
+      },
+      "receipt": {
+        "background_job_id": "c6727588-6829-4986-b05a-6c8a418ad8bb",
+        "image_id": "0de28cfd-231d-5dbc-a052-c84ff563a915",
+        "status": "processing",
+        "source_image_id": "0de28cfd-231d-5dbc-a052-c84ff563a915",
+        "job_id": "c6727588-6829-4986-b05a-6c8a418ad8bb",
+        "description": "SUBJECT: ONE large cohesive submerged stone-and-reef corner formation for the LOWER LEFT of an ancient drowned royal court. A heavy dark blue-teal boulder foundation fused with a broken palace-column buttress. Tall at the OUTER LEFT, sloping down toward the INNER RIGHT; broad grounded foot, ONE connected silhouette, no separate floating rocks. A small muted magenta branching coral grows from a dark rock crevice near the outside, a restrained sand-colored starfish is attached to a vertical stone face, a few tiny grouped barnacles and two dark green kelp shoots emerge from cracks. Stone is 75 percent of the visible mass. Large angular rock faces, clear chunky shapes, flat top-left highlight planes, three or four stone values. Rich coherent architecture, not an aquarium ornament and not foliage wallpaper. VIEW: frontal 2D sidescroller environment, no isometric pedestal. Native 80x96 pixels, full object fits with 3px transparent margin; intended occupied width about 70px and height about 88px. OUTER left rises near the top, INNER right edge quiet and low to leave HUD clearance. Transparent standalone sprite. Sharp single native pixels, dark contiguous outlines, economical connected clusters like the supplied rendering reference. Reference is for outline/shading discipline only, NO character, crown, skeleton anatomy, text, UI or floor background. No detached stones, no glow, no blur, no dithering, no painted microtexture.",
+        "seed": 77071,
+        "image_size": {
+          "width": 80,
+          "height": 96
+        },
+        "output_count": 1,
+        "estimated_generations": 5,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/c6727588-6829-4986-b05a-6c8a418ad8bb/download"
+      },
+      "raw_sha256": "3b4309fa6e305c44cea4921501fac50e0843b55a835173bf52f2ed59a51ad4fc",
+      "raw_size": [
+        80,
+        96
+      ],
+      "raw_bounds": [
+        1,
+        3,
+        77,
+        93
+      ],
+      "raw_color_count": 15,
+      "result": {
+        "job_id": "c6727588-6829-4986-b05a-6c8a418ad8bb",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/c6727588-6829-4986-b05a-6c8a418ad8bb/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/c6727588-6829-4986-b05a-6c8a418ad8bb/download"
+        ],
+        "asset": {
+          "id": "0de28cfd-231d-5dbc-a052-c84ff563a915",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      }
+    },
+    {
+      "name": "RightReef",
+      "request": {
+        "description": "SUBJECT: ONE cohesive large ancient underwater rock-and-ruin corner formation for the LOWER RIGHT of a sunken royal court. Heavy angular dark blue-teal stone boulders fused with a broken fluted palace buttress rising at the OUTER RIGHT. Tall on OUTER RIGHT, low toward INNER LEFT; all stones connected into ONE grounded wedge silhouette. A partly buried OLD STONE SKULL RELIC at the lower inner face, only head and a short broken rib-like carving visible, resting heavily between stone blocks, not a living skeleton. A small muted magenta branching coral grows from a rear outer crevice, two restrained kelp blades rooted in mortar, few tiny grouped barnacles on a ledge. Stone occupies at least 75 percent of the mass. Broad simple rock planes and chipped masonry, top-left lighting, dark contiguous contours and economical readable clusters. Match the royal ruined architecture mood, not cute aquarium toy or fantasy tree. Native 80x96 pixels, frontal 2D sidescroller prop, NO isometric perspective. Occupied width around70px and height88px with3px transparent margin; ground nearbottom. All roots/stems attached to mainstone, no disconnected fragments. Brighter coral onlynearouterright; innerleft HUDside quiet. Transparent isolated sprite, no scenery background, water, bubbles, text, UI, character or full skeleton. Rendering reference only: do not copy Rattlebones crown, body, face or royal palette. NO blur, tiny crack noise, dithering or painterly gradients.",
+        "width": 80,
+        "height": 96,
+        "max_colors": 18,
+        "no_background": true,
+        "palette": [
+          "#0a0d11",
+          "#081e2b",
+          "#0f3141",
+          "#164759",
+          "#205b69",
+          "#286b78",
+          "#367d86",
+          "#518f94",
+          "#192e2e",
+          "#28483b",
+          "#426343",
+          "#6d8450",
+          "#2f203d",
+          "#63334f",
+          "#944a68",
+          "#c5728b",
+          "#ded4af",
+          "#968e71"
+        ],
+        "palette_name": "Dungeon Matcher Drowned Court stone kelp coral and shell",
+        "seed": 77072,
+        "style_image": {
+          "base64": "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",
+          "usage_description": "Current approved Rattlebones native PNG: rendering discipline only, crisp dark contours, broad connected shading, strong small-scale readability. Do not copy anatomy, royal costume, pose or palette."
+        },
+        "style_options": {
+          "color_palette": false,
+          "outline": true,
+          "detail": true,
+          "shading": true
+        }
+      },
+      "receipt": {
+        "background_job_id": "6ed489d6-cf7f-4643-b2fc-e2fc97212da0",
+        "image_id": "52d359f3-99bb-57f2-bc15-3c4cfa28a01a",
+        "status": "processing",
+        "source_image_id": "52d359f3-99bb-57f2-bc15-3c4cfa28a01a",
+        "job_id": "6ed489d6-cf7f-4643-b2fc-e2fc97212da0",
+        "description": "SUBJECT: ONE cohesive large ancient underwater rock-and-ruin corner formation for the LOWER RIGHT of a sunken royal court. Heavy angular dark blue-teal stone boulders fused with a broken fluted palace buttress rising at the OUTER RIGHT. Tall on OUTER RIGHT, low toward INNER LEFT; all stones connected into ONE grounded wedge silhouette. A partly buried OLD STONE SKULL RELIC at the lower inner face, only head and a short broken rib-like carving visible, resting heavily between stone blocks, not a living skeleton. A small muted magenta branching coral grows from a rear outer crevice, two restrained kelp blades rooted in mortar, few tiny grouped barnacles on a ledge. Stone occupies at least 75 percent of the mass. Broad simple rock planes and chipped masonry, top-left lighting, dark contiguous contours and economical readable clusters. Match the royal ruined architecture mood, not cute aquarium toy or fantasy tree. Native 80x96 pixels, frontal 2D sidescroller prop, NO isometric perspective. Occupied width around70px and height88px with3px transparent margin; ground nearbottom. All roots/stems attached to mainstone, no disconnected fragments. Brighter coral onlynearouterright; innerleft HUDside quiet. Transparent isolated sprite, no scenery background, water, bubbles, text, UI, character or full skeleton. Rendering reference only: do not copy Rattlebones crown, body, face or royal palette. NO blur, tiny crack noise, dithering or painterly gradients.",
+        "seed": 77072,
+        "image_size": {
+          "width": 80,
+          "height": 96
+        },
+        "output_count": 1,
+        "estimated_generations": 5,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/6ed489d6-cf7f-4643-b2fc-e2fc97212da0/download"
+      },
+      "raw_sha256": "0287000df10d1d8871e203b8adfa79737d7bdb0a3496420b447143ffe5820c42",
+      "raw_size": [
+        80,
+        96
+      ],
+      "raw_bounds": [
+        2,
+        2,
+        76,
+        93
+      ],
+      "raw_color_count": 17,
+      "result": {
+        "job_id": "6ed489d6-cf7f-4643-b2fc-e2fc97212da0",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/6ed489d6-cf7f-4643-b2fc-e2fc97212da0/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/6ed489d6-cf7f-4643-b2fc-e2fc97212da0/download"
+        ],
+        "asset": {
+          "id": "52d359f3-99bb-57f2-bc15-3c4cfa28a01a",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      }
+    }
+  ],
+  "balance_after": 558.2,
+  "charged_stage": 10,
+  "cumulative_generations": 84,
+  "actual_cost": 10,
+  "selected_status": "CANDIDATE_PENDING_USER_REVIEW",
+  "native_method": "LibreSprite exact native cleanup of warm salt speckles on column masonry; unchanged source silhouettes and pixel scale. Native repeated connector copies from accepted Stage06 shaft. Quiet seabed and rubble authored in LibreSprite. No animation.",
+  "native_manifest": "Native/Stage07/Manifest.json"
+}

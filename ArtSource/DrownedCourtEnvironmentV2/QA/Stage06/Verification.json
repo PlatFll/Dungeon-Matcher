@@ -1,0 +1,175 @@
+{
+  "status": "PASS",
+  "protected_production_files": 7839,
+  "accepted_stage01_05_files": 576,
+  "authorities_unchanged": 5,
+  "native_roundtrips": 17,
+  "combined_opaque_colors": 17,
+  "exact_modular_seams": 25,
+  "continuous_stone_masses": 2,
+  "attachments": [
+    {
+      "name": "KelpTall",
+      "point": [
+        18,
+        340
+      ],
+      "stone_overlap_pixels": 588
+    },
+    {
+      "name": "CoralColony",
+      "point": [
+        17,
+        471
+      ],
+      "stone_overlap_pixels": 639
+    },
+    {
+      "name": "CoralColony",
+      "point": [
+        344,
+        341
+      ],
+      "stone_overlap_pixels": 632
+    },
+    {
+      "name": "KelpTall",
+      "point": [
+        343,
+        472
+      ],
+      "stone_overlap_pixels": 592
+    },
+    {
+      "name": "BarnaclePatch",
+      "point": [
+        22,
+        374
+      ],
+      "stone_overlap_pixels": 18
+    },
+    {
+      "name": "BarnaclePatch",
+      "point": [
+        339,
+        392
+      ],
+      "stone_overlap_pixels": 25
+    },
+    {
+      "name": "VentOutlet",
+      "point": [
+        16,
+        399
+      ],
+      "stone_overlap_pixels": 49
+    },
+    {
+      "name": "VentOutlet",
+      "point": [
+        346,
+        512
+      ],
+      "stone_overlap_pixels": 49
+    }
+  ],
+  "kelp_split_recomposes_exactly": true,
+  "asset_connected_components": {
+    "BarnaclePatch": [
+      43
+    ],
+    "ColumnBase": [
+      293
+    ],
+    "ColumnCap": [
+      252
+    ],
+    "ColumnShaftA": [
+      448
+    ],
+    "ColumnShaftB": [
+      448
+    ],
+    "ColumnShaftC": [
+      448
+    ],
+    "ColumnShaftShort": [
+      252
+    ],
+    "CoralColony": [
+      947
+    ],
+    "CoralSeed": [
+      1108
+    ],
+    "KelpSeed": [
+      835
+    ],
+    "KelpStem": [
+      686
+    ],
+    "KelpTall": [
+      797
+    ],
+    "KelpTip": [
+      131
+    ],
+    "PillarSeed": [
+      1831
+    ],
+    "ShelfLeft": [
+      129
+    ],
+    "ShelfRight": [
+      126
+    ],
+    "VentOutlet": [
+      49
+    ]
+  },
+  "verified_native_side_pixels": 277480,
+  "unchanged_frame_pixels": 402044,
+  "screens": [
+    {
+      "size": "360x640",
+      "changed_gutter_pixels": 9910,
+      "native_side_pixels": 9910,
+      "hidden_by_frame": 0
+    },
+    {
+      "size": "720x1280",
+      "changed_gutter_pixels": 39640,
+      "native_side_pixels": 39640,
+      "hidden_by_frame": 0
+    },
+    {
+      "size": "1080x1920",
+      "changed_gutter_pixels": 89190,
+      "native_side_pixels": 89190,
+      "hidden_by_frame": 0
+    },
+    {
+      "size": "360x800",
+      "changed_gutter_pixels": 9910,
+      "native_side_pixels": 9910,
+      "hidden_by_frame": 0
+    },
+    {
+      "size": "720x1600",
+      "changed_gutter_pixels": 39640,
+      "native_side_pixels": 39640,
+      "hidden_by_frame": 0
+    },
+    {
+      "size": "1080x2400",
+      "changed_gutter_pixels": 89190,
+      "native_side_pixels": 89190,
+      "hidden_by_frame": 0
+    }
+  ],
+  "old_scene_changes": [
+    "2080446818"
+  ],
+  "unity_captures": 19,
+  "scope": "Static art-only; no production, gameplay, animation or device test. Existing fractional cell mapping remains unchanged."
+}

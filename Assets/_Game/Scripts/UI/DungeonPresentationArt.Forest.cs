@@ -22,7 +22,7 @@ public sealed partial class DungeonPresentationArt
         Vector3 hi=camera.WorldToScreenPoint(board.transform.TransformPoint(new Vector3(board.LocalBoardWidth/2,board.LocalBoardHeight/2)));
         var opening=new Rect((lo.x-viewport.xMin)/scale,(viewport.yMax-hi.y)/scale,(hi.x-lo.x)/scale,(hi.y-lo.y)/scale);
         // The approved ground's standing line is 213; HP remains below the actor's feet.
-        float feet=GameplayPixelLayoutController.ScreenRect(actor.CombatBarRect).yMax+2*scale;
+        float feet=BattleFloorAnchor.EnemyFeetScreenY(actor);
         float groundOffset=Mathf.Round((viewport.yMax-feet)/scale)-213;
         int width=Mathf.CeilToInt(viewport.width/scale),height=Mathf.CeilToInt(viewport.height/scale);
         string key=UnityEngine.Device.Screen.width+"x"+UnityEngine.Device.Screen.height+":"+viewport+":"+opening+":"+groundOffset+":"+scale;

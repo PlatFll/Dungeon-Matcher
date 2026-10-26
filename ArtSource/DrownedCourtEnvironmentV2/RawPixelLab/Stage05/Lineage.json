@@ -1,0 +1,87 @@
+{
+  "stage": "05",
+  "date": "2026-10-25",
+  "reference_hashes": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+  },
+  "balance_before": 590.2,
+  "quoted_cost": 6,
+  "request": {
+    "description": "A SINGLE TOP-LEFT L-SHAPED modular STONE BOARD FRAME section for an ancient drowned royal court. Front-facing flat 2D pixel art. A compact chamfered teal carved-stone corner with one dull SILVER OCTAGONAL SOCKET and dark circular inset rivet; substantial calm straight block beam extending right and down with a couple broad rectangular masonry joints. Rails 9-11 native pixels thick; corner about 21-25 native pixels square, L arms about 50 pixels long. Deep blue-slate shadows, muted turquoise base, restrained top-left aqua bevel, clean near-black inner edge. Old water-worn architectural stone with only two deliberate chips, broad unbroken material planes. This is a reusable structural asset, not thin pipe or purple fantasy jewelry. Keep the entire L on transparent background with generous clearance. No coral, no vines, no hanging ornaments, no skulls, no gems, no grid, no text, no whole frame, no floor perspective. Strong crisp clusters, no dithering, no noise or anti-aliased haze.",
+    "width": 128,
+    "height": 64,
+    "max_colors": 16,
+    "no_background": true,
+    "palette": [
+      "#0a0d11",
+      "#081e2b",
+      "#0f3141",
+      "#164759",
+      "#205b69",
+      "#286b78",
+      "#367d86",
+      "#518f94",
+      "#2b313a",
+      "#55606e",
+      "#93a1b0",
+      "#ced6cc"
+    ],
+    "palette_name": "Approved Drowned Court teal stone and dull silver",
+    "seed": 55051,
+    "style_image": {
+      "usage_description": "Actual unchanged Rattlebones golden image for crisp dark contours, connected native pixel planes and restrained top-left shading. Draw the requested STONE FRAME, never copy skeleton anatomy, skull, crown, face or costume. Material colors come from the supplied Court palette.",
+      "input_file": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png"
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "receipt": {
+    "background_job_id": "7d1deab4-1347-412c-9fa0-7aefa95b6090",
+    "image_id": "621eded2-635a-5834-9f0d-fb335c2933f8",
+    "status": "processing",
+    "source_image_id": "621eded2-635a-5834-9f0d-fb335c2933f8",
+    "job_id": "7d1deab4-1347-412c-9fa0-7aefa95b6090",
+    "description": "A SINGLE TOP-LEFT L-SHAPED modular STONE BOARD FRAME section for an ancient drowned royal court. Front-facing flat 2D pixel art. A compact chamfered teal carved-stone corner with one dull SILVER OCTAGONAL SOCKET and dark circular inset rivet; substantial calm straight block beam extending right and down with a couple broad rectangular masonry joints. Rails 9-11 native pixels thick; corner about 21-25 native pixels square, L arms about 50 pixels long. Deep blue-slate shadows, muted turquoise base, restrained top-left aqua bevel, clean near-black inner edge. Old water-worn architectural stone with only two deliberate chips, broad unbroken material planes. This is a reusable structural asset, not thin pipe or purple fantasy jewelry. Keep the entire L on transparent background with generous clearance. No coral, no vines, no hanging ornaments, no skulls, no gems, no grid, no text, no whole frame, no floor perspective. Strong crisp clusters, no dithering, no noise or anti-aliased haze.",
+    "seed": 55051,
+    "image_size": {
+      "width": 128,
+      "height": 64
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/7d1deab4-1347-412c-9fa0-7aefa95b6090/download"
+  },
+  "result": {
+    "job_id": "7d1deab4-1347-412c-9fa0-7aefa95b6090",
+    "status": "completed",
+    "frames": 1,
+    "download_url": "https://api.pixellab.ai/mcp/images/7d1deab4-1347-412c-9fa0-7aefa95b6090/download",
+    "download_urls": [
+      "https://api.pixellab.ai/mcp/images/7d1deab4-1347-412c-9fa0-7aefa95b6090/download"
+    ],
+    "asset": {
+      "id": "621eded2-635a-5834-9f0d-fb335c2933f8",
+      "type": "image",
+      "status": "saved"
+    },
+    "charged_generations": 6
+  },
+  "balance_after": 584.2,
+  "actual_cost": 6,
+  "cumulative_stage00_05_generations": 58,
+  "raw_sha256": "4185242ab6fb8f2601be2ac78243b138def69b717cf54b86ff8cda8a578a80bd",
+  "selected_status": "CANDIDATE_PENDING_USER_REVIEW",
+  "native_edit": "LibreSprite: subdued two bright stone tones, drilled the center socket, authored four separate upright corners and six seam-compatible rail variants, centered plates and a native dark overlap strip. No resampling. Raw seed alpha preserved.",
+  "native_manifest": "Native/Stage05/Manifest.json",
+  "validation": "QA/Stage05/Verification.json"
+}

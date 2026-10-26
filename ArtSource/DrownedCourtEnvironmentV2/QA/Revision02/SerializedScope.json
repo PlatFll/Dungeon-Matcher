@@ -1,0 +1,83 @@
+{
+  "unchanged_authorities": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+  },
+  "retained_serialized_blocks": 1113,
+  "added_serialized_blocks": 382,
+  "changed_existing_blocks": [
+    {
+      "fileID": "30434718",
+      "lines": [
+        "-  m_Sprite: {fileID: 21300000, guid: 2130da12778ef7242971decb7b2c5ee6, type: 3}",
+        "+  m_Sprite: {fileID: 21300000, guid: 3276e44cb9bf4c64fa544aa54577e0ce, type: 3}"
+      ]
+    },
+    {
+      "fileID": "303949936",
+      "lines": [
+        "-  m_IsActive: 1",
+        "+  m_IsActive: 0"
+      ]
+    },
+    {
+      "fileID": "306966188",
+      "lines": [
+        "-  m_Sprite: {fileID: 21300000, guid: 362c7048ef295d54bad633037136f547, type: 3}",
+        "+  m_Sprite: {fileID: 21300000, guid: fd10f519ed47e0d499c810036d940879, type: 3}"
+      ]
+    },
+    {
+      "fileID": "817709351",
+      "lines": [
+        "-  m_Sprite: {fileID: 21300000, guid: 85003bb08dee9ae4fab4862c22cb5445, type: 3}",
+        "+  m_Sprite: {fileID: 21300000, guid: cf1c9f7164d07c94ea0673de89c8e28d, type: 3}"
+      ]
+    },
+    {
+      "fileID": "1023046869",
+      "lines": [
+        "-  m_Sprite: {fileID: 21300000, guid: 774f766be7672fc4abc8b881435b84be, type: 3}",
+        "+  m_Sprite: {fileID: 21300000, guid: 5edb5df677152da43943fd7efc14b3bd, type: 3}"
+      ]
+    },
+    {
+      "fileID": "1183897813",
+      "lines": [
+        "-  m_IsActive: 0",
+        "+  m_IsActive: 1"
+      ]
+    },
+    {
+      "fileID": "1404256124",
+      "lines": [
+        "-  m_Sprite: {fileID: 21300000, guid: fd9d345252b28c7439593e8faf3f66c4, type: 3}",
+        "+  m_Sprite: {fileID: 21300000, guid: 16eea31a4370865458f32cb1e2a0dea3, type: 3}"
+      ]
+    },
+    {
+      "fileID": "1631344122",
+      "lines": [
+        "-  m_Sprite: {fileID: 21300000, guid: 0d506e02aa529114797555a714b89a63, type: 3}",
+        "+  m_Sprite: {fileID: 21300000, guid: c0b32bb5ea7a9ed40b9785455cd79e20, type: 3}"
+      ]
+    },
+    {
+      "fileID": "1805604931",
+      "lines": [
+        "-  m_Sprite: {fileID: 21300000, guid: fe927e660e47c724bb3fb8c34c9183d8, type: 3}",
+        "+  m_Sprite: {fileID: 21300000, guid: 189aadbeec8943741a409e560755c94f, type: 3}"
+      ]
+    },
+    {
+      "fileID": "2080446818",
+      "lines": [
+        "+  - {fileID: 1284197396}",
+        "+  - {fileID: 129115846}"
+      ]
+    }
+  ]
+}

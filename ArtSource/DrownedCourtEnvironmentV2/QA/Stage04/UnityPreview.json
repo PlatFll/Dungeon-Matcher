@@ -1,0 +1,26 @@
+{
+    "status": "PASS",
+    "note": "Static art-only Unity renders. HUD snapshot uses exact production graphic bindings and measured positions; actors-only mode retains Stage03 contrast references. Not a live combat or device integration test. Shield was not visible in the captured starting profile. Magenta probe pixel bounds independently checked by VerifyStage04.py.",
+    "importedAssets": 16,
+    "captures": 16,
+    "resizeCases": 3,
+    "oversizePadding": 128,
+    "importedOpaquePixelsAndAlphaExact": true,
+    "sharedFrameFitterUnmodified": true,
+    "sceneExcludedFromBuild": true,
+    "sharedPortraitSize": {
+        "x": 195.0,
+        "y": 406.0
+    },
+    "sharedBoardSize": {
+        "x": 545.0989990234375,
+        "y": 545.0989990234375
+    },
+    "maskScreenRect": {
+        "serializedVersion": "2",
+        "x": 41.0,
+        "y": 69.0,
+        "width": 155.0,
+        "height": 366.0
+    }
+}

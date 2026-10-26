@@ -1,0 +1,81 @@
+{
+  "stage": "03",
+  "date": "2026-10-25",
+  "reference_hashes": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+  },
+  "balance_before": 606.2,
+  "quoted_cost": 6,
+  "tool_selection": "Evaluated create_sidescroller_tileset: 16/32 square terrain masks and base-tile IDs, no native style-image input. Chose one Pro Flash style-guided stone seed and exact LibreSprite custom-strip joins to match the existing horizontal combat footprint.",
+  "request": {
+    "description": "ONE long sample of an ancient submerged palace STONE BATTLE PLATFORM, isolated native pixel art. Front-facing 2D sidescroller elevation, horizontal level top and a vertical front fascia below. Wide simple blue-teal slate slabs with broad calm faces, top-left bevel highlights, recessed dark grout, only two or three tiny purposeful chips. About four broad cut masonry blocks across a roughly 112-pixel wide, 36-pixel tall platform. A narrow flat horizontal top surface and substantial rectangular vertical stone face, NO receding perspective grid, NO isometric view, no slopes. Chunky connected planes and restrained detail matching the supplied native game-art reference; material matches underwater court columns. Complete object in transparent 128x64 canvas with clear margins. No moss carpet, coral, algae strands, sand particles, rubble scatter, decorations, characters, text, UI, floor shadows or extra background. This is a reusable material seed for modular platform tops and fascia; do not draw a scene or UI frame.",
+    "width": 128,
+    "height": 64,
+    "max_colors": 7,
+    "no_background": true,
+    "palette": [
+      "#081e2b",
+      "#0f3141",
+      "#164759",
+      "#205b69",
+      "#286b78",
+      "#367d86",
+      "#518f94"
+    ],
+    "palette_name": "Approved Drowned Court Stage02 slate",
+    "seed": 43031,
+    "style_image": {
+      "usage_description": "Use the actual approved Rattlebones image for crisp native edges, broad connected planes and restrained top-left shading only. Do not copy character anatomy, royal costume, cyan eyes or palette; draw blue-teal stone architecture.",
+      "input_file": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png"
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "receipt": {
+    "background_job_id": "5a52f95f-8825-486e-ae23-bfe198ae817c",
+    "image_id": "a8b1ebb4-8aa6-514c-9efe-9d3248185b2e",
+    "status": "processing",
+    "source_image_id": "a8b1ebb4-8aa6-514c-9efe-9d3248185b2e",
+    "job_id": "5a52f95f-8825-486e-ae23-bfe198ae817c",
+    "description": "ONE long sample of an ancient submerged palace STONE BATTLE PLATFORM, isolated native pixel art. Front-facing 2D sidescroller elevation, horizontal level top and a vertical front fascia below. Wide simple blue-teal slate slabs with broad calm faces, top-left bevel highlights, recessed dark grout, only two or three tiny purposeful chips. About four broad cut masonry blocks across a roughly 112-pixel wide, 36-pixel tall platform. A narrow flat horizontal top surface and substantial rectangular vertical stone face, NO receding perspective grid, NO isometric view, no slopes. Chunky connected planes and restrained detail matching the supplied native game-art reference; material matches underwater court columns. Complete object in transparent 128x64 canvas with clear margins. No moss carpet, coral, algae strands, sand particles, rubble scatter, decorations, characters, text, UI, floor shadows or extra background. This is a reusable material seed for modular platform tops and fascia; do not draw a scene or UI frame.",
+    "seed": 43031,
+    "image_size": {
+      "width": 128,
+      "height": 64
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/5a52f95f-8825-486e-ae23-bfe198ae817c/download"
+  },
+  "result": {
+    "job_id": "5a52f95f-8825-486e-ae23-bfe198ae817c",
+    "status": "completed",
+    "frames": 1,
+    "download_url": "https://api.pixellab.ai/mcp/images/5a52f95f-8825-486e-ae23-bfe198ae817c/download",
+    "download_urls": [
+      "https://api.pixellab.ai/mcp/images/5a52f95f-8825-486e-ae23-bfe198ae817c/download"
+    ],
+    "asset": {
+      "id": "a8b1ebb4-8aa6-514c-9efe-9d3248185b2e",
+      "type": "image",
+      "status": "saved"
+    },
+    "charged_generations": 6
+  },
+  "balance_after_text": "credits: $0.00\ngenerations_remaining: 600.20\ngenerations_used: 2499.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use \u2014 prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls \u2014 most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset",
+  "balance_after": 600.2,
+  "actual_cost": 6,
+  "raw_sha256": "ef91fbdaf6b309ac3b7401bcce0fe69c2b93e1489aad6f83a1a8ff3d4395380f",
+  "selected": "CANDIDATE_AFTER_LIBRESPRITE",
+  "source_alpha_preserved": true
+}

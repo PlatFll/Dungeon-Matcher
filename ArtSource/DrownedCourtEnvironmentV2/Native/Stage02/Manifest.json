@@ -1,0 +1,259 @@
+{
+  "stage": "02",
+  "status": "CANDIDATE_PENDING_USER_REVIEW",
+  "ppu": 64,
+  "native_canvas": [
+    360,
+    240
+  ],
+  "assets": [
+    {
+      "name": "BrokenPillar",
+      "width": 96,
+      "height": 128,
+      "colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        31,
+        24,
+        77,
+        121
+      ],
+      "raw_alpha_preserved": null,
+      "sha256": "f72d6bef49da765c73989caa45dac52040adaa331c33cfbc4851b72e6fb26b46"
+    },
+    {
+      "name": "CourtArch",
+      "width": 160,
+      "height": 128,
+      "colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        23,
+        17,
+        129,
+        106
+      ],
+      "raw_alpha_preserved": true,
+      "sha256": "da6549762f3089cea8f964d11d6135e5ccd62eb459392412b4de2342000e4527"
+    },
+    {
+      "name": "MonarchStatue",
+      "width": 128,
+      "height": 160,
+      "colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        21,
+        15,
+        93,
+        145
+      ],
+      "raw_alpha_preserved": true,
+      "sha256": "5cdffc6cee97dd26e724962e6c899a9541d66262df05ba89262171dae56c9e30"
+    },
+    {
+      "name": "PillarBase",
+      "width": 64,
+      "height": 24,
+      "colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        14,
+        0,
+        50,
+        21
+      ],
+      "raw_alpha_preserved": null,
+      "sha256": "a132863bc7ac2354a15e6a94c9a689842572931c7a8b64aba75adcd798564474"
+    },
+    {
+      "name": "PillarCapital",
+      "width": 64,
+      "height": 20,
+      "colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        14,
+        2,
+        50,
+        20
+      ],
+      "raw_alpha_preserved": null,
+      "sha256": "0ca698864baf6ec932a5f77273c731f3b809165730c9081acfc89fcd13d8394b"
+    },
+    {
+      "name": "PillarSeed",
+      "width": 64,
+      "height": 160,
+      "colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        13,
+        17,
+        49,
+        142
+      ],
+      "raw_alpha_preserved": true,
+      "sha256": "f4d5e20fa4265056d6d047ebe48a171722d2527fd4cb63dfb7a51110989b1290"
+    },
+    {
+      "name": "PillarShaft",
+      "width": 64,
+      "height": 24,
+      "colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        22,
+        0,
+        42,
+        24
+      ],
+      "raw_alpha_preserved": null,
+      "sha256": "c2b6a116549a505fdd9f430c2e53598883a00037983a88972a25df6606054836"
+    },
+    {
+      "name": "PillarShaftWorn",
+      "width": 64,
+      "height": 24,
+      "colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        22,
+        0,
+        42,
+        24
+      ],
+      "raw_alpha_preserved": null,
+      "sha256": "84911e14aa9bacaba147e18d2612158fd08f80f2701850e6d43eebcd1ce085e5"
+    },
+    {
+      "name": "RubbleJoint",
+      "width": 32,
+      "height": 24,
+      "colors": 3,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        4,
+        9,
+        29,
+        22
+      ],
+      "raw_alpha_preserved": null,
+      "sha256": "b9ff4305535fb41484d1d3186d237cca35e33bc7254960df4605a87ae5ec1138"
+    },
+    {
+      "name": "RuinedLedge",
+      "width": 64,
+      "height": 16,
+      "colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        2,
+        64,
+        14
+      ],
+      "raw_alpha_preserved": null,
+      "sha256": "ed052ac5f7df20f65f978fa125c47fc006d0e1ecab881ae61127e36ee2ca947b"
+    }
+  ],
+  "placements": [
+    {
+      "name": "MonarchStatue",
+      "x": 192,
+      "y": 46
+    },
+    {
+      "name": "RuinedLedge",
+      "x": 192,
+      "y": 188
+    },
+    {
+      "name": "RuinedLedge",
+      "x": 256,
+      "y": 188
+    },
+    {
+      "name": "CourtArch",
+      "x": 168,
+      "y": 99
+    },
+    {
+      "name": "PillarCapital",
+      "x": 110,
+      "y": 44
+    },
+    {
+      "name": "PillarShaft",
+      "x": 110,
+      "y": 64
+    },
+    {
+      "name": "PillarShaftWorn",
+      "x": 110,
+      "y": 88
+    },
+    {
+      "name": "PillarShaft",
+      "x": 110,
+      "y": 112
+    },
+    {
+      "name": "PillarShaft",
+      "x": 110,
+      "y": 136
+    },
+    {
+      "name": "PillarShaftWorn",
+      "x": 110,
+      "y": 160
+    },
+    {
+      "name": "PillarBase",
+      "x": 110,
+      "y": 184
+    },
+    {
+      "name": "BrokenPillar",
+      "x": 264,
+      "y": 85
+    },
+    {
+      "name": "RubbleJoint",
+      "x": 299,
+      "y": 184
+    }
+  ],
+  "joins": "All capital/shaft/worn/base connector rows exact RGBA. Ledge edge columns exact. Repeated native join study supplied."
+}

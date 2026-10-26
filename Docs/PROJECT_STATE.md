@@ -21,6 +21,28 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 
+## Approved Drowned Court production integration (2026-10-26)
+
+The user approved Revision04 and authorized PR #212 merge and production use.
+The real build-enabled Game scene now selects 94 approved modular underwater
+pieces, native portrait/board framing, the corrected clam, two coral sways and
+twelve bubble tracks. Original source art and review scenes are preserved;
+legacy Court scenery is bypassed by the existing presentation owner.
+
+The shared enemy floor/HP registration matches the approved Dungeon baseline
+across all five zones. Board/portrait geometry, characters, gems, shared controls,
+AIR/flood, combat, save and travel ownership remain unchanged. The Court camera
+retains its prior reference size; no global character or low-resolution HUD
+redesign is included.
+
+Actual Game validation passed 25 screen/zone cases and 75 source-pivot floor
+checks, accepted swap, controls/pause/Reduced Motion, flooded save/resume and
+18 zone handoffs. Required Unity compilation and Android IL2CPP development
+build passed. Two old test failures reproduce without this art and remain
+documented and unchanged. Physical-device execution is not claimed.
+Zero integration generations; the approved pack retains its 107-generation
+ledger. [Screenshots and full evidence](../ArtSource/DrownedCourtEnvironmentV2/Integration/README.md).
+
 ## Dungeon side architecture (2026-10-25, awaiting visual approval)
 
 The dedicated `feature/dungeon-side-architecture-polish` branch adds native

@@ -1,0 +1,315 @@
+{
+  "stage": "04",
+  "status": "CANDIDATE_PENDING_USER_REVIEW",
+  "ppu": 64,
+  "assets": [
+    {
+      "name": "AlgaeLeft",
+      "width": 12,
+      "height": 32,
+      "colors": 3,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        2,
+        10,
+        32
+      ],
+      "sha256": "d0d4fc5c6bc7b216ab068a1a38a0d022548cffb314fcd5e83199e3b01a7daa79"
+    },
+    {
+      "name": "AlgaeRight",
+      "width": 12,
+      "height": 32,
+      "colors": 3,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        2,
+        12,
+        32
+      ],
+      "sha256": "0db2bc1dee1fe3f791d47a4f268c937d2c67829b33f6f1d05beda77a447db777"
+    },
+    {
+      "name": "Barnacles",
+      "width": 12,
+      "height": 16,
+      "colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        9,
+        14
+      ],
+      "sha256": "fe435a73a3382bb4977b6e5fb5f502ba4d271dc03f03f4a3d0ad20edb0ad9a49"
+    },
+    {
+      "name": "Clamp",
+      "width": 9,
+      "height": 9,
+      "colors": 7,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        9,
+        9
+      ],
+      "sha256": "29ed54a776c1486cc6a7f7fdba57d205ced862be4d8d2b9429a7854535cfe445"
+    },
+    {
+      "name": "CoralSprig",
+      "width": 12,
+      "height": 20,
+      "colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        2,
+        12,
+        20
+      ],
+      "sha256": "be2fb1d6f086e62575ecdf663d317b0b7b46622ec16b9f4d9c2c276159385198"
+    },
+    {
+      "name": "CornerBL",
+      "width": 15,
+      "height": 15,
+      "colors": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        0,
+        15,
+        14
+      ],
+      "sha256": "624932cd8608f3d5f78baaf5ea1421b9542b01f5c763018cfcf21021cb0dae7e"
+    },
+    {
+      "name": "CornerBR",
+      "width": 15,
+      "height": 15,
+      "colors": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        14,
+        14
+      ],
+      "sha256": "244f5df6a3757491480412346cc2739d98c13e7861c87658bb151879ced1b9cd"
+    },
+    {
+      "name": "CornerMotif",
+      "width": 64,
+      "height": 64,
+      "colors": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        6,
+        8,
+        54,
+        56
+      ],
+      "sha256": "8f0c31d1b9f0cfc6e0b3a80c65bdae72e6492d4c2033936c59fe280f9a85b2de"
+    },
+    {
+      "name": "CornerTL",
+      "width": 15,
+      "height": 15,
+      "colors": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        1,
+        15,
+        15
+      ],
+      "sha256": "796d3d788838faeba699dfb9afdc3ac90bd40ecfbf28fefc554241e98b71f94a"
+    },
+    {
+      "name": "CornerTR",
+      "width": 15,
+      "height": 15,
+      "colors": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        1,
+        14,
+        15
+      ],
+      "sha256": "0ab51df9a0daa5b03a699f5f00524f95dfbfe8157472aeaffc127699c179a22a"
+    },
+    {
+      "name": "RailBottom",
+      "width": 16,
+      "height": 7,
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        16,
+        7
+      ],
+      "sha256": "94879690309c66d6b7f9e88375573d6fc32dbc2d9540f0a7fd55569d2b82f790"
+    },
+    {
+      "name": "RailLeft",
+      "width": 7,
+      "height": 16,
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        7,
+        16
+      ],
+      "sha256": "79b82f7d76843532b2b0820c7df6901ff80e1e1fb7e5b6ad085f513dafb215ca"
+    },
+    {
+      "name": "RailRight",
+      "width": 7,
+      "height": 16,
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        7,
+        16
+      ],
+      "sha256": "79b82f7d76843532b2b0820c7df6901ff80e1e1fb7e5b6ad085f513dafb215ca"
+    },
+    {
+      "name": "RailTop",
+      "width": 16,
+      "height": 7,
+      "colors": 5,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        16,
+        7
+      ],
+      "sha256": "94879690309c66d6b7f9e88375573d6fc32dbc2d9540f0a7fd55569d2b82f790"
+    },
+    {
+      "name": "RecessA",
+      "width": 64,
+      "height": 64,
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "sha256": "5bc7847318a0d25dee3d75052698347ba9a9b0dd841d29c5d7d47839c241d70a"
+    },
+    {
+      "name": "RecessB",
+      "width": 64,
+      "height": 64,
+      "colors": 4,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "sha256": "7c0c8acee422c17a2f4fed3d062516a64fc3d83d4d3a6dc62852800cd54f3ff8"
+    }
+  ],
+  "portrait_reference_rect": [
+    21,
+    825,
+    195,
+    406
+  ],
+  "native_layout_size": [
+    97.5,
+    203
+  ],
+  "unit": 2,
+  "corner": 15,
+  "rail_thickness": 7,
+  "connector_pitch": 45,
+  "interior_inset_reference": 20,
+  "decorations": [
+    {
+      "name": "Barnacles",
+      "x": -1,
+      "y": 0
+    },
+    {
+      "name": "Barnacles",
+      "x": 87,
+      "y": 187
+    },
+    {
+      "name": "AlgaeLeft",
+      "x": -4,
+      "y": 45
+    },
+    {
+      "name": "AlgaeRight",
+      "x": 89,
+      "y": 110
+    },
+    {
+      "name": "CoralSprig",
+      "x": -3,
+      "y": 172
+    }
+  ],
+  "notes": "Same outer PlayerSection and actor/UI positions. Existing ResponsiveModularFrameFitter rounds the native decorative shell width to 98, as its shared implementation specifies; no artwork is stretched. Recess overfills an inset mask that overlaps beneath opaque rails."
+}

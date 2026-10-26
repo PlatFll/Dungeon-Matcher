@@ -1,0 +1,157 @@
+{
+  "reference_image_dimensions": [
+    941,
+    1672
+  ],
+  "reference_policy": "These reference images/crops are to study design only; do not treat as native source sprites or import as flattened scene. Read current repo golden files before generating.",
+  "files": [
+    {
+      "file": "references/01_Drowned_Court_Visual_Target.png",
+      "source_container_file": "image(20261025-074617).png",
+      "source_sha256": "bea2378930da73d2cdf121f830167f3a344605c0fe209afe4d9ea3aef9de1afd",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "role": "The user-supplied full underwater mockup: inspiration for Drowned Court ruins, trident statue, coral growth, stone frame, bubbles and seaweed. NOT a production sprite or approved native export."
+    },
+    {
+      "file": "references/02_Current_Dungeon_Production_Benchmark.png",
+      "source_container_file": "image(20261025-072433).png",
+      "source_sha256": "6d6f0fbd78b935dfd38ad1324aafd64f6647f9ea1ebdde41f95be7db9842d095",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "role": "Current Dungeon gameplay: native-density, clean pixel art, 8x8 gameplay proportions, shared HUD and material restraint benchmark."
+    },
+    {
+      "file": "references/03_Current_Magical_Forest_Production_Benchmark.png",
+      "source_container_file": "image(20261025-054041).png",
+      "source_sha256": "17d29b8999c7f5d8c1d85a22e1135703c1e39aeae2a368329be9300f849f1fb5",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "role": "Current Magical Forest gameplay: distinct zone-specific scenery/frames, layered depth, and coherent side dressing. Refer for quality and structure, not for wood/foliage color on Court stone."
+    },
+    {
+      "file": "references/04_Art_References_Historical_Board.png",
+      "source_container_file": "Dungeon_Matcher_Art_References(2).png",
+      "source_sha256": "0fb115df6e311b613333b2d4a2e837a634f21e6a6a6ec52fb3012269b7d21c03",
+      "dimensions": [
+        1440,
+        1530
+      ],
+      "role": "Historical art-reference board v1.0 provided by user. For visual comparison only; CURRENT repo golden register and actual production PNGs take precedence."
+    },
+    {
+      "file": "reference_crops/01_Top_Battle_Backdrop_Reference.png",
+      "source": "references/01_Drowned_Court_Visual_Target.png",
+      "crop_xyxy": [
+        0,
+        0,
+        941,
+        585
+      ],
+      "note": "deep teal ruins, shafts, trident statue and combat ground; character/labels only composition references",
+      "reference_only": true
+    },
+    {
+      "file": "reference_crops/02_Left_Portrait_Reference.png",
+      "source": "references/01_Drowned_Court_Visual_Target.png",
+      "crop_xyxy": [
+        0,
+        35,
+        290,
+        580
+      ],
+      "note": "ancient stone portrait frame, algae and barnacle accents; do NOT reproduce the character",
+      "reference_only": true
+    },
+    {
+      "file": "reference_crops/03_Central_Court_Ruins_Reference.png",
+      "source": "references/01_Drowned_Court_Visual_Target.png",
+      "crop_xyxy": [
+        273,
+        0,
+        941,
+        592
+      ],
+      "note": "columns, central drowned monarch with trident, arch, fish silhouettes, submerged waterline",
+      "reference_only": true
+    },
+    {
+      "file": "reference_crops/04_Board_Stone_Sides_Reference.png",
+      "source": "references/01_Drowned_Court_Visual_Target.png",
+      "crop_xyxy": [
+        0,
+        553,
+        941,
+        1432
+      ],
+      "note": "submerged teal masonry frame, coral growth, kelp, barnacles and bubbles; source board gems are protected",
+      "reference_only": true
+    },
+    {
+      "file": "reference_crops/05_Left_Board_Gutter_Reference.png",
+      "source": "references/01_Drowned_Court_Visual_Target.png",
+      "crop_xyxy": [
+        0,
+        550,
+        168,
+        1445
+      ],
+      "note": "left board-side masonry and coral growth; modular inspiration, not a paste source",
+      "reference_only": true
+    },
+    {
+      "file": "reference_crops/06_Right_Board_Gutter_Reference.png",
+      "source": "references/01_Drowned_Court_Visual_Target.png",
+      "crop_xyxy": [
+        785,
+        550,
+        941,
+        1445
+      ],
+      "note": "right board-side masonry and coral growth; modular inspiration, not a paste source",
+      "reference_only": true
+    },
+    {
+      "file": "reference_crops/07_Bottom_Reef_Environment_Reference.png",
+      "source": "references/01_Drowned_Court_Visual_Target.png",
+      "crop_xyxy": [
+        0,
+        1357,
+        941,
+        1672
+      ],
+      "note": "lower contextual reef, coral, rock, old submerged skull/rubble; center controls remain unified",
+      "reference_only": true
+    },
+    {
+      "file": "reference_crops/08_Bottom_Left_Rock_Coral_Reference.png",
+      "source": "references/01_Drowned_Court_Visual_Target.png",
+      "crop_xyxy": [
+        0,
+        1385,
+        313,
+        1672
+      ],
+      "note": "left unified seabed rock/coral corner mass",
+      "reference_only": true
+    },
+    {
+      "file": "reference_crops/09_Bottom_Right_Rock_Coral_Reference.png",
+      "source": "references/01_Drowned_Court_Visual_Target.png",
+      "crop_xyxy": [
+        630,
+        1385,
+        941,
+        1672
+      ],
+      "note": "right unified seabed rock/coral corner mass",
+      "reference_only": true
+    }
+  ]
+}

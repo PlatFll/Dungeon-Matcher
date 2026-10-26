@@ -1,0 +1,26 @@
+{
+  "status": "REVIEW_CANDIDATE",
+  "scope": "Background palette only; redesign left/right vertical board surroundings only. Stage09 not started.",
+  "generation_cost": 0,
+  "prior_total_cost": 89,
+  "tool": "LibreSprite native JavaScript pixel editing and .ase exports",
+  "mockup": {
+    "path": "C:/Users/USER/AppData/Local/Temp/codex-clipboard-8a5a81f7-8dff-48a7-b0b2-0b85c872ed5a.png",
+    "sha256": "f5320df9bd9c5a4e675fe1fec30a88d6884425d69488cd85259bf615e5b3d993"
+  },
+  "edit_target": "Assets/_Game/Scenes/ArtPreview_DrownedCourtV2_Stage08.unity",
+  "coral_source": {
+    "path": "Exports/Stage06/CoralColony.png",
+    "sha256": "dddede0db76c25b7e0cee48832e38717374dcb9f5877062f8f908c165bdb082d",
+    "method": "Native branching silhouette re-used with per-material colors, original detached rock foot replaced by an integral stone socket. No scaling."
+  },
+  "recolors": "Native/Revision01/RecolorPlan.json",
+  "authority_hashes": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+  },
+  "original_sources": "Preserved byte-for-byte; see QA/Revision01/AcceptedStagesHashes.json"
+}

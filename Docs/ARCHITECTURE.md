@@ -459,6 +459,19 @@ Opened settings and main menu keep their existing skins and menu music selection
   `ArtSource/DungeonHybrid/Integration/`. This supersedes the selected Dungeon art
   binding only; the earlier library and other-zone paths remain preserved.
 
+- **Approved Drowned Court runtime binding (2026-10-26):**
+  `DrownedCourtBattleAssembly` selects `CourtAssembly` only for Court, preserving
+  the original shared control/cell selection and camera reference. Its 94 pieces
+  and 15 motion tracks reference the approved Revision04 sprites by GUID.
+  `DungeonPresentationArt.Court` uses the existing native world-canvas owner;
+  `ResponsiveModularFrameFitter` surrounds the live board and portrait, and a
+  RectMask2D clips the overfilled portrait recess. Source floor row 208 maps to
+  `BattleFloorAnchor`, keeping the live actor/HP/UI geometry authoritative.
+  `DrownedCourtAmbientMotion` samples approved 12 Hz cosmetic poses using scaled
+  time and Reduced Motion; it never consumes gameplay RNG or advances combat.
+  The tilemap owner skips legacy Court scenery when this binding is present.
+  Art remains modular and unchanged. Evidence: `ArtSource/DrownedCourtEnvironmentV2/Integration/`.
+
 - **Approved Forest runtime binding (2026-10-25):** The existing
   `DungeonPixelLabBattleArt` native presentation resource now also selects
   `ForestPixelLab` for the Forest zone. Its `ForestBattleAssembly` references the
@@ -490,9 +503,16 @@ Opened settings and main menu keep their existing skins and menu music selection
   choice; integer native environment pixels do not imply integer board scaling on
   narrow physical screens. Character floor registration follows the live HP row,
   preserving animation pivots; resize changes refresh existing enemy-slot layout.
-  `EnemyFloorInset` lowers the Dungeon HP row and grounded enemies by six native
-  pixels into the floor strip. Scenery compensates for that inset so its rear
-  edge, gate, props and platform remain in the approved positions.
+  `BattleFloorAnchor.EnemyFloorInset` now applies the approved six-native-pixel
+  inset in every zone. `EnemySlotUI` also compensates the older HUD enclosure
+  offset through `GameplayPixelLayoutController.BattleFloorCompensation`, keeping
+  the original board/portrait rectangles. `PixelPerfectBattleCharacterUI` applies
+  the same HP-relative source-floor registration in all five zones, preserving
+  per-sprite pivots, image pixel snapping and the existing character sizing.
+  Dungeon and Forest retain their approved floor line; scenery compensates for
+  the inset so its rear edge, gate, props and platform remain in position.
+  Independent pre-change Game captures and strict cross-zone/unchanged-rectangle
+  assertions live in `SharedEnemyFloorTests` and Drowned Court Revision03 QA.
   Existing ability, consumable, settings, Guide and save/combat owners stay in place.
   Forest/Court and other-zone paths retain the previous implementation. The user
   approved the gameplay visuals; merged PR #203 supersedes the Dungeon binding below.

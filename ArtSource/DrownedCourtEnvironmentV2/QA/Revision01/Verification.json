@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "protected_production_files": 7839,
+  "accepted_stage_files": 881,
+  "reference_authorities": 5,
+  "exact_recolored_assets": 37,
+  "roundtrips": 51,
+  "native_asset_pixels": 190063,
+  "unchanged_UI_actor_frame_tile_pixels": 3148840,
+  "screens": [
+    {
+      "size": "360x640",
+      "protected_pixels": 112372,
+      "side_pixels": 14007,
+      "recolored_or_redesigned_pixels": 116103
+    },
+    {
+      "size": "720x1280",
+      "protected_pixels": 449916,
+      "side_pixels": 56028,
+      "recolored_or_redesigned_pixels": 463984
+    },
+    {
+      "size": "1080x1920",
+      "protected_pixels": 1012132,
+      "side_pixels": 126063,
+      "recolored_or_redesigned_pixels": 1044143
+    },
+    {
+      "size": "360x800",
+      "protected_pixels": 112372,
+      "side_pixels": 14007,
+      "recolored_or_redesigned_pixels": 173669
+    },
+    {
+      "size": "720x1600",
+      "protected_pixels": 449916,
+      "side_pixels": 56028,
+      "recolored_or_redesigned_pixels": 694248
+    },
+    {
+      "size": "1080x2400",
+      "protected_pixels": 1012132,
+      "side_pixels": 126063,
+      "recolored_or_redesigned_pixels": 1562237
+    }
+  ],
+  "authorized_serialized_object_changes": 60,
+  "all_prior_scene_objects_retained": true,
+  "side_extents": "Only x0-30 and329-359, y243-550; established tall mapping +63px.",
+  "generation_cost": 0,
+  "limitations": "Art-only Unity review, not gameplay/device test. Production integration and merge not performed."
+}

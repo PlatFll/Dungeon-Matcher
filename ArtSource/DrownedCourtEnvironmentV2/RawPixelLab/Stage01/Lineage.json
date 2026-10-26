@@ -1,0 +1,492 @@
+{
+  "date": "2026-10-25",
+  "guide_sha256": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+  "reference": {
+    "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+    "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "input": "style_image.base64",
+    "usage": "rendering only; no palette/identity copy"
+  },
+  "quote": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"name\": \"Pro Flash\",\n  \"revision\": \"pro-flash-presets-48-128-2026-09-29\",\n  \"grid_recovery\": \"Creation recovers the pixel grid the model drew with Unzoom. An exact grid is kept; drift of at most one pixel is recovered on the expected grid. Images with a background must fill the canvas, so any other size is redrawn with image-to-pixel-art on the generated box only. Sprites without a background keep their own pixels, centred on the canvas, while the drawn pixel is close to the requested one; coarser or oversized sprites are redrawn. Experimental 16x16 creation always uses image-to-pixel-art. Editing and inpainting start at 32x32 and never use image-to-pixel-art conversion.\",\n  \"operations\": {\n    \"create\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": 1\n    },\n    \"edit\": {\n      \"sizes\": [\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 32,\n        \"min_height\": 32,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 1,\n      \"supports_no_background\": true,\n      \"supports_style_options\": false,\n      \"output_count\": 1,\n      \"edit_methods\": [\n        \"text\",\n        \"reference\"\n      ],\n      \"canvas_growth\": false,\n      \"reference_image_fit\": \"native dimensions must fit the edit canvas\"\n    },\n    \"inpaint\": {\n      \"sizes\": [\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 32,\n        \"min_height\": 32,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 1,\n      \"supports_no_background\": true,\n      \"supports_style_options\": false,\n      \"output_count\": 1,\n      \"canvas_growth\": false,\n      \"crop_to_mask_values\": [\n        true\n      ],\n      \"output_methods\": [\n        \"New layer with changes\",\n        \"Modify current layer, only changes\",\n        \"Modify current layer\"\n      ],\n      \"mask\": {\n        \"white_rgb\": \"generate\",\n        \"black_rgb\": \"preserve\",\n        \"alpha\": \"ignored\",\n        \"binary_rgb_required\": true\n      },\n      \"context\": {\n        \"bounding_box_required\": true,\n        \"max_width_multiple\": 3,\n        \"max_height_multiple\": 3,\n        \"native_pixels\": true\n      }\n    },\n    \"character\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": 8,\n      \"n_directions\": [\n        8\n      ],\n      \"includes_first_direction\": true,\n      \"supports_existing_source\": true,\n      \"rotation_canvas\": \"Native source padded to a square, minimum 32 pixels, aligned to four pixels.\"\n    },\n    \"object\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": \"n_directions\",\n      \"n_directions\": [\n        1,\n        8\n      ],\n      \"includes_first_direction\": true,\n      \"supports_existing_source\": true,\n      \"rotation_canvas\": \"Eight views use the square V3 canvas; one direction keeps the native size.\"\n    }\n  },\n  \"style_reference_fit\": \"native dimensions must fit the target canvas; smaller references are centered without resizing\",\n  \"cost\": {\n    \"image\": 9,\n    \"rotations\": 0,\n    \"total\": 9,\n    \"provisional\": true\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "name": "Pro Flash",
+      "revision": "pro-flash-presets-48-128-2026-09-29",
+      "grid_recovery": "Creation recovers the pixel grid the model drew with Unzoom. An exact grid is kept; drift of at most one pixel is recovered on the expected grid. Images with a background must fill the canvas, so any other size is redrawn with image-to-pixel-art on the generated box only. Sprites without a background keep their own pixels, centred on the canvas, while the drawn pixel is close to the requested one; coarser or oversized sprites are redrawn. Experimental 16x16 creation always uses image-to-pixel-art. Editing and inpainting start at 32x32 and never use image-to-pixel-art conversion.",
+      "operations": {
+        "create": {
+          "sizes": [
+            {
+              "width": 16,
+              "height": 16
+            },
+            {
+              "width": 24,
+              "height": 24
+            },
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 48,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [
+            {
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 16,
+            "min_height": 16,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 0,
+          "supports_no_background": true,
+          "supports_style_options": true,
+          "output_count": 1
+        },
+        "edit": {
+          "sizes": [
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 32,
+            "min_height": 32,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 1,
+          "supports_no_background": true,
+          "supports_style_options": false,
+          "output_count": 1,
+          "edit_methods": [
+            "text",
+            "reference"
+          ],
+          "canvas_growth": false,
+          "reference_image_fit": "native dimensions must fit the edit canvas"
+        },
+        "inpaint": {
+          "sizes": [
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 32,
+            "min_height": 32,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 1,
+          "supports_no_background": true,
+          "supports_style_options": false,
+          "output_count": 1,
+          "canvas_growth": false,
+          "crop_to_mask_values": [
+            true
+          ],
+          "output_methods": [
+            "New layer with changes",
+            "Modify current layer, only changes",
+            "Modify current layer"
+          ],
+          "mask": {
+            "white_rgb": "generate",
+            "black_rgb": "preserve",
+            "alpha": "ignored",
+            "binary_rgb_required": true
+          },
+          "context": {
+            "bounding_box_required": true,
+            "max_width_multiple": 3,
+            "max_height_multiple": 3,
+            "native_pixels": true
+          }
+        },
+        "character": {
+          "sizes": [
+            {
+              "width": 16,
+              "height": 16
+            },
+            {
+              "width": 24,
+              "height": 24
+            },
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 48,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [
+            {
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 16,
+            "min_height": 16,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 0,
+          "supports_no_background": true,
+          "supports_style_options": true,
+          "output_count": 8,
+          "n_directions": [
+            8
+          ],
+          "includes_first_direction": true,
+          "supports_existing_source": true,
+          "rotation_canvas": "Native source padded to a square, minimum 32 pixels, aligned to four pixels."
+        },
+        "object": {
+          "sizes": [
+            {
+              "width": 16,
+              "height": 16
+            },
+            {
+              "width": 24,
+              "height": 24
+            },
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 48,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [
+            {
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 16,
+            "min_height": 16,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 0,
+          "supports_no_background": true,
+          "supports_style_options": true,
+          "output_count": "n_directions",
+          "n_directions": [
+            1,
+            8
+          ],
+          "includes_first_direction": true,
+          "supports_existing_source": true,
+          "rotation_canvas": "Eight views use the square V3 canvas; one direction keeps the native size."
+        }
+      },
+      "style_reference_fit": "native dimensions must fit the target canvas; smaller references are centered without resizing",
+      "cost": {
+        "image": 9,
+        "rotations": 0,
+        "total": 9,
+        "provisional": true
+      }
+    },
+    "isError": false
+  },
+  "balanceBefore": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "credits: $0.00\ngenerations_remaining: 642.20\ngenerations_used: 2457.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use — prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls — most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "jobs": [
+    {
+      "role": "Far",
+      "request": {
+        "width": 256,
+        "height": 192,
+        "no_background": true,
+        "max_colors": 16,
+        "seed": 47101,
+        "style_image": {
+          "base64": "[actual verified PNG bytes submitted; see reference hash]",
+          "usage_description": "Rendering reference only: crisp native pixel grid, broad connected material planes and economical detail. Do not depict this skeleton or copy its palette, body, crown or cape."
+        },
+        "style_options": {
+          "outline": true,
+          "detail": true,
+          "shading": true,
+          "color_palette": false
+        },
+        "description": "One isolated FAR-DEPTH UNDERWATER RUINS silhouette layer for Dungeon Matcher. Native pixel art at 256 by 192 pixels. Straight-on 2D sidescroller view. Group of ancient submerged temple columns and broken lintels, at three distances, mostly dim desaturated cyan-blue silhouettes. Tall broken pillar shapes near the far left and right; distant small arch remains in the upper-middle distance. Keep the center lower half almost empty negative space for later combatants and a separate monarch statue. Large broad quiet shading planes, two or three tones per form, minimal small cracks. Distant ruined royal court in deep water, not Greek sightseeing illustration. Native 1 pixel detail, coherent chunky clusters, crisp edges, no painterly lighting. All fragments belong to a connected architectural silhouette at the bottom, not floating stones. Transparent empty background around and through architecture. NO WATER GRADIENT OR SKY, NO WATER RAYS, NO STATUE, NO FLOOR, NO actors, coral, kelp, bubbles, UI, text, board, gems or frame. Do not crop off any architecture at the top. Empty transparent top margin. Low contrast dark cyan and blue palette appropriate to distant submerged stone. Match the reference's pixel discipline, not its subject."
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad\",\n  \"image_id\": \"ba57465e-f78a-5f0c-ae5c-a9f287aac160\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"ba57465e-f78a-5f0c-ae5c-a9f287aac160\",\n  \"job_id\": \"cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad\",\n  \"description\": \"One isolated FAR-DEPTH UNDERWATER RUINS silhouette layer for Dungeon Matcher. Native pixel art at 256 by 192 pixels. Straight-on 2D sidescroller view. Group of ancient submerged temple columns and broken lintels, at three distances, mostly dim desaturated cyan-blue silhouettes. Tall broken pillar shapes near the far left and right; distant small arch remains in the upper-middle distance. Keep the center lower half almost empty negative space for later combatants and a separate monarch statue. Large broad quiet shading planes, two or three tones per form, minimal small cracks. Distant ruined royal court in deep water, not Greek sightseeing illustration. Native 1 pixel detail, coherent chunky clusters, crisp edges, no painterly lighting. All fragments belong to a connected architectural silhouette at the bottom, not floating stones. Transparent empty background around and through architecture. NO WATER GRADIENT OR SKY, NO WATER RAYS, NO STATUE, NO FLOOR, NO actors, coral, kelp, bubbles, UI, text, board, gems or frame. Do not crop off any architecture at the top. Empty transparent top margin. Low contrast dark cyan and blue palette appropriate to distant submerged stone. Match the reference's pixel discipline, not its subject.\",\n  \"seed\": 47101,\n  \"image_size\": {\n    \"width\": 256,\n    \"height\": 192\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 9,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad/download\"\n}\nPoll get_image(job_id=\"cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad",
+          "image_id": "ba57465e-f78a-5f0c-ae5c-a9f287aac160",
+          "status": "processing",
+          "source_image_id": "ba57465e-f78a-5f0c-ae5c-a9f287aac160",
+          "job_id": "cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad",
+          "description": "One isolated FAR-DEPTH UNDERWATER RUINS silhouette layer for Dungeon Matcher. Native pixel art at 256 by 192 pixels. Straight-on 2D sidescroller view. Group of ancient submerged temple columns and broken lintels, at three distances, mostly dim desaturated cyan-blue silhouettes. Tall broken pillar shapes near the far left and right; distant small arch remains in the upper-middle distance. Keep the center lower half almost empty negative space for later combatants and a separate monarch statue. Large broad quiet shading planes, two or three tones per form, minimal small cracks. Distant ruined royal court in deep water, not Greek sightseeing illustration. Native 1 pixel detail, coherent chunky clusters, crisp edges, no painterly lighting. All fragments belong to a connected architectural silhouette at the bottom, not floating stones. Transparent empty background around and through architecture. NO WATER GRADIENT OR SKY, NO WATER RAYS, NO STATUE, NO FLOOR, NO actors, coral, kelp, bubbles, UI, text, board, gems or frame. Do not crop off any architecture at the top. Empty transparent top margin. Low contrast dark cyan and blue palette appropriate to distant submerged stone. Match the reference's pixel discipline, not its subject.",
+          "seed": 47101,
+          "image_size": {
+            "width": 256,
+            "height": 192
+          },
+          "output_count": 1,
+          "estimated_generations": 9,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad/download"
+        },
+        "isError": false
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad\njob_id: cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad\nframes: 1\ntransparent: yes\nasset_id: ba57465e-f78a-5f0c-ae5c-a9f287aac160\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 9 generations\ndownload: https://api.pixellab.ai/mcp/images/cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad/download"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad",
+          "status": "completed",
+          "frames": 1,
+          "download_url": "https://api.pixellab.ai/mcp/images/cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad/download",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/cf58e4fd-9bc4-4e21-8f9b-fbc7670382ad/download"
+          ],
+          "asset": {
+            "id": "ba57465e-f78a-5f0c-ae5c-a9f287aac160",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 9
+        },
+        "isError": false
+      }
+    },
+    {
+      "role": "Mid",
+      "request": {
+        "width": 256,
+        "height": 192,
+        "no_background": true,
+        "max_colors": 16,
+        "seed": 47102,
+        "style_image": {
+          "base64": "[actual verified PNG bytes submitted; see reference hash]",
+          "usage_description": "Native pixel rendering discipline only. Simple connected clusters, deliberate silhouette and restrained details. Do not depict the skeleton or copy any royal character palette."
+        },
+        "style_options": {
+          "outline": true,
+          "detail": true,
+          "shading": true,
+          "color_palette": false
+        },
+        "description": "Transparent modular mid-distance backdrop: TWO DISTINCT SIDE GROUPS of ruined underwater temple pillars, arranged at the LEFT and RIGHT edges of a wide canvas. Four tall ancient stone columns, left group with a broken lintel, right group one leaning broken column and one shorter pillar. Front-facing flat 2D sidescroller elevation. Dark desaturated TEAL stone silhouettes with restrained turquoise edge planes, low contrast because these ruins are underwater in the distance. Large chunky pixels and broad simple material planes matching the supplied pixel reference. The central 100 pixels MUST remain completely transparent, with no structure, wall, pyramid, mound or rubble in the central opening. The bottom-center must also be transparent. Entire columns fit inside the canvas with four pixels of clearance. Columns emerge from small dark connected foundation chunks confined to the two SIDE groups. NO FLOOR OR PATH spanning the canvas; no perspective or isometric ground. NO water, sky, flat colored rectangle, ocean gradient, light shafts, bubbles, coral, seaweed, fish, statue, trident, throne, characters, text, UI, gems or frame. These are distant royal-court silhouettes, not decorative foreground pillars. Low detail, no bright white highlights, no stippled noise, no thin scratch texture. Transparent background and wide empty center."
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"6d3d03c6-8adb-4281-ad96-87b6bc5d1780\",\n  \"image_id\": \"4cf23db8-c33c-5995-8f78-7fa808bef657\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"4cf23db8-c33c-5995-8f78-7fa808bef657\",\n  \"job_id\": \"6d3d03c6-8adb-4281-ad96-87b6bc5d1780\",\n  \"description\": \"Transparent modular mid-distance backdrop: TWO DISTINCT SIDE GROUPS of ruined underwater temple pillars, arranged at the LEFT and RIGHT edges of a wide canvas. Four tall ancient stone columns, left group with a broken lintel, right group one leaning broken column and one shorter pillar. Front-facing flat 2D sidescroller elevation. Dark desaturated TEAL stone silhouettes with restrained turquoise edge planes, low contrast because these ruins are underwater in the distance. Large chunky pixels and broad simple material planes matching the supplied pixel reference. The central 100 pixels MUST remain completely transparent, with no structure, wall, pyramid, mound or rubble in the central opening. The bottom-center must also be transparent. Entire columns fit inside the canvas with four pixels of clearance. Columns emerge from small dark connected foundation chunks confined to the two SIDE groups. NO FLOOR OR PATH spanning the canvas; no perspective or isometric ground. NO water, sky, flat colored rectangle, ocean gradient, light shafts, bubbles, coral, seaweed, fish, statue, trident, throne, characters, text, UI, gems or frame. These are distant royal-court silhouettes, not decorative foreground pillars. Low detail, no bright white highlights, no stippled noise, no thin scratch texture. Transparent background and wide empty center.\",\n  \"seed\": 47102,\n  \"image_size\": {\n    \"width\": 256,\n    \"height\": 192\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 9,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/6d3d03c6-8adb-4281-ad96-87b6bc5d1780/download\"\n}\nPoll get_image(job_id=\"6d3d03c6-8adb-4281-ad96-87b6bc5d1780\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "6d3d03c6-8adb-4281-ad96-87b6bc5d1780",
+          "image_id": "4cf23db8-c33c-5995-8f78-7fa808bef657",
+          "status": "processing",
+          "source_image_id": "4cf23db8-c33c-5995-8f78-7fa808bef657",
+          "job_id": "6d3d03c6-8adb-4281-ad96-87b6bc5d1780",
+          "description": "Transparent modular mid-distance backdrop: TWO DISTINCT SIDE GROUPS of ruined underwater temple pillars, arranged at the LEFT and RIGHT edges of a wide canvas. Four tall ancient stone columns, left group with a broken lintel, right group one leaning broken column and one shorter pillar. Front-facing flat 2D sidescroller elevation. Dark desaturated TEAL stone silhouettes with restrained turquoise edge planes, low contrast because these ruins are underwater in the distance. Large chunky pixels and broad simple material planes matching the supplied pixel reference. The central 100 pixels MUST remain completely transparent, with no structure, wall, pyramid, mound or rubble in the central opening. The bottom-center must also be transparent. Entire columns fit inside the canvas with four pixels of clearance. Columns emerge from small dark connected foundation chunks confined to the two SIDE groups. NO FLOOR OR PATH spanning the canvas; no perspective or isometric ground. NO water, sky, flat colored rectangle, ocean gradient, light shafts, bubbles, coral, seaweed, fish, statue, trident, throne, characters, text, UI, gems or frame. These are distant royal-court silhouettes, not decorative foreground pillars. Low detail, no bright white highlights, no stippled noise, no thin scratch texture. Transparent background and wide empty center.",
+          "seed": 47102,
+          "image_size": {
+            "width": 256,
+            "height": 192
+          },
+          "output_count": 1,
+          "estimated_generations": 9,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/6d3d03c6-8adb-4281-ad96-87b6bc5d1780/download"
+        },
+        "isError": false
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: 6d3d03c6-8adb-4281-ad96-87b6bc5d1780\njob_id: 6d3d03c6-8adb-4281-ad96-87b6bc5d1780\nframes: 1\ntransparent: yes\nasset_id: 4cf23db8-c33c-5995-8f78-7fa808bef657\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 9 generations\ndownload: https://api.pixellab.ai/mcp/images/6d3d03c6-8adb-4281-ad96-87b6bc5d1780/download"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "6d3d03c6-8adb-4281-ad96-87b6bc5d1780",
+          "status": "completed",
+          "frames": 1,
+          "download_url": "https://api.pixellab.ai/mcp/images/6d3d03c6-8adb-4281-ad96-87b6bc5d1780/download",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/6d3d03c6-8adb-4281-ad96-87b6bc5d1780/download"
+          ],
+          "asset": {
+            "id": "4cf23db8-c33c-5995-8f78-7fa808bef657",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 9
+        },
+        "isError": false
+      }
+    }
+  ]
+}

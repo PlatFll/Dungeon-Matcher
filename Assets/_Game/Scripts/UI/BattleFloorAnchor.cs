@@ -5,6 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(RectTransform))]
 public sealed class BattleFloorAnchor : MonoBehaviour
 {
+    // Shared by every zone. Keep the already-approved Dungeon/Forest standing
+    // line; zone artwork must follow this line, never select its own actor depth.
+    public const int EnemyFloorInset = 6;
+    public const int EnemyHealthGap = 2;
+    public static int PhysicalPixelScale => Mathf.Max(1, Mathf.RoundToInt(UnityEngine.Device.Screen.width / 360f));
+    public static float Unit(Canvas canvas) => PhysicalPixelScale / canvas.rootCanvas.scaleFactor;
+    public static float EnemyFeetScreenY(EnemySlotUI slot) =>
+        GameplayPixelLayoutController.ScreenRect(slot.CombatBarRect).yMax + EnemyHealthGap * PhysicalPixelScale;
+
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {

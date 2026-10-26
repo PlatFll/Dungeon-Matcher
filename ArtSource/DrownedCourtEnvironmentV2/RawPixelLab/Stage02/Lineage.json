@@ -1,0 +1,271 @@
+{
+  "date": "2026-10-25",
+  "stage": "02",
+  "reference_hashes": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+  },
+  "style_input": {
+    "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+    "field": "style_image.base64",
+    "role": "rendering only"
+  },
+  "balance_before": 624.2,
+  "jobs": [
+    {
+      "name": "MonarchStatue",
+      "request": {
+        "width": 128,
+        "height": 160,
+        "seed": 42021,
+        "max_colors": 12,
+        "palette": [
+          "#0e303e",
+          "#164352",
+          "#1e5361",
+          "#286574",
+          "#337781",
+          "#438b90",
+          "#61a0a3",
+          "#81b2b0"
+        ],
+        "description": "ONE monumental ancient drowned monarch STONE STATUE, isolated complete sprite. Ancient solemn bearded sea king wearing a simple five-point carved stone crown, gripping a tall three-pronged trident on the viewer's left. Upright broad heavy stone shoulders, robe carved as 3 broad vertical stone planes, chunky plinth at the bottom, memorial sculpture at building scale. Entire object is weathered blue teal stone including crown, eyes, beard and trident. Empty carved eye sockets, never glowing or living eyes, no flesh, no gold. FRONT-facing elevation, 2D sidescroller background object. Quiet low-contrast distant sculpture, simple silhouette with the three trident tips readable, sparse chips on large connected stone planes. Occupied width about 100 pixels height about 145; leave transparent margins around ALL tips and full plinth. Crisp native pixels, large economical clusters, limited shading, strong deliberate edges. NO cast shadow, no scenery, no floor beyond the sculpture plinth, no background, no bubbles, coral, writing, UI, living character, painterly shading or anti aliasing.",
+        "no_background": true,
+        "style_image": {
+          "usage_description": "Use this actual approved Dungeon Matcher Rattlebones sprite only for crisp native-pixel contour discipline, large connected material planes, restrained detail and top-left shading. Do not copy skeleton anatomy, character proportions, costume, eyes or palette. The requested subject is architecture.",
+          "input_file": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png"
+        },
+        "style_options": {
+          "color_palette": false,
+          "outline": true,
+          "detail": true,
+          "shading": true
+        }
+      },
+      "receipt": {
+        "background_job_id": "db5264b9-e056-4cb0-b8c7-8f9aef24892d",
+        "image_id": "1b75ef9c-9252-5eca-a1c4-295d993b3b49",
+        "status": "processing",
+        "source_image_id": "1b75ef9c-9252-5eca-a1c4-295d993b3b49",
+        "job_id": "db5264b9-e056-4cb0-b8c7-8f9aef24892d",
+        "description": "ONE monumental ancient drowned monarch STONE STATUE, isolated complete sprite. Ancient solemn bearded sea king wearing a simple five-point carved stone crown, gripping a tall three-pronged trident on the viewer's left. Upright broad heavy stone shoulders, robe carved as 3 broad vertical stone planes, chunky plinth at the bottom, memorial sculpture at building scale. Entire object is weathered blue teal stone including crown, eyes, beard and trident. Empty carved eye sockets, never glowing or living eyes, no flesh, no gold. FRONT-facing elevation, 2D sidescroller background object. Quiet low-contrast distant sculpture, simple silhouette with the three trident tips readable, sparse chips on large connected stone planes. Occupied width about 100 pixels height about 145; leave transparent margins around ALL tips and full plinth. Crisp native pixels, large economical clusters, limited shading, strong deliberate edges. NO cast shadow, no scenery, no floor beyond the sculpture plinth, no background, no bubbles, coral, writing, UI, living character, painterly shading or anti aliasing.",
+        "seed": 42021,
+        "image_size": {
+          "width": 128,
+          "height": 160
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/db5264b9-e056-4cb0-b8c7-8f9aef24892d/download"
+      },
+      "result": {
+        "job_id": "db5264b9-e056-4cb0-b8c7-8f9aef24892d",
+        "status": "completed",
+        "charged_generations": 6,
+        "download_url": "https://api.pixellab.ai/mcp/images/db5264b9-e056-4cb0-b8c7-8f9aef24892d/download"
+      },
+      "raw": {
+        "name": "MonarchStatue",
+        "size": [
+          128,
+          160
+        ],
+        "bbox": [
+          21,
+          15,
+          93,
+          145
+        ],
+        "colors": 8,
+        "alpha": [
+          0,
+          255
+        ],
+        "sha256": "0790a6565ad2219ce7eb8b7216cc6e7fe38990308d442e6135f5a9d3649bc586"
+      }
+    },
+    {
+      "name": "PillarSeed",
+      "request": {
+        "width": 64,
+        "height": 160,
+        "seed": 42022,
+        "max_colors": 12,
+        "palette": [
+          "#081e2b",
+          "#0f3141",
+          "#164759",
+          "#205f6e",
+          "#2c7781",
+          "#408c91",
+          "#5ca0a0",
+          "#2d5752",
+          "#457061",
+          "#78928a"
+        ],
+        "description": "ONE intact submerged royal court stone COLUMN, complete standalone architectural asset. Front elevation for 2D sidescroller, no isometric camera. Tall straight fluted BLUE-TEAL SLATE shaft about 22 native pixels wide, capital widest about 40 pixels with chunky stepped horizontal ring, sturdy square foot plinth 40 pixels wide. Central shaft has clear straight parallel edges, calm repeatable modular horizontal block courses. Capital and foot are simple masonry profiles, large connected planes, top-left bevel highlight, dark blue shadow right. Only two purposeful small worn cracks, tiny algae in one joint. Crisp strong clusters like the supplied game sprite, economical rather than microtexture. Fit the ENTIRE column and base in 64x160 native transparent canvas with generous padding all sides. No other props, no foliage wall, no glow, no backdrop, no letters, no text, no interface, no character. No shadows outside asset. Square straightforward masonry rather than decorative filigree.",
+        "no_background": true,
+        "style_image": {
+          "usage_description": "Use this actual approved Dungeon Matcher Rattlebones sprite only for crisp native-pixel contour discipline, large connected material planes, restrained detail and top-left shading. Do not copy skeleton anatomy, character proportions, costume, eyes or palette. The requested subject is architecture.",
+          "input_file": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png"
+        },
+        "style_options": {
+          "color_palette": false,
+          "outline": true,
+          "detail": true,
+          "shading": true
+        }
+      },
+      "receipt": {
+        "background_job_id": "0db17109-639c-4dd3-a653-41466da36ff7",
+        "image_id": "0b6abcfb-fdc1-5052-b61b-9d01ae3d5c0c",
+        "status": "processing",
+        "source_image_id": "0b6abcfb-fdc1-5052-b61b-9d01ae3d5c0c",
+        "job_id": "0db17109-639c-4dd3-a653-41466da36ff7",
+        "description": "ONE intact submerged royal court stone COLUMN, complete standalone architectural asset. Front elevation for 2D sidescroller, no isometric camera. Tall straight fluted BLUE-TEAL SLATE shaft about 22 native pixels wide, capital widest about 40 pixels with chunky stepped horizontal ring, sturdy square foot plinth 40 pixels wide. Central shaft has clear straight parallel edges, calm repeatable modular horizontal block courses. Capital and foot are simple masonry profiles, large connected planes, top-left bevel highlight, dark blue shadow right. Only two purposeful small worn cracks, tiny algae in one joint. Crisp strong clusters like the supplied game sprite, economical rather than microtexture. Fit the ENTIRE column and base in 64x160 native transparent canvas with generous padding all sides. No other props, no foliage wall, no glow, no backdrop, no letters, no text, no interface, no character. No shadows outside asset. Square straightforward masonry rather than decorative filigree.",
+        "seed": 42022,
+        "image_size": {
+          "width": 64,
+          "height": 160
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/0db17109-639c-4dd3-a653-41466da36ff7/download"
+      },
+      "result": {
+        "job_id": "0db17109-639c-4dd3-a653-41466da36ff7",
+        "status": "completed",
+        "charged_generations": 6,
+        "download_url": "https://api.pixellab.ai/mcp/images/0db17109-639c-4dd3-a653-41466da36ff7/download"
+      },
+      "raw": {
+        "name": "PillarSeed",
+        "size": [
+          64,
+          160
+        ],
+        "bbox": [
+          13,
+          17,
+          49,
+          142
+        ],
+        "colors": 9,
+        "alpha": [
+          0,
+          255
+        ],
+        "sha256": "0c0fa22bda4c8be11ac426fa82130791c50eb4b41d642b8887908d4af6f956ef"
+      }
+    },
+    {
+      "name": "CourtArch",
+      "request": {
+        "width": 160,
+        "height": 128,
+        "seed": 42023,
+        "max_colors": 12,
+        "palette": [
+          "#081e2b",
+          "#0f3141",
+          "#164759",
+          "#205f6e",
+          "#2c7781",
+          "#408c91",
+          "#5ca0a0",
+          "#2d5752",
+          "#457061",
+          "#78928a"
+        ],
+        "description": "ONE ancient partially broken underwater royal-court masonry ARCHWAY as an isolated native pixel-art prop. Straight-on front elevation, 2D sidescroller, NOT isometric. Broad rounded arch of large blue-green slate voussoir blocks, short sturdy thick square side piers with supporting foot blocks. Wide empty TRANSPARENT opening. The upper right outer rim is chipped away but inner arch remains connected and credible. Six or seven readable big stone wedges each side, very few cracks, two tiny barnacles attached in crevices. Controlled top-left planes, dark navy-blue recess edges and muted cyan bevel, chunky pixel clusters. Occupied width about 144 pixels, height about 112 with transparent clearance on ALL sides. No door, no gate, no floor, no backdrop, no sea vegetation, no coral wallpaper, no scenery collage, no text, interface or characters. No fine filigree, painted shading, blurry edges or cast shadow. Architecture should be strong and simple with a clear connected silhouette.",
+        "no_background": true,
+        "style_image": {
+          "usage_description": "Use this actual approved Dungeon Matcher Rattlebones sprite only for crisp native-pixel contour discipline, large connected material planes, restrained detail and top-left shading. Do not copy skeleton anatomy, character proportions, costume, eyes or palette. The requested subject is architecture.",
+          "input_file": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png"
+        },
+        "style_options": {
+          "color_palette": false,
+          "outline": true,
+          "detail": true,
+          "shading": true
+        }
+      },
+      "receipt": {
+        "background_job_id": "f11aecc0-ee2e-4062-9038-758130bb370e",
+        "image_id": "8db7f71c-0b06-547e-91e9-142303a85383",
+        "status": "processing",
+        "source_image_id": "8db7f71c-0b06-547e-91e9-142303a85383",
+        "job_id": "f11aecc0-ee2e-4062-9038-758130bb370e",
+        "description": "ONE ancient partially broken underwater royal-court masonry ARCHWAY as an isolated native pixel-art prop. Straight-on front elevation, 2D sidescroller, NOT isometric. Broad rounded arch of large blue-green slate voussoir blocks, short sturdy thick square side piers with supporting foot blocks. Wide empty TRANSPARENT opening. The upper right outer rim is chipped away but inner arch remains connected and credible. Six or seven readable big stone wedges each side, very few cracks, two tiny barnacles attached in crevices. Controlled top-left planes, dark navy-blue recess edges and muted cyan bevel, chunky pixel clusters. Occupied width about 144 pixels, height about 112 with transparent clearance on ALL sides. No door, no gate, no floor, no backdrop, no sea vegetation, no coral wallpaper, no scenery collage, no text, interface or characters. No fine filigree, painted shading, blurry edges or cast shadow. Architecture should be strong and simple with a clear connected silhouette.",
+        "seed": 42023,
+        "image_size": {
+          "width": 160,
+          "height": 128
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/f11aecc0-ee2e-4062-9038-758130bb370e/download"
+      },
+      "result": {
+        "job_id": "f11aecc0-ee2e-4062-9038-758130bb370e",
+        "status": "completed",
+        "charged_generations": 6,
+        "download_url": "https://api.pixellab.ai/mcp/images/f11aecc0-ee2e-4062-9038-758130bb370e/download"
+      },
+      "raw": {
+        "name": "CourtArch",
+        "size": [
+          160,
+          128
+        ],
+        "bbox": [
+          23,
+          17,
+          129,
+          106
+        ],
+        "colors": 8,
+        "alpha": [
+          0,
+          255
+        ],
+        "sha256": "9cdc75a4e62c0c5bde783d59da91e995679471c5883d49d6e7e76110f1313511"
+      }
+    }
+  ],
+  "quotes": [
+    {
+      "width": 128,
+      "height": 160,
+      "image": 6,
+      "rotations": 0,
+      "total": 6,
+      "provisional": true
+    },
+    {
+      "width": 64,
+      "height": 160,
+      "image": 6,
+      "rotations": 0,
+      "total": 6,
+      "provisional": true
+    },
+    {
+      "width": 160,
+      "height": 128,
+      "image": 6,
+      "rotations": 0,
+      "total": 6,
+      "provisional": true
+    }
+  ]
+}

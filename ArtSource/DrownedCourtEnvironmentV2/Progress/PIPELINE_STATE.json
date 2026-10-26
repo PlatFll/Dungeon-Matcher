@@ -1,0 +1,58 @@
+{
+  "project": "Dungeon Matcher",
+  "zone": "Drowned Court / Sunken Marches",
+  "scope": "New visual environment asset library; all existing gameplay/controls protected",
+  "branch_suggestion": "feature/drowned-court-pixellab-environment-v2",
+  "current_stage": "08",
+  "status": "COMPLETE_PENDING_USER_REVIEW",
+  "stages": {
+    "00": "COMPLETE_USER_ACCEPTED",
+    "01": "COMPLETE_USER_ACCEPTED",
+    "02": "COMPLETE_USER_ACCEPTED",
+    "03": "COMPLETE_USER_ACCEPTED",
+    "04": "COMPLETE_USER_ACCEPTED",
+    "05": "COMPLETE_USER_ACCEPTED",
+    "06": "COMPLETE_USER_ACCEPTED",
+    "07": "COMPLETE_USER_ACCEPTED",
+    "08": "COMPLETE_PENDING_USER_REVIEW",
+    "09": "NOT_STARTED",
+    "10": "NOT_STARTED",
+    "11": "NOT_STARTED",
+    "12": "NOT_STARTED"
+  },
+  "optional_stage_12_requires_user_approval": true,
+  "merge_allowed": false,
+  "total_pixellab_spending": 94,
+  "user_approved_final_art": false,
+  "active_stage": "08",
+  "branch": "feature/drowned-court-pixellab-environment-v2",
+  "base_commit": "00e9ebe9d074ecc7cf5e5989286b976f644c8436",
+  "generation_spend": 94,
+  "focused_revision_01": {
+    "status": "COMPLETE_PENDING_USER_REVIEW",
+    "scope": "Background recolor and integrated board sides",
+    "report": "Revision01Report.md",
+    "preview": "Preview/Revision01/Review.html",
+    "generation_spend": 0
+  },
+  "focused_revision_02": {
+    "status": "COMPLETE_PENDING_USER_REVIEW",
+    "scope": "Six-stage coral, portrait, masonry and ambient-life polish",
+    "report": "Revision02Report.md",
+    "preview": "Preview/Revision02/Review.html",
+    "generation_spend": 5,
+    "new_assets": 21,
+    "motion_tracks": 13,
+    "formal_later_stages_unchanged": true
+  },
+  "focused_revision_03": {
+    "status": "COMPLETE_PENDING_USER_REVIEW",
+    "scope": "Set back underwater ruins and unify the approved enemy floor registration in all five zones",
+    "report": "Revision03Report.md",
+    "preview": "Preview/Revision03/Review.html",
+    "generation_spend": 0,
+    "new_art_assets": 0,
+    "production_environment_integrated": false,
+    "merge_allowed": false
+  }
+}
