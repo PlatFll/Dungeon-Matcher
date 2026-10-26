@@ -33,6 +33,12 @@ floor registration and HP inset across all five zones. Older enclosure offsets
 are compensated without changing board or portrait geometry. This is a visual
 alignment change only; combat, actions, saves and gem rules are untouched.
 See [Revision03 evidence](../ArtSource/DrownedCourtEnvironmentV2/Revision03Report.md).
+The latest art-only Revision04 removes the seam between the two floor courses,
+rebuilds the closed clam and its PixelLab hinge motion, and adds occasional
+one-pixel sway to two anchored coral modules. Previous art/scenes and the
+production floor fix remain unchanged. Native/Unity QA and compilation passed;
+13 additional PixelLab generations were used (107 cumulative for this pack).
+See [Revision04 preview and evidence](../ArtSource/DrownedCourtEnvironmentV2/Revision04Report.md).
 The work remains on draft PR #212, unmerged and pending visual review.
 
 ## Dungeon side architecture (2026-10-25, awaiting visual approval)
