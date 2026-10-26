@@ -21,25 +21,27 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 
-## Shared enemy floor and Drowned Court depth revision (2026-10-26, branch review)
+## Approved Drowned Court production integration (2026-10-26)
 
-The Drowned Court review scene moves its upper ruins back by 16 native pixels,
-grounded by an added course of the unchanged floor modules. Source artwork,
-characters, UI and previous review scenes are preserved. The new underwater
-environment remains an art-preview candidate, not a new production binding.
+The user approved Revision04 and authorized PR #212 merge and production use.
+The real build-enabled Game scene now selects 94 approved modular underwater
+pieces, native portrait/board framing, the corrected clam, two coral sways and
+twelve bubble tracks. Original source art and review scenes are preserved;
+legacy Court scenery is bypassed by the existing presentation owner.
 
-The existing presentation owners now apply the approved Dungeon/Forest enemy
-floor registration and HP inset across all five zones. Older enclosure offsets
-are compensated without changing board or portrait geometry. This is a visual
-alignment change only; combat, actions, saves and gem rules are untouched.
-See [Revision03 evidence](../ArtSource/DrownedCourtEnvironmentV2/Revision03Report.md).
-The latest art-only Revision04 removes the seam between the two floor courses,
-rebuilds the closed clam and its PixelLab hinge motion, and adds occasional
-one-pixel sway to two anchored coral modules. Previous art/scenes and the
-production floor fix remain unchanged. Native/Unity QA and compilation passed;
-13 additional PixelLab generations were used (107 cumulative for this pack).
-See [Revision04 preview and evidence](../ArtSource/DrownedCourtEnvironmentV2/Revision04Report.md).
-The work remains on draft PR #212, unmerged and pending visual review.
+The shared enemy floor/HP registration matches the approved Dungeon baseline
+across all five zones. Board/portrait geometry, characters, gems, shared controls,
+AIR/flood, combat, save and travel ownership remain unchanged. The Court camera
+retains its prior reference size; no global character or low-resolution HUD
+redesign is included.
+
+Actual Game validation passed 25 screen/zone cases and 75 source-pivot floor
+checks, accepted swap, controls/pause/Reduced Motion, flooded save/resume and
+18 zone handoffs. Required Unity compilation and Android IL2CPP development
+build passed. Two old test failures reproduce without this art and remain
+documented and unchanged. Physical-device execution is not claimed.
+Zero integration generations; the approved pack retains its 107-generation
+ledger. [Screenshots and full evidence](../ArtSource/DrownedCourtEnvironmentV2/Integration/README.md).
 
 ## Dungeon side architecture (2026-10-25, awaiting visual approval)
 

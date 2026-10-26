@@ -7,6 +7,8 @@ using UnityEngine.UI;
 /// <summary>Approved Dungeon artwork and native UI construction, used by the existing presentation owners.</summary>
 public sealed partial class DungeonPixelLabBattleArt : ScriptableObject
 {
+    [Serializable] public sealed class SpriteAlias { public string key; public Sprite sprite; }
+    public SpriteAlias[] aliases;
     public ForestBattleAssembly forestAssembly;
     public Sprite[] modules;
     public TextAsset placementManifest;
@@ -25,6 +27,7 @@ public sealed partial class DungeonPixelLabBattleArt : ScriptableObject
         if (lookup == null)
         {
             lookup = modules.ToDictionary(s => s.name, s => s);
+            if (aliases != null) foreach (var alias in aliases) lookup[alias.key] = alias.sprite;
             if (UsesHybrid) foreach (var sprite in hybridModules) lookup[sprite.name] = sprite;
             if (UsesSideArchitecture) foreach (var sprite in sideArchitectureModules) lookup[sprite.name] = sprite;
             if (forestAssembly) foreach (var module in forestAssembly.modules) lookup[module.key] = module.sprite;

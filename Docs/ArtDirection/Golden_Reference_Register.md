@@ -184,3 +184,10 @@ Dungeon/Forest/Court reference kits and the main-menu shading V2. Current
 integration evidence is in ArtSource/BattlePresentation/ReferenceIntegration/.
 This supersedes those presentation review gates only; character reference
 membership and every golden sprite hash remain unchanged.
+
+## Drowned Court environment approval, 2026-10-26
+
+The user approved Revision04 for production integration and PR #212 merge.
+The accepted environment and its motion are recorded in
+`ArtSource/DrownedCourtEnvironmentV2/Integration/README.md`. This is environment
+approval only: golden membership and all reference hashes above are unchanged.

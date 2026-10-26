@@ -139,7 +139,7 @@ public static class GameplayPixelLayoutValidator
         }
         foreach (ResponsiveModularFrameFitter frame in owner.GetComponentsInChildren<ResponsiveModularFrameFitter>(false))
         {
-            if (pixelLab && frame.name.StartsWith("PixelLab"))
+            if ((pixelLab || DrownedCourtBattleAssembly.Current) && frame.name.StartsWith("PixelLab"))
             {
                 foreach(var im in frame.GetComponentsInChildren<Image>())
                 {

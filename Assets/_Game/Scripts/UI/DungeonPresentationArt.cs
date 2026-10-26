@@ -20,9 +20,9 @@ public sealed partial class DungeonPresentationArt : MonoBehaviour
     private void Start()
     {
         worldCamera = Camera.main;
-        if (DungeonPixelLabBattleArt.Current)
+        if (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current)
         {
-            if(worldCamera.TryGetComponent<UnityEngine.Rendering.Universal.PixelPerfectCamera>(out var pixelCamera))
+            if(DungeonPixelLabBattleArt.Current && worldCamera.TryGetComponent<UnityEngine.Rendering.Universal.PixelPerfectCamera>(out var pixelCamera))
             { pixelCamera.refResolutionX=360; pixelCamera.refResolutionY=640; }
             if(!TryGetComponent<BattleAmbientPresentation>(out _)) gameObject.AddComponent<BattleAmbientPresentation>();
             UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering += PixelLabBeforeCamera; return;
@@ -39,6 +39,7 @@ public sealed partial class DungeonPresentationArt : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (DrownedCourtBattleAssembly.Current) { UpdateCourt(); return; }
         if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt art) { if(art.forestAssembly) UpdateForest(); else UpdatePixelLabDungeon(); return; }
         UpdateReferenceSides();
         if (approved != null) UpdateApprovedDungeon();

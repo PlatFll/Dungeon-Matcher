@@ -459,6 +459,19 @@ Opened settings and main menu keep their existing skins and menu music selection
   `ArtSource/DungeonHybrid/Integration/`. This supersedes the selected Dungeon art
   binding only; the earlier library and other-zone paths remain preserved.
 
+- **Approved Drowned Court runtime binding (2026-10-26):**
+  `DrownedCourtBattleAssembly` selects `CourtAssembly` only for Court, preserving
+  the original shared control/cell selection and camera reference. Its 94 pieces
+  and 15 motion tracks reference the approved Revision04 sprites by GUID.
+  `DungeonPresentationArt.Court` uses the existing native world-canvas owner;
+  `ResponsiveModularFrameFitter` surrounds the live board and portrait, and a
+  RectMask2D clips the overfilled portrait recess. Source floor row 208 maps to
+  `BattleFloorAnchor`, keeping the live actor/HP/UI geometry authoritative.
+  `DrownedCourtAmbientMotion` samples approved 12 Hz cosmetic poses using scaled
+  time and Reduced Motion; it never consumes gameplay RNG or advances combat.
+  The tilemap owner skips legacy Court scenery when this binding is present.
+  Art remains modular and unchanged. Evidence: `ArtSource/DrownedCourtEnvironmentV2/Integration/`.
+
 - **Approved Forest runtime binding (2026-10-25):** The existing
   `DungeonPixelLabBattleArt` native presentation resource now also selects
   `ForestPixelLab` for the Forest zone. Its `ForestBattleAssembly` references the
