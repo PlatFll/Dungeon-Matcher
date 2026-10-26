@@ -1,0 +1,191 @@
+Use the Ironvein Excavation mockup only as a visual target for composition, theme, and asset list.
+Do not try to recreate the scene by feeding the image directly into PixelLab and hoping for a final result.
+This zone must be built using a text-description-driven PixelLab workflow, section by section, asset by asset.
+Core workflow rules
+- Generate assets in small focused batches using text prompts
+- Do not generate the whole zone in one pass
+- Do not rely on the mockup as a direct generation reference
+- The mockup is only for:
+  - overall theme
+  - approximate composition
+  - what kinds of assets are needed
+  - where those assets belong in the final scene
+Art-direction rules
+- Match the established Dungeon Matcher game style
+- Preserve the current global UI system and layout
+- Keep the bottom HUD, button treatment, and overall unified game structure consistent with the other finished zones
+- The Ironvein Excavation zone should feel like:
+  - a dwarven mining cavern
+  - sturdy, geometric, weighty construction
+  - warm orange firelight against cool dark rock
+  - carved stone, timber supports, mine rails, hanging lanterns, ore clusters, mining props
+- Shading should match our style:
+  - clean readable pixel clusters
+  - no muddy over-detailing
+  - no painterly blur
+  - no random noisy texture spam
+- After generation, recolor and polish every approved asset using our established color guide and shading guide
+Production goal
+Build the zone in stages using PixelLab-generated assets, then assemble it in Unity so it feels like the same game as:
+- the dungeon zone
+- the magical forest zone
+Stop only when:
+- all stage assets are complete
+- assembled scene is in-engine
+- visual QA passes
+- everything is ready for review
+Do not merge anything.
+Stop at the review stage with a clear summary of:
+- what was generated
+- what was kept
+- what was recolored/polished
+- what still needs approval
+REQUIRED STAGE ORDER
+Stage 1 — Foundation planning
+Create the asset list and production breakdown for the zone.
+
+Identify asset groups:
+- top HUD environment background
+- character portrait frame styling for this zone
+- board frame styling for this zone
+- side environment structures
+- mining props
+- cavern background layers
+- floor / platform treatment
+- bottom-side decoration around HUD region
+- ambient effects
+Do not generate yet until the asset list is locked.
+Stage 2 — Top HUD background kit
+Generate from text:
+- cavern wall sections
+- stone arch / tunnel opening
+- timber supports
+- hanging lanterns
+- rails or track hints in the ground
+- background mine depth shapes
+- ore glow accents
+- mining banners / dwarf signage if needed
+Goal:
+A crisp top battle area background that reads immediately as dwarven mine / excavation cavern.
+Stage 3 — Portrait frame styling
+Generate and build a zone-specific player portrait frame using text prompts.
+
+Desired style:
+- still compatible with the unified game UI
+- but adapted for Ironvein Excavation
+- materials can include:
+  - reinforced iron corners
+  - carved stone blocks
+  - metal braces / rivets
+  - mining-themed structural weight
+Do not redesign layout.
+Only redesign the art treatment so it fits the zone.
+Stage 4 — Board frame styling
+Generate a zone-specific board frame from text.
+
+Desired style:
+- heavier stone-and-metal dwarven construction
+- readable, clean, crisp
+- slightly more industrial/mining than the base dungeon frame
+- should feel like the board is mounted into sturdy excavation architecture
+Possible motifs:
+- cut stone edges
+- iron brackets
+- riveted joints
+- subtle ore insets
+- restrained mining construction details
+Do not make it noisy.
+Stage 5 — Side structures around the board
+Generate the large surrounding side structures using text, not direct image copying.
+
+Needed ideas:
+- support beams
+- mine posts
+- dwarf masonry
+- chains
+- lantern hooks
+- carved supports
+- ore veins in rock
+- subtle tools / supports / braces
+These should frame the board without overwhelming it.
+Stage 6 — Bottom environment around HUD
+Generate the lower-zone side decorations around the bottom HUD.
+
+Possible assets:
+- rock piles
+- timber braces
+- mine carts or cart fragments
+- ore crates
+- barrels
+- pickaxes / tools
+- lanterns
+- small ore glows
+- structural posts
+Keep readability of the HUD first.
+Stage 7 — Ambient props and filler assets
+Generate small modular props to place selectively:
+- crystals / ore clusters
+- chains
+- signs / mining banners
+- tracks
+- crates
+- barrels
+- rope bundles
+- support bolts / braces
+- lantern variants
+Only add where needed.
+Do not clutter.
+Stage 8 — Recolor and style pass
+After assets are approved:
+- recolor them to match the official palette direction
+- simplify any over-detailed shading
+- remove blurry or off-style pixel clusters
+- align hue/value treatment with your existing zones
+Everything must feel like the same game.
+Stage 9 — Unity assembly
+Assemble the zone in Unity using the approved generated assets.
+
+Rules:
+- build section by section
+- top HUD first
+- then portrait frame
+- then board frame
+- then side structures
+- then bottom environment
+- then ambient props
+Stage 10 — QA and stop point
+Validate:
+- pixel readability
+- consistency with dungeon + forest zones
+- no blur
+- no bad seams
+- no floating disconnected elements
+- no off-palette assets
+- no overcrowding
+- frame readability preserved
+- gameplay readability preserved
+Then stop before merge and present for review.
+PIXELLAB GENERATION METHOD
+When using PixelLab:
+- generate one asset family at a time
+- use tight prompts
+- prefer modular outputs
+- do not ask for a full game screen unless testing composition
+- focus on clean production assets
+Examples of asset-family prompts:
+Example: cavern wall kit
+“Create crisp pixel-art modular dwarven cavern wall tiles for a fantasy match-3 game. Dark bluish-purple rock, carved stone blocks, subtle warm torchlight influence, readable pixel clusters, clean edges, no blur, no painterly rendering, no excessive texture noise. Style should fit a polished retro-inspired fantasy mobile game UI.”
+Example: mining timber supports
+“Create modular pixel-art dwarven mine support beams and wooden braces for a cavern excavation zone. Heavy timber, sturdy construction, warm brown wood, iron reinforcement accents, clean pixel readability, simplified cluster shading, game-ready asset style.”
+Example: board frame pieces
+“Create a modular pixel-art board frame for a dwarven mine zone. Heavy stone-and-iron construction, riveted metal corners, carved stone beams, subtle mining-industrial flavor, readable and clean, suitable for framing a match-3 board in a polished fantasy mobile game.”
+Example: lantern props
+“Create small pixel-art hanging mining lanterns for a dwarven cave zone. Warm orange glow, sturdy metal housing, readable silhouette, clean pixel-art clusters, suitable for placement around a fantasy match-3 combat UI.”
+Example: ore/crystal accents
+“Create small pixel-art ore clusters and excavation crystals for a dwarven cave mine. Warm amber and gold ore glow, embedded in dark rock, crisp readable pixels, limited detail, asset-ready style.”
+IMPORTANT DO-NOT-DO RULES
+- Do not generate the entire screen in one image and use it as final production
+- Do not keep blurry AI texture
+- Do not over-detail with noisy clusters
+- Do not let generated assets drift away from our game’s established style
+- Do not merge without review

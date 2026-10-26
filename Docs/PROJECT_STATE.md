@@ -21,6 +21,16 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 
+## Ironvein modular environment review (2026-10-26)
+
+The ten-stage text-driven PixelLab/LibreSprite environment rebuild is assembled
+in a separate Unity art-review scene. Forty native modules cover cavern depth,
+portal, timber/iron frames, side supports, lamps, ore and grounded lower props.
+`ArtSource/IronveinEnvironmentV2/README.md` records sources, spending and checks.
+All new art is **pending user visual approval**. Production Ironvein, gameplay,
+shared UI/layout and other zones remain unchanged; no integration or merge is
+authorized by this review milestone.
+
 ## Approved Drowned Court production integration (2026-10-26)
 
 The user approved Revision04 and authorized PR #212 merge and production use.
