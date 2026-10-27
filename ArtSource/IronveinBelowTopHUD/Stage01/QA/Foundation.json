@@ -1,0 +1,39 @@
+{
+    "status": "PASS",
+    "sourceScene": "Assets/_Game/Scenes/ArtPreview_IronveinStaged_Final.unity",
+    "workingScene": "Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage01.unity",
+    "note": "Entire source and duplicate screenshots match, not just the locked top. The empty lower mask marks scope and renders no artwork. Actual Unity art-only preview; no generation, no gameplay integration, no merge.",
+    "sourcePixelsUnchanged": true,
+    "sceneExcludedFromBuild": true,
+    "sourceWidth": 720,
+    "sourceHeight": 1280,
+    "firstEditableScreenRow": 484.0,
+    "firstEditableNativeRow": 242.0,
+    "protectedGraphicsMinWorldY": 798.0,
+    "editableBoundsWorld": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 720.0,
+        "height": 796.0
+    },
+    "boardBoundsWorld": {
+        "serializedVersion": "2",
+        "x": 87.45048522949219,
+        "y": 213.45050048828126,
+        "width": 545.0989990234375,
+        "height": 545.0989990234375
+    },
+    "portraitBoundsWorld": {
+        "serializedVersion": "2",
+        "x": 21.0,
+        "y": 825.0,
+        "width": 195.0,
+        "height": 406.0
+    },
+    "capturedWidths": [
+        360,
+        720,
+        1080
+    ]
+}
