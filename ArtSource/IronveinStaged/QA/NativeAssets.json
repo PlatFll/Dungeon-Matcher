@@ -1,0 +1,1242 @@
+[
+  {
+    "name": "Barrel",
+    "size": [
+      25,
+      32
+    ],
+    "colors": 12,
+    "bounds": [
+      1,
+      1,
+      24,
+      31
+    ],
+    "sha256": "bc33d84c38900f056278a10b8dc26421ec0f39a406703a2bcc9dbb8158b91232",
+    "selection": {
+      "source": "Barrel",
+      "stage": 6,
+      "trim": true,
+      "pad": 1,
+      "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained"
+    }
+  },
+  {
+    "name": "BeamStrap",
+    "size": [
+      19,
+      9
+    ],
+    "colors": 7,
+    "bounds": [
+      0,
+      0,
+      19,
+      9
+    ],
+    "sha256": "4b14e7d58c8a506d70fe78d539a763d621d5f5f1412ec22cbb98ef04ffe2270e",
+    "selection": {
+      "source": "Timber",
+      "stage": 8,
+      "crop": [
+        4,
+        17,
+        23,
+        26
+      ],
+      "note": "original iron beam strap; intact native material clusters"
+    }
+  },
+  {
+    "name": "BoardCornerBL",
+    "size": [
+      27,
+      27
+    ],
+    "colors": 14,
+    "bounds": [
+      0,
+      0,
+      27,
+      27
+    ],
+    "sha256": "78342863d43965cab8f6035d62b47872f7efd71138da5e1578fc85a98a9c1f99",
+    "selection": {
+      "source": "BoardFrame",
+      "stage": 4,
+      "crop": [
+        12,
+        90,
+        39,
+        117
+      ],
+      "note": "selected generated angular ore socket, original native pixels"
+    }
+  },
+  {
+    "name": "BoardCornerBR",
+    "size": [
+      27,
+      27
+    ],
+    "colors": 14,
+    "bounds": [
+      0,
+      0,
+      27,
+      27
+    ],
+    "sha256": "fc22c4e722c8b0a086de0224dcd10cf07c53e0383c22114648e2038ed326b718",
+    "selection": {
+      "source": "BoardFrame",
+      "stage": 4,
+      "crop": [
+        90,
+        90,
+        117,
+        117
+      ],
+      "note": "selected generated angular ore socket, original native pixels"
+    }
+  },
+  {
+    "name": "BoardCornerTL",
+    "size": [
+      27,
+      27
+    ],
+    "colors": 11,
+    "bounds": [
+      0,
+      0,
+      27,
+      27
+    ],
+    "sha256": "7dcbc4595300a9dd405634406a765fe77b06e4c831898c830b024aa0db4064d1",
+    "selection": {
+      "source": "BoardFrame",
+      "stage": 4,
+      "crop": [
+        12,
+        12,
+        39,
+        39
+      ],
+      "note": "selected generated angular ore socket, original native pixels"
+    }
+  },
+  {
+    "name": "BoardCornerTR",
+    "size": [
+      27,
+      27
+    ],
+    "colors": 13,
+    "bounds": [
+      0,
+      0,
+      27,
+      27
+    ],
+    "sha256": "9cbb8509fcd7a7d7c9bdeb12d8b0161b501d9a35e4ca0135306ea3e6d557ff1e",
+    "selection": {
+      "source": "BoardFrame",
+      "stage": 4,
+      "crop": [
+        90,
+        12,
+        117,
+        39
+      ],
+      "note": "selected generated angular ore socket, original native pixels"
+    }
+  },
+  {
+    "name": "BoardJoint",
+    "size": [
+      9,
+      9
+    ],
+    "colors": 7,
+    "bounds": [
+      0,
+      0,
+      9,
+      9
+    ],
+    "sha256": "61ce62ac2214f1e9ad56e2f684cd86825dbae4b7b284bb33c5778c886909965a",
+    "selection": {
+      "source": "BoardFrame",
+      "stage": 4,
+      "crop": [
+        40,
+        14,
+        49,
+        23
+      ],
+      "custom": "portrait_joint",
+      "note": "centered iron clamp, native 9px"
+    }
+  },
+  {
+    "name": "BoardRailBottom",
+    "size": [
+      25,
+      9
+    ],
+    "colors": 7,
+    "bounds": [
+      0,
+      0,
+      25,
+      9
+    ],
+    "sha256": "5ccb305e5fbade6cde7ba1c97bec674bbc3638eaab6ffc8fabddbc7e5726a54a",
+    "selection": {
+      "source": "BoardFrame",
+      "stage": 4,
+      "crop": [
+        51,
+        15,
+        76,
+        24
+      ],
+      "custom": "board_rail_h",
+      "note": "nine-pixel steel and timber rail rebuilt continuously in LibreSprite"
+    }
+  },
+  {
+    "name": "BoardRailLeft",
+    "size": [
+      9,
+      25
+    ],
+    "colors": 7,
+    "bounds": [
+      0,
+      0,
+      9,
+      25
+    ],
+    "sha256": "f8fd624ea31a139c2fb4e5488b0a5c6d52b60c00453e896139328be2ce63d486",
+    "selection": {
+      "source": "BoardFrame",
+      "stage": 4,
+      "crop": [
+        15,
+        51,
+        24,
+        76
+      ],
+      "custom": "board_rail_v",
+      "note": "matching upright, no scaling"
+    }
+  },
+  {
+    "name": "BoardRailRight",
+    "size": [
+      9,
+      25
+    ],
+    "colors": 7,
+    "bounds": [
+      0,
+      0,
+      9,
+      25
+    ],
+    "sha256": "f8fd624ea31a139c2fb4e5488b0a5c6d52b60c00453e896139328be2ce63d486",
+    "selection": {
+      "source": "BoardFrame",
+      "stage": 4,
+      "crop": [
+        15,
+        51,
+        24,
+        76
+      ],
+      "custom": "board_rail_v",
+      "note": "matching upright, no scaling"
+    }
+  },
+  {
+    "name": "BoardRailTop",
+    "size": [
+      25,
+      9
+    ],
+    "colors": 7,
+    "bounds": [
+      0,
+      0,
+      25,
+      9
+    ],
+    "sha256": "5ccb305e5fbade6cde7ba1c97bec674bbc3638eaab6ffc8fabddbc7e5726a54a",
+    "selection": {
+      "source": "BoardFrame",
+      "stage": 4,
+      "crop": [
+        51,
+        15,
+        76,
+        24
+      ],
+      "custom": "board_rail_h",
+      "note": "nine-pixel steel and timber rail rebuilt continuously in LibreSprite"
+    }
+  },
+  {
+    "name": "Cart",
+    "size": [
+      58,
+      59
+    ],
+    "colors": 12,
+    "bounds": [
+      1,
+      1,
+      57,
+      58
+    ],
+    "sha256": "c2d35c5183f0fae6890f1d360a087dc917578001c0b815dc28e7dc175d396e0d",
+    "selection": {
+      "source": "MineCart",
+      "stage": 6,
+      "trim": true,
+      "pad": 1,
+      "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained"
+    }
+  },
+  {
+    "name": "CaveRecess",
+    "size": [
+      64,
+      64
+    ],
+    "colors": 4,
+    "bounds": [
+      0,
+      0,
+      64,
+      64
+    ],
+    "sha256": "e55733094383128adf725a7ff57a931ae24c01afc902f6ba7d10777c3a4351d6",
+    "selection": {
+      "source": "QuietRock",
+      "stage": 3,
+      "seam": "xy",
+      "note": "QuietRock candidate 1, broad irregular rock planes, exact edge joins",
+      "map": {
+        "292638": "181c27",
+        "383044": "222635",
+        "463a50": "2a2d3b"
+      }
+    }
+  },
+  {
+    "name": "CavernDepth",
+    "size": [
+      240,
+      160
+    ],
+    "colors": 20,
+    "bounds": [
+      0,
+      0,
+      240,
+      160
+    ],
+    "sha256": "c2e38e45cbd539f3ec8648ec21f37e395446a40d58d2bbc090f1c9de17cff377",
+    "selection": {
+      "source": "CavernDepth",
+      "stage": 2,
+      "note": "controlled cool depth ramps; localized warm recoloring follows existing rock planes near lamps",
+      "light": true,
+      "map": {
+        "01010c": "0a0d11",
+        "020205": "0a0d11",
+        "040516": "0a0d11",
+        "06091a": "10131f",
+        "0e101e": "10131f",
+        "121429": "171e2e",
+        "121623": "171e2e",
+        "141c2b": "171e2e",
+        "161e31": "171e2e",
+        "1a2335": "242e42",
+        "1e1a29": "1c1c2b",
+        "2a354b": "2c354d",
+        "2e3a53": "2c354d",
+        "332c3b": "302638",
+        "343044": "42374f",
+        "362c34": "302638",
+        "384560": "36435a",
+        "455877": "46556e",
+        "506789": "596c87",
+        "5f7699": "6a7e98",
+        "7f513e": "7a4d2e",
+        "604441": "4a2c1c",
+        "524d6b": "5a4964",
+        "473e4f": "42374f"
+      }
+    }
+  },
+  {
+    "name": "CaveWall",
+    "size": [
+      64,
+      64
+    ],
+    "colors": 3,
+    "bounds": [
+      0,
+      0,
+      64,
+      64
+    ],
+    "sha256": "9d1c0dcf781c9aa742c098b7a708c6fe5c7a371319751138e8989cb2bd35f6fb",
+    "selection": {
+      "source": "QuietRock",
+      "stage": 2,
+      "seam": "xy",
+      "note": "QuietRock candidate 1, broad irregular rock planes, exact edge joins; quieter background value grouping",
+      "map": {
+        "292638": "1c1c2b",
+        "383044": "292638",
+        "463a50": "383044"
+      }
+    }
+  },
+  {
+    "name": "Chain",
+    "size": [
+      24,
+      56
+    ],
+    "colors": 8,
+    "bounds": [
+      1,
+      1,
+      23,
+      55
+    ],
+    "sha256": "036cf5686339a11ebebc98dd2df63313d695e91882673627232628e12656b4c9",
+    "selection": {
+      "source": "ChainMount",
+      "stage": 5,
+      "trim": true,
+      "pad": 1,
+      "note": "full bracket and hanging links; supported hook, no chopped chain"
+    }
+  },
+  {
+    "name": "Crate",
+    "size": [
+      36,
+      29
+    ],
+    "colors": 11,
+    "bounds": [
+      1,
+      1,
+      35,
+      28
+    ],
+    "sha256": "36ee81d3fa905d86691262f94bc60f7932f69622bab08d7469345985ce0c0b77",
+    "selection": {
+      "source": "OreCrate",
+      "stage": 6,
+      "trim": true,
+      "pad": 1,
+      "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained"
+    }
+  },
+  {
+    "name": "Lantern",
+    "size": [
+      20,
+      40
+    ],
+    "colors": 12,
+    "bounds": [
+      1,
+      1,
+      19,
+      39
+    ],
+    "sha256": "8d356b4ee3a0635c1555fda377a2dc3454853222825a927c26bbcaba63877fe6",
+    "selection": {
+      "source": "Lantern",
+      "stage": 2,
+      "trim": true,
+      "pad": 1,
+      "note": "candidate 3; broad squat lantern silhouette"
+    }
+  },
+  {
+    "name": "LanternSmall",
+    "size": [
+      20,
+      40
+    ],
+    "colors": 13,
+    "bounds": [
+      1,
+      1,
+      19,
+      39
+    ],
+    "sha256": "dfb69020491220e4da7330cdea4381b22507d9ae0251c1491568d1be9f9723da",
+    "selection": {
+      "source": "LanternSmall",
+      "stage": 2,
+      "trim": true,
+      "pad": 1,
+      "note": "candidate 0; distant small lighting variant"
+    }
+  },
+  {
+    "name": "LowerLedge",
+    "size": [
+      38,
+      10
+    ],
+    "colors": 12,
+    "bounds": [
+      0,
+      0,
+      38,
+      10
+    ],
+    "sha256": "a2759e6834867e215704bde35d2453ba56e8d8acc9320d929f230b141df71cfc",
+    "selection": {
+      "source": "Timber",
+      "stage": 7,
+      "crop": [
+        7,
+        28,
+        17,
+        66
+      ],
+      "rotate": true,
+      "note": "reusable native timber strip from selected beam; no stretch"
+    }
+  },
+  {
+    "name": "LowerLeft",
+    "size": [
+      56,
+      76
+    ],
+    "colors": 12,
+    "bounds": [
+      2,
+      2,
+      54,
+      74
+    ],
+    "sha256": "11d953ddf0c55f6151447a50284570eaa4a9fb93d9cf1598d2a62356c2cdc2e6",
+    "selection": {
+      "source": "LowerLeft",
+      "stage": 7,
+      "trim": true,
+      "pad": 2,
+      "note": "one grounded integrated rock/timber mass, no separate floating chunks; native selected candidate"
+    }
+  },
+  {
+    "name": "LowerRight",
+    "size": [
+      56,
+      78
+    ],
+    "colors": 13,
+    "bounds": [
+      2,
+      2,
+      54,
+      76
+    ],
+    "sha256": "ffbcc8216370460ae66342589881f5ca0956b45fbbfa60afcc53382c09652da6",
+    "selection": {
+      "source": "LowerRight",
+      "stage": 7,
+      "trim": true,
+      "pad": 2,
+      "note": "one grounded integrated rock/timber mass, no separate floating chunks; native selected candidate"
+    }
+  },
+  {
+    "name": "LowerWall",
+    "size": [
+      96,
+      32
+    ],
+    "colors": 5,
+    "bounds": [
+      0,
+      0,
+      96,
+      32
+    ],
+    "sha256": "70a368708969a3de9b76a0c2ab90728ce286e562ed75b18ed0eea25cb157e468",
+    "selection": {
+      "source": "LowerWall",
+      "stage": 7,
+      "seam": "xy",
+      "map": {
+        "292638": "1c1c2b",
+        "383044": "292638",
+        "463a50": "383044"
+      },
+      "note": "quiet lower stone tile, clean native repeat and value control behind shared HUD"
+    }
+  },
+  {
+    "name": "MineEntrance",
+    "size": [
+      118,
+      99
+    ],
+    "colors": 13,
+    "bounds": [
+      2,
+      2,
+      116,
+      97
+    ],
+    "sha256": "7cacb0619a2ed1545037347ea2c868694a7538587b7a7f34834fe7f80223ead8",
+    "selection": {
+      "source": "MineEntrance",
+      "stage": 2,
+      "trim": true,
+      "pad": 2,
+      "map": {
+        "000000": "0a0d11",
+        "08040a": "0a0d11",
+        "010005": "0a0d11",
+        "181022": "13131f",
+        "2b1d39": "2c293d",
+        "23182e": "1c1c2b",
+        "372c3e": "42374f",
+        "413148": "42374f",
+        "483752": "42374f",
+        "5b4b59": "5a4964",
+        "6a5370": "786477",
+        "75616a": "786477",
+        "987775": "786477",
+        "c7c6cb": "93a1b0",
+        "5f3d32": "7a4d2e",
+        "c18166": "b07a43",
+        "925c4e": "b07a43",
+        "6e473f": "7a4d2e",
+        "472b27": "4a2c1c",
+        "3e2322": "4a2c1c",
+        "2d1519": "30202a",
+        "341e27": "30202a",
+        "413945": "2b313a",
+        "240f15": "30202a"
+      },
+      "note": "candidate 1; economical stone/wood/iron material ramps, no geometry changes"
+    }
+  },
+  {
+    "name": "Ore",
+    "size": [
+      32,
+      36
+    ],
+    "colors": 9,
+    "bounds": [
+      1,
+      1,
+      31,
+      35
+    ],
+    "sha256": "4640305486f34a1052441ff43f21d13a1123ca3c90ab3e033105a2d03b1dacf6",
+    "selection": {
+      "source": "Ore",
+      "stage": 2,
+      "trim": true,
+      "pad": 1,
+      "note": "selected for restrained background placement"
+    }
+  },
+  {
+    "name": "OreSmall",
+    "size": [
+      27,
+      35
+    ],
+    "colors": 10,
+    "bounds": [
+      1,
+      1,
+      26,
+      34
+    ],
+    "sha256": "1f10a1454ae61d7ed8668bef0ec01098b094eb3489d79b66e2e0b5b834639548",
+    "selection": {
+      "source": "OreSmall",
+      "stage": 2,
+      "trim": true,
+      "pad": 1,
+      "note": "selected for restrained background placement"
+    }
+  },
+  {
+    "name": "Platform",
+    "size": [
+      96,
+      25
+    ],
+    "colors": 4,
+    "bounds": [
+      0,
+      0,
+      96,
+      25
+    ],
+    "sha256": "dc834c86d7d81509d5d46d5cd699cadc190ac860abd512ef196df877bab344fa",
+    "selection": {
+      "source": "RailFloor",
+      "stage": 2,
+      "crop": [
+        0,
+        5,
+        96,
+        30
+      ],
+      "seam": "x",
+      "map": {
+        "cfccbc": "55606e",
+        "93a1b0": "55606e",
+        "55606e": "42374f",
+        "c58826": "42374f",
+        "8a5622": "42374f",
+        "6f3b1d": "30202a",
+        "4a2c1c": "30202a"
+      },
+      "note": "quiet repeat floor: remove scattered gold flecks, merge isolated native interior pixels, preserve continuous slab silhouette",
+      "despeck": true
+    }
+  },
+  {
+    "name": "PortraitCornerBL",
+    "size": [
+      13,
+      13
+    ],
+    "colors": 9,
+    "bounds": [
+      0,
+      0,
+      13,
+      13
+    ],
+    "sha256": "20dc02686782e3e4e7373b8a98eaa657fb33dc631596fc4267b04485446c08b3",
+    "selection": {
+      "source": "PortraitFrame",
+      "stage": 3,
+      "crop": [
+        7,
+        19,
+        20,
+        32
+      ],
+      "custom": "portrait_corner",
+      "note": "selected source material ramp; compact 13px centered iron socket authored in LibreSprite"
+    }
+  },
+  {
+    "name": "PortraitCornerBR",
+    "size": [
+      13,
+      13
+    ],
+    "colors": 9,
+    "bounds": [
+      0,
+      0,
+      13,
+      13
+    ],
+    "sha256": "20dc02686782e3e4e7373b8a98eaa657fb33dc631596fc4267b04485446c08b3",
+    "selection": {
+      "source": "PortraitFrame",
+      "stage": 3,
+      "crop": [
+        7,
+        19,
+        20,
+        32
+      ],
+      "custom": "portrait_corner",
+      "note": "selected source material ramp; compact 13px centered iron socket authored in LibreSprite"
+    }
+  },
+  {
+    "name": "PortraitCornerTL",
+    "size": [
+      13,
+      13
+    ],
+    "colors": 9,
+    "bounds": [
+      0,
+      0,
+      13,
+      13
+    ],
+    "sha256": "20dc02686782e3e4e7373b8a98eaa657fb33dc631596fc4267b04485446c08b3",
+    "selection": {
+      "source": "PortraitFrame",
+      "stage": 3,
+      "crop": [
+        7,
+        19,
+        20,
+        32
+      ],
+      "custom": "portrait_corner",
+      "note": "selected source material ramp; compact 13px centered iron socket authored in LibreSprite"
+    }
+  },
+  {
+    "name": "PortraitCornerTR",
+    "size": [
+      13,
+      13
+    ],
+    "colors": 9,
+    "bounds": [
+      0,
+      0,
+      13,
+      13
+    ],
+    "sha256": "20dc02686782e3e4e7373b8a98eaa657fb33dc631596fc4267b04485446c08b3",
+    "selection": {
+      "source": "PortraitFrame",
+      "stage": 3,
+      "crop": [
+        7,
+        19,
+        20,
+        32
+      ],
+      "custom": "portrait_corner",
+      "note": "selected source material ramp; compact 13px centered iron socket authored in LibreSprite"
+    }
+  },
+  {
+    "name": "PortraitJoint",
+    "size": [
+      9,
+      9
+    ],
+    "colors": 7,
+    "bounds": [
+      0,
+      0,
+      9,
+      9
+    ],
+    "sha256": "61ce62ac2214f1e9ad56e2f684cd86825dbae4b7b284bb33c5778c886909965a",
+    "selection": {
+      "source": "PortraitFrame",
+      "stage": 3,
+      "crop": [
+        45,
+        21,
+        54,
+        30
+      ],
+      "custom": "portrait_joint",
+      "note": "nine-pixel centered connector"
+    }
+  },
+  {
+    "name": "PortraitRailBottom",
+    "size": [
+      16,
+      7
+    ],
+    "colors": 5,
+    "bounds": [
+      0,
+      0,
+      16,
+      7
+    ],
+    "sha256": "2a49d56154af6c3b8e88df3d73df5a532654714739e817acdec840252cf9477e",
+    "selection": {
+      "source": "PortraitFrame",
+      "stage": 3,
+      "crop": [
+        29,
+        23,
+        45,
+        30
+      ],
+      "custom": "portrait_rail_h",
+      "note": "native seven-pixel rail; broad quiet stone planes"
+    }
+  },
+  {
+    "name": "PortraitRailLeft",
+    "size": [
+      7,
+      16
+    ],
+    "colors": 5,
+    "bounds": [
+      0,
+      0,
+      7,
+      16
+    ],
+    "sha256": "07fcbb838866534f077ac31585e92ac74c4c3b309c69a04fa8c1f7955169e8c3",
+    "selection": {
+      "source": "PortraitFrame",
+      "stage": 3,
+      "crop": [
+        10,
+        44,
+        17,
+        60
+      ],
+      "custom": "portrait_rail_v",
+      "note": "matching upright rail, no stretch"
+    }
+  },
+  {
+    "name": "PortraitRailRight",
+    "size": [
+      7,
+      16
+    ],
+    "colors": 5,
+    "bounds": [
+      0,
+      0,
+      7,
+      16
+    ],
+    "sha256": "07fcbb838866534f077ac31585e92ac74c4c3b309c69a04fa8c1f7955169e8c3",
+    "selection": {
+      "source": "PortraitFrame",
+      "stage": 3,
+      "crop": [
+        10,
+        44,
+        17,
+        60
+      ],
+      "custom": "portrait_rail_v",
+      "note": "matching upright rail, no stretch"
+    }
+  },
+  {
+    "name": "PortraitRailTop",
+    "size": [
+      16,
+      7
+    ],
+    "colors": 5,
+    "bounds": [
+      0,
+      0,
+      16,
+      7
+    ],
+    "sha256": "2a49d56154af6c3b8e88df3d73df5a532654714739e817acdec840252cf9477e",
+    "selection": {
+      "source": "PortraitFrame",
+      "stage": 3,
+      "crop": [
+        29,
+        23,
+        45,
+        30
+      ],
+      "custom": "portrait_rail_h",
+      "note": "native seven-pixel rail; broad quiet stone planes"
+    }
+  },
+  {
+    "name": "Rope",
+    "size": [
+      30,
+      24
+    ],
+    "colors": 8,
+    "bounds": [
+      1,
+      1,
+      29,
+      23
+    ],
+    "sha256": "60e3cfd3a5e889ba2d6886d2876473fce8d101dcf4b87394d46367da2742203b",
+    "selection": {
+      "source": "RopeBundle",
+      "stage": 6,
+      "trim": true,
+      "pad": 1,
+      "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained"
+    }
+  },
+  {
+    "name": "SupportBase",
+    "size": [
+      32,
+      22
+    ],
+    "colors": 11,
+    "bounds": [
+      0,
+      0,
+      32,
+      22
+    ],
+    "sha256": "fc813e96eeee966cdf44ba51b7cf8dd20ad0544dc6507aeab4e89b65e07a18fb",
+    "selection": {
+      "source": "Support",
+      "stage": 5,
+      "crop": [
+        0,
+        106,
+        32,
+        128
+      ],
+      "note": "selected pillar 0; separate cap, repeat shaft, inset, brace and foot; no stretched pixels"
+    }
+  },
+  {
+    "name": "SupportBrace",
+    "size": [
+      32,
+      13
+    ],
+    "colors": 7,
+    "bounds": [
+      4,
+      0,
+      28,
+      13
+    ],
+    "sha256": "f2ceb857df5dd4ea6be3be24bd6c5fce51696688cf504c32caa3bac462651d6b",
+    "selection": {
+      "source": "Support",
+      "stage": 5,
+      "crop": [
+        0,
+        90,
+        32,
+        103
+      ],
+      "note": "selected pillar 0; separate cap, repeat shaft, inset, brace and foot; no stretched pixels"
+    }
+  },
+  {
+    "name": "SupportCap",
+    "size": [
+      32,
+      16
+    ],
+    "colors": 6,
+    "bounds": [
+      0,
+      0,
+      32,
+      16
+    ],
+    "sha256": "3881adda8100c6a5ae7ef3ff585a16a75b10a6ab1ccfdaf2f92d20b0933b1d4c",
+    "selection": {
+      "source": "Support",
+      "stage": 5,
+      "crop": [
+        0,
+        0,
+        32,
+        16
+      ],
+      "note": "selected pillar 0; separate cap, repeat shaft, inset, brace and foot; no stretched pixels"
+    }
+  },
+  {
+    "name": "SupportRune",
+    "size": [
+      32,
+      29
+    ],
+    "colors": 12,
+    "bounds": [
+      5,
+      0,
+      27,
+      29
+    ],
+    "sha256": "7727b0a850306a89c483c306399e716932717e3339a3e803bc9789fd796c315d",
+    "selection": {
+      "source": "Support",
+      "stage": 5,
+      "crop": [
+        0,
+        54,
+        32,
+        83
+      ],
+      "note": "selected pillar 0; separate cap, repeat shaft, inset, brace and foot; no stretched pixels"
+    }
+  },
+  {
+    "name": "SupportShaft",
+    "size": [
+      32,
+      20
+    ],
+    "colors": 10,
+    "bounds": [
+      3,
+      0,
+      29,
+      20
+    ],
+    "sha256": "1f578914ac9e2dec2cb7dc94abfb009cb4fdc07ed877ebe5cc3acf8e63da95f2",
+    "selection": {
+      "source": "Support",
+      "stage": 5,
+      "crop": [
+        0,
+        32,
+        32,
+        52
+      ],
+      "note": "selected pillar 0; separate cap, repeat shaft, inset, brace and foot; no stretched pixels",
+      "seam": "y"
+    }
+  },
+  {
+    "name": "Timber",
+    "size": [
+      28,
+      89
+    ],
+    "colors": 14,
+    "bounds": [
+      1,
+      1,
+      27,
+      88
+    ],
+    "sha256": "1349111d8746a862ca9c8d9c35bad2af105e3b6769c45c1e33407f13b5c85893",
+    "selection": {
+      "source": "Timber",
+      "stage": 2,
+      "trim": true,
+      "pad": 1,
+      "note": "subordinate tunnel-side supports; full native drawing retained"
+    }
+  },
+  {
+    "name": "Tools",
+    "size": [
+      36,
+      37
+    ],
+    "colors": 11,
+    "bounds": [
+      1,
+      1,
+      35,
+      36
+    ],
+    "sha256": "e61afbf0e4984ecea4c127c4c3429e9739841da22e030b2634addf420b2b9594",
+    "selection": {
+      "source": "MiningTools",
+      "stage": 6,
+      "trim": true,
+      "pad": 1,
+      "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained",
+      "map": {
+        "cfccbc": "93a1b0"
+      }
+    }
+  },
+  {
+    "name": "TopBeam",
+    "size": [
+      38,
+      10
+    ],
+    "colors": 12,
+    "bounds": [
+      0,
+      0,
+      38,
+      10
+    ],
+    "sha256": "a2759e6834867e215704bde35d2453ba56e8d8acc9320d929f230b141df71cfc",
+    "selection": {
+      "source": "Timber",
+      "stage": 8,
+      "crop": [
+        7,
+        28,
+        17,
+        66
+      ],
+      "rotate": true,
+      "note": "native timber beam reused as a continuous mine lintel above the combat chamber"
+    }
+  },
+  {
+    "name": "Tracks",
+    "size": [
+      50,
+      59
+    ],
+    "colors": 5,
+    "bounds": [
+      1,
+      1,
+      49,
+      58
+    ],
+    "sha256": "edbfed05e54919ffc69b8fdc5fdd143ab57e0fb7ccf098114acafdf5381527e5",
+    "selection": {
+      "source": "ReuseTracks",
+      "stage": 2,
+      "trim": true,
+      "pad": 1,
+      "map": {
+        "d3a66a": "55606e",
+        "b07a43": "42374f"
+      },
+      "note": "Reuse prior PixelLab DistantTracks; upright loop candidate rejected"
+    }
+  },
+  {
+    "name": "Wheel",
+    "size": [
+      57,
+      63
+    ],
+    "colors": 11,
+    "bounds": [
+      1,
+      1,
+      56,
+      62
+    ],
+    "sha256": "6653e80f13f1d655997cf9af51129e652238bc7c45cebc82a4b8ba3d490ecd54",
+    "selection": {
+      "source": "Winch",
+      "stage": 6,
+      "trim": true,
+      "pad": 1,
+      "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained"
+    }
+  }
+]

@@ -1,0 +1,106 @@
+{
+  "stage": 2,
+  "status": "INTERNAL SELECTION \u2014 USER APPROVAL PENDING",
+  "note": "Selected broad quiet rock, layered cavern/tunnel, flat platform and supported lanterns; original cell/gem/player/actor artwork preserved. HUD capture still under QA for masked graphic scaling.",
+  "assets": [
+    {
+      "name": "CaveRecess",
+      "size": [
+        64,
+        64
+      ],
+      "colors": 4,
+      "sha256": "e55733094383128adf725a7ff57a931ae24c01afc902f6ba7d10777c3a4351d6"
+    },
+    {
+      "name": "CavernDepth",
+      "size": [
+        240,
+        160
+      ],
+      "colors": 24,
+      "sha256": "107d002f0fab5bd6dad95ab57579d612999169ea2ba69f449a313fa3711bb6da"
+    },
+    {
+      "name": "CaveWall",
+      "size": [
+        64,
+        64
+      ],
+      "colors": 4,
+      "sha256": "eca04e7df84207e7483a57cbf12985eeec80169d81df6f9c98741c71bca45cf5"
+    },
+    {
+      "name": "Lantern",
+      "size": [
+        20,
+        40
+      ],
+      "colors": 12,
+      "sha256": "8d356b4ee3a0635c1555fda377a2dc3454853222825a927c26bbcaba63877fe6"
+    },
+    {
+      "name": "LanternSmall",
+      "size": [
+        20,
+        40
+      ],
+      "colors": 13,
+      "sha256": "dfb69020491220e4da7330cdea4381b22507d9ae0251c1491568d1be9f9723da"
+    },
+    {
+      "name": "MineEntrance",
+      "size": [
+        118,
+        99
+      ],
+      "colors": 13,
+      "sha256": "7cacb0619a2ed1545037347ea2c868694a7538587b7a7f34834fe7f80223ead8"
+    },
+    {
+      "name": "Ore",
+      "size": [
+        32,
+        36
+      ],
+      "colors": 9,
+      "sha256": "4640305486f34a1052441ff43f21d13a1123ca3c90ab3e033105a2d03b1dacf6"
+    },
+    {
+      "name": "OreSmall",
+      "size": [
+        27,
+        35
+      ],
+      "colors": 10,
+      "sha256": "1f10a1454ae61d7ed8668bef0ec01098b094eb3489d79b66e2e0b5b834639548"
+    },
+    {
+      "name": "Platform",
+      "size": [
+        96,
+        25
+      ],
+      "colors": 8,
+      "sha256": "fb4320a3959d57b1d68c444c8c177087b5048ba14c1eac5d59f60c0441c8d4fd"
+    },
+    {
+      "name": "Timber",
+      "size": [
+        28,
+        89
+      ],
+      "colors": 14,
+      "sha256": "1349111d8746a862ca9c8d9c35bad2af105e3b6769c45c1e33407f13b5c85893"
+    },
+    {
+      "name": "Tracks",
+      "size": [
+        50,
+        59
+      ],
+      "colors": 5,
+      "sha256": "edbfed05e54919ffc69b8fdc5fdd143ab57e0fb7ccf098114acafdf5381527e5"
+    }
+  ]
+}
