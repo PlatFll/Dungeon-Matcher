@@ -1,11 +1,11 @@
 {
   "status": "PASS",
-  "scope": "User-selected scenery only in art-review scene; no production integration or device test",
+  "scope": "Three user-requested old backgrounds reused in the selected art-review scene; no production integration or device test",
   "unity_version": "6000.3.19f1",
   "required_validator": {
     "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
     "exit_code": 0,
-    "log": "RequiredUnityValidatorSelection01.log"
+    "log": "RequiredUnityValidatorBackdrop01.log"
   },
   "tests": {
     "PreflightDeferredImport": {
@@ -40,9 +40,12 @@
     "No production Game environment replacement",
     "User visual approval pending"
   ],
-  "current_revision": "SelectionRevision01",
-  "selected_scene_assets": 33,
+  "current_revision": "BackdropRestore01",
+  "selected_scene_assets": 36,
   "removed_scene_assets": 14,
-  "selection_checks": "SelectionRevision01.json",
-  "tests_evidence_note": "Preflight and live-content tests remain prior evidence for unchanged capture fixtures/data. Current revision reran native import/layout assembly and required Unity compilation."
+  "selection_checks": "BackdropRestore01.json",
+  "tests_evidence_note": "Preflight and live-content tests remain prior evidence for unchanged capture fixtures/data. Current revision reran native import/layout assembly and required Unity compilation.",
+  "selected_newer_kit_assets": 33,
+  "restored_older_assets": 3,
+  "restored_native_import_pixels_exact": 3
 }

@@ -2,6 +2,14 @@
 
 All ten supplied stages completed on `feature/ironvein-pixellab-staged-rebuild`. This is an art-only Unity review; the selected assets below are user-approved to keep. Production integration remains separate. No merge. The prior attempt and PR #213 remain intact.
 
+## Background restoration — 2026-10-27
+
+The user's latest screenshot exactly matches `IronveinEnvironmentV2/Preview/Unity-360x640.png`. Reused that library's **Platform**, **CaveWall** and **CaveRecess** directly through their existing Unity assets, preserving their PNG and LibreSprite sources byte-for-byte. These are distinct from the rejected staged replacements with the same names.
+
+The stone platform retains its original 22-pixel height at the existing combat floor. CaveWall fills the surrounding background at native scale, including tall screens; CaveRecess fills the portrait's existing overfilled mask and the platform underside as in the older assembly. All 33 selected newer modules, actors, board cells/gems, frame dimensions and shared UI remain unchanged. No other earlier scene decorations return.
+
+`Review.html` now compares the selected-only assembly with this restoration. Before-images: `Preview/BackdropRestore01/Before/`; exact sources and preservation: `QA/BackdropRestore01.json`. The updated scene remains art-only and excluded from production builds. Zero new generation usage; no merge.
+
 ## Selection revision — 2026-10-27
 
 The user selected the cave depth, wheel, five modular support pieces, timber, lower-left/right rock corners, cart, crate, both lanterns, chain, and existing portrait/board frame pieces. The review scene now uses only those **33 native modules**. The other **14 source assets** remain preserved but have no sprite references in the saved scene.

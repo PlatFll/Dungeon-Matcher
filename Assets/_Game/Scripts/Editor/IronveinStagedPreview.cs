@@ -14,6 +14,7 @@ public static class IronveinStagedPreview
 {
     const string Root="ArtSource/IronveinStaged";
     const string Art="Assets/_Game/Art/IronveinStaged";
+    const string RestoredArt="Assets/_Game/Art/IronveinEnvironmentV2";
     const string Scene="Assets/_Game/Scenes/ArtPreview_IronveinStaged_Final.unity";
     static Canvas canvas;static Camera camera;
     static RectTransform native,top,boardSides,lower,cells,actors,board,portrait,portraitFrame,boardFrame;
@@ -31,12 +32,12 @@ public static class IronveinStagedPreview
         Assert.That((board.rect.size-snapshot.board.size).sqrMagnitude,Is.LessThan(.001f));
         foreach(Transform t in canvas.transform)if(t.name.StartsWith("Blank")||t.name.StartsWith("GridGuide")||t.name=="ExistingBattleFloorGuide")t.gameObject.SetActive(false);
         native=NativeGroup("IronveinNativeBackground");native.SetAsFirstSibling();
-        Solid(native,"NeutralReviewBacking",new Rect(0,0,360,640));
+        RestoredTile(native,"CaveWall",new Rect(0,0,360,640));
         top=NativeGroup("IronveinTopModules");top.SetSiblingIndex(1);BuildTop();
         // Overfill inside the existing portrait mask. Its opening and layout remain measured production values.
         foreach(Transform t in portrait)t.gameObject.SetActive(false);
         var backing=Rect(portrait,"OverfilledNativeRecess",new Rect(-16,-16,portrait.rect.width+32,portrait.rect.height+32));
-        var backImage=backing.gameObject.AddComponent<Image>();backImage.color=new Color32(16,19,31,255);backImage.raycastTarget=false;
+        var backImage=backing.gameObject.AddComponent<Image>();backImage.sprite=LoadSprite(RestoredArt+"/CaveRecess.png",null);backImage.type=Image.Type.Tiled;backImage.pixelsPerUnitMultiplier=.5f;backImage.raycastTarget=false;
         portrait.SetAsLastSibling();
         boardSides=NativeGroup("IronveinBoardSideModules");BuildSides();
         lower=NativeGroup("IronveinLowerModules");BuildLower(640);
@@ -94,6 +95,9 @@ public static class IronveinStagedPreview
         Optional(top,"Lantern",126,113);Optional(top,"Lantern",338,112);
         Optional(top,"LanternSmall",268,114);
         Optional(top,"Wheel",290,135);Optional(top,"Cart",149,145);
+        // Exact earlier stone platform and its recessed underside, at the existing combat floor.
+        RestoredTile(top,"Platform",new Rect(0,640-203-22,360,22));
+        RestoredTile(top,"CaveRecess",new Rect(0,640-225-16,360,16));
     }
     static void BuildSides()
     {
@@ -157,13 +161,23 @@ public static class IronveinStagedPreview
             var a=actual.GetPixels32();var b=original.GetPixels32();for(int i=0;i<a.Length;i++)Assert.That(a[i].a==b[i].a&&(b[i].a==0||a[i].Equals(b[i])),Is.True,path+" pixel "+i);Object.DestroyImmediate(original);imported++;
         }
     }
-    static void Solid(Transform parent,string name,Rect bounds)
-    {var im=Rect(parent,name,bounds).gameObject.AddComponent<Image>();im.color=new Color32(16,19,31,255);im.raycastTarget=false;}
+    static void RestoredTile(Transform parent,string name,Rect bounds)
+    {var im=Rect(parent,"Restored"+name,bounds).gameObject.AddComponent<Image>();im.sprite=LoadSprite(RestoredArt+"/"+name+".png",null);im.type=Image.Type.Tiled;im.pixelsPerUnitMultiplier=1;im.raycastTarget=false;}
     static void CheckNative()
     {
         foreach(var root in new[]{native,top,boardSides,lower})foreach(var im in root.GetComponentsInChildren<Image>())
             if(im.sprite!=null&&im.type==Image.Type.Simple)Assert.That(im.rectTransform.rect.size,Is.EqualTo(im.sprite.rect.size),im.name+" must retain source pixels");
         Assert.That(portrait.GetComponent<RectMask2D>(),Is.Not.Null);
+        foreach(var name in new[]{"Platform","CaveWall","CaveRecess"}){
+            var path=RestoredArt+"/"+name+".png";var ti=(TextureImporter)AssetImporter.GetAtPath(path);
+            Assert.That(ti.filterMode,Is.EqualTo(FilterMode.Point));Assert.That(ti.mipmapEnabled,Is.False);
+            Assert.That(ti.textureCompression,Is.EqualTo(TextureImporterCompression.Uncompressed));
+            var actual=AssetDatabase.LoadAssetAtPath<Texture2D>(path);var original=new Texture2D(2,2);
+            original.LoadImage(File.ReadAllBytes("ArtSource/IronveinEnvironmentV2/Exports/"+name+".png"));
+            Assert.That(actual.width,Is.EqualTo(original.width));Assert.That(actual.height,Is.EqualTo(original.height));
+            CollectionAssert.AreEqual(original.GetPixels32(),actual.GetPixels32(),name+" restored pixels");Object.DestroyImmediate(original);
+        }
+        Debug.Log("IRONVEIN_RESTORED_BACKGROUND_PIXELS_PASS 3");
     }
     static void CheckCenters(RectTransform frame)
     {
