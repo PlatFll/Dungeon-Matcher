@@ -1,9 +1,10 @@
 {
   "branch": "feature/ironvein-pixellab-staged-rebuild",
-  "objective": "All stages complete; review candidate, no merge",
+  "objective": "Selected-scenery revision complete; awaiting review, no merge",
   "base_commit": "7530e7334e05469375f5db544405d0109ae9ccbe",
   "production_unchanged": true,
   "final_validation": "QA/FinalValidation.json",
-  "next_action": "Await user visual review; production integration is separate",
-  "jobs_pending": []
+  "next_action": "Await user review of the stripped assembly; no further art or production integration authorized",
+  "jobs_pending": [],
+  "selection_revision": "QA/SelectionRevision01.json"
 }

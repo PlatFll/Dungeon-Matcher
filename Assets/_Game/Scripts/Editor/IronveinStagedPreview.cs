@@ -30,12 +30,13 @@ public static class IronveinStagedPreview
         var boardStart=board.anchoredPosition;var boardSize=board.rect.size;var portraitStart=portrait.anchoredPosition;var portraitSize=portrait.rect.size;
         Assert.That((board.rect.size-snapshot.board.size).sqrMagnitude,Is.LessThan(.001f));
         foreach(Transform t in canvas.transform)if(t.name.StartsWith("Blank")||t.name.StartsWith("GridGuide")||t.name=="ExistingBattleFloorGuide")t.gameObject.SetActive(false);
-        native=NativeGroup("IronveinNativeBackground");native.SetAsFirstSibling();Tile(native,"CaveWall",new Rect(0,0,360,640));
+        native=NativeGroup("IronveinNativeBackground");native.SetAsFirstSibling();
+        Solid(native,"NeutralReviewBacking",new Rect(0,0,360,640));
         top=NativeGroup("IronveinTopModules");top.SetSiblingIndex(1);BuildTop();
         // Overfill inside the existing portrait mask. Its opening and layout remain measured production values.
         foreach(Transform t in portrait)t.gameObject.SetActive(false);
         var backing=Rect(portrait,"OverfilledNativeRecess",new Rect(-16,-16,portrait.rect.width+32,portrait.rect.height+32));
-        var backImage=backing.gameObject.AddComponent<Image>();backImage.sprite=Sprite("CaveRecess");backImage.type=Image.Type.Tiled;backImage.pixelsPerUnitMultiplier=.5f;backImage.raycastTarget=false;
+        var backImage=backing.gameObject.AddComponent<Image>();backImage.color=new Color32(16,19,31,255);backImage.raycastTarget=false;
         portrait.SetAsLastSibling();
         boardSides=NativeGroup("IronveinBoardSideModules");BuildSides();
         lower=NativeGroup("IronveinLowerModules");BuildLower(640);
@@ -89,18 +90,10 @@ public static class IronveinStagedPreview
     static void BuildTop()
     {
         Stamp(top,"CavernDepth",120,43);
-        if(Has("TopBeam")){TileTop(top,"TopBeam",new Rect(116,48,244,10));Optional(top,"BeamStrap",119,48);Optional(top,"BeamStrap",228,48);Optional(top,"BeamStrap",335,48);}
-        Optional(top,"WarmRock",110,83);Optional(top,"WarmRock",310,83);
-        Optional(top,"MineEntrance",188,92);
-        Optional(top,"Tracks",213,146);
         Optional(top,"Timber",111,113);Optional(top,"Timber",331,113);
         Optional(top,"Lantern",126,113);Optional(top,"Lantern",338,112);
         Optional(top,"LanternSmall",268,114);
-        Optional(top,"Ore",111,179);Optional(top,"OreSmall",328,178);
-        Optional(top,"Banner",308,64);
-        Optional(top,"Wheel",290,135);Optional(top,"Cart",149,145);Optional(top,"Barrel",335,174);
-        TileTop(top,"Platform",new Rect(0,203,360,25));
-        TileTop(top,"CaveRecess",new Rect(0,228,360,15));
+        Optional(top,"Wheel",290,135);Optional(top,"Cart",149,145);
     }
     static void BuildSides()
     {
@@ -112,18 +105,15 @@ public static class IronveinStagedPreview
         }
         Optional(boardSides,"Chain",5,264);Optional(boardSides,"Chain",337,264);
         Optional(boardSides,"Lantern",6,313);Optional(boardSides,"Lantern",338,313);
-        Optional(boardSides,"OreSmall",0,503);Optional(boardSides,"OreSmall",331,503);
     }
     static void BuildLower(int h)
     {
         for(int i=lower.childCount-1;i>=0;i--)Object.DestroyImmediate(lower.GetChild(i).gameObject);
         lower.sizeDelta=new Vector2(360,h);float reach=board.anchoredPosition.y/2-9;
-        if(Has("LowerWall"))Tile(lower,"LowerWall",new Rect(0,0,360,reach));
         if(Has("SupportShaft"))foreach(float x in new[]{0f,328f})Tile(lower,"SupportShaft",new Rect(x,68,32,Mathf.Max(1,reach-68)));
         foreach(string n in new[]{"LowerLeft","LowerRight"})if(Has(n)){var sp=Sprite(n);Stamp(lower,n,n=="LowerLeft"?0:360-sp.rect.width,h-sp.rect.height,h);}
         if(Has("LowerLeft")){
-            Optional(lower,"LowerLedge",8,h-48,h);Optional(lower,"LowerLedge",316,h-48,h);
-            Optional(lower,"Crate",9,h-74,h);Optional(lower,"Tools",320,h-78,h);Optional(lower,"Rope",37,h-22,h);
+            Optional(lower,"Crate",9,h-38,h);
         }
     }
     static RectTransform MakeFrame(Transform parent,RectTransform opening,string prefix,float pitch)
@@ -167,10 +157,12 @@ public static class IronveinStagedPreview
             var a=actual.GetPixels32();var b=original.GetPixels32();for(int i=0;i<a.Length;i++)Assert.That(a[i].a==b[i].a&&(b[i].a==0||a[i].Equals(b[i])),Is.True,path+" pixel "+i);Object.DestroyImmediate(original);imported++;
         }
     }
+    static void Solid(Transform parent,string name,Rect bounds)
+    {var im=Rect(parent,name,bounds).gameObject.AddComponent<Image>();im.color=new Color32(16,19,31,255);im.raycastTarget=false;}
     static void CheckNative()
     {
         foreach(var root in new[]{native,top,boardSides,lower})foreach(var im in root.GetComponentsInChildren<Image>())
-            if(im.type==Image.Type.Simple)Assert.That(im.rectTransform.rect.size,Is.EqualTo(im.sprite.rect.size),im.name+" must retain source pixels");
+            if(im.sprite!=null&&im.type==Image.Type.Simple)Assert.That(im.rectTransform.rect.size,Is.EqualTo(im.sprite.rect.size),im.name+" must retain source pixels");
         Assert.That(portrait.GetComponent<RectMask2D>(),Is.Not.Null);
     }
     static void CheckCenters(RectTransform frame)

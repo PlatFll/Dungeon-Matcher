@@ -1,11 +1,11 @@
 {
   "status": "PASS",
-  "scope": "art-only candidate; production not integrated; no device test",
+  "scope": "User-selected scenery only in art-review scene; no production integration or device test",
   "unity_version": "6000.3.19f1",
   "required_validator": {
     "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
     "exit_code": 0,
-    "log": "RequiredUnityValidator.log"
+    "log": "RequiredUnityValidatorSelection01.log"
   },
   "tests": {
     "PreflightDeferredImport": {
@@ -39,5 +39,10 @@
     "No Android build or phone test",
     "No production Game environment replacement",
     "User visual approval pending"
-  ]
+  ],
+  "current_revision": "SelectionRevision01",
+  "selected_scene_assets": 33,
+  "removed_scene_assets": 14,
+  "selection_checks": "SelectionRevision01.json",
+  "tests_evidence_note": "Preflight and live-content tests remain prior evidence for unchanged capture fixtures/data. Current revision reran native import/layout assembly and required Unity compilation."
 }

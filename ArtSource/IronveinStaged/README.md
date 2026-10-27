@@ -1,6 +1,14 @@
-# Ironvein Excavation staged rebuild — final review candidate
+# Ironvein Excavation — selected scenery review
 
-All ten supplied stages completed on `feature/ironvein-pixellab-staged-rebuild`. This is an art-only Unity review, not production integration or user approval. No merge. The prior attempt and PR #213 remain intact.
+All ten supplied stages completed on `feature/ironvein-pixellab-staged-rebuild`. This is an art-only Unity review; the selected assets below are user-approved to keep. Production integration remains separate. No merge. The prior attempt and PR #213 remain intact.
+
+## Selection revision — 2026-10-27
+
+The user selected the cave depth, wheel, five modular support pieces, timber, lower-left/right rock corners, cart, crate, both lanterns, chain, and existing portrait/board frame pieces. The review scene now uses only those **33 native modules**. The other **14 source assets** remain preserved but have no sprite references in the saved scene.
+
+Unselected wall/recess textures, separate mine arch, rails, platform, ore decorations, barrel, beam/straps, lower wall/ledges, tools and rope are removed from the assembly. Plain dark backing fills cleared areas; no replacement scenery was designed. The crate sits on the retained lower-left rock instead of its removed ledge. Selected art is byte-identical, including the player/board frame pieces. Gameplay actors, gems and shared controls retain their previous placement.
+
+`Preview/SelectionRevision01/Before/` preserves all six earlier Unity captures. `Review.html` compares these directly to the revised captures and displays only the kept asset set. `QA/SelectionRevision01.json` records exact attachment matches, the selection and preservation checks. This revision spent **zero generations**. The complete staged source library described below remains recoverable; this partial selection does not approve the other assets or production integration.
 
 ## Review
 
