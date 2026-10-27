@@ -1,0 +1,371 @@
+{
+  "prompt": {
+    "description": "Single modular HUD seating bracket for a dwarven mine. Compact L shaped timber corbel: short horizontal stout warm brown oak shelf across the upper part, vertical support on left, one broad diagonal wooden brace beneath it joining them. Forged dull blue gray iron end cap and two readable rivets. Tiny amber rivet, no glowing crystal, no gears, no chains. Orthographic straight-on front view, flat 2D sidescroller interface prop. Hard crisp native pixel art, chunky connected planes, one pixel deep charcoal contour, simple upper-left light, restrained 3-tone wood and 3-tone iron, dark lower-right shadows. Empty transparent space around full silhouette, no text, no complete panel, no scene, no perspective floor.",
+    "width": 32,
+    "height": 32,
+    "no_background": true,
+    "max_colors": 14,
+    "palette": [
+      "#0A0D11",
+      "#141522",
+      "#202332",
+      "#303447",
+      "#41485B",
+      "#55606E",
+      "#93A1B0",
+      "#30202A",
+      "#4A2C1C",
+      "#7A4D2E",
+      "#B07A43",
+      "#8A5622",
+      "#C58826",
+      "#FBEA90"
+    ],
+    "seed": 27062026
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 5176647b-3c64-49d1-b639-af022b6aed08\njob_id: 5176647b-3c64-49d1-b639-af022b6aed08\nmodel: pro\ndescription: Single modular HUD seating bracket for a dwarven mine. Compact L shaped timber corbel: short horizontal stout warm brown oak shelf across the upper part, vertical support on left, one broad diagonal wooden brace beneath it joining them. Forged dull blue gray iron end cap and two readable rivets. Tiny amber rivet, no glowing crystal, no gears, no chains. Orthographic straight-on front view, flat 2D sidescroller interface prop. Hard crisp native pixel art, chunky connected planes, one pixel deep charcoal contour, simple upper-left light, restrained 3-tone wood and 3-tone iron, dark lower-right shadows. Empty transparent space around full silhouette, no text, no complete panel, no scene, no perspective floor.\nsize: 32x32px\ntransparent: True\ncandidates: 64\npalette: 14 colours\nmax colours: 14 per image\nseed: 27062026\nasset_id: eaa90516-c99e-502a-855b-392066a2b42a\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"5176647b-3c64-49d1-b639-af022b6aed08\")"
+      }
+    ],
+    "isError": false
+  },
+  "job": "5176647b-3c64-49d1-b639-af022b6aed08",
+  "cost": 10,
+  "starting_generations": 202.2,
+  "reference_inputs": [],
+  "method": "Pack-authorized text-only modular UI asset generation; actual golden references inspected locally.",
+  "guide_version": "1.17.2",
+  "raw_assets": [
+    {
+      "index": 0,
+      "file": "Raw/Bracket-00.png",
+      "sha256": "9fb4e290f3bc5629484e6fb3def17cf155d9fa1f1e36c536ac40e787595e4b29"
+    },
+    {
+      "index": 1,
+      "file": "Raw/Bracket-01.png",
+      "sha256": "fa12e10a90ef26aa0a4e7d2a35aaf51f561eb7a3657d11fe9fc15b18c1f30665"
+    },
+    {
+      "index": 2,
+      "file": "Raw/Bracket-02.png",
+      "sha256": "386eea06eaf81c577dce59a6176017ae50c3f4b62e8cfc8f7dadd97be5dcda15"
+    },
+    {
+      "index": 3,
+      "file": "Raw/Bracket-03.png",
+      "sha256": "da6fcf02039adaab38e30c396cc295404adf3f3e365e5ad1c7b98832e743603a"
+    },
+    {
+      "index": 4,
+      "file": "Raw/Bracket-04.png",
+      "sha256": "58e101dbd8014d809be3ad2e5c51194d4ac0cd4aa57daaf2f2f878808ed6b537"
+    },
+    {
+      "index": 5,
+      "file": "Raw/Bracket-05.png",
+      "sha256": "28d119989073bf13ad8dee69eb9d72f2f45c25180d8671544c0524687ce11e76"
+    },
+    {
+      "index": 6,
+      "file": "Raw/Bracket-06.png",
+      "sha256": "e7ba6e020524f5ffdfe2ccb83854bb17278abef89b72c06b549243116a1e64f1"
+    },
+    {
+      "index": 7,
+      "file": "Raw/Bracket-07.png",
+      "sha256": "d852517eca89bb63e7eb923d713b41cc7f3bde2b3068dfcf3778f4bd72af7484"
+    },
+    {
+      "index": 8,
+      "file": "Raw/Bracket-08.png",
+      "sha256": "3936436e90455b194306f23a40972a7afd68c78f5ad5bb37a06ba4a6e735378e"
+    },
+    {
+      "index": 9,
+      "file": "Raw/Bracket-09.png",
+      "sha256": "f768fd8b3f815111625a0e5d0ae2dceaca46f7ccfb591ebc2c48e1684ffb0d88"
+    },
+    {
+      "index": 10,
+      "file": "Raw/Bracket-10.png",
+      "sha256": "93b79f94adee872487c628f5ef25e6da99862ab62816bcb8ebdb9fd468df71b5"
+    },
+    {
+      "index": 11,
+      "file": "Raw/Bracket-11.png",
+      "sha256": "579dc2e09d8a3de98dc313fa04055c11341cd74ec3cf043570aa5fddbe14a0e0"
+    },
+    {
+      "index": 12,
+      "file": "Raw/Bracket-12.png",
+      "sha256": "ccc1b2c23a0cf03e3743c996decf8ec96555d540034b61214c57f7de2fa9f575"
+    },
+    {
+      "index": 13,
+      "file": "Raw/Bracket-13.png",
+      "sha256": "757f36ddff832a9690828a081697e16e16c77ffbb51d63b7effd03dd72d68f6e"
+    },
+    {
+      "index": 14,
+      "file": "Raw/Bracket-14.png",
+      "sha256": "1ef97965d3b5cd63369d86132da503601063c5aaae3a0c7c0c1436c4a2ca3225"
+    },
+    {
+      "index": 15,
+      "file": "Raw/Bracket-15.png",
+      "sha256": "daec482b1b304a2882cd6cab94623436398ebe4011e4d1a4331940bcaa9e36d6"
+    },
+    {
+      "index": 16,
+      "file": "Raw/Bracket-16.png",
+      "sha256": "17d4335d91817f8cc2560cd41e0a7da32e78633e01af9fb9bfa0f5b5921b495b"
+    },
+    {
+      "index": 17,
+      "file": "Raw/Bracket-17.png",
+      "sha256": "9eaa93e5aad80cebe05d438a99d2c53702207b793008e359b9cba854691c6383"
+    },
+    {
+      "index": 18,
+      "file": "Raw/Bracket-18.png",
+      "sha256": "e6e438021b8e4a46e988e40635bf9eb9cd0ffe0ea0c55af68a61e0178660c76a"
+    },
+    {
+      "index": 19,
+      "file": "Raw/Bracket-19.png",
+      "sha256": "a75993885ae17b520847bc95d28f66d462963172a102f37e81e3f08064d2a5a1"
+    },
+    {
+      "index": 20,
+      "file": "Raw/Bracket-20.png",
+      "sha256": "fb7d990ff09c912d94ef3cb84cbdf01a3a7f7b640f4e4996e850c85525f0e61c"
+    },
+    {
+      "index": 21,
+      "file": "Raw/Bracket-21.png",
+      "sha256": "e318d8d7eb6497e73a7fea7599d08107656a8a69e6d5fea71d12686a0672bbec"
+    },
+    {
+      "index": 22,
+      "file": "Raw/Bracket-22.png",
+      "sha256": "fddb8e74e82381e9fa73c59f67d7fbeae530f4d8fd76c3ce383610b7b73b20b0"
+    },
+    {
+      "index": 23,
+      "file": "Raw/Bracket-23.png",
+      "sha256": "886eb2d08e295d313bc4e3259676700e8172d37d8e26f9568af65ca35bd26fdb"
+    },
+    {
+      "index": 24,
+      "file": "Raw/Bracket-24.png",
+      "sha256": "5a67c19838a00776194ccf17c883a1a53d9cd5a23aff58115c5e7bddd8045ddf"
+    },
+    {
+      "index": 25,
+      "file": "Raw/Bracket-25.png",
+      "sha256": "08aa0c016621ff4fb673cc4a31be0730fd04c4acdd651794fb18aba30d225324"
+    },
+    {
+      "index": 26,
+      "file": "Raw/Bracket-26.png",
+      "sha256": "81d905c4de537b21e944a9cf537d8faf5174e5b7fe75d964ba248cdaa3bd285e"
+    },
+    {
+      "index": 27,
+      "file": "Raw/Bracket-27.png",
+      "sha256": "1f8d0943080d1d240ff9cc9277964e1be476dd7439512cbba5829edae6f7238a"
+    },
+    {
+      "index": 28,
+      "file": "Raw/Bracket-28.png",
+      "sha256": "0dcf9238828367adeed9517e43a255855294e310079b81f9e162bf33b6992b06"
+    },
+    {
+      "index": 29,
+      "file": "Raw/Bracket-29.png",
+      "sha256": "4b2b6e7b3b581743b7d0b01e1fc67f69213072d76d86e7bd7da8d9d634dfd475"
+    },
+    {
+      "index": 30,
+      "file": "Raw/Bracket-30.png",
+      "sha256": "4e16ce1a67d7ece86bdb92931d94c1924492610d92d78415ad782c2ad16c1d3b"
+    },
+    {
+      "index": 31,
+      "file": "Raw/Bracket-31.png",
+      "sha256": "23085b1d55e30ec626c57161f25762d0293863ed3d047d1765b2d0d3a581a5be"
+    },
+    {
+      "index": 32,
+      "file": "Raw/Bracket-32.png",
+      "sha256": "5c0c3a0e18aa5d556f87834e9f3a98cc8669062fb2308c9e45ff6ec7652fb895"
+    },
+    {
+      "index": 33,
+      "file": "Raw/Bracket-33.png",
+      "sha256": "21369ff1a9cd2c6aeb154ccf30c24acd9be64fa1ad432643cae75fefee6938e9"
+    },
+    {
+      "index": 34,
+      "file": "Raw/Bracket-34.png",
+      "sha256": "488434bb99e414a9a0ee758a79bd750f7df0c76341e8c28bcff9214d891cb015"
+    },
+    {
+      "index": 35,
+      "file": "Raw/Bracket-35.png",
+      "sha256": "ec11c4ec2ee328eaf185dbd3fe5b4f7bcdd18d88e052c548240936695539d534"
+    },
+    {
+      "index": 36,
+      "file": "Raw/Bracket-36.png",
+      "sha256": "dea3168a0ff14dc76df73700bbd5768bea3458ba1f5173c0951457229ff718b1"
+    },
+    {
+      "index": 37,
+      "file": "Raw/Bracket-37.png",
+      "sha256": "fec0c521c3b55722083f130721e9a2b4423bc522b68763ccc6bcdf8b16bcd480"
+    },
+    {
+      "index": 38,
+      "file": "Raw/Bracket-38.png",
+      "sha256": "1123bc1e8c2ac491f4f20678cefc508bf99297be2e2dc9a9ed9e92e8fab1110d"
+    },
+    {
+      "index": 39,
+      "file": "Raw/Bracket-39.png",
+      "sha256": "46774e08cdcef822a69f6bce52b9073724b72499302af47935cdd5ba5870817d"
+    },
+    {
+      "index": 40,
+      "file": "Raw/Bracket-40.png",
+      "sha256": "cf3dba7a4525a9866a9f4c9990bb35a5f309d803888fa64b8294987aba7e0608"
+    },
+    {
+      "index": 41,
+      "file": "Raw/Bracket-41.png",
+      "sha256": "fcd1e93b1905a1e516c1b9e8d8aeb7879285cef5e21287d743429e5b149c0ece"
+    },
+    {
+      "index": 42,
+      "file": "Raw/Bracket-42.png",
+      "sha256": "fa0347b7657900a9639b641f99de4d8a65beffce8cec8f5ff676e91aa53f85a2"
+    },
+    {
+      "index": 43,
+      "file": "Raw/Bracket-43.png",
+      "sha256": "601b3b64ba1e76f75df7c8da747ea757adea6e64763ec4504b2f37b2b0da743f"
+    },
+    {
+      "index": 44,
+      "file": "Raw/Bracket-44.png",
+      "sha256": "16014546ada136c0772ade7948100367bb57b329a8a295a56565567662272f63"
+    },
+    {
+      "index": 45,
+      "file": "Raw/Bracket-45.png",
+      "sha256": "fc35193f0073d9b53d1cdaf811b2ba2ba69fe1a810372672f95fc75091743b5e"
+    },
+    {
+      "index": 46,
+      "file": "Raw/Bracket-46.png",
+      "sha256": "d59b9f0478c9e16c033b8545011f9138d0398d56328eb54e8f65262b1c07ed14"
+    },
+    {
+      "index": 47,
+      "file": "Raw/Bracket-47.png",
+      "sha256": "07a998b32f2870829486ccd29bfca28d01c5dcb3b6653ce0aeb05910c9d96951"
+    },
+    {
+      "index": 48,
+      "file": "Raw/Bracket-48.png",
+      "sha256": "d9470b7dee39ecc2c8317f31c8de70b96b463f1fea42e152616e44e8e1fafd3a"
+    },
+    {
+      "index": 49,
+      "file": "Raw/Bracket-49.png",
+      "sha256": "70a60ef3175027be1119edc4ff19e4d0eacc0403738d28625a20d75f07139782"
+    },
+    {
+      "index": 50,
+      "file": "Raw/Bracket-50.png",
+      "sha256": "3b3e68dd5e9600dd8a75f5b1bb574ce94c253d688d21fa877a16c5e557db71a3"
+    },
+    {
+      "index": 51,
+      "file": "Raw/Bracket-51.png",
+      "sha256": "8252456c28192657d7ad326b53ded90e38a6659aa5f9b42562a9238cf697b4c0"
+    },
+    {
+      "index": 52,
+      "file": "Raw/Bracket-52.png",
+      "sha256": "8235c52136a76759fcb3564cce1ad0a640dd524b7a6012e5fefc32adf8b54cb6"
+    },
+    {
+      "index": 53,
+      "file": "Raw/Bracket-53.png",
+      "sha256": "075a6e6bc6ea1292cdd8c988ea4c53db19637355b45c50c1e02019e57cab46aa"
+    },
+    {
+      "index": 54,
+      "file": "Raw/Bracket-54.png",
+      "sha256": "f6ee5811b3530b111c2858ae0880677a6f0e5ce29350a3c28f31d28a53e2964f"
+    },
+    {
+      "index": 55,
+      "file": "Raw/Bracket-55.png",
+      "sha256": "f08fc19630d5222e84ddc3b4f3717190ab8e5d0308734a2cb0ec2efc6ec413c4"
+    },
+    {
+      "index": 56,
+      "file": "Raw/Bracket-56.png",
+      "sha256": "392990822dd93413bd461df4ebf2bae5c62133eb67204bdecdc21def6e85f37b"
+    },
+    {
+      "index": 57,
+      "file": "Raw/Bracket-57.png",
+      "sha256": "29ca8f573866a33bc7ec551bc7462f83f83665ca50cbb7cf895d6da8bf4f51a3"
+    },
+    {
+      "index": 58,
+      "file": "Raw/Bracket-58.png",
+      "sha256": "d9debe5d2928d7afea03c650acfb3c70df3ada74d9c24a9258152213d8ac903e"
+    },
+    {
+      "index": 59,
+      "file": "Raw/Bracket-59.png",
+      "sha256": "43e3cd1622a39a6d1e39f1e136336452deb0d0c1f65f0fbd3c596a5411b629f7"
+    },
+    {
+      "index": 60,
+      "file": "Raw/Bracket-60.png",
+      "sha256": "3c94f85fe497246aa0f0517b00dbf0e78d5f9ec1f8364b30ece12682306a6d30"
+    },
+    {
+      "index": 61,
+      "file": "Raw/Bracket-61.png",
+      "sha256": "bf81a05ab24fabbd9a92ff008f096022d9a361a40953161d76d6fa75f2cd50aa"
+    },
+    {
+      "index": 62,
+      "file": "Raw/Bracket-62.png",
+      "sha256": "59fa04deb209159149c1bcca76783cec1641eccdcd709e7565a60b23fad608c2"
+    },
+    {
+      "index": 63,
+      "file": "Raw/Bracket-63.png",
+      "sha256": "a0cb1de37df34ff0f555c89f925be070f1019f75bf7dc549cc666cf40082f863"
+    }
+  ],
+  "selected_candidate": 0,
+  "cleanup": "Native binary-alpha corbel, mirrored partner, shallow rails adapted by removing redundant rows from an unchanged copy of approved Stage02 timber; exact repeat-seam repair, separate iron/amber bolt. No scaling or interpolation.",
+  "status": "completed",
+  "ending_balance": 192.2,
+  "verified_generations_spent": 10,
+  "cumulative_pack_generations": 74,
+  "guide_sha256": "bd6c09c5bca884482b59b3167bc17ea6ed47592ec2152d903f06106de9714b49",
+  "register_sha256": "e95eae0c386ba33f573bd0d70749e74076360021aeab95e53d3ab0a54b279958"
+}

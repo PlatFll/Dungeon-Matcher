@@ -1,9 +1,45 @@
-# Ironvein below-top-HUD rebuild — Stage 05 mine surroundings
+# Ironvein below-top-HUD rebuild — Stage 06 bottom-HUD seating
 
 Branch: `codex/ironvein-below-tophud-pixellab`.
 Base: `feature/ironvein-pixellab-staged-rebuild` at `4a790aa0` (PR #214), including the user's three restored older backgrounds. Main and the earlier branch remain unchanged.
 
-## Current result and stop point — Stage 05
+## Current result and stop point — Stage 06
+
+Scene: `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage06.unity`.
+Review: `Stage06/Review.html`, `Stage06/Preview/Comparison.png` and `HUDDetails.png`.
+
+A shallow timber cradle and two iron-capped wooden corbels seat the unchanged
+potion, resonance and bomb controls inside the mine. Four small warm rivets
+connect the support rails to the outer posts. New art renders behind the
+existing controls and lower props. The energy bar and both instruction lines
+remain clear; no controls were moved, replaced or disabled.
+
+Five separate native assets: paired corbels (32x32), rail (24x7), post (7x24),
+and iron/amber rivet (5x5). One PixelLab Pro call produced 64 bracket candidates;
+candidate 0 was selected for its simple connected shapes. LibreSprite preserved
+the silhouette, produced the mirrored partner, adapted an unchanged copy of
+Stage02 timber into shallow supports, and repaired exact repeat seams.
+The set uses 11 opaque colors, binary alpha, and no resampling. Editable ASEs,
+native exports, exact reopen roundtrips, source alternatives and scripts remain.
+
+Validation: `Tools/Validate-Unity.ps1` passed on Unity 6000.3.19f1. Actual art-only
+Unity renders at 360x640, 720x1280 and 1080x1920 preserve the entire top and board,
+energy bar and instruction pixels. Existing opaque UI, frames, drills, separator,
+side dressing and lower props match. All existing Graphic geometry, references
+and active states remain exact. 761 protected files retain their hashes; five
+Unity PNG copies and LibreSprite roundtrips match. The new scene adds 10 Images
+in one group, with only one Canvas child link changed. It is excluded from builds.
+These are art-only preview checks, not live gameplay or real-device testing.
+
+PixelLab: **10 subscription generations** spent; **192.20 remain**. Cumulative
+pack usage: **74**. No reference-image uploads and no pending generation jobs.
+
+**Stop for Stage 06 visual approval. Do not start Stage 07 or merge.**
+Draft PR #215 remains on the dedicated branch, based on PR #214's Ironvein branch.
+Production Game, gameplay systems, approved art, characters/gems, shared frame
+dimensions and all other zones remain unchanged.
+
+## Approved Stage 05 history
 
 Scene: `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage05.unity`.
 Review: `Stage05/Review.html` and `Stage05/Preview/Comparison.png`.
@@ -40,7 +76,7 @@ PixelLab: **22 subscription generations** spent (two Pro calls at 10, two
 Pixflux calls at 1); **202.20 remain**. Cumulative pack usage: **64**. No reference
 images uploaded; no pending generation jobs.
 
-**Stop for Stage 05 visual approval. Do not start Stage 06 or merge.**
+The user approved continuation to Stage 06. Preserve the Stage05 source and scene unchanged.
 Draft PR #215 stays on the dedicated branch, based on PR #214's Ironvein branch.
 Production Game, gameplay systems, approved top, shared frame dimensions,
 characters/gems and all other zones remain untouched.

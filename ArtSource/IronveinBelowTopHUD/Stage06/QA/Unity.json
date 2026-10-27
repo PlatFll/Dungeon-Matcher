@@ -1,0 +1,40 @@
+{
+    "status": "PASS",
+    "scene": "Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage06.unity",
+    "note": "Actual art-only Unity renders. Only environmental seating behind the bottom controls changes. Every existing Graphic geometry, reference and active state is unchanged. Approved opaque UI and props match pixel-for-pixel. Top and board remain exact; not live gameplay/device testing; excluded from builds.",
+    "assets": 5,
+    "disabledOldSupportPlacements": 0,
+    "sourcePixelScale": 2,
+    "geometryUnchanged": true,
+    "originalReferencesUnchanged": true,
+    "protectedPixelsUnchanged": true,
+    "widths": [
+        360,
+        720,
+        1080
+    ],
+    "changedPixels": [
+        2792,
+        11099,
+        25026
+    ],
+    "protectedOpaquePixels": [
+        69695,
+        278993,
+        628994
+    ],
+    "boardBounds": {
+        "serializedVersion": "2",
+        "x": 87.45048522949219,
+        "y": 213.45050048828126,
+        "width": 545.0989990234375,
+        "height": 545.0989990234375
+    },
+    "portraitBounds": {
+        "serializedVersion": "2",
+        "x": 21.0,
+        "y": 825.0,
+        "width": 195.0,
+        "height": 406.0
+    }
+}
