@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "stage": 7,
+  "protected_files": 891,
+  "assets": 36,
+  "scene_records_unchanged": true,
+  "captures": [
+    {
+      "width": 360,
+      "height": 640,
+      "approved_stage06_pixels_exact": true,
+      "initial_top_exact": true
+    },
+    {
+      "width": 720,
+      "height": 1280,
+      "approved_stage06_pixels_exact": true,
+      "initial_top_exact": true
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "approved_stage06_pixels_exact": true,
+      "initial_top_exact": true
+    }
+  ],
+  "new_generations": 0,
+  "cumulative_pack_generations": 74,
+  "artistic_verdict": "The approved lower families form one restrained mine assembly. Wood carries the frame and drills, iron reads as mounting hardware, amber stays an accent, and dark rock supports the sides. The HUD cradle ties the lower controls into the setting. No additional art or placement changes were needed.",
+  "limitations": [
+    "Art-only static preview, not production Game or device testing.",
+    "Existing shared board/UI layout is retained, including its fractional geometry. New native environment pieces preserve their uniform pixel scale."
+  ],
+  "stop": "Stage07 review; do not merge or start Stage08 automatically",
+  "required_unity_validator": {
+    "passed": true,
+    "version": "6000.3.19f1",
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-fae250e0-71cd-45cb-9eff-a06475857dd6.log",
+    "code_sha256": "560c977eaef801006b5ea4f19e525c6f8ddf901d34dfaef16803e31c138231f7"
+  },
+  "unity_log": "Stage07Final.log"
+}

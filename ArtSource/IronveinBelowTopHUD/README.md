@@ -1,9 +1,31 @@
-# Ironvein below-top-HUD rebuild — Stage 06 bottom-HUD seating
+# Ironvein below-top-HUD rebuild — Stage 07 complete assembly
 
 Branch: `codex/ironvein-below-tophud-pixellab`.
 Base: `feature/ironvein-pixellab-staged-rebuild` at `4a790aa0` (PR #214), including the user's three restored older backgrounds. Main and the earlier branch remain unchanged.
 
-## Current result and stop point — Stage 06
+## Current result and stop point — Stage 07
+
+Scene: `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage07.unity`.
+Review: `Stage07/Review.html`, with the full scene, initial-foundation comparison,
+assembly close-ups and all 36 native assets. The incremental approved assembly
+already contained all required groups; no artwork or placement changes were needed.
+
+Unity validation and assembly checks passed at 360x640, 720x1280 and 1080x1920.
+All rendered pixels match approved Stage06; top/grid also match Stage01. The
+six drills clear the unchanged 8x8 grid, connectors align with their rails,
+repeat/import/native-scale checks pass, and the HUD sits above its support art.
+891 protected files remain exact; all 36 PNGs match Unity copies and LibreSprite
+roundtrips. Every scene object record matches the approved assembly. See
+`Stage07/QA/Validation.json` for evidence and testing limitations.
+
+**No new PixelLab generations.** Cumulative pack usage stays **74**.
+Production Game and existing artwork remain unchanged. This is an art-only
+preview excluded from builds, not gameplay, safe-area or real-device testing.
+
+**Stop for Stage 07 visual approval. Do not start Stage 08 or merge.**
+Draft PR #215 stays on the dedicated branch based on PR #214's Ironvein branch.
+
+## Approved Stage 06 history
 
 Scene: `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage06.unity`.
 Review: `Stage06/Review.html`, `Stage06/Preview/Comparison.png` and `HUDDetails.png`.
@@ -34,7 +56,7 @@ These are art-only preview checks, not live gameplay or real-device testing.
 PixelLab: **10 subscription generations** spent; **192.20 remain**. Cumulative
 pack usage: **74**. No reference-image uploads and no pending generation jobs.
 
-**Stop for Stage 06 visual approval. Do not start Stage 07 or merge.**
+The user approved continuation to Stage 07. Preserve the Stage06 source and scene unchanged.
 Draft PR #215 remains on the dedicated branch, based on PR #214's Ironvein branch.
 Production Game, gameplay systems, approved art, characters/gems, shared frame
 dimensions and all other zones remain unchanged.
