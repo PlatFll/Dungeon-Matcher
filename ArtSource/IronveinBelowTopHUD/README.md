@@ -1,9 +1,45 @@
-# Ironvein below-top-HUD rebuild — Stage 02 separator
+# Ironvein below-top-HUD rebuild — Stage 03 board frame
 
 Branch: `codex/ironvein-below-tophud-pixellab`.
 Base: `feature/ironvein-pixellab-staged-rebuild` at `4a790aa0` (PR #214), including the user's three restored older backgrounds. Main and the earlier branch remain unchanged.
 
-## Current result and stop point — Stage 02
+## Current result and stop point — Stage 03
+
+Scene: `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage03.unity`.
+Review: `Stage03/Review.html` and `Stage03/Preview/Comparison.png`.
+
+The board now has ten separate native modules: four 27x27 corner plates, four
+9px-thick timber rails, a 9x9 riveted connector and a 9x9 amber inset. PixelLab
+Pro candidate 1 supplied the socket/crystal and material direction. LibreSprite
+cleanup rebuilt the source into the existing frame footprints, consolidated
+planes, aligned rails and connectors, and retained the original inner corner
+pixels beneath the rounded board-cell edges. Editable ASE files, raw alternatives,
+exact exports and reproducible native-edit scripts remain separate.
+
+The existing ResponsiveModularFrameFitter still owns dimensions and centering.
+New UI PNGs import at 100 PPU to match the unchanged Canvas reference PPU, giving
+their tiled texels the same native scale as corners. Existing 64-PPU assets,
+runtime code and shared Canvas settings are untouched. All new pieces render
+at uniform 2x source scale in the 720x1280 preview.
+
+Validation: required Tools/Validate-Unity.ps1 passed. Actual art-only Unity
+captures at 360x640, 720x1280 and 1080x1920 keep every changed pixel inside the
+original rendered board-frame footprint and outside the unchanged board opening.
+The top HUD and opaque separator pixels match exactly. All existing Graphic
+bounds, 371 protected source files, the portrait, characters, cells/gems, other
+modules and shared controls remain unchanged. All ten LibreSprite roundtrips
+and Unity PNG copies match, binary alpha is retained, and rail repeat edges match.
+Evidence: `Stage03/QA/Validation.json`, `Unity.json`, `Assets.json` and the compact
+`SceneDelta.patch`. These are preview/automated checks, not live gameplay or a
+phone test; the scene is excluded from builds.
+
+PixelLab: **10 subscription generations** for four alternatives; **236.20 remain**.
+No images uploaded. Stage02 + Stage03 cumulative spend: 30 generations.
+
+**Stop for Stage 03 review. Do not start Stage 04 drills or merge.** Draft PR #215
+remains based on the current Ironvein parent branch; production Game is unchanged.
+
+## Approved Stage 02 history
 
 The current review scene is `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage02.unity`. Five new native modules form four component families: repeat timber beam, reinforced center beam, mounted amber diamond, and separate left/right end brackets. Their PNGs and editable LibreSprite ASE sources are in `Stage02/Exports` and `Stage02/Native`.
 
@@ -13,7 +49,7 @@ Actual Unity captures at 360x640, 720x1280 and 1080x1920 verify that **every pix
 
 PixelLab: **20 subscription generations** for two Pro calls / eight alternatives, no reference-image uploads. First-call candidate 0 supplies the selected design. The second, short-canvas attempt lost the timber and is rejected. Native cleanup condensed redundant wood rows, restored complete socket contours, consolidated material ramps and made repeat seams/brackets consistent without interpolation. See `Stage02/Generation*.json`, `Raw/`, and `QA/Assets.json`.
 
-Review: `Stage02/Review.html`, `Stage02/Preview/Comparison.png`, native components and unannotated Unity renders. Draft PR #215 remains based on PR #214's branch. **Stop for Stage 02 approval. Stage 03 is not started. Do not merge.**
+Review: `Stage02/Review.html`, `Stage02/Preview/Comparison.png`, native components and unannotated Unity renders. Draft PR #215 remains based on PR #214's branch. The user approved continuation to Stage 03. Preserve this source and scene unchanged.
 
 ## Stage 01 foundation history
 

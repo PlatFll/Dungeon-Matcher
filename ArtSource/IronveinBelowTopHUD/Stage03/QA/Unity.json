@@ -1,0 +1,48 @@
+{
+    "status": "PASS",
+    "scene": "Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage03.unity",
+    "note": "Actual art-only Unity camera renders; every changed pixel lies outside the unchanged grid and inside the original board-frame footprint. Top, separator source/placement, UI and all other modules remain preserved. No gameplay or device testing.",
+    "boardBounds": {
+        "serializedVersion": "2",
+        "x": 87.45048522949219,
+        "y": 213.45050048828126,
+        "width": 545.0989990234375,
+        "height": 545.0989990234375
+    },
+    "frameBounds": {
+        "serializedVersion": "2",
+        "x": 51.45048522949219,
+        "y": 177.45050048828126,
+        "width": 617.0989990234375,
+        "height": 617.0989990234375
+    },
+    "renderedFrameBounds": {
+        "serializedVersion": "2",
+        "x": 51.45048522949219,
+        "y": 176.54949951171876,
+        "width": 618.0,
+        "height": 618.0
+    },
+    "portraitBounds": {
+        "serializedVersion": "2",
+        "x": 21.0,
+        "y": 825.0,
+        "width": 195.0,
+        "height": 406.0
+    },
+    "geometryUnchanged": true,
+    "protectedArtworkUnchanged": true,
+    "protectedPixelsUnchanged": true,
+    "sourcePixelScale": 2,
+    "assets": 10,
+    "widths": [
+        360,
+        720,
+        1080
+    ],
+    "changedPixels": [
+        7967,
+        32316,
+        72375
+    ]
+}

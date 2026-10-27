@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "protected_file_count": 371,
+  "approved_sources_unchanged": true,
+  "captures": [
+    {
+      "width": 360,
+      "difference_bounds": [
+        26,
+        243,
+        335,
+        552
+      ],
+      "locked_top_exact": true,
+      "separator_opaque_pixels_exact": true
+    },
+    {
+      "width": 720,
+      "difference_bounds": [
+        51,
+        485,
+        669,
+        1103
+      ],
+      "locked_top_exact": true,
+      "separator_opaque_pixels_exact": true
+    },
+    {
+      "width": 1080,
+      "difference_bounds": [
+        77,
+        728,
+        1004,
+        1655
+      ],
+      "locked_top_exact": true,
+      "separator_opaque_pixels_exact": true
+    }
+  ],
+  "unity_report": "Unity.json",
+  "assets_report": "Assets.json",
+  "pixel_lab_generations": 10,
+  "remaining_generations": 236.2,
+  "stage": 3,
+  "no_merge": true,
+  "not_live_gameplay_or_device_test": true,
+  "pixel_mapping": "New UI imports use 100 PPU, matching the existing Canvas. The unchanged native fitter renders all frame parts at uniform 2x in 720x1280. Shared Canvas and runtime code unchanged.",
+  "required_unity_validator": {
+    "passed": true,
+    "version": "6000.3.19f1",
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-80c5726f-f352-4130-a003-1f9a035d806a.log",
+    "code_sha256": "258d8f2d64f10b9809c3426a7179f1c1e2a1558a1b9b63d1bdea83d455bc714c"
+  },
+  "review_status": "Candidate; stop for Stage03 user approval",
+  "scene_delta": "12 new records, 16 existing records changed only for board-frame sprite references and three amber-overlay child links."
+}

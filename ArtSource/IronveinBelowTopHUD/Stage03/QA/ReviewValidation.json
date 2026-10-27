@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "protected_file_count": 371,
+  "approved_sources_unchanged": true,
+  "captures": [
+    {
+      "width": 360,
+      "difference_bounds": [
+        26,
+        243,
+        335,
+        552
+      ],
+      "locked_top_exact": true,
+      "separator_opaque_pixels_exact": true
+    },
+    {
+      "width": 720,
+      "difference_bounds": [
+        51,
+        485,
+        669,
+        1103
+      ],
+      "locked_top_exact": true,
+      "separator_opaque_pixels_exact": true
+    },
+    {
+      "width": 1080,
+      "difference_bounds": [
+        77,
+        728,
+        1004,
+        1655
+      ],
+      "locked_top_exact": true,
+      "separator_opaque_pixels_exact": true
+    }
+  ],
+  "unity_report": "Unity.json",
+  "assets_report": "Assets.json",
+  "pixel_lab_generations": 10,
+  "remaining_generations": 236.2,
+  "stage": 3,
+  "no_merge": true,
+  "not_live_gameplay_or_device_test": true,
+  "pixel_mapping": "New UI imports use 100 PPU, matching the existing Canvas. The unchanged native fitter renders all frame parts at uniform 2x in 720x1280. Shared Canvas and runtime code unchanged."
+}
