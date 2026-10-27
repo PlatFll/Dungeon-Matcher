@@ -1,9 +1,51 @@
-# Ironvein below-top-HUD rebuild — Stage 04 drill modules
+# Ironvein below-top-HUD rebuild — Stage 05 mine surroundings
 
 Branch: `codex/ironvein-below-tophud-pixellab`.
 Base: `feature/ironvein-pixellab-staged-rebuild` at `4a790aa0` (PR #214), including the user's three restored older backgrounds. Main and the earlier branch remain unchanged.
 
-## Current result and stop point — Stage 04
+## Current result and stop point — Stage 05
+
+Scene: `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage05.unity`.
+Review: `Stage05/Review.html` and `Stage05/Preview/Comparison.png`.
+
+The board-side purple support placements are replaced by brown timber posts,
+iron collars and darker irregular mine rock. The approved drills now sit over
+timber supports. Two restrained amber deposits anchor the lower sides, and a
+quiet native rock course continues beneath the board. Existing lanterns,
+chains, lower-corner props, crate, general background and functional HUD remain.
+Bottom-HUD seating is Stage 06 and has not started.
+
+Nine separate native modules: timber cap/repeat/foot (20x18, 20x24, 20x15), iron
+collar (22x8), two rock outcrops (22x46, 22x48), a rock footing (28x17), under-board
+rock course (64x16), and amber deposit (24x30). PixelLab timber candidate 0 and
+rock candidates 5/9 were selected from two 25-candidate calls; two focused
+Pixflux calls supplied the crystal and rock course. LibreSprite cleanup repaired
+repeat edges, simplified the noisy course into broad native planes, consolidated
+material colors, and tightened collar clearance without scaling. Raw alternatives,
+ASE sources, PNGs, exact roundtrips and scripts remain separately editable.
+The complete set uses 17 meaningful opaque colors and binary alpha.
+
+Validation: `Tools/Validate-Unity.ps1` passed on Unity 6000.3.19f1. Actual art-only
+Unity renders at 360x640, 720x1280 and 1080x1920 preserve the top, playable grid,
+HUD and every opaque frame/drill/separator pixel. Existing geometry and asset
+references are exact; 614 protected source files retain their hashes. The new
+scene only disables 14 old support placements and adds one group of 31 Images.
+No existing assets or prior scenes are deleted or overwritten. Nine Unity PNG
+copies and LibreSprite roundtrips match, and both repeat seams match. See
+`Stage05/QA/Validation.json`, `Unity.json`, `Assets.json` and `SceneDelta.patch`.
+These are automated/visual preview checks, not live gameplay or device tests;
+the scene remains excluded from builds.
+
+PixelLab: **22 subscription generations** spent (two Pro calls at 10, two
+Pixflux calls at 1); **202.20 remain**. Cumulative pack usage: **64**. No reference
+images uploaded; no pending generation jobs.
+
+**Stop for Stage 05 visual approval. Do not start Stage 06 or merge.**
+Draft PR #215 stays on the dedicated branch, based on PR #214's Ironvein branch.
+Production Game, gameplay systems, approved top, shared frame dimensions,
+characters/gems and all other zones remain untouched.
+
+## Approved Stage 04 history
 
 Scene: `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage04.unity`.
 Review: `Stage04/Review.html` and `Stage04/Preview/Comparison.png`.
@@ -39,7 +81,7 @@ PixelLab: **12 subscription generations** spent (two Pixflux calls at 1 each,
 one Pro call at 10); **224.20 remaining**. Total for Stages 02–04: **42**.
 No image uploads and no generation jobs pending.
 
-**Stop for Stage 04 visual approval. Do not start Stage 05 or merge.**
+The user approved continuation to Stage 05. Preserve this source and scene unchanged.
 Draft PR #215 remains based on the current Ironvein parent branch. Production
 Game, runtime presentation, characters, shared controls and other zones remain
 unchanged.

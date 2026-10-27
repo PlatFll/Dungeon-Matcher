@@ -1,0 +1,142 @@
+{
+  "stage": 5,
+  "starting_balance": 224.2,
+  "mode": "Text-only focused modular generation per pack",
+  "image_inputs": [],
+  "args": {
+    "timber": {
+      "description": "Single upright TIMBER MINE SUPPORT, front orthographic elevation, straight sturdy vertical square-cut brown wooden post with dark forged iron riveted fastening bands near top and bottom. Dark warm chestnut wood with two or three broad planes and quiet long grain. Grey charcoal steel straps, small restrained copper rivets. Not stone, no foliage, no background, no text. One simple narrow modular support for sides of a dwarven mining UI. Occupied about 18 pixels wide and 58 tall, complete silhouette and transparent margin on 32x64 canvas. Crisp chunky native pixel art, clean broad shading clusters, top-left light, no anti-alias, no detailed scratches or bright grain. Simple readable hand-crafted game asset, slightly worn timber. Straight parallel edges and flat ends so it can be split into cap, repeat and foot pieces.",
+      "width": 32,
+      "height": 64,
+      "no_background": true,
+      "max_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#141522",
+        "#202332",
+        "#303447",
+        "#41485B",
+        "#53556B",
+        "#30202A",
+        "#4A2C1C",
+        "#674229",
+        "#8C5B34",
+        "#B07A43",
+        "#2B313A",
+        "#55606E",
+        "#786477",
+        "#93A1B0",
+        "#8A5622",
+        "#C58826",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ],
+      "seed": 27052026
+    },
+    "rock": {
+      "description": "A narrow vertical exposed mine rock outcrop, a group of 4 to 6 large connected jagged DARK BASALT stone masses, FRONT VIEW for the side edge of a 2D mining game UI. Tall narrow silhouette about 26 by 58 pixels on transparent 32x64 canvas. Uneven stacked natural rock, NOT brickwork or a pillar. Dark charcoal navy and muted cool violet planes. Few broad planar facets, deep seams, limited three-tone shading, subtle upper-left rim. Quiet low contrast backdrop asset, no crystals, no moss, no objects, no text, no scenery. Entire solid connected outcrop fully inside canvas with clear silhouette. Crisp native chunky pixel art, no tiny chisel scratches, no dithering, no antialias, no shiny gems, no blurry paint.",
+      "width": 32,
+      "height": 64,
+      "no_background": true,
+      "max_colors": 8,
+      "palette": [
+        "#0A0D11",
+        "#141522",
+        "#202332",
+        "#303447",
+        "#41485B",
+        "#53556B"
+      ],
+      "seed": 27052027
+    },
+    "crystal": {
+      "description": "A very small amber-orange mining crystal deposit growing out of one dark charcoal rock base. THREE chunky upright faceted crystals: a medium central point and two much smaller points. Compact wide grounded silhouette about 22 pixels wide by 18 high, centered with transparent space in native 32x32 canvas. Warm amber faces and tiny yellow lit tips, dark rock base, strong readable connected silhouette. Quiet crisp fantasy game pixel art. Simple flat connected shading clusters, top-left light, no glow halo, no tiny sparkles, no fragments, no scene, no background, no blur.",
+      "width": 32,
+      "height": 32,
+      "no_background": true,
+      "detail": "low detail",
+      "outline": "single color black outline",
+      "shading": "basic shading",
+      "view": "side",
+      "isometric": false,
+      "seed": 27052028
+    }
+  },
+  "receipts": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 9ba90d6e-1abf-48f1-9cf3-a04e2289425f\njob_id: 9ba90d6e-1abf-48f1-9cf3-a04e2289425f\nmodel: pro\ndescription: Single upright TIMBER MINE SUPPORT, front orthographic elevation, straight sturdy vertical square-cut brown wooden post with dark forged iron riveted fastening bands near top and bottom. Dark warm chestnut wood with two or three broad planes and quiet long grain. Grey charcoal steel straps, small restrained copper rivets. Not stone, no foliage, no background, no text. One simple narrow modular support for sides of a dwarven mining UI. Occupied about 18 pixels wide and 58 tall, complete silhouette and transparent margin on 32x64 canvas. Crisp chunky native pixel art, clean broad shading clusters, top-left light, no anti-alias, no detailed scratches or bright grain. Simple readable hand-crafted game asset, slightly worn timber. Straight parallel edges and flat ends so it can be split into cap, repeat and foot pieces.\nsize: 32x64px\ntransparent: True\ncandidates: 25\npalette: 20 colours\nmax colours: 14 per image\nseed: 27052026\nasset_id: 766b8da5-d43b-5430-af36-a936b532c9c4\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"9ba90d6e-1abf-48f1-9cf3-a04e2289425f\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: b1b1279c-3f49-46c2-8b86-2457e035bf32\njob_id: b1b1279c-3f49-46c2-8b86-2457e035bf32\nmodel: pro\ndescription: A narrow vertical exposed mine rock outcrop, a group of 4 to 6 large connected jagged DARK BASALT stone masses, FRONT VIEW for the side edge of a 2D mining game UI. Tall narrow silhouette about 26 by 58 pixels on transparent 32x64 canvas. Uneven stacked natural rock, NOT brickwork or a pillar. Dark charcoal navy and muted cool violet planes. Few broad planar facets, deep seams, limited three-tone shading, subtle upper-left rim. Quiet low contrast backdrop asset, no crystals, no moss, no objects, no text, no scenery. Entire solid connected outcrop fully inside canvas with clear silhouette. Crisp native chunky pixel art, no tiny chisel scratches, no dithering, no antialias, no shiny gems, no blurry paint.\nsize: 32x64px\ntransparent: True\ncandidates: 25\npalette: 6 colours\nmax colours: 8 per image\nseed: 27052027\nasset_id: c90da2c4-7057-569d-a60e-3bc38d07fbed\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"b1b1279c-3f49-46c2-8b86-2457e035bf32\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 358ad8cf-02ac-42e7-96f4-28b41d002d6e\njob_id: 358ad8cf-02ac-42e7-96f4-28b41d002d6e\ndescription: A very small amber-orange mining crystal deposit growing out of one dark charcoal rock base. THREE chunky upright faceted crystals: a medium central point and two much smaller points. Compact wide grounded silhouette about 22 pixels wide by 18 high, centered with transparent space in native 32x32 canvas. Warm amber faces and tiny yellow lit tips, dark rock base, strong readable connected silhouette. Quiet crisp fantasy game pixel art. Simple flat connected shading clusters, top-left light, no glow halo, no tiny sparkles, no fragments, no scene, no background, no blur.\nsize: 32x32px\ntransparent: True\nasset_id: b6fff2b3-db98-5f34-bc85-81a27f22b36d\nasset_status: pending (saved when generation completes)\nseed: 27052028\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"358ad8cf-02ac-42e7-96f4-28b41d002d6e\")"
+          }
+        ],
+        "isError": false
+      }
+    }
+  ],
+  "total_generations": 22,
+  "course": {
+    "args": {
+      "description": "A horizontal repeatable strip of DARK NATURAL MINE ROCK, front orthographic elevation. Seamless left and right edges. 64 pixels wide by 16 pixels tall. Three broad irregular basalt stones connected along a low rock ledge, top faces subtly lit from upper left, lower edge in shadow. Quiet charcoal/navy-violet background tones, only 4 or 5 colors. Native chunky clean pixel art, broad solid planes, deep irregular cracks. NOT brickwork, no floor perspective, no crystals, no foliage, no moss, no bolts, no text, no bright outlines, no texture noise. Fills the entire rectangular canvas to join side-by-side as support directly beneath a mining game board.",
+      "width": 64,
+      "height": 16,
+      "no_background": false,
+      "detail": "low detail",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "view": "side",
+      "isometric": false,
+      "seed": 27052029
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 62015827-61a3-42bd-9b91-2940e8c0e81e\njob_id: 62015827-61a3-42bd-9b91-2940e8c0e81e\ndescription: A horizontal repeatable strip of DARK NATURAL MINE ROCK, front orthographic elevation. Seamless left and right edges. 64 pixels wide by 16 pixels tall. Three broad irregular basalt stones connected along a low rock ledge, top faces subtly lit from upper left, lower edge in shadow. Quiet charcoal/navy-violet background tones, only 4 or 5 colors. Native chunky clean pixel art, broad solid planes, deep irregular cracks. NOT brickwork, no floor perspective, no crystals, no foliage, no moss, no bolts, no text, no bright outlines, no texture noise. Fills the entire rectangular canvas to join side-by-side as support directly beneath a mining game board.\nsize: 64x16px\ntransparent: False\nasset_id: 972cbc3f-347c-5ed6-bb58-8a30fec209b0\nasset_status: pending (saved when generation completes)\nseed: 27052029\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"62015827-61a3-42bd-9b91-2940e8c0e81e\")"
+        }
+      ],
+      "isError": false
+    },
+    "cost_generations": 1
+  },
+  "selection": {
+    "Timber": 0,
+    "Rock": [
+      5,
+      9
+    ],
+    "Crystal": 0,
+    "Course": 0
+  },
+  "native_cleanup": "Separate timber end/repeat modules, native seam closure, controlled stone ramp, crystal/rock palette consolidation and native metal collars. No resampling.",
+  "ending_balance": 202.2,
+  "verified_generations_spent": 22,
+  "cumulative_pack_generations": 64
+}
