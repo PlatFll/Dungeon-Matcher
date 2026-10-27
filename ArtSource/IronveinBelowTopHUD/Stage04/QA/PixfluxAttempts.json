@@ -1,0 +1,36 @@
+[
+  {
+    "name": "PixfluxA",
+    "job": "aef4d8a9-1555-45bd-bf36-30359ca01a53",
+    "size": [
+      32,
+      32
+    ],
+    "opaque_bounds": [
+      4,
+      1,
+      28,
+      31
+    ],
+    "colors": 38,
+    "sha256": "59c9f1bbcfe432b266431dabc8285a20e669925399782d40f62408bdfb0e9727",
+    "status": "rejected: drill profile not clear enough at native size"
+  },
+  {
+    "name": "PixfluxB",
+    "job": "b52d99ea-69cc-45f3-bd0f-bbc63af27470",
+    "size": [
+      32,
+      32
+    ],
+    "opaque_bounds": [
+      3,
+      3,
+      30,
+      29
+    ],
+    "colors": 26,
+    "sha256": "35c3c6bd4b3cfdff50d8993792e6571177d0a9d2c6c7e70ffd5ac5e96d0ade64",
+    "status": "rejected: drill profile not clear enough at native size"
+  }
+]

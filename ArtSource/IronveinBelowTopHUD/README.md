@@ -1,9 +1,50 @@
-# Ironvein below-top-HUD rebuild — Stage 03 board frame
+# Ironvein below-top-HUD rebuild — Stage 04 drill modules
 
 Branch: `codex/ironvein-below-tophud-pixellab`.
 Base: `feature/ironvein-pixellab-staged-rebuild` at `4a790aa0` (PR #214), including the user's three restored older backgrounds. Main and the earlier branch remain unchanged.
 
-## Current result and stop point — Stage 03
+## Current result and stop point — Stage 04
+
+Scene: `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage04.unity`.
+Review: `Stage04/Review.html` and `Stage04/Preview/Comparison.png`.
+
+Six inward-facing drill mechanisms attach to the board rails at three paired
+stations. Seven separate native assets form the assemblies: left/right mounting
+plates (38x36), motors (18x27), drill noses (16x17), and one amber power block
+(9x9). The bolts and mounting straps contact the existing rail centerlines;
+the drill tips remain outside the playable opening. No frame source or layout
+value is changed. Existing side stones, lamps and chains remain intact for
+their separate Stage 05 review.
+
+PixelLab Pro candidate 17 supplied the selected side-profile motor and spiral
+bit. Two earlier Pixflux results were rejected for unclear profile. LibreSprite
+native editing removed the raw wraparound fragment, completed the clipped tip
+on a separate canvas, cleaned material planes, and built separate mounting
+plates and the amber inset. Paired silhouettes match; shading keeps upper-left
+light. All 66 raw alternatives, 7 editable ASE files, exports, roundtrips and
+reproducible scripts are retained. The finished set uses 13 opaque colors total
+and binary alpha. Nothing was resized or blurred.
+
+Validation: `Tools/Validate-Unity.ps1` passed on Unity 6000.3.19f1. Actual art-only
+Unity captures at 360x640, 720x1280 and 1080x1920 verify that every changed pixel
+lies in a drill station and outside the grid. Top, separator and lower HUD match
+exactly. All existing Graphic geometry and sprite references are unchanged;
+471 protected source files retain their hashes. The new scene only adds one
+Canvas child group and its 24 Images. All seven Unity PNG copies and LibreSprite
+roundtrips match. See `Stage04/QA/Validation.json`, `Unity.json`, `Assets.json`
+and `SceneDelta.patch`. This is an art-only preview, excluded from builds;
+live gameplay and real-device behavior were not tested.
+
+PixelLab: **12 subscription generations** spent (two Pixflux calls at 1 each,
+one Pro call at 10); **224.20 remaining**. Total for Stages 02–04: **42**.
+No image uploads and no generation jobs pending.
+
+**Stop for Stage 04 visual approval. Do not start Stage 05 or merge.**
+Draft PR #215 remains based on the current Ironvein parent branch. Production
+Game, runtime presentation, characters, shared controls and other zones remain
+unchanged.
+
+## Approved Stage 03 history
 
 Scene: `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage03.unity`.
 Review: `Stage03/Review.html` and `Stage03/Preview/Comparison.png`.
@@ -36,7 +77,7 @@ phone test; the scene is excluded from builds.
 PixelLab: **10 subscription generations** for four alternatives; **236.20 remain**.
 No images uploaded. Stage02 + Stage03 cumulative spend: 30 generations.
 
-**Stop for Stage 03 review. Do not start Stage 04 drills or merge.** Draft PR #215
+The user approved continuation to Stage 04. Preserve this source and scene unchanged. Draft PR #215
 remains based on the current Ironvein parent branch; production Game is unchanged.
 
 ## Approved Stage 02 history

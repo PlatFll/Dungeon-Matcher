@@ -1,0 +1,165 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "name": "MotorLeft",
+      "size": [
+        18,
+        27
+      ],
+      "bounds": [
+        0,
+        0,
+        18,
+        27
+      ],
+      "opaque_colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "207f4fa8a981d775d7687ea67ce680eea13e5c8306abd9e82cd7f46db2e14f83",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "MotorRight",
+      "size": [
+        18,
+        27
+      ],
+      "bounds": [
+        0,
+        0,
+        18,
+        27
+      ],
+      "opaque_colors": 8,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "9ad0014021e0ea1be0a2616bc501b166eaa315f9cb6674c8b782edd13f8acf98",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "MountLeft",
+      "size": [
+        38,
+        36
+      ],
+      "bounds": [
+        0,
+        1,
+        38,
+        35
+      ],
+      "opaque_colors": 8,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "becf62b04cdaeb41aa1803f6fb7006c79023a50d48b4713a44e99e54e2e6bc7e",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "MountRight",
+      "size": [
+        38,
+        36
+      ],
+      "bounds": [
+        0,
+        1,
+        38,
+        35
+      ],
+      "opaque_colors": 8,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "589acc417866bcb6bb5e4ab67368c9c5cba1c4714d60c9ca56b973200b2c4fff",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "NoseLeft",
+      "size": [
+        16,
+        17
+      ],
+      "bounds": [
+        1,
+        2,
+        16,
+        15
+      ],
+      "opaque_colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "ac165b5f99c080299938ad34c817994a6185a2bbdce7e9f882ec6f3d3f3e1bf2",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "NoseRight",
+      "size": [
+        16,
+        17
+      ],
+      "bounds": [
+        0,
+        2,
+        15,
+        15
+      ],
+      "opaque_colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "c03aa61f729c7698ef3b26e8574b1e92c07ad0c5b713d0bdf2766521e848c2b1",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "PowerBlock",
+      "size": [
+        9,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ],
+      "opaque_colors": 8,
+      "alpha": [
+        255
+      ],
+      "sha256": "eecf6cbf3e9edc89db853cd2ee33a3393c3c745e0aface3743221710df61d40e",
+      "libresprite_roundtrip_exact": true
+    }
+  ],
+  "connected_assemblies": true,
+  "mirrored_silhouettes": true,
+  "native_assembly_canvas": [
+    40,
+    36
+  ],
+  "palette": [
+    "#0a0d11",
+    "#2b313a",
+    "#30202a",
+    "#42374f",
+    "#55606e",
+    "#786477",
+    "#8a5622",
+    "#93a1b0",
+    "#c58826",
+    "#c94d08",
+    "#f5923d",
+    "#fdf5e5",
+    "#ffdb8f"
+  ]
+}
