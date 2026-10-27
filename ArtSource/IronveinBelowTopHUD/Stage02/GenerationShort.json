@@ -1,0 +1,26 @@
+{
+  "prompt": {
+    "description": "Single horizontal 2D mine UI beam, straight FRONT view. Fill the width with one dark walnut timber rail about 8 pixels thick, centred on this very short 128 by 16 canvas. Square charcoal iron reinforcement bands at x=8,32,96,120, each with one tiny brass rivet. At x=64 place one compact symmetrical diamond shaped iron socket 14 pixels tall, containing a small amber crystal (orange shadow, golden center, one pale highlight). Wood uses THREE warm brown tones and long connected quiet grain shapes. Metal uses THREE charcoal lavender gray tones, broad face with a short upper-left edge highlight. Dark outline. Hard native pixels. Flat orthographic UI construction, straight uniform height, no perspective. Important: entire object inside this 16 pixel tall canvas. Both caps and diamond must have complete top and bottom contours. Transparent background. No labels, no lettering, no scenery, no loose ornaments, no soft glow, no gradients, no antialiasing, no ornate curls. Whimsical chunky fantasy game art, compact and clean. The clear wooden stretches between metal bands must be suitable for extracting repeatable horizontal beam tiles. One horizontal ledge ONLY, not a complete frame.",
+    "width": 128,
+    "height": 16,
+    "no_background": true,
+    "max_colors": 16,
+    "seed": 27022027
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 53590f75-0190-4188-bf01-f9f1456d22f6\njob_id: 53590f75-0190-4188-bf01-f9f1456d22f6\nmodel: pro\ndescription: Single horizontal 2D mine UI beam, straight FRONT view. Fill the width with one dark walnut timber rail about 8 pixels thick, centred on this very short 128 by 16 canvas. Square charcoal iron reinforcement bands at x=8,32,96,120, each with one tiny brass rivet. At x=64 place one compact symmetrical diamond shaped iron socket 14 pixels tall, containing a small amber crystal (orange shadow, golden center, one pale highlight). Wood uses THREE warm brown tones and long connected quiet grain shapes. Metal uses THREE charcoal lavender gray tones, broad face with a short upper-left edge highlight. Dark outline. Hard native pixels. Flat orthographic UI construction, straight uniform height, no perspective. Important: entire object inside this 16 pixel tall canvas. Both caps and diamond must have complete top and bottom contours. Transparent background. No labels, no lettering, no scenery, no loose ornaments, no soft glow, no gradients, no antialiasing, no ornate curls. Whimsical chunky fantasy game art, compact and clean. The clear wooden stretches between metal bands must be suitable for extracting repeatable horizontal beam tiles. One horizontal ledge ONLY, not a complete frame.\nsize: 128x16px\ntransparent: True\ncandidates: 4\nmax colours: 16 per image\nseed: 27022027\nasset_id: 81402896-c900-5d8b-8382-4d3bbacf3b7f\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"53590f75-0190-4188-bf01-f9f1456d22f6\")"
+      }
+    ],
+    "isError": false
+  },
+  "result_text": [
+    {
+      "type": "text",
+      "text": "status: completed\nid: 53590f75-0190-4188-bf01-f9f1456d22f6\njob_id: 53590f75-0190-4188-bf01-f9f1456d22f6\nframes: 4\ntransparent: yes\nasset_id: 81402896-c900-5d8b-8382-4d3bbacf3b7f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 10 generations\ndownload: https://api.pixellab.ai/mcp/images/53590f75-0190-4188-bf01-f9f1456d22f6/download?index=0 ... ?index=3"
+    }
+  ],
+  "generations_spent": 10
+}

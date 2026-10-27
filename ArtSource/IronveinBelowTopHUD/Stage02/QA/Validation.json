@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "required_unity_validator": "Tools/Validate-Unity.ps1 completed successfully with Unity 6000.3.19f1",
+  "validator_log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-f55d446f-3a29-4233-9fee-265fcec589e0.log",
+  "validator_code_sha256": "b0c282826686ba82e23b751b954a46d0292788a73bb5791307e75328a8fb2f07",
+  "actual_unity_art_preview": true,
+  "live_gameplay_test": false,
+  "real_device_test": false,
+  "protected_source_files_byte_identical": 304,
+  "stage01_scene_and_helper_unchanged": true,
+  "existing_scene_records": 1721,
+  "new_scene_records": 29,
+  "only_existing_record_change": "One added child link on the canvas RectTransform; all other existing scene records exact after whitespace normalization.",
+  "locked_screen_pixels": "Every pixel outside the separator exactly matches Stage 01 at 360x640, 720x1280, 1080x1920.",
+  "imported_native_pixels": "Five exact source PNGs, Point / uncompressed / no mipmaps / FullRect.",
+  "restored_incidental_whitespace": [],
+  "pixel_lab_generations": 20,
+  "verified_remaining_generations": 246.2,
+  "artistic_verdict": "Review candidate: quiet connected timber, cool forged brackets, one mounted amber focal node; end brackets clear existing corner crystals. Top and all gameplay-facing layout remain unchanged.",
+  "merge": false,
+  "stop": "Stage 02 only; await user review before Stage 03."
+}

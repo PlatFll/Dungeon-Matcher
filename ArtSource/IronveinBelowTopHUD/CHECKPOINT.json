@@ -1,10 +1,12 @@
 {
-  "stage_completed": 1,
-  "next_stage": 2,
+  "stage_completed": 2,
+  "next_stage": 3,
   "branch": "codex/ironvein-below-tophud-pixellab",
   "base_commit": "4a790aa0",
-  "state": "Await Stage 01 review; do not generate or continue automatically",
-  "generation_usage": 0,
+  "state": "Await Stage 02 review; do not continue automatically",
+  "generation_usage": 20,
   "jobs_pending": [],
-  "merge_authorized": false
+  "merge_authorized": false,
+  "preview": "Stage02/Review.html",
+  "scene": "Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage02.unity"
 }

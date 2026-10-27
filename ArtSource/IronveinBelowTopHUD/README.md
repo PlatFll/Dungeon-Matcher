@@ -1,15 +1,27 @@
-# Ironvein below-top-HUD rebuild — Stage 01 foundation
+# Ironvein below-top-HUD rebuild — Stage 02 separator
 
 Branch: `codex/ironvein-below-tophud-pixellab`.
 Base: `feature/ironvein-pixellab-staged-rebuild` at `4a790aa0` (PR #214), including the user's three restored older backgrounds. Main and the earlier branch remain unchanged.
 
-## Current result and stop point
+## Current result and stop point — Stage 02
+
+The current review scene is `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage02.unity`. Five new native modules form four component families: repeat timber beam, reinforced center beam, mounted amber diamond, and separate left/right end brackets. Their PNGs and editable LibreSprite ASE sources are in `Stage02/Exports` and `Stage02/Native`.
+
+Only the separator above the board is assembled. The brackets meet the existing corner plates without covering their crystals. Repeat sections use native tiling, and the new components retain uniform 2x source-pixel scale in the 720x1280 scene. No old frame asset, top-HUD asset, cell, gem, character, bottom control or production scene was edited.
+
+Actual Unity captures at 360x640, 720x1280 and 1080x1920 verify that **every pixel outside the separator rectangle remains exact**, and all existing Graphic geometry/asset references are unchanged. Source imports and LibreSprite reopen/export roundtrips also match. The scene remains art-only, excluded from builds; no phone or live combat test is claimed. Final compilation/source evidence: `Stage02/QA/Validation.json`.
+
+PixelLab: **20 subscription generations** for two Pro calls / eight alternatives, no reference-image uploads. First-call candidate 0 supplies the selected design. The second, short-canvas attempt lost the timber and is rejected. Native cleanup condensed redundant wood rows, restored complete socket contours, consolidated material ramps and made repeat seams/brackets consistent without interpolation. See `Stage02/Generation*.json`, `Raw/`, and `QA/Assets.json`.
+
+Review: `Stage02/Review.html`, `Stage02/Preview/Comparison.png`, native components and unannotated Unity renders. Draft PR #215 remains based on PR #214's branch. **Stop for Stage 02 approval. Stage 03 is not started. Do not merge.**
+
+## Stage 01 foundation history
 
 Stage 01 only. The current approved scene is duplicated into `Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage01.unity`. No artwork is generated, removed, recolored, resized or replaced. Original scene: `Assets/_Game/Scenes/ArtPreview_IronveinStaged_Final.unity`.
 
 The working scene has two non-rendering hierarchy markers: `LOCKED_TOP_KeepCurrentArtwork` and `LOWER_ONLY_StageBoundary_NoArtwork`. The latter is an empty rectangular mask for future environment additions, below existing UI. This is a safe art-only scene, excluded from build settings. The image target remains a reference file, never a game texture.
 
-**STOP HERE for user approval of Stage 01. Stage 02 is not started. PixelLab usage: 0. No merge or production integration.**
+Stage 01 was reviewed and the user requested continuation to Stage 02. The Stage 01 scene, screenshot baseline and source hashes remain immutable.
 
 ## Exact boundary
 
