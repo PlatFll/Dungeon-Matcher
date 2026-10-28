@@ -1,0 +1,58 @@
+{
+  "removed": [
+    "  - name: IronveinLowerModules/LowerLeft",
+    "  - name: IronveinLowerModules/LowerRight",
+    "  - name: IronveinLowerModules/Crate",
+    "  - name: Revision01_LowerCrystals/LeftGroundedOutcrop",
+    "  - name: Revision01_LowerCrystals/RightGroundedOutcrop"
+  ],
+  "added": [
+    [
+      "FoundationLeft",
+      0,
+      610
+    ],
+    [
+      "FoundationRight",
+      296,
+      609
+    ],
+    [
+      "RailSleepers",
+      0,
+      604
+    ],
+    [
+      "TimberSupportExtended",
+      312,
+      534
+    ],
+    [
+      "OreCrate",
+      0,
+      563
+    ],
+    [
+      "SupplyCrate",
+      304,
+      597
+    ],
+    [
+      "Pickaxe",
+      326,
+      584
+    ],
+    [
+      "OreFragments",
+      34,
+      610
+    ],
+    [
+      "EmbeddedOre",
+      312,
+      610
+    ]
+  ],
+  "protectedPieces": 69,
+  "runtimeCodeChanged": false
+}

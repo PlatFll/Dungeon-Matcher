@@ -1,0 +1,969 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be148ae8c163f160b6da0389b1bd641, type: 3}
+  m_Name: IronveinAssembly
+  m_EditorClassIdentifier: Assembly-CSharp::IronveinBattleAssembly
+  approvedScene: Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Revision04.unity
+  portrait:
+    serializedVersion: 2
+    x: 0.5
+    y: 14.5
+    width: 117.5
+    height: 223
+  boardOpening:
+    serializedVersion: 2
+    x: 43.725243
+    y: 260.72525
+    width: 272.5495
+    height: 272.5495
+  frames: {fileID: 11400000, guid: cab2968229c94514bab2cf81b5627e86, type: 2}
+  sharedControls: {fileID: 11400000, guid: 38ecb8e747304fbc88f111a61b0cf3b3, type: 2}
+  masonry: {fileID: 0}
+  recess: {fileID: 21300000, guid: 71f99edf388913b41a6ece957f9b400e, type: 3}
+  amberInset: {fileID: 21300000, guid: 41e55e5619a6677438fd3a87594c517b, type: 3}
+  pieces:
+  - name: IronveinNativeBackground/RestoredCaveWall
+    region: IronveinNativeBackground
+    sprite: {fileID: 21300000, guid: e081a098e932b3c4c90de4e812c55f3e, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 360
+      height: 640
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinTopModules/CavernDepth
+    region: IronveinTopModules
+    sprite: {fileID: 21300000, guid: 245a97f2fbd1e764abc85fa889dc1723, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 120
+      y: 43
+      width: 240
+      height: 160
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinTopModules/Timber
+    region: IronveinTopModules
+    sprite: {fileID: 21300000, guid: f48a00099a9aa2243aca754ac83d97be, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 111
+      y: 113
+      width: 28
+      height: 89
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinTopModules/Timber
+    region: IronveinTopModules
+    sprite: {fileID: 21300000, guid: f48a00099a9aa2243aca754ac83d97be, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 331
+      y: 113
+      width: 28
+      height: 89
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinTopModules/RestoredCaveRecess
+    region: IronveinTopModules
+    sprite: {fileID: 21300000, guid: 71f99edf388913b41a6ece957f9b400e, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 225
+      width: 360
+      height: 16
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision02_CombatFloor/StoneBlock0
+    region: Revision02_CombatFloor
+    sprite: {fileID: 21300000, guid: 7dcbecf125b679443b56ff8fd47ffb5b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 220
+      width: 40
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision02_CombatFloor/StoneBlock1
+    region: Revision02_CombatFloor
+    sprite: {fileID: 21300000, guid: 3bea737ed4558de4c895ef3f39e0daf5, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 220
+      width: 40
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision02_CombatFloor/StoneBlock2
+    region: Revision02_CombatFloor
+    sprite: {fileID: 21300000, guid: 7dcbecf125b679443b56ff8fd47ffb5b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 220
+      width: 40
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision02_CombatFloor/StoneBlock3
+    region: Revision02_CombatFloor
+    sprite: {fileID: 21300000, guid: 7dcbecf125b679443b56ff8fd47ffb5b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 120
+      y: 220
+      width: 40
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision02_CombatFloor/StoneBlock4
+    region: Revision02_CombatFloor
+    sprite: {fileID: 21300000, guid: 3bea737ed4558de4c895ef3f39e0daf5, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 220
+      width: 40
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision02_CombatFloor/StoneBlock5
+    region: Revision02_CombatFloor
+    sprite: {fileID: 21300000, guid: 7dcbecf125b679443b56ff8fd47ffb5b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 200
+      y: 220
+      width: 40
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision02_CombatFloor/StoneBlock6
+    region: Revision02_CombatFloor
+    sprite: {fileID: 21300000, guid: 7dcbecf125b679443b56ff8fd47ffb5b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 220
+      width: 40
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision02_CombatFloor/StoneBlock7
+    region: Revision02_CombatFloor
+    sprite: {fileID: 21300000, guid: 3bea737ed4558de4c895ef3f39e0daf5, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 220
+      width: 40
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision02_CombatFloor/StoneBlock8
+    region: Revision02_CombatFloor
+    sprite: {fileID: 21300000, guid: 7dcbecf125b679443b56ff8fd47ffb5b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 220
+      width: 40
+      height: 19
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision03_WalkingSurface/WalkingSlab0
+    region: Revision03_WalkingSurface
+    sprite: {fileID: 21300000, guid: 23b0b6e077d6c7d489671a56d9c77560, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 188
+      width: 64
+      height: 32
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision03_WalkingSurface/WalkingSlab1
+    region: Revision03_WalkingSurface
+    sprite: {fileID: 21300000, guid: 09577c6a9ec815945b1d76adc7a3b803, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 188
+      width: 64
+      height: 32
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision03_WalkingSurface/WalkingSlab2
+    region: Revision03_WalkingSurface
+    sprite: {fileID: 21300000, guid: f088acecaef893642bf66f9559ae408b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 188
+      width: 64
+      height: 32
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision03_WalkingSurface/WalkingSlab3
+    region: Revision03_WalkingSurface
+    sprite: {fileID: 21300000, guid: 23b0b6e077d6c7d489671a56d9c77560, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 188
+      width: 64
+      height: 32
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision03_WalkingSurface/WalkingSlab4
+    region: Revision03_WalkingSurface
+    sprite: {fileID: 21300000, guid: 09577c6a9ec815945b1d76adc7a3b803, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 188
+      width: 64
+      height: 32
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Revision03_WalkingSurface/WalkingSlab5
+    region: Revision03_WalkingSurface
+    sprite: {fileID: 21300000, guid: f088acecaef893642bf66f9559ae408b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 188
+      width: 40
+      height: 32
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockLeft0
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 65a1cb1e3d29342448b396dbff73bb52, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 244
+      width: 22
+      height: 46
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockRight0
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 3a6d9acf6373aa84f9d9d4e6cc37128b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 338
+      y: 244
+      width: 22
+      height: 48
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockLeft1
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 3a6d9acf6373aa84f9d9d4e6cc37128b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 2
+      y: 288
+      width: 22
+      height: 48
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockRight1
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 65a1cb1e3d29342448b396dbff73bb52, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 288
+      width: 22
+      height: 46
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockLeft2
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 65a1cb1e3d29342448b396dbff73bb52, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 332
+      width: 22
+      height: 46
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockRight2
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 3a6d9acf6373aa84f9d9d4e6cc37128b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 338
+      y: 332
+      width: 22
+      height: 48
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockLeft3
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 3a6d9acf6373aa84f9d9d4e6cc37128b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 2
+      y: 376
+      width: 22
+      height: 48
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockRight3
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 65a1cb1e3d29342448b396dbff73bb52, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 376
+      width: 22
+      height: 46
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockLeft4
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 65a1cb1e3d29342448b396dbff73bb52, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 420
+      width: 22
+      height: 46
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockRight4
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 3a6d9acf6373aa84f9d9d4e6cc37128b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 338
+      y: 420
+      width: 22
+      height: 48
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockLeft5
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 3a6d9acf6373aa84f9d9d4e6cc37128b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 2
+      y: 464
+      width: 22
+      height: 48
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockRight5
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 65a1cb1e3d29342448b396dbff73bb52, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 464
+      width: 22
+      height: 46
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockLeft6
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 65a1cb1e3d29342448b396dbff73bb52, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 508
+      width: 22
+      height: 46
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RockRight6
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 3a6d9acf6373aa84f9d9d4e6cc37128b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 338
+      y: 508
+      width: 22
+      height: 48
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/UnderBoardRock
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 6fa11d31fe4f18e438fa193716e24b37, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 541
+      width: 360
+      height: 16
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/TimberCap13
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: eb90bfc961555164987e8707aae9ca72, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 13
+      y: 244
+      width: 20
+      height: 18
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/TimberShaft13
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 8d5b18e805ec5c043b5e5eddf926be1c, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 13
+      y: 262
+      width: 20
+      height: 280
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/TimberFoot13
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 4bcc897b229d356409f087d7240dcc9e, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 13
+      y: 542
+      width: 20
+      height: 15
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/Collar13_354
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: bc20700da7efea64298f7a59201c2c22, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 12
+      y: 354
+      width: 22
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/Collar13_449
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: bc20700da7efea64298f7a59201c2c22, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 12
+      y: 449
+      width: 22
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/Collar13_515
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: bc20700da7efea64298f7a59201c2c22, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 12
+      y: 515
+      width: 22
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/TimberCap327
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: eb90bfc961555164987e8707aae9ca72, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 327
+      y: 244
+      width: 20
+      height: 18
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/TimberShaft327
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 8d5b18e805ec5c043b5e5eddf926be1c, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 327
+      y: 262
+      width: 20
+      height: 280
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/TimberFoot327
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 4bcc897b229d356409f087d7240dcc9e, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 327
+      y: 542
+      width: 20
+      height: 15
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/Collar327_354
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: bc20700da7efea64298f7a59201c2c22, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 326
+      y: 354
+      width: 22
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/Collar327_449
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: bc20700da7efea64298f7a59201c2c22, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 326
+      y: 449
+      width: 22
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/Collar327_515
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: bc20700da7efea64298f7a59201c2c22, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 326
+      y: 515
+      width: 22
+      height: 8
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/LeftFooting
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 51ed5bf6cce466c46a6b6543ee2cea34, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 548
+      width: 28
+      height: 17
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage05_Surroundings_PreviewOnly/RightFooting
+    region: Stage05_Surroundings_PreviewOnly
+    sprite: {fileID: 21300000, guid: 51ed5bf6cce466c46a6b6543ee2cea34, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 332
+      y: 548
+      width: 28
+      height: 17
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinBoardSideModules/Chain
+    region: IronveinBoardSideModules
+    sprite: {fileID: 21300000, guid: c2434c69e9777ca4e97189ff4c7ce26d, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 264
+      width: 24
+      height: 56
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinBoardSideModules/Chain
+    region: IronveinBoardSideModules
+    sprite: {fileID: 21300000, guid: c2434c69e9777ca4e97189ff4c7ce26d, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 337
+      y: 264
+      width: 24
+      height: 56
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinBoardSideModules/Lantern
+    region: IronveinBoardSideModules
+    sprite: {fileID: 21300000, guid: b8790fb305897c444aaa36ee37da623f, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 6
+      y: 313
+      width: 20
+      height: 40
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinBoardSideModules/Lantern
+    region: IronveinBoardSideModules
+    sprite: {fileID: 21300000, guid: b8790fb305897c444aaa36ee37da623f, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 338
+      y: 313
+      width: 20
+      height: 40
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage06_HUDSeating_PreviewOnly/UpperSeatingRail
+    region: Stage06_HUDSeating_PreviewOnly
+    sprite: {fileID: 21300000, guid: 58ec19aafb4896f42a685d6140fc0ccb, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 570
+      width: 232
+      height: 7
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage06_HUDSeating_PreviewOnly/LowerSeatingRail
+    region: Stage06_HUDSeating_PreviewOnly
+    sprite: {fileID: 21300000, guid: 58ec19aafb4896f42a685d6140fc0ccb, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 611
+      width: 232
+      height: 7
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage06_HUDSeating_PreviewOnly/LeftOuterPost
+    region: Stage06_HUDSeating_PreviewOnly
+    sprite: {fileID: 21300000, guid: a7e2b092822a0c74daf85a3f7c33970d, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 577
+      width: 7
+      height: 34
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage06_HUDSeating_PreviewOnly/RightOuterPost
+    region: Stage06_HUDSeating_PreviewOnly
+    sprite: {fileID: 21300000, guid: a7e2b092822a0c74daf85a3f7c33970d, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 289
+      y: 577
+      width: 7
+      height: 34
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage06_HUDSeating_PreviewOnly/LeftCorbel
+    region: Stage06_HUDSeating_PreviewOnly
+    sprite: {fileID: 21300000, guid: 5dc5341dbbf5eac4ebcd6902bd870808, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 604
+      width: 32
+      height: 32
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage06_HUDSeating_PreviewOnly/RightCorbel
+    region: Stage06_HUDSeating_PreviewOnly
+    sprite: {fileID: 21300000, guid: 7bd387c842ef392418602c0a7f40725b, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 282
+      y: 604
+      width: 32
+      height: 32
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage06_HUDSeating_PreviewOnly/LeftUpperBolt
+    region: Stage06_HUDSeating_PreviewOnly
+    sprite: {fileID: 21300000, guid: 6ba827ef20aa55f4c8c008430d37f0af, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 571
+      width: 5
+      height: 5
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage06_HUDSeating_PreviewOnly/RightUpperBolt
+    region: Stage06_HUDSeating_PreviewOnly
+    sprite: {fileID: 21300000, guid: 6ba827ef20aa55f4c8c008430d37f0af, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 291
+      y: 571
+      width: 5
+      height: 5
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage06_HUDSeating_PreviewOnly/LeftLowerBolt
+    region: Stage06_HUDSeating_PreviewOnly
+    sprite: {fileID: 21300000, guid: 6ba827ef20aa55f4c8c008430d37f0af, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 611
+      width: 5
+      height: 5
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage06_HUDSeating_PreviewOnly/RightLowerBolt
+    region: Stage06_HUDSeating_PreviewOnly
+    sprite: {fileID: 21300000, guid: 6ba827ef20aa55f4c8c008430d37f0af, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 291
+      y: 611
+      width: 5
+      height: 5
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage02_Separator_PreviewOnly/Native2x_ModularLedge/RepeatLeft
+    region: Stage02_Separator_PreviewOnly
+    sprite: {fileID: 21300000, guid: bdffd764706da2745bcaedd4aa5700e3, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 53
+      y: 246
+      width: 107
+      height: 10
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage02_Separator_PreviewOnly/Native2x_ModularLedge/RepeatRight
+    region: Stage02_Separator_PreviewOnly
+    sprite: {fileID: 21300000, guid: bdffd764706da2745bcaedd4aa5700e3, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 200
+      y: 246
+      width: 107
+      height: 10
+    type: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage02_Separator_PreviewOnly/Native2x_ModularLedge/BeamCenter
+    region: Stage02_Separator_PreviewOnly
+    sprite: {fileID: 21300000, guid: bc4e9830ca8162a44b1324a938f55169, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 245
+      width: 40
+      height: 12
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage02_Separator_PreviewOnly/Native2x_ModularLedge/EndTransition
+    region: Stage02_Separator_PreviewOnly
+    sprite: {fileID: 21300000, guid: 74d41f5458a3b3348b3be632bc33320d, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 245
+      width: 10
+      height: 12
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage02_Separator_PreviewOnly/Native2x_ModularLedge/EndTransitionRight
+    region: Stage02_Separator_PreviewOnly
+    sprite: {fileID: 21300000, guid: 657ebc930a6e29340972e17d2ee9f9c9, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 303
+      y: 245
+      width: 10
+      height: 12
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: Stage02_Separator_PreviewOnly/Native2x_ModularLedge/CrystalNode
+    region: Stage02_Separator_PreviewOnly
+    sprite: {fileID: 21300000, guid: 14d1c12a16859074fb7d46f3d4bcba54, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 171
+      y: 242
+      width: 18
+      height: 18
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_FoundationLeft
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 3dcda8a82d6945bf883fa599dd18b333, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 610
+      width: 64
+      height: 32
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_FoundationRight
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 50ab3ddf082b4a75bbe5c0f7f54fa750, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 609
+      width: 64
+      height: 32
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_RailSleepers
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 874fa2df36924ec68b5bf3446fbeed36, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 604
+      width: 64
+      height: 24
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_TimberSupportExtended
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: c83680f9708a40819277c7980d279401, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 312
+      y: 534
+      width: 48
+      height: 96
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_OreCrate
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: eae91cdd1eae457aaa0253badc4fd977, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 563
+      width: 64
+      height: 56
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_SupplyCrate
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 76f77cb2e5a54a738566ab54a3b15a7d, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 597
+      width: 32
+      height: 32
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_Pickaxe
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 409007010a8c4acd892621d17738c9d6, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 326
+      y: 584
+      width: 32
+      height: 48
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_OreFragments
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 1f302ccb9435497d81cef4cd56553a57, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 34
+      y: 610
+      width: 32
+      height: 32
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_EmbeddedOre
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 3760e06a18be4a828f10cfcac08c4429, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 312
+      y: 610
+      width: 48
+      height: 32
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}

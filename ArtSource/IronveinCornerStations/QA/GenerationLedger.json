@@ -1,0 +1,99 @@
+{
+  "totalGenerations": 90,
+  "balanceBefore": 154.2,
+  "balanceAfter": 64.2,
+  "paidCreditSpendUSD": 0,
+  "jobs": [
+    {
+      "name": "OreCrate",
+      "job": "f973453d-6621-4295-b611-61f7b86de38f",
+      "cost": 10,
+      "candidates": 25,
+      "selected": [],
+      "status": "Rejected: insufficient occupied size for left corner"
+    },
+    {
+      "name": "RockFoundation",
+      "job": "c2b3f5ff-4998-4428-9503-c2237d3ed75c",
+      "cost": 10,
+      "candidates": 25,
+      "selected": [
+        "FoundationLeft candidate 11",
+        "FoundationRight candidate 9"
+      ],
+      "status": "Selected native source"
+    },
+    {
+      "name": "RailSleepers",
+      "job": "c4fc933e-0cf2-4ee2-a117-776d73d7139a",
+      "cost": 10,
+      "candidates": 36,
+      "selected": [
+        "RailSleepers candidate 21"
+      ],
+      "status": "Selected native source"
+    },
+    {
+      "name": "OreFragments",
+      "job": "25b5cb0b-7fa8-46fa-bdda-22bf4c9ef177",
+      "cost": 10,
+      "candidates": 64,
+      "selected": [
+        "OreFragments candidate 37"
+      ],
+      "status": "Selected native source"
+    },
+    {
+      "name": "TimberSupport",
+      "job": "f92fc850-f848-4859-9902-16db09cfa5e4",
+      "cost": 10,
+      "candidates": 16,
+      "selected": [
+        "TimberSupport candidate 7"
+      ],
+      "status": "Selected native source"
+    },
+    {
+      "name": "Pickaxe",
+      "job": "7c34497b-5c4c-4c48-9108-fa271ffc2814",
+      "cost": 10,
+      "candidates": 36,
+      "selected": [
+        "Pickaxe candidate 0"
+      ],
+      "status": "Selected native source"
+    },
+    {
+      "name": "SupplyCrate",
+      "job": "d490dcf9-f995-439c-a203-ce479245af27",
+      "cost": 10,
+      "candidates": 64,
+      "selected": [
+        "SupplyCrate candidate 28"
+      ],
+      "status": "Selected native source"
+    },
+    {
+      "name": "EmbeddedOre",
+      "job": "7ad2fb83-7c61-4f7e-9d88-5713fa156049",
+      "cost": 10,
+      "candidates": 36,
+      "selected": [
+        "EmbeddedOre candidate 25"
+      ],
+      "status": "Selected native source"
+    },
+    {
+      "name": "OreCrateWide",
+      "job": "062f52ec-b4af-4598-b190-3a2a2dc2dfbd",
+      "cost": 10,
+      "candidates": 16,
+      "selected": [
+        "OreCrate candidate 0"
+      ],
+      "status": "Selected native source"
+    }
+  ],
+  "textOnly": true,
+  "uploadedReferenceImages": 0
+}

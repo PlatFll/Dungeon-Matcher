@@ -20,6 +20,16 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Ironvein corner stations — awaiting visual review (2026-10-29)
+
+The dedicated `codex/ironvein-bottom-corner-stations` branch replaces only five
+lower-corner decoration placements with nine modular ore-storage and excavation
+props. PixelLab source candidates and LibreSprite editable files are preserved.
+The remaining 69 placements, shared UI, gameplay and other zones are unchanged.
+Actual Game captures and layout checks cover five phone/safe-area profiles.
+This work is based on the pending drill foreground fix in PR #216; neither is
+merged by this revision. See [the corner review](../ArtSource/IronveinCornerStations/README.md).
+
 ## Approved Ironvein production integration (2026-10-28)
 
 The user approved the final floor/separator, selected cave/frames/props, six

@@ -1,0 +1,92 @@
+[
+  {
+    "name": "OreCrate",
+    "family": "OreCrateWide",
+    "index": 0,
+    "nativeSize": [
+      64,
+      56
+    ],
+    "selection": "Wide practical crate; first 48px batch rejected as undersized. Broad faces avoid texture noise."
+  },
+  {
+    "name": "FoundationLeft",
+    "family": "RockFoundation",
+    "index": 11,
+    "nativeSize": [
+      64,
+      32
+    ],
+    "selection": "Continuous level rock ledge; rejected detached rock islands and noisy strata."
+  },
+  {
+    "name": "FoundationRight",
+    "family": "RockFoundation",
+    "index": 9,
+    "nativeSize": [
+      64,
+      32
+    ],
+    "selection": "Connected asymmetrical low stone wedge."
+  },
+  {
+    "name": "RailSleepers",
+    "family": "RailSleepers",
+    "index": 21,
+    "nativeSize": [
+      64,
+      24
+    ],
+    "selection": "Two clear rails on joined sleepers; no floating components."
+  },
+  {
+    "name": "OreFragments",
+    "family": "OreFragments",
+    "index": 37,
+    "nativeSize": [
+      32,
+      32
+    ],
+    "selection": "Low integrated ore crevice, restrained warm accent."
+  },
+  {
+    "name": "TimberSupport",
+    "family": "TimberSupport",
+    "index": 7,
+    "nativeSize": [
+      48,
+      72
+    ],
+    "selection": "Functional diagonal brace with two clear metal brackets; rejected noisy grain and disconnected feet."
+  },
+  {
+    "name": "Pickaxe",
+    "family": "Pickaxe",
+    "index": 0,
+    "nativeSize": [
+      32,
+      48
+    ],
+    "selection": "Natural curved steel head and readable handle; rejected wooden/orange heads."
+  },
+  {
+    "name": "SupplyCrate",
+    "family": "SupplyCrate",
+    "index": 28,
+    "nativeSize": [
+      32,
+      32
+    ],
+    "selection": "Dark wood and iron corners; rejected pale all-metal and golden crates."
+  },
+  {
+    "name": "EmbeddedOre",
+    "family": "EmbeddedOre",
+    "index": 25,
+    "nativeSize": [
+      48,
+      32
+    ],
+    "selection": "A few small embedded ore tips in one connected stone mass."
+  }
+]
