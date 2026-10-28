@@ -10,7 +10,9 @@ using UnityEngine.TestTools;
 
 public sealed partial class ForestFoundationPlayTests
 {
-    [UnityTest,Explicit]public IEnumerator IronveinProductionDrillMotionPreview()
+    [UnityTest,Explicit]public IEnumerator IronveinProductionDrillMotionPreview()=>CaptureProductionDrillMotion("ArtSource/IronveinBelowTopHUD/Integration/Motion");
+    [UnityTest,Explicit]public IEnumerator IronveinDrillForegroundMotionPreview()=>CaptureProductionDrillMotion("ArtSource/IronveinBelowTopHUD/DrillForeground/Motion");
+    IEnumerator CaptureProductionDrillMotion(string root)
     {
         yield return LaunchMineKit("pickaxe_delver","rivet_gunner","stonewright");QuietKitFixture();
         typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,new object[]{new Vector2Int(720,1280)});
@@ -18,7 +20,7 @@ public sealed partial class ForestFoundationPlayTests
         for(int i=0;i<12;i++)yield return null;
         Assert.That(SceneManager.sceneCount,Is.EqualTo(1));Assert.That(SceneManager.GetActiveScene().name,Is.EqualTo("Game"));
         Assert.That(GameObject.Find("ApprovedIronveinEnvironment"),Is.Not.Null);
-        string root="ArtSource/IronveinBelowTopHUD/Integration/Motion";Directory.CreateDirectory(root);
+        Directory.CreateDirectory(root);
         var b=Run.Board;float old=Time.captureDeltaTime;var times=new List<float>();
         try
         {

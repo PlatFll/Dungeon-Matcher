@@ -23,6 +23,7 @@ public sealed partial class DungeonPresentationArt
         {
             pixelLabGeometry=key;
             if(pixelLabWorld){pixelLabWorld.gameObject.SetActive(false);Destroy(pixelLabWorld.gameObject);}
+            pixelLabBoardFrame=null;
             var go=new GameObject("ApprovedIronveinEnvironment",typeof(RectTransform),typeof(Canvas));
             pixelLabWorld=go.GetComponent<Canvas>();pixelLabWorld.renderMode=RenderMode.WorldSpace;pixelLabWorld.worldCamera=camera;
             pixelLabWorld.sortingLayerName="Default";pixelLabWorld.sortingOrder=-190;pixelLabWorld.referencePixelsPerUnit=64;pixelLabWorld.pixelPerfect=true;
@@ -31,16 +32,28 @@ public sealed partial class DungeonPresentationArt
             RefreshIronveinPortrait(art,(RectTransform)player.transform);
         }
         PositionPixelLabWorld();
-        float unit=BattleFloorAnchor.Unit(layout.GetComponentInParent<Canvas>());
+        const float unit=1; // The world environment already maps one unit to one native pixel.
         if(!pixelLabBoardFrame)
         {
-            pixelLabBoardFrame=DungeonPixelLabBattleArt.Rect("IronveinBoardFrame",layout.BoardArea,0,0,0,0);
-            art.frames.Frame(pixelLabBoardFrame,"Board",90,unit);
+            pixelLabBoardFrame=DungeonPixelLabBattleArt.Rect("IronveinBoardFrame",pixelLabContent,0,0,0,0);
+            // Match the established world board rim. Overlay UI would hide the
+            // Effects/110..140 drill hardware and projectiles as they cross it.
+            var rim=pixelLabBoardFrame.gameObject.AddComponent<Canvas>();
+            rim.overrideSorting=true;rim.sortingLayerName="Effects";rim.sortingOrder=100;
+            rim.worldCamera=camera;rim.referencePixelsPerUnit=64;
+            art.frames.Frame(pixelLabBoardFrame,"Board",90,0);
         }
         float inset=(art.frames.Sprite("Board_Corner_TL").rect.width+art.frames.Sprite("Board_Rail_Top").rect.height)*.5f;
-        float outside=Mathf.Ceil(opening.width)*unit+2*inset*unit;
-        DungeonPixelLabBattleArt.TopRect(pixelLabBoardFrame,(layout.BoardArea.rect.width-outside)/2,(layout.BoardArea.rect.height-outside)/2,outside,outside);
-        GameplayPixelGrid.Snap(pixelLabBoardFrame);
+        float outside=Mathf.Ceil(opening.width)+2*inset;
+        // Preserve the exact BoardArea-centered geometry from the overlay frame.
+        var area=GameplayPixelLayoutController.ScreenRect(layout.BoardArea);
+        var origin=area.center-Vector2.one*(outside*scale*.5f);
+        // Round in screen space before the world transform: floating-point camera
+        // conversion must not flip half-pixel positions to the neighbouring pixel.
+        origin.x=Mathf.Round(Mathf.Round(origin.x*1000)/1000);
+        origin.y=Mathf.Round(Mathf.Round(origin.y*1000)/1000);
+        DungeonPixelLabBattleArt.TopRect(pixelLabBoardFrame,(origin.x-viewport.xMin)/scale,
+            (viewport.yMax-origin.y)/scale-outside,outside,outside);
         var frame=pixelLabBoardFrame.GetComponentInChildren<ResponsiveModularFrameFitter>();frame.RefreshFrame();
         if(art.amberInset)
         foreach(RectTransform c in frame.transform.Find("NativeConnectors"))
