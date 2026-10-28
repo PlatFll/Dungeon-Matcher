@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "scope": "Broad walking surface only; approved separator locked",
+  "required_unity_validator": {
+    "passed": true,
+    "version": "6000.3.19f1",
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-9ba4097f-ff8b-460d-af93-06551a0a4aea.log",
+    "code_sha256": "de379e8a3fcc4d686221a2669b6853b2d6d3a8b703453814923c11fa5352053b"
+  },
+  "render_check": "QA/Unity.json",
+  "asset_check": "QA/Assets.json",
+  "scene_check": "QA/SceneDelta.json",
+  "pixel_scope_check": "QA/PixelScope.json",
+  "protected_files": 6086,
+  "native_assets": 3,
+  "preview_sizes": [
+    "360x640",
+    "720x1280",
+    "1080x1920"
+  ],
+  "walking_depth_before": 20,
+  "walking_depth_after": 32,
+  "separator_pixels_unchanged": true,
+  "enemy_floor_line_unchanged": true,
+  "UI_geometry_unchanged": true,
+  "pixellab_generations": 0,
+  "artistic_verdict": "Broad cave-slate slabs make the walking surface clearly readable. The darker surface remains distinct from the approved lighter block separator. Existing enemy feet stay exactly fixed; added floor extends backward.",
+  "limitations": [
+    "Static art-only Unity camera renders; not production Game or real-device testing.",
+    "Existing shared fractional board/UI geometry retained.",
+    "The locked feet remain approximately three native pixels behind the approved separator."
+  ],
+  "stop": "Review only. Do not merge."
+}
