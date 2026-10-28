@@ -439,7 +439,7 @@ zone source and at most one outgoing source during its 0.75-second crossfade.
 Opened settings and main menu keep their existing skins and menu music selection.
 
 - Modular board sprites use Full Rect import meshes. Tight corner triangulation can distort the one-pixel border under pixel snapping and make its join with a rectangular straight strip look stepped, despite matching sprite bounds and transforms.
-- `BoardVisuals` creates the board background, cell tiles, rectangular gem mask, and modular frame. It assigns frame sorting once: `Effects / 100`, above board content on `BoardBackground` and `Gems`, below `WorldUI` and screen-space overlay canvases. Frame sprites are unmasked. Board motion, obstacles, and VFX must stay below this border; neither animation nor gameplay code owns frame sorting.
+- `BoardVisuals` creates the board background, cell tiles, rectangular gem mask, and modular frame. It assigns frame sorting once: `Effects / 100`, above board content on `BoardBackground` and `Gems`, below `WorldUI` and screen-space overlay canvases. Frame sprites are unmasked. Board motion and obstacles stay below this border. Mine drill hardware and projectiles deliberately use higher Effects orders (110-140) so launch, contact and exit remain visible across the rim; neither animation nor gameplay code owns frame sorting.
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 ### Gameplay pixel layout ownership
 
@@ -453,6 +453,11 @@ Opened settings and main menu keep their existing skins and menu music selection
   the safe viewport. Board and portrait frames follow the unchanged shared
   rectangles, and the overfilled recess is clipped with RectMask2D. Mixed source
   import PPU is honored by `ResponsiveModularFrameFitter` when repeating rails.
+  The Ironvein board rim is a separate world-canvas batch at `Effects / 100`,
+  below the live dispensers and spinning drill bits. It uses the same native
+  environment transform and retains its original BoardArea-centered dimensions.
+  Only controls remain on the overlay canvas; putting this rim there would
+  obscure all world projectiles regardless of their sprite sorting order.
   Existing Wave/Guide/Settings/ability/supply owners consume the approved shared
   control art through `DungeonPixelLabBattleArt.Controls`; this does not select
   Dungeon cell artwork or scenery. The old mine enclosure/background instances

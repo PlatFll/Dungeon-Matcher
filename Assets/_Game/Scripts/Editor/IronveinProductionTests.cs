@@ -109,7 +109,11 @@ public sealed class IronveinProductionTests
             var r=GameplayPixelLayoutController.ScreenRect(im.rectTransform);Assert.That(Mathf.Abs(r.width/im.sprite.rect.width),Is.EqualTo(BattleFloorAnchor.PhysicalPixelScale).Within(.01f),im.name+" X");Assert.That(Mathf.Abs(r.height/im.sprite.rect.height),Is.EqualTo(BattleFloorAnchor.PhysicalPixelScale).Within(.01f),im.name+" Y");
         }
         if(court){Assert.That(Object.FindFirstObjectByType<DrownedCourtAmbientMotion>().tracks.Count,Is.EqualTo(15));return;}
-        Assert.That(layout.BoardArea.Find("IronveinBoardFrame"),Is.Not.Null);
+        var rim=iron.transform.Find("IronveinBoardFrame").GetComponent<Canvas>();
+        Assert.That(rim.renderMode,Is.EqualTo(RenderMode.WorldSpace));
+        Assert.That(rim.overrideSorting,Is.True);
+        Assert.That(rim.sortingLayerName,Is.EqualTo("Effects"));Assert.That(rim.sortingOrder,Is.EqualTo(100));
+        Assert.That(layout.BoardArea.Find("IronveinBoardFrame"),Is.Null,"No overlay rim may obscure mine projectiles");
         Assert.That(layout.TopHud.Find("GeneratedTopBattleLayout/PlayerSection/IronveinPortraitBackdrop/PortraitMask").GetComponent<RectMask2D>(),Is.Not.Null);
         Assert.That(GameObject.Find("GlobalGear"),Is.Null,"No old settings plate behind the approved gear");
         foreach(var bar in layout.GetComponentsInChildren<ModularHealthBarUI>())
