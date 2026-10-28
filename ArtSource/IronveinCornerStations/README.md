@@ -1,4 +1,4 @@
-# Ironvein corner stations — review candidate
+# Ironvein corner stations — approved for production
 
 Only the lower-left and lower-right environment dressing is replaced. The actual Game scene continues to use `IronveinBattleAssembly` and `DungeonPresentationArt`. No production C# changed.
 
@@ -9,8 +9,8 @@ Left: a large ore-storage crate rests on a short track over a connected rock fou
 - Exactly five previous lower-corner placements were replaced; 69 other modular placements are byte-identical.
 - 2,905 other protected production files match the starting SHA-256 snapshot. Existing art, characters, gems, scenes, other zones and shared HUD assets are unchanged.
 - No generation changed the top mine vista, portrait, board, drills, buttons, resonance panel or text. No gameplay, combat, save or layout runtime code changed.
-- The pending PR #216 drill foreground fix is retained as this branch's base. This revision does not merge it or change its behavior.
-- Prior approved sprite files and every raw candidate remain intact. These new corners are awaiting user visual approval.
+- The PR #216 drill foreground fix is retained. The user authorized promotion of the combined reviewed result to main on 2026-10-29.
+- Prior approved sprite files and every raw candidate remain intact. The user approved these corners for the main playable zone on 2026-10-29.
 
 ## Native art validation
 
@@ -36,4 +36,4 @@ The required `Tools/Validate-Unity.ps1` result is recorded in `QA/Compilation.tx
 - `Scripts/`: native cleanup, timber extension, scoped import and gallery reproduction.
 - `QA/`: reference hashes, palette/alpha checks, preservation proof and Unity test reports.
 
-Work remains on `codex/ironvein-bottom-corner-stations`. **Do not merge until the user approves the corner visuals.**
+Approved for production through PR #217, following the PR #216 drill visibility fix. The source branch is `codex/ironvein-bottom-corner-stations`.
