@@ -20,30 +20,32 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Ironvein six row-drill revision (2026-10-28)
+## Approved Ironvein production integration (2026-10-28)
 
-On `codex/ironvein-below-tophud-pixellab` / draft PR #215, the user explicitly
-approved making all six side launchers functional row drills. The revision
-retains four-charge intake rules, stone penetration, unrewarded clears and the
-canonical board lock/settlement. The first cell now shatters instantly on
-launch; later occupied cells remain intact during a spinning contact hold,
-then shatter before the bit enters. Sockets remain empty until the far-edge
-burst finishes, then reload. Legacy mine saves migrate
-without losing charge. The broader Ironvein environment remains an unmerged
-art-review assembly; the drill mechanic is connected to the production Game.
-Validation and preview evidence: `ArtSource/IronveinBelowTopHUD/SixDrills/`.
-Final visual approval and physical-device testing remain outstanding.
+The user approved the final floor/separator, selected cave/frames/props, six
+functional row drills and contact timing, then authorized production use and
+merge of PR #214/#215. The build-enabled Game scene now selects the approved
+Revision04 modular artwork through `IronveinBattleAssembly` and the existing
+`DungeonPresentationArt` owner. The art-only scene is not loaded in gameplay.
+Seventy-four environment placements, native responsive frames, a masked cave
+portrait recess and the approved shared controls replace the legacy mine view.
+Source artwork and prior review scenes remain intact; no generation was spent.
 
+The shared board/portrait rectangles, enemy floor lines and HP positions are
+unchanged across five zones and five phone/safe-area profiles. The existing
+board fit, gems, characters, combat, saves and other-zone presentation remain
+owned by their established systems. Ironvein uses the approved native player
+rendering size and shared control artwork from its review assembly.
 
-## Ironvein modular environment review (2026-10-26)
-
-The ten-stage text-driven PixelLab/LibreSprite environment rebuild is assembled
-in a separate Unity art-review scene. Forty native modules cover cavern depth,
-portal, timber/iron frames, side supports, lamps, ore and grounded lower props.
-`ArtSource/IronveinEnvironmentV2/README.md` records sources, spending and checks.
-All new art is **pending user visual approval**. Production Ironvein, gameplay,
-shared UI/layout and other zones remain unchanged; no integration or merge is
-authorized by this review milestone.
+Six row launchers retain four-charge intake, stone penetration, unrewarded
+clears and the canonical board lock/settlement. The first cell shatters on
+launch; later occupied cells hold the spinning bit at contact, shatter, then
+allow entry. The empty socket reloads only after the far-edge burst. Legacy
+mine saves migrate without losing charge. Automated production/layout, travel,
+drill timing, stone and missing-view checks pass. Drowned Court's PR #212 art
+is also confirmed in the actual Game scene. Physical-device execution is not
+claimed. Exact compilation/build results and captures are in
+[the integration report](../ArtSource/IronveinBelowTopHUD/Integration/README.md).
 
 ## Approved Drowned Court production integration (2026-10-26)
 

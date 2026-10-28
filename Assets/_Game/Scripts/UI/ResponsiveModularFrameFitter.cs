@@ -67,7 +67,9 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
         foreach (var edge in new[] { topEdge, bottomEdge, leftEdge, rightEdge })
         {
             var image = edge.GetComponent<Image>();
-            image.type = Image.Type.Tiled; image.pixelsPerUnitMultiplier = 1 / unit;
+            image.type = Image.Type.Tiled;
+            // Respect the source PPU: native kits include both 64- and 100-PPU imports.
+            image.pixelsPerUnitMultiplier = image.canvas.referencePixelsPerUnit / image.sprite.pixelsPerUnit / unit;
             edge.SetAsFirstSibling();
         }
         var connectors = frameRoot.Find("NativeConnectors") as RectTransform;

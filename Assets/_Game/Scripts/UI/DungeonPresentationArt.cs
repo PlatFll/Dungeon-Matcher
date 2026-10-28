@@ -20,7 +20,7 @@ public sealed partial class DungeonPresentationArt : MonoBehaviour
     private void Start()
     {
         worldCamera = Camera.main;
-        if (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current)
+        if (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current || IronveinBattleAssembly.Current)
         {
             if(DungeonPixelLabBattleArt.Current && worldCamera.TryGetComponent<UnityEngine.Rendering.Universal.PixelPerfectCamera>(out var pixelCamera))
             { pixelCamera.refResolutionX=360; pixelCamera.refResolutionY=640; }
@@ -39,6 +39,7 @@ public sealed partial class DungeonPresentationArt : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (IronveinBattleAssembly.Current) { UpdateIronvein(); return; }
         if (DrownedCourtBattleAssembly.Current) { UpdateCourt(); return; }
         if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt art) { if(art.forestAssembly) UpdateForest(); else UpdatePixelLabDungeon(); return; }
         UpdateReferenceSides();

@@ -57,7 +57,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private bool pixelLabSkin;
     private void LateUpdate()
     {
-        if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt) { ApplyPixelLabSkin(nativeArt); return; }
+        if (DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt) { ApplyPixelLabSkin(nativeArt); return; }
         if(sharedSkinApplied || BattlePresentationSkin.Shared("Ability")!=null)
         {
             if(!sharedSkinApplied)
@@ -301,7 +301,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
             ability != null &&
             ability.Icon != null)
         {
-            abilityIcon.sprite = BattlePresentationSkin.Shared("Ability")!=null ? SharedIcon(ability.Icon) :
+            abilityIcon.sprite = BattlePresentationSkin.Shared("Ability")!=null || IronveinBattleAssembly.Current ? SharedIcon(ability.Icon) :
                 GameplayThemeSkin.Current?.AbilityIcon(ability.Icon) ?? ability.Icon;
             if(sharedSkinApplied && abilityIcon.TryGetComponent<NativePixelUiSurface>(out var native))native.enabled=false;
             GameplayPixelGrid.FitImage(abilityIcon, abilityIcon.rectTransform.rect.size);

@@ -228,14 +228,20 @@ cleanup inside the accepted action prevents a false stable-save window.
 
 ## Phase 09 — native cave and presentation
 
-Three additive battle compositions use a receding rail tunnel, separate timber,
-ore, rail/cart, lamps and machinery modules. The existing unit Grid, Tilemap
-roles, viewport mask and battle-floor anchor remain authoritative. A subdued
-charcoal surround and a separate steel inset theme the gameplay screen. Native
-80-pixel L corners, 64x16 edge strips, 128x32 plaque, 144x32 energy frame and
-146-pixel player slices match the existing layout. The original player, skills,
-gems, neutral HP family, ranks and opened settings/menu assets remain bound.
-The theme reserves .8 world units outside its frame for the six row-drill housings.
+The approved Revision04 modular environment now renders in the build-enabled
+Game scene through IronveinBattleAssembly and the existing DungeonPresentationArt
+owner. The separate cave depth, timber, walking slabs, separator, responsive
+portrait/board frame, side supports/lamps and large lower amber formations keep
+their native source pixels. Repeated floor/rock tiles cover the physical display;
+the portrait's overfilled cave backing is masked. The original Phase09 scenes
+remain source history and are bypassed by the production binding.
+
+Board/portrait geometry and the shared enemy floor remain unchanged. The existing
+live control owners use the approved shared frame family; Rattlebones uses the
+approved native player size. The original gems, board cells, HP/ranks and opened
+settings/menu functions remain bound. The theme reserves .8 world units outside
+its frame for the six row-drill housings. Actual Game captures, five-zone layout
+checks and build results: `ArtSource/IronveinBelowTopHUD/Integration/`.
 
 Small drill presentation receives the board's actual stop cell; it cannot choose
 or change collision. Detachable spinning row bits, empty sockets and reload

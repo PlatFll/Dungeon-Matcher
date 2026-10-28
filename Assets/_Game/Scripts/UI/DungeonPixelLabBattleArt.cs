@@ -22,6 +22,8 @@ public sealed partial class DungeonPixelLabBattleArt : ScriptableObject
     public static DungeonPixelLabBattleArt Current => BattlePresentationSkin.Folder == "Dungeon"
         ? Resources.Load<DungeonPixelLabBattleArt>("UI/BattlePresentation/DungeonPixelLab")
         : BattlePresentationSkin.Folder == "Forest" ? Resources.Load<DungeonPixelLabBattleArt>("UI/BattlePresentation/ForestPixelLab") : null;
+    // Ironvein reuses the approved shared controls without selecting Dungeon scenery or cell art.
+    public static DungeonPixelLabBattleArt Controls => Current ?? IronveinBattleAssembly.Current?.sharedControls;
     public Sprite Sprite(string name)
     {
         if (lookup == null)

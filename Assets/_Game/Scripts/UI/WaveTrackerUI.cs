@@ -41,7 +41,7 @@ public sealed class WaveTrackerUI :
 
     private void Start()
     {
-        if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt)
+        if (DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt)
         {
             var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
             nativeArt.SkinControl((RectTransform)transform,"Wave",top);

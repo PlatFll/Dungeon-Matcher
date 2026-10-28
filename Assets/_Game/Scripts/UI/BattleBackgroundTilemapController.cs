@@ -37,7 +37,7 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     public void ApplyGameplayTheme(GameplayThemeDefinition theme, int variant = 0)
     {
-        if (runtimeZonePresentation && (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current)) { ClearObsoleteEnvironment(); return; }
+        if (runtimeZonePresentation && (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current || IronveinBattleAssembly.Current)) { ClearObsoleteEnvironment(); return; }
         if (theme == null || theme.battleEnvironment == null) return;
         var selected = BattlePresentationSkin.Environment ?? (theme.battleEnvironmentVariants != null && variant >= 0 &&
             variant < theme.battleEnvironmentVariants.Length && theme.battleEnvironmentVariants[variant] != null
@@ -71,7 +71,7 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     private void Start()
     {
-        if(runtimeZonePresentation && (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current)) { ClearObsoleteEnvironment(); return; }
+        if(runtimeZonePresentation && (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current || IronveinBattleAssembly.Current)) { ClearObsoleteEnvironment(); return; }
         var presentation=BattlePresentationSkin.Environment;
         if(Application.isPlaying && presentation!=null) SelectEnvironment(presentation);
         // Register after PPC's OnEnable so its final projection is authoritative.
@@ -135,7 +135,7 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     private void EnsureEnvironmentInstance()
     {
-        if(runtimeZonePresentation && (!Application.isPlaying || DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current || environmentPrefab==null))return;
+        if(runtimeZonePresentation && (!Application.isPlaying || DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current || IronveinBattleAssembly.Current || environmentPrefab==null))return;
 #if UNITY_EDITOR
         // OnEnable can run during domain reload before new prefabs are imported.
         // Instantiate only after the asset database has finished refreshing.

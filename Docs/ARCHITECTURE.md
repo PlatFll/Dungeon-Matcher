@@ -443,6 +443,25 @@ Opened settings and main menu keep their existing skins and menu music selection
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 ### Gameplay pixel layout ownership
 
+- **Approved Ironvein runtime binding (2026-10-28):** `IronveinBattleAssembly`
+  selects `IronveinAssembly` only in the mine. Its source is the approved
+  Revision04 assembly: 74 modular environment placements plus native frame
+  aliases, the cave recess and shared control binding. `DungeonPresentationArt`
+  maps those modules to the existing live board and common enemy floor. The
+  walking surface surrounds that floor; the separator stays below it. Native
+  pieces repeat or move without stretching; background coverage extends beyond
+  the safe viewport. Board and portrait frames follow the unchanged shared
+  rectangles, and the overfilled recess is clipped with RectMask2D. Mixed source
+  import PPU is honored by `ResponsiveModularFrameFitter` when repeating rails.
+  Existing Wave/Guide/Settings/ability/supply owners consume the approved shared
+  control art through `DungeonPixelLabBattleArt.Controls`; this does not select
+  Dungeon cell artwork or scenery. The old mine enclosure/background instances
+  are bypassed. MineEnvironmentView still owns the six live dispensers, and
+  BoardController retains all firing, contact, mutation and settlement authority.
+  Review scenes and static actors/gems/UI are never instantiated in production.
+  Verification: `ArtSource/IronveinBelowTopHUD/Integration/`.
+
+
 - **Approved hybrid Dungeon integration (2026-10-22, pending PR #205):** the same
   `DungeonPixelLabBattleArt` resource has an optional hybrid module/placement binding.
   It overrides only approved matching art names, keeping the earlier 102 modules

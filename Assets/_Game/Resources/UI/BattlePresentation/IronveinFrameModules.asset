@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b939c0dcc8f40e9ae325d3e4c1db9d0, type: 3}
+  m_Name: IronveinFrameModules
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonPixelLabBattleArt
+  aliases:
+  - key: Portrait_Corner_TL
+    sprite: {fileID: 21300000, guid: 4e06655b36a08a343ba0c660bbb0c78e, type: 3}
+  - key: Portrait_Corner_TR
+    sprite: {fileID: 21300000, guid: 45f37570c17cd3c498162153b0e0bb10, type: 3}
+  - key: Portrait_Corner_BL
+    sprite: {fileID: 21300000, guid: 4eed806bc505f6642848abf0fc01baad, type: 3}
+  - key: Portrait_Corner_BR
+    sprite: {fileID: 21300000, guid: 215bc6f95d3e62041afd12d62100bfb2, type: 3}
+  - key: Portrait_Rail_Top
+    sprite: {fileID: 21300000, guid: 99b3d03ec06f473489d86f95eb825be1, type: 3}
+  - key: Portrait_Rail_Bottom
+    sprite: {fileID: 21300000, guid: 71949c9460127714ea5baea8d8fcac47, type: 3}
+  - key: Portrait_Rail_Left
+    sprite: {fileID: 21300000, guid: 5cc68c20ec2f3a04f84c994d5696ea5e, type: 3}
+  - key: Portrait_Rail_Right
+    sprite: {fileID: 21300000, guid: 7ded16ac450a962478ab04b2c1025ff2, type: 3}
+  - key: Portrait_Clamp
+    sprite: {fileID: 21300000, guid: 3678cef53d223d447a58e9c8a0154c69, type: 3}
+  - key: Board_Corner_TL
+    sprite: {fileID: 21300000, guid: eb7a865092837014b871b5103c54d1c8, type: 3}
+  - key: Board_Corner_TR
+    sprite: {fileID: 21300000, guid: 8bbdc44bfd1f4be4580a04f1df6d1ff3, type: 3}
+  - key: Board_Corner_BL
+    sprite: {fileID: 21300000, guid: 50b67bdf7a4b04c4981758badd32c9fb, type: 3}
+  - key: Board_Corner_BR
+    sprite: {fileID: 21300000, guid: e51bd5bcf6e9a3a4993ef7960a8af6af, type: 3}
+  - key: Board_Rail_Top
+    sprite: {fileID: 21300000, guid: 3fb07b1be77bde3469f4ea6c58700995, type: 3}
+  - key: Board_Rail_Bottom
+    sprite: {fileID: 21300000, guid: 09185b56b35722e489b485fa2d198b2c, type: 3}
+  - key: Board_Rail_Left
+    sprite: {fileID: 21300000, guid: d2e846697faa7bb4faed95b3e32358e0, type: 3}
+  - key: Board_Rail_Right
+    sprite: {fileID: 21300000, guid: 64e04a8eec0e9b5448aaba914b70e967, type: 3}
+  - key: Board_Clamp
+    sprite: {fileID: 21300000, guid: 6f021c6de921b69498220fd68404419d, type: 3}
+  forestAssembly: {fileID: 0}
+  modules: []
+  placementManifest: {fileID: 0}
+  boardCell64: {fileID: 0}
+  hybridModules: []
+  sideArchitectureModules: []
+  hybridPlacementManifest: {fileID: 0}
