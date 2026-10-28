@@ -787,66 +787,6 @@ MonoBehaviour:
     type: 0
     color: {r: 1, g: 1, b: 1, a: 1}
     reflection: {x: 1, y: 1}
-  - name: IronveinLowerModules/LowerLeft
-    region: IronveinLowerModules
-    sprite: {fileID: 21300000, guid: 08c72401920718e43aa71b447a9feee0, type: 3}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 564
-      width: 56
-      height: 76
-    type: 0
-    color: {r: 1, g: 1, b: 1, a: 1}
-    reflection: {x: 1, y: 1}
-  - name: IronveinLowerModules/LowerRight
-    region: IronveinLowerModules
-    sprite: {fileID: 21300000, guid: 98c731b964d15c74c98675f224be24c7, type: 3}
-    rect:
-      serializedVersion: 2
-      x: 304
-      y: 562
-      width: 56
-      height: 78
-    type: 0
-    color: {r: 1, g: 1, b: 1, a: 1}
-    reflection: {x: 1, y: 1}
-  - name: IronveinLowerModules/Crate
-    region: IronveinLowerModules
-    sprite: {fileID: 21300000, guid: 1dd297dffb6b97440b7a75cb64f896aa, type: 3}
-    rect:
-      serializedVersion: 2
-      x: 9
-      y: 602
-      width: 36
-      height: 29
-    type: 0
-    color: {r: 1, g: 1, b: 1, a: 1}
-    reflection: {x: 1, y: 1}
-  - name: Revision01_LowerCrystals/LeftGroundedOutcrop
-    region: Revision01_LowerCrystals
-    sprite: {fileID: 21300000, guid: 210dc2914919520408981343e26f0b7c, type: 3}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 575
-      width: 56
-      height: 64
-    type: 0
-    color: {r: 1, g: 1, b: 1, a: 1}
-    reflection: {x: 1, y: 1}
-  - name: Revision01_LowerCrystals/RightGroundedOutcrop
-    region: Revision01_LowerCrystals
-    sprite: {fileID: 21300000, guid: 406b2ed2b2262e14e9c4006865f4e0e1, type: 3}
-    rect:
-      serializedVersion: 2
-      x: 304
-      y: 575
-      width: 56
-      height: 64
-    type: 0
-    color: {r: 1, g: 1, b: 1, a: 1}
-    reflection: {x: 1, y: 1}
   - name: Stage02_Separator_PreviewOnly/Native2x_ModularLedge/RepeatLeft
     region: Stage02_Separator_PreviewOnly
     sprite: {fileID: 21300000, guid: bdffd764706da2745bcaedd4aa5700e3, type: 3}
@@ -916,6 +856,114 @@ MonoBehaviour:
       y: 242
       width: 18
       height: 18
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_FoundationLeft
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 3dcda8a82d6945bf883fa599dd18b333, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 610
+      width: 64
+      height: 32
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_FoundationRight
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 50ab3ddf082b4a75bbe5c0f7f54fa750, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 609
+      width: 64
+      height: 32
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_RailSleepers
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 874fa2df36924ec68b5bf3446fbeed36, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 604
+      width: 64
+      height: 24
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_TimberSupportExtended
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: c83680f9708a40819277c7980d279401, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 312
+      y: 534
+      width: 48
+      height: 96
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_OreCrate
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: eae91cdd1eae457aaa0253badc4fd977, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 563
+      width: 64
+      height: 56
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_SupplyCrate
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 76f77cb2e5a54a738566ab54a3b15a7d, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 597
+      width: 32
+      height: 32
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_Pickaxe
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 409007010a8c4acd892621d17738c9d6, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 326
+      y: 584
+      width: 32
+      height: 48
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_OreFragments
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 1f302ccb9435497d81cef4cd56553a57, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 34
+      y: 610
+      width: 32
+      height: 32
+    type: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    reflection: {x: 1, y: 1}
+  - name: IronveinLowerModules/CornerStation_EmbeddedOre
+    region: IronveinLowerModules
+    sprite: {fileID: 21300000, guid: 3760e06a18be4a828f10cfcac08c4429, type: 3}
+    rect:
+      serializedVersion: 2
+      x: 312
+      y: 610
+      width: 48
+      height: 32
     type: 0
     color: {r: 1, g: 1, b: 1, a: 1}
     reflection: {x: 1, y: 1}
