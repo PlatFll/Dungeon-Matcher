@@ -68,11 +68,87 @@ public sealed partial class ForestFoundationPlayTests
         var bit=b.transform.Find("MineDrill_2/LoadedBit").GetComponent<SpriteRenderer>();Assert.That(bit.enabled,Is.False);
         var shot=b.transform.Find("RowDrillProjectile_2");Assert.That(shot,Is.Not.Null);
         Time.timeScale=0;yield return null;Vector3 point=shot.localPosition;var sprite=shot.GetComponent<SpriteRenderer>().sprite;int count=visited.Count;
-        yield return new WaitForSecondsRealtime(.2f);
+        float pauseEnd=Time.realtimeSinceStartup+.2f;
+        yield return Until(()=>Time.realtimeSinceStartup>=pauseEnd,"paused observation");
         Assert.That(visited.Count,Is.EqualTo(count));Assert.That(shot.localPosition,Is.EqualTo(point));Assert.That(shot.GetComponent<SpriteRenderer>().sprite,Is.SameAs(sprite));
         Time.timeScale=1;yield return Stable();yield return null;
         CollectionAssert.AreEqual(Enumerable.Range(0,b.Width).Reverse(),visited);Assert.That(exploded&&reloaded,Is.True);Assert.That(bit.enabled,Is.True);
         Assert.That(b.transform.Find("RowDrillProjectile_2"),Is.Null);
+    }
+    [UnityTest] public IEnumerator IronveinLeftDrillBoresBeforeEntryButLaunchShattersImmediately()
+    { yield return CheckMineContactTiming(1); }
+    [UnityTest] public IEnumerator IronveinRightDrillBoresBeforeEntryButLaunchShattersImmediately()
+    { yield return CheckMineContactTiming(2); }
+    IEnumerator CheckMineContactTiming(int id)
+    {
+        float capture=Time.captureDeltaTime;
+        try { Time.captureDeltaTime=id==1?1f/60f:1f/30f; yield return CheckMineContactAtFixedRate(id); }
+        finally { Time.captureDeltaTime=capture; }
+    }
+    IEnumerator CheckMineContactAtFixedRate(int id)
+    {
+        yield return LaunchMine();var b=Run.Board;var d=b.Mine.drills.Single(x=>x.id==id);
+        int first=d.fromRight?b.Width-1:0,next=first+(d.fromRight?-1:1),row=d.lane;
+        var originals=Enumerable.Range(0,b.Width).Select(x=>b.GetGem(x,row)).ToArray();
+        // Launch must also remove a special immediately without activating it.
+        originals[first].SetSpecialType(GemSpecialType.ColorCrystal);
+        var contacts=new Dictionary<int,float>();var entries=new List<int>();bool launched=false;float launchTime=0;
+        b.MineDrillFired+=(f,_,__)=>{if(f==id){launched=true;launchTime=Time.time;}};
+        b.MineDrillBoring+=(f,cell,seconds)=>{
+            if(f!=id)return;Assert.That(cell.x,Is.Not.EqualTo(first),"first tile never winds up");
+            Assert.That(b.GetGem(cell.x,row),Is.SameAs(originals[cell.x]),"target intact during drilling");
+            contacts.Add(cell.x,Time.time);Assert.That(b.IsBusy,Is.True);
+        };
+        b.MineDrillTravelling+=(f,cell,seconds)=>{
+            if(f!=id||cell.x<0||cell.x>=b.Width)return;entries.Add(cell.x);
+            if(cell.x==first)return;
+            Assert.That(contacts.ContainsKey(cell.x),Is.True);
+            Assert.That(Time.time-contacts[cell.x],Is.GreaterThanOrEqualTo(BoardController.MineDrillApproachSeconds+BoardController.MineDrillBoreSeconds-.015f));
+            Assert.That(b.GetGem(cell.x,row),Is.Null,"entry waits for destruction");
+            Assert.That(originals[cell.x]==null||!originals[cell.x].GetComponent<SpriteRenderer>().enabled,Is.True,"entry waits for visible shatter, not just logical removal");
+        };
+        int reports=0;b.BoardClearResolved+=_=>reports++;
+        b.TryQueueMineDrillPower(id,4);yield return Until(()=>launched,"launch");yield return null;
+        Assert.That(Time.time-launchTime,Is.LessThan(BoardController.MineDrillTravelSeconds+.02f));
+        Assert.That(b.GetGem(first,row),Is.Null,"first cell removed during launch travel");
+        Assert.That(originals[first]==null||!originals[first].GetComponent<SpriteRenderer>().enabled,Is.True,"first cell skips preparation flash");
+        yield return Until(()=>contacts.ContainsKey(next),"contact with next gem");
+        var shot=b.transform.Find("RowDrillProjectile_"+id);Assert.That(shot,Is.Not.Null);
+        var contact=b.GetCellLocalPosition(next,row)+(d.fromRight?Vector3.right:Vector3.left)*b.CellSize*.7f;
+        // Observe arrival rather than racing this test coroutine against the
+        // renderer on the frame where the short approach completes.
+        yield return Until(()=>shot.localPosition==contact,"tip reaches contact");
+        Assert.That(Time.time-contacts[next],Is.LessThan(BoardController.MineDrillApproachSeconds+.05f),"approach must not consume the drilling hold");
+        Vector3 point=shot.localPosition;var sprite=shot.GetComponent<SpriteRenderer>().sprite;float sampled=Time.time;
+        Assert.That(Mathf.Abs(point.x-b.GetCellLocalPosition(next,row).x),Is.GreaterThan(b.CellSize*.6f),"bit body stays outside occupied cell");
+        Assert.That(b.GetGem(next,row),Is.SameAs(originals[next]));
+        yield return Until(()=>Time.time-sampled>=.055f,"sample multiple spinning frames");
+        Assert.That(shot.localPosition,Is.EqualTo(point),"spin holds at contact without advancing");
+        Assert.That(shot.GetComponent<SpriteRenderer>().sprite,Is.Not.SameAs(sprite),"bit keeps spinning during the hold");
+        Assert.That(b.GetGem(next,row),Is.SameAs(originals[next]),"target still intact before shatter");
+        yield return Stable();
+        var order=Enumerable.Range(0,b.Width);CollectionAssert.AreEqual(d.fromRight?order.Reverse():order,entries);
+        Assert.That(contacts.Count,Is.EqualTo(b.Width-1));Assert.That(reports,Is.Zero);
+    }
+    [UnityTest] public IEnumerator IronveinDrillBreaksStoneAtContactBeforeMovingIntoItsCell()
+    {
+        yield return LaunchMine();var b=Run.Board;int row=b.Mine.drills[0].lane;
+        // Only these two non-special cells are eligible for controlled stones.
+        for(int y=0;y<b.Height;y++)for(int x=0;x<b.Width;x++)
+            b.GetGem(x,y).SetSpecialType(y==row&&(x==0||x==1)?GemSpecialType.None:GemSpecialType.ColorCrystal);
+        Assert.That(b.TryQueuePlaceMineStones(Run.Waves.ActiveEnemies[0],2,6,MineStoneStage.Obsidian),Is.True);yield return Stable();
+        var first=new Vector2Int(0,row);var next=new Vector2Int(1,row);
+        var barriers=(IDictionary)Get(b,"barricadeCells");
+        var firstState=barriers[first];var nextState=barriers[next];bool contact=false,entered=false,launched=false;
+        b.MineDrillFired+=(id,_,__)=>{if(id==1)launched=true;};
+        b.MineDrillBoring+=(id,cell,seconds)=>{if(id!=1||cell!=next)return;contact=true;
+            Assert.That(b.MineStoneTargets().Any(t=>t.Cell==cell),Is.True);Assert.That(Get(nextState,"ViewObject"),Is.Not.Null);};
+        b.MineDrillTravelling+=(id,cell,seconds)=>{if(id!=1||cell!=next)return;entered=true;
+            Assert.That(contact,Is.True);Assert.That(b.MineStoneTargets().Any(t=>t.Cell==cell),Is.False);
+            Assert.That(Get(nextState,"ViewObject"),Is.Null,"stone view is removed before entry");};
+        b.TryQueueMineDrillPower(1,4);yield return Until(()=>launched,"stone launch");yield return null;
+        Assert.That(b.MineStoneTargets().Any(t=>t.Cell==first),Is.False);Assert.That(Get(firstState,"ViewObject"),Is.Null,"first stone shatters on launch");
+        yield return Stable();Assert.That(contact&&entered,Is.True);
     }
     [UnityTest] public IEnumerator IronveinSixDrillGameplayDoesNotDependOnTheView()
     {
@@ -119,15 +195,16 @@ public sealed partial class ForestFoundationPlayTests
         // Real BoardController, gems, sockets and VFX against the approved modular
         // art-review assembly. Actor/HUD snapshot stays unchanged in this proof.
         for(int i=0;i<3;i++)yield return null;
-        Directory.CreateDirectory(DrillReview+"/Preview/Motion");CaptureDrillCamera(cam,DrillReview+"/Preview/Aligned.png",720,1280);
+        string motionRoot=DrillReview+"/ContactTiming";
+        Directory.CreateDirectory(motionRoot+"/Motion");CaptureDrillCamera(cam,motionRoot+"/Aligned.png",720,1280);
         b.TryQueueMineDrillPower(1,4);b.TryQueueMineDrillPower(2,4);
         int frame=0;float next=0;
         while(b.IsBusy||frame==0){
-            if(Time.time>=next){CaptureDrillCamera(cam,DrillReview+"/Preview/Motion/"+(frame++).ToString("D4")+".png",720,1280);next=Time.time+.05f;}
+            if(Time.time>=next){CaptureDrillCamera(cam,motionRoot+"/Motion/"+(frame++).ToString("D4")+".png",720,1280);next=Time.time+.05f;}
             Assert.That(frame,Is.LessThan(600),"bounded real resolver capture");yield return null;
         }
-        for(int i=0;i<10;i++){CaptureDrillCamera(cam,DrillReview+"/Preview/Motion/"+(frame++).ToString("D4")+".png",720,1280);yield return new WaitForSeconds(.05f);}
-        File.WriteAllText(DrillReview+"/Preview/MotionEvidence.json",JsonUtility.ToJson(new DrillMotionEvidence{frames=frame,scene=scene.path},true));
+        for(int i=0;i<10;i++){CaptureDrillCamera(cam,motionRoot+"/Motion/"+(frame++).ToString("D4")+".png",720,1280);yield return new WaitForSeconds(.05f);}
+        File.WriteAllText(motionRoot+"/MotionEvidence.json",JsonUtility.ToJson(new DrillMotionEvidence{frames=frame,scene=scene.path},true));
     }
     static void CaptureDrillCamera(Camera cam,string path,int w,int h){
         var rt=RenderTexture.GetTemporary(w,h,24);rt.filterMode=FilterMode.Point;rt.antiAliasing=1;var prev=RenderTexture.active;

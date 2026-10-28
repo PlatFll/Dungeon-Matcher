@@ -1,5 +1,7 @@
 # Ironvein — six working row drills
 
+**Current timing revision:** [ContactTiming/README.md](ContactTiming/README.md) and [updated preview](ContactTiming/Review.html). The capture and validation below document the retained original six-drill revision.
+
 Review candidate on `codex/ironvein-below-tophud-pixellab`, draft PR #215. Not merged.
 
 ## Result

@@ -51,8 +51,12 @@ machines. Charge saturates at one launch; excess does not create hidden shots.
 The move coordinator drains charged machines after actor opportunities. Off-turn
 feeds drain under the mutation queue before its ownership ends. Machines reserve
 charge before firing callbacks, launch in stable-ID order, and clear each row
-in travel order (right-side machines move right-to-left). Board-owned travel
-beats last 75 ms; canonical gem shatter provides the brief impact hold. The
+in travel order (right-side machines move right-to-left). The launch cell
+shatters immediately during its first 75 ms travel, with preparation flash
+skipped only for that clear. Later occupied cells remain intact during a
+35 ms approach and 140 ms spinning contact hold. Canonical shatter then
+finishes while the bit stays outside the cell; only afterward does a 75 ms
+entry movement begin. Already empty/visited cells skip resistance. The
 empty dispenser does not reload until the terminal 180 ms burst finishes, then
 the new bit peeks out over 160 ms. Presentation events observe this sequence;
 missing/disabled VFX cannot block or change clears. Thinking/menu pause freezes

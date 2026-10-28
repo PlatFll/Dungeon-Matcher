@@ -18,6 +18,7 @@ public sealed partial class MineEnvironmentView : MonoBehaviour
         square.name = "Ironvein_Proof_Presentation";
         board.MineDrillFired += Fire;
         board.MineDrillTravelling += TravelRow;
+        board.MineDrillBoring += BoreRow;
         board.MineDrillExploded += ExplodeRow;
         board.MineDrillReloading += ReloadRow;
         board.SmallMineDrillPresented += SmallDrill;
@@ -107,6 +108,7 @@ public sealed partial class MineEnvironmentView : MonoBehaviour
         if (board != null) {
             board.MineDrillFired -= Fire;
             board.MineDrillTravelling -= TravelRow;
+            board.MineDrillBoring -= BoreRow;
             board.MineDrillExploded -= ExplodeRow;
             board.MineDrillReloading -= ReloadRow;
         }

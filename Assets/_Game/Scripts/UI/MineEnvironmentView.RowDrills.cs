@@ -45,19 +45,30 @@ public sealed partial class MineEnvironmentView
         rowShots[id]=head;sweeps.Add(head.gameObject);
         if(loadedBits.TryGetValue(id,out var bit))bit.enabled=false;
     }
-    void TravelRow(int id,Vector2Int cell,float seconds)
+    void TravelRow(int id,Vector2Int cell,float seconds) => MoveRow(id,RowPoint(cell),seconds);
+    void BoreRow(int id,Vector2Int cell,float seconds)
+    {
+        var drill=board.Mine?.drills?.Find(d=>d.id==id);if(drill==null)return;
+        // The cone's native tip contacts the near face of the next gem while
+        // its body remains in the preceding cell. Only the ridges keep moving.
+        var behind=drill.fromRight?Vector3.right:Vector3.left;
+        MoveRow(id,RowPoint(cell)+behind*board.CellSize*.7f,seconds);
+    }
+    void MoveRow(int id,Vector3 point,float seconds)
     {
         if(!isActiveAndEnabled)return;
         if(rowMotion.TryGetValue(id,out var prior) && prior!=null)StopCoroutine(prior);
-        rowMotion[id]=StartCoroutine(TravelRowTo(id,RowPoint(cell),seconds));
+        rowMotion[id]=StartCoroutine(TravelRowTo(id,point,seconds));
     }
     IEnumerator TravelRowTo(int id,Vector3 end,float seconds)
     {
         if(!rowShots.TryGetValue(id,out var head)||!head)yield break;
-        Vector3 start=head.transform.localPosition;float pixel=board.CellSize/64f;
-        for(float age=0;age<seconds;age+=Time.deltaTime){
+        Vector3 start=head.transform.localPosition;float pixel=board.CellSize/64f,started=Time.time;
+        // Use the same scaled clock as the board beat. Accumulating the prior
+        // frame's delta leaves a trailing movement frame during contact.
+        while(Time.time-started<seconds){
             if(!head)yield break;
-            var p=Vector3.Lerp(start,end,Mathf.Clamp01(age/seconds));
+            var p=Vector3.Lerp(start,end,Mathf.Clamp01((Time.time-started)/seconds));
             p.x=Mathf.Round(p.x/pixel)*pixel;p.y=Mathf.Round(p.y/pixel)*pixel;
             head.transform.localPosition=p;yield return null;
         }

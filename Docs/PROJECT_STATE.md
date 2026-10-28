@@ -25,8 +25,10 @@ The newer rules in this status and the owning design/architecture documents supe
 On `codex/ironvein-below-tophud-pixellab` / draft PR #215, the user explicitly
 approved making all six side launchers functional row drills. The revision
 retains four-charge intake rules, stone penetration, unrewarded clears and the
-canonical board lock/settlement. Spinning bits advance cell by cell, leave empty
-sockets, burst at the far edge and reload afterward. Legacy mine saves migrate
+canonical board lock/settlement. The first cell now shatters instantly on
+launch; later occupied cells remain intact during a spinning contact hold,
+then shatter before the bit enters. Sockets remain empty until the far-edge
+burst finishes, then reload. Legacy mine saves migrate
 without losing charge. The broader Ironvein environment remains an unmerged
 art-review assembly; the drill mechanic is connected to the production Game.
 Validation and preview evidence: `ArtSource/IronveinBelowTopHUD/SixDrills/`.

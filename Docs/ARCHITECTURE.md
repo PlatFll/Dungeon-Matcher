@@ -187,7 +187,7 @@ operations use the canonical mutation queue. The move coordinator also drains
 the kit's pending coroutine cleanup after the board completes its motion, so
 saved preparation/basic holds cannot leak through a transient stable checkpoint.
 Presentation never triggers damage. Six fixed row drills use the same mutation
-queue; BoardController emits travel/burst/reload observations while retaining
+queue; BoardController emits contact/travel/burst/reload observations while retaining
 per-cell removal, batch deduplication and final settlement. Mine snapshot v3
 migrates the old two-machine network without losing fuel. MineEnvironmentView
 aligns native modular launchers to board cell centers and owns only visuals.

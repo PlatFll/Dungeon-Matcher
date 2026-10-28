@@ -11,9 +11,11 @@ public partial class BoardController
     public event Action MineDrillBatchSettled;
     // Presentation observes this board-owned timeline; no animation callback clears gems.
     public event Action<int, Vector2Int, float> MineDrillTravelling;
+    public event Action<int, Vector2Int, float> MineDrillBoring;
     public event Action<int, Vector2Int> MineDrillExploded;
     public event Action<int> MineDrillReloading;
     public const float MineDrillTravelSeconds = .075f, MineDrillBurstSeconds = .18f, MineDrillReloadSeconds = .16f;
+    public const float MineDrillApproachSeconds = .035f, MineDrillBoreSeconds = .14f;
     private readonly HashSet<int> airborneMineDrills = new HashSet<int>();
     public bool IsMineDrillInFlight(int id) => airborneMineDrills.Contains(id);
     public int MineDrillForCycle(int cycle) => mine?.drills?.Count > 0 ? mine.drills[Math.Abs(cycle) % mine.drills.Count].id : 1;
@@ -90,24 +92,44 @@ public partial class BoardController
                 {
                     int column = drill.fromRight ? width - 1 - step : step;
                     var cell = drill.horizontal ? new Vector2Int(column, drill.lane) : new Vector2Int(drill.lane, step);
-                    MineDrillTravelling?.Invoke(drill.id, cell, MineDrillTravelSeconds);
-                    yield return new WaitForSeconds(MineDrillTravelSeconds);
-                    // A shifted launcher can share a lane. Empty cells still receive the
-                    // same readable cadence, but cannot clear or reward twice.
-                    if (!visited.Add(cell)) { yield return new WaitForSeconds(.05f); continue; }
-                    if (barricadeCells.TryGetValue(cell, out var barrier))
+                    bool first = step == 0;
+                    float launchTime = Time.time;
+                    // Launch punches through the first cell immediately. Subsequent
+                    // occupied cells stay intact while the tip drills at their edge.
+                    if (first) MineDrillTravelling?.Invoke(drill.id, cell, MineDrillTravelSeconds);
+                    bool occupied = GetGem(cell.x, cell.y) != null || barricadeCells.ContainsKey(cell) || royalBannerCells.ContainsKey(cell);
+                    if (!first && !visited.Contains(cell) && occupied)
                     {
-                        // Environmental infrastructure destroys the whole object,
-                        // irrespective of material tier or remaining durability.
-                        barricadeCells.Remove(cell); RootDestroyed(barrier); AquaticCofferBroken(cell);
-                        QueueRoyalBannerGravityOpening(cell.x, cell.y); StartBarricadeHitVFX(barrier, true);
+                        MineDrillBoring?.Invoke(drill.id, cell, MineDrillApproachSeconds);
+                        yield return new WaitForSeconds(MineDrillApproachSeconds + MineDrillBoreSeconds);
                     }
-                    if (royalBannerCells.TryGetValue(cell, out var banner)) CompleteRoyalBannerRemoval(banner);
-                    var gem = GetGem(cell.x, cell.y);
-                    // Canonical shatter supplies the short impact hold; no refill yet.
-                    // Includes specials without activation, reporting, energy or fuel.
-                    if (gem != null) yield return ClearMatches(new HashSet<Gem> { gem }, null);
-                    else yield return new WaitForSeconds(.05f);
+                    // A shifted/opposed launcher can share this row. Empty cells
+                    // have no resistance, and an object can never be cleared twice.
+                    if (visited.Add(cell))
+                    {
+                        if (barricadeCells.TryGetValue(cell, out var barrier))
+                        {
+                            barricadeCells.Remove(cell); RootDestroyed(barrier); AquaticCofferBroken(cell);
+                            QueueRoyalBannerGravityOpening(cell.x, cell.y); StartBarricadeHitVFX(barrier, true, immediateImpact: true);
+                        }
+                        if (royalBannerCells.TryGetValue(cell, out var banner)) CompleteRoyalBannerRemoval(banner);
+                        var gem = GetGem(cell.x, cell.y);
+                        // Retain the canonical unrewarded clear. The launch cell
+                        // bypasses preparation flash; later cells finish shattering
+                        // while the bit is still outside them, before entry travel.
+                        if (gem != null) yield return ClearMatchesWithOrderedBursts(
+                            new HashSet<Gem> { gem }, null, false, null, null, immediateImpact: first);
+                    }
+                    if (!first)
+                    {
+                        MineDrillTravelling?.Invoke(drill.id, cell, MineDrillTravelSeconds);
+                        yield return new WaitForSeconds(MineDrillTravelSeconds);
+                    }
+                    else
+                    {
+                        float remaining = MineDrillTravelSeconds - (Time.time - launchTime);
+                        if (remaining > 0f) yield return new WaitForSeconds(remaining);
+                    }
                 }
                 var exit = new Vector2Int(drill.fromRight ? -1 : width, drill.lane);
                 MineDrillTravelling?.Invoke(drill.id, exit, MineDrillTravelSeconds);

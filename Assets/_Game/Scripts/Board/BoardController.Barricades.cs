@@ -911,7 +911,8 @@ public partial class BoardController
 
     private void StartBarricadeHitVFX(
         BarricadeCellState state,
-        bool destroyAfterFlash)
+        bool destroyAfterFlash,
+        bool immediateImpact = false)
     {
         if (!CanPlayBarricadeVFX(state))
         {
@@ -939,7 +940,8 @@ public partial class BoardController
             StartCoroutine(
                 PlayBarricadeHitVFX(
                     state,
-                    destroyAfterFlash
+                    destroyAfterFlash,
+                    immediateImpact
                 )
             );
     }
@@ -980,7 +982,8 @@ public partial class BoardController
 
     private IEnumerator PlayBarricadeHitVFX(
         BarricadeCellState state,
-        bool destroyAfterFlash)
+        bool destroyAfterFlash,
+        bool immediateImpact = false)
     {
         if (!CanPlayBarricadeVFX(state))
         {
@@ -995,7 +998,7 @@ public partial class BoardController
 
         float elapsedTime = 0f;
 
-        while (elapsedTime <
+        while (!immediateImpact && elapsedTime <
                safeFlashDuration)
         {
             if (!CanPlayBarricadeVFX(state))

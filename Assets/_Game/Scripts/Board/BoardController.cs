@@ -988,7 +988,8 @@ public partial class BoardController : MonoBehaviour
         IReadOnlyList<Gem> primaryBurstOrder,
         GemMatchVFXContext[] matchImpacts = null,
         bool rewardableMatch = false,
-        BoardFeedbackKind? impactKind = null)
+        BoardFeedbackKind? impactKind = null,
+        bool immediateImpact = false)
     {
         List<ClearVisual> visuals =
             new List<ClearVisual>();
@@ -1099,7 +1100,7 @@ public partial class BoardController : MonoBehaviour
          */
         float elapsedTime = 0f;
 
-        while (elapsedTime <
+        while (!immediateImpact && elapsedTime <
                matchFlashDuration)
         {
             float progress =
@@ -1161,7 +1162,7 @@ public partial class BoardController : MonoBehaviour
                 matchBurstScale;
         }
 
-        if (matchWhiteHoldDuration > 0f)
+        if (!immediateImpact && matchWhiteHoldDuration > 0f)
         {
             yield return new WaitForSeconds(
                 matchWhiteHoldDuration
