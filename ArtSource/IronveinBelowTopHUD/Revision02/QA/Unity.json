@@ -1,0 +1,42 @@
+{
+    "status": "PASS",
+    "scene": "Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Revision02.unity",
+    "note": "Actual static art-only Unity renders. All original Graphic geometry and references remain exact, including actor floor line. Only the previous floor group is hidden. Surface depth increases from 8 to 20 native pixels; front edge and enemy feet remain fixed. Shared opaque UI/actors/grid exact. Point/native additions. Original source scene and production Game remain unchanged; not live combat or device testing.",
+    "assets": 4,
+    "sourcePixelScale": 2,
+    "geometryUnchanged": true,
+    "originalReferencesUnchanged": true,
+    "protectedPixelsUnchanged": true,
+    "disabledPlacements": [
+        "Revision01_CombatFloor"
+    ],
+    "widths": [
+        360,
+        720,
+        1080
+    ],
+    "changedPixels": [
+        6806,
+        27116,
+        60855
+    ],
+    "protectedOpaquePixels": [
+        122498,
+        491745,
+        1106531
+    ],
+    "boardBounds": {
+        "serializedVersion": "2",
+        "x": 87.45048522949219,
+        "y": 213.45050048828126,
+        "width": 545.0989990234375,
+        "height": 545.0989990234375
+    },
+    "portraitBounds": {
+        "serializedVersion": "2",
+        "x": 21.0,
+        "y": 825.0,
+        "width": 195.0,
+        "height": 406.0
+    }
+}
