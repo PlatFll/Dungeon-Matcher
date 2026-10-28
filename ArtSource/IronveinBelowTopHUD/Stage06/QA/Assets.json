@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "name": "CorbelLeft",
+      "size": [
+        32,
+        32
+      ],
+      "bounds": [
+        7,
+        4,
+        31,
+        30
+      ],
+      "opaque_colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "e717fd89b2aabfd3645dd91836e54b95ce1d5f4a625620fd9cf5b4f40b54d0b6",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "CorbelRight",
+      "size": [
+        32,
+        32
+      ],
+      "bounds": [
+        1,
+        4,
+        25,
+        30
+      ],
+      "opaque_colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "8f929991c1e76fe47358d47306291d435a6b7690cf7358254a208d88baf620a5",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "SeatBolt",
+      "size": [
+        5,
+        5
+      ],
+      "bounds": [
+        0,
+        0,
+        5,
+        5
+      ],
+      "opaque_colors": 6,
+      "alpha": [
+        255
+      ],
+      "sha256": "e6482db06fac4198ba5c97cde906c8fdeb8ee390af8d97412f8dc8489188cf18",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "SeatPost",
+      "size": [
+        7,
+        24
+      ],
+      "bounds": [
+        0,
+        0,
+        7,
+        24
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "sha256": "cef4fa5f4d22e1f9e500ab86b5ef36ab765b8e3b107c0158d436d437ed02505e",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "SeatRail",
+      "size": [
+        24,
+        7
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        7
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "sha256": "0a61fcaedd34f95c72c14fbfe23395407d3421565cd94229c6d654aaa7df4367",
+      "libresprite_roundtrip_exact": true
+    }
+  ],
+  "rail_and_post_repeat_edges_match": true,
+  "corbel_silhouettes_mirrored": true,
+  "palette": [
+    "#0a0d11",
+    "#30202a",
+    "#303447",
+    "#4a2c1c",
+    "#55606e",
+    "#7a4d2e",
+    "#8a5622",
+    "#93a1b0",
+    "#b07a43",
+    "#c58826",
+    "#fbea90"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "name": "WalkingSlabA",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "e81ce38ae9fb198a7f37a745b94ac832e5e618b54c843ae0717de8d1ee88c2fb"
+    },
+    {
+      "name": "WalkingSlabB",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "87ab4a3455b7d6092718181215d338caf6928d9ef54babbbbf74028fbeac2e4f"
+    },
+    {
+      "name": "WalkingSlabC",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "7a57a8bbf1564cb871b2e6231a50b4cac5740840df4b715faab762451d89d4cd"
+    }
+  ],
+  "variant_seams": "exact",
+  "protected_files": 6086
+}

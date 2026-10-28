@@ -28,7 +28,13 @@ public sealed class MineStoneState
 [Serializable]
 public sealed class MineEnvironmentState
 {
-    public const int CurrentVersion = 2;
+    public const int CurrentVersion = 3;
+    public const int DrillCount = 6;
+    public static int InitialRow(int id, int height)
+    {
+        int[] topRows = { 0, 1, 3, 4, 6, 7 };
+        return Math.Max(0, height - 1 - (int)Math.Round(topRows[Math.Max(0, Math.Min(5, id - 1))] * (height - 1) / 7f));
+    }
     public int version = CurrentVersion, lastSettledMove;
     public long nextStoneId = 1;
     public bool naturalStoneIntroduced;
@@ -43,7 +49,8 @@ public sealed class MineEnvironmentState
         var ids = new HashSet<long>();
         var machines = new HashSet<int>();
         if (state?.drills != null) foreach (var drill in state.drills)
-            if (drill == null || drill.id < 1 || drill.id > 2 || !machines.Add(drill.id) ||
+            if (drill == null || drill.id < 1 || drill.id > (state.version < 3 ? 2 : DrillCount) || !machines.Add(drill.id) ||
+                (state.version >= 3 && (!drill.horizontal || drill.fromRight != (drill.id % 2 == 0))) ||
                 drill.lane < 0 || drill.lane >= (drill.horizontal ? board.height : board.width) ||
                 drill.charge < 0 || drill.lastPlayerAction < 0) return false;
         if (board.cells != null) foreach (var cell in board.cells)
@@ -63,5 +70,5 @@ public sealed class MineEnvironmentState
 public sealed class MineDrillState
 {
     public int id, lane, charge, lastPlayerAction;
-    public bool horizontal;
+    public bool horizontal, fromRight;
 }

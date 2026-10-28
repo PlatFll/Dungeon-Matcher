@@ -1,0 +1,25 @@
+{
+  "method": "Native LibreSprite adaptation of approved PixelLab-derived Court floor modules. Rear and front courses joined without scaling, cave palette mapping, compatible tile-edge cleanup.",
+  "sources": {
+    "Assets/_Game/Art/DrownedCourtEnvironmentV2/Revision04/FloorRearA.png": "e60d539884f99686443fe7bf81f0be0b849a2d6a7aab16d5d7c015d3c306729d",
+    "Assets/_Game/Art/DrownedCourtEnvironmentV2/Revision04/FloorFrontA.png": "08238267e2aef378c41594b9d33a5fab0aec01e015d439edad07742af15cb02c",
+    "Assets/_Game/Art/DrownedCourtEnvironmentV2/Revision04/FloorRearB.png": "05c7cd817e2ee1c2ebb8e5b0b4453bddcf1032f5b8bf0d6a25676871dd0c7a7d",
+    "Assets/_Game/Art/DrownedCourtEnvironmentV2/Revision04/FloorFrontB.png": "2ca8fd10abb6c499acbdc25c8a3867b84a0b6b36e14dcaf3fc4fc26eef319567",
+    "Assets/_Game/Art/DrownedCourtEnvironmentV2/Revision04/FloorRearC.png": "61667985bb054e37df75c09cd075d68550bdc90b71998092e0e7b1c7d7087be4",
+    "Assets/_Game/Art/DrownedCourtEnvironmentV2/Revision04/FloorFrontC.png": "670cc3decf388227cc94522ebadf34e3461aee330eb775802c6f4de3f958e820"
+  },
+  "reference_preview": "ArtSource/DrownedCourtEnvironmentV2/Preview/Revision04/Unity-RevisedOpen-720x1280.png",
+  "native_tile": [
+    64,
+    32
+  ],
+  "source_rows": "Rear 0-15 followed by Front 0-15; no resampling",
+  "floor_start": 174,
+  "floor_end": 206,
+  "separator_locked_band": [
+    206,
+    225
+  ],
+  "enemy_floor_line": "Retained exactly per explicit user answer",
+  "pixellab_generations": 0
+}

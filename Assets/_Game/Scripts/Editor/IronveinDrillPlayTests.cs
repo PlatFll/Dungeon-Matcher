@@ -41,7 +41,7 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(reports,Is.EqualTo(reportsAtFire));Assert.That(board.CompletedValidPlayerMoves,Is.EqualTo(1));
     }
 
-    [UnityTest] public IEnumerator IronveinDrillsPenetrateObsidianAndCrossOnceWithoutRewards()
+    [UnityTest] public IEnumerator IronveinSixDrillsPenetrateObsidianAndOverlappingRowsClearOnceWithoutRewards()
     { yield return MineDrillPenetration(); }
     private IEnumerator MineDrillPenetration()
     {
@@ -49,9 +49,9 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(board.TryQueuePlaceMineStones(Run.Waves.ActiveEnemies[0], 5, 6, MineStoneStage.Obsidian), Is.True);
         yield return Stable(); var stones = MineCells(); Assert.That(stones.Length, Is.GreaterThan(0));
         var first = stones.OrderBy(c=>c.x).First();
-        board.Mine.drills[0].lane = first.y; board.Mine.drills[1].lane = first.x;
+        board.Mine.drills[0].lane = first.y; board.Mine.drills[1].lane = first.y;
         var before = Run.Continuation.Capture().board;
-        var removed = before.cells.Where(c=>c.hasGem && (c.x==first.x || c.y==first.y)).Select(c=>c.identity).ToArray();
+        var removed = before.cells.Where(c=>c.hasGem && board.Mine.drills.Any(d=>d.lane==c.y)).Select(c=>c.identity).ToArray();
         int reports=0,settles=0;var launches=new List<int>();
         board.BoardClearResolved+=_=>reports++;
         board.MineDrillBatchSettled+=()=>settles++;
@@ -59,8 +59,8 @@ public sealed partial class ForestFoundationPlayTests
         int hp=Run.Player.CurrentHealth,energy=Run.Player.GetComponent<PlayerAbilityEnergy>().CurrentEnergy;
         // Both feeds are synchronous requests; the queue must batch both passes.
         Assert.That(board.TryQueueMineDrillPower(0,4),Is.True); yield return Stable();
-        CollectionAssert.AreEqual(new[]{1,2},launches); Assert.That(settles,Is.EqualTo(1));
-        Assert.That(MineCells().Any(c=>c.x==first.x || c.y==first.y),Is.False,"every intersected stone is destroyed regardless of tier");
+        CollectionAssert.AreEqual(new[]{1,2,3,4,5,6},launches); Assert.That(settles,Is.EqualTo(1));
+        Assert.That(MineCells().Any(c=>board.Mine.drills.Any(d=>d.lane==c.y)),Is.False,"every intersected stone is destroyed regardless of tier");
         Assert.That(Run.Continuation.Capture().board.cells.Any(c=>c.hasGem&&removed.Contains(c.identity)),Is.False);
         Assert.That(reports,Is.Zero,"neither machine clear nor its refill cascades report player combat");
         Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp));

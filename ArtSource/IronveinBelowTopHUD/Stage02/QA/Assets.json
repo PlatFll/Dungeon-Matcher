@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "guide_version": "1.17.2",
+  "selected": {
+    "job": "71e6af15-a481-4e76-b583-ac452ecc0dec",
+    "index": 0
+  },
+  "rejected_short_set": {
+    "job": "53590f75-0190-4188-bf01-f9f1456d22f6",
+    "reason": "Transparent removal damaged timber; no short-set pixels used."
+  },
+  "pixel_lab_generations": 20,
+  "starting_balance": 266.2,
+  "expected_remaining": 246.2,
+  "actual_image_inputs": [],
+  "reference_policy": "Text-only focused UI asset generation, as requested by the supplied pack; local golden images reviewed but not uploaded.",
+  "cleanup": "LibreSprite native cel edits: condense redundant wood rows into a 10-pixel beam; retain the generated grain vocabulary and amber center; merge shades into existing wood/iron/amber ramps, close the diamond contour, author clean mirrored end geometry with upper-left highlights. No resizing or interpolation.",
+  "repeat_edge_match": true,
+  "assets": [
+    {
+      "name": "BeamCenter",
+      "size": [
+        40,
+        12
+      ],
+      "opaque_colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "33d5a79d1ac708bb3c0921d18ba1963378bd221df7945cf031ea18abe043dbbc",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "BeamRepeat",
+      "size": [
+        24,
+        10
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "sha256": "10a881260a29e1e53fe7d21a1bf2e54cc9b9b215c069d5594815510979b3c4bc",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "CrystalNode",
+      "size": [
+        18,
+        18
+      ],
+      "opaque_colors": 8,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "1a8600d61d753fc1c1ea263de8603a16c2cf7cf9731021afdad70b2a4f46387b",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "EndTransition",
+      "size": [
+        10,
+        12
+      ],
+      "opaque_colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "28d175172c51d84e4932fdd66dac234993f8cd7a6b068aff1be4891b4a10d4c3",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "EndTransitionRight",
+      "size": [
+        10,
+        12
+      ],
+      "opaque_colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "3ac674bdf6bd1c5174d8d1e3e6b44a5b81442202a7081eb30e39ae73a9d57b52",
+      "libresprite_roundtrip_exact": true
+    }
+  ]
+}

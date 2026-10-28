@@ -29,6 +29,8 @@ public sealed class GameplayThemeDefinition : ScriptableObject
     public Sprite[] mineDrillFrames, mineSmallDrillFrames, mineOreFrames, mineFuseFrames, mineCoreBreakFrames;
     [Min(0)] public float boardPerimeterPadding;
     public Sprite horizontalMineDrill, verticalMineDrill;
+    public Sprite mineRowMount, mineRowMotor, mineRowSocket, mineRowPower;
+    public Sprite[] mineRowSpinFrames;
     public Sprite supplyNormal,supplyHighlighted,supplyPressed,supplyDisabled;
     [System.Serializable] public struct IconReplacement { public Sprite source, themed; }
     public IconReplacement[] abilityIcons;

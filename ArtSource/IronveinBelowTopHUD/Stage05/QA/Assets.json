@@ -1,0 +1,204 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "name": "AmberDeposit",
+      "size": [
+        24,
+        30
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        30
+      ],
+      "opaque_colors": 9,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "5ac3a6bcc5e4e079145d12de5da5ae3b7058b746e5fc8c42db4977889c16e4e4",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "IronCollar",
+      "size": [
+        22,
+        8
+      ],
+      "bounds": [
+        0,
+        1,
+        22,
+        7
+      ],
+      "opaque_colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "52038ad96752af659c637ad59dfff09fa489bee9113ad726e5068d93b95de176",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "RockA",
+      "size": [
+        22,
+        46
+      ],
+      "bounds": [
+        0,
+        0,
+        22,
+        46
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "2084b4f78ca9dc2ae4ccaefd8661109439b9fd9a25ebb564dd18d49b9994384b",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "RockB",
+      "size": [
+        22,
+        48
+      ],
+      "bounds": [
+        0,
+        0,
+        22,
+        48
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "e25b028b85a13148ceda61ee2362d8899bcd856559aabd3a17b31c78acc5d7b6",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "RockCourse",
+      "size": [
+        64,
+        16
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        16
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "sha256": "9ca3b0afa9bd57512d57f90eefc36265e199241d9486a1a2943cb7b741597db1",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "RockFoot",
+      "size": [
+        28,
+        17
+      ],
+      "bounds": [
+        1,
+        1,
+        27,
+        16
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "08b131403b50a74710a4804f09fb71f5149562e85a2c2330b7fab39992ae1155",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "TimberCap",
+      "size": [
+        20,
+        18
+      ],
+      "bounds": [
+        1,
+        0,
+        19,
+        18
+      ],
+      "opaque_colors": 9,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "124b7c4c5473a37e5613ca6b32aa9fd10813e5f40674f7843e93784802b6ce86",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "TimberFoot",
+      "size": [
+        20,
+        15
+      ],
+      "bounds": [
+        1,
+        0,
+        19,
+        14
+      ],
+      "opaque_colors": 8,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "1210364bf44d24bc728a00e4bef08123f47e1b35dd41eae6a0f0d62fa73a7701",
+      "libresprite_roundtrip_exact": true
+    },
+    {
+      "name": "TimberRepeat",
+      "size": [
+        20,
+        24
+      ],
+      "bounds": [
+        2,
+        0,
+        18,
+        24
+      ],
+      "opaque_colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "3337e35f76c21e623b71dbf36738c12b72bb7f22d6eafdbd3a7ffbc5fbd6741b",
+      "libresprite_roundtrip_exact": true
+    }
+  ],
+  "timber_and_rock_repeat_edges_match": true,
+  "palette": [
+    "#0a0d11",
+    "#141522",
+    "#202332",
+    "#2b313a",
+    "#30202a",
+    "#303447",
+    "#41485b",
+    "#4a2c1c",
+    "#55606e",
+    "#674229",
+    "#8a5622",
+    "#8c5b34",
+    "#93a1b0",
+    "#c58826",
+    "#c94d08",
+    "#f5923d",
+    "#ffdb8f"
+  ]
+}

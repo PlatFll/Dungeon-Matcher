@@ -1,0 +1,32 @@
+{
+  "rule": "Scenery follows the common actor/health-bar baseline; no zone-specific enemy position.",
+  "references": [
+    {
+      "path": "Assets/_Game/Scripts/UI/BattleFloorAnchor.cs",
+      "sha256": "5174af98b329c41d9d100f5a927a2b14e47f48a242dbf41fe9d50685a58658c3"
+    },
+    {
+      "path": "Assets/_Game/Scripts/UI/DungeonPresentationArt.Court.cs",
+      "sha256": "817ecce06a97a209a618de694b0c387b35df41b5822c5810b5b390f8fe87502a"
+    },
+    {
+      "path": "Assets/_Game/Scripts/UI/DungeonPresentationArt.Forest.cs",
+      "sha256": "28856e6e754e76626ea3fb36eeaf767f290afdb752ab1c49f2e091288ca0f794"
+    },
+    {
+      "path": "Assets/_Game/Scripts/UI/DungeonPresentationArt.PixelLab.cs",
+      "sha256": "65381d979288512dec11d227549e606c8d5cdca6b76e572247964a4ffcc2abf0"
+    },
+    {
+      "path": "ArtSource/DrownedCourtEnvironmentV2/Integration/After/drowned-court-720x1280.png",
+      "sha256": "15f39d6bd7c8cdf8aa2f38083b42b0a9d8208696e8ad7c68864c2d67068dac33"
+    },
+    {
+      "path": "ArtSource/DrownedCourtEnvironmentV2/Integration/After/dungeon-720x1280.png",
+      "sha256": "ba30923b1a2b670122d80ac6dfd61450085e29d700fcea9f694b2f72f9e3489e"
+    }
+  ],
+  "court": "Source floor 208 maps to the live actor feet; front course 200..216 is above the fascia.",
+  "dungeon": "The 12px walking strip centers the shared 6px standing inset; fascia begins immediately below.",
+  "ironvein": "Center the existing 32px floor around the unchanged measured sprite-floor pivot. Move the separator to its bottom edge. Do not move health bars, actors or board."
+}

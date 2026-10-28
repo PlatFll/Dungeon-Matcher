@@ -41,7 +41,7 @@ public sealed partial class MineEnemyAbility
         }
         var targets = OwnedTurrets.ToArray(); if (targets.Length == 0) return false;
         foreach (var turret in targets) turret.GetComponent<EnemyOrePower>()?.Grant();
-        board.TryQueueMineDrillPower(1+(state.cycle/2)%2,1); return true;
+        board.TryQueueMineDrillPower(board.MineDrillForCycle(state.cycle/2),1); return true;
     }
     private void ApplyExtractedPower(MineStoneStage stage)
     {

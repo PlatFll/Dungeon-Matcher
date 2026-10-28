@@ -351,7 +351,7 @@ public sealed class BoardVisuals : MonoBehaviour
     private void CreateModularBoardFrame()
     {
         // The live board keeps its existing fit; the native modular rim is drawn by its presentation owner.
-        if (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current) { var r = new GameObject(BoardFrameContainerName); r.transform.SetParent(transform,false); return; }
+        if (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current || IronveinBattleAssembly.Current) { var r = new GameObject(BoardFrameContainerName); r.transform.SetParent(transform,false); return; }
         if(BattlePresentationSkin.UsesReferenceKit)
         {
             var root=new GameObject(BoardFrameContainerName);root.transform.SetParent(transform,false);

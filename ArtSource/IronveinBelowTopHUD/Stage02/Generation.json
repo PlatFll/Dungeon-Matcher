@@ -1,0 +1,27 @@
+{
+  "prompt": {
+    "description": "A single horizontal modular separator ledge asset for a whimsical dwarven mine pixel-art match-3 interface, FRONT orthographic view, perfectly horizontal. On a 128x32 transparent canvas draw one long timber beam centered vertically. The beam itself is only 10 pixels high, from x=4 to x=123, with warm dark walnut wood, broad quiet connected grain planes (3 brown tones), thin very dark contour. Forged charcoal steel reinforcement bands at both ends and at quarter positions, square readable gold rivet heads, cool lavender-gray metal highlights on the upper left. One small symmetrical 16 pixel high diamond-shaped iron socket at the exact horizontal center with a mounted amber crystal: orange shadow, golden body, tiny pale warm highlight. The crystal is embedded in the beam, never floating. Keep clear unobstructed stretches of wood between bands so they can be extracted as seamless repeating segments. The left and right terminal blocks are square steel endcaps attaching firmly to the beam. Chunky deliberate pixel clusters, top-left light, restrained surface detail, native hard square pixels, no antialiasing, no gradients, no soft glow, no text, no UI labels, no characters, no background or scenery. Strong readable material separation, broad dark wood planes, dull iron faces and small amber focal accent. The whole asset must fit inside the canvas with at least 4 transparent pixels above and below. NOT a full board frame: one single low horizontal structural beam.",
+    "width": 128,
+    "height": 32,
+    "no_background": true,
+    "max_colors": 20,
+    "seed": 27022026
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 71e6af15-a481-4e76-b583-ac452ecc0dec\njob_id: 71e6af15-a481-4e76-b583-ac452ecc0dec\nmodel: pro\ndescription: A single horizontal modular separator ledge asset for a whimsical dwarven mine pixel-art match-3 interface, FRONT orthographic view, perfectly horizontal. On a 128x32 transparent canvas draw one long timber beam centered vertically. The beam itself is only 10 pixels high, from x=4 to x=123, with warm dark walnut wood, broad quiet connected grain planes (3 brown tones), thin very dark contour. Forged charcoal steel reinforcement bands at both ends and at quarter positions, square readable gold rivet heads, cool lavender-gray metal highlights on the upper left. One small symmetrical 16 pixel high diamond-shaped iron socket at the exact horizontal center with a mounted amber crystal: orange shadow, golden body, tiny pale warm highlight. The crystal is embedded in the beam, never floating. Keep clear unobstructed stretches of wood between bands so they can be extracted as seamless repeating segments. The left and right terminal blocks are square steel endcaps attaching firmly to the beam. Chunky deliberate pixel clusters, top-left light, restrained surface detail, native hard square pixels, no antialiasing, no gradients, no soft glow, no text, no UI labels, no characters, no background or scenery. Strong readable material separation, broad dark wood planes, dull iron faces and small amber focal accent. The whole asset must fit inside the canvas with at least 4 transparent pixels above and below. NOT a full board frame: one single low horizontal structural beam.\nsize: 128x32px\ntransparent: True\ncandidates: 4\nmax colours: 20 per image\nseed: 27022026\nasset_id: 7ed413a8-5192-5ecc-b4fc-690fedbacb77\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"71e6af15-a481-4e76-b583-ac452ecc0dec\")"
+      }
+    ],
+    "isError": false
+  },
+  "result_text": [
+    {
+      "type": "text",
+      "text": "status: completed\nid: 71e6af15-a481-4e76-b583-ac452ecc0dec\njob_id: 71e6af15-a481-4e76-b583-ac452ecc0dec\nframes: 4\ntransparent: yes\nasset_id: 7ed413a8-5192-5ecc-b4fc-690fedbacb77\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 10 generations\ndownload: https://api.pixellab.ai/mcp/images/71e6af15-a481-4e76-b583-ac452ecc0dec/download?index=0 ... ?index=3"
+    }
+  ],
+  "starting_balance": 266.2,
+  "generations_spent": 10
+}

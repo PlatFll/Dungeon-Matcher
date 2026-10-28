@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "stage": 1,
+  "generation_usage": 0,
+  "unity_version": "6000.3.19f1",
+  "required_validator": {
+    "exit_code": 0,
+    "log": "RequiredUnityValidator.log"
+  },
+  "foundation": "Foundation.json",
+  "exact_source_files_preserved": 304,
+  "all_existing_tracked_files_git_clean": true,
+  "new_artwork": 0,
+  "screenshots_exact_source_vs_copy": [
+    "360x640",
+    "720x1280",
+    "1080x1920"
+  ],
+  "production_unchanged": true,
+  "scene_excluded_from_build": true,
+  "limits": [
+    "Art-only foundation scene",
+    "No real-device or new gameplay test",
+    "No later stages started"
+  ]
+}

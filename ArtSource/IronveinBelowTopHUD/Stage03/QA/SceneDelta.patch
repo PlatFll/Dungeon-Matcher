@@ -1,0 +1,178 @@
+--- Stage02/64955973
++++ Stage03/64955973
+@@ -9,7 +9,8 @@
+   m_LocalPosition: {x: 0, y: 0, z: 0}
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_ConstrainProportionsScale: 0
+-  m_Children: []
++  m_Children:
++  - {fileID: 2072511588}
+   m_Father: {fileID: 1097973095}
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+   m_AnchorMin: {x: 0, y: 1}
+--- Stage02/647806914
++++ Stage03/647806914
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: d3ecaba3de115b34f9369d83375fe690, type: 3}
++  m_Sprite: {fileID: 21300000, guid: eb7a865092837014b871b5103c54d1c8, type: 3}
+   m_Type: 0
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/2057732262
++++ Stage03/2057732262
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 20b2b00dabb92354e8ebcdf811f7216d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 6f021c6de921b69498220fd68404419d, type: 3}
+   m_Type: 0
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/797160217
++++ Stage03/797160217
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 99eedf87649379a478cc56eb88ba0069, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 3fb07b1be77bde3469f4ea6c58700995, type: 3}
+   m_Type: 2
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/1791665524
++++ Stage03/1791665524
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 9d3ea308f309cd74981e61e0f2fbbf28, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 8bbdc44bfd1f4be4580a04f1df6d1ff3, type: 3}
+   m_Type: 0
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/1068163096
++++ Stage03/1068163096
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 3d27ed490d724a543a9a062c7dae7fdb, type: 3}
++  m_Sprite: {fileID: 21300000, guid: d2e846697faa7bb4faed95b3e32358e0, type: 3}
+   m_Type: 2
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/1004953100
++++ Stage03/1004953100
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 47026a84ec526f94c9a21266f1a8649d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: e51bd5bcf6e9a3a4993ef7960a8af6af, type: 3}
+   m_Type: 0
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/1972066932
++++ Stage03/1972066932
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 9528f267c5def5a428aaa8119ac4e124, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 50b67bdf7a4b04c4981758badd32c9fb, type: 3}
+   m_Type: 0
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/2089499294
++++ Stage03/2089499294
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 2b9ea6c9d31bbff439b946544fc30a8e, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 64e04a8eec0e9b5448aaba914b70e967, type: 3}
+   m_Type: 2
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/64955974
++++ Stage03/64955974
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 20b2b00dabb92354e8ebcdf811f7216d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 6f021c6de921b69498220fd68404419d, type: 3}
+   m_Type: 0
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/469433505
++++ Stage03/469433505
+@@ -9,7 +9,8 @@
+   m_LocalPosition: {x: 0, y: 0, z: 0}
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_ConstrainProportionsScale: 0
+-  m_Children: []
++  m_Children:
++  - {fileID: 1271824660}
+   m_Father: {fileID: 1097973095}
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+   m_AnchorMin: {x: 0, y: 1}
+--- Stage02/228741008
++++ Stage03/228741008
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 20b2b00dabb92354e8ebcdf811f7216d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 6f021c6de921b69498220fd68404419d, type: 3}
+   m_Type: 0
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/469433506
++++ Stage03/469433506
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 20b2b00dabb92354e8ebcdf811f7216d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 6f021c6de921b69498220fd68404419d, type: 3}
+   m_Type: 0
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/1310860563
++++ Stage03/1310860563
+@@ -11,6 +11,6 @@
+   m_Name:
+   m_EditorClassIdentifier: Assembly-CSharp::ResponsiveModularFrameFitter
+   nativePieceLayout: 1
+-  nativeConnector: {fileID: 21300000, guid: 20b2b00dabb92354e8ebcdf811f7216d, type: 3}
++  nativeConnector: {fileID: 21300000, guid: 6f021c6de921b69498220fd68404419d, type: 3}
+   connectorPitch: 90
+   fittedOpening: {fileID: 741235684}
+--- Stage02/7615585
++++ Stage03/7615585
+@@ -18,7 +18,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 88e873f3c16274141b6a041d1dcd08f2, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 09185b56b35722e489b485fa2d198b2c, type: 3}
+   m_Type: 2
+   m_PreserveAspect: 0
+   m_FillCenter: 1
+--- Stage02/2057732261
++++ Stage03/2057732261
+@@ -9,7 +9,8 @@
+   m_LocalPosition: {x: 0, y: 0, z: 0}
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_ConstrainProportionsScale: 0
+-  m_Children: []
++  m_Children:
++  - {fileID: 398900711}
+   m_Father: {fileID: 1097973095}
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+   m_AnchorMin: {x: 0, y: 1}

@@ -69,6 +69,13 @@ and Obsidian are structural material stages, separate from remaining durability.
 Neglect matures them; damage delays maturity. The small Bore projectile stops
 after exactly one durability hit on the first stone, even if it breaks. Shared
 environmental drills penetrate and destroy every intended object in their lane.
+The 2026-10-28 approved revision makes all six visible side launchers functional
+row drills, alternating left/right intakes. They retain four-charge saturation,
+manual intake rules and unrewarded clears. Launch instantly destroys the first
+cell. At each subsequent occupied cell the bit spins against its near face,
+waits for destruction, then advances into that cell. Empty cells offer no
+resistance. It bursts at the far end and reloads only afterward; the board remains locked until the
+whole charged batch and its one final refill/cascade settle.
 Neither changes existing zones' clear/shield rules. See
 [the implementation contract](IronveinExcavation/IMPLEMENTATION.md).
 

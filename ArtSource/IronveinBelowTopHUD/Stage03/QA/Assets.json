@@ -1,0 +1,161 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "name": "AmberInset",
+      "size": [
+        9,
+        9
+      ],
+      "opaque_colors": 8,
+      "alpha": [
+        255
+      ],
+      "sha256": "696fc64dcf7ef70b23960710df10ebe5d4a3e7013edfd8da9ba21369be75d954",
+      "roundtrip_exact": true
+    },
+    {
+      "name": "BoardCornerBL",
+      "size": [
+        27,
+        27
+      ],
+      "opaque_colors": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "a714db40d92793b3ca1a381093797eb9ff52abc07250382bd7b1045c383bbb5d",
+      "roundtrip_exact": true
+    },
+    {
+      "name": "BoardCornerBR",
+      "size": [
+        27,
+        27
+      ],
+      "opaque_colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "62f55ca87e30a3119af14885b2a654e32243398a1914bc7b0f6b080931e14e9e",
+      "roundtrip_exact": true
+    },
+    {
+      "name": "BoardCornerTL",
+      "size": [
+        27,
+        27
+      ],
+      "opaque_colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "90366cbbbc3a68a5b0b57fb95206ccb1166f760ac40fec38a2010f798b6bc0a1",
+      "roundtrip_exact": true
+    },
+    {
+      "name": "BoardCornerTR",
+      "size": [
+        27,
+        27
+      ],
+      "opaque_colors": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "cef849859ff014b4f07f6ac524aa39974282250f4a5337b2ad732c5b396d5057",
+      "roundtrip_exact": true
+    },
+    {
+      "name": "BoardJoint",
+      "size": [
+        9,
+        9
+      ],
+      "opaque_colors": 8,
+      "alpha": [
+        255
+      ],
+      "sha256": "d36b2187bf11e171da5af424e064bf499fa0e0fbaf8121747f9f8d7c4b90e366",
+      "roundtrip_exact": true
+    },
+    {
+      "name": "BoardRailBottom",
+      "size": [
+        25,
+        9
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "sha256": "84784e4b32aca379aa8bc6c2015284606f2704bf0418fb448f17339008f9f83f",
+      "roundtrip_exact": true
+    },
+    {
+      "name": "BoardRailLeft",
+      "size": [
+        9,
+        25
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "sha256": "a813a9a005a0ae3b065cebb1566ed4d23a9b2485716ff94f09346061be659bf6",
+      "roundtrip_exact": true
+    },
+    {
+      "name": "BoardRailRight",
+      "size": [
+        9,
+        25
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "sha256": "a813a9a005a0ae3b065cebb1566ed4d23a9b2485716ff94f09346061be659bf6",
+      "roundtrip_exact": true
+    },
+    {
+      "name": "BoardRailTop",
+      "size": [
+        25,
+        9
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "sha256": "84784e4b32aca379aa8bc6c2015284606f2704bf0418fb448f17339008f9f83f",
+      "roundtrip_exact": true
+    }
+  ],
+  "native_edges_match": true,
+  "palette": [
+    "#0a0d11",
+    "#13131f",
+    "#2b313a",
+    "#2c293d",
+    "#30202a",
+    "#42374f",
+    "#4a2c1c",
+    "#55606e",
+    "#5a4964",
+    "#786477",
+    "#7a4d2e",
+    "#8a5622",
+    "#93a1b0",
+    "#b07a43",
+    "#c58826",
+    "#c94d08",
+    "#f5923d",
+    "#fbea90",
+    "#ffdb8f"
+  ]
+}

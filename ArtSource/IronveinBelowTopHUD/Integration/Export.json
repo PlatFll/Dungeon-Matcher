@@ -1,0 +1,1881 @@
+{
+    "approvedScene": "Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Revision04.unity",
+    "portrait": {
+        "serializedVersion": "2",
+        "x": 0.5,
+        "y": 14.5,
+        "width": 117.5,
+        "height": 223.0
+    },
+    "boardOpening": {
+        "serializedVersion": "2",
+        "x": 43.725242614746097,
+        "y": 260.7252502441406,
+        "width": 272.54949951171877,
+        "height": 272.54949951171877
+    },
+    "frames": {
+        "instanceID": -1704
+    },
+    "masonry": {
+        "instanceID": 0
+    },
+    "recess": {
+        "instanceID": 59838
+    },
+    "amberInset": {
+        "instanceID": 59842
+    },
+    "pieces": [
+        {
+            "name": "IronveinNativeBackground/RestoredCaveWall",
+            "region": "IronveinNativeBackground",
+            "sprite": {
+                "instanceID": 59856
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 360.0,
+                "height": 640.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "IronveinTopModules/CavernDepth",
+            "region": "IronveinTopModules",
+            "sprite": {
+                "instanceID": 60014
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 120.0,
+                "y": 43.0,
+                "width": 240.0,
+                "height": 160.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "IronveinTopModules/Timber",
+            "region": "IronveinTopModules",
+            "sprite": {
+                "instanceID": 59862
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 111.0,
+                "y": 113.0,
+                "width": 28.0,
+                "height": 89.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "IronveinTopModules/Timber",
+            "region": "IronveinTopModules",
+            "sprite": {
+                "instanceID": 59862
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 331.0,
+                "y": 113.0,
+                "width": 28.0,
+                "height": 89.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "IronveinTopModules/RestoredCaveRecess",
+            "region": "IronveinTopModules",
+            "sprite": {
+                "instanceID": 59838
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 225.0,
+                "width": 360.0,
+                "height": 16.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision02_CombatFloor/StoneBlock0",
+            "region": "Revision02_CombatFloor",
+            "sprite": {
+                "instanceID": 59762
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 220.0,
+                "width": 40.0,
+                "height": 19.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision02_CombatFloor/StoneBlock1",
+            "region": "Revision02_CombatFloor",
+            "sprite": {
+                "instanceID": 59884
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 40.0,
+                "y": 220.0,
+                "width": 40.0,
+                "height": 19.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision02_CombatFloor/StoneBlock2",
+            "region": "Revision02_CombatFloor",
+            "sprite": {
+                "instanceID": 59762
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 80.0,
+                "y": 220.0,
+                "width": 40.0,
+                "height": 19.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision02_CombatFloor/StoneBlock3",
+            "region": "Revision02_CombatFloor",
+            "sprite": {
+                "instanceID": 59762
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 120.0,
+                "y": 220.0,
+                "width": 40.0,
+                "height": 19.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision02_CombatFloor/StoneBlock4",
+            "region": "Revision02_CombatFloor",
+            "sprite": {
+                "instanceID": 59884
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 160.0,
+                "y": 220.0,
+                "width": 40.0,
+                "height": 19.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision02_CombatFloor/StoneBlock5",
+            "region": "Revision02_CombatFloor",
+            "sprite": {
+                "instanceID": 59762
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 200.0,
+                "y": 220.0,
+                "width": 40.0,
+                "height": 19.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision02_CombatFloor/StoneBlock6",
+            "region": "Revision02_CombatFloor",
+            "sprite": {
+                "instanceID": 59762
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 240.0,
+                "y": 220.0,
+                "width": 40.0,
+                "height": 19.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision02_CombatFloor/StoneBlock7",
+            "region": "Revision02_CombatFloor",
+            "sprite": {
+                "instanceID": 59884
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 280.0,
+                "y": 220.0,
+                "width": 40.0,
+                "height": 19.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision02_CombatFloor/StoneBlock8",
+            "region": "Revision02_CombatFloor",
+            "sprite": {
+                "instanceID": 59762
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 320.0,
+                "y": 220.0,
+                "width": 40.0,
+                "height": 19.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision03_WalkingSurface/WalkingSlab0",
+            "region": "Revision03_WalkingSurface",
+            "sprite": {
+                "instanceID": 59778
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 188.0,
+                "width": 64.0,
+                "height": 32.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision03_WalkingSurface/WalkingSlab1",
+            "region": "Revision03_WalkingSurface",
+            "sprite": {
+                "instanceID": 59812
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 64.0,
+                "y": 188.0,
+                "width": 64.0,
+                "height": 32.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision03_WalkingSurface/WalkingSlab2",
+            "region": "Revision03_WalkingSurface",
+            "sprite": {
+                "instanceID": 59896
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 128.0,
+                "y": 188.0,
+                "width": 64.0,
+                "height": 32.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision03_WalkingSurface/WalkingSlab3",
+            "region": "Revision03_WalkingSurface",
+            "sprite": {
+                "instanceID": 59778
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 192.0,
+                "y": 188.0,
+                "width": 64.0,
+                "height": 32.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision03_WalkingSurface/WalkingSlab4",
+            "region": "Revision03_WalkingSurface",
+            "sprite": {
+                "instanceID": 59812
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 256.0,
+                "y": 188.0,
+                "width": 64.0,
+                "height": 32.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision03_WalkingSurface/WalkingSlab5",
+            "region": "Revision03_WalkingSurface",
+            "sprite": {
+                "instanceID": 59896
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 320.0,
+                "y": 188.0,
+                "width": 40.0,
+                "height": 32.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockLeft0",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59744
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 244.0,
+                "width": 22.0,
+                "height": 46.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockRight0",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59742
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 338.0,
+                "y": 244.0,
+                "width": 22.0,
+                "height": 48.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockLeft1",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59742
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 2.0,
+                "y": 288.0,
+                "width": 22.0,
+                "height": 48.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockRight1",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59744
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0,
+                "y": 288.0,
+                "width": 22.0,
+                "height": 46.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockLeft2",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59744
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 332.0,
+                "width": 22.0,
+                "height": 46.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockRight2",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59742
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 338.0,
+                "y": 332.0,
+                "width": 22.0,
+                "height": 48.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockLeft3",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59742
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 2.0,
+                "y": 376.0,
+                "width": 22.0,
+                "height": 48.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockRight3",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59744
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0,
+                "y": 376.0,
+                "width": 22.0,
+                "height": 46.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockLeft4",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59744
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 420.0,
+                "width": 22.0,
+                "height": 46.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockRight4",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59742
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 338.0,
+                "y": 420.0,
+                "width": 22.0,
+                "height": 48.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockLeft5",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59742
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 2.0,
+                "y": 464.0,
+                "width": 22.0,
+                "height": 48.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockRight5",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59744
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 336.0,
+                "y": 464.0,
+                "width": 22.0,
+                "height": 46.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockLeft6",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59744
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 508.0,
+                "width": 22.0,
+                "height": 46.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RockRight6",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59742
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 338.0,
+                "y": 508.0,
+                "width": 22.0,
+                "height": 48.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/UnderBoardRock",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 60026
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 541.0,
+                "width": 360.0,
+                "height": 16.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/TimberCap13",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59886
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 13.0,
+                "y": 244.0,
+                "width": 20.0,
+                "height": 18.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/TimberShaft13",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59986
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 13.0,
+                "y": 262.0,
+                "width": 20.0,
+                "height": 280.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/TimberFoot13",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59950
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 13.0,
+                "y": 542.0,
+                "width": 20.0,
+                "height": 15.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/Collar13_354",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59772
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 12.0,
+                "y": 354.0,
+                "width": 22.0,
+                "height": 8.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/Collar13_449",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59772
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 12.0,
+                "y": 449.0,
+                "width": 22.0,
+                "height": 8.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/Collar13_515",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59772
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 12.0,
+                "y": 515.0,
+                "width": 22.0,
+                "height": 8.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/TimberCap327",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59886
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 327.0,
+                "y": 244.0,
+                "width": 20.0,
+                "height": 18.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/TimberShaft327",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59986
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 327.0,
+                "y": 262.0,
+                "width": 20.0,
+                "height": 280.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/TimberFoot327",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59950
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 327.0,
+                "y": 542.0,
+                "width": 20.0,
+                "height": 15.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/Collar327_354",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59772
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 326.0,
+                "y": 354.0,
+                "width": 22.0,
+                "height": 8.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/Collar327_449",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59772
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 326.0,
+                "y": 449.0,
+                "width": 22.0,
+                "height": 8.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/Collar327_515",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59772
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 326.0,
+                "y": 515.0,
+                "width": 22.0,
+                "height": 8.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/LeftFooting",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59800
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 548.0,
+                "width": 28.0,
+                "height": 17.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage05_Surroundings_PreviewOnly/RightFooting",
+            "region": "Stage05_Surroundings_PreviewOnly",
+            "sprite": {
+                "instanceID": 59800
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 332.0,
+                "y": 548.0,
+                "width": 28.0,
+                "height": 17.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "IronveinBoardSideModules/Chain",
+            "region": "IronveinBoardSideModules",
+            "sprite": {
+                "instanceID": 59764
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 5.0,
+                "y": 264.0,
+                "width": 24.0,
+                "height": 56.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "IronveinBoardSideModules/Chain",
+            "region": "IronveinBoardSideModules",
+            "sprite": {
+                "instanceID": 59764
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 337.0,
+                "y": 264.0,
+                "width": 24.0,
+                "height": 56.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "IronveinBoardSideModules/Lantern",
+            "region": "IronveinBoardSideModules",
+            "sprite": {
+                "instanceID": 59782
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 6.0,
+                "y": 313.0,
+                "width": 20.0,
+                "height": 40.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "IronveinBoardSideModules/Lantern",
+            "region": "IronveinBoardSideModules",
+            "sprite": {
+                "instanceID": 59782
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 338.0,
+                "y": 313.0,
+                "width": 20.0,
+                "height": 40.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage06_HUDSeating_PreviewOnly/UpperSeatingRail",
+            "region": "Stage06_HUDSeating_PreviewOnly",
+            "sprite": {
+                "instanceID": 59796
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 64.0,
+                "y": 570.0,
+                "width": 232.0,
+                "height": 7.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage06_HUDSeating_PreviewOnly/LowerSeatingRail",
+            "region": "Stage06_HUDSeating_PreviewOnly",
+            "sprite": {
+                "instanceID": 59796
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 64.0,
+                "y": 611.0,
+                "width": 232.0,
+                "height": 7.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage06_HUDSeating_PreviewOnly/LeftOuterPost",
+            "region": "Stage06_HUDSeating_PreviewOnly",
+            "sprite": {
+                "instanceID": 59750
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 64.0,
+                "y": 577.0,
+                "width": 7.0,
+                "height": 34.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage06_HUDSeating_PreviewOnly/RightOuterPost",
+            "region": "Stage06_HUDSeating_PreviewOnly",
+            "sprite": {
+                "instanceID": 59750
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 289.0,
+                "y": 577.0,
+                "width": 7.0,
+                "height": 34.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage06_HUDSeating_PreviewOnly/LeftCorbel",
+            "region": "Stage06_HUDSeating_PreviewOnly",
+            "sprite": {
+                "instanceID": 59920
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 46.0,
+                "y": 604.0,
+                "width": 32.0,
+                "height": 32.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage06_HUDSeating_PreviewOnly/RightCorbel",
+            "region": "Stage06_HUDSeating_PreviewOnly",
+            "sprite": {
+                "instanceID": 60050
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 282.0,
+                "y": 604.0,
+                "width": 32.0,
+                "height": 32.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage06_HUDSeating_PreviewOnly/LeftUpperBolt",
+            "region": "Stage06_HUDSeating_PreviewOnly",
+            "sprite": {
+                "instanceID": 59790
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 64.0,
+                "y": 571.0,
+                "width": 5.0,
+                "height": 5.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage06_HUDSeating_PreviewOnly/RightUpperBolt",
+            "region": "Stage06_HUDSeating_PreviewOnly",
+            "sprite": {
+                "instanceID": 59790
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 291.0,
+                "y": 571.0,
+                "width": 5.0,
+                "height": 5.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage06_HUDSeating_PreviewOnly/LeftLowerBolt",
+            "region": "Stage06_HUDSeating_PreviewOnly",
+            "sprite": {
+                "instanceID": 59790
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 64.0,
+                "y": 611.0,
+                "width": 5.0,
+                "height": 5.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage06_HUDSeating_PreviewOnly/RightLowerBolt",
+            "region": "Stage06_HUDSeating_PreviewOnly",
+            "sprite": {
+                "instanceID": 59790
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 291.0,
+                "y": 611.0,
+                "width": 5.0,
+                "height": 5.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "IronveinLowerModules/LowerLeft",
+            "region": "IronveinLowerModules",
+            "sprite": {
+                "instanceID": 59948
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 564.0,
+                "width": 56.0,
+                "height": 76.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "IronveinLowerModules/LowerRight",
+            "region": "IronveinLowerModules",
+            "sprite": {
+                "instanceID": 60048
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 304.0,
+                "y": 562.0,
+                "width": 56.0,
+                "height": 78.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "IronveinLowerModules/Crate",
+            "region": "IronveinLowerModules",
+            "sprite": {
+                "instanceID": 59878
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 9.0,
+                "y": 602.0,
+                "width": 36.0,
+                "height": 29.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision01_LowerCrystals/LeftGroundedOutcrop",
+            "region": "Revision01_LowerCrystals",
+            "sprite": {
+                "instanceID": 59902
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 575.0,
+                "width": 56.0,
+                "height": 64.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Revision01_LowerCrystals/RightGroundedOutcrop",
+            "region": "Revision01_LowerCrystals",
+            "sprite": {
+                "instanceID": 59946
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 304.0,
+                "y": 575.0,
+                "width": 56.0,
+                "height": 64.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage02_Separator_PreviewOnly/Native2x_ModularLedge/RepeatLeft",
+            "region": "Stage02_Separator_PreviewOnly",
+            "sprite": {
+                "instanceID": 59894
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 53.0,
+                "y": 246.0,
+                "width": 107.0,
+                "height": 10.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage02_Separator_PreviewOnly/Native2x_ModularLedge/RepeatRight",
+            "region": "Stage02_Separator_PreviewOnly",
+            "sprite": {
+                "instanceID": 59894
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 200.0,
+                "y": 246.0,
+                "width": 107.0,
+                "height": 10.0
+            },
+            "type": 2,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage02_Separator_PreviewOnly/Native2x_ModularLedge/BeamCenter",
+            "region": "Stage02_Separator_PreviewOnly",
+            "sprite": {
+                "instanceID": 59788
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 160.0,
+                "y": 245.0,
+                "width": 40.0,
+                "height": 12.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage02_Separator_PreviewOnly/Native2x_ModularLedge/EndTransition",
+            "region": "Stage02_Separator_PreviewOnly",
+            "sprite": {
+                "instanceID": 59988
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 47.0,
+                "y": 245.0,
+                "width": 10.0,
+                "height": 12.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage02_Separator_PreviewOnly/Native2x_ModularLedge/EndTransitionRight",
+            "region": "Stage02_Separator_PreviewOnly",
+            "sprite": {
+                "instanceID": 59922
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 303.0,
+                "y": 245.0,
+                "width": 10.0,
+                "height": 12.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        },
+        {
+            "name": "Stage02_Separator_PreviewOnly/Native2x_ModularLedge/CrystalNode",
+            "region": "Stage02_Separator_PreviewOnly",
+            "sprite": {
+                "instanceID": 59850
+            },
+            "rect": {
+                "serializedVersion": "2",
+                "x": 171.0,
+                "y": 242.0,
+                "width": 18.0,
+                "height": 18.0
+            },
+            "type": 0,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "reflection": {
+                "x": 1.0,
+                "y": 1.0
+            }
+        }
+    ]
+}

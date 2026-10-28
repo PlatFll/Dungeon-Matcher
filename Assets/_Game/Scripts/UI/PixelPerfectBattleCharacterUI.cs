@@ -41,7 +41,7 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
             observedImage = image;
         }
         Vector2 available = requestedBox;
-        if(DungeonPixelLabBattleArt.Current)
+        if(DungeonPixelLabBattleArt.Current || (isPlayer && IronveinBattleAssembly.Current))
         {
             Vector2 sourceReference=isPlayer ? RunSession.Current.Player.Definition.BattleReferenceCanvas : EnemyReferenceCanvasSize;
             if(sourceReference.x<=0 || sourceReference.y<=0)sourceReference=EnemyReferenceCanvasSize;

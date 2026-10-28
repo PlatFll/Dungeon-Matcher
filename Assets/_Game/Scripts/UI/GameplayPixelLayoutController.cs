@@ -256,7 +256,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             if (wave.TryGetComponent(out Image waveImage)) GameplayPixelGrid.FitImage(waveImage,
                 BattlePresentationSkin.Folder != null ? new Vector2(264, 54) : WaveTrackerLogicalSize);
         }
-        if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt && wave != null) nativeArt.PlaceControl(wave,"Wave",TopHud);
+        if (DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt && wave != null) nativeArt.PlaceControl(wave,"Wave",TopHud);
         if (TopHud.TryGetComponent(out TopBattlePresentationController presentation)) presentation.RefreshPresentation();
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         validationFrames = 5;

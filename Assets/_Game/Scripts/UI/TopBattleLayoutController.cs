@@ -163,7 +163,7 @@ public sealed class TopBattleLayoutController : MonoBehaviour
 
         // These reference vistas run to the screen edge. Only the player is
         // enclosed; an extra board-style box would obscure their scenery.
-        if (BattlePresentationSkin.Folder == null)
+        if (BattlePresentationSkin.Folder == null && !IronveinBattleAssembly.Current)
             BuildFrame(layoutRoot, "BattleArenaFrame");
 
         BuildFrame(

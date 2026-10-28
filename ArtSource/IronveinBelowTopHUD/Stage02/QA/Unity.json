@@ -1,0 +1,40 @@
+{
+    "status": "PASS",
+    "scene": "Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage02.unity",
+    "note": "Actual Unity art-only renders. Every pixel outside the separator rectangle matches Stage 01 at all three sizes. No production integration or phone test.",
+    "protectedPixelsUnchanged": true,
+    "geometryUnchanged": true,
+    "sceneExcludedFromBuild": true,
+    "nativeSeparatorBounds": {
+        "serializedVersion": "2",
+        "x": 47.0,
+        "y": 242.0,
+        "width": 266.0,
+        "height": 18.0
+    },
+    "boardBounds": {
+        "serializedVersion": "2",
+        "x": 87.45048522949219,
+        "y": 213.45050048828126,
+        "width": 545.0989990234375,
+        "height": 545.0989990234375
+    },
+    "portraitBounds": {
+        "serializedVersion": "2",
+        "x": 21.0,
+        "y": 825.0,
+        "width": 195.0,
+        "height": 406.0
+    },
+    "widths": [
+        360,
+        720,
+        1080
+    ],
+    "changedPixels": [
+        2706,
+        10849,
+        24390
+    ],
+    "importedAssets": 5
+}

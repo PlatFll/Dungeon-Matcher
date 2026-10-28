@@ -98,7 +98,7 @@ public sealed class RunControlsUI : MonoBehaviour
         settings.gameObject.AddComponent<GraphicRaycaster>();
         FinalizedUiSkin.Button(settings, gear:true);
         GameplayThemeSkin.Button(settings,settings:true);
-        if(!BattlePresentationSkin.UsesReferenceKit)GlobalMenuSkin.Gear(settings);
+        if(!BattlePresentationSkin.UsesReferenceKit && !IronveinBattleAssembly.Current)GlobalMenuSkin.Gear(settings);
         if(BattlePresentationSkin.Folder!=null && BattlePresentationSkin.Reference("SharedSettings") is Sprite referenceGear)
         {
             settings.image.sprite=referenceGear;settings.transition=Selectable.Transition.ColorTint;settings.spriteState=default;
@@ -114,7 +114,7 @@ public sealed class RunControlsUI : MonoBehaviour
             GameplayPixelGrid.FitImage(settings.image,new Vector2(45,40));
             GameplayPixelGrid.FitImage(guide.image,new Vector2(79,39));
         }
-        if(DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt)
+        if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt)
         {
             var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
             settings.transform.SetParent(top,false); guide.transform.SetParent(top,false);
@@ -179,7 +179,7 @@ public sealed class RunControlsUI : MonoBehaviour
         for(int i=0;i<2;i++)
         {
             var kind=(ConsumableKind)i;int count=session.Charges(kind);float cooldown=session.Cooldown(kind);
-            if(DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt)
+            if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt)
             {
                 float u=DungeonPixelLabBattleArt.Unit(canvas);var r=(RectTransform)slots[i].transform;
                 r.sizeDelta=new Vector2(47,43)*u;r.anchoredPosition=new Vector2(i==0?-87.5f:88.5f,0)*u;
@@ -218,7 +218,7 @@ public sealed class RunControlsUI : MonoBehaviour
         hint.fontSize=9;
         // The compact strip has room for native controls and their energy bar,
         // but not the optional lesson caption over the buttons. Guide stays available.
-        hint.gameObject.SetActive(DungeonPixelLabBattleArt.Current != null || ((RectTransform)hint.transform.parent).rect.height > 80);
+        hint.gameObject.SetActive(DungeonPixelLabBattleArt.Controls != null || ((RectTransform)hint.transform.parent).rect.height > 80);
         hint.text=session.Board.IsSelectingTarget?"Preview, then confirm. Tap Bomb to cancel.\nBarricades take 1 hit; specials can extend the blast.":lesson ?? (session.IsPractice?"Practice: no stock spent or progression earned.":"");
         if(resonance!=null)
         {
@@ -233,7 +233,7 @@ public sealed class RunControlsUI : MonoBehaviour
             confirmBomb.transform.position = abilityRect.position;
             confirmBomb.interactable=session.CanUse(ConsumableKind.Bomb);
         }
-        if(DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt controlArt)
+        if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt controlArt)
         {
             var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
             controlArt.PlaceControl((RectTransform)SettingsButton.transform,"Settings",top);
@@ -242,6 +242,15 @@ public sealed class RunControlsUI : MonoBehaviour
             hint.rectTransform.sizeDelta=new Vector2(Mathf.Min(430,((RectTransform)hint.transform.parent).rect.width-12),28);
             foreach(var c in charges) {var r=(RectTransform)c.transform.parent;r.anchoredPosition=new Vector2(15,-16)*u;GameplayPixelGrid.Snap(r);r.SetAsLastSibling();}
             var hud=(RectTransform)hint.transform.parent;
+            if(IronveinBattleAssembly.Current && UnityEngine.Device.Screen.width<448)
+            {
+                // Keep the compact caption below the native controls, not across their icons.
+                hint.text=session.Board.IsSelectingTarget?"PREVIEW, THEN CONFIRM.":"THINKING IS SAFE. TAP GUIDE FOR HELP.";
+                hint.rectTransform.sizeDelta=new Vector2(hud.rect.width-12,16*u);
+                PixelTextFitter.Apply(hint,8*u);
+                hint.rectTransform.anchoredPosition=new Vector2(0,-hud.rect.height*.5f+8*u);
+                if(resonance)resonance.gameObject.SetActive(false);
+            }
             if(controlArt.forestAssembly && hud.rect.height<=100)
             {
                 // Compact phones retain the same buttons; fit the caption below them.
@@ -310,8 +319,8 @@ public sealed class RunControlsUI : MonoBehaviour
             text+="\n\nDROWNED COURT\nFlooding lasts 10-12 accepted moves. AIR starts at five; each move spends one. Pop a bubbled gem to restore two. At zero AIR take 5 damage after enemy actions, except the final move drains first. Break Air Coffers or defeat their owners to recover captured bubbles. Sapphire gem damage gains 15%.";
         if (session == null || session.IsFinished || overlay != null) return;
         session.CancelTargeting(); BuildOverlay("Combat guide · paused"); Pause();
-        float pw=DungeonPixelLabBattleArt.Current?Mathf.Min(500,safeRoot.rect.width-16):500;
-        float ph=DungeonPixelLabBattleArt.Current?Mathf.Min(660,safeRoot.rect.height-20):660;
+        float pw=DungeonPixelLabBattleArt.Controls?Mathf.Min(500,safeRoot.rect.width-16):500;
+        float ph=DungeonPixelLabBattleArt.Controls?Mathf.Min(660,safeRoot.rect.height-20):660;
         panel.sizeDelta=new Vector2(pw,ph);
         panel.Find("Title").GetComponent<RectTransform>().anchoredPosition=new Vector2(0,ph/2-50);
         var viewport=GameUi.Rect("GuideViewport",panel,new Vector2(pw-50,ph-250),new Vector2(0,25));

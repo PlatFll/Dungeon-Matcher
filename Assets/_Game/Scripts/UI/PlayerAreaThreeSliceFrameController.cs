@@ -151,6 +151,8 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
     private void BuildThreeSliceFrame()
     {
         RemoveGeneratedFrame();
+        if (IronveinBattleAssembly.Current is IronveinBattleAssembly mine)
+        { if (!playerSection.Find("PixelLabPortraitFrame")) mine.frames.Frame(playerSection, "Portrait", 50, BattleFloorAnchor.Unit(playerSection.GetComponentInParent<Canvas>())); return; }
         if (DrownedCourtBattleAssembly.Current is DrownedCourtBattleAssembly court)
         { if (!playerSection.Find("PixelLabPortraitFrame")) court.frames.Frame(playerSection, "Portrait", 45, BattleFloorAnchor.Unit(playerSection.GetComponentInParent<Canvas>())); return; }
         if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt)

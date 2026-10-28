@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "scope": "Center approved walking surface on the shared actor floor, with approved separator directly below",
+  "required_unity_validator": {
+    "passed": true,
+    "version": "6000.3.19f1",
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-9a18faea-6d80-44f0-bd7f-97c7ea2f346f.log",
+    "code_sha256": "d6fcb56bcec28f25a283714012895bee28657f80b0d1df046a9ecce386071df7"
+  },
+  "render_check": "QA/Unity.json",
+  "source_and_pixel_check": "QA/Independent.json",
+  "scene_check": "QA/SceneDelta.json",
+  "reference_inspection": "QA/LayoutReferences.json",
+  "protected_files": 6105,
+  "changed_rectangles": 15,
+  "translation_native_pixels": 14,
+  "floor": [
+    188.0,
+    220.0
+  ],
+  "feet": 204.0,
+  "separator": [
+    220.0,
+    239.0
+  ],
+  "artwork_changes": 0,
+  "pixellab_generations": 0,
+  "actor_and_UI_unchanged": true,
+  "preview_sizes": [
+    "360x640",
+    "720x1280",
+    "1080x1920"
+  ],
+  "limitations": [
+    "Static art-only Unity camera renders; not production Game integration or device testing.",
+    "Existing shared fractional board/UI geometry retained."
+  ],
+  "stop": "Review only. Do not merge."
+}

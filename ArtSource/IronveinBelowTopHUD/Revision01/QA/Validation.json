@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "scope": "Focused floor / top prop removal / lower crystal revision; no merge",
+  "unity_editor": "6000.3.19f1",
+  "required_unity_validator": {
+    "passed": true,
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-be93f42a-df28-4b5e-a62f-915ae696ad33.log",
+    "code_sha256": "2de23f5d1a7eeee841c00541c8b4ea099700cd988303838cf60ec21605fb4de8"
+  },
+  "scene_validation": "QA/Unity.json",
+  "native_validation": "QA/Assets.json",
+  "serialized_validation": "QA/SceneDelta.json",
+  "protected_original_files": 6040,
+  "new_assets": 6,
+  "capture_sizes": [
+    "360x640",
+    "720x1280",
+    "1080x1920"
+  ],
+  "pixellab_generations": 26,
+  "cumulative_pack_generations": 100,
+  "artistic_verdict": "Upper combat area is clearer after removing the three lanterns, cart and wheel. A warm flat walking plane and darker natural bedrock replace the old gray-brick strip. Two large distinct amber outcrops sit at the grounded lower corners; the loose board-side deposits are hidden. Native cluster economy and existing character/UI readability are retained.",
+  "limitations": [
+    "Static art-only Unity render, not live combat or device testing.",
+    "Original shared board and UI geometry remains unchanged, including inherited fractional edge rounding.",
+    "Review scene excluded from builds; production Game is unchanged."
+  ]
+}

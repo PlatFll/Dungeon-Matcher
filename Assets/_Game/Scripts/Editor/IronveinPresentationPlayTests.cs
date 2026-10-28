@@ -52,8 +52,12 @@ public sealed partial class ForestFoundationPlayTests
                     {var p=Camera.main.WorldToScreenPoint(point);Assert.That(p.x,Is.InRange(0f,(float)Screen.width));Assert.That(p.y,Is.InRange(0f,(float)Screen.height));}
                 var frameProfile=theme.playerFrame;
                 Assert.That(frameProfile.TopPiece.rect.width,Is.EqualTo(146));
-                Assert.That(GameObject.Find("PlayerDungeonBackdrop").GetComponent<Image>().sprite,Is.SameAs(theme.panelBackground));
-                Assert.That(GameObject.Find("BottomDungeonBackdrop").GetComponent<Image>().sprite,Is.SameAs(theme.panelBackground));
+                Assert.That(GameObject.Find("PlayerDungeonBackdrop"),Is.Null,"Obsolete mine panel is not rendered");
+                Assert.That(GameObject.Find("BottomDungeonBackdrop"),Is.Null,"Obsolete lower metal panel is not rendered");
+                Assert.That(GameObject.Find("ApprovedIronveinEnvironment"),Is.Not.Null);
+                var recess=GameObject.Find("Overfilled cave recess").GetComponent<Image>();
+                Assert.That(recess.sprite,Is.SameAs(IronveinBattleAssembly.Current.recess));
+                Assert.That(recess.GetComponentInParent<RectMask2D>(),Is.Not.Null);
                 ScreenCapture.CaptureScreenshot(Path.Combine(folder,name+".png"));yield return null;yield return null;index++;
             }
         }

@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "scope": "Cave-dark wider walking plane and lighter chunky separator blocks only",
+  "required_unity_validator": {
+    "passed": true,
+    "version": "6000.3.19f1",
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-ac03383d-fe0c-4017-8fd8-57c428e27718.log",
+    "code_sha256": "7b7fe99a52f000cc8b96cfea22a2a83d2ac8e7d13526beefc3a44f1103462826"
+  },
+  "render_check": "QA/Unity.json",
+  "asset_check": "QA/Assets.json",
+  "scene_check": "QA/SceneDelta.json",
+  "protected_files": 6067,
+  "native_assets": 4,
+  "preview_sizes": [
+    "360x640",
+    "720x1280",
+    "1080x1920"
+  ],
+  "walking_depth_before": 8,
+  "walking_depth_after": 20,
+  "separator_block_size": [
+    40,
+    19
+  ],
+  "enemy_floor_line_unchanged": true,
+  "UI_geometry_unchanged": true,
+  "pixellab_generations": 0,
+  "artistic_verdict": "The walking plane now recedes into the cave with its existing near-black colors. Broad lighter charcoal blocks clearly separate the upper area from the board. Their connected shading and small chips remain quiet behind health bars.",
+  "limitations": [
+    "Art-only static Unity renders; not production Game or device testing.",
+    "Original shared fractional board/UI geometry is retained."
+  ],
+  "stop": "Review only. Do not merge."
+}

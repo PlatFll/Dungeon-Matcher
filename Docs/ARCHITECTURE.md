@@ -186,7 +186,11 @@ photo/travel flows. Testing eligibility does not imply live travel readiness.
 operations use the canonical mutation queue. The move coordinator also drains
 the kit's pending coroutine cleanup after the board completes its motion, so
 saved preparation/basic holds cannot leak through a transient stable checkpoint.
-Presentation never triggers damage.
+Presentation never triggers damage. Six fixed row drills use the same mutation
+queue; BoardController emits contact/travel/burst/reload observations while retaining
+per-cell removal, batch deduplication and final settlement. Mine snapshot v3
+migrates the old two-machine network without losing fuel. MineEnvironmentView
+aligns native modular launchers to board cell centers and owns only visuals.
 Rattled is a shared player status read by the central Stagger buildup calculation.
 `MineEncounterSelector` reads zone recipe metadata and a WaveSpawnProfile budget;
 WaveController retains spawning, global depth scaling and rewards. Successful
@@ -438,6 +442,25 @@ Opened settings and main menu keep their existing skins and menu music selection
 - `BoardVisuals` creates the board background, cell tiles, rectangular gem mask, and modular frame. It assigns frame sorting once: `Effects / 100`, above board content on `BoardBackground` and `Gems`, below `WorldUI` and screen-space overlay canvases. Frame sprites are unmasked. Board motion, obstacles, and VFX must stay below this border; neither animation nor gameplay code owns frame sorting.
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 ### Gameplay pixel layout ownership
+
+- **Approved Ironvein runtime binding (2026-10-28):** `IronveinBattleAssembly`
+  selects `IronveinAssembly` only in the mine. Its source is the approved
+  Revision04 assembly: 74 modular environment placements plus native frame
+  aliases, the cave recess and shared control binding. `DungeonPresentationArt`
+  maps those modules to the existing live board and common enemy floor. The
+  walking surface surrounds that floor; the separator stays below it. Native
+  pieces repeat or move without stretching; background coverage extends beyond
+  the safe viewport. Board and portrait frames follow the unchanged shared
+  rectangles, and the overfilled recess is clipped with RectMask2D. Mixed source
+  import PPU is honored by `ResponsiveModularFrameFitter` when repeating rails.
+  Existing Wave/Guide/Settings/ability/supply owners consume the approved shared
+  control art through `DungeonPixelLabBattleArt.Controls`; this does not select
+  Dungeon cell artwork or scenery. The old mine enclosure/background instances
+  are bypassed. MineEnvironmentView still owns the six live dispensers, and
+  BoardController retains all firing, contact, mutation and settlement authority.
+  Review scenes and static actors/gems/UI are never instantiated in production.
+  Verification: `ArtSource/IronveinBelowTopHUD/Integration/`.
+
 
 - **Approved hybrid Dungeon integration (2026-10-22, pending PR #205):** the same
   `DungeonPixelLabBattleArt` resource has an optional hybrid module/placement binding.

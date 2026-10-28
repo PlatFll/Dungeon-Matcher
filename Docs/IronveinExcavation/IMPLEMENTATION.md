@@ -37,8 +37,11 @@ and drill hardware while retaining the existing materialization/hit feedback.
 
 ## Phase 03 — fixed drills
 
-Two persistent board-owned drills have stable IDs: 1 enters a row from the left,
-2 enters a column from below. The initial lanes are the middle row and column.
+The user-approved six-launcher revision (2026-10-28) replaces the original
+row/column pair. Six persistent board-owned row drills have stable IDs 1-6:
+odd IDs enter from the left, even IDs from the right. On an 8-row board their
+initial target rows, counted from the bottom starting at zero, are 7,6,4,3,1,0.
+Each muzzle is aligned to its actual target cell center, including after shifts.
 Each has four charge pips. A deliberate opening match involving either of the
 first two cells inside an intake contributes one charge, at most once per drill
 per accepted move. Cascades, specials, free abilities and machine clears do not
@@ -47,8 +50,17 @@ machines. Charge saturates at one launch; excess does not create hidden shots.
 
 The move coordinator drains charged machines after actor opportunities. Off-turn
 feeds drain under the mutation queue before its ownership ends. Machines reserve
-charge before firing callbacks, launch in stable-ID order, and clear whole lanes.
-Intersecting cells clear once. There is no refill between passes; one canonical
+charge before firing callbacks, launch in stable-ID order, and clear each row
+in travel order (right-side machines move right-to-left). The launch cell
+shatters immediately during its first 75 ms travel, with preparation flash
+skipped only for that clear. Later occupied cells remain intact during a
+35 ms approach and 140 ms spinning contact hold. Canonical shatter then
+finishes while the bit stays outside the cell; only afterward does a 75 ms
+entry movement begin. Already empty/visited cells skip resistance. The
+empty dispenser does not reload until the terminal 180 ms burst finishes, then
+the new bit peeks out over 160 ms. Presentation events observe this sequence;
+missing/disabled VFX cannot block or change clears. Thinking/menu pause freezes
+the timeline. Overlapping row cells clear once. There is no refill between passes; one canonical
 environmental settlement follows the batch. No actor damage is dealt by machines.
 
 This environmental source removes crossed special gems without activation.
@@ -58,8 +70,10 @@ healing, shield grants or recursive drill fuel can come from the machine clear.
 Other environmental operations and all player clears retain their established
 semantics. The small Bore projectile is a separate later-phase operation.
 
-Mine snapshot v2 saves machine lanes, charges and the last contributing manual
-action. Foundation v1 saves initialize the two machines once. Photos keep the
+Mine snapshot v3 saves six machine lanes, sides, charges and the last
+contributing manual action. Legacy v1/v2 saves keep existing IDs, charge and
+manual-action receipts; the old vertical lane becomes the same numbered row.
+Missing machines initialize uncharged, and old input snapshots are not mutated. Photos keep the
 current network and cannot refund spent charge; zone travel drops the source
 network. The existing layout owners reserve optional perimeter space only for
 the mine theme. `MineEnvironmentView` observes state and shows fallback machine
@@ -90,13 +104,13 @@ warnings; death/Stagger cancels them without a separate recovery timer. Missing
 or changed Assay targets fizzle. Source sigils, actor countdowns and optional
 board highlights observe the saved intent. Native effects remain Phase 09 work.
 
-- Hauler powers existing eligible allies and alternates one drill feed.
+- Hauler powers existing eligible allies and cycles one feed through the six stable drill IDs.
 - Stonewright's floor contact queues two safe Brittle placements immediately.
 - Bore scans rows then columns in stable index order, preferring fewer stones.
   Its two-move warned projectile skips specials and stops at its first stone,
   dealing exactly one durability even when that destroys it. Only an unobstructed
-  shot reaches the player. Each launch gives the corresponding fixed drill one
-  charge. Enemy clears and refill cascades grant no player rewards.
+  shot reaches the player. Its existing feed targets remain ID 1 for horizontal
+  shots and ID 2 for vertical shots; each launch grants one charge. Enemy clears and refill cascades grant no player rewards.
 - Surveyor marks one non-Obsidian stone for one move. If another effect already
   changed its stage, the cast fizzles; it does not advance a replacement target.
 - Sapper's one attached charge has a two-move deadline. Deliberate adjacent
@@ -214,18 +228,25 @@ cleanup inside the accepted action prevents a false stable-save window.
 
 ## Phase 09 — native cave and presentation
 
-Three additive battle compositions use a receding rail tunnel, separate timber,
-ore, rail/cart, lamps and machinery modules. The existing unit Grid, Tilemap
-roles, viewport mask and battle-floor anchor remain authoritative. A subdued
-charcoal surround and a separate steel inset theme the gameplay screen. Native
-80-pixel L corners, 64x16 edge strips, 128x32 plaque, 144x32 energy frame and
-146-pixel player slices match the existing layout. The original player, skills,
-gems, neutral HP family, ranks and opened settings/menu assets remain bound.
-The theme reserves .8 world units outside its frame for the two drill housings.
+The approved Revision04 modular environment now renders in the build-enabled
+Game scene through IronveinBattleAssembly and the existing DungeonPresentationArt
+owner. The separate cave depth, timber, walking slabs, separator, responsive
+portrait/board frame, side supports/lamps and large lower amber formations keep
+their native source pixels. Repeated floor/rock tiles cover the physical display;
+the portrait's overfilled cave backing is masked. The original Phase09 scenes
+remain source history and are bypassed by the production binding.
+
+Board/portrait geometry and the shared enemy floor remain unchanged. The existing
+live control owners use the approved shared frame family; Rattlebones uses the
+approved native player size. The original gems, board cells, HP/ranks and opened
+settings/menu functions remain bound. The theme reserves .8 world units outside
+its frame for the six row-drill housings. Actual Game captures, five-zone layout
+checks and build results: `ArtSource/IronveinBelowTopHUD/Integration/`.
 
 Small drill presentation receives the board's actual stop cell; it cannot choose
-or change collision. Fixed drills show a full-lane travelling head/shaft and
-retraction, alongside their native spinning housing and four charge pips. Amber
+or change collision. Detachable spinning row bits, empty sockets and reload
+replace the previous head/shaft sweep. Housings remain stationary with four
+charge pips. Amber
 intake brackets identify their first charging cell. Damaged Hardened/Obsidian
 and Core art retains each material. Imminent maturation, fuse and Core break
 effects observe board state. Pausing freezes animation time, disabling the view

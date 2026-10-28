@@ -358,7 +358,7 @@ public sealed class ModularHealthBarUI : MonoBehaviour
             if (label != null)
             {
                 label.rectTransform.anchoredPosition = new Vector2(7, label.rectTransform.anchoredPosition.y);
-                if(DungeonPixelLabBattleArt.Current)
+                if(DungeonPixelLabBattleArt.Controls)
                 {
                     label.textWrappingMode=TMPro.TextWrappingModes.NoWrap;
                     if(compact)label.text=label.text.Replace(" ","");

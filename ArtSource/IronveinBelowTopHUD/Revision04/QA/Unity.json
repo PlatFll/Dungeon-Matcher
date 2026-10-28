@@ -1,0 +1,49 @@
+{
+    "status": "PASS",
+    "scene": "Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Revision04.unity",
+    "note": "Actual static art-only Unity renders. Fifteen existing floor/separator placements translated by whole native pixels. Source sprites, actors, HP, board, portrait, other geometry and production Game unchanged.",
+    "shiftedNativePixels": 14,
+    "floorTop": 188.0,
+    "floorBottom": 220.0,
+    "separatorBottom": 239.0,
+    "enemyFloorNative": 204.0,
+    "enemyFeetWorld": [
+        872.0,
+        872.0,
+        872.0
+    ],
+    "widths": [
+        360,
+        720,
+        1080
+    ],
+    "changedPixels": [
+        9976,
+        39914,
+        89370
+    ],
+    "protectedPixels": [
+        122498,
+        491745,
+        1106531
+    ],
+    "movedRects": [
+        "Revision03_WalkingSurface/WalkingSlab0",
+        "Revision03_WalkingSurface/WalkingSlab1",
+        "Revision03_WalkingSurface/WalkingSlab2",
+        "Revision03_WalkingSurface/WalkingSlab3",
+        "Revision03_WalkingSurface/WalkingSlab4",
+        "Revision03_WalkingSurface/WalkingSlab5",
+        "Revision02_CombatFloor/StoneBlock0",
+        "Revision02_CombatFloor/StoneBlock1",
+        "Revision02_CombatFloor/StoneBlock2",
+        "Revision02_CombatFloor/StoneBlock3",
+        "Revision02_CombatFloor/StoneBlock4",
+        "Revision02_CombatFloor/StoneBlock5",
+        "Revision02_CombatFloor/StoneBlock6",
+        "Revision02_CombatFloor/StoneBlock7",
+        "Revision02_CombatFloor/StoneBlock8"
+    ],
+    "originalArtUnchanged": true,
+    "actorAndUIUnchanged": true
+}

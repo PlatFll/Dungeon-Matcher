@@ -1,0 +1,59 @@
+{
+  "start_balance": 192.2,
+  "jobs": [
+    {
+      "kind": "sidescroller_tileset",
+      "id": "01040804-df87-4e71-9311-743283373428",
+      "quote": 1,
+      "verdict": "Rejected: still resembles gray brick ledge and has noisy highlights.",
+      "charged": 1
+    },
+    {
+      "kind": "crystal_outcrop_pro",
+      "id": "1bce3ffe-d8af-4bd9-9047-0a93ad62975b",
+      "quote": 10,
+      "charged": 10
+    },
+    {
+      "kind": "sidescroller_tileset_pro",
+      "id": "c0054523-2015-4f7c-8775-6c0c5b91304f",
+      "quote": 15,
+      "verdict": "Selected: broad natural bedrock and warm flat walkable surface.",
+      "charged": 15
+    }
+  ],
+  "image_uploads": 0,
+  "selected_crystals": {
+    "left": 9,
+    "right": 13
+  },
+  "cleanup": "LibreSprite native palette/cluster cleanup, separate surface/body repeat modules, whole-row additions to walking surface; no resizing. Crystal facets and silhouettes retained. All original sources preserved.",
+  "ending_balance": 166.2,
+  "actual_usage": 26,
+  "accounting": "192.20 before minus 166.20 after = 26 generations. Includes rejected standard floor.",
+  "raw_source_sha256": {
+    "Crystal-00.png": "5ccccde84cafb9e3fc4b9a07f50a00957d027834f3b681bebf2b7f56e07c7301",
+    "Crystal-01.png": "58f6b73ba954febff7d38fcb410da4bc721aaa38ebee6298d81c81bb871ee615",
+    "Crystal-02.png": "cde962cc55d873da81f81ad1f912ed72c63edd01b84fcaf3108c8337be5d1c3c",
+    "Crystal-03.png": "f3f2614619fae888b2be5006bb2e6ce2fddf3501e468a85c8f9f2b6e0bdb9845",
+    "Crystal-04.png": "b1eb89bc363f562da5bdb68f3a2a1b530f7d85ef9864ce5d65bacbc8ba2075b9",
+    "Crystal-05.png": "fa8008fbbe1ade67c7169749d7544085fefe5b79d0476b188544f9472644fdc8",
+    "Crystal-06.png": "1c28743c223ce70a4a5def0e7bb92b869792b03fe88e30fcd27f964454c944fb",
+    "Crystal-07.png": "cb06c012408624aa321ad7bc239b1a7528b040f3dd8f831c88ebd1d60870cc80",
+    "Crystal-08.png": "f01831496ff43909d4d4f4f171de11523fd744b24ba69ca7d6e8ce6e392695f1",
+    "Crystal-09.png": "0af23e4d99adb745082b81bd9595015df77b2dcf347177765e80ac0057c8e06e",
+    "Crystal-10.png": "b3c5b41f8eea8c91501ccafbf07d76feefeb4c713e7daeebef8fa5b66ae32da3",
+    "Crystal-11.png": "db6256853ebc1a8268a85de1cea8086ab9e70f1139ee4102142cd5020fa7c5cd",
+    "Crystal-12.png": "081a0efaff16b1ee95c13b36e6a99110d5d1b4e3237caaff439029a458ba2c7d",
+    "Crystal-13.png": "f25b19f9999ed2800db95bcdbd75f608b0ad9088ce22892412a2cd36957d004e",
+    "Crystal-14.png": "31141bb441e88f24ef87732132183ea912472799c5df3f899ffa6fe4d687d4f5",
+    "Crystal-15.png": "2539b0cebbe2254430f618e7acbe081fe9d4a878221629781b42b24cb5bf987c",
+    "FloorMetadata.json": "7958a20cbcba8fe6b431edf86095f71699034ab1ef06c9d224a6bc1574a34143",
+    "FloorProMetadata.json": "aa6353ee966d7ef2c67b023030d2cf10ec1a07de53e996cd8a10697d18ccd20d",
+    "FloorProTileset.png": "739719b58bc135d00a6d096aab0adc7e891e039541726a0cc0a1ad082dac65f7",
+    "FloorTileset.png": "903fd1b9ed16f76d67da07828fcfe0eeb78fabe86985e117208708684763034b"
+  },
+  "crystal_prompt": "One big grounded orange amber crystal outcrop for the bottom corner of an ancient fantasy mine game HUD. Three large chunky angular orange crystals emerge from ONE coherent broad charcoal violet slate rock base. Main tall orange crystal leans slightly inward, two smaller sturdy crystals flank it, embedded visibly into cracks. Wide stable base, clean strong silhouette, all components touch, complete uncut formation with transparent padding. Side view with slight three-quarter depth, compact 56x64 native pixel sprite. Broad flat facets, dark warm orange shadow, amber orange lit plane, tiny pale golden tips. Rock has two or three broad matte planes matching dark blue violet cave stone. Strong dark contour and restrained top-left lighting. Whimsical chunky crisp pixel art matching a compact mobile fantasy cast. No glow halo, no sparks, no tiny scattered crystals, no detached debris, no plants, no outline noise, no antialiasing, no painterly texture. Separate reusable environmental asset, no UI and no scenery.",
+  "crystal_seed": 281027,
+  "floor_prompts": "Exact complete descriptions and seeds retained in Raw/FloorMetadata.json and Raw/FloorProMetadata.json"
+}

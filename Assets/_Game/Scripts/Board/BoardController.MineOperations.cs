@@ -156,11 +156,18 @@ public partial class BoardController
         request.MineReachedEdge = !stopped; request.Succeeded = true;
     }
 
+    public bool CanShiftMineDrill(int id, int lane)
+    {
+        var drill = mine?.drills?.Find(d => d.id == id);
+        return drill != null && lane >= 0 && lane < height && Math.Abs(lane - drill.lane) == 1 &&
+            !mine.drills.Exists(d => d.id != id && d.fromRight == drill.fromRight && d.lane == lane);
+    }
+
     public bool TryQueueMineDrillShift(EnemyActor owner, int id, int lane, Action<bool> completed)
     {
         var drill = mine?.drills?.Find(d => d.id == id);
         if (!UsesMine || owner == null || owner.IsDefeated || drill == null || lane < 0 ||
-            lane >= (drill.horizontal ? height : width) || Math.Abs(lane - drill.lane) != 1) return false;
+            !CanShiftMineDrill(id, lane)) return false;
         EnqueueBoardMutation(new BoardMutationRequest { Kind = BoardMutationKind.ShiftMineDrill,
             OwnerActor = owner, MineDrillId = id, MineLane = lane, Completed = completed,
             IsCancelled = () => MineCasterCancelled(owner) });
@@ -169,7 +176,7 @@ public partial class BoardController
     private void ExecuteMineDrillShift(BoardMutationRequest request)
     {
         var drill = mine?.drills?.Find(d => d.id == request.MineDrillId);
-        if (drill == null || Math.Abs(drill.lane - request.MineLane) != 1) return;
+        if (drill == null || !CanShiftMineDrill(drill.id, request.MineLane)) return;
         drill.lane = request.MineLane; request.Succeeded = true; MineChanged?.Invoke();
     }
     private static bool MineCasterCancelled(EnemyActor actor) => actor == null || actor.IsDefeated ||

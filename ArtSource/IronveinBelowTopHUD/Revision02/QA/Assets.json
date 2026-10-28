@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "name": "FloorSurfaceA",
+      "size": [
+        32,
+        20
+      ],
+      "opaque_colors": 4,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "55d4ffc1f4067636bc61046571d24fd0c9784fbff3c1ec00934d47ce8ee4a500"
+    },
+    {
+      "name": "FloorSurfaceB",
+      "size": [
+        32,
+        20
+      ],
+      "opaque_colors": 4,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "33411cd21171789ea0746704289e39af5fd27b898f3b597757b9732837a5be0e"
+    },
+    {
+      "name": "SeparatorBlockA",
+      "size": [
+        40,
+        19
+      ],
+      "opaque_colors": 6,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "38bd050dd1ef0abdcfe34315d2a7f0551f78c126301c83d2bdf83a7ca37c09d2"
+    },
+    {
+      "name": "SeparatorBlockB",
+      "size": [
+        40,
+        19
+      ],
+      "opaque_colors": 6,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "57a0bf3e6f397112fa5a9fdadd5ca395098a4bb24ff2dd853cc6b66ea0bdc538"
+    }
+  ],
+  "variant_seams": "exact",
+  "protected_files": 6067
+}

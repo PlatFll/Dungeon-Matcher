@@ -81,6 +81,8 @@ public sealed partial class ForestFoundationPlayTests
     private IEnumerator MineBoreDeadline()
     {
         yield return LaunchMineKit("bore_engineer","pickaxe_delver");var actor=Enemy("bore_engineer");
+        // Keep this enemy-feed assertion separate from the fixture's top-row manual intake.
+        Run.Board.Mine.drills[0].lane=2;
         yield return ReadyMine(actor);var kit=actor.GetComponent<MineEnemyAbility>();
         Assert.That(kit.IsPreparing,Is.True);Assert.That(kit.Horizontal,Is.True);Assert.That(kit.Lane,Is.Zero);
         Assert.That(kit.ResponseMoves,Is.EqualTo(2));Assert.That(actor.GetComponent<EnemyAutoAttack>().IsPausedByAction,Is.True);
@@ -139,6 +141,8 @@ public sealed partial class ForestFoundationPlayTests
     private IEnumerator MineSupportAndGeology()
     {
         yield return LaunchMineKit("ore_hauler","stonewright","vein_surveyor");var board=Run.Board;
+        // Isolate Hauler fuel from the top-row opening match; leave the next lane free for Switcher.
+        board.Mine.drills[0].lane=2;
         yield return ReadyMine(Enemy("ore_hauler"));Assert.That(Enemy("stonewright").GetComponent<EnemyOrePower>().IsPowered,Is.True);
         Assert.That(board.Mine.drills[0].charge,Is.EqualTo(1));
         yield return ReadyMine(Enemy("stonewright"));Assert.That(board.MineStoneCount,Is.EqualTo(2));

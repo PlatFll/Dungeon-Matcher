@@ -21,14 +21,31 @@ public partial class BoardController
     {
         if (!UsesMine) return;
         mine ??= new MineEnvironmentState { lastSettledMove = completedValidPlayerMoves };
-        mine.version = MineEnvironmentState.CurrentVersion;
-        // Foundation checkpoints predate machines; add the initial two only once.
         if (mine.drills == null) mine.drills = new List<MineDrillState>();
-        if (mine.drills.Count == 0)
+        if (mine.version == MineEnvironmentState.CurrentVersion && mine.drills.Count == MineEnvironmentState.DrillCount) return;
+        // Migrate the old two-machine network without refunding or discarding fuel.
+        // Its vertical lane becomes the same numbered row; IDs remain stable.
+        foreach (var drill in mine.drills)
         {
-            mine.drills.Add(new MineDrillState { id = 1, horizontal = true, lane = height / 2 });
-            mine.drills.Add(new MineDrillState { id = 2, horizontal = false, lane = width / 2 });
+            drill.horizontal = true;
+            drill.fromRight = drill.id % 2 == 0;
+            drill.lane = Mathf.Clamp(drill.lane, 0, height - 1);
         }
+        for (int id = 1; id <= MineEnvironmentState.DrillCount; id++)
+            if (!mine.drills.Exists(d => d.id == id))
+            {
+                bool right = id % 2 == 0; int row = MineEnvironmentState.InitialRow(id, height);
+                // Legacy lanes retain priority; never stack two same-side housings.
+                for (int offset = 0; offset < height; offset++)
+                {
+                    int candidate = (row + offset) % height;
+                    if (mine.drills.Exists(d => d.fromRight == right && d.lane == candidate)) continue;
+                    row = candidate; break;
+                }
+                mine.drills.Add(new MineDrillState { id = id, horizontal = true, fromRight = right, lane = row });
+            }
+        mine.drills.Sort((a, b) => a.id.CompareTo(b.id));
+        mine.version = MineEnvironmentState.CurrentVersion;
     }
 
     public bool TryQueuePlaceMineStones(EnemyActor owner, int count, int ownerCap,

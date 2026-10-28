@@ -67,6 +67,8 @@ public sealed partial class ForestFoundationPlayTests
             yield return Until(()=>Run?.InitialStateReady==true && !Run.Continuation.IsRestoring,"destination loads");
             Run.GetComponent<RunControlsUI>().Close();yield return Stable();
             yield return Until(()=>Run.Travel.State.stage==0,"smoke clears");
+            Assert.That(GameObject.Find("ApprovedIronveinEnvironment")!=null,Is.EqualTo(destination=="ironvein-excavation"));
+            Assert.That(GameObject.Find("ApprovedDrownedCourtEnvironment")!=null,Is.EqualTo(destination=="drowned-court"));
             Assert.That(Run.RunId,Is.EqualTo(runId));Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo(destination));
             Assert.That(Run.Board.MineStoneCount,Is.Zero);Assert.That(Run.Board.VineCount,Is.Zero);Assert.That(Run.Board.IsFlooded,Is.False);
             Assert.That(Run.Continuation.Capture().board.frost,Is.Empty);

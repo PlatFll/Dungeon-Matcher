@@ -1,0 +1,823 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "stage": 2,
+      "name": "BeamCenter",
+      "size": [
+        40,
+        12
+      ],
+      "bounds": [
+        0,
+        0,
+        40,
+        12
+      ],
+      "opaque_colors": 12,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage02/Exports/BeamCenter.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage02/BeamCenter.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage02/Native/BeamCenter.ase",
+      "sha256": "33d5a79d1ac708bb3c0921d18ba1963378bd221df7945cf031ea18abe043dbbc",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 2,
+      "name": "BeamRepeat",
+      "size": [
+        24,
+        10
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        10
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage02/Exports/BeamRepeat.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage02/BeamRepeat.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage02/Native/BeamRepeat.ase",
+      "sha256": "10a881260a29e1e53fe7d21a1bf2e54cc9b9b215c069d5594815510979b3c4bc",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 2,
+      "name": "CrystalNode",
+      "size": [
+        18,
+        18
+      ],
+      "bounds": [
+        0,
+        0,
+        18,
+        18
+      ],
+      "opaque_colors": 8,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage02/Exports/CrystalNode.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage02/CrystalNode.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage02/Native/CrystalNode.ase",
+      "sha256": "1a8600d61d753fc1c1ea263de8603a16c2cf7cf9731021afdad70b2a4f46387b",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 2,
+      "name": "EndTransition",
+      "size": [
+        10,
+        12
+      ],
+      "bounds": [
+        0,
+        0,
+        10,
+        12
+      ],
+      "opaque_colors": 12,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage02/Exports/EndTransition.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage02/EndTransition.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage02/Native/EndTransition.ase",
+      "sha256": "28d175172c51d84e4932fdd66dac234993f8cd7a6b068aff1be4891b4a10d4c3",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 2,
+      "name": "EndTransitionRight",
+      "size": [
+        10,
+        12
+      ],
+      "bounds": [
+        0,
+        0,
+        10,
+        12
+      ],
+      "opaque_colors": 12,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage02/Exports/EndTransitionRight.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage02/EndTransitionRight.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage02/Native/EndTransitionRight.ase",
+      "sha256": "3ac674bdf6bd1c5174d8d1e3e6b44a5b81442202a7081eb30e39ae73a9d57b52",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 3,
+      "name": "AmberInset",
+      "size": [
+        9,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ],
+      "opaque_colors": 8,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage03/Exports/AmberInset.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage03/AmberInset.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage03/Native/AmberInset.ase",
+      "sha256": "696fc64dcf7ef70b23960710df10ebe5d4a3e7013edfd8da9ba21369be75d954",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 3,
+      "name": "BoardCornerBL",
+      "size": [
+        27,
+        27
+      ],
+      "bounds": [
+        2,
+        0,
+        27,
+        25
+      ],
+      "opaque_colors": 18,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage03/Exports/BoardCornerBL.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage03/BoardCornerBL.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage03/Native/BoardCornerBL.ase",
+      "sha256": "a714db40d92793b3ca1a381093797eb9ff52abc07250382bd7b1045c383bbb5d",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 3,
+      "name": "BoardCornerBR",
+      "size": [
+        27,
+        27
+      ],
+      "bounds": [
+        0,
+        0,
+        25,
+        25
+      ],
+      "opaque_colors": 15,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage03/Exports/BoardCornerBR.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage03/BoardCornerBR.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage03/Native/BoardCornerBR.ase",
+      "sha256": "62f55ca87e30a3119af14885b2a654e32243398a1914bc7b0f6b080931e14e9e",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 3,
+      "name": "BoardCornerTL",
+      "size": [
+        27,
+        27
+      ],
+      "bounds": [
+        2,
+        2,
+        27,
+        27
+      ],
+      "opaque_colors": 16,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage03/Exports/BoardCornerTL.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage03/BoardCornerTL.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage03/Native/BoardCornerTL.ase",
+      "sha256": "90366cbbbc3a68a5b0b57fb95206ccb1166f760ac40fec38a2010f798b6bc0a1",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 3,
+      "name": "BoardCornerTR",
+      "size": [
+        27,
+        27
+      ],
+      "bounds": [
+        0,
+        2,
+        25,
+        27
+      ],
+      "opaque_colors": 17,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage03/Exports/BoardCornerTR.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage03/BoardCornerTR.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage03/Native/BoardCornerTR.ase",
+      "sha256": "cef849859ff014b4f07f6ac524aa39974282250f4a5337b2ad732c5b396d5057",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 3,
+      "name": "BoardJoint",
+      "size": [
+        9,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ],
+      "opaque_colors": 8,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage03/Exports/BoardJoint.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage03/BoardJoint.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage03/Native/BoardJoint.ase",
+      "sha256": "d36b2187bf11e171da5af424e064bf499fa0e0fbaf8121747f9f8d7c4b90e366",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 3,
+      "name": "BoardRailBottom",
+      "size": [
+        25,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        25,
+        9
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage03/Exports/BoardRailBottom.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage03/BoardRailBottom.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage03/Native/BoardRailBottom.ase",
+      "sha256": "84784e4b32aca379aa8bc6c2015284606f2704bf0418fb448f17339008f9f83f",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 3,
+      "name": "BoardRailLeft",
+      "size": [
+        9,
+        25
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        25
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage03/Exports/BoardRailLeft.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage03/BoardRailLeft.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage03/Native/BoardRailLeft.ase",
+      "sha256": "a813a9a005a0ae3b065cebb1566ed4d23a9b2485716ff94f09346061be659bf6",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 3,
+      "name": "BoardRailRight",
+      "size": [
+        9,
+        25
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        25
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage03/Exports/BoardRailRight.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage03/BoardRailRight.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage03/Native/BoardRailRight.ase",
+      "sha256": "a813a9a005a0ae3b065cebb1566ed4d23a9b2485716ff94f09346061be659bf6",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 3,
+      "name": "BoardRailTop",
+      "size": [
+        25,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        25,
+        9
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage03/Exports/BoardRailTop.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage03/BoardRailTop.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage03/Native/BoardRailTop.ase",
+      "sha256": "84784e4b32aca379aa8bc6c2015284606f2704bf0418fb448f17339008f9f83f",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 4,
+      "name": "MotorLeft",
+      "size": [
+        18,
+        27
+      ],
+      "bounds": [
+        0,
+        0,
+        18,
+        27
+      ],
+      "opaque_colors": 7,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage04/Exports/MotorLeft.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage04/MotorLeft.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage04/Native/MotorLeft.ase",
+      "sha256": "207f4fa8a981d775d7687ea67ce680eea13e5c8306abd9e82cd7f46db2e14f83",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 4,
+      "name": "MotorRight",
+      "size": [
+        18,
+        27
+      ],
+      "bounds": [
+        0,
+        0,
+        18,
+        27
+      ],
+      "opaque_colors": 8,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage04/Exports/MotorRight.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage04/MotorRight.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage04/Native/MotorRight.ase",
+      "sha256": "9ad0014021e0ea1be0a2616bc501b166eaa315f9cb6674c8b782edd13f8acf98",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 4,
+      "name": "MountLeft",
+      "size": [
+        38,
+        36
+      ],
+      "bounds": [
+        0,
+        1,
+        38,
+        35
+      ],
+      "opaque_colors": 8,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage04/Exports/MountLeft.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage04/MountLeft.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage04/Native/MountLeft.ase",
+      "sha256": "becf62b04cdaeb41aa1803f6fb7006c79023a50d48b4713a44e99e54e2e6bc7e",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 4,
+      "name": "MountRight",
+      "size": [
+        38,
+        36
+      ],
+      "bounds": [
+        0,
+        1,
+        38,
+        35
+      ],
+      "opaque_colors": 8,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage04/Exports/MountRight.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage04/MountRight.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage04/Native/MountRight.ase",
+      "sha256": "589acc417866bcb6bb5e4ab67368c9c5cba1c4714d60c9ca56b973200b2c4fff",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 4,
+      "name": "NoseLeft",
+      "size": [
+        16,
+        17
+      ],
+      "bounds": [
+        1,
+        2,
+        16,
+        15
+      ],
+      "opaque_colors": 7,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage04/Exports/NoseLeft.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage04/NoseLeft.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage04/Native/NoseLeft.ase",
+      "sha256": "ac165b5f99c080299938ad34c817994a6185a2bbdce7e9f882ec6f3d3f3e1bf2",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 4,
+      "name": "NoseRight",
+      "size": [
+        16,
+        17
+      ],
+      "bounds": [
+        0,
+        2,
+        15,
+        15
+      ],
+      "opaque_colors": 7,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage04/Exports/NoseRight.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage04/NoseRight.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage04/Native/NoseRight.ase",
+      "sha256": "c03aa61f729c7698ef3b26e8574b1e92c07ad0c5b713d0bdf2766521e848c2b1",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 4,
+      "name": "PowerBlock",
+      "size": [
+        9,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ],
+      "opaque_colors": 8,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage04/Exports/PowerBlock.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage04/PowerBlock.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage04/Native/PowerBlock.ase",
+      "sha256": "eecf6cbf3e9edc89db853cd2ee33a3393c3c745e0aface3743221710df61d40e",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 5,
+      "name": "AmberDeposit",
+      "size": [
+        24,
+        30
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        30
+      ],
+      "opaque_colors": 9,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage05/Exports/AmberDeposit.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage05/AmberDeposit.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage05/Native/AmberDeposit.ase",
+      "sha256": "5ac3a6bcc5e4e079145d12de5da5ae3b7058b746e5fc8c42db4977889c16e4e4",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 5,
+      "name": "IronCollar",
+      "size": [
+        22,
+        8
+      ],
+      "bounds": [
+        0,
+        1,
+        22,
+        7
+      ],
+      "opaque_colors": 7,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage05/Exports/IronCollar.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage05/IronCollar.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage05/Native/IronCollar.ase",
+      "sha256": "52038ad96752af659c637ad59dfff09fa489bee9113ad726e5068d93b95de176",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 5,
+      "name": "RockA",
+      "size": [
+        22,
+        46
+      ],
+      "bounds": [
+        0,
+        0,
+        22,
+        46
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage05/Exports/RockA.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage05/RockA.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage05/Native/RockA.ase",
+      "sha256": "2084b4f78ca9dc2ae4ccaefd8661109439b9fd9a25ebb564dd18d49b9994384b",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 5,
+      "name": "RockB",
+      "size": [
+        22,
+        48
+      ],
+      "bounds": [
+        0,
+        0,
+        22,
+        48
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage05/Exports/RockB.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage05/RockB.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage05/Native/RockB.ase",
+      "sha256": "e25b028b85a13148ceda61ee2362d8899bcd856559aabd3a17b31c78acc5d7b6",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 5,
+      "name": "RockCourse",
+      "size": [
+        64,
+        16
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        16
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage05/Exports/RockCourse.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage05/RockCourse.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage05/Native/RockCourse.ase",
+      "sha256": "9ca3b0afa9bd57512d57f90eefc36265e199241d9486a1a2943cb7b741597db1",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 5,
+      "name": "RockFoot",
+      "size": [
+        28,
+        17
+      ],
+      "bounds": [
+        1,
+        1,
+        27,
+        16
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage05/Exports/RockFoot.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage05/RockFoot.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage05/Native/RockFoot.ase",
+      "sha256": "08b131403b50a74710a4804f09fb71f5149562e85a2c2330b7fab39992ae1155",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 5,
+      "name": "TimberCap",
+      "size": [
+        20,
+        18
+      ],
+      "bounds": [
+        1,
+        0,
+        19,
+        18
+      ],
+      "opaque_colors": 9,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage05/Exports/TimberCap.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage05/TimberCap.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage05/Native/TimberCap.ase",
+      "sha256": "124b7c4c5473a37e5613ca6b32aa9fd10813e5f40674f7843e93784802b6ce86",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 5,
+      "name": "TimberFoot",
+      "size": [
+        20,
+        15
+      ],
+      "bounds": [
+        1,
+        0,
+        19,
+        14
+      ],
+      "opaque_colors": 8,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage05/Exports/TimberFoot.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage05/TimberFoot.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage05/Native/TimberFoot.ase",
+      "sha256": "1210364bf44d24bc728a00e4bef08123f47e1b35dd41eae6a0f0d62fa73a7701",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 5,
+      "name": "TimberRepeat",
+      "size": [
+        20,
+        24
+      ],
+      "bounds": [
+        2,
+        0,
+        18,
+        24
+      ],
+      "opaque_colors": 4,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage05/Exports/TimberRepeat.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage05/TimberRepeat.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage05/Native/TimberRepeat.ase",
+      "sha256": "3337e35f76c21e623b71dbf36738c12b72bb7f22d6eafdbd3a7ffbc5fbd6741b",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 6,
+      "name": "CorbelLeft",
+      "size": [
+        32,
+        32
+      ],
+      "bounds": [
+        7,
+        4,
+        31,
+        30
+      ],
+      "opaque_colors": 7,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage06/Exports/CorbelLeft.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage06/CorbelLeft.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage06/Native/CorbelLeft.ase",
+      "sha256": "e717fd89b2aabfd3645dd91836e54b95ce1d5f4a625620fd9cf5b4f40b54d0b6",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 6,
+      "name": "CorbelRight",
+      "size": [
+        32,
+        32
+      ],
+      "bounds": [
+        1,
+        4,
+        25,
+        30
+      ],
+      "opaque_colors": 7,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage06/Exports/CorbelRight.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage06/CorbelRight.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage06/Native/CorbelRight.ase",
+      "sha256": "8f929991c1e76fe47358d47306291d435a6b7690cf7358254a208d88baf620a5",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 6,
+      "name": "SeatBolt",
+      "size": [
+        5,
+        5
+      ],
+      "bounds": [
+        0,
+        0,
+        5,
+        5
+      ],
+      "opaque_colors": 6,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage06/Exports/SeatBolt.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage06/SeatBolt.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage06/Native/SeatBolt.ase",
+      "sha256": "e6482db06fac4198ba5c97cde906c8fdeb8ee390af8d97412f8dc8489188cf18",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 6,
+      "name": "SeatPost",
+      "size": [
+        7,
+        24
+      ],
+      "bounds": [
+        0,
+        0,
+        7,
+        24
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage06/Exports/SeatPost.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage06/SeatPost.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage06/Native/SeatPost.ase",
+      "sha256": "cef4fa5f4d22e1f9e500ab86b5ef36ab765b8e3b107c0158d436d437ed02505e",
+      "roundtrip_exact": true
+    },
+    {
+      "stage": 6,
+      "name": "SeatRail",
+      "size": [
+        24,
+        7
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        7
+      ],
+      "opaque_colors": 5,
+      "binary_alpha": true,
+      "source": "ArtSource/IronveinBelowTopHUD/Stage06/Exports/SeatRail.png",
+      "unity_asset": "Assets/_Game/Art/IronveinBelowTopHUD/Stage06/SeatRail.png",
+      "ase": "ArtSource/IronveinBelowTopHUD/Stage06/Native/SeatRail.ase",
+      "sha256": "0a61fcaedd34f95c72c14fbfe23395407d3421565cd94229c6d654aaa7df4367",
+      "roundtrip_exact": true
+    }
+  ],
+  "asset_count": 36,
+  "no_asset_edits": true,
+  "repeat_seams": [
+    {
+      "stage": 2,
+      "name": "BeamRepeat",
+      "axis": "x",
+      "edge_pixels_exact": true
+    },
+    {
+      "stage": 5,
+      "name": "TimberRepeat",
+      "axis": "y",
+      "edge_pixels_exact": true
+    },
+    {
+      "stage": 5,
+      "name": "RockCourse",
+      "axis": "x",
+      "edge_pixels_exact": true
+    },
+    {
+      "stage": 6,
+      "name": "SeatRail",
+      "axis": "x",
+      "edge_pixels_exact": true
+    },
+    {
+      "stage": 6,
+      "name": "SeatPost",
+      "axis": "y",
+      "edge_pixels_exact": true
+    }
+  ],
+  "palette_union": [
+    "#0a0d11",
+    "#13131f",
+    "#141522",
+    "#202332",
+    "#2b313a",
+    "#2c293d",
+    "#30202a",
+    "#303447",
+    "#41485b",
+    "#42374f",
+    "#4a2c1c",
+    "#55606e",
+    "#5a4964",
+    "#674229",
+    "#786477",
+    "#7a4d2e",
+    "#8a5622",
+    "#8c5b34",
+    "#93a1b0",
+    "#b07a43",
+    "#c58826",
+    "#c94d08",
+    "#f5923d",
+    "#fbea90",
+    "#fdf5e5",
+    "#ffdb8f"
+  ]
+}

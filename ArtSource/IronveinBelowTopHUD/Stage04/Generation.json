@@ -1,0 +1,86 @@
+{
+  "guide_version": "1.17.2",
+  "image_inputs": [],
+  "mode": "Text-only focused modular UI generation per pack",
+  "starting_balance": 236.2,
+  "requests": [
+    {
+      "model": "pixflux",
+      "args": {
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "outline": "single color black outline",
+        "shading": "basic shading",
+        "detail": "low detail",
+        "direction": "east",
+        "view": "side",
+        "isometric": false,
+        "text_guidance_scale": 9,
+        "description": "A tiny wall-mounted dwarven mining drill mechanism, SIDE VIEW pointing RIGHT. Compact square dark forged-iron motor housing on the LEFT with a small inset amber-orange diamond power core, sturdy rivets and short upper and lower mounting tabs. A short silver-gray conical spiral drill nose projects horizontally RIGHT from the housing. One solid connected machine, bolted to a mine UI board rail. Thick simple connected pixel clusters, broad quiet steel planes, restrained copper details, warm amber accents, strongest light upper-left. Native 32x32 sprite with a complete silhouette, transparent margin; occupied mechanism about 24 pixels wide and 22 tall. Crisp nostalgic fantasy mobile game pixel art, not a weapon, no hand, no text, no floor, no scenery, no glow haze, no anti-aliasing.",
+        "seed": 27042026
+      },
+      "job_id": "aef4d8a9-1555-45bd-bf36-30359ca01a53",
+      "cost_generations": 1,
+      "status": "rejected: unclear side-facing drill profile"
+    },
+    {
+      "model": "pixflux",
+      "args": {
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "outline": "single color black outline",
+        "shading": "basic shading",
+        "detail": "low detail",
+        "direction": "east",
+        "view": "side",
+        "isometric": false,
+        "text_guidance_scale": 9,
+        "description": "A compact fantasy mining machine module bolted to a vertical UI frame, facing RIGHT in a strict SIDE VIEW. Chunky charcoal-purple steel motor case on the LEFT, a small golden amber diamond in its side panel, four corner rivets, short mounting brackets above and below. Short tapered SILVER SPIRAL DRILL BIT pointing horizontally RIGHT, joined by a dark collar. The complete connected silhouette occupies about 24x22 pixels on a transparent 32x32 native canvas. Clean chunky pixel clusters, top-left lit metal rims, 2-3 useful shading steps per material, crisp dark outlines, quiet low detail. Industrial dwarven craftsmanship with a charming game-art finish. No handle, no person, no ground, no background, no painterly shading or blur.",
+        "seed": 27042027
+      },
+      "job_id": "b52d99ea-69cc-45f3-bd0f-bbc63af27470",
+      "cost_generations": 1,
+      "status": "rejected: unclear side-facing drill profile"
+    },
+    {
+      "model": "pro",
+      "args": {
+        "description": "ONE compact SIDE-MOUNTED MINING DRILL mechanism for a dwarven mine game UI border, exact SIDE ELEVATION pointing RIGHT. Large simple square charcoal-purple IRON MOTOR HOUSING on LEFT, with a clear tiny orange amber DIAMOND set in its side. Short tapered SILVER CONICAL DRILL BIT projects horizontally RIGHT, three broad diagonal spiral bands and a pointed tip. Profile view of the conical bit, NOT a circular front view. A chunky mounting backplate connects behind the housing, with simple dark top and bottom mounting lugs. Industrial fantasy mechanism, sturdy and readable. Entire connected machine only about 26 pixels wide by 22 tall centered on transparent canvas. Crisp native low-resolution pixel art, dark outline, broad clean material planes, 2-3 shading tones, upper-left light, quiet metal rims, warm tiny copper bolts. Keep amber jewel small. No handles, hands, scenery, wood background, sparks or blur. Not isometric; no other objects.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "max_colors": 16,
+        "palette": [
+          "#0A0D11",
+          "#30202A",
+          "#4A2C1C",
+          "#7A4D2E",
+          "#B07A43",
+          "#2B313A",
+          "#42374F",
+          "#55606E",
+          "#786477",
+          "#93A1B0",
+          "#FDF5E5",
+          "#8A5622",
+          "#C58826",
+          "#C94D08",
+          "#F5923D",
+          "#FFDB8F"
+        ],
+        "seed": 27042028
+      },
+      "job_id": "1df2b9a2-2f60-480f-8777-15ba58bc7394",
+      "cost_generations": 10,
+      "status": "selected candidate 17; other candidates retained as alternatives",
+      "selection": 17
+    }
+  ],
+  "total_generations": 12,
+  "cleanup": "Split the generated motor and spiral bit into native pieces; discard wraparound specks, complete truncated tip with native pixels, simplify small material noise, add separate mechanical mounts and amber inset, retain top-left light on both assemblies.",
+  "ending_balance": 224.2,
+  "verified_generations_spent": 12,
+  "cumulative_pack_generations": 42
+}

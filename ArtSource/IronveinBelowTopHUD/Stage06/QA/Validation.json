@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "stage": 6,
+  "protected_file_count": 761,
+  "approved_sources_unchanged": true,
+  "captures": [
+    {
+      "width": 360,
+      "difference_bounds": [
+        47,
+        570,
+        313,
+        634
+      ],
+      "top_board_energy_bar_exact": true,
+      "bottom_text_exact": true,
+      "approved_opaque_UI_and_environment_exact": true
+    },
+    {
+      "width": 720,
+      "difference_bounds": [
+        94,
+        1140,
+        626,
+        1268
+      ],
+      "top_board_energy_bar_exact": true,
+      "bottom_text_exact": true,
+      "approved_opaque_UI_and_environment_exact": true
+    },
+    {
+      "width": 1080,
+      "difference_bounds": [
+        141,
+        1710,
+        939,
+        1902
+      ],
+      "top_board_energy_bar_exact": true,
+      "bottom_text_exact": true,
+      "approved_opaque_UI_and_environment_exact": true
+    }
+  ],
+  "unity_report": "Unity.json",
+  "assets_report": "Assets.json",
+  "pixel_lab_generations": 10,
+  "remaining_generations": 192.2,
+  "no_merge": true,
+  "not_live_gameplay_or_device_test": true,
+  "artistic_verdict": "A restrained timber cradle seats the existing controls, with two solid forged-iron corbels and tiny warm rivets. Existing HUD frames, icons, energy bar and instructions remain readable and unchanged. No extra dangling props or scene redesign.",
+  "required_unity_validator": {
+    "passed": true,
+    "version": "6000.3.19f1",
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-b5e0e782-fa2e-4c56-bc16-ce6adadda72f.log",
+    "code_sha256": "2f9d5a1baf7753fb425959f55b8ac73865303455aa426ec38dba4ba130c97a7f"
+  },
+  "review_status": "Candidate; stop for Stage06 user approval",
+  "scene_delta": "42 added records for one group and 10 native support Images. Only the Canvas child list gains one link. No existing records, source artwork, geometry, active states or asset references changed."
+}

@@ -1,0 +1,87 @@
+{
+    "status": "PASS",
+    "scene": "Assets/_Game/Scenes/ArtPreview_IronveinBelowTopHUD_Stage04.unity",
+    "note": "Actual art-only Unity camera renders at three resolutions. Every changed pixel lies within a drill station and outside the grid. Top, separator, lower HUD and all original asset pixels and object geometry remain preserved. No live gameplay/device testing.",
+    "boardBounds": {
+        "serializedVersion": "2",
+        "x": 87.45048522949219,
+        "y": 213.45050048828126,
+        "width": 545.0989990234375,
+        "height": 545.0989990234375
+    },
+    "frameBounds": {
+        "serializedVersion": "2",
+        "x": 51.45048522949219,
+        "y": 177.45050048828126,
+        "width": 617.0989990234375,
+        "height": 617.0989990234375
+    },
+    "portraitBounds": {
+        "serializedVersion": "2",
+        "x": 21.0,
+        "y": 825.0,
+        "width": 195.0,
+        "height": 406.0
+    },
+    "nativeDrillBounds": [
+        {
+            "serializedVersion": "2",
+            "x": 5.725242614746094,
+            "y": 284.0,
+            "width": 40.0,
+            "height": 36.0
+        },
+        {
+            "serializedVersion": "2",
+            "x": 314.7252502441406,
+            "y": 284.0,
+            "width": 40.0,
+            "height": 36.0
+        },
+        {
+            "serializedVersion": "2",
+            "x": 5.725242614746094,
+            "y": 379.0,
+            "width": 40.0,
+            "height": 36.0
+        },
+        {
+            "serializedVersion": "2",
+            "x": 314.7252502441406,
+            "y": 379.0,
+            "width": 40.0,
+            "height": 36.0
+        },
+        {
+            "serializedVersion": "2",
+            "x": 5.725242614746094,
+            "y": 474.0,
+            "width": 40.0,
+            "height": 36.0
+        },
+        {
+            "serializedVersion": "2",
+            "x": 314.7252502441406,
+            "y": 474.0,
+            "width": 40.0,
+            "height": 36.0
+        }
+    ],
+    "geometryUnchanged": true,
+    "existingArtworkUnchanged": true,
+    "protectedPixelsUnchanged": true,
+    "sceneExcludedFromBuild": true,
+    "assets": 7,
+    "modules": 6,
+    "sourcePixelScale": 2,
+    "widths": [
+        360,
+        720,
+        1080
+    ],
+    "changedPixels": [
+        6873,
+        27338,
+        61543
+    ]
+}

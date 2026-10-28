@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "stage": 4,
+  "protected_file_count": 471,
+  "approved_sources_unchanged": true,
+  "captures": [
+    {
+      "width": 360,
+      "difference_bounds": [
+        6,
+        285,
+        355,
+        509
+      ],
+      "top_and_separator_exact": true,
+      "lower_hud_exact": true
+    },
+    {
+      "width": 720,
+      "difference_bounds": [
+        11,
+        570,
+        709,
+        1018
+      ],
+      "top_and_separator_exact": true,
+      "lower_hud_exact": true
+    },
+    {
+      "width": 1080,
+      "difference_bounds": [
+        17,
+        855,
+        1064,
+        1527
+      ],
+      "top_and_separator_exact": true,
+      "lower_hud_exact": true
+    }
+  ],
+  "unity_report": "Unity.json",
+  "assets_report": "Assets.json",
+  "pixel_lab_generations": 12,
+  "remaining_generations": 224.2,
+  "no_merge": true,
+  "not_live_gameplay_or_device_test": true,
+  "artistic_verdict": "Six compact inward drills attach to the rail through top and bottom mounting straps. Broad steel planes and small amber cores preserve readability. No floating fragments or grid overlap. Previous side stone/lantern sources are retained for their separate Stage05 review.",
+  "required_unity_validator": {
+    "passed": true,
+    "version": "6000.3.19f1",
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-34865d97-4c20-414b-8d12-34e0a6ad6ee7.log",
+    "code_sha256": "b0121ae185c00967565b89ced8da30eda1c5248b0c26685a68a25ce172659178"
+  },
+  "review_status": "Candidate; stop for Stage04 user approval",
+  "scene_delta": "98 added records for one group and 24 separate Image objects. Only one existing Canvas child-list record gains the group link. No removed records or changed existing asset/transform records."
+}
