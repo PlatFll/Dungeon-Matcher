@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-28",
+  "unity": "6000.3.19f1",
+  "validator": "PASS",
+  "validator_log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-6abeedb1-0e38-4f11-9353-ee0e0f195852.log",
+  "tests": {
+    "ForestFoundationPlayTests.IronveinDrillChargeDeduplicatesManualMatchesAndSurvivesContinue": {
+      "result": "Passed",
+      "run": "90215ce2-9b1a-45c8-bc9e-bd086c58d6a2",
+      "duration": "10.931906"
+    },
+    "ForestFoundationPlayTests.IronveinFullDrillNeverStopsAtTheFirstOfTwoObsidianStones": {
+      "result": "Passed",
+      "run": "90215ce2-9b1a-45c8-bc9e-bd086c58d6a2",
+      "duration": "8.387507"
+    },
+    "ForestFoundationPlayTests.IronveinManualIntakeLaunchWaitsForActorWorkAndKeepsBoardOwned": {
+      "result": "Passed",
+      "run": "90215ce2-9b1a-45c8-bc9e-bd086c58d6a2",
+      "duration": "9.069623"
+    },
+    "ForestFoundationPlayTests.IronveinRightIntakeFeedsOnlyItsOwnEdgeOnce": {
+      "result": "Passed",
+      "run": "90215ce2-9b1a-45c8-bc9e-bd086c58d6a2",
+      "duration": "6.133690"
+    },
+    "ForestFoundationPlayTests.IronveinSixDrillsPenetrateObsidianAndOverlappingRowsClearOnceWithoutRewards": {
+      "result": "Passed",
+      "run": "90215ce2-9b1a-45c8-bc9e-bd086c58d6a2",
+      "duration": "19.546049"
+    },
+    "ForestFoundationPlayTests.IronveinSixRowsMigrateLegacyFuelAndResume": {
+      "result": "Passed",
+      "run": "90215ce2-9b1a-45c8-bc9e-bd086c58d6a2",
+      "duration": "6.953214"
+    },
+    "ForestFoundationPlayTests.IronveinRowProjectileClearsInOrderPausesAndReloadsAfterBurst": {
+      "result": "Passed",
+      "run": "de3ccc95-1b2c-4975-ad5b-0ed7f378ccfc",
+      "duration": "10.235976"
+    },
+    "ForestFoundationPlayTests.IronveinSixDrillApprovedAssemblyMotionPreview": {
+      "result": "Passed",
+      "run": "de3ccc95-1b2c-4975-ad5b-0ed7f378ccfc",
+      "duration": "13.723274"
+    },
+    "ForestFoundationPlayTests.IronveinSixLaunchersAlignAtPortraitSizes": {
+      "result": "Passed",
+      "run": "de3ccc95-1b2c-4975-ad5b-0ed7f378ccfc",
+      "duration": "7.013173"
+    },
+    "ForestFoundationPlayTests.IronveinBoreChoosesEmptyLaneResumesThenHitsOnceAndReleasesBasics": {
+      "result": "Passed",
+      "run": "df353716-1d88-42c2-b39d-ed1a62a402c3",
+      "duration": "10.660256"
+    },
+    "ForestFoundationPlayTests.IronveinDelverFinalResponseDrillBreaksCoreBeforeImpact": {
+      "result": "Passed",
+      "run": "4c9b1161-80ed-411f-97d5-f35cf8d41ae5",
+      "duration": "4.867109"
+    },
+    "ForestFoundationPlayTests.IronveinDrillProofFitsEdgesAndLeavesSigilSidesClear": {
+      "result": "Passed",
+      "run": "4c9b1161-80ed-411f-97d5-f35cf8d41ae5",
+      "duration": "6.869285"
+    },
+    "ForestFoundationPlayTests.IronveinHaulerStonewrightAssayAndSwitchUseOwnedBoardQueue": {
+      "result": "Passed",
+      "run": "df353716-1d88-42c2-b39d-ed1a62a402c3",
+      "duration": "18.517324"
+    },
+    "ForestFoundationPlayTests.IronveinPackbeetleDeathPowersEveryDrillAndLivingEligibleAllyOnce": {
+      "result": "Passed",
+      "run": "4c9b1161-80ed-411f-97d5-f35cf8d41ae5",
+      "duration": "5.302515"
+    },
+    "ForestFoundationPlayTests.IronveinSentinelOnlyActualDrillFiringInterruptsEvenOnLastResponseMove": {
+      "result": "Passed",
+      "run": "4c9b1161-80ed-411f-97d5-f35cf8d41ae5",
+      "duration": "11.733295"
+    },
+    "ForestFoundationPlayTests.IronveinSixDrillGameplayDoesNotDependOnTheView": {
+      "result": "Passed",
+      "run": "4c9b1161-80ed-411f-97d5-f35cf8d41ae5",
+      "duration": "8.990846"
+    },
+    "ForestFoundationPlayTests.IronveinSmallDrillBreaksFirstStoneButNeverTouchesSecond": {
+      "result": "Passed",
+      "run": "df353716-1d88-42c2-b39d-ed1a62a402c3",
+      "duration": "6.788300"
+    },
+    "IronveinFoundationTests.BossSnapshotRejectsFutureAndImpossibleRemountButAcceptsPreviousMineSchema": {
+      "result": "Passed",
+      "run": "4c9b1161-80ed-411f-97d5-f35cf8d41ae5",
+      "duration": "0.001834"
+    },
+    "IronveinFoundationTests.IronveinLiveDestinationHasCompleteAssetsAndProvisionalSerializedTuning": {
+      "result": "Passed",
+      "run": "4c9b1161-80ed-411f-97d5-f35cf8d41ae5",
+      "duration": "0.000590"
+    },
+    "IronveinFoundationTests.MinePayloadRejectsFutureVersionWithoutRejectingOlderZones": {
+      "result": "Passed",
+      "run": "4c9b1161-80ed-411f-97d5-f35cf8d41ae5",
+      "duration": "0.002178"
+    },
+    "IronveinFoundationTests.StoneContinuationKeepsAgeAndHitWithoutReplayingAnAction": {
+      "result": "Passed",
+      "run": "4c9b1161-80ed-411f-97d5-f35cf8d41ae5",
+      "duration": "0.001282"
+    },
+    "IronveinFoundationTests.StoneHitResetsAgeAndCannotHardenOnThatAction": {
+      "result": "Passed",
+      "run": "4c9b1161-80ed-411f-97d5-f35cf8d41ae5",
+      "duration": "0.000438"
+    },
+    "IronveinFoundationTests.StoneMaturesOncePerAcceptedMoveAndStopsAtObsidian": {
+      "result": "Passed",
+      "run": "4c9b1161-80ed-411f-97d5-f35cf8d41ae5",
+      "duration": "0.001072"
+    }
+  },
+  "screens": [
+    [
+      360,
+      640
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      1080,
+      2400
+    ]
+  ],
+  "real_device_tested": false,
+  "android_build_run": false,
+  "preview_scope": "Real production BoardController and drill effects against unchanged Revision04 modular art; actor/HUD snapshot static. Production Game captures supplied separately.",
+  "regression_repair": "Restored original Bore horizontal/vertical feed IDs 1/2. Hauler/Bore fixtures place ID 1 on row 2 to isolate enemy fuel from the controlled top-row deliberate match; original exact assertions retained."
+}

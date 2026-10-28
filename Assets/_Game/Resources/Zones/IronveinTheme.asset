@@ -113,6 +113,19 @@ MonoBehaviour:
   boardPerimeterPadding: 0.8
   horizontalMineDrill: {fileID: 21300000, guid: e901139639a9cd54d85fd4b6d06f7eca, type: 3}
   verticalMineDrill: {fileID: 21300000, guid: e901139639a9cd54d85fd4b6d06f7eca, type: 3}
+  mineRowMount: {fileID: 21300000, guid: 4d75c2ea70551da42a1b647b1680c5f1, type: 3}
+  mineRowMotor: {fileID: 21300000, guid: 4b14aaba3fa69054ab886d32868c8e30, type: 3}
+  mineRowSocket: {fileID: 21300000, guid: b5cf83659689c6c41b173ef1dad42fa4, type: 3}
+  mineRowPower: {fileID: 21300000, guid: ccfc5272f1358704aa744eb254f20d62, type: 3}
+  mineRowSpinFrames:
+  - {fileID: 21300000, guid: e1dcbce1835dad047b03ef41e3ec2932, type: 3}
+  - {fileID: 21300000, guid: e1504b013bd394e4b850590f167b7e7c, type: 3}
+  - {fileID: 21300000, guid: 14130285a0b195948ad49bed4f26e0bb, type: 3}
+  - {fileID: 21300000, guid: 12fa855fa7d1f75419f548fc063b5940, type: 3}
+  - {fileID: 21300000, guid: 66fac02a640830542b68cbf530e0601a, type: 3}
+  - {fileID: 21300000, guid: 23c70ef095b035f44990fb76d4fcffaa, type: 3}
+  - {fileID: 21300000, guid: ccab0686a110f554ba0c9699d828dc4e, type: 3}
+  - {fileID: 21300000, guid: 1f45f9676a8592e4b8656207ae04b607, type: 3}
   supplyNormal: {fileID: 21300000, guid: 3ef51c701bec4c946be4e4c29f8c6e99, type: 3}
   supplyHighlighted: {fileID: 21300000, guid: 5b26e62f38855654aaec507d3d7f1207, type: 3}
   supplyPressed: {fileID: 21300000, guid: f5fa92f40fbc2734b8ecef1a102dbd44, type: 3}

@@ -1,0 +1,46 @@
+{
+  "still": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 5de05678-3db0-4b63-b596-3f3dab4333b1\njob_id: 5de05678-3db0-4b63-b596-3f3dab4333b1\nmodel: pro\ndescription: One detachable conical mining drill bit projectile, pointed RIGHT, strict side view. Keep the compact silvery iron spiral cone identity of the supplied tiny approved drill nose. This is ONLY the bit: no housing, no gun, no handle, no flames, no text. Broad readable helical ridges, dark charcoal outline #0A0D11, three cool gray iron tones and a small warm brass collar at the blunt left base. Native crisp chunky pixels, controlled top-left light, solid connected clusters. Match Dungeon Matcher's approved rendering discipline. Center the bit horizontally with transparent margins; cone occupies about 26 by 15 pixels within 32 by 24 canvas. Designed to spin around its horizontal axis without changing pointing direction or silhouette.\nsize: 32x24px\ntransparent: True\ncandidates: 64\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nmax colours: 12 per image\nasset_id: 4571d52b-ba5e-5026-8018-d9ce5c65158b\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"5de05678-3db0-4b63-b596-3f3dab4333b1\")"
+      }
+    ],
+    "isError": false
+  },
+  "animation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: a269c36d-8a95-47db-b6c8-f86546428f0e\njob_id: a269c36d-8a95-47db-b6c8-f86546428f0e\naction: Loop a mining drill bit spinning rapidly about its horizontal long axis while remaining perfectly centered and pointing right. The helical iron ridges cycle around the cone, with one full smooth revolution across the frames. Fixed rigid conical outline, fixed tip, fixed brass collar and constant volume. No translation, no wobbling, no tilting, no turning in the screen plane. No effects, no background. Keep every crisp native pixel and all transparent margins.\nframes: 8\nsize: 32x24px\ntransparent: True\nasset_id: 8fbe2748-245f-5da3-ba3b-be12b2b3d9f1\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"a269c36d-8a95-47db-b6c8-f86546428f0e\")"
+      }
+    ],
+    "isError": false
+  },
+  "references": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "bd6c09c5bca884482b59b3167bc17ea6ed47592ec2152d903f06106de9714b49",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "e95eae0c386ba33f573bd0d70749e74076360021aeab95e53d3ab0a54b279958",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Assets/_Game/Art/IronveinBelowTopHUD/Stage04/NoseRight.png": "c03aa61f729c7698ef3b26e8574b1e92c07ad0c5b713d0bdf2766521e848c2b1"
+  },
+  "startingBalance": 166.2,
+  "constrained_loop": {
+    "job_id": "c45807dc-bf5f-486e-958d-e9bd664c587f",
+    "frames_returned": 9,
+    "selected": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "cost": 1,
+    "first_and_last_frame": "PaddedStill.png",
+    "reason": "Stabilize loop endpoint and allow transparent margins"
+  },
+  "endingBalance": 154.2,
+  "spent": 12
+}

@@ -9,6 +9,14 @@ public partial class BoardController
     private bool resolvingUnrewardedEnvironment;
     public event Action<int, bool, int> MineDrillFired;
     public event Action MineDrillBatchSettled;
+    // Presentation observes this board-owned timeline; no animation callback clears gems.
+    public event Action<int, Vector2Int, float> MineDrillTravelling;
+    public event Action<int, Vector2Int> MineDrillExploded;
+    public event Action<int> MineDrillReloading;
+    public const float MineDrillTravelSeconds = .075f, MineDrillBurstSeconds = .18f, MineDrillReloadSeconds = .16f;
+    private readonly HashSet<int> airborneMineDrills = new HashSet<int>();
+    public bool IsMineDrillInFlight(int id) => airborneMineDrills.Contains(id);
+    public int MineDrillForCycle(int cycle) => mine?.drills?.Count > 0 ? mine.drills[Math.Abs(cycle) % mine.drills.Count].id : 1;
     public int MineDrillCapacity => Mathf.Max(1, MineZone?.mineDrillCapacity ?? 4);
     public bool HasReadyMineDrill => UsesMine && mine?.drills != null && mine.drills.Exists(d => d.charge >= MineDrillCapacity);
 
@@ -33,7 +41,7 @@ public partial class BoardController
             // Two cells immediately inside the intake are the visible feed zone.
             bool feeds = false;
             foreach (var gem in matches) if (gem != null)
-                feeds |= drill.horizontal ? gem.Row == drill.lane && gem.Column < 2
+                feeds |= drill.horizontal ? gem.Row == drill.lane && (drill.fromRight ? gem.Column >= width - 2 : gem.Column < 2)
                     : gem.Column == drill.lane && gem.Row < 2;
             if (!feeds) continue;
             drill.lastPlayerAction = action;
@@ -75,13 +83,18 @@ public partial class BoardController
         {
             foreach (var drill in firing)
             {
+                airborneMineDrills.Add(drill.id);
                 MineDrillFired?.Invoke(drill.id, drill.horizontal, drill.lane);
-                var cleared = new HashSet<Gem>();
                 int length = drill.horizontal ? width : height;
                 for (int step = 0; step < length; step++)
                 {
-                    var cell = drill.horizontal ? new Vector2Int(step, drill.lane) : new Vector2Int(drill.lane, step);
-                    if (!visited.Add(cell)) continue;
+                    int column = drill.fromRight ? width - 1 - step : step;
+                    var cell = drill.horizontal ? new Vector2Int(column, drill.lane) : new Vector2Int(drill.lane, step);
+                    MineDrillTravelling?.Invoke(drill.id, cell, MineDrillTravelSeconds);
+                    yield return new WaitForSeconds(MineDrillTravelSeconds);
+                    // A shifted launcher can share a lane. Empty cells still receive the
+                    // same readable cadence, but cannot clear or reward twice.
+                    if (!visited.Add(cell)) { yield return new WaitForSeconds(.05f); continue; }
                     if (barricadeCells.TryGetValue(cell, out var barrier))
                     {
                         // Environmental infrastructure destroys the whole object,
@@ -91,10 +104,19 @@ public partial class BoardController
                     }
                     if (royalBannerCells.TryGetValue(cell, out var banner)) CompleteRoyalBannerRemoval(banner);
                     var gem = GetGem(cell.x, cell.y);
-                    if (gem != null) cleared.Add(gem);
+                    // Canonical shatter supplies the short impact hold; no refill yet.
+                    // Includes specials without activation, reporting, energy or fuel.
+                    if (gem != null) yield return ClearMatches(new HashSet<Gem> { gem }, null);
+                    else yield return new WaitForSeconds(.05f);
                 }
-                // Includes special gems, with no detonation, report or energy.
-                if (cleared.Count > 0) yield return ClearMatches(cleared, null);
+                var exit = new Vector2Int(drill.fromRight ? -1 : width, drill.lane);
+                MineDrillTravelling?.Invoke(drill.id, exit, MineDrillTravelSeconds);
+                yield return new WaitForSeconds(MineDrillTravelSeconds);
+                MineDrillExploded?.Invoke(drill.id, exit);
+                yield return new WaitForSeconds(MineDrillBurstSeconds);
+                airborneMineDrills.Remove(drill.id);
+                MineDrillReloading?.Invoke(drill.id);
+                yield return new WaitForSeconds(MineDrillReloadSeconds);
             }
             deferRoyalBannerGravity = false;
             ResolvePendingRoyalBannerGravity();
@@ -102,6 +124,7 @@ public partial class BoardController
         }
         finally
         {
+            airborneMineDrills.Clear();
             deferRoyalBannerGravity = false;
             resolvingUnrewardedEnvironment = previous;
         }

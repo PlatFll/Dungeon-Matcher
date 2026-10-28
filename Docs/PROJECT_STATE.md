@@ -20,6 +20,18 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Ironvein six row-drill revision (2026-10-28)
+
+On `codex/ironvein-below-tophud-pixellab` / draft PR #215, the user explicitly
+approved making all six side launchers functional row drills. The revision
+retains four-charge intake rules, stone penetration, unrewarded clears and the
+canonical board lock/settlement. Spinning bits advance cell by cell, leave empty
+sockets, burst at the far edge and reload afterward. Legacy mine saves migrate
+without losing charge. The broader Ironvein environment remains an unmerged
+art-review assembly; the drill mechanic is connected to the production Game.
+Validation and preview evidence: `ArtSource/IronveinBelowTopHUD/SixDrills/`.
+Final visual approval and physical-device testing remain outstanding.
+
 
 ## Ironvein modular environment review (2026-10-26)
 

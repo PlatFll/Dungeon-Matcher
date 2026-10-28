@@ -101,11 +101,14 @@ public sealed partial class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbili
                 state.stoneId = targets[0].State.id; state.stoneStage = targets[0].State.stage;
                 state.action = Kind == EnemySpecialAbilityKind.AssayVein ? "ASSAY" : "CHARGE"; break;
             case EnemySpecialAbilityKind.SwitchTrack:
-                var drill = board.Mine?.drills?.OrderBy(d => d.id).ElementAtOrDefault(state.cycle % 2);
+                var drill = board.Mine?.drills?.OrderBy(d => d.id).ElementAtOrDefault(state.cycle % Math.Max(1, board.Mine.drills.Count));
                 if (drill == null) return false;
                 state.drillId = drill.id; state.horizontal = drill.horizontal;
                 int size = drill.horizontal ? board.Height : board.Width;
-                state.lane = drill.lane + (drill.lane == size - 1 ? -1 : 1); state.action = "SWITCH"; break;
+                state.lane = drill.lane + (drill.lane == size - 1 ? -1 : 1);
+                if (!board.CanShiftMineDrill(drill.id, state.lane)) state.lane = drill.lane - (state.lane - drill.lane);
+                if (!board.CanShiftMineDrill(drill.id, state.lane)) return false;
+                state.action = "SWITCH"; break;
             default: return false;
         }
         return true;
@@ -138,7 +141,7 @@ public sealed partial class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbili
             case EnemySpecialAbilityKind.ShareOre:
                 foreach (var ally in roster)
                     if (ally != null && ally != actor && !ally.IsDefeated) ally.GetComponent<EnemyOrePower>()?.Grant();
-                board.TryQueueMineDrillPower(1 + state.cycle % 2, 1); break;
+                board.TryQueueMineDrillPower(board.MineDrillForCycle(state.cycle), 1); break;
             case EnemySpecialAbilityKind.LayFoundation:
                 bool placed = false; used = false;
                 if (board.TryQueuePlaceMineStones(actor, 2, 6, MineStoneStage.Brittle, ok => { used = ok; placed = true; },
