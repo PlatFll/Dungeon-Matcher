@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "name": "CrystalLeft",
+      "size": [
+        56,
+        64
+      ],
+      "bounds": [
+        6,
+        2,
+        50,
+        62
+      ],
+      "colors": 9,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "0b5fffc1f1d8d37c33ba416b64d633784b4e755877f6c983104c69baae543f4e"
+    },
+    {
+      "name": "CrystalRight",
+      "size": [
+        56,
+        64
+      ],
+      "bounds": [
+        6,
+        2,
+        50,
+        62
+      ],
+      "colors": 10,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "5f031a8d4b20b3be9b5a6d18fb6f9c1711cd940c91ac409ba599579a4fcab55d"
+    },
+    {
+      "name": "FloorFaceA",
+      "size": [
+        32,
+        19
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        19
+      ],
+      "colors": 3,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "cadf3c38422b3b14089d8c3bc2ecd4b5b87b9f0a561a603cf819ad480f66733f"
+    },
+    {
+      "name": "FloorFaceB",
+      "size": [
+        32,
+        19
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        19
+      ],
+      "colors": 3,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "7813b34b6337d74354f65f4c3930d297ac1756756f04196e7e52cd956db53d85"
+    },
+    {
+      "name": "FloorSurfaceA",
+      "size": [
+        32,
+        8
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        8
+      ],
+      "colors": 4,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "870e48971e32b7176e5e7d2d26eb86c5a1a57dbc8456defae3d6c51bea5f888e"
+    },
+    {
+      "name": "FloorSurfaceB",
+      "size": [
+        32,
+        8
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        8
+      ],
+      "colors": 4,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "84be1846fa8e4cf1eabfa2ee37ea62186336c338d797477c3bc46f6ca0d8e72c"
+    }
+  ],
+  "repeat_variant_seams": "exact",
+  "protected_source_files": 6040
+}
