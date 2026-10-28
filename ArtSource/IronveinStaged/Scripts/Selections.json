@@ -1,0 +1,537 @@
+{
+  "CaveWall": {
+    "source": "QuietRock",
+    "stage": 2,
+    "seam": "xy",
+    "note": "QuietRock candidate 1, broad irregular rock planes, exact edge joins; quieter background value grouping",
+    "map": {
+      "292638": "1c1c2b",
+      "383044": "292638",
+      "463a50": "383044"
+    }
+  },
+  "CaveRecess": {
+    "source": "QuietRock",
+    "stage": 3,
+    "seam": "xy",
+    "note": "QuietRock candidate 1, broad irregular rock planes, exact edge joins",
+    "map": {
+      "292638": "181c27",
+      "383044": "222635",
+      "463a50": "2a2d3b"
+    }
+  },
+  "CavernDepth": {
+    "source": "CavernDepth",
+    "stage": 2,
+    "note": "controlled cool depth ramps; localized warm recoloring follows existing rock planes near lamps",
+    "light": true,
+    "map": {
+      "01010c": "0a0d11",
+      "020205": "0a0d11",
+      "040516": "0a0d11",
+      "06091a": "10131f",
+      "0e101e": "10131f",
+      "121429": "171e2e",
+      "121623": "171e2e",
+      "141c2b": "171e2e",
+      "161e31": "171e2e",
+      "1a2335": "242e42",
+      "1e1a29": "1c1c2b",
+      "2a354b": "2c354d",
+      "2e3a53": "2c354d",
+      "332c3b": "302638",
+      "343044": "42374f",
+      "362c34": "302638",
+      "384560": "36435a",
+      "455877": "46556e",
+      "506789": "596c87",
+      "5f7699": "6a7e98",
+      "7f513e": "7a4d2e",
+      "604441": "4a2c1c",
+      "524d6b": "5a4964",
+      "473e4f": "42374f"
+    }
+  },
+  "MineEntrance": {
+    "source": "MineEntrance",
+    "stage": 2,
+    "trim": true,
+    "pad": 2,
+    "map": {
+      "000000": "0a0d11",
+      "08040a": "0a0d11",
+      "010005": "0a0d11",
+      "181022": "13131f",
+      "2b1d39": "2c293d",
+      "23182e": "1c1c2b",
+      "372c3e": "42374f",
+      "413148": "42374f",
+      "483752": "42374f",
+      "5b4b59": "5a4964",
+      "6a5370": "786477",
+      "75616a": "786477",
+      "987775": "786477",
+      "c7c6cb": "93a1b0",
+      "5f3d32": "7a4d2e",
+      "c18166": "b07a43",
+      "925c4e": "b07a43",
+      "6e473f": "7a4d2e",
+      "472b27": "4a2c1c",
+      "3e2322": "4a2c1c",
+      "2d1519": "30202a",
+      "341e27": "30202a",
+      "413945": "2b313a",
+      "240f15": "30202a"
+    },
+    "note": "candidate 1; economical stone/wood/iron material ramps, no geometry changes"
+  },
+  "Timber": {
+    "source": "Timber",
+    "stage": 2,
+    "trim": true,
+    "pad": 1,
+    "note": "subordinate tunnel-side supports; full native drawing retained"
+  },
+  "Lantern": {
+    "source": "Lantern",
+    "stage": 2,
+    "trim": true,
+    "pad": 1,
+    "note": "candidate 3; broad squat lantern silhouette"
+  },
+  "LanternSmall": {
+    "source": "LanternSmall",
+    "stage": 2,
+    "trim": true,
+    "pad": 1,
+    "note": "candidate 0; distant small lighting variant"
+  },
+  "Platform": {
+    "source": "RailFloor",
+    "stage": 2,
+    "crop": [
+      0,
+      5,
+      96,
+      30
+    ],
+    "seam": "x",
+    "map": {
+      "cfccbc": "55606e",
+      "93a1b0": "55606e",
+      "55606e": "42374f",
+      "c58826": "42374f",
+      "8a5622": "42374f",
+      "6f3b1d": "30202a",
+      "4a2c1c": "30202a"
+    },
+    "note": "quiet repeat floor: remove scattered gold flecks, merge isolated native interior pixels, preserve continuous slab silhouette",
+    "despeck": true
+  },
+  "Ore": {
+    "source": "Ore",
+    "stage": 2,
+    "trim": true,
+    "pad": 1,
+    "note": "selected for restrained background placement"
+  },
+  "OreSmall": {
+    "source": "OreSmall",
+    "stage": 2,
+    "trim": true,
+    "pad": 1,
+    "note": "selected for restrained background placement"
+  },
+  "Tracks": {
+    "source": "ReuseTracks",
+    "stage": 2,
+    "trim": true,
+    "pad": 1,
+    "map": {
+      "d3a66a": "55606e",
+      "b07a43": "42374f"
+    },
+    "note": "Reuse prior PixelLab DistantTracks; upright loop candidate rejected"
+  },
+  "PortraitCornerTL": {
+    "source": "PortraitFrame",
+    "stage": 3,
+    "crop": [
+      7,
+      19,
+      20,
+      32
+    ],
+    "custom": "portrait_corner",
+    "note": "selected source material ramp; compact 13px centered iron socket authored in LibreSprite"
+  },
+  "PortraitCornerTR": {
+    "source": "PortraitFrame",
+    "stage": 3,
+    "crop": [
+      7,
+      19,
+      20,
+      32
+    ],
+    "custom": "portrait_corner",
+    "note": "selected source material ramp; compact 13px centered iron socket authored in LibreSprite"
+  },
+  "PortraitCornerBL": {
+    "source": "PortraitFrame",
+    "stage": 3,
+    "crop": [
+      7,
+      19,
+      20,
+      32
+    ],
+    "custom": "portrait_corner",
+    "note": "selected source material ramp; compact 13px centered iron socket authored in LibreSprite"
+  },
+  "PortraitCornerBR": {
+    "source": "PortraitFrame",
+    "stage": 3,
+    "crop": [
+      7,
+      19,
+      20,
+      32
+    ],
+    "custom": "portrait_corner",
+    "note": "selected source material ramp; compact 13px centered iron socket authored in LibreSprite"
+  },
+  "PortraitRailTop": {
+    "source": "PortraitFrame",
+    "stage": 3,
+    "crop": [
+      29,
+      23,
+      45,
+      30
+    ],
+    "custom": "portrait_rail_h",
+    "note": "native seven-pixel rail; broad quiet stone planes"
+  },
+  "PortraitRailBottom": {
+    "source": "PortraitFrame",
+    "stage": 3,
+    "crop": [
+      29,
+      23,
+      45,
+      30
+    ],
+    "custom": "portrait_rail_h",
+    "note": "native seven-pixel rail; broad quiet stone planes"
+  },
+  "PortraitRailLeft": {
+    "source": "PortraitFrame",
+    "stage": 3,
+    "crop": [
+      10,
+      44,
+      17,
+      60
+    ],
+    "custom": "portrait_rail_v",
+    "note": "matching upright rail, no stretch"
+  },
+  "PortraitRailRight": {
+    "source": "PortraitFrame",
+    "stage": 3,
+    "crop": [
+      10,
+      44,
+      17,
+      60
+    ],
+    "custom": "portrait_rail_v",
+    "note": "matching upright rail, no stretch"
+  },
+  "PortraitJoint": {
+    "source": "PortraitFrame",
+    "stage": 3,
+    "crop": [
+      45,
+      21,
+      54,
+      30
+    ],
+    "custom": "portrait_joint",
+    "note": "nine-pixel centered connector"
+  },
+  "BoardCornerTL": {
+    "source": "BoardFrame",
+    "stage": 4,
+    "crop": [
+      12,
+      12,
+      39,
+      39
+    ],
+    "note": "selected generated angular ore socket, original native pixels"
+  },
+  "BoardCornerTR": {
+    "source": "BoardFrame",
+    "stage": 4,
+    "crop": [
+      90,
+      12,
+      117,
+      39
+    ],
+    "note": "selected generated angular ore socket, original native pixels"
+  },
+  "BoardCornerBL": {
+    "source": "BoardFrame",
+    "stage": 4,
+    "crop": [
+      12,
+      90,
+      39,
+      117
+    ],
+    "note": "selected generated angular ore socket, original native pixels"
+  },
+  "BoardCornerBR": {
+    "source": "BoardFrame",
+    "stage": 4,
+    "crop": [
+      90,
+      90,
+      117,
+      117
+    ],
+    "note": "selected generated angular ore socket, original native pixels"
+  },
+  "BoardRailTop": {
+    "source": "BoardFrame",
+    "stage": 4,
+    "crop": [
+      51,
+      15,
+      76,
+      24
+    ],
+    "custom": "board_rail_h",
+    "note": "nine-pixel steel and timber rail rebuilt continuously in LibreSprite"
+  },
+  "BoardRailBottom": {
+    "source": "BoardFrame",
+    "stage": 4,
+    "crop": [
+      51,
+      15,
+      76,
+      24
+    ],
+    "custom": "board_rail_h",
+    "note": "nine-pixel steel and timber rail rebuilt continuously in LibreSprite"
+  },
+  "BoardRailLeft": {
+    "source": "BoardFrame",
+    "stage": 4,
+    "crop": [
+      15,
+      51,
+      24,
+      76
+    ],
+    "custom": "board_rail_v",
+    "note": "matching upright, no scaling"
+  },
+  "BoardRailRight": {
+    "source": "BoardFrame",
+    "stage": 4,
+    "crop": [
+      15,
+      51,
+      24,
+      76
+    ],
+    "custom": "board_rail_v",
+    "note": "matching upright, no scaling"
+  },
+  "BoardJoint": {
+    "source": "BoardFrame",
+    "stage": 4,
+    "crop": [
+      40,
+      14,
+      49,
+      23
+    ],
+    "custom": "portrait_joint",
+    "note": "centered iron clamp, native 9px"
+  },
+  "SupportCap": {
+    "source": "Support",
+    "stage": 5,
+    "crop": [
+      0,
+      0,
+      32,
+      16
+    ],
+    "note": "selected pillar 0; separate cap, repeat shaft, inset, brace and foot; no stretched pixels"
+  },
+  "SupportShaft": {
+    "source": "Support",
+    "stage": 5,
+    "crop": [
+      0,
+      32,
+      32,
+      52
+    ],
+    "note": "selected pillar 0; separate cap, repeat shaft, inset, brace and foot; no stretched pixels",
+    "seam": "y"
+  },
+  "SupportRune": {
+    "source": "Support",
+    "stage": 5,
+    "crop": [
+      0,
+      54,
+      32,
+      83
+    ],
+    "note": "selected pillar 0; separate cap, repeat shaft, inset, brace and foot; no stretched pixels"
+  },
+  "SupportBrace": {
+    "source": "Support",
+    "stage": 5,
+    "crop": [
+      0,
+      90,
+      32,
+      103
+    ],
+    "note": "selected pillar 0; separate cap, repeat shaft, inset, brace and foot; no stretched pixels"
+  },
+  "SupportBase": {
+    "source": "Support",
+    "stage": 5,
+    "crop": [
+      0,
+      106,
+      32,
+      128
+    ],
+    "note": "selected pillar 0; separate cap, repeat shaft, inset, brace and foot; no stretched pixels"
+  },
+  "Chain": {
+    "source": "ChainMount",
+    "stage": 5,
+    "trim": true,
+    "pad": 1,
+    "note": "full bracket and hanging links; supported hook, no chopped chain"
+  },
+  "Cart": {
+    "source": "MineCart",
+    "stage": 6,
+    "trim": true,
+    "pad": 1,
+    "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained"
+  },
+  "Wheel": {
+    "source": "Winch",
+    "stage": 6,
+    "trim": true,
+    "pad": 1,
+    "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained"
+  },
+  "Crate": {
+    "source": "OreCrate",
+    "stage": 6,
+    "trim": true,
+    "pad": 1,
+    "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained"
+  },
+  "Barrel": {
+    "source": "Barrel",
+    "stage": 6,
+    "trim": true,
+    "pad": 1,
+    "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained"
+  },
+  "Tools": {
+    "source": "MiningTools",
+    "stage": 6,
+    "trim": true,
+    "pad": 1,
+    "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained",
+    "map": {
+      "cfccbc": "93a1b0"
+    }
+  },
+  "Rope": {
+    "source": "RopeBundle",
+    "stage": 6,
+    "trim": true,
+    "pad": 1,
+    "note": "selected native prop; palette already conforms to authored material ramps, transparent padding retained"
+  },
+  "LowerLeft": {
+    "source": "LowerLeft",
+    "stage": 7,
+    "trim": true,
+    "pad": 2,
+    "note": "one grounded integrated rock/timber mass, no separate floating chunks; native selected candidate"
+  },
+  "LowerRight": {
+    "source": "LowerRight",
+    "stage": 7,
+    "trim": true,
+    "pad": 2,
+    "note": "one grounded integrated rock/timber mass, no separate floating chunks; native selected candidate"
+  },
+  "LowerWall": {
+    "source": "LowerWall",
+    "stage": 7,
+    "seam": "xy",
+    "map": {
+      "292638": "1c1c2b",
+      "383044": "292638",
+      "463a50": "383044"
+    },
+    "note": "quiet lower stone tile, clean native repeat and value control behind shared HUD"
+  },
+  "LowerLedge": {
+    "source": "Timber",
+    "stage": 7,
+    "crop": [
+      7,
+      28,
+      17,
+      66
+    ],
+    "rotate": true,
+    "note": "reusable native timber strip from selected beam; no stretch"
+  },
+  "TopBeam": {
+    "source": "Timber",
+    "stage": 8,
+    "crop": [
+      7,
+      28,
+      17,
+      66
+    ],
+    "rotate": true,
+    "note": "native timber beam reused as a continuous mine lintel above the combat chamber"
+  },
+  "BeamStrap": {
+    "source": "Timber",
+    "stage": 8,
+    "crop": [
+      4,
+      17,
+      23,
+      26
+    ],
+    "note": "original iron beam strap; intact native material clusters"
+  }
+}

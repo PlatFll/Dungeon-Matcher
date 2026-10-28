@@ -1,0 +1,678 @@
+{
+    "geometry": {
+        "zone": "ironvein-excavation",
+        "height": 1280,
+        "board": {
+            "serializedVersion": "2",
+            "x": 87.45048522949219,
+            "y": 215.45046997070313,
+            "width": 545.0989990234375,
+            "height": 545.0989990234375
+        },
+        "portrait": {
+            "serializedVersion": "2",
+            "x": 21.0,
+            "y": 827.0,
+            "width": 195.0,
+            "height": 406.0
+        },
+        "top": {
+            "serializedVersion": "2",
+            "x": 4.0,
+            "y": 798.0,
+            "width": 712.0,
+            "height": 478.0
+        },
+        "bottom": {
+            "serializedVersion": "2",
+            "x": 4.0,
+            "y": 4.0,
+            "width": 712.0,
+            "height": 176.0
+        },
+        "floorY": 866.0,
+        "legacyScenery": false,
+        "errors": [],
+        "masks": []
+    },
+    "pieces": [
+        {
+            "name": "Canvas/SafeArea/BottomHUD/AbilityButton",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/Ironvein/ButtonNormal.png",
+            "sprite": "ButtonNormal",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 272.0,
+                "y": 43.0,
+                "width": 176.0,
+                "height": 64.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 2,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/UI/Ability UI/Royal_Decree_Button_new.png",
+            "sprite": "Royal_Decree_Button_new",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 272.0,
+                "y": 43.0,
+                "width": 176.0,
+                "height": 64.0
+            },
+            "color": {
+                "r": 0.3499999940395355,
+                "g": 0.3499999940395355,
+                "b": 0.3499999940395355,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EmptyEnergyTrack",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/Finalized/EnergyTrack.png",
+            "sprite": "EnergyTrack",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 306.0,
+                "y": 120.0,
+                "width": 107.0,
+                "height": 8.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 2,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFillMask/EnergyFill",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/Finalized/EnergyFill.png",
+            "sprite": "EnergyFill",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 306.0,
+                "y": 120.0,
+                "width": 107.0,
+                "height": 8.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 2,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 0.1962616890668869,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/Ironvein/EnergyFrame.png",
+            "sprite": "EnergyFrame",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 288.0,
+                "y": 109.0,
+                "width": 144.0,
+                "height": 32.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/HealthPotion",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/Ironvein/SupplyNormal.png",
+            "sprite": "SupplyNormal",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 192.0,
+                "y": 43.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/HealthPotion/Label",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 198.0,
+                "y": 45.0,
+                "width": 52.0,
+                "height": 60.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 32.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/HealthPotion/Icon",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/Consumables/Potion.png",
+            "sprite": "Potion",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 200.0,
+                "y": 51.0,
+                "width": 48.0,
+                "height": 48.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": true
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/HealthPotion/CountBacking",
+            "kind": "image",
+            "asset": "",
+            "sprite": "",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 236.0,
+                "y": 43.0,
+                "width": 22.0,
+                "height": 16.0
+            },
+            "color": {
+                "r": 0.10980392247438431,
+                "g": 0.08235294371843338,
+                "b": 0.15294118225574494,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/HealthPotion/CountBacking/Charges",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "3",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 236.0,
+                "y": 43.0,
+                "width": 22.0,
+                "height": 16.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 16.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/Bomb",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/Ironvein/SupplyNormal.png",
+            "sprite": "SupplyNormal",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 464.0,
+                "y": 43.0,
+                "width": 64.0,
+                "height": 64.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/Bomb/Label",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 470.0,
+                "y": 45.0,
+                "width": 52.0,
+                "height": 60.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 32.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/Bomb/Icon",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/Consumables/Bomb.png",
+            "sprite": "Bomb",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 472.0,
+                "y": 51.0,
+                "width": 48.0,
+                "height": 48.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": true
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/Bomb/CountBacking",
+            "kind": "image",
+            "asset": "",
+            "sprite": "",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 508.0,
+                "y": 43.0,
+                "width": 22.0,
+                "height": 16.0
+            },
+            "color": {
+                "r": 0.10980392247438431,
+                "g": 0.08235294371843338,
+                "b": 0.15294118225574494,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/Bomb/CountBacking/Charges",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "3",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 508.0,
+                "y": 43.0,
+                "width": 22.0,
+                "height": 16.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 16.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/BottomHUD/ConsumableHint",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "Attacks and abilities count moves. Thinking is safe.\nTap Guide or an enemy to inspect.",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 145.0,
+                "y": 21.0,
+                "width": 430.0,
+                "height": 28.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 16.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/TopHUD/WaveTracker",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/Ironvein/WavePlaque.png",
+            "sprite": "WavePlaque",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 296.0,
+                "y": 1228.0,
+                "width": 128.0,
+                "height": 32.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/TopHUD/WaveTracker/WaveText",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "WAVE 1",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 308.0,
+                "y": 1228.0,
+                "width": 104.0,
+                "height": 32.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 32.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/CombatGuide",
+            "kind": "image",
+            "asset": "Assets/_Game/Art/Ironvein/ButtonNormal.png",
+            "sprite": "ButtonNormal",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 550.0,
+                "y": 1214.0,
+                "width": 88.0,
+                "height": 40.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 2,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/CombatGuide/Label",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "Guide",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 556.0,
+                "y": 1216.0,
+                "width": 76.0,
+                "height": 36.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 32.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/Settings/Label",
+            "kind": "text",
+            "asset": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset",
+            "sprite": "",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 654.0,
+                "y": 1212.0,
+                "width": 36.0,
+                "height": 44.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 0,
+            "fillOrigin": 0,
+            "alignment": 514,
+            "fontStyle": 0,
+            "fill": 0.0,
+            "ppuMultiplier": 0.0,
+            "fontSize": 32.0,
+            "preserveAspect": false
+        },
+        {
+            "name": "Canvas/SafeArea/Settings/GlobalGear",
+            "kind": "image",
+            "asset": "Assets/_Game/Resources/UI/GlobalMenu/Gear.png",
+            "sprite": "Gear",
+            "text": "",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 656.0,
+                "y": 1218.0,
+                "width": 32.0,
+                "height": 32.0
+            },
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "imageType": 0,
+            "fillMethod": 4,
+            "fillOrigin": 0,
+            "alignment": 0,
+            "fontStyle": 0,
+            "fill": 1.0,
+            "ppuMultiplier": 1.0,
+            "fontSize": 0.0,
+            "preserveAspect": false
+        }
+    ]
+}

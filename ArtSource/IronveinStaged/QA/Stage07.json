@@ -1,0 +1,412 @@
+{
+  "stage": 7,
+  "status": "INTERNAL SELECTION \u2014 USER APPROVAL PENDING",
+  "note": "Grounded lower rock/timber formations selected; crate/tools sit on native ledges; center potion, bomb and resonance controls unchanged; six Unity captures passed.",
+  "assets": [
+    {
+      "name": "Barrel",
+      "size": [
+        25,
+        32
+      ],
+      "colors": 12,
+      "sha256": "bc33d84c38900f056278a10b8dc26421ec0f39a406703a2bcc9dbb8158b91232"
+    },
+    {
+      "name": "BoardCornerBL",
+      "size": [
+        27,
+        27
+      ],
+      "colors": 14,
+      "sha256": "78342863d43965cab8f6035d62b47872f7efd71138da5e1578fc85a98a9c1f99"
+    },
+    {
+      "name": "BoardCornerBR",
+      "size": [
+        27,
+        27
+      ],
+      "colors": 14,
+      "sha256": "fc22c4e722c8b0a086de0224dcd10cf07c53e0383c22114648e2038ed326b718"
+    },
+    {
+      "name": "BoardCornerTL",
+      "size": [
+        27,
+        27
+      ],
+      "colors": 11,
+      "sha256": "7dcbc4595300a9dd405634406a765fe77b06e4c831898c830b024aa0db4064d1"
+    },
+    {
+      "name": "BoardCornerTR",
+      "size": [
+        27,
+        27
+      ],
+      "colors": 13,
+      "sha256": "9cbb8509fcd7a7d7c9bdeb12d8b0161b501d9a35e4ca0135306ea3e6d557ff1e"
+    },
+    {
+      "name": "BoardJoint",
+      "size": [
+        9,
+        9
+      ],
+      "colors": 7,
+      "sha256": "61ce62ac2214f1e9ad56e2f684cd86825dbae4b7b284bb33c5778c886909965a"
+    },
+    {
+      "name": "BoardRailBottom",
+      "size": [
+        25,
+        9
+      ],
+      "colors": 7,
+      "sha256": "5ccb305e5fbade6cde7ba1c97bec674bbc3638eaab6ffc8fabddbc7e5726a54a"
+    },
+    {
+      "name": "BoardRailLeft",
+      "size": [
+        9,
+        25
+      ],
+      "colors": 7,
+      "sha256": "f8fd624ea31a139c2fb4e5488b0a5c6d52b60c00453e896139328be2ce63d486"
+    },
+    {
+      "name": "BoardRailRight",
+      "size": [
+        9,
+        25
+      ],
+      "colors": 7,
+      "sha256": "f8fd624ea31a139c2fb4e5488b0a5c6d52b60c00453e896139328be2ce63d486"
+    },
+    {
+      "name": "BoardRailTop",
+      "size": [
+        25,
+        9
+      ],
+      "colors": 7,
+      "sha256": "5ccb305e5fbade6cde7ba1c97bec674bbc3638eaab6ffc8fabddbc7e5726a54a"
+    },
+    {
+      "name": "Cart",
+      "size": [
+        58,
+        59
+      ],
+      "colors": 12,
+      "sha256": "c2d35c5183f0fae6890f1d360a087dc917578001c0b815dc28e7dc175d396e0d"
+    },
+    {
+      "name": "CaveRecess",
+      "size": [
+        64,
+        64
+      ],
+      "colors": 4,
+      "sha256": "e55733094383128adf725a7ff57a931ae24c01afc902f6ba7d10777c3a4351d6"
+    },
+    {
+      "name": "CavernDepth",
+      "size": [
+        240,
+        160
+      ],
+      "colors": 24,
+      "sha256": "107d002f0fab5bd6dad95ab57579d612999169ea2ba69f449a313fa3711bb6da"
+    },
+    {
+      "name": "CaveWall",
+      "size": [
+        64,
+        64
+      ],
+      "colors": 4,
+      "sha256": "eca04e7df84207e7483a57cbf12985eeec80169d81df6f9c98741c71bca45cf5"
+    },
+    {
+      "name": "Chain",
+      "size": [
+        24,
+        56
+      ],
+      "colors": 8,
+      "sha256": "036cf5686339a11ebebc98dd2df63313d695e91882673627232628e12656b4c9"
+    },
+    {
+      "name": "Crate",
+      "size": [
+        36,
+        29
+      ],
+      "colors": 11,
+      "sha256": "36ee81d3fa905d86691262f94bc60f7932f69622bab08d7469345985ce0c0b77"
+    },
+    {
+      "name": "Lantern",
+      "size": [
+        20,
+        40
+      ],
+      "colors": 12,
+      "sha256": "8d356b4ee3a0635c1555fda377a2dc3454853222825a927c26bbcaba63877fe6"
+    },
+    {
+      "name": "LanternSmall",
+      "size": [
+        20,
+        40
+      ],
+      "colors": 13,
+      "sha256": "dfb69020491220e4da7330cdea4381b22507d9ae0251c1491568d1be9f9723da"
+    },
+    {
+      "name": "LowerLedge",
+      "size": [
+        38,
+        10
+      ],
+      "colors": 12,
+      "sha256": "a2759e6834867e215704bde35d2453ba56e8d8acc9320d929f230b141df71cfc"
+    },
+    {
+      "name": "LowerLeft",
+      "size": [
+        56,
+        76
+      ],
+      "colors": 12,
+      "sha256": "11d953ddf0c55f6151447a50284570eaa4a9fb93d9cf1598d2a62356c2cdc2e6"
+    },
+    {
+      "name": "LowerRight",
+      "size": [
+        56,
+        78
+      ],
+      "colors": 13,
+      "sha256": "ffbcc8216370460ae66342589881f5ca0956b45fbbfa60afcc53382c09652da6"
+    },
+    {
+      "name": "LowerWall",
+      "size": [
+        96,
+        32
+      ],
+      "colors": 5,
+      "sha256": "70a368708969a3de9b76a0c2ab90728ce286e562ed75b18ed0eea25cb157e468"
+    },
+    {
+      "name": "MineEntrance",
+      "size": [
+        118,
+        99
+      ],
+      "colors": 13,
+      "sha256": "7cacb0619a2ed1545037347ea2c868694a7538587b7a7f34834fe7f80223ead8"
+    },
+    {
+      "name": "Ore",
+      "size": [
+        32,
+        36
+      ],
+      "colors": 9,
+      "sha256": "4640305486f34a1052441ff43f21d13a1123ca3c90ab3e033105a2d03b1dacf6"
+    },
+    {
+      "name": "OreSmall",
+      "size": [
+        27,
+        35
+      ],
+      "colors": 10,
+      "sha256": "1f10a1454ae61d7ed8668bef0ec01098b094eb3489d79b66e2e0b5b834639548"
+    },
+    {
+      "name": "Platform",
+      "size": [
+        96,
+        25
+      ],
+      "colors": 8,
+      "sha256": "fb4320a3959d57b1d68c444c8c177087b5048ba14c1eac5d59f60c0441c8d4fd"
+    },
+    {
+      "name": "PortraitCornerBL",
+      "size": [
+        13,
+        13
+      ],
+      "colors": 9,
+      "sha256": "20dc02686782e3e4e7373b8a98eaa657fb33dc631596fc4267b04485446c08b3"
+    },
+    {
+      "name": "PortraitCornerBR",
+      "size": [
+        13,
+        13
+      ],
+      "colors": 9,
+      "sha256": "20dc02686782e3e4e7373b8a98eaa657fb33dc631596fc4267b04485446c08b3"
+    },
+    {
+      "name": "PortraitCornerTL",
+      "size": [
+        13,
+        13
+      ],
+      "colors": 9,
+      "sha256": "20dc02686782e3e4e7373b8a98eaa657fb33dc631596fc4267b04485446c08b3"
+    },
+    {
+      "name": "PortraitCornerTR",
+      "size": [
+        13,
+        13
+      ],
+      "colors": 9,
+      "sha256": "20dc02686782e3e4e7373b8a98eaa657fb33dc631596fc4267b04485446c08b3"
+    },
+    {
+      "name": "PortraitJoint",
+      "size": [
+        9,
+        9
+      ],
+      "colors": 7,
+      "sha256": "61ce62ac2214f1e9ad56e2f684cd86825dbae4b7b284bb33c5778c886909965a"
+    },
+    {
+      "name": "PortraitRailBottom",
+      "size": [
+        16,
+        7
+      ],
+      "colors": 5,
+      "sha256": "2a49d56154af6c3b8e88df3d73df5a532654714739e817acdec840252cf9477e"
+    },
+    {
+      "name": "PortraitRailLeft",
+      "size": [
+        7,
+        16
+      ],
+      "colors": 5,
+      "sha256": "07fcbb838866534f077ac31585e92ac74c4c3b309c69a04fa8c1f7955169e8c3"
+    },
+    {
+      "name": "PortraitRailRight",
+      "size": [
+        7,
+        16
+      ],
+      "colors": 5,
+      "sha256": "07fcbb838866534f077ac31585e92ac74c4c3b309c69a04fa8c1f7955169e8c3"
+    },
+    {
+      "name": "PortraitRailTop",
+      "size": [
+        16,
+        7
+      ],
+      "colors": 5,
+      "sha256": "2a49d56154af6c3b8e88df3d73df5a532654714739e817acdec840252cf9477e"
+    },
+    {
+      "name": "Rope",
+      "size": [
+        30,
+        24
+      ],
+      "colors": 8,
+      "sha256": "60e3cfd3a5e889ba2d6886d2876473fce8d101dcf4b87394d46367da2742203b"
+    },
+    {
+      "name": "SupportBase",
+      "size": [
+        32,
+        22
+      ],
+      "colors": 11,
+      "sha256": "fc813e96eeee966cdf44ba51b7cf8dd20ad0544dc6507aeab4e89b65e07a18fb"
+    },
+    {
+      "name": "SupportBrace",
+      "size": [
+        32,
+        13
+      ],
+      "colors": 7,
+      "sha256": "f2ceb857df5dd4ea6be3be24bd6c5fce51696688cf504c32caa3bac462651d6b"
+    },
+    {
+      "name": "SupportCap",
+      "size": [
+        32,
+        16
+      ],
+      "colors": 6,
+      "sha256": "3881adda8100c6a5ae7ef3ff585a16a75b10a6ab1ccfdaf2f92d20b0933b1d4c"
+    },
+    {
+      "name": "SupportRune",
+      "size": [
+        32,
+        29
+      ],
+      "colors": 12,
+      "sha256": "7727b0a850306a89c483c306399e716932717e3339a3e803bc9789fd796c315d"
+    },
+    {
+      "name": "SupportShaft",
+      "size": [
+        32,
+        20
+      ],
+      "colors": 10,
+      "sha256": "1f578914ac9e2dec2cb7dc94abfb009cb4fdc07ed877ebe5cc3acf8e63da95f2"
+    },
+    {
+      "name": "Timber",
+      "size": [
+        28,
+        89
+      ],
+      "colors": 14,
+      "sha256": "1349111d8746a862ca9c8d9c35bad2af105e3b6769c45c1e33407f13b5c85893"
+    },
+    {
+      "name": "Tools",
+      "size": [
+        36,
+        37
+      ],
+      "colors": 11,
+      "sha256": "e61afbf0e4984ecea4c127c4c3429e9739841da22e030b2634addf420b2b9594"
+    },
+    {
+      "name": "Tracks",
+      "size": [
+        50,
+        59
+      ],
+      "colors": 5,
+      "sha256": "edbfed05e54919ffc69b8fdc5fdd143ab57e0fb7ccf098114acafdf5381527e5"
+    },
+    {
+      "name": "Wheel",
+      "size": [
+        57,
+        63
+      ],
+      "colors": 11,
+      "sha256": "6653e80f13f1d655997cf9af51129e652238bc7c45cebc82a4b8ba3d490ecd54"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+    "status": "PASS",
+    "note": "Actual Unity camera renders of an art-only scene. Measured live Ironvein cell, gem, actor and HUD graphics copied read-only at exact rects. New environment is separate tiled native art; production Game remains unchanged. No device or gameplay integration claim.",
+    "importedAssets": 40,
+    "captures": 6,
+    "lockedCells": 64,
+    "lockedGems": 64,
+    "sourcePixelScales": [
+        1,
+        2,
+        3
+    ],
+    "nativeImportsExact": true,
+    "sceneExcludedFromBuild": true,
+    "boardPosition": {
+        "x": 87.45048522949219,
+        "y": 215.45046997070313
+    },
+    "boardSize": {
+        "x": 545.0989990234375,
+        "y": 545.0989990234375
+    },
+    "portraitPosition": {
+        "x": 21.0,
+        "y": 827.0
+    },
+    "portraitSize": {
+        "x": 195.0,
+        "y": 406.0
+    }
+}

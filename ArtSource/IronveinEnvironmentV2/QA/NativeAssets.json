@@ -1,0 +1,707 @@
+[
+  {
+    "name": "Banner",
+    "width": 32,
+    "height": 48,
+    "colors": 9,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      3,
+      5,
+      29,
+      40
+    ],
+    "sha256": "3186b91cf2767f8a7f32a28d3edcaa23161c03a06cd5e8ab8768b29da4a4e306",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/Banner.png"
+  },
+  {
+    "name": "BoardCornerBL",
+    "width": 25,
+    "height": 25,
+    "colors": 13,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      25,
+      25
+    ],
+    "sha256": "a16ebd9a4a3c6fb463dd45cfbc3ee3cc55ffb55533594a75146d3ccdd19564ff",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/BoardCornerBL.png"
+  },
+  {
+    "name": "BoardCornerBR",
+    "width": 25,
+    "height": 25,
+    "colors": 13,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      25,
+      25
+    ],
+    "sha256": "a16ebd9a4a3c6fb463dd45cfbc3ee3cc55ffb55533594a75146d3ccdd19564ff",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/BoardCornerBR.png"
+  },
+  {
+    "name": "BoardCornerTL",
+    "width": 25,
+    "height": 25,
+    "colors": 13,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      25,
+      25
+    ],
+    "sha256": "a16ebd9a4a3c6fb463dd45cfbc3ee3cc55ffb55533594a75146d3ccdd19564ff",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/BoardCornerTL.png"
+  },
+  {
+    "name": "BoardCornerTR",
+    "width": 25,
+    "height": 25,
+    "colors": 13,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      25,
+      25
+    ],
+    "sha256": "a16ebd9a4a3c6fb463dd45cfbc3ee3cc55ffb55533594a75146d3ccdd19564ff",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/BoardCornerTR.png"
+  },
+  {
+    "name": "BoardJoint",
+    "width": 9,
+    "height": 11,
+    "colors": 7,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      9,
+      11
+    ],
+    "sha256": "9c136fec2694f760053c8edc513384791462a9e64f2df10b5cfb35462a98cf7a",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/BoardJoint.png"
+  },
+  {
+    "name": "BoardRailBottom",
+    "width": 25,
+    "height": 9,
+    "colors": 7,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      25,
+      9
+    ],
+    "sha256": "4d7f241b71324ff6fd03bfeeb8a93c9038f81e9fbf55a07b80480f1da42dfcad",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/BoardRailBottom.png"
+  },
+  {
+    "name": "BoardRailLeft",
+    "width": 9,
+    "height": 25,
+    "colors": 6,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      9,
+      25
+    ],
+    "sha256": "8e7d7ce7d7f04848011e2f8357e510f558702322e2df15d7be6313bc263dc9f7",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/BoardRailLeft.png"
+  },
+  {
+    "name": "BoardRailRight",
+    "width": 9,
+    "height": 25,
+    "colors": 6,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      9,
+      25
+    ],
+    "sha256": "8e7d7ce7d7f04848011e2f8357e510f558702322e2df15d7be6313bc263dc9f7",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/BoardRailRight.png"
+  },
+  {
+    "name": "BoardRailTop",
+    "width": 25,
+    "height": 9,
+    "colors": 7,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      25,
+      9
+    ],
+    "sha256": "4d7f241b71324ff6fd03bfeeb8a93c9038f81e9fbf55a07b80480f1da42dfcad",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/BoardRailTop.png"
+  },
+  {
+    "name": "CaveRecess",
+    "width": 64,
+    "height": 64,
+    "colors": 5,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      64,
+      64
+    ],
+    "sha256": "d5588ebe7be56f1abcc103a487c5c104291234e6906c5bede47f64ef33d706c8",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/CaveRecess.png"
+  },
+  {
+    "name": "CaveWall",
+    "width": 64,
+    "height": 64,
+    "colors": 5,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      64,
+      64
+    ],
+    "sha256": "496140851b136b4d9d8c67540df2a9bd77555fa74527dcf1418206bd4c6a5296",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/CaveWall.png"
+  },
+  {
+    "name": "Chain",
+    "width": 6,
+    "height": 11,
+    "colors": 6,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      6,
+      11
+    ],
+    "sha256": "c7139a975f0e8e3136d415c0d5d2dabb5a665e69e58126a7921fef0bee3b60cd",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/Chain.png"
+  },
+  {
+    "name": "DistantPortal",
+    "width": 86,
+    "height": 83,
+    "colors": 8,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      1,
+      1,
+      85,
+      82
+    ],
+    "sha256": "9d69fb3b75855ffe2aab4b70c1cbacf5817d08006ba3ff96e6f3de0fe3d060d1",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/DistantPortal.png"
+  },
+  {
+    "name": "InnerShadow",
+    "width": 2,
+    "height": 2,
+    "colors": 1,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      2,
+      2
+    ],
+    "sha256": "1eb3978f88ad8dd277765139bf62154e16a9e31a02c525f188d008538db23bf1",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/InnerShadow.png"
+  },
+  {
+    "name": "Lantern",
+    "width": 18,
+    "height": 38,
+    "colors": 12,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      1,
+      1,
+      17,
+      37
+    ],
+    "sha256": "825f16d3b77a5bf3705a7a3bfceb737b9a318990bcefeeaee82edc71eb28a456",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/Lantern.png"
+  },
+  {
+    "name": "LowerCartLeft",
+    "width": 63,
+    "height": 66,
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      2,
+      61,
+      64
+    ],
+    "sha256": "05ed16c622d34b8f8a38cd888e7552ac632067733f4274f6c0cc1334f733c88d",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/LowerCartLeft.png"
+  },
+  {
+    "name": "LowerToolsRight",
+    "width": 64,
+    "height": 68,
+    "colors": 14,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      2,
+      62,
+      66
+    ],
+    "sha256": "ef8d8a309db7aa10547146831e35f2703dc3fba190f21b6f94caa4a5876b2199",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/LowerToolsRight.png"
+  },
+  {
+    "name": "Ore",
+    "width": 23,
+    "height": 27,
+    "colors": 10,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      1,
+      1,
+      22,
+      26
+    ],
+    "sha256": "b108a4dd12f2eccef21de154d6d8319b1e271509d5276fee0cf13e93ac69255b",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/Ore.png"
+  },
+  {
+    "name": "Platform",
+    "width": 90,
+    "height": 22,
+    "colors": 10,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      90,
+      22
+    ],
+    "sha256": "2f07efb97795803fae6f889b78b67ce67b179ccf5affd9148dc4a765277a357e",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/Platform.png"
+  },
+  {
+    "name": "Portal",
+    "width": 164,
+    "height": 164,
+    "colors": 13,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      1,
+      1,
+      163,
+      163
+    ],
+    "sha256": "541666df2e40a08f3ed69fb0976dd38bed3ed8a6dcb1499c1b2e8f3f3c258797",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/Portal.png"
+  },
+  {
+    "name": "PortraitCornerBL",
+    "width": 13,
+    "height": 13,
+    "colors": 12,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      2,
+      11,
+      11
+    ],
+    "sha256": "734d32f0f8c1edc7d56838b47750958cbbd9cfb02304618b36eb79597e735151",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/PortraitCornerBL.png"
+  },
+  {
+    "name": "PortraitCornerBR",
+    "width": 13,
+    "height": 13,
+    "colors": 12,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      2,
+      11,
+      11
+    ],
+    "sha256": "734d32f0f8c1edc7d56838b47750958cbbd9cfb02304618b36eb79597e735151",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/PortraitCornerBR.png"
+  },
+  {
+    "name": "PortraitCornerTL",
+    "width": 13,
+    "height": 13,
+    "colors": 12,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      2,
+      11,
+      11
+    ],
+    "sha256": "734d32f0f8c1edc7d56838b47750958cbbd9cfb02304618b36eb79597e735151",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/PortraitCornerTL.png"
+  },
+  {
+    "name": "PortraitCornerTR",
+    "width": 13,
+    "height": 13,
+    "colors": 12,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      2,
+      11,
+      11
+    ],
+    "sha256": "734d32f0f8c1edc7d56838b47750958cbbd9cfb02304618b36eb79597e735151",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/PortraitCornerTR.png"
+  },
+  {
+    "name": "PortraitJoint",
+    "width": 9,
+    "height": 9,
+    "colors": 12,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      9,
+      9
+    ],
+    "sha256": "18059f8c44df9babf9319890d7fa2485fa3605dd64fa68c86ea197f099bad531",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/PortraitJoint.png"
+  },
+  {
+    "name": "PortraitRailBottom",
+    "width": 16,
+    "height": 5,
+    "colors": 6,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      16,
+      5
+    ],
+    "sha256": "b5d3be3fddb89cb23f6282f9074a6723f7bfa12a95293fab2bca08e03b94d270",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/PortraitRailBottom.png"
+  },
+  {
+    "name": "PortraitRailLeft",
+    "width": 5,
+    "height": 16,
+    "colors": 7,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      5,
+      16
+    ],
+    "sha256": "8daddff94b6c9cd850014cabe19949c58ed45b20aaa715f53117e22b78d48482",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/PortraitRailLeft.png"
+  },
+  {
+    "name": "PortraitRailRight",
+    "width": 5,
+    "height": 16,
+    "colors": 6,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      5,
+      16
+    ],
+    "sha256": "6aa25747799a33e3d812782334de9158876b050c2d6b6d86eea91803e26bc50a",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/PortraitRailRight.png"
+  },
+  {
+    "name": "PortraitRailTop",
+    "width": 16,
+    "height": 5,
+    "colors": 8,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      16,
+      5
+    ],
+    "sha256": "7a7d577ce5facbeaedeb44adb47e71b30b1f8eb2a3337c31b556bd3ac65ba1f4",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/PortraitRailTop.png"
+  },
+  {
+    "name": "SupportBase",
+    "width": 32,
+    "height": 20,
+    "colors": 7,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      0,
+      30,
+      17
+    ],
+    "sha256": "26fd2c7edd556d728c875154154f552ecfe3d72bb815cba00995e6dd5c9814e7",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/SupportBase.png"
+  },
+  {
+    "name": "SupportBrace",
+    "width": 32,
+    "height": 10,
+    "colors": 7,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      0,
+      30,
+      10
+    ],
+    "sha256": "1e87d35d136051b84f2787b6e2eb8b44e35320a4ab7020eaddb605d1f1012482",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/SupportBrace.png"
+  },
+  {
+    "name": "SupportCap",
+    "width": 32,
+    "height": 20,
+    "colors": 7,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      2,
+      30,
+      20
+    ],
+    "sha256": "0924bfd7af877d79a247ddd72ec36664b69a4661b1bbc43a9758b5e79ab5252f",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/SupportCap.png"
+  },
+  {
+    "name": "SupportOreJoint",
+    "width": 32,
+    "height": 28,
+    "colors": 14,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      0,
+      30,
+      28
+    ],
+    "sha256": "567d4fa7857d8a065f9c6e076175a107f6042ee5b92421192124db9112db23a4",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/SupportOreJoint.png"
+  },
+  {
+    "name": "SupportShaft",
+    "width": 32,
+    "height": 32,
+    "colors": 6,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      4,
+      0,
+      28,
+      32
+    ],
+    "sha256": "f173a68567bed1f5026425e340d1864aff6a27ec46cf83e5c7d0248735dadcd6",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/SupportShaft.png"
+  },
+  {
+    "name": "TimberBeam",
+    "width": 32,
+    "height": 9,
+    "colors": 11,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      32,
+      9
+    ],
+    "sha256": "dba5ce27b7bbbfbd626bddaa2d8eb9bc6d4550ef081cb34171d7d6a879bb2f09",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/TimberBeam.png"
+  },
+  {
+    "name": "TimberPost",
+    "width": 25,
+    "height": 113,
+    "colors": 12,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      1,
+      1,
+      24,
+      112
+    ],
+    "sha256": "c467d088e7d88911b919e962fe93bfed8117c51b680f191db2b7afd11a27f6f9",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/TimberPost.png"
+  },
+  {
+    "name": "Tracks",
+    "width": 64,
+    "height": 64,
+    "colors": 5,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      8,
+      5,
+      56,
+      62
+    ],
+    "sha256": "115ef8592bfc67499e92a7d876f257c955d5f39322491f68af2b9994f81d22f0",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/Tracks.png"
+  },
+  {
+    "name": "WarmWallLeft",
+    "width": 48,
+    "height": 64,
+    "colors": 5,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      48,
+      64
+    ],
+    "sha256": "93200bd7b95a50182e3bc0b4bcbc0ad5ee5b3eb193833bc95c821faef31fc5a4",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/WarmWallLeft.png"
+  },
+  {
+    "name": "WarmWallRight",
+    "width": 48,
+    "height": 64,
+    "colors": 5,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      48,
+      64
+    ],
+    "sha256": "c4ad2b8f7637cca0d6378793c7b0ebf3c1b49b8170987c0ed91cd8ffdf550bfb",
+    "source": "ArtSource/IronveinEnvironmentV2/Exports/WarmWallRight.png"
+  }
+]

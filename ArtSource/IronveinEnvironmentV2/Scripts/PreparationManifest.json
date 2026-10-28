@@ -1,0 +1,528 @@
+[
+  {
+    "name": "CaveWall",
+    "source": "CavernWall",
+    "width": 64,
+    "height": 64,
+    "map": {
+      "12131f": "11121b",
+      "2b2c42": "181a26",
+      "3c3d55": "202232",
+      "51536b": "26283b",
+      "746f83": "2b2e42"
+    },
+    "polish": "quiet backdrop / shared opposite edges",
+    "seam": true
+  },
+  {
+    "name": "CaveRecess",
+    "source": "CavernWall",
+    "width": 64,
+    "height": 64,
+    "map": {
+      "12131f": "0a0d11",
+      "2b2c42": "10121b",
+      "3c3d55": "171a25",
+      "51536b": "1b1e2c",
+      "746f83": "202333"
+    },
+    "polish": "portrait and depth recess",
+    "seam": true
+  },
+  {
+    "name": "Portal",
+    "source": "GreatPortal",
+    "width": 164,
+    "height": 164,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "isolated rock highlight cleanup",
+    "seam": false
+  },
+  {
+    "name": "DistantPortal",
+    "source": "MinePortal",
+    "width": 86,
+    "height": 83,
+    "map": {
+      "a5a1ad": "3c3d55",
+      "746f83": "2b2c42",
+      "51536b": "24273b",
+      "3c3d55": "1d1e30",
+      "2b2c42": "171824",
+      "916344": "493039",
+      "694734": "2d2228"
+    },
+    "polish": "distant contrast grouping",
+    "seam": false
+  },
+  {
+    "name": "TimberPost",
+    "source": "TimberPost",
+    "width": 25,
+    "height": 113,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "metal highlight discipline",
+    "seam": false
+  },
+  {
+    "name": "Lantern",
+    "source": "MineLantern",
+    "width": 18,
+    "height": 38,
+    "map": {
+      "dbaa68": "c18c56"
+    },
+    "polish": "small restrained material ramp",
+    "seam": false
+  },
+  {
+    "name": "Ore",
+    "source": "AmberOre",
+    "width": 23,
+    "height": 27,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "quiet rock base",
+    "seam": false
+  },
+  {
+    "name": "Platform",
+    "source": "RailPlatform",
+    "width": 90,
+    "height": 22,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "remove generation matte; flat repeat",
+    "seam": true
+  },
+  {
+    "name": "LowerCartLeft",
+    "source": "LowerCartLeft",
+    "width": 63,
+    "height": 66,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "rock cluster cleanup; full silhouette padded",
+    "seam": false
+  },
+  {
+    "name": "LowerToolsRight",
+    "source": "LowerToolsRight",
+    "width": 64,
+    "height": 68,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "rock cluster cleanup; full silhouette padded",
+    "seam": false
+  },
+  {
+    "name": "Banner",
+    "source": "MiningBanner",
+    "width": 32,
+    "height": 48,
+    "map": {
+      "dbaa68": "c18c56",
+      "746f83": "626076"
+    },
+    "polish": "quiet cloth/metal accents",
+    "seam": false
+  },
+  {
+    "name": "SupportCap",
+    "source": "SideSupport",
+    "width": 32,
+    "height": 20,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "SupportBase",
+    "source": "SideSupport",
+    "width": 32,
+    "height": 20,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "SupportShaft",
+    "source": "SideSupport",
+    "width": 32,
+    "height": 32,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "unbroken native timber; no repeated capitals or metal bands",
+    "seam": false
+  },
+  {
+    "name": "SupportBrace",
+    "source": "SideSupport",
+    "width": 32,
+    "height": 10,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "separate sparse brace",
+    "seam": false
+  },
+  {
+    "name": "SupportOreJoint",
+    "source": "SideSupport",
+    "width": 32,
+    "height": 28,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "one attached ore motif per side",
+    "seam": false
+  },
+  {
+    "name": "BoardCornerTL",
+    "source": "BoardFrameSource",
+    "width": 25,
+    "height": 25,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "upright identical plate; top-left light",
+    "seam": false
+  },
+  {
+    "name": "BoardCornerTR",
+    "source": "BoardFrameSource",
+    "width": 25,
+    "height": 25,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "upright identical plate; top-left light",
+    "seam": false
+  },
+  {
+    "name": "BoardCornerBL",
+    "source": "BoardFrameSource",
+    "width": 25,
+    "height": 25,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "upright identical plate; top-left light",
+    "seam": false
+  },
+  {
+    "name": "BoardCornerBR",
+    "source": "BoardFrameSource",
+    "width": 25,
+    "height": 25,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "upright identical plate; top-left light",
+    "seam": false
+  },
+  {
+    "name": "BoardRailTop",
+    "source": "BoardFrameSource",
+    "width": 25,
+    "height": 9,
+    "map": {
+      "a54120": "694734",
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "BoardRailBottom",
+    "source": "BoardFrameSource",
+    "width": 25,
+    "height": 9,
+    "map": {
+      "a54120": "694734",
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "BoardRailLeft",
+    "source": "BoardFrameSource",
+    "width": 9,
+    "height": 25,
+    "map": {
+      "a54120": "694734",
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "BoardRailRight",
+    "source": "BoardFrameSource",
+    "width": 9,
+    "height": 25,
+    "map": {
+      "a54120": "694734",
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "BoardJoint",
+    "source": "BoardFrameSource",
+    "width": 9,
+    "height": 11,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "centered joint",
+    "seam": false
+  },
+  {
+    "name": "PortraitCornerTL",
+    "source": "PortraitFrameSource",
+    "width": 13,
+    "height": 13,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "PortraitCornerTR",
+    "source": "PortraitFrameSource",
+    "width": 13,
+    "height": 13,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "PortraitCornerBL",
+    "source": "PortraitFrameSource",
+    "width": 13,
+    "height": 13,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "PortraitCornerBR",
+    "source": "PortraitFrameSource",
+    "width": 13,
+    "height": 13,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "PortraitRailTop",
+    "source": "PortraitFrameSource",
+    "width": 16,
+    "height": 5,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "PortraitRailBottom",
+    "source": "PortraitFrameSource",
+    "width": 16,
+    "height": 5,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "PortraitRailLeft",
+    "source": "PortraitFrameSource",
+    "width": 5,
+    "height": 16,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "PortraitRailRight",
+    "source": "PortraitFrameSource",
+    "width": 5,
+    "height": 16,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "PortraitJoint",
+    "source": "PortraitFrameSource",
+    "width": 9,
+    "height": 9,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "",
+    "seam": false
+  },
+  {
+    "name": "TimberBeam",
+    "source": "TimberPost",
+    "width": 32,
+    "height": 9,
+    "map": {
+      "dbaa68": "c18c56"
+    },
+    "polish": "native right-angle turn; relight top edge in editor",
+    "seam": false
+  },
+  {
+    "name": "Chain",
+    "source": "MineLantern",
+    "width": 6,
+    "height": 11,
+    "map": {
+      "a5a1ad": "746f83",
+      "746f83": "626076",
+      "51536b": "49495f"
+    },
+    "polish": "repeat attached chain links",
+    "seam": false
+  },
+  {
+    "name": "InnerShadow",
+    "source": "native connector",
+    "width": 2,
+    "height": 2,
+    "map": {},
+    "polish": "gap-safe underlay",
+    "seam": false
+  },
+  {
+    "name": "Tracks",
+    "source": "DistantTracks",
+    "width": 64,
+    "height": 64,
+    "map": {
+      "916344": "694734",
+      "3c3d55": "2b2c42"
+    },
+    "polish": "distant rail hint behind actors",
+    "seam": false
+  },
+  {
+    "name": "WarmWallLeft",
+    "source": "CavernWall",
+    "width": 48,
+    "height": 64,
+    "map": {
+      "12131f": "17141e",
+      "2b2c42": "29202a",
+      "3c3d55": "40303a",
+      "51536b": "59403e",
+      "746f83": "75513e"
+    },
+    "polish": "localized native warm rock clusters",
+    "seam": false
+  },
+  {
+    "name": "WarmWallRight",
+    "source": "CavernWall",
+    "width": 48,
+    "height": 64,
+    "map": {
+      "12131f": "17141e",
+      "2b2c42": "29202a",
+      "3c3d55": "40303a",
+      "51536b": "59403e",
+      "746f83": "75513e"
+    },
+    "polish": "localized native warm rock clusters",
+    "seam": false
+  }
+]

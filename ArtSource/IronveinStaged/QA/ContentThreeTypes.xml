@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-26 23:54:27Z" end-time="2026-10-26 23:54:31Z" duration="4.153674">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="882" result="Passed" start-time="2026-10-26 23:54:27Z" end-time="2026-10-26 23:54:31Z" duration="4.153674" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="2078" name="Assembly-CSharp-Editor.dll" fullname="C:/Users/USER/.codex/worktrees/drowned-court-pixellab-v2/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="882" result="Passed" start-time="2026-10-26 23:54:27Z" end-time="2026-10-26 23:54:31Z" duration="4.114661" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="68472" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+      <test-suite type="TestFixture" id="1825" name="IronveinStagedContentCapture" fullname="IronveinStagedContentCapture" classname="IronveinStagedContentCapture" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-26 23:54:27Z" end-time="2026-10-26 23:54:31Z" duration="4.103592" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+        <test-case id="1826" name="CaptureContent" fullname="IronveinStagedContentCapture.CaptureContent" methodname="CaptureContent" classname="IronveinStagedContentCapture" runstate="Explicit" seed="901635309" result="Passed" start-time="2026-10-26 23:54:23Z" end-time="2026-10-26 23:54:31Z" duration="8.436823" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+Spawned Pickaxe Delver in EnemySlot1. Category: Normal. Gem type: Amber. Wave 1, Level 1, HP 65, Damage 10, Follow-up Damage 0, Attack Interval 4.70s, Special Turns 5
+Wave 1 started using rule 'Rail patrol'. Planned: 1. Spawned: 1.
+Initialized player RattleBones. HP: 100/100.
+Pixel layout validated: Screen 720x1280; safe=(x:0.00, y:0.00, width:720.00, height:1280.00); constraints=(x:0.00, y:0.00, width:720.00, height:1280.00); logical viewport=(712.00, 1272.00); physical viewport=(x:4.00, y:4.00, width:712.00, height:1272.00); canvas scale=1; logical/physical=1; Top=(x:4.00, y:798.00, width:712.00, height:478.00); BoardArea=(x:57.00, y:186.00, width:605.00, height:605.00); Bottom=(x:4.00, y:4.00, width:712.00, height:176.00); gaps=7,6; cutouts=0; bottom display clearance=4; safe clearance=4; board texel ratio=1.064646; origin=(360.00, 488.00); fractional board scale=True
+World frame TopLeftCorner: min=(70.42, 692.41, 9.90), max=(155.59, 777.58, 10.10), source=(80.00, 80.00), ratios=(1.06, 1.06)
+World frame TopRightCorner: min=(564.41, 692.41, 9.90), max=(649.58, 777.58, 10.10), source=(80.00, 80.00), ratios=(1.06, 1.06)
+World frame BottomLeftCorner: min=(70.42, 198.42, 9.90), max=(155.59, 283.59, 10.10), source=(80.00, 80.00), ratios=(1.06, 1.06)
+World frame BottomRightCorner: min=(564.41, 198.42, 9.90), max=(649.58, 283.59, 10.10), source=(80.00, 80.00), ratios=(1.06, 1.06)
+World frame TopEdge_1: min=(155.59, 760.55, 9.90), max=(223.73, 777.58, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame BottomEdge_1: min=(155.59, 198.42, 9.90), max=(223.73, 215.45, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame TopEdge_2: min=(223.73, 760.55, 9.90), max=(291.86, 777.58, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame BottomEdge_2: min=(223.73, 198.42, 9.90), max=(291.86, 215.45, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame TopEdge_3: min=(291.86, 760.55, 9.90), max=(360.00, 777.58, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame BottomEdge_3: min=(291.86, 198.42, 9.90), max=(360.00, 215.45, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame TopEdge_4: min=(360.00, 760.55, 9.90), max=(428.14, 777.58, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame BottomEdge_4: min=(360.00, 198.42, 9.90), max=(428.14, 215.45, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame TopEdge_5: min=(428.14, 760.55, 9.90), max=(496.27, 777.58, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame BottomEdge_5: min=(428.14, 198.42, 9.90), max=(496.27, 215.45, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame TopEdge_6: min=(496.27, 760.55, 9.90), max=(564.41, 777.58, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame BottomEdge_6: min=(496.27, 198.42, 9.90), max=(564.41, 215.45, 10.10), source=(64.00, 16.00), ratios=(1.06, 1.06)
+World frame LeftEdge_1: min=(70.42, 283.59, 9.90), max=(87.45, 351.73, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+World frame RightEdge_1: min=(632.55, 283.59, 9.90), max=(649.58, 351.73, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+World frame LeftEdge_2: min=(70.42, 351.73, 9.90), max=(87.45, 419.86, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+World frame RightEdge_2: min=(632.55, 351.73, 9.90), max=(649.58, 419.86, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+World frame LeftEdge_3: min=(70.42, 419.86, 9.90), max=(87.45, 488.00, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+World frame RightEdge_3: min=(632.55, 419.86, 9.90), max=(649.58, 488.00, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+World frame LeftEdge_4: min=(70.42, 488.00, 9.90), max=(87.45, 556.14, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+World frame RightEdge_4: min=(632.55, 488.00, 9.90), max=(649.58, 556.14, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+World frame LeftEdge_5: min=(70.42, 556.14, 9.90), max=(87.45, 624.27, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+World frame RightEdge_5: min=(632.55, 556.14, 9.90), max=(649.58, 624.27, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+World frame LeftEdge_6: min=(70.42, 624.27, 9.90), max=(87.45, 692.41, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+World frame RightEdge_6: min=(632.55, 624.27, 9.90), max=(649.58, 692.41, 10.10), source=(16.00, 64.00), ratios=(1.06, 1.06)
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopLeftCorner physical=(x:4.00, y:1196.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopRightCorner physical=(x:636.00, y:1196.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomLeftCorner physical=(x:4.00, y:798.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomRightCorner physical=(x:636.00, y:798.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopEdge physical=(x:84.00, y:1260.00, width:552.00, height:16.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomEdge physical=(x:84.00, y:798.00, width:552.00, height:16.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/LeftEdge physical=(x:4.00, y:878.00, width:16.00, height:318.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/RightEdge physical=(x:700.00, y:878.00, width:16.00, height:318.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopLeftCorner physical=(x:4.00, y:100.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopRightCorner physical=(x:636.00, y:100.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomLeftCorner physical=(x:4.00, y:4.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomRightCorner physical=(x:636.00, y:4.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopEdge physical=(x:84.00, y:164.00, width:552.00, height:16.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomEdge physical=(x:84.00, y:4.00, width:552.00, height:16.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/LeftEdge physical=(x:4.00, y:84.00, width:16.00, height:16.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/RightEdge physical=(x:700.00, y:84.00, width:16.00, height:16.00); source=(64.00, 16.00); tilePPU=1
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:86.00, y:992.00, width:64.00, height:64.00), source=(64.00, 64.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:64.00, y:966.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:175.00, y:966.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:50.00, y:966.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:102.00, y:1060.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Pickaxe Delver_Level_1/VisualRoot bounds=(x:184.00, y:864.00, width:256.00, height:208.00), source=(128.00, 104.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:259.00, y:845.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:365.00, y:845.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:245.00, y:845.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:295.00, y:803.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:303.00, y:1097.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:309.00, y:1081.00, width:12.00, height:12.00), source=(12.00, 12.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopLeftCorner bounds=(x:4.00, y:1196.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopRightCorner bounds=(x:636.00, y:1196.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomLeftCorner bounds=(x:4.00, y:798.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomRightCorner bounds=(x:636.00, y:798.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:296.00, y:1228.00, width:128.00, height:32.00), source=(128.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopLeftCorner bounds=(x:4.00, y:100.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopRightCorner bounds=(x:636.00, y:100.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomLeftCorner bounds=(x:4.00, y:4.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomRightCorner bounds=(x:636.00, y:4.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:272.00, y:43.00, width:176.00, height:64.00), source=(176.00, 64.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:288.00, y:109.00, width:144.00, height:32.00), source=(144.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:192.00, y:43.00, width:64.00, height:64.00), source=(64.00, 64.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:200.00, y:51.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:464.00, y:43.00, width:64.00, height:64.00), source=(64.00, 64.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:472.00, y:51.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/Settings/GlobalGear bounds=(x:656.00, y:1218.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+
+Board entrance complete.
+Spawned Rivet Gunner in EnemySlot2. Category: Normal. Gem type: Amethyst. Wave 1, Level 1, HP 55, Damage 5, Follow-up Damage 0, Attack Interval 4.20s, Special Turns 5
+Summoned Rivet Gunner into EnemySlot2. The summon is now an independent member of wave 1.
+Spawned Stonewright in EnemySlot3. Category: Special. Gem type: Ruby. Wave 1, Level 1, HP 80, Damage 10, Follow-up Damage 0, Attack Interval 5.30s, Special Turns 4
+Summoned Stonewright into EnemySlot3. The summon is now an independent member of wave 1.
+Saving results to: C:/Users/USER/AppData/LocalLow/Blank/Dungeon Matcher\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

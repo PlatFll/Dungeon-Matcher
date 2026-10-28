@@ -1,0 +1,936 @@
+[
+  {
+    "name": "CaveWall",
+    "stage": 2,
+    "tool": "pixen",
+    "args": {
+      "description": "One seamless modular cave wall tile, close view of small interlocking jagged angular rock courses, dwarven mine, deep blue-violet charcoal rock, subdued upper-left rim light, restrained 3-tone connected stone clusters, narrow cracks. Rock chunks roughly 12-20 pixels across, quiet low contrast, no giant boulders, no crystals, no timber, no ground, no props, no border. Crisp native pixel art for whimsical polished fantasy mobile RPG, no gradients, no blur, no dithering or isolated speckled noise. Fills the canvas edge to edge.",
+      "width": 64,
+      "height": 64,
+      "no_background": false,
+      "detail": "medium detail",
+      "outline": "selective outline",
+      "view": "side"
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: f296d098-2b7c-4bd4-b4d2-363df144d79e\njob_id: f296d098-2b7c-4bd4-b4d2-363df144d79e\nmodel: pixen\ndescription: One seamless modular cave wall tile, close view of small interlocking jagged angular rock courses, dwarven mine, deep blue-violet charcoal rock, subdued upper-left rim light, restrained 3-tone connected stone clusters, narrow cracks. Rock chunks roughly 12-20 pixels across, quiet low contrast, no giant boulders, no crystals, no timber, no ground, no props, no border. Crisp native pixel art for whimsical polished fantasy mobile RPG, no gradients, no blur, no dithering or isolated speckled noise. Fills the canvas edge to edge.\nsize: 64x64px\ntransparent: False\nasset_id: f047a644-4d6b-5491-b0b9-a3aa35f46465\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"f296d098-2b7c-4bd4-b4d2-363df144d79e\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "CavernDepth",
+    "stage": 2,
+    "tool": "pro",
+    "args": {
+      "description": "Pixel art background layer for a dwarven excavation cavern, ONLY distant cavern geology and depth, no interface, no frames, no characters, no foreground props. Wide underground chamber receding toward a small dark mine tunnel near middle right. Layered blue charcoal and muted violet rock, ragged ceiling stalactites, stepped stone shelves and shadowed niches. Deep cool shadows with a few restrained amber light reflections from unseen lamps. Large connected irregular rock clusters, quiet central darkness for silhouettes, upper-left plane lighting, clean one-pixel edges. Warm rich atmosphere but NOT a giant geometric temple facade. Polished whimsical 16-bit game pixel art, crisp native pixels, restrained 16-color economy, no blur, no dithering, no smooth gradients.",
+      "width": 240,
+      "height": 160,
+      "no_background": false,
+      "max_colors": 24
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: e6ecc798-8a8c-45b9-959b-ced089e8463f\njob_id: e6ecc798-8a8c-45b9-959b-ced089e8463f\nmodel: pro\ndescription: Pixel art background layer for a dwarven excavation cavern, ONLY distant cavern geology and depth, no interface, no frames, no characters, no foreground props. Wide underground chamber receding toward a small dark mine tunnel near middle right. Layered blue charcoal and muted violet rock, ragged ceiling stalactites, stepped stone shelves and shadowed niches. Deep cool shadows with a few restrained amber light reflections from unseen lamps. Large connected irregular rock clusters, quiet central darkness for silhouettes, upper-left plane lighting, clean one-pixel edges. Warm rich atmosphere but NOT a giant geometric temple facade. Polished whimsical 16-bit game pixel art, crisp native pixels, restrained 16-color economy, no blur, no dithering, no smooth gradients.\nsize: 240x160px\ntransparent: False\ncandidates: 1\nmax colours: 24 per image\nasset_id: 4b70173b-9415-5b53-894d-825195435824\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"e6ecc798-8a8c-45b9-959b-ced089e8463f\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "MineEntrance",
+    "stage": 2,
+    "tool": "pro",
+    "args": {
+      "description": "One isolated dwarven mine tunnel mouth, side-view environmental sprite. Heavy square-cut dark violet rock sides, low slightly angular arch of seven large stone voussoirs with a simple keystone, reinforced by worn brown timber upright posts and broad slanting timber braces, compact riveted dark iron bands. A hollow open central tunnel is fully transparent. Grounded on two blocky stone footings. Workmanlike excavation architecture, NOT a palace, temple, shrine or doorway with a triangular roof. No glyphs, no doors, no chains or lanterns. Crisp chunky pixel art, economical broad planes, top-left lighting, restrained warm copper bounce on inward edges and cool purple shadow on exterior. Full object visible with 3px empty clearance. Clean outlines, no blur or dither.",
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 24
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: ba6522da-d357-4925-975e-d163090b9a05\njob_id: ba6522da-d357-4925-975e-d163090b9a05\nmodel: pro\ndescription: One isolated dwarven mine tunnel mouth, side-view environmental sprite. Heavy square-cut dark violet rock sides, low slightly angular arch of seven large stone voussoirs with a simple keystone, reinforced by worn brown timber upright posts and broad slanting timber braces, compact riveted dark iron bands. A hollow open central tunnel is fully transparent. Grounded on two blocky stone footings. Workmanlike excavation architecture, NOT a palace, temple, shrine or doorway with a triangular roof. No glyphs, no doors, no chains or lanterns. Crisp chunky pixel art, economical broad planes, top-left lighting, restrained warm copper bounce on inward edges and cool purple shadow on exterior. Full object visible with 3px empty clearance. Clean outlines, no blur or dither.\nsize: 128x128px\ntransparent: True\ncandidates: 4\nmax colours: 24 per image\nasset_id: 13ded709-1c71-5120-a30c-a4a1aeee2a8a\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"ba6522da-d357-4925-975e-d163090b9a05\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "Timber",
+    "stage": 2,
+    "tool": "pro_flash",
+    "args": {
+      "description": "A single sturdy dwarven mine timber support post, full front view. Thick straight dark brown squared timber shaft with visible broad wood planes, one wide dark iron riveted band near top and near bottom, an angular top bracket and short slanted side brace at upper right. Foot rests on a squat violet cut-stone block. Workmanlike and weighty, broad shapes, not a thin decorative stick. Top-left lighting, cool dull metal, limited clean shading, crisp native pixels, full silhouette visible with 2px clearance, isolated on transparency.",
+      "width": 32,
+      "height": 128,
+      "no_background": true,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ],
+      "max_colors": 18
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"bd3da355-69e8-4009-939c-126d6641f984\",\n  \"image_id\": \"c38c52ed-15a6-55fa-bf37-02c192fbaa0b\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"c38c52ed-15a6-55fa-bf37-02c192fbaa0b\",\n  \"job_id\": \"bd3da355-69e8-4009-939c-126d6641f984\",\n  \"description\": \"A single sturdy dwarven mine timber support post, full front view. Thick straight dark brown squared timber shaft with visible broad wood planes, one wide dark iron riveted band near top and near bottom, an angular top bracket and short slanted side brace at upper right. Foot rests on a squat violet cut-stone block. Workmanlike and weighty, broad shapes, not a thin decorative stick. Top-left lighting, cool dull metal, limited clean shading, crisp native pixels, full silhouette visible with 2px clearance, isolated on transparency.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 32,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/bd3da355-69e8-4009-939c-126d6641f984/download\"\n}\nPoll get_image(job_id=\"bd3da355-69e8-4009-939c-126d6641f984\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "bd3da355-69e8-4009-939c-126d6641f984",
+        "image_id": "c38c52ed-15a6-55fa-bf37-02c192fbaa0b",
+        "status": "processing",
+        "source_image_id": "c38c52ed-15a6-55fa-bf37-02c192fbaa0b",
+        "job_id": "bd3da355-69e8-4009-939c-126d6641f984",
+        "description": "A single sturdy dwarven mine timber support post, full front view. Thick straight dark brown squared timber shaft with visible broad wood planes, one wide dark iron riveted band near top and near bottom, an angular top bracket and short slanted side brace at upper right. Foot rests on a squat violet cut-stone block. Workmanlike and weighty, broad shapes, not a thin decorative stick. Top-left lighting, cool dull metal, limited clean shading, crisp native pixels, full silhouette visible with 2px clearance, isolated on transparency.",
+        "seed": 0,
+        "image_size": {
+          "width": 32,
+          "height": 128
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/bd3da355-69e8-4009-939c-126d6641f984/download"
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "Lantern",
+    "stage": 2,
+    "tool": "pro",
+    "args": {
+      "description": "One dwarven mining lantern suspended from a short iron hook. Squat hexagonal dark iron cage with angular cap, thick bars, bright warm yellow heart, orange glass side planes, tiny upper-left cool metal highlights, small ring and short chain at top. Sturdy charming fantasy dungeon prop, strong readable silhouette, 1px dark contours, economical chunky connected clusters, no blurred glow, no gradients, no dither, isolated transparent with complete hook and bottom point.",
+      "width": 32,
+      "height": 48,
+      "no_background": true,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ],
+      "max_colors": 16
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 5ad1a786-d9a0-4b10-a6e9-8cd19d378bae\njob_id: 5ad1a786-d9a0-4b10-a6e9-8cd19d378bae\nmodel: pro\ndescription: One dwarven mining lantern suspended from a short iron hook. Squat hexagonal dark iron cage with angular cap, thick bars, bright warm yellow heart, orange glass side planes, tiny upper-left cool metal highlights, small ring and short chain at top. Sturdy charming fantasy dungeon prop, strong readable silhouette, 1px dark contours, economical chunky connected clusters, no blurred glow, no gradients, no dither, isolated transparent with complete hook and bottom point.\nsize: 32x48px\ntransparent: True\ncandidates: 36\npalette: 24 colours\nmax colours: 16 per image\nasset_id: 811e07b3-7722-5810-b414-d660860dd129\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"5ad1a786-d9a0-4b10-a6e9-8cd19d378bae\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "RailFloor",
+    "stage": 2,
+    "tool": "pro_flash",
+    "args": {
+      "description": "A horizontal modular side-view dwarven mine combat platform strip, solid continuous flat level floor across full canvas width. Upper 10 pixels show stone slabs and a pair of slim iron mine rails running horizontally left-to-right with brown timber sleeper ends, lower portion is dark purple cut-stone fascia in three chunky courses. Slight amber edge light. No arch, no walls, no slope, no perspective vanishing point, no objects. Tileable left and right; pixel crisp broad plane shading, no speckle, no blur.",
+      "width": 96,
+      "height": 32,
+      "no_background": false,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ],
+      "max_colors": 16
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"5076a7dc-2b01-4b67-a79d-6e9d985e5166\",\n  \"image_id\": \"573e5381-cbf9-5f61-9eec-9f8aeb0e7fa4\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"573e5381-cbf9-5f61-9eec-9f8aeb0e7fa4\",\n  \"job_id\": \"5076a7dc-2b01-4b67-a79d-6e9d985e5166\",\n  \"description\": \"A horizontal modular side-view dwarven mine combat platform strip, solid continuous flat level floor across full canvas width. Upper 10 pixels show stone slabs and a pair of slim iron mine rails running horizontally left-to-right with brown timber sleeper ends, lower portion is dark purple cut-stone fascia in three chunky courses. Slight amber edge light. No arch, no walls, no slope, no perspective vanishing point, no objects. Tileable left and right; pixel crisp broad plane shading, no speckle, no blur.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 96,\n    \"height\": 32\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/5076a7dc-2b01-4b67-a79d-6e9d985e5166/download\"\n}\nPoll get_image(job_id=\"5076a7dc-2b01-4b67-a79d-6e9d985e5166\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "5076a7dc-2b01-4b67-a79d-6e9d985e5166",
+        "image_id": "573e5381-cbf9-5f61-9eec-9f8aeb0e7fa4",
+        "status": "processing",
+        "source_image_id": "573e5381-cbf9-5f61-9eec-9f8aeb0e7fa4",
+        "job_id": "5076a7dc-2b01-4b67-a79d-6e9d985e5166",
+        "description": "A horizontal modular side-view dwarven mine combat platform strip, solid continuous flat level floor across full canvas width. Upper 10 pixels show stone slabs and a pair of slim iron mine rails running horizontally left-to-right with brown timber sleeper ends, lower portion is dark purple cut-stone fascia in three chunky courses. Slight amber edge light. No arch, no walls, no slope, no perspective vanishing point, no objects. Tileable left and right; pixel crisp broad plane shading, no speckle, no blur.",
+        "seed": 0,
+        "image_size": {
+          "width": 96,
+          "height": 32
+        },
+        "output_count": 1,
+        "estimated_generations": 5,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/5076a7dc-2b01-4b67-a79d-6e9d985e5166/download"
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "Ore",
+    "stage": 2,
+    "tool": "pro",
+    "args": {
+      "description": "One small cluster of warm amber orange ore crystals emerging naturally from a low dark blue violet cave rock. Three unequal angular crystals, big middle point and two small points attached at base, bright pale yellow cores and orange side planes, opaque clean silhouette with tiny matte rock chips. Chunky whimsical fantasy pixel art, 1px dark contour, top-left lighting, no sparkles, no diffuse glow, no pedestal, no halo, transparent background and full clearance.",
+      "width": 48,
+      "height": 48,
+      "no_background": true,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ],
+      "max_colors": 16
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 01a02d83-4344-478c-8ea2-2865188f66c8\njob_id: 01a02d83-4344-478c-8ea2-2865188f66c8\nmodel: pro\ndescription: One small cluster of warm amber orange ore crystals emerging naturally from a low dark blue violet cave rock. Three unequal angular crystals, big middle point and two small points attached at base, bright pale yellow cores and orange side planes, opaque clean silhouette with tiny matte rock chips. Chunky whimsical fantasy pixel art, 1px dark contour, top-left lighting, no sparkles, no diffuse glow, no pedestal, no halo, transparent background and full clearance.\nsize: 48x48px\ntransparent: True\ncandidates: 25\npalette: 24 colours\nmax colours: 16 per image\nasset_id: 4aca6564-e782-5c35-b8f7-bab195690440\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"01a02d83-4344-478c-8ea2-2865188f66c8\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "Tracks",
+    "stage": 2,
+    "tool": "pixen",
+    "args": {
+      "description": "Single modular section of two narrow iron mine rails on dark brown wooden sleepers, curving gently from a narrow tunnel entry at top center into a wider foreground at bottom left. Subtle low-top-down perspective, short compact track section, chunky crisp pixel art, subdued charcoal steel and warm brown, deep blue-purple stone ballast islands immediately underneath, transparent elsewhere. No scenery, no backdrop, no train or cart, no border, all ends visible.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "view": "low top-down",
+      "detail": "medium detail",
+      "outline": "selective outline"
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 5b7215cd-2736-4e47-89f2-f9cb22e108ef\njob_id: 5b7215cd-2736-4e47-89f2-f9cb22e108ef\nmodel: pixen\ndescription: Single modular section of two narrow iron mine rails on dark brown wooden sleepers, curving gently from a narrow tunnel entry at top center into a wider foreground at bottom left. Subtle low-top-down perspective, short compact track section, chunky crisp pixel art, subdued charcoal steel and warm brown, deep blue-purple stone ballast islands immediately underneath, transparent elsewhere. No scenery, no backdrop, no train or cart, no border, all ends visible.\nsize: 64x64px\ntransparent: True\nasset_id: 16d467bb-d8c6-539d-8ce9-72d7451dc9bf\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"5b7215cd-2736-4e47-89f2-f9cb22e108ef\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "QuietRock",
+    "stage": 2,
+    "tool": "pro",
+    "args": {
+      "description": "Seamlessly repeating dark dwarven underground rock wall texture. Small angular flat cut rocks of uneven sizes fitted in staggered irregular courses, broad quiet flat planes, only three subtle dark blue-violet values with tiny dim violet upper edges. Clean low-noise clusters. No boulders, NO rounded cobbles, NO gravel, NO shiny highlights, NO dotted texture, no props, no borders. Native chunky fantasy pixel art, matte, restrained contrast, readable rock shapes about 12 to 20 pixels wide. Quiet background behind a mobile game interface.",
+      "width": 64,
+      "height": 64,
+      "no_background": false,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#292638",
+        "#383044",
+        "#463A50"
+      ],
+      "max_colors": 6
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: dde774aa-53f7-45e1-85d3-3686756c534b\njob_id: dde774aa-53f7-45e1-85d3-3686756c534b\nmodel: pro\ndescription: Seamlessly repeating dark dwarven underground rock wall texture. Small angular flat cut rocks of uneven sizes fitted in staggered irregular courses, broad quiet flat planes, only three subtle dark blue-violet values with tiny dim violet upper edges. Clean low-noise clusters. No boulders, NO rounded cobbles, NO gravel, NO shiny highlights, NO dotted texture, no props, no borders. Native chunky fantasy pixel art, matte, restrained contrast, readable rock shapes about 12 to 20 pixels wide. Quiet background behind a mobile game interface.\nsize: 64x64px\ntransparent: False\ncandidates: 16\npalette: 6 colours\nmax colours: 6 per image\nasset_id: 745d417f-037f-5e58-b146-7409140b6768\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"dde774aa-53f7-45e1-85d3-3686756c534b\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "PortraitFrame",
+    "stage": 3,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "Single empty tall rectangular player portrait frame, front orthographic view, isolated transparent background. Dwarven mining cavern RPG UI. Chunky angular cool purple cut-stone rails with dull charcoal iron straps and four squared reinforced corner plates, a small amber rivet inset in each corner. Main uprights 9 pixels thick, straight top and bottom beams, symmetrical clean structure, unobstructed empty center. Sparse squared bolts centered on rail centerlines. Not ornate, no curls, no characters, no text, no scenery. Crisp native low-resolution pixel art, broad 2-3 shade material clusters, hard one-pixel outlines, top-left lighting, no dithering, no blur. Highly readable miniature game UI asset.",
+      "width": 96,
+      "height": 160,
+      "no_background": true,
+      "max_colors": 18,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 3fadec51-f1c0-4f11-9dc4-6f8bc7a4b7b2\njob_id: 3fadec51-f1c0-4f11-9dc4-6f8bc7a4b7b2\nmodel: pro\ndescription: Single empty tall rectangular player portrait frame, front orthographic view, isolated transparent background. Dwarven mining cavern RPG UI. Chunky angular cool purple cut-stone rails with dull charcoal iron straps and four squared reinforced corner plates, a small amber rivet inset in each corner. Main uprights 9 pixels thick, straight top and bottom beams, symmetrical clean structure, unobstructed empty center. Sparse squared bolts centered on rail centerlines. Not ornate, no curls, no characters, no text, no scenery. Crisp native low-resolution pixel art, broad 2-3 shade material clusters, hard one-pixel outlines, top-left lighting, no dithering, no blur. Highly readable miniature game UI asset.\nsize: 96x160px\ntransparent: True\ncandidates: 4\npalette: 24 colours\nmax colours: 18 per image\nasset_id: d7d5cb3b-914f-53c1-bfb8-b41c0867f120\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"3fadec51-f1c0-4f11-9dc4-6f8bc7a4b7b2\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "BoardFrame",
+    "stage": 4,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "Single empty square dwarven mine match-three board frame, front orthographic, transparent center and outside. Premium chunky low-resolution pixel art. Frame occupies most of canvas with uninterrupted straight heavy stone rails, dark dull iron straps. Exactly FOUR large angular chamfered squared iron corner plates, each has one small glowing AMBER diamond ore rivet. Corner squares about 23px, rail beams about 9px thick. Cool deep slate-purple stone planes, desaturated steel edges, warm brown timber inner rail, sparse brass bolts. Symmetrical strong geometry, simple large clean shading clusters, top-left light, black separation pixels. Empty center, NO gems, no words, no scenery, no extra loose objects, no curves, no baroque scrollwork, no dithering or gradients. Polished crisp mobile fantasy UI.",
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 20,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: b2afbe00-007f-432c-90f0-c2f1cfde878a\njob_id: b2afbe00-007f-432c-90f0-c2f1cfde878a\nmodel: pro\ndescription: Single empty square dwarven mine match-three board frame, front orthographic, transparent center and outside. Premium chunky low-resolution pixel art. Frame occupies most of canvas with uninterrupted straight heavy stone rails, dark dull iron straps. Exactly FOUR large angular chamfered squared iron corner plates, each has one small glowing AMBER diamond ore rivet. Corner squares about 23px, rail beams about 9px thick. Cool deep slate-purple stone planes, desaturated steel edges, warm brown timber inner rail, sparse brass bolts. Symmetrical strong geometry, simple large clean shading clusters, top-left light, black separation pixels. Empty center, NO gems, no words, no scenery, no extra loose objects, no curves, no baroque scrollwork, no dithering or gradients. Polished crisp mobile fantasy UI.\nsize: 128x128px\ntransparent: True\ncandidates: 4\npalette: 24 colours\nmax colours: 20 per image\nasset_id: c5204df6-f806-5169-9c10-66eeb7e3cbb7\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"b2afbe00-007f-432c-90f0-c2f1cfde878a\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "Support",
+    "stage": 5,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "Single tall straight dwarven mine support pillar, full object isolated on transparent background. Front orthographic low-resolution pixel sprite. 26 pixels wide, 120 pixels tall centered with clear outer margins. Large square cut-stone capital at top, plain uninterrupted long rectangular shaft of big purple-gray stone blocks, a small recessed vertical iron insert with angular carved mining rune at middle, one solid squared pedestal at bottom. Heavy geometric structural masonry with dull iron bands and tiny warm copper rivets. Broad quiet 2-3 tone planes, restrained cracks, chunky dark outline, top-left light. No foliage, no skull, no busy trim, no background, no isometric view. Clear joining surfaces for modular tiling.",
+      "width": 32,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 16,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: aa89ad88-4764-4fea-bb7c-7d15940fc5b3\njob_id: aa89ad88-4764-4fea-bb7c-7d15940fc5b3\nmodel: pro\ndescription: Single tall straight dwarven mine support pillar, full object isolated on transparent background. Front orthographic low-resolution pixel sprite. 26 pixels wide, 120 pixels tall centered with clear outer margins. Large square cut-stone capital at top, plain uninterrupted long rectangular shaft of big purple-gray stone blocks, a small recessed vertical iron insert with angular carved mining rune at middle, one solid squared pedestal at bottom. Heavy geometric structural masonry with dull iron bands and tiny warm copper rivets. Broad quiet 2-3 tone planes, restrained cracks, chunky dark outline, top-left light. No foliage, no skull, no busy trim, no background, no isometric view. Clear joining surfaces for modular tiling.\nsize: 32x128px\ntransparent: True\ncandidates: 4\npalette: 24 colours\nmax colours: 16 per image\nasset_id: 51ea78c2-8d66-5d0f-91c5-9c9bff4994c2\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"aa89ad88-4764-4fea-bb7c-7d15940fc5b3\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "ChainMount",
+    "stage": 5,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "One sturdy iron wall bracket with a straight hanging vertical chain for a dwarven mine lantern. Full object isolated on transparent background, front orthographic view, low resolution pixel art. Compact squared mounting plate at top with one copper rivet and a short right-angle bracket, a single chain of six large alternating readable oval rectangular links hangs straight down. End is a simple open hook. Dull blue-gray iron, deep near-black inner holes, sparse warm edge light, crisp one-pixel edges. No lantern, no backdrop, no multiple chains or extra separate objects, no curves or ornate scrolling, no blur.",
+      "width": 32,
+      "height": 64,
+      "no_background": true,
+      "max_colors": 12,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 65f95740-be13-40a8-9bf3-716d75d78cf7\njob_id: 65f95740-be13-40a8-9bf3-716d75d78cf7\nmodel: pro\ndescription: One sturdy iron wall bracket with a straight hanging vertical chain for a dwarven mine lantern. Full object isolated on transparent background, front orthographic view, low resolution pixel art. Compact squared mounting plate at top with one copper rivet and a short right-angle bracket, a single chain of six large alternating readable oval rectangular links hangs straight down. End is a simple open hook. Dull blue-gray iron, deep near-black inner holes, sparse warm edge light, crisp one-pixel edges. No lantern, no backdrop, no multiple chains or extra separate objects, no curves or ornate scrolling, no blur.\nsize: 32x64px\ntransparent: True\ncandidates: 25\npalette: 24 colours\nmax colours: 12 per image\nasset_id: a1b72474-3c68-5ad9-bab5-9ef977416846\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"65f95740-be13-40a8-9bf3-716d75d78cf7\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "MineCart",
+    "stage": 6,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "Single low squat mine cart on four small iron wheels, side view slightly showing top, full object. Sturdy warm brown wooden trapezoid wagon with charcoal iron corner straps and brass rivets. Small mound of dark stone with only three amber ore chunks visible above rim. Broad rectangular readable cart body. No rails attached, no scenery. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "max_colors": 16,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 129ef327-113d-4922-bd9c-f40eeffb6572\njob_id: 129ef327-113d-4922-bd9c-f40eeffb6572\nmodel: pro\ndescription: Single low squat mine cart on four small iron wheels, side view slightly showing top, full object. Sturdy warm brown wooden trapezoid wagon with charcoal iron corner straps and brass rivets. Small mound of dark stone with only three amber ore chunks visible above rim. Broad rectangular readable cart body. No rails attached, no scenery. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.\nsize: 64x64px\ntransparent: True\ncandidates: 16\npalette: 24 colours\nmax colours: 16 per image\nasset_id: 1e9b66e4-6431-52c2-b8e8-7c6b3689c7cb\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"129ef327-113d-4922-bd9c-f40eeffb6572\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "Winch",
+    "stage": 6,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "Single compact dwarven wooden winding wheel mounted on a squat iron axle support base, side view slightly showing thickness. Large circular warm dark wooden wheel, six broad spokes, thick dull iron rim, bronze axle center. One short support leg. Clearly mechanical mining winch, no teeth like a saw, no scenery. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "max_colors": 16,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 53af35b6-8104-49a9-a8c1-7c56a4f83f80\njob_id: 53af35b6-8104-49a9-a8c1-7c56a4f83f80\nmodel: pro\ndescription: Single compact dwarven wooden winding wheel mounted on a squat iron axle support base, side view slightly showing thickness. Large circular warm dark wooden wheel, six broad spokes, thick dull iron rim, bronze axle center. One short support leg. Clearly mechanical mining winch, no teeth like a saw, no scenery. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.\nsize: 64x64px\ntransparent: True\ncandidates: 16\npalette: 24 colours\nmax colours: 16 per image\nasset_id: c6a899f8-6c57-5353-b7a3-9b294aaf35bf\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"53af35b6-8104-49a9-a8c1-7c56a4f83f80\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "OreCrate",
+    "stage": 6,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "One squat reinforced wooden ore crate, open top with a few dark rocks and two small amber ore chunks. Warm practical timber broad side panels, diagonal brace, dull iron corner straps, two copper rivets. Three-quarter sidescroller prop view, grounded solid footprint. No glow halo, no scenery. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.",
+      "width": 48,
+      "height": 48,
+      "no_background": true,
+      "max_colors": 16,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 07f37e15-b6e5-4288-ac74-2b9d462406cd\njob_id: 07f37e15-b6e5-4288-ac74-2b9d462406cd\nmodel: pro\ndescription: One squat reinforced wooden ore crate, open top with a few dark rocks and two small amber ore chunks. Warm practical timber broad side panels, diagonal brace, dull iron corner straps, two copper rivets. Three-quarter sidescroller prop view, grounded solid footprint. No glow halo, no scenery. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.\nsize: 48x48px\ntransparent: True\ncandidates: 25\npalette: 24 colours\nmax colours: 16 per image\nasset_id: f41c76c4-c77a-5349-aa73-d3a95e1da966\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"07f37e15-b6e5-4288-ac74-2b9d462406cd\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "Barrel",
+    "stage": 6,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "One stout wooden mining barrel, squat cylindrical warm brown staves, two broad charcoal iron bands and small dull rivets, slightly visible circular top. Three-quarter sidescroller prop, no emblem or loose objects. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.",
+      "width": 32,
+      "height": 48,
+      "no_background": true,
+      "max_colors": 16,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 6bc7c7e4-7f1f-4d23-a3aa-ef04f3bba695\njob_id: 6bc7c7e4-7f1f-4d23-a3aa-ef04f3bba695\nmodel: pro\ndescription: One stout wooden mining barrel, squat cylindrical warm brown staves, two broad charcoal iron bands and small dull rivets, slightly visible circular top. Three-quarter sidescroller prop, no emblem or loose objects. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.\nsize: 32x48px\ntransparent: True\ncandidates: 36\npalette: 24 colours\nmax colours: 16 per image\nasset_id: bb07f063-8bc9-5fe6-a528-579c0f4875b9\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"6bc7c7e4-7f1f-4d23-a3aa-ef04f3bba695\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "MiningTools",
+    "stage": 6,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "One grounded pair of crossed mining tools leaning together: steel pickaxe with curved pointed head and short shovel, sturdy warm brown wooden handles, dull cold iron, a small solid brown tool bag at their base. Full tools fit inside canvas. Low detail, clear silhouettes, no extra rocks or scenery. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.",
+      "width": 48,
+      "height": 48,
+      "no_background": true,
+      "max_colors": 16,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 5e5d8496-5679-4ce7-ac61-d5a78744df1d\njob_id: 5e5d8496-5679-4ce7-ac61-d5a78744df1d\nmodel: pro\ndescription: One grounded pair of crossed mining tools leaning together: steel pickaxe with curved pointed head and short shovel, sturdy warm brown wooden handles, dull cold iron, a small solid brown tool bag at their base. Full tools fit inside canvas. Low detail, clear silhouettes, no extra rocks or scenery. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.\nsize: 48x48px\ntransparent: True\ncandidates: 25\npalette: 24 colours\nmax colours: 16 per image\nasset_id: 13c173c0-cccf-5d2a-908a-b5b86b022f42\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"5e5d8496-5679-4ce7-ac61-d5a78744df1d\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "RopeBundle",
+    "stage": 6,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "One compact coiled thick hemp rope bundle lying flat, warm tan and brown, broad readable three-loop shape with one loose end and small iron hook. Low detail, not tangled, no background or other objects. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.",
+      "width": 32,
+      "height": 32,
+      "no_background": true,
+      "max_colors": 16,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 19303f35-3bb7-499e-b84e-c881a33db2a1\njob_id: 19303f35-3bb7-499e-b84e-c881a33db2a1\nmodel: pro\ndescription: One compact coiled thick hemp rope bundle lying flat, warm tan and brown, broad readable three-loop shape with one loose end and small iron hook. Low detail, not tangled, no background or other objects. Isolated transparent background. Crisp native fantasy RPG pixel art, readable chunky silhouette, broad connected two or three tone material planes, top-left lighting, clean dark outlines, no dithering, no gradients, no scattered pixel noise. Dwarven excavation prop; no characters, no UI.\nsize: 32x32px\ntransparent: True\ncandidates: 64\npalette: 24 colours\nmax colours: 16 per image\nasset_id: b856fba0-77be-516b-852c-1531d630e3ca\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"19303f35-3bb7-499e-b84e-c881a33db2a1\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "LowerWall",
+    "stage": 7,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "Opaque seamless horizontal lower cave-wall/base tile for a dwarven mine. Dark cool charcoal and muted purple angular stone slabs, 3 broad irregular courses, large quiet planes, 2-3 shade chunky clusters, deep recesses. One clean level top rim, no pillar, no objects, no crystals. Side-view flat 2D background, calm behind HUD, no perspective, no speckles or dithering.",
+      "width": 96,
+      "height": 32,
+      "no_background": false,
+      "max_colors": 6,
+      "palette": [
+        "#0a0d11",
+        "#13131f",
+        "#1c1c2b",
+        "#292638",
+        "#383044",
+        "#463a50"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: b7a6c382-9fab-4c03-8cd6-ab82514bfa7f\njob_id: b7a6c382-9fab-4c03-8cd6-ab82514bfa7f\nmodel: pro\ndescription: Opaque seamless horizontal lower cave-wall/base tile for a dwarven mine. Dark cool charcoal and muted purple angular stone slabs, 3 broad irregular courses, large quiet planes, 2-3 shade chunky clusters, deep recesses. One clean level top rim, no pillar, no objects, no crystals. Side-view flat 2D background, calm behind HUD, no perspective, no speckles or dithering.\nsize: 96x32px\ntransparent: False\ncandidates: 16\npalette: 6 colours\nmax colours: 6 per image\nasset_id: 4398356f-3dc7-57e6-804c-2e0763dfafac\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"b7a6c382-9fab-4c03-8cd6-ab82514bfa7f\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "LowerLeft",
+    "stage": 7,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "One LEFT lower-corner grounded stone formation for a dwarven mine UI environment. Tall solid angular dark slate-purple rock mass along LEFT outer edge, stepping down toward RIGHT with a broad flat grounded foot. One rugged brown timber brace embedded into the rock, a small iron support plate, two restrained amber ore seams near base. Bottom-heavy cohesive silhouette, full formation fits inside canvas with two transparent pixels margin. No separate floating chunks, no scenery, no characters, no framing UI. Chunky clean native pixel art, broad connected 3-tone shading, top-left light, strong dark contour. Quiet empty space toward right upper corner.",
+      "width": 64,
+      "height": 96,
+      "no_background": true,
+      "max_colors": 16,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: fe495951-edd4-4101-9ab9-f0f1dc1ac110\njob_id: fe495951-edd4-4101-9ab9-f0f1dc1ac110\nmodel: pro\ndescription: One LEFT lower-corner grounded stone formation for a dwarven mine UI environment. Tall solid angular dark slate-purple rock mass along LEFT outer edge, stepping down toward RIGHT with a broad flat grounded foot. One rugged brown timber brace embedded into the rock, a small iron support plate, two restrained amber ore seams near base. Bottom-heavy cohesive silhouette, full formation fits inside canvas with two transparent pixels margin. No separate floating chunks, no scenery, no characters, no framing UI. Chunky clean native pixel art, broad connected 3-tone shading, top-left light, strong dark contour. Quiet empty space toward right upper corner.\nsize: 64x96px\ntransparent: True\ncandidates: 9\npalette: 24 colours\nmax colours: 16 per image\nasset_id: 2b6985ab-5b0b-59e2-8c41-3c9f586f268e\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"fe495951-edd4-4101-9ab9-f0f1dc1ac110\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "LowerRight",
+    "stage": 7,
+    "tool": "create_image_pro",
+    "args": {
+      "description": "One RIGHT lower-corner grounded rock formation for a dwarven excavation UI environment. Tall solid angular dark slate-purple cave stone mass along RIGHT outer edge, stepping down to LEFT into a wide grounded base. One rugged timber brace in the rock and a small iron plate, three small orange amber ore facets embedded near the foot. One coherent large mass, not stacked islands. Full object inside canvas with two transparent pixels of margin. No loose objects, no characters, no text, no background. Chunky native pixel art, broad clean 3-tone material planes, top-left lighting, restrained chips, no dithering or gradients. Leave upper-left area quiet.",
+      "width": 64,
+      "height": 96,
+      "no_background": true,
+      "max_colors": 16,
+      "palette": [
+        "#0A0D11",
+        "#13131F",
+        "#1C1C2B",
+        "#2C293D",
+        "#42374F",
+        "#5A4964",
+        "#786477",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0",
+        "#CFCCBC",
+        "#30202A",
+        "#4A2C1C",
+        "#7A4D2E",
+        "#B07A43",
+        "#D3A66A",
+        "#6F3B1D",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90",
+        "#A33612",
+        "#C94D08",
+        "#F5923D",
+        "#FFDB8F"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 2c421d75-bcbe-48f8-9a83-3c2b804df5b3\njob_id: 2c421d75-bcbe-48f8-9a83-3c2b804df5b3\nmodel: pro\ndescription: One RIGHT lower-corner grounded rock formation for a dwarven excavation UI environment. Tall solid angular dark slate-purple cave stone mass along RIGHT outer edge, stepping down to LEFT into a wide grounded base. One rugged timber brace in the rock and a small iron plate, three small orange amber ore facets embedded near the foot. One coherent large mass, not stacked islands. Full object inside canvas with two transparent pixels of margin. No loose objects, no characters, no text, no background. Chunky native pixel art, broad clean 3-tone material planes, top-left lighting, restrained chips, no dithering or gradients. Leave upper-left area quiet.\nsize: 64x96px\ntransparent: True\ncandidates: 9\npalette: 24 colours\nmax colours: 16 per image\nasset_id: 8669e65c-f7d4-5953-8112-254836e02e9e\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"2c421d75-bcbe-48f8-9a83-3c2b804df5b3\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]
