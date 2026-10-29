@@ -1,0 +1,32 @@
+{
+  "provider": "PixelLab",
+  "job_id": "1bd66f5e-7f6b-460c-9afd-5fad06f60a80",
+  "asset_id": "ae86da07-0443-5306-9aa9-5c7653c5e42d",
+  "charged_generations": 10,
+  "balance_before": 4930,
+  "selected": 2,
+  "arguments": {
+    "description": "Four-corner square board FRAME KIT for a polished chunky native pixel-art fantasy match-3 mobile game, cold snowy mountain fortress. FRONT VIEW orthogonal square with perfectly straight parallel beams, not isometric. Hollow transparent center, no background, no gems, no text, no icons. Sturdy weathered dark brown timber rails 7 to 9 pixels thick, dull cold blue-gray iron square corner plates about 16 pixels across, each with one centered simple bolt. Matching small square centered metal clamps at side midpoints. Fresh white snow with two pale icy blue shadow tones rests naturally on top horizontal beam and a little on the outward-facing lower corner ledges, a few short clean icicles hanging OUTSIDE the opening only. Preserve a clean deep navy inner edge around the playable opening. Premium restrained craft, simple broad connected shading planes, controlled top-left lighting, dark contours, small material ramps. No glowing crystals, no ropes or chains, no decorative symbols, no tiny scattered scratches, no blur or antialiasing. Complete frame silhouette within 3 transparent pixels of canvas edge. Make corners, straight rails, connectors and snow edges easy to separate as native reusable pieces. Wood material should be cool muted walnut, iron subdued slate blue, snow the sole small bright accent.",
+    "width": 128,
+    "height": 128,
+    "max_colors": 24,
+    "no_background": true,
+    "seed": 291051
+  },
+  "reference_input": "Text only as staged pack instructs; golden references inspected locally",
+  "rejected": [
+    {
+      "candidate": 0,
+      "reason": "Less even wood edges and heavier downward snow."
+    },
+    {
+      "candidate": 1,
+      "reason": "Noisy ice encroaches on timber."
+    },
+    {
+      "candidate": 3,
+      "reason": "Missing square structural corner plates."
+    }
+  ],
+  "balance_after": 4920
+}

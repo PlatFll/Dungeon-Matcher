@@ -1,0 +1,159 @@
+{
+  "assets": [
+    {
+      "name": "Board_Clamp",
+      "dimensions": [
+        8,
+        8
+      ],
+      "colors": 4,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "4e2b742f23b83a20878c74d76d7ac81edf6f3a31190b303c6f224fc1973def50"
+    },
+    {
+      "name": "Board_Corner_BL",
+      "dimensions": [
+        18,
+        18
+      ],
+      "colors": 6,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "2f3ee4df90e6a97f0834e93e8dcb39c6effa7f96e455edaa63fe14aca714da76"
+    },
+    {
+      "name": "Board_Corner_BR",
+      "dimensions": [
+        18,
+        18
+      ],
+      "colors": 6,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "3407253eb15510e47915358d0f78632e88efe091011f79cbfac53274cdf42df2"
+    },
+    {
+      "name": "Board_Corner_TL",
+      "dimensions": [
+        18,
+        18
+      ],
+      "colors": 6,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "73be63ba9c2a0682c298d267877ee5117a15ccb0699130c82b4b030e44ef35cf"
+    },
+    {
+      "name": "Board_Corner_TR",
+      "dimensions": [
+        18,
+        18
+      ],
+      "colors": 6,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "65b01a79f2579527b1b08d80a7b03ff7b4a66cb5313e69d89ba5205bc90c3eee"
+    },
+    {
+      "name": "Board_Icicles",
+      "dimensions": [
+        16,
+        8
+      ],
+      "colors": 2,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "b78d2d9fd5dd14b7d19e5e9f6c2c30610485a4a179ce351204cc23caf2f70a08"
+    },
+    {
+      "name": "Board_Rail_Bottom",
+      "dimensions": [
+        32,
+        8
+      ],
+      "colors": 5,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "6e6891076e80c39d6d9c14d93d9dc4220df645d35787a99e44c02cb521311cfd"
+    },
+    {
+      "name": "Board_Rail_Left",
+      "dimensions": [
+        8,
+        32
+      ],
+      "colors": 5,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "3fe65f7c0f2b27585c9bec8239b2bbb896b18aace6f725f635d6477714a3088e"
+    },
+    {
+      "name": "Board_Rail_Right",
+      "dimensions": [
+        8,
+        32
+      ],
+      "colors": 5,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "3fe65f7c0f2b27585c9bec8239b2bbb896b18aace6f725f635d6477714a3088e"
+    },
+    {
+      "name": "Board_Rail_Top",
+      "dimensions": [
+        32,
+        8
+      ],
+      "colors": 5,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "6e6891076e80c39d6d9c14d93d9dc4220df645d35787a99e44c02cb521311cfd"
+    },
+    {
+      "name": "Board_SnowCorner",
+      "dimensions": [
+        18,
+        18
+      ],
+      "colors": 2,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "e0a486c1ae857c86dfba453444f600d5132008a27bdd3e0cba92daf92ed04e2b"
+    },
+    {
+      "name": "Board_SnowRail",
+      "dimensions": [
+        32,
+        8
+      ],
+      "colors": 2,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "29924d8e672ecf8fdd1113a5e8ce310c4b253f8f66bcb4ea080ebfae550ad6aa"
+    },
+    {
+      "name": "CobbleWall_Muted",
+      "dimensions": [
+        154,
+        52
+      ],
+      "colors": 17,
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "0ca3c9d78227f8a01ca98a60be9d19f61e0251ce8f5c68043e27b2093bfc5c26"
+    }
+  ],
+  "wall": {
+    "before": {
+      "mean_value": 114.81393606393607,
+      "mean_saturation": 0.4763589555943033
+    },
+    "after": {
+      "mean_value": 75.59428071928072,
+      "mean_saturation": 0.34960745463982673
+    },
+    "geometry_exact": true
+  },
+  "protected_files_unchanged": 9108
+}
