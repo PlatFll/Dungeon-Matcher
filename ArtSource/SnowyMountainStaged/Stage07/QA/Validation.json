@@ -1,0 +1,92 @@
+{
+  "protected_files": 9253,
+  "changed_protected_files": [],
+  "native_assets": 4,
+  "views": [
+    {
+      "size": "720x1280",
+      "changed_pixels": 27084,
+      "exact_unchanged": [
+        "upper_scene",
+        "board",
+        "approved_board_side_dressing",
+        "central_bottom_lane"
+      ],
+      "opaque_control_pixels_unchanged": [
+        "AbilityButton",
+        "Bomb",
+        "HealthPotion"
+      ]
+    },
+    {
+      "size": "1080x1920",
+      "changed_pixels": 61203,
+      "exact_unchanged": [
+        "upper_scene",
+        "board",
+        "approved_board_side_dressing",
+        "central_bottom_lane"
+      ],
+      "opaque_control_pixels_unchanged": [
+        "AbilityButton",
+        "Bomb",
+        "HealthPotion"
+      ]
+    },
+    {
+      "size": "1080x2400",
+      "changed_pixels": 61415,
+      "exact_unchanged": [
+        "upper_scene",
+        "board",
+        "approved_board_side_dressing",
+        "central_bottom_lane"
+      ],
+      "opaque_control_pixels_unchanged": [
+        "AbilityButton",
+        "Bomb",
+        "HealthPotion"
+      ]
+    },
+    {
+      "size": "1080x2400-safe",
+      "changed_pixels": 61440,
+      "exact_unchanged": [
+        "upper_scene",
+        "board",
+        "approved_board_side_dressing",
+        "central_bottom_lane"
+      ],
+      "opaque_control_pixels_unchanged": [
+        "AbilityButton",
+        "Bomb",
+        "HealthPotion"
+      ]
+    },
+    {
+      "size": "360x640",
+      "changed_pixels": 2465,
+      "exact_unchanged": [
+        "upper_scene",
+        "board",
+        "approved_board_side_dressing",
+        "central_bottom_lane"
+      ],
+      "opaque_control_pixels_unchanged": [
+        "AbilityButton",
+        "Bomb",
+        "HealthPotion"
+      ]
+    }
+  ],
+  "unity": {
+    "compilation": "passed",
+    "command": "Tools/Validate-Unity.ps1",
+    "compile_log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-08694c3c-f371-401f-a1b0-7f2c713d489e.log",
+    "test": "ForestFoundationPlayTests.SnowyMountainStage07LowerEnvironmentReview",
+    "result": "Passed",
+    "viewports": 5,
+    "fixture_sha256": "8f6cfc3bd1037995fc68c5ce6fa606d737ca3efe408841464c55f3cf842652fc",
+    "evidence": "Unity Editor; no Android or physical-device testing"
+  }
+}

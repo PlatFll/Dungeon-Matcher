@@ -1,0 +1,19 @@
+{
+  "request": {
+    "description": "One single compact snow-covered alpine rock outcrop, isolated native pixel art game prop on transparent canvas. Broad low grounded cohesive boulder formation about 56 pixels wide and 42 pixels tall, filling the lower central part of a 64x64 sprite. One main blue-gray rock mass with three strong stepped planes, thick accumulated white snow caps draping naturally over the top, two short icicles. Small snow bank at its base. Cold muted blue-gray stone, pale blue snow shadows, white light planes, clean dark outline #0a0d11. Front-facing sidescroller view, simple chunky charming fantasy game style, broad connected shading, top-left illumination, restrained texture. No crystals, no trees, no background, no ground plane, no characters, no text. Entire silhouette with transparent margin. Readable simple pixel clusters, no antialiasing, no blur.",
+    "width": 64,
+    "height": 64,
+    "max_colors": 20,
+    "no_background": true
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 2710a287-a934-4a2e-a390-2ef6806792f1\njob_id: 2710a287-a934-4a2e-a390-2ef6806792f1\nmodel: pro\ndescription: One single compact snow-covered alpine rock outcrop, isolated native pixel art game prop on transparent canvas. Broad low grounded cohesive boulder formation about 56 pixels wide and 42 pixels tall, filling the lower central part of a 64x64 sprite. One main blue-gray rock mass with three strong stepped planes, thick accumulated white snow caps draping naturally over the top, two short icicles. Small snow bank at its base. Cold muted blue-gray stone, pale blue snow shadows, white light planes, clean dark outline #0a0d11. Front-facing sidescroller view, simple chunky charming fantasy game style, broad connected shading, top-left illumination, restrained texture. No crystals, no trees, no background, no ground plane, no characters, no text. Entire silhouette with transparent margin. Readable simple pixel clusters, no antialiasing, no blur.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nmax colours: 20 per image\nasset_id: 703db4a6-c008-51b2-8446-2aac6f467a73\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"2710a287-a934-4a2e-a390-2ef6806792f1\")"
+      }
+    ],
+    "isError": false
+  },
+  "reason": "Initial 128px kit returned standalone oversized props. This source is generated at the intended native module size rather than downscaled."
+}

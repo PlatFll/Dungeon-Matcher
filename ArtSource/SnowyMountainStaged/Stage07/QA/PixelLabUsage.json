@@ -1,0 +1,26 @@
+{
+  "stage": 7,
+  "starting_generations_remaining": 4910,
+  "ending_generations_remaining": 4889,
+  "generations_spent": 21,
+  "cash_credits_charged": 0,
+  "operations": [
+    {
+      "receipt": "Raw/Generation.json",
+      "cost_generations": 10,
+      "result": "Rejected at native size: candidate objects exceeded the available lower-HUD area. Retained as Oversized0..3; not resampled or used."
+    },
+    {
+      "receipt": "Raw/RockGeneration.json",
+      "cost_generations": 10,
+      "result": "64x64 source candidates 4 and 13 selected for separate left/right formations."
+    },
+    {
+      "receipt": "Raw/CrateGeneration.json",
+      "cost_generations": 1,
+      "result": "40x40 snow-covered supply crate selected."
+    }
+  ],
+  "reference_uploads": false,
+  "reuse": "Stage 6 IceCluster and RopePosts retained exactly."
+}
