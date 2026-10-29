@@ -1,0 +1,33 @@
+{
+  "stage": 4,
+  "referenceInput": "Text only per pack; current golden files inspected locally.",
+  "startingBalance": 4940,
+  "jobs": [
+    {
+      "input": {
+        "description": "A modular horizontal SNOWY STONE BATTLE PLATFORM for a premium fantasy pixel-art sidescroller. Exactly orthographic front view with a shallow visible flat walking surface, not isometric, no ground sloping away. A long continuous level strip made from large built blue-gray fortress blocks. Upper walking surface is broad and quiet, patches of compact snow with pale blue shadows and a few exposed flat blue stone slabs; there must be a generous level area for three fighters to stand in the middle. Clearly separate the top walking plane from the darker vertical front fascia made of one row of large rectangular masonry blocks with restrained bevels. Thick natural white snow softly overhangs a few front edges, a few short connected icicles toward outer edges. Lower vertical face dark icy slate, upper planes medium cold blue; top-left light, broad connected clusters, limited 2-3 shade material ramps. Tile-friendly continuous structure, mostly straight left/right boundaries, no isolated floating stones or gaps. Entire platform visible with transparent margin. Chunky clean native pixels, strong but restrained dark separation, no blur, anti-aliasing, dithering, noisy cracks or painted texture. Platform only, no characters, no background, no fences, no UI, no labels, no props.",
+        "width": 320,
+        "height": 96,
+        "max_colors": 24,
+        "no_background": true,
+        "seed": 291041
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 81053d69-9724-4a13-86a7-e1af574e122a\njob_id: 81053d69-9724-4a13-86a7-e1af574e122a\nmodel: pro\ndescription: A modular horizontal SNOWY STONE BATTLE PLATFORM for a premium fantasy pixel-art sidescroller. Exactly orthographic front view with a shallow visible flat walking surface, not isometric, no ground sloping away. A long continuous level strip made from large built blue-gray fortress blocks. Upper walking surface is broad and quiet, patches of compact snow with pale blue shadows and a few exposed flat blue stone slabs; there must be a generous level area for three fighters to stand in the middle. Clearly separate the top walking plane from the darker vertical front fascia made of one row of large rectangular masonry blocks with restrained bevels. Thick natural white snow softly overhangs a few front edges, a few short connected icicles toward outer edges. Lower vertical face dark icy slate, upper planes medium cold blue; top-left light, broad connected clusters, limited 2-3 shade material ramps. Tile-friendly continuous structure, mostly straight left/right boundaries, no isolated floating stones or gaps. Entire platform visible with transparent margin. Chunky clean native pixels, strong but restrained dark separation, no blur, anti-aliasing, dithering, noisy cracks or painted texture. Platform only, no characters, no background, no fences, no UI, no labels, no props.\nsize: 320x96px\ntransparent: True\ncandidates: 1\nmax colours: 24 per image\nseed: 291041\nasset_id: 9e22bc13-97df-5167-8d52-ea5f87ba9baa\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"81053d69-9724-4a13-86a7-e1af574e122a\")"
+          }
+        ],
+        "isError": false
+      },
+      "cost": 10
+    }
+  ],
+  "finalBalance": 4930,
+  "stageGenerationsUsed": 10,
+  "cumulativeStagedGenerationsUsed": 70,
+  "completedAssetId": "9e22bc13-97df-5167-8d52-ea5f87ba9baa",
+  "status": "completed",
+  "rawSourceSha256": "64e0bfed65cb02d16cf97815d88974d48f2b4244cba565f605efaebea6030e3f"
+}
