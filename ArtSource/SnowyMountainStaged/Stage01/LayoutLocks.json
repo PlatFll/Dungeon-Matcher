@@ -1,0 +1,52 @@
+[
+  {
+    "area": "Board",
+    "owner": "Game.unity / BoardController / BoardVisuals / BoardLayoutController",
+    "lock": "Keep width=8, height=8, cellSize=1; 64 PPU and existing 64x64 gem/cell art. BoardLayoutExtent and CalculateShared retain cross-zone dimensions. The target illustrates 8x7; it is not permission to remove a row."
+  },
+  {
+    "area": "Portrait",
+    "owner": "GameplayPixelLayoutController.SharedPlayerRect",
+    "lock": "Use SharedPlayerRegistration (11,28,129,252) within its 470-wide, 298-high registration and the existing viewport mapping. These are registration coordinates, not a fixed phone screenshot rectangle."
+  },
+  {
+    "area": "Enemy floor and health",
+    "owner": "BattleFloorAnchor / TopBattleLayoutController",
+    "lock": "Keep EnemyFloorInset=6 and EnemyHealthGap=2. Use EnemyFeetScreenY and source pivot compensation. Adapt the floor and lower separator around that same line; never move actors to hide a floor mistake."
+  },
+  {
+    "area": "Top HUD",
+    "owner": "GameplayPixelLayoutController.TopHud / live WAVE, GUIDE, settings owners",
+    "lock": "Keep hit areas, labels, functionality and shared control artwork. Only scene/snow dressing changes. No extra outer arena frame in the new composition; retire only that legacy Snow enclosure when integration is approved."
+  },
+  {
+    "area": "Portrait clipping",
+    "owner": "DungeonPixelLabBattleArt.Interior / RectMask2D",
+    "lock": "Overfill repeated dark masonry inside the existing inner mask. Keep the frame above it, with its corners and clamps centered. Decorative snow is separate; never crop a silhouette to disguise overflow."
+  },
+  {
+    "area": "Board surround",
+    "owner": "ResponsiveModularFrameFitter",
+    "lock": "Build corners, rails and centered joins around the actual board bounds. Repeat native pieces; no nonuniform image scaling, flattened whole-frame texture, changed board pitch or gap between cells and inner rim."
+  },
+  {
+    "area": "Bottom HUD",
+    "owner": "Existing energy, potion, bomb, resonance and text controls",
+    "lock": "Keep shared art, center panel, hit areas and text placement. Snow/rocks/crystals go behind and outside these. Never recreate the mockup UI as a baked screen."
+  },
+  {
+    "area": "Screen coverage",
+    "owner": "World background + existing safe gameplay root",
+    "lock": "Fill the full physical screen behind notch, side insets and bottom gesture area. Safe area moves controls only. Extend scenery/tiles while preserving native art density; avoid duplicate side strips stacked over each other."
+  },
+  {
+    "area": "Gameplay and identities",
+    "owner": "ZoneDefinition, FrostwakeRules, combat/board/save systems",
+    "lock": "Leave all zone rules, approved characters, animations, gems, ice overlays, progression, saves and other zones unchanged."
+  },
+  {
+    "area": "Scaling",
+    "owner": "Existing shared board projection / native environment scale",
+    "lock": "Native source artwork remains crisp, Point filtered, uncompressed and unmipped. The existing uniformly fitted board uses fractional screen ratios on some phones; preserve its shared sizing rather than inventing a snow-specific integer scale or shrinking gems."
+  }
+]
