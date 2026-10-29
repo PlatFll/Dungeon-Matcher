@@ -1,0 +1,54 @@
+{
+  "stage": 2,
+  "referenceInput": "Text only, per pack. Golden images inspected locally; no images uploaded.",
+  "startingBalance": 5000,
+  "jobs": [
+    {
+      "input": {
+        "description": "Native pixel-art scenic backdrop for Dungeon Matcher, a whimsical polished mobile fantasy RPG. Hand-authored-looking crisp single-pixel grid, chunky connected shapes, strong readable planes, restrained 3-tone material ramps, no antialiasing, no blur, no painterly gradients, no dithering or noisy speckles. Cool blue alpine daylight from upper left. Near rocks deep navy/slate blue, snow pale blue shadow and off-white highlights, distant peaks desaturated ice-blue. Cold open-air depth, not a cave. Environment only: NO people, monsters, text, UI, icons, frame, lantern props, board, battle platform or horizontal separator. Keep bottom third relatively quiet subdued cool blue rock/snow planes so foreground enemy silhouettes will read. No giant objects in lower center. Composition A: a dramatic towering cliff along the far left with broad snow shelves and crisp icicles; a few chunky snow-laden pine trees on each side. Beyond them an old stone arch bridge with slender rope-post railings curves from lower-right mid-distance toward center-left and recedes toward subtle tall ruined fortress towers high on the right. Layered triangular distant mountain peaks and pale cold blue sky occupy upper center. Broad white snow planes against navy rocks, strongest architectural focal point in middle upper half. Rich but economical large-scale shapes.",
+        "width": 384,
+        "height": 320,
+        "max_colors": 40,
+        "no_background": false,
+        "seed": 291002
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 526c26a4-46f2-463b-be03-0d747aa44ca7\njob_id: 526c26a4-46f2-463b-be03-0d747aa44ca7\nmodel: pro\ndescription: Native pixel-art scenic backdrop for Dungeon Matcher, a whimsical polished mobile fantasy RPG. Hand-authored-looking crisp single-pixel grid, chunky connected shapes, strong readable planes, restrained 3-tone material ramps, no antialiasing, no blur, no painterly gradients, no dithering or noisy speckles. Cool blue alpine daylight from upper left. Near rocks deep navy/slate blue, snow pale blue shadow and off-white highlights, distant peaks desaturated ice-blue. Cold open-air depth, not a cave. Environment only: NO people, monsters, text, UI, icons, frame, lantern props, board, battle platform or horizontal separator. Keep bottom third relatively quiet subdued cool blue rock/snow planes so foreground enemy silhouettes will read. No giant objects in lower center. Composition A: a dramatic towering cliff along the far left with broad snow shelves and crisp icicles; a few chunky snow-laden pine trees on each side. Beyond them an old stone arch bridge with slender rope-post railings curves from lower-right mid-distance toward center-left and recedes toward subtle tall ruined fortress towers high on the right. Layered triangular distant mountain peaks and pale cold blue sky occupy upper center. Broad white snow planes against navy rocks, strongest architectural focal point in middle upper half. Rich but economical large-scale shapes.\nsize: 384x320px\ntransparent: False\ncandidates: 1\nmax colours: 40 per image\nseed: 291002\nasset_id: 91e9c710-898e-5249-b3ef-2dff305afe80\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"526c26a4-46f2-463b-be03-0d747aa44ca7\")"
+          }
+        ],
+        "isError": false
+      },
+      "cost": 25,
+      "outputSHA256": "e1ec5e516b225b3e850bdfeabf5a9be5664f35f14e134c4b49fae0d44fa022c9"
+    },
+    {
+      "input": {
+        "description": "Native pixel-art scenic backdrop for Dungeon Matcher, a whimsical polished mobile fantasy RPG. Hand-authored-looking crisp single-pixel grid, chunky connected shapes, strong readable planes, restrained 3-tone material ramps, no antialiasing, no blur, no painterly gradients, no dithering or noisy speckles. Cool blue alpine daylight from upper left. Near rocks deep navy/slate blue, snow pale blue shadow and off-white highlights, distant peaks desaturated ice-blue. Cold open-air depth, not a cave. Environment only: NO people, monsters, text, UI, icons, frame, lantern props, board, battle platform or horizontal separator. Keep bottom third relatively quiet subdued cool blue rock/snow planes so foreground enemy silhouettes will read. No giant objects in lower center. Composition B: a sheltered winding alpine fortress pass between two uneven dark blue cliffs with thick white snow shelves and hanging icicles. A high narrow stone arch bridge crosses the mid-distance center with rope fences leading uphill into small ruined towers at upper-center-right. Tall snow-covered pines frame the sides, with broad pale mountain peaks beyond. The central route leads the eye gently into the distance. Near framing cliff shapes stay on extreme left and right; leave middle-bottom quiet and unobstructed. Visually grand but simple, clean deliberate pixel clusters.",
+        "width": 384,
+        "height": 320,
+        "max_colors": 40,
+        "no_background": false,
+        "seed": 291003
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: d0533cb2-4648-486f-9fe7-7efc9d4d856f\njob_id: d0533cb2-4648-486f-9fe7-7efc9d4d856f\nmodel: pro\ndescription: Native pixel-art scenic backdrop for Dungeon Matcher, a whimsical polished mobile fantasy RPG. Hand-authored-looking crisp single-pixel grid, chunky connected shapes, strong readable planes, restrained 3-tone material ramps, no antialiasing, no blur, no painterly gradients, no dithering or noisy speckles. Cool blue alpine daylight from upper left. Near rocks deep navy/slate blue, snow pale blue shadow and off-white highlights, distant peaks desaturated ice-blue. Cold open-air depth, not a cave. Environment only: NO people, monsters, text, UI, icons, frame, lantern props, board, battle platform or horizontal separator. Keep bottom third relatively quiet subdued cool blue rock/snow planes so foreground enemy silhouettes will read. No giant objects in lower center. Composition B: a sheltered winding alpine fortress pass between two uneven dark blue cliffs with thick white snow shelves and hanging icicles. A high narrow stone arch bridge crosses the mid-distance center with rope fences leading uphill into small ruined towers at upper-center-right. Tall snow-covered pines frame the sides, with broad pale mountain peaks beyond. The central route leads the eye gently into the distance. Near framing cliff shapes stay on extreme left and right; leave middle-bottom quiet and unobstructed. Visually grand but simple, clean deliberate pixel clusters.\nsize: 384x320px\ntransparent: False\ncandidates: 1\nmax colours: 40 per image\nseed: 291003\nasset_id: 92e3fb7c-47fe-5252-9d57-79a1a9f9158f\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"d0533cb2-4648-486f-9fe7-7efc9d4d856f\")"
+          }
+        ],
+        "isError": false
+      },
+      "cost": 25,
+      "outputSHA256": "37ac4f48679dd99d8166a67070fb44d550f7958058b3781c8b7a582522fbbdff"
+    }
+  ],
+  "endingBalance": 4950,
+  "totalSpent": 50,
+  "completedJobs": 2,
+  "selected": "B",
+  "status": "Candidate for Stage 2 user review"
+}

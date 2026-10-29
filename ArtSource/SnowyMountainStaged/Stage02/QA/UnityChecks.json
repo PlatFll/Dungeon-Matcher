@@ -1,0 +1,28 @@
+{
+  "unityCompile": {
+    "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+    "result": "Passed",
+    "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-a22bc20a-b130-456e-b940-6f74f95d59a3.log"
+  },
+  "unityPreviewTest": {
+    "command": "powershell -ExecutionPolicy Bypass -File Tools/Test-ForestFoundation.ps1 -Filter ForestFoundationPlayTests.SnowyMountainStage02BackdropReview -Graphics",
+    "result": "Passed",
+    "total": "1",
+    "passed": "1",
+    "failed": "0",
+    "screens": [
+      "720x1280",
+      "1080x1920",
+      "1080x2400",
+      "1080x2400-safe",
+      "360x640"
+    ],
+    "testXML": ".utmp\\ForestValidation\\d480919b-ed07-4c22-87fc-76820ca9f839.xml"
+  },
+  "deviceTesting": "Not performed. Screenshots are actual Unity Editor Game renders, not physical-phone captures.",
+  "scope": "Only an editor-test scenery override; production prefabs, themes and scenes remain unchanged.",
+  "knownExistingIssues": [
+    "Legacy Frostwake outer enclosure and old portrait/board/HUD materials remain pending their later stages.",
+    "At 360x640 the existing Pixel Perfect Camera warning and crowded upper labels are also present in the baseline; this stage does not alter shared UI."
+  ]
+}
