@@ -1,0 +1,173 @@
+{
+  "modules": [
+    {
+      "name": "Backing",
+      "size": [
+        64,
+        32
+      ],
+      "colors": 4,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "96f5e44f449567875926ffc1463c760fde0bb55264f6abfc79759940ac2283ae"
+    },
+    {
+      "name": "Portrait_Clamp",
+      "size": [
+        12,
+        12
+      ],
+      "colors": 4,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "0442198ed5be2f687b83ea9bf25a68d33fc05d14297d73f01200c961946f3d12"
+    },
+    {
+      "name": "Portrait_Corner_BL",
+      "size": [
+        16,
+        16
+      ],
+      "colors": 4,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "711313ab25f5ecb12cc48373ad1029b65f4ebb9a6e267af21d3f3a0a360f36c5"
+    },
+    {
+      "name": "Portrait_Corner_BR",
+      "size": [
+        16,
+        16
+      ],
+      "colors": 4,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "711313ab25f5ecb12cc48373ad1029b65f4ebb9a6e267af21d3f3a0a360f36c5"
+    },
+    {
+      "name": "Portrait_Corner_TL",
+      "size": [
+        16,
+        16
+      ],
+      "colors": 4,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "711313ab25f5ecb12cc48373ad1029b65f4ebb9a6e267af21d3f3a0a360f36c5"
+    },
+    {
+      "name": "Portrait_Corner_TR",
+      "size": [
+        16,
+        16
+      ],
+      "colors": 4,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "711313ab25f5ecb12cc48373ad1029b65f4ebb9a6e267af21d3f3a0a360f36c5"
+    },
+    {
+      "name": "Portrait_Rail_Bottom",
+      "size": [
+        32,
+        8
+      ],
+      "colors": 4,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "1686cd4c7f6ae00d1bd4fd1cc6abadf8776d83ffb6b42329ed1a5a531b2bb81b"
+    },
+    {
+      "name": "Portrait_Rail_Left",
+      "size": [
+        8,
+        32
+      ],
+      "colors": 4,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "4d4f38636088ed8abb703320bb3f69be186f0190383ea261b257d4f49fd2f919"
+    },
+    {
+      "name": "Portrait_Rail_Right",
+      "size": [
+        8,
+        32
+      ],
+      "colors": 4,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "5f101c6cd08b8d2dc346dc36444998692458b4289d62f01dd76707ef99e12987"
+    },
+    {
+      "name": "Portrait_Rail_Top",
+      "size": [
+        32,
+        8
+      ],
+      "colors": 4,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "326e1a09784ddb7908926825d34a60682589941013d5101d17f13901206c5a35"
+    },
+    {
+      "name": "SnowCap_Left",
+      "size": [
+        32,
+        36
+      ],
+      "colors": 3,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "7a194cebb8555fab8d852493a3fad6ec0e657c471248cf4a757a457b0f0e164c"
+    },
+    {
+      "name": "SnowCap_Middle",
+      "size": [
+        32,
+        16
+      ],
+      "colors": 3,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "ed8f8abd75726ac0d2e3f7a3cfe15e745a121ff098c78bec699eacc777734428"
+    },
+    {
+      "name": "SnowCap_Right",
+      "size": [
+        32,
+        36
+      ],
+      "colors": 3,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "3937124ce652ccf7fcc2251b8fa99ebd16d124ecdbfcd3499e726571e6d3e0b8"
+    },
+    {
+      "name": "SnowFoot_Left",
+      "size": [
+        24,
+        14
+      ],
+      "colors": 2,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "2cc2360e7f2f6ccf6b996637b6a46ef02d676a5cdd89f0f7ee87fb3fccd55310"
+    },
+    {
+      "name": "SnowFoot_Right",
+      "size": [
+        24,
+        14
+      ],
+      "colors": 3,
+      "binaryAlpha": true,
+      "roundtripPixelsEqual": true,
+      "sha256": "8222749ee33782597c74fdc9381e5e26a265af1570a558ff95caad7acca20bf4"
+    }
+  ],
+  "combinedOpaquePalette": 12,
+  "resampling": false,
+  "structuralRailsAndBackingOpaque": true,
+  "allRoundtripsExact": true
+}
