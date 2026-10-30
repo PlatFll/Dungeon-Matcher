@@ -1,0 +1,81 @@
+{
+  "status": "review validation passed; 360x640 shared HUD limitations remain",
+  "protected_files": 9485,
+  "changed_protected_files": [],
+  "native_assets": 56,
+  "libresprite_roundtrips": "all exact",
+  "new_sky_extension": {
+    "size": [
+      384,
+      96
+    ],
+    "source": "Stage02/AlpinePass",
+    "bottom_seam": "exact source top row",
+    "palette": "subset of original vista",
+    "original_artwork": "unchanged"
+  },
+  "views": [
+    {
+      "size": "720x1280",
+      "pixel_scale": 2.0,
+      "protected_regions": "exact",
+      "atmosphere_changed_pixels": 252,
+      "reduced_motion": "exact static assembly"
+    },
+    {
+      "size": "1080x1920",
+      "pixel_scale": 3.0,
+      "protected_regions": "exact",
+      "atmosphere_changed_pixels": 387,
+      "reduced_motion": "exact static assembly"
+    },
+    {
+      "size": "1080x2400",
+      "pixel_scale": 3.0,
+      "protected_regions": "exact",
+      "atmosphere_changed_pixels": 573,
+      "reduced_motion": "exact static assembly"
+    },
+    {
+      "size": "1080x2400-safe",
+      "pixel_scale": 3.0,
+      "protected_regions": "exact",
+      "atmosphere_changed_pixels": 549,
+      "reduced_motion": "exact static assembly"
+    },
+    {
+      "size": "360x640",
+      "pixel_scale": 1.0,
+      "protected_regions": "exact",
+      "atmosphere_changed_pixels": 63,
+      "reduced_motion": "exact static assembly"
+    }
+  ],
+  "frozen_atmosphere": {
+    "frames": 96,
+    "protected_regions": "every frame exact",
+    "changed_pixels_range": [
+      240,
+      292
+    ]
+  },
+  "live_preview": {
+    "frames": 96,
+    "seconds": 8.0,
+    "enemy_idles_advanced": [
+      true,
+      true,
+      true
+    ],
+    "board_checks": "logical occupancy, identity, sprite, scale, color and fixed cells; existing hint movement preserved"
+  },
+  "unity": "passed",
+  "fixture_sha256": "360f881644d8daf1d37fdc258a9f36e9c8e34e5dad04d6db3c39a93ede5b6c28",
+  "shared_assembler_sha256": "0d2f45d1976bbff5cef198b44f95ed54bcea655b65ffcdd243ab7dcf915288ea",
+  "limitations": [
+    "360x640 retains shared HUD crowding and Unity development/editor pixel-camera warning",
+    "Legacy gem-cell art and shared board sampling unchanged",
+    "No production binding, Android build or real-device test",
+    "Final assembled design awaits user review; nothing merged"
+  ]
+}

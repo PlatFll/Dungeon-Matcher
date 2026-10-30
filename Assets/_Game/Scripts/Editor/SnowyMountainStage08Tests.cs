@@ -17,6 +17,9 @@ public sealed partial class ForestFoundationPlayTests
 
     // Disposable production-Game review. This does not register or replace a live zone kit.
     [UnityTest,Explicit] public IEnumerator SnowyMountainStage08AtmosphereReview()
+    { yield return SnowyMountainAssembledReview(SnowStage08,false); }
+
+    IEnumerator SnowyMountainAssembledReview(string reviewRoot,bool finalAssembly)
     {
         UnityEngine.Random.InitState(291002);
         RunLaunchOptions.ForestPrototype=false;RunLaunchOptions.StartingZone="frostwake-peaks";
@@ -34,6 +37,14 @@ public sealed partial class ForestFoundationPlayTests
         var plate=new GameObject("ApprovedStage02Scenery_PreviewOnly");plate.transform.SetParent(env.transform,false);
         var vista=plate.AddComponent<SpriteRenderer>();vista.sprite=SnowPreviewSprite(SnowStage02+"/Exports/AlpinePass.png",64);
         vista.sortingLayerID=sourceLayer.sortingLayerID;vista.sortingOrder=sourceLayer.sortingOrder;
+        SpriteRenderer skyExtension=null;
+        if(finalAssembly)
+        {
+            var sky=new GameObject("SnowStage09NativeSkyOverscan_PreviewOnly");sky.transform.SetParent(plate.transform,false);
+            skyExtension=sky.AddComponent<SpriteRenderer>();skyExtension.sprite=SnowPreviewSprite(SnowStage09+"/Exports/SkyExtension.png",64);
+            skyExtension.sortingLayerID=vista.sortingLayerID;skyExtension.sortingOrder=vista.sortingOrder;
+            sky.transform.localPosition=new Vector3(0,(vista.sprite.rect.height+skyExtension.sprite.rect.height)/128f,0);
+        }
         architecture.SetActive(false);oldFloor.SetActive(false);
         var art=ScriptableObject.CreateInstance<DungeonPixelLabBattleArt>();snowPortraitTemporary.Add(art);
         art.modules=Directory.GetFiles(SnowStage03+"/Exports","*.png").Concat(Directory.GetFiles(SnowStage05+"/Exports","Board_*.png"))
@@ -102,6 +113,8 @@ public sealed partial class ForestFoundationPlayTests
                 arena.SetActive(false);bottomEnclosure.SetActive(false);
                 // Reveal the existing overscan around the removed enclosure, without moving the scenery.
                 vista.maskInteraction=SpriteMaskInteraction.None;
+                if(skyExtension)
+                    Assert.That(cam.WorldToScreenPoint(skyExtension.bounds.max).y,Is.GreaterThanOrEqualTo(Screen.height),"Native sky overscan covers the physical top beyond the safe area");
                 boardVisuals.enabled=false;oldBoardFrame.SetActive(false);
                 if(boardTarget)UnityEngine.Object.Destroy(boardTarget.gameObject);
                 boardTarget=DungeonPixelLabBattleArt.Rect("SnowStage05BoardFrame_PreviewOnly",layout.BoardArea,0,0,0,0);
@@ -142,7 +155,7 @@ public sealed partial class ForestFoundationPlayTests
                 lowerRoot=SnowStage07Lower(cam,fr,pixel,layout);
                 for(int i=0;i<3;i++)yield return null;
                 var sharedState=SnowStage07UiState(layout);
-                yield return ForegroundScreenshot(SnowStage08+"/Preview/Before/"+key+".png");
+                yield return ForegroundScreenshot(reviewRoot+"/Preview/Before/"+key+".png");
                 atmosphere=SnowStage08Atmosphere(cam,fr,pixel,feet,after.portrait,sideRoot,lowerRoot);
                 var rng=UnityEngine.Random.state;
                 for(int n=0;n<96;n++){atmosphere.Sample(n*.125f,false);atmosphere.Validate(fr,pixel);}
@@ -153,22 +166,25 @@ public sealed partial class ForestFoundationPlayTests
                 atmosphere.Sample(0,true);var reduced=atmosphere.State();atmosphere.Sample(7,true);
                 Assert.That(atmosphere.State(),Is.EqualTo(reduced),"Reduced Motion is stable");
                 Assert.That(atmosphere.root.GetComponentsInChildren<SpriteRenderer>().All(r=>!r.enabled),Is.True);
-                yield return ForegroundScreenshot(SnowStage08+"/Preview/Reduced/"+key+".png");
+                yield return ForegroundScreenshot(reviewRoot+"/Preview/Reduced/"+key+".png");
                 atmosphere.Sample(2.5f,false);for(int i=0;i<2;i++)yield return null;
                 Assert.That(SnowStage07UiState(layout),Is.EqualTo(sharedState));
                 Assert.That(JsonUtility.ToJson(SnowGeometry(layout)),Is.EqualTo(JsonUtility.ToJson(after)));
                 Assert.That(SnowBoardSpriteState(lockedRenderers),Is.EqualTo(lockedState));
                 records.Add(new SnowBoardRecord{size=key,geometry=after,boardFrame=fr,nativePixelScale=pixel,wallTop=sourceTop-84*pixel,report=report});
-                File.WriteAllText(SnowStage08+"/Preview/Measurements.json",JsonUtility.ToJson(new SnowBoardRecords{items=records.ToArray()},true));
-                yield return ForegroundScreenshot(SnowStage08+"/Preview/After/"+key+".png");
+                File.WriteAllText(reviewRoot+"/Preview/Measurements.json",JsonUtility.ToJson(new SnowBoardRecords{items=records.ToArray()},true));
+                yield return ForegroundScreenshot(reviewRoot+"/Preview/After/"+key+".png");
+                if(finalAssembly)
+                    SnowStage09RecordAssembly(reviewRoot,key,cam,plate,floorRoot,sideRoot,lowerRoot,portraitFrame,portraitMask,portraitDressing,boardTarget,atmosphere.root);
                 if(key=="720x1280")
                 {
                     for(int n=0;n<96;n++)
                     {
                         atmosphere.Sample(n*.125f,false);
                         yield return null;
-                        yield return ForegroundScreenshot(SnowStage08+"/Preview/Motion/"+n.ToString("D3")+".png");
+                        yield return ForegroundScreenshot(reviewRoot+"/Preview/Motion/"+n.ToString("D3")+".png");
                     }
+                    if(finalAssembly)yield return SnowStage09LiveReview(reviewRoot,cam,atmosphere,layout,fr,pixel);
                 }
             }
         }
