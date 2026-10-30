@@ -1,0 +1,36 @@
+{
+  "request": {
+    "description": "ONE narrow tall snowy cliffside buttress, a substantial connected vertical environmental structure for the LEFT outside edge of a fantasy match-three board. Front orthographic 2D sidescroller view. Native 40 by 128 pixel canvas, very narrow roughly 30-34 pixel wide silhouette with transparent breathing room. A continuous blue-gray rocky cliff face, broad stacked wind-packed white snow shelves, substantial dark-brown timber upright buried within the cliff on the RIGHT edge, one short outward-projecting crossarm near the top suitable for hanging a separate lantern, thick diagonal wooden brace resting on rock, small hard blue ice on ONE crevice only. Heavy snow cap at top, a connected quiet rocky middle, a grounded larger snowy footing at bottom. Read as one rugged load-bearing structure, not scattered objects, not three separate rocks. Keep the outside left contour organic. The inner right edge stays nearly straight for attachment beside a UI frame. Larger readable rock planes, clean dark contour, simple top-left lit snow, clear wood/stone separation, minimal texture and sparse cracks. Cold mountain fortress pass. Charming chunky game pixel art, crisp hard native pixels, about 18 meaningful colors, no blur, no antialiasing, no painterly microtexture, no gray noise, no repeated little stones, no snowflake particles, no characters, no text, no HUD, no actual lantern or banner, no horizontal floor, no background. Distinct snow masses visible at native size.",
+    "width": 40,
+    "height": 128,
+    "no_background": true,
+    "max_colors": 20,
+    "seed": 301002,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "ArtSource/SnowyMountainStaged/Stage06/Exports/SnowRock.png",
+        "usage": "Established snow and blue-gray rock palette and native pixel density; expand into a continuous tall rock-and-snow buttress with much larger connected masses."
+      },
+      {
+        "path": "ArtSource/SnowyMountainStaged/Stage06/Exports/Support_Left.png",
+        "usage": "Existing timber, metal, snow material family; integrate stout wood supports into the cliff instead of a bare thin post."
+      }
+    ],
+    "style_image": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+    "transmitted_fields": "Actual PNG bytes passed through style_image_base64 and reference_images[].base64; hashes in QA/Lineage.json."
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 52a819f1-c7d8-474e-b705-f91028434a99\njob_id: 52a819f1-c7d8-474e-b705-f91028434a99\nmodel: pro\ndescription: ONE narrow tall snowy cliffside buttress, a substantial connected vertical environmental structure for the LEFT outside edge of a fantasy match-three board. Front orthographic 2D sidescroller view. Native 40 by 128 pixel canvas, very narrow roughly 30-34 pixel wide silhouette with transparent breathing room. A continuous blue-gray rocky cliff face, broad stacked wind-packed white snow shelves, substantial dark-brown timber upright buried within the cliff on the RIGHT edge, one short outward-projecting crossarm near the top suitable for hanging a separate lantern, thick diagonal wooden brace resting on rock, small hard blue ice on ONE crevice only. Heavy snow cap at top, a connected quiet rocky middle, a grounded larger snowy footing at bottom. Read as one rugged load-bearing structure, not scattered objects, not three separate rocks. Keep the outside left contour organic. The inner right edge stays nearly straight for attachment beside a UI frame. Larger readable rock planes, clean dark contour, simple top-left lit snow, clear wood/stone separation, minimal texture and sparse cracks. Cold mountain fortress pass. Charming chunky game pixel art, crisp hard native pixels, about 18 meaningful colors, no blur, no antialiasing, no painterly microtexture, no gray noise, no repeated little stones, no snowflake particles, no characters, no text, no HUD, no actual lantern or banner, no horizontal floor, no background. Distinct snow masses visible at native size.\nsize: 40x128px\ntransparent: True\ncandidates: 4\nreferences: 2\nstyle_image: yes (outline, detail, shading)\nmax colours: 20 per image\nseed: 301002\nasset_id: 2bc37ae8-85f2-5a7d-826f-0041e8e20ecb\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"52a819f1-c7d8-474e-b705-f91028434a99\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/52a819f1-c7d8-474e-b705-f91028434a99/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+      }
+    ],
+    "isError": false
+  }
+}

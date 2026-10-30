@@ -1,6 +1,7 @@
-Current follow-up: SideCornerPolish/Stage01 — analysis and asset plan awaiting review.
-The user requested richer board sides and lower corners; upper scene and shared layout remain locked.
-No new generation or scene changes in this follow-up yet.
+Current follow-up: SideCornerPolish/Stage02 — board-side assets complete, awaiting review.
+Two PixelLab designs; ten cleaned native PNG/ASE sources including eight overlap modules.
+20 generations spent. Approved art, Unity scene and production bindings unchanged.
+Open SideCornerPolish/Stage02/Review.html. Stop before Stage 3. No merge.
 
 Snowy Mountain / Frostwake Peaks staged rebuild
 
