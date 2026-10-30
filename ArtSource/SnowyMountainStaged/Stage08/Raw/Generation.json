@@ -1,0 +1,31 @@
+{
+  "stage": 8,
+  "request": {
+    "description": "A tiny pixel-art VFX sprite sheet on a transparent 32x32 canvas. Sparse drifting snow flecks and cold glints for a snowy mountain game. Four isolated little motifs arranged in a 2 by 2 grid with lots of empty transparent space: top left a single tiny round snow mote, top right a small diagonal 3-pixel snow fleck, bottom left a tiny irregular diamond snowflake, bottom right one very simple four-point ice sparkle. Each motif only 3 to 7 native pixels across, centered in its own 16x16 quadrant, no touching or connecting. Only white, pale icy blue and muted blue-gray. Hard pixels, economical clusters, no outline, no gradients, no glow halo, no blur, no background, no text, no scene, no large snowflake icon. Small understated reusable ambient effects, clean whimsical fantasy game style.",
+    "width": 32,
+    "height": 32,
+    "no_background": true,
+    "detail": "low detail",
+    "outline": "lineless",
+    "view": "side"
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 7dd20e01-ff7b-4fa7-8e31-296098c20ba3\njob_id: 7dd20e01-ff7b-4fa7-8e31-296098c20ba3\nmodel: pixen\ndescription: A tiny pixel-art VFX sprite sheet on a transparent 32x32 canvas. Sparse drifting snow flecks and cold glints for a snowy mountain game. Four isolated little motifs arranged in a 2 by 2 grid with lots of empty transparent space: top left a single tiny round snow mote, top right a small diagonal 3-pixel snow fleck, bottom left a tiny irregular diamond snowflake, bottom right one very simple four-point ice sparkle. Each motif only 3 to 7 native pixels across, centered in its own 16x16 quadrant, no touching or connecting. Only white, pale icy blue and muted blue-gray. Hard pixels, economical clusters, no outline, no gradients, no glow halo, no blur, no background, no text, no scene, no large snowflake icon. Small understated reusable ambient effects, clean whimsical fantasy game style.\nsize: 32x32px\ntransparent: True\nasset_id: b1fa2e26-f128-5398-aa67-ce7c3ec9b41c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"7dd20e01-ff7b-4fa7-8e31-296098c20ba3\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/7dd20e01-ff7b-4fa7-8e31-296098c20ba3/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+      }
+    ],
+    "isError": false
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: 7dd20e01-ff7b-4fa7-8e31-296098c20ba3\njob_id: 7dd20e01-ff7b-4fa7-8e31-296098c20ba3\nframes: 1\ntransparent: no — every pixel is opaque. If you asked for no_background, background removal did not find one; retry or describe the subject on a plain background.\nasset_id: b1fa2e26-f128-5398-aa67-ce7c3ec9b41c\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/7dd20e01-ff7b-4fa7-8e31-296098c20ba3/download"
+      }
+    ]
+  },
+  "starting_balance": 4889,
+  "reference_usage": "Text-only generation per pack. Current golden images inspected locally; hashes checked against register."
+}

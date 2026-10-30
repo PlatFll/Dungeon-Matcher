@@ -1,0 +1,188 @@
+{
+  "stage": 8,
+  "status": "review_candidate",
+  "source": "Raw/SnowEffects.png",
+  "cleanup": "LibreSprite: remove generated opaque gray backdrop; retain and simplify motif cores at native scale; consolidate to approved snow colors. Six authored glint poses.",
+  "assets": [
+    {
+      "name": "Glint_00",
+      "size": [
+        8,
+        8
+      ],
+      "opaque_pixels": 1,
+      "colors": [
+        [
+          236,
+          250,
+          253
+        ]
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "cfca533e1c7639ad018d8b2a792e3dfe11c1244c7551919edc95ecfe32de6e9a"
+    },
+    {
+      "name": "Glint_01",
+      "size": [
+        8,
+        8
+      ],
+      "opaque_pixels": 5,
+      "colors": [
+        [
+          236,
+          250,
+          253
+        ]
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "091e3d099694821b2c08c0a697dd81bc1106c3b46e41da332d05e04184cb2eb0"
+    },
+    {
+      "name": "Glint_02",
+      "size": [
+        8,
+        8
+      ],
+      "opaque_pixels": 9,
+      "colors": [
+        [
+          102,
+          143,
+          166
+        ],
+        [
+          184,
+          217,
+          232
+        ],
+        [
+          236,
+          250,
+          253
+        ]
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "56e8199813a3806963c16d3bbf000ee0f8395c5d518349971c7f105346ecb6d1"
+    },
+    {
+      "name": "Glint_03",
+      "size": [
+        8,
+        8
+      ],
+      "opaque_pixels": 5,
+      "colors": [
+        [
+          236,
+          250,
+          253
+        ]
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "091e3d099694821b2c08c0a697dd81bc1106c3b46e41da332d05e04184cb2eb0"
+    },
+    {
+      "name": "Glint_04",
+      "size": [
+        8,
+        8
+      ],
+      "opaque_pixels": 1,
+      "colors": [
+        [
+          236,
+          250,
+          253
+        ]
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "cfca533e1c7639ad018d8b2a792e3dfe11c1244c7551919edc95ecfe32de6e9a"
+    },
+    {
+      "name": "Glint_05",
+      "size": [
+        8,
+        8
+      ],
+      "opaque_pixels": 0,
+      "colors": [],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "af3b779390ec58b47fc4287e335e24d1d3ac9b670e8b15872c504d3f12da299d"
+    },
+    {
+      "name": "MoteSmall",
+      "size": [
+        8,
+        8
+      ],
+      "opaque_pixels": 2,
+      "colors": [
+        [
+          236,
+          250,
+          253
+        ]
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "1b0ed8b3bc7d2d4c2bd3f4cf73f386fd7639693f763927ddb1fb833adf8c0f7e"
+    },
+    {
+      "name": "MoteWide",
+      "size": [
+        8,
+        8
+      ],
+      "opaque_pixels": 3,
+      "colors": [
+        [
+          184,
+          217,
+          232
+        ],
+        [
+          236,
+          250,
+          253
+        ]
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "b03c121cbb603bc06f58fd66c6f6f5aa2edbd420f585480f852f521bc12781fb"
+    },
+    {
+      "name": "Snowflake",
+      "size": [
+        8,
+        8
+      ],
+      "opaque_pixels": 5,
+      "colors": [
+        [
+          236,
+          250,
+          253
+        ]
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "sha256": "091e3d099694821b2c08c0a697dd81bc1106c3b46e41da332d05e04184cb2eb0"
+    }
+  ],
+  "pixel_lab_generations": 1,
+  "motion": {
+    "period_seconds": 12,
+    "frames_per_second": 8,
+    "preview_frames": 96,
+    "drift": "integer native positions; independent phase; edge fades; no board overlap",
+    "glint_frame_seconds": 0.125,
+    "reduced_motion": "all atmospheric effects hidden; accepted Stage 7 scene remains"
+  }
+}
