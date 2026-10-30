@@ -1,7 +1,7 @@
-Current follow-up: SideCornerPolish/Stage02 — board-side assets complete, awaiting review.
-Two PixelLab designs; ten cleaned native PNG/ASE sources including eight overlap modules.
-20 generations spent. Approved art, Unity scene and production bindings unchanged.
-Open SideCornerPolish/Stage02/Review.html. Stop before Stage 3. No merge.
+Current follow-up: SideCornerPolish/Stage03 — bottom-corner assets complete, awaiting review.
+Two larger PixelLab corner cores; six native PNG/ASE sources including cliff connectors and snow aprons.
+30 generations spent this stage. Approved art, Unity scene and production bindings unchanged.
+Open SideCornerPolish/Stage03/Review.html. Stop before Stage 4 Unity assembly. No merge.
 
 Snowy Mountain / Frostwake Peaks staged rebuild
 

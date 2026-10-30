@@ -1,0 +1,36 @@
+{
+  "width": 96,
+  "height": 80,
+  "max_colors": 20,
+  "no_background": true,
+  "style_image_base64": "golden",
+  "style_copy": [
+    "outline",
+    "detail",
+    "shading"
+  ],
+  "reference_images": [
+    {
+      "usage": "Rock and snow material rendering, expand into a large stepped rocky formation.",
+      "reference_role": "snow"
+    },
+    {
+      "usage": "A clearly recognizable rectangular wooden supply box with a deep snow cap, visible front planks and iron corner band; put one on the rock shelf.",
+      "reference_role": "crate"
+    },
+    {
+      "usage": "Only the timber colors, not the tall composition.",
+      "reference_role": "timber"
+    }
+  ],
+  "description": "Large BOTTOM RIGHT snowbound mountain corner decoration, native crisp 96x80 pixel-art sprite. Broad angular BLUE-GRAY ROCK MASS occupies the lower two thirds and extends across most of the canvas. Two massive stepped boulders on the RIGHT, one low snowdrift slopes LEFT along the base. On a horizontal stone shelf near the RIGHT sits ONE small but recognizable RECTANGULAR WOODEN CRATE, around 23 pixels wide, with front planks, dark iron corners and a thick white snow cap. Crate is a secondary detail rooted on the stone, not a separate floating prop. A short buried angled timber brace supports it from below. Thick piled snow on every upward rock ledge; one short icy blue crevice below crate. Composition is taller at right, wide and grounded at bottom, naturally tapered toward left. Fill the canvas with a strong cohesive corner mass with transparent clearance, no cutoff. Simple dark contour, large clean quiet rock planes, bright matte top-left snow light, deep cold blue underside shadows. 2D side-scroller front view with small top planes, similar pixel density and cluster discipline to references. No tall tower, no freestanding lantern, no sign, no barrel or round object, no diamonds, no gems, no tiny scattered rocks, no full scene, no UI. One connected asset silhouette.",
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: a75648e4-1d44-4f91-ac8a-a365774120a8\njob_id: a75648e4-1d44-4f91-ac8a-a365774120a8\nmodel: pro\ndescription: Large BOTTOM RIGHT snowbound mountain corner decoration, native crisp 96x80 pixel-art sprite. Broad angular BLUE-GRAY ROCK MASS occupies the lower two thirds and extends across most of the canvas. Two massive stepped boulders on the RIGHT, one low snowdrift slopes LEFT along the base. On a horizontal stone shelf near the RIGHT sits ONE small but recognizable RECTANGULAR WOODEN CRATE, around 23 pixels wide, with front planks, dark iron corners and a thick white snow cap. Crate is a secondary detail rooted on the stone, not a separate floating prop. A short buried angled timber brace supports it from below. Thick piled snow on every upward rock ledge; one short icy blue crevice below crate. Composition is taller at right, wide and grounded at bottom, naturally tapered toward left. Fill the canvas with a strong cohesive corner mass with transparent clearance, no cutoff. Simple dark contour, large clean quiet rock planes, bright matte top-left snow light, deep cold blue underside shadows. 2D side-scroller front view with small top planes, similar pixel density and cluster discipline to references. No tall tower, no freestanding lantern, no sign, no barrel or round object, no diamonds, no gems, no tiny scattered rocks, no full scene, no UI. One connected asset silhouette.\nsize: 96x80px\ntransparent: True\ncandidates: 4\nreferences: 3\nstyle_image: yes (outline, detail, shading)\nmax colours: 20 per image\nasset_id: 95b6f57a-2be6-57a8-a396-b1a8ba3acc9e\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"a75648e4-1d44-4f91-ac8a-a365774120a8\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/a75648e4-1d44-4f91-ac8a-a365774120a8/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+      }
+    ],
+    "isError": false
+  }
+}
