@@ -1,3 +1,7 @@
+Current follow-up: SideCornerPolish/Stage01 — analysis and asset plan awaiting review.
+The user requested richer board sides and lower corners; upper scene and shared layout remain locked.
+No new generation or scene changes in this follow-up yet.
+
 Snowy Mountain / Frostwake Peaks staged rebuild
 
 Current checkpoint: Stage 9 final assembly, awaiting user visual approval.

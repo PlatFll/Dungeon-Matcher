@@ -1,0 +1,153 @@
+You are continuing the Snowy Mountain zone polish for Dungeon Matcher.
+Goal
+Redo only the board-side environment and the bottom-left / bottom-right corner environment so the final assembled scene matches the supplied composition/material target much more closely.
+
+The current assembled scene is too sparse.
+The mockup has the correct direction: richer snowy side build-up, larger environmental masses, better corner composition, more layered props, and more believable frame integration.
+Scope lock
+Do NOT redesign or replace these unless required only for seamless integration:
+- top HUD
+- wave / guide / settings UI
+- player portrait frame
+- board contents / gems
+- central board play area dimensions
+- bottom HUD core layout and buttons
+- enemies / characters
+- shared gameplay proportions
+Your job is to improve:
+1. Left side of the board
+2. Right side of the board
+3. Bottom-left corner around the bottom HUD
+4. Bottom-right corner around the bottom HUD
+5. The immediate environment attached to those parts so they feel intentionally built, not sparse
+Main problem to fix
+The current assembled scene has:
+- very thin / weak side dressing
+- tiny corner props
+- not enough snow mass
+- not enough layered depth
+- corners that feel empty and unfinished
+- side structures that don’t feel as substantial as the mockup
+The mockup does this better because it has:
+- thicker snowy side framing
+- larger environmental shapes
+- more stacked snow buildup
+- better use of wood posts, ropes/fences, lantern supports, icy outcrops, rocks, crates, and snow piles
+- corners that feel grounded and substantial
+Visual target
+Make the sides and bottom corners feel like:
+- a cold mountain pass / fortress edge
+- snowy cliffside with manmade supports
+- rugged, crisp, readable pixel art
+- same game family as dungeon / forest / underwater zones
+- gameplay readable first, decorative second
+Art direction
+The area should contain a richer combination of:
+- snow piles and snow drifts
+- icy rock clusters
+- blue-white ice crystals / frozen chunks
+- wooden posts, beams, or supports
+- rope fence / railing logic where appropriate
+- small hanging lantern supports if useful
+- crates / supply boxes / small cargo details
+- frosted cliff edges
+- subtle icicles
+- snow layered on top of objects
+- optional broken planks / support braces
+- restrained background dressing behind board sides if it helps integration
+Important composition rules
+- Do not clutter the board itself
+- Side dressing should hug the board frame and feel intentionally built into the zone
+- Bottom corners should be much larger and fuller than they are now
+- Build strong silhouettes in the bottom corners
+- Use asymmetry, but both corners should feel equally “finished”
+- Details must feel like part of one composed asset set, not random pieces pasted around
+- Bigger asset masses are preferred over lots of tiny scattered props
+Specific direction for the board sides
+Rebuild the side areas so they feel more like the mockup:
+- thicker snowy side build-up
+- stronger vertical framing
+- layered wood + snow + rock + ice
+- visible structural logic
+- optional lantern supports or side posts if they help
+- side decoration should visually anchor the board in the scene
+Specific direction for the bottom corners
+Rebuild both bottom corners with larger assembled environmental pieces.
+Bottom-left corner
+Possible ingredients:
+- snow-covered rock mass
+- partial wooden post / railing / support
+- crate or supply box
+- icy crystal cluster
+- snow drift spilling inward
+- lantern post or fence stub
+- frozen debris / rope / small gear if appropriate
+Bottom-right corner
+Possible ingredients:
+- larger rocky ice mass
+- wooden support or fence continuation
+- stacked snow buildup
+- crate / barrel / supply bundle
+- ice crystals or frozen mineral cluster
+- angled support beam or cliff fragment
+- a stronger silhouette than the current version
+Workflow
+Use PixelLab generation and assembly, and take as many generations as needed.
+
+Work in stages and stop at the end of each stage for review.
+Stage 1 — Side analysis and plan
+- Analyze the supplied target and current assembled scene
+- Identify why the sides and corners are weak
+- Produce a brief asset plan for:
+  - left board side kit
+  - right board side kit
+  - bottom-left corner kit
+  - bottom-right corner kit
+Stage 2 — Board side asset generation
+Generate the side-environment assets first:
+- larger snowy side structures
+- posts / supports / rails / snow masses / ice / rock / lantern support variants
+- make them crisp and stylized for this zone
+Stage 3 — Bottom corner asset generation
+Generate the corner kits:
+- bigger environmental corner masses
+- snow + rock + ice + wood combinations
+- integrated props
+- avoid tiny random clutter
+Stage 4 — Assembly pass
+Assemble the new sides and corners into the scene:
+- left side
+- right side
+- bottom-left corner
+- bottom-right corner
+- make the assembly feel cohesive and deliberate
+Stage 5 — Polish pass
+Refine:
+- overlap
+- snow layering
+- contact shadows
+- integration with board frame
+- silhouette readability
+- visual weight balance between left and right
+- make sure corners feel premium and finished
+Quality bar
+This should feel like the same finished game as the dungeon, forest, and underwater zones.
+
+It must:
+- look more complete than the current assembled scene
+- preserve gameplay readability
+- feel crisp, not muddy
+- feel layered, not flat
+- feel intentionally composed, not randomly decorated
+Hard constraints
+- Keep the shared gameplay layout intact
+- Do not move or redesign the top HUD
+- Do not replace the core bottom HUD structure
+- Do not shrink the board
+- Do not change character art
+- Do not stop early; complete each stage fully, then stop for review
+Final instruction
+Use the supplied mockup as the quality/composition target for board sides and bottom corners only.
+The current assembled scene is the base; your task is to upgrade its sides and bottom corners until they feel as full, premium, and zone-specific as the mockup.
+
+Start now with Stage 1.
