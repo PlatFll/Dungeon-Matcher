@@ -464,8 +464,13 @@ Opened settings and main menu keep their existing skins and menu music selection
   aliases, the cave recess and shared control binding. `DungeonPresentationArt`
   maps those modules to the existing live board and common enemy floor. The
   walking surface surrounds that floor; the separator stays below it. Native
-  pieces repeat or move without stretching; background coverage extends beyond
-  the safe viewport. Board and portrait frames follow the unchanged shared
+  pieces repeat or move without stretching. An optional `cavernBackdrop` is a
+  full upper-screen native canvas, drawn at `BattleFloorAnchor.PhysicalPixelScale`
+  like the other environment modules. Its bottom retains the original cave/floor
+  registration; spare ceiling and side margins extend behind the physical screen
+  edges and safe areas. It is never zoomed to fill the viewport. Without the
+  optional sprite, the original modular cave remains the fallback.
+  Board and portrait frames follow the unchanged shared
   rectangles, and the overfilled recess is clipped with RectMask2D. Mixed source
   import PPU is honored by `ResponsiveModularFrameFitter` when repeating rails.
   The Ironvein board rim is a separate world-canvas batch at `Effects / 100`,

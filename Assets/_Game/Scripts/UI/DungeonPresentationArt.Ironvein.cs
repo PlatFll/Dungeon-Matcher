@@ -106,7 +106,20 @@ public sealed partial class DungeonPresentationArt
                 else r.y+=Mathf.Lerp(top,bottom,Mathf.InverseLerp(244,548,p.rect.y));
             }
             r.x=Mathf.Round(r.x);r.y=Mathf.Round(r.y);r.width=Mathf.Round(r.width);r.height=Mathf.Round(r.height);
-            MineImage(p,pixelLabContent,r);
+            if(p.name=="IronveinTopModules/CavernDepth"&&art.cavernBackdrop)
+            {
+                // The new canvas contains extra scenery, so it stays at the same
+                // native pixel scale as the other environment modules. Its lower
+                // edge follows the original floor registration; only spare ceiling
+                // and side margins are cropped by the physical screen.
+                var viewport=GetComponent<GameplayPixelLayoutController>().Current.Viewport;
+                float scale=BattleFloorAnchor.PhysicalPixelScale;
+                var size=art.cavernBackdrop.rect.size;
+                float caveLeft=Mathf.Floor((UnityEngine.Device.Screen.width-size.x*scale)*.5f);
+                var full=new Rect((caveLeft-viewport.xMin)/scale,r.yMax-size.y,size.x,size.y);
+                MineImage(new IronveinBattleAssembly.Piece{name=p.name,sprite=art.cavernBackdrop},pixelLabContent,full);
+            }
+            else MineImage(p,pixelLabContent,r);
         }
     }
     static Image MineImage(IronveinBattleAssembly.Piece p,Transform parent,Rect rect,float unit=1)
