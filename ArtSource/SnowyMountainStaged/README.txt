@@ -1,7 +1,8 @@
-Current follow-up: SideCornerPolish/Stage03 — bottom-corner assets complete, awaiting review.
-Two larger PixelLab corner cores; six native PNG/ASE sources including cliff connectors and snow aprons.
-30 generations spent this stage. Approved art, Unity scene and production bindings unchanged.
-Open SideCornerPolish/Stage03/Review.html. Stop before Stage 4 Unity assembly. No merge.
+Current follow-up: SideCornerPolish/Stage04 — Unity assembly complete, awaiting review.
+Approved snowy side and bottom-corner kits assembled at native scale; no artwork changed.
+Five actual Unity before/after captures; upper scene and gem opening are pixel-identical.
+Compilation and assembly test passed. Zero new PixelLab generations.
+Open SideCornerPolish/Stage04/Review.html. Stop before Stage 5 polish. No production binding or merge.
 
 Snowy Mountain / Frostwake Peaks staged rebuild
 

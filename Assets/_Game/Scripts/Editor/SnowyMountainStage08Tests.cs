@@ -19,7 +19,7 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest,Explicit] public IEnumerator SnowyMountainStage08AtmosphereReview()
     { yield return SnowyMountainAssembledReview(SnowStage08,false); }
 
-    IEnumerator SnowyMountainAssembledReview(string reviewRoot,bool finalAssembly)
+    IEnumerator SnowyMountainAssembledReview(string reviewRoot,bool finalAssembly,bool sideCornerAssembly=false)
     {
         UnityEngine.Random.InitState(291002);
         RunLaunchOptions.ForestPrototype=false;RunLaunchOptions.StartingZone="frostwake-peaks";
@@ -155,7 +155,7 @@ public sealed partial class ForestFoundationPlayTests
                 lowerRoot=SnowStage07Lower(cam,fr,pixel,layout);
                 for(int i=0;i<3;i++)yield return null;
                 var sharedState=SnowStage07UiState(layout);
-                yield return ForegroundScreenshot(reviewRoot+"/Preview/Before/"+key+".png");
+                if(!sideCornerAssembly)yield return ForegroundScreenshot(reviewRoot+"/Preview/Before/"+key+".png");
                 atmosphere=SnowStage08Atmosphere(cam,fr,pixel,feet,after.portrait,sideRoot,lowerRoot);
                 var rng=UnityEngine.Random.state;
                 for(int n=0;n<96;n++){atmosphere.Sample(n*.125f,false);atmosphere.Validate(fr,pixel);}
@@ -166,8 +166,21 @@ public sealed partial class ForestFoundationPlayTests
                 atmosphere.Sample(0,true);var reduced=atmosphere.State();atmosphere.Sample(7,true);
                 Assert.That(atmosphere.State(),Is.EqualTo(reduced),"Reduced Motion is stable");
                 Assert.That(atmosphere.root.GetComponentsInChildren<SpriteRenderer>().All(r=>!r.enabled),Is.True);
-                yield return ForegroundScreenshot(reviewRoot+"/Preview/Reduced/"+key+".png");
+                if(!sideCornerAssembly)yield return ForegroundScreenshot(reviewRoot+"/Preview/Reduced/"+key+".png");
                 atmosphere.Sample(2.5f,false);for(int i=0;i<2;i++)yield return null;
+                if(sideCornerAssembly)
+                {
+                    yield return ForegroundScreenshot(reviewRoot+"/Preview/Before/"+key+".png");
+                    sideRoot.SetActive(false);UnityEngine.Object.Destroy(sideRoot);
+                    lowerRoot.SetActive(false);UnityEngine.Object.Destroy(lowerRoot);
+                    sideRoot=SnowPolishSides(cam,fr,pixel);
+                    lowerRoot=SnowPolishCorners(cam,fr,pixel);
+                    SnowPolishGlints(atmosphere,cam,pixel,sideRoot,lowerRoot);
+                    atmosphere.Sample(2.5f,false);
+                    for(int i=0;i<3;i++)yield return null;
+                    SnowPolishValidate(cam,fr,pixel,sideRoot,lowerRoot);
+                    atmosphere.Validate(fr,pixel);
+                }
                 Assert.That(SnowStage07UiState(layout),Is.EqualTo(sharedState));
                 Assert.That(JsonUtility.ToJson(SnowGeometry(layout)),Is.EqualTo(JsonUtility.ToJson(after)));
                 Assert.That(SnowBoardSpriteState(lockedRenderers),Is.EqualTo(lockedState));
@@ -176,7 +189,7 @@ public sealed partial class ForestFoundationPlayTests
                 yield return ForegroundScreenshot(reviewRoot+"/Preview/After/"+key+".png");
                 if(finalAssembly)
                     SnowStage09RecordAssembly(reviewRoot,key,cam,plate,floorRoot,sideRoot,lowerRoot,portraitFrame,portraitMask,portraitDressing,boardTarget,atmosphere.root);
-                if(key=="720x1280")
+                if(key=="720x1280"&&!sideCornerAssembly)
                 {
                     for(int n=0;n<96;n++)
                     {
