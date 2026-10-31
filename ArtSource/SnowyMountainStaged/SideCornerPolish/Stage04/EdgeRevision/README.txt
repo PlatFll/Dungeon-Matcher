@@ -1,3 +1,7 @@
+REJECTED / SUPERSEDED — the user rejected this duplicated backing layer. Open ../SidePeek/Review.html for the corrected original-side placement.
+
+Historical evidence follows:
+
 SNOWY MOUNTAIN — SCREEN-EDGE REVISION
 Focused follow-up to Stage 4, 2026-10-31. Review only; no merge.
 

@@ -13,45 +13,30 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest,Explicit] public IEnumerator SnowyMountainSideCornerStage04AssemblyReview()
     { yield return SnowyMountainAssembledReview(SnowPolish+"/Stage04",true,true); }
 
-    [UnityTest,Explicit] public IEnumerator SnowyMountainSideCornerEdgeReview()
-    { yield return SnowyMountainAssembledReview(SnowPolish+"/Stage04/EdgeRevision",true,true,true); }
+    [UnityTest,Explicit] public IEnumerator SnowyMountainSidePeekReview()
+    { yield return SnowyMountainAssembledReview(SnowPolish+"/Stage04/SidePeek",true,true,true); }
 
-    // Source-rectangle views reuse the approved pixels, beneath the existing silhouettes.
-    // Only these architectural continuation courses intentionally extend past the viewport.
-    void SnowPolishEdgeContinuation(Camera cam,Rect frame,float pixel,GameObject sides)
+    // Translate the existing structures only. The rejected second backing layer is removed.
+    void SnowPolishMoveSides(Camera cam,Rect frame,float pixel,GameObject sides,GameObject lower)
     {
-        for(int side=0;side<2;side++)
+        var all=sides.GetComponentsInChildren<SpriteRenderer>().Concat(lower.GetComponentsInChildren<SpriteRenderer>()).ToArray();
+        var originalSprites=all.Select(r=>r.sprite).ToArray();
+        foreach(var sr in all)
         {
-            var source=SnowPreviewSprite(SnowPolish+"/Stage02/Exports/"+(side==0?"Left":"Right")+"_MiddleA.png",64);
-            int start=side==0?-3:Mathf.CeilToInt(frame.xMax/pixel)-10;
-            int end=side==0?Mathf.FloorToInt(frame.xMin/pixel)+10:Mathf.CeilToInt(Screen.width/pixel)+3;
-            int sourceX=side==0?9:14,courseWidth=side==0?22:20;
-            int ceiling=Mathf.FloorToInt(frame.yMax/pixel);
-            for(int top=ceiling;top>0;top-=40)
-            for(int x=start;x<end;x+=courseWidth)
-            {
-                int height=Mathf.Min(40,top),width=Mathf.Min(courseWidth,end-x);
-                var rect=new Rect(sourceX,source.texture.height-10-height,width,height);
-                var course=Sprite.Create(source.texture,rect,Vector2.one*.5f,64,0,SpriteMeshType.FullRect);
-                course.name="SnowEdgeContinuation_"+(side==0?"Left":"Right");snowPortraitTemporary.Add(course);
-                SnowRevisionTile(sides.transform,course,cam,x*pixel,top*pixel,pixel,-84);
-            }
+            bool move=sr.transform.IsChildOf(sides.transform)||sr.sprite.name.StartsWith("Connector_");
+            if(!move)continue;
+            int side=cam.WorldToScreenPoint(sr.bounds.center).x<Screen.width*.5f?0:1;
+            float target=side==0?-5*pixel:Screen.width-39*pixel;
+            float delta=target-SnowPolishSideX(frame,pixel,side);
+            var old=cam.WorldToScreenPoint(sr.transform.position);
+            sr.transform.position=SnowWorld(cam,new Vector2(old.x+delta,old.y));
+            var now=cam.WorldToScreenPoint(sr.transform.position);
+            Assert.That(now.y,Is.EqualTo(old.y).Within(.01),"Horizontal placement only");
         }
-        // Inspect real source alpha at both physical screen edges, every scanline.
-        var edge=sides.GetComponentsInChildren<SpriteRenderer>().Where(r=>r.sprite.name.StartsWith("SnowEdgeContinuation_")).ToArray();
-        int yMax=Mathf.FloorToInt(frame.yMax/pixel)*(int)pixel;
-        foreach(int x in new[]{0,Screen.width-1})for(int y=0;y<yMax;y++)
-        {
-            bool covered=edge.Any(sr=>
-            {
-                var lo=cam.WorldToScreenPoint(sr.bounds.min);var hi=cam.WorldToScreenPoint(sr.bounds.max);
-                if(x+.5f<lo.x||x+.5f>=hi.x||y+.5f<lo.y||y+.5f>=hi.y)return false;
-                int sx=Mathf.FloorToInt((x+.5f-lo.x)/pixel+sr.sprite.rect.x);
-                int sy=Mathf.FloorToInt((y+.5f-lo.y)/pixel+sr.sprite.rect.y);
-                return sr.sprite.texture.GetPixel(sx,sy).a==1;
-            });
-            Assert.That(covered,Is.True,"Continuous snowy structure at physical edge "+x+","+y);
-        }
+        var after=sides.GetComponentsInChildren<SpriteRenderer>().Concat(lower.GetComponentsInChildren<SpriteRenderer>()).ToArray();
+        Assert.That(after,Is.EqualTo(all),"No added, removed or duplicated foreground pieces");
+        Assert.That(after.Select(r=>r.sprite).ToArray(),Is.EqualTo(originalSprites),"Exact approved sprite references");
+        Assert.That(after.Any(r=>r.sprite.name.StartsWith("SnowEdgeContinuation_")),Is.False,"No rejected backing layer");
     }
 
     GameObject SnowPolishSides(Camera cam,Rect frame,float pixel)
@@ -120,7 +105,7 @@ public sealed partial class ForestFoundationPlayTests
         }
     }
 
-    void SnowPolishValidate(Camera cam,Rect frame,float pixel,params GameObject[] roots)
+    void SnowPolishValidate(Camera cam,Rect frame,float pixel,bool sidePeek,params GameObject[] roots)
     {
         var opening=Rect.MinMaxRect(frame.xMin+13*pixel,frame.yMin+13*pixel,frame.xMax-13*pixel,frame.yMax-13*pixel);
         foreach(var root in roots)
@@ -134,14 +119,15 @@ public sealed partial class ForestFoundationPlayTests
                 Assert.That(sr.sprite.texture.filterMode,Is.EqualTo(FilterMode.Point));
                 Assert.That(sr.color,Is.EqualTo(UnityEngine.Color.white),"No recoloring");
                 Assert.That(hi.y,Is.LessThanOrEqualTo(frame.yMax+.01),"Upper scene is locked");
-                var texture=sr.sprite.texture;var colors=texture.GetPixels32();var source=sr.sprite.rect;
-                bool edge=sr.sprite.name.StartsWith("SnowEdgeContinuation_");
-                for(int y=0;y<(int)source.height;y++)for(int x=0;x<(int)source.width;x++)
+                bool shiftedSide=root.name=="SnowSideCornerStage04Sides_PreviewOnly"||sr.sprite.name.StartsWith("Connector_");
+                float clipping=sidePeek&&shiftedSide?5*pixel:0;
+                var texture=sr.sprite.texture;var colors=texture.GetPixels32();
+                for(int y=0;y<texture.height;y++)for(int x=0;x<texture.width;x++)
                 {
-                    var alpha=colors[(y+(int)source.y)*texture.width+x+(int)source.x].a;
+                    var alpha=colors[y*texture.width+x].a;
                     Assert.That(alpha==0||alpha==255,Is.True,"Binary native artwork");if(alpha==0)continue;
                     float px=lo.x+(x+.5f)*pixel,py=lo.y+(y+.5f)*pixel;
-                    Assert.That(px,Is.InRange(edge?-3*pixel:0f,Screen.width+(edge?3*pixel:0)),sr.name+" authorized edge overscan only");
+                    Assert.That(px,Is.InRange(-clipping,Screen.width+clipping),sr.name+" requested slight outer-edge clipping only");
                     Assert.That(py,Is.InRange(0f,(float)Screen.height),sr.name+" full opaque height");
                     Assert.That(opening.Contains(new Vector2(px,py)),Is.False,sr.name+" stays outside gems");
                 }

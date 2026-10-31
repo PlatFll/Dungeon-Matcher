@@ -1,0 +1,72 @@
+{
+  "scope": "Stage 4 correction: restore original sides and move horizontally; preview only",
+  "views": [
+    {
+      "size": "720x1280",
+      "native_scale": 2.0,
+      "upper_scene_changed_pixels": 0,
+      "center_board_and_lower_HUD_changed_pixels": 0,
+      "side_placement_changed_pixels": 68172
+    },
+    {
+      "size": "1080x1920",
+      "native_scale": 3.0,
+      "upper_scene_changed_pixels": 0,
+      "center_board_and_lower_HUD_changed_pixels": 0,
+      "side_placement_changed_pixels": 170949
+    },
+    {
+      "size": "1080x2400",
+      "native_scale": 3.0,
+      "upper_scene_changed_pixels": 0,
+      "center_board_and_lower_HUD_changed_pixels": 0,
+      "side_placement_changed_pixels": 201468
+    },
+    {
+      "size": "1080x2400-safe",
+      "native_scale": 3.0,
+      "upper_scene_changed_pixels": 0,
+      "center_board_and_lower_HUD_changed_pixels": 0,
+      "side_placement_changed_pixels": 250815
+    },
+    {
+      "size": "360x640",
+      "native_scale": 1.0,
+      "upper_scene_changed_pixels": 0,
+      "center_board_and_lower_HUD_changed_pixels": 0,
+      "side_placement_changed_pixels": 26605
+    }
+  ],
+  "native_source_art": "All original PNG/ASE files unchanged",
+  "extra_backing_layer": "Removed; original renderer count and sprite references asserted unchanged during translation",
+  "side_canvas_overscan_native_pixels": 5,
+  "corner_formations": "Original placement preserved",
+  "generation_spend": 0,
+  "protected_source_files": 166,
+  "source_sha256": {
+    "Assets/_Game/Scripts/Editor/SnowyMountainStage08Tests.cs": "be70c1b90ca36cd8c2ad4d36d340beba47d58f54588695806eac94a0283aadec",
+    "Assets/_Game/Scripts/Editor/SnowyMountainSideCornerAssemblyTests.cs": "977a26b4c9f55f8b661cd47904091c6b366a98d494d8666f4f33cf2e5de5b840"
+  },
+  "unity": {
+    "version": "6000.3.19f1",
+    "compilation": "Tools/Validate-Unity.ps1 passed",
+    "compile_log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-6f15069e-3a19-475e-8d62-e0f12a52e1df.log",
+    "test": "SnowyMountainSidePeekReview",
+    "result": "Passed",
+    "passed": 1,
+    "failed": 0,
+    "test_log": "C:\\Users\\USER\\.codex\\worktrees\\drowned-court-pixellab-v2\\Dungeon Matcher\\.utmp\\ForestValidation\\f15f09ef-c8a8-420d-a69f-b62e39b057ad.log"
+  },
+  "limitations": [
+    "Existing 360x640 shared HUD crowding and Unity editor pixel-camera warning unchanged",
+    "No production binding, Android build, real-device test or merge"
+  ],
+  "changed_preexisting_files": [
+    "ArtSource/SnowyMountainStaged/README.txt",
+    "ArtSource/SnowyMountainStaged/SideCornerPolish/Stage04/EdgeRevision/README.txt",
+    "ArtSource/SnowyMountainStaged/SideCornerPolish/Stage04/EdgeRevision/Review.html",
+    "Assets/_Game/Scripts/Editor/SnowyMountainSideCornerAssemblyTests.cs",
+    "Assets/_Game/Scripts/Editor/SnowyMountainStage08Tests.cs"
+  ],
+  "preserved_starting_tracked_files": 32816
+}

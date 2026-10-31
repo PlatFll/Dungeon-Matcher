@@ -1,8 +1,8 @@
-Current follow-up: SideCornerPolish/Stage04/EdgeRevision — screen-edge correction complete, awaiting review.
-Both snowy side environments fill the physical edges with a three-native-pixel overscan.
-Original artwork and foreground placement unchanged; board, upper scene and UI preserved.
-Compilation and five-view Unity review passed. Zero new PixelLab generations.
-Open SideCornerPolish/Stage04/EdgeRevision/Review.html. No production binding or merge.
+Current follow-up: SideCornerPolish/Stage04/SidePeek — original sides restored, moved for slight edge clipping; awaiting review.
+The extra backing in EdgeRevision was rejected and has been removed.
+Original art, corner formations, upper scene, board and UI unchanged.
+Compilation and five-view Unity review passed. Zero PixelLab spending.
+Open SideCornerPolish/Stage04/SidePeek/Review.html. No production binding or merge.
 
 Snowy Mountain / Frostwake Peaks staged rebuild
 
