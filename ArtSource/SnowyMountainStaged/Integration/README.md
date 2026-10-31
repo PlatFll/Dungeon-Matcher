@@ -16,7 +16,7 @@ The existing presentation owner builds the modular frames and masked portrait ba
 - Board/portrait rectangles, enemy feet, health bars, button placement and artwork compare exactly with the pre-integration runtime measurements. Other-zone cell references remain exact. Board sizes and floor lines match across zones.
 - Native scale/Point filtering; all ten reviewed cliff textures pixel-exact; no outer gutter gaps or opaque cliff overlap of gems; portrait clipping; no enclosing top/bottom frame; motion loop, RNG independence and Reduced Motion checks passed.
 - Actual accepted player swap settles and advances the move clock; Guide and Settings open/close. Existing ice-state save/cleanup test and Minotaur/Frostwake scenery/ice presentation test passed. These are automated Unity checks, not real-device testing.
-- `AndroidBuild.json` records the separate development APK build outcome. No phone/device installation or manual device test is claimed.
+- Android IL2CPP development APK build succeeded: zero errors, seven warnings. All 51 new artwork PNGs appear in the packed build report. `AndroidBuild.json` records the build outcome. No phone/device installation or manual device test is claimed.
 
 `Before/` captures old production artwork; `After/` captures this production binding. `Review.html` shows the original, approved art review, and actual integrated game. `SourceVerification.json` records immutable artwork and byte-identical imports.
 
