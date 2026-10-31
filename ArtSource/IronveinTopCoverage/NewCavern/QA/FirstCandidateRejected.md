@@ -1,0 +1,1 @@
+First create_image_pro candidate b6f0411e-7058-4991-8cf2-ece996b6d72d (25 generations) rejected: focal features enlarged and uniform top/bottom letterbox strips. Retained under Raw. The next job outpaints the existing cave at its EXACT native size, using a 480x352 prepared canvas and mask.

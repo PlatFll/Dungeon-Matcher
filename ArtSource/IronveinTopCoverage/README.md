@@ -1,6 +1,6 @@
 # Ironvein upper-screen coverage
 
-Review candidate, 2026-10-31. Not merged.
+REJECTED BY USER, 2026-10-31. Not merged. This page and its captures preserve the rejected zoom-to-cover proposal. The active replacement is [NewCavern/README.md](NewCavern/README.md).
 
 The original 240×160 cave panel followed the enemy floor vertically but kept
 its fixed dimensions. Tall physical screens exposed repeated CaveWall above

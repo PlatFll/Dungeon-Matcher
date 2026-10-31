@@ -23,9 +23,10 @@ public sealed class CaveSceneryCoverageTests
     [UnityTest,Explicit]public IEnumerator After()=>Capture(true);
     static IEnumerator Capture(bool verify)
     {
+        if(verify)IronveinCavernImporter.Import();
         SessionState.SetBool("CaveCoverageVerify",verify);EditorUtility.audioMasterMute=true;Size(1080,2340);
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);yield return new EnterPlayMode();
-        verify=SessionState.GetBool("CaveCoverageVerify",false);string folder=Root+(verify?"/After":"/Before");Directory.CreateDirectory(folder);
+        verify=SessionState.GetBool("CaveCoverageVerify",false);string folder=verify?"ArtSource/IronveinTopCoverage/NewCavern/Preview/After":Root+"/Before";Directory.CreateDirectory(folder);
         string profile=Path.GetFullPath(".utmp/CaveCoverage/"+Guid.NewGuid()+".json");Directory.CreateDirectory(Path.GetDirectoryName(profile));
         File.WriteAllText(profile,JsonUtility.ToJson(new AccountSave{potions=3,bombs=3,equipPotions=true,equipBombs=true}));
         using(CharacterSelectionSettings.UseTemporarySelection("skeleton"))
@@ -98,9 +99,17 @@ public sealed class CaveSceneryCoverageTests
         var cr=GameplayPixelLayoutController.ScreenRect(cave.rectTransform);
         Assert.That(cave.raycastTarget,Is.False);Assert.That(cave.color,Is.EqualTo(Color.white));
         Assert.That(cave.sprite.texture.filterMode,Is.EqualTo(FilterMode.Point));
-        Assert.That(AssetDatabase.GetAssetPath(cave.sprite),Is.EqualTo("Assets/_Game/Art/IronveinStaged/CavernDepth.png"));
+        Assert.That(AssetDatabase.GetAssetPath(cave.sprite),Is.EqualTo("Assets/_Game/Art/IronveinTopCoverage/CavernWide.png"));
         float sx=cr.width/cave.sprite.rect.width,sy=cr.height/cave.sprite.rect.height;
         Assert.That(sx,Is.EqualTo(sy).Within(.001),"Uniform source pixel scale");
+        Assert.That(sx,Is.EqualTo(BattleFloorAnchor.PhysicalPixelScale).Within(.001),"Normal environment pixel scale; never zoom to fill");
+        Assert.That(cave.sprite.rect.size,Is.EqualTo(new Vector2(480,352)),"Full native scene canvas");
+        var source=new Texture2D(2,2);source.LoadImage(File.ReadAllBytes("Assets/_Game/Art/IronveinStaged/CavernDepth.png"));
+        var original=source.GetPixels32();var full=cave.sprite.texture.GetPixels32();
+        Assert.That(full.All(c=>c.a==255),Is.True,"Every pixel in the full cave is opaque");
+        for(int y=0;y<160;y++)for(int x=0;x<240;x++)
+            Assert.That(full[y*480+180+x],Is.EqualTo(original[y*240+x]),"Original cave pixel unchanged");
+        Object.Destroy(source);
         Assert.That(sx,Is.EqualTo(Mathf.Round(sx)).Within(.001),"Whole physical pixels, no fractional sampling");
         Assert.That(cr.xMin,Is.LessThanOrEqualTo(.01));Assert.That(cr.xMax,Is.GreaterThanOrEqualTo(Screen.width-.01));
         Assert.That(cr.yMax,Is.GreaterThanOrEqualTo(Screen.height-.01),"Cover physical top beyond safe area");

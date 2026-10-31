@@ -1,0 +1,43 @@
+{
+  "width": 480,
+  "height": 352,
+  "no_background": false,
+  "max_colors": 28,
+  "description": "A NEW native 480x352 pixel-art cavern backdrop for the upper battle area of Dungeon Matcher, matching the labelled approved cave reference's identity and material language. IMPORTANT: a WIDER AND TALLER COMPOSITION drawn with extra environment, NOT an enlarged or zoomed crop of the 240x160 reference. Retain roughly the original reference's rock feature scale: a modest deep oval mine tunnel opening about 65 pixels wide and 85 pixels tall near x350,y250; a winding narrow stone stair climbing toward a faint cool-blue distant opening near x190,y190. Large coherent charcoal and muted blue-slate cave walls, a high shadowed ceiling with restrained stalactites, a few muted warm brown mineral contours around the right tunnel. Distant atmospheric depth and ample quiet dark rock. The upper 140 pixels are additional calm cave ceiling and high walls, not a giant focal object; there is NO giant foreground close-up boulder, no giant tunnel mouth, no giant steps. Lower main rock structures sit in the lower half, with a quiet flat dark ground band along the bottom. The leftmost 130 pixels are unobtrusive cave rock behind a separately rendered player portrait. Maintain continuous natural cave environment all the way to all four edges, fully opaque edge to edge. This is the scenery layer ONLY: no characters, creatures, gems, words, letters, UI, frames, buttons, health bars, banners, timber posts, carts, wheels, lanterns, crystals, floor separator, tile grid, vignette border or black empty padding. Crisp true native pixels, broad connected shading planes, limited disciplined ramps, clean one-pixel contours, quiet detail density, no blurry paint, no smooth gradients, no dithering, no photographic rendering. Similar mood and cave identity to the approved cave, enough extra ceiling and sides to fill tall mobile screens at native game-pixel scale.",
+  "reference_images": [
+    {
+      "url": "upload:5a7b24a8-7e5f-4f20-a35b-7b802fe86a18",
+      "usage": "Approved cavern identity, composition motifs, dark blue-slate palette, distant left stairway and smaller right mine tunnel. Expand scenery; preserve similar feature scale, do not zoom."
+    }
+  ],
+  "style_image_url": "upload:0ce0d110-a2e6-4089-809a-a2498cd7d060",
+  "style_copy": [
+    "outline",
+    "detail",
+    "shading"
+  ],
+  "seed": 311026,
+  "palette": [
+    "#0A0D11",
+    "#10131F",
+    "#171E2E",
+    "#1C1C2B",
+    "#2C354D",
+    "#302638",
+    "#121629",
+    "#121423",
+    "#242E42",
+    "#30202A",
+    "#42374F",
+    "#46556E",
+    "#6A7E98",
+    "#596C87",
+    "#36435A",
+    "#7A4D2E",
+    "#45313A",
+    "#5A3C3C",
+    "#4A2C1C",
+    "#5A4964"
+  ],
+  "palette_name": "Approved Ironvein charcoal, blue-slate and restrained warm mineral accents"
+}

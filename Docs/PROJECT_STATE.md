@@ -20,16 +20,17 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Ironvein upper-scene coverage correction — awaiting review (2026-10-31)
+## Ironvein expanded native cave — awaiting review (2026-10-31)
 
-The cave vista previously remained a fixed native rectangle beneath the shared
-floor offset, exposing the repeated rock backing above it on tall phones.
-The focused correction uses the same unmodified PNG with uniform integer
-physical-pixel cover scaling across the whole upper screen, including cutouts.
-The walking surface, separator, actors, board, controls, portrait and other
-zones retain their current placement and assets. No generation was spent.
-Actual Game comparisons and verification: [coverage report](../ArtSource/IronveinTopCoverage/README.md).
-This correction is on its review branch, not merged into main.
+The user rejected PR #219's initial zoom-to-cover correction. The replacement
+uses PixelLab to extend the cave's ceiling and walls on a 480×352 native canvas,
+retaining the original 240×160 cave section at its original pixel size. The
+renderer uses the normal environment pixel scale; it does not magnify the scene
+to fill a tall phone. The walking surface, separator, actors, board, controls,
+portrait and other zones retain their current layout and assets.
+Source lineage, native cleanup and Game-scene comparisons are in
+[the revised report](../ArtSource/IronveinTopCoverage/NewCavern/README.md).
+This replaces the zoom proposal on the review branch; it is not merged.
 
 ## Approved Snowy Mountain production integration (2026-10-31)
 
