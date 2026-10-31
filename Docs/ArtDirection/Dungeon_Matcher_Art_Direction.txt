@@ -1094,3 +1094,16 @@ Docs/ArtDirection/Ironvein_Reference_Register.md. The supplied mockup is composi
 guidance only. Existing approved reference pixels remain unchanged. All new art
 and the original temporary cue await user visual/listening review; internal
 selection and validation do not establish approval.
+
+
+2026-11-01 — Cross-zone battle controls and cave acceptance
+The user approved the expanded native Ironvein cave for the actual zone and
+selected the current underwater stone Guide/Settings, potion/bomb and ability
+plates as the common battle-control family for all zones. Preserve those exact
+source PNGs and their material rendering. Settings must use uniform native pixel
+scale, never the independently responsive background dimensions. The user also
+requested a new PixelLab stone wave plaque matching those controls. Its modular
+LibreSprite implementation and actual Game previews are in
+ArtSource/UnifiedBattleUI; the new wave remains pending final visual review.
+No character reference, zone palette or golden membership changes are approved
+by this shared-UI instruction. Prior approval/source history remains intact.

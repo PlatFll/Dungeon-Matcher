@@ -1,0 +1,61 @@
+{
+  "unity_version": "6000.3.19f1",
+  "baseline_test": "Passed",
+  "final_game_test": "Passed",
+  "final_test_job": "284d65dd-6fa4-4dfd-b96e-816dc1279036",
+  "zones": [
+    "ironvein-excavation",
+    "dungeon",
+    "magical-forest",
+    "drowned-court",
+    "frostwake-peaks"
+  ],
+  "profiles": [
+    "1080x2340",
+    "720x1280",
+    "360x640",
+    "1080x2400 safe (24,96,1032,2184)"
+  ],
+  "actual_game_captures": 20,
+  "actual_clicks_per_zone": [
+    "settings pause/resume",
+    "guide open/close",
+    "bomb select/cancel no stock cost",
+    "potion consumes one stock",
+    "ability activation spends energy"
+  ],
+  "layout_checks": [
+    "exact board/cells and actor floors",
+    "exact non-control/environment artwork placement",
+    "shared bindings and native dimensions",
+    "uniform integer X/Y control pixels",
+    "safe-area and playable tile clearance",
+    "no old frame overlays",
+    "live long wave text fit",
+    "responsive enemy intent clearance and unchanged art"
+  ],
+  "validator": {
+    "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+    "exit_code": 0,
+    "log": "QA/Validate-Unity.log"
+  },
+  "android_build": "not run",
+  "physical_device": "not tested",
+  "known_existing_limit": "360x640 Unity Editor reference-resolution warning remains visible",
+  "pixel_lab": {
+    "generations": 10,
+    "cash_credits_usd": 0,
+    "remaining": 4778
+  },
+  "preserved_user_files": 9,
+  "final_review": "pending user visual approval; not merged",
+  "tested_runtime_sha256": {
+    "Assets/_Game/Scripts/UI/AbilityButtonUI.cs": "d89d153d8b072271f4985b3cc91918f150b7a52b66ae3fbc6b246c34ceaf894d",
+    "Assets/_Game/Scripts/UI/BattlePresentationSkin.Controls.cs": "7dace4c82d134858691fd074d391708afa5fe2f58b886bbf564de329cd2a244a",
+    "Assets/_Game/Scripts/UI/BattlePresentationSkin.cs": "1b4e2d1b0b70e2888ea15ba4c7a8d9bb76e477455fe89c1bc00469273103cbb4",
+    "Assets/_Game/Scripts/UI/GameplayPixelLayoutController.cs": "e3b6837a3f8705e27d48004ba74dd81a808d3f04036dd4eb5b68bc221425753b",
+    "Assets/_Game/Scripts/UI/GameplayThemeSkin.cs": "d62abddbec9327bd1214e0297212f65ebcf778c17582846e8c0d496985703a40",
+    "Assets/_Game/Scripts/UI/RunControlsUI.cs": "6174abf6b08b6cdc6da28a824b40954fa0deb87a66af9b680583e64ca720581d",
+    "Assets/_Game/Scripts/UI/WaveTrackerUI.cs": "6dc333c8cd32732d684baab73aa29dec823c1c0523ce7ccd7de9ce1c02fcf27c"
+  }
+}

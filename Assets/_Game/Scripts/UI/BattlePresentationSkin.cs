@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>Optional battle artwork. Existing layout, input and combat owners remain authoritative.</summary>
-public static class BattlePresentationSkin
+public static partial class BattlePresentationSkin
 {
     public static bool UsesReferenceKit => Folder != null && Reference(Folder == "Dungeon" ? "FarWall" : "FarScenery") != null;
     public static Sprite Reference(string name)
@@ -36,8 +36,7 @@ public static class BattlePresentationSkin
     };
     public static Sprite Shared(string name)
     {
-        if(Folder==null)return null;
-        string reference = name switch {"Guide"=>"SharedGuide", "Supply"=>"SharedPotionHolder",
+        string reference = name switch {"Guide"=>"SharedGuide", "Settings"=>"SharedSettings", "Supply"=>"SharedPotionHolder",
             "Ability"=>"SharedAbility", "Energy"=>"SharedEnergy", _=>null};
         return (reference==null?null:Reference(reference)) ?? Resources.Load<Sprite>("UI/BattlePresentation/Shared/"+name);
     }

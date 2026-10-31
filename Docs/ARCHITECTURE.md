@@ -1026,3 +1026,22 @@ Non-board shields, summons and blessings wait for their owning actor's contact b
 `KingEnemyAbility` commits to Bombardment from the accepted sword raise through the warning, both strikes, recovery and board settlement. It owns an `EnemyAutoAttack.SetActionPaused` hold, preserving the remaining cooldown and rejecting normal or commanded attacks. Other King specials and reinforcement gestures wait behind this commitment. Restoring an active lane warning restores the hold; completion, cancellation, disable and death release only the King's hold. Other owners' holds remain intact.
 
 Enemy weakness indicators reserve the six-unit shield track plus clearance below the HP frame, including their materialization/death overshoot. The reserved lane remains at zero shield to avoid jumps on shield grant or break.
+
+
+### Shared battle control family (2026-11-01)
+
+`BattlePresentationSkin.Controls` supplies one native control layout for all five
+battle zones. The existing `RunControlsUI`, `AbilityButtonUI`, `WaveTrackerUI` and
+`GameplayPixelLayoutController` apply it; they keep their existing interactions,
+charge authority and safe-area/section ownership. Shared control resources are
+independent of the zone's `Folder`, scenery, health art and environment scale.
+The old per-zone control families remain as asset fallbacks/history.
+
+Guide/Settings, supply plates, ability plate and energy shell use equal native
+X/Y scale from the integer Canvas scale. Top controls do not use
+`ReferenceKitSurface`'s responsive environment registration. The new wave uses
+native tiled rails/corners and a separate attached pendant; live labels use
+`PixelTextFitter`. Compact bottom controls occupy existing free space without
+moving the board, and the optional caption is suppressed when it cannot fit.
+The existing enemy intent view still clamps its rows below the live wave badge.
+No control helper advances combat, mutates board state or writes saves.

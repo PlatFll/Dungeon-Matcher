@@ -20,7 +20,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Ironvein expanded native cave — awaiting review (2026-10-31)
+## Ironvein expanded native cave — approved for integration (2026-11-01)
 
 The user rejected PR #219's initial zoom-to-cover correction. The replacement
 uses PixelLab to extend the cave's ceiling and walls on a 480×352 native canvas,
@@ -30,7 +30,21 @@ to fill a tall phone. The walking surface, separator, actors, board, controls,
 portrait and other zones retain their current layout and assets.
 Source lineage, native cleanup and Game-scene comparisons are in
 [the revised report](../ArtSource/IronveinTopCoverage/NewCavern/README.md).
-This replaces the zoom proposal on the review branch; it is not merged.
+The user approved this expanded cave on 2026-11-01 and requested its actual Game
+binding. The production assembly uses it on the integration branch; PR #219
+remains unmerged. The original zoom proposal is superseded.
+
+## Shared battle controls — integration review (2026-11-01)
+
+All five zones now select the user-chosen Drowned Court stone supply, ability,
+Guide and Settings artwork through the existing battle UI owners. Native uniform
+Canvas scaling replaces the stretched Court top-control mapping. A new modular
+PixelLab/LibreSprite stone wave plaque is the only new control artwork; its live
+text uses the shared native pixel fitter. The approved cave integration is
+retained. Board/portrait sizes, combat, health, saves and other zone art remain
+unchanged. Sources, usage and actual Game validation are recorded in
+[the UI report](../ArtSource/UnifiedBattleUI/README.md). This is an unmerged
+visual-review branch; the new wave design is not yet a final user approval.
 
 ## Approved Snowy Mountain production integration (2026-10-31)
 
