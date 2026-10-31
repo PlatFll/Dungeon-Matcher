@@ -1,5 +1,17 @@
 # Dungeon Matcher Game Design Reference
 
+## Shared stone controls and temporary roster availability (2026-11-01)
+
+Every zone uses one stone control family. Supply buttons retain their potion/bomb
+icons and behavior; Settings remains square. There is no Guide button. Enemy tap
+inspection remains available. The full stone ability slab carries a unique
+engraving: Rattlebones crowned skull, Minotaur angry bull, Kobold revolver cylinder,
+and Bardley flute. Ready means a small outward lift plus restrained white glow;
+Reduced Motion retains a static glow. Existing energy costs and activation gates
+remain authoritative. Gideon Glass is temporarily unavailable for new selection
+until a future steampunk update, without deleting his existing progression or
+preventing an already-saved continuation from loading.
+
 ## Frostwake and new playable contracts (2026-10-11)
 
 The approved pack updates [Frostwake's direction](FUTURE_ZONE_LOCKS.md) and adds
@@ -17,13 +29,17 @@ Partial thaw reduces damage. A Bifrost target causes the strongest hit and adds
 Frostbite. The identity, stage and deadline persist across Continue.
 
 Dungeon Attender jumps from the player frame, marks a meaningful legal target,
-lands and charges along orthogonal board segments. The provisional budget is
+lands and charges along orthogonal board segments. After the portrait leap,
+the board representation is a small colored angry bull-head icon, matching his
+stone-button engraving; the full character does not run over the gems. The provisional budget is
 seven collision/travel steps, including landing. Durable obstacles receive
 normal object damage with eligible card bonuses; surviving obstacles cost more
 steps and cause a visible stumble/retry. Protected unsupported objects remain
 ineligible. These free ability effects consume no accepted player moves.
 
-Kobold Gunner fires six sequential legal board impacts, each with at most one
+Kobold Gunner rapidly empties all six chambers in one spontaneous burst of
+sequential legal board impacts (without normal tile-clear presentation pauses),
+each with at most one
 enemy ricochet. His passive tracks the actual enemy recipient within that cast;
 hits on other recipients do not erase its count. Provisional damage is 5 base
 plus 5 per prior hit to that recipient, capped at +15 before ordinary ability,

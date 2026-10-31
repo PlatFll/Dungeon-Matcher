@@ -7,9 +7,9 @@ public sealed class RicochetAbilityDefinition : CharacterAbilityDefinition
     [SerializeField,Min(1)] private int energyCost=90;
     [SerializeField,Range(1,32)] private int shots=6;
     [SerializeField,Min(0)] private int baseEnemyDamage=5;
-    [SerializeField,Min(0)] private float spinSeconds=.3f;
-    [SerializeField,Min(0)] private float shotSeconds=.13f;
-    [SerializeField,Min(0)] private float recoverySeconds=.18f;
+    [SerializeField,Min(0)] private float spinSeconds=.12f;
+    [SerializeField,Min(0)] private float shotSeconds=.055f;
+    [SerializeField,Min(0)] private float recoverySeconds=.10f;
     [SerializeField] private Sprite[] impactFrames;
     public override int EnergyCost => Mathf.Max(1,energyCost);
     public override float MaximumSelfRefundFraction => 0;

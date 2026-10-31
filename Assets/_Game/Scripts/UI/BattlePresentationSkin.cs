@@ -36,6 +36,8 @@ public static partial class BattlePresentationSkin
     };
     public static Sprite Shared(string name)
     {
+        string stone = name switch { "Ability"=>"AbilityPlate", "Settings"=>"Settings", "Supply"=>"Supply", _=>null };
+        if(stone!=null && Resources.Load<Sprite>("UI/BattlePresentation/Stone/"+stone) is Sprite plate)return plate;
         string reference = name switch {"Guide"=>"SharedGuide", "Settings"=>"SharedSettings", "Supply"=>"SharedPotionHolder",
             "Ability"=>"SharedAbility", "Energy"=>"SharedEnergy", _=>null};
         return (reference==null?null:Reference(reference)) ?? Resources.Load<Sprite>("UI/BattlePresentation/Shared/"+name);

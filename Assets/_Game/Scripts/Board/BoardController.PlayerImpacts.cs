@@ -18,6 +18,8 @@ public sealed class PlayerBoardImpactSequence
 {
     public int Count;
     public float LeadSeconds, StepSeconds, FirstStepSeconds, RecoverySeconds;
+    // Fast ordered impact presentation. It changes no target, reward or settlement rules.
+    public bool ImmediateImpact;
     public Func<int, IReadOnlyList<PlayerBoardImpactTarget>, Vector2Int?> Select;
     public Func<bool> Cancelled;
     public Action<int, Vector2Int> Approaching;
@@ -112,7 +114,8 @@ public partial class BoardController
                             foreach (var crystal in crystals)
                                 if (reservedCrystals.Add(crystal.CrystalGem)) deferredCrystals.Add(crystal);
                             ReportBombClearsToCombat(null,expanded,0,BoardClearSource.Ability);
-                            yield return ClearMatchesWithBurstTargets(expanded,null,true,seed);
+                            yield return ClearMatchesWithOrderedBursts(expanded,null,true,seed,null,
+                                immediateImpact:request.ImmediateImpact,waitForBurst:!request.ImmediateImpact);
                         }
                     }
                 }

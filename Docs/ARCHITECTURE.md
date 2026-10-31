@@ -1037,7 +1037,7 @@ charge authority and safe-area/section ownership. Shared control resources are
 independent of the zone's `Folder`, scenery, health art and environment scale.
 The old per-zone control families remain as asset fallbacks/history.
 
-Guide/Settings, supply plates, ability plate and energy shell use equal native
+Settings, supply plates, ability plate and energy shell use equal native
 X/Y scale from the integer Canvas scale. Top controls do not use
 `ReferenceKitSurface`'s responsive environment registration. The new wave uses
 native tiled rails/corners and a separate attached pendant; live labels use
@@ -1045,3 +1045,28 @@ native tiled rails/corners and a separate attached pendant; live labels use
 moving the board, and the optional caption is suppressed when it cannot fit.
 The existing enemy intent view still clamps its rows below the live wave badge.
 No control helper advances combat, mutates board state or writes saves.
+
+### Stone engraving presentation and rapid ordered impacts (2026-11-01)
+
+`StoneAbilityButtonView` is an optional child presentation of `AbilityButtonUI`.
+The existing Button/PlayerAbilityController remain the sole input and energy
+owners. Definition-owned `StoneEngraving`/`ReadyStoneEngraving` select the symbols;
+one shared socket/slab supplies the material. Whole-pixel translation exposes the
+socket, without resampling or scaling artwork. Game pause freezes the state;
+Reduced Motion removes translation/pulse. Missing optional engraving data retains
+the existing icon fallback. RunControlsUI no longer creates Guide in any art path;
+enemy inspection and Settings remain owned by the same modal controller.
+
+`PlayerBoardImpactSequence.ImmediateImpact` is a generic presentation option used
+by Ricochet. It skips normal clear flash/hold and the post-burst wait while still
+awaiting each authoritative clear, keeping targets, specials, reward attribution,
+cancellation, input locking and one final refill/cascade in BoardController.
+Existing callers default to their prior timing. Minotaur's definition supplies
+an optional `BoardAvatar`; his presentation uses the colored bull icon at native
+board-pixel scale instead of the old full-body marker. Portrait leap and collision
+logic are unchanged. The old marker stays available only as a missing-art fallback.
+
+CharacterSelectionSettings separates known saved identities from currently
+selectable characters. Gideon remains known for save sanitation/continuation,
+but the new-run menu and persistent selection setter exclude him. No save schema
+or stored progression is removed.

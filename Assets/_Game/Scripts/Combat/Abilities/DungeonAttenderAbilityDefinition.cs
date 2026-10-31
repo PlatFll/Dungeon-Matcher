@@ -9,6 +9,8 @@ public sealed class DungeonAttenderAbilityDefinition : CharacterAbilityDefinitio
     [SerializeField,Min(0)] private float jumpSeconds=.4f;
     [SerializeField,Min(0)] private float stepSeconds=.16f;
     [SerializeField] private Sprite boardMarker;
+    [SerializeField] private Sprite boardAvatar;
+    public Sprite BoardAvatar => boardAvatar;
     [SerializeField,Min(0)] private float landingSeconds=.3f;
     [SerializeField,Min(0)] private float recoverySeconds=.32f;
     [SerializeField] private Sprite[] impactFrames;

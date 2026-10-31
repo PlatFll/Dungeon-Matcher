@@ -26,6 +26,11 @@ public abstract class CharacterAbilityDefinition : ScriptableObject
     [SerializeField]
     private Sprite icon;
 
+    [SerializeField] private Sprite stoneEngraving;
+    [SerializeField] private Sprite readyStoneEngraving;
+    public Sprite StoneEngraving => stoneEngraving;
+    public Sprite ReadyStoneEngraving => readyStoneEngraving;
+
     [SerializeField]
     [Tooltip(
         "Optional short text displayed on the ability button. " +

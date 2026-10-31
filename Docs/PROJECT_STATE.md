@@ -34,17 +34,27 @@ The user approved this expanded cave on 2026-11-01 and requested its actual Game
 binding. The production assembly uses it on the integration branch; PR #219
 remains unmerged. The original zoom proposal is superseded.
 
-## Shared battle controls — integration review (2026-11-01)
+## Shared stone battle controls and four-character menu — review branch (2026-11-01)
 
-All five zones now select the user-chosen Drowned Court stone supply, ability,
-Guide and Settings artwork through the existing battle UI owners. Native uniform
-Canvas scaling replaces the stretched Court top-control mapping. A new modular
-PixelLab/LibreSprite stone wave plaque is the only new control artwork; its live
-text uses the shared native pixel fitter. The approved cave integration is
-retained. Board/portrait sizes, combat, health, saves and other zone art remain
-unchanged. Sources, usage and actual Game validation are recorded in
-[the UI report](../ArtSource/UnifiedBattleUI/README.md). This is an unmerged
-visual-review branch; the new wave design is not yet a final user approval.
+All five zones use the same PixelLab/LibreSprite stone supply tiles, square
+Settings button, and solid ability slab. The approved wave plaque remains the
+material reference. Guide is removed; tapping an enemy still opens inspection.
+Each ability definition supplies a crowned-skull, bull, six-chamber revolver or
+flute engraving. A ready slab rises by whole pixels and softly glows white;
+pause freezes it and Reduced Motion keeps a static ready cue.
+
+Kobold now empties six rapid ordered shots without the normal per-tile flash/hold
+or burst pause. Damage, passive stacking, energy cost, target selection and the
+single final settlement remain unchanged. Minotaur retains his portrait leap
+and seven-step charge, represented on the board by a small colored bull head.
+Gideon is temporarily hidden from new character selection for the future
+steampunk zone; assets, progression and existing continuation identity survive.
+
+The expanded Ironvein cave remains bound to the actual Game scene. Board,
+portrait, environment and health placements are unchanged. New native sources,
+PixelLab usage and actual Game captures are in
+[the stone UI handoff](../ArtSource/StoneAbilityUI/README.md). This work remains
+unmerged for user review. Automated Unity evidence is separate from phone testing.
 
 ## Approved Snowy Mountain production integration (2026-10-31)
 

@@ -1,0 +1,206 @@
+{
+  "BullSmall": {"request":{"description":"Native pixel art miniature angry Minotaur head icon. Redraw the attached bull face at 32x32 pixels with a complete silhouette. Broad warm brown face, cream curved horns, strong angry lowered brows, amber eyes, short blunt muzzle. Head only, no body. Match its identity, simplify just enough to remain chunky readable at this smaller native size. Frontal symmetrical horns. Keep entire horns, chin and outline visible. Dark one-pixel outline, broad 2-3 tone matte brown fur, 2 tone ivory horns, max12colors. No texture noise, jewelry, gradients, glow, background or AA. Compact squat proportions, use a 28x28 head centered on transparent 32x32 canvas. This will be a small board charging icon and a stone engraving.","width":32,"height":32,"max_colors":12,"no_background":true,"reference_images":[{"url":"upload:cee99eeb-7a01-4530-b304-1f11e86e4600","usage":"Direct selected angry bull head identity; native redraw at32px, complete horns and chin"},{"url":"upload:6ca2af9e-5f8b-415e-97ff-3b1ca4707711","usage":"Production Minotaur character identity"}],"style_image_url":"upload:a7bc9030-af5b-4554-b9be-b9a66da51474","style_copy":["outline","detail","shading"]},"receipt":{"content":[{"type":"text","text":"id: fec974b6-49b8-4e0e-a594-cf9c1bfac6ba\njob_id: fec974b6-49b8-4e0e-a594-cf9c1bfac6ba\nmodel: pro\ndescription: Native pixel art miniature angry Minotaur head icon. Redraw the attached bull face at 32x32 pixels with a complete silhouette. Broad warm brown face, cream curved horns, strong angry lowered brows, amber eyes, short blunt muzzle. Head only, no body. Match its identity, simplify just enough to remain chunky readable at this smaller native size. Frontal symmetrical horns. Keep entire horns, chin and outline visible. Dark one-pixel outline, broad 2-3 tone matte brown fur, 2 tone ivory horns, max12colors. No texture noise, jewelry, gradients, glow, background or AA. Compact squat proportions, use a 28x28 head centered on transparent 32x32 canvas. This will be a small board charging icon and a stone engraving.\nsize: 32x32px\ntransparent: True\ncandidates: 64\nreferences: 2\nstyle_image: yes (outline, detail, shading)\nmax colours: 12 per image\nasset_id: ac2a6670-3618-5dad-8a02-20b6c3a3916b\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"fec974b6-49b8-4e0e-a594-cf9c1bfac6ba\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/fec974b6-49b8-4e0e-a594-cf9c1bfac6ba/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"}],"isError":false}},
+  "PlateV2": {"request":{"description":"One wide horizontal SOLID STONE BUTTON / stone tablet, 176x66 native pixels, for Dungeon Matcher. Use the first attached square stone button as the design to expand horizontally. Preserve its filled gray stone slab center and four small corner bolts, broad rectangular bevel around thick solid stone. Full center is opaque medium gray-lavender slate with a few broad quiet stone texture clusters. A plain pushable massive rectangular stone tablet. Front facing, top-left light; 3px visible lower/right thickness, 2px transparent margin. No emblem, no text, no black opening/window/inset. The supplied wave reference is only for matching gray stone color and outer border shading. Clean native pixels and chunky connected planes, minimal detail, no gradients, anti-aliasing or random grit.","width":176,"height":66,"max_colors":15,"no_background":true,"style_image_url":"upload:92841b55-b410-439c-8f44-fe88a8d7ec61","style_copy":["color_palette","outline","detail","shading"],"reference_images":[{"url":"upload:92841b55-b410-439c-8f44-fe88a8d7ec61","usage":"Use this filled solid stone tile as the direct design; make a wide horizontal version"},{"url":"upload:e997e4ac-95e3-4e26-a236-21509b228d84","usage":"Secondary material rendering only; do NOT reproduce empty black window"}]},"receipt":{"content":[{"type":"text","text":"id: 540474c9-0731-4c31-8dca-367c044bb0bf\njob_id: 540474c9-0731-4c31-8dca-367c044bb0bf\nmodel: pro\ndescription: One wide horizontal SOLID STONE BUTTON / stone tablet, 176x66 native pixels, for Dungeon Matcher. Use the first attached square stone button as the design to expand horizontally. Preserve its filled gray stone slab center and four small corner bolts, broad rectangular bevel around thick solid stone. Full center is opaque medium gray-lavender slate with a few broad quiet stone texture clusters. A plain pushable massive rectangular stone tablet. Front facing, top-left light; 3px visible lower/right thickness, 2px transparent margin. No emblem, no text, no black opening/window/inset. The supplied wave reference is only for matching gray stone color and outer border shading. Clean native pixels and chunky connected planes, minimal detail, no gradients, anti-aliasing or random grit.\nsize: 176x66px\ntransparent: True\ncandidates: 1\nreferences: 2\nstyle_image: yes (color_palette, outline, detail, shading)\nmax colours: 15 per image\nasset_id: 6c11268e-e0b9-5c82-b3bc-a169d119e8d1\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"540474c9-0731-4c31-8dca-367c044bb0bf\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/540474c9-0731-4c31-8dca-367c044bb0bf/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"}],"isError":false}},
+  "Plate": {
+    "request": {
+      "description": "Dungeon Matcher mobile fantasy UI production asset. One wide horizontal clickable ability button, front view, 176x66 native pixel canvas. Match the attached approved wave plaque EXACT rendering family: cool desaturated gray-lavender carved stone, charcoal outline, broad clean top-left lit bevels, four modest round carved bolt sockets. But the ENTIRE center must be a solid medium gray stone slab face, not a dark hollow window. Flat usable quiet center with subtle stone texture in 3-4 connected clusters only, no cracks across center, no emblem, no text, no glow. Thick stone plate reads heavy and pushable, very slight visible bottom/right thickness only 3 pixels. Center the complete button with 2px transparent padding. Straight horizontal rails and symmetrical corners. Crisp authentic native pixel art, no AA, blur, dither or painterly noise. Dark outer contour; restrained 10-15 color stone ramp from approved reference. Preserve clean empty stone center for a separate engraved character symbol.",
+      "width": 176,
+      "height": 66,
+      "max_colors": 15,
+      "no_background": true,
+      "style_image_url": "upload:e997e4ac-95e3-4e26-a236-21509b228d84",
+      "style_copy": [
+        "color_palette",
+        "outline",
+        "detail",
+        "shading"
+      ],
+      "reference_images": [
+        {
+          "url": "upload:e997e4ac-95e3-4e26-a236-21509b228d84",
+          "usage": "Approved carved stone border material and bevel language; replace its black inset with solid gray stone, no lettering"
+        }
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 3c1d70b9-73da-46e5-91e9-02a4d20953f7\njob_id: 3c1d70b9-73da-46e5-91e9-02a4d20953f7\nmodel: pro\ndescription: Dungeon Matcher mobile fantasy UI production asset. One wide horizontal clickable ability button, front view, 176x66 native pixel canvas. Match the attached approved wave plaque EXACT rendering family: cool desaturated gray-lavender carved stone, charcoal outline, broad clean top-left lit bevels, four modest round carved bolt sockets. But the ENTIRE center must be a solid medium gray stone slab face, not a dark hollow window. Flat usable quiet center with subtle stone texture in 3-4 connected clusters only, no cracks across center, no emblem, no text, no glow. Thick stone plate reads heavy and pushable, very slight visible bottom/right thickness only 3 pixels. Center the complete button with 2px transparent padding. Straight horizontal rails and symmetrical corners. Crisp authentic native pixel art, no AA, blur, dither or painterly noise. Dark outer contour; restrained 10-15 color stone ramp from approved reference. Preserve clean empty stone center for a separate engraved character symbol.\nsize: 176x66px\ntransparent: True\ncandidates: 1\nreferences: 1\nstyle_image: yes (color_palette, outline, detail, shading)\nmax colours: 15 per image\nasset_id: ef250ef5-1837-5023-8760-a76c3193b4f7\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"3c1d70b9-73da-46e5-91e9-02a4d20953f7\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/3c1d70b9-73da-46e5-91e9-02a4d20953f7/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "Supply": {
+    "request": {
+      "description": "Dungeon Matcher native pixel art UI asset. One square thick stone item-slot button, full solid medium gray stone face with quiet flat center for a separate potion or bomb icon. Four rounded corner sockets, broad top-left bevel and a narrow lower stone thickness, symmetrical edges. No item, no icon, no symbols, no text. No hollow black center. Match the attached approved wave plaque's cool desaturated gray-lavender stone palette and rendering. Clean chunky connected planes, restrained stone texture, crisp hard pixels, top-left light. No blur, gradients, anti-aliasing, glitter, random cracks or noise. Complete centered asset with 2px transparent margin. Front-facing rectangle, no scene.",
+      "width": 64,
+      "height": 64,
+      "max_colors": 15,
+      "no_background": true,
+      "style_image_url": "upload:e997e4ac-95e3-4e26-a236-21509b228d84",
+      "style_copy": [
+        "color_palette",
+        "outline",
+        "detail",
+        "shading"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 41842cf0-72b7-4b14-9211-04f2d92f2403\njob_id: 41842cf0-72b7-4b14-9211-04f2d92f2403\nmodel: pro\ndescription: Dungeon Matcher native pixel art UI asset. One square thick stone item-slot button, full solid medium gray stone face with quiet flat center for a separate potion or bomb icon. Four rounded corner sockets, broad top-left bevel and a narrow lower stone thickness, symmetrical edges. No item, no icon, no symbols, no text. No hollow black center. Match the attached approved wave plaque's cool desaturated gray-lavender stone palette and rendering. Clean chunky connected planes, restrained stone texture, crisp hard pixels, top-left light. No blur, gradients, anti-aliasing, glitter, random cracks or noise. Complete centered asset with 2px transparent margin. Front-facing rectangle, no scene.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nstyle_image: yes (color_palette, outline, detail, shading)\nmax colours: 15 per image\nasset_id: e5ad5fa3-399f-5c00-958a-ae55c2f50b36\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"41842cf0-72b7-4b14-9211-04f2d92f2403\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/41842cf0-72b7-4b14-9211-04f2d92f2403/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "Settings": {
+    "request": {
+      "description": "Dungeon Matcher native pixel art UI asset. One compact square settings button, full medium gray stone face and a clear recessed stone gear engraving with exactly eight broad teeth and a simple dark round center. Gear centered, circular proportions, never stretched. Four modest stone corner sockets. Strong dark outer silhouette and clean top-left bevels. No text, no extra icons. Match the attached approved wave plaque's cool desaturated gray-lavender stone palette and rendering. Clean chunky connected planes, restrained stone texture, crisp hard pixels, top-left light. No blur, gradients, anti-aliasing, glitter, random cracks or noise. Complete centered asset with 2px transparent margin. Front-facing rectangle, no scene.",
+      "width": 40,
+      "height": 40,
+      "max_colors": 15,
+      "no_background": true,
+      "style_image_url": "upload:e997e4ac-95e3-4e26-a236-21509b228d84",
+      "style_copy": [
+        "color_palette",
+        "outline",
+        "detail",
+        "shading"
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: a24a6a5c-6631-4c99-8c7c-4ae115805a55\njob_id: a24a6a5c-6631-4c99-8c7c-4ae115805a55\nmodel: pro\ndescription: Dungeon Matcher native pixel art UI asset. One compact square settings button, full medium gray stone face and a clear recessed stone gear engraving with exactly eight broad teeth and a simple dark round center. Gear centered, circular proportions, never stretched. Four modest stone corner sockets. Strong dark outer silhouette and clean top-left bevels. No text, no extra icons. Match the attached approved wave plaque's cool desaturated gray-lavender stone palette and rendering. Clean chunky connected planes, restrained stone texture, crisp hard pixels, top-left light. No blur, gradients, anti-aliasing, glitter, random cracks or noise. Complete centered asset with 2px transparent margin. Front-facing rectangle, no scene.\nsize: 40x40px\ntransparent: True\ncandidates: 36\nstyle_image: yes (color_palette, outline, detail, shading)\nmax colours: 15 per image\nasset_id: d0840778-4d1f-589a-9ade-b0d3ec3c37e6\nasset_status: pending (saved when generation completes)\ncost: 15 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"a24a6a5c-6631-4c99-8c7c-4ae115805a55\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/a24a6a5c-6631-4c99-8c7c-4ae115805a55/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "Skull": {
+    "request": {
+      "description": "Dungeon Matcher UI / VFX native pixel asset. A single small front-facing crowned skull symbol carved INTO stone, for a character ability engraving. Match Rattlebones's recognizable big rounded skull and three-point crown silhouette; just head and crown, no body or cape. Hollow eye sockets, tiny nose and simple jaw, cheeky regal identity. Recessed dark charcoal shape with a narrow stone-gray lower-right cut lip; 4 stone grayscale shades maximum. Transparent outside the symbol, no plate behind it, no circular badge, no glow, no text. Bold readable silhouette filling about 34x34 of a 48x40 canvas, at least 3px margin. No bone colors or gold in this engraved version. Crisp clean 1-pixel clusters, no anti-aliasing, blurry shading, gradients, dither or tiny texture noise.",
+      "width": 48,
+      "height": 40,
+      "max_colors": 5,
+      "no_background": true,
+      "style_image_url": "upload:e997e4ac-95e3-4e26-a236-21509b228d84",
+      "style_copy": [
+        "color_palette",
+        "outline",
+        "detail",
+        "shading"
+      ],
+      "reference_images": [
+        {
+          "url": "upload:a7bc9030-af5b-4554-b9be-b9a66da51474",
+          "usage": "Crowned skull identity simplified into an engraving, no full body"
+        },
+        {
+          "url": "upload:e997e4ac-95e3-4e26-a236-21509b228d84",
+          "usage": "Gray stone material and native pixel rendering"
+        }
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 4dd2e09b-33d5-4602-90e6-92308c2828bb\njob_id: 4dd2e09b-33d5-4602-90e6-92308c2828bb\nmodel: pro\ndescription: Dungeon Matcher UI / VFX native pixel asset. A single small front-facing crowned skull symbol carved INTO stone, for a character ability engraving. Match Rattlebones's recognizable big rounded skull and three-point crown silhouette; just head and crown, no body or cape. Hollow eye sockets, tiny nose and simple jaw, cheeky regal identity. Recessed dark charcoal shape with a narrow stone-gray lower-right cut lip; 4 stone grayscale shades maximum. Transparent outside the symbol, no plate behind it, no circular badge, no glow, no text. Bold readable silhouette filling about 34x34 of a 48x40 canvas, at least 3px margin. No bone colors or gold in this engraved version. Crisp clean 1-pixel clusters, no anti-aliasing, blurry shading, gradients, dither or tiny texture noise.\nsize: 48x40px\ntransparent: True\ncandidates: 25\nreferences: 2\nstyle_image: yes (color_palette, outline, detail, shading)\nmax colours: 5 per image\nasset_id: f1cd4980-4ab3-5719-bf35-fb2962c199d8\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"4dd2e09b-33d5-4602-90e6-92308c2828bb\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/4dd2e09b-33d5-4602-90e6-92308c2828bb/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "Bull": {
+    "request": {
+      "description": "Dungeon Matcher UI / VFX native pixel asset. A single front-facing angry bull / Minotaur HEAD icon, no neck or body. Broad warm brown face, cream curved horns, heavy lowered brows, narrow amber eyes, broad muzzle, stubborn angry expression. Match the attached Dungeon Attender Minotaur's head and warm fur/horns, but clear angry charging expression. Small chunky whimsical game icon readable at 1x. Complete horns inside canvas, dark one-pixel outline, 3 useful fur shades, 2 horn shades, top-left light. No jewelry, no ring/background, no text, no smoke. 48x40 native canvas with 3px clearance, compact centered 36px wide head. This same silhouette will also be cut into stone as an ability engraving. Crisp clean 1-pixel clusters, no anti-aliasing, blurry shading, gradients, dither or tiny texture noise.",
+      "width": 48,
+      "height": 40,
+      "max_colors": 14,
+      "no_background": true,
+      "style_image_url": "upload:a7bc9030-af5b-4554-b9be-b9a66da51474",
+      "style_copy": [
+        "outline",
+        "detail",
+        "shading"
+      ],
+      "reference_images": [
+        {
+          "url": "upload:6ca2af9e-5f8b-415e-97ff-3b1ca4707711",
+          "usage": "Identity of the bull face, fur and horn colors; only head, no body"
+        },
+        {
+          "url": "upload:a7bc9030-af5b-4554-b9be-b9a66da51474",
+          "usage": "Primary rendering standard: chunky clean planes and native outlines, do not copy skeleton anatomy or palette"
+        }
+      ]
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 5b3386fa-d072-4d24-82d5-b87a92df2664\njob_id: 5b3386fa-d072-4d24-82d5-b87a92df2664\nmodel: pro\ndescription: Dungeon Matcher UI / VFX native pixel asset. A single front-facing angry bull / Minotaur HEAD icon, no neck or body. Broad warm brown face, cream curved horns, heavy lowered brows, narrow amber eyes, broad muzzle, stubborn angry expression. Match the attached Dungeon Attender Minotaur's head and warm fur/horns, but clear angry charging expression. Small chunky whimsical game icon readable at 1x. Complete horns inside canvas, dark one-pixel outline, 3 useful fur shades, 2 horn shades, top-left light. No jewelry, no ring/background, no text, no smoke. 48x40 native canvas with 3px clearance, compact centered 36px wide head. This same silhouette will also be cut into stone as an ability engraving. Crisp clean 1-pixel clusters, no anti-aliasing, blurry shading, gradients, dither or tiny texture noise.\nsize: 48x40px\ntransparent: True\ncandidates: 25\nreferences: 2\nstyle_image: yes (outline, detail, shading)\nmax colours: 14 per image\nasset_id: 4c16b2d9-d1c1-5043-bdf6-afbff089d3bf\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"5b3386fa-d072-4d24-82d5-b87a92df2664\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/5b3386fa-d072-4d24-82d5-b87a92df2664/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "Revolver": {
+    "request": {
+      "description": "Dungeon Matcher UI / VFX native pixel asset. A single small engraved SIX-CHAMBER REVOLVER CYLINDER seen straight-on, a simple circular steel gun barrel end with exactly SIX evenly spaced dark round chamber holes around one small axle point. Strong clearly identifiable six-shot revolver emblem, NO hand, NO bullets or gun body, NO extra weapon. Recessed dark charcoal silhouette with selective stone-gray lower-right cut lip, four grayscale tones. Transparent outside the symbol, no plate, no badge, no text, no glow. Native 48x40 canvas with 3px margin; circular emblem about30x30 pixels. It must look carved into a stone button. Crisp clean 1-pixel clusters, no anti-aliasing, blurry shading, gradients, dither or tiny texture noise.",
+      "width": 48,
+      "height": 40,
+      "max_colors": 5,
+      "no_background": true,
+      "style_image_url": "upload:e997e4ac-95e3-4e26-a236-21509b228d84",
+      "style_copy": [
+        "color_palette",
+        "outline",
+        "detail",
+        "shading"
+      ],
+      "reference_images": []
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 9e985170-49c0-4c89-b0c3-ecc979eea8ce\njob_id: 9e985170-49c0-4c89-b0c3-ecc979eea8ce\nmodel: pro\ndescription: Dungeon Matcher UI / VFX native pixel asset. A single small engraved SIX-CHAMBER REVOLVER CYLINDER seen straight-on, a simple circular steel gun barrel end with exactly SIX evenly spaced dark round chamber holes around one small axle point. Strong clearly identifiable six-shot revolver emblem, NO hand, NO bullets or gun body, NO extra weapon. Recessed dark charcoal silhouette with selective stone-gray lower-right cut lip, four grayscale tones. Transparent outside the symbol, no plate, no badge, no text, no glow. Native 48x40 canvas with 3px margin; circular emblem about30x30 pixels. It must look carved into a stone button. Crisp clean 1-pixel clusters, no anti-aliasing, blurry shading, gradients, dither or tiny texture noise.\nsize: 48x40px\ntransparent: True\ncandidates: 25\nstyle_image: yes (color_palette, outline, detail, shading)\nmax colours: 5 per image\nasset_id: 6f0729c5-e588-54cb-80bd-1e636ce59b7a\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"9e985170-49c0-4c89-b0c3-ecc979eea8ce\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/9e985170-49c0-4c89-b0c3-ecc979eea8ce/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "Flute": {
+    "request": {
+      "description": "Dungeon Matcher UI / VFX native pixel asset. A single small engraved flute / recorder musical instrument diagonal from lower-left to upper-right. One chunky straight wooden flute with a clear mouthpiece and 4-5 separated dark finger holes, simple end collar. NO hands, NO musical notes, NO leaves, NO staff or wand. Readable minimalist silhouette carved into gray stone. Recessed dark charcoal linework and narrow lighter lower-right chisel lip, 4 grayscale shades total. Transparent outside the symbol; no plate, badge, text or glow. 48x40 native canvas, 4px margin, clear connected native pixels. Crisp clean 1-pixel clusters, no anti-aliasing, blurry shading, gradients, dither or tiny texture noise.",
+      "width": 48,
+      "height": 40,
+      "max_colors": 5,
+      "no_background": true,
+      "style_image_url": "upload:e997e4ac-95e3-4e26-a236-21509b228d84",
+      "style_copy": [
+        "color_palette",
+        "outline",
+        "detail",
+        "shading"
+      ],
+      "reference_images": []
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 78321149-2e5a-402e-9232-112269801c58\njob_id: 78321149-2e5a-402e-9232-112269801c58\nmodel: pro\ndescription: Dungeon Matcher UI / VFX native pixel asset. A single small engraved flute / recorder musical instrument diagonal from lower-left to upper-right. One chunky straight wooden flute with a clear mouthpiece and 4-5 separated dark finger holes, simple end collar. NO hands, NO musical notes, NO leaves, NO staff or wand. Readable minimalist silhouette carved into gray stone. Recessed dark charcoal linework and narrow lighter lower-right chisel lip, 4 grayscale shades total. Transparent outside the symbol; no plate, badge, text or glow. 48x40 native canvas, 4px margin, clear connected native pixels. Crisp clean 1-pixel clusters, no anti-aliasing, blurry shading, gradients, dither or tiny texture noise.\nsize: 48x40px\ntransparent: True\ncandidates: 25\nstyle_image: yes (color_palette, outline, detail, shading)\nmax colours: 5 per image\nasset_id: 57ece6a4-3eec-5c39-b138-c32f182aa1c1\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"78321149-2e5a-402e-9232-112269801c58\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/78321149-2e5a-402e-9232-112269801c58/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

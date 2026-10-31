@@ -989,7 +989,8 @@ public partial class BoardController : MonoBehaviour
         GemMatchVFXContext[] matchImpacts = null,
         bool rewardableMatch = false,
         BoardFeedbackKind? impactKind = null,
-        bool immediateImpact = false)
+        bool immediateImpact = false,
+        bool waitForBurst = true)
     {
         List<ClearVisual> visuals =
             new List<ClearVisual>();
@@ -1213,7 +1214,7 @@ public partial class BoardController : MonoBehaviour
         float responsivePostBurstDelay =
             GetResponsiveMatchPostBurstDelay();
 
-        if (responsivePostBurstDelay > 0f)
+        if (waitForBurst && responsivePostBurstDelay > 0f)
         {
             yield return new WaitForSeconds(
                 responsivePostBurstDelay

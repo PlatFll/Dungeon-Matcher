@@ -44,7 +44,6 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private bool initialized;
     private Button levelUpButton;
     private Button resetLevelButton;
-    private Button gideonButton;
     private Button minotaurButton,koboldButton;
     private GameObject resetConfirmation;
     private TMP_Text resetConfirmationText;
@@ -157,6 +156,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private void SelectCharacter(
         string playerId)
     {
+        if(!CharacterSelectionSettings.IsSelectableCharacter(playerId))return;
         CloseResetConfirmation();
         selectedPlayerId = playerId;
 
@@ -187,8 +187,6 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
 
     private void Refresh()
     {
-        SetButtonColor(gideonButton, CharacterSelectionSettings.GideonPlayerId,
-            PlayerDefinitionRegistry.IsAvailable(CharacterSelectionSettings.GideonPlayerId));
         SetButtonColor(minotaurButton,CharacterSelectionSettings.MinotaurPlayerId,
             PlayerDefinitionRegistry.IsAvailable(CharacterSelectionSettings.MinotaurPlayerId));
         SetButtonColor(koboldButton,CharacterSelectionSettings.KoboldPlayerId,
@@ -303,14 +301,10 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private void ConfigureProgression()
     {
         previewColor=characterPreview.color;
-        Place(rattlebonesButton.transform,new Vector2(-142,220),new Vector2(140,46));
-        Place(bardleyButton.transform,new Vector2(0,220),new Vector2(140,46));
+        Place(rattlebonesButton.transform,new Vector2(-107,220),new Vector2(210,42));
+        Place(bardleyButton.transform,new Vector2(107,220),new Vector2(210,42));
         rattlebonesButton.GetComponentInChildren<TMP_Text>().fontSize=16;
         bardleyButton.GetComponentInChildren<TMP_Text>().fontSize=16;
-        gideonButton=GameUi.Button("GideonButton",transform,"GIDEON",new Vector2(140,46),new Vector2(142,220),
-            ()=>SelectCharacter(CharacterSelectionSettings.GideonPlayerId));
-        gideonButton.GetComponentInChildren<TMP_Text>().fontSize=16;
-        gideonButton.GetComponentInChildren<TMP_Text>().fontStyle=rattlebonesButton.GetComponentInChildren<TMP_Text>().fontStyle;
         minotaurButton=GameUi.Button("MinotaurButton",transform,"MINOTAUR",new Vector2(210,42),new Vector2(-107,170),
             ()=>SelectCharacter(CharacterSelectionSettings.MinotaurPlayerId));
         koboldButton=GameUi.Button("KoboldButton",transform,"KOBOLD",new Vector2(210,42),new Vector2(107,170),

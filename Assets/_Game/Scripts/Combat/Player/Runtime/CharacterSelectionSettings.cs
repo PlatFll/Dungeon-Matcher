@@ -38,7 +38,7 @@ public static class CharacterSelectionSettings
                     RattlebonesPlayerId
                 );
 
-            return IsKnownCharacter(storedPlayerId)
+            return IsSelectableCharacter(storedPlayerId)
                 ? storedPlayerId
                 : RattlebonesPlayerId;
         }
@@ -47,10 +47,10 @@ public static class CharacterSelectionSettings
     public static bool SetSelectedPlayerId(
         string playerId)
     {
-        if (!IsKnownCharacter(playerId))
+        if (!IsSelectableCharacter(playerId))
         {
             Debug.LogError(
-                $"Cannot select unknown player id '{playerId}'."
+                $"Cannot select unavailable player id '{playerId}'."
             );
 
             return false;
@@ -91,6 +91,9 @@ public static class CharacterSelectionSettings
 
         return true;
     }
+
+    public static bool IsSelectableCharacter(string playerId) =>
+        IsKnownCharacter(playerId) && !string.Equals(playerId,GideonPlayerId,StringComparison.Ordinal);
 
     public static bool IsKnownCharacter(
         string playerId)
