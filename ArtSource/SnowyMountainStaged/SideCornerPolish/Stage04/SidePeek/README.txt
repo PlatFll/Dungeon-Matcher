@@ -1,3 +1,7 @@
+SUPERSEDED: the user requested connected cliff art and no gutters. Current review: ../ConnectedSides/Review.html.
+
+Historical placement-only review:
+
 SNOWY MOUNTAIN — ORIGINAL SIDES, PLACEMENT CORRECTION
 2026-10-31. Review only; no merge.
 

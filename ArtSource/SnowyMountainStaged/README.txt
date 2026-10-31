@@ -1,8 +1,8 @@
-Current follow-up: SideCornerPolish/Stage04/SidePeek — original sides restored, moved for slight edge clipping; awaiting review.
-The extra backing in EdgeRevision was rejected and has been removed.
-Original art, corner formations, upper scene, board and UI unchanged.
-Compilation and five-view Unity review passed. Zero PixelLab spending.
-Open SideCornerPolish/Stage04/SidePeek/Review.html. No production binding or merge.
+Current follow-up: SideCornerPolish/Stage04/ConnectedSides — continuous snowy cliffs and edge coverage; awaiting review.
+One cliff/timber/corner sprite per side replaces overlapping modules and gaps.
+Original sources, upper scene, board and shared controls are preserved.
+LibreSprite round trips, compilation and five-view Unity review passed. Zero PixelLab spending.
+Open SideCornerPolish/Stage04/ConnectedSides/Review.html. No production binding or merge.
 
 Snowy Mountain / Frostwake Peaks staged rebuild
 
