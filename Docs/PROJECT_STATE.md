@@ -20,6 +20,17 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Ironvein upper-scene coverage correction — awaiting review (2026-10-31)
+
+The cave vista previously remained a fixed native rectangle beneath the shared
+floor offset, exposing the repeated rock backing above it on tall phones.
+The focused correction uses the same unmodified PNG with uniform integer
+physical-pixel cover scaling across the whole upper screen, including cutouts.
+The walking surface, separator, actors, board, controls, portrait and other
+zones retain their current placement and assets. No generation was spent.
+Actual Game comparisons and verification: [coverage report](../ArtSource/IronveinTopCoverage/README.md).
+This correction is on its review branch, not merged into main.
+
 ## Approved Snowy Mountain production integration (2026-10-31)
 
 The user approved the final Snowy Mountain library, connected sides and mounted

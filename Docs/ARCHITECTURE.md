@@ -464,8 +464,12 @@ Opened settings and main menu keep their existing skins and menu music selection
   aliases, the cave recess and shared control binding. `DungeonPresentationArt`
   maps those modules to the existing live board and common enemy floor. The
   walking surface surrounds that floor; the separator stays below it. Native
-  pieces repeat or move without stretching; background coverage extends beyond
-  the safe viewport. Board and portrait frames follow the unchanged shared
+  pieces repeat or move without stretching. The existing 240×160 cavern image
+  uses uniform integer physical-pixel cover scaling to fill the physical upper
+  screen, including safe-area overflow. Its lower edge remains behind the same
+  walking surface; centered horizontal overflow is cropped by the screen.
+  The fallback rock tile covers the lower scene, not a band above the cavern.
+  Board and portrait frames follow the unchanged shared
   rectangles, and the overfilled recess is clipped with RectMask2D. Mixed source
   import PPU is honored by `ResponsiveModularFrameFitter` when repeating rails.
   The Ironvein board rim is a separate world-canvas batch at `Effects / 100`,

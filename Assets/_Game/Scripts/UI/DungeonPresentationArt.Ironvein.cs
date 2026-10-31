@@ -106,9 +106,27 @@ public sealed partial class DungeonPresentationArt
                 else r.y+=Mathf.Lerp(top,bottom,Mathf.InverseLerp(244,548,p.rect.y));
             }
             r.x=Mathf.Round(r.x);r.y=Mathf.Round(r.y);r.width=Mathf.Round(r.width);r.height=Mathf.Round(r.height);
+            if(p.region=="IronveinTopModules"&&p.name=="IronveinTopModules/CavernDepth")
+                r=CoverIronveinCavern(p.sprite,r);
             MineImage(p,pixelLabContent,r);
         }
     }
+    Rect CoverIronveinCavern(Sprite sprite,Rect authored)
+    {
+        // The original 240x160 panel followed the floor but left repeated wall
+        // above it on tall screens. Cover the physical screen, including cutouts,
+        // at a uniform INTEGER physical pixel scale. Crop overflow; never stretch.
+        // Its bottom remains behind the same walking surface and separator.
+        var viewport=GetComponent<GameplayPixelLayoutController>().Current.Viewport;
+        float p=BattleFloorAnchor.PhysicalPixelScale;
+        float bottom=viewport.yMax-authored.yMax*p;
+        float width=UnityEngine.Device.Screen.width,height=UnityEngine.Device.Screen.height-bottom;
+        int pixelScale=Mathf.CeilToInt(Mathf.Max(width/sprite.rect.width,height/sprite.rect.height));
+        float w=sprite.rect.width*pixelScale,h=sprite.rect.height*pixelScale;
+        float left=Mathf.Floor((width-w)*.5f);
+        return new Rect((left-viewport.xMin)/p,authored.yMax-h/p,w/p,h/p);
+    }
+
     static Image MineImage(IronveinBattleAssembly.Piece p,Transform parent,Rect rect,float unit=1)
     {
         var r=DungeonPixelLabBattleArt.Rect(p.name.Replace('/','_'),parent,rect.x*unit,rect.y*unit,rect.width*unit,rect.height*unit);
