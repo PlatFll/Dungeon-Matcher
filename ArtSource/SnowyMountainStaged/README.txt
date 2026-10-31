@@ -1,8 +1,8 @@
-Current follow-up: SideCornerPolish/Stage04 — Unity assembly complete, awaiting review.
-Approved snowy side and bottom-corner kits assembled at native scale; no artwork changed.
-Five actual Unity before/after captures; upper scene and gem opening are pixel-identical.
-Compilation and assembly test passed. Zero new PixelLab generations.
-Open SideCornerPolish/Stage04/Review.html. Stop before Stage 5 polish. No production binding or merge.
+Current follow-up: SideCornerPolish/Stage04/EdgeRevision — screen-edge correction complete, awaiting review.
+Both snowy side environments fill the physical edges with a three-native-pixel overscan.
+Original artwork and foreground placement unchanged; board, upper scene and UI preserved.
+Compilation and five-view Unity review passed. Zero new PixelLab generations.
+Open SideCornerPolish/Stage04/EdgeRevision/Review.html. No production binding or merge.
 
 Snowy Mountain / Frostwake Peaks staged rebuild
 

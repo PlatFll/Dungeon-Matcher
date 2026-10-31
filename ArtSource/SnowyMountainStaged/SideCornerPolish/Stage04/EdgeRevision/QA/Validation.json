@@ -1,0 +1,69 @@
+{
+  "scope": "Screen-edge placement correction to Stage 4 only; preview only",
+  "views": [
+    {
+      "size": "720x1280",
+      "native_scale": 2.0,
+      "upper_scene_changed_pixels": 0,
+      "center_board_and_lower_HUD_changed_pixels": 0,
+      "edge_revision_changed_pixels": 18132
+    },
+    {
+      "size": "1080x1920",
+      "native_scale": 3.0,
+      "upper_scene_changed_pixels": 0,
+      "center_board_and_lower_HUD_changed_pixels": 0,
+      "edge_revision_changed_pixels": 45330
+    },
+    {
+      "size": "1080x2400",
+      "native_scale": 3.0,
+      "upper_scene_changed_pixels": 0,
+      "center_board_and_lower_HUD_changed_pixels": 0,
+      "edge_revision_changed_pixels": 47202
+    },
+    {
+      "size": "1080x2400-safe",
+      "native_scale": 3.0,
+      "upper_scene_changed_pixels": 0,
+      "center_board_and_lower_HUD_changed_pixels": 0,
+      "edge_revision_changed_pixels": 89280
+    },
+    {
+      "size": "360x640",
+      "native_scale": 1.0,
+      "upper_scene_changed_pixels": 0,
+      "center_board_and_lower_HUD_changed_pixels": 0,
+      "edge_revision_changed_pixels": 13345
+    }
+  ],
+  "native_source_art": "All PNG/ASE source files unchanged; source rectangles are reused without resampling",
+  "edge_overscan_native_pixels": 3,
+  "generation_spend": 0,
+  "protected_source_files": 166,
+  "source_sha256": {
+    "Assets/_Game/Scripts/Editor/SnowyMountainStage08Tests.cs": "c3f30eaceaa4f4503195fb7d0f012ee8883409c27d9c6c17a04b604f84e1d01e",
+    "Assets/_Game/Scripts/Editor/SnowyMountainSideCornerAssemblyTests.cs": "6aa6c71a9940cf21b45df591852c48b885f80d9a2c9f9efff50aa8f27e1c55a2"
+  },
+  "unity": {
+    "version": "6000.3.19f1",
+    "compilation": "Tools/Validate-Unity.ps1 passed",
+    "compile_log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-7cf77f39-b6ea-4328-aa71-d5e7a8069ea6.log",
+    "test": "SnowyMountainSideCornerEdgeReview",
+    "result": "Passed",
+    "passed": 1,
+    "failed": 0,
+    "test_log": ".utmp\\ForestValidation\\b320c348-4ff2-4b57-8c1a-ca1f27128fdb.log"
+  },
+  "edge_coverage": "Unity asserts opaque coverage at both physical screen-edge columns on every scanline below the board-frame top, at all five resolutions",
+  "limitations": [
+    "Existing 360x640 shared HUD crowding and Unity editor Pixel Perfect Camera warning unchanged",
+    "No production binding, Android build, device test or merge"
+  ],
+  "changed_preexisting_files": [
+    "ArtSource/SnowyMountainStaged/README.txt",
+    "Assets/_Game/Scripts/Editor/SnowyMountainSideCornerAssemblyTests.cs",
+    "Assets/_Game/Scripts/Editor/SnowyMountainStage08Tests.cs"
+  ],
+  "preserved_starting_tracked_files": 32795
+}

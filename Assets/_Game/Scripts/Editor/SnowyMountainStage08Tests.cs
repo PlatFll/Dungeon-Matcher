@@ -19,7 +19,7 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest,Explicit] public IEnumerator SnowyMountainStage08AtmosphereReview()
     { yield return SnowyMountainAssembledReview(SnowStage08,false); }
 
-    IEnumerator SnowyMountainAssembledReview(string reviewRoot,bool finalAssembly,bool sideCornerAssembly=false)
+    IEnumerator SnowyMountainAssembledReview(string reviewRoot,bool finalAssembly,bool sideCornerAssembly=false,bool edgeFill=false)
     {
         UnityEngine.Random.InitState(291002);
         RunLaunchOptions.ForestPrototype=false;RunLaunchOptions.StartingZone="frostwake-peaks";
@@ -170,7 +170,7 @@ public sealed partial class ForestFoundationPlayTests
                 atmosphere.Sample(2.5f,false);for(int i=0;i<2;i++)yield return null;
                 if(sideCornerAssembly)
                 {
-                    yield return ForegroundScreenshot(reviewRoot+"/Preview/Before/"+key+".png");
+                    if(!edgeFill)yield return ForegroundScreenshot(reviewRoot+"/Preview/Before/"+key+".png");
                     sideRoot.SetActive(false);UnityEngine.Object.Destroy(sideRoot);
                     lowerRoot.SetActive(false);UnityEngine.Object.Destroy(lowerRoot);
                     sideRoot=SnowPolishSides(cam,fr,pixel);
@@ -178,6 +178,12 @@ public sealed partial class ForestFoundationPlayTests
                     SnowPolishGlints(atmosphere,cam,pixel,sideRoot,lowerRoot);
                     atmosphere.Sample(2.5f,false);
                     for(int i=0;i<3;i++)yield return null;
+                    if(edgeFill)
+                    {
+                        yield return ForegroundScreenshot(reviewRoot+"/Preview/Before/"+key+".png");
+                        SnowPolishEdgeContinuation(cam,fr,pixel,sideRoot);
+                        for(int i=0;i<3;i++)yield return null;
+                    }
                     SnowPolishValidate(cam,fr,pixel,sideRoot,lowerRoot);
                     atmosphere.Validate(fr,pixel);
                 }
