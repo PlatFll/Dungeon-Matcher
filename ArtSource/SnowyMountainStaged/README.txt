@@ -1,8 +1,7 @@
-Current follow-up: SideCornerPolish/Stage04/ConnectedSides — continuous snowy cliffs and edge coverage; awaiting review.
-One cliff/timber/corner sprite per side replaces overlapping modules and gaps.
-Original sources, upper scene, board and shared controls are preserved.
+Current follow-up: SideCornerPolish/Stage04/BannerMounts — flags visibly bolted to side timbers; awaiting review.
+Only the two flag regions change. Connected cliffs, upper scene, board, lamps and HUD are preserved.
 LibreSprite round trips, compilation and five-view Unity review passed. Zero PixelLab spending.
-Open SideCornerPolish/Stage04/ConnectedSides/Review.html. No production binding or merge.
+Open SideCornerPolish/Stage04/BannerMounts/Review.html. No production binding or merge.
 
 Snowy Mountain / Frostwake Peaks staged rebuild
 

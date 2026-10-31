@@ -11,6 +11,49 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest,Explicit] public IEnumerator SnowyMountainConnectedSidesReview()
     { yield return SnowyMountainAssembledReview(SnowConnected,true,true,true,true); }
 
+    const string SnowBannerMounts="ArtSource/SnowyMountainStaged/SideCornerPolish/Stage04/BannerMounts";
+
+    [UnityTest,Explicit] public IEnumerator SnowyMountainMountedBannersReview()
+    { yield return SnowyMountainAssembledReview(SnowBannerMounts,true,true,true,true,true); }
+
+    void SnowMountBanners(Camera cam,Rect frame,float pixel,GameObject root)
+    {
+        var all=root.GetComponentsInChildren<SpriteRenderer>();
+        var banners=all.Where(r=>r.sprite.name=="Banner").OrderBy(r=>r.transform.position.x).ToArray();
+        Assert.That(banners.Length,Is.EqualTo(2));
+        float top=Mathf.Floor(frame.yMax/pixel)*pixel;
+        for(int side=0;side<2;side++)
+        {
+            bool left=side==0;string name=left?"Left":"Right";
+            var structure=all.Single(r=>r.sprite.name.StartsWith(name+"_"));
+            float gap=left?frame.xMin/pixel:(Screen.width-frame.xMax)/pixel;
+            float shaft=Mathf.Ceil(gap)+8;
+            float anchorX=left?(shaft-11)*pixel:Screen.width+(13-shaft)*pixel;
+            float clothX=anchorX+(left?-27:-15)*pixel;
+            float x=clothX-4*pixel,flagTop=top-87*pixel; // Clear the brace seam; bolt into the upright.
+            var mounted=SnowPreviewSprite(SnowBannerMounts+"/Exports/Banner_"+name+"_Mounted.png",64);
+            var banner=banners[side];banner.sprite=mounted;
+            banner.transform.position=SnowWorld(cam,new Vector2(x+mounted.rect.width*pixel*.5f,flagTop-mounted.rect.height*pixel*.5f));
+            float plateX=x+(left?31:19)*pixel;
+            Assert.That(plateX,Is.EqualTo(anchorX).Within(.01),"Bolted plate aligns to the actual side upright");
+            var lo=cam.WorldToScreenPoint(structure.bounds.min);
+            int tx=Mathf.FloorToInt((anchorX+.5f*pixel-lo.x)/pixel);
+            int ty=Mathf.FloorToInt((flagTop-10.5f*pixel-lo.y)/pixel);
+            var under=(Color32)structure.sprite.texture.GetPixel(tx,ty);
+            Assert.That(under.a,Is.EqualTo(255),"Mount cannot float over transparent scenery");
+            // Existing brown timber or its gray iron band must be under the bolt.
+            bool timber=under.r>under.g&&under.g>=under.b;
+            bool iron=under.r==85&&under.g==80&&under.b==81;
+            Assert.That(timber||iron,Is.True,name+" mount sits on the timber/iron upright, not the cliff face: "+under);
+            var old=SnowPreviewSprite(SnowStage06+"/Exports/Banner.png",64).texture;
+            for(int sy=0;sy<old.height;sy++)for(int sx=0;sx<old.width;sx++)
+            {
+                var c=old.GetPixel(sx,sy);if(c.a==0)continue;
+                Assert.That(mounted.texture.GetPixel(sx+4,sy),Is.EqualTo(c),"Original cloth, emblem and pole pixels unchanged");
+            }
+        }
+    }
+
     GameObject SnowConnectedSides(Camera cam,Rect frame,float pixel,string key)
     {
         var root=new GameObject("SnowConnectedSides_PreviewOnly");

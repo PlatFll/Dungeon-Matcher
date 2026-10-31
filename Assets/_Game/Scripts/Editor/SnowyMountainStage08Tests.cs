@@ -19,7 +19,7 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest,Explicit] public IEnumerator SnowyMountainStage08AtmosphereReview()
     { yield return SnowyMountainAssembledReview(SnowStage08,false); }
 
-    IEnumerator SnowyMountainAssembledReview(string reviewRoot,bool finalAssembly,bool sideCornerAssembly=false,bool sidePeek=false,bool connectedSides=false)
+    IEnumerator SnowyMountainAssembledReview(string reviewRoot,bool finalAssembly,bool sideCornerAssembly=false,bool sidePeek=false,bool connectedSides=false,bool mountedBanners=false)
     {
         UnityEngine.Random.InitState(291002);
         RunLaunchOptions.ForestPrototype=false;RunLaunchOptions.StartingZone="frostwake-peaks";
@@ -188,12 +188,18 @@ public sealed partial class ForestFoundationPlayTests
                     }
                     if(connectedSides)
                     {
-                        yield return ForegroundScreenshot(reviewRoot+"/Preview/Before/"+key+".png");
+                        if(!mountedBanners)yield return ForegroundScreenshot(reviewRoot+"/Preview/Before/"+key+".png");
                         sideRoot.SetActive(false);UnityEngine.Object.Destroy(sideRoot);
                         lowerRoot.SetActive(false);UnityEngine.Object.Destroy(lowerRoot);
                         sideRoot=SnowConnectedSides(cam,fr,pixel,key);
                         lowerRoot=new GameObject("SnowConnectedCornersIncludedInSides_PreviewOnly");
                         for(int i=0;i<3;i++)yield return null;
+                        if(mountedBanners)
+                        {
+                            yield return ForegroundScreenshot(reviewRoot+"/Preview/Before/"+key+".png");
+                            SnowMountBanners(cam,fr,pixel,sideRoot);
+                            for(int i=0;i<3;i++)yield return null;
+                        }
                         SnowConnectedValidate(cam,fr,pixel,sideRoot);
                     }
                     else SnowPolishValidate(cam,fr,pixel,sidePeek,sideRoot,lowerRoot);
