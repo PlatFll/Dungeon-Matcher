@@ -443,6 +443,21 @@ Opened settings and main menu keep their existing skins and menu music selection
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 ### Gameplay pixel layout ownership
 
+- **Approved Frostwake runtime binding (2026-10-31):** `SnowyMountainBattleAssembly`
+  selects `SnowyMountainAssembly` only in `frostwake-peaks`. `BoardVisuals` uses
+  the shared Dungeon/Forest `boardCell64` reference without changing gem scale
+  or board rules. `DungeonPresentationArt.Snow` follows the existing live board,
+  portrait mask, common enemy floor and physical screen bounds. Separate native
+  modules form the vista, platform, muted masonry, frames and mounted banners.
+  `SnowyMountainCliff` replays the approved LibreSprite connected-side assembly
+  at the current height/gutter; it creates one texture/sprite per side on geometry
+  changes and destroys both at teardown. It never stretches art or owns layout.
+  The obsolete mountain environment and top/bottom enclosures are bypassed.
+  `SnowyMountainAmbientMotion` owns only native snow/glint presentation, honors
+  pause/Reduced Motion and never consumes gameplay RNG. Sources and exact
+  before/after validation: `ArtSource/SnowyMountainStaged/Integration/`.
+
+
 - **Approved Ironvein runtime binding (2026-10-28):** `IronveinBattleAssembly`
   selects `IronveinAssembly` only in the mine. Its source is the approved
   Revision04 assembly: 74 modular environment placements plus native frame

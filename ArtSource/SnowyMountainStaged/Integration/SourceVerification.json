@@ -1,0 +1,282 @@
+{
+  "sourceArtworkUnchanged": true,
+  "startingTrackedFiles": 32949,
+  "unchangedTrackedFiles": 32939,
+  "changedTrackedPaths": [
+    "Assets/_Game/Scripts/Board/BoardVisuals.cs",
+    "Assets/_Game/Scripts/UI/BattleBackgroundTilemapController.cs",
+    "Assets/_Game/Scripts/UI/BottomHudModularFrameController.cs",
+    "Assets/_Game/Scripts/UI/DungeonPresentationArt.PixelLab.cs",
+    "Assets/_Game/Scripts/UI/DungeonPresentationArt.cs",
+    "Assets/_Game/Scripts/UI/GameplayPixelLayoutValidator.cs",
+    "Assets/_Game/Scripts/UI/PlayerAreaThreeSliceFrameController.cs",
+    "Assets/_Game/Scripts/UI/TopBattleLayoutController.cs",
+    "Docs/ARCHITECTURE.md",
+    "Docs/PROJECT_STATE.md"
+  ],
+  "importedByteIdenticalPNGs": [
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/AlpinePass.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage02/Exports/AlpinePass.png",
+      "sha256": "ed05af27614cdaffca7a3d18843626f80c5db07bb4d5a6f14a7ed41dfc7feec4"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Backing.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/Backing.png",
+      "sha256": "96f5e44f449567875926ffc1463c760fde0bb55264f6abfc79759940ac2283ae"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Banner_Left_Mounted.png",
+      "source": "ArtSource/SnowyMountainStaged/SideCornerPolish/Stage04/BannerMounts/Exports/Banner_Left_Mounted.png",
+      "sha256": "f44f2dfe5db3b469342281da094f79ce4806fa016bb53a3339898c32c187c9b0"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Banner_Right_Mounted.png",
+      "source": "ArtSource/SnowyMountainStaged/SideCornerPolish/Stage04/BannerMounts/Exports/Banner_Right_Mounted.png",
+      "sha256": "040432adf3bd6227af713d9421e7ded1923905001160dafbea0c1cf87f0eb4e1"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_Clamp.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_Clamp.png",
+      "sha256": "4e2b742f23b83a20878c74d76d7ac81edf6f3a31190b303c6f224fc1973def50"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_Corner_BL.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_Corner_BL.png",
+      "sha256": "2f3ee4df90e6a97f0834e93e8dcb39c6effa7f96e455edaa63fe14aca714da76"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_Corner_BR.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_Corner_BR.png",
+      "sha256": "3407253eb15510e47915358d0f78632e88efe091011f79cbfac53274cdf42df2"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_Corner_TL.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_Corner_TL.png",
+      "sha256": "73be63ba9c2a0682c298d267877ee5117a15ccb0699130c82b4b030e44ef35cf"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_Corner_TR.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_Corner_TR.png",
+      "sha256": "65b01a79f2579527b1b08d80a7b03ff7b4a66cb5313e69d89ba5205bc90c3eee"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_Icicles.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_Icicles.png",
+      "sha256": "b78d2d9fd5dd14b7d19e5e9f6c2c30610485a4a179ce351204cc23caf2f70a08"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_Rail_Bottom.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_Rail_Bottom.png",
+      "sha256": "6e6891076e80c39d6d9c14d93d9dc4220df645d35787a99e44c02cb521311cfd"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_Rail_Left.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_Rail_Left.png",
+      "sha256": "3fe65f7c0f2b27585c9bec8239b2bbb896b18aace6f725f635d6477714a3088e"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_Rail_Right.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_Rail_Right.png",
+      "sha256": "3fe65f7c0f2b27585c9bec8239b2bbb896b18aace6f725f635d6477714a3088e"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_Rail_Top.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_Rail_Top.png",
+      "sha256": "6e6891076e80c39d6d9c14d93d9dc4220df645d35787a99e44c02cb521311cfd"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_SnowCorner.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_SnowCorner.png",
+      "sha256": "e0a486c1ae857c86dfba453444f600d5132008a27bdd3e0cba92daf92ed04e2b"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Board_SnowRail.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/Board_SnowRail.png",
+      "sha256": "29924d8e672ecf8fdd1113a5e8ce310c4b253f8f66bcb4ea080ebfae550ad6aa"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/CobbleWall_Muted.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage05/Exports/CobbleWall_Muted.png",
+      "sha256": "0ca3c9d78227f8a01ca98a60be9d19f61e0251ce8f5c68043e27b2093bfc5c26"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Corner_Left.png",
+      "source": "ArtSource/SnowyMountainStaged/SideCornerPolish/Stage03/Exports/Corner_Left.png",
+      "sha256": "78a19baeeba4653ae384f58b708d539a48ed169eb3e2b4e79a0fef7367ac3282"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Corner_Right.png",
+      "source": "ArtSource/SnowyMountainStaged/SideCornerPolish/Stage03/Exports/Corner_Right.png",
+      "sha256": "cbd29a9e730f5fc212c0d13c2009f614a3f6f41f13292b7768b0f1496170e30c"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Glint_00.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage08/Exports/Glint_00.png",
+      "sha256": "cfca533e1c7639ad018d8b2a792e3dfe11c1244c7551919edc95ecfe32de6e9a"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Glint_01.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage08/Exports/Glint_01.png",
+      "sha256": "091e3d099694821b2c08c0a697dd81bc1106c3b46e41da332d05e04184cb2eb0"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Glint_02.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage08/Exports/Glint_02.png",
+      "sha256": "56e8199813a3806963c16d3bbf000ee0f8395c5d518349971c7f105346ecb6d1"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Glint_03.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage08/Exports/Glint_03.png",
+      "sha256": "091e3d099694821b2c08c0a697dd81bc1106c3b46e41da332d05e04184cb2eb0"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Glint_04.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage08/Exports/Glint_04.png",
+      "sha256": "cfca533e1c7639ad018d8b2a792e3dfe11c1244c7551919edc95ecfe32de6e9a"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Glint_05.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage08/Exports/Glint_05.png",
+      "sha256": "af3b779390ec58b47fc4287e335e24d1d3ac9b670e8b15872c504d3f12da299d"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Lantern.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage06/Exports/Lantern.png",
+      "sha256": "b469c8c362babd1b2ef4883c7bc3161d4f9720647c7a580032d784571862bcb0"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Ledge_0.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage04/Revision01/Exports/Ledge_0.png",
+      "sha256": "8f71950b81df7fa97872d0aba09a5ca47bc8f32746b5ca1f28b57ced6fe3dbe3"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Ledge_1.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage04/Revision01/Exports/Ledge_1.png",
+      "sha256": "07471f581cef6ae05b97421da8998d10f62e0d309abe4d168078c9a26716bed9"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Ledge_2.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage04/Revision01/Exports/Ledge_2.png",
+      "sha256": "1053af6ed2965e78db0782f14e8b9ce4566d8cb5a01f661e1c8f9e20b8af9aef"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Ledge_3.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage04/Revision01/Exports/Ledge_3.png",
+      "sha256": "b67ddf7975e7ca8e41023523259f2402c30162aa7b4ea09d82b3762eae553091"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Ledge_4.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage04/Revision01/Exports/Ledge_4.png",
+      "sha256": "bc63be7bbbf41441ed8f282d32a0d2b953d9bf6deb9066f093cbd843b45b05b0"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Left_Complete.png",
+      "source": "ArtSource/SnowyMountainStaged/SideCornerPolish/Stage02/Exports/Left_Complete.png",
+      "sha256": "ff694d49c68bc04bbdf99b31f8fccc516638e7e7a2d8d7445c1b3886298eee49"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/MoteSmall.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage08/Exports/MoteSmall.png",
+      "sha256": "1b0ed8b3bc7d2d4c2bd3f4cf73f386fd7639693f763927ddb1fb833adf8c0f7e"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/MoteWide.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage08/Exports/MoteWide.png",
+      "sha256": "b03c121cbb603bc06f58fd66c6f6f5aa2edbd420f585480f852f521bc12781fb"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Portrait_Clamp.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/Portrait_Clamp.png",
+      "sha256": "0442198ed5be2f687b83ea9bf25a68d33fc05d14297d73f01200c961946f3d12"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Portrait_Corner_BL.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/Portrait_Corner_BL.png",
+      "sha256": "711313ab25f5ecb12cc48373ad1029b65f4ebb9a6e267af21d3f3a0a360f36c5"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Portrait_Corner_BR.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/Portrait_Corner_BR.png",
+      "sha256": "711313ab25f5ecb12cc48373ad1029b65f4ebb9a6e267af21d3f3a0a360f36c5"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Portrait_Corner_TL.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/Portrait_Corner_TL.png",
+      "sha256": "711313ab25f5ecb12cc48373ad1029b65f4ebb9a6e267af21d3f3a0a360f36c5"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Portrait_Corner_TR.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/Portrait_Corner_TR.png",
+      "sha256": "711313ab25f5ecb12cc48373ad1029b65f4ebb9a6e267af21d3f3a0a360f36c5"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Portrait_Rail_Bottom.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/Portrait_Rail_Bottom.png",
+      "sha256": "1686cd4c7f6ae00d1bd4fd1cc6abadf8776d83ffb6b42329ed1a5a531b2bb81b"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Portrait_Rail_Left.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/Portrait_Rail_Left.png",
+      "sha256": "4d4f38636088ed8abb703320bb3f69be186f0190383ea261b257d4f49fd2f919"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Portrait_Rail_Right.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/Portrait_Rail_Right.png",
+      "sha256": "5f101c6cd08b8d2dc346dc36444998692458b4289d62f01dd76707ef99e12987"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Portrait_Rail_Top.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/Portrait_Rail_Top.png",
+      "sha256": "326e1a09784ddb7908926825d34a60682589941013d5101d17f13901206c5a35"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Right_Complete.png",
+      "source": "ArtSource/SnowyMountainStaged/SideCornerPolish/Stage02/Exports/Right_Complete.png",
+      "sha256": "2b5feba0883980349f683d924f0f3672bf0a83097cdc0b2a9795582ee9afb34d"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/SkyExtension.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage09/Exports/SkyExtension.png",
+      "sha256": "af05d4faaf61f4e947cb1ab4ff8c6467c35780f6394e3646ffa7e5d0fabfbe46"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/SnowCap_Left.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/SnowCap_Left.png",
+      "sha256": "7a194cebb8555fab8d852493a3fad6ec0e657c471248cf4a757a457b0f0e164c"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/SnowCap_Middle.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/SnowCap_Middle.png",
+      "sha256": "ed8f8abd75726ac0d2e3f7a3cfe15e745a121ff098c78bec699eacc777734428"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/SnowCap_Right.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/SnowCap_Right.png",
+      "sha256": "3937124ce652ccf7fcc2251b8fa99ebd16d124ecdbfcd3499e726571e6d3e0b8"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/Snowflake.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage08/Exports/Snowflake.png",
+      "sha256": "091e3d099694821b2c08c0a697dd81bc1106c3b46e41da332d05e04184cb2eb0"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/SnowFoot_Left.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/SnowFoot_Left.png",
+      "sha256": "2cc2360e7f2f6ccf6b996637b6a46ef02d676a5cdd89f0f7ee87fb3fccd55310"
+    },
+    {
+      "production": "Assets/_Game/Art/SnowyMountainApproved/SnowFoot_Right.png",
+      "source": "ArtSource/SnowyMountainStaged/Stage03/Exports/SnowFoot_Right.png",
+      "sha256": "8222749ee33782597c74fdc9381e5e26a265af1570a558ff95caad7acca20bf4"
+    }
+  ],
+  "PixelLabGenerations": 0,
+  "unityIncidentalSettingsRestored": [
+    "Assets/_Game/Resources/BattleEnvironments/DrownedCourt.prefab",
+    "ProjectSettings/TimeManager.asset",
+    "ProjectSettings/GraphicsSettings.asset",
+    "ProjectSettings/ProjectSettings.asset"
+  ],
+  "preexistingEditsPreserved": true
+}

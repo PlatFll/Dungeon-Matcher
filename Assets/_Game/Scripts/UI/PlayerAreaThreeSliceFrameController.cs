@@ -151,6 +151,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
     private void BuildThreeSliceFrame()
     {
         RemoveGeneratedFrame();
+        if (SnowyMountainBattleAssembly.Current) return; // Existing presentation owner builds frame, masked backing and snow together.
         if (IronveinBattleAssembly.Current is IronveinBattleAssembly mine)
         { if (!playerSection.Find("PixelLabPortraitFrame")) mine.frames.Frame(playerSection, "Portrait", 50, BattleFloorAnchor.Unit(playerSection.GetComponentInParent<Canvas>())); return; }
         if (DrownedCourtBattleAssembly.Current is DrownedCourtBattleAssembly court)

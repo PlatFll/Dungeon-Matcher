@@ -20,6 +20,7 @@ public sealed partial class DungeonPresentationArt : MonoBehaviour
     private void Start()
     {
         worldCamera = Camera.main;
+        if (SnowyMountainBattleAssembly.Current) { UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering += PixelLabBeforeCamera; return; }
         if (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current || IronveinBattleAssembly.Current)
         {
             if(DungeonPixelLabBattleArt.Current && worldCamera.TryGetComponent<UnityEngine.Rendering.Universal.PixelPerfectCamera>(out var pixelCamera))
@@ -39,6 +40,7 @@ public sealed partial class DungeonPresentationArt : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (SnowyMountainBattleAssembly.Current) { UpdateSnow(); return; }
         if (IronveinBattleAssembly.Current) { UpdateIronvein(); return; }
         if (DrownedCourtBattleAssembly.Current) { UpdateCourt(); return; }
         if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt art) { if(art.forestAssembly) UpdateForest(); else UpdatePixelLabDungeon(); return; }
@@ -207,6 +209,7 @@ public sealed partial class DungeonPresentationArt : MonoBehaviour
     private void OnDestroy()
     {
         UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering -= PixelLabBeforeCamera;
+        ReleaseSnowWorld();
         if (pixelLabWorld) Destroy(pixelLabWorld.gameObject);
         if (backdrop != null) Destroy(backdrop.gameObject);
         if (approvedWorld != null) Destroy(approvedWorld);
