@@ -1,0 +1,5 @@
+LibreSprite native cleanup: PASS
+15 editable ASE files saved, reopened and re-exported.
+All 15 exports match their reopened roundtrips byte-for-byte at the pixel level.
+Source script: Scripts/Cleanup.js
+Command: powershell -ExecutionPolicy Bypass -File Scripts/RunLibreSprite.ps1

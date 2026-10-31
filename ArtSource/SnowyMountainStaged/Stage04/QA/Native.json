@@ -1,0 +1,162 @@
+{
+  "modules": [
+    {
+      "name": "Foundation",
+      "size": [
+        64,
+        32
+      ],
+      "opaqueColors": 3,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "occupiedBounds": [
+        0,
+        0,
+        64,
+        32
+      ],
+      "sha256": "6befac030f240860183b0ca190ee6408648e749645abb5dffffa4c6c985e2998"
+    },
+    {
+      "name": "Separator_A",
+      "size": [
+        64,
+        24
+      ],
+      "opaqueColors": 5,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "occupiedBounds": [
+        0,
+        0,
+        64,
+        24
+      ],
+      "sha256": "64b42fe4cdd1cb7b46a2a1ebe7a28579c4729ccf033c7d2178b92213902ca16f"
+    },
+    {
+      "name": "Separator_B",
+      "size": [
+        64,
+        24
+      ],
+      "opaqueColors": 5,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "occupiedBounds": [
+        0,
+        0,
+        64,
+        24
+      ],
+      "sha256": "a7f204739d63bac8a1e2e0b9faac23932483af26766b805055c4e8f703de324c"
+    },
+    {
+      "name": "Separator_C",
+      "size": [
+        64,
+        24
+      ],
+      "opaqueColors": 5,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "occupiedBounds": [
+        0,
+        0,
+        64,
+        24
+      ],
+      "sha256": "24f60f43487c918aa3060916be929e1df988045168ac51e2d601795908143414"
+    },
+    {
+      "name": "SnowFloor_A",
+      "size": [
+        64,
+        32
+      ],
+      "opaqueColors": 7,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "occupiedBounds": [
+        0,
+        8,
+        64,
+        32
+      ],
+      "sha256": "dc5fc579e505d6c274d1c2fc745a49ae9939f0af12a30e758c833c04331a4a30"
+    },
+    {
+      "name": "SnowFloor_B",
+      "size": [
+        64,
+        32
+      ],
+      "opaqueColors": 5,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "occupiedBounds": [
+        0,
+        10,
+        64,
+        32
+      ],
+      "sha256": "d16fe8744f480ce15099476ce264efad449360d460c6d5e39b46b1662d194960"
+    },
+    {
+      "name": "SnowFloor_C",
+      "size": [
+        64,
+        32
+      ],
+      "opaqueColors": 6,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "occupiedBounds": [
+        0,
+        10,
+        64,
+        32
+      ],
+      "sha256": "9ba1ef55bbb55e5ae69a2bd58eede7a5d44fa9d8f6800106b8d38779ec023f3c"
+    },
+    {
+      "name": "SnowOverhang_A",
+      "size": [
+        109,
+        35
+      ],
+      "opaqueColors": 2,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "occupiedBounds": [
+        2,
+        2,
+        107,
+        19
+      ],
+      "sha256": "37bc5dca231080d84c05da2f0ab782abd06f4c523a9aabef61f9a277bf7509ca"
+    },
+    {
+      "name": "SnowOverhang_B",
+      "size": [
+        73,
+        23
+      ],
+      "opaqueColors": 2,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "occupiedBounds": [
+        2,
+        2,
+        72,
+        20
+      ],
+      "sha256": "7da2c01324717641043c1c9bfb30875755e39b618cec6b8ebb2dfdcf9063192a"
+    }
+  ],
+  "combinedOpaqueColors": 7,
+  "standingRowNativeY": 20,
+  "walkingSurfaceNativeHeight": 32,
+  "separatorNativeHeight": 24,
+  "allRoundtripsExact": true
+}

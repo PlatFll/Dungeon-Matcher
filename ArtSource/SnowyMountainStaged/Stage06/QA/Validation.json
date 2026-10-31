@@ -1,0 +1,71 @@
+{
+  "protected_files": 9190,
+  "changed_protected_files": [],
+  "native_assets": 8,
+  "views": [
+    {
+      "size": "720x1280",
+      "changed_pixels": 44914,
+      "exact_unchanged": [
+        "upper_scene",
+        "board_interior",
+        "bottom_hud"
+      ],
+      "whole_native_canvas_inside_viewport": true,
+      "layout_and_floor_verified_in_Unity": true
+    },
+    {
+      "size": "1080x1920",
+      "changed_pixels": 103155,
+      "exact_unchanged": [
+        "upper_scene",
+        "board_interior",
+        "bottom_hud"
+      ],
+      "whole_native_canvas_inside_viewport": true,
+      "layout_and_floor_verified_in_Unity": true
+    },
+    {
+      "size": "1080x2400",
+      "changed_pixels": 103290,
+      "exact_unchanged": [
+        "upper_scene",
+        "board_interior",
+        "bottom_hud"
+      ],
+      "whole_native_canvas_inside_viewport": true,
+      "layout_and_floor_verified_in_Unity": true
+    },
+    {
+      "size": "1080x2400-safe",
+      "changed_pixels": 100543,
+      "exact_unchanged": [
+        "upper_scene",
+        "board_interior",
+        "bottom_hud"
+      ],
+      "whole_native_canvas_inside_viewport": true,
+      "layout_and_floor_verified_in_Unity": true
+    },
+    {
+      "size": "360x640",
+      "changed_pixels": 10817,
+      "exact_unchanged": [
+        "upper_scene",
+        "board_interior",
+        "bottom_hud"
+      ],
+      "whole_native_canvas_inside_viewport": true,
+      "layout_and_floor_verified_in_Unity": true
+    }
+  ],
+  "unity": {
+    "compile": "Passed",
+    "compile_log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-5fd9dc6a-c3bf-4037-bbae-473579dffcf3.log",
+    "runtime_test": "SnowyMountainStage06SideDressingReview",
+    "test_result": "QA/UnityTestResult.xml",
+    "passed": 1,
+    "viewport_captures": 5,
+    "real_device_test": false
+  }
+}

@@ -49,7 +49,7 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
             return;
         }
 
-        if (BattlePresentationSkin.Folder != null || IronveinBattleAssembly.Current)
+        if (BattlePresentationSkin.Folder != null || IronveinBattleAssembly.Current || SnowyMountainBattleAssembly.Current)
         {
             RemoveExistingFrame();
             frameBuilt = true;

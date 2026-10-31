@@ -1,0 +1,76 @@
+{
+  "modules": [
+    {
+      "name": "CobbleWall",
+      "size": [
+        154,
+        52
+      ],
+      "opaqueColors": 17,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "sha256": "8e5883cd8c885eae6f7173f559d5d019965fd82bb569427c96bc80daf6ec2919"
+    },
+    {
+      "name": "Ledge_0",
+      "size": [
+        64,
+        84
+      ],
+      "opaqueColors": 23,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "sha256": "8f71950b81df7fa97872d0aba09a5ca47bc8f32746b5ca1f28b57ced6fe3dbe3"
+    },
+    {
+      "name": "Ledge_1",
+      "size": [
+        64,
+        84
+      ],
+      "opaqueColors": 22,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "sha256": "07471f581cef6ae05b97421da8998d10f62e0d309abe4d168078c9a26716bed9"
+    },
+    {
+      "name": "Ledge_2",
+      "size": [
+        64,
+        84
+      ],
+      "opaqueColors": 23,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "sha256": "1053af6ed2965e78db0782f14e8b9ce4566d8cb5a01f661e1c8f9e20b8af9aef"
+    },
+    {
+      "name": "Ledge_3",
+      "size": [
+        64,
+        84
+      ],
+      "opaqueColors": 22,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "sha256": "b67ddf7975e7ca8e41023523259f2402c30162aa7b4ea09d82b3762eae553091"
+    },
+    {
+      "name": "Ledge_4",
+      "size": [
+        64,
+        84
+      ],
+      "opaqueColors": 24,
+      "binaryAlpha": true,
+      "roundtripExact": true,
+      "sha256": "bc63be7bbbf41441ed8f282d32a0d2b953d9bf6deb9066f093cbd843b45b05b0"
+    }
+  ],
+  "originalLedgePixelsPreserved": 26836,
+  "originalLedgePixelsTotal": 26880,
+  "exactOriginalPercent": 99.83630952380952,
+  "changedPixels": 44,
+  "changeReason": "Fill the empty right export column below y=40 to avoid a transparent seam; all other original pixels and colors unchanged.",
+  "newPixelLabGenerations": 0
+}

@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "protected_files": 9325,
+  "changed_protected_files": [],
+  "native_frames": 9,
+  "views": [
+    {
+      "viewport": "720x1280",
+      "changed_pixels": 252,
+      "protected_board_portrait_controls_health_text": "exact",
+      "reduced_motion": "exact baseline"
+    },
+    {
+      "viewport": "1080x1920",
+      "changed_pixels": 387,
+      "protected_board_portrait_controls_health_text": "exact",
+      "reduced_motion": "exact baseline"
+    },
+    {
+      "viewport": "1080x2400",
+      "changed_pixels": 573,
+      "protected_board_portrait_controls_health_text": "exact",
+      "reduced_motion": "exact baseline"
+    },
+    {
+      "viewport": "1080x2400-safe",
+      "changed_pixels": 549,
+      "protected_board_portrait_controls_health_text": "exact",
+      "reduced_motion": "exact baseline"
+    },
+    {
+      "viewport": "360x640",
+      "changed_pixels": 63,
+      "protected_board_portrait_controls_health_text": "exact",
+      "reduced_motion": "exact baseline"
+    }
+  ],
+  "motion": {
+    "frames": 96,
+    "duration_seconds": 12,
+    "distinct_frames": 96,
+    "protected_region_comparison": "every frame exact",
+    "changed_pixels_min": 240,
+    "changed_pixels_max": 292
+  },
+  "unity": {
+    "compile": "passed",
+    "compile_log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-fb21b4f0-26a2-4828-8957-b8a6cf00ca91.log",
+    "test": "SnowyMountainStage08AtmosphereReview",
+    "test_result": "Passed",
+    "fixture_sha256": "95bc46a8fb52510df14c849973e8fdca7f1856e0f4c553600aa7e1e7f985df34",
+    "limitations": "Unity Editor test and captures only. No Android or real-device test."
+  }
+}

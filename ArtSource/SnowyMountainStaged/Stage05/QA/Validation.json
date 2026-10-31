@@ -1,0 +1,44 @@
+{
+  "unity_version": "6000.3.19f1",
+  "compile": {
+    "command": "Tools/Validate-Unity.ps1",
+    "result": "passed",
+    "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-a385934c-cd97-4338-8c90-4c02acd6637b.log"
+  },
+  "runtime": {
+    "command": "Tools/Test-ForestFoundation.ps1 -Filter ForestFoundationPlayTests.SnowyMountainStage05BoardFrameReview -Graphics",
+    "result": "passed",
+    "test_count": 1,
+    "viewport_cases": 5,
+    "source": "Assets/_Game/Scripts/Editor/SnowyMountainStage05Tests.cs",
+    "source_sha256": "053aa5fa564a4a4f59754ee8611b221b76aeb1348084ea309436870908dfdf0b",
+    "xml": ".utmp/ForestValidation/683ddc3d-722b-407f-899b-cd7a7cadfc09.xml"
+  },
+  "libresprite": "Exit 0; all 13 editable documents reopened to exact RGBA exports",
+  "pixellab_generations": 10,
+  "generation_balance_after": 4920,
+  "production_registration": false,
+  "merged": false,
+  "device_test": false,
+  "protected_files": 9108,
+  "known_baseline": [
+    "360x640 camera warning and crowded labels",
+    "Legacy board cell artwork and board sampling",
+    "Existing safe-area top backing outside the approved alpine plate"
+  ],
+  "export_hashes": {
+    "Board_Clamp.png": "4e2b742f23b83a20878c74d76d7ac81edf6f3a31190b303c6f224fc1973def50",
+    "Board_Corner_BL.png": "2f3ee4df90e6a97f0834e93e8dcb39c6effa7f96e455edaa63fe14aca714da76",
+    "Board_Corner_BR.png": "3407253eb15510e47915358d0f78632e88efe091011f79cbfac53274cdf42df2",
+    "Board_Corner_TL.png": "73be63ba9c2a0682c298d267877ee5117a15ccb0699130c82b4b030e44ef35cf",
+    "Board_Corner_TR.png": "65b01a79f2579527b1b08d80a7b03ff7b4a66cb5313e69d89ba5205bc90c3eee",
+    "Board_Icicles.png": "b78d2d9fd5dd14b7d19e5e9f6c2c30610485a4a179ce351204cc23caf2f70a08",
+    "Board_Rail_Bottom.png": "6e6891076e80c39d6d9c14d93d9dc4220df645d35787a99e44c02cb521311cfd",
+    "Board_Rail_Left.png": "3fe65f7c0f2b27585c9bec8239b2bbb896b18aace6f725f635d6477714a3088e",
+    "Board_Rail_Right.png": "3fe65f7c0f2b27585c9bec8239b2bbb896b18aace6f725f635d6477714a3088e",
+    "Board_Rail_Top.png": "6e6891076e80c39d6d9c14d93d9dc4220df645d35787a99e44c02cb521311cfd",
+    "Board_SnowCorner.png": "e0a486c1ae857c86dfba453444f600d5132008a27bdd3e0cba92daf92ed04e2b",
+    "Board_SnowRail.png": "29924d8e672ecf8fdd1113a5e8ce310c4b253f8f66bcb4ea080ebfae550ad6aa",
+    "CobbleWall_Muted.png": "0ca3c9d78227f8a01ca98a60be9d19f61e0251ce8f5c68043e27b2093bfc5c26"
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "stage": 3,
+  "status": "Corner asset candidates for review; no Unity assembly or production import",
+  "generation_spend": 30,
+  "balance_after": 4838,
+  "selections": {
+    "left": "Raw/Left_3.png",
+    "right": "Raw/RightCargo_0.png"
+  },
+  "native_handling": "No source resampling. Core canvases add transparent padding; right cut source boundary completed in LibreSprite.",
+  "source_pixel_registration": {
+    "left": "All 96x80 source positions match exact material remap at +4,+4",
+    "right": "All source positions x<92, y<80 match exact material remap at +4,+4. Only final four source columns and added canvas complete the clipped contour."
+  },
+  "assets": [
+    {
+      "file": "Exports/Connector_Left.png",
+      "native": "Native/Connector_Left.ase",
+      "size": [
+        44,
+        60
+      ],
+      "bounds_exclusive": [
+        4,
+        2,
+        43,
+        58
+      ],
+      "opaque_colors": 13,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#2B445E",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "connected_components_8way": [
+        2055
+      ],
+      "sha256": "4fbf958e3e8c51ac45a1d13170607fadc7e0a9a42704516ada1dabcc7cb6e203",
+      "reopened_RGBA_exact": true
+    },
+    {
+      "file": "Exports/Connector_Right.png",
+      "native": "Native/Connector_Right.ase",
+      "size": [
+        44,
+        60
+      ],
+      "bounds_exclusive": [
+        1,
+        2,
+        43,
+        58
+      ],
+      "opaque_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#302627",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#887468",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "connected_components_8way": [
+        2071
+      ],
+      "sha256": "1af73042d8ae34f3ba45227b90a9b94cde514a66a122b63a03018590acfd1fce",
+      "reopened_RGBA_exact": true
+    },
+    {
+      "file": "Exports/Corner_Left.png",
+      "native": "Native/Corner_Left.ase",
+      "size": [
+        104,
+        88
+      ],
+      "bounds_exclusive": [
+        6,
+        19,
+        98,
+        76
+      ],
+      "opaque_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#2B445E",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#577993",
+        "#624937",
+        "#649FBE",
+        "#668FA6",
+        "#83BEDC",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "connected_components_8way": [
+        2893
+      ],
+      "sha256": "78a19baeeba4653ae384f58b708d539a48ed169eb3e2b4e79a0fef7367ac3282",
+      "reopened_RGBA_exact": true
+    },
+    {
+      "file": "Exports/Corner_Right.png",
+      "native": "Native/Corner_Right.ase",
+      "size": [
+        108,
+        92
+      ],
+      "bounds_exclusive": [
+        8,
+        8,
+        104,
+        88
+      ],
+      "opaque_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#2B445E",
+        "#35526C",
+        "#3D2C27",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#887468",
+        "#B8D9E8",
+        "#C5EAFA",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "connected_components_8way": [
+        4975
+      ],
+      "sha256": "cbd29a9e730f5fc212c0d13c2009f614a3f6f41f13292b7768b0f1496170e30c",
+      "reopened_RGBA_exact": true
+    },
+    {
+      "file": "Exports/SnowApron_Left.png",
+      "native": "Native/SnowApron_Left.ase",
+      "size": [
+        64,
+        24
+      ],
+      "bounds_exclusive": [
+        2,
+        4,
+        62,
+        22
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#0A0D11",
+        "#668FA6",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "connected_components_8way": [
+        716
+      ],
+      "sha256": "bebaca0a1bb4d71310861cdd1b1efb152af8b3e4a314c9826299190e4aa194e9",
+      "reopened_RGBA_exact": true
+    },
+    {
+      "file": "Exports/SnowApron_Right.png",
+      "native": "Native/SnowApron_Right.ase",
+      "size": [
+        64,
+        24
+      ],
+      "bounds_exclusive": [
+        2,
+        4,
+        62,
+        22
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#0A0D11",
+        "#668FA6",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "connected_components_8way": [
+        686
+      ],
+      "sha256": "de82e773385ee1eff3986bab8e02b7a8baf99a7b6e61fd77d4707465d06932e3",
+      "reopened_RGBA_exact": true
+    }
+  ]
+}

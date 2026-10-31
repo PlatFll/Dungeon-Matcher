@@ -1,0 +1,36 @@
+{
+  "request": {
+    "description": "ONE narrow tall snowy fortress retaining buttress for the RIGHT outside edge of a fantasy puzzle board. Standalone connected environmental sprite, front orthographic 2D sidescroller. Native 40 by 128 pixels, roughly 30-34 pixel wide silhouette with complete transparent clearance. A strong vertical dark weathered timber beam along the LEFT inner edge, one short crossarm projecting outward to the right near the top for a separate hanging lantern, and a broad diagonal wooden brace. Beam and brace visibly sink into a substantial continuous jagged blue-gray cliff formation behind them, not a free-floating wooden post. Heavy rounded snow accumulation on top of the beam and three broad staggered rocky ledges, dark cool rock face unifying everything. One slim blue frozen crevice, a few short icicles, bottom tapered snow-rock footing. Organic outer RIGHT profile; almost straight inner LEFT attachment edge. The body should look rooted in a snowy cliff with sturdy manmade supports, with connected large masses and a clear chunky silhouette. Use the referenced warm muted brown timber, blue-gray stone and icy white snow family; strong clean dark contours, matte broad connected shading, restrained top-left lighting, only sparse cracks, about 18 meaningful colors. Hard native pixels, no interpolation, no blur, no dithering, no tiny noise. No characters, symbols, text, HUD, actual lantern, banner, background or horizontal floor. This is substantial snowy environmental architecture, not several detached props. Different silhouette from the left-side version; retain top-left light.",
+    "width": 40,
+    "height": 128,
+    "no_background": true,
+    "max_colors": 20,
+    "seed": 301003,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "ArtSource/SnowyMountainStaged/Stage06/Exports/SnowRock.png",
+        "usage": "Established snow and blue-gray rock palette and native pixel density; expand into a continuous tall rock-and-snow buttress with much larger connected masses."
+      },
+      {
+        "path": "ArtSource/SnowyMountainStaged/Stage06/Exports/Support_Left.png",
+        "usage": "Existing timber, metal, snow material family; integrate stout wood supports into the cliff instead of a bare thin post."
+      }
+    ],
+    "style_image": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+    "transmitted_fields": "Actual PNG bytes passed through style_image_base64 and reference_images[].base64; hashes in QA/Lineage.json."
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 37a88bcf-1f0b-4af8-8135-f9ddde276262\njob_id: 37a88bcf-1f0b-4af8-8135-f9ddde276262\nmodel: pro\ndescription: ONE narrow tall snowy fortress retaining buttress for the RIGHT outside edge of a fantasy puzzle board. Standalone connected environmental sprite, front orthographic 2D sidescroller. Native 40 by 128 pixels, roughly 30-34 pixel wide silhouette with complete transparent clearance. A strong vertical dark weathered timber beam along the LEFT inner edge, one short crossarm projecting outward to the right near the top for a separate hanging lantern, and a broad diagonal wooden brace. Beam and brace visibly sink into a substantial continuous jagged blue-gray cliff formation behind them, not a free-floating wooden post. Heavy rounded snow accumulation on top of the beam and three broad staggered rocky ledges, dark cool rock face unifying everything. One slim blue frozen crevice, a few short icicles, bottom tapered snow-rock footing. Organic outer RIGHT profile; almost straight inner LEFT attachment edge. The body should look rooted in a snowy cliff with sturdy manmade supports, with connected large masses and a clear chunky silhouette. Use the referenced warm muted brown timber, blue-gray stone and icy white snow family; strong clean dark contours, matte broad connected shading, restrained top-left lighting, only sparse cracks, about 18 meaningful colors. Hard native pixels, no interpolation, no blur, no dithering, no tiny noise. No characters, symbols, text, HUD, actual lantern, banner, background or horizontal floor. This is substantial snowy environmental architecture, not several detached props. Different silhouette from the left-side version; retain top-left light.\nsize: 40x128px\ntransparent: True\ncandidates: 4\nreferences: 2\nstyle_image: yes (outline, detail, shading)\nmax colours: 20 per image\nseed: 301003\nasset_id: 8a580bb7-8b2d-5f77-81e1-ce2026b392b9\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"37a88bcf-1f0b-4af8-8135-f9ddde276262\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/37a88bcf-1f0b-4af8-8135-f9ddde276262/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+      }
+    ],
+    "isError": false
+  }
+}

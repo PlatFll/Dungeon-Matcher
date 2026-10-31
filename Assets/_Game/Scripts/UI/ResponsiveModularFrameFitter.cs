@@ -8,6 +8,8 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
     // callers retain their original rotated-edge layout unless explicitly configured.
     [SerializeField] private bool nativePieceLayout;
     private bool dungeonPhysicalPixels;
+    // Per-frame sizing is authoritative even in a staged preview of a legacy zone.
+    public bool UsesPhysicalPixelLayout => nativePieceLayout && dungeonPhysicalPixels;
     private float lastPhysicalUnit;
     [SerializeField] private Sprite nativeConnector;
     [SerializeField] private float connectorPitch = 40;
@@ -124,11 +126,20 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
             y - (nativeConnector.rect.height - 1) / 2, nativeConnector.rect.width, nativeConnector.rect.height, unit);
     }
 
-    private static void NativeRect(RectTransform r, float x, float y, float w, float h, float unit)
+    private void NativeRect(RectTransform r, float x, float y, float w, float h, float unit)
     {
         r.anchorMin = r.anchorMax = r.pivot = new Vector2(0, 1);
         r.localRotation = Quaternion.identity; r.localScale = Vector3.one;
         r.anchoredPosition = new Vector2(x, -y) * unit; r.sizeDelta = new Vector2(w, h) * unit;
+        if (dungeonPhysicalPixels)
+        {
+            // Even-sized corners put a rail's lengthwise join on a half native
+            // pixel. At odd physical scales, snap that hidden join to the screen
+            // grid without changing source-pixel density or the frame bounds.
+            float scale = r.GetComponentInParent<Canvas>().rootCanvas.scaleFactor;
+            Vector2 physical = r.anchoredPosition * scale;
+            r.anchoredPosition = new Vector2(Mathf.Round(physical.x), Mathf.Round(physical.y)) / scale;
+        }
     }
 
     private RectTransform frameRoot;

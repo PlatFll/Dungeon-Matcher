@@ -1,0 +1,166 @@
+{
+  "status": "Stage 1 plan awaiting review; no generated art",
+  "nativeBudgets": "Starting canvas budgets only. Confirm native density and available clearances in the relevant stage; expand canvas, never shrink art to fit.",
+  "assets": [
+    {
+      "stage": 2,
+      "id": "AlpineVista",
+      "construction": "background plate",
+      "plannedExports": "AlpineVista",
+      "nativeStartingBudget": "384x320",
+      "assemblyRule": "Mountains, sky, far pine silhouettes, fortress and receding arched bridge/path. No actors, gems, UI, close lanterns or fighting floor baked in. Keep lower middle quiet behind three enemies."
+    },
+    {
+      "stage": 2,
+      "id": "ScenicExtensions",
+      "construction": "reusable background kit",
+      "plannedExports": "SkyExtension, CliffLeft, CliffRight",
+      "nativeStartingBudget": "384x128 sky; 64x160 cliffs",
+      "assemblyRule": "Quiet sky/cliff extensions cover tall and wide viewports. Maintain a fixed native scale; extend coverage instead of stretching the vista."
+    },
+    {
+      "stage": 3,
+      "id": "PortraitRim",
+      "construction": "modular frame kit",
+      "plannedExports": "Portrait_Corner_TL/TR/BL/BR, Portrait_Rail_Top/Bottom/Left/Right, Portrait_Connector",
+      "nativeStartingBudget": "16x16 corners; 32x8 or 8x32 rails; 12x12 connector",
+      "assemblyRule": "Weathered cold timber, steel plates and centered bolts. Separate upright pieces so snow always sits above wood. Fit the existing SharedPlayerRect; do not resize its contents."
+    },
+    {
+      "stage": 3,
+      "id": "PortraitBacking",
+      "construction": "repeatable tiles",
+      "plannedExports": "ColdMasonry_A/B",
+      "nativeStartingBudget": "64x64 each",
+      "assemblyRule": "Dark blue masonry overfills a RectMask2D inset behind the existing portrait. No gaps; do not bake the player or health bar."
+    },
+    {
+      "stage": 3,
+      "id": "PortraitSnow",
+      "construction": "modular overlays",
+      "plannedExports": "SnowLip_Short/Long, Icicles_Short/Long",
+      "nativeStartingBudget": "32x12, 64x12; 16x24, 32x24",
+      "assemblyRule": "Add natural upper-edge snow and sparse complete icicles. Keep snow out of the portrait interior and connectors readable. Reuse this family on later frames."
+    },
+    {
+      "stage": 3,
+      "id": "PortraitBanner",
+      "construction": "separate sprite kit",
+      "plannedExports": "PortraitBanner_Blue, PortraitBannerRod",
+      "nativeStartingBudget": "32x56 banner; 40x8 rod",
+      "assemblyRule": "Muted blue stag banner in upper portrait negative space. Optional placement if the smallest supported portrait has clearance; never cover player, gem or HP."
+    },
+    {
+      "stage": 4,
+      "id": "SnowStandingFloor",
+      "construction": "tile strip kit",
+      "plannedExports": "SnowFloor_A/B/C, FloorBackEdge, FloorEnd_L/R",
+      "nativeStartingBudget": "64x32 tiles; 64x8 back edge; 32x32 ends",
+      "assemblyRule": "Broad side-on snowy stone walking surface. Position around the existing shared feet line, with visible floor ahead and behind. Snow is clustered, not bright noise."
+    },
+    {
+      "stage": 4,
+      "id": "StoneSeparator",
+      "construction": "modular ledge kit",
+      "plannedExports": "Separator_A/B, Separator_End_L/R",
+      "nativeStartingBudget": "64x24 middle; 32x24 ends",
+      "assemblyRule": "Separate darker blue-gray block front face below the floor and feet. Tile through the full screen width behind the masked portrait. Keep HP and weakness markers readable."
+    },
+    {
+      "stage": 5,
+      "id": "BoardRim",
+      "construction": "modular frame kit",
+      "plannedExports": "Board_Corner_TL/TR/BL/BR, Board_Rail_Top/Bottom/Left/Right, Board_Connector_H/V",
+      "nativeStartingBudget": "24x24 corners; 64x12 or 12x64 rails; 16x16 clamps",
+      "assemblyRule": "Sturdy brown timber and steel. Fit around all eight live rows with no gap between the inner rim and cells. Center clamps and rails on the same axis. Never stretch a flattened frame."
+    },
+    {
+      "stage": 5,
+      "id": "BoardSnowCaps",
+      "construction": "separate overlays",
+      "plannedExports": "BoardSnow_TopCorner_L/R, BoardSnow_BottomCorner_L/R",
+      "nativeStartingBudget": "32x16 each",
+      "assemblyRule": "Reuse long/short snow lips and icicles from Stage 3. Add a few broad shelves, not snow around every cell. Keep the full eight-by-eight grid clear."
+    },
+    {
+      "stage": 6,
+      "id": "SideCliffStructure",
+      "construction": "reusable side kits",
+      "plannedExports": "SideRock_Left, SideRock_Right, SideRock_Repeat",
+      "nativeStartingBudget": "48x192 left/right; 48x64 repeat",
+      "assemblyRule": "Large coherent alpine rock shapes with quiet dark inner edge; attach to board posts. Repeat or extend neutral rock sections on tall phones, not entire decorated strips."
+    },
+    {
+      "stage": 6,
+      "id": "TimberSupport",
+      "construction": "modular support kit",
+      "plannedExports": "LanternPost_Left/Right, TimberBrace, RopePost, RopeLink",
+      "nativeStartingBudget": "48x96 posts; 32x32 brace; 24x64 post; 48x16 rope",
+      "assemblyRule": "Attach beams and rope to visible structural joints. Reuse for top side accents and lower corners, with fittings kept outside controls and enemy silhouettes."
+    },
+    {
+      "stage": 6,
+      "id": "WarmLantern",
+      "construction": "separate motion-ready kit",
+      "plannedExports": "Lantern_A/B, LanternChain, LanternBracket",
+      "nativeStartingBudget": "24x40 lamps; 8x24 chain; 24x16 bracket",
+      "assemblyRule": "Small warm windows within a cold scene. Separate lamp body from anchor for later sway; use discrete light clusters, no diffuse airbrush halo."
+    },
+    {
+      "stage": 6,
+      "id": "SideBanner",
+      "construction": "separate motion-ready kit",
+      "plannedExports": "Banner_Red, BannerRod",
+      "nativeStartingBudget": "32x64 banner; 40x8 rod",
+      "assemblyRule": "Muted red cloth with clear pale stag emblem, connected to a post. Later flutter stays within an expanded canvas and outside the grid."
+    },
+    {
+      "stage": 6,
+      "id": "AlpineGrowth",
+      "construction": "separate grounded accents",
+      "plannedExports": "SnowRock_A/B, IceCrystal_Small/Large, PineTip",
+      "nativeStartingBudget": "48x32 rocks; 24x40 and 40x64 crystals; 32x48 pine",
+      "assemblyRule": "Use a few attached accents where rock meets a post or snow shelf. Keep them away from gem colors, frame seams and HUD text; do not scatter stickers."
+    },
+    {
+      "stage": 7,
+      "id": "LowerBacking",
+      "construction": "repeatable tiles",
+      "plannedExports": "LowerMasonry_A/B",
+      "nativeStartingBudget": "64x64 each",
+      "assemblyRule": "Quiet cold masonry behind the lower UI and screen edges. Cover every physical-screen pixel including safe-area insets without moving live controls."
+    },
+    {
+      "stage": 7,
+      "id": "CornerFoundation",
+      "construction": "two cohesive large pieces",
+      "plannedExports": "LowerSnowRock_Left/Right",
+      "nativeStartingBudget": "96x112 each",
+      "assemblyRule": "One grounded snow-and-rock mass per side, joined to the side cliff. Continuous lower edge and generous overlap; no stacked floating rock islands."
+    },
+    {
+      "stage": 7,
+      "id": "CornerSupplies",
+      "construction": "modular accents",
+      "plannedExports": "SnowCrate, RopeFence_End_L/R, BottomSnowDrift",
+      "nativeStartingBudget": "48x40 crate; 48x64 fences; 96x32 drift",
+      "assemblyRule": "Reuse earlier posts/rope/crystals. Anchor supplies in the right foundation and icy outcrop on the left. Preserve empty space behind resonance text and all shared buttons."
+    },
+    {
+      "stage": 8,
+      "id": "SnowAtmosphere",
+      "construction": "small effects",
+      "plannedExports": "SnowMote_1/2/3, ColdGlint",
+      "nativeStartingBudget": "2x2 to 8x8",
+      "assemblyRule": "Sparse drifting and blinking hard-pixel sprites. No gameplay RNG or input interception; keep gems/text legible and respect pause/Reduced Motion."
+    },
+    {
+      "stage": 8,
+      "id": "MotionLayers",
+      "construction": "animation-ready native cels",
+      "plannedExports": "LanternSway_A/B, BannerFlutter, IcicleDrip",
+      "nativeStartingBudget": "use approved still canvas plus required transparent clearance",
+      "assemblyRule": "Animate approved targets only. Small intermittent movement, varied phase, stable attachments and complete silhouettes. Optional drip only if it improves the scene."
+    }
+  ]
+}

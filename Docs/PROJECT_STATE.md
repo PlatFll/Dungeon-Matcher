@@ -20,6 +20,29 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Approved Snowy Mountain production integration (2026-10-31)
+
+The user approved the final Snowy Mountain library, connected sides and mounted
+flags, then requested integration into the playable Frostwake zone and merge.
+PR #218 binds 51 unchanged native PNGs through `SnowyMountainBattleAssembly` and
+the existing `DungeonPresentationArt` owner. Frostwake now uses the same dark
+64×64 cell sprite as Dungeon/Forest; gems, board fit, shared portrait dimensions,
+enemy floor line, health bars, controls and gameplay remain unchanged.
+
+The old mountain environment is bypassed at runtime. The approved vista,
+snowy platform, separator, muted cobbles, masked portrait, modular board frame,
+connected edge-to-edge cliffs, flags and restrained snow/glints load in `Game`.
+The connected sides adapt to actual viewport/gutter dimensions without sprite
+resampling. Original source artwork and all other zones are preserved.
+
+Unity compilation and three automated integration/regression tests passed,
+including five-zone geometry comparisons, eight Frostwake viewport profiles,
+pixel-exact approved cliffs, input/modal checks and existing Frostwake ice checks.
+See [integration evidence](../ArtSource/SnowyMountainStaged/Integration/README.md)
+and its Android build result. Physical-device testing is not claimed. Existing
+360×640 shared-control crowding and editor/development pixel-camera diagnostic
+remain; phone-size layouts were verified independently.
+
 ## Approved Ironvein corner stations and drill foreground (2026-10-29)
 
 The user approved the corner review and requested it in the main playable zone.

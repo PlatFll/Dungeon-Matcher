@@ -1,0 +1,516 @@
+{
+  "stage": "Side/corner polish 2: board-side asset generation",
+  "status": "Candidate assets awaiting user review; no Unity assembly or production import",
+  "source_selections": {
+    "left": "Raw/Left_0.png",
+    "right": "Raw/Right_1.png"
+  },
+  "native_scale": "1 source pixel remains 1 output pixel; no resampling",
+  "assets": [
+    {
+      "file": "Exports/Left_Complete.png",
+      "native": "Native/Left_Complete.ase",
+      "size": [
+        44,
+        142
+      ],
+      "bounds_exclusive": [
+        1,
+        4,
+        43,
+        139
+      ],
+      "opaque_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#2B445E",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#887468",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "png_sha256": "ff694d49c68bc04bbdf99b31f8fccc516638e7e7a2d8d7445c1b3886298eee49",
+      "ase_sha256": "6150aa216c4399d6a5112e33f9ac4ede8523934120f2c8e04da221de0b5fa09c",
+      "libresprite_roundtrip_exact": true,
+      "components_8_neighbor": [
+        {
+          "pixels": 4780,
+          "bounds": [
+            1,
+            4,
+            43,
+            139
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Exports/Left_Foot.png",
+      "native": "Native/Left_Foot.ase",
+      "size": [
+        44,
+        52
+      ],
+      "bounds_exclusive": [
+        1,
+        2,
+        43,
+        49
+      ],
+      "opaque_colors": 13,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#2B445E",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "png_sha256": "fd788238825a85a71c2f733adb98edba09c06f9597cd07d90dfb3da4002238d8",
+      "ase_sha256": "e843da29377b01cbb045bb069773d60293be6405ca5462d1d27f3115366612c9",
+      "libresprite_roundtrip_exact": true,
+      "components_8_neighbor": [
+        {
+          "pixels": 1763,
+          "bounds": [
+            1,
+            2,
+            43,
+            49
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Exports/Left_MiddleA.png",
+      "native": "Native/Left_MiddleA.ase",
+      "size": [
+        44,
+        60
+      ],
+      "bounds_exclusive": [
+        4,
+        2,
+        43,
+        58
+      ],
+      "opaque_colors": 13,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#2B445E",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "png_sha256": "4fbf958e3e8c51ac45a1d13170607fadc7e0a9a42704516ada1dabcc7cb6e203",
+      "ase_sha256": "7bf2f52b17c879aae1e1c8f6644dbfbdfc88b83d70946e6e3754664a61f52532",
+      "libresprite_roundtrip_exact": true,
+      "components_8_neighbor": [
+        {
+          "pixels": 2055,
+          "bounds": [
+            4,
+            2,
+            43,
+            58
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Exports/Left_MiddleB.png",
+      "native": "Native/Left_MiddleB.ase",
+      "size": [
+        44,
+        60
+      ],
+      "bounds_exclusive": [
+        4,
+        2,
+        43,
+        58
+      ],
+      "opaque_colors": 13,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#2B445E",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "png_sha256": "117bbbf7e87a9f8b329405ca687831b7b6a102dabb0ca4795262d0f7fbb415a2",
+      "ase_sha256": "5ca233d6b0ca10cf8c6f332b112ed3505cec374b54d1f9b6c961c721d9a6868a",
+      "libresprite_roundtrip_exact": true,
+      "components_8_neighbor": [
+        {
+          "pixels": 2016,
+          "bounds": [
+            4,
+            2,
+            43,
+            58
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Exports/Left_Upper.png",
+      "native": "Native/Left_Upper.ase",
+      "size": [
+        44,
+        60
+      ],
+      "bounds_exclusive": [
+        4,
+        4,
+        43,
+        58
+      ],
+      "opaque_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#2B445E",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#887468",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "png_sha256": "3b800be6cfa6558462bd285e3c76d7efed5c4bb2ddfa15b8b1d6d3ec438f735a",
+      "ase_sha256": "2d5dcc92753eb2f4317973a9ef6ee6a8a78f439a405446215041781a7370e391",
+      "libresprite_roundtrip_exact": true,
+      "components_8_neighbor": [
+        {
+          "pixels": 1773,
+          "bounds": [
+            4,
+            4,
+            43,
+            58
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Exports/Right_Complete.png",
+      "native": "Native/Right_Complete.ase",
+      "size": [
+        44,
+        142
+      ],
+      "bounds_exclusive": [
+        1,
+        4,
+        43,
+        139
+      ],
+      "opaque_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#302627",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#887468",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "png_sha256": "2b5feba0883980349f683d924f0f3672bf0a83097cdc0b2a9795582ee9afb34d",
+      "ase_sha256": "19ef6834dfccd1801e3bc3b00695e237a0ec47746615765d73b420e462fcbbc0",
+      "libresprite_roundtrip_exact": true,
+      "components_8_neighbor": [
+        {
+          "pixels": 4584,
+          "bounds": [
+            1,
+            4,
+            43,
+            139
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Exports/Right_Foot.png",
+      "native": "Native/Right_Foot.ase",
+      "size": [
+        44,
+        52
+      ],
+      "bounds_exclusive": [
+        1,
+        2,
+        43,
+        49
+      ],
+      "opaque_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#302627",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#887468",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "png_sha256": "f1269cb4883cafda9a6857f9d722a63f59fee46d97ca4ae8206a489266dfecbd",
+      "ase_sha256": "03bd194b416c47994d2eaba39b354d2c983ce4cb6cb955b220c04bf572cd8bdb",
+      "libresprite_roundtrip_exact": true,
+      "components_8_neighbor": [
+        {
+          "pixels": 1621,
+          "bounds": [
+            1,
+            2,
+            43,
+            49
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Exports/Right_MiddleA.png",
+      "native": "Native/Right_MiddleA.ase",
+      "size": [
+        44,
+        60
+      ],
+      "bounds_exclusive": [
+        1,
+        2,
+        43,
+        58
+      ],
+      "opaque_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#302627",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#887468",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "png_sha256": "1af73042d8ae34f3ba45227b90a9b94cde514a66a122b63a03018590acfd1fce",
+      "ase_sha256": "acb61a973dce9de6326693ccac110dc4a23c9d382528ecd1cab1cf8d02965adb",
+      "libresprite_roundtrip_exact": true,
+      "components_8_neighbor": [
+        {
+          "pixels": 2071,
+          "bounds": [
+            1,
+            2,
+            43,
+            58
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Exports/Right_MiddleB.png",
+      "native": "Native/Right_MiddleB.ase",
+      "size": [
+        44,
+        60
+      ],
+      "bounds_exclusive": [
+        1,
+        2,
+        43,
+        58
+      ],
+      "opaque_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#302627",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#887468",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "png_sha256": "60b6c3ebbc5715cfd0a2e8fad9036040738cfb14d8ce82202b1672bef9ee91e9",
+      "ase_sha256": "69c928963772bbd9dcee0bb137fb6d9c715b41ae3137bc8ab3ad93e9676fb915",
+      "libresprite_roundtrip_exact": true,
+      "components_8_neighbor": [
+        {
+          "pixels": 2054,
+          "bounds": [
+            1,
+            2,
+            43,
+            58
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Exports/Right_Upper.png",
+      "native": "Native/Right_Upper.ase",
+      "size": [
+        44,
+        60
+      ],
+      "bounds_exclusive": [
+        1,
+        4,
+        43,
+        58
+      ],
+      "opaque_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#192330",
+        "#1D3245",
+        "#302627",
+        "#35526C",
+        "#3D2C27",
+        "#4D382D",
+        "#555051",
+        "#577993",
+        "#624937",
+        "#668FA6",
+        "#887468",
+        "#B8D9E8",
+        "#ECFAFD"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "png_sha256": "dfcfeda12545858dcc51968ecbd2168f1449c7055cc994c28c940edb58fed776",
+      "ase_sha256": "2e480a1913321e0484e74d8584eb0146f630b4295c94cdfac1abba1896b53137",
+      "libresprite_roundtrip_exact": true,
+      "components_8_neighbor": [
+        {
+          "pixels": 1607,
+          "bounds": [
+            1,
+            4,
+            43,
+            58
+          ]
+        }
+      ]
+    }
+  ],
+  "source_reconstruction": {
+    "placements_y": {
+      "Upper": 0,
+      "MiddleA": 40,
+      "MiddleB": 56,
+      "Foot": 90
+    },
+    "purpose": "Overlapping modules reconstruct the complete cleaned side pixel-for-pixel. Variable-height repetition and frame occlusion require Stage 4 Unity review.",
+    "exact_for_both_sides": true
+  },
+  "budget": {
+    "start": 4888,
+    "end": 4868,
+    "spent": 20,
+    "calls": 2,
+    "candidates": 8,
+    "dollar_credits_spent": 0
+  }
+}

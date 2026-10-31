@@ -139,13 +139,18 @@ public static class GameplayPixelLayoutValidator
         }
         foreach (ResponsiveModularFrameFitter frame in owner.GetComponentsInChildren<ResponsiveModularFrameFitter>(false))
         {
-            if ((pixelLab || DrownedCourtBattleAssembly.Current || IronveinBattleAssembly.Current) && frame.name.StartsWith("PixelLab"))
+            if (frame.UsesPhysicalPixelLayout || ((pixelLab || DrownedCourtBattleAssembly.Current || IronveinBattleAssembly.Current || SnowyMountainBattleAssembly.Current) && frame.name.StartsWith("PixelLab")))
             {
                 foreach(var im in frame.GetComponentsInChildren<Image>())
                 {
                     var bounds=GameplayPixelLayoutController.ScreenRect(im.rectTransform);
                     Require(Integral(bounds.xMin)&&Integral(bounds.yMin)&&Integral(bounds.xMax)&&Integral(bounds.yMax),"Off-grid native frame: "+Path(im.transform),errors);
                     if(im.type==Image.Type.Simple) Require(Near(bounds.width/im.sprite.rect.width,DungeonPixelLabBattleArt.PhysicalPixelScale)&&Near(bounds.height/im.sprite.rect.height,DungeonPixelLabBattleArt.PhysicalPixelScale),"Native frame pixels distorted: "+Path(im.transform),errors);
+                    if(im.type==Image.Type.Tiled)
+                    {
+                        float texelScale=im.canvas.rootCanvas.scaleFactor*im.canvas.referencePixelsPerUnit/(im.sprite.pixelsPerUnit*im.pixelsPerUnitMultiplier);
+                        Require(Near(texelScale,DungeonPixelLabBattleArt.PhysicalPixelScale),"Native frame tile density mismatch: "+Path(im.transform),errors);
+                    }
                 }
                 continue;
             }
@@ -166,12 +171,12 @@ public static class GameplayPixelLayoutValidator
                 Require(corner || Near(image.pixelsPerUnitMultiplier, 1), $"Fractional tile density {Path(piece)}", errors);
             }
         }
-        Require((owner.BottomHud.Find("GeneratedBottomHudFrame") == null) == (BattlePresentationSkin.Folder != null || IronveinBattleAssembly.Current),
+        Require((owner.BottomHud.Find("GeneratedBottomHudFrame") == null) == (BattlePresentationSkin.Folder != null || IronveinBattleAssembly.Current || SnowyMountainBattleAssembly.Current),
             "Bottom HUD enclosure does not match the active presentation", errors);
         var arenaFrame = owner.TopHud.Find("GeneratedTopBattleLayout/BattleArenaFrame");
         // The three reference vistas intentionally have an open arena edge.
         // Enforce that composition while retaining the enclosure in other zones.
-        Require(BattlePresentationSkin.Folder != null || IronveinBattleAssembly.Current ? arenaFrame == null : arenaFrame != null,
+        Require(BattlePresentationSkin.Folder != null || IronveinBattleAssembly.Current || SnowyMountainBattleAssembly.Current ? arenaFrame == null : arenaFrame != null,
             BattlePresentationSkin.Folder != null ? "Unexpected enclosing frame over reference vista" : "Missing generated battle frame", errors);
         foreach (Image image in owner.GetComponentsInChildren<Image>(false))
         {

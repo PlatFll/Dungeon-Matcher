@@ -194,6 +194,8 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private bool ApplyPresentationCells()
     {
+        if (SnowyMountainBattleAssembly.Current is SnowyMountainBattleAssembly snow)
+        { cellTileSprites = new[] { snow.boardCell }; cellTileScale = 1; cellTileColor = Color.white; return true; }
         if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt)
         { cellTileSprites = new[] { nativeArt.boardCell64 }; cellTileScale = 1; cellTileColor = Color.white; return true; }
         var first = BattlePresentationSkin.ZoneSprite("CellA");
@@ -351,7 +353,7 @@ public sealed class BoardVisuals : MonoBehaviour
     private void CreateModularBoardFrame()
     {
         // The live board keeps its existing fit; the native modular rim is drawn by its presentation owner.
-        if (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current || IronveinBattleAssembly.Current) { var r = new GameObject(BoardFrameContainerName); r.transform.SetParent(transform,false); return; }
+        if (DungeonPixelLabBattleArt.Current || DrownedCourtBattleAssembly.Current || IronveinBattleAssembly.Current || SnowyMountainBattleAssembly.Current) { var r = new GameObject(BoardFrameContainerName); r.transform.SetParent(transform,false); return; }
         if(BattlePresentationSkin.UsesReferenceKit)
         {
             var root=new GameObject(BoardFrameContainerName);root.transform.SetParent(transform,false);

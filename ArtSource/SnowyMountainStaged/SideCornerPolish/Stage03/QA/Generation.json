@@ -1,0 +1,77 @@
+{
+  "starting_generations": 4868,
+  "jobs": {
+    "Left": {
+      "width": 96,
+      "height": 80,
+      "max_colors": 20,
+      "no_background": true,
+      "style_image_base64": "golden (SHA-256 in Lineage.json)",
+      "style_copy": [
+        "outline",
+        "detail",
+        "shading"
+      ],
+      "reference_images": [
+        {
+          "usage": "Approved snowy cliff material, snow layering, blue-gray rock and dark timber palette. New low corner formation, not this tall strip.",
+          "reference_role": "sideLeft"
+        },
+        {
+          "usage": "Simple chunky rock planes and snow overhang; maintain this native pixel density.",
+          "reference_role": "snow"
+        },
+        {
+          "usage": "Restrained weathered timber and dull iron material only.",
+          "reference_role": "timber"
+        }
+      ],
+      "description": "One modular BOTTOM LEFT corner environment asset for a whimsical crisp pixel-art mountain fortress mobile game. 96x80 native pixels. A single substantial grounded blue-gray rocky outcrop with a wide deep layered snowdrift, thick overhanging snow caps, a short weathered wooden fence stub rising near the LEFT outer side, and two modest blue-white frozen chunks emerging from one crevice near its base. Broad silhouette: taller on the LEFT, tapering into a low snow apron toward the RIGHT, inner edge reserved for UI. ONE connected foundation; a few broad rock planes, snow on ledges, a short buried horizontal timber attached to the post, simple rope tie. Rich large masses, few purposeful details; no little scattered objects, no gems, no lantern, no icons, no text, no frame, no characters, no full scene. Front-facing 2D side-scroller view, slight visible top planes. Match references' chunky contour and clean connected light/shadow clusters. Top-left light, dark thin exposed contour, matte rock, pale snow. No painterly textures, no dithering, no glow. Full complete asset with transparent margin on all four sides.",
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 2a9f5ead-bada-44e1-9c00-ae54a2a08c58\njob_id: 2a9f5ead-bada-44e1-9c00-ae54a2a08c58\nmodel: pro\ndescription: One modular BOTTOM LEFT corner environment asset for a whimsical crisp pixel-art mountain fortress mobile game. 96x80 native pixels. A single substantial grounded blue-gray rocky outcrop with a wide deep layered snowdrift, thick overhanging snow caps, a short weathered wooden fence stub rising near the LEFT outer side, and two modest blue-white frozen chunks emerging from one crevice near its base. Broad silhouette: taller on the LEFT, tapering into a low snow apron toward the RIGHT, inner edge reserved for UI. ONE connected foundation; a few broad rock planes, snow on ledges, a short buried horizontal timber attached to the post, simple rope tie. Rich large masses, few purposeful details; no little scattered objects, no gems, no lantern, no icons, no text, no frame, no characters, no full scene. Front-facing 2D side-scroller view, slight visible top planes. Match references' chunky contour and clean connected light/shadow clusters. Top-left light, dark thin exposed contour, matte rock, pale snow. No painterly textures, no dithering, no glow. Full complete asset with transparent margin on all four sides.\nsize: 96x80px\ntransparent: True\ncandidates: 4\nreferences: 3\nstyle_image: yes (outline, detail, shading)\nmax colours: 20 per image\nasset_id: 0023adcd-1852-52ff-a2b5-ac162cb3bdbc\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"2a9f5ead-bada-44e1-9c00-ae54a2a08c58\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/2a9f5ead-bada-44e1-9c00-ae54a2a08c58/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+          }
+        ],
+        "isError": false
+      }
+    },
+    "Right": {
+      "width": 96,
+      "height": 80,
+      "max_colors": 20,
+      "no_background": true,
+      "style_image_base64": "golden (SHA-256 in Lineage.json)",
+      "style_copy": [
+        "outline",
+        "detail",
+        "shading"
+      ],
+      "reference_images": [
+        {
+          "usage": "Approved mountain rock, snow and wood materials and connected structural logic; new bottom corner rather than long strip.",
+          "reference_role": "sideRight"
+        },
+        {
+          "usage": "Broad blue-gray planes and thick snow caps.",
+          "reference_role": "snow"
+        },
+        {
+          "usage": "Supply crate style, snow cap and modest dark wood colors; one SMALL partly buried supply detail integrated on a rock ledge.",
+          "reference_role": "crate"
+        }
+      ],
+      "description": "One modular BOTTOM RIGHT corner environment asset for a whimsical chunky pixel-art mountain fortress game. 96x80 native pixels. ONE substantial grounded stepped blue-gray rock foundation covered in deep sculpted snow. Taller rocky peak at the RIGHT outer edge, low snow lip tapering LEFT toward the inner UI. A weathered wooden upright and angled support brace emerge along the right rear side, rooted in the rock. A single small snow-topped wooden supply box rests visibly on a broad rock ledge at the base of the upright; mostly buried in snow, secondary to the stone mass. Small short icicles below one overhang, a couple blue-white ice chunks emerging from a crevice. ONE coherent connected silhouette, complete grounded bottom, transparent margins. Native clean side-scroller front view with slight top planes, top-left lighting. Match provided refs in outline weight, crisp broad shading and few purposeful accents. Three main layers: snow cap, rock mass, low drift. No detached props, no scattered pebbles, no bush, no lantern, no characters or UI, no painterly highlights, blur, dithering or glow.",
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: fa575fc8-6c30-4e61-9ec2-45b419b0140c\njob_id: fa575fc8-6c30-4e61-9ec2-45b419b0140c\nmodel: pro\ndescription: One modular BOTTOM RIGHT corner environment asset for a whimsical chunky pixel-art mountain fortress game. 96x80 native pixels. ONE substantial grounded stepped blue-gray rock foundation covered in deep sculpted snow. Taller rocky peak at the RIGHT outer edge, low snow lip tapering LEFT toward the inner UI. A weathered wooden upright and angled support brace emerge along the right rear side, rooted in the rock. A single small snow-topped wooden supply box rests visibly on a broad rock ledge at the base of the upright; mostly buried in snow, secondary to the stone mass. Small short icicles below one overhang, a couple blue-white ice chunks emerging from a crevice. ONE coherent connected silhouette, complete grounded bottom, transparent margins. Native clean side-scroller front view with slight top planes, top-left lighting. Match provided refs in outline weight, crisp broad shading and few purposeful accents. Three main layers: snow cap, rock mass, low drift. No detached props, no scattered pebbles, no bush, no lantern, no characters or UI, no painterly highlights, blur, dithering or glow.\nsize: 96x80px\ntransparent: True\ncandidates: 4\nreferences: 3\nstyle_image: yes (outline, detail, shading)\nmax colours: 20 per image\nasset_id: 06c8f1b4-468c-53e2-b706-0dde1c9f5f3b\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"fa575fc8-6c30-4e61-9ec2-45b419b0140c\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/fa575fc8-6c30-4e61-9ec2-45b419b0140c/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+          }
+        ],
+        "isError": false
+      }
+    }
+  }
+}

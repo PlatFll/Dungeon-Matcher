@@ -75,7 +75,7 @@ public sealed partial class DungeonPresentationArt
         pixelLabContent.position=a;pixelLabContent.localScale=Vector3.one*Mathf.Abs(b.x-a.x);
     }
     void PixelLabBeforeCamera(ScriptableRenderContext context, Camera camera)
-    { if(camera==Camera.main) PositionPixelLabWorld(); }
+    { if(camera==Camera.main) { PositionPixelLabWorld(); PositionSnowWorld(); } }
 
     void BuildPixelLabEnvironment(DungeonPixelLabBattleArt art,int width,int height,int floor)
     {

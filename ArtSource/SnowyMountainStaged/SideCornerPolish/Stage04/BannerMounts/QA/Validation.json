@@ -1,0 +1,84 @@
+{
+  "scope": "Only side flag mount artwork and placement",
+  "views": [
+    {
+      "size": "720x1280",
+      "changed_pixels_outside_flag_rectangles": 0,
+      "native_scale": 2.0,
+      "flags": 2
+    },
+    {
+      "size": "1080x1920",
+      "changed_pixels_outside_flag_rectangles": 0,
+      "native_scale": 3.0,
+      "flags": 2
+    },
+    {
+      "size": "1080x2400",
+      "changed_pixels_outside_flag_rectangles": 0,
+      "native_scale": 3.0,
+      "flags": 2
+    },
+    {
+      "size": "1080x2400-safe",
+      "changed_pixels_outside_flag_rectangles": 0,
+      "native_scale": 3.0,
+      "flags": 2
+    },
+    {
+      "size": "360x640",
+      "changed_pixels_outside_flag_rectangles": 0,
+      "native_scale": 1.0,
+      "flags": 2
+    }
+  ],
+  "native": [
+    {
+      "side": "Left",
+      "size": [
+        48,
+        82
+      ],
+      "opaque_colors": 14,
+      "binary_alpha": true,
+      "original_visible_pixels": "exact +4,+12 registration",
+      "libresprite_reopen": "exact",
+      "sha256": "f44f2dfe5db3b469342281da094f79ce4806fa016bb53a3339898c32c187c9b0"
+    },
+    {
+      "side": "Right",
+      "size": [
+        48,
+        82
+      ],
+      "opaque_colors": 14,
+      "binary_alpha": true,
+      "original_visible_pixels": "exact +4,+12 registration",
+      "libresprite_reopen": "exact",
+      "sha256": "040432adf3bd6227af713d9421e7ded1923905001160dafbea0c1cf87f0eb4e1"
+    }
+  ],
+  "original_sources_preserved": 186,
+  "preserved_starting_tracked_files": 32910,
+  "changed_preexisting_files": [
+    "ArtSource/SnowyMountainStaged/README.txt",
+    "Assets/_Game/Scripts/Editor/SnowyMountainConnectedSidesTests.cs",
+    "Assets/_Game/Scripts/Editor/SnowyMountainStage08Tests.cs"
+  ],
+  "source_sha256": {
+    "Assets/_Game/Scripts/Editor/SnowyMountainStage08Tests.cs": "3aa722b7ddca6745d7e95be9b2603dcfec5abe3d64bde46950d0acf65162360d",
+    "Assets/_Game/Scripts/Editor/SnowyMountainConnectedSidesTests.cs": "c815e7981cc1141fd2687ee26c5c497ee31ccc657160bed684a0bb13106c6639"
+  },
+  "PixelLab_spend": 0,
+  "unity": {
+    "compile": "Passed Tools/Validate-Unity.ps1",
+    "compile_log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-fb4dd0b9-a36e-4976-bc08-59689c5e8a22.log",
+    "test": "SnowyMountainMountedBannersReview",
+    "result": "Passed",
+    "test_log": "C:\\Users\\USER\\.codex\\worktrees\\drowned-court-pixellab-v2\\Dungeon Matcher\\.utmp\\ForestValidation\\c6172ceb-7da6-4a89-a7ea-9bbc072e4b45.log"
+  },
+  "limits": [
+    "Existing compact HUD crowding/editor warning",
+    "No production registration, phone test or merge"
+  ]
+}

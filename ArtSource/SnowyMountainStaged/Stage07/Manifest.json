@@ -1,0 +1,84 @@
+{
+  "stage": 7,
+  "status": "review_candidate",
+  "art": [
+    {
+      "name": "LowerIce",
+      "dimensions": [
+        39,
+        54
+      ],
+      "colors": 14,
+      "bounds": [
+        1,
+        1,
+        38,
+        53
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "source_mask_exact": true,
+      "sha256": "7bec2ecc1147e0db75503c72e0c9d2cd7fe86486c4fe486408e3d402107d5565"
+    },
+    {
+      "name": "LowerRock_Left",
+      "dimensions": [
+        62,
+        55
+      ],
+      "colors": 7,
+      "bounds": [
+        1,
+        1,
+        61,
+        54
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "source_mask_exact": true,
+      "sha256": "98f9ad0da170e73f079efa8444200802ff036427013d08a3df5639f7876ebd4d"
+    },
+    {
+      "name": "LowerRock_Right",
+      "dimensions": [
+        62,
+        57
+      ],
+      "colors": 8,
+      "bounds": [
+        1,
+        1,
+        61,
+        56
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "source_mask_exact": true,
+      "sha256": "f55879698c723f4a64416069e85bbda05d73de0d748f7a11fc77c757cfc4b573"
+    },
+    {
+      "name": "SupplyCrate",
+      "dimensions": [
+        36,
+        35
+      ],
+      "colors": 12,
+      "bounds": [
+        1,
+        1,
+        35,
+        34
+      ],
+      "binary_alpha": true,
+      "roundtrip_exact": true,
+      "source_mask_exact": true,
+      "sha256": "c1a76bacba20eaee360885957541029c61bc7e4503a7bd87325174ec45981a3d"
+    }
+  ],
+  "pixellab_generations": 21,
+  "rock_selection": [
+    4,
+    13
+  ],
+  "ice_reused_exact": true
+}

@@ -1,0 +1,36 @@
+{
+  "unity": "6000.3.19f1",
+  "compileGate": "Tools/Validate-Unity.ps1",
+  "compilePassed": true,
+  "compileLog": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-c1aa3906-f166-4d8f-8154-5cde37c5e721.log",
+  "compileLogSha256": "beb20bd200471310c6a74e4da0b057c6250a69de5f07660a6caa26e614bdc91c",
+  "test": "ForestFoundationPlayTests.SnowyMountainStage04FloorReview",
+  "result": "Passed",
+  "sizes": [
+    "720x1280",
+    "1080x1920",
+    "1080x2400",
+    "1080x2400-safe",
+    "360x640"
+  ],
+  "testFixtureSha256": "39efe0d2a2ac63a45be73c92b6caa04b54ddc827f742c4f022ca48aafe1b6ec0",
+  "checks": [
+    "Before/after shared geometry exactly equal",
+    "Common enemy feet line retained",
+    "Floor has 12 native pixels in front of feet",
+    "Entire 24px separator stays above board",
+    "Native scale uniform at 1x/2x/3x",
+    "Actual capture contains native snow and stone pixels",
+    "No changed screenshot pixels outside floor and replaced bottom rail"
+  ],
+  "iterationNotes": [
+    "Fixed old preview portrait dressing retaining its previous viewport scale during resize.",
+    "Kept the approved backdrop mask; added a floor-only mask reaching the top-HUD bottom so the stone face is complete.",
+    "Bound floor textures to explicit unlit materials and completed shader compilation before captures; rejected transient incorrect shader renders."
+  ],
+  "deviceTesting": false,
+  "knownBaseline": [
+    "Legacy Pixel Perfect Camera warning and crowded labels at 360x640 remain.",
+    "Board, outer enclosure and lower HUD art still await their scheduled stages."
+  ]
+}

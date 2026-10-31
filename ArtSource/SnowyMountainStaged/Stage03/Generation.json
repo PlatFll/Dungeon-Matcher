@@ -1,0 +1,30 @@
+{
+  "stage": 3,
+  "referenceInput": "Text only per pack. Current golden PNGs inspected locally with hashes verified.",
+  "startingBalance": 4950,
+  "jobs": [
+    {
+      "input": {
+        "description": "A single tall rectangular player portrait PANEL KIT for a polished fantasy pixel-art mobile game. FRONT VIEW, straight parallel rails, orthogonal rectangle, not isometric. Dark cold-blue masonry bricks fill the quiet empty interior, no character and no text. Sturdy cold brown timber posts 7 pixels thick and horizontal wooden crossbeams, flat square dull blue-gray steel corner plates with one small bolt each, a few matching square steel intermediate clamps centered exactly on the timber rails. Natural fresh white snow rests on top crossbeam and small outward-facing ledges, with blue snow shadows and a few short icicles. Bottom beam plain timber with modest frost. Reserve the upper interior for a future banner but do NOT draw a banner. Restrained premium structure, chunky clean pixel clusters, simple top-left lighting, dark navy contour, 2-3 shade material ramps, crisp native pixel grid. No antialiasing, blur, painted gradients, noisy tiny scratches, ropes, chains, gems, symbols, crests or filigree. Snow and timber and square steel, nothing ornate. Entire outer silhouette fits with 3 pixels transparent margin on all sides. Frame should be easy to cut into corners, vertical beams, horizontal beams, centered clamps, snow caps and a tileable backing.",
+        "width": 128,
+        "height": 256,
+        "max_colors": 32,
+        "no_background": true,
+        "seed": 291031
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 13b803aa-ab4d-4feb-8f14-72f7f3a1baec\njob_id: 13b803aa-ab4d-4feb-8f14-72f7f3a1baec\nmodel: pro\ndescription: A single tall rectangular player portrait PANEL KIT for a polished fantasy pixel-art mobile game. FRONT VIEW, straight parallel rails, orthogonal rectangle, not isometric. Dark cold-blue masonry bricks fill the quiet empty interior, no character and no text. Sturdy cold brown timber posts 7 pixels thick and horizontal wooden crossbeams, flat square dull blue-gray steel corner plates with one small bolt each, a few matching square steel intermediate clamps centered exactly on the timber rails. Natural fresh white snow rests on top crossbeam and small outward-facing ledges, with blue snow shadows and a few short icicles. Bottom beam plain timber with modest frost. Reserve the upper interior for a future banner but do NOT draw a banner. Restrained premium structure, chunky clean pixel clusters, simple top-left lighting, dark navy contour, 2-3 shade material ramps, crisp native pixel grid. No antialiasing, blur, painted gradients, noisy tiny scratches, ropes, chains, gems, symbols, crests or filigree. Snow and timber and square steel, nothing ornate. Entire outer silhouette fits with 3 pixels transparent margin on all sides. Frame should be easy to cut into corners, vertical beams, horizontal beams, centered clamps, snow caps and a tileable backing.\nsize: 128x256px\ntransparent: True\ncandidates: 1\nmax colours: 32 per image\nseed: 291031\nasset_id: b5c38a03-561c-548f-b1a7-1c92605df5cc\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"13b803aa-ab4d-4feb-8f14-72f7f3a1baec\")"
+          }
+        ],
+        "isError": false
+      },
+      "cost": 10
+    }
+  ],
+  "finalBalance": 4940,
+  "stageGenerationsSpent": 10,
+  "cycleGenerationsUsed": 60
+}
