@@ -18,7 +18,8 @@ are no runtime, gameplay, layout, importer or scene changes in this revision.
 
 Actual Game evidence covers all five zones and four existing screen profiles.
 Previous screenshots are preserved in MaterialRevision; only the new captures
-are stored here. This branch remains unmerged, on PR #221.
+are stored here. The user approved this revision for production across all
+five zones and authorized merging PRs #219, #220 and #221 on 2026-11-01.
 
 Executed verification: StoneBattleUiTests.After passed all 20 actual Game cases
 (five zones × 720×1280, 1080×2340, 360×640 and 1080×2400 simulated safe area).
@@ -28,3 +29,25 @@ byte-for-byte after capture. Runtime C#, importer metadata and scenes have no
 task changes. Art-only scope does not require the separate compilation validator;
 the actual Unity play-mode capture suite ran successfully. No Android build or
 physical-device test. Pre-existing compact camera warning remains visible.
+
+## Production integration verification — 2026-11-01
+
+The enabled `Assets/_Game/Scenes/Game.unity` scene uses the common runtime path:
+`BattlePresentationSkin` loads `UI/BattlePresentation/Stone` before zone fallbacks;
+`GameplayPixelLayoutController`, `WaveTrackerUI`, `RunControlsUI` and
+`AbilityButtonUI` place the same controls in Dungeon, Magical Forest, Drowned
+Court, Ironvein and Frostwake. The four serialized ability definitions supply
+their engraving masks. No art-preview scene is required for these bindings.
+
+At source commit `90333e9a3419499f40157865ce7c76c941412266`, all 13 current PNGs
+match the native QA hashes. The final `QA/UnityLayouts.xml` remains valid for
+the unchanged runtime and artwork: 20 actual Game cases across five zones and
+four resolution/safe-area profiles. The six character/ability checks in the
+preceding material revision passed; that initial report also retains a layout
+failure, subsequently fixed and superseded by this final passing layout matrix.
+
+`Tools/Validate-Unity.ps1` completed with exit 0 using Unity 6000.3.19f1 before
+merge. Its complete local log is
+`C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-869094a6-7f92-4841-81a0-4a25774237fd.log`.
+This approval handoff changes documentation only. No generation credits,
+Android build, or real-device test were used.

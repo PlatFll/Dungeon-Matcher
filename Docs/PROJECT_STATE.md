@@ -20,7 +20,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Ironvein expanded native cave — approved for integration (2026-11-01)
+## Ironvein expanded native cave — production integration approved (2026-11-01)
 
 The user rejected PR #219's initial zoom-to-cover correction. The replacement
 uses PixelLab to extend the cave's ceiling and walls on a 480×352 native canvas,
@@ -31,10 +31,11 @@ portrait and other zones retain their current layout and assets.
 Source lineage, native cleanup and Game-scene comparisons are in
 [the revised report](../ArtSource/IronveinTopCoverage/NewCavern/README.md).
 The user approved this expanded cave on 2026-11-01 and requested its actual Game
-binding. The production assembly uses it on the integration branch; PR #219
-remains unmerged. The original zoom proposal is superseded.
+binding and authorized merging PR #219 with the shared-control stack. The
+production assembly uses the expanded native canvas. The original zoom proposal
+is superseded.
 
-## Shared stone battle controls and four-character menu — review branch (2026-11-01)
+## Shared stone battle controls and four-character menu — production integration approved (2026-11-01)
 
 All five zones use the same PixelLab/LibreSprite supply tiles, square Settings
 button, solid ability slab and wave plaque. The first set read too metallic; the
@@ -60,8 +61,13 @@ The expanded Ironvein cave remains bound to the actual Game scene. Board,
 portrait, environment and health placements are unchanged. New native sources,
 PixelLab usage and actual Game captures are in
 [the stone UI handoff](../ArtSource/StoneAbilityUI/README.md) and its
-[current material revision](../ArtSource/StoneAbilityUI/MaterialRevision/README.md). This work remains
-unmerged for user review. Automated Unity evidence is separate from phone testing.
+[approved lighter-gray revision](../ArtSource/StoneAbilityUI/LightGrayRevision/README.md).
+The user approved production integration in every zone and merging the dependency
+stack PR #219 → #220 → #221. The enabled production Game scene uses these shared
+Resources and runtime bindings. The final 20-case Game-scene matrix passed; the
+required Unity compilation validator passed again before merge on 2026-11-01.
+Automated Unity evidence is separate from phone testing; no new Android build or
+physical-device test was performed for this handoff.
 
 ## Approved Snowy Mountain production integration (2026-10-31)
 
