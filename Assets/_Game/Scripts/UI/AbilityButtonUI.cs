@@ -57,6 +57,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private bool pixelLabSkin;
     private void LateUpdate()
     {
+        if(BattlePresentationSkin.HasUnifiedControls){ApplyUnifiedSkin();return;}
         if (DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt) { ApplyPixelLabSkin(nativeArt); return; }
         if(sharedSkinApplied || BattlePresentationSkin.Shared("Ability")!=null)
         {
@@ -100,6 +101,27 @@ public sealed class AbilityButtonUI : MonoBehaviour
         var frame=transform.Find(AbilityEnergyBarName+"/EnergyFrame")?.GetComponent<Image>();
         if(frame!=null && theme.energyFrame!=null) frame.sprite=theme.energyFrame;
         RefreshVisuals();
+    }
+
+    private void ApplyUnifiedSkin()
+    {
+        var r=(RectTransform)transform;
+        BattlePresentationSkin.PrepareSharedControl(r);
+        r.anchorMin=r.anchorMax=r.pivot=Vector2.one*.5f;r.sizeDelta=new Vector2(176,66);
+        r.anchoredPosition=new Vector2(0,BattlePresentationSkin.BottomControlY((RectTransform)r.parent));GameplayPixelGrid.Snap(r);
+        if(!sharedSkinApplied)
+        {
+            sharedSkinApplied=true;BattlePresentationSkin.Button(abilityButton,"Ability");RefreshVisuals();
+        }
+        if(abilityIcon){BattlePresentationSkin.PrepareSharedControl(abilityIcon.rectTransform);GameplayPixelGrid.FitImage(abilityIcon,new Vector2(148,44));}
+        var bar=transform.Find(AbilityEnergyBarName) as RectTransform;
+        if(!bar)return;
+        bar.sizeDelta=new Vector2(147,24);bar.anchoredPosition=new Vector2(0,46);GameplayPixelGrid.Snap(bar);
+        var frame=bar.Find("EnergyFrame")?.GetComponent<Image>();
+        if(frame){frame.sprite=BattlePresentationSkin.Shared("Energy");frame.rectTransform.sizeDelta=new Vector2(147,24);GameplayPixelGrid.Snap(frame.rectTransform);}
+        // Native interior is 107x8; retain the existing fill and charge authority.
+        energyBarMaximumWidth=107;
+        ApplyEnergyVisual(displayedCharge);
     }
 
     private void ApplyPixelLabSkin(DungeonPixelLabBattleArt art)

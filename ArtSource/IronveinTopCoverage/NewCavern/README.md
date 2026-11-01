@@ -1,4 +1,4 @@
-# Expanded native Ironvein cave — review candidate
+# Expanded native Ironvein cave — approved for integration
 
 The user rejected the first zoom-to-cover implementation and explicitly
 requested a new similar PixelLab backdrop sized for the whole upper screen.
@@ -54,3 +54,10 @@ Evidence: `Preview/After`, `Preview/Review.html` and `QA/Validation.json`.
 Original pre-fix captures remain under `../Preview/Before`; rejected zoom
 captures stay in `../Preview/After`. No Android build or physical-device test
 was run for this revision. Nothing is merged.
+
+
+2026-11-01 acceptance: the user approved this cave as the actual zone background.
+The production binding is retained on `codex/unified-zone-battle-ui`, alongside
+the requested common UI. Cave artwork is unchanged; the new UI captures are in
+`ArtSource/UnifiedBattleUI/Preview/After`. PR #219 and the shared-UI work remain
+unmerged until explicitly authorized.

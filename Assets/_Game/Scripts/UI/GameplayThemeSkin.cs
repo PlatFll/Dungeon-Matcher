@@ -7,8 +7,8 @@ public static class GameplayThemeSkin
     public static GameplayThemeDefinition Current => RunSession.Current?.Zone?.Definition?.theme;
     public static void Button(Button button,bool settings=false)
     {
-        if(button!=null && (button.name=="CombatGuide"||button.name=="AbilityButton") &&
-            BattlePresentationSkin.Button(button,button.name=="CombatGuide"?"Guide":"Ability")) return;
+        if(button!=null && (button.name=="CombatGuide"||button.name=="AbilityButton"||button.name=="Settings") &&
+            BattlePresentationSkin.Button(button,button.name=="CombatGuide"?"Guide":button.name=="Settings"?"Settings":"Ability")) return;
         var theme=Current;
         if(theme==null || button==null || button.targetGraphic is not Image image) return;
         Sprite normal=settings?theme.settingsNormal:theme.buttonNormal;

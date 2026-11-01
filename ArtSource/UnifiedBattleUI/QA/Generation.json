@@ -1,0 +1,42 @@
+{
+  "request": {
+    "description": "A single horizontal WAVE COUNTER plaque for Dungeon Matcher, isolated transparent pixel-art UI asset. Match the supplied native SharedGuide button's silver-gray stone frame, dark muted plum bevel shadows, rounded bolt sockets in all four corners, straight clean stone rails and near-black inset. Same chunky crisp native pixel clusters and simple top-left lighting as that button. Canvas 144x48 pixels; main rectangular plaque occupies x2..141, y3..37 with a small attached bone skull pendant centered directly underneath at y38..45, attached structurally by a short stone tab, no floating parts. Frame balanced and symmetric, ample flat near-black center to receive live game text. No text, letters, numbers, symbols inside the panel, background scene, teal water, seaweed, gems, chains, extra ornaments, blue glow or painterly anti-aliasing. Keep ornament modest; most of the shape is a sturdy rectangular stone UI plate. The underwater wave screenshot is only proportion/role inspiration; remove its irregular teal bars and glitchy ends. The exact native guide sprite is the rendering and material authority.",
+    "width": 144,
+    "height": 48,
+    "max_colors": 20,
+    "no_background": true,
+    "seed": 110126,
+    "style_image_url": "upload:f6684f64-0c18-4dc2-8cd1-8823a217c0c7",
+    "style_copy": [
+      "color_palette",
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:3f3829c9-9f33-4fe9-ae68-7440d3760318",
+        "usage": "User-selected button family and restrained silver stone material."
+      },
+      {
+        "url": "upload:b2abb8b3-7002-438e-a976-1e21798ddb06",
+        "usage": "Wave counter role with a small attached skull below; replace the irregular teal frame with matching stone."
+      }
+    ]
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: cb797467-9744-4c13-a308-9465a122c060\njob_id: cb797467-9744-4c13-a308-9465a122c060\nmodel: pro\ndescription: A single horizontal WAVE COUNTER plaque for Dungeon Matcher, isolated transparent pixel-art UI asset. Match the supplied native SharedGuide button's silver-gray stone frame, dark muted plum bevel shadows, rounded bolt sockets in all four corners, straight clean stone rails and near-black inset. Same chunky crisp native pixel clusters and simple top-left lighting as that button. Canvas 144x48 pixels; main rectangular plaque occupies x2..141, y3..37 with a small attached bone skull pendant centered directly underneath at y38..45, attached structurally by a short stone tab, no floating parts. Frame balanced and symmetric, ample flat near-black center to receive live game text. No text, letters, numbers, symbols inside the panel, background scene, teal water, seaweed, gems, chains, extra ornaments, blue glow or painterly anti-aliasing. Keep ornament modest; most of the shape is a sturdy rectangular stone UI plate. The underwater wave screenshot is only proportion/role inspiration; remove its irregular teal bars and glitchy ends. The exact native guide sprite is the rendering and material authority.\nsize: 144x48px\ntransparent: True\ncandidates: 4\nreferences: 2\nstyle_image: yes (color_palette, outline, detail, shading)\nmax colours: 20 per image\nseed: 110126\nasset_id: 4de40c4c-a81f-5599-971d-26211041302c\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"cb797467-9744-4c13-a308-9465a122c060\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/cb797467-9744-4c13-a308-9465a122c060/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+      }
+    ],
+    "isError": false
+  },
+  "completed": [
+    {
+      "type": "text",
+      "text": "status: completed\nid: cb797467-9744-4c13-a308-9465a122c060\njob_id: cb797467-9744-4c13-a308-9465a122c060\nframes: 4\ntransparent: yes\nasset_id: 4de40c4c-a81f-5599-971d-26211041302c\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 10 generations\ndownload: https://api.pixellab.ai/mcp/images/cb797467-9744-4c13-a308-9465a122c060/download?index=0 ... ?index=3"
+    }
+  ]
+}

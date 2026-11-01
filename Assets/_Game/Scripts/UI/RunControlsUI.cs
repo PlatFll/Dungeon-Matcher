@@ -98,7 +98,7 @@ public sealed class RunControlsUI : MonoBehaviour
         settings.gameObject.AddComponent<GraphicRaycaster>();
         FinalizedUiSkin.Button(settings, gear:true);
         GameplayThemeSkin.Button(settings,settings:true);
-        if(!BattlePresentationSkin.UsesReferenceKit && !IronveinBattleAssembly.Current)GlobalMenuSkin.Gear(settings);
+        if(!BattlePresentationSkin.HasUnifiedControls && !BattlePresentationSkin.UsesReferenceKit && !IronveinBattleAssembly.Current)GlobalMenuSkin.Gear(settings);
         if(BattlePresentationSkin.Folder!=null && BattlePresentationSkin.Reference("SharedSettings") is Sprite referenceGear)
         {
             settings.image.sprite=referenceGear;settings.transition=Selectable.Transition.ColorTint;settings.spriteState=default;
@@ -114,7 +114,14 @@ public sealed class RunControlsUI : MonoBehaviour
             GameplayPixelGrid.FitImage(settings.image,new Vector2(45,40));
             GameplayPixelGrid.FitImage(guide.image,new Vector2(79,39));
         }
-        if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt)
+        if(BattlePresentationSkin.HasUnifiedControls)
+        {
+            var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
+            BattlePresentationSkin.Button(settings,"Settings");BattlePresentationSkin.Button(guide,"Guide");
+            BattlePresentationSkin.PlaceTopControl(settingsRect,"Settings",top);
+            BattlePresentationSkin.PlaceTopControl(guideRect,"Guide",top);
+        }
+        else if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt)
         {
             var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
             settings.transform.SetParent(top,false); guide.transform.SetParent(top,false);
@@ -179,7 +186,8 @@ public sealed class RunControlsUI : MonoBehaviour
         for(int i=0;i<2;i++)
         {
             var kind=(ConsumableKind)i;int count=session.Charges(kind);float cooldown=session.Cooldown(kind);
-            if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt)
+            if(BattlePresentationSkin.HasUnifiedControls)BattlePresentationSkin.PlaceSupply(slots[i],icons[i],i);
+            else if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt)
             {
                 float u=DungeonPixelLabBattleArt.Unit(canvas);var r=(RectTransform)slots[i].transform;
                 r.sizeDelta=new Vector2(47,43)*u;r.anchoredPosition=new Vector2(i==0?-87.5f:88.5f,0)*u;
@@ -218,11 +226,11 @@ public sealed class RunControlsUI : MonoBehaviour
         hint.fontSize=9;
         // The compact strip has room for native controls and their energy bar,
         // but not the optional lesson caption over the buttons. Guide stays available.
-        hint.gameObject.SetActive(DungeonPixelLabBattleArt.Controls != null || ((RectTransform)hint.transform.parent).rect.height > 80);
+        hint.gameObject.SetActive(BattlePresentationSkin.HasUnifiedControls ? ((RectTransform)hint.transform.parent).rect.height>110 : DungeonPixelLabBattleArt.Controls != null || ((RectTransform)hint.transform.parent).rect.height > 80);
         hint.text=session.Board.IsSelectingTarget?"Preview, then confirm. Tap Bomb to cancel.\nBarricades take 1 hit; specials can extend the blast.":lesson ?? (session.IsPractice?"Practice: no stock spent or progression earned.":"");
         if(resonance!=null)
         {
-            bool show=!session.Board.IsSelectingTarget && lesson==null;
+            bool show=hint.gameObject.activeSelf && !session.Board.IsSelectingTarget && lesson==null;
             resonance.gameObject.SetActive(show);
             resonance.rectTransform.anchoredPosition=hint.rectTransform.anchoredPosition+new Vector2(-120,0);
             if(show) hint.text=session.Zone.CurrentGem+" resonance: +15% gem damage";
@@ -233,7 +241,15 @@ public sealed class RunControlsUI : MonoBehaviour
             confirmBomb.transform.position = abilityRect.position;
             confirmBomb.interactable=session.CanUse(ConsumableKind.Bomb);
         }
-        if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt controlArt)
+        if(BattlePresentationSkin.HasUnifiedControls)
+        {
+            var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
+            BattlePresentationSkin.PlaceTopControl((RectTransform)SettingsButton.transform,"Settings",top);
+            var guide=top.Find("CombatGuide") as RectTransform;
+            if(guide)BattlePresentationSkin.PlaceTopControl(guide,"Guide",top);
+            foreach(var c in charges)GameplayPixelGrid.Snap((RectTransform)c.transform.parent);
+        }
+        else if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt controlArt)
         {
             var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
             controlArt.PlaceControl((RectTransform)SettingsButton.transform,"Settings",top);
