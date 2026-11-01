@@ -13,7 +13,7 @@ public sealed class RicochetRuntime : SequentialBoardAbilityRuntime
     {
         var ability=(RicochetAbilityDefinition)definition;hits.Clear();
         return new PlayerBoardImpactSequence {Count=ability.Shots,LeadSeconds=ability.SpinSeconds,
-            StepSeconds=ability.ShotSeconds,RecoverySeconds=ability.RecoverySeconds,Select=SelectTarget,
+            StepSeconds=ability.ShotSeconds,RecoverySeconds=ability.RecoverySeconds,ImmediateImpact=true,Select=SelectTarget,
             Impacted=(step,cell,survived)=>Ricochet(step,cell,ability)};
     }
     private Vector2Int? SelectTarget(int step,IReadOnlyList<PlayerBoardImpactTarget> candidates)

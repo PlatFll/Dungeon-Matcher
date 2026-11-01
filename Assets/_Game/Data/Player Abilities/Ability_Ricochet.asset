@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RicochetAbilityDefinition
   abilityId: ricochet
   displayName: Ricochet
-  description: Fire six ordered shots at board targets. Each shot can ricochet to
+  description: Fire a rapid burst of six ordered shots at board targets. Each shot can ricochet to
     a living enemy. Repeated hits on the same enemy gain up to 15 extra damage this
     cast.
   icon: {fileID: -2116082989849011225, guid: 438268fe56b5bf248bc27aa04cf41b83, type: 3}
@@ -23,12 +23,14 @@ MonoBehaviour:
   energyCost: 90
   shots: 6
   baseEnemyDamage: 5
-  spinSeconds: 0.54
-  shotSeconds: 0.12
-  recoverySeconds: 0.18
+  spinSeconds: 0.12
+  shotSeconds: 0.055
+  recoverySeconds: 0.10
   impactFrames:
   - {fileID: -4467762693717555016, guid: f7f5655e14aab734ab7e02008374cf09, type: 3}
   - {fileID: 4670862520143671222, guid: f7f5655e14aab734ab7e02008374cf09, type: 3}
   - {fileID: 8781029533609606438, guid: f7f5655e14aab734ab7e02008374cf09, type: 3}
   - {fileID: 1146765932455926177, guid: f7f5655e14aab734ab7e02008374cf09, type: 3}
   - {fileID: -544001982811231204, guid: f7f5655e14aab734ab7e02008374cf09, type: 3}
+  stoneEngraving: {fileID: 21300000, guid: 27b95d7c9a5041cfa418da48b98e1625, type: 3}
+  readyStoneEngraving: {fileID: 21300000, guid: 6a12b5999d4d461da307f3257064f20e, type: 3}

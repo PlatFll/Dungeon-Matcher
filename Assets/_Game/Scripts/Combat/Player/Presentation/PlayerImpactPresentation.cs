@@ -78,9 +78,11 @@ public sealed class PlayerImpactPresentation : MonoBehaviour
         {
             if(avatar==null)
             {
-                avatar=MakeBoardSprite("AttenderBoardAvatar",attender.BoardMarker,65);
-                marker=MakeBoardSprite("AttenderLandingMarker",attender.BoardMarker,64);
-                if(avatar!=null)avatar.transform.localScale=Vector3.one*2;
+                avatar=MakeBoardSprite("AttenderBoardAvatar",attender.BoardAvatar??attender.BoardMarker,65);
+                // The legacy marker contains the full character. The new face icon
+                // already provides the landing cue; never duplicate the old body.
+                marker=attender.BoardAvatar ? null : MakeBoardSprite("AttenderLandingMarker",attender.BoardMarker,64);
+                if(avatar!=null)avatar.transform.localScale=Vector3.one*(attender.BoardAvatar!=null?board.CellSize:2);
                 if(marker!=null)marker.transform.localScale=Vector3.one*2;
             }
             to=Position(cell);from=step==0?to+Vector3.up*board.CellSize:avatar!=null?avatar.transform.localPosition:to;

@@ -20,7 +20,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Ironvein expanded native cave — approved for integration (2026-11-01)
+## Ironvein expanded native cave — production integration approved (2026-11-01)
 
 The user rejected PR #219's initial zoom-to-cover correction. The replacement
 uses PixelLab to extend the cave's ceiling and walls on a 480×352 native canvas,
@@ -31,20 +31,43 @@ portrait and other zones retain their current layout and assets.
 Source lineage, native cleanup and Game-scene comparisons are in
 [the revised report](../ArtSource/IronveinTopCoverage/NewCavern/README.md).
 The user approved this expanded cave on 2026-11-01 and requested its actual Game
-binding. The production assembly uses it on the integration branch; PR #219
-remains unmerged. The original zoom proposal is superseded.
+binding and authorized merging PR #219 with the shared-control stack. The
+production assembly uses the expanded native canvas. The original zoom proposal
+is superseded.
 
-## Shared battle controls — integration review (2026-11-01)
+## Shared stone battle controls and four-character menu — production integration approved (2026-11-01)
 
-All five zones now select the user-chosen Drowned Court stone supply, ability,
-Guide and Settings artwork through the existing battle UI owners. Native uniform
-Canvas scaling replaces the stretched Court top-control mapping. A new modular
-PixelLab/LibreSprite stone wave plaque is the only new control artwork; its live
-text uses the shared native pixel fitter. The approved cave integration is
-retained. Board/portrait sizes, combat, health, saves and other zone art remain
-unchanged. Sources, usage and actual Game validation are recorded in
-[the UI report](../ArtSource/UnifiedBattleUI/README.md). This is an unmerged
-visual-review branch; the new wave design is not yet a final user approval.
+All five zones use the same PixelLab/LibreSprite supply tiles, square Settings
+button, solid ability slab and wave plaque. The first set read too metallic; the
+user requested larger wave/Settings controls and a stronger stone material. The
+current revision uses chipped matte gray stone without studs: wave up to 176×48
+native pixels and Settings 56×56, with integer scale and protected corners.
+The user accepted these shapes and requested the prior lighter cool-gray UI
+palette. The palette-only follow-up preserves exact masks, sizing and engravings;
+current evidence is in ArtSource/StoneAbilityUI/LightGrayRevision/.
+Guide is removed; tapping an enemy still opens inspection.
+Each ability definition supplies a crowned-skull, bull, six-chamber revolver or
+flute engraving. A ready slab rises by whole pixels and softly glows white;
+pause freezes it and Reduced Motion keeps a static ready cue.
+
+Kobold now empties six rapid ordered shots without the normal per-tile flash/hold
+or burst pause. Damage, passive stacking, energy cost, target selection and the
+single final settlement remain unchanged. Minotaur retains his portrait leap
+and seven-step charge, represented on the board by a small colored bull head.
+Gideon is temporarily hidden from new character selection for the future
+steampunk zone; assets, progression and existing continuation identity survive.
+
+The expanded Ironvein cave remains bound to the actual Game scene. Board,
+portrait, environment and health placements are unchanged. New native sources,
+PixelLab usage and actual Game captures are in
+[the stone UI handoff](../ArtSource/StoneAbilityUI/README.md) and its
+[approved lighter-gray revision](../ArtSource/StoneAbilityUI/LightGrayRevision/README.md).
+The user approved production integration in every zone and merging the dependency
+stack PR #219 → #220 → #221. The enabled production Game scene uses these shared
+Resources and runtime bindings. The final 20-case Game-scene matrix passed; the
+required Unity compilation validator passed again before merge on 2026-11-01.
+Automated Unity evidence is separate from phone testing; no new Android build or
+physical-device test was performed for this handoff.
 
 ## Approved Snowy Mountain production integration (2026-10-31)
 

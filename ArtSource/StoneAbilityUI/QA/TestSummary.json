@@ -1,0 +1,141 @@
+[
+  {
+    "label": "Before",
+    "overall": "Passed",
+    "cases": [
+      {
+        "fullname": "StoneBattleUiTests.Before",
+        "result": "Passed",
+        "duration": "24.805850"
+      }
+    ]
+  },
+  {
+    "label": "ZoneMatrix",
+    "overall": "Failed(Child)",
+    "cases": [
+      {
+        "fullname": "StoneAbilityPlayTests.BardleyStonePlate",
+        "result": "Failed",
+        "duration": "6.842939"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.FourSelectableCharactersPreserveGideonIdentity",
+        "result": "Passed",
+        "duration": "0.004259"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.KoboldStonePlateAndRapidSixShots",
+        "result": "Failed",
+        "duration": "6.464317"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.MinotaurStonePlateAndBullCharge",
+        "result": "Failed",
+        "duration": "5.938015"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.RattlebonesStonePlate",
+        "result": "Failed",
+        "duration": "5.983925"
+      },
+      {
+        "fullname": "StoneBattleUiTests.After",
+        "result": "Passed",
+        "duration": "28.691290"
+      }
+    ]
+  },
+  {
+    "label": "Regressions",
+    "overall": "Failed(Child)",
+    "cases": [
+      {
+        "fullname": "ForestFoundationPlayTests.AttenderPaysOnceRetriesDurableObstacleAndRespectsCardDamage",
+        "result": "Passed",
+        "duration": "10.773045"
+      },
+      {
+        "fullname": "ForestFoundationPlayTests.PlayerImpactCancellationSettlesAndNeverDuplicatesCompletion",
+        "result": "Passed",
+        "duration": "7.101552"
+      },
+      {
+        "fullname": "ForestFoundationPlayTests.PlayerImpactClearsBifrostSafelyAndChainsSpecialsBeforeSettlement",
+        "result": "Passed",
+        "duration": "11.529421"
+      },
+      {
+        "fullname": "ForestFoundationPlayTests.RicochetSixHitsUsePerRecipientPassiveResetNextCastAndSpendOnce",
+        "result": "Passed",
+        "duration": "9.460896"
+      },
+      {
+        "fullname": "ForestFoundationPlayTests.SequenceAbilityRejectsBlockedBoardWithoutSpendingAndPausesBetweenImpacts",
+        "result": "Passed",
+        "duration": "9.149602"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.BardleyStonePlate",
+        "result": "Failed",
+        "duration": "6.088779"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.FourSelectableCharactersPreserveGideonIdentity",
+        "result": "Passed",
+        "duration": "0.003591"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.KoboldStonePlateAndRapidSixShots",
+        "result": "Failed",
+        "duration": "6.168344"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.MinotaurStonePlateAndBullCharge",
+        "result": "Failed",
+        "duration": "6.014351"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.RattlebonesStonePlate",
+        "result": "Failed",
+        "duration": "6.126856"
+      }
+    ]
+  },
+  {
+    "label": "Characters",
+    "overall": "Passed",
+    "cases": [
+      {
+        "fullname": "StoneAbilityPlayTests.BardleyStonePlate",
+        "result": "Passed",
+        "duration": "9.379058"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.FourSelectableCharactersPreserveGideonIdentity",
+        "result": "Passed",
+        "duration": "4.094506"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.KoboldStonePlateAndRapidSixShots",
+        "result": "Passed",
+        "duration": "9.375737"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.MenuHasOnlyFourCharacterChoices",
+        "result": "Passed",
+        "duration": "5.379063"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.MinotaurStonePlateAndBullCharge",
+        "result": "Passed",
+        "duration": "12.100023"
+      },
+      {
+        "fullname": "StoneAbilityPlayTests.RattlebonesStonePlate",
+        "result": "Passed",
+        "duration": "9.029646"
+      }
+    ]
+  }
+]

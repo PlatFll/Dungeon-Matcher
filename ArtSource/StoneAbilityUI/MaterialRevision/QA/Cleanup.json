@@ -1,0 +1,154 @@
+{
+  "AbilityPlate": {
+    "source": "Raw/Ability_00.png",
+    "source_bounds": [
+      13,
+      4,
+      163,
+      62
+    ],
+    "output_bounds": [
+      3,
+      4,
+      173,
+      62
+    ],
+    "method": "native central column/row repetitions, original corner shapes, no resampling; material palette mapping",
+    "palette_map": {
+      "#0c0e13": "#0a0d11",
+      "#8d867c": "#8d867c",
+      "#373032": "#343438",
+      "#04060b": "#0a0d11",
+      "#11131a": "#0a0d11",
+      "#4d4a4b": "#484646",
+      "#4a4646": "#484646",
+      "#595955": "#595955",
+      "#aaa397": "#aaa397",
+      "#6f6d66": "#6f6d66",
+      "#06090d": "#0a0d11",
+      "#7b7871": "#7b7871"
+    }
+  },
+  "WaveBody": {
+    "source": "Raw/Wave_00.png",
+    "source_bounds": [
+      16,
+      2,
+      160,
+      46
+    ],
+    "output_bounds": [
+      2,
+      2,
+      174,
+      46
+    ],
+    "method": "native central column/row repetitions, original corner shapes, no resampling; material palette mapping",
+    "palette_map": {
+      "#79716b": "#7b7871",
+      "#b2aa9f": "#aaa397",
+      "#4b4549": "#484646",
+      "#887e74": "#8d867c",
+      "#978e85": "#8d867c",
+      "#a69e94": "#aaa397",
+      "#373437": "#343438",
+      "#aba399": "#aaa397",
+      "#867e74": "#7b7871",
+      "#4f4a4c": "#484646",
+      "#6c6562": "#6f6d66",
+      "#0a0d14": "#0a0d11"
+    }
+  },
+  "Supply": {
+    "source": "Raw/Supply_06.png",
+    "source_bounds": [
+      7,
+      7,
+      58,
+      58
+    ],
+    "output_bounds": [
+      2,
+      2,
+      62,
+      62
+    ],
+    "method": "native central column/row repetitions, original corner shapes, no resampling; material palette mapping",
+    "palette_map": {
+      "#54524c": "#595955",
+      "#b2ada3": "#aaa397",
+      "#43413d": "#484646",
+      "#2d2c2d": "#343438",
+      "#817d75": "#7b7871",
+      "#1c1b20": "#202129",
+      "#4c4944": "#484646",
+      "#938e84": "#8d867c",
+      "#101012": "#0a0d11",
+      "#bdb8ae": "#aaa397",
+      "#010101": "#0a0d11",
+      "#65635e": "#6f6d66"
+    }
+  },
+  "Settings": {
+    "source": "Raw/Settings_03.png",
+    "source_bounds": [
+      4,
+      4,
+      52,
+      52
+    ],
+    "output_bounds": [
+      4,
+      4,
+      52,
+      52
+    ],
+    "method": "native central column/row repetitions, original corner shapes, no resampling; material palette mapping",
+    "palette_map": {
+      "#b5aa9e": "#aaa397",
+      "#020202": "#0a0d11",
+      "#5c5450": "#595955",
+      "#463e40": "#484646",
+      "#978d84": "#8d867c",
+      "#837a70": "#7b7871",
+      "#02010b": "#0a0d11",
+      "#040309": "#0a0d11",
+      "#a59a90": "#aaa397",
+      "#2b282c": "#202129",
+      "#716860": "#6f6d66",
+      "#7b716a": "#7b7871"
+    }
+  },
+  "CrownedSkull": {
+    "source": "Inputs/CrownedSkull.png",
+    "method": "exact palette-only material mapping; alpha and all engraving shapes unchanged"
+  },
+  "CrownedSkullReady": {
+    "source": "Inputs/CrownedSkullReady.png",
+    "method": "exact palette-only material mapping; alpha and all engraving shapes unchanged"
+  },
+  "Bull": {
+    "source": "Inputs/Bull.png",
+    "method": "exact palette-only material mapping; alpha and all engraving shapes unchanged"
+  },
+  "BullReady": {
+    "source": "Inputs/BullReady.png",
+    "method": "exact palette-only material mapping; alpha and all engraving shapes unchanged"
+  },
+  "Revolver": {
+    "source": "Inputs/Revolver.png",
+    "method": "exact palette-only material mapping; alpha and all engraving shapes unchanged"
+  },
+  "RevolverReady": {
+    "source": "Inputs/RevolverReady.png",
+    "method": "exact palette-only material mapping; alpha and all engraving shapes unchanged"
+  },
+  "Flute": {
+    "source": "Inputs/Flute.png",
+    "method": "exact palette-only material mapping; alpha and all engraving shapes unchanged"
+  },
+  "FluteReady": {
+    "source": "Inputs/FluteReady.png",
+    "method": "exact palette-only material mapping; alpha and all engraving shapes unchanged"
+  }
+}

@@ -55,6 +55,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private bool sharedSkinApplied;
     private Sprite croppedSource, croppedIcon;
     private bool pixelLabSkin;
+    private StoneAbilityButtonView stoneView;
     private void LateUpdate()
     {
         if(BattlePresentationSkin.HasUnifiedControls){ApplyUnifiedSkin();return;}
@@ -113,7 +114,16 @@ public sealed class AbilityButtonUI : MonoBehaviour
         {
             sharedSkinApplied=true;BattlePresentationSkin.Button(abilityButton,"Ability");RefreshVisuals();
         }
-        if(abilityIcon){BattlePresentationSkin.PrepareSharedControl(abilityIcon.rectTransform);GameplayPixelGrid.FitImage(abilityIcon,new Vector2(148,44));}
+        var definition=playerAbilityController!=null?playerAbilityController.ActiveAbility:null;
+        bool stone=definition!=null && definition.StoneEngraving!=null && Resources.Load<Sprite>("UI/BattlePresentation/Stone/AbilityPlate")!=null;
+        if(stone)
+        {
+            if(!stoneView)stoneView=gameObject.AddComponent<StoneAbilityButtonView>();
+            stoneView.Present(abilityButton,playerAbilityController,definition);
+            if(abilityIcon)abilityIcon.enabled=false;
+        }
+        else if(stoneView)stoneView.Hide();
+        if(!stone && abilityIcon){abilityIcon.enabled=true;BattlePresentationSkin.PrepareSharedControl(abilityIcon.rectTransform);GameplayPixelGrid.FitImage(abilityIcon,new Vector2(148,44));}
         var bar=transform.Find(AbilityEnergyBarName) as RectTransform;
         if(!bar)return;
         bar.sizeDelta=new Vector2(147,24);bar.anchoredPosition=new Vector2(0,46);GameplayPixelGrid.Snap(bar);

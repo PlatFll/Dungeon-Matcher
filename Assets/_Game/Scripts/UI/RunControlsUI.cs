@@ -105,39 +105,27 @@ public sealed class RunControlsUI : MonoBehaviour
         }
         var settingsRect=(RectTransform)settings.transform;settingsRect.anchorMin=settingsRect.anchorMax=settingsRect.pivot=new Vector2(1,1);
         settingsRect.anchoredPosition=new Vector2(-20,BattlePresentationSkin.Folder!=null?-24:-18);
-        var guide=GameUi.Button("CombatGuide",safeRoot,"Guide",new Vector2(88,40),Vector2.zero,()=>OpenGuide(CombatGuide.Basics));
-        GameplayThemeSkin.Button(guide);GameplayThemeSkin.Button(confirmBomb);
-        var guideRect=(RectTransform)guide.transform;guideRect.anchorMin=guideRect.anchorMax=guideRect.pivot=new Vector2(1,1);
-        guideRect.anchoredPosition=BattlePresentationSkin.Folder!=null?new Vector2(-72,-32):new Vector2(-78,-22);
-        if(BattlePresentationSkin.Reference("SharedGuide")!=null && BattlePresentationSkin.Folder!=null)
-        {
-            GameplayPixelGrid.FitImage(settings.image,new Vector2(45,40));
-            GameplayPixelGrid.FitImage(guide.image,new Vector2(79,39));
-        }
+        // Enemy inspection remains available by tapping an enemy. There is no
+        // separate Guide control in any zone, including legacy art fallbacks.
+        GameplayThemeSkin.Button(confirmBomb);
         if(BattlePresentationSkin.HasUnifiedControls)
         {
             var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
-            BattlePresentationSkin.Button(settings,"Settings");BattlePresentationSkin.Button(guide,"Guide");
+            BattlePresentationSkin.Button(settings,"Settings");
             BattlePresentationSkin.PlaceTopControl(settingsRect,"Settings",top);
-            BattlePresentationSkin.PlaceTopControl(guideRect,"Guide",top);
         }
         else if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt)
         {
             var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
-            settings.transform.SetParent(top,false); guide.transform.SetParent(top,false);
-            nativeArt.SkinControl(settingsRect,"Settings",top);nativeArt.SkinControl(guideRect,"Guide",top);
-            var label=guide.GetComponentInChildren<TMP_Text>();label.fontSize=16*DungeonPixelLabBattleArt.Unit(canvas);label.enableAutoSizing=false;
+            settings.transform.SetParent(top,false);
+            nativeArt.SkinControl(settingsRect,"Settings",top);
         }
         else if(BattlePresentationSkin.UsesReferenceKit)
         {
             var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
-            settingsRect.SetParent(top,false);guideRect.SetParent(top,false);
-            foreach(var control in new[]{settings,guide})
-                if(control.TryGetComponent<NativePixelUiSurface>(out var native))native.enabled=false;
-            var extent=new Vector2(470,BattlePresentationSkin.ReferenceTopHeight);
-            settings.gameObject.AddComponent<ReferenceKitSurface>().Initialize(new Rect(414,30,45,40),extent);
-            guide.gameObject.AddComponent<ReferenceKitSurface>().Initialize(new Rect(330,30,79,39),extent);
-            var label=guide.GetComponentInChildren<TMP_Text>();label.fontSize=20;label.enableAutoSizing=true;label.fontSizeMax=20;label.fontSizeMin=12;
+            settingsRect.SetParent(top,false);
+            if(settings.TryGetComponent<NativePixelUiSurface>(out var native))native.enabled=false;
+            settings.gameObject.AddComponent<ReferenceKitSurface>().Initialize(new Rect(414,30,45,40),new Vector2(470,BattlePresentationSkin.ReferenceTopHeight));
         }
         foreach (var slot in FindObjectsByType<EnemySlotUI>(FindObjectsSortMode.None))
         {
@@ -225,7 +213,7 @@ public sealed class RunControlsUI : MonoBehaviour
         hint.rectTransform.sizeDelta=new Vector2(Mathf.Min(430,((RectTransform)hint.transform.parent).rect.width-12),28);
         hint.fontSize=9;
         // The compact strip has room for native controls and their energy bar,
-        // but not the optional lesson caption over the buttons. Guide stays available.
+        // but not the optional lesson caption over the buttons. Enemy inspection stays available.
         hint.gameObject.SetActive(BattlePresentationSkin.HasUnifiedControls ? ((RectTransform)hint.transform.parent).rect.height>110 : DungeonPixelLabBattleArt.Controls != null || ((RectTransform)hint.transform.parent).rect.height > 80);
         hint.text=session.Board.IsSelectingTarget?"Preview, then confirm. Tap Bomb to cancel.\nBarricades take 1 hit; specials can extend the blast.":lesson ?? (session.IsPractice?"Practice: no stock spent or progression earned.":"");
         if(resonance!=null)
@@ -245,15 +233,12 @@ public sealed class RunControlsUI : MonoBehaviour
         {
             var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
             BattlePresentationSkin.PlaceTopControl((RectTransform)SettingsButton.transform,"Settings",top);
-            var guide=top.Find("CombatGuide") as RectTransform;
-            if(guide)BattlePresentationSkin.PlaceTopControl(guide,"Guide",top);
             foreach(var c in charges)GameplayPixelGrid.Snap((RectTransform)c.transform.parent);
         }
         else if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt controlArt)
         {
             var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
             controlArt.PlaceControl((RectTransform)SettingsButton.transform,"Settings",top);
-            var guide=top.Find("CombatGuide") as RectTransform;if(guide)controlArt.PlaceControl(guide,"Guide",top);
             float u=DungeonPixelLabBattleArt.Unit(canvas);
             hint.rectTransform.sizeDelta=new Vector2(Mathf.Min(430,((RectTransform)hint.transform.parent).rect.width-12),28);
             foreach(var c in charges) {var r=(RectTransform)c.transform.parent;r.anchoredPosition=new Vector2(15,-16)*u;GameplayPixelGrid.Snap(r);r.SetAsLastSibling();}
@@ -261,7 +246,7 @@ public sealed class RunControlsUI : MonoBehaviour
             if(IronveinBattleAssembly.Current && UnityEngine.Device.Screen.width<448)
             {
                 // Keep the compact caption below the native controls, not across their icons.
-                hint.text=session.Board.IsSelectingTarget?"PREVIEW, THEN CONFIRM.":"THINKING IS SAFE. TAP GUIDE FOR HELP.";
+                hint.text=session.Board.IsSelectingTarget?"PREVIEW, THEN CONFIRM.":"THINKING IS SAFE. TAP AN ENEMY TO INSPECT.";
                 hint.rectTransform.sizeDelta=new Vector2(hud.rect.width-12,16*u);
                 PixelTextFitter.Apply(hint,8*u);
                 hint.rectTransform.anchoredPosition=new Vector2(0,-hud.rect.height*.5f+8*u);
@@ -316,7 +301,7 @@ public sealed class RunControlsUI : MonoBehaviour
         lesson=null;
         var account=AccountProgression.Current;
         if(!account.HasSeenLesson("combat-clocks"))
-        { ShowLesson("combat-clocks",CombatMoveClock.Unified ? "Attacks and abilities count moves. Thinking is safe.\nTap Guide or an enemy to inspect." : CombatMoveClock.MoveBasics ? "Legacy forest test: attacks and abilities count moves." : "Attacks count seconds; abilities count moves.\nTap Guide or an enemy to inspect while paused."); return; }
+        { ShowLesson("combat-clocks",CombatMoveClock.Unified ? "Attacks and abilities count moves. Thinking is safe.\nTap an enemy to inspect." : CombatMoveClock.MoveBasics ? "Legacy forest test: attacks and abilities count moves." : "Attacks count seconds; abilities count moves.\nTap an enemy to inspect while paused."); return; }
         foreach(var enemy in session.Waves.ActiveEnemies)
         {
             if(!enemy.HasSpecialAbility) continue;
