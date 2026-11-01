@@ -69,6 +69,16 @@ required Unity compilation validator passed again before merge on 2026-11-01.
 Automated Unity evidence is separate from phone testing; no new Android build or
 physical-device test was performed for this handoff.
 
+## Dungeon standing-floor depth — review candidate (2026-11-01)
+
+The user requested a deeper Dungeon standing surface like the underwater zone.
+Two additional native rear stone courses expand the floor from 12 to 36 pixels
+without changing actor feet, the front separator, board, portrait or shared UI.
+No artwork is regenerated or recolored. Actual Game captures and exact pixel
+preservation checks are in [the floor review](../ArtSource/DungeonFloorDepth/README.md).
+This focused change is on `codex/dungeon-deeper-battle-floor`, pending review and
+not merged; the other zones retain their approved production bindings.
+
 ## Approved Snowy Mountain production integration (2026-10-31)
 
 The user approved the final Snowy Mountain library, connected sides and mounted

@@ -46,6 +46,16 @@ public sealed partial class DungeonPresentationArt
             // matching right half when repeating across the full screen.
             if(p.name=="Wall_Edge_Left")art.Image("Wall_Edge_Right",wall,x+24,y);
         }
+        // Extend the standing surface behind the existing front course. Repeat
+        // the approved native stones without stretching them or moving actors,
+        // the separator, or UI. Architecture remains above the new rear courses.
+        float floorWidth=(UnityEngine.Device.Screen.width-v.xMin)/scale-106;
+        var rearFloor=DungeonPixelLabBattleArt.Rect("Standing floor rear courses",pixelLabContent,106,floor-24,floorWidth,24);
+        rearFloor.gameObject.AddComponent<RectMask2D>();
+        string[] floorVariants={"Floor_Mid_A","Floor_Mid_B","Floor_Mid_C"};
+        for(int row=0;row<2;row++)
+            for(int x=row==0?0:-16,n=0;x<floorWidth;x+=32,n++)
+                art.Image(floorVariants[(n+row)%floorVariants.Length],rearFloor,x,row*12);
         var structure=DungeonPixelLabBattleArt.Rect("Structure",pixelLabContent,0,0,width,height);
         foreach(int x in new[]{0,96,width-36})
         {
