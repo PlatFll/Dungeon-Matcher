@@ -69,6 +69,27 @@ required Unity compilation validator passed again before merge on 2026-11-01.
 Automated Unity evidence is separate from phone testing; no new Android build or
 physical-device test was performed for this handoff.
 
+## Approved Dungeon connected floor and quieter ground skull (2026-11-01)
+
+The user approved the full-width Dungeon correction and authorized production
+integration and PR #222 merge after reducing the ground skull. The 128×32 native
+floor continues across the physical screen behind the masked portrait; the
+separator joins it without gaps. All rear pillar bases and the doorway meet the
+rear edge, with small native contact shadows grounding existing props.
+
+The ground skull's visible footprint is now 21×20 instead of 27×26, with a muted
+gray-violet bone ramp and tighter contact shadow. Its original canvas, bottom
+ground row and source artwork remain preserved. DungeonPixelLab.asset selects
+the revised sprite through the existing production presentation architecture.
+Characters, shared enemy floor line, board, UI and gameplay remain unchanged.
+
+Actual Game checks passed at five phone/safe-area layouts, including exact
+skull-only pixel comparisons and zero floor/separator gaps. Shared geometry,
+portrait protection, swap/Settings and required compilation were checked.
+[Final integration evidence](../ArtSource/DungeonFloorDepth/SkullPolish/README.md).
+No new PixelLab spending or physical-device test; original floor generation
+cost remains 10 generations.
+
 ## Approved Snowy Mountain production integration (2026-10-31)
 
 The user approved the final Snowy Mountain library, connected sides and mounted

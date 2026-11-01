@@ -127,6 +127,7 @@ public sealed partial class DungeonPresentationArt
         mask.anchorMin=Vector2.zero;mask.anchorMax=Vector2.one;mask.offsetMin=Vector2.one*9*u;mask.offsetMax=-mask.offsetMin;
         mask.gameObject.AddComponent<RectMask2D>();
         var backing=art.Image("Recess_Center",mask,0,0,u);backing.type=Image.Type.Tiled;backing.pixelsPerUnitMultiplier=1/u;
+        if(art.portraitRecessMaterial)backing.material=art.portraitRecessMaterial;
         backing.rectTransform.anchorMin=Vector2.zero;backing.rectTransform.anchorMax=Vector2.one;
         backing.rectTransform.offsetMin=-backing.sprite.rect.size*u;backing.rectTransform.offsetMax=-backing.rectTransform.offsetMin;
         if (art.UsesHybrid) { pixelLabPortraitBanner=null; return; }

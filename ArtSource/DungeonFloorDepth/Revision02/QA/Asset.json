@@ -1,0 +1,16 @@
+{
+  "size": [
+    128,
+    32
+  ],
+  "opaque_colors": 5,
+  "alpha": [
+    255,
+    255
+  ],
+  "sha256": "6d9cf447f536ef7b1ffb2ca83c4070a25d33bd3f4394820f8453e4dc5f0de3dd",
+  "native_roundtrip_exact": true,
+  "raw_choice": 3,
+  "repeat": "Horizontal only; 1px deliberate slab joint at x0; no opaque border band",
+  "cleanup": "Remove generated 4px side band and deep speckle noise; quiet front plane. No scaling."
+}

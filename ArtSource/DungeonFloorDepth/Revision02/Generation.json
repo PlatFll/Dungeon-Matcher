@@ -1,0 +1,51 @@
+{
+  "inputs": {
+    "description": "A single continuous horizontal dungeon standing-floor TOP SURFACE tile. 128x32 native pixel artwork, the ENTIRE rectangular canvas filled edge to edge by a flat walking plane of broad muted violet-gray stone slabs. This is the walking surface seen slightly from above for a 2D side-view battle, not a front wall. Three or four large shallow floor stones across, narrow quiet joints, subtle top-left stone edge lighting, almost no texture. One uninterrupted plane; horizontal seamless repeat. Match reference 1 purple dungeon floor MATERIAL but make its visible top surface deeper, analogous to reference 2 broad underwater floor. Retain purple gray stone, not teal. No raised steps, no stacked ledges, no front fascia, no vertical brick wall, no floating isolated block, no outline around canvas, no characters or props. Quiet broad clean planes for characters to stand on. Crisp Dungeon Matcher native pixel-art discipline, no blur or dithering.",
+    "width": 128,
+    "height": 32,
+    "no_background": false,
+    "max_colors": 8,
+    "palette": [
+      "#151423",
+      "#241F3A",
+      "#382D55",
+      "#4E3D6C",
+      "#67537D",
+      "#846A95"
+    ],
+    "palette_name": "Dungeon Matcher quiet violet masonry",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "Assets/_Game/Art/DungeonPixelLab/FloorTop/Floor_Mid_A.png",
+        "usage": "reference 1: preserve this purple dungeon floor material and rendering; expand walking-surface depth, not vertical stacking"
+      },
+      {
+        "path": "Assets/_Game/Art/DrownedCourtEnvironmentV2/Revision04/FloorFrontA.png",
+        "usage": "reference 2: quiet broad connected floor-plane geometry only; do not copy teal color"
+      }
+    ],
+    "style_image_path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png"
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 02f07a83-d1c0-4b02-9c72-de866ab1fc7c\njob_id: 02f07a83-d1c0-4b02-9c72-de866ab1fc7c\nmodel: pro\ndescription: A single continuous horizontal dungeon standing-floor TOP SURFACE tile. 128x32 native pixel artwork, the ENTIRE rectangular canvas filled edge to edge by a flat walking plane of broad muted violet-gray stone slabs. This is the walking surface seen slightly from above for a 2D side-view battle, not a front wall. Three or four large shallow floor stones across, narrow quiet joints, subtle top-left stone edge lighting, almost no texture. One uninterrupted plane; horizontal seamless repeat. Match reference 1 purple dungeon floor MATERIAL but make its visible top surface deeper, analogous to reference 2 broad underwater floor. Retain purple gray stone, not teal. No raised steps, no stacked ledges, no front fascia, no vertical brick wall, no floating isolated block, no outline around canvas, no characters or props. Quiet broad clean planes for characters to stand on. Crisp Dungeon Matcher native pixel-art discipline, no blur or dithering.\nsize: 128x32px\ntransparent: False\ncandidates: 4\nreferences: 2\nstyle_image: yes (outline, detail, shading)\npalette: 6 colours (Dungeon Matcher quiet violet masonry)\nmax colours: 8 per image\nasset_id: e8e80892-73ee-5805-9064-b3744850c8e7\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"02f07a83-d1c0-4b02-9c72-de866ab1fc7c\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/02f07a83-d1c0-4b02-9c72-de866ab1fc7c/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+      }
+    ],
+    "isError": false
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "status: completed\nid: 02f07a83-d1c0-4b02-9c72-de866ab1fc7c\njob_id: 02f07a83-d1c0-4b02-9c72-de866ab1fc7c\nframes: 4\ntransparent: no — every pixel is opaque. If you asked for no_background, background removal did not find one; retry or describe the subject on a plain background.\nasset_id: e8e80892-73ee-5805-9064-b3744850c8e7\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 10 generations\ndownload: https://api.pixellab.ai/mcp/images/02f07a83-d1c0-4b02-9c72-de866ab1fc7c/download?index=0 ... ?index=3"
+    }
+  ],
+  "status": "review candidates",
+  "cost": 10
+}

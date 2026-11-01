@@ -46,12 +46,29 @@ public sealed partial class DungeonPresentationArt
             // matching right half when repeating across the full screen.
             if(p.name=="Wall_Edge_Left")art.Image("Wall_Edge_Right",wall,x+24,y);
         }
+        // The connected top surface replaces the old shallow strip. Its rear
+        // edge is behind the shared actor soles; the front meets the fascia.
+        // Original art remains the fallback if the optional surface is absent.
+        var standing = art.Sprite("Floor_Standing");
+        int rear = floor - (standing ? 20 : 0);
+        int fascia = floor + 12;
         var structure=DungeonPixelLabBattleArt.Rect("Structure",pixelLabContent,0,0,width,height);
         foreach(int x in new[]{0,96,width-36})
         {
             art.Image("Support_Capital",structure,x,0);
-            for(int y=16;y<floor-22;y+=28)art.Image("Support_Core",structure,x,y);
-            art.Image("Support_Foot",structure,x,floor-22);
+            // Every column lands at the same wall/floor junction, including
+            // the posts behind the portrait. Trim only the final shaft repeat.
+            int footTop = rear - (int)art.Sprite("Support_Foot").rect.height;
+            for(int y=16;y<footTop;y+=28)
+            {
+                var shaft=art.Image("Support_Core",structure,x,y);
+                if(y+28>footTop)
+                {
+                    shaft.type=Image.Type.Filled;shaft.fillMethod=Image.FillMethod.Vertical;
+                    shaft.fillOrigin=(int)Image.OriginVertical.Top;shaft.fillAmount=(footTop-y)/28f;
+                }
+            }
+            art.Image("Support_Foot",structure,x,footTop);
         }
         if (!art.UsesSideArchitecture)
         {
@@ -79,30 +96,59 @@ public sealed partial class DungeonPresentationArt
                 art.Image("Masonry_Corner_Right",cornerRoot,screenLeft+screenWidth-58,screenBottom-86);
             }
         }
-        art.Image("Support_Corbel",structure,96,floor+32);
-        art.Image("Support_Corbel",structure,210+Mathf.Round((width-360)/2f),floor+32);
+        art.Image("Support_Corbel",structure,96,fascia+20);
+        art.Image("Support_Corbel",structure,210+Mathf.Round((width-360)/2f),fascia+20);
         var gate=DungeonPixelLabBattleArt.Rect("Approved hybrid gate",pixelLabContent,0,0,width,height);
         foreach(var p in art.Manifest.placements.Where(p=>p.layer==20))
-            art.Image(p.name,gate,p.x+Mathf.Round((width-360)/2f),p.y+floor-178);
+            art.Image(p.name,gate,p.x+Mathf.Round((width-360)/2f),p.y+rear-178);
         var platform=DungeonPixelLabBattleArt.Rect("Standing platform",pixelLabContent,0,0,width,height);
-        // Continue the existing tile phase beneath the portrait to the viewport edge.
-        // Keep the enemy-side floor, masked recess and actor baseline unchanged.
-        for(int x=74,n=0;x>-32;x-=32,n++)
-            art.Image("Floor_Mid_"+(n%3==0?"A":n%3==1?"C":"B"),platform,x,floor);
-        for(int x=106,n=0;x<width;x+=32,n++)
-            art.Image(n==0?"Floor_Left":"Floor_Mid_"+(n%3==0?"A":n%3==1?"B":"C"),platform,x,floor);
-        for(int x=0,n=0;x<width;n++)
+        if (standing)
+        {
+            // One opaque, full-depth surface continues behind the masked portrait
+            // and across physical screen margins. Native repeats overhang only the
+            // display edges; no RectMask2D fringe can expose the wall at a join.
+            float screenLeft = -v.xMin/scale;
+            float screenWidth = UnityEngine.Device.Screen.width/scale;
+            var surface = DungeonPixelLabBattleArt.Rect("Connected standing floor", platform,
+                screenLeft, rear, screenWidth, standing.rect.height);
+            for (int x = Mathf.FloorToInt(screenLeft/standing.rect.width)*(int)standing.rect.width;
+                 x < screenLeft+screenWidth; x += (int)standing.rect.width)
+                art.Image("Floor_Standing", surface, x-screenLeft, 0);
+        }
+        else
+        {
+            // Continue the existing tile phase beneath the portrait to the viewport edge.
+            // Keep the enemy-side floor, masked recess and actor baseline unchanged.
+            for(int x=74,n=0;x>-32;x-=32,n++)
+                art.Image("Floor_Mid_"+(n%3==0?"A":n%3==1?"C":"B"),platform,x,floor);
+            for(int x=106,n=0;x<width;x+=32,n++)
+                art.Image(n==0?"Floor_Left":"Floor_Mid_"+(n%3==0?"A":n%3==1?"B":"C"),platform,x,floor);
+        }
+        for(int x=0,n=0;x<(UnityEngine.Device.Screen.width-v.xMin)/scale;n++)
         {
             string name=n==0?"Fascia_Left":"Fascia_Mid_"+(n%2==0?"A":"B");
-            art.Image(name,platform,x,floor+12);x+=(int)art.Sprite(name).rect.width;
+            art.Image(name,platform,x,fascia);x+=(int)art.Sprite(name).rect.width;
         }
+        // Continue the existing separator phase through the left safe-area
+        // margin as well. Full opaque native modules meet without masks/scaling.
+        for(int x=-64,n=0;x+64>-v.xMin/scale;x-=64,n++)
+            art.Image("Fascia_Mid_"+(n%2==0?"A":"B"),platform,x,fascia);
         var props=DungeonPixelLabBattleArt.Rect("Approved hybrid props",pixelLabContent,0,0,width,height);
+        // Tiny, native contact clusters use the existing floor shadow colors.
+        // They sit beneath the complete prop silhouettes, never recolor the props.
+        if(standing)foreach(var p in art.Manifest.placements.Where(p=>p.layer==25))
+        {
+            float dx=p.x>=280?width-360:p.x>=200?Mathf.Round((width-360)/2f):0;
+            string contact=p.name=="Barrel"?"Floor_ContactLarge":p.name=="Skull"?"Floor_ContactSkull":"Floor_ContactSmall";
+            if(art.Sprite(contact))
+                art.Image(contact,props,p.x+dx,p.y+art.Sprite(p.name).rect.height-6+rear-178);
+        }
         foreach(var p in art.Manifest.placements.Where(p=>p.layer==24||p.layer==25))
         {
             // Left/right wall dressing stays attached to its column; the second
             // complete chain and center bones follow the centered gate.
             float dx=p.x>=280?width-360:p.x>=200?Mathf.Round((width-360)/2f):0;
-            art.Image(p.name,props,p.x+dx,p.y+(p.layer==25?floor-178:0));
+            art.Image(p.name,props,p.x+dx,p.y+(p.layer==25?rear-178:0));
         }
     }
 }
