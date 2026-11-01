@@ -1,0 +1,35 @@
+{
+  "before": {
+    "result": "Passed",
+    "total": "1",
+    "failed": "0",
+    "results_path": "C:\\Users\\USER\\.codex\\worktrees\\drowned-court-pixellab-v2\\Dungeon Matcher\\.utmp\\ForestValidation\\d37fdb37-0a09-48d9-8eed-083f012febeb.xml",
+    "sha256": "fef9154bf5967e5fe59cb1b9d1636cb9715ea46f19830abab056c8a0a6066198"
+  },
+  "after": {
+    "result": "Passed",
+    "total": "1",
+    "failed": "0",
+    "results_path": "C:\\Users\\USER\\.codex\\worktrees\\drowned-court-pixellab-v2\\Dungeon Matcher\\.utmp\\ForestValidation\\acd1984a-bef1-4dd8-b9cc-019a29e4ed3e.xml",
+    "sha256": "82634e99eda79f6e45b4037ede2d5acc7e702447b3a63694451ccfa5ebc3141a"
+  },
+  "compilation": {
+    "result": "Passed",
+    "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-69dce7f5-ede8-4012-b88c-646ba12d594f.log",
+    "sha256": "2b552141065dc9c48b4e6eab54843d6329404aa1864fb3b9af6f4f91b61e0c36"
+  },
+  "scope": {
+    "game_scene_cases": 12,
+    "cave_profiles": 8,
+    "other_zones": 4,
+    "physical_device_test": false,
+    "android_build_this_fix": false,
+    "artwork_files_changed": 0,
+    "generation_spending": 0
+  },
+  "fixture_notes": [
+    "Initial capture reused one disposable save across zones and timed out; fixed with one independent save per zone.",
+    "Initial comparison exposed differing time-seeded encounters; fixed by seeding WaveController before Start as well as Unity Random. Exact comparison assertions retained."
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "native": {
+    "size": [
+      480,
+      352
+    ],
+    "opaque_colors": 20,
+    "alpha": [
+      255
+    ],
+    "original_native_core_unchanged": true,
+    "original_placement": [
+      180,
+      192,
+      240,
+      160
+    ],
+    "libresprite_roundtrip_exact": true,
+    "png_sha256": "6e7b2926d9a0dc54d671e690c5889f4ab6fd98066d27892160f2e7377ac71c5d"
+  },
+  "unity_version": "6000.3.19f1",
+  "runtime_test": {
+    "name": "CaveSceneryCoverageTests.After",
+    "result": "Passed",
+    "tests": 1,
+    "profiles": 12,
+    "cases": [
+      "drowned-court-1080x2340",
+      "dungeon-1080x2340",
+      "frostwake-peaks-1080x2340",
+      "ironvein-excavation-1080x1920",
+      "ironvein-excavation-1080x2340",
+      "ironvein-excavation-1080x2400-safe",
+      "ironvein-excavation-1080x2400",
+      "ironvein-excavation-1440x3200",
+      "ironvein-excavation-360x640",
+      "ironvein-excavation-720x1280",
+      "ironvein-excavation-800x1800",
+      "magical-forest-1080x2340"
+    ]
+  },
+  "checks": [
+    "Exact baseline UI/layout/enemy feet/board geometry in all 12 cases",
+    "Normal environment integer pixel scale, without zoom",
+    "Opaque native 480x352 cave and exact original core",
+    "Full physical-screen and safe-area upper coverage",
+    "Guide and Settings open/close",
+    "Other four zones keep their existing presentation"
+  ],
+  "required_validator": {
+    "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+    "result": "Passed",
+    "log": "UnityValidation.log"
+  },
+  "physical_device_tested": false,
+  "android_build_run_this_revision": false,
+  "existing_limitation": "360x640 keeps the existing shared compact layout and its editor reference-resolution warning; this change only fixes the cave scenery.",
+  "unrelated_starting_files_restored": 9,
+  "review_status": "Candidate, not merged",
+  "pixel_lab": {
+    "generations_spent": 50,
+    "remaining": 4788,
+    "first_candidate_rejected": 25,
+    "selected_outpaint": 25
+  },
+  "screenshots": {
+    "drowned-court-1080x2340.png": "2d1dac49d09fdc8ad956e54085a2d1cefea62dffa334111f1f566073eff6cbf7",
+    "dungeon-1080x2340.png": "cf19d36c3b516064bea1a9d69a6167f52950907e744d3f8bb7bab4deb15e349f",
+    "frostwake-peaks-1080x2340.png": "9640f5cd0d363475b8d658be7e569a4fa1a82df2dae185869aa85e41f322668c",
+    "ironvein-excavation-1080x1920.png": "a520e070d6528f2aa9fd9f5ab563ccc654b770888ac78701a35561d79aa9f7cd",
+    "ironvein-excavation-1080x2340.png": "59ad638f76af6a7180ce5ed489fe351da0ea1d775c118d615a1329847ef5a568",
+    "ironvein-excavation-1080x2400-safe.png": "e795db018b8d5a48e868dfb1174bf0f91e70bf695b3f79c9ea8feb34859f942b",
+    "ironvein-excavation-1080x2400.png": "3203cd7d3d26b87dae2838d968a0c76de40e2db36a646fdfa637f6f69d3b006c",
+    "ironvein-excavation-1440x3200.png": "1ef32a7ee97200161c9a6e29786979af87e07a17b194044b57eb6d6fa181b6db",
+    "ironvein-excavation-360x640.png": "a537b89404aa657354ab1498176404679203e37ce247f61e7cfd563a0c6f888c",
+    "ironvein-excavation-720x1280.png": "9eaf79138ef45dbe922d5dad903bfaa07d56fbb790eea31c1612c48db81f19bc",
+    "ironvein-excavation-800x1800.png": "bacf6362a5f72365ba55c1256eb0dd4f1d95a1d5a74a68d1dc3ef3c8931cf030",
+    "magical-forest-1080x2340.png": "d530e3ce977bf88f7007df2e153cb7efef9b49e29dde4797537c97f7631ac9c9"
+  },
+  "runtime_source_hashes": {
+    "Assets/_Game/Scripts/UI/DungeonPresentationArt.Ironvein.cs": "13921c1dbe8da894c77a06e786eab57eb555c628310a36533a237ef26a3c2af5",
+    "Assets/_Game/Scripts/UI/IronveinBattleAssembly.cs": "09af3860252e5cfe096137cd0ae2bdba05ce57a2b4db0cc9c8b4b5345df92a80",
+    "Assets/_Game/Scripts/Editor/CaveSceneryCoverageTests.cs": "77122bb3d9b1412fb8acbd7adddb370ca62e22d2273d4d03fc619e07ee3ea6db",
+    "Assets/_Game/Scripts/Editor/IronveinCavernImporter.cs": "9a6e4a0db2364af63788f2ad5072c63adcd6c95690c4abc4bd388249ad718e54",
+    "Assets/_Game/Resources/UI/BattlePresentation/IronveinAssembly.asset": "f3daf1877eac82f611c70efc6ccd06a94e0e93bb4bacad9ee0528bd131d5a9a4"
+  }
+}
