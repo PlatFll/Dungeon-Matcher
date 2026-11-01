@@ -69,18 +69,23 @@ required Unity compilation validator passed again before merge on 2026-11-01.
 Automated Unity evidence is separate from phone testing; no new Android build or
 physical-device test was performed for this handoff.
 
-## Dungeon connected standing floor — revised review candidate (2026-11-01)
+## Dungeon connected standing floor — full-width review candidate (2026-11-01)
 
-The user rejected the stacked rear-course approach. PR #222 now replaces the
-enemy-side 12-pixel strip with one 128×32 native PixelLab/LibreSprite floor module,
-repeated horizontally only. Gate, rear column and grounded props meet its rear
-edge; the original separator and shared enemy floor line stay fixed. Portrait,
-board, controls and gameplay are unchanged. Original floor assets remain intact.
+PR #222 corrects the rejected stacked courses and partial-width follow-up.
+The same 128×32 native PixelLab/LibreSprite slab now continues across the entire
+physical screen behind the masked portrait, with the separator flush beneath it.
+All three rear pillars and the doorway meet the floor's rear edge. Small native
+LibreSprite contact shadows ground the existing props. The Dungeon portrait uses
+the existing hard-clipping UI shader with no flash, preventing floor-color bleed
+at its mask boundary. Original artwork, shared enemy floor line, board, controls
+and gameplay remain intact.
 
-Actual Game captures at five phone/safe-area profiles, exact protected-pixel and
-geometry comparisons, swap/Settings checks and the required Unity compilation
-gate passed. [Current floor review](../ArtSource/DungeonFloorDepth/Revision02/README.md).
-The branch remains unmerged pending visual approval. Cost: 10 PixelLab generations.
+Actual Game checks passed at five phone/safe-area layouts, with zero visible
+gaps and zero protected-region pixel changes. Swap/Settings checks and the
+required Unity compilation validator passed. No physical-device test.
+[Current floor review](../ArtSource/DungeonFloorDepth/Revision03/README.md).
+The branch remains unmerged pending visual approval. Original generation cost:
+10 PixelLab generations; the full-width revision spends zero.
 
 ## Approved Snowy Mountain production integration (2026-10-31)
 

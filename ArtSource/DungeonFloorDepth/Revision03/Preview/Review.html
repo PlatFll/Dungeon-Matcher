@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><title>Dungeon floor — full-width correction</title>
+<style>body{background:#10141e;color:#e9edf5;font:16px system-ui;margin:24px}h1{font-size:25px}p{max-width:1000px;line-height:1.5}button,select{background:#273145;color:inherit;border:1px solid #657389;padding:9px;margin:4px}section{display:flex;gap:18px;align-items:flex-start;overflow:auto}.panel{min-width:360px;flex:1;background:#181f2d;padding:12px}canvas{image-rendering:pixelated;max-width:100%;height:auto}img{image-rendering:pixelated}a{color:#9dd9ff}.asset{display:inline-block;margin:20px}.small{font-size:13px;color:#bbc8dc}</style>
+<h1>Dungeon floor — continuous across the full screen</h1>
+<p>The 32-pixel floor passes behind the portrait and reaches both physical edges. All pillar bases meet its rear edge; the separator meets its front edge. Existing artwork and gameplay layout are preserved. Small native contact shadows ground the skull, bones and barrel.</p>
+<p><b>Actual Unity Game scene.</b> Rattlebones, three enemies and 64 gems. No merge. No new PixelLab spending.</p>
+<select id="size"><option>720x1280</option><option>1080x1920</option><option>1080x2400</option><option>1080x2400-safe</option><option>360x640</option></select>
+<button id="mode">Show full scene</button>
+<section><div class="panel">Previous partial-width revision<canvas id="old"></canvas></div><div class="panel">Revised full-width assembly<canvas id="now"></canvas></div></section>
+<p class="small">Previous captures were taken in an earlier session, so idle poses and random weakness icons can differ. Automated frozen before/after comparisons separately confirm unchanged actor/UI geometry, unchanged portrait pixels and zero pixel changes outside the authorized floor/grounding region.</p>
+<p>Five Dungeon phone/safe-area profiles passed. A bright diagnostic layer behind the floor and separator exposed zero pixels at every join and screen edge. Underwater was checked at two profiles. No physical-device test.</p>
+<div class="asset">Unchanged floor, native 128×32<br><img src="../../Revision02/Exports/Floor_Standing.png"><br><img style="width:512px" src="../../Revision02/Exports/Floor_Standing.png"></div>
+<div class="asset">New contact shadows, native 32×6 / 40×6<br><img src="../Exports/Floor_ContactSmall.png"> <img src="../Exports/Floor_ContactLarge.png"><br><img style="width:128px" src="../Exports/Floor_ContactSmall.png"> <img style="width:160px" src="../Exports/Floor_ContactLarge.png"></div>
+<p><a href="../README.md">Revision notes</a> · <a href="drowned-court-720x1280.png">Underwater comparison</a> · <a href="Comparison.png">Side-by-side detail</a></p>
+<script>
+let full=false;const size=document.querySelector('#size'),button=document.querySelector('#mode');
+const crops={'720x1280':500,'1080x1920':656,'1080x2400':953,'1080x2400-safe':1073,'360x640':243};
+function draw(id,src){const im=new Image;im.onload=()=>{const c=document.getElementById(id);c.width=im.width;c.height=full?im.height:crops[size.value];const ctx=c.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.drawImage(im,0,0);};im.src=src;}
+function update(){draw('old','../../Revision02/Preview/dungeon-'+size.value+'-after.png');draw('now','dungeon-'+size.value+'-after.png');button.textContent=full?'Show floor detail':'Show full scene';}
+size.onchange=update;button.onclick=()=>{full=!full;update()};update();
+</script>

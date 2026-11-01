@@ -13,6 +13,7 @@ public sealed partial class DungeonPixelLabBattleArt : ScriptableObject
     public Sprite[] modules;
     public TextAsset placementManifest;
     public Sprite boardCell64;
+    public Material portraitRecessMaterial;
     public Sprite[] hybridModules;
     public Sprite[] sideArchitectureModules;
     public bool UsesSideArchitecture => sideArchitectureModules != null && sideArchitectureModules.Length > 0;

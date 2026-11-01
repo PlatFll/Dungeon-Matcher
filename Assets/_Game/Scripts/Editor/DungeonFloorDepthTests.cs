@@ -16,7 +16,7 @@ using Object=UnityEngine.Object;
 // Only the optional surface lookup changes; production data and actors stay fixed.
 public sealed class DungeonFloorDepthTests
 {
-    const string Root="ArtSource/DungeonFloorDepth/Revision02";
+    const string Root="ArtSource/DungeonFloorDepth/Revision03";
     // World-canvas projection uses float matrices; below 1/20 of a screen pixel.
     // Captured pixel comparisons remain exact, with no color/position tolerance.
     const float ProjectionEpsilon=.05f;
@@ -83,7 +83,7 @@ public sealed class DungeonFloorDepthTests
                         var rect=GameplayPixelLayoutController.ScreenRect(surface);
                         float scale=BattleFloorAnchor.PhysicalPixelScale;
                         Assert.That(rect.height,Is.EqualTo(32*scale).Within(ProjectionEpsilon));
-                        Assert.That(rect.xMin,Is.EqualTo(layout.Current.Viewport.xMin+106*scale).Within(ProjectionEpsilon));
+                        Assert.That(rect.xMin,Is.EqualTo(0).Within(ProjectionEpsilon));
                         Assert.That(rect.xMax,Is.EqualTo(size.x).Within(ProjectionEpsilon));
                         // Enemy soles can fall between scenery texels. Scenery retains the
                         // existing nearest-native-pixel anchor, never moves the actor.
@@ -99,10 +99,22 @@ public sealed class DungeonFloorDepthTests
                         var fascia=world.Find("Standing platform").GetComponentsInChildren<Image>().First(i=>i.name=="Fascia_Left");
                         var fasciaRect=GameplayPixelLayoutController.ScreenRect(fascia.rectTransform);
                         Assert.That(fasciaRect.yMax,Is.EqualTo(rect.yMin).Within(ProjectionEpsilon),"Fascia starts directly below floor");
-                        foreach(var original in world.Find("Standing platform").GetComponentsInChildren<Image>()
-                            .Where(i=>i.name.StartsWith("Floor_Mid")||i.name=="Floor_Left"))
-                            Assert.That(GameplayPixelLayoutController.ScreenRect(original.rectTransform).xMax,
-                                Is.LessThanOrEqualTo(rect.xMin+ProjectionEpsilon),"Original portrait-side course must never overlap the replacement");
+                        Assert.That(world.Find("Standing platform").GetComponentsInChildren<Image>()
+                            .Any(i=>i.name.StartsWith("Floor_Mid")||i.name=="Floor_Left"),Is.False,
+                            "No shallow strips remain under the full-width surface");
+                        Assert.That(surface.GetComponent<RectMask2D>(),Is.Null,"Opaque floor needs no soft clipping edge");
+                        var columnFeet=world.Find("Structure").GetComponentsInChildren<Image>().Where(i=>i.name=="Support_Foot").ToArray();
+                        Assert.That(columnFeet.Length,Is.EqualTo(3));
+                        foreach(var foot in columnFeet)
+                            Assert.That(GameplayPixelLayoutController.ScreenRect(foot.rectTransform).yMin,
+                                Is.EqualTo(rect.yMax).Within(ProjectionEpsilon),"All column bases meet the rear floor edge");
+                        var separators=world.Find("Standing platform").GetComponentsInChildren<Image>()
+                            .Where(i=>i.name.StartsWith("Fascia_")).Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).OrderBy(r=>r.xMin).ToArray();
+                        Assert.That(separators[0].xMin,Is.LessThanOrEqualTo(ProjectionEpsilon));
+                        Assert.That(separators.Last().xMax,Is.GreaterThanOrEqualTo(size.x-ProjectionEpsilon));
+                        for(int n=1;n<separators.Length;n++)
+                            Assert.That(separators[n].xMin,Is.EqualTo(separators[n-1].xMax).Within(ProjectionEpsilon),"Separator has no gaps or overlaps");
+                        yield return CheckOpaqueCoverage(key,surface);
                         var portrait=GameplayPixelLayoutController.ScreenRect((RectTransform)GameObject.Find("PlayerSection").transform.Find("PixelLabPortraitBackdrop/PortraitMask"));
                         Assert.That(Geometry(layout),Is.EqualTo(beforeGeometry),"Actor feet, health, board and UI must remain exact");
                         File.WriteAllText(Root+"/QA/"+key+"-geometry.txt",beforeGeometry);
@@ -132,6 +144,31 @@ public sealed class DungeonFloorDepthTests
             }
         }
         yield return new ExitPlayMode();
+    }
+    // A bright test-only backing immediately under the surface detects even a
+    // one-pixel alpha leak at a tile join, separator join, or physical screen edge.
+    static IEnumerator CheckOpaqueCoverage(string key,RectTransform surface)
+    {
+        var sentinel=DungeonPixelLabBattleArt.Rect("Coverage probe",surface.parent,
+            surface.anchoredPosition.x,-surface.anchoredPosition.y,surface.rect.width,54);
+        sentinel.SetAsFirstSibling();
+        var image=sentinel.gameObject.AddComponent<Image>();image.color=Color.magenta;image.raycastTarget=false;
+        try
+        {
+            yield return Capture(Root+"/QA/"+key+"-coverage-probe.png");
+            var normal=new Texture2D(2,2);var probe=new Texture2D(2,2);
+            try
+            {
+                Assert.That(normal.LoadImage(File.ReadAllBytes(Root+"/Preview/"+key+"-after.png")),Is.True);
+                Assert.That(probe.LoadImage(File.ReadAllBytes(Root+"/QA/"+key+"-coverage-probe.png")),Is.True);
+                var a=normal.GetPixels32();var b=probe.GetPixels32();
+                int leaks=Enumerable.Range(0,a.Length).Count(i=>!a[i].Equals(b[i]));
+                File.WriteAllText(Root+"/QA/"+key+"-coverage.txt","Visible probe pixels="+leaks);
+                Assert.That(leaks,Is.Zero,"Full-width floor and separator must be completely opaque, including every join");
+            }
+            finally{Object.DestroyImmediate(normal);Object.DestroyImmediate(probe);}
+        }
+        finally{Object.DestroyImmediate(sentinel.gameObject);}
     }
     static void Rebuild(DungeonPresentationArt owner)
     {
