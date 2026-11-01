@@ -15,7 +15,7 @@ using Object=UnityEngine.Object;
 
 public sealed class StoneAbilityPlayTests
 {
-    const string Root="ArtSource/StoneAbilityUI/Preview/Characters";
+    const string Root="ArtSource/StoneAbilityUI/MaterialRevision/Preview/Characters";
     IDisposable profile,selection;
     int oldCapture;bool motionKey,preferencesCaptured;int oldMotion;
     [UnityTearDown]public IEnumerator Cleanup()

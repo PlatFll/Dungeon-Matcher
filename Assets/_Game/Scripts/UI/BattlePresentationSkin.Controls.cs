@@ -25,21 +25,23 @@ public static partial class BattlePresentationSkin
         rect.anchorMin=rect.anchorMax=rect.pivot=new Vector2(0,1);
         // CanvasScaler already chooses one whole physical-pixel scale. Never map
         // these controls through the independently responsive environment height.
-        float right=top.rect.width-8, waveRight=right-40-12;
+        Vector2 settingsSize=Shared("Settings").rect.size;
+        float right=top.rect.width-8, waveRight=right-settingsSize.x-8;
         Vector2 size;float left,y;
-        if(kind=="Settings"){size=new Vector2(40,40);left=right-40;y=12;}
+        if(kind=="Settings"){size=settingsSize;left=right-settingsSize.x;y=12;}
         else
         {
             float minLeft=Mathf.Ceil(top.rect.width*.29f)+6;
-            float width=Mathf.Min(144,Mathf.Floor(waveRight-minLeft));
-            size=new Vector2(Mathf.Max(64,width),34);
+            float width=Mathf.Min(176,Mathf.Floor(waveRight-minLeft));
+            size=new Vector2(Mathf.Max(64,width),48);
             left=Mathf.Clamp(Mathf.Round((top.rect.width-size.x)*.5f),minLeft,waveRight-size.x);y=10;
         }
         rect.sizeDelta=size;rect.anchoredPosition=new Vector2(left,-y);GameplayPixelGrid.Snap(rect);
         if(kind=="Wave")
         {
             var image=rect.GetComponent<Image>();
-            image.sprite=Resources.Load<Sprite>("UI/BattlePresentation/Unified/WaveBody");
+            image.sprite=Resources.Load<Sprite>("UI/BattlePresentation/Stone/WaveBody") ??
+                Resources.Load<Sprite>("UI/BattlePresentation/Unified/WaveBody");
             image.type=Image.Type.Tiled;image.pixelsPerUnitMultiplier=1;image.color=Color.white;image.raycastTarget=false;
             var pendant=rect.Find("SharedWavePendant") as RectTransform;
             if(!pendant)
@@ -48,9 +50,9 @@ public static partial class BattlePresentationSkin
                 var ornament=pendant.gameObject.AddComponent<Image>();ornament.sprite=Resources.Load<Sprite>("UI/BattlePresentation/Unified/WavePendant");ornament.raycastTarget=false;
             }
             pendant.anchorMin=pendant.anchorMax=pendant.pivot=new Vector2(.5f,1);
-            pendant.anchoredPosition=new Vector2(0,-24);GameplayPixelGrid.Snap(pendant);
+            pendant.anchoredPosition=new Vector2(0,-41);GameplayPixelGrid.Snap(pendant);
             var label=rect.GetComponentInChildren<TMP_Text>();
-            if(label){label.rectTransform.anchorMin=Vector2.zero;label.rectTransform.anchorMax=Vector2.one;label.rectTransform.offsetMin=new Vector2(11,0);label.rectTransform.offsetMax=new Vector2(-11,0);label.textWrappingMode=TextWrappingModes.NoWrap;label.overflowMode=TextOverflowModes.Overflow;PixelTextFitter.ApplyNativeMenu(label,40);}
+            if(label){label.rectTransform.anchorMin=Vector2.zero;label.rectTransform.anchorMax=Vector2.one;label.rectTransform.offsetMin=new Vector2(16,0);label.rectTransform.offsetMax=new Vector2(-16,0);label.textWrappingMode=TextWrappingModes.NoWrap;label.overflowMode=TextOverflowModes.Overflow;PixelTextFitter.ApplyNativeMenu(label,48);}
         }
 
     }

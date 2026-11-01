@@ -36,9 +36,12 @@ remains unmerged. The original zoom proposal is superseded.
 
 ## Shared stone battle controls and four-character menu — review branch (2026-11-01)
 
-All five zones use the same PixelLab/LibreSprite stone supply tiles, square
-Settings button, and solid ability slab. The approved wave plaque remains the
-material reference. Guide is removed; tapping an enemy still opens inspection.
+All five zones use the same PixelLab/LibreSprite supply tiles, square Settings
+button, solid ability slab and wave plaque. The first set read too metallic; the
+user requested larger wave/Settings controls and a stronger stone material. The
+current revision uses chipped matte gray stone without studs: wave up to 176×48
+native pixels and Settings 56×56, with integer scale and protected corners.
+Guide is removed; tapping an enemy still opens inspection.
 Each ability definition supplies a crowned-skull, bull, six-chamber revolver or
 flute engraving. A ready slab rises by whole pixels and softly glows white;
 pause freezes it and Reduced Motion keeps a static ready cue.
@@ -53,7 +56,8 @@ steampunk zone; assets, progression and existing continuation identity survive.
 The expanded Ironvein cave remains bound to the actual Game scene. Board,
 portrait, environment and health placements are unchanged. New native sources,
 PixelLab usage and actual Game captures are in
-[the stone UI handoff](../ArtSource/StoneAbilityUI/README.md). This work remains
+[the stone UI handoff](../ArtSource/StoneAbilityUI/README.md) and its
+[current material revision](../ArtSource/StoneAbilityUI/MaterialRevision/README.md). This work remains
 unmerged for user review. Automated Unity evidence is separate from phone testing.
 
 ## Approved Snowy Mountain production integration (2026-10-31)

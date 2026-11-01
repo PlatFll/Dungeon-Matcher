@@ -14,7 +14,7 @@ using Object=UnityEngine.Object;
 
 public sealed class StoneBattleUiTests
 {
-    const string Root="ArtSource/StoneAbilityUI/Preview";
+    const string Root="ArtSource/StoneAbilityUI/MaterialRevision/Preview";
     static void Size(int w,int h)=>typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.NonPublic|BindingFlags.Static).Invoke(null,new object[]{new Vector2Int(w,h)});
     static IEnumerator Until(Func<bool> ready){float end=Time.realtimeSinceStartup+60;while(!ready()){Assert.That(Time.realtimeSinceStartup,Is.LessThan(end));yield return null;}}
     static IEnumerator Wait(float seconds){float end=Time.realtimeSinceStartup+seconds;yield return Until(()=>Time.realtimeSinceStartup>=end);}
@@ -135,14 +135,20 @@ public sealed class StoneBattleUiTests
         }
         for(int a=0;a<bounds.Count;a++)for(int b=a+1;b<bounds.Count;b++)Assert.That(bounds[a].Overlaps(bounds[b]),Is.False,names[a]+" overlaps "+names[b]);
         var wave=layout.TopHud.Find("WaveTracker").GetComponent<Image>();
-        Assert.That(wave.type,Is.EqualTo(Image.Type.Tiled));Assert.That(wave.sprite.border,Is.EqualTo(new Vector4(11,10,11,10)));
+        Assert.That(wave.type,Is.EqualTo(Image.Type.Tiled));Assert.That(wave.sprite.border,Is.EqualTo(new Vector4(20,14,20,14)));
         Assert.That(wave.pixelsPerUnitMultiplier,Is.EqualTo(1));
+        Assert.That(wave.sprite.name,Is.EqualTo("WaveBody"));
+        Assert.That(AssetDatabase.GetAssetPath(wave.sprite),Is.EqualTo("Assets/_Game/Resources/UI/BattlePresentation/Stone/WaveBody.png"));
+        Assert.That(wave.rectTransform.rect.height,Is.EqualTo(48));
+        Assert.That(wave.rectTransform.rect.width,Is.GreaterThanOrEqualTo(170));
+        Assert.That(all.Single(im=>im.name=="Settings").rectTransform.rect.size,Is.EqualTo(new Vector2(56,56)));
+
         Assert.That(wave.transform.Find("SharedWavePendant"),Is.Not.Null);
         var wr=GameplayPixelLayoutController.ScreenRect(wave.rectTransform);
         Assert.That(wr.Overlaps(bounds[0]),Is.False,"Wave overlaps top buttons");
         var text=wave.GetComponentInChildren<TMPro.TMP_Text>();string saved=text.text;
-        foreach(var value in new[]{"WAVE 1","WAVE 99999"}){text.text=value;PixelTextFitter.ApplyNativeMenu(text,40);text.ForceMeshUpdate();Assert.That(text.isTextOverflowing,Is.False,value);Assert.That(text.textBounds.size.x,Is.LessThanOrEqualTo(text.rectTransform.rect.width+.1f));Assert.That(text.textInfo.characterInfo.Take(text.textInfo.characterCount).Where(c=>c.isVisible).Max(c=>c.textElement.glyph.metrics.height*c.scale),Is.LessThanOrEqualTo(21),"Native glyph height stays inside dark plaque inset (excluding transparent TMP mesh padding)");}
-        text.text=saved;PixelTextFitter.ApplyNativeMenu(text,40);text.ForceMeshUpdate();
+        foreach(var value in new[]{"WAVE 1","WAVE 99999"}){text.text=value;PixelTextFitter.ApplyNativeMenu(text,48);text.ForceMeshUpdate();Assert.That(text.isTextOverflowing,Is.False,value);Assert.That(text.textBounds.size.x,Is.LessThanOrEqualTo(text.rectTransform.rect.width+.1f));Assert.That(text.textInfo.characterInfo.Take(text.textInfo.characterCount).Where(c=>c.isVisible).Max(c=>c.textElement.glyph.metrics.height*c.scale),Is.LessThanOrEqualTo(21),"Native glyph height stays inside dark plaque inset (excluding transparent TMP mesh padding)");}
+        text.text=saved;PixelTextFitter.ApplyNativeMenu(text,48);text.ForceMeshUpdate();
         Assert.That(text.fontSize*layout.Current.Scale/16,Is.EqualTo(Mathf.Round(text.fontSize*layout.Current.Scale/16)).Within(.01),"Whole physical glyph pixels");
         foreach(var actor in RunSession.Current.Waves.ActiveEnemies)
         {

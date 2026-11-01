@@ -1,5 +1,8 @@
 # Stone battle controls — review handoff
 
+**Latest revision:** [matte carved stone and larger top controls](MaterialRevision/README.md).
+The first material pass below is preserved as history; the user rejected its metallic read.
+
 Implemented on `codex/stone-ability-controls`, stacked on the existing shared-UI
 branch/PR #220. No merge. The expanded approved Ironvein cave remains bound in
 the actual Game scene through the preceding integration work.
