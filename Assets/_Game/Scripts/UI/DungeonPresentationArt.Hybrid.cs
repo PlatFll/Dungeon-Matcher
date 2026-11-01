@@ -139,7 +139,7 @@ public sealed partial class DungeonPresentationArt
         if(standing)foreach(var p in art.Manifest.placements.Where(p=>p.layer==25))
         {
             float dx=p.x>=280?width-360:p.x>=200?Mathf.Round((width-360)/2f):0;
-            string contact=p.name=="Barrel"?"Floor_ContactLarge":"Floor_ContactSmall";
+            string contact=p.name=="Barrel"?"Floor_ContactLarge":p.name=="Skull"?"Floor_ContactSkull":"Floor_ContactSmall";
             if(art.Sprite(contact))
                 art.Image(contact,props,p.x+dx,p.y+art.Sprite(p.name).rect.height-6+rear-178);
         }

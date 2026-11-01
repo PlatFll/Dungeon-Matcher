@@ -16,7 +16,7 @@ using Object=UnityEngine.Object;
 // Only the optional surface lookup changes; production data and actors stay fixed.
 public sealed class DungeonFloorDepthTests
 {
-    const string Root="ArtSource/DungeonFloorDepth/Revision03";
+    const string Root="ArtSource/DungeonFloorDepth/SkullPolish";
     // World-canvas projection uses float matrices; below 1/20 of a screen pixel.
     // Captured pixel comparisons remain exact, with no color/position tolerance.
     const float ProjectionEpsilon=.05f;
@@ -65,6 +65,21 @@ public sealed class DungeonFloorDepthTests
                         var lookup=(System.Collections.Generic.Dictionary<string,Sprite>)typeof(DungeonPixelLabBattleArt)
                             .GetField("lookup",BindingFlags.Instance|BindingFlags.NonPublic).GetValue(art);
                         var owner=layout.GetComponent<DungeonPresentationArt>();
+                        var skull=art.Sprite("Skull");var contact=art.Sprite("Floor_ContactSkull");
+                        Assert.That(AssetDatabase.GetAssetPath(skull),Is.EqualTo("Assets/_Game/Art/DungeonHybrid/Polish/Skull.png"),
+                            "Actual Dungeon Game scene must use the smaller muted skull");
+                        Assert.That(contact,Is.Not.Null);
+                        try
+                        {
+                            lookup["Skull"]=AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_Game/Art/DungeonHybrid/Stage04/Skull.png");
+                            lookup["Floor_ContactSkull"]=art.Sprite("Floor_ContactSmall");
+                            Rebuild(owner);yield return null;yield return null;
+                            yield return Capture(Root+"/Preview/"+key+"-skull-before.png");
+                        }
+                        finally{lookup["Skull"]=skull;lookup["Floor_ContactSkull"]=contact;Rebuild(owner);}
+                        yield return null;yield return null;
+                        yield return Capture(Root+"/Preview/"+key+"-skull-after.png");
+                        CheckSkullPixels(key);
                         string beforeGeometry=Geometry(layout);
                         try
                         {
@@ -169,6 +184,28 @@ public sealed class DungeonFloorDepthTests
             finally{Object.DestroyImmediate(normal);Object.DestroyImmediate(probe);}
         }
         finally{Object.DestroyImmediate(sentinel.gameObject);}
+    }
+    static void CheckSkullPixels(string key)
+    {
+        var props=GameObject.Find("DungeonPixelLabEnvironment").transform.Find("Approved hybrid props");
+        var bounds=props.GetComponentsInChildren<Image>().Where(i=>i.name=="Skull"||i.name=="Floor_ContactSkull")
+            .Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).ToArray();
+        var allowed=Rect.MinMaxRect(bounds.Min(r=>r.xMin),bounds.Min(r=>r.yMin),bounds.Max(r=>r.xMax),bounds.Max(r=>r.yMax));
+        var a=new Texture2D(2,2);var b=new Texture2D(2,2);
+        try
+        {
+            Assert.That(a.LoadImage(File.ReadAllBytes(Root+"/Preview/"+key+"-skull-before.png")),Is.True);
+            Assert.That(b.LoadImage(File.ReadAllBytes(Root+"/Preview/"+key+"-skull-after.png")),Is.True);
+            var ap=a.GetPixels32();var bp=b.GetPixels32();int changed=0,outside=0;
+            for(int i=0;i<ap.Length;i++)if(!ap[i].Equals(bp[i]))
+            {
+                changed++;
+                if(!allowed.Contains(new Vector2(i%a.width+.5f,i/a.width+.5f)))outside++;
+            }
+            File.WriteAllText(Root+"/QA/"+key+"-skull.txt",$"Changed={changed}; outside skull/contact={outside}; allowed={allowed}");
+            Assert.That(changed,Is.GreaterThan(0));Assert.That(outside,Is.Zero,"Only the ground skull and its contact may change");
+        }
+        finally{Object.DestroyImmediate(a);Object.DestroyImmediate(b);}
     }
     static void Rebuild(DungeonPresentationArt owner)
     {

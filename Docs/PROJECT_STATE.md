@@ -69,23 +69,26 @@ required Unity compilation validator passed again before merge on 2026-11-01.
 Automated Unity evidence is separate from phone testing; no new Android build or
 physical-device test was performed for this handoff.
 
-## Dungeon connected standing floor — full-width review candidate (2026-11-01)
+## Approved Dungeon connected floor and quieter ground skull (2026-11-01)
 
-PR #222 corrects the rejected stacked courses and partial-width follow-up.
-The same 128×32 native PixelLab/LibreSprite slab now continues across the entire
-physical screen behind the masked portrait, with the separator flush beneath it.
-All three rear pillars and the doorway meet the floor's rear edge. Small native
-LibreSprite contact shadows ground the existing props. The Dungeon portrait uses
-the existing hard-clipping UI shader with no flash, preventing floor-color bleed
-at its mask boundary. Original artwork, shared enemy floor line, board, controls
-and gameplay remain intact.
+The user approved the full-width Dungeon correction and authorized production
+integration and PR #222 merge after reducing the ground skull. The 128×32 native
+floor continues across the physical screen behind the masked portrait; the
+separator joins it without gaps. All rear pillar bases and the doorway meet the
+rear edge, with small native contact shadows grounding existing props.
 
-Actual Game checks passed at five phone/safe-area layouts, with zero visible
-gaps and zero protected-region pixel changes. Swap/Settings checks and the
-required Unity compilation validator passed. No physical-device test.
-[Current floor review](../ArtSource/DungeonFloorDepth/Revision03/README.md).
-The branch remains unmerged pending visual approval. Original generation cost:
-10 PixelLab generations; the full-width revision spends zero.
+The ground skull's visible footprint is now 21×20 instead of 27×26, with a muted
+gray-violet bone ramp and tighter contact shadow. Its original canvas, bottom
+ground row and source artwork remain preserved. DungeonPixelLab.asset selects
+the revised sprite through the existing production presentation architecture.
+Characters, shared enemy floor line, board, UI and gameplay remain unchanged.
+
+Actual Game checks passed at five phone/safe-area layouts, including exact
+skull-only pixel comparisons and zero floor/separator gaps. Shared geometry,
+portrait protection, swap/Settings and required compilation were checked.
+[Final integration evidence](../ArtSource/DungeonFloorDepth/SkullPolish/README.md).
+No new PixelLab spending or physical-device test; original floor generation
+cost remains 10 generations.
 
 ## Approved Snowy Mountain production integration (2026-10-31)
 
