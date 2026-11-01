@@ -1,3 +1,12 @@
+# Current review: connected floor revision 02
+
+The user rejected the stacked rear courses below. They are removed from runtime.
+See [revision 02 and its Unity preview](Revision02/README.md). PR #222 remains unmerged.
+
+---
+
+## Rejected first-pass history
+
 # Dungeon standing-floor depth
 
 The user requested a wider Dungeon standing surface like Drowned Court. The

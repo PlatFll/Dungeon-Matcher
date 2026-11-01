@@ -46,22 +46,20 @@ public sealed partial class DungeonPresentationArt
             // matching right half when repeating across the full screen.
             if(p.name=="Wall_Edge_Left")art.Image("Wall_Edge_Right",wall,x+24,y);
         }
-        // Extend the standing surface behind the existing front course. Repeat
-        // the approved native stones without stretching them or moving actors,
-        // the separator, or UI. Architecture remains above the new rear courses.
-        float floorWidth=(UnityEngine.Device.Screen.width-v.xMin)/scale-106;
-        var rearFloor=DungeonPixelLabBattleArt.Rect("Standing floor rear courses",pixelLabContent,106,floor-24,floorWidth,24);
-        rearFloor.gameObject.AddComponent<RectMask2D>();
-        string[] floorVariants={"Floor_Mid_A","Floor_Mid_B","Floor_Mid_C"};
-        for(int row=0;row<2;row++)
-            for(int x=row==0?0:-16,n=0;x<floorWidth;x+=32,n++)
-                art.Image(floorVariants[(n+row)%floorVariants.Length],rearFloor,x,row*12);
+        // The connected top surface replaces the old shallow strip. Its rear
+        // edge is behind the shared actor soles; the front meets the fascia.
+        // Original art remains the fallback if the optional surface is absent.
+        var standing = art.Sprite("Floor_Standing");
+        int rear = floor - (standing ? 20 : 0);
+        int fascia = floor + 12;
         var structure=DungeonPixelLabBattleArt.Rect("Structure",pixelLabContent,0,0,width,height);
         foreach(int x in new[]{0,96,width-36})
         {
             art.Image("Support_Capital",structure,x,0);
-            for(int y=16;y<floor-22;y+=28)art.Image("Support_Core",structure,x,y);
-            art.Image("Support_Foot",structure,x,floor-22);
+            // The portrait posts stay in the foreground at their approved anchor.
+            int columnFloor = x==width-36 ? rear : floor;
+            for(int y=16;y<columnFloor-22;y+=28)art.Image("Support_Core",structure,x,y);
+            art.Image("Support_Foot",structure,x,columnFloor-22);
         }
         if (!art.UsesSideArchitecture)
         {
@@ -89,22 +87,41 @@ public sealed partial class DungeonPresentationArt
                 art.Image("Masonry_Corner_Right",cornerRoot,screenLeft+screenWidth-58,screenBottom-86);
             }
         }
-        art.Image("Support_Corbel",structure,96,floor+32);
-        art.Image("Support_Corbel",structure,210+Mathf.Round((width-360)/2f),floor+32);
+        art.Image("Support_Corbel",structure,96,fascia+20);
+        art.Image("Support_Corbel",structure,210+Mathf.Round((width-360)/2f),fascia+20);
         var gate=DungeonPixelLabBattleArt.Rect("Approved hybrid gate",pixelLabContent,0,0,width,height);
         foreach(var p in art.Manifest.placements.Where(p=>p.layer==20))
-            art.Image(p.name,gate,p.x+Mathf.Round((width-360)/2f),p.y+floor-178);
+            art.Image(p.name,gate,p.x+Mathf.Round((width-360)/2f),p.y+rear-178);
         var platform=DungeonPixelLabBattleArt.Rect("Standing platform",pixelLabContent,0,0,width,height);
-        // Continue the existing tile phase beneath the portrait to the viewport edge.
-        // Keep the enemy-side floor, masked recess and actor baseline unchanged.
-        for(int x=74,n=0;x>-32;x-=32,n++)
-            art.Image("Floor_Mid_"+(n%3==0?"A":n%3==1?"C":"B"),platform,x,floor);
-        for(int x=106,n=0;x<width;x+=32,n++)
-            art.Image(n==0?"Floor_Left":"Floor_Mid_"+(n%3==0?"A":n%3==1?"B":"C"),platform,x,floor);
+        if (standing)
+        {
+            // One full-depth strip, repeated only horizontally at native scale.
+            // Keep the original course under the portrait: its clipped edge must
+            // not change color when the enemy-side surface is replaced.
+            for(int x=74,n=0;x>-32;x-=32,n++)
+                art.Image("Floor_Mid_"+(n%3==0?"A":n%3==1?"C":"B"),platform,x,floor);
+            float screenLeft = 106;
+            float screenWidth = (UnityEngine.Device.Screen.width-v.xMin)/scale-screenLeft;
+            var surface = DungeonPixelLabBattleArt.Rect("Connected standing floor", platform,
+                screenLeft, rear, screenWidth, standing.rect.height);
+            surface.gameObject.AddComponent<RectMask2D>();
+            for (int x = Mathf.FloorToInt(screenLeft/standing.rect.width)*(int)standing.rect.width;
+                 x < screenLeft+screenWidth; x += (int)standing.rect.width)
+                art.Image("Floor_Standing", surface, x-screenLeft, 0);
+        }
+        else
+        {
+            // Continue the existing tile phase beneath the portrait to the viewport edge.
+            // Keep the enemy-side floor, masked recess and actor baseline unchanged.
+            for(int x=74,n=0;x>-32;x-=32,n++)
+                art.Image("Floor_Mid_"+(n%3==0?"A":n%3==1?"C":"B"),platform,x,floor);
+            for(int x=106,n=0;x<width;x+=32,n++)
+                art.Image(n==0?"Floor_Left":"Floor_Mid_"+(n%3==0?"A":n%3==1?"B":"C"),platform,x,floor);
+        }
         for(int x=0,n=0;x<width;n++)
         {
             string name=n==0?"Fascia_Left":"Fascia_Mid_"+(n%2==0?"A":"B");
-            art.Image(name,platform,x,floor+12);x+=(int)art.Sprite(name).rect.width;
+            art.Image(name,platform,x,fascia);x+=(int)art.Sprite(name).rect.width;
         }
         var props=DungeonPixelLabBattleArt.Rect("Approved hybrid props",pixelLabContent,0,0,width,height);
         foreach(var p in art.Manifest.placements.Where(p=>p.layer==24||p.layer==25))
@@ -112,7 +129,7 @@ public sealed partial class DungeonPresentationArt
             // Left/right wall dressing stays attached to its column; the second
             // complete chain and center bones follow the centered gate.
             float dx=p.x>=280?width-360:p.x>=200?Mathf.Round((width-360)/2f):0;
-            art.Image(p.name,props,p.x+dx,p.y+(p.layer==25?floor-178:0));
+            art.Image(p.name,props,p.x+dx,p.y+(p.layer==25?rear-178:0));
         }
     }
 }

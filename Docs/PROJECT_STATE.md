@@ -69,15 +69,18 @@ required Unity compilation validator passed again before merge on 2026-11-01.
 Automated Unity evidence is separate from phone testing; no new Android build or
 physical-device test was performed for this handoff.
 
-## Dungeon standing-floor depth — review candidate (2026-11-01)
+## Dungeon connected standing floor — revised review candidate (2026-11-01)
 
-The user requested a deeper Dungeon standing surface like the underwater zone.
-Two additional native rear stone courses expand the floor from 12 to 36 pixels
-without changing actor feet, the front separator, board, portrait or shared UI.
-No artwork is regenerated or recolored. Actual Game captures and exact pixel
-preservation checks are in [the floor review](../ArtSource/DungeonFloorDepth/README.md).
-This focused change is on `codex/dungeon-deeper-battle-floor`, pending review and
-not merged; the other zones retain their approved production bindings.
+The user rejected the stacked rear-course approach. PR #222 now replaces the
+enemy-side 12-pixel strip with one 128×32 native PixelLab/LibreSprite floor module,
+repeated horizontally only. Gate, rear column and grounded props meet its rear
+edge; the original separator and shared enemy floor line stay fixed. Portrait,
+board, controls and gameplay are unchanged. Original floor assets remain intact.
+
+Actual Game captures at five phone/safe-area profiles, exact protected-pixel and
+geometry comparisons, swap/Settings checks and the required Unity compilation
+gate passed. [Current floor review](../ArtSource/DungeonFloorDepth/Revision02/README.md).
+The branch remains unmerged pending visual approval. Cost: 10 PixelLab generations.
 
 ## Approved Snowy Mountain production integration (2026-10-31)
 

@@ -12,11 +12,14 @@ using UnityEngine.TestTools;
 using UnityEngine.UI;
 using Object=UnityEngine.Object;
 
-// Actual Game-scene comparison. Only the added rear floor layer is toggled;
-// a frozen scene makes the original and revised pixels directly comparable.
+// Actual Game-scene comparison against the original shallow-floor fallback.
+// Only the optional surface lookup changes; production data and actors stay fixed.
 public sealed class DungeonFloorDepthTests
 {
-    const string Root="ArtSource/DungeonFloorDepth";
+    const string Root="ArtSource/DungeonFloorDepth/Revision02";
+    // World-canvas projection uses float matrices; below 1/20 of a screen pixel.
+    // Captured pixel comparisons remain exact, with no color/position tolerance.
+    const float ProjectionEpsilon=.05f;
     static void Size(int w,int h)=>typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.NonPublic|BindingFlags.Static).Invoke(null,new object[]{new Vector2Int(w,h)});
     static IEnumerator Until(Func<bool> condition){float end=Time.realtimeSinceStartup+60;while(!condition()){Assert.That(Time.realtimeSinceStartup,Is.LessThan(end));yield return null;}}
     static IEnumerator Wait(float seconds){float end=Time.realtimeSinceStartup+seconds;yield return Until(()=>Time.realtimeSinceStartup>=end);}
@@ -57,28 +60,66 @@ public sealed class DungeonFloorDepthTests
                     if(zone=="dungeon")
                     {
                         DungeonHybridIntegrationTests.AssertNativeLayers(layout);
-                        var world=GameObject.Find("DungeonPixelLabEnvironment").transform;
-                        var rear=(RectTransform)world.Find("Standing floor rear courses");Assert.That(rear,Is.Not.Null);
-                        var allowed=GameplayPixelLayoutController.ScreenRect(rear);
-                        var floor=world.Find("Standing platform").GetComponentsInChildren<Image>().Where(i=>i.name.StartsWith("Floor_")).ToArray();
-                        var front=GameplayPixelLayoutController.ScreenRect(floor[0].rectTransform);
-                        Assert.That(allowed.yMin,Is.EqualTo(front.yMax).Within(.01f),"Rear courses join the existing front course without a gap");
-                        Assert.That(allowed.height+front.height,Is.EqualTo(36*BattleFloorAnchor.PhysicalPixelScale).Within(.01f));
-                        Assert.That(feet[0],Is.InRange(front.yMin,front.yMax),"Enemy soles stay on the original front course");
-                        var portrait=GameplayPixelLayoutController.ScreenRect((RectTransform)GameObject.Find("PlayerSection").transform.Find("PixelLabPortraitBackdrop/PortraitMask"));
+                        var art=DungeonPixelLabBattleArt.Current;
+                        var selected=art.Sprite("Floor_Standing");Assert.That(selected,Is.Not.Null);
+                        var lookup=(System.Collections.Generic.Dictionary<string,Sprite>)typeof(DungeonPixelLabBattleArt)
+                            .GetField("lookup",BindingFlags.Instance|BindingFlags.NonPublic).GetValue(art);
+                        var owner=layout.GetComponent<DungeonPresentationArt>();
                         string beforeGeometry=Geometry(layout);
-                        rear.gameObject.SetActive(false);yield return null;yield return null;
-                        yield return Capture(Root+"/Preview/"+key+"-before.png");
-                        rear.gameObject.SetActive(true);yield return null;yield return null;
+                        try
+                        {
+                            lookup["Floor_Standing"]=null;
+                            Rebuild(owner);yield return null;yield return null;
+                            yield return Capture(Root+"/Preview/"+key+"-before.png");
+                        }
+                        finally {lookup["Floor_Standing"]=selected;Rebuild(owner);}
+                        yield return null;yield return null;
                         yield return Capture(Root+"/Preview/"+key+"-after.png");
+                        DungeonHybridIntegrationTests.AssertNativeLayers(layout);
+                        var world=GameObject.Find("DungeonPixelLabEnvironment").transform;
+                        Assert.That(world.Find("Standing floor rear courses"),Is.Null,"Rejected stacked courses must be absent");
+                        var surface=(RectTransform)world.Find("Standing platform/Connected standing floor");
+                        Assert.That(surface,Is.Not.Null);
+                        var rect=GameplayPixelLayoutController.ScreenRect(surface);
+                        float scale=BattleFloorAnchor.PhysicalPixelScale;
+                        Assert.That(rect.height,Is.EqualTo(32*scale).Within(ProjectionEpsilon));
+                        Assert.That(rect.xMin,Is.EqualTo(layout.Current.Viewport.xMin+106*scale).Within(ProjectionEpsilon));
+                        Assert.That(rect.xMax,Is.EqualTo(size.x).Within(ProjectionEpsilon));
+                        // Enemy soles can fall between scenery texels. Scenery retains the
+                        // existing nearest-native-pixel anchor, never moves the actor.
+                        float anchored = layout.Current.Viewport.yMax - Mathf.Round(
+                            (layout.Current.Viewport.yMax-feet[0]-BattleFloorAnchor.EnemyFloorInset*scale)/scale)*scale;
+                        Assert.That(rect.yMax,Is.EqualTo(anchored+20*scale).Within(ProjectionEpsilon));
+                        Assert.That(rect.yMin,Is.EqualTo(anchored-12*scale).Within(ProjectionEpsilon));
+                        Assert.That(feet[0],Is.InRange(rect.yMin+5*scale,rect.yMin+7*scale));
+                        var floorImages=surface.GetComponentsInChildren<Image>();
+                        Assert.That(floorImages.All(i=>i.sprite==selected),Is.True);
+                        var slabs=floorImages.Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).OrderBy(r=>r.xMin).ToArray();
+                        for(int n=1;n<slabs.Length;n++)Assert.That(slabs[n].xMin,Is.EqualTo(slabs[n-1].xMax).Within(ProjectionEpsilon),"No module gap or overlap");
+                        var fascia=world.Find("Standing platform").GetComponentsInChildren<Image>().First(i=>i.name=="Fascia_Left");
+                        var fasciaRect=GameplayPixelLayoutController.ScreenRect(fascia.rectTransform);
+                        Assert.That(fasciaRect.yMax,Is.EqualTo(rect.yMin).Within(ProjectionEpsilon),"Fascia starts directly below floor");
+                        foreach(var original in world.Find("Standing platform").GetComponentsInChildren<Image>()
+                            .Where(i=>i.name.StartsWith("Floor_Mid")||i.name=="Floor_Left"))
+                            Assert.That(GameplayPixelLayoutController.ScreenRect(original.rectTransform).xMax,
+                                Is.LessThanOrEqualTo(rect.xMin+ProjectionEpsilon),"Original portrait-side course must never overlap the replacement");
+                        var portrait=GameplayPixelLayoutController.ScreenRect((RectTransform)GameObject.Find("PlayerSection").transform.Find("PixelLabPortraitBackdrop/PortraitMask"));
                         Assert.That(Geometry(layout),Is.EqualTo(beforeGeometry),"Actor feet, health, board and UI must remain exact");
                         File.WriteAllText(Root+"/QA/"+key+"-geometry.txt",beforeGeometry);
-                        // Compare the complete floor strip while preserving the portrait mask exactly.
+                        // The authorized correction changes the floor and the grounding of
+                        // gate/column feet/props behind it, never UI, actors, or lower art.
+                        var gateBounds=world.Find("Approved hybrid gate").GetComponentsInChildren<Image>()
+                            .Select(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform)).ToArray();
+                        float highestGate=gateBounds.Max(r=>r.yMax);
+                        var corbels=world.Find("Structure").GetComponentsInChildren<Image>().Where(i=>i.name=="Support_Corbel");
+                        float lowestCorbel=corbels.Min(i=>GameplayPixelLayoutController.ScreenRect(i.rectTransform).yMin);
+                        var allowed=Rect.MinMaxRect(0,lowestCorbel,size.x,highestGate);
                         CheckPixels(key,allowed,portrait);
+
                     }
                     else
                     {
-                        Assert.That(GameObject.Find("Standing floor rear courses"),Is.Null,"The underwater zone is unchanged");
+                        Assert.That(GameObject.Find("Connected standing floor"),Is.Null,"The underwater zone is unchanged");
                         yield return Capture(Root+"/Preview/"+key+".png");
                     }
                 }
@@ -91,6 +132,10 @@ public sealed class DungeonFloorDepthTests
             }
         }
         yield return new ExitPlayMode();
+    }
+    static void Rebuild(DungeonPresentationArt owner)
+    {
+        typeof(DungeonPresentationArt).GetField("pixelLabGeometry",BindingFlags.Instance|BindingFlags.NonPublic).SetValue(owner,null);
     }
     static IEnumerator Capture(string path)
     {
@@ -119,7 +164,7 @@ public sealed class DungeonFloorDepthTests
                 if(!allowed.Contains(point))outside++;
                 if(portrait.Contains(point))portraitChanged++;
             }
-            File.WriteAllText(Root+"/QA/"+key+"-pixels.txt",$"Changed={changed}; outside floor={outside}; portrait={portraitChanged}");
+            File.WriteAllText(Root+"/QA/"+key+"-pixels.txt",$"Changed={changed}; outside environment correction={outside}; portrait={portraitChanged}; allowed={allowed}; portraitRect={portrait}");
             Assert.That(changed,Is.GreaterThan(0));Assert.That(outside,Is.Zero);Assert.That(portraitChanged,Is.Zero);
         }
         finally{Object.DestroyImmediate(a);Object.DestroyImmediate(b);}
