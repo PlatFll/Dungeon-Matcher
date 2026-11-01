@@ -1,6 +1,7 @@
 # Stone battle controls — review handoff
 
-**Latest revision:** [matte carved stone and larger top controls](MaterialRevision/README.md).
+**Latest revision:** [approved stone shapes with restored lighter gray](LightGrayRevision/README.md).
+[The preceding shape revision](MaterialRevision/README.md) remains preserved.
 The first material pass below is preserved as history; the user rejected its metallic read.
 
 Implemented on `codex/stone-ability-controls`, stacked on the existing shared-UI

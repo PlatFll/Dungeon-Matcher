@@ -1,0 +1,291 @@
+[
+  {
+    "name": "AbilityPlate",
+    "palette_map": {
+      "#0a0d11": "#0a0d11",
+      "#202129": "#151423",
+      "#343438": "#262333",
+      "#484646": "#3c374a",
+      "#595955": "#524d61",
+      "#6f6d66": "#6f6b7e",
+      "#7b7871": "#838091",
+      "#8d867c": "#a7a1b6",
+      "#aaa397": "#c4bdd4"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "2ac3935cb917bc8d9a06dbf2082f57b43b70d3c10be18f9596d7103492edfe9b",
+    "size": [
+      176,
+      66
+    ],
+    "colors": 8,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "ef798b67bdd30c7ebdd041e5e73a3461e3f04d518630422da463038bd15e065a"
+  },
+  {
+    "name": "WaveBody",
+    "palette_map": {
+      "#0a0d11": "#0a0d11",
+      "#202129": "#1a1c28",
+      "#343438": "#3c374a",
+      "#484646": "#524d61",
+      "#595955": "#6f6b7e",
+      "#6f6d66": "#838091",
+      "#7b7871": "#948fa4",
+      "#8d867c": "#a7a1b6",
+      "#aaa397": "#c4bdd4"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "1b0b4f779670d8277126e0200f228cb836b9376f107ce56feb9240cc9fa1d3e7",
+    "size": [
+      176,
+      48
+    ],
+    "colors": 8,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "136269b679f010ea638b947a3fa77fea363b2c11ed7f63880d8c5f969ca2929b"
+  },
+  {
+    "name": "Supply",
+    "palette_map": {
+      "#0a0d11": "#0a0d11",
+      "#202129": "#262333",
+      "#343438": "#3c374a",
+      "#484646": "#524d61",
+      "#595955": "#6f6b7e",
+      "#6f6d66": "#838091",
+      "#7b7871": "#948fa4",
+      "#8d867c": "#a7a1b6",
+      "#aaa397": "#c4bdd4"
+    },
+    "solid_supply_face_pixels": 1327,
+    "before_sha256": "65b01019106ba8fb01cb44a5c8f9889cb76ce104fe175b6a39b21417e3a3e829",
+    "size": [
+      64,
+      64
+    ],
+    "colors": 9,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "7e0e19f47f73648efbb5c5f474ec39dbd59510db23be8d3608c4fe7d8ccd962f"
+  },
+  {
+    "name": "Settings",
+    "palette_map": {
+      "#0a0d11": "#0a0d11",
+      "#202129": "#262333",
+      "#343438": "#3c374a",
+      "#484646": "#524d61",
+      "#595955": "#6f6b7e",
+      "#6f6d66": "#838091",
+      "#7b7871": "#948fa4",
+      "#8d867c": "#a7a1b6",
+      "#aaa397": "#c4bdd4"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "ccc6c6fa9d5af1d0211942e574c3cd3b718ffac4bf136afec8fabfd6daddd6f5",
+    "size": [
+      56,
+      56
+    ],
+    "colors": 8,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "aff578684f05d6aa4b268642f7098125144fa6db9529edd33bd92ce53f9e66bc"
+  },
+  {
+    "name": "AbilitySocket",
+    "palette_map": {
+      "#0a0d11": "#0a0d11",
+      "#202129": "#262333",
+      "#343438": "#3c374a",
+      "#484646": "#524d61",
+      "#595955": "#6f6b7e",
+      "#6f6d66": "#838091",
+      "#7b7871": "#948fa4",
+      "#8d867c": "#a7a1b6",
+      "#aaa397": "#c4bdd4"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "976dc76e429cb9793b36d3c448b96fab2eae4cf89b73f105238d0fcf44e99d6b",
+    "size": [
+      176,
+      66
+    ],
+    "colors": 6,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "5ca406bbe752a7572535caef957b06a3e2f5fb1b8bfe1b4ff8e39413be335209"
+  },
+  {
+    "name": "CrownedSkull",
+    "palette_map": {
+      "#202129": "#262333",
+      "#484646": "#524d61",
+      "#6f6d66": "#6f6b7e",
+      "#aaa397": "#a7a1b6",
+      "#343438": "#3c374a"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "688e062c1aeb3bd1df1397194163fe493bcbede818b684038e0011e98e613ec4",
+    "size": [
+      48,
+      40
+    ],
+    "colors": 5,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "c396069a4ea97e3d8297866d61f23517767f9ec3914911e16e7c9479f0b664e7"
+  },
+  {
+    "name": "CrownedSkullReady",
+    "palette_map": {
+      "#343438": "#3c374a",
+      "#e3e1db": "#e3daf5",
+      "#f6f4ef": "#f6f4ef",
+      "#c4c2bc": "#c4bdd4"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "658a1689dccd05f8cada0772f05f4321994b6013b39408b21b528844dc3786ae",
+    "size": [
+      48,
+      40
+    ],
+    "colors": 4,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "6818fbb13b75aee50dcaa928676a7773cc4ed71043f3f027910df5e966d9ac07"
+  },
+  {
+    "name": "Bull",
+    "palette_map": {
+      "#202129": "#262333",
+      "#6f6d66": "#6f6b7e",
+      "#aaa397": "#a7a1b6",
+      "#484646": "#524d61",
+      "#343438": "#3c374a"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "470f180f374f88dc399d5a374545a963cc2f32da9a4b7b5438cbdba229bae735",
+    "size": [
+      48,
+      40
+    ],
+    "colors": 5,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "ea5de07441a3ca68e9943638d47a4d22d38518553b6d51aab03aa690abc31e12"
+  },
+  {
+    "name": "BullReady",
+    "palette_map": {
+      "#343438": "#3c374a",
+      "#f6f4ef": "#f6f4ef",
+      "#e3e1db": "#e3daf5",
+      "#c4c2bc": "#c4bdd4"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "3194f2caafa7956129bce11117c7660c4cbebca951767b580cb3a3d7b86614de",
+    "size": [
+      48,
+      40
+    ],
+    "colors": 4,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "40130b0f2d7657c84372a410927aea5a5db019ad7a9ab1e62de5df720ed4617a"
+  },
+  {
+    "name": "Revolver",
+    "palette_map": {
+      "#202129": "#262333",
+      "#6f6d66": "#6f6b7e",
+      "#484646": "#524d61",
+      "#343438": "#3c374a",
+      "#aaa397": "#a7a1b6"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "3e9c263bd017eebc1d9d943120a9394f8db58539e84bac65d1a5e4ec857674df",
+    "size": [
+      48,
+      40
+    ],
+    "colors": 5,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "a3d3c077fcc4c68518a7a04a68f2fca20841a45dde175e563d34dd1eef4cd4b8"
+  },
+  {
+    "name": "RevolverReady",
+    "palette_map": {
+      "#343438": "#3c374a",
+      "#f6f4ef": "#f6f4ef",
+      "#e3e1db": "#e3daf5",
+      "#c4c2bc": "#c4bdd4"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "93ba27fffe0e7b274b5f544a8a9fbcc7e591b5279d09962743f4bdf3a1ba943e",
+    "size": [
+      48,
+      40
+    ],
+    "colors": 4,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "f3a3c6322b4cc6b2aededf7e54be186c274819eec781c661a9a74e2953f5848d"
+  },
+  {
+    "name": "Flute",
+    "palette_map": {
+      "#202129": "#262333",
+      "#6f6d66": "#6f6b7e",
+      "#343438": "#3c374a",
+      "#aaa397": "#a7a1b6",
+      "#484646": "#524d61"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "0e8ebf8fcad11f203fc8c3d4aefb4721f6ace705738109b49c264f8f83a5dad8",
+    "size": [
+      48,
+      40
+    ],
+    "colors": 5,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "a6811bdafb0b9011cf46e1cbcf4d3cbc7c89b05bf0d1d2f3a9670932b86c2056"
+  },
+  {
+    "name": "FluteReady",
+    "palette_map": {
+      "#343438": "#3c374a",
+      "#f6f4ef": "#f6f4ef",
+      "#c4c2bc": "#c4bdd4",
+      "#e3e1db": "#e3daf5"
+    },
+    "solid_supply_face_pixels": 0,
+    "before_sha256": "984358e18b63d780041f779d2d94fc565d500b9f2c94be4b5dd0534691f9c434",
+    "size": [
+      48,
+      40
+    ],
+    "colors": 4,
+    "binary_alpha": true,
+    "mask_exact": true,
+    "roundtrip_exact": true,
+    "sha256": "995cc93aa98bcc00773db8e4f54243ec5379f1eba7ce8e05d84608f7afedafc9"
+  }
+]

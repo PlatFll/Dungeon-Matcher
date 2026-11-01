@@ -41,6 +41,9 @@ button, solid ability slab and wave plaque. The first set read too metallic; the
 user requested larger wave/Settings controls and a stronger stone material. The
 current revision uses chipped matte gray stone without studs: wave up to 176×48
 native pixels and Settings 56×56, with integer scale and protected corners.
+The user accepted these shapes and requested the prior lighter cool-gray UI
+palette. The palette-only follow-up preserves exact masks, sizing and engravings;
+current evidence is in ArtSource/StoneAbilityUI/LightGrayRevision/.
 Guide is removed; tapping an enemy still opens inspection.
 Each ability definition supplies a crowned-skull, bull, six-chamber revolver or
 flute engraving. A ready slab rises by whole pixels and softly glows white;
