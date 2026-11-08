@@ -13,16 +13,14 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
     private GameplayThemeDefinition theme;
     private readonly Dictionary<string, SpriteRenderer> overlays = new Dictionary<string, SpriteRenderer>();
     private readonly Dictionary<string, TMP_Text> captions = new Dictionary<string, TMP_Text>();
-    private RectTransform strip, water, sceneWater, waterline;
+    private RectTransform strip, water;
     private TMP_Text airLabel, tideLabel;
     private Image[] blocks;
-    private Image waterImage;
-    private Image sceneWaterImage;
+    private CourtFloodGraphic flood;
     private TMP_Text airReturn;
     private readonly Queue<(int air,string label)> airSteps=new Queue<(int,string)>();
     private float airStepUntil;
     private int displayedAir=-1;
-    private float waterAmount;
     private void Start()
     {
         run=RunSession.Current;board=GetComponent<BoardController>();theme=run?.Zone?.Definition?.theme;
@@ -41,18 +39,11 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
             var inset=GameUi.Rect("Fill",cell,new Vector2(12,8),Vector2.zero);blocks[i]=inset.gameObject.AddComponent<Image>();blocks[i].raycastTarget=false;
         }
         tideLabel=GameUi.Label("Tide",strip,"TIDE",new Vector2(118,20),new Vector2(89,0),16);
-        // Water sits behind gameplay actors/text; its alpha exception is limited
-        // to this documented compositing layer, never sprite edges or gems.
-        water=GameUi.Rect("CourtWater",layout.transform,Vector2.zero,Vector2.zero);
-        water.pivot=new Vector2(.5f,0);water.anchorMin=Vector2.zero;water.anchorMax=new Vector2(1,0);water.sizeDelta=Vector2.zero;
-        water.SetAsFirstSibling();waterImage=water.gameObject.AddComponent<Image>();waterImage.raycastTarget=false;
-        // Scenery tint is behind actor portraits, status text and the frame.
-        sceneWater=GameUi.Rect("CourtSceneryWater",layout.TopHud,Vector2.zero,Vector2.zero);
-        sceneWater.anchorMin=Vector2.zero;sceneWater.anchorMax=Vector2.one;sceneWater.sizeDelta=Vector2.zero;
-        sceneWater.SetAsFirstSibling();sceneWaterImage=sceneWater.gameObject.AddComponent<Image>();sceneWaterImage.raycastTarget=false;
-        waterline=GameUi.Rect("TideSurface",water,new Vector2(0,2),Vector2.zero);
-        waterline.anchorMin=new Vector2(0,1);waterline.anchorMax=Vector2.one;waterline.sizeDelta=new Vector2(0,2);
-        var line=waterline.gameObject.AddComponent<Image>();line.color=new Color(.65f,.91f,.85f,.5f);line.raycastTarget=false;
+        // Full physical canvas, including safe-area margins. Behind all live
+        // HUD controls/actors, above the world scenery and gems; never raycast.
+        water=GameUi.Rect("CourtWater",layout.GetComponentInParent<Canvas>().rootCanvas.transform,Vector2.zero,Vector2.zero);
+        water.anchorMin=Vector2.zero;water.anchorMax=Vector2.one;water.offsetMin=water.offsetMax=Vector2.zero;
+        water.SetAsFirstSibling();flood=water.gameObject.AddComponent<CourtFloodGraphic>();
         airReturn=GameUi.Label("AirReturned",strip,"+2",new Vector2(40,20),new Vector2(-20,20),16);
         airReturn.color=new Color(.5f,1,.85f);airReturn.gameObject.SetActive(false);
         board.AirReceipt+=AnimateAirReceipt;
@@ -62,15 +53,7 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
     {
         if(board==null || theme==null || run==null) return;
         var state=board.Aquatic;bool wet=board.IsFlooded;
-        waterAmount=PresentationPreferences.ReducedMotion?(wet?1:0):Mathf.MoveTowards(waterAmount,wet?1:0,Time.deltaTime/.35f);
-        if(waterImage!=null)
-        {
-            water.anchorMax=new Vector2(1,waterAmount);water.anchoredPosition=Vector2.zero;
-            waterImage.color=new Color(.15f,.58f,.66f,.055f);
-            water.gameObject.SetActive(waterAmount>0);
-            waterline.gameObject.SetActive(!PresentationPreferences.ReducedMotion && waterAmount>0 && waterAmount<1);
-        }
-        if(sceneWaterImage!=null)sceneWaterImage.color=new Color(.15f,.58f,.66f,.15f*waterAmount);
+        if(flood!=null)flood.Present(wet,Time.deltaTime,PresentationPreferences.ReducedMotion);
         if(!wet) {airSteps.Clear();displayedAir=-1;airStepUntil=0;}
         else if(Time.time>=airStepUntil)
         {
@@ -155,6 +138,6 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
     }
     private void OnDestroy()
     {if(board!=null)board.AirReceipt-=AnimateAirReceipt;
-     if(strip!=null)Destroy(strip.gameObject);if(water!=null)Destroy(water.gameObject);if(sceneWater!=null)Destroy(sceneWater.gameObject);
+     if(strip!=null)Destroy(strip.gameObject);if(water!=null)Destroy(water.gameObject);
      BackgroundMusicPlayer.Instance?.SetUnderwaterMix(false);}
 }

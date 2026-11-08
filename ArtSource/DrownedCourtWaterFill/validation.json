@@ -1,0 +1,35 @@
+{
+  "unity_compile": "passed",
+  "compile_log": "DungeonMatcher-UnityValidation-253d1d08-1e28-46b2-81f3-4884b8dcda72.log",
+  "runtime_test": "CourtFloodPresentationPreviewAndContracts",
+  "runtime_result": "passed",
+  "test_result_sha256": "0705011d77aff86ef233483155d37ad57dc0fd3ec58d3c48ac5ccc3ba8f8cd4f",
+  "screens": [
+    [
+      720,
+      1280
+    ],
+    [
+      1080,
+      1920
+    ],
+    [
+      1080,
+      2400
+    ]
+  ],
+  "safe_area": [
+    32,
+    72,
+    1016,
+    2240
+  ],
+  "animation_capture_frames": 210,
+  "capture_fps": 30,
+  "native_frames": 16,
+  "native_repeat_edges_match": true,
+  "libresprite_pixel_roundtrip": true,
+  "approved_underwater_art_modified": false,
+  "real_device_test": false,
+  "status": "awaiting visual approval; not merged"
+}

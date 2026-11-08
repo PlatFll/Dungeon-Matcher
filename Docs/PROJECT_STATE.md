@@ -174,6 +174,14 @@ documented and unchanged. Physical-device execution is not claimed.
 Zero integration generations; the approved pack retains its 107-generation
 ledger. [Screenshots and full evidence](../ArtSource/DrownedCourtEnvironmentV2/Integration/README.md).
 
+The 2026-11-08 rising-water effect is a separate, unmerged visual-review candidate
+in `ArtSource/DrownedCourtWaterFill`. PixelLab/LibreSprite surface animation,
+small bubbles and a full-canvas depth tint replace the old flat water line in
+the candidate branch only. Cosmetic timing is independent of the unchanged
+board transition and AIR rules. Actual Game captures at three phone sizes and
+a safe area, pause/reduced-motion checks and Unity compilation pass. Twelve
+PixelLab generations were used. User visual approval is still required.
+
 ## Dungeon side architecture (2026-10-25, awaiting visual approval)
 
 The dedicated `feature/dungeon-side-architecture-polish` branch adds native
