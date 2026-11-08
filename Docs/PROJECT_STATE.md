@@ -422,6 +422,13 @@ the exact original, export hashes and verification evidence. The production
 are preserved, with a native paving continuation for tall phones. Existing menu
 controls, wordmark, character animation, settings and navigation are unchanged.
 
+The menu-art checksum guard now recognizes the exact committed and historical
+user-local protected-file variants, with LF/CRLF normalization only. The former
+false failure used an uncommitted-file snapshot as a universal checkout baseline.
+All 54 native menu checks and both protected-file variants pass; unexpected
+changes still fail. No underwater artwork changed. See
+`ArtSource/MenuUI/validation/Preservation-Contract.md`.
+
 The supplied main-menu/settings mockups now guide the shared non-zone UI family:
 native violet dungeon hall and skull portal, silver/gold wordmark, silver rims,
 purple gems, live selected character, and separate green/gray/red action faces.

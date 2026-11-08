@@ -1,0 +1,67 @@
+{
+  "format": "unity-text-lf-v1",
+  "historical_snapshot": "starting-user-files.json",
+  "note": "Two exact pre-existing states: committed Git asset and original preserved local user copy. Normalize CRLF to LF only; do not trim YAML or ignore tile flags/references. User authorized checker repair on 2026-11-08. No asset changes.",
+  "files": [
+    {
+      "path": "Assets/_Game/Resources/BattleEnvironments/DrownedCourt_Throne.prefab",
+      "variants": [
+        {
+          "name": "repository",
+          "sha256_lf": "cb0bb184305dd42658c8d6a0eedc15270fce237886b98e4e7171af6a4248eb3b",
+          "source_commit": "ba577b8818112ba69997b6ac717ced11c70aff8f"
+        },
+        {
+          "name": "preserved_local_user_copy",
+          "sha256_lf": "f2a3e6059c4df8ebce3279e7ac29ca5acd9a52e529425abe70c51ecab097bd10",
+          "historical_raw_sha256": "f2a3e6059c4df8ebce3279e7ac29ca5acd9a52e529425abe70c51ecab097bd10"
+        }
+      ]
+    },
+    {
+      "path": "Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta",
+      "variants": [
+        {
+          "name": "repository",
+          "sha256_lf": "75ff17d929d4ee2fd7576d8bd24bf60022bc16de35a99eb28b48b58d565d2f92",
+          "source_commit": "8cbdc55f25111e887fd78da8738c0f89c4b508ff"
+        },
+        {
+          "name": "preserved_local_user_copy",
+          "sha256_lf": "0f7e12e81377e9d521a4d132a17a3b3bfcf575daac8434f77bf20849575f5518",
+          "historical_raw_sha256": "0f7e12e81377e9d521a4d132a17a3b3bfcf575daac8434f77bf20849575f5518"
+        }
+      ]
+    },
+    {
+      "path": "Assets/_Game/Resources/UI/Consumables/SlotHighlighted.png.meta",
+      "variants": [
+        {
+          "name": "repository",
+          "sha256_lf": "69bfdb7f36aac425aa5cd08a5d6aacdbebf478c71106dacf293b78207766234e",
+          "source_commit": "8cbdc55f25111e887fd78da8738c0f89c4b508ff"
+        },
+        {
+          "name": "preserved_local_user_copy",
+          "sha256_lf": "3a32303ab05166168f39ca8f6f06367234df30cb46393acb6fa5fde7331762f7",
+          "historical_raw_sha256": "3a32303ab05166168f39ca8f6f06367234df30cb46393acb6fa5fde7331762f7"
+        }
+      ]
+    },
+    {
+      "path": "Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta",
+      "variants": [
+        {
+          "name": "repository",
+          "sha256_lf": "cddaaf535218c952f0875a10e62ab5908216694f88f1296a8e743d71d4ca19f5",
+          "source_commit": "8cbdc55f25111e887fd78da8738c0f89c4b508ff"
+        },
+        {
+          "name": "preserved_local_user_copy",
+          "sha256_lf": "0443273d14468ccb1584abcf6ab204674debcae15cda563f6aba543e6dc7e88f",
+          "historical_raw_sha256": "0443273d14468ccb1584abcf6ab204674debcae15cda563f6aba543e6dc7e88f"
+        }
+      ]
+    }
+  ]
+}
