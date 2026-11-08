@@ -1,0 +1,41 @@
+{
+  "approval": "User saved the active LibreSprite document and authorized actual-menu integration and merge on 2026-11-08.",
+  "source_document": "MenuBackground-Ali.aseprite",
+  "source_sha256": "bd5363a8212eeca3c0e210783729f0eb4d48a97fb165e3455062c8901aa52913",
+  "source_dimensions": [
+    360,
+    640
+  ],
+  "export_sha256": "b31d14c92ecf4ae8fc7bda95752ff068a4b0b80ce5bd4c992ebca24e12e800d6",
+  "original_pixels_preserved": true,
+  "tall_extension": {
+    "dimensions": [
+      360,
+      800
+    ],
+    "unchanged_source_rect": [
+      0,
+      0,
+      360,
+      640
+    ],
+    "additional_floor_source_rect": [
+      0,
+      480,
+      360,
+      640
+    ],
+    "destination": [
+      0,
+      640
+    ]
+  },
+  "runtime_binding": "MainMenuArtwork -> UI/GlobalMenu/HallTall; existing GUID and layout retained",
+  "generation_usage": 0,
+  "assets": {
+    "Hall.aseprite": "5b505960e5c7dedc0c63729dbfecca9a02198df5804b1954147e66da7475363a",
+    "Hall.png": "88498cf1bf4b7444531f0ad11369801408f595ddd27ed257e7027af3fade15b0",
+    "HallTall.aseprite": "54f051e2334bf0aa332373aa89dd0cd3c670bd239e051e1898af0193577b4d28",
+    "HallTall.png": "0f865e4f26515394c58f8049f689a8633e32d10b18dc5801c05b4b8d103ff0a7"
+  }
+}
