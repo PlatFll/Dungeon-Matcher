@@ -415,6 +415,13 @@ whole-run difficulty, progression balance or physical-device feel.
 
 ## Main menu and settings presentation (2026-10-13)
 
+2026-11-08: the user saved the revised layered main-menu room in LibreSprite and
+approved production integration. `ArtSource/MenuUI/AliEditedBackground` preserves
+the exact original, export hashes and verification evidence. The production
+`Hall`/`HallTall` resources now show that edited room; all 360x640 authored pixels
+are preserved, with a native paving continuation for tall phones. Existing menu
+controls, wordmark, character animation, settings and navigation are unchanged.
+
 The supplied main-menu/settings mockups now guide the shared non-zone UI family:
 native violet dungeon hall and skull portal, silver/gold wordmark, silver rims,
 purple gems, live selected character, and separate green/gray/red action faces.
