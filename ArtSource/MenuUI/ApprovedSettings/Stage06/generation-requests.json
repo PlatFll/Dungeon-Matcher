@@ -1,0 +1,76 @@
+{
+  "stage": 6,
+  "authorization": "User Continue after Stage05 approval; pack permits text-driven PixelLab generations as needed.",
+  "balanceBefore": 4361,
+  "requests": [
+    {
+      "args": {
+        "description": "Dungeon Matcher fantasy mobile game settings UI asset kit. Transparent background. Strict front view, crisp actual native pixel art, top-left lighting, clean broad pixel clusters, not painted. Three separate UI parts in an organized sheet with empty transparent gutters: TOP HALF: one wide short EMPTY inset horizontal settings row, dark blue-violet flat quiet center, thin dull pale silver stone-metal brackets at each end, restrained bevels, NO jewels, NO symbols, NO labels, NO text, no patterned interior. Bottom left: one compact rectangular GREEN ON toggle base with a small bright green cut emerald switch at its RIGHT end, blank dark green area on the left for later text. Bottom right: same-size neutral gray OFF toggle base with a small gray gemstone switch at its LEFT end, blank charcoal area on the right for later text. Straight horizontal edges, subtle clipped square corners, a single strong dark outline. Keep slots large and readable, no tiny filigree, no shadows outside each part, no decorative objects.",
+        "width": 256,
+        "height": 128,
+        "no_background": true,
+        "palette": [
+          "#0B0B15",
+          "#141827",
+          "#1C2235",
+          "#282D43",
+          "#404258",
+          "#676079",
+          "#7F778E",
+          "#9891A5",
+          "#BFBDCD",
+          "#D4D2DF",
+          "#F5F2FA",
+          "#21432F",
+          "#286345",
+          "#328C53",
+          "#54BD67",
+          "#A4E49B"
+        ],
+        "max_colors": 16
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: c9b1d378-2e13-410a-8a9d-7e095a157d4a\njob_id: c9b1d378-2e13-410a-8a9d-7e095a157d4a\nmodel: pro\ndescription: Dungeon Matcher fantasy mobile game settings UI asset kit. Transparent background. Strict front view, crisp actual native pixel art, top-left lighting, clean broad pixel clusters, not painted. Three separate UI parts in an organized sheet with empty transparent gutters: TOP HALF: one wide short EMPTY inset horizontal settings row, dark blue-violet flat quiet center, thin dull pale silver stone-metal brackets at each end, restrained bevels, NO jewels, NO symbols, NO labels, NO text, no patterned interior. Bottom left: one compact rectangular GREEN ON toggle base with a small bright green cut emerald switch at its RIGHT end, blank dark green area on the left for later text. Bottom right: same-size neutral gray OFF toggle base with a small gray gemstone switch at its LEFT end, blank charcoal area on the right for later text. Straight horizontal edges, subtle clipped square corners, a single strong dark outline. Keep slots large and readable, no tiny filigree, no shadows outside each part, no decorative objects.\nsize: 256x128px\ntransparent: True\ncandidates: 1\npalette: 16 colours\nmax colours: 16 per image\nasset_id: ba7bc193-321a-503c-802c-8f369db9082c\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"c9b1d378-2e13-410a-8a9d-7e095a157d4a\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/c9b1d378-2e13-410a-8a9d-7e095a157d4a/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "args": {
+        "description": "Four tiny coherent game settings glyphs in a perfectly spaced 2 by 2 sheet. Each glyph fits within a 26 by 26 pixel area in its own 32px cell, separated on transparent background. Top left a simple white beamed pair of musical eighth notes. Top right a simple white loudspeaker with two sound-wave arcs. Bottom left a simple WHITE DIAMOND enclosing a dot, with one small steady line on each side, icon for reduced motion and stable image, not arrows. Bottom right a WHITE UPRIGHT SMARTPHONE with dark screen and two tiny vibration marks. Dungeon fantasy pixel UI, native pixel art, strong very dark outline, off-white main fill and restrained lavender-gray bottom shadow. Clear simple silhouettes, mostly white like UI symbols, not 3D objects, no medallions, no borders, no labels, no text, no decorative skulls. Hard pixels only, no antialiasing.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "palette": [
+          "#0B0B15",
+          "#141827",
+          "#1C2235",
+          "#282D43",
+          "#404258",
+          "#676079",
+          "#7F778E",
+          "#9891A5",
+          "#BFBDCD",
+          "#D4D2DF",
+          "#F5F2FA"
+        ],
+        "max_colors": 6
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 294c7a0f-11e7-40e9-8638-ff5afd1d6a85\njob_id: 294c7a0f-11e7-40e9-8638-ff5afd1d6a85\nmodel: pro\ndescription: Four tiny coherent game settings glyphs in a perfectly spaced 2 by 2 sheet. Each glyph fits within a 26 by 26 pixel area in its own 32px cell, separated on transparent background. Top left a simple white beamed pair of musical eighth notes. Top right a simple white loudspeaker with two sound-wave arcs. Bottom left a simple WHITE DIAMOND enclosing a dot, with one small steady line on each side, icon for reduced motion and stable image, not arrows. Bottom right a WHITE UPRIGHT SMARTPHONE with dark screen and two tiny vibration marks. Dungeon fantasy pixel UI, native pixel art, strong very dark outline, off-white main fill and restrained lavender-gray bottom shadow. Clear simple silhouettes, mostly white like UI symbols, not 3D objects, no medallions, no borders, no labels, no text, no decorative skulls. Hard pixels only, no antialiasing.\nsize: 64x64px\ntransparent: True\ncandidates: 16\npalette: 11 colours\nmax colours: 6 per image\nasset_id: 5ff7df2c-84c6-5261-8e1e-c5317fe970f9\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"294c7a0f-11e7-40e9-8638-ff5afd1d6a85\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/294c7a0f-11e7-40e9-8638-ff5afd1d6a85/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+          }
+        ],
+        "isError": false
+      }
+    }
+  ],
+  "uploads": [],
+  "referenceRole": "Canonical golden images inspected locally; text-driven UI generation and explicit menu palette per pack."
+}

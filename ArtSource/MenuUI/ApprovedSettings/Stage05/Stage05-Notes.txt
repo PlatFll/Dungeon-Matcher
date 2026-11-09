@@ -1,0 +1,57 @@
+DUNGEON MATCHER — SETTINGS STAGE 05
+Status: settings frame and header candidate, awaiting user review.
+
+Authority:
+Original DungeonMatcher_Menus_Astra_PixelLab_v2.zip, Stage 05.
+All 16 original pack instructions verified byte-for-byte against the ZIP.
+Current canonical guide v1.17.2 and golden register read; current Rattlebones,
+Farmer and Pan stills viewed and hashes verified.
+The connected menu revision was accepted by the user's latest message and is
+preserved byte-for-byte. No previous candidate or production artwork overwritten.
+
+Produced:
+12 modular native pieces: four fixed corner caps, four oriented repeat rails,
+body tile, header tile, header rule, crowned-skull crest.
+Two standalone shells: 304x532 battle and 304x348 home.
+Two 360x640 native layered assembly documents, 12 layers each.
+SETTINGS is a separate preview label using the current Thaleah font; native
+art textures do not contain baked text.
+
+PixelLab:
+Frame job 21240711-ec17-42da-980f-405e7672a7c7: 15 generations, one 304x348 source.
+Crest job 6422a954-09c2-44b7-8481-35f2d9608f34: 10 generations, 25 64x32 options.
+CrestS / candidate 18 selected for its readable crowned skull. The literal
+wing motif was replaced with stone mounting brackets in LibreSprite.
+Total 25 generations, 4386 -> 4361 remaining. $0.00 dollar credits.
+Text-driven generation with the established menu material palette; no images
+uploaded and no mockup pixels extracted.
+
+Native cleanup and construction:
+LibreSprite author_shell.js creates the cleaned pieces without resampling.
+12px structural rim maintained. 26px fixed jewel caps overlay the corner joins
+as separate ornaments, allowing the original native gem facets to remain intact.
+This refines the earlier 12px protected-corner proposal: 12px describes the rail
+thickness, while the fixed corner ornament envelope is 26px. Both approved shell
+sizes, future row/action bounds and native scale remain unchanged.
+Flat dark fill avoids visual noise behind future controls.
+No internal row, toggle or action artwork produced in this stage.
+
+Verification:
+All 16 PNG exports exactly match reopened LibreSprite exports.
+Each saved 12-layer assembly independently recomposes to its exported PNG.
+Alpha is binary; shell interior is fully opaque; repeat ends join exactly.
+Fixed corners match at both sizes. Future rows/actions fit their reserved area.
+Static placement checks cover four screen sizes and two safe-area examples.
+573 prior review files, 12 canonical/reference/source hashes and the production
+Git working-tree status remain unchanged.
+See validation.json for evidence and assembly-manifest.json for layer positions.
+
+Preview provenance:
+Home backdrop is the exact newly approved connected-menu preview.
+Battle backdrop is the existing DungeonFloorDepth/SkullPolish 360x640 gameplay
+capture; this task did not run Unity. Composite previews use a modal dimmer.
+This is an art-only candidate, not implementation or device testing.
+
+Next stage after approval:
+10_STAGE_06_SETTINGS_ROWS_TOGGLES_AND_ICONS.md
+No production integration, PR, commit or merge performed.

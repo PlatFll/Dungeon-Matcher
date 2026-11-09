@@ -1,8 +1,8 @@
-# Drowned Court rising-water candidate
+# Drowned Court rising water
 
 User request, 2026-11-08: generate and animate a smoother screen flood with gentle
 surface waves and bubbles. Show the actual result before merging. This directory
-is **a review candidate, not approved art**. The checksum repair is separately
+was approved for actual-game integration and merge on 2026-11-09. The checksum repair is separately
 merged in PR #224; no approved underwater artwork was changed by that repair.
 
 PixelLab generated four 128x64 still candidates (10 generations); candidate 3
@@ -45,7 +45,7 @@ reduced motion uses a static tint. Missing optional art retains a quiet fill.
 - Numeric checks are accompanied by visual inspection: the original first pass
   was invisible because a custom Graphic lacked CanvasRenderer. That was fixed,
   and the geometry regression assertion now detects it.
-- No real-device test. Effect remains unmerged pending user approval.
+- No real-device test. User approved the actual Game preview for integration.
 
 Generate the local review page from captured frames with
 `python ArtSource/DrownedCourtWaterFill/publish_preview.py <output-folder>`.

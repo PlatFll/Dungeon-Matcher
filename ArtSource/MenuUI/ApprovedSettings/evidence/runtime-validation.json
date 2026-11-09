@@ -1,0 +1,64 @@
+{
+  "latestResults": {
+    "ForestFoundationPlayTests.CourtFloodPresentationPreviewAndContracts": "Passed",
+    "MenuUiReviewTests.ApprovedSettingsAcrossAllZones": "Passed",
+    "MenuUiReviewTests.CaptureMenusAndPreservePause": "Passed",
+    "MenuUiReviewTests.HomeNavigationPreferencesAndSavedRunContinue": "Passed",
+    "MenuUiReviewTests.NativeMenuLayoutsFitSafeAreasAndEveryPlayable": "Passed"
+  },
+  "nativeAssets": 37,
+  "unchangedLegacyNativeAssets": 54,
+  "zones": [
+    "dungeon",
+    "magical-forest",
+    "drowned-court",
+    "ironvein-excavation",
+    "frostwake-peaks"
+  ],
+  "settingsTouchSizes": [
+    [
+      360,
+      640
+    ],
+    [
+      1080,
+      2400
+    ]
+  ],
+  "homeSizes": [
+    [
+      720,
+      1280
+    ],
+    [
+      1080,
+      1920
+    ],
+    [
+      1080,
+      2400
+    ]
+  ],
+  "initialFailure": "All-zone test clicked before camera/CanvasScaler completed a resolution change. Added the existing layout-settle wait; identical touch and centering assertions then passed.",
+  "safeAreaChecks": true,
+  "saveAndPreferenceChecks": true,
+  "pauseChecks": true,
+  "realDeviceTest": false,
+  "additionalPixelLabGenerations": 0,
+  "screenshots": {
+    "1920-main-menu.png": "451844afbe7726ea697c162c1924bdcf6b3fdf65d1c9298a7b1f7cbb679ac0eb",
+    "menu-settings.png": "91b91e3faf3f000c5719f5ed2dc117c9c714eeacd65640be9f0f7816e0541e9a",
+    "1920-settings.png": "05ed961e1d1ad4d08b5b9e8940875b4ce1ceab9297d3a39a15407a45783128e3",
+    "2400-home-settings-safe-area.png": "18ad44d55d960ed03b61076cccb4f8991401e272074c7e6b5c17e6fbac803bc0",
+    "dungeon-settings-360.png": "231880c32e7114cb500d953a57cd2718fa52e6b57722f7ff74fa9ed8ed1f1401",
+    "dungeon-settings-1080.png": "036edce3134279eb33e00613479c64f606dbf7dbef50ed56200b7764a532ce58",
+    "magical-forest-settings-360.png": "dc6c37e20b29abef1939743b47a5e9d48185cece68d610ba930a1e6bcfe3114b",
+    "magical-forest-settings-1080.png": "edb88f212466b74fb58f36b6ddcf9604402cf46d564d0a74a7b343e1b106d04a",
+    "drowned-court-settings-360.png": "f8762bca52b7b13a62af43b891b6594f128f71a11a2b3b8d5caf16fb5f48ee37",
+    "drowned-court-settings-1080.png": "b58bddca266808398300396f33ecf3af13225fc35f4617ea0d01df1591883b43",
+    "ironvein-excavation-settings-360.png": "0e27fed81068c824feed0cb5bff6fbbf65a6e69bd10011d530435441f7797a10",
+    "ironvein-excavation-settings-1080.png": "88bc551ef7fbb92850fb22f29709c003e16411ae1c6fc2b31c3183f13d0a78f2",
+    "frostwake-peaks-settings-360.png": "2f50efd62f5aab2bd41acb5c353d3dcc9f801ace976075aa1bea0c1434c25134",
+    "frostwake-peaks-settings-1080.png": "8a465a84bf3086ad8b2d8a95f1348563cfbd26de414a88e8df3a90474b041936"
+  }
+}

@@ -268,18 +268,16 @@ public sealed class RunControlsUI : MonoBehaviour
     {
         if(session==null||session.IsFinished||overlay!=null)return;
         session.CancelTargeting();BuildOverlay("Settings");Pause();
-        if(GlobalMenuSkin.Load("Panel")!=null)
+        if(SettingsMenuArt.Available)
         {
             overlay.GetComponent<Image>().color=new Color(0,0,0,.65f);
             var stage=GlobalMenuSkin.Root(overlay,"NativeSettingsStage",new Vector2(360,640));
-            GlobalMenuSkin.Place(panel,stage,new Vector2(240,392),Vector2.zero);
-            GlobalMenuSkin.Panel(panel,new Vector2(240,392),"SETTINGS");
-            GlobalMenuSkin.SettingsRows(panel,125);
-            GlobalMenuSkin.Art("Divider",panel,"Divider",new Vector2(184,16),new Vector2(0,-9));
-            GlobalMenuSkin.Button("Resume",panel,"RESUME","Affirmative","Resume",new Vector2(0,-42),Close);
-            GlobalMenuSkin.Button("Suspend",panel,session.IsPractice?"LEAVE PRACTICE":"SUSPEND TO MENU","Neutral","Suspend",new Vector2(0,-85),Suspend);
-            GlobalMenuSkin.Button("Retry",panel,"END RUN AND RETRY","Neutral","Retry",new Vector2(0,-128),()=>ConfirmExit("Game"));
-            GlobalMenuSkin.Button("Quit",panel,"END RUN","Destructive","Skull",new Vector2(0,-171),()=>ConfirmExit("MainMenu"));
+            GlobalMenuSkin.Place(panel,stage,new Vector2(304,532),Vector2.zero);
+            SettingsMenuArt.Panel(panel,true);
+            SettingsMenuArt.Action(panel,"Resume","RESUME","Resume",296,Close);
+            SettingsMenuArt.Action(panel,"Suspend",session.IsPractice?"LEAVE PRACTICE":"SUSPEND TO MENU","Suspend",352,Suspend);
+            SettingsMenuArt.Action(panel,"Retry","END RUN AND RETRY","Retry",404,()=>ConfirmExit("Game"));
+            SettingsMenuArt.Action(panel,"Quit","END RUN","EndRun",456,()=>ConfirmExit("MainMenu"));
             return;
         }
         panel.sizeDelta=new Vector2(420,690);
@@ -394,7 +392,7 @@ public sealed class RunControlsUI : MonoBehaviour
         if(panel!=null && panel.Find("SaveFailed")==null)
         {
             if(panel.GetComponentInParent<GlobalMenuPixelRoot>()!=null)
-                GlobalMenuSkin.Label("SaveFailed",panel,"COULD NOT SAVE. CHECK STORAGE AND TRY AGAIN.",new Vector2(280,32),new Vector2(0,-218),16);
+                GlobalMenuSkin.Label("SaveFailed",panel,"COULD NOT SAVE. CHECK STORAGE AND TRY AGAIN.",new Vector2(304,32),new Vector2(0,-290),16);
             else GameUi.Label("SaveFailed",panel,"Could not save. Check storage and try again.",new Vector2(380,35),new Vector2(0,-290),16);
         }
     }

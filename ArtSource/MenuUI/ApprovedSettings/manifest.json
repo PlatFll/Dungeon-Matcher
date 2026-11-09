@@ -1,0 +1,486 @@
+{
+  "approved": "User authorized actual-game integration and merge on 2026-11-09",
+  "assets": [
+    {
+      "name": "BodyTile",
+      "stage": 5,
+      "size": [
+        16,
+        16
+      ],
+      "pngSha256": "8f1963a2e1011be4987a8f1a9526036cadbea8d8acd1acee5f48191dcc70e477",
+      "aseSha256": "fce3777429e9b0bec0755885a914d65809690c0e2716fa60063471b9c832cea8",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\BodyTile.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\BodyTile.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\BodyTile.png"
+    },
+    {
+      "name": "HeaderTile",
+      "stage": 5,
+      "size": [
+        16,
+        16
+      ],
+      "pngSha256": "5d9c74fd8dedb67499915877fab191585975032d342cc93065cfdadb6aa3c869",
+      "aseSha256": "975683ba40294b4bc7f411940d3a42964316f6bbbdb2533384045fa55181b010",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\HeaderTile.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\HeaderTile.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\HeaderTile.png"
+    },
+    {
+      "name": "EdgeTop",
+      "stage": 5,
+      "size": [
+        32,
+        12
+      ],
+      "pngSha256": "447fc8ef05a5b7e369a98971b4fe7920db175a32e4cfe798a185ebe51b0efc7f",
+      "aseSha256": "9d9b08cf68d1e36bc0aab41faf5803fc99d315cbadfb5e36d7a5ed55048edb08",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\EdgeTop.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\EdgeTop.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\EdgeTop.png"
+    },
+    {
+      "name": "EdgeBottom",
+      "stage": 5,
+      "size": [
+        32,
+        12
+      ],
+      "pngSha256": "8eb6102488ca41e7024de251eefa9caa5399aed27ac883119fa25d5afb5fc7cf",
+      "aseSha256": "1dad7efee12d5770444060ee9b57877ecdc1e6e35f59502761ce919c2d0381ae",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\EdgeBottom.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\EdgeBottom.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\EdgeBottom.png"
+    },
+    {
+      "name": "EdgeLeft",
+      "stage": 5,
+      "size": [
+        12,
+        32
+      ],
+      "pngSha256": "eb884a62c3d8335e5d90014ec5d4038c69f73e66fda92abb3cb30328ac04f4d7",
+      "aseSha256": "cc4b304aebd501ee3057c2073d21a8c76e292847c01a548acee62f4efb62170f",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\EdgeLeft.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\EdgeLeft.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\EdgeLeft.png"
+    },
+    {
+      "name": "EdgeRight",
+      "stage": 5,
+      "size": [
+        12,
+        32
+      ],
+      "pngSha256": "82f64f42d6ab559dc03367fc242f526f004272583a2047fdca4be500510d1253",
+      "aseSha256": "2400b2b9f2449bfe0f972385245ad8e4aca697163e7895ed46f95e14d8b1273a",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\EdgeRight.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\EdgeRight.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\EdgeRight.png"
+    },
+    {
+      "name": "HeaderRule",
+      "stage": 5,
+      "size": [
+        32,
+        8
+      ],
+      "pngSha256": "7b45fe9fa6f9a199042d59a1f004019808423c4a3ac320462f5a2458e09c0969",
+      "aseSha256": "2f2884297845a77d8bc8512cd49d6889777eaf56b4abac500a7fe7f126d37b54",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\HeaderRule.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\HeaderRule.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\HeaderRule.png"
+    },
+    {
+      "name": "CornerTL",
+      "stage": 5,
+      "size": [
+        26,
+        26
+      ],
+      "pngSha256": "728bfa100098d78f0e95a0b54a855cd3a79050417f7f45fba97c01a5b43e23fd",
+      "aseSha256": "1e1dcc9a7468f82a08d4900b7eb9050e2036e98e5555f1bff40402e2fa57efe2",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\CornerTL.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\CornerTL.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\CornerTL.png"
+    },
+    {
+      "name": "CornerTR",
+      "stage": 5,
+      "size": [
+        26,
+        26
+      ],
+      "pngSha256": "c24e9ed9fd5974a733ed6d01fc520f0d3aecfbc0b9ce2374cf3092308d943056",
+      "aseSha256": "f6b9b98d5ee8edcaf20a0bdbf019c1d996f112424d447155bd57388b7f757ef8",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\CornerTR.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\CornerTR.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\CornerTR.png"
+    },
+    {
+      "name": "CornerBL",
+      "stage": 5,
+      "size": [
+        26,
+        26
+      ],
+      "pngSha256": "46bcf3bf2c740bbaff11acc79d604ca676bdeda8bb5d8850f1a5650df3bbd6a1",
+      "aseSha256": "8b2bd2815362f233da133fa4dd40a87c239d7b62d19c7d1b60ca723cfa3c72db",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\CornerBL.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\CornerBL.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\CornerBL.png"
+    },
+    {
+      "name": "CornerBR",
+      "stage": 5,
+      "size": [
+        26,
+        26
+      ],
+      "pngSha256": "1e538b0f94e0c5eec7577a2e173e56368960fb69bfaad91f9ece321ffcf519bd",
+      "aseSha256": "397e48eb9a43845991a461b71341ce9edf13f1d7956a3e15570dcdd2996772a0",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\CornerBR.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\CornerBR.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\CornerBR.png"
+    },
+    {
+      "name": "CrownedCrest",
+      "stage": 5,
+      "size": [
+        64,
+        32
+      ],
+      "pngSha256": "9120c92d70862094591e699c1c66da4f76fbabb3e85acc59f9c65454ca1f744d",
+      "aseSha256": "06fce3bd5fd7e1ce5e37e3cdd29d064a673cf70881f01622d4c16df143e7f88b",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage05\\Clean\\CrownedCrest.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage05\\CrownedCrest.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\CrownedCrest.png"
+    },
+    {
+      "name": "Row",
+      "stage": 6,
+      "size": [
+        264,
+        44
+      ],
+      "pngSha256": "dc23c179bb8a0e3cf96394e0c053b126470a677e419ec8d893c8af7e39dbd47b",
+      "aseSha256": "1517e6a9ad2c2ab026bf5504cf8cf5a18d88b54ef6da238a2075b4191c5c9daf",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage06\\Clean\\Row.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage06\\Row.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\Row.png"
+    },
+    {
+      "name": "IconMusic",
+      "stage": 6,
+      "size": [
+        28,
+        28
+      ],
+      "pngSha256": "cf5b9d834e32203fce4ea8ec08cf18959e3ff935ce49306ffe52911c05294940",
+      "aseSha256": "5f84bddabc03ffe118d210ac26313392876b3e3a3d0956aa39e2482cbc544a3c",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage06\\Clean\\IconMusic.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage06\\IconMusic.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\IconMusic.png"
+    },
+    {
+      "name": "IconSFX",
+      "stage": 6,
+      "size": [
+        28,
+        28
+      ],
+      "pngSha256": "0df6c68fdfa19baf07b8bcd89114dfd9a066c90bf2f54dfaee3b38cc0acfb39d",
+      "aseSha256": "9e38f2b5e6f8595b7480d5ab7b7169544a0e327f1c3b739b88f42360947f4de6",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage06\\Clean\\IconSFX.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage06\\IconSFX.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\IconSFX.png"
+    },
+    {
+      "name": "IconMotion",
+      "stage": 6,
+      "size": [
+        28,
+        28
+      ],
+      "pngSha256": "88fbc39d2abad3282a49ff6148cdd8e5fb938d92c5499e434fb04b2cb5898dfc",
+      "aseSha256": "e31330036aecf75e55bf4444b2c55ce6bce4d6238fe1663ace683c0c76d254e7",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage06\\Clean\\IconMotion.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage06\\IconMotion.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\IconMotion.png"
+    },
+    {
+      "name": "IconVibration",
+      "stage": 6,
+      "size": [
+        28,
+        28
+      ],
+      "pngSha256": "b09b048cbd1858a0196f50f1b9e2c9eb5865f24b0a46989fb3744c79b0c052f6",
+      "aseSha256": "2dd868f7ec32e87a34869d1dd4bbfbdaa5054fc7bb058b592a24cec047719b98",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage06\\Clean\\IconVibration.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage06\\IconVibration.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\IconVibration.png"
+    },
+    {
+      "name": "ToggleOn",
+      "stage": 6,
+      "size": [
+        66,
+        30
+      ],
+      "pngSha256": "2d0378cb9557908c8bfd9bfe0d9c2332cb6eca88f82cc187c984ece99ebb860e",
+      "aseSha256": "8482c135aeca91aa7bcd811041e8c0ff2d6eda173b6f5af748a374908a06be47",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage06\\Clean\\ToggleOn.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage06\\ToggleOn.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ToggleOn.png"
+    },
+    {
+      "name": "ToggleOff",
+      "stage": 6,
+      "size": [
+        66,
+        30
+      ],
+      "pngSha256": "5772f210f308b2cbd97dbc7582faafa485ff7038ddef05e3e997cc75331c5cc2",
+      "aseSha256": "e14d034598297c390a6140b4b4b8f75275fdbeb6261dc7a1c16e6eb1948ddb3f",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage06\\Clean\\ToggleOff.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage06\\ToggleOff.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ToggleOff.png"
+    },
+    {
+      "name": "Divider",
+      "stage": 6,
+      "size": [
+        240,
+        12
+      ],
+      "pngSha256": "6ec83d5fc9c1c33a7250589dc3720f9d5cf18cf936d26d5c89eb589fb88dd964",
+      "aseSha256": "38dc3a56514942b6babe7eefd3b99f844f1353d72bc3a56c71cf9c92c879c43d",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage06\\Clean\\Divider.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage06\\Divider.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\Divider.png"
+    },
+    {
+      "name": "ButtonGreen",
+      "stage": 7,
+      "size": [
+        248,
+        48
+      ],
+      "pngSha256": "94b1a220bd9bc2a83adfe0857a4ffd264dae0e7dc1f236a459bfea1186d23717",
+      "aseSha256": "0e52e30fd605a96440d85113cdd590c543e50a7f5b61ec31effc6b941b0b65c9",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonGreen.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonGreen.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonGreen.png"
+    },
+    {
+      "name": "ButtonGreenHover",
+      "stage": 7,
+      "size": [
+        248,
+        48
+      ],
+      "pngSha256": "be4de8113bfba8392678c45133096438704bd78572f96076a93e23557af8cf83",
+      "aseSha256": "489e309f7f2761b2e2ffe54a3e5342d4ee353c2723bc09771a96fc7c6b3f9eac",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonGreenHover.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonGreenHover.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonGreenHover.png"
+    },
+    {
+      "name": "ButtonGreenPressed",
+      "stage": 7,
+      "size": [
+        248,
+        48
+      ],
+      "pngSha256": "9ecee82b21d48a1e589cbc409636a8606026de743be90cc5762e644322be5a88",
+      "aseSha256": "9b1c33f21b0684266e3125ac66579340b341ac0981f0a74a0d187a9836df6c3a",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonGreenPressed.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonGreenPressed.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonGreenPressed.png"
+    },
+    {
+      "name": "ButtonGreenDisabled",
+      "stage": 7,
+      "size": [
+        248,
+        48
+      ],
+      "pngSha256": "d244e91f578154c9d7d2315bc6c7a86a75223bc4a106baf6622ace7da0541d2f",
+      "aseSha256": "c91bc93facd2625ade9685b420ba3810d27dcd0d0ab2b704dfc69c0b2b069a4d",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonGreenDisabled.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonGreenDisabled.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonGreenDisabled.png"
+    },
+    {
+      "name": "ButtonGray",
+      "stage": 7,
+      "size": [
+        248,
+        44
+      ],
+      "pngSha256": "6746f96f8ffabf9b7cfc45d649ae5809ee613676613f958c22e964bbd9c54369",
+      "aseSha256": "5a4c29b000fe08766766c287c0b124e3f63780ddaa7f9796e64891e34965914d",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonGray.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonGray.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonGray.png"
+    },
+    {
+      "name": "ButtonGrayHover",
+      "stage": 7,
+      "size": [
+        248,
+        44
+      ],
+      "pngSha256": "f31553e4fafc25f73a0f3e6d739884140d9badf73185bae3280b366553b05715",
+      "aseSha256": "151c16c5b1d0f66794013978d329e9c075882678870c190191b17b0ac1c624bb",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonGrayHover.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonGrayHover.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonGrayHover.png"
+    },
+    {
+      "name": "ButtonGrayPressed",
+      "stage": 7,
+      "size": [
+        248,
+        44
+      ],
+      "pngSha256": "c0a077d4e0929c4ee84e86b9c1bc6321f451ae614950cd7c0248a438f901f5d1",
+      "aseSha256": "0eb967c7848df195c1737c769f0d83ca7f2a64072cc72ecf7da1461ecbb6e067",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonGrayPressed.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonGrayPressed.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonGrayPressed.png"
+    },
+    {
+      "name": "ButtonGrayDisabled",
+      "stage": 7,
+      "size": [
+        248,
+        44
+      ],
+      "pngSha256": "485d0b0f194212e879c4750123bceae7f2e7fc7cc90bd6329e89f1b1d24fd8f2",
+      "aseSha256": "116df9467414a1c8bfe8c623380533c4d70b2c047fdd18ab02ef2456372ab2e0",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonGrayDisabled.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonGrayDisabled.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonGrayDisabled.png"
+    },
+    {
+      "name": "ButtonRed",
+      "stage": 7,
+      "size": [
+        248,
+        48
+      ],
+      "pngSha256": "f9d57c4a6fbf41659fdf42b636b21ddc49d63517ac81c0d67a1d20e819a87350",
+      "aseSha256": "cb98090f215001fcb58a8f1173d0cdde51e09faa5f7c18a29da4ef3309ced6f3",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonRed.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonRed.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonRed.png"
+    },
+    {
+      "name": "ButtonRedHover",
+      "stage": 7,
+      "size": [
+        248,
+        48
+      ],
+      "pngSha256": "498952d1cffb4b820b775b882995a2785df44a7b844a3b558d5c62808f29ba45",
+      "aseSha256": "e42ecab8d60a78cf2d7cff561a170c4a86bf5c47910d56f64bd6253a07e8102f",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonRedHover.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonRedHover.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonRedHover.png"
+    },
+    {
+      "name": "ButtonRedPressed",
+      "stage": 7,
+      "size": [
+        248,
+        48
+      ],
+      "pngSha256": "edb65896cb5c6e7dddeccc7b2549ac9ab87630f116a289aa94b46e361b674add",
+      "aseSha256": "c6474e81882e017207a5e0ea657fb6d53c34c3ac82baac03761baa0bb884c835",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonRedPressed.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonRedPressed.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonRedPressed.png"
+    },
+    {
+      "name": "ButtonRedDisabled",
+      "stage": 7,
+      "size": [
+        248,
+        48
+      ],
+      "pngSha256": "d244e91f578154c9d7d2315bc6c7a86a75223bc4a106baf6622ace7da0541d2f",
+      "aseSha256": "3a1675960490be7d47919ce52648bd01d58b2f0e6aad7e54862cfe15598d5afa",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\ButtonRedDisabled.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\ButtonRedDisabled.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\ButtonRedDisabled.png"
+    },
+    {
+      "name": "IconResume",
+      "stage": 7,
+      "size": [
+        24,
+        24
+      ],
+      "pngSha256": "ff077758bcc2a2655584ea7b2746a0fa59cc547d96094ed5acbe25f3fb031daf",
+      "aseSha256": "91cec139ecc50f0b429ba58c8aa339b2434e5886ea29da34cdc6c3c3544af1b5",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\IconResume.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\IconResume.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\IconResume.png"
+    },
+    {
+      "name": "IconSuspend",
+      "stage": 7,
+      "size": [
+        24,
+        24
+      ],
+      "pngSha256": "c43c01e3d25b82f5d9b79d41fba111498b0c270d2a88d8f39f97846dba272166",
+      "aseSha256": "5e227e1fb31ada4a80783c94620bb155cab444c3e770bbad7c92a05fdd2a6ee0",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\IconSuspend.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\IconSuspend.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\IconSuspend.png"
+    },
+    {
+      "name": "IconRetry",
+      "stage": 7,
+      "size": [
+        24,
+        24
+      ],
+      "pngSha256": "9232516c2dd0861044ff94ce7a806522a897c1099abe577e025dd47c7945fc15",
+      "aseSha256": "07a8f1db9d992a90e06782d2dcd696dd629e1fc720005bc1a2e93a5c60ed5f20",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\IconRetry.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\IconRetry.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\IconRetry.png"
+    },
+    {
+      "name": "IconEndRun",
+      "stage": 7,
+      "size": [
+        24,
+        24
+      ],
+      "pngSha256": "66097a5bcc57bd3d0bba57fc5ecea72c2b8a634fd02cebb0f93f98d41ffc81c1",
+      "aseSha256": "64de3dd4400cc53b663c84b3757fc93042203baa369649f5d3f9833569bcbacc",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\IconEndRun.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\IconEndRun.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\IconEndRun.png"
+    },
+    {
+      "name": "IconBack",
+      "stage": 7,
+      "size": [
+        24,
+        24
+      ],
+      "pngSha256": "7892ff6b6412224054ab791aee9d5adf1ff6387e43a6f9e020df37a65ee5b6df",
+      "aseSha256": "0505fdf7f7e7a3528777f68bfd6296cdc3e43390fe230d91e3a8443b92d3c7f1",
+      "source": "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\MenuSettingsV2\\Settings\\Stage07\\Clean\\IconBack.png",
+      "native": "ArtSource\\MenuUI\\ApprovedSettings\\Stage07\\IconBack.png",
+      "runtime": "Assets\\_Game\\Resources\\UI\\GlobalMenu\\SettingsV2\\IconBack.png"
+    }
+  ]
+}

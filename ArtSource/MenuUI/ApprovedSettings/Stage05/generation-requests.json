@@ -1,0 +1,75 @@
+{
+  "frame": {
+    "args": {
+      "description": "Native pixel art game UI component ONLY: a tall rectangular SETTINGS MODAL SHELL with a blank title area and EMPTY dark body, front-facing orthographic, Dungeon Matcher fantasy dungeon. Canvas 304x348 pixels, entire panel fits with 2 pixels transparent margin. Continuous twelve-pixel-wide chunky pale gray carved stone frame, restrained dull silver brackets at structural joints. Four small purple diamond gems inset into fixed square corner blocks, each corner within a 16x16 area. All four sides join cleanly. Broad matte stone faces, sparse chips, controlled top-left shading, dark outline, no chrome bands. Upper blank title area is 272x44 centered under the top border. One simple horizontal stone rule below that header, located roughly 60 pixels below top. The rest of the interior is ONE dark blue-violet recessed EMPTY flat surface suitable for rows. Interior is opaque and quiet, not transparency. No text of any kind, no controls, no switches, no icons, no skull yet, no illustrated scenery. No protruding ornament, no chains, no extra dividers in body. Keep the side rails straight, consistent thickness, modular, and suitable for vertical repetition without scaling. Hard native pixels, broad coherent clusters, no dither, no blur, no gradients, no noisy speckling. Materials follow restrained light-gray menu stone, purple gems and near-black indigo interior. This will be split into corner pieces and repeating edges in LibreSprite, so prioritize clean straight construction.",
+      "width": 304,
+      "height": 348,
+      "no_background": true,
+      "max_colors": 20,
+      "palette": [
+        "#0B0B15",
+        "#141827",
+        "#1C2235",
+        "#242A40",
+        "#30354B",
+        "#403F55",
+        "#535067",
+        "#676079",
+        "#7F778E",
+        "#9891A5",
+        "#AAA5B8",
+        "#BFBDCD",
+        "#D4D2DF",
+        "#E8E6EE",
+        "#351948",
+        "#5D287B",
+        "#883FA8",
+        "#BA6BDD",
+        "#E5ADFA",
+        "#F7E5FF"
+      ],
+      "seed": 11035051
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 21240711-ec17-42da-980f-405e7672a7c7\njob_id: 21240711-ec17-42da-980f-405e7672a7c7\nmodel: pro\ndescription: Native pixel art game UI component ONLY: a tall rectangular SETTINGS MODAL SHELL with a blank title area and EMPTY dark body, front-facing orthographic, Dungeon Matcher fantasy dungeon. Canvas 304x348 pixels, entire panel fits with 2 pixels transparent margin. Continuous twelve-pixel-wide chunky pale gray carved stone frame, restrained dull silver brackets at structural joints. Four small purple diamond gems inset into fixed square corner blocks, each corner within a 16x16 area. All four sides join cleanly. Broad matte stone faces, sparse chips, controlled top-left shading, dark outline, no chrome bands. Upper blank title area is 272x44 centered under the top border. One simple horizontal stone rule below that header, located roughly 60 pixels below top. The rest of the interior is ONE dark blue-violet recessed EMPTY flat surface suitable for rows. Interior is opaque and quiet, not transparency. No text of any kind, no controls, no switches, no icons, no skull yet, no illustrated scenery. No protruding ornament, no chains, no extra dividers in body. Keep the side rails straight, consistent thickness, modular, and suitable for vertical repetition without scaling. Hard native pixels, broad coherent clusters, no dither, no blur, no gradients, no noisy speckling. Materials follow restrained light-gray menu stone, purple gems and near-black indigo interior. This will be split into corner pieces and repeating edges in LibreSprite, so prioritize clean straight construction.\nsize: 304x348px\ntransparent: True\ncandidates: 1\npalette: 20 colours\nmax colours: 20 per image\nseed: 11035051\nasset_id: c98dc449-67e1-5ddb-a3cb-7d03b48ac2ca\nasset_status: pending (saved when generation completes)\ncost: 15 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"21240711-ec17-42da-980f-405e7672a7c7\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/21240711-ec17-42da-980f-405e7672a7c7/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "crest": {
+    "args": {
+      "description": "A single native pixel-art fantasy UI header crest, transparent background, 64x32 canvas. Center one small friendly crowned skull carved in pale ivory-gray stone, frontal with two clean dark eye sockets, broad forehead, compact jaw with three teeth, integrated small three-point stone crown. This is a symbolic UI medallion, not a character face or a portrait. Two short symmetrical dull silver-gray masonry mounting wings flank the skull and reach left and right; wings slot directly into a horizontal stone frame top rail. Skull occupies about 24x26 pixels in center, whole crest within x4..59 y2..29 so nothing is cropped. Match Dungeon Matcher whimsical chunky native icon language, strong simple silhouette, broad flat connected shading, upper-left light. Two or three grayscale shades per material, dark charcoal outline, no busy engraving or chains, no gems, no words, no black background, no glow, no blur, no antialiasing, no dither, no noisy texture. Flat front view, horizontal crest mounting. The center skull remains readable at actual 1x.",
+      "width": 64,
+      "height": 32,
+      "no_background": true,
+      "max_colors": 10,
+      "palette": [
+        "#0B0B15",
+        "#30354B",
+        "#535067",
+        "#7F778E",
+        "#AAA5B8",
+        "#BFBDCD",
+        "#D4D2DF",
+        "#E8E6EE",
+        "#FFF5E1",
+        "#D8C8B0"
+      ],
+      "seed": 11035052
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 6422a954-09c2-44b7-8481-35f2d9608f34\njob_id: 6422a954-09c2-44b7-8481-35f2d9608f34\nmodel: pro\ndescription: A single native pixel-art fantasy UI header crest, transparent background, 64x32 canvas. Center one small friendly crowned skull carved in pale ivory-gray stone, frontal with two clean dark eye sockets, broad forehead, compact jaw with three teeth, integrated small three-point stone crown. This is a symbolic UI medallion, not a character face or a portrait. Two short symmetrical dull silver-gray masonry mounting wings flank the skull and reach left and right; wings slot directly into a horizontal stone frame top rail. Skull occupies about 24x26 pixels in center, whole crest within x4..59 y2..29 so nothing is cropped. Match Dungeon Matcher whimsical chunky native icon language, strong simple silhouette, broad flat connected shading, upper-left light. Two or three grayscale shades per material, dark charcoal outline, no busy engraving or chains, no gems, no words, no black background, no glow, no blur, no antialiasing, no dither, no noisy texture. Flat front view, horizontal crest mounting. The center skull remains readable at actual 1x.\nsize: 64x32px\ntransparent: True\ncandidates: 25\npalette: 10 colours\nmax colours: 10 per image\nseed: 11035052\nasset_id: df2be121-4e9b-5632-8a1a-d89ead84497b\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"6422a954-09c2-44b7-8481-35f2d9608f34\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/6422a954-09c2-44b7-8481-35f2d9608f34/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "balanceBefore": 4386
+}

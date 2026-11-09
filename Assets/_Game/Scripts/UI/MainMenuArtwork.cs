@@ -82,9 +82,9 @@ public sealed class MainMenuArtwork : MonoBehaviour
         settings.anchorMin=Vector2.zero;settings.anchorMax=Vector2.one;settings.offsetMin=settings.offsetMax=Vector2.zero;
         settings.gameObject.AddComponent<Image>().color=new Color(0,0,0,.65f);
         var stage=GlobalMenuSkin.Root(settings,"SettingsStage",new Vector2(360,640));
-        var panel=GameUi.Panel("Panel",stage,new Vector2(240,248));GlobalMenuSkin.Panel(panel,new Vector2(240,248),"SETTINGS");
-        GlobalMenuSkin.SettingsRows(panel,54);
-        GlobalMenuSkin.Button("CloseMenuSettings",panel,"BACK","Affirmative","Resume",new Vector2(0,-92),CloseSettings);
+        var panel=GameUi.Panel("Panel",stage,new Vector2(304,348));
+        SettingsMenuArt.Panel(panel,false);
+        SettingsMenuArt.Action(panel,"CloseMenuSettings","BACK","Back",280,CloseSettings);
     }
     private void CloseSettings(){if(settings!=null)Destroy(settings.gameObject);settings=null;}
     private void OnDisable()=>CloseSettings();
