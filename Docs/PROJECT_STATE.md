@@ -1,3 +1,11 @@
+# Approved enemy-ability design selections — 2026-11-10
+
+The user approved **six enemy ability directions** (Knight Captain, Court Mage, Glacier Troll, Iceborn Champion, Hearthkeeper, Pearl Cantor) and **one presentation-only Reef Netweaver snare retheme**. See [APPROVED_ENEMY_ABILITY_REVISIONS_2026-11-10.md](APPROVED_ENEMY_ABILITY_REVISIONS_2026-11-10.md) for the precise boundaries, preserved behavior, pending name, and changelog.
+
+**Important:** these are approved **design decisions**, not a claim that runtime code, data, sprites, or balance have been changed or tested. Other ideas in the broader enemy-and-zone review are **not approved**. Confirm implementation status from current code and update this checkpoint after an actual implementation PR.
+
+---
+
 # Revised implementation status — 2026-09-15
 
 The user approved implementation of the revised design, retired Bardley's testing override and authorized merging after validation. Yesterday's Balance v1 PR #157 and documentation PR #152 were merged first. See [DESIGN_V2_IMPLEMENTATION.md](DESIGN_V2_IMPLEMENTATION.md) for the exact scope, balance decisions and executed evidence.
