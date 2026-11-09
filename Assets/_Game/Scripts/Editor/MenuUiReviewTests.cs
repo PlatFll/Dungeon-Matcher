@@ -93,6 +93,9 @@ public sealed class MenuUiReviewTests
             GlobalMenuPixelRoot.ValidationSafeArea=new Rect(0,40,size.x,size.y-80);
             yield return new WaitForSecondsRealtime(.6f);
             ValidateNativeStage();yield return Shot(size.y+"-safe-area");
+            Click("MenuSettings");yield return new WaitForSecondsRealtime(.2f);
+            ValidateApprovedSettings(false);yield return Shot(size.y+"-home-settings-safe-area");
+            Click("CloseMenuSettings");yield return null;
         }
         GlobalMenuPixelRoot.ValidationSafeArea=null;
         foreach(string id in new[]{"skeleton","bardley",CharacterSelectionSettings.GideonPlayerId,CharacterSelectionSettings.MinotaurPlayerId,CharacterSelectionSettings.KoboldPlayerId})
@@ -131,7 +134,14 @@ public sealed class MenuUiReviewTests
             foreach(var image in stage.GetComponentsInChildren<Image>())
                 if(image.sprite!=null)Assert.That(image.sprite.texture.filterMode,Is.EqualTo(FilterMode.Point));
             foreach(var button in stage.GetComponentsInChildren<Button>().Where(b=>b.name=="Music"||b.name=="SFX"||b.name=="ReducedMotion"||b.name=="Vibration"))
-                Assert.That(button.transform.Find("Label").GetComponent<TMP_Text>().fontSize,Is.EqualTo(16).Within(.01f),button.name+" keeps the readable row size");
+            {
+                var text=button.transform.Find("Label").GetComponent<TMP_Text>();
+                float step=16/ratio;
+                float approvedSize=Mathf.Max(step,Mathf.Floor(22/step+.0001f)*step);
+                Assert.That(text.fontSize,Is.EqualTo(approvedSize).Within(.01f),button.name+" uses approved 22-em rows at integer physical glyph scale");
+                Assert.That(((RectTransform)button.transform).rect.size,Is.EqualTo(new Vector2(264,44)));
+                Assert.That(AssetDatabase.GetAssetPath(button.image.sprite),Does.EndWith("/SettingsV2/Row.png"));
+            }
         }
     }
     [UnityTest] public IEnumerator CaptureMenusAndPreservePause()
@@ -170,6 +180,79 @@ public sealed class MenuUiReviewTests
             .SelectMany(s=>s.GetComponentsInChildren<TMP_Text>()).Select(t=>$"{t.transform.parent.name}/{t.name}: em={t.fontSize}; rect={t.rectTransform.rect.size}; preferred={t.GetPreferredValues(t.text)}; text={t.text.Replace('\n',' ')}"));
         ScreenCapture.CaptureScreenshot(Path.Combine(output,name+".png"));
         yield return new WaitForSecondsRealtime(.3f);
+    }
+    [UnityTest] public IEnumerator ApprovedSettingsAcrossAllZones()
+    {
+        foreach(string zone in new[]{"dungeon","magical-forest","drowned-court","ironvein-excavation","frostwake-peaks"})
+        {
+            string temporary=Path.Combine(output,"zone-"+Guid.NewGuid().ToString("N")+".json");
+            File.WriteAllText(temporary,JsonUtility.ToJson(new AccountSave{potions=3,bombs=3,equipPotions=true,equipBombs=true}));
+            using(AccountProgression.UseDisposableProfile(temporary))
+            {
+                RunLaunchOptions.StartingZone=zone;SceneManager.LoadScene("Game");
+                yield return Until(()=>RunSession.Current?.Continuation?.CanCapture==true&&RunSession.Current.Waves.IsWaveActive);
+                var controls=Object.FindFirstObjectByType<RunControlsUI>();
+                foreach(var size in new[]{new Vector2Int(360,640),new Vector2Int(1080,2400)})
+                {
+                    typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,new object[]{size});
+                    yield return Until(()=>Screen.width==size.x&&Screen.height==size.y);
+                    GlobalMenuPixelRoot.ValidationSafeArea=size.x==1080?new Rect(24,96,1032,2184):new Rect(0,20,360,600);
+                    // Screen size changes precede the camera/CanvasScaler/LateUpdate
+                    // layout pass; test the settled physical touch target.
+                    yield return new WaitForSecondsRealtime(.4f);
+                    Click("Settings");yield return new WaitForSecondsRealtime(.3f);
+                    Assert.That(Time.timeScale,Is.Zero);int tick=RunSession.Current.MoveClock.Tick;
+                    ValidateApprovedSettings(true);yield return Shot(zone+"-settings-"+size.x);
+                    Assert.That(RunSession.Current.MoveClock.Tick,Is.EqualTo(tick));
+                    Click("Resume");yield return null;Assert.That(Time.timeScale,Is.EqualTo(1));
+                }
+                GlobalMenuPixelRoot.ValidationSafeArea=null;
+                controls.OpenSettings();yield return null;Click("Quit");yield return null;
+                Assert.That(GameObject.Find("Confirm"),Is.Not.Null,"End Run retains its confirmation");
+                Click("Cancel");yield return null;Click("Resume");yield return null;
+                SceneManager.LoadScene("MainMenu");yield return new WaitForSecondsRealtime(.2f);
+            }
+        }
+    }
+
+    private static void ValidateApprovedSettings(bool battle)
+    {
+        var stage=GameObject.Find(battle?"NativeSettingsStage":"SettingsStage").GetComponent<RectTransform>();
+        var panel=(RectTransform)stage.Find("Panel");
+        Assert.That(panel.rect.size,Is.EqualTo(new Vector2(304,battle?532:348)));
+        Assert.That(panel.Find("CrownedCrest"),Is.Not.Null);
+        foreach(var action in panel.GetComponentsInChildren<SettingsActionContent>())
+        {
+            var button=action.GetComponent<Button>();var rect=(RectTransform)button.transform;
+            var label=action.GetComponentInChildren<TMP_Text>();label.ForceMeshUpdate();
+            var icon=action.transform.Find("ActionIcon").GetComponent<Image>();
+            // Inspect the actual imported PNG alpha independently of the layout's authored bounds.
+            var pixels=new Texture2D(2,2,TextureFormat.RGBA32,false);
+            pixels.LoadImage(File.ReadAllBytes(AssetDatabase.GetAssetPath(icon.sprite)));
+            int minX=pixels.width,minY=pixels.height,maxX=-1,maxY=-1;
+            for(int y=0;y<pixels.height;y++)for(int x=0;x<pixels.width;x++)if(pixels.GetPixel(x,y).a>.5f)
+            {minX=Math.Min(minX,x);maxX=Math.Max(maxX,x);minY=Math.Min(minY,y);maxY=Math.Max(maxY,y);}
+            var ir=icon.rectTransform;
+            float left=ir.anchoredPosition.x+ir.rect.xMin+minX;
+            float iconRight=ir.anchoredPosition.x+ir.rect.xMin+maxX+1;
+            float iconCenterY=ir.anchoredPosition.y+ir.rect.yMin+(minY+maxY+1)*.5f;
+            Object.Destroy(pixels);
+            var tb=label.textBounds;var tp=label.rectTransform.anchoredPosition;
+            float textLeft=tp.x+tb.min.x,right=tp.x+tb.max.x;
+            Assert.That(textLeft-iconRight,Is.EqualTo(12).Within(1),button.name+" icon/label clearance");
+            Assert.That((left+right)*.5f,Is.EqualTo(0).Within(1),button.name+" whole painted group centered");
+            Assert.That(iconCenterY,Is.EqualTo(0).Within(1),button.name+" icon vertically centered");
+            Assert.That(tp.y+tb.center.y,Is.EqualTo(0).Within(1),button.name+" text vertically centered");
+            Assert.That(left-rect.rect.xMin,Is.GreaterThanOrEqualTo(28));
+            Assert.That(rect.rect.xMax-right,Is.GreaterThanOrEqualTo(28));
+        }
+        Rect safe=GlobalMenuPixelRoot.ValidationSafeArea??UnityEngine.Device.Screen.safeArea;
+        var corners=new Vector3[4];panel.GetWorldCorners(corners);
+        foreach(var point in corners)
+        {
+            Assert.That(point.x,Is.InRange(safe.xMin,safe.xMax));
+            Assert.That(point.y,Is.InRange(safe.yMin,safe.yMax));
+        }
     }
     [UnityTest] public IEnumerator CaptureControlledBackgroundCleanupComparison()
     {

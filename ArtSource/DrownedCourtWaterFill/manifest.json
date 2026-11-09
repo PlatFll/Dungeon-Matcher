@@ -1,0 +1,24 @@
+{
+  "status": "candidate, not approved or merged",
+  "still_job": "57ec6823-93da-4385-8f58-a064b18cb119",
+  "still_index": 3,
+  "animation_job": "31e31e02-dea2-4c0f-bbb6-d6052a65031f",
+  "generations": 12,
+  "native": [
+    128,
+    64
+  ],
+  "frames": 16,
+  "fps": 12,
+  "cleanup": "Remove duplicated last frame; exact teal composite ramp, native seam collars, discrete intentional transparency; no resampling.",
+  "libresprite_roundtrip_exact": true,
+  "source_reference_sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+  "alpha": [
+    0,
+    64,
+    120,
+    164,
+    255
+  ],
+  "atlas_sha256": "d5e773b0b2b874e7113bf1ed652ab88e44ef802fcd8b4537dbe620fe85c5df7c"
+}

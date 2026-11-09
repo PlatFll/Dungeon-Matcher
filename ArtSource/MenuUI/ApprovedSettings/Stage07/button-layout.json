@@ -1,0 +1,191 @@
+{
+  "buttons": {
+    "Battle": [
+      [
+        "Resume",
+        "Green",
+        "RESUME",
+        350,
+        48,
+        28
+      ],
+      [
+        "Suspend",
+        "Gray",
+        "SUSPEND TO MENU",
+        406,
+        44,
+        22
+      ],
+      [
+        "Retry",
+        "Gray",
+        "END RUN AND RETRY",
+        458,
+        44,
+        20
+      ],
+      [
+        "EndRun",
+        "Red",
+        "END RUN",
+        510,
+        48,
+        28
+      ]
+    ],
+    "Home": [
+      [
+        "Back",
+        "Green",
+        "BACK",
+        426,
+        48,
+        28
+      ]
+    ]
+  },
+  "labels": [
+    {
+      "name": "Resume",
+      "text": "RESUME",
+      "font": 28,
+      "iconPosition": [
+        64,
+        12
+      ],
+      "iconBounds": [
+        69,
+        15,
+        83,
+        33
+      ],
+      "bounds": [
+        95,
+        18,
+        178,
+        30
+      ],
+      "gap": 12,
+      "leftMargin": 69,
+      "rightMargin": 70,
+      "buttonSize": [
+        248,
+        48
+      ]
+    },
+    {
+      "name": "Suspend",
+      "text": "SUSPEND TO MENU",
+      "font": 22,
+      "iconPosition": [
+        29,
+        11
+      ],
+      "iconBounds": [
+        30,
+        11,
+        51,
+        32
+      ],
+      "bounds": [
+        63,
+        17,
+        217,
+        27
+      ],
+      "gap": 12,
+      "leftMargin": 30,
+      "rightMargin": 31,
+      "buttonSize": [
+        248,
+        44
+      ]
+    },
+    {
+      "name": "Retry",
+      "text": "END RUN AND RETRY",
+      "font": 20,
+      "iconPosition": [
+        28,
+        10
+      ],
+      "iconBounds": [
+        31,
+        12,
+        49,
+        31
+      ],
+      "bounds": [
+        61,
+        17,
+        217,
+        26
+      ],
+      "gap": 12,
+      "leftMargin": 31,
+      "rightMargin": 31,
+      "buttonSize": [
+        248,
+        44
+      ]
+    },
+    {
+      "name": "EndRun",
+      "text": "END RUN",
+      "font": 28,
+      "iconPosition": [
+        61,
+        11
+      ],
+      "iconBounds": [
+        63,
+        14,
+        81,
+        33
+      ],
+      "bounds": [
+        93,
+        18,
+        184,
+        30
+      ],
+      "gap": 12,
+      "leftMargin": 63,
+      "rightMargin": 64,
+      "buttonSize": [
+        248,
+        48
+      ]
+    },
+    {
+      "name": "Back",
+      "text": "BACK",
+      "font": 28,
+      "iconPosition": [
+        79,
+        12
+      ],
+      "iconBounds": [
+        84,
+        15,
+        98,
+        33
+      ],
+      "bounds": [
+        110,
+        18,
+        164,
+        30
+      ],
+      "gap": 12,
+      "leftMargin": 84,
+      "rightMargin": 84,
+      "buttonSize": [
+        248,
+        48
+      ]
+    }
+  ],
+  "coordinateSystem": "Native pixels, top-left; labels are preview overlays"
+}

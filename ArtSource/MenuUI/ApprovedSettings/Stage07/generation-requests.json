@@ -1,0 +1,38 @@
+{
+  "stage": 7,
+  "balanceBefore": 4337,
+  "args": {
+    "description": "A SINGLE EMPTY horizontal fantasy game action button, native pixel art for Dungeon Matcher mobile settings. Front view, 248 pixels wide by 48 pixels tall. Fill nearly the entire canvas, leaving 1 pixel of transparent breathing room. Crisp thick PALE SILVER STONE/METAL rim, simple square bracket side mounts with one restrained dark rivet on each side, softly clipped square corners. Broad flat quiet muted charcoal-violet interior face, enough free space for a long label and a 24px icon later. Top-left light, broad planar bevels, no shiny mirror/chrome, no random cracks or speckles. Match clean dark outlines, pale silver material planes, and readable chunky fantasy menu parts. The button is RECTANGULAR and horizontal, not a scroll. NO text, NO letters, NO icons, NO skulls, NO gemstones, NO decoration in the interior. Individual transparent UI sprite. Clear connected rim, consistent rail thickness, no antialiasing, no blur, no gradient, no drop shadow outside canvas.",
+    "width": 248,
+    "height": 48,
+    "palette": [
+      "#0B0B15",
+      "#141827",
+      "#1C2235",
+      "#282D43",
+      "#404258",
+      "#56516A",
+      "#676079",
+      "#7F778E",
+      "#9891A5",
+      "#AAA5B8",
+      "#BFBDCD",
+      "#D4D2DF",
+      "#F5F2FA"
+    ],
+    "max_colors": 13,
+    "no_background": true
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 5c921c72-8108-4a74-b982-7ed4097117c1\njob_id: 5c921c72-8108-4a74-b982-7ed4097117c1\nmodel: pro\ndescription: A SINGLE EMPTY horizontal fantasy game action button, native pixel art for Dungeon Matcher mobile settings. Front view, 248 pixels wide by 48 pixels tall. Fill nearly the entire canvas, leaving 1 pixel of transparent breathing room. Crisp thick PALE SILVER STONE/METAL rim, simple square bracket side mounts with one restrained dark rivet on each side, softly clipped square corners. Broad flat quiet muted charcoal-violet interior face, enough free space for a long label and a 24px icon later. Top-left light, broad planar bevels, no shiny mirror/chrome, no random cracks or speckles. Match clean dark outlines, pale silver material planes, and readable chunky fantasy menu parts. The button is RECTANGULAR and horizontal, not a scroll. NO text, NO letters, NO icons, NO skulls, NO gemstones, NO decoration in the interior. Individual transparent UI sprite. Clear connected rim, consistent rail thickness, no antialiasing, no blur, no gradient, no drop shadow outside canvas.\nsize: 248x48px\ntransparent: True\ncandidates: 1\npalette: 13 colours\nmax colours: 13 per image\nasset_id: c91c078f-0ebd-51ba-8066-51a0cd6724cf\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"5c921c72-8108-4a74-b982-7ed4097117c1\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/5c921c72-8108-4a74-b982-7ed4097117c1/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+      }
+    ],
+    "isError": false
+  },
+  "authorization": "User Continue after Stage06; staged pack authorizes text-driven PixelLab UI generation as needed.",
+  "uploads": [],
+  "referenceRole": "Current canonical guide and actual golden images inspected locally; approved menu palette provided as colors."
+}

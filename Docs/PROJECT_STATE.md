@@ -174,6 +174,14 @@ documented and unchanged. Physical-device execution is not claimed.
 Zero integration generations; the approved pack retains its 107-generation
 ledger. [Screenshots and full evidence](../ArtSource/DrownedCourtEnvironmentV2/Integration/README.md).
 
+The 2026-11-08 rising-water effect was approved for game integration on 2026-11-09
+in `ArtSource/DrownedCourtWaterFill`. PixelLab/LibreSprite surface animation,
+small bubbles and a full-canvas depth tint replace the old flat water line in
+the actual Game presentation. Cosmetic timing is independent of the unchanged
+board transition and AIR rules. Actual Game captures at three phone sizes and
+a safe area, pause/reduced-motion checks and Unity compilation pass. Twelve
+PixelLab generations were used; no additional generation was needed for integration.
+
 ## Dungeon side architecture (2026-10-25, awaiting visual approval)
 
 The dedicated `feature/dungeon-side-architecture-polish` branch adds native
@@ -428,6 +436,13 @@ false failure used an uncommitted-file snapshot as a universal checkout baseline
 All 54 native menu checks and both protected-file variants pass; unexpected
 changes still fail. No underwater artwork changed. See
 `ArtSource/MenuUI/validation/Preservation-Contract.md`.
+
+On 2026-11-09 the user also approved integrating the complete Settings Stages
+05–07 UI. The exact 37 modular PNG/LibreSprite sources are preserved in
+`ArtSource/MenuUI/ApprovedSettings`. Home and every zone now share the approved
+larger settings panel, preference rows, and centered green/gray/red action buttons.
+Ali's edited hall, main navigation artwork, and shared light-gray battle controls
+are unchanged. Existing controllers retain all preference/save/pause behavior.
 
 The supplied main-menu/settings mockups now guide the shared non-zone UI family:
 native violet dungeon hall and skull portal, silver/gold wordmark, silver rims,

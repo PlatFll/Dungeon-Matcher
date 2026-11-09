@@ -1,0 +1,14 @@
+SETTINGS STAGE 06 — ROWS / ICONS / TOGGLES
+Status: art review checkpoint. User approved Stage05 and requested Continue.
+Scope: MUSIC, SFX, REDUCED MOTION and VIBRATION rows, their icons, explicit ON/OFF switch states and one action-group divider.
+
+Approved Stage05 frame/header/crest: unchanged. The new saved assemblies retain all 12 original layers pixel-for-pixel. The 304x532 battle panel and 304x348 home panel retain their locked placements.
+Rows: 264x44, fixed 16x44 end caps plus repeating 16x44 center. Icons: 28x28. Switches: 66x30, green/right for ON, neutral/left for OFF. Labels remain separate preview overlays using Thaleah, not baked runtime assets. Reduced Motion uses the slightly smaller 20px font setting for a clean 13px gap before the switch; other labels use 22px. Switches keep 12px clearance from the row's outer right edge. Row hit areas are 264x44 in this review.
+
+PixelLab: text-driven Pro row/toggle source (10 generations), Pro icon concepts (10), four native 28x28 Pixen sources (4). Total 24; subscription balance 4361 to 4337, no USD credit charge.
+The 64x64 icon concepts were too large for the row slot and were not resampled. Music preserves the native 28px source silhouette. The Pixen SFX attempt read as a phone and was rejected; the Pro loudspeaker concept was rebuilt at 28px directly in LibreSprite. Stable diamond and phone motifs were cleaned/reconstructed in native pixels, removing generated checker patterns and unneeded shading. Generated row endcaps remain native and its center repeats without scaling. Toggle parts were rebuilt from the generated style at the required native size with coherent state geometry and palette.
+
+13 clean native PNGs with matching LibreSprite sources and exact reopen/export checks. Final assemblies have 25 battle layers and 24 home layers. Independent layer reconstruction and pixel comparison pass. Labels/icons/switches fit without overlap. Binary alpha throughout. 694 prior files and 12 canonical/production reference hashes verified unchanged. Existing unrelated repository changes preserved.
+
+Browser preview toggles are demonstration state only: they do not modify game settings. Backgrounds are existing approved menu art and an existing recorded Unity Dungeon capture. No new Unity runtime test, gameplay edit, game import, commit, PR or merge occurred.
+Next checkpoint: Stage07 settings action buttons. Stop here for user review.
