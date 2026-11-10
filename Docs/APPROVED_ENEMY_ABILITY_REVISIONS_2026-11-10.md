@@ -88,6 +88,12 @@ All **other** ability changes in the broad enemy-and-zone review remain **unsele
 
 ## Implementation handoff
 
+Review PR: [#227](https://github.com/PlatFll/Dungeon-Matcher/pull/227).
+Implementation commit: `2a9d5a60fe467af54194dad149b3c75c9e7e4a77`.
+Final gate: **38/38 passed, no skips**, and `Tools/Validate-Unity.ps1` passed
+with Unity 6000.3.19f1. Not merged; physical-device and human balance review
+remain outstanding.
+
 All seven scoped revisions are implemented using the existing board queue, damage
 flow, accepted-move clock and continuation architecture. King's Royal Assault and
 unrelated encounters remain unchanged. Mage ice shares the Frostwake rules and

@@ -4,6 +4,10 @@ Feature branch: `codex/approved-enemy-ability-redesigns`, based on main
 `dabfc718ca17a9637ae3095a6a63f70d77729013`. Not merged. Design provenance: PR #226
 and the user's explicit implementation request of 2026-11-10.
 
+Review PR: [#227](https://github.com/PlatFll/Dungeon-Matcher/pull/227).
+Tested implementation commit: `2a9d5a60fe467af54194dad149b3c75c9e7e4a77`.
+Subsequent handoff edits only add these PR/commit references to documentation.
+
 ## Implemented scope
 
 | Enemy | Implemented change |
