@@ -1,0 +1,151 @@
+{
+  "guide_version": "1.17.2",
+  "guide_sha256": "f628e40bc010483ec0f52c9498904985fbca563924ab0947bc600d4b17011e4d",
+  "references": {
+    "Rattlebones": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "Farmer": {
+      "path": "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png",
+      "sha256": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d"
+    },
+    "Pan": {
+      "path": "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png",
+      "sha256": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+    }
+  },
+  "generations": 11,
+  "flame": {
+    "approved_still_sha256": "c7e9a2096ec252dd4e0ab4966a54259615f60df899e1283b3ed84c982e7ecaca",
+    "frames": 8,
+    "duration_ms": [
+      120,
+      120,
+      120,
+      120,
+      120,
+      120,
+      120,
+      120
+    ],
+    "canvas": [
+      32,
+      32
+    ],
+    "opaque_palette": [
+      [
+        10,
+        13,
+        17,
+        255
+      ],
+      [
+        65,
+        71,
+        94,
+        255
+      ],
+      [
+        120,
+        130,
+        153,
+        255
+      ],
+      [
+        124,
+        56,
+        47,
+        255
+      ],
+      [
+        172,
+        180,
+        190,
+        255
+      ],
+      [
+        238,
+        155,
+        67,
+        255
+      ],
+      [
+        255,
+        231,
+        160,
+        255
+      ]
+    ],
+    "all_stone_pixels_identical": true,
+    "outside_flame_mask_identical": true,
+    "frame_zero_exact_approved_still": true,
+    "source_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "libresprite_rgba_equal": true
+  },
+  "net": {
+    "source_index": 4,
+    "canvas": [
+      64,
+      64
+    ],
+    "bounds": [
+      1,
+      1,
+      63,
+      63
+    ],
+    "opaque_colors": 6,
+    "transparent_fraction": 0.3955078125,
+    "native_geometry_preserved": true,
+    "libresprite_rgba_equal": true
+  },
+  "files": {
+    "Frames/HearthFlame_00.png": "4a6bdb6751c7565dfd21174fc87c6945cb6f67c7b2ab4db48be230c417a9fde2",
+    "Frames/HearthFlame_01.png": "d5e4634bbd26073faaaace6a498014ef0462a5fcbd951e416584660492fa2556",
+    "Frames/HearthFlame_02.png": "f1deb5cd71477ea1650e84ab8105d49857e245eb5b14ea269c3f980baa86cb95",
+    "Frames/HearthFlame_03.png": "dfd5d5633284e4e53fabfa1fb7ac41856aa8ee5933b93c9facd00cb0d2501183",
+    "Frames/HearthFlame_04.png": "3c31e23e1173c96385c39573647687dcd66dfb35609406374c01ad7a2055cce8",
+    "Frames/HearthFlame_05.png": "2aeac5f9aa90c40ebfbf2cc729e990b6c797bb98894e4659d3438a49829f1901",
+    "Frames/HearthFlame_06.png": "1e6fc5a74ff4cd63307e5a70a4630259a8b7152722af02cba25a9ec8c6f33d83",
+    "Frames/HearthFlame_07.png": "5ee26ab457c3bda82be988c908eb1e17191d264f9c312928290aaa57f80c1e03",
+    "HearthFlame-raw-sheet.png": "4a0bede3b23332577a62720b3d1f5f9216a13919ae8da88a4bf712981a8ea2ee",
+    "HearthFlame-strip.png": "f86c50d3720dda25dd6fdacd4fdcadc820be50d3442d904b0422636d2daf33e8",
+    "MarineNet-raw-sheet.png": "17247100a8c39e56fed5cfdc1a26c7c5cf0f96767aa524fe01d5ccc6c3f42217",
+    "MarineSnare.png": "172bf4f7cae028372545a78e7762802324d196d9cc61fc6e0dfb0bedd5f0d863",
+    "Raw/HearthFlame/00.png": "4a6bdb6751c7565dfd21174fc87c6945cb6f67c7b2ab4db48be230c417a9fde2",
+    "Raw/HearthFlame/01.png": "55193e19604187cd63b06cf15b94d9fcad16afe281d1ec8596489556bbfeff84",
+    "Raw/HearthFlame/02.png": "6378127bf05e9dc6b50e922e7cbd7fa0a27179dfd40a58c404b0f3ed23f39036",
+    "Raw/HearthFlame/03.png": "a0abd41802d8e91c29c30145e4db3d34c7bc40e083a3f09a7dd31d4a1d9df48d",
+    "Raw/HearthFlame/04.png": "cf0c7b4a2edca15f69906be20e47de4a80f50fa09796ddf2574651a89feb7a08",
+    "Raw/HearthFlame/05.png": "b1cb1a050b82dea906186795d5283645c533fe327e39430e85a4d8cf290bbbd2",
+    "Raw/HearthFlame/06.png": "2fed07e50acbe05d7959f4f864cde3834c0c26e30bc5ca46762244283d6813dd",
+    "Raw/HearthFlame/07.png": "00cdd27d45275c862b6a80847c978b0bf295d83ce4f5083a8439fd445f62066d",
+    "Raw/HearthFlame/08.png": "ac99cc30b39212d3185762f30c16952e60fcc3066571d52487efe2200bbd82ad",
+    "Raw/MarineNet/00.png": "5a6179022e3889ab23262e1c5d625df533c5f6322355525b87b64bb64f7804e1",
+    "Raw/MarineNet/01.png": "08bf3763e5f88677ee170fdc966270fd015f765f4d74e4134a7da9903be2cd49",
+    "Raw/MarineNet/02.png": "b13e7324274702d628c3b1b27a831a0a0abf3646cb25b36cd816d6058bc4ca78",
+    "Raw/MarineNet/03.png": "5b354831580edf3a29ef42ca677df0aa60d0c9c21d9427af82c46586ed16e090",
+    "Raw/MarineNet/04.png": "71a48ecd5f5d9233700826017cadce6c58d5fc82ea17f7e28d72ac208ce24f8b",
+    "Raw/MarineNet/05.png": "573d5f45af068fd4027af4a2d7cbf5f8f293af5e744b526e80eddd6f7a23efc5",
+    "Raw/MarineNet/06.png": "2133b0d1023c196f11001ee70144f288ab7d567f06a28759d80f45b71822902b",
+    "Raw/MarineNet/07.png": "89cd4c7473c8c5d16d7a7325cbe48c8bda5827a84ac7ac9529cf994d93a362da",
+    "Raw/MarineNet/08.png": "216317194e20bc5c5a393419d2cc9e1d04db05692dc9564a98ada614e7cd84f4",
+    "Raw/MarineNet/09.png": "dfbe0001b748f4bac3d1c4d2b2fb1bec0fbea9bbaa1080182f59cb3f3bd74cf1",
+    "Raw/MarineNet/10.png": "9fce2fddff64c8f9443fd36950dbc32c7ef88070488bebef877a932ae400cfee",
+    "Raw/MarineNet/11.png": "9ca94d4712c58d71f8ef76ce3cd3dda43601449db12ca966d291737e73528d77",
+    "Raw/MarineNet/12.png": "2df8e9428b6f24e1a53aed367d50c5b5fe767b0dfdf17ca4b048c45219eaff51",
+    "Raw/MarineNet/13.png": "1602f2efa900ff0e636f967e91b1822d3feecfb24392c372a6656bdf29f4876e",
+    "Raw/MarineNet/14.png": "c3224b638d46ca95c4c68cc6d0df57ab91efc82eb7b7b6cffc2a7197d689a3ce",
+    "Raw/MarineNet/15.png": "ff60b3da005df0c5783be07b47e4020bc6a6d83e42dc821bc2c0ddc10699ab69"
+  }
+}

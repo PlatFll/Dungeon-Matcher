@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-10",
+  "status": "review candidate; not merged",
+  "unity": "6000.3.19f1",
+  "compile": {
+    "command": "Tools/Validate-Unity.ps1",
+    "result": "Passed",
+    "exit_code": 0,
+    "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-35ef70cb-3436-461b-a8ed-f52e46d51b90.log"
+  },
+  "automated_game_checks": {
+    "unique_passed": 6,
+    "passes": [
+      {"test": "HearthFlameMovesWithFixedFootingPausesAndResumes", "xml": ".utmp/ForestValidation/d8e2409f-0fd5-4a3c-87e2-6c72cd6ac432.xml"},
+      {"test": "RevisionHearthThreeFutureMovesContinueAndOwnerDeath", "xml": ".utmp/ForestValidation/d8e2409f-0fd5-4a3c-87e2-6c72cd6ac432.xml"},
+      {"test": "RevisionHearthPlayerBreakThawsAtMostTwoAndDoesNotRetarget", "xml": ".utmp/ForestValidation/d8e2409f-0fd5-4a3c-87e2-6c72cd6ac432.xml"},
+      {"test": "RevisionCantorOnlyCollectedChannelBubblesReduceHealAndResume", "xml": ".utmp/ForestValidation/d8e2409f-0fd5-4a3c-87e2-6c72cd6ac432.xml"},
+      {"test": "CourtSnareExpiresAfterThreeFutureMovesAndSparesAirRoutes", "xml": ".utmp/ForestValidation/be1c4f4e-4b98-4a77-a598-52008acbc3bc.xml"},
+      {"test": "MarineNetFillsOneCellAtEveryRemainingDurationAndPhoneSize", "xml": ".utmp/ForestValidation/a27a2cb0-7901-4d3d-a688-42eaa5e95bd5.xml"}
+    ],
+    "initial_fixture_failures": "The new net check initially skipped the first accepted move that initializes aquatic state and the useful-answer/AIR-route setup required by legal snare placement. It now uses the established Court expiry fixture setup. An exact Vector3 comparison then exposed world/local floating-point roundoff; the new assertion uses distance <0.00001 world units, far below one displayed pixel. No preexisting test or gameplay rule was weakened.",
+    "coverage": "8 flame cels; fixed transform and stone pixels; pause; Reduced Motion; resume; unchanged hearth lifetime, healing, thawing and owner cleanup; unchanged net expiry and AIR routes; net bounds, alignment and visibility at 1080x1920, 360x640, 1080x2400 for 3, 2, 1 remaining moves"
+  },
+  "native": {
+    "flame": "32x32; 8 x 120ms; 7 opaque colors; binary alpha; all stone pixels and pixels outside flame mask exact; first cel equals approved still; full cel-to-LibreSprite-export equality",
+    "net": "64x64; 6 opaque colors; binary alpha; bounds [1,1,63,63); full-cell runtime rectangle, one native pixel edge clearance; selected PixelLab geometry exact after LibreSprite export"
+  },
+  "pixel_lab_generations": 11,
+  "runtime_visual_evidence": "Preview/*.png are actual Unity Game renders from controlled combat fixtures. Hearth captures sample authored frame times; automatic animation playback is separately asserted. The 360x640 capture includes the existing Editor PixelPerfectCamera reference-resolution warning.",
+  "limitations": "No Android build or real-device test for this focused revision. Visual approval is pending. The production main checkout was not changed."
+}

@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-10",
+  "guideVersion": "1.17.2",
+  "scope": "User approved current Hearth Ember still; requested flame animation and thicker full-tile marine net. No merge requested for this revision.",
+  "flame": {
+    "first_frame_url": "https://raw.githubusercontent.com/PlatFll/Dungeon-Matcher/main/Assets/_Game/Resources/Combat/ApprovedRevisions/HearthEmber.png",
+    "last_frame_url": "https://raw.githubusercontent.com/PlatFll/Dungeon-Matcher/main/Assets/_Game/Resources/Combat/ApprovedRevisions/HearthEmber.png",
+    "action": "A subtle looping hearth flame flicker. ONLY the orange flame and pale inner flame move: the narrow tip curls one or two pixels left, gathers upright, then curls gently right and returns. Small internal tongue rises and fades into the flame, no detached sparks. All cool gray stone base pixels stay perfectly stationary and identical, no bobbing, no zooming, no glow halo, no camera motion. Preserve the small flame shape, exact native palette, hard pixel clusters and transparent canvas. The flame base stays attached inside the stone ring throughout.",
+    "frame_count": 8,
+    "no_background": true,
+    "seed": 22731
+  },
+  "flameReceipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 366178e0-6228-42fc-864e-a7c3ca149fba\njob_id: 366178e0-6228-42fc-864e-a7c3ca149fba\naction: A subtle looping hearth flame flicker. ONLY the orange flame and pale inner flame move: the narrow tip curls one or two pixels left, gathers upright, then curls gently right and returns. Small internal tongue rises and fades into the flame, no detached sparks. All cool gray stone base pixels stay perfectly stationary and identical, no bobbing, no zooming, no glow halo, no camera motion. Preserve the small flame shape, exact native palette, hard pixel clusters and transparent canvas. The flame base stays attached inside the stone ring throughout.\nframes: 8\nsize: 32x32px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 22731\nasset_id: 25f41a42-1841-5aff-a613-fbd7b826c8a4\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"366178e0-6228-42fc-864e-a7c3ca149fba\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/366178e0-6228-42fc-864e-a7c3ca149fba/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+      }
+    ],
+    "isError": false
+  },
+  "net": {
+    "description": "One square heavy marine capture net overlay for a 64x64 game board tile, straight-on view, centered. FOUR chunky nautical ropes running diagonally each way form a regular broad diamond fishing-net mesh, attached to four large knotted corners at (3,3), (60,3), (3,60), (60,60). The net extends edge to edge almost filling the entire 64x64 canvas; its outer rope perimeter follows a softly squared tile shape, NOT a small circle. Thick readable 4 to 5 pixel blue-green rope strands with dark edge separation and two restrained matte rope shades. Small desaturated purple barnacle/barb clusters belong at the corner knots only. Hollow transparent diamond windows between the cords must remain open so a colorful gem underneath can still be identified. No opaque backing, no gem, no terrain, no metal frame, no sharp jagged clutter, no faint thin lines, no glow, no blur. Crisp chunky native pixel-art clusters, dark clean contour and top-left light consistent with the style reference. Fill the square tile footprint; complete cords end in attached corner knots rather than cropped loose ends.",
+    "width": 64,
+    "height": 64,
+    "no_background": true,
+    "style_image_url": "upload:661c4fb9-7a0b-4082-9577-766f5dce3cb1",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "max_colors": 8,
+    "palette": [
+      "#0A0D11",
+      "#243F48",
+      "#42666B",
+      "#71918E",
+      "#A9BBB6",
+      "#4D425F",
+      "#7C658F",
+      "#B0A0B8"
+    ],
+    "seed": 22732
+  },
+  "netReceipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 9ea6247c-5184-4205-92ed-4d896c4d78ac\njob_id: 9ea6247c-5184-4205-92ed-4d896c4d78ac\nmodel: pro\ndescription: One square heavy marine capture net overlay for a 64x64 game board tile, straight-on view, centered. FOUR chunky nautical ropes running diagonally each way form a regular broad diamond fishing-net mesh, attached to four large knotted corners at (3,3), (60,3), (3,60), (60,60). The net extends edge to edge almost filling the entire 64x64 canvas; its outer rope perimeter follows a softly squared tile shape, NOT a small circle. Thick readable 4 to 5 pixel blue-green rope strands with dark edge separation and two restrained matte rope shades. Small desaturated purple barnacle/barb clusters belong at the corner knots only. Hollow transparent diamond windows between the cords must remain open so a colorful gem underneath can still be identified. No opaque backing, no gem, no terrain, no metal frame, no sharp jagged clutter, no faint thin lines, no glow, no blur. Crisp chunky native pixel-art clusters, dark clean contour and top-left light consistent with the style reference. Fill the square tile footprint; complete cords end in attached corner knots rather than cropped loose ends.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nstyle_image: yes (outline, detail, shading)\npalette: 8 colours\nmax colours: 8 per image\nseed: 22732\nasset_id: 35cfd3cf-a737-5ce2-9a3d-9f21204b8225\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"9ea6247c-5184-4205-92ed-4d896c4d78ac\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/9ea6247c-5184-4205-92ed-4d896c4d78ac/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+      }
+    ],
+    "isError": false
+  }
+}

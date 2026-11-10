@@ -864,6 +864,11 @@ public partial class BoardController
 
         state.ViewObject.transform.localScale =
             Vector3.one * scale;
+        if(state.Style==EnemyBarricadeStyle.HearthEmber)
+        {
+            var flame=state.ViewObject.GetComponent<HearthEmberFlameView>() ?? state.ViewObject.AddComponent<HearthEmberFlameView>();
+            flame.Bind(state.Renderer);
+        }
         if(IsRoot(state)) RefreshRootDurability(state,spriteExtent);
         if(state.Style==EnemyBarricadeStyle.ShieldRoot || state.Style==EnemyBarricadeStyle.Heartroot)
         {
