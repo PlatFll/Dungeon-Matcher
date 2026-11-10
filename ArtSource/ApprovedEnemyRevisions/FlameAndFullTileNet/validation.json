@@ -23,7 +23,18 @@
   },
   "native": {
     "flame": "32x32; 8 x 120ms; 7 opaque colors; binary alpha; all stone pixels and pixels outside flame mask exact; first cel equals approved still; full cel-to-LibreSprite-export equality",
-    "net": "64x64; 6 opaque colors; binary alpha; bounds [1,1,63,63); full-cell runtime rectangle, one native pixel edge clearance; selected PixelLab geometry exact after LibreSprite export"
+    "net": "64x64; 5 opaque colors after the requested held-net recolor; binary alpha; bounds [1,1,63,63); full-cell runtime rectangle, one native pixel edge clearance; selected PixelLab geometry exact after LibreSprite export"
+  },
+  "held_net_recolor": {
+    "editor": "LibreSprite 1.1-dev native JavaScript pixel API",
+    "reference": "NetRopeRecolor/reference.json",
+    "checks": "NetRopeRecolor/checks.json",
+    "pixel_lab_generations": 0,
+    "changed_scope": "RGB only on MarineSnare; alpha, coordinates, mesh, thick strands, bounds, GUID and import settings unchanged. Enemy art and hearth animation unchanged.",
+    "fresh_game_test": "MarineNetFillsOneCellAtEveryRemainingDurationAndPhoneSize: Passed",
+    "fresh_game_xml": ".utmp/ForestValidation/8bf8ebd4-ddea-4a02-bd92-c6693bb7d931.xml",
+    "fresh_game_coverage": "Recolored PNG in actual Game at 360x640, 1080x1920 and 1080x2400; full-cell bounds, alignment and visibility at all remaining lifetimes. Preview net screenshots refreshed.",
+    "compile_note": "Art-only follow-up, no runtime code or serialization changed; prior compilation and unaffected gameplay evidence retained. The fresh Game test also compiled the current checkout."
   },
   "pixel_lab_generations": 11,
   "runtime_visual_evidence": "Preview/*.png are actual Unity Game renders from controlled combat fixtures. Hearth captures sample authored frame times; automatic animation playback is separately asserted. The 360x640 capture includes the existing Editor PixelPerfectCamera reference-resolution warning.",

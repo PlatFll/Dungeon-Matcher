@@ -14,7 +14,7 @@ not phone recordings or claims of device testing. This revision is not merged.
   binary alpha. Every original stone pixel and every pixel outside the flame
   edit mask is exact. Cel zero equals the approved still. No scaling, drift,
   palette expansion or detached sparks. The original still remains the fallback.
-- Net: native 64x64, six opaque colors, binary alpha, knotted heavy ropes with
+- Net: native 64x64, five opaque colors after the requested recolor, binary alpha, knotted heavy ropes with
   transparent diamond windows. Occupied bounds are `[1,1,63,63)` for a one-pixel
   edge clearance. Its full sprite rectangle matches the cell; the visible ropes
   reach within one native pixel of each edge. It no longer shrinks toward expiry.
@@ -44,3 +44,22 @@ its existing GUID and production theme reference. Other sprites, gems, scenery,
 UI, gameplay rules and the main checkout are untouched.
 
 Executed test details and limitations are in `validation.json`.
+
+## Held-net color match
+
+The user identified the Reef Netweaver and requested the same colors as his held
+net. His serialized enemy definition binds `ThornySnare` (24), which dispatches
+the existing `TryApplyAquaticSnares` operation. The production still is the exact
+palette authority for this scoped recolor; his own artwork remains unchanged.
+
+`NetRopeRecolor/recolor.js` replaces colors inside LibreSprite, then saves and
+reopens the native ASE document for an exact PNG round-trip. The cool rope ramp
+becomes the held net's `#4A2C1C`, `#7A4D2E`, `#B07A43`; the small weight accents
+use `#B8C8BE`. Outline `#0A0D11`, all coordinates, rope thickness, knots and alpha
+stay exact. Two redundant cool midtones share the sampled brown base.
+
+The prior artwork is preserved as `NetRopeRecolor/Before.png` and `Before.ase`.
+Reference path/hash, sampled coordinates and checks are recorded beside them.
+Run `NetRopeRecolor/run.py` to repeat the native edit and verify/bind its exports;
+`build.py` also invokes that final recolor after rebuilding the initial sources.
+This color-only follow-up spends **zero PixelLab generations**.

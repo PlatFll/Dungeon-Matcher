@@ -104,10 +104,25 @@
       63,
       63
     ],
-    "opaque_colors": 6,
+    "opaque_colors": 5,
     "transparent_fraction": 0.3955078125,
     "native_geometry_preserved": true,
-    "libresprite_rgba_equal": true
+    "libresprite_rgba_equal": true,
+    "recolor": {
+      "reference": "NetRopeRecolor/reference.json",
+      "palette_map": {
+        "#0A0D11": "#0A0D11",
+        "#243F48": "#4A2C1C",
+        "#42666B": "#7A4D2E",
+        "#71918E": "#7A4D2E",
+        "#A9BBB6": "#B07A43",
+        "#B0A0B8": "#B8C8BE"
+      },
+      "mask_exact": true,
+      "all_pixel_changes_match_map": true,
+      "libresprite_reopen_exact": true,
+      "generations": 0
+    }
   },
   "files": {
     "Frames/HearthFlame_00.png": "4a6bdb6751c7565dfd21174fc87c6945cb6f67c7b2ab4db48be230c417a9fde2",
@@ -121,7 +136,11 @@
     "HearthFlame-raw-sheet.png": "4a0bede3b23332577a62720b3d1f5f9216a13919ae8da88a4bf712981a8ea2ee",
     "HearthFlame-strip.png": "f86c50d3720dda25dd6fdacd4fdcadc820be50d3442d904b0422636d2daf33e8",
     "MarineNet-raw-sheet.png": "17247100a8c39e56fed5cfdc1a26c7c5cf0f96767aa524fe01d5ccc6c3f42217",
-    "MarineSnare.png": "172bf4f7cae028372545a78e7762802324d196d9cc61fc6e0dfb0bedd5f0d863",
+    "MarineSnare.png": "3a547086d4211e5cadd7cda33b5027a6580d1f0f46aad1285e6825df4f189095",
+    "NetRopeRecolor/Before.png": "172bf4f7cae028372545a78e7762802324d196d9cc61fc6e0dfb0bedd5f0d863",
+    "NetRopeRecolor/MarineSnare.png": "3a547086d4211e5cadd7cda33b5027a6580d1f0f46aad1285e6825df4f189095",
+    "NetRopeRecolor/ReefNetweaver-reference.png": "afb8a288f65be6da78e938c7075375479993b4053d9c1650900e7da8d929870d",
+    "NetRopeRecolor/Roundtrip.png": "3a547086d4211e5cadd7cda33b5027a6580d1f0f46aad1285e6825df4f189095",
     "Raw/HearthFlame/00.png": "4a6bdb6751c7565dfd21174fc87c6945cb6f67c7b2ab4db48be230c417a9fde2",
     "Raw/HearthFlame/01.png": "55193e19604187cd63b06cf15b94d9fcad16afe281d1ec8596489556bbfeff84",
     "Raw/HearthFlame/02.png": "6378127bf05e9dc6b50e922e7cbd7fa0a27179dfd40a58c404b0f3ed23f39036",

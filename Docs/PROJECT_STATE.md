@@ -27,6 +27,9 @@ plus thicker Marine Net ropes covering the entire tile. The focused follow-up
 on `codex/ember-flame-marine-net` preserves every stone pixel and the approved
 still, adds eight 120 ms flame cels, and replaces the thin net with a native
 64x64 square mesh. Net coverage stays constant until its existing expiry.
+The requested LibreSprite palette follow-up matches the brown rope and pale
+weights in the current Reef Netweaver's hand, with exact mesh/alpha preservation
+and zero additional generation spending.
 PixelLab sources, LibreSprite documents, validation and actual Game previews
 are in `ArtSource/ApprovedEnemyRevisions/FlameAndFullTileNet` (11 generations).
 Gameplay rules and the production main checkout remain unchanged by this

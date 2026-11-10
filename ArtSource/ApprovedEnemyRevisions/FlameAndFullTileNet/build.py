@@ -1,7 +1,7 @@
 """Native PixelLab flame cleanup, locked-stone animation, and full-cell net export."""
 from pathlib import Path
 from PIL import Image, ImageDraw
-import hashlib,json,re,subprocess,uuid
+import hashlib,json,re,subprocess,uuid,sys
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[2]
@@ -93,3 +93,5 @@ manifest={'guide_version':'1.17.2','guide_sha256':hashlib.sha256((ROOT/'Docs/Art
           'files':{p.relative_to(HERE).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(HERE.rglob('*.png')) if 'Preview' not in p.parts}}
 (HERE/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print('8 exact 32px flame cels, locked stones, 960ms loop; 64px full-tile net, no resampling. LibreSprite verified.')
+if (HERE/'NetRopeRecolor/run.py').exists():
+    subprocess.run([sys.executable,str(HERE/'NetRopeRecolor/run.py')],cwd=ROOT,check=True)
