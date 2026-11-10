@@ -36,6 +36,12 @@ public sealed class EnemyDefinition : ScriptableObject
     [Range(1,3)] public int mountainMarkedGems=1;
     [Min(1)] public int mountainResponseMoves=2;
     [Min(0)] public int mountainStrikeDamage=15;
+    [Header("Approved ability revisions — provisional tuning")]
+    [Min(0)] public int shieldbreakerFirstDamage = 10;
+    [Min(0)] public int shieldbreakerMainDamage = 25;
+    [Min(1)] public int shieldbreakerRecoveryMoves = 3;
+    [Tooltip("Flooded heal can be countered by genuinely collected oxygen bubbles.")]
+    public bool bubbleCounterHeal;
     [Tooltip("The complete formation must opt in before the court floods. Unknown/global enemies stay dry-only.")]
     public bool canFightFlooded;
     public EnemyDefinition aquaticSummon;

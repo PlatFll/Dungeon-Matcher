@@ -32,7 +32,10 @@ MonoBehaviour:
   mineReserveHealthFraction: 0.5
   appliedPlayerStatus: {fileID: 0}
   frostwakeRules: {fileID: 11400000, guid: dd1e0b55cec7eb74abe1321173ec9999, type: 2}
-  abilityDisplayName: Hallbreaker
+  abilityDisplayName: Shieldbreaker Charge
+  shieldbreakerFirstDamage: 10
+  shieldbreakerMainDamage: 25
+  shieldbreakerRecoveryMoves: 3
   mountainArmorShield: 0
   mountainMarkedGems: 2
   mountainResponseMoves: 2
@@ -61,9 +64,9 @@ MonoBehaviour:
   chainsPerUse: 1
   displayName: Iceborn Champion
   category: 2
-  description: Hallbreaker marks two gems for two moves. Clear either mark to cancel
-    the full hammer blow and Stagger the champion. Otherwise both are consumed and
-    the strike deals 30 base damage once.
+  description: Channels Shieldbreaker Charge for two moves, then strikes for 10 and
+    25 base damage as separate shield-gated hits. Stagger or defeat interrupts.
+    Recovers for three future moves afterward. Normal basic attack is unchanged.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 21300000, guid: 5e985249e361d8b409ab73246130e24d, type: 3}
   animationControllerOverride: {fileID: 9100000, guid: 3db64a8864e902c43ac27492a5ea6f47, type: 2}
@@ -85,7 +88,7 @@ MonoBehaviour:
   pressureAttackMoves: 3
   pressureSpecialTurns: 3
   hasSpecialAbility: 1
-  specialAbilityKind: 42
+  specialAbilityKind: 44
   baseSpecialTurnRequirement: 5
   lockSpecialTurnRequirement: 1
   allyShieldAmount: 10

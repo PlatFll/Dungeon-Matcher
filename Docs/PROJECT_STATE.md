@@ -20,6 +20,17 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Approved enemy ability revisions — implementation review (2026-11-10)
+
+The six approved redesigns and marine-snare presentation change are implemented
+on `codex/approved-enemy-ability-redesigns`, pending PR review, **not merged**.
+Captain advances readiness; Mage uses shared owned True Ice; Troll warns a
+column; Champion channels two shield-gated impacts and recovers; Hearthkeeper
+places a three-move Ember; flooded Cantor healing responds to collected bubbles.
+The King's command, unrelated roster, character art and zone layouts remain
+unchanged. Champion 10/25 damage and three recovery moves are provisional tuning.
+See [approval, decisions and validation](APPROVED_ENEMY_ABILITY_REVISIONS_2026-11-10.md).
+
 ## Ironvein expanded native cave — production integration approved (2026-11-01)
 
 The user rejected PR #219's initial zoom-to-cover correction. The replacement

@@ -13,6 +13,7 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
     private GameplayThemeDefinition theme;
     private readonly Dictionary<string, SpriteRenderer> overlays = new Dictionary<string, SpriteRenderer>();
     private readonly Dictionary<string, TMP_Text> captions = new Dictionary<string, TMP_Text>();
+    private MaterialPropertyBlock overlayTexture;
     private RectTransform strip, water;
     private TMP_Text airLabel, tideLabel;
     private Image[] blocks;
@@ -23,6 +24,7 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
     private int displayedAir=-1;
     private void Start()
     {
+        overlayTexture=new MaterialPropertyBlock();
         run=RunSession.Current;board=GetComponent<BoardController>();theme=run?.Zone?.Definition?.theme;
         if(board==null || theme==null || run.Zone.Definition.periodicallyFloods!=true) {enabled=false;return;}
         var layout=FindFirstObjectByType<GameplayPixelLayoutController>();
@@ -112,6 +114,11 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
          renderer.sortingLayerName="Gems";renderer.sortingOrder=20;renderer.sprite=sprite;renderer.maskInteraction=SpriteMaskInteraction.VisibleInsideMask;}
         renderer.transform.position=position;renderer.transform.localScale=Vector3.one*board.CellSize/sprite.bounds.size.x*.95f*size;
         renderer.color=new Color(1,1,1,alpha);
+        // Keep separate textures explicit when same-sized bubble/net sprites
+        // share Unity's default 2D material and dynamic batches.
+        renderer.GetPropertyBlock(overlayTexture);
+        overlayTexture.SetTexture("_MainTex",sprite.texture);
+        renderer.SetPropertyBlock(overlayTexture);
     }
     private void Caption(string key,string value,Vector3 position,HashSet<string> used)
     {

@@ -60,15 +60,43 @@ Raider and Wolf supply simple axe/bite pressure. Harpoon Hunter marks one gem
 for two moves; clearing or converting it cancels the strike and Staggers him.
 Rimecarver adds one ordinary Frost encasement under shared restriction limits.
 Shieldmaiden grants ordinary party shields. Rime Skald rallies other allies'
-basic attack speed without repeated stacking. Hearthkeeper channels a heal on
-one wounded ally and can be interrupted. Reaver applies Frostbite and makes
+basic attack speed without repeated stacking. Hearthkeeper places one one-hit
+Hearth Ember that locks one wounded ally and heals 5 HP on each of three future
+moves (15 maximum). Player destruction stops healing and thaws one layer on up
+to two adjacent iced gems; caster/recipient death extinguishes it without a thaw
+reward or retargeting. Reaver applies Frostbite and makes
 two distinct sword contacts, each respecting central shield gating.
 
-Glacier Troll alternates ordinary shield armor with a two-gem, two-move slam;
-shield break or clearing either mark Staggers it. Iceborn Champion uses the
-same readable two-gem counterplay for a heavier hammer blow. Haldra keeps the
+Glacier Troll alternates ordinary shield armor with a two-move column warning.
+Any player clear in that column cancels it; unanswered warnings add Frost to at
+most two eligible ordinary gems, without upgrading ice or causing a direct hit.
+Iceborn Champion channels Shieldbreaker Charge for two moves, then deals two
+independent ordinary shield-gated hits followed by three recovery moves.
+Weakness Stagger or death cancels the channel. Haldra keeps the
 three-move ice-stage contract above. Warning actions pause their caster's basics.
 Numerical values are listed in `BALANCE_V1.md` as provisional tuning.
+
+### Approved enemy revisions (2026-11-10)
+
+Knight Captain retains Chain Volley and alternates it with **Advance the Ranks**:
+all other living allies, including leaders, advance normal/special readiness by
+one move, never below one. It neither triggers an immediate action nor shortens
+an active response/channel/ice timer. King's Royal Assault remains distinct and
+unchanged. No forced new formation is introduced.
+
+Court Mage uses the shared Frostwake True Ice stages on at most three owned gems.
+Three ignored accepted moves escalate each stage. Fixed positions, adjacent
+layer thaw, dangerous ordinary Bifrost breaks and safe indirect clears follow
+the same authoritative rules. Mage death releases only its ice without penalty;
+Dungeon does not acquire ambient Frostwake spawning.
+
+Pearl Cantor retains its dry heal and fixed two-move channel. A flooded channel
+starts at 20 pending HP; each genuinely collected bubble during it removes 10,
+minimum zero. The current pending heal is visible. Environmental removals do not
+counter it. Reef Netweaver retains every Thorny Snare rule and its name; only the
+overlay changes to native barbed marine netting.
+
+See [the approval and implementation record](APPROVED_ENEMY_ABILITY_REVISIONS_2026-11-10.md).
 
 Weighted encounters teach these identities across a substantial visit, vary
 escorts, cap disruptive/support/leader roles and provide a normal-enemy relief

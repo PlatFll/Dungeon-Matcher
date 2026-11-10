@@ -55,7 +55,10 @@ public sealed class RunContinuation : MonoBehaviour
         if (saved.enemies != null) foreach (var enemy in saved.enemies)
             if (enemy != null && (!MineEnemyAbility.Supports(enemy.mineEnemy) || float.IsNaN(enemy.oreNextMultiplier) ||
                 float.IsInfinity(enemy.oreNextMultiplier) || enemy.oreNextMultiplier < 0 ||
-                !GlacierCleaveSnapshot.Supports(enemy.glacierCleave))) return false;
+                !GlacierCleaveSnapshot.Supports(enemy.glacierCleave) ||
+                !ShieldbreakerSnapshot.Supports(enemy.shieldbreaker) ||
+                !HearthEmberSnapshot.Supports(enemy.hearthEmber) ||
+                !EnemyChannelSnapshot.Supports(enemy.channel))) return false;
         if(saved.travel?.version>0 && (saved.travel.version!=1 || saved.travel.stage<0 || saved.travel.stage>2 ||
             !SupportedZone(saved.travel.zoneId) ||
             (saved.travel.stage==1 && !SupportedZone(saved.travel.destination)))) return false;

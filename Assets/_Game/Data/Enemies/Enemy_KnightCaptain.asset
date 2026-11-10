@@ -15,7 +15,9 @@ MonoBehaviour:
   enemyId: knight_captain
   displayName: Knight Captain
   category: 2
-  description: 
+  description: 'Alternates Chain Volley with Advance the Ranks. Every other living
+    ally advances normal and special readiness by one move, stopping at one.
+    Active warnings and channels never shorten. No immediate commanded attacks.'
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 7904730791348178809, guid: 5e04b3fe9cf77624a9127b8cd21c5b2c, type: 3}
   animationControllerOverride: {fileID: 9100000, guid: 0021a239a92c28344a623180e2912581, type: 2}

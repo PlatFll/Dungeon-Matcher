@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: pearl_cantor
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
   canFightFlooded: 1
+  bubbleCounterHeal: 1
   aquaticSummon: {fileID: 0}
   aquaticChannelMoves: 2
   aquaticAbilityDamage: 20
@@ -33,7 +34,8 @@ MonoBehaviour:
   displayName: Pearl Cantor
   category: 1
   description: 'Pearl Hymn: two-move heal channel on one fixed other ally below 75%
-    HP. Stagger or defeat the cantor to interrupt.'
+    HP. Stagger or defeat the cantor to interrupt. A flooded channel starts at 20 HP;
+    each bubble collected during it removes 10 pending healing, to zero. Dry healing is unchanged.'
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 21300000, guid: 22bc7265043429a498a02d029099098e, type: 3}
   animationControllerOverride: {fileID: 9100000, guid: 8ad703c727e25c6419d945340de69087, type: 2}

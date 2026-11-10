@@ -25,6 +25,17 @@ public readonly struct CombatStatusDisplay
     {
         output.Clear();
         if (actor == null || actor.IsDefeated) return;
+        var heal=actor.GetComponent<EnemyChannelRuntime>();
+        if(heal?.IsChanneling==true && actor.Definition.bubbleCounterHeal)
+            output.Add(new CombatStatusDisplay("Benediction","Pending heal",heal.PendingHeal.ToString(),
+                  heal.BubblesReduceHeal ? "HP remaining on the fixed recipient. Each collected bubble during this flooded channel removes 10 HP." :
+                  "HP remaining on the fixed recipient. Dry-mode healing is unchanged; bubbles do not reduce this channel."));
+        var charge=actor.GetComponent<ShieldbreakerChargeRuntime>();
+        if(charge?.RecoveryMoves>0)output.Add(new CombatStatusDisplay("MarshalRetreat","Recovering",charge.RecoveryMoves.ToString(),
+            "Shieldbreaker recovery: no attacks or new channel until the remaining accepted moves finish."));
+        var ember=actor.GetComponent<HearthEmberRuntime>();
+        if(ember?.HasEmber==true)output.Add(new CombatStatusDisplay("Burn","Hearth Ember",ember.RemainingMoves.ToString(),
+            "One-hit Ember heals its fixed ally 5 HP per future move. Destroy it to thaw nearby ice."));
         if (actor.IsWarded) output.Add(new CombatStatusDisplay("Warded","Warded","·","25% less damage while a living Warden Root remains."));
         if (actor.FortifiedStacks>0) output.Add(new CombatStatusDisplay("Fortified","Fortified",actor.FortifiedStacks.ToString(),"Each pearl halves one eligible direct hit. Periodic damage does not consume it."));
         if (actor.GetComponent<EnemyOrePower>()?.IsPowered==true) output.Add(new CombatStatusDisplay("OrePowered","Ore-Powered","·","Strengthens the next entire basic sequence once."));

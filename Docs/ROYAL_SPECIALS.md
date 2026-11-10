@@ -36,11 +36,11 @@ Balance v1 serialized tuning:
 - A frozen gem cannot be manually swapped and does not fall under gravity.
 - Other movable gems in the same column can pass through the frozen gem's height and fill valid spaces below it. This reuses the authoritative fixed-pin gravity behavior; there is no second gravity simulation.
 - Frozen gems remain real gems in the match grid. A match or special effect that actually destroys the frozen gem removes the freeze with it.
-- Merely matching next to a frozen gem does not thaw it.
+- The 2026-11-10 approved revision uses the shared Frostwake Frost/Heavy Ice/Bifrost stages, escalating after three ignored accepted moves per stage. An eligible adjacent clear thaws one layer and resets growth. A deliberate ordinary Bifrost break retaliates and applies Frostbite; specials, abilities and cascades remain safe.
 - When the Mage is defeated or destroyed, its surviving frozen gems are released and the board resolves any resulting gravity/cascades through the normal environmental-board pipeline.
 - Freeze target selection reuses the board's legal-move safety check so a new freeze is not allowed to remove the final legal move.
 - Freeze requests use the shared board-mutation queue and cannot begin while the Mage is staggered.
-- `BoardController.frozenGemOverlaySprite` is the assignable frozen-gem artwork slot. Missing artwork logs a warning but the gameplay freeze still functions.
+- The shared `FrostwakeRules` supplies stage sprites and retaliation/status tuning in Dungeon. It does not enable ambient spawning there. The existing frozen-gem overlay remains an optional fallback.
 
 Balance v1 serialized tuning:
 - minimum eligible wave: 23;
@@ -56,7 +56,7 @@ Both mechanics preserve the existing ownership model:
 
 - `EnemySpecialActionAvailability` gates special startup around stagger and waits for board idle without claiming board ownership early.
 - `BoardController` remains the sole authority for structural board mutation, gravity, legal-move checks, refill, cascades and emergency reshuffle.
-- Court Mage freeze is represented as a distinct frozen tag layered on the existing pin ownership system. Frozen gems use fixed-pin gravity semantics and their own overlay. Crossbow Guard and Knight Captain now share falling-chain rules; neither chains nor freezes break from adjacency alone.
+- Court Mage ice lives in the shared `frostGems` identity map, with a durable caster ID. It counts once toward restrictions and reuses fixed-pin gravity. Legacy frozen pin saves migrate on owner restore. Death invalidates retaliation immediately and queues physical release. Crossbow/Captain chains still follow gravity and do not break from adjacency.
 - Royal standards are non-gem occupants tracked by `BoardController.RoyalBanners`. Physical gem-destruction notifications are batched for the current clear before the normal collapse resumes, so a standard consumes all gravity openings created beneath it in that resolution. Presentation never owns the gameplay lifetime.
 - `RoyalBannerAuraRuntime` is a board-level coordinator rather than one independent runtime per standard, so duplicate Standard Bearers cannot incorrectly clear each other's aura.
 - Both new enemy definitions are registered in `EnemyDatabase_Main` and use weighted eligibility rather than exact-wave scripted encounters.

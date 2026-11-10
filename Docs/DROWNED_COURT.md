@@ -69,7 +69,7 @@ These numbers are starting values for human tuning, not pacing guarantees.
 | Needlefin Skirmisher | 50 | 5 + 5 / 4.2 | Two independently shield-gated darts |
 | Shellback Porter | 120 | 10 / 6.5 | Mallet; no hidden armor |
 | Pearl Thief | 65 | 5 / 6 | Ready in four moves; instant exact-two theft, one-hit coffer, +4 AIR on break; waits while dry or fewer than two valid bubbles |
-| Pearl Cantor | 75 | 5 / 5.5 | Ready in two moves; two-move fixed-ally heal for 20, other ally below 75%; stagger interrupts |
+| Pearl Cantor | 75 | 5 / 5.5 | Ready in two moves; two-move fixed-ally heal for 20, other ally below 75%; stagger interrupts. Flooded channels subtract 10 pending HP per collected bubble, minimum zero; dry mode unchanged |
 | Conch Marshal | 90 | 10 / 6 | Ready in four moves; other living allies gain 30% basic damage for five seconds; refreshes, strongest lease only, no speed buff |
 | Moray Siphoner | 80 | 5 / 6 | Ready in four moves; two-move 20-damage siphon; heals actual HP lost only |
 | Reef Netweaver | 85 | 5 / 6 | Ready in four moves; up to two thorny snares, shrink and expire after three future accepted moves |
@@ -79,7 +79,9 @@ These numbers are starting values for human tuning, not pacing guarantees.
 | Queen Nacre | 320 | 15 / 6.5 | Royal Seizure, Nacre Tribute, Court Muster; details below |
 | Skittercrab | 25 | 5 / 2.8 | Independent summon, no repeat farming reward |
 
-Netweaver uses thorny snares, never ordinary chains. An opening manual match of a
+Netweaver uses thorny snares, never ordinary chains. The 2026-11-10 presentation
+revision uses barbed marine netting; the identifier and mechanics are unchanged.
+An opening manual match of a
 snared gem while flooded costs one AIR; cascades, abilities and specials clear
 safely. Snares prevent directly swapping the bound gem, follow it through gravity,
 and use the existing shared six-restriction budget. Placement preserves available

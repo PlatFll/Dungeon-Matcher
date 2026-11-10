@@ -168,6 +168,9 @@ public sealed partial class ForestFoundationPlayTests
         foreach(var point in new[]{new Vector2Int(safeMoveTo.x-2,safeMoveTo.y),new Vector2Int(safeMoveTo.x-1,safeMoveTo.y),safeMoveFrom})
             board.GetGem(point.x,point.y).SetType(useful,types[(int)useful]);
         var routes=(HashSet<Gem>)Call(board,"ImmediatelyClearableOrdinaryGems");
+        // Recoloring the fixture invalidates random pre-existing bubble routes.
+        // Keep a real collectible bubble on the controlled useful response.
+        board.Aquatic.bubbles.Clear();board.Aquatic.bubbles.Add(board.GetGem(safeMoveFrom.x,safeMoveFrom.y).BoardIdentity);
         var owner=Enemy("reef_netweaver");
         Assert.That(board.TryApplyAquaticSnares(owner),Is.True);
         var placed=board.Aquatic.snares.Select(s=>s.gemId).ToArray();
@@ -183,7 +186,7 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest] public IEnumerator CourtWetResumePreservesAirAndChannelDeadline()
     {
         yield return LaunchCourt("moray_siphoner","shellback_porter");
-        for(int i=0;i<4;i++)yield return Move();
+        for(int i=0;i<Enemy("moray_siphoner").SpecialTurnRequirement;i++)yield return Move();
         var board=Run.Board;board.Aquatic.StartFlood(12,Run.MoveClock.Tick);board.Aquatic.air=2;
         var before=Run.Continuation.Capture();string runId=Run.RunId;
         Assert.That(Enemy("moray_siphoner").GetComponent<AquaticEnemyAbility>().ResponseMoves,Is.EqualTo(2));
@@ -197,6 +200,7 @@ public sealed partial class ForestFoundationPlayTests
         Run.GetComponent<RunControlsUI>().Close();
         yield return Until(()=>Run.Waves.ActiveEnemies.All(e=>e.GetComponent<EnemyLifecycleVFX>()?.IsSpawning!=true),"restored portraits finish spawning");
         yield return new WaitForSeconds(.5f);
+        System.IO.Directory.CreateDirectory(System.IO.Path.GetFullPath(".utmp/DrownedCourtValidation"));
         ScreenCapture.CaptureScreenshot(System.IO.Path.GetFullPath(".utmp/DrownedCourtValidation/WetCourt.png"));
         yield return null;
     }

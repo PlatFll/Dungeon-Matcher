@@ -25,9 +25,9 @@ public static class EnemyAbilityNames
             case EnemySpecialAbilityKind.ShieldingAllies:return "Shielding Allies";
             case EnemySpecialAbilityKind.TownMarshal:return "Ring the Bell|Citizens, Seize Him!";
             case EnemySpecialAbilityKind.SiegeSergeant:return "Fortification|Hammer Strike";
-            case EnemySpecialAbilityKind.KnightCaptain:return "Chain Volley|Royal Command";
+            case EnemySpecialAbilityKind.KnightCaptain:return "Chain Volley|Advance the Ranks";
             case EnemySpecialAbilityKind.RoyalStandardBearer:return "Royal Standard";
-            case EnemySpecialAbilityKind.CourtMage:return "Frozen Gems";
+            case EnemySpecialAbilityKind.CourtMage:return "True Ice";
             case EnemySpecialAbilityKind.RoyalArchbishop:return "Restoration|Benediction";
             case EnemySpecialAbilityKind.King:return "Judgment|Royal Assault|Bombardment|Reinforcements";
             case EnemySpecialAbilityKind.ChannelHeal:return "Mend";
@@ -61,6 +61,9 @@ public static class EnemyAbilityNames
             case EnemySpecialAbilityKind.GlacierCleave:return "Glacier Cleave";
             case EnemySpecialAbilityKind.Rimecarving:return "Carve Rime";
             case EnemySpecialAbilityKind.MountainStrike:return "Mountain Strike";
+            case EnemySpecialAbilityKind.AvalancheFrost:return "Glacial Armor|Avalanche Frost";
+            case EnemySpecialAbilityKind.ShieldbreakerCharge:return "Shieldbreaker Charge";
+            case EnemySpecialAbilityKind.HearthEmber:return "Hearth Ember";
             default:return "";
         }
     }

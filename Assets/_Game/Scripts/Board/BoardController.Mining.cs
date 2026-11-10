@@ -31,13 +31,14 @@ public partial class BoardController
         MarkCellResponse, ResolveCellResponse, AdvanceCrumblingTiles,
         PlaceAirCoffer, RemoveAirCoffer, ConsumeAirBubbles, AdvanceMineStones, ChargeMineDrills, FireMineDrills,
         MineStoneOperation, SmallMineDrill, ShiftMineDrill,
-        EncaseGem, ConsumeEncasedGem, AdvanceFrost
+        EncaseGem, ConsumeEncasedGem, AdvanceFrost, ReleaseOwnedIce, RemoveHearth, AdvanceHearth
     }
 
     private sealed class BoardMutationRequest
     {
         public BoardMutationKind Kind;
         public FrostStage IceStage;
+        public long IceOwnerId;
         public Action<FrostStage> IceImpact;
         public int MineDrillId, MinePower;
         public long MineStoneId;
@@ -87,6 +88,7 @@ public partial class BoardController
         public string ThreatLabel;
         public bool RestorationPresentation;
         public bool RequiresVine;
+        public bool FrostColumnWarning;
         public CellResponseThreat CellThreat;
         public Action<int,bool> CellResponseImpact;
 
@@ -108,6 +110,9 @@ public partial class BoardController
     private Coroutine boardMutationCoroutine;
     private BoardMutationKind? activeBoardMutationKind;
     private BoardMutationRequest activeBoardMutationRequest;
+    // Enemy/environment mutations can cause cascades through the same resolver.
+    // Counterplay listeners must not mistake those for a player's response.
+    public bool ResolvingEnvironmentalMutation => activeBoardMutationRequest != null;
     private int completedValidPlayerMoves;
 
     public bool HasPendingBoardMutation =>
@@ -397,6 +402,12 @@ public partial class BoardController
                 {
                     case BoardMutationKind.EncaseGem:
                         ExecuteEncaseGem(request); break;
+                    case BoardMutationKind.ReleaseOwnedIce:
+                        yield return ExecuteReleaseOwnedIce(request.IceOwnerId); break;
+                    case BoardMutationKind.RemoveHearth:
+                        yield return ExecuteRemoveHearth(request.OwnerInstanceId); break;
+                    case BoardMutationKind.AdvanceHearth:
+                        HearthMoveAdvanced?.Invoke(request.EnvironmentMove); break;
                     case BoardMutationKind.ConsumeEncasedGem:
                         yield return ExecuteConsumeEncasedGem(request); break;
                     case BoardMutationKind.AdvanceFrost:

@@ -398,6 +398,7 @@ public partial class BoardController
         var impactWait = WaitForBoardMutationAnimationImpact(request);
         while (impactWait.MoveNext()) yield return impactWait.Current;
         if (!request.NaturalMineStone && IsAnimationRequestCancelled(request)) yield break;
+        if(request.BarricadeStyle==EnemyBarricadeStyle.HearthEmber && HasHearthEmber())yield break;
 
         int remainingCapacity =
             request.MaximumOwnedBarricades -
@@ -421,6 +422,8 @@ public partial class BoardController
 
         bool roots=IsRootStyle(request.BarricadeStyle);
         List<Vector2Int> candidates = BuildBarricadableCellList(request.ProtectSpecialGems);
+        if(request.BarricadeStyle==EnemyBarricadeStyle.HearthEmber)
+            candidates.RemoveAll(c=>IsProtectedWarningTarget(GetGem(c.x,c.y)) || !HasReachableCofferHit(c));
         if(roots) candidates.RemoveAll(c=>!CanHostRoot(GetGem(c.x,c.y)) ||
             (request.SetThreat!=null && !request.SetThreat.Targets.Contains(GetGem(c.x,c.y))));
 
@@ -708,6 +711,7 @@ public partial class BoardController
 
             RootDestroyed(state);
             AquaticCofferBroken(cell);
+            HearthBroken(cell,state);
             // One retaliation per broken barrier; a simultaneous clear from
             // its safe side is a valid safe answer. Cascades/blasts never retaliate.
             if(state.Style==EnemyBarricadeStyle.Thorn && retaliate)
@@ -1242,6 +1246,8 @@ public partial class BoardController
     private Sprite GetBarricadeSprite(
         BarricadeCellState state)
     {
+        if(state?.Style==EnemyBarricadeStyle.HearthEmber)
+            return Resources.Load<Sprite>("Combat/ApprovedRevisions/HearthEmber") ?? GetBarricadeFallbackSprite();
         if (IsMineStone(state)) return MineStoneSprite(state);
         if(state?.Style==EnemyBarricadeStyle.AirCoffer && GameplayThemeSkin.Current?.airCoffer!=null)
             return state.RemainingDurability>1

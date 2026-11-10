@@ -1,0 +1,201 @@
+﻿{
+    "unity":  "6000.3.19f1",
+    "result":  "Passed",
+    "total":  38,
+    "passed":  38,
+    "failed":  0,
+    "skipped":  0,
+    "logId":  "ecfaae56-f635-428f-a89e-23c4b299d9b2",
+    "tests":  [
+                  {
+                      "name":  "ApprovedEnemyRevisionSnapshotTests.NewChannelsRejectCorruptionAndLegacyDefaultsStayReadable",
+                      "result":  "Passed",
+                      "durationSeconds":  0.011171
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.ChannelGetsTwoFutureResponsesThenNormalCadenceAndStableResume",
+                      "result":  "Passed",
+                      "durationSeconds":  12.149597
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.CourtBubbleReceiptsRespectPhysicalDestructionAndManualSnareSource",
+                      "result":  "Passed",
+                      "durationSeconds":  6.146679
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.CourtSnareExpiresAfterThreeFutureMovesAndSparesAirRoutes",
+                      "result":  "Passed",
+                      "durationSeconds":  9.067396
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.CourtWetResumePreservesAirAndChannelDeadline",
+                      "result":  "Passed",
+                      "durationSeconds":  9.77735
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.FrostwakeChampionStaggerCancelsChargeWithoutMarkedGems",
+                      "result":  "Passed",
+                      "durationSeconds":  7.009031
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.FrostwakeHunterResumesWarningAndReleasesExactlyOnce",
+                      "result":  "Passed",
+                      "durationSeconds":  8.930967
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.FrostwakeImportedSupportsApplyShieldRallyHealAndFrostbite",
+                      "result":  "Passed",
+                      "durationSeconds":  24.129384
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.FrostwakeRimecarverAddsIceAndDeathDoesNotRemoveIt",
+                      "result":  "Passed",
+                      "durationSeconds":  8.175369
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.FrostwakeTrollArmorBreakStaggersAndNextCastWarnsOneColumn",
+                      "result":  "Passed",
+                      "durationSeconds":  12.929251
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.IronveinFourZoneTravelCleansSourceAndPreservesResources",
+                      "result":  "Passed",
+                      "durationSeconds":  27.64784
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.KingReadinessCaptainAdvanceWorksWithTimedBasicsWithoutForcedAttacks",
+                      "result":  "Passed",
+                      "durationSeconds":  9.250125
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.RevisionCantorDryHealStaggerAndRecipientDeathRetainContract",
+                      "result":  "Passed",
+                      "durationSeconds":  8.732732
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.RevisionCantorOnlyCollectedChannelBubblesReduceHealAndResume",
+                      "result":  "Passed",
+                      "durationSeconds":  11.137878
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.RevisionCaptainAdvancesOthersWithoutImmediateActionsOrSelfAdvance",
+                      "result":  "Passed",
+                      "durationSeconds":  10.86161
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.RevisionChampionTwoPacketsRecoveryContinueAndDeath",
+                      "result":  "Passed",
+                      "durationSeconds":  17.702779
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.RevisionHearthPlayerBreakThawsAtMostTwoAndDoesNotRetarget",
+                      "result":  "Passed",
+                      "durationSeconds":  17.441314
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.RevisionHearthThreeFutureMovesContinueAndOwnerDeath",
+                      "result":  "Passed",
+                      "durationSeconds":  21.460641
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.RevisionIceClearRulesAndZoneCleanupUseSharedOwners",
+                      "result":  "Passed",
+                      "durationSeconds":  5.927342
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.RevisionMageSharesIceOwnsExactlyThreeAndReleasesWithoutPenalty",
+                      "result":  "Passed",
+                      "durationSeconds":  9.226484
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.RevisionTrollColumnAnswersAbilityAndEnvironmentalClearDoesNot",
+                      "result":  "Passed",
+                      "durationSeconds":  9.582023
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.RoyalCommandConsumesParticipantsOnceIncludingFollowUpHits",
+                      "result":  "Passed",
+                      "durationSeconds":  13.585778
+                  },
+                  {
+                      "name":  "ForestFoundationPlayTests.UnifiedTwoChannelsResumeIndependentlyAndKeepTargetLinks",
+                      "result":  "Passed",
+                      "durationSeconds":  10.894957
+                  },
+                  {
+                      "name":  "FrostwakePlayableTests.AttenderBudgetAndTargetPriorityRetainObstacleResponse",
+                      "result":  "Passed",
+                      "durationSeconds":  0.001259
+                  },
+                  {
+                      "name":  "FrostwakePlayableTests.FrostSnapshotRejectsMissingOrDuplicateGemAndInvalidChannel",
+                      "result":  "Passed",
+                      "durationSeconds":  0.0006
+                  },
+                  {
+                      "name":  "FrostwakePlayableTests.FrostWorsensOnlyOnDistinctIgnoredMovesAndThawResetsGrowth",
+                      "result":  "Passed",
+                      "durationSeconds":  0.000933
+                  },
+                  {
+                      "name":  "FrostwakePlayableTests.RicochetBonusIsBoundedAndNeverUsesNegativePriorHits",
+                      "result":  "Passed",
+                      "durationSeconds":  0.000857
+                  },
+                  {
+                      "name":  "UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(4,1.0f,4)",
+                      "result":  "Passed",
+                      "durationSeconds":  0.000563
+                  },
+                  {
+                      "name":  "UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(4,1.4f,3)",
+                      "result":  "Passed",
+                      "durationSeconds":  8E-05
+                  },
+                  {
+                      "name":  "UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(5,1.25f,4)",
+                      "result":  "Passed",
+                      "durationSeconds":  3.4E-05
+                  },
+                  {
+                      "name":  "UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(2,5.0f,2)",
+                      "result":  "Passed",
+                      "durationSeconds":  2.6E-05
+                  },
+                  {
+                      "name":  "UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(6,1.2f,5)",
+                      "result":  "Passed",
+                      "durationSeconds":  2.6E-05
+                  },
+                  {
+                      "name":  "UnifiedMoveCombatTests.PressureHasteRemainsUsefulAtShortIntervals(3,1.0f,3)",
+                      "result":  "Passed",
+                      "durationSeconds":  0.000162
+                  },
+                  {
+                      "name":  "UnifiedMoveCombatTests.PressureHasteRemainsUsefulAtShortIntervals(3,1.4f,2)",
+                      "result":  "Passed",
+                      "durationSeconds":  4.8E-05
+                  },
+                  {
+                      "name":  "UnifiedMoveCombatTests.PressureHasteRemainsUsefulAtShortIntervals(3,1.25f,2)",
+                      "result":  "Passed",
+                      "durationSeconds":  2.9E-05
+                  },
+                  {
+                      "name":  "UnifiedMoveCombatTests.PressureHasteRemainsUsefulAtShortIntervals(4,1.25f,3)",
+                      "result":  "Passed",
+                      "durationSeconds":  2.4E-05
+                  },
+                  {
+                      "name":  "UnifiedMoveCombatTests.PressureHasteRemainsUsefulAtShortIntervals(2,5.0f,2)",
+                      "result":  "Passed",
+                      "durationSeconds":  2.6E-05
+                  },
+                  {
+                      "name":  "UnifiedMoveCombatTests.UnifiedSavesNeverInterpretLegacyFloatCountdowns",
+                      "result":  "Passed",
+                      "durationSeconds":  0.001506
+                  }
+              ]
+}

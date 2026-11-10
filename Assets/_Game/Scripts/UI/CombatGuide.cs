@@ -32,6 +32,10 @@ public static class CombatGuide
         if (actor.Definition.SpecialAbilityKind == EnemySpecialAbilityKind.ApplyPlayerStatus && actor.Definition.appliedPlayerStatus != null)
             basic += actor.Definition.appliedPlayerStatus.displayName + ": " + actor.Definition.appliedPlayerStatus.description + "\n";
         if (actor.GetComponent<EnemyOrePower>()?.IsPowered == true) basic += "ORE-POWERED: next whole basic sequence is strengthened once. Repeated ore refreshes; it does not stack.\n";
+        var heal=actor.GetComponent<EnemyChannelRuntime>();
+        if(heal?.IsChanneling==true && actor.Definition.bubbleCounterHeal)
+            basic+=$"PENDING HEAL: {heal.PendingHeal} HP in {heal.ResponseMoves} moves. "+
+                (heal.BubblesReduceHeal ? "Collect a bubble to subtract 10 HP.\n" : "Dry channel: bubbles do not reduce it.\n");
         return basic + "\n" + (actor.Definition.canFightFlooded || actor.GetComponent<MineEnemyAbility>() != null || actor.GetComponent<EnemyOrePower>() != null
                 ? actor.Definition.Description : Counter(actor.Definition.SpecialAbilityKind)) +
             (RunSession.Current?.Board != null ? "\n\n"+RunSession.Current.Board.DescribeOwnedBoardThreats(actor) : "") +
@@ -53,9 +57,12 @@ public static class CombatGuide
             case EnemySpecialAbilityKind.ShieldingAllies: return "Grants separate shields to allies and itself. Target the support to stop repeated shielding. The hit that breaks a shield stops there; later hits reach HP.";
             case EnemySpecialAbilityKind.TownMarshal: return "Summons a protector and retreats behind it. The protector intercepts direct hits; defeating it opens the Marshal. Rally speeds living locals for " + (CombatMoveClock.MoveEffects ? "3 future moves." : "5 seconds.") + " Summoned locals survive him.";
             case EnemySpecialAbilityKind.SiegeSergeant: return "Alternates blockades and a hammer warning with at least two moves to respond. Clear either marked gem to cancel the hammer. Marks follow gems. Break his last owned blockade to remove his defence.";
-            case EnemySpecialAbilityKind.KnightCaptain: return "Chains up to three gems, then commands Crown allies. Clear chained gems or defeat the Captain. Defeating him cancels unfinished command strikes; escorts remain valid targets.";
+            case EnemySpecialAbilityKind.KnightCaptain: return "Chains up to three gems, then advances every other living ally's normal and special readiness by one move, stopping at one. Never accelerates active warnings or ice. Clear chains or defeat their Captain.";
             case EnemySpecialAbilityKind.RoyalStandardBearer: return "His banner speeds Crown forces. Clear gems beneath it so gravity carries it to the bottom. Defeating the bearer stops new placements; the existing banner and its aura remain until it reaches the bottom.";
-            case EnemySpecialAbilityKind.CourtMage: return "Frozen gems cannot be moved manually and stay fixed during gravity. Clear the frozen gems or defeat their Mage. Freezing and falling chains are different obstacles.";
+            case EnemySpecialAbilityKind.CourtMage: return "Encases one ordinary gem, at most three owned. True Ice stays fixed and progresses Frost to Heavy Ice to Bifrost after three ignored moves per stage. Adjacent clears thaw one layer. Deliberate ordinary Bifrost breaks retaliate and apply Frostbite; special/cascade/ability breaks are safe. Defeat the Mage to release its ice safely.";
+            case EnemySpecialAbilityKind.AvalancheFrost: return "Glacial Armor alternates with a two-move column warning. Clear any gem in that column with a player action to cancel. Otherwise up to two ordinary gems receive Frost, with no direct hit or ice upgrade.";
+            case EnemySpecialAbilityKind.ShieldbreakerCharge: return "Two-move channel, then a small impact followed by a stronger impact. Each obeys ordinary shield gating. Weakness Stagger or death cancels. Long visible recovery follows.";
+            case EnemySpecialAbilityKind.HearthEmber: return "One one-hit Ember heals a fixed wounded ally by 5 HP on each of three future moves. Destroy it to stop healing and thaw one layer on up to two adjacent iced gems. Owner death extinguishes it without thawing.";
             case EnemySpecialAbilityKind.RoyalArchbishop: return "Heals wounded allies, marks Restoration runes and blesses a normal attack sequence. Clear individual runes before their move countdown ends to prevent their healing.";
             case EnemySpecialAbilityKind.King: return "Cycles Judgment, coordinated Assault and Bombardment. Clear Judgment marks; clearing ordinary gems cannot cancel a lane bombardment. Defeat or stagger the threat, plan healing/shielding and target remaining escorts. Reinforcements trigger once at half and quarter HP.";
             default: return "Match this enemy's weakness to damage and stagger it. Prioritize the most urgent attack or build a special for the next threat.";

@@ -36,8 +36,15 @@ public static class EnemySpecialAbilityRuntimeFactory
         switch (abilityKind)
         {
             case EnemySpecialAbilityKind.Rimecarving:
+            case EnemySpecialAbilityKind.AvalancheFrost:
             case EnemySpecialAbilityKind.MountainStrike:
                 runtime=enemyObject.GetComponent<FrostwakeEnemyAbility>() ?? enemyObject.AddComponent<FrostwakeEnemyAbility>();
+                break;
+            case EnemySpecialAbilityKind.ShieldbreakerCharge:
+                runtime=enemyObject.GetComponent<ShieldbreakerChargeRuntime>() ?? enemyObject.AddComponent<ShieldbreakerChargeRuntime>();
+                break;
+            case EnemySpecialAbilityKind.HearthEmber:
+                runtime=enemyObject.GetComponent<HearthEmberRuntime>() ?? enemyObject.AddComponent<HearthEmberRuntime>();
                 break;
             case EnemySpecialAbilityKind.GlacierCleave:
                 runtime=enemyObject.GetComponent<GlacierCleaveRuntime>() ?? enemyObject.AddComponent<GlacierCleaveRuntime>();

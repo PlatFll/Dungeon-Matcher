@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dungeon Matcher — approved enemy revisions</title>
+<style>
+body{background:#111521;color:#e4e8ed;font:16px system-ui;margin:28px auto;max-width:1300px;padding:0 20px}h1{font-size:25px}p{max-width:950px;line-height:1.5}a{color:#98dbdf}section{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}article{background:#202633;padding:16px;border-radius:8px}h2{font-size:18px}img{image-rendering:pixelated;max-width:100%;height:auto}.shot{width:100%}.effects{display:flex;gap:32px;align-items:center;margin:24px 0}.effect img{width:32px;max-width:none}.effect .large{width:160px}.note{color:#bec5d2;font-size:14px}
+</style>
+<h1>Enemy ability revisions — gameplay review</h1>
+<p>Actual Unity Game-scene captures at 1080×1920. Test fixtures isolate ability behavior with controlled readiness, immunity and sometimes health values; those fixture values are not production balance changes. Click a capture for its full resolution.</p>
+<p><a href="EnemyRevisions2026-11-10.md">Verification and tuning notes</a> · <a href="../APPROVED_ENEMY_ABILITY_REVISIONS_2026-11-10.md">Approval and implementation record</a></p>
+<section>
+<article><h2>Knight Captain</h2><p>Chain Volley alternates with readiness advancement for every other living ally. No immediate allied attacks.</p><a href="EnemyRevisions/revision-advance-the-ranks.png"><img class="shot" src="EnemyRevisions/revision-advance-the-ranks.png" alt="Captain and other royal enemies in the real Dungeon scene"></a></article>
+<article><h2>Court Mage</h2><p>Owned True Ice shares Frostwake's stages and counterplay. Death releases only that Mage's ice.</p><a href="EnemyRevisions/revision-mage-true-ice.png"><img class="shot" src="EnemyRevisions/revision-mage-true-ice.png" alt="Mage-owned True Ice in Dungeon"></a></article>
+<article><h2>Glacier Troll</h2><p>Two-move column warning. A player clear anywhere in that column cancels; unanswered warnings add at most two Frost encasements.</p><a href="EnemyRevisions/revision-avalanche-column.png"><img class="shot" src="EnemyRevisions/revision-avalanche-column.png" alt="A complete threatened board column"></a></article>
+<article><h2>Iceborn Champion — warning</h2><p>Two response moves before independent 10/25 base-damage contacts. Stagger or death cancels.</p><a href="EnemyRevisions/revision-shieldbreaker-warning.png"><img class="shot" src="EnemyRevisions/revision-shieldbreaker-warning.png" alt="Shieldbreaker warning"></a></article>
+<article><h2>Iceborn Champion — recovery</h2><p>Three accepted recovery moves; normal and special actions remain held until recovery completes.</p><a href="EnemyRevisions/revision-shieldbreaker-recovery.png"><img class="shot" src="EnemyRevisions/revision-shieldbreaker-recovery.png" alt="Visible recovery counter"></a></article>
+<article><h2>Hearthkeeper</h2><p>One one-hit Ember heals its fixed ally 5 HP per future move, up to 15. Destroying it thaws up to two adjacent ice layers.</p><a href="EnemyRevisions/revision-hearth-ember.png"><img class="shot" src="EnemyRevisions/revision-hearth-ember.png" alt="Native Hearth Ember on the Frostwake board"></a></article>
+<article><h2>Pearl Cantor</h2><p>A flooded channel starts at 20 HP. One collected bubble leaves 10; two leave zero. The pending heal is displayed.</p><a href="EnemyRevisions/revision-cantor-heal-ten.png"><img class="shot" src="EnemyRevisions/revision-cantor-heal-ten.png" alt="Cantor's ten-point pending heal"></a></article>
+<article><h2>Reef Netweaver</h2><p>Barbed marine netting replaces the old overlay. Thorny Snare's name, swap restriction, falling attachment, AIR rules and expiry are preserved.</p><a href="EnemyRevisions/revision-marine-snare.png"><img class="shot" src="EnemyRevisions/revision-marine-snare.png" alt="Marine nets and AIR bubbles on the underwater board"></a></article>
+</section>
+<h2>New effect assets — native and 5×</h2>
+<div class="effects"><div class="effect">Marine net<br><img src="../../ArtSource/ApprovedEnemyRevisions/MarineSnare.png" alt="32 pixel marine net"><img class="large" src="../../ArtSource/ApprovedEnemyRevisions/MarineSnare.png" alt="Enlarged marine net"></div><div class="effect">Hearth Ember<br><img src="../../ArtSource/ApprovedEnemyRevisions/HearthEmber.png" alt="32 pixel Ember"><img class="large" src="../../ArtSource/ApprovedEnemyRevisions/HearthEmber.png" alt="Enlarged Ember"></div></div>
+<p class="note">Hand-authored native pixels, LibreSprite sources, binary alpha. No image-generation credits used. Existing character and environment artwork preserved. Not merged.</p>

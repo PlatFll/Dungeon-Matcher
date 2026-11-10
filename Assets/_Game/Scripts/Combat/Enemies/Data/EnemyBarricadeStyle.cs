@@ -7,5 +7,6 @@ public enum EnemyBarricadeStyle
     Thorn = 4,
     AirCoffer = 5,
     ShieldRoot = 6,
-    MineStone = 7
+    MineStone = 7,
+    HearthEmber = 8
 }

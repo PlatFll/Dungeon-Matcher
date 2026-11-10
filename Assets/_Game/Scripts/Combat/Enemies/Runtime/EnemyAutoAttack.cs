@@ -115,6 +115,17 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         if (CombatMoveClock.Unified) unifiedRemaining = Mathf.Max(0, unifiedRemaining - 1);
         else remainingAttackTime = Mathf.Max(0, remainingAttackTime - Mathf.Clamp(runtimeAttackSpeedMultiplier * Product(speedModifiers), .1f, 5f));
     }
+    public void AdvanceReadinessWithoutAttack()
+    {
+        if (!isRunning || enemyActor == null || enemyActor.IsDefeated ||
+            enemyActor.HasAnimationActionInProgress || IsPausedByAction || commandOwner != null) return;
+        if (CombatMoveClock.Unified)
+        {
+            if (unifiedRemaining > 1) unifiedRemaining--;
+        }
+        else if (remainingAttackTime > 1)
+            remainingAttackTime = Mathf.Max(1, remainingAttackTime - 1);
+    }
     public bool TryPerformAcceptedMoveAttack()
     {
         if (!CombatMoveClock.MoveBasics || !isRunning || RemainingAttackTime > 0 || !CanPerformAttack()) return false;

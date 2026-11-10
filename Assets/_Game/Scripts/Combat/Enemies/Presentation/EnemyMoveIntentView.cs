@@ -85,7 +85,7 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         bool warning=pressure!=null && pressure.IsPreparing;
         var recipient=casting?channel.Target:null;
         var aquatic=GetComponent<AquaticEnemyAbility>();
-        text.text=casting ? $"HEAL IN {channel.ResponseMoves}" :
+        text.text=casting ? $"HEAL {channel.PendingHeal} IN {channel.ResponseMoves}" :
             milestone!=null && milestone.IsPreparing ? $"{milestone.CastName} IN {milestone.ResponseMoves}" :
             milestone!=null && milestone.BlocksBasic ? "CASTING" :
             roots!=null && roots.IsWarning ? $"ROOT IN {roots.ResponseMoves}" :

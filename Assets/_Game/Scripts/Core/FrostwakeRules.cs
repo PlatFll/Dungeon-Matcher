@@ -20,6 +20,8 @@ public sealed class FrostwakeRules : ScriptableObject
 [Serializable]
 public sealed class FrostGemSnapshot
 {
+    // Zero is environmental ice; positive IDs are durable caster identities.
+    public long ownerId;
     public int identity;
     public FrostStage stage;
     public int ignoredMoves,lastAdvancedMove,lastHitMove=-1;
@@ -39,7 +41,7 @@ public sealed class FrostGemSnapshot
         if(saved.cells==null || saved.nextFrostSeedMove<0)return false;
         var seen=new System.Collections.Generic.HashSet<int>();
         foreach(var ice in saved.frost)
-            if(ice==null || ice.identity<=0 || !seen.Add(ice.identity) ||
+            if(ice==null || ice.identity<=0 || ice.ownerId<0 || !seen.Add(ice.identity) ||
                 ice.stage<FrostStage.Frost || ice.stage>FrostStage.Bifrost ||
                 ice.ignoredMoves<0 || ice.lastAdvancedMove<0 || ice.lastHitMove < -1 ||
                 !saved.cells.Exists(c=>c!=null && c.hasGem && c.identity==ice.identity))return false;
