@@ -41,10 +41,10 @@ Special intervals count accepted moves and pause through committed warnings.
 | Rimecarver | 75 | 5 | 5 | 5 | 1 Frost gem, shared restriction cap |
 | Shieldmaiden | 85 | 10 | 5 | 6 | 10 ally / 15 self shield |
 | Rime Skald | 70 | 5 | 5 | 5 | 1.35× other allies' basic speed, 3 moves |
-| Hearthkeeper | 70 | 5 | 5 | 5 | 20 HP heal, 2-move channel, ally below 75% |
+| Hearthkeeper | 70 | 5 | 5 | 5 | One one-hit Ember; fixed wounded ally; 5 HP on each of 3 future moves, maximum 15 |
 | Frostblade Reaver | 90 | 5 + 5 | 4 | 5 | Shared Frostbite status |
-| Glacier Troll | 205 | 15 | 6 | 5 | Alternate 30 shield / 2 marks, 2 responses, 25 damage |
-| Iceborn Champion | 220 | 15 | 5 | 5 | 2 marks, 2 responses, 30 damage |
+| Glacier Troll | 205 | 15 | 6 | 5 | Alternate 30 shield / one column, 2 response moves; unanswered adds at most 2 Frost gems, no damage |
+| Iceborn Champion | 220 | 15 | 5 | 5 | 2 response moves; separate 10 then 25 damage packets; 3 recovery moves |
 | Jarl Haldra | 340 | 15 | 5 | 5 | 3 responses, Frost/Heavy/Bifrost: 20/35/50 |
 
 Frostwake's composition budget is 3 at entry, 4 at local 4, 6.5 at local 8,
@@ -240,6 +240,22 @@ At level 5, Bardley has 110 HP, a 50 shield cap and a baseline three-gem hit of 
 
 ## Enemy ability quantities and counterplay
 
+### 2026-11-10 provisional redesign tuning
+
+Shieldbreaker Charge starts at **10 + 25 base damage**, two separate ordinary
+shield-gated packets, after **two response moves**, followed by **three full
+recovery moves**. The three values are editable on the Champion definition.
+The old Hallbreaker was one 30-base hit: the new 35-total attack trades a modest
+increase and two-packet pressure for explicit Stagger counterplay and a longer
+recovery. Existing runtime damage scaling still applies; Frostbite is not added
+to the charge. These are initial tuning choices, not validated difficulty claims.
+
+Hearth Ember's one-active limit is board-wide, including multiple Hearthkeepers.
+Its specified 5×3 maximum is not increased by support count. Existing basic
+damage, HP, encounter weights and special readiness cadences remain unchanged.
+Human playtesting should assess Champion pressure across defensive builds and
+whether the one-hit Ember presents a worthwhile counterplay choice.
+
 Cadences below count accepted completed matching moves, not invalid swaps, cascades, consumables or environmental clears. Every board action queues behind settlement. A rejected placement adds nothing; readiness/retry remains owned by the existing ability runtime. The global structural limit is **10 mined plus barricaded cells**; standards retain their separate existing lifetime and cap. The movable-chain queue stops at **6 total pinned gems**, including existing freezes when choosing capacity. Normal random formations allow at most two board disruptors and one support; the named three-disruptor recipe is explicitly budgeted.
 
 | Enemy / action | Quantity and cadence | Targeting / cap | Warning, counterplay and cleanup |
@@ -250,11 +266,11 @@ Cadences below count accepted completed matching moves, not invalid swaps, casca
 | Siege Sergeant | Alternates three wooden walls and Hammer Time every 4 moves | Prefers a complete straight run, otherwise random distinct legal cells; 6 walls per owner; specials protected | Hammer marks one adjacent ordinary pair for 2 moves. Remove/convert/pin either identity to cancel the entire strike. Failed warning deals base 10 through the shield-aware path, removes both targets environmentally and settles. One warning per owner. Owned walls grant the established 20% damage reduction. Death cancels warning/passive; walls persist orphaned. |
 | Crossbow Guard | Adds one chain every 3 moves, up to 2 owned | Ordinary unpinned gems; each placement must preserve a legal move | Same falling-chain rules as Captain: no manual swap, gravity allowed, matching/special destruction removes chain, adjacency alone does not. Death/disable queues release; emergency reshuffle can release pins. |
 | Royal Arbalist | Special; adds up to two chains every 4 moves, up to 2 owned | Ordinary unpinned gems, shared six-chain cap and safe-placement checks | Two authored chain-shot contacts; retains double-shot basics. Chains use the same breaking, falling and owner-cleanup rules as Crossbow Guard. Counted as a disruptor in encounter composition; HP/damage/threat cost retained. |
-| Knight Captain | Alternates top-up to 3 chains and On My Mark every 4 moves | Shared chain queue; command snapshots eligible available Crown allies in roster order | Command wind-up and spaced complete normal sequences. Kill/stagger an ally to interrupt participation; killing the Captain cancels outstanding commands and releases reservations/chains. No immunity or forced escort-first order. |
+| Knight Captain | Alternates top-up to 3 chains and Advance the Ranks every 4 moves | Shared chain queue; all other living allies, including leaders | Advances normal/special readiness by one move, floor one, no immediate action. Active channels/warnings/ice are unchanged. Captain does not accelerate himself. |
 | Shield Knight | Every 6 moves: +10 shield to each living ally, +12 to self | Enemy shield cap 30; caster never receives its ally grant | Grants add up to the cap, with no timed expiration or refresh. Shields live on the recipient and remain if the Knight dies. Shield VFX; focus support or break shields with damage. Existing 25% hit mitigation and whole-hit shield gating remain centralized. |
 | Town Marshal | Alternates one summon and a rally opportunity every 4 moves | Farmer/Pan/Basket pool; only free slots within 3 total; roster-based local eligibility | Summon becomes protector for 2 moves; killing it ends interception and resets a held-ready special. Rally is +40% attack speed for 5 seconds, non-stacking. Summons survive Marshal death; no summon income. |
 | Royal Standard Bearer | One standard every 5 moves, at most one owned | Legal ordinary top-row cell; one non-gem occupant | Existing standard falls with actual gravity openings and leaves at the bottom. Clear below it to end its shared non-stacking +20% Crown attack-speed aura. It cannot be directly matched/bombed away; death orphans the standard rather than erasing it. |
-| Court Mage | One freeze every 5 moves; 3 per owner | Legal ordinary unpinned cell, preserving a move | Ice remains fixed under gravity and cannot be manually swapped. Matching/destroying that gem breaks the ice; adjacent clears do not. Owner death queues release and normal settlement. This is deliberately distinct from chains. |
+| Court Mage | One True Ice encasement every 5 moves; 3 per owner | Legal ordinary unpinned cell, preserving a move | Fixed Frost/Heavy/Bifrost; 3 ignored moves per stage. Adjacent clear thaws one layer. Ordinary direct Bifrost break retaliates 10 plus Frostbite; specials/cascades/abilities safe. Owner death releases its ice. No Dungeon ambient spawning. |
 | Minister | Alternates Restoration and Benediction every 4 moves | Three distinct runes, 3-move warning; blessings on at most 2 other allies | Destroy/convert rune identities to cancel individual heals. Each survivor removes its gem environmentally and heals 3.3% of a newly chosen triage target's max HP. Need × rank weights select targets (1 / 1.15 / 1.35 / 1.6); meaningful wounded allies halve self-priority. Blessing multiplies the next accepted whole normal sequence by 1.4. Death cancels marks and unspent blessings. |
 | King | Judgment → Assault → Bombardment every 4 moves; 3 when enraged | Judgment: three distinct gems for 3 moves; Bombardment: one row plus one column for 2 moves; command snapshots explicitly eligible Royals | Judgment deals base 12 on the first two contacts; only three survivors enable a provisional base-18 finisher. Consume physical marks in saved order, use authored impacts and settle once after the sequence. Bombardment lanes cannot be cancelled but preserve specials/structures and deal base 6 once. Commands use complete normal sequences at ×1.1 with 0.6s wind-up and 0.12s spacing. Surviving 50%/25% crossings each fill free slots once, never with a Minister; first crossing adds ×1.2 normal damage and ×1.25 attack speed. Death cancels outstanding actions; independent reinforcements remain. |
 

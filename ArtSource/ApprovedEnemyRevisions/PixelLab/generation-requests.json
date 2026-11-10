@@ -1,0 +1,75 @@
+{
+  "guide": "1.17.2",
+  "authorizedInputs": [
+    "Rattlebones native reference",
+    "MarineSnare.png",
+    "HearthEmber.png"
+  ],
+  "authorization": "User explicitly approved these three PNG inputs for PixelLab on 2026-11-10.",
+  "requests": {
+    "net": {
+      "width": 32,
+      "height": 32,
+      "no_background": true,
+      "style_image_url": "upload:661c4fb9-7a0b-4082-9577-766f5dce3cb1",
+      "style_copy": [
+        "outline",
+        "detail",
+        "shading"
+      ],
+      "max_colors": 10,
+      "description": "ONE small barbed marine capture net, a readable board-gem trap overlay for Dungeon Matcher, centered at native 32x32 pixels with at least 2 transparent pixels of padding. An irregular rounded square perimeter of muted sea-green rope, crossed by 3 sparse diagonal knotted cords in each direction, and 4 tiny violet-gray urchin-spine barbs attached to the outside knots. It must be hollow open netting: transparent empty diamond gaps across the interior, at least 65 percent transparent area, no solid backing, no gem underneath. The trapped gem will remain clearly visible through the gaps. Crisp intentional dark contours, simple top-left matte shading, just two useful rope shades and sparse pale knot accents. Same clean chunky pixel rendering as the style reference, but NOT a skull or character. No vines, leaves, red thorns, web glow, gradients, blur, floating particles, terrain, frame or text. The reference net is concept/placement guidance, improve its crafted nautical equipment readability.",
+      "reference_images": [
+        {
+          "url": "upload:239a9c8c-e377-4ee6-8a2d-d82227c25fcb",
+          "usage": "Existing 32px overlay concept and centered footprint; sparse net with transparent interior. Improve drawing quality, retain open gaps."
+        }
+      ],
+      "palette": [
+        "#0A0D11",
+        "#243F48",
+        "#42666B",
+        "#71918E",
+        "#A9BBB6",
+        "#4D425F",
+        "#7C658F",
+        "#B0A0B8"
+      ],
+      "seed": 22711
+    },
+    "ember": {
+      "width": 32,
+      "height": 32,
+      "no_background": true,
+      "style_image_url": "upload:661c4fb9-7a0b-4082-9577-766f5dce3cb1",
+      "style_copy": [
+        "outline",
+        "detail",
+        "shading"
+      ],
+      "max_colors": 10,
+      "description": "ONE tiny Hearth Ember board structure sprite for Dungeon Matcher, centered native 32x32 pixels, with 2 transparent pixels around the whole silhouette. A compact oval ring of four or five chunky cool slate stones holding a small warm orange living ember flame. Front-facing three-quarter low view, stone footing grounded, a single simple upright flame with pale warm core, orange body and rust-red outer shadow. Quiet broad stone planes with top-left light, restrained light catching the stone lip. It is a small destroyable Nordic hearth/healing source, no character, face, symbols or text. Strong clean near-black outline on stone, clean connected flame clusters. Whimsical chunky pixel-art quality matching supplied Rattlebones rendering discipline. Native pixel edges, controlled palette, no noisy texture, glow halo, blurry gradients, smoke, flying embers, drop shadow or background. Retain the reference's compact stone hearth identity, improve its authored shape and material clarity.",
+      "reference_images": [
+        {
+          "url": "upload:ff6d5025-5ca0-4a3c-b878-409d4510ee3d",
+          "usage": "Existing stone footing and upright orange flame identity, compact 32px board structure and centered placement."
+        }
+      ],
+      "palette": [
+        "#0A0D11",
+        "#242D40",
+        "#41475E",
+        "#788299",
+        "#ACB4BE",
+        "#7C382F",
+        "#B85037",
+        "#EE9B43",
+        "#FFD072",
+        "#FFE7A0"
+      ],
+      "seed": 22712
+    }
+  },
+  "netReceipt": "id: 2eeb91c3-6198-4e59-93e3-80bff0587980\njob_id: 2eeb91c3-6198-4e59-93e3-80bff0587980\nmodel: pro\ndescription: ONE small barbed marine capture net, a readable board-gem trap overlay for Dungeon Matcher, centered at native 32x32 pixels with at least 2 transparent pixels of padding. An irregular rounded square perimeter of muted sea-green rope, crossed by 3 sparse diagonal knotted cords in each direction, and 4 tiny violet-gray urchin-spine barbs attached to the outside knots. It must be hollow open netting: transparent empty diamond gaps across the interior, at least 65 percent transparent area, no solid backing, no gem underneath. The trapped gem will remain clearly visible through the gaps. Crisp intentional dark contours, simple top-left matte shading, just two useful rope shades and sparse pale knot accents. Same clean chunky pixel rendering as the style reference, but NOT a skull or character. No vines, leaves, red thorns, web glow, gradients, blur, floating particles, terrain, frame or text. The reference net is concept/placement guidance, improve its crafted nautical equipment readability.\nsize: 32x32px\ntransparent: True\ncandidates: 64\nreferences: 1\nstyle_image: yes (outline, detail, shading)\npalette: 8 colours\nmax colours: 10 per image\nseed: 22711\nasset_id: 546626a9-3056-50ef-9ff5-86fc78ab6e76\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"2eeb91c3-6198-4e59-93e3-80bff0587980\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/2eeb91c3-6198-4e59-93e3-80bff0587980/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "emberReceipt": "id: 8ab475d0-6b74-4578-95db-1faeb9571fe8\njob_id: 8ab475d0-6b74-4578-95db-1faeb9571fe8\nmodel: pro\ndescription: ONE tiny Hearth Ember board structure sprite for Dungeon Matcher, centered native 32x32 pixels, with 2 transparent pixels around the whole silhouette. A compact oval ring of four or five chunky cool slate stones holding a small warm orange living ember flame. Front-facing three-quarter low view, stone footing grounded, a single simple upright flame with pale warm core, orange body and rust-red outer shadow. Quiet broad stone planes with top-left light, restrained light catching the stone lip. It is a small destroyable Nordic hearth/healing source, no character, face, symbols or text. Strong clean near-black outline on stone, clean connected flame clusters. Whimsical chunky pixel-art quality matching supplied Rattlebones rendering discipline. Native pixel edges, controlled palette, no noisy texture, glow halo, blurry gradients, smoke, flying embers, drop shadow or background. Retain the reference's compact stone hearth identity, improve its authored shape and material clarity.\nsize: 32x32px\ntransparent: True\ncandidates: 64\nreferences: 1\nstyle_image: yes (outline, detail, shading)\npalette: 10 colours\nmax colours: 10 per image\nseed: 22712\nasset_id: a6d56336-d14f-5a1f-9d30-1208f8b81544\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"8ab475d0-6b74-4578-95db-1faeb9571fe8\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/8ab475d0-6b74-4578-95db-1faeb9571fe8/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+}

@@ -107,6 +107,7 @@ public sealed class EnemyUnifiedIntentView : MonoBehaviour
     }
     private int ResponseMoves()
     {
+        var charge=GetComponent<ShieldbreakerChargeRuntime>(); if(charge?.IsChanneling==true)return charge.ResponseMoves;
         var cleave=GetComponent<GlacierCleaveRuntime>(); if(cleave?.IsChanneling==true)return cleave.ResponseMoves;
         var mountain=GetComponent<FrostwakeEnemyAbility>(); if(mountain?.IsPreparing==true)return mountain.ResponseMoves;
         var heal=GetComponent<EnemyChannelRuntime>(); if(heal?.IsChanneling==true)return heal.ResponseMoves;

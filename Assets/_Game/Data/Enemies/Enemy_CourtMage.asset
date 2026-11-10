@@ -15,8 +15,10 @@ MonoBehaviour:
   enemyId: court_mage
   displayName: Court Mage
   category: 1
-  description: A Royal spellcaster who freezes ordinary gems in place while the rest
-    of the column continues falling past them.
+  description: 'True Ice fixes up to three ordinary gems in place. Three ignored moves
+    per stage advance Frost to Heavy Ice to Bifrost. Adjacent clears thaw a layer.
+    Deliberate ordinary Bifrost breaks retaliate; specials, abilities and cascades are safe.
+    Defeat the Mage to release its ice.'
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 6662421484501983901, guid: d4bbdde9482955246b39db3d777cdcd5, type: 3}
   animationControllerOverride: {fileID: 9100000, guid: b6f9131f60daec749a29e64fab265c53, type: 2}

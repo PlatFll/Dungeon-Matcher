@@ -251,12 +251,15 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
         }
     }
     private static bool BlocksBasic(EnemyActor actor) =>
+        actor.GetComponent<ShieldbreakerChargeRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<EnemyChannelRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||
         actor.GetComponent<MineEnemyAbility>()?.BlocksBasic == true ||
         actor.GetComponent<GlacierCleaveRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<EnemyAutoAttack>()?.IsPausedByAction == true;
-    private static bool BlocksSpecialCountdown(EnemyActor actor) =>
+    public static bool BlocksSpecialCountdown(EnemyActor actor) =>
+        actor.GetComponent<ShieldbreakerChargeRuntime>()?.BlocksBasic == true ||
+        actor.GetComponent<HearthEmberRuntime>()?.HasEmber == true ||
         actor.GetComponent<FrostwakeEnemyAbility>()?.BlocksBasic == true ||
         actor.GetComponent<EnemyChannelRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||

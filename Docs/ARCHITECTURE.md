@@ -804,6 +804,23 @@ Shared board code must never switch on a concrete enemy identity. Add enemy beha
 
 ## Wave and enemy board-manipulation timing
 
+The 2026-11-10 revisions retain this queue. Court Mage ownership extends the
+shared Frost map with persistent actor IDs; old frozen pins migrate at restore.
+Column warnings extend `CellResponseThreat` rather than introducing another
+warning pipeline. Their physical destruction receipt must originate from player
+resolution, excluding cascades produced inside an enemy/environment mutation.
+Hearth Ember uses ordinary one-hit barricade occupancy/destruction; a board move
+event advances exactly-once fixed-target healing. Owner/target death requests
+queued removal without the player-break thaw reward. Travel removes Ember and
+ice alongside existing zone-owned cleanup.
+
+`ShieldbreakerChargeRuntime` owns its saved channel and recovery; both impacts
+use `PlayerActor.TryTakeDamage` independently. `EnemyChannelRuntime` records
+Cantor pending healing and receives actual bubble receipts, excluding enemy
+mutation context. Existing AIR and snare accounting is unchanged. Captain
+readiness helpers only change counters, with a one-move floor and held-state
+guards; King's immediate command path is untouched.
+
 - `BoardController.NotifyValidPlayerMoveCompleted` is called once after a successful player swap has completely resolved. Cascades never call it independently.
 - `WaveController` snapshots active enemies and calls `EnemyActor.RegisterValidPlayerTurn` once per active enemy for that completed move.
 - Ready enemy runtimes may immediately queue board work. All mining, pinning, cleanup, and barricade requests share `pendingBoardMutations` and `ProcessBoardMutations`.
@@ -944,7 +961,7 @@ The script reads the exact editor version from `ProjectSettings/ProjectVersion.t
 
 - `WaveSpawnProfile` remains the category/count planner; `EnemyDatabase` filters eligible definitions and evaluates their age-relative weight curves. `WaveController.BuildEncounter` resolves the complete composition before spawning through `CreateEnemy`. Definition-owned escort pools constrain all other slots when a Mini-boss is selected; they never create a second spawn path. Ordinary fixed overrides are removed from the standard profile, while the existing solo checkpoints remain.
 - `WaveController` owns a private `SavedRandom` through its `System.Random` interface, initialized from its recorded encounter seed. Category planning, definition/escort draws and weakness shuffling use that same instance. The separate board/refill and gameplay streams are described under combat continuation ownership; rewinding a board does not rewind encounter selection.
-- `KnightCaptainEnemyAbility` owns preference, one shared four-move special opportunity, participant snapshot, wind-up/sequencing and cancellation. It uses `EnemyActor` action ownership and `EnemyAutoAttack.TryReserveCommand` / `PerformCommandStrike` / `ReleaseCommand`. Reservation suspends the existing timer; release preserves an unspent cooldown or restarts a consumed attack. All hits still use the existing auto-attack sequence and player damage API, including Spear Knight's two-hit lifecycle.
+- `KnightCaptainEnemyAbility` owns preference, one shared four-move special opportunity, wind-up and cancellation. Chain Volley retains the shared pin queue. Advance the Ranks calls readiness-only helpers on other living allies, with a one-move floor and no ready/cast dispatch. Active channels and warnings retain their deadlines. It no longer reserves or performs allied attacks; that flow belongs to the King's Royal Assault.
 - `TryQueueTopUpMovablePins` extends the single board mutation queue. It selects ordinary gems at execution, uses existing pin ownership and `HasAvailableMove`, and tops up only to the cap. A separate movable-pin set distinguishes swap-only chains from fixed bolts. Gravity skips fixed pins only; input/legal-move checks reject both. Adjacent clears release bolts only. Gem destruction, special conversion, owner cleanup and emergency reshuffles release chains through established ownership cleanup. No board code identifies a Captain.
 - Shield Knight's category is Special; its asset compensates category/wave multipliers for the wave-17 introduction baseline. Shield grants and shield-aware damage remain owned by the existing runtime and `EnemyActor`; player shields are unchanged.
 
@@ -954,7 +971,7 @@ Command reservation uses the existing `EnemyAutoAttack` eligibility checks, with
 one distinction: a move coordinator's pause of autonomous timed basics does not
 block reservation for an explicit special command. Pause, stagger, occupied
 actions, existing reservations, death and the King's Bombardment hold still
-reject it. This lets King Assault and Captain commands execute in live seconds
+reject it. This lets King Assault execute in live seconds
 profiles without granting extra autonomous attacks.
 Reservations remain held through the final inter-strike spacing, and the move
 coordinator waits for those reservations as well as animation actions. The
@@ -963,7 +980,7 @@ counter and advanced cycle together.
 
 - `RoyalArchbishopEnemyAbility` and `KingEnemyAbility` are installed through the existing factory. They own their shared cast cycles, warning handles, retries, cleanup and rank/roster decisions. `EnemySpecialActionAvailability` and explicit idle/action checks gate new casts; due effects use the same stagger/idle conditions without holding board ownership while waiting.
 - `EnemyActor.SurvivedHealthDamage` publishes before/after HP after a nonlethal centralized damage instance, including DoT. The King records crossing latches here, queues ordered threshold batches and applies Enrage; it never polls HP or mutates health. `SetSpecialTurnRequirement` changes the effective requirement without discarding accumulated valid moves. Restoration uses the existing `RestoreHealth` API.
-- `EnemyAutoAttack` owns source-keyed persistent normal-damage/speed modifiers and next-sequence damage modifiers. Accepted attacks capture one product for primary/follow-up damage and consume next-sequence modifiers once. Optional `PerformCommandStrike` scaling is scoped to that command; existing Captain calls retain 1x. Enrage multiplies the existing timer countdown independently of the legacy banner/rally speed channel. Removing one source cannot erase another source's modifier.
+- `EnemyAutoAttack` owns source-keyed persistent normal-damage/speed modifiers and next-sequence damage modifiers. Accepted attacks capture one product for primary/follow-up damage and consume next-sequence modifiers once. Optional `PerformCommandStrike` scaling is scoped to the King's command. Enrage multiplies the existing timer countdown independently of the legacy banner/rally speed channel. Removing one source cannot erase another source's modifier.
 - `BoardController.TelegraphedClears` extends `pendingBoardMutations` with mark-set and lane requests. Gem sets track owner, identities, deadline and one-shot state. `Gem.SetSpecialType` cancels marks on replacement. Marking changes metadata only, preserving legal moves. Environmental clearability includes frozen ordinary gems but excludes specials and all non-playable structural cells. Clear requests use `ClearMatches(..., null)` without reward reporting and settle once via `ResolveEnvironmentalBoardChange`; no alternate resolver or special chain path exists. Due requests recheck stagger at execution and release their queued flag if deferred.
 - `BoardTelegraphVFX`, `EnemyBlessingView` and `EnemyRoyalPhaseView` only observe state/events. Board art slots serialize on the existing `Game.unity` BoardController; missing assets use procedural/presentation fallbacks. Per-lane gameplay pacing is independent of VFX availability and uses the existing clear timings.
 - `WaveSpawnProfile.SelectMilestone` draws from serialized rising-probability opportunities using the existing encounter RNG. `WaveController` records successfully spawned definitions as seen, preventing repeat milestone injection. `BuildEncounter` supports Boss leaders and their required escort while preserving the existing normal spawning path. First-pass King milestones request two slots and open with King + Archbishop. Threshold summons use the existing free-slot service; no separate summon ownership or targeting system is introduced.

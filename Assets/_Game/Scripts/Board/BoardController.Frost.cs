@@ -6,8 +6,11 @@ using UnityEngine;
 public partial class BoardController
 {
     private readonly Dictionary<int,FrostGemSnapshot> frostGems=new Dictionary<int,FrostGemSnapshot>();
+    private readonly HashSet<long> releasedIceOwners=new HashSet<long>();
     private int nextFrostSeedMove;
-    private FrostwakeRules FrostRules => RunSession.Current?.Zone?.Definition?.frostwakeRules;
+    private FrostwakeRules sharedFrostRules;
+    private FrostwakeRules FrostRules => RunSession.Current?.Zone?.Definition?.frostwakeRules ??
+        (sharedFrostRules ??= Resources.Load<FrostwakeRules>("Zones/FrostwakeRules"));
     public event Action FrostChanged;
     public FrostStage IceStage(Gem gem) => gem!=null && frostGems.TryGetValue(gem.BoardIdentity,out var ice)?ice.stage:FrostStage.None;
     public Gem FindGemIdentity(int identity)
@@ -32,26 +35,68 @@ public partial class BoardController
     private void RemoveFrost(Gem gem)
     {if(gem!=null && frostGems.Remove(gem.BoardIdentity))PublishFrost();}
 
-    public bool TryQueueEncasedGem(EnemyActor owner,FrostStage stage,Action<Gem> completed,Func<bool> cancelled=null)
+    public bool TryQueueEncasedGem(EnemyActor owner,FrostStage stage,Action<Gem> completed,Func<bool> cancelled=null,
+        int ownedLimit=0)
     {
         if(owner==null || owner.IsDefeated || gems==null || stage<FrostStage.Frost || stage>FrostStage.Bifrost)return false;
         var request=new BoardMutationRequest {Kind=BoardMutationKind.EncaseGem,OwnerActor=owner,
-            IceStage=stage,IsCancelled=cancelled};
+            IceStage=stage,IsCancelled=cancelled,MaximumOwnedPins=ownedLimit};
         request.Completed=ok=>completed?.Invoke(ok?request.TargetGem:null);
         EnqueueBoardMutation(request);TryStartBoardMutationProcessor();return true;
     }
-    private Gem EncaseSafeGem(FrostStage stage)
+    private Gem EncaseSafeGem(FrostStage stage, long ownerId=0, int column=-1)
     {
         if(RestrictionCount>=BalanceV1.Current.maximumGlobalChains)return null;
         var candidates=BuildSafePinnableGemList();
-        candidates.RemoveAll(g=>g==null || g.SpecialType!=GemSpecialType.None || IsProtectedWarningTarget(g));
+        candidates.RemoveAll(g=>g==null || g.SpecialType!=GemSpecialType.None || IsProtectedWarningTarget(g) ||
+            (column>=0 && g.Column!=column));
         if(candidates.Count==0)return null;
         var target=candidates[GameplayRandom.Range(0,candidates.Count)];
-        frostGems[target.BoardIdentity]=new FrostGemSnapshot {identity=target.BoardIdentity,stage=stage,lastAdvancedMove=FrostMove};
+        frostGems[target.BoardIdentity]=new FrostGemSnapshot {identity=target.BoardIdentity,ownerId=ownerId,stage=stage,lastAdvancedMove=FrostMove};
         CancelPointerInteraction(target);PublishFrost();return target;
     }
     private void ExecuteEncaseGem(BoardMutationRequest request)
-    {request.TargetGem=EncaseSafeGem(request.IceStage);request.Succeeded=request.TargetGem!=null;}
+    {
+        if(request.OwnerActor==null || request.OwnerActor.IsDefeated)return;
+        long owner=request.MaximumOwnedPins>0 ? request.OwnerActor.PersistentId : 0;
+        if(request.MaximumOwnedPins>0 && (owner<=0 || CountOwnedIce(owner)>=request.MaximumOwnedPins))return;
+        request.TargetGem=EncaseSafeGem(request.IceStage,owner);request.Succeeded=request.TargetGem!=null;
+    }
+    public int CountOwnedIce(long ownerId)
+    {
+        int count=0;if(ownerId<=0)return count;
+        foreach(var ice in frostGems.Values)if(ice.ownerId==ownerId)count++;
+        return count;
+    }
+    public void MigrateOwnedFreezeToIce(EnemyActor owner)
+    {
+        if(owner==null || owner.PersistentId<=0)return;
+        foreach(var gem in new List<Gem>(frozenPinnedGems))
+        {
+            if(gem==null || !pinnedGemOwners.TryGetValue(gem,out int id) || id!=owner.GetInstanceID())continue;
+            ReleasePinInternal(gem);
+            frostGems[gem.BoardIdentity]=new FrostGemSnapshot{identity=gem.BoardIdentity,ownerId=owner.PersistentId,
+                stage=FrostStage.Frost,lastAdvancedMove=FrostMove};
+        }
+        PublishFrost();
+    }
+    public void QueueReleaseOwnedIce(long ownerId)
+    {
+        if(ownerId<=0 || CountOwnedIce(ownerId)==0)return;
+        // Death may occur inside the current cascade. Invalidate retaliation now;
+        // physical release still runs through the authoritative mutation queue.
+        releasedIceOwners.Add(ownerId);
+        EnqueueBoardMutation(new BoardMutationRequest{Kind=BoardMutationKind.ReleaseOwnedIce,IceOwnerId=ownerId});
+        TryStartBoardMutationProcessor();
+    }
+    private IEnumerator ExecuteReleaseOwnedIce(long ownerId)
+    {
+        foreach(var ice in new List<FrostGemSnapshot>(frostGems.Values))
+            if(ice.ownerId==ownerId)frostGems.Remove(ice.identity);
+        releasedIceOwners.Remove(ownerId);
+        PublishFrost();
+        yield return ResolveEnvironmentalBoardChange();
+    }
 
     public bool TryQueueConsumeEncasedGem(EnemyActor owner,int identity,Action<FrostStage> impact,Action<bool> completed,Func<bool> cancelled)
     {
@@ -76,8 +121,9 @@ public partial class BoardController
         var rules=FrostRules;if(rules==null)return;
         bool changed=false;
         foreach(var ice in frostGems.Values)changed|=ice.Advance(move,rules.movesPerStage);
-        if(nextFrostSeedMove<=0)nextFrostSeedMove=move+Mathf.Max(1,rules.seedCadence);
-        if(move>=nextFrostSeedMove)
+        bool ambient=RunSession.Current?.Zone?.Definition?.frostwakeRules!=null;
+        if(ambient && nextFrostSeedMove<=0)nextFrostSeedMove=move+Mathf.Max(1,rules.seedCadence);
+        if(ambient && move>=nextFrostSeedMove)
         {
             nextFrostSeedMove=move+Mathf.Max(1,rules.seedCadence);
             if(frostGems.Count<rules.maximumEncasedGems)EncaseSafeGem(FrostStage.Frost);
@@ -90,6 +136,8 @@ public partial class BoardController
         bool changed=false;int retaliations=0;
         foreach(var ice in new List<FrostGemSnapshot>(frostGems.Values))
         {
+            if(ice.ownerId>0 && releasedIceOwners.Contains(ice.ownerId))
+            {frostGems.Remove(ice.identity);changed=true;continue;}
             var gem=FindGemIdentity(ice.identity);
             if(gem==null){frostGems.Remove(ice.identity);changed=true;continue;}
             bool direct=clears.Contains(gem) && (ignored==null || !ignored.Contains(gem));
@@ -123,7 +171,7 @@ public partial class BoardController
     }
     private void RestoreFrost(BoardCombatSnapshot saved)
     {
-        frostGems.Clear();nextFrostSeedMove=saved.nextFrostSeedMove;
+        frostGems.Clear();releasedIceOwners.Clear();nextFrostSeedMove=saved.nextFrostSeedMove;
         if(saved.frost!=null)foreach(var ice in saved.frost)
             if(ice!=null && FindGemIdentity(ice.identity)!=null && ice.stage>=FrostStage.Frost && ice.stage<=FrostStage.Bifrost)
                 frostGems[ice.identity]=ice.Copy();

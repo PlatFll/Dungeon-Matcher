@@ -12,10 +12,17 @@ public partial class BoardController
         public bool RequiresVine { get; internal set; }
         public bool Answered { get; internal set; }
         public bool Ended { get; internal set; }
+        public int FrostColumn { get; internal set; } = -1;
         internal bool Queued;
         public readonly List<Vector2Int> Cells = new List<Vector2Int>();
     }
     private readonly List<CellResponseThreat> cellResponseThreats = new List<CellResponseThreat>();
+    private readonly HashSet<int> columnPlayerClearReceipts = new HashSet<int>();
+    private void RegisterColumnPlayerClear(IEnumerable<Gem> cleared)
+    {
+        if(ResolvingEnvironmentalMutation)return;
+        if(cleared!=null)foreach(var gem in cleared)if(gem!=null)columnPlayerClearReceipts.Add(gem.BoardIdentity);
+    }
     public event Action<CellResponseThreat> CellResponseMarked;
     public CellResponseThreat RestoredCellResponse(EnemyActor owner) => cellResponseThreats.Find(t=>t.Owner==owner && !t.Ended);
     public void CancelCellResponse(CellResponseThreat threat)
@@ -26,6 +33,14 @@ public partial class BoardController
         if(owner==null || owner.IsDefeated || gems==null) return false;
         var request=new BoardMutationRequest {Kind=BoardMutationKind.MarkCellResponse,OwnerActor=owner,
             TargetCount=Mathf.Clamp(count,1,3),WarningMoves=Mathf.Max(2,moves),RequiresVine=requiresVine};
+        request.Completed=ok=>completed?.Invoke(ok?request.CellThreat:null);
+        EnqueueBoardMutation(request);TryStartBoardMutationProcessor();return true;
+    }
+    public bool TryQueueFrostColumn(EnemyActor owner,int moves,Action<CellResponseThreat> completed)
+    {
+        if(owner==null || owner.IsDefeated || gems==null)return false;
+        var request=new BoardMutationRequest{Kind=BoardMutationKind.MarkCellResponse,OwnerActor=owner,
+            WarningMoves=Mathf.Max(2,moves),FrostColumnWarning=true};
         request.Completed=ok=>completed?.Invoke(ok?request.CellThreat:null);
         EnqueueBoardMutation(request);TryStartBoardMutationProcessor();return true;
     }
@@ -45,8 +60,15 @@ public partial class BoardController
         var answers=candidates.FindAll(c=>clearable.Contains(c));
         if(answers.Count==0) return; // Every warning has at least one immediate legal answer.
         var threat=new CellResponseThreat {Owner=request.OwnerActor,RequiresVine=request.RequiresVine,
-            DueMove=ReserveWarningDeadline(request.WarningMoves)};
+            DueMove=request.FrostColumnWarning ? completedValidPlayerMoves+request.WarningMoves : ReserveWarningDeadline(request.WarningMoves)};
         var first=answers[GameplayRandom.Range(0,answers.Count)];
+        if(request.FrostColumnWarning)
+        {
+            threat.FrostColumn=first.x;
+            for(int y=0;y<height;y++)threat.Cells.Add(new Vector2Int(first.x,y));
+            cellResponseThreats.Add(threat);request.CellThreat=threat;request.Succeeded=true;
+            EnsureTelegraphPresentation();CellResponseMarked?.Invoke(threat);return;
+        }
         threat.Cells.Add(first);candidates.Remove(first);
         // Heavy response targets form a compact group, not scattered board-wide marks.
         if(!request.RequiresVine) candidates.RemoveAll(c=>Mathf.Abs(c.x-first.x)+Mathf.Abs(c.y-first.y)>1);
@@ -72,13 +94,16 @@ public partial class BoardController
         int remaining=0;
         foreach(var cell in threat.Cells) if(!threat.RequiresVine || IsCellVined(cell.x,cell.y)) remaining++;
         CancelCellResponse(threat); // Consume before callbacks; no gem clears or extra reward pipeline.
+        if(threat.FrostColumn>=0 && !threat.Answered)
+            for(int i=0;i<2;i++)if(EncaseSafeGem(FrostStage.Frost,0,threat.FrostColumn)==null)break;
         request.Succeeded=true;request.CellResponseImpact?.Invoke(remaining,threat.Answered);
     }
-    private void AnswerCellResponse(Vector2Int cell,bool vineRemoved)
+    private void AnswerCellResponse(Vector2Int cell,bool vineRemoved,bool playerClear=false)
     {
         foreach(var threat in cellResponseThreats)
         {
             if(threat.Ended || (threat.RequiresVine && !vineRemoved)) continue;
+            if(threat.FrostColumn>=0 && !playerClear)continue;
             if(threat.Cells.Remove(cell)) threat.Answered=true;
         }
     }

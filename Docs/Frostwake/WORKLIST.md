@@ -5,6 +5,12 @@
 
 ## Authorization and current state
 
+The 2026-11-10 approved enemy revision supersedes the original Troll,
+Champion and Hearthkeeper payloads recorded below. See
+[the implementation record](../APPROVED_ENEMY_ABILITY_REVISIONS_2026-11-10.md)
+and current `BALANCE_V1.md`: column Frost warning, two-hit Shieldbreaker channel,
+and one-hit healing Ember respectively. Existing roster art is unchanged.
+
 The latest request expands the prior Frostwake planning/foundation scope to the
 complete mountain roster and its kits. All eleven still candidates in
 `ArtSource/Frostwake/technical-checks.json` were explicitly approved for animation

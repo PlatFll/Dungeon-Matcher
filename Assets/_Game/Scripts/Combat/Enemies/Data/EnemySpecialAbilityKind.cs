@@ -30,5 +30,8 @@ public enum EnemySpecialAbilityKind
     GrandDelver = 39,
     GlacierCleave = 40,
     Rimecarving = 41,
-    MountainStrike = 42
+    MountainStrike = 42,
+    AvalancheFrost = 43,
+    ShieldbreakerCharge = 44,
+    HearthEmber = 45
 }

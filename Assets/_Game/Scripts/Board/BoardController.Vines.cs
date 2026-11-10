@@ -161,8 +161,10 @@ public partial class BoardController
         if(cleared==null) return;
         foreach(var gem in cleared)
         {
-            if(gem==null || (preserved!=null && preserved.Contains(gem))) continue;
-            AnswerCellResponse(new Vector2Int(gem.Column,gem.Row),false);
+            if(gem==null)continue;
+            bool playerClear=columnPlayerClearReceipts.Remove(gem.BoardIdentity);
+            if(preserved!=null && preserved.Contains(gem))continue;
+            AnswerCellResponse(new Vector2Int(gem.Column,gem.Row),false,playerClear);
             var node=vineNodes.Find(n=>n.x==gem.Column && n.y==gem.Row);
             if(node==null) continue;
             // Opening is recorded after this clear's root-hit check. This clear

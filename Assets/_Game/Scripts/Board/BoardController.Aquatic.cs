@@ -41,6 +41,7 @@ public partial class BoardController
 
     private void RegisterAquaticClear(IEnumerable<Gem> cleared, bool manual)
     {
+        RegisterColumnPlayerClear(cleared);
         if (!AquaticZone || cleared == null) return;
         foreach (var gem in cleared) if (gem != null)
             aquaticClearReceipts[gem.BoardIdentity] = manual ||

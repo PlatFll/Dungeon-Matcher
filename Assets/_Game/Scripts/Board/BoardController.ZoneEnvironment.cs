@@ -17,7 +17,12 @@ public partial class BoardController
     {
         var zone = RunSession.Current?.Zone?.Definition;
         if (zone == null || gems == null) return;
-        if (zone.frostwakeRules != null)
+        if(HasHearthEmber())
+        {
+            EnqueueBoardMutation(new BoardMutationRequest{Kind=BoardMutationKind.AdvanceHearth,EnvironmentMove=move});
+            TryStartBoardMutationProcessor();
+        }
+        if (zone.frostwakeRules != null || frostGems.Count>0)
         {
             EnqueueBoardMutation(new BoardMutationRequest {Kind=BoardMutationKind.AdvanceFrost,EnvironmentMove=move});
             TryStartBoardMutationProcessor();
@@ -122,7 +127,8 @@ public partial class BoardController
         {
             bool root = cell.barricade && IsRootStyle(cell.barricadeStyle);
             if (cell.crumbleRestoreMove <= 0 && !root && cell.barricadeStyle != EnemyBarricadeStyle.AirCoffer &&
-                !(cell.barricade && cell.barricadeStyle == EnemyBarricadeStyle.MineStone)) continue;
+                !(cell.barricade && (cell.barricadeStyle == EnemyBarricadeStyle.MineStone ||
+                    cell.barricadeStyle == EnemyBarricadeStyle.HearthEmber))) continue;
             cell.mined = cell.barricade = false;
             cell.mineStone = null;
             cell.crumbleRestoreMove = 0;

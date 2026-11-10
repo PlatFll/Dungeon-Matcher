@@ -5,10 +5,15 @@ using UnityEngine;
 [Serializable]
 public sealed class EnemyChannelSnapshot
 {
+    public int version, pendingHeal = 20;
+    public bool bubbleCounter;
     public int state, sequence, triggerMove, deadlineMove, lastOutcomeSequence;
     public int recoveryUntil; // Legacy save field; never schedules new recovery moves.
     public long targetId;
     public string outcome;
+    public static bool Supports(EnemyChannelSnapshot s)=>s==null ||
+        (s.version>=0 && s.version<=1 && (s.version==0 ||
+            (s.pendingHeal>=0 && s.pendingHeal<=20 && s.pendingHeal%10==0)));
 }
 
 /// <summary>Cancelable fixed-target heal; animation never authorizes completion.</summary>
@@ -21,6 +26,7 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
     private EnemyStagger stagger;
     private EnemyAutoAttack attack;
     private EnemyActor target;
+    private BoardController board;
     private EnemyChannelSnapshot value = new EnemyChannelSnapshot();
     public event Action Changed;
     public bool IsChanneling => value.state == 1;
@@ -28,10 +34,13 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
     public int ResponseMoves => IsChanneling ? Mathf.Max(0,value.deadlineMove-(CombatMoveClock.Current?.Tick ?? 0)) : 0;
     public EnemyActor Target => target;
     public string Outcome => value.outcome;
+    public int PendingHeal => IsChanneling ? value.pendingHeal : 0;
+    public bool BubblesReduceHeal => IsChanneling && value.bubbleCounter;
 
     public void InitializeSpecialAbility(EnemyActor owner, BoardController board, IReadOnlyList<EnemyActor> enemies)
     {
-        Cleanup(); actor=owner; roster=enemies; value=new EnemyChannelSnapshot();
+        Cleanup(); actor=owner; roster=enemies; this.board=board; value=new EnemyChannelSnapshot();
+        if(board!=null) board.AquaticAnswer+=BubbleCollected;
         stagger=actor.GetComponent<EnemyStagger>(); attack=actor.GetComponent<EnemyAutoAttack>();
         actor.Defeated+=CasterDied;
         if(stagger!=null) stagger.StaggerApplied+=Staggered;
@@ -62,6 +71,8 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
         if(selected==null || !actor.TryBeginSpecialAbilityAnimationAction()) return;
         target=selected; target.Defeated+=RecipientDied;
         value.state=1; value.sequence++; value.targetId=target.PersistentId;
+        value.version=1; value.pendingHeal=20;
+        value.bubbleCounter=actor.Definition.bubbleCounterHeal && board?.IsFlooded==true;
         value.triggerMove=move; value.deadlineMove=move+2; value.outcome=null;
         attack?.SetActionPaused(this,true);
         actor.AnnounceCommittedCast();actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter(); actor.EndSpecialAbilityAnimationAction();
@@ -86,12 +97,19 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
         if(target!=null) target.Defeated-=RecipientDied;
         target=null;
         actor?.ResetSpecialCounter();attack?.SetActionPaused(this,false);
-        if(canHeal) recipient.RestoreHealth(20);
+        if(canHeal && value.pendingHeal>0) recipient.RestoreHealth(value.pendingHeal);
         Changed?.Invoke();
     }
     private void Staggered(EnemyStagger source,float duration,float remaining) => Finish("Interrupted",false);
     private void RecipientDied(EnemyActor source) => Finish("Target lost",false);
     private void CasterDied(EnemyActor source) { Finish("Caster defeated",false); attack?.SetActionPaused(this,false); }
+
+    private void BubbleCollected(int identity, bool bubble, bool unused)
+    {
+        if(!IsChanneling || !value.bubbleCounter || !bubble || board.ResolvingEnvironmentalMutation) return;
+        value.pendingHeal=Mathf.Max(0,value.pendingHeal-10);
+        Changed?.Invoke();
+    }
 
     public void CaptureContinuation(EnemyCombatSnapshot saved, Func<EnemyActor,int> slotOf)
     { saved.channel=JsonUtility.FromJson<EnemyChannelSnapshot>(JsonUtility.ToJson(value)); }
@@ -100,6 +118,11 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
         if(target!=null) target.Defeated-=RecipientDied;
         value=saved.channel==null ? new EnemyChannelSnapshot() :
             JsonUtility.FromJson<EnemyChannelSnapshot>(JsonUtility.ToJson(saved.channel)); target=null;
+        if(value.version==0)
+        {
+            value.version=1; value.pendingHeal=20;
+            value.bubbleCounter=actor.Definition.bubbleCounterHeal && board?.IsFlooded==true;
+        }
         if(value.state==2)
         {
             value.state=0;value.recoveryUntil=0;value.targetId=0;
@@ -115,6 +138,7 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
     }
     private void Cleanup()
     {
+        if(board!=null) board.AquaticAnswer-=BubbleCollected;
         if(actor!=null) actor.Defeated-=CasterDied;
         if(stagger!=null) stagger.StaggerApplied-=Staggered;
         if(target!=null) target.Defeated-=RecipientDied;

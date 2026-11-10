@@ -75,10 +75,11 @@ public sealed partial class ForestFoundationPlayTests
         yield return LaunchFrostwakeKit("rime_skald","iceborn_raider");
         yield return ReadyFrostwake(Enemy("rime_skald"));Assert.That(RosterSpeed(Enemy("iceborn_raider")),Is.GreaterThan(1));
         yield return LaunchFrostwakeKit("hearthkeeper","iceborn_raider");var ally=Enemy("iceborn_raider");Set(ally,"currentHealth",20);
-        yield return ReadyFrostwake(Enemy("hearthkeeper"));var heal=Enemy("hearthkeeper").GetComponent<EnemyChannelRuntime>();
-        Assert.That(heal.IsChanneling,Is.True);int before=ally.CurrentHealth;
-        yield return EnvironmentMove();yield return EnvironmentMove();Assert.That(heal.Outcome,Is.EqualTo("Healed"));
-        Assert.That(ally.CurrentHealth,Is.EqualTo(before+20));
+        yield return ReadyRevisionHearth(Enemy("hearthkeeper"),ally);var heal=Enemy("hearthkeeper").GetComponent<HearthEmberRuntime>();
+        Assert.That(heal.HasEmber,Is.True);int before=ally.CurrentHealth;
+        ally.SetSharedDamageReduction(this,()=>0f); // This fixture measures healing, not random refill damage.
+        for(int move=1;move<=3;move++){yield return EnvironmentMove();Assert.That(ally.CurrentHealth,Is.EqualTo(before+5*move));}
+        Assert.That(heal.HasEmber,Is.False);Assert.That(Run.Board.HasHearthEmber(),Is.False);
         yield return LaunchFrostwakeKit("frostblade_reaver");yield return ReadyFrostwake(Enemy("frostblade_reaver"));
         Assert.That(Run.Player.Statuses.Has(PlayerStatusKind.Frostbite),Is.True);
     }

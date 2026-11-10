@@ -32,7 +32,7 @@ MonoBehaviour:
   mineReserveHealthFraction: 0.5
   appliedPlayerStatus: {fileID: 0}
   frostwakeRules: {fileID: 11400000, guid: dd1e0b55cec7eb74abe1321173ec9999, type: 2}
-  abilityDisplayName: Hearthfire
+  abilityDisplayName: Hearth Ember
   mountainArmorShield: 0
   mountainMarkedGems: 1
   mountainResponseMoves: 2
@@ -61,9 +61,9 @@ MonoBehaviour:
   chainsPerUse: 1
   displayName: Hearthkeeper
   category: 1
-  description: Hearthfire channels for two accepted moves to heal 20 HP on one fixed
-    other ally below 75% HP. Stagger or defeat the keeper to cancel. Basics pause
-    while tending the flame.
+  description: Plants one one-hit Hearth Ember for three future moves. Heals one fixed
+    wounded ally by 5 HP per move. Destroy the Ember to stop healing and thaw one
+    layer on up to two adjacent iced gems. Defeating its owner extinguishes it safely.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 21300000, guid: 3aee09905d1bff04ebaa2263429246cf, type: 3}
   animationControllerOverride: {fileID: 9100000, guid: 59819c59716a95c479cc79f5c4c1538d, type: 2}
@@ -85,7 +85,7 @@ MonoBehaviour:
   pressureAttackMoves: 3
   pressureSpecialTurns: 3
   hasSpecialAbility: 1
-  specialAbilityKind: 12
+  specialAbilityKind: 45
   baseSpecialTurnRequirement: 5
   lockSpecialTurnRequirement: 1
   allyShieldAmount: 10

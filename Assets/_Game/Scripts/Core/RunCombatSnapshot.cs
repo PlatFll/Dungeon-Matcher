@@ -79,6 +79,7 @@ public sealed class RunCombatSnapshot
 {
     // 0 pair / 1 set / 2 lanes / 3 fixed response cells. Target indices refer to saved cells.
     public int kind, owner, dueMove, row, column;
+    public int frostColumn = -1;
     public bool restoration, vine, environmental, nonSpreading;
     public int vineLimit, parentGemId;
     public int rootDurability;
@@ -93,6 +94,8 @@ public sealed class RunCombatSnapshot
 {
     public GlacierCleaveSnapshot glacierCleave;
     public FrostwakeEnemySnapshot frostwakeEnemy;
+    public ShieldbreakerSnapshot shieldbreaker;
+    public HearthEmberSnapshot hearthEmber;
     public float oreNextMultiplier;
     public bool oreBurstConsumed;
     public MineEnemySnapshot mineEnemy;

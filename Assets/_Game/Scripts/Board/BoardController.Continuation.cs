@@ -72,7 +72,7 @@ public partial class BoardController
         foreach(var threat in cellResponseThreats) if(!threat.Ended && threat.Owner!=null && !threat.Owner.IsDefeated)
         {
             var warning=new BoardWarningSnapshot {kind=3,owner=ownerSlot(threat.Owner.GetInstanceID()),dueMove=threat.DueMove,
-                requiresVine=threat.RequiresVine,answered=threat.Answered};
+                requiresVine=threat.RequiresVine,answered=threat.Answered,frostColumn=threat.FrostColumn};
             foreach(var cell in threat.Cells) warning.targets.Add(cell.y*width+cell.x);
             saved.warnings.Add(warning);
         }
@@ -112,7 +112,7 @@ public partial class BoardController
             }
             else if(warning.kind==3)
             {
-                var threat=new CellResponseThreat {Owner=owner,DueMove=warning.dueMove,RequiresVine=warning.requiresVine,Answered=warning.answered};
+                var threat=new CellResponseThreat {Owner=owner,DueMove=warning.dueMove,RequiresVine=warning.requiresVine,Answered=warning.answered,FrostColumn=warning.frostColumn};
                 foreach(int index in warning.targets) threat.Cells.Add(new Vector2Int(index%width,index/width));
                 cellResponseThreats.Add(threat);EnsureTelegraphPresentation();CellResponseMarked?.Invoke(threat);
             }

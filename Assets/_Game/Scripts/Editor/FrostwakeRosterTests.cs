@@ -72,18 +72,19 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(Run.Board.FindGemIdentity(identity),Is.Null);Assert.That(actor.GetComponent<EnemyAutoAttack>().IsPausedByAction,Is.False);
         kit.ResolveAcceptedMove();yield return Stable();Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp-15));
     }
-    [UnityTest] public IEnumerator FrostwakeChampionConversionCancelsAllMarksAndStaggers()
+    [UnityTest] public IEnumerator FrostwakeChampionStaggerCancelsChargeWithoutMarkedGems()
     {
         yield return LaunchFrostwakeKit("iceborn_champion");var actor=Enemy("iceborn_champion");
-        yield return ReadyFrostwake(actor);var kit=actor.GetComponent<FrostwakeEnemyAbility>();
-        var warning=(BoardController.GemSetThreat)Get(kit,"warning");Assert.That(warning.Targets.Count,Is.EqualTo(2));
+        yield return ReadyFrostwake(actor);var kit=actor.GetComponent<ShieldbreakerChargeRuntime>();
+        Assert.That(kit.IsChanneling,Is.True);Assert.That(kit.ResponseMoves,Is.EqualTo(2));
+        Assert.That(actor.GetComponent<FrostwakeEnemyAbility>(),Is.Null);
         Set(actor.GetComponent<EnemyStagger>(),"remainingImmunityTime",0f);
-        warning.Targets[0].SetSpecialType(GemSpecialType.ColorCrystal);int hp=Run.Player.CurrentHealth;
+        int hp=Run.Player.CurrentHealth;actor.GetComponent<EnemyStagger>().ApplyStagger(1,1);
         yield return null;yield return null;
-        Assert.That(kit.IsPreparing,Is.False);Assert.That(warning.Ended,Is.True);
+        Assert.That(kit.IsChanneling,Is.False);Assert.That(kit.RecoveryMoves,Is.Zero);
         Assert.That(actor.GetComponent<EnemyStagger>().IsStaggered,Is.True);Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp));
     }
-    [UnityTest] public IEnumerator FrostwakeTrollArmorBreakStaggersAndNextCastIsSlam()
+    [UnityTest] public IEnumerator FrostwakeTrollArmorBreakStaggersAndNextCastWarnsOneColumn()
     {
         yield return LaunchFrostwakeKit("glacier_troll");var actor=Enemy("glacier_troll");
         yield return ReadyFrostwake(actor);Assert.That(actor.CurrentShield,Is.EqualTo(30));
@@ -94,7 +95,10 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(actor.GetComponent<EnemyStagger>().IsStaggered,Is.True);
         yield return EnvironmentMove();yield return EnvironmentMove();QuietKitFixture();
         yield return ReadyFrostwake(actor);Assert.That(actor.GetComponent<FrostwakeEnemyAbility>().IsPreparing,Is.True);
-        Assert.That(((BoardController.GemSetThreat)Get(actor.GetComponent<FrostwakeEnemyAbility>(),"warning")).Targets.Count,Is.EqualTo(2));
+        var column=(BoardController.CellResponseThreat)Get(actor.GetComponent<FrostwakeEnemyAbility>(),"column");
+        Assert.That(column.Cells.Count,Is.EqualTo(Run.Board.Height));
+        Assert.That(column.Cells.All(c=>c.x==column.FrostColumn),Is.True);
+        Assert.That(actor.GetComponent<FrostwakeEnemyAbility>().ResponseMoves,Is.EqualTo(2));
     }
     [UnityTest] public IEnumerator FrostwakeRimecarverAddsIceAndDeathDoesNotRemoveIt()
     {

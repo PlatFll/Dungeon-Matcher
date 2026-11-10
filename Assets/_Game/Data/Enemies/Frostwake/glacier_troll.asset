@@ -32,7 +32,7 @@ MonoBehaviour:
   mineReserveHealthFraction: 0.5
   appliedPlayerStatus: {fileID: 0}
   frostwakeRules: {fileID: 11400000, guid: dd1e0b55cec7eb74abe1321173ec9999, type: 2}
-  abilityDisplayName: Avalanche Blow
+  abilityDisplayName: Avalanche Frost
   mountainArmorShield: 30
   mountainMarkedGems: 2
   mountainResponseMoves: 2
@@ -61,9 +61,9 @@ MonoBehaviour:
   chainsPerUse: 1
   displayName: Glacier Troll
   category: 2
-  description: Alternates Glacial Armor (30 ordinary shield) with Avalanche Blow
-    (two marked gems, two response moves, 25 base damage). Break its shield or clear
-    either mark to Stagger it. Basics pause during the warning.
+  description: Alternates Glacial Armor (30 ordinary shield) with a two-move column
+    warning. Any player clear in that column cancels it. Otherwise adds Frost to
+    at most two eligible ordinary gems there. Never upgrades ice or deals a slam hit.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 21300000, guid: 72dbfd3a9fd2dcc46b87e7c9c4fad9a9, type: 3}
   animationControllerOverride: {fileID: 9100000, guid: 470b5a0f07cfaa4428d4bd2eb780b806, type: 2}
@@ -85,7 +85,7 @@ MonoBehaviour:
   pressureAttackMoves: 4
   pressureSpecialTurns: 3
   hasSpecialAbility: 1
-  specialAbilityKind: 42
+  specialAbilityKind: 43
   baseSpecialTurnRequirement: 5
   lockSpecialTurnRequirement: 1
   allyShieldAmount: 10

@@ -7,12 +7,9 @@ using UnityEngine;
 public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner, IAcceptedMoveEnemyAbility
 {
     [SerializeField, Min(0.1f)] private float commandWindup = 0.8f;
-    [SerializeField, Min(0f)] private float strikeSpacing = 0.2f;
     private EnemyActor actor;
     private BoardController board;
     private IReadOnlyList<EnemyActor> roster;
-    private readonly List<EnemyAutoAttack> participants = new List<EnemyAutoAttack>();
-    private readonly HashSet<EnemyActor> commandLocks = new HashSet<EnemyActor>();
     private bool released, pending, preferChains = true;
     private int retryAfterMove = -1;
     public void CaptureContinuation(EnemyCombatSnapshot saved, System.Func<EnemyActor,int> slotOf)
@@ -69,31 +66,11 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
 
     private bool TryCommand()
     {
-        var attack = actor.GetComponent<EnemyAutoAttack>();
-        if (attack == null || !attack.TryReserveCommand(this)) return false;
-        participants.Add(attack);
+        bool hasAlly = false;
         foreach (var ally in roster)
-        {
-            if (ally == null || ally == actor || ally.IsDefeated ||
-                ally.Definition == null || !ally.Definition.CrownSoldier) continue;
-            var allyAttack = ally.GetComponent<EnemyAutoAttack>();
-            if (allyAttack != null && allyAttack.TryReserveCommand(this))
-            {
-                if (ally.TryBeginSpecialAbilityAnimationAction())
-                {
-                    participants.Add(allyAttack);
-                    commandLocks.Add(ally);
-                }
-                else allyAttack.ReleaseCommand(this);
-            }
-        }
-        if (!actor.TryBeginSpecialAbilityAnimationAction())
-        {
-            ReleaseParticipants();
-            return false;
-        }
+            if (ally != null && ally != actor && ally.IsInitialized && !ally.IsDefeated) hasAlly = true;
+        if (!hasAlly || !actor.TryBeginSpecialAbilityAnimationAction()) return false;
         pending = true;
-        commandLocks.Add(actor);
         actor.StartSpecialMotion();
         actor.NotifySpecialAbilityUsed();
         StartCoroutine(Command());
@@ -102,28 +79,21 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
 
     private IEnumerator Command()
     {
-        bool announced=false;
         if (actor.SpecialMotionId > 0) yield return actor.WaitForSpecialMotionComplete(actor.SpecialMotionId);
         else yield return new WaitForSeconds(commandWindup);
         if (released || actor == null || actor.IsDefeated) yield break;
-        actor.EndSpecialAbilityAnimationAction();
-        commandLocks.Remove(actor);
-        foreach (var attack in participants)
+        if (actor.GetComponent<EnemyStagger>()?.IsStaggered == true)
         {
-            if (released || actor == null || actor.IsDefeated) yield break;
-            if (attack == null || attack.EnemyActor == null || attack.EnemyActor.IsDefeated) continue;
-            attack.EnemyActor.EndSpecialAbilityAnimationAction();
-            commandLocks.Remove(attack.EnemyActor);
-            if (attack.PerformCommandStrike(this))
-            {
-                if(!announced) {actor.AnnounceCommittedCast("Royal Command");announced=true;}
-                while (!released && attack != null && attack.IsAttackSequenceInProgress)
-                    yield return null;
-                yield return new WaitForSeconds(strikeSpacing);
-                if (attack != null) attack.ReleaseCommand(this);
-            }
+            actor.EndSpecialAbilityAnimationAction(); Complete(false, preferChains); yield break;
         }
-        ReleaseParticipants();
+        foreach (var ally in roster)
+        {
+            if (ally == null || ally == actor || !ally.IsInitialized || ally.IsDefeated) continue;
+            ally.GetComponent<EnemyAutoAttack>()?.AdvanceReadinessWithoutAttack();
+            ally.AdvanceSpecialReadiness();
+        }
+        actor.AnnounceCommittedCast("Advance the Ranks");
+        actor.EndSpecialAbilityAnimationAction();
         Complete(true, true);
     }
 
@@ -141,28 +111,11 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
         pending = false;
     }
 
-    private void ReleaseParticipants()
-    {
-        foreach (var lockedActor in commandLocks)
-            if (lockedActor != null) lockedActor.EndSpecialAbilityAnimationAction();
-        commandLocks.Clear();
-        foreach (var attack in participants)
-        {
-            if (attack == null) continue;
-            if (attack.IsCommandReservedBy(this))
-            {
-                attack.ReleaseCommand(this);
-            }
-        }
-        participants.Clear();
-    }
-
     private void HandleDefeated(EnemyActor enemy) => Cleanup();
     private void Cleanup()
     {
         released = true;
         StopAllCoroutines();
-        ReleaseParticipants();
         if (actor != null)
         {
             actor.Defeated -= HandleDefeated;

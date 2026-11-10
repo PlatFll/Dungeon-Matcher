@@ -112,16 +112,19 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(attack.HasCommandReservation, Is.False);
     }
 
-    [UnityTest] public IEnumerator KingReadinessCaptainCommandWorksWithTimedBasics()
+    [UnityTest] public IEnumerator KingReadinessCaptainAdvanceWorksWithTimedBasicsWithoutForcedAttacks()
     {
         yield return Launch(3, true);
         var data = AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_KnightCaptain.asset");
         Assert.That(Run.Waves.TrySummonEnemy(data, out var captain), Is.True);
         yield return Stable(); PreserveRoster();
         var ability = captain.GetComponent<KnightCaptainEnemyAbility>(); Set(ability, "preferChains", false);
-        int hits = 0; captain.GetComponent<EnemyAutoAttack>().AttackResolved += (a, n, applied) => hits++;
+        int hits = 0; foreach(var ally in Run.Waves.ActiveEnemies)
+            ally.GetComponent<EnemyAutoAttack>().AttackResolved += (a, n, applied) => hits++;
         for (int i = 0; i < captain.SpecialTurnRequirement; i++) yield return Move();
-        Assert.That(hits, Is.GreaterThan(0)); Assert.That(captain.IsSpecialReady, Is.False);
+        Assert.That(hits, Is.Zero,"Advance the Ranks does not command any immediate sequence");
+        Assert.That((bool)Get(ability,"preferChains"),Is.True,"successful advance returns to Chain Volley");
+        Assert.That(captain.IsSpecialReady, Is.False);
         Assert.That(captain.GetComponent<EnemyAutoAttack>().HasCommandReservation, Is.False);
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyActor))]
 public sealed class CourtMageEnemyAbility :
     MonoBehaviour,
-    IEnemySpecialAbilityRuntime
+    IEnemySpecialAbilityRuntime, IEnemyContinuationOwner
 {
     private const int MaximumOwnedFrozenGems = 3;
 
@@ -135,10 +135,12 @@ public sealed class CourtMageEnemyAbility :
         if (!enemyActor.TryBeginSpecialAbilityAnimationAction()) return false;
         enemyActor.PrepareSpecialMotion();
         bool queued =
-            boardController.TryQueueFreezeRandomGem(
+            boardController.TryQueueEncasedGem(
                 enemyActor,
-                MaximumOwnedFrozenGems,
-                succeeded => { if(succeeded && enemyActor!=null) enemyActor.AnnounceCommittedCast(); }
+                FrostStage.Frost,
+                gem => { if(gem!=null && enemyActor!=null) enemyActor.AnnounceCommittedCast(); },
+                () => enemyActor==null || enemyActor.IsDefeated,
+                MaximumOwnedFrozenGems
             );
 
         if (!queued)
@@ -178,7 +180,8 @@ public sealed class CourtMageEnemyAbility :
         }
 
         releaseQueued = true;
-        boardController.QueueReleasePinnedGems(ownerInstanceId);
+        boardController.QueueReleaseOwnedIce(enemyActor.PersistentId);
+        boardController.QueueReleasePinnedGems(ownerInstanceId); // Legacy frozen saves.
     }
 
     private void RefreshOwnedFrozenGemCount()
@@ -186,8 +189,7 @@ public sealed class CourtMageEnemyAbility :
         ownedFrozenGemCount =
             boardController != null &&
             ownerInstanceId != 0
-                ? boardController.GetFrozenGemCountForOwner(
-                    ownerInstanceId)
+                ? boardController.CountOwnedIce(enemyActor.PersistentId)
                 : 0;
     }
 
@@ -195,6 +197,9 @@ public sealed class CourtMageEnemyAbility :
     {
         if (enemyActor != null) enemyActor.EndSpecialAbilityAnimationAction();
     }
+    public void CaptureContinuation(EnemyCombatSnapshot saved,System.Func<EnemyActor,int> slotOf) { }
+    public void RestoreContinuation(EnemyCombatSnapshot saved,System.Func<int,EnemyActor> enemyAt)
+    { boardController.MigrateOwnedFreezeToIce(enemyActor);RefreshOwnedFrozenGemCount(); }
 
     private void OnDestroy()
     {

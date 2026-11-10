@@ -1,0 +1,64 @@
+{
+  "phase": "PixelLab art production follow-up",
+  "xml": "4652ed40-128a-47dc-8352-892a308b9389.xml",
+  "summary": {
+    "id": "2",
+    "testcasecount": "3",
+    "result": "Passed",
+    "total": "3",
+    "passed": "3",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-11-10 02:35:10Z",
+    "end-time": "2026-11-10 02:35:27Z",
+    "duration": "17.680774"
+  },
+  "tests": [
+    {
+      "id": "1012",
+      "name": "RevisionCantorOnlyCollectedChannelBubblesReduceHealAndResume",
+      "fullname": "ForestFoundationPlayTests.RevisionCantorOnlyCollectedChannelBubblesReduceHealAndResume",
+      "methodname": "RevisionCantorOnlyCollectedChannelBubblesReduceHealAndResume",
+      "classname": "ForestFoundationPlayTests",
+      "runstate": "Runnable",
+      "seed": "1317130243",
+      "result": "Passed",
+      "start-time": "2026-11-10 02:34:34Z",
+      "end-time": "2026-11-10 02:34:49Z",
+      "duration": "15.785743",
+      "asserts": "0"
+    },
+    {
+      "id": "1011",
+      "name": "RevisionHearthPlayerBreakThawsAtMostTwoAndDoesNotRetarget",
+      "fullname": "ForestFoundationPlayTests.RevisionHearthPlayerBreakThawsAtMostTwoAndDoesNotRetarget",
+      "methodname": "RevisionHearthPlayerBreakThawsAtMostTwoAndDoesNotRetarget",
+      "classname": "ForestFoundationPlayTests",
+      "runstate": "Runnable",
+      "seed": "1866997529",
+      "result": "Passed",
+      "start-time": "2026-11-10 02:34:49Z",
+      "end-time": "2026-11-10 02:35:07Z",
+      "duration": "17.043349",
+      "asserts": "0"
+    },
+    {
+      "id": "1010",
+      "name": "RevisionHearthThreeFutureMovesContinueAndOwnerDeath",
+      "fullname": "ForestFoundationPlayTests.RevisionHearthThreeFutureMovesContinueAndOwnerDeath",
+      "methodname": "RevisionHearthThreeFutureMovesContinueAndOwnerDeath",
+      "classname": "ForestFoundationPlayTests",
+      "runstate": "Runnable",
+      "seed": "1743056196",
+      "result": "Passed",
+      "start-time": "2026-11-10 02:35:07Z",
+      "end-time": "2026-11-10 02:35:27Z",
+      "duration": "20.915961",
+      "asserts": "0"
+    }
+  ]
+}

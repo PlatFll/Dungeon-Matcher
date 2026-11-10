@@ -710,6 +710,16 @@ public sealed partial class EnemyActor : MonoBehaviour
         }
     }
 
+    // Advance only unstarted readiness. Never emit a ready/cast event or alter
+    // a response deadline; the next accepted move retains the opportunity.
+    public void AdvanceSpecialReadiness()
+    {
+        if (!isInitialized || isDefeated || !HasSpecialAbility || isSpecialReady ||
+            HasAnimationActionInProgress || CombatMoveClock.BlocksSpecialCountdown(this)) return;
+        currentSpecialTurnCount = Mathf.Min(currentSpecialTurnCount + 1, Mathf.Max(0, SpecialTurnRequirement - 1));
+        SpecialCounterChanged?.Invoke(this, currentSpecialTurnCount, SpecialTurnRequirement);
+    }
+
     public bool TryBeginAutoAttackAnimationAction()
     {
         if (!isInitialized ||

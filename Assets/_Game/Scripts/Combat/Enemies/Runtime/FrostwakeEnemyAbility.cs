@@ -19,11 +19,12 @@ public sealed class FrostwakeEnemyAbility : MonoBehaviour, IEnemySpecialAbilityR
     private EnemyStagger stagger;
     private BoardController board;
     private BoardController.GemSetThreat warning;
+    private BoardController.CellResponseThreat column;
     private FrostwakeEnemySnapshot state=new FrostwakeEnemySnapshot();
     private bool pending,disposed;
-    public bool IsPreparing => warning!=null && !warning.Ended;
+    public bool IsPreparing => (warning!=null && !warning.Ended) || (column!=null && !column.Ended);
     public bool BlocksBasic => pending || IsPreparing;
-    public int ResponseMoves => IsPreparing?Mathf.Max(0,warning.DueMove-board.CompletedValidPlayerMoves):0;
+    public int ResponseMoves => IsPreparing?Mathf.Max(0,(column?.DueMove ?? warning.DueMove)-board.CompletedValidPlayerMoves):0;
     private bool InvalidTarget => warning!=null && (warning.Ended || warning.Targets.Exists(g=>!board.IsEnvironmentalOrdinaryGem(g)));
     private bool Cancelled() => disposed || actor==null || actor.IsDefeated || stagger?.IsStaggered==true;
 
@@ -36,17 +37,22 @@ public sealed class FrostwakeEnemyAbility : MonoBehaviour, IEnemySpecialAbilityR
     private void LateUpdate()
     {
         if(!disposed && !pending && board!=null && !board.IsBusy &&
-            CombatMoveClock.Current?.IsBlockingWaveProgression!=true && InvalidTarget) Finish(true);
+            CombatMoveClock.Current?.IsBlockingWaveProgression!=true && (InvalidTarget || column?.Answered==true)) Finish(true);
     }
     public void ResolveAcceptedMove()
     {
         if(Cancelled() || pending || board.IsBusy || Time.timeScale<=0 ||
             actor.HasAnimationActionInProgress || !CombatMoveClock.CanOffer(actor))return;
-        if(InvalidTarget){Finish(true);return;}
+        if(InvalidTarget || column?.Answered==true){Finish(true);return;}
         if(IsPreparing)
         {
             if(ResponseMoves>0 || !actor.TryBeginSpecialAbilityAnimationAction())return;
             pending=true;actor.SpecialIdleState=null;actor.PrepareSpecialMotion("Release");
+            if(column!=null)
+            {
+                if(!board.TryQueueResolveCellResponse(column,(_,answered)=>{},_=>Finish(false)))Finish(false);
+                return;
+            }
             if(!board.TryQueueResolveGemSet(warning,Impact,_=>Finish(false),Cancelled,pulseBeforeClear:true))Finish(false);
             return;
         }
@@ -62,6 +68,17 @@ public sealed class FrostwakeEnemyAbility : MonoBehaviour, IEnemySpecialAbilityR
             },Cancelled))Finish(false);
         }
         else if(actor.Definition.mountainArmorShield>0 && state.armorNext)StartCoroutine(Armor());
+        else if(actor.Definition.SpecialAbilityKind==EnemySpecialAbilityKind.AvalancheFrost)
+        {
+            actor.PrepareSpecialMotion("ChannelStart");
+            if(!board.TryQueueFrostColumn(actor,actor.Definition.mountainResponseMoves,marked=>
+            {
+                pending=false;column=marked;
+                if(marked!=null && !Cancelled()){Commit();actor.SpecialIdleState="ChannelHold";}
+                else {board.CancelCellResponse(marked);column=null;}
+                attack?.SetActionPaused(this,IsPreparing);actor.EndSpecialAbilityAnimationAction();
+            }))Finish(false);
+        }
         else
         {
             actor.PrepareSpecialMotion("ChannelStart");
@@ -97,7 +114,8 @@ public sealed class FrostwakeEnemyAbility : MonoBehaviour, IEnemySpecialAbilityR
     }
     private void Finish(bool countered)
     {
-        bool hadWarning=warning!=null;board?.CancelGemSetThreat(warning);warning=null;pending=false;
+        bool hadWarning=warning!=null || column!=null;board?.CancelGemSetThreat(warning);warning=null;
+        board?.CancelCellResponse(column);column=null;pending=false;
         if(hadWarning)state.armorNext=true;
         if(actor!=null){actor.SpecialIdleState=null;actor.ResetSpecialCounter();actor.EndSpecialAbilityAnimationAction();}
         attack?.SetActionPaused(this,false);
@@ -109,7 +127,7 @@ public sealed class FrostwakeEnemyAbility : MonoBehaviour, IEnemySpecialAbilityR
         if(!state.shieldArmed || current>0 || actor.IsDefeated)return;
         state.shieldArmed=false;stagger?.ApplyStagger(1,1);
     }
-    private void Interrupted(EnemyStagger _,float duration,float remaining){if(warning!=null)Finish(false);}
+    private void Interrupted(EnemyStagger _,float duration,float remaining){if(warning!=null || column!=null)Finish(false);}
     private void Died(EnemyActor _) => Cleanup();
     public void CaptureContinuation(EnemyCombatSnapshot saved,Func<EnemyActor,int> slotOf)
     {saved.frostwakeEnemy=new FrostwakeEnemySnapshot{armorNext=state.armorNext,shieldArmed=state.shieldArmed};}
@@ -118,6 +136,9 @@ public sealed class FrostwakeEnemyAbility : MonoBehaviour, IEnemySpecialAbilityR
         state=saved.frostwakeEnemy==null?new FrostwakeEnemySnapshot():
             new FrostwakeEnemySnapshot{armorNext=saved.frostwakeEnemy.armorNext,shieldArmed=saved.frostwakeEnemy.shieldArmed};
         warning=board.RestoredSet(actor);pending=false;
+        column=board.RestoredCellResponse(actor);
+        if(actor.Definition.SpecialAbilityKind==EnemySpecialAbilityKind.AvalancheFrost && warning!=null)
+        {board.CancelGemSetThreat(warning);warning=null;actor.ResetSpecialCounter();}
         actor.SpecialIdleState=IsPreparing?"ChannelHold":null;attack?.SetActionPaused(this,IsPreparing);
     }
     private void Cleanup()
