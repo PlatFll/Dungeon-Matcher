@@ -1,0 +1,592 @@
+{
+  "guide_version": "1.17.2",
+  "generation_cost": 20,
+  "effects": {
+    "MarineSnare": {
+      "selected_index": 51,
+      "raw_path": "ArtSource/ApprovedEnemyRevisions/PixelLab/Raw/MarineSnare/51.png",
+      "raw_sha256": "766aa433ede853e138395ec5613a21ffb7ab0f991a10fce402fb7a30a6437c34",
+      "final_sha256": "220bf7c991b3b2fdd3c61338999f05520905b73cb9b9ba5f57f1e4574fb93951",
+      "dimensions": [
+        32,
+        32
+      ],
+      "bounds": [
+        2,
+        2,
+        30,
+        31
+      ],
+      "opaque_colors": 6,
+      "transparent_fraction": 0.55859375,
+      "alpha": [
+        0,
+        255
+      ],
+      "removed_interior_ink_pixels": [
+        [
+          13,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          19,
+          8
+        ],
+        [
+          20,
+          8
+        ],
+        [
+          21,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          18,
+          9
+        ],
+        [
+          19,
+          9
+        ],
+        [
+          20,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          10
+        ],
+        [
+          22,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          13,
+          11
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          21,
+          11
+        ],
+        [
+          24,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          18,
+          12
+        ],
+        [
+          20,
+          12
+        ],
+        [
+          23,
+          12
+        ],
+        [
+          24,
+          12
+        ],
+        [
+          25,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          19,
+          13
+        ],
+        [
+          22,
+          13
+        ],
+        [
+          23,
+          13
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          16,
+          14
+        ],
+        [
+          21,
+          14
+        ],
+        [
+          22,
+          14
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          17,
+          15
+        ],
+        [
+          21,
+          15
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          22,
+          16
+        ],
+        [
+          10,
+          17
+        ],
+        [
+          11,
+          17
+        ],
+        [
+          13,
+          17
+        ],
+        [
+          18,
+          17
+        ],
+        [
+          19,
+          17
+        ],
+        [
+          23,
+          17
+        ],
+        [
+          6,
+          18
+        ],
+        [
+          9,
+          18
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          20,
+          18
+        ],
+        [
+          24,
+          18
+        ],
+        [
+          8,
+          19
+        ],
+        [
+          19,
+          19
+        ],
+        [
+          21,
+          19
+        ],
+        [
+          25,
+          19
+        ],
+        [
+          6,
+          20
+        ],
+        [
+          7,
+          20
+        ],
+        [
+          8,
+          20
+        ],
+        [
+          15,
+          20
+        ],
+        [
+          16,
+          20
+        ],
+        [
+          22,
+          20
+        ],
+        [
+          7,
+          21
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          14,
+          21
+        ],
+        [
+          15,
+          21
+        ],
+        [
+          17,
+          21
+        ],
+        [
+          23,
+          21
+        ],
+        [
+          7,
+          22
+        ],
+        [
+          8,
+          22
+        ],
+        [
+          13,
+          22
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          18,
+          22
+        ],
+        [
+          24,
+          22
+        ],
+        [
+          8,
+          23
+        ],
+        [
+          9,
+          23
+        ],
+        [
+          12,
+          23
+        ],
+        [
+          13,
+          23
+        ],
+        [
+          22,
+          23
+        ],
+        [
+          12,
+          24
+        ],
+        [
+          11,
+          25
+        ],
+        [
+          12,
+          25
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          13,
+          26
+        ]
+      ],
+      "native_translation": [
+        0,
+        0
+      ],
+      "opaque_colors_preserved": true,
+      "libresprite_roundtrip_rgba_equal": true,
+      "runtime_guid": "189bafbb194a47bf9d1be6cd04c88421",
+      "runtime_guid_preserved": true,
+      "cleanup": "Marine net: thin redundant interior ink only; Hearth: translate intact native drawing upward two pixels for clear bottom padding. Invisible RGB normalized."
+    },
+    "HearthEmber": {
+      "selected_index": 3,
+      "raw_path": "ArtSource/ApprovedEnemyRevisions/PixelLab/Raw/HearthEmber/03.png",
+      "raw_sha256": "0cf1f35fcb2e3fb618cfaee40f306a19ac70468157b40a222fbc73bd1c206aa1",
+      "final_sha256": "c7e9a2096ec252dd4e0ab4966a54259615f60df899e1283b3ed84c982e7ecaca",
+      "dimensions": [
+        32,
+        32
+      ],
+      "bounds": [
+        2,
+        2,
+        30,
+        30
+      ],
+      "opaque_colors": 7,
+      "transparent_fraction": 0.5283203125,
+      "alpha": [
+        0,
+        255
+      ],
+      "removed_interior_ink_pixels": [],
+      "native_translation": [
+        0,
+        -2
+      ],
+      "opaque_colors_preserved": true,
+      "libresprite_roundtrip_rgba_equal": true,
+      "runtime_guid": "695d03ce24364970b15ee3b9b6e16b92",
+      "runtime_guid_preserved": true,
+      "cleanup": "Marine net: thin redundant interior ink only; Hearth: translate intact native drawing upward two pixels for clear bottom padding. Invisible RGB normalized."
+    }
+  },
+  "guide_sha256": "f628e40bc010483ec0f52c9498904985fbca563924ab0947bc600d4b17011e4d",
+  "references": {
+    "Rattlebones": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "Farmer": {
+      "path": "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png",
+      "sha256": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d"
+    },
+    "Pan": {
+      "path": "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png",
+      "sha256": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
+    }
+  },
+  "raw_candidates": {
+    "Raw/HearthEmber/00.png": "518e1bc5a229c2e90ca71be5d4468285eabe3e37ec21bc76501ca56e1bf2c465",
+    "Raw/HearthEmber/01.png": "2894a12852dba743c4cd6a0eea8c0e678b8a963f39319546bd4a12096fcd0e97",
+    "Raw/HearthEmber/02.png": "af8a5d2be9414f0deff8152f4cfcdce490201a321f7de19e72aa923271179e88",
+    "Raw/HearthEmber/03.png": "0cf1f35fcb2e3fb618cfaee40f306a19ac70468157b40a222fbc73bd1c206aa1",
+    "Raw/HearthEmber/04.png": "5f0138c629db47fc5b893eb07d73e4426c65861b9f1935967254046738650fbe",
+    "Raw/HearthEmber/05.png": "08c78499c24bd8d8d5752041b9d4dc46531c0015456efd2765e324c92e825ddc",
+    "Raw/HearthEmber/06.png": "1a3deb3d99a6f7a7fa980ae56012e8cb77063481e96831ed8063c333578b3d54",
+    "Raw/HearthEmber/07.png": "8b66a95e5e04c9dcf59092bd8d0e9e12640a0541f613b566ced5fd94a5658b7d",
+    "Raw/HearthEmber/08.png": "a4bd1f9110cd3bddb2f92a338a939736faa2823bbda881bfb11b02d567eab814",
+    "Raw/HearthEmber/09.png": "72e4726d18c2f862dbeef97962c798eaede32a76b429583813659f1fac5e09b2",
+    "Raw/HearthEmber/10.png": "65db98aef0df4a24dc1a2a9b52fa9e905f3dcb7f104604e4a3e6531ca47fcd0a",
+    "Raw/HearthEmber/11.png": "6ed30aad6384ca78343e57557e63877e6a33ba29525123ee3d58e4e1eefe2f74",
+    "Raw/HearthEmber/12.png": "8715ba5d7e0cf3f4e2aeceea5a23c40d3f102a072b85a38d6d0b5969d097686b",
+    "Raw/HearthEmber/13.png": "d8a0968c3e567ca4d4b37dbea28de738a1b079378ad7498691a0d22d168283b5",
+    "Raw/HearthEmber/14.png": "14a30704944d0a78f8ac6e4c9414eeb78a3aff76f0178317ea855bd6a6121c25",
+    "Raw/HearthEmber/15.png": "9b94450711c6f0b86c266d6aaff650769f390f8a438b20002e8a0cc4c643d606",
+    "Raw/HearthEmber/16.png": "e9d6b13e541a6cb1a2db30b4acf8252ef57337bcb2618dd158f67ebb58d9c82b",
+    "Raw/HearthEmber/17.png": "09f66acbb7b2e954a4530ec8f7c1db97e54c36454f11890430d5c264f75eb4f6",
+    "Raw/HearthEmber/18.png": "0bb8482e8f4810af75c797880146c7eee8e409651cc8ef3ab08c9bd1c48c8766",
+    "Raw/HearthEmber/19.png": "e2f1501930f0d8312045263de4ca62b4605998786fdb6599d6621eff92c70d10",
+    "Raw/HearthEmber/20.png": "503db3b7991d35567f0511d24b2d247dbef22655fb2e3c3713682aa8982c7440",
+    "Raw/HearthEmber/21.png": "db1c515467a0d2608edd0bd02c580b48dba336bbaea189b01643a11af20331b6",
+    "Raw/HearthEmber/22.png": "8674e3ac783e103c2795203837f8fb92e8a061733f9492103f58a4f5439d9605",
+    "Raw/HearthEmber/23.png": "523fb75b2f1a6c50c0518c8972d959e695b4b630af4b2795582b26d0e1ece209",
+    "Raw/HearthEmber/24.png": "a321d57e830b85d3d2842b786b4637fc36a5d7bf72ecdfd8d0ada9843004ed09",
+    "Raw/HearthEmber/25.png": "896802187fe9ebf0e28983d5959ca5c8c4d616b7698b999443259a8c83bf9772",
+    "Raw/HearthEmber/26.png": "5069f7e637263697541d5d60767034473708ee91d7a3efd9e67895d48bc52a7f",
+    "Raw/HearthEmber/27.png": "f357497c9bc8cc06cea04c5b40a59a4398d3edcbba5ce8cf1e0c31850b00b06d",
+    "Raw/HearthEmber/28.png": "b8542e93ba965dadf0b2a0a3d8219d2181dc31e73753272960ecf0747816f1ea",
+    "Raw/HearthEmber/29.png": "c896942789d3c851341ddd3597f883ada8d1da711c5763d886f1f4bbca51a94f",
+    "Raw/HearthEmber/30.png": "dc214ea91c917c1b08b007e8c246a74f2eae9b805ad62e35bc49086923d79aeb",
+    "Raw/HearthEmber/31.png": "29ca8fc4d781faf5cd38e54cf23dbb1bf170357dd626664b877dac4749bd90d9",
+    "Raw/HearthEmber/32.png": "ddf0e8645aaf89ee265cd045d73fb8a1c709da128317737d820637176de80ec2",
+    "Raw/HearthEmber/33.png": "deed45d4c982968550c5e7f9a855b8cfc6363ca4ff3a1ee2bad9ecfead266b9c",
+    "Raw/HearthEmber/34.png": "ee8303c9a546aa90fb81e227d740df2f81b948d8a2747b4d0a6bb81e0d7924aa",
+    "Raw/HearthEmber/35.png": "4b1d5e15cd7245305fa8460f2dc99a7c572af18253bf4f60795db1a516e2aa9c",
+    "Raw/HearthEmber/36.png": "40d452897afc4ba53b58c22aa61b01debecdcc1043ee0238b146d7611b99088f",
+    "Raw/HearthEmber/37.png": "d9cc7df16642343994d1373dbc710d6973fda5670f8cd90bd90055688557367f",
+    "Raw/HearthEmber/38.png": "d1502a717a696fc6abb25ea9e0f758491a5aeab2948177375f8fb38735985e2f",
+    "Raw/HearthEmber/39.png": "a0248de64b8df5b5ad62cda7966995ee0ae3f2422f7874a5e30f92f7baad0d8d",
+    "Raw/HearthEmber/40.png": "07c37314f4d957925997a6eff29d0ef2b2e5eb2c3eb9145528b3991d155e8018",
+    "Raw/HearthEmber/41.png": "0816912cf20ddf2659971b1473ba2017847933536d4e9db638c016d1af36149c",
+    "Raw/HearthEmber/42.png": "3f1cc76355b4c5f0ea3d5b86dfb609f1b8e3877d6abc2a08356f28f96b8e7b03",
+    "Raw/HearthEmber/43.png": "0a8b41c5ce2341c689b16b0ebdb0f8dcda568fefafe7d6da928e14d700f80754",
+    "Raw/HearthEmber/44.png": "f739a71ee980b92a1cb8c5e94f086051852b1e3a2ce70711200e8de287bbd99c",
+    "Raw/HearthEmber/45.png": "a5b87a0673f83dce90a298c14a9a118bbffea5e9a7510f69ad5cec48c2360725",
+    "Raw/HearthEmber/46.png": "3e1bf90fa0ce146cc1f88b4f2594463af7c1e923600ea7daf694891280217326",
+    "Raw/HearthEmber/47.png": "3498b199d00cd56d1b22b6c45004c4d5b6a49c1e158fbf99adfda640b5938243",
+    "Raw/HearthEmber/48.png": "4cfec23b6fb71af569a71fb848338252b1bff36cb49b02e06548aa358317480c",
+    "Raw/HearthEmber/49.png": "e858c1b3366e343e8d438f3d61bbed408bf437c221f3055f1398a8f27f0de079",
+    "Raw/HearthEmber/50.png": "c869e62c3181c847087294cb592d452de57883885b4ad26dcdc4b6fde64e4fde",
+    "Raw/HearthEmber/51.png": "9cf1ffa130265334d0dd0baa149ab94782219c58955ebac4fbf046ee9b77fbe3",
+    "Raw/HearthEmber/52.png": "a969d74bd46c4455ddaf9a003dd8cf2cc4fbea7c99490ffd2cf6c104bf3ad2f6",
+    "Raw/HearthEmber/53.png": "00768438e50d7d2ba5ef66ef304fe31fa6dfd117fb38b197ec19f2c504e47349",
+    "Raw/HearthEmber/54.png": "b410f248c5522d4209137cb6724d030d137a06b903371ca37680091a02a46bf3",
+    "Raw/HearthEmber/55.png": "5594b86bc2307f879dbfd1caab86064106338fc09a3da56e5fd4ccf9eb3b2c1b",
+    "Raw/HearthEmber/56.png": "011f6ac5497ae9d7367d61f90023c75d053829c08e3018c6713267dbf459ebf2",
+    "Raw/HearthEmber/57.png": "ef6868b6d19923661d871cdacdd0af3267b73a62893bf0e48907210458d0489e",
+    "Raw/HearthEmber/58.png": "a84292878106453753859b497fad9cef614b5b3ae89b176bd6a5c6f56d3e0a07",
+    "Raw/HearthEmber/59.png": "2e30eb90ccb91240ab773d2f6b768e4192e75fb74192c2bbf01aeae4d1ca6863",
+    "Raw/HearthEmber/60.png": "e95f5fad874f426d1c781755825aa2f4c2f15b9452e3bdef9bebfc5655b7c7b8",
+    "Raw/HearthEmber/61.png": "dd423ffc79d1f03992ea6eb0295f34b473a000728716b8979e6f4001f72bdc1d",
+    "Raw/HearthEmber/62.png": "e4ebd46cce2a1aaf4e40eaa2186c0df0d2535989f421bea0a46347ff08434da8",
+    "Raw/HearthEmber/63.png": "c8b8dbe755e9e3b9e5789f48fc9d56967a8fa16535647be8e0f612075007ea27",
+    "Raw/MarineSnare/00.png": "04117b788ab140d576e58ca4177c338a037df90232b652958a25fe0be71c5283",
+    "Raw/MarineSnare/01.png": "843efab166b346d5563ac662e8f9b1eb71e7dda12f7fcaa56869bbc5078c915e",
+    "Raw/MarineSnare/02.png": "4a15aa4b9669c259ad5c4045d2f89635ba7ed67bc42b148b4e67d2b1dc6c4f9d",
+    "Raw/MarineSnare/03.png": "e69bdc894617e32cbcffefa2da36dba03fc6dfbde369005b7811fddb33c6e9c5",
+    "Raw/MarineSnare/04.png": "cf64b8eb32a1d518e89bf4c858066baac78e8ddb4602d16aeac18ec0064ee7ab",
+    "Raw/MarineSnare/05.png": "38d586fe041a13498543d60de486637440f622dfe1fbea49ae1f3dd54f4c44a1",
+    "Raw/MarineSnare/06.png": "a53883db9403d4c53a0cd77e38b1a88424802af73830f171ada8b3a69321233a",
+    "Raw/MarineSnare/07.png": "1d9cb540fcdcea1655fdf7da805cf4461c4610cf661fdb06473be8a659f987a2",
+    "Raw/MarineSnare/08.png": "de62bac43bedec917fb8e059c10240e0d2c8b477622b13ee0aab3967dcbe4be1",
+    "Raw/MarineSnare/09.png": "3c538c0f3d7be38e336cd3223c485ce5d214ab31fae523c749dfdb9c79485b2a",
+    "Raw/MarineSnare/10.png": "cbfaaff80f4bd770008ae64c742896186984f4c23bf58faac673c8fec29c2ff3",
+    "Raw/MarineSnare/11.png": "57e34dc5e124c2ee58bd6d84cbc947448ed50ace353af5fb5ce7ec54adf8a8c7",
+    "Raw/MarineSnare/12.png": "905d8a5be4f61a9e1f7a55575556aad31f24cd551a9189462198349818c28350",
+    "Raw/MarineSnare/13.png": "1519e73178e1ab7d4344b8d65576ed314999c4e1f6b488d20212d53ea718c494",
+    "Raw/MarineSnare/14.png": "d4f532a60a69ee6a6c1a3de7e0c0ff9528b5517c2c33e0d0416b411fd804c8f5",
+    "Raw/MarineSnare/15.png": "6217541634b7ca025625d6a3c4f97c75f089a58f06b2a5f910864800aaee49b5",
+    "Raw/MarineSnare/16.png": "ccc028faab745b8634767c67d3121ba49e06e4d77dffd3d0599ded774e6462dd",
+    "Raw/MarineSnare/17.png": "1a4b324db789cf917a37e8f300928c44aa9d2321904b08ffdca4a7c9c33e6f8d",
+    "Raw/MarineSnare/18.png": "5cc9a987192fc17da91b70a0b65a101b44383c8f18b5648a53239fd360ac7e40",
+    "Raw/MarineSnare/19.png": "751a5335c3827026b94edc985974fc58489d5db43736f7d654af9fa4d5d43e6b",
+    "Raw/MarineSnare/20.png": "339d7f90a2c4780548d8c01dfb617f5cbf08b64725b7b573288735d668406494",
+    "Raw/MarineSnare/21.png": "b7aa50a0bac05564f32e33247d036c6970efa2f368c9b9855935b2b96e37ed0c",
+    "Raw/MarineSnare/22.png": "722112ccb06b1a0b5ff36c7741c9587f13f7c08a5863b0604caece9a83d0f477",
+    "Raw/MarineSnare/23.png": "4941992cac0370abd3f186cacb012415df2f361a50c4ee7c1631dd0fe99ba22d",
+    "Raw/MarineSnare/24.png": "6ddfd564edc180d7ba04da9082386efe5aeb2936a9ddf696cb5ea9687d8f8d39",
+    "Raw/MarineSnare/25.png": "b92973ad4e7d4cf9ddfb52d3ff851d755133a1aa990728b2422d3a4ea739d275",
+    "Raw/MarineSnare/26.png": "8905253ecdd40e2a58036b6f0279be7fc6f67aee775b474f408a52ebe8043322",
+    "Raw/MarineSnare/27.png": "868f49f7ad52ecc23bb173a8c2df467e2917d1a9c6d164d69f5eb84a0f12e834",
+    "Raw/MarineSnare/28.png": "35b58d8ba53b5ed84efa36a2cdb136b8a97316bf195948b3fc9739ac875a8fc2",
+    "Raw/MarineSnare/29.png": "6c0e5053769e4e94d16486675e7140ac81cd07042cf73e51d1072ea5e0145300",
+    "Raw/MarineSnare/30.png": "a0bee1b9de4565c03ea6059f7f30772e5f0655a8ed16f2425df818ec65e00cd0",
+    "Raw/MarineSnare/31.png": "2f788209377aef7663a06562e9019ba8c46a05ab3c01ce03d468410199a77424",
+    "Raw/MarineSnare/32.png": "9fcb2b466b3ab7fb67de32732fc4f078aa90d0a348bb1b26cc451cca0ba438bd",
+    "Raw/MarineSnare/33.png": "fb34a35ccba15f7e83b7a1fb2f1d1533585dd2d3a80c86b763631d38ff02e97c",
+    "Raw/MarineSnare/34.png": "df3bf1e5f543c7426d949f96e23629ccc4d4571312746c2f651ca20e406ad6fb",
+    "Raw/MarineSnare/35.png": "f2de0766ae56fbde74654d5781c6b4c5e48a5642c10b18e8b412d359e38a982b",
+    "Raw/MarineSnare/36.png": "9db162e0041170cb0d1ff6e2d3386da081756cbc0e692ffc4cb0fbfc9e2bb999",
+    "Raw/MarineSnare/37.png": "11ed240c0f2a1c9283f1852ac4585bf6825ab469728af935faa329b4fec85956",
+    "Raw/MarineSnare/38.png": "27aae44fd738bb0e016e6aa79fd56e6f325124178b3e008bc523f2147bcf86ac",
+    "Raw/MarineSnare/39.png": "ca296a01b78bfaaf57c820f4659308e7d274793d06cce7e18d15cb59162996db",
+    "Raw/MarineSnare/40.png": "48597d558afa1ad19e55c018e0d0a2ebf3e8f0f035933d25f4ef5a18c62079e7",
+    "Raw/MarineSnare/41.png": "c4b5ccac6ac73e255cfdab0819a521cfc0b0d37b271a03ee2ec4881822759e17",
+    "Raw/MarineSnare/42.png": "b6b25d4ebd884dc4428a2acd36a6dcbb1c6cd60c198d0438b59d8f5c086451cd",
+    "Raw/MarineSnare/43.png": "5faa88a3ddf3670f95ba2868a9667663c85eb7326a0305c98e6d860d1d98b66c",
+    "Raw/MarineSnare/44.png": "e1431ae61d94c12ef2282da559efaa837d3a05ab1c600793119ebd4cf4a7d0e7",
+    "Raw/MarineSnare/45.png": "f0633c65b227af3dc72eb39c32d3f4bc32f7af04ef52e0dba5d1c7da5b0538e4",
+    "Raw/MarineSnare/46.png": "fc057dde2156c81aafe30516991d60d6af8c57d0efb97c1d2f3253d312fe9546",
+    "Raw/MarineSnare/47.png": "9ea8986ee9489f684a27830e9a46744077b199ca001961188b1ade0b42680bb3",
+    "Raw/MarineSnare/48.png": "f710aefe53c91159459899e85f740167b958d6ef186c0a86c852bfea4e272a73",
+    "Raw/MarineSnare/49.png": "328f6e38b3fdef0bd99eb3a9a34ea76999817b3e99e2442c15c40d36c462fc9b",
+    "Raw/MarineSnare/50.png": "0998b023efa8e8d16ea2c683f32ca158db5cd3934547d5abb780b1a2ea265825",
+    "Raw/MarineSnare/51.png": "766aa433ede853e138395ec5613a21ffb7ab0f991a10fce402fb7a30a6437c34",
+    "Raw/MarineSnare/52.png": "c6baaa1056f1e30ca51e213babed1027d1ff81e05617833aeecb11c16cddf13c",
+    "Raw/MarineSnare/53.png": "4644578fd54798cea3d21b8b72a61fa8d358f5a266019c44d96a94cf6dd4469a",
+    "Raw/MarineSnare/54.png": "2b88a4fd35c14699070ce62dbb2950cc6b7752cde8ef02c59b93a02addfd7dd5",
+    "Raw/MarineSnare/55.png": "141ecda73a3e413c1a7edab12a579104497aa7aea5b429ecaea3c1340de95a12",
+    "Raw/MarineSnare/56.png": "93937f44e4309815e4fe759388a90d72dab70886d2799d041a6419ba9588411a",
+    "Raw/MarineSnare/57.png": "fb61aac3ccf93039550bd4213739ffa7064c0d20bfd0a8cc995f95749b60c9ad",
+    "Raw/MarineSnare/58.png": "a5b7b0f94482daab5bfdc6e90e1b98ea0131db21b607d45196ed886d567bd7b2",
+    "Raw/MarineSnare/59.png": "8d7ab7ac359b497a3032cbe4eb374f57b628d7636119d42765121e0870f96b42",
+    "Raw/MarineSnare/60.png": "984eb9a443dbf951faa362fde1073c76dc92a27b1bbf477e741de640b6f6aab3",
+    "Raw/MarineSnare/61.png": "c90664690ef5cd8e51375da8bf4114114699fe87cacb98d3d915825791658fd9",
+    "Raw/MarineSnare/62.png": "4e0ff8d9310eafc9a4321b16ccfdb35e8d5c88104c30ddd5ff30f94d20b7922e",
+    "Raw/MarineSnare/63.png": "d9a21c1966d2f70090244c22605815107ffcbb98c296387cb4f69e0184e81f8f"
+  }
+}

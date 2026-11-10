@@ -20,17 +20,22 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Approved enemy ability revisions — implementation review (2026-11-10)
+## Approved enemy ability revisions — production integration approved (2026-11-10)
 
 The six approved redesigns and marine-snare presentation change are implemented
-on `codex/approved-enemy-ability-redesigns` in [PR #227](https://github.com/PlatFll/Dungeon-Matcher/pull/227), **not merged**.
+on `codex/approved-enemy-ability-redesigns` in [PR #227](https://github.com/PlatFll/Dungeon-Matcher/pull/227).
+The user approved actual-game integration and merging that PR, then requested
+PixelLab Marine Net and Hearth Ember art. Both native 32x32 replacements use the
+existing production bindings; sources and the 20-generation ledger are in
+`ArtSource/ApprovedEnemyRevisions/PixelLab`. The original drafts remain preserved.
 Captain advances readiness; Mage uses shared owned True Ice; Troll warns a
 column; Champion channels two shield-gated impacts and recovers; Hearthkeeper
 places a three-move Ember; flooded Cantor healing responds to collected bubbles.
 The King's command, unrelated roster, character art and zone layouts remain
 unchanged. Champion 10/25 damage and three recovery moves are provisional tuning.
 See [approval, decisions and validation](APPROVED_ENEMY_ABILITY_REVISIONS_2026-11-10.md).
-Unity compilation and 38 automated checks passed. Device and human balance
+Unity compilation and 38 automated checks passed; the PixelLab follow-up also
+passed three focused Game-scene checks and final compilation. Device and human balance
 testing remain outstanding; the gallery uses controlled Game-scene fixtures.
 
 ## Ironvein expanded native cave — production integration approved (2026-11-01)

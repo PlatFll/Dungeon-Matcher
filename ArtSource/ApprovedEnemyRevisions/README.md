@@ -1,4 +1,12 @@
-# Enemy revision effect candidates
+# Enemy revision effects
+
+**Current runtime sources:** [PixelLab replacements](PixelLab/README.md), requested
+by the user with production integration and merge approval on 2026-11-10.
+The section below records the historical first drafts; these source files remain
+preserved. Use `PixelLab/finalize.py` for current exports. The legacy `build.py`
+would regenerate the superseded first drafts and must not overwrite runtime art.
+
+## Historical direct-pixel drafts
 
 Two hand-authored 32×32 RGBA effects, exported through LibreSprite. These are
 review candidates, not additions to the golden-reference register. Existing

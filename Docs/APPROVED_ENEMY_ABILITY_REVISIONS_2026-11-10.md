@@ -2,7 +2,7 @@
 
 **Approved:** 2026-11-10
 
-**Status:** Implemented on `codex/approved-enemy-ability-redesigns` for review; **not merged or released**. The approval record below is preserved. Executed evidence and remaining balance limitations are recorded in [the verification report](Validation/EnemyRevisions2026-11-10.md).
+**Status:** Implemented on `codex/approved-enemy-ability-redesigns`; the user approved actual-game integration and merging PR #227 on 2026-11-10. The requested PixelLab Marine Net and Hearth Ember replacements use the existing runtime bindings. The approval record below is preserved. Executed evidence and remaining balance limitations are recorded in [the verification report](Validation/EnemyRevisions2026-11-10.md).
 
 **Scope:** Exactly two previously approved Dungeon revisions, four approved Frostwake/Drowned Court gameplay redesigns, and one Drowned Court presentation-only adjustment.
 
