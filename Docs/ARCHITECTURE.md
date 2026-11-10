@@ -221,12 +221,18 @@ the board's structural placement routine within environmental advancement.
 ### Drowned Court ownership
 
 `BoardController.Aquatic` owns `AquaticEnvironmentState`, the accepted-move AIR
-receipt, physical bubble identities, shrinking snare deadlines and the single
+receipt, physical bubble identities, snare deadlines and the single
 hostile coffer. It uses the existing clear path, structural durability and mutation
 queue. Special conversion retains bubble identity; only actual player destruction
 awards AIR. Consumed crystals report destruction without inventing colored-gem
 rewards. `CombatMoveClock` advances the environment before enemy work and checks
 suffocation after it; presentation cannot advance either.
+
+Marine nets render at the complete cell footprint throughout their existing
+three-move lifetime; remaining duration does not shrink the sprite. The optional
+`HearthEmberFlameView` cycles native flame cels without changing the hearth's
+stone pixels, scale or board state. It uses scaled time for pause, shows the
+approved still with Reduced Motion, and retains that still if cels are missing.
 
 Aquatic state v2 records reserve exhaustion and the next emergency pulse. The
 zone definition owns 16–18 flood moves, five initial bubbles, the three-move

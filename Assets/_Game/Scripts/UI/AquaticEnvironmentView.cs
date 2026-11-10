@@ -92,8 +92,9 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
             foreach(var snare in state.snares)
             {
                 var gem=board.FindAquaticGem(snare.gemId);if(gem==null)continue;
-                float size=Mathf.Clamp((snare.expiresMove-board.CompletedValidPlayerMoves)/3f,.34f,1);
-                Show("snare"+snare.gemId,theme.thornySnare,gem.transform.position,size,used);
+                // The net covers its complete cell until board-owned expiry.
+                // Remaining duration must not shrink the physical rope mesh.
+                Show("snare"+snare.gemId,theme.thornySnare,gem.transform.position,1,used,cellFill:1);
             }
             if(state.coffer!=null)
             {
@@ -106,13 +107,13 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
         foreach(var key in overlays.Keys.ToArray())if(!used.Contains(key)){Destroy(overlays[key].gameObject);overlays.Remove(key);}
         foreach(var key in captions.Keys.ToArray())if(!used.Contains(key)){Destroy(captions[key].gameObject);captions.Remove(key);}
     }
-    private void Show(string key,Sprite sprite,Vector3 position,float size,HashSet<string> used,float alpha=1)
+    private void Show(string key,Sprite sprite,Vector3 position,float size,HashSet<string> used,float alpha=1,float cellFill=.95f)
     {
         if(sprite==null)return;used.Add(key);
         if(!overlays.TryGetValue(key,out var renderer))
         {var go=new GameObject(key);go.transform.SetParent(board.transform,false);renderer=go.AddComponent<SpriteRenderer>();overlays.Add(key,renderer);
          renderer.sortingLayerName="Gems";renderer.sortingOrder=20;renderer.sprite=sprite;renderer.maskInteraction=SpriteMaskInteraction.VisibleInsideMask;}
-        renderer.transform.position=position;renderer.transform.localScale=Vector3.one*board.CellSize/sprite.bounds.size.x*.95f*size;
+        renderer.transform.position=position;renderer.transform.localScale=Vector3.one*board.CellSize/sprite.bounds.size.x*cellFill*size;
         renderer.color=new Color(1,1,1,alpha);
         // Keep separate textures explicit when same-sized bubble/net sprites
         // share Unity's default 2D material and dynamic batches.

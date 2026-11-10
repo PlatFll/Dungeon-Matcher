@@ -20,10 +20,30 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Approved enemy ability revisions — production integration approved (2026-11-10)
+## Hearth flame and full-tile Marine Net — production approved (2026-11-10)
+
+The user accepted the Hearth Ember still and requested flame-only animation,
+plus thicker Marine Net ropes covering the entire tile. The focused follow-up
+on `codex/ember-flame-marine-net` preserves every stone pixel and the approved
+still, adds eight 120 ms flame cels, and replaces the thin net with a native
+64x64 square mesh. Net coverage stays constant until its existing expiry.
+The requested LibreSprite palette follow-up matches the brown rope and pale
+weights in the current Reef Netweaver's hand, with exact mesh/alpha preservation
+and zero additional generation spending.
+PixelLab sources, LibreSprite documents, validation and actual Game previews
+are in `ArtSource/ApprovedEnemyRevisions/FlameAndFullTileNet` (11 generations).
+The user approved the completed flame animation and brown-rope net for the
+actual game and authorized merging [PR #228](https://github.com/PlatFll/Dungeon-Matcher/pull/228).
+Both use the existing production bindings; gameplay rules remain unchanged.
+Unity compilation and six focused Game checks passed, including animation,
+pause, Reduced Motion, existing lifetimes and net coverage at three phone sizes.
+No real-device testing has been performed for this follow-up.
+
+## Approved enemy ability revisions — merged to production (2026-11-10)
 
 The six approved redesigns and marine-snare presentation change are implemented
-on `codex/approved-enemy-ability-redesigns` in [PR #227](https://github.com/PlatFll/Dungeon-Matcher/pull/227).
+in merged [PR #227](https://github.com/PlatFll/Dungeon-Matcher/pull/227), commit
+`eb4a95eb8da8f260add0beb85fcce601d54216f4`.
 The user approved actual-game integration and merging that PR, then requested
 PixelLab Marine Net and Hearth Ember art. Both native 32x32 replacements use the
 existing production bindings; sources and the 20-generation ledger are in

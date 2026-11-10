@@ -1,0 +1,44 @@
+{
+  "enemy_id": "reef_netweaver",
+  "display_name": "Reef Netweaver",
+  "definition": "Assets/_Game/Data/Enemies/DrownedCourt/reef_netweaver.asset",
+  "special_ability_kind": "ThornySnare = 24",
+  "source": "Assets/_Game/Art/DrownedCourt/reef_netweaver.png",
+  "sha256": "afb8a288f65be6da78e938c7075375479993b4053d9c1650900e7da8d929870d",
+  "guid": "147a8afb737eb0648b696771460020bc",
+  "file_id": 21300000,
+  "canvas": [
+    128,
+    104
+  ],
+  "held_net_sampling_rect": [
+    70,
+    60,
+    87,
+    88
+  ],
+  "colors": {
+    "10,13,17": [
+      79,
+      60
+    ],
+    "74,44,28": [
+      75,
+      65
+    ],
+    "122,77,46": [
+      70,
+      64
+    ],
+    "176,122,67": [
+      74,
+      74
+    ],
+    "184,200,190": [
+      71,
+      63
+    ]
+  },
+  "pixel_lab_generations": 0,
+  "method": "Exact RGB replacement in LibreSprite via recolor.js; source geometry and alpha locked."
+}
