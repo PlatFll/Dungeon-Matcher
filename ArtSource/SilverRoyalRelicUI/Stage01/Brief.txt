@@ -1,0 +1,403 @@
+# ASTRA — Dungeon Matcher Global UI Production
+## Silver Royal Relic UI — PixelLab + LibreSprite
+
+### Objective
+
+Create a new **universal UI asset set** for Dungeon Matcher using PixelLab for generation and LibreSprite for final pixel-art cleanup.
+
+I am attaching two reference images showing exactly the UI elements I want.
+
+Recreate their overall silhouettes, decorative style, proportions, and visual quality, but make one important adjustment:
+
+**THE UI MUST BE PRIMARILY SILVER, NOT GOLD.**
+
+I want elegant, polished, slightly magical silver framing with small, selective gold accents.
+
+This will be the same UI across the Dungeon, Magical Forest, Drowned Court, Ironvein Excavation, Snowy Mountain, and future zones.
+
+It should look like a universal magical relic interface belonging to the game itself, not like environmental stonework belonging to any particular zone.
+
+---
+
+## 1. Mandatory preparation
+
+Before generating assets:
+
+1. Read `AGENTS.md`.
+2. Read the latest Dungeon Matcher art direction guide.
+3. Inspect the current approved character, gem, and UI references.
+4. Inspect my two attached UI reference images.
+5. Inspect the existing Unity HUD implementation, sprite dimensions, hierarchy, anchors, and scaling.
+6. Identify which parts of each UI component are sprites and which are generated dynamically through Unity.
+
+Do not guess current sprite dimensions, component positions, or how the buttons work.
+
+The attached screenshots are **visual design targets, not production sprite sheets**.
+
+Do not crop them to obtain the finished assets. Generate the artwork using PixelLab text prompts, then refine the generated results using LibreSprite.
+
+Use as many PixelLab generations as necessary. Larger assets are allowed.
+
+---
+
+## 2. Exact design language
+
+### Style name: Silver Royal Relic
+
+The UI should look like finely crafted fantasy silverwork with subtle royal ornamentation.
+
+Imagine an ancient magical interface forged from enchanted silver and decorated with a few gold gemstones and small royal embellishments.
+
+It should feel:
+
+- Elegant and slightly ornate.
+- Magical and mysterious.
+- Premium but not overly luxurious.
+- Crisp and nostalgic.
+- Visually consistent with our compact pixel-art characters and faceted gems.
+- Readable at actual mobile gameplay size.
+
+### Metallic balance
+
+Of the visible metallic trim, aim for approximately:
+
+**80–85% silver / steel**
+
+**15–20% gold / bronze accents**
+
+This is a design guideline rather than a strict per-pixel requirement.
+
+Silver should overwhelmingly dominate the framing. Gold should be used only for small focal details.
+
+Do not create a gold frame with silver highlights. It must clearly read as a silver frame.
+
+### Suggested palette
+
+Use these as initial candidate ramps. Refine against the existing art before final approval.
+
+**Silver material**
+
+- Deep outline: `#171622`
+- Dark metal shadow: `#343341`
+- Silver shadow: `#565568`
+- Main silver: `#89899C`
+- Light silver: `#C2C1D0`
+- Silver highlight: `#ECEAF2`
+- Tiny specular highlight: `#FFF9F0`
+
+**Gold accent material**
+
+- Deep bronze: `#60340F`
+- Dark gold: `#8A5622`
+- Main gold: `#C58826`
+- Bright gold: `#E8B84D`
+- Tiny highlight: `#FBEA90`
+
+**Panel interiors**
+
+- Near-black purple: `#11101B`
+- Deep indigo: `#151423`
+- Rich dark purple: `#241F3A`
+- Optional magical purple: `#68168A`
+
+Prefer a small useful subset of these colors per asset. Do not force every color into every sprite.
+
+### Shading rules
+
+- Strong dark pixel outlines.
+- Light coming from the upper-left.
+- Defined bevels using clean pixel clusters.
+- Bright silver highlights primarily on the top and left edges.
+- Darker metal shading underneath and along right-facing edges.
+- Gold decorations limited to small diamonds, fasteners, end ornaments, and selective flourishes.
+- No gradients, blur, antialiasing, noisy metallic texture, or excessive single-pixel sparkle.
+
+The result should be visibly handcrafted at native pixel resolution.
+
+---
+
+## 3. Assets to generate
+
+Generate ONLY the following six UI components.
+
+**Do not generate or replace the question-mark Guide button. It is excluded from this task.**
+
+### Asset A — Wave Counter Frame
+
+This is the primary top-center panel.
+
+Match the reference's general composition:
+
+- Wide horizontal plaque.
+- Dark recessed purple-black interior.
+- Ornate but controlled silver exterior border.
+- Slightly chamfered or angled corners.
+- One small gold diamond ornament at the top center.
+- Small gold accents at the left and right ends.
+- Optional small Rattlebones-style skull ornament underneath.
+
+**PixelLab prompt direction:**
+
+"Premium fantasy RPG pixel-art wave counter frame, broad horizontal symmetrical plaque, polished enchanted silver as the overwhelmingly dominant material, deep charcoal-violet inset center, crisp beveled silver edges with controlled top-left highlights, subtly sculpted angular corners, one small gold diamond ornament centered along the upper edge, tiny warm-gold side accents, elegant restrained dark-fantasy magical relic aesthetic, compact clean native pixels, strong silhouette, isolated transparent background, no lettering, no gradients, no blur."
+
+The text `WAVE 1` and future wave numbers must remain dynamically rendered by Unity.
+
+Generate ornamentation separately if that produces a cleaner result.
+
+### Asset B — Settings Button
+
+Create a compact square button belonging to the same family as the Wave Counter.
+
+Requirements:
+
+- Square or subtly chamfered silhouette.
+- Silver-dominant border.
+- Dark purple-black recessed center.
+- Small gold accent points.
+- Readable white or pale-silver gear icon.
+- Matching corner treatment and light direction.
+
+**PixelLab prompt direction:**
+
+"Compact square settings button for a fantasy pixel-art RPG, elegant beveled polished silver frame, dark indigo recessed interior, extremely restrained tiny gold corner accents, simple clearly readable pale-silver gear icon in the middle, same enchanted royal relic design language as an ornate silver wave counter, minimal decorative noise, crisp native pixel art, transparent background."
+
+Prefer separating the frame and gear icon if that makes the icon sharper, easier to replace, or easier to animate.
+
+Do not change the existing Settings functionality.
+
+### Asset C — Energy / Charge Bar
+
+This is the thin horizontal purple bar above the central ability button.
+
+Requirements:
+
+- Long, narrow silver casing.
+- Dark interior trough.
+- Purple energy fill.
+- Subtle silver beveled endcaps.
+- A tiny gold accent near each end.
+- Strong readability at small scale.
+
+**PixelLab prompt direction:**
+
+"Long narrow fantasy RPG magical energy meter casing, elegant thin beveled polished silver frame with dark indigo interior, subtly pointed silver endcaps, tiny gold ornamental diamonds near the ends, dark purple magical energy reservoir, crisp symmetrical native pixel-art sprite, restrained decorations, transparent background, no text."
+
+Create the casing and the energy fill as **separate assets**.
+
+Unity must continue controlling fill percentage, depletion, restoration, and any existing visual feedback.
+
+Do not bake a permanently half-filled bar into the frame sprite.
+
+### Asset D — Main Ability Button
+
+This should be the most visually distinctive UI element.
+
+Use the attached lower-HUD reference as the primary guide.
+
+Requirements:
+
+- Wide horizontal silver plaque.
+- Dark purple magical interior.
+- Elegant silver beveling.
+- Small gold diamond ornaments.
+- A central royal skull/crown motif, consistent with Rattlebones.
+- Small decorative magical flourishes, but not overpowering.
+- Strong silhouette and clear center space.
+
+**PixelLab prompt direction:**
+
+"Wide premium fantasy RPG ability button, predominantly polished enchanted silver beveled border, dark rich violet-black recessed center with restrained magical purple ornamental swirls, small gold diamonds placed sparingly at major symmetry points, centered small crowned skeleton skull emblem with subtle gold crown, elegant magical relic aesthetic, luxurious but clean, strong pixel-art silhouette, restrained top-left lighting, no text, isolated transparent asset, crisp native pixel clusters."
+
+Generate the frame and central skull/crown motif separately when practical.
+
+Retain existing ability functionality, pressed/disabled states, and runtime content. The ornamental skull should not obscure dynamic ability icons or text if the button currently displays them.
+
+### Asset E — Potion Item Slot
+
+A compact square button with:
+
+- Silver frame.
+- Dark recessed center.
+- Small gold corner ornaments.
+- Existing potion icon.
+- Existing item-count display.
+
+**PixelLab prompt direction:**
+
+"Compact square potion inventory button frame for a fantasy pixel-art game, polished beveled enchanted silver border, dark indigo recessed interior, tiny gold diamond accents, refined silver-and-gold magical relic UI style, clean readable geometry, crisp native pixel art, transparent background, empty center reserved for an existing potion sprite."
+
+Generate the **frame separately from the potion icon**.
+
+Reuse the approved in-game potion artwork unless replacement is specifically necessary and separately approved.
+
+The quantity number must remain dynamic.
+
+### Asset F — Bomb Item Slot
+
+Create a matching sibling to the Potion Item Slot.
+
+**PixelLab prompt direction:**
+
+"Compact square bomb inventory button frame for a fantasy pixel-art game, polished beveled enchanted silver border, dark indigo recessed interior, tiny gold diamond accents, exactly the same design family, border thickness and corner language as the matching potion button frame, crisp native pixel art, transparent background, empty center reserved for an existing bomb sprite."
+
+The potion and bomb frames should share the **same template**.
+
+Do not independently generate two different-looking button frames.
+
+Reuse the established bomb icon and keep its quantity number dynamic.
+
+---
+
+## 4. Production workflow
+
+Work through the following stages.
+
+### Stage 1 — Style exploration
+
+Use PixelLab to generate several versions of:
+
+- The Wave Counter.
+- The Settings Button.
+- The main silver-metal border treatment.
+
+Explore variations in silver brightness, gold ornament size, bevel thickness, and corner shape.
+
+Choose the strongest coherent style rather than independently selecting unrelated attractive sprites.
+
+Compare the candidates with my attached references.
+
+**Stop after Stage 1 and show me the candidates for approval.**
+
+### Stage 2 — Top HUD production
+
+Produce the final Wave Counter and Settings Button.
+
+Clean them in LibreSprite:
+
+- Correct stray pixels.
+- Simplify shading.
+- Fix the silver highlights.
+- Reduce gold if it appears too dominant.
+- Remove inconsistent outline thickness.
+- Prepare transparent source assets.
+- Verify the actual native dimensions.
+
+Integrate temporarily into the current game for visual inspection.
+
+**Stop after Stage 2 for review.**
+
+### Stage 3 — Bottom HUD production
+
+Use PixelLab to generate:
+
+- Energy bar casing.
+- Main ability button.
+- Item slot frame shared by potion and bomb.
+
+Generate large enough source assets to get attractive, readable detail, but maintain appropriate pixel density when converting to the game's native sprite system.
+
+Clean and separate the components in LibreSprite.
+
+Do not simply shrink a large detailed generated asset until its pixels become unreadable.
+
+**Stop after Stage 3 for review.**
+
+### Stage 4 — Unity integration
+
+Integrate the cleaned UI sprites into the existing Unity HUD system.
+
+Requirements:
+
+- Maintain existing HUD anchors and layout.
+- Maintain touch targets.
+- Preserve all button interactions.
+- Preserve wave-number updates.
+- Preserve energy-bar fill logic.
+- Preserve item quantities.
+- Preserve ability states and existing animations.
+- Use Point filtering and the project's appropriate pixels-per-unit configuration.
+- Use nine-slicing or reusable frame components where appropriate, without distorting corners or ornamentation.
+
+Do not modify combat mechanics or gameplay systems.
+
+**Stop after Stage 4 and show a real Unity screenshot.**
+
+### Stage 5 — Cross-zone quality check
+
+Test the exact same global UI assets in:
+
+1. Dungeon
+2. Magical Forest
+3. Drowned Court
+4. Ironvein Excavation
+5. Snowy Mountain
+
+The UI should not change palette or material between zones.
+
+Inspect against light snow, teal underwater scenery, dark dungeon stone, warm mine lighting, and green forest environments.
+
+Check contrast, legibility, visual hierarchy, and whether the silver borders become difficult to see against pale backgrounds.
+
+If necessary, adjust the global dark outline or panel backing consistently. Do not create separate zone variants as a quick fix.
+
+**Stop after Stage 5 and present side-by-side screenshots for approval.**
+
+---
+
+## 5. Important restrictions
+
+Do not change:
+
+- Character sprites.
+- Enemy sprites.
+- Gem designs.
+- Gem colors.
+- Board cell dimensions or mechanics.
+- Zone backgrounds.
+- Environmental board frames.
+- Portrait-frame geometry.
+- Weakness gem frames.
+- Health bar systems.
+- The question-mark Guide button.
+- Any unrelated artwork or gameplay systems.
+
+Only the six specified UI components are authorized for replacement.
+
+The screenshots are conceptual visual references. Do not assume every detail in them is an approved gameplay change.
+
+These new assets remain **candidates** until I approve them.
+
+---
+
+## 6. Final quality requirements
+
+Every asset must:
+
+- Clearly belong to the same UI family.
+- Be predominantly silver, with minor gold accents.
+- Be clean and readable at real mobile size.
+- Use intentional native pixel shapes.
+- Avoid blurry scaling.
+- Preserve transparency correctly.
+- Work across all zones without changing appearance.
+- Preserve all current gameplay functionality.
+
+Use PixelLab for generation, followed by LibreSprite cleanup and verification. If the required PixelLab connection is unavailable, report the blocker rather than silently substituting another image generator.
+
+Keep the original source files and cleaned editable files separate.
+
+Document which candidate was chosen, its palette, native dimensions, alpha handling, and where it is used.
+
+Work in an isolated branch.
+
+**Do not merge into main without my explicit approval.**
+
+## Final artistic priority
+
+The reference images are a good starting point, but I want a more refined silver-forward result.
+
+**Silver is the main material. Gold is jewelry. Dark purple is the background.**
+
+The result should look like a unified magical fantasy interface, rather than separate stone buttons or a collection of golden ornaments.
+
+Start with Stage 1.
