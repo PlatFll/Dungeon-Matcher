@@ -20,6 +20,17 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Silver Royal Relic UI — selected A, Stage 2 review (2026-11-11)
+
+The user chose A / Royal bevel for the staged global battle-UI replacement.
+Stage 2 prepares the native wave plaque and square Settings control from the
+approved PixelLab source in LibreSprite. An Editor-only adapter temporarily
+shows them on the existing Game controls; production routing and all bottom-HUD
+art remain unchanged. This is a review checkpoint, not a deployed replacement.
+See [Stage 2 handoff](../ArtSource/SilverRoyalRelicUI/Stage02/README.md).
+Bottom controls, final runtime integration and cross-zone approval remain later
+stages; no merge is authorized.
+
 ## Hearth flame and full-tile Marine Net — production approved (2026-11-10)
 
 The user accepted the Hearth Ember still and requested flame-only animation,
