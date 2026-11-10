@@ -1,12 +1,14 @@
 # Hearth flame and full-tile Marine Net
 
-Review candidate following the user's acceptance of the Hearth Ember still and
+Production-approved following the user's acceptance of the Hearth Ember still and
 request for flame-only motion and a thicker, tile-covering Marine Net.
 The prior approved still and previous PixelLab art remain in `../PixelLab/`.
 
 `Review.html` presents native artwork, nearest-neighbor enlargement, the flame
 loop and actual Unity Game captures. These are controlled combat fixtures,
-not phone recordings or claims of device testing. This revision is not merged.
+not phone recordings or claims of device testing. The user approved the final
+flame animation and brown-rope net for actual-game integration and PR #228 merge
+on 2026-11-10. The source versions and earlier review evidence remain preserved.
 
 ## Artwork
 

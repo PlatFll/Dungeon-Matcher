@@ -20,7 +20,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Hearth flame and full-tile Marine Net — review candidate (2026-11-10)
+## Hearth flame and full-tile Marine Net — production approved (2026-11-10)
 
 The user accepted the Hearth Ember still and requested flame-only animation,
 plus thicker Marine Net ropes covering the entire tile. The focused follow-up
@@ -32,8 +32,9 @@ weights in the current Reef Netweaver's hand, with exact mesh/alpha preservation
 and zero additional generation spending.
 PixelLab sources, LibreSprite documents, validation and actual Game previews
 are in `ArtSource/ApprovedEnemyRevisions/FlameAndFullTileNet` (11 generations).
-Gameplay rules and the production main checkout remain unchanged by this
-unmerged review revision.
+The user approved the completed flame animation and brown-rope net for the
+actual game and authorized merging [PR #228](https://github.com/PlatFll/Dungeon-Matcher/pull/228).
+Both use the existing production bindings; gameplay rules remain unchanged.
 Unity compilation and six focused Game checks passed, including animation,
 pause, Reduced Motion, existing lifetimes and net coverage at three phone sizes.
 No real-device testing has been performed for this follow-up.

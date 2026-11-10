@@ -1,12 +1,19 @@
 {
   "date": "2026-11-10",
-  "status": "review candidate; not merged",
+  "status": "User approved final flame and brown-rope net for actual-game integration and PR #228 merge on 2026-11-10",
   "unity": "6000.3.19f1",
   "compile": {
     "command": "Tools/Validate-Unity.ps1",
     "result": "Passed",
     "exit_code": 0,
     "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-35ef70cb-3436-461b-a8ed-f52e46d51b90.log"
+  },
+  "pre_merge_compile": {
+    "command": "Tools/Validate-Unity.ps1",
+    "result": "Passed",
+    "unity_exit_code": 0,
+    "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-d8c448f5-51fa-40d7-a2ea-e5756af72bf7.log",
+    "evidence": "Unity completed batchmode with return code 0; no validator compilation-failure patterns. Runtime source and artwork unchanged from the recorded Game checks."
   },
   "automated_game_checks": {
     "unique_passed": 6,
@@ -38,5 +45,5 @@
   },
   "pixel_lab_generations": 11,
   "runtime_visual_evidence": "Preview/*.png are actual Unity Game renders from controlled combat fixtures. Hearth captures sample authored frame times; automatic animation playback is separately asserted. The 360x640 capture includes the existing Editor PixelPerfectCamera reference-resolution warning.",
-  "limitations": "No Android build or real-device test for this focused revision. Visual approval is pending. The production main checkout was not changed."
+  "limitations": "No Android build or real-device test for this focused revision. The user approved the recorded visuals for production integration on 2026-11-10."
 }
