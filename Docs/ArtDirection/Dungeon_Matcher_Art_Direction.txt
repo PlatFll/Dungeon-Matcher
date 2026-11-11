@@ -1151,3 +1151,16 @@ native ornaments and gear, then temporarily substitutes them in the real Game
 scene for review. It does not approve deployment, bottom-HUD replacement or
 golden membership. Stop for Stage 2 review before producing the bottom controls.
 Sources and evidence: ArtSource/SilverRoyalRelicUI/Stage02/.
+
+2026-11-12 — User-edited Silver Royal Relic production authority
+The user supplied WavePlaqueSilver.png, SettingsButtonSilver.png,
+PowerUpTileSilver.png, AbilityButtonSilver.png and RattleBonesAbilityIcon.png
+and requested their actual-game use across zones. Preserve those five PNGs
+exactly, including their transparent padding and hand-cleaned pixel clusters.
+The ability frame and character icon are separate Unity images; center the
+visible icon in the quiet blue-gray inset. Reuse the existing bull, revolver
+and flute symbols as editable starting points for the other three characters.
+This acceptance supersedes the earlier generated control candidates only;
+energy bar, health art, menus, characters, gems and environments are unchanged.
+Provenance, exact hashes, LibreSprite files and Game previews:
+ArtSource/SilverRoyalRelicUI/Production/. No golden-reference membership changes.

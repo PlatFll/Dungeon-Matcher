@@ -1080,6 +1080,16 @@ Reduced Motion removes translation/pulse. Missing optional engraving data retain
 the existing icon fallback. RunControlsUI no longer creates Guide in any art path;
 enemy inspection and Settings remain owned by the same modal controller.
 
+The 2026-11-12 user-edited Silver controls take precedence in `BattlePresentationSkin.Shared`.
+`StoneAbilityButtonView` retains its existing role/name but renders the shared
+approved silver frame with definition-owned icons as separate non-raycast children.
+Visible alpha bounds determine native icon centering, so differing transparent
+padding never offsets the engraving. The frame itself provides its dark translated
+shadow; the old stone socket is not layered beneath the new silhouette.
+The wave plaque is five exact source columns: corners and central ornaments stay
+native, while uniform rails tile to the existing responsive width. No gameplay
+system or zone-specific UI copy is introduced.
+
 `PlayerBoardImpactSequence.ImmediateImpact` is a generic presentation option used
 by Ricochet. It skips normal clear flash/hold and the post-burst wait while still
 awaiting each authoritative clear, keeping targets, specials, reward attribution,
