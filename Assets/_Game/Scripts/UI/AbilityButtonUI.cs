@@ -115,7 +115,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
             sharedSkinApplied=true;BattlePresentationSkin.Button(abilityButton,"Ability");RefreshVisuals();
         }
         var definition=playerAbilityController!=null?playerAbilityController.ActiveAbility:null;
-        bool stone=definition!=null && definition.StoneEngraving!=null && Resources.Load<Sprite>("UI/BattlePresentation/Stone/AbilityPlate")!=null;
+        bool stone=definition!=null && definition.StoneEngraving!=null && BattlePresentationSkin.Shared("Ability")!=null;
         if(stone)
         {
             if(!stoneView)stoneView=gameObject.AddComponent<StoneAbilityButtonView>();

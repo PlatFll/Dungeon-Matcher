@@ -1,0 +1,72 @@
+{
+  "args": {
+    "description": "ONE single wide horizontal pixel-art WAVE COUNTER FRAME only. No settings button, no gear, no other icons beside the specified tiny skull ornament. Front-on orthographic UI, long symmetrical octagonal plaque occupying about 176x48 pixels, centered on 192x64 transparent canvas. Forged silver royal relic. Substantial 7-pixel SILVER beveled rim, short 45-degree chamfered corners, broad bright upper-left facets, charcoal lavender underside; chunky premium fantasy UI geometry. The long middle is a flat empty near-black purple text recess, no lettering. Only a small gold diamond nested at top center in a silver socket and miniature gold diamonds at the two side ends. A tiny pale 9-pixel-wide skull medallion joined to bottom center of frame. Silver must account for at least 85 percent of the trim; gold is small jewelry. Broad controlled pixel planes, no cracks, no bolts, no dotted texture, no excessive shine, no gradient or antialiasing. Compact rendering economy matching the provided game's native sprite, but no character anatomy. Leave transparent margins. Not a sprite sheet, exactly one large horizontal plaque.",
+    "width": 192,
+    "height": 64,
+    "no_background": true,
+    "palette": [
+      "#171622",
+      "#343341",
+      "#565568",
+      "#89899C",
+      "#C2C1D0",
+      "#ECEAF2",
+      "#FFF9F0",
+      "#60340F",
+      "#8A5622",
+      "#C58826",
+      "#E8B84D",
+      "#FBEA90",
+      "#11101B",
+      "#151423",
+      "#241F3A",
+      "#68168A"
+    ],
+    "palette_name": "Silver Royal Relic",
+    "max_colors": 16,
+    "seed": 76178,
+    "style_image": {
+      "url": "upload:832d655c-cc96-4852-a299-67ab35a4f191",
+      "usage_description": "Native pixel rendering economy, outlines and clusters only."
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "request": {
+    "background_job_id": "b6d0e7f6-71fe-4995-9ef6-24799a0d4c6a",
+    "image_id": "f66a9861-6875-589a-85b3-124f4080fa61",
+    "status": "processing",
+    "source_image_id": "f66a9861-6875-589a-85b3-124f4080fa61",
+    "job_id": "b6d0e7f6-71fe-4995-9ef6-24799a0d4c6a",
+    "description": "ONE single wide horizontal pixel-art WAVE COUNTER FRAME only. No settings button, no gear, no other icons beside the specified tiny skull ornament. Front-on orthographic UI, long symmetrical octagonal plaque occupying about 176x48 pixels, centered on 192x64 transparent canvas. Forged silver royal relic. Substantial 7-pixel SILVER beveled rim, short 45-degree chamfered corners, broad bright upper-left facets, charcoal lavender underside; chunky premium fantasy UI geometry. The long middle is a flat empty near-black purple text recess, no lettering. Only a small gold diamond nested at top center in a silver socket and miniature gold diamonds at the two side ends. A tiny pale 9-pixel-wide skull medallion joined to bottom center of frame. Silver must account for at least 85 percent of the trim; gold is small jewelry. Broad controlled pixel planes, no cracks, no bolts, no dotted texture, no excessive shine, no gradient or antialiasing. Compact rendering economy matching the provided game's native sprite, but no character anatomy. Leave transparent margins. Not a sprite sheet, exactly one large horizontal plaque.",
+    "seed": 76178,
+    "image_size": {
+      "width": 192,
+      "height": 64
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/b6d0e7f6-71fe-4995-9ef6-24799a0d4c6a/download"
+  },
+  "result": {
+    "job_id": "b6d0e7f6-71fe-4995-9ef6-24799a0d4c6a",
+    "status": "completed",
+    "frames": 1,
+    "download_url": "https://api.pixellab.ai/mcp/images/b6d0e7f6-71fe-4995-9ef6-24799a0d4c6a/download",
+    "download_urls": [
+      "https://api.pixellab.ai/mcp/images/b6d0e7f6-71fe-4995-9ef6-24799a0d4c6a/download"
+    ],
+    "asset": {
+      "id": "f66a9861-6875-589a-85b3-124f4080fa61",
+      "type": "image",
+      "status": "saved"
+    },
+    "charged_generations": 6
+  }
+}

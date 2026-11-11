@@ -1,0 +1,201 @@
+{
+  "stage": 3,
+  "selected": "A - Royal bevel",
+  "status": "bottom HUD assets pending user review; Unity integration is Stage 4",
+  "new_pixellab_generations": 18,
+  "prior_pixellab_generations": 29,
+  "assets": {
+    "AbilityFrame": {
+      "dimensions": [
+        176,
+        66
+      ],
+      "bounds": [
+        2,
+        1,
+        174,
+        64
+      ],
+      "opaque_colors": 13,
+      "sha256": "b13da3fa7f604e7e4d78395bcefc9912f4bb9e3edfd597d3312f2ce115c0e01a",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true,
+      "minimum_margin": 1,
+      "palette": {
+        "#1C2438": 5744,
+        "#89899C": 694,
+        "#ECEAF2": 529,
+        "#565568": 482,
+        "#C2C1D0": 394,
+        "#171622": 377,
+        "#FFF9F0": 137,
+        "#C58826": 77,
+        "#8A5622": 64,
+        "#343341": 43,
+        "#241F3A": 38,
+        "#E8B84D": 16,
+        "#60340F": 9
+      }
+    },
+    "AbilityFlourish": {
+      "dimensions": [
+        176,
+        66
+      ],
+      "bounds": [
+        19,
+        28,
+        157,
+        42
+      ],
+      "opaque_colors": 1,
+      "sha256": "60038f4e86f8b10ec17b83d3d8aac5ada917bc3e72b2a42bbc06681bc029ec45",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true,
+      "minimum_margin": 19,
+      "palette": {
+        "#3B0D65": 60
+      }
+    },
+    "RattlebonesEmblem": {
+      "dimensions": [
+        30,
+        40
+      ],
+      "bounds": [
+        2,
+        2,
+        28,
+        38
+      ],
+      "opaque_colors": 12,
+      "sha256": "86341d8cf1e3e2edcc54902407219bc6bd43fbb441f992be56b6b56b897502d0",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true,
+      "minimum_margin": 2,
+      "palette": {
+        "#FFF9F0": 240,
+        "#241F3A": 116,
+        "#171622": 58,
+        "#C2C1D0": 54,
+        "#8A5622": 43,
+        "#565568": 39,
+        "#C58826": 36,
+        "#343341": 33,
+        "#89899C": 32,
+        "#ECEAF2": 24,
+        "#E8B84D": 18,
+        "#60340F": 14
+      }
+    },
+    "ItemFrame": {
+      "dimensions": [
+        64,
+        64
+      ],
+      "bounds": [
+        2,
+        2,
+        62,
+        62
+      ],
+      "opaque_colors": 11,
+      "sha256": "971e46f6a00fd7c7766988aa374e329431cc8de6caa55fcb07f7448fa0017fb2",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true,
+      "minimum_margin": 2,
+      "palette": {
+        "#11101B": 1461,
+        "#89899C": 383,
+        "#565568": 207,
+        "#C2C1D0": 195,
+        "#ECEAF2": 167,
+        "#FFF9F0": 134,
+        "#C58826": 77,
+        "#E8B84D": 51,
+        "#8A5622": 48,
+        "#343341": 29,
+        "#FBEA90": 14
+      }
+    },
+    "EnergyCasing": {
+      "dimensions": [
+        147,
+        24
+      ],
+      "bounds": [
+        2,
+        2,
+        145,
+        22
+      ],
+      "opaque_colors": 11,
+      "sha256": "15ec53e5ec834797ef979f2ed5622c8277af5df75235cf2d3fbcd79448909fd9",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true,
+      "minimum_margin": 2,
+      "palette": {
+        "#171622": 1244,
+        "#89899C": 402,
+        "#ECEAF2": 368,
+        "#11101B": 254,
+        "#C2C1D0": 159,
+        "#565568": 150,
+        "#FFF9F0": 33,
+        "#60340F": 25,
+        "#343341": 16,
+        "#C58826": 15,
+        "#FBEA90": 10
+      }
+    },
+    "EnergyFill": {
+      "dimensions": [
+        107,
+        8
+      ],
+      "bounds": [
+        0,
+        0,
+        107,
+        8
+      ],
+      "opaque_colors": 4,
+      "sha256": "ed459f7c4c1bb81ab6289e52ff7d347012a7c51f41e1aba2452080170410a0d3",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true,
+      "minimum_margin": 0,
+      "palette": {
+        "#9020CE": 319,
+        "#68168A": 214,
+        "#3B0D65": 208,
+        "#BC52FA": 103
+      }
+    }
+  },
+  "energy_fill_top_left": [
+    20,
+    7
+  ],
+  "energy_fill_size": [
+    107,
+    8
+  ],
+  "ability_icon_center": [
+    88,
+    38
+  ],
+  "ability_icon_is_character_specific": true,
+  "same_item_template_for_both_supplies": true,
+  "production_runtime_changed": false,
+  "resampling_used_on_production_assets": false,
+  "ability_background_revision": {
+    "user_request": "Match board tile background color; preserve all other art",
+    "color": "#1C2438",
+    "tile_source": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+    "tile_sha256": "3a05cf2df5b48528e0bb5445a7bd58da3903bbb177346d4456722bfa61bf70b7",
+    "before_sha256": "6ec7277d80ef828908364d12c496a966f4eaf9a46c5bcbbb2a25fe33511bea55",
+    "changed_pixels": 5744,
+    "other_asset_exports_unchanged": true,
+    "new_generations": 0
+  }
+}

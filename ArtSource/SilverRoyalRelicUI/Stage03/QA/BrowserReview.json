@@ -1,0 +1,13 @@
+{
+  "page": "http://127.0.0.1:61347/Stage03/Review.html",
+  "observed": "2026-11-11",
+  "method": "In-app browser controls and actual screenshots; asset review, not Unity",
+  "native_1x_visible_without_horizontal_clipping": true,
+  "charge_percentages_checked": [0, 65, 100],
+  "quantity_values_checked": [0, 3, 99],
+  "emblem_hidden_and_restored": true,
+  "backgrounds_visually_checked": ["dark dungeon", "pale snow", "underwater teal"],
+  "final_state": {"charge": 65, "count": 3, "emblem": "visible", "zoom": "native 1x"},
+  "tab_kept_open_for_user": true,
+  "limits": "No Unity bottom-HUD integration, runtime button-state test, or real-device check in Stage 3. Plain backdrops do not constitute Stage 5 zone acceptance."
+}

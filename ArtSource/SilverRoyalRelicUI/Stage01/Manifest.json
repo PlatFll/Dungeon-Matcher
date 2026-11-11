@@ -1,0 +1,257 @@
+{
+  "stage": 1,
+  "status": "candidates-awaiting-approval",
+  "recommended": "A",
+  "selected": null,
+  "generator": "PixelLab create_image_pro_flash",
+  "cleanup": "LibreSprite native JavaScript and batch export",
+  "style_reference_sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+  "generation_usage": 29,
+  "balance_before": 3714.9,
+  "balance_after": 3685.9,
+  "assets": {
+    "A_Wave": {
+      "dimensions": [
+        157,
+        62
+      ],
+      "bounds": [
+        2,
+        2,
+        155,
+        60
+      ],
+      "colors": {
+        "#171622": 637,
+        "#FFF9F0": 173,
+        "#ECEAF2": 487,
+        "#343341": 75,
+        "#C2C1D0": 331,
+        "#565568": 440,
+        "#FBEA90": 29,
+        "#C58826": 59,
+        "#11101B": 3498,
+        "#8A5622": 69,
+        "#60340F": 15,
+        "#89899C": 539
+      },
+      "color_count": 12,
+      "binary_alpha": true,
+      "minimum_clearance": 2,
+      "libresprite_exact_roundtrip": true,
+      "sha256": "37624468d77018b3f1f42c83448af9d9749935d9e17ea241a2ccf144d208136e"
+    },
+    "A_Settings": {
+      "dimensions": [
+        56,
+        56
+      ],
+      "bounds": [
+        4,
+        4,
+        51,
+        51
+      ],
+      "colors": {
+        "#11101B": 864,
+        "#171622": 193,
+        "#FFF9F0": 51,
+        "#ECEAF2": 252,
+        "#FBEA90": 20,
+        "#C2C1D0": 373,
+        "#C58826": 20,
+        "#565568": 112,
+        "#8A5622": 12,
+        "#343341": 46,
+        "#89899C": 174
+      },
+      "color_count": 11,
+      "binary_alpha": true,
+      "minimum_clearance": 2,
+      "libresprite_exact_roundtrip": true,
+      "sha256": "8bc1af70095c7f2e32644d60a81911df459befdd88ae5492617a06b0378fd3ef"
+    },
+    "B_Wave": {
+      "dimensions": [
+        170,
+        57
+      ],
+      "bounds": [
+        2,
+        2,
+        168,
+        55
+      ],
+      "colors": {
+        "#171622": 682,
+        "#343341": 59,
+        "#8A5622": 39,
+        "#FBEA90": 16,
+        "#C58826": 43,
+        "#E8B84D": 20,
+        "#60340F": 26,
+        "#11101B": 4039,
+        "#ECEAF2": 537,
+        "#C2C1D0": 367,
+        "#565568": 640,
+        "#89899C": 70
+      },
+      "color_count": 12,
+      "binary_alpha": true,
+      "minimum_clearance": 2,
+      "libresprite_exact_roundtrip": true,
+      "sha256": "59b3c08cf47e066b318550c8c89af706e9fe647932614c616831036973dcf3fb"
+    },
+    "B_Settings": {
+      "dimensions": [
+        56,
+        56
+      ],
+      "bounds": [
+        4,
+        4,
+        52,
+        52
+      ],
+      "colors": {
+        "#171622": 344,
+        "#11101B": 846,
+        "#ECEAF2": 274,
+        "#C2C1D0": 374,
+        "#C58826": 29,
+        "#343341": 39,
+        "#89899C": 106,
+        "#FBEA90": 2,
+        "#565568": 218,
+        "#8A5622": 16,
+        "#E8B84D": 14,
+        "#60340F": 6
+      },
+      "color_count": 12,
+      "binary_alpha": true,
+      "minimum_clearance": 2,
+      "libresprite_exact_roundtrip": true,
+      "sha256": "f22b04960e1989932077a6bb2b0d625e2ce17a8bdb277d9ac55515c86fc5cfa6"
+    },
+    "C_Wave": {
+      "dimensions": [
+        184,
+        60
+      ],
+      "bounds": [
+        2,
+        2,
+        182,
+        58
+      ],
+      "colors": {
+        "#241F3A": 272,
+        "#171622": 341,
+        "#FFF9F0": 120,
+        "#C2C1D0": 1066,
+        "#565568": 1155,
+        "#ECEAF2": 217,
+        "#89899C": 204,
+        "#FBEA90": 13,
+        "#8A5622": 14,
+        "#343341": 51,
+        "#C58826": 43,
+        "#60340F": 23,
+        "#11101B": 3402
+      },
+      "color_count": 13,
+      "binary_alpha": true,
+      "minimum_clearance": 2,
+      "libresprite_exact_roundtrip": true,
+      "sha256": "ac16352ae7c0700046bed19098d28345eec81ab2430cc777fb1fbb4d83aedf40"
+    },
+    "C_Settings": {
+      "dimensions": [
+        56,
+        56
+      ],
+      "bounds": [
+        8,
+        9,
+        47,
+        47
+      ],
+      "colors": {
+        "#151423": 55,
+        "#11101B": 210,
+        "#FFF9F0": 139,
+        "#C2C1D0": 322,
+        "#89899C": 216,
+        "#565568": 122,
+        "#C58826": 28,
+        "#241F3A": 289,
+        "#FBEA90": 7,
+        "#8A5622": 24,
+        "#343341": 10
+      },
+      "color_count": 11,
+      "binary_alpha": true,
+      "minimum_clearance": 2,
+      "libresprite_exact_roundtrip": true,
+      "sha256": "afd5a9c9a60e7d3c1e9c225b4313a51f3a814a0f816c25ecb1e91ff1d206c75a"
+    }
+  },
+  "raw_sources": {
+    "A.png": {
+      "sha256": "dbc7efb2b4f3764f31b6349079caece65922368ada60ed477b52ff1b5a665909",
+      "dimensions": [
+        192,
+        128
+      ]
+    },
+    "B.png": {
+      "sha256": "823aaa5aad237e2a3278439cc118e82f975c8e3b9b5ef22ac0a940146c80027e",
+      "dimensions": [
+        192,
+        128
+      ]
+    },
+    "C.png": {
+      "sha256": "6076cd3de0da0f656b467115a49502f1f6398f6bd1f66f272eed93a50f89ff99",
+      "dimensions": [
+        192,
+        128
+      ]
+    },
+    "CSettings.png": {
+      "sha256": "95b9c28d435936c82aa9843f0c41012eb389f85e005ff392b4f329e90d69bbd3",
+      "dimensions": [
+        64,
+        64
+      ]
+    },
+    "CWave.png": {
+      "sha256": "9d6c5e7bb0320eb0e17e927325eaa1aa0f37f5af08a9d90f143a5af663dac02d",
+      "dimensions": [
+        192,
+        64
+      ]
+    }
+  },
+  "editable_sources": {
+    "A_Settings.ase": "55f569894054152c9f4c5394c002dc53971cecdd516a0582290561724dd41f25",
+    "A_Sheet.ase": "21b80e65dcbcb220c4f7ba0c95abb2b87f289fa9fdaa94db9eb169732eb4b3e9",
+    "A_Wave.ase": "07f93b46b1efd662cefb943f686510de740954716e3362683c6c605aa520a29e",
+    "B_Settings.ase": "39a4c0bc52ea485d100cdd150e049d2a3c4b5514eefdbd9665294e45f1659ca6",
+    "B_Sheet.ase": "938ac2c61669fb78d481a77a9800bcab561813ddf9c6ed300d1882de6caeedfd",
+    "B_Wave.ase": "fdec3fb91b24b7220047dfce8f6c90337d84e7d20e7f7f9dd32c44b7cacbd220",
+    "CSettings_Sheet.ase": "bcbbf94ca6550614f5dbd7fa03efa5b5c076f2f8167c3ca23b08d5639425d5c9",
+    "CWave_Sheet.ase": "7e9a0a66647f865ea47bf93bb9c582904015e4e94fb3ac0d5db569f10c070c1b",
+    "C_Settings.ase": "6f5e3dbc3a3a87c4ecb44f9237224a692c6821ff6975f3958e532c0677cc5157",
+    "C_Wave.ase": "cff6851960c9ef086682ef676191387aeb1fc88a9623cc40b36a59026f852cfd"
+  },
+  "generation_receipts": [
+    "GenerationRequests.json",
+    "GenerationResults.json",
+    "GenerationCWave.json",
+    "GenerationCSettings.json"
+  ],
+  "unity_integration": false,
+  "production_art_unchanged": true,
+  "merge_authorized": false
+}

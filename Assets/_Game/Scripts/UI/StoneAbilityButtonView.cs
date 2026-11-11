@@ -10,6 +10,8 @@ public sealed class StoneAbilityButtonView : MonoBehaviour
     private Button button;
     private float lift, glowClock;
     private bool ready;
+    private Sprite centeredSource;
+    private Vector2 iconPosition;
     public RectTransform Slab => slab ? slab.rectTransform : null;
     public Image Engraving => engraving;
     public Image Glow => glow;
@@ -22,17 +24,27 @@ public sealed class StoneAbilityButtonView : MonoBehaviour
         if(!slab)
         {
             slab=Make("StoneSlab",transform,new Vector2(176,66));
-            slab.sprite=Resources.Load<Sprite>("UI/BattlePresentation/Stone/AbilityPlate");
+            slab.sprite=BattlePresentationSkin.Shared("Ability");
             engraving=Make("StoneEngraving",slab.transform,definition.StoneEngraving.rect.size);
             glow=Make("StoneEngravingGlow",slab.transform,definition.StoneEngraving.rect.size);
         }
         slab.gameObject.SetActive(true);
         // The fixed dark socket exposes a small side face when the slab lifts.
-        button.image.sprite=Resources.Load<Sprite>("UI/BattlePresentation/Stone/AbilitySocket");
-        button.image.color=Color.white;button.image.CrossFadeColor(Color.white,0,true,true);
+        // Reuse the approved silhouette as its shadow instead of exposing the
+        // obsolete stone socket behind the user's new silver bevels.
+        button.image.sprite=slab.sprite;
+        var shadow=new Color(.3f,.3f,.35f,1);
+        button.image.color=shadow;button.image.CrossFadeColor(shadow,0,true,true);
         button.transition=Selectable.Transition.None;
         engraving.sprite=definition.StoneEngraving;engraving.rectTransform.sizeDelta=engraving.sprite.rect.size;
         glow.sprite=definition.ReadyStoneEngraving;glow.rectTransform.sizeDelta=engraving.sprite.rect.size;
+        if(centeredSource!=engraving.sprite)
+        {
+            centeredSource=engraving.sprite;
+            iconPosition=CenteredIconPosition(centeredSource);
+        }
+        engraving.rectTransform.anchoredPosition=glow.rectTransform.anchoredPosition=iconPosition;
+        GameplayPixelGrid.Snap(engraving.rectTransform);GameplayPixelGrid.Snap(glow.rectTransform);
         if(Time.timeScale>0)
         {
             ready=controller.CanActivate;
@@ -48,6 +60,22 @@ public sealed class StoneAbilityButtonView : MonoBehaviour
         float shine=PresentationPreferences.ReducedMotion ? .75f : Mathf.Round((.72f+.10f*Mathf.Sin(glowClock*3))*8)/8;
         glow.color=new Color(1,1,1,ready?shine:0);
         glow.enabled=glow.sprite!=null;
+    }
+
+    // Transparent padding differs by character. Center the visible drawing in
+    // the plate's quiet inset (native center 88,30 from its bottom), not its file.
+    private static Vector2 CenteredIconPosition(Sprite sprite)
+    {
+        if(!sprite.texture.isReadable)return Vector2.zero;
+        var r=sprite.rect;var pixels=sprite.texture.GetPixels32();
+        int minX=(int)r.width,minY=(int)r.height,maxX=-1,maxY=-1;
+        for(int y=0;y<r.height;y++)for(int x=0;x<r.width;x++)
+            if(pixels[((int)r.y+y)*sprite.texture.width+(int)r.x+x].a>0)
+            { minX=Mathf.Min(minX,x);minY=Mathf.Min(minY,y);maxX=Mathf.Max(maxX,x);maxY=Mathf.Max(maxY,y); }
+        if(maxX<0)return Vector2.zero;
+        float left=Mathf.Round(88-(maxX-minX+1)*.5f)-minX;
+        float bottom=Mathf.Round(30-(maxY-minY+1)*.5f)-minY;
+        return new Vector2(left+r.width*.5f-88,bottom+r.height*.5f-33);
     }
 
     public void Hide()

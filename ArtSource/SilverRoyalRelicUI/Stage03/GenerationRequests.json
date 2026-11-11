@@ -1,0 +1,137 @@
+[
+  {
+    "id": "Ability",
+    "args": {
+      "width": 192,
+      "height": 128,
+      "no_background": true,
+      "palette": [
+        "#171622",
+        "#343341",
+        "#565568",
+        "#89899C",
+        "#C2C1D0",
+        "#ECEAF2",
+        "#FFF9F0",
+        "#60340F",
+        "#8A5622",
+        "#C58826",
+        "#E8B84D",
+        "#FBEA90",
+        "#11101B",
+        "#151423",
+        "#241F3A",
+        "#3B0D65",
+        "#68168A",
+        "#9020CE",
+        "#BC52FA",
+        "#E8AEFF",
+        "#C9B79B"
+      ],
+      "palette_name": "Dungeon Matcher Silver Royal Relic A",
+      "max_colors": 21,
+      "style_image": {
+        "url": "https://api.pixellab.ai/mcp/images/b5ac3e3d-febe-4f11-a90c-ebe56791e271/download",
+        "usage_description": "The user-selected A / Royal bevel UI pair. Match exactly its dominant silver material, small warm gold accent diamonds, chamfered silhouette, dark-purple recess, clean top-left bevel clusters, and compact native pixel density. Do not redraw the wave or settings buttons."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "seed": 76193,
+      "description": "A modular pixel-art ability button sheet on a transparent 192x128 canvas. TOP: one broad horizontal SILVER button frame about 176 pixels wide and 62 pixels tall, centered at x96,y38, contained within x8..183,y7..69. Dark purple-black quiet center RESERVED EMPTY for a separate dynamic character symbol. Top-center and bottom-center tiny gold diamonds; very small gold side ornaments. Restrained low-contrast purple curl flourish at each inner far side only, leave center x66..125 quiet. BOTTOM CENTER: a separate small crowned ivory skeleton skull emblem, around 32x36 pixels, centered at x96,y102, fully detached from the frame with clear transparent margin. Simple whimsical skull, two black sockets, small gold crown with three points; no body, no character portrait. The emblem must be removable so other character symbols can use the same frame. Native pixel-art fantasy game UI, front-facing orthographic. Closely match the supplied approved A wave/settings family: broad polished SILVER bevels, dark clean outline, 45-degree chamfer corners, bright top/left and restrained lower/right planes, 85 percent silver trim with only 15 percent tiny warm gold jewelry. No bolts, rivets, stone cracks, gritty texture, blurry gradients, antialiasing, random sparkles, text or numbers. Leave several clear transparent pixels around every sprite. Keep the depicted components at their requested small native size within the canvas; don't enlarge them to fill the sheet."
+    }
+  },
+  {
+    "id": "Supply",
+    "args": {
+      "width": 192,
+      "height": 128,
+      "no_background": true,
+      "palette": [
+        "#171622",
+        "#343341",
+        "#565568",
+        "#89899C",
+        "#C2C1D0",
+        "#ECEAF2",
+        "#FFF9F0",
+        "#60340F",
+        "#8A5622",
+        "#C58826",
+        "#E8B84D",
+        "#FBEA90",
+        "#11101B",
+        "#151423",
+        "#241F3A",
+        "#3B0D65",
+        "#68168A",
+        "#9020CE",
+        "#BC52FA",
+        "#E8AEFF",
+        "#C9B79B"
+      ],
+      "palette_name": "Dungeon Matcher Silver Royal Relic A",
+      "max_colors": 21,
+      "style_image": {
+        "url": "https://api.pixellab.ai/mcp/images/b5ac3e3d-febe-4f11-a90c-ebe56791e271/download",
+        "usage_description": "The user-selected A / Royal bevel UI pair. Match exactly its dominant silver material, small warm gold accent diamonds, chamfered silhouette, dark-purple recess, clean top-left bevel clusters, and compact native pixel density. Do not redraw the wave or settings buttons."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "seed": 76194,
+      "description": "Exactly ONE small empty inventory item button frame on transparent 192x128 canvas. The button itself is a compact 60x60 native-pixel square, centered at x96,y64 (around x66..125,y34..93). It is NOT a wide panel. Thick SILVER bevels with eight short chamfered corners, matching the supplied square Settings frame; no gear or other icon. Dark purple-black completely empty quiet central recess at least 44x44 native pixels for existing potion OR bomb icons. Four tiny gold diamond accents at cardinal rail centers. No contents, no potion, no bomb, no count badge, no text. Keep most canvas transparent; preserve 60x60 button size so it fits a 64x64 slot with 2px margin. Native pixel-art fantasy game UI, front-facing orthographic. Closely match the supplied approved A wave/settings family: broad polished SILVER bevels, dark clean outline, 45-degree chamfer corners, bright top/left and restrained lower/right planes, 85 percent silver trim with only 15 percent tiny warm gold jewelry. No bolts, rivets, stone cracks, gritty texture, blurry gradients, antialiasing, random sparkles, text or numbers. Leave several clear transparent pixels around every sprite. Keep the depicted components at their requested small native size within the canvas; don't enlarge them to fill the sheet."
+    }
+  },
+  {
+    "id": "Energy",
+    "args": {
+      "width": 192,
+      "height": 128,
+      "no_background": true,
+      "palette": [
+        "#171622",
+        "#343341",
+        "#565568",
+        "#89899C",
+        "#C2C1D0",
+        "#ECEAF2",
+        "#FFF9F0",
+        "#60340F",
+        "#8A5622",
+        "#C58826",
+        "#E8B84D",
+        "#FBEA90",
+        "#11101B",
+        "#151423",
+        "#241F3A",
+        "#3B0D65",
+        "#68168A",
+        "#9020CE",
+        "#BC52FA",
+        "#E8AEFF",
+        "#C9B79B"
+      ],
+      "palette_name": "Dungeon Matcher Silver Royal Relic A",
+      "max_colors": 21,
+      "style_image": {
+        "url": "https://api.pixellab.ai/mcp/images/b5ac3e3d-febe-4f11-a90c-ebe56791e271/download",
+        "usage_description": "The user-selected A / Royal bevel UI pair. Match exactly its dominant silver material, small warm gold accent diamonds, chamfered silhouette, dark-purple recess, clean top-left bevel clusters, and compact native pixel density. Do not redraw the wave or settings buttons."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "seed": 76195,
+      "description": "A modular energy meter sheet, transparent 192x128 native pixels, exactly TWO long thin horizontal elements separated by clear transparency. TOP at x22..169,y35..58: one slim empty SILVER meter casing 148x24 pixels, pointed or chamfered endcaps, tiny gold diamond near each end. Black-purple quiet empty trough, at least 108 pixels wide and 8 pixels tall. NO energy baked into casing. BELOW centered at y90: a separate fully filled violet energy strip 108x8 pixels long, with a clean bright-purple upper bevel and dark-purple lower edge, broad connected horizontal color bands, no shiny white stripe, no glow outside its hard silhouette. Empty transparent area between elements. Meter is straight, symmetric and slender, NOT a chunky plaque, NO skull, no words, no numbers. Native pixel-art fantasy game UI, front-facing orthographic. Closely match the supplied approved A wave/settings family: broad polished SILVER bevels, dark clean outline, 45-degree chamfer corners, bright top/left and restrained lower/right planes, 85 percent silver trim with only 15 percent tiny warm gold jewelry. No bolts, rivets, stone cracks, gritty texture, blurry gradients, antialiasing, random sparkles, text or numbers. Leave several clear transparent pixels around every sprite. Keep the depicted components at their requested small native size within the canvas; don't enlarge them to fill the sheet."
+    }
+  }
+]

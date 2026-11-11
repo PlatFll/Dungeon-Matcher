@@ -1,0 +1,124 @@
+{
+  "stage": 2,
+  "selected": "A - Royal bevel",
+  "selection_date": "2026-11-11",
+  "status": "Stage 2 top HUD ready for user review; temporary Game preview only",
+  "source": "../Stage01/Cleaned/A_Wave.png and A_Settings.png",
+  "new_pixellab_generations": 0,
+  "prior_pixellab_generations": 29,
+  "assets": {
+    "WaveBody": {
+      "dimensions": [
+        176,
+        48
+      ],
+      "bounds": [
+        2,
+        2,
+        174,
+        46
+      ],
+      "opaque_colors": 12,
+      "sha256": "6c25362dea391c409225b3622364ef1156e120fd4b6e579a152b17acb1a805f4",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true
+    },
+    "WaveDiamond": {
+      "dimensions": [
+        22,
+        20
+      ],
+      "bounds": [
+        2,
+        2,
+        19,
+        18
+      ],
+      "opaque_colors": 12,
+      "sha256": "d7e9e66a4bb42bc694a4d0b891f00fbe4d1bbeca6dfbafca009d5c62124e7d13",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true
+    },
+    "WavePendant": {
+      "dimensions": [
+        28,
+        22
+      ],
+      "bounds": [
+        2,
+        2,
+        25,
+        20
+      ],
+      "opaque_colors": 8,
+      "sha256": "fd1b0e60c402a98485b3d3088992d2206880212ab4eb2e8206c8cddd8d7e5c88",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true
+    },
+    "SettingsFrame": {
+      "dimensions": [
+        56,
+        56
+      ],
+      "bounds": [
+        4,
+        4,
+        51,
+        51
+      ],
+      "opaque_colors": 11,
+      "sha256": "9a1591387defb04a4adc33d6ae78cb8f0093be3b891cf2c275b049c23bf3dc45",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true
+    },
+    "SettingsGear": {
+      "dimensions": [
+        32,
+        32
+      ],
+      "bounds": [
+        3,
+        3,
+        29,
+        28
+      ],
+      "opaque_colors": 7,
+      "sha256": "8ebc1ab6a01fb7777b2faeea05553657191f9a3a2a91185f77504f2e0c2c7439",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true
+    },
+    "Settings": {
+      "dimensions": [
+        56,
+        56
+      ],
+      "bounds": [
+        4,
+        4,
+        51,
+        51
+      ],
+      "opaque_colors": 11,
+      "sha256": "e38f2b26b9c7c99028c263076d6bf246356c61e107a5ba708034cc34171cc894",
+      "binary_alpha": true,
+      "exact_libresprite_roundtrip": true
+    }
+  },
+  "preview_only": true,
+  "wave_body_border_lbrt": [
+    20,
+    10,
+    20,
+    10
+  ],
+  "diamond_top_offset": -8,
+  "pendant_top_offset": 32,
+  "production_runtime_changed": false,
+  "unity_capture_cases": [
+    "dungeon-720x1280",
+    "dungeon-360x640",
+    "dungeon-1080x1920",
+    "dungeon-1080x2400-safe",
+    "drowned-court-1080x2340"
+  ]
+}

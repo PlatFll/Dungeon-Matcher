@@ -36,6 +36,9 @@ public static partial class BattlePresentationSkin
     };
     public static Sprite Shared(string name)
     {
+        string silver = name switch { "Ability"=>"AbilityButtonSilver", "Settings"=>"SettingsButtonSilver",
+            "Supply"=>"PowerUpTileSilver", "Wave"=>"WavePlaqueSilver", _=>null };
+        if(silver!=null && Resources.Load<Sprite>("UI/BattlePresentation/Silver/"+silver) is Sprite approved)return approved;
         string stone = name switch { "Ability"=>"AbilityPlate", "Settings"=>"Settings", "Supply"=>"Supply", _=>null };
         if(stone!=null && Resources.Load<Sprite>("UI/BattlePresentation/Stone/"+stone) is Sprite plate)return plate;
         string reference = name switch {"Guide"=>"SharedGuide", "Settings"=>"SharedSettings", "Supply"=>"SharedPotionHolder",
@@ -59,7 +62,7 @@ public static partial class BattlePresentationSkin
     {
         var sprite=Shared(family);if(sprite==null||button==null||button.image==null)return false;
         button.image.sprite=sprite;button.image.type=Image.Type.Simple;button.image.color=Color.white;
-        if(Reference("SharedAbility")!=null)
+        if(HasUnifiedControls || Reference("SharedAbility")!=null)
         {
             // Tint the actual approved plate; an old alternate sprite would
             // visibly change its shape whenever a control is pressed/disabled.

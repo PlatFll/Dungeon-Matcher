@@ -1,0 +1,176 @@
+[
+  {
+    "id": "A",
+    "name": "Royal bevel",
+    "endpoint": "create_image_pro_flash",
+    "args": {
+      "description": "Pixel-art UI style exploration sheet on a transparent 192x128 native pixel canvas. Exactly TWO separate UI sprites, NOT a game screen: TOP a horizontal empty wave plaque occupying x8..183, y4..59, with a long dark purple-black blank text recess; BOTTOM LEFT a square settings button occupying x8..63,y68..123 with a clear pale silver gear centered in its dark recess. Leave the remaining lower-right area transparent. The wave plaque includes a small gold diamond centered on its top border, tiny gold side diamonds and a tiny pale skull attached at the bottom middle. No text or numbers anywhere. Same border treatment on both. Silver Royal Relic family: visibly 85 percent cool SILVER bevels and only 15 percent small gold jewelry, never gold main rails. Strong dark one-pixel outline, upper-left light, crisp native pixel clusters, flat intentional ramps, large quiet connected planes, no dithering, no antialiasing, no gradient, no blur, no stone cracks, no rivets, no gritty noise. Front elevation orthographic UI. Keep all artwork inside with transparent margin. Rendering economy like style reference but do not reproduce its character body or costume. VARIATION: Medium six-pixel polished silver rims, decisive 45-degree chamfered corners, broad bright top-left bevel and subdued lavender-gray bottom bevel. Refined angular royal silhouette. Small gold diamond is the only main focal ornament; no gold rail or gold filigree. Clear clean center.",
+      "width": 192,
+      "height": 128,
+      "no_background": true,
+      "palette": [
+        "#171622",
+        "#343341",
+        "#565568",
+        "#89899C",
+        "#C2C1D0",
+        "#ECEAF2",
+        "#FFF9F0",
+        "#60340F",
+        "#8A5622",
+        "#C58826",
+        "#E8B84D",
+        "#FBEA90",
+        "#11101B",
+        "#151423",
+        "#241F3A",
+        "#68168A"
+      ],
+      "palette_name": "Silver Royal Relic",
+      "max_colors": 16,
+      "seed": 76175,
+      "style_image": {
+        "url": "upload:832d655c-cc96-4852-a299-67ab35a4f191",
+        "usage_description": "Rendering discipline only: native pixel clusters, dark clean contours, readable compact forms and top-left shading. Do not copy anatomy, red/cyan colors or character pose."
+      },
+      "style_options": {
+        "color_palette": false,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      }
+    },
+    "background_job_id": "b5ac3e3d-febe-4f11-a90c-ebe56791e271",
+    "image_id": "73ca07eb-cbc3-54ec-a8a0-4a39b7f7dcc7",
+    "status": "processing",
+    "source_image_id": "73ca07eb-cbc3-54ec-a8a0-4a39b7f7dcc7",
+    "job_id": "b5ac3e3d-febe-4f11-a90c-ebe56791e271",
+    "description": "Pixel-art UI style exploration sheet on a transparent 192x128 native pixel canvas. Exactly TWO separate UI sprites, NOT a game screen: TOP a horizontal empty wave plaque occupying x8..183, y4..59, with a long dark purple-black blank text recess; BOTTOM LEFT a square settings button occupying x8..63,y68..123 with a clear pale silver gear centered in its dark recess. Leave the remaining lower-right area transparent. The wave plaque includes a small gold diamond centered on its top border, tiny gold side diamonds and a tiny pale skull attached at the bottom middle. No text or numbers anywhere. Same border treatment on both. Silver Royal Relic family: visibly 85 percent cool SILVER bevels and only 15 percent small gold jewelry, never gold main rails. Strong dark one-pixel outline, upper-left light, crisp native pixel clusters, flat intentional ramps, large quiet connected planes, no dithering, no antialiasing, no gradient, no blur, no stone cracks, no rivets, no gritty noise. Front elevation orthographic UI. Keep all artwork inside with transparent margin. Rendering economy like style reference but do not reproduce its character body or costume. VARIATION: Medium six-pixel polished silver rims, decisive 45-degree chamfered corners, broad bright top-left bevel and subdued lavender-gray bottom bevel. Refined angular royal silhouette. Small gold diamond is the only main focal ornament; no gold rail or gold filigree. Clear clean center.",
+    "seed": 76175,
+    "image_size": {
+      "width": 192,
+      "height": 128
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/b5ac3e3d-febe-4f11-a90c-ebe56791e271/download"
+  },
+  {
+    "id": "B",
+    "name": "Moonlit filigree",
+    "endpoint": "create_image_pro_flash",
+    "args": {
+      "description": "Pixel-art UI style exploration sheet on a transparent 192x128 native pixel canvas. Exactly TWO separate UI sprites, NOT a game screen: TOP a horizontal empty wave plaque occupying x8..183, y4..59, with a long dark purple-black blank text recess; BOTTOM LEFT a square settings button occupying x8..63,y68..123 with a clear pale silver gear centered in its dark recess. Leave the remaining lower-right area transparent. The wave plaque includes a small gold diamond centered on its top border, tiny gold side diamonds and a tiny pale skull attached at the bottom middle. No text or numbers anywhere. Same border treatment on both. Silver Royal Relic family: visibly 85 percent cool SILVER bevels and only 15 percent small gold jewelry, never gold main rails. Strong dark one-pixel outline, upper-left light, crisp native pixel clusters, flat intentional ramps, large quiet connected planes, no dithering, no antialiasing, no gradient, no blur, no stone cracks, no rivets, no gritty noise. Front elevation orthographic UI. Keep all artwork inside with transparent margin. Rendering economy like style reference but do not reproduce its character body or costume. VARIATION: Slender four-pixel pale moon-silver rims with long eight-pixel diagonal corner chamfers, elegant lighter silhouette. Two restrained tiny SILVER curved flourishes attached below the wave plaque and smaller gold diamond accents. Calm deep-indigo center. The silver dominates strongly.",
+      "width": 192,
+      "height": 128,
+      "no_background": true,
+      "palette": [
+        "#171622",
+        "#343341",
+        "#565568",
+        "#89899C",
+        "#C2C1D0",
+        "#ECEAF2",
+        "#FFF9F0",
+        "#60340F",
+        "#8A5622",
+        "#C58826",
+        "#E8B84D",
+        "#FBEA90",
+        "#11101B",
+        "#151423",
+        "#241F3A",
+        "#68168A"
+      ],
+      "palette_name": "Silver Royal Relic",
+      "max_colors": 16,
+      "seed": 76176,
+      "style_image": {
+        "url": "upload:832d655c-cc96-4852-a299-67ab35a4f191",
+        "usage_description": "Rendering discipline only: native pixel clusters, dark clean contours, readable compact forms and top-left shading. Do not copy anatomy, red/cyan colors or character pose."
+      },
+      "style_options": {
+        "color_palette": false,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      }
+    },
+    "background_job_id": "0dbdfb32-7b16-4cd1-ad0d-571d88cd56b7",
+    "image_id": "f786febc-8515-5bc7-ba0f-bd72c7dff669",
+    "status": "processing",
+    "source_image_id": "f786febc-8515-5bc7-ba0f-bd72c7dff669",
+    "job_id": "0dbdfb32-7b16-4cd1-ad0d-571d88cd56b7",
+    "description": "Pixel-art UI style exploration sheet on a transparent 192x128 native pixel canvas. Exactly TWO separate UI sprites, NOT a game screen: TOP a horizontal empty wave plaque occupying x8..183, y4..59, with a long dark purple-black blank text recess; BOTTOM LEFT a square settings button occupying x8..63,y68..123 with a clear pale silver gear centered in its dark recess. Leave the remaining lower-right area transparent. The wave plaque includes a small gold diamond centered on its top border, tiny gold side diamonds and a tiny pale skull attached at the bottom middle. No text or numbers anywhere. Same border treatment on both. Silver Royal Relic family: visibly 85 percent cool SILVER bevels and only 15 percent small gold jewelry, never gold main rails. Strong dark one-pixel outline, upper-left light, crisp native pixel clusters, flat intentional ramps, large quiet connected planes, no dithering, no antialiasing, no gradient, no blur, no stone cracks, no rivets, no gritty noise. Front elevation orthographic UI. Keep all artwork inside with transparent margin. Rendering economy like style reference but do not reproduce its character body or costume. VARIATION: Slender four-pixel pale moon-silver rims with long eight-pixel diagonal corner chamfers, elegant lighter silhouette. Two restrained tiny SILVER curved flourishes attached below the wave plaque and smaller gold diamond accents. Calm deep-indigo center. The silver dominates strongly.",
+    "seed": 76176,
+    "image_size": {
+      "width": 192,
+      "height": 128
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/0dbdfb32-7b16-4cd1-ad0d-571d88cd56b7/download"
+  },
+  {
+    "id": "C",
+    "name": "Forged relic",
+    "endpoint": "create_image_pro_flash",
+    "args": {
+      "description": "Pixel-art UI style exploration sheet on a transparent 192x128 native pixel canvas. Exactly TWO separate UI sprites, NOT a game screen: TOP a horizontal empty wave plaque occupying x8..183, y4..59, with a long dark purple-black blank text recess; BOTTOM LEFT a square settings button occupying x8..63,y68..123 with a clear pale silver gear centered in its dark recess. Leave the remaining lower-right area transparent. The wave plaque includes a small gold diamond centered on its top border, tiny gold side diamonds and a tiny pale skull attached at the bottom middle. No text or numbers anywhere. Same border treatment on both. Silver Royal Relic family: visibly 85 percent cool SILVER bevels and only 15 percent small gold jewelry, never gold main rails. Strong dark one-pixel outline, upper-left light, crisp native pixel clusters, flat intentional ramps, large quiet connected planes, no dithering, no antialiasing, no gradient, no blur, no stone cracks, no rivets, no gritty noise. Front elevation orthographic UI. Keep all artwork inside with transparent margin. Rendering economy like style reference but do not reproduce its character body or costume. VARIATION: Substantial eight-pixel steel-silver beveled rim, short stepped octagonal corners, dark underside and bold bright upper-left facets, chunky premium relic geometry. A slightly larger top diamond nestled in a silver socket, miniature gold points at the ends. No chains or detached hardware.",
+      "width": 192,
+      "height": 128,
+      "no_background": true,
+      "palette": [
+        "#171622",
+        "#343341",
+        "#565568",
+        "#89899C",
+        "#C2C1D0",
+        "#ECEAF2",
+        "#FFF9F0",
+        "#60340F",
+        "#8A5622",
+        "#C58826",
+        "#E8B84D",
+        "#FBEA90",
+        "#11101B",
+        "#151423",
+        "#241F3A",
+        "#68168A"
+      ],
+      "palette_name": "Silver Royal Relic",
+      "max_colors": 16,
+      "seed": 76177,
+      "style_image": {
+        "url": "upload:832d655c-cc96-4852-a299-67ab35a4f191",
+        "usage_description": "Rendering discipline only: native pixel clusters, dark clean contours, readable compact forms and top-left shading. Do not copy anatomy, red/cyan colors or character pose."
+      },
+      "style_options": {
+        "color_palette": false,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      }
+    },
+    "background_job_id": "a3b8592b-2caf-4da9-b061-3baf6be90690",
+    "image_id": "d78c51b6-5c6a-5f90-8b1a-ab83b82b1bef",
+    "status": "processing",
+    "source_image_id": "d78c51b6-5c6a-5f90-8b1a-ab83b82b1bef",
+    "job_id": "a3b8592b-2caf-4da9-b061-3baf6be90690",
+    "description": "Pixel-art UI style exploration sheet on a transparent 192x128 native pixel canvas. Exactly TWO separate UI sprites, NOT a game screen: TOP a horizontal empty wave plaque occupying x8..183, y4..59, with a long dark purple-black blank text recess; BOTTOM LEFT a square settings button occupying x8..63,y68..123 with a clear pale silver gear centered in its dark recess. Leave the remaining lower-right area transparent. The wave plaque includes a small gold diamond centered on its top border, tiny gold side diamonds and a tiny pale skull attached at the bottom middle. No text or numbers anywhere. Same border treatment on both. Silver Royal Relic family: visibly 85 percent cool SILVER bevels and only 15 percent small gold jewelry, never gold main rails. Strong dark one-pixel outline, upper-left light, crisp native pixel clusters, flat intentional ramps, large quiet connected planes, no dithering, no antialiasing, no gradient, no blur, no stone cracks, no rivets, no gritty noise. Front elevation orthographic UI. Keep all artwork inside with transparent margin. Rendering economy like style reference but do not reproduce its character body or costume. VARIATION: Substantial eight-pixel steel-silver beveled rim, short stepped octagonal corners, dark underside and bold bright upper-left facets, chunky premium relic geometry. A slightly larger top diamond nestled in a silver socket, miniature gold points at the ends. No chains or detached hardware.",
+    "seed": 76177,
+    "image_size": {
+      "width": 192,
+      "height": 128
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/a3b8592b-2caf-4da9-b061-3baf6be90690/download"
+  }
+]

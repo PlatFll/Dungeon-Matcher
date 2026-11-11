@@ -20,6 +20,22 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Silver Royal Relic UI — user-edited production controls (2026-11-12)
+
+The user supplied and approved five final PNGs for the actual shared battle UI:
+wave plaque 176×66, Settings 56×56, supply holder 70×70, ability frame 176×66,
+and a separate 41×38 Rattlebones icon. These exact files now override the old
+stone controls in every zone through the existing BattlePresentationSkin.
+The wave's native corners, diamond and skull stay fixed while only straight
+rail lengths respond to screen width. Each ability definition still owns its
+icon; the existing slab view centers the visible drawing above the shared frame
+and preserves its ready lift, white glow, pause and Reduced Motion behavior.
+The existing Minotaur bull, Kobold revolver and Bardley flute are reused, with
+separate editable LibreSprite copies. No new generation spending is required.
+Energy-bar artwork and charge logic, gameplay, environments and other UI remain
+unchanged. Earlier generated art and user-edited source documents are preserved.
+See [production handoff and actual Game evidence](../ArtSource/SilverRoyalRelicUI/Production/README.md).
+
 ## Hearth flame and full-tile Marine Net — production approved (2026-11-10)
 
 The user accepted the Hearth Ember still and requested flame-only animation,
@@ -75,7 +91,8 @@ is superseded.
 
 ## Shared stone battle controls and four-character menu — production integration approved (2026-11-01)
 
-All five zones use the same PixelLab/LibreSprite supply tiles, square Settings
+Historical stone family (superseded by the user's Silver Royal Relic controls above):
+all five zones used the same PixelLab/LibreSprite supply tiles, square Settings
 button, solid ability slab and wave plaque. The first set read too metallic; the
 user requested larger wave/Settings controls and a stronger stone material. The
 current revision uses chipped matte gray stone without studs: wave up to 176×48
