@@ -1,0 +1,105 @@
+{
+  "method": "Exact material recolor; native LibreSprite input/export/reopen",
+  "pixellab_generations": 0,
+  "references": {
+    "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt": "114be005931c199924e4923fdea0046af566afab7f8754f31a24eb53fa7f779e",
+    "Docs/ArtDirection/Golden_Reference_Register.md": "e95eae0c386ba33f573bd0d70749e74076360021aeab95e53d3ab0a54b279958",
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306",
+    "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca",
+    "Assets/_Game/Art/FrostwakePlayables/Minotaur_Portrait.png": "80cd9ec0c65bd7cd844709f0e0cc854a2a22bb68846933fe3df5c1df6fa4eb57",
+    "Assets/_Game/Art/CombatIdles/Bardley_Idle.png": "8e53b58662d7d51c8c90edef954ee2be68a8fe3b7d93e5cd5a7044f759b73dec"
+  },
+  "icons": {
+    "Minotaur_Bull": {
+      "source_ase_sha256": "8be9190b7fb1fac49b6ef552c603595f44dd9b48ae7c57bdc23b292ca0652302",
+      "input_png_sha256": "e1516eba7e08506a6200e27086882ece4c3f25950ff61f67b4e9246a7606ecb3",
+      "production_asset": "Assets\\_Game\\Resources\\UI\\BattlePresentation\\Silver\\BullAbilityIcon.png",
+      "output_sha256": "f3f8755121a81c2f7c26ea762d20d4e849fc2d2b3cce33221e0b8716d294b207",
+      "canvas": [
+        48,
+        40
+      ],
+      "bounds": [
+        9,
+        9,
+        39,
+        35
+      ],
+      "palette": [
+        "#0A0D11",
+        "#79502E",
+        "#B49872",
+        "#C99D6F",
+        "#CDA12E",
+        "#D1BE95",
+        "#F0DDAF"
+      ],
+      "opaque_colors": 7,
+      "alpha": [
+        0,
+        255
+      ],
+      "alpha_mask_and_placement_preserved": true,
+      "libresprite_roundtrip_exact": true
+    },
+    "Kobold_Revolver": {
+      "source_ase_sha256": "7bc96f7ccf01caa780d4da6a5e3566df94f6e33988f5503112d88742cd9d879d",
+      "input_png_sha256": "951851b858fdb5cde19a2575ac0a5db0ab1bca9c95f94d8f877b7d88d50511c6",
+      "production_asset": "Assets\\_Game\\Resources\\UI\\BattlePresentation\\Silver\\RevolverAbilityIcon.png",
+      "output_sha256": "ef21f57869c91d8335b4e7119cf028b0d6870c7aad694b6ea9d4d6cb6bbf5fe1",
+      "canvas": [
+        48,
+        40
+      ],
+      "bounds": [
+        8,
+        5,
+        41,
+        37
+      ],
+      "palette": [
+        "#0A0D11",
+        "#2B313A",
+        "#55606E",
+        "#93A1B0"
+      ],
+      "opaque_colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "alpha_mask_and_placement_preserved": true,
+      "libresprite_roundtrip_exact": true
+    },
+    "Bardley_Flute": {
+      "source_ase_sha256": "e21b2fc74c68c7cdfa44319a4eee04a93501b8ab7ac35b259aef290bdd33aba5",
+      "input_png_sha256": "33e9902b2e2fad3593cb8625fb5d2e71da63e045aad38602efbbc10bc6fe28e0",
+      "production_asset": "Assets\\_Game\\Resources\\UI\\BattlePresentation\\Silver\\FluteAbilityIcon.png",
+      "output_sha256": "9845661b5ca39428f70732cf8548e55e2e8a549850ff4c80ab53b3b86cc66cac",
+      "canvas": [
+        48,
+        40
+      ],
+      "bounds": [
+        9,
+        4,
+        41,
+        36
+      ],
+      "palette": [
+        "#0A0D11",
+        "#8A5622",
+        "#C58826",
+        "#FBEA90"
+      ],
+      "opaque_colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "alpha_mask_and_placement_preserved": true,
+      "libresprite_roundtrip_exact": true
+    }
+  }
+}
