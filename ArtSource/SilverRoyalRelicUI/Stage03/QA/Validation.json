@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "scope": "Stage 3 native sources and review only",
+  "protected_production_files_unchanged": 9182,
+  "production_files_added": 0,
+  "approved_stage2_sources_unchanged": true,
+  "golden_and_prior_ui_hashes_unchanged": true,
+  "existing_potion_bomb_icons_unchanged": true,
+  "energy_fill_fits_empty_trough": true,
+  "assets": {
+    "AbilityFrame": {
+      "native_size": [
+        176,
+        66
+      ],
+      "binary_alpha": true,
+      "visible_rgba_roundtrip_equal": true,
+      "sha256": "6ec7277d80ef828908364d12c496a966f4eaf9a46c5bcbbb2a25fe33511bea55",
+      "editable_sha256": "f7b0d76a66194a5c2cb2ea116576246f835617c5fb5e7a0fa9dfd44e72670f87"
+    },
+    "AbilityFlourish": {
+      "native_size": [
+        176,
+        66
+      ],
+      "binary_alpha": true,
+      "visible_rgba_roundtrip_equal": true,
+      "sha256": "60038f4e86f8b10ec17b83d3d8aac5ada917bc3e72b2a42bbc06681bc029ec45",
+      "editable_sha256": "e2eac2f47641049e91a48b715ed817c09f0367bc6e04dedaefc085cfd2fbc55d"
+    },
+    "RattlebonesEmblem": {
+      "native_size": [
+        30,
+        40
+      ],
+      "binary_alpha": true,
+      "visible_rgba_roundtrip_equal": true,
+      "sha256": "86341d8cf1e3e2edcc54902407219bc6bd43fbb441f992be56b6b56b897502d0",
+      "editable_sha256": "42a388cd332e70d5db761806bb8f572fbe8b1fc514e8f5b12d76cb29efb7c5e0"
+    },
+    "ItemFrame": {
+      "native_size": [
+        64,
+        64
+      ],
+      "binary_alpha": true,
+      "visible_rgba_roundtrip_equal": true,
+      "sha256": "971e46f6a00fd7c7766988aa374e329431cc8de6caa55fcb07f7448fa0017fb2",
+      "editable_sha256": "bf77e2f4bc06f44c288caf13e0926a54bee2fb1ca15c7b8a646e1e59161fa816"
+    },
+    "EnergyCasing": {
+      "native_size": [
+        147,
+        24
+      ],
+      "binary_alpha": true,
+      "visible_rgba_roundtrip_equal": true,
+      "sha256": "15ec53e5ec834797ef979f2ed5622c8277af5df75235cf2d3fbcd79448909fd9",
+      "editable_sha256": "821c8df98b7dd59af661d0300d52c82348442b2798d7ca175ef8b4ea7bb65252"
+    },
+    "EnergyFill": {
+      "native_size": [
+        107,
+        8
+      ],
+      "binary_alpha": true,
+      "visible_rgba_roundtrip_equal": true,
+      "sha256": "ed459f7c4c1bb81ab6289e52ff7d347012a7c51f41e1aba2452080170410a0d3",
+      "editable_sha256": "73cea564133589bf231b9c52efcb7f489f72a9fc69e75030033237448839f01c"
+    }
+  },
+  "pixellab_generations": 18,
+  "starting_balance": 3685.9,
+  "ending_balance": 3667.9,
+  "unity_run_this_stage": false,
+  "reason": "No Assets, runtime, editor, import or serialization changes; Stage 4 integration awaits approval",
+  "device_testing": false
+}

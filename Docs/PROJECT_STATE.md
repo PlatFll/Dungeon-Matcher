@@ -20,16 +20,18 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Silver Royal Relic UI — selected A, Stage 2 review (2026-11-11)
+## Silver Royal Relic UI — selected A, Stage 3 review (2026-11-11)
 
 The user chose A / Royal bevel for the staged global battle-UI replacement.
-Stage 2 prepares the native wave plaque and square Settings control from the
-approved PixelLab source in LibreSprite. An Editor-only adapter temporarily
-shows them on the existing Game controls; production routing and all bottom-HUD
-art remain unchanged. This is a review checkpoint, not a deployed replacement.
-See [Stage 2 handoff](../ArtSource/SilverRoyalRelicUI/Stage02/README.md).
-Bottom controls, final runtime integration and cross-zone approval remain later
-stages; no merge is authorized.
+Stage 2's native wave plaque and square Settings control remain unchanged;
+its Editor-only adapter temporarily shows them on the existing Game controls.
+Stage 3 adds PixelLab-generated, LibreSprite-finished energy casing/fill,
+ability frame, separate Rattlebones emblem and one shared item frame in ArtSource.
+The bottom controls are an asset-review assembly, not a Unity integration.
+All 9,182 existing production/configuration files remain byte-identical during
+Stage 3. See [Stage 3 handoff](../ArtSource/SilverRoyalRelicUI/Stage03/README.md).
+Runtime integration is Stage 4 and awaits approval, followed by cross-zone
+review. Production routing remains unchanged; no merge is authorized.
 
 ## Hearth flame and full-tile Marine Net — production approved (2026-11-10)
 

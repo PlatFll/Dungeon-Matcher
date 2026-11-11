@@ -1,0 +1,92 @@
+[
+  {
+    "id": "Ability",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"fcb088bb-f268-41b8-92e2-a99d8522a890\",\n  \"image_id\": \"e3acb81e-42c9-50ce-b001-b6f16ac5618a\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"e3acb81e-42c9-50ce-b001-b6f16ac5618a\",\n  \"job_id\": \"fcb088bb-f268-41b8-92e2-a99d8522a890\",\n  \"description\": \"A modular pixel-art ability button sheet on a transparent 192x128 canvas. TOP: one broad horizontal SILVER button frame about 176 pixels wide and 62 pixels tall, centered at x96,y38, contained within x8..183,y7..69. Dark purple-black quiet center RESERVED EMPTY for a separate dynamic character symbol. Top-center and bottom-center tiny gold diamonds; very small gold side ornaments. Restrained low-contrast purple curl flourish at each inner far side only, leave center x66..125 quiet. BOTTOM CENTER: a separate small crowned ivory skeleton skull emblem, around 32x36 pixels, centered at x96,y102, fully detached from the frame with clear transparent margin. Simple whimsical skull, two black sockets, small gold crown with three points; no body, no character portrait. The emblem must be removable so other character symbols can use the same frame. Native pixel-art fantasy game UI, front-facing orthographic. Closely match the supplied approved A wave/settings family: broad polished SILVER bevels, dark clean outline, 45-degree chamfer corners, bright top/left and restrained lower/right planes, 85 percent silver trim with only 15 percent tiny warm gold jewelry. No bolts, rivets, stone cracks, gritty texture, blurry gradients, antialiasing, random sparkles, text or numbers. Leave several clear transparent pixels around every sprite. Keep the depicted components at their requested small native size within the canvas; don't enlarge them to fill the sheet.\",\n  \"seed\": 76193,\n  \"image_size\": {\n    \"width\": 192,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/fcb088bb-f268-41b8-92e2-a99d8522a890/download\"\n}\nPoll get_image(job_id=\"fcb088bb-f268-41b8-92e2-a99d8522a890\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "fcb088bb-f268-41b8-92e2-a99d8522a890",
+        "image_id": "e3acb81e-42c9-50ce-b001-b6f16ac5618a",
+        "status": "processing",
+        "source_image_id": "e3acb81e-42c9-50ce-b001-b6f16ac5618a",
+        "job_id": "fcb088bb-f268-41b8-92e2-a99d8522a890",
+        "description": "A modular pixel-art ability button sheet on a transparent 192x128 canvas. TOP: one broad horizontal SILVER button frame about 176 pixels wide and 62 pixels tall, centered at x96,y38, contained within x8..183,y7..69. Dark purple-black quiet center RESERVED EMPTY for a separate dynamic character symbol. Top-center and bottom-center tiny gold diamonds; very small gold side ornaments. Restrained low-contrast purple curl flourish at each inner far side only, leave center x66..125 quiet. BOTTOM CENTER: a separate small crowned ivory skeleton skull emblem, around 32x36 pixels, centered at x96,y102, fully detached from the frame with clear transparent margin. Simple whimsical skull, two black sockets, small gold crown with three points; no body, no character portrait. The emblem must be removable so other character symbols can use the same frame. Native pixel-art fantasy game UI, front-facing orthographic. Closely match the supplied approved A wave/settings family: broad polished SILVER bevels, dark clean outline, 45-degree chamfer corners, bright top/left and restrained lower/right planes, 85 percent silver trim with only 15 percent tiny warm gold jewelry. No bolts, rivets, stone cracks, gritty texture, blurry gradients, antialiasing, random sparkles, text or numbers. Leave several clear transparent pixels around every sprite. Keep the depicted components at their requested small native size within the canvas; don't enlarge them to fill the sheet.",
+        "seed": 76193,
+        "image_size": {
+          "width": 192,
+          "height": 128
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/fcb088bb-f268-41b8-92e2-a99d8522a890/download"
+      },
+      "isError": false
+    }
+  },
+  {
+    "id": "Supply",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"4daf6aee-ec55-48a0-8c84-eedb24c79295\",\n  \"image_id\": \"6f399381-6c05-56d2-a554-3afb95c30612\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"6f399381-6c05-56d2-a554-3afb95c30612\",\n  \"job_id\": \"4daf6aee-ec55-48a0-8c84-eedb24c79295\",\n  \"description\": \"Exactly ONE small empty inventory item button frame on transparent 192x128 canvas. The button itself is a compact 60x60 native-pixel square, centered at x96,y64 (around x66..125,y34..93). It is NOT a wide panel. Thick SILVER bevels with eight short chamfered corners, matching the supplied square Settings frame; no gear or other icon. Dark purple-black completely empty quiet central recess at least 44x44 native pixels for existing potion OR bomb icons. Four tiny gold diamond accents at cardinal rail centers. No contents, no potion, no bomb, no count badge, no text. Keep most canvas transparent; preserve 60x60 button size so it fits a 64x64 slot with 2px margin. Native pixel-art fantasy game UI, front-facing orthographic. Closely match the supplied approved A wave/settings family: broad polished SILVER bevels, dark clean outline, 45-degree chamfer corners, bright top/left and restrained lower/right planes, 85 percent silver trim with only 15 percent tiny warm gold jewelry. No bolts, rivets, stone cracks, gritty texture, blurry gradients, antialiasing, random sparkles, text or numbers. Leave several clear transparent pixels around every sprite. Keep the depicted components at their requested small native size within the canvas; don't enlarge them to fill the sheet.\",\n  \"seed\": 76194,\n  \"image_size\": {\n    \"width\": 192,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/4daf6aee-ec55-48a0-8c84-eedb24c79295/download\"\n}\nPoll get_image(job_id=\"4daf6aee-ec55-48a0-8c84-eedb24c79295\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "4daf6aee-ec55-48a0-8c84-eedb24c79295",
+        "image_id": "6f399381-6c05-56d2-a554-3afb95c30612",
+        "status": "processing",
+        "source_image_id": "6f399381-6c05-56d2-a554-3afb95c30612",
+        "job_id": "4daf6aee-ec55-48a0-8c84-eedb24c79295",
+        "description": "Exactly ONE small empty inventory item button frame on transparent 192x128 canvas. The button itself is a compact 60x60 native-pixel square, centered at x96,y64 (around x66..125,y34..93). It is NOT a wide panel. Thick SILVER bevels with eight short chamfered corners, matching the supplied square Settings frame; no gear or other icon. Dark purple-black completely empty quiet central recess at least 44x44 native pixels for existing potion OR bomb icons. Four tiny gold diamond accents at cardinal rail centers. No contents, no potion, no bomb, no count badge, no text. Keep most canvas transparent; preserve 60x60 button size so it fits a 64x64 slot with 2px margin. Native pixel-art fantasy game UI, front-facing orthographic. Closely match the supplied approved A wave/settings family: broad polished SILVER bevels, dark clean outline, 45-degree chamfer corners, bright top/left and restrained lower/right planes, 85 percent silver trim with only 15 percent tiny warm gold jewelry. No bolts, rivets, stone cracks, gritty texture, blurry gradients, antialiasing, random sparkles, text or numbers. Leave several clear transparent pixels around every sprite. Keep the depicted components at their requested small native size within the canvas; don't enlarge them to fill the sheet.",
+        "seed": 76194,
+        "image_size": {
+          "width": 192,
+          "height": 128
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/4daf6aee-ec55-48a0-8c84-eedb24c79295/download"
+      },
+      "isError": false
+    }
+  },
+  {
+    "id": "Energy",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"2956ecec-2c8e-4435-b705-4908e44c251b\",\n  \"image_id\": \"39579ca1-be87-54d9-8030-d00da5659240\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"39579ca1-be87-54d9-8030-d00da5659240\",\n  \"job_id\": \"2956ecec-2c8e-4435-b705-4908e44c251b\",\n  \"description\": \"A modular energy meter sheet, transparent 192x128 native pixels, exactly TWO long thin horizontal elements separated by clear transparency. TOP at x22..169,y35..58: one slim empty SILVER meter casing 148x24 pixels, pointed or chamfered endcaps, tiny gold diamond near each end. Black-purple quiet empty trough, at least 108 pixels wide and 8 pixels tall. NO energy baked into casing. BELOW centered at y90: a separate fully filled violet energy strip 108x8 pixels long, with a clean bright-purple upper bevel and dark-purple lower edge, broad connected horizontal color bands, no shiny white stripe, no glow outside its hard silhouette. Empty transparent area between elements. Meter is straight, symmetric and slender, NOT a chunky plaque, NO skull, no words, no numbers. Native pixel-art fantasy game UI, front-facing orthographic. Closely match the supplied approved A wave/settings family: broad polished SILVER bevels, dark clean outline, 45-degree chamfer corners, bright top/left and restrained lower/right planes, 85 percent silver trim with only 15 percent tiny warm gold jewelry. No bolts, rivets, stone cracks, gritty texture, blurry gradients, antialiasing, random sparkles, text or numbers. Leave several clear transparent pixels around every sprite. Keep the depicted components at their requested small native size within the canvas; don't enlarge them to fill the sheet.\",\n  \"seed\": 76195,\n  \"image_size\": {\n    \"width\": 192,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/2956ecec-2c8e-4435-b705-4908e44c251b/download\"\n}\nPoll get_image(job_id=\"2956ecec-2c8e-4435-b705-4908e44c251b\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "2956ecec-2c8e-4435-b705-4908e44c251b",
+        "image_id": "39579ca1-be87-54d9-8030-d00da5659240",
+        "status": "processing",
+        "source_image_id": "39579ca1-be87-54d9-8030-d00da5659240",
+        "job_id": "2956ecec-2c8e-4435-b705-4908e44c251b",
+        "description": "A modular energy meter sheet, transparent 192x128 native pixels, exactly TWO long thin horizontal elements separated by clear transparency. TOP at x22..169,y35..58: one slim empty SILVER meter casing 148x24 pixels, pointed or chamfered endcaps, tiny gold diamond near each end. Black-purple quiet empty trough, at least 108 pixels wide and 8 pixels tall. NO energy baked into casing. BELOW centered at y90: a separate fully filled violet energy strip 108x8 pixels long, with a clean bright-purple upper bevel and dark-purple lower edge, broad connected horizontal color bands, no shiny white stripe, no glow outside its hard silhouette. Empty transparent area between elements. Meter is straight, symmetric and slender, NOT a chunky plaque, NO skull, no words, no numbers. Native pixel-art fantasy game UI, front-facing orthographic. Closely match the supplied approved A wave/settings family: broad polished SILVER bevels, dark clean outline, 45-degree chamfer corners, bright top/left and restrained lower/right planes, 85 percent silver trim with only 15 percent tiny warm gold jewelry. No bolts, rivets, stone cracks, gritty texture, blurry gradients, antialiasing, random sparkles, text or numbers. Leave several clear transparent pixels around every sprite. Keep the depicted components at their requested small native size within the canvas; don't enlarge them to fill the sheet.",
+        "seed": 76195,
+        "image_size": {
+          "width": 192,
+          "height": 128
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/2956ecec-2c8e-4435-b705-4908e44c251b/download"
+      },
+      "isError": false
+    }
+  }
+]
