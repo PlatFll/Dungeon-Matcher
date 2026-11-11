@@ -30,8 +30,14 @@ The wave's native corners, diamond and skull stay fixed while only straight
 rail lengths respond to screen width. Each ability definition still owns its
 icon; the existing slab view centers the visible drawing above the shared frame
 and preserves its ready lift, white glow, pause and Reduced Motion behavior.
-The existing Minotaur bull, Kobold revolver and Bardley flute are reused, with
-separate editable LibreSprite copies. No new generation spending is required.
+The user subsequently cleaned the Minotaur bull, Kobold revolver and Bardley
+flute in LibreSprite and authorized their palette-only coloring and integration.
+Their exact edited masks now use the current Minotaur fur/horn/amber colors,
+the canonical cool-iron ramp and Bardley/Rattlebones gold respectively. The
+three ability definitions bind separate native icons and matching ready masks;
+their original edits and old assets remain preserved. Sources and evidence:
+[icon color revision](../ArtSource/SilverRoyalRelicUI/IconColorRevision/README.md).
+No new generation spending was needed.
 Energy-bar artwork and charge logic, gameplay, environments and other UI remain
 unchanged. Earlier generated art and user-edited source documents are preserved.
 See [production handoff and actual Game evidence](../ArtSource/SilverRoyalRelicUI/Production/README.md).

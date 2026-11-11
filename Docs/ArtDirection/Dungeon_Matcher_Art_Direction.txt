@@ -1164,3 +1164,16 @@ This acceptance supersedes the earlier generated control candidates only;
 energy bar, health art, menus, characters, gems and environments are unchanged.
 Provenance, exact hashes, LibreSprite files and Game previews:
 ArtSource/SilverRoyalRelicUI/Production/. No golden-reference membership changes.
+
+
+2026-11-12 — User-cleaned ability icon recolors
+The user finished cleaning the bull, revolver cylinder and flute in LibreSprite
+and requested coloring, actual-game integration and merge. Preserve the exact
+saved 48x40 canvases, masks, placement and drawing. Minotaur uses its current
+approved portrait colors: warm #79502E/#C99D6F, ivory #B49872/#F0DDAF/#D1BE95,
+and amber #CDA12E. Revolver uses the established cool iron #2B313A/#55606E/#93A1B0;
+flute uses Bardley's gold #8A5622/#C58826/#FBEA90. Deep separations are #0A0D11.
+This is material coloring of the supplied symbols, not a new global palette.
+The five user-supplied silver UI PNGs and current character sprites are unchanged.
+Sources, exact masks, LibreSprite round trips and Game-scene evidence:
+ArtSource/SilverRoyalRelicUI/IconColorRevision/.
