@@ -17,12 +17,12 @@
         64
       ],
       "opaque_colors": 13,
-      "sha256": "6ec7277d80ef828908364d12c496a966f4eaf9a46c5bcbbb2a25fe33511bea55",
+      "sha256": "b13da3fa7f604e7e4d78395bcefc9912f4bb9e3edfd597d3312f2ce115c0e01a",
       "binary_alpha": true,
       "exact_libresprite_roundtrip": true,
       "minimum_margin": 1,
       "palette": {
-        "#11101B": 5744,
+        "#1C2438": 5744,
         "#89899C": 694,
         "#ECEAF2": 529,
         "#565568": 482,
@@ -187,5 +187,15 @@
   "ability_icon_is_character_specific": true,
   "same_item_template_for_both_supplies": true,
   "production_runtime_changed": false,
-  "resampling_used_on_production_assets": false
+  "resampling_used_on_production_assets": false,
+  "ability_background_revision": {
+    "user_request": "Match board tile background color; preserve all other art",
+    "color": "#1C2438",
+    "tile_source": "Assets/_Game/Art/DungeonPixelLab/Stage16/Board_Cell64.png",
+    "tile_sha256": "3a05cf2df5b48528e0bb5445a7bd58da3903bbb177346d4456722bfa61bf70b7",
+    "before_sha256": "6ec7277d80ef828908364d12c496a966f4eaf9a46c5bcbbb2a25fe33511bea55",
+    "changed_pixels": 5744,
+    "other_asset_exports_unchanged": true,
+    "new_generations": 0
+  }
 }

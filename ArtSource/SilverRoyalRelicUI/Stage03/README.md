@@ -4,6 +4,13 @@ User direction: continue from selected **A / Royal bevel** and the Stage 2 top
 controls. This is a native-asset review checkpoint under the original brief,
 not runtime deployment. **Stop for approval before Stage 4. Do not merge.**
 
+User revision: the ability inset now uses the shared board tile's exact main
+fill, **#1C2438**, sampled from `DungeonPixelLab/Stage16/Board_Cell64.png`.
+LibreSprite replaced only 5,744 original #11101B inset pixels. Alpha, dimensions,
+all frame/jewelry pixels, the emblem and every other export are unchanged.
+Before-art is preserved in `Inputs/AbilityFrame-BeforeBoardColor.*`; exact
+checks are in `QA/AbilityBackgroundRevision.json`. No generations were spent.
+
 Open [Review.html](Review.html) for native and integer-zoom views, original
 PixelLab sheets, editable sources, charge controls, item quantities, and five
 plain backdrop colors. These are asset assemblies, **not Unity screenshots**.

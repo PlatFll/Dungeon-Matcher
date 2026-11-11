@@ -50,6 +50,10 @@ def line(im,a,b,c):
 for a,b in zip(path,path[1:]):
  line(swirl,a,b,color('3B0D65'));line(swirl,(175-a[0],a[1]),(175-b[0],b[1]),color('3B0D65'))
 frame.alpha_composite(crest,(77,0))
+# User revision: only the ability inset matches the shared board tile fill.
+for y in range(frame.height):
+ for x in range(frame.width):
+  if frame.getpixel((x,y))==recess:frame.putpixel((x,y),color('1C2438'))
 skull=Image.new('RGBA',(30,40));skull.paste(raw['Ability'].crop((82,70,108,106)),(2,2))
 # The icon keeps the generated crown / face. Darken hollow features to the same
 # recess rather than treating their gray source fringe as shiny metal.
