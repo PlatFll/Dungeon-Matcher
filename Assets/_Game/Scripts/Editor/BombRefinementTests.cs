@@ -55,9 +55,9 @@ public sealed class BombRefinementTests
         }
         finally{Object.DestroyImmediate(go);if(had)PlayerPrefs.SetInt(PresentationPreferences.ReducedMotionKey,old);else PlayerPrefs.DeleteKey(PresentationPreferences.ReducedMotionKey);}
     }
-    [Test] public void IdleFramesKeepNativeScaleAndDirectionalSocketsFollowTheirCasings()
+    [Test] public void IdleFramesKeepNativeScaleAndDirectionalSocketsStayAnchored()
     {
-        foreach (var entry in new[]{("Poison",24),("Healing",32),("Star",32)})
+        foreach (var entry in new[]{("Poison",24),("Healing",32),("Star",32),("RowIdle",8),("ColumnIdle",8)})
         {
             var frames=Resources.LoadAll<Sprite>("VFX/BombRefinement/Idles/"+entry.Item1);
             Assert.That(frames.Length,Is.EqualTo(entry.Item2));
@@ -79,10 +79,16 @@ public sealed class BombRefinementTests
             var still=BombIdleArt.DirectionalStill(GemSpecialType.ColumnBomb);
             view.Show(still,still,renderer,GemSpecialType.ColumnBomb);
             Set(view,"idleTime",.08f);Call(view,"ApplyIdle");
-            Assert.That(view.transform.localPosition,Is.EqualTo(new Vector3(1f/64,0,0)));
+            Assert.That(view.transform.localPosition,Is.EqualTo(Vector3.zero));
+            var shell=view.GetComponent<SpriteRenderer>();
+            var rockFrame=shell.sprite;
+            Set(view,"idleTime",.24f);Call(view,"ApplyIdle");
+            Assert.That(shell.sprite,Is.Not.SameAs(rockFrame));
+            Assert.That(view.transform.localPosition,Is.EqualTo(Vector3.zero));
             Assert.That(view.transform.Find("SourceGemIcon").localPosition,Is.EqualTo(new Vector3(0,1f/64,0)));
             Assert.That(view.transform.localScale,Is.EqualTo(Vector3.one));
             PlayerPrefs.SetInt(PresentationPreferences.ReducedMotionKey,1);Call(view,"ApplyIdle");
+            Assert.That(shell.sprite,Is.SameAs(still));
             Assert.That(view.transform.localPosition,Is.EqualTo(Vector3.zero));
             view.Hide();Assert.That(view.GetComponentsInChildren<SpriteRenderer>().All(r=>!r.enabled),Is.True);
             view.Show(still,still,renderer,GemSpecialType.RowBomb);
@@ -175,7 +181,22 @@ public sealed class BombRefinementPlayTests
             Assert.That(icon.maskInteraction,Is.EqualTo(gem.GetComponent<SpriteRenderer>().maskInteraction));
         }
         string dir=Path.GetFullPath(Root+"/SelectedIdles");Directory.CreateDirectory(dir);Time.captureFramerate=30;
-        for(int f=0;f<100;f++){ScreenCapture.CaptureScreenshot(dir+"/Frame"+f.ToString("D3")+".png");yield return null;}
+        var fixedRow=board.GetGem(1,4).GetComponentInChildren<PoisonBombGemView>();
+        var fixedColumn=board.GetGem(1,3).GetComponentInChildren<PoisonBombGemView>();
+        var rowFrames=new System.Collections.Generic.HashSet<Sprite>();
+        var columnFrames=new System.Collections.Generic.HashSet<Sprite>();
+        for(int f=0;f<100;f++)
+        {
+            Assert.That(fixedRow.transform.localPosition,Is.EqualTo(Vector3.zero));
+            Assert.That(fixedColumn.transform.localPosition,Is.EqualTo(Vector3.zero));
+            Assert.That(fixedRow.transform.Find("SourceGemIcon").localPosition,Is.EqualTo(Vector3.zero));
+            Assert.That(fixedColumn.transform.Find("SourceGemIcon").localPosition,Is.EqualTo(new Vector3(0,1f/64,0)));
+            rowFrames.Add(fixedRow.GetComponent<SpriteRenderer>().sprite);
+            columnFrames.Add(fixedColumn.GetComponent<SpriteRenderer>().sprite);
+            ScreenCapture.CaptureScreenshot(dir+"/Frame"+f.ToString("D3")+".png");yield return null;
+        }
+        Assert.That(rowFrames.Count,Is.GreaterThan(1),"Anchoring must retain the row casing tremor");
+        Assert.That(columnFrames.Count,Is.GreaterThan(1),"Anchoring must retain the column casing tremor");
         Time.captureFramerate=oldCapture;yield return Until(()=>File.Exists(dir+"/Frame099.png"));
         var poison=board.GetGem(1,6).GetComponentInChildren<PoisonBombGemView>();
         var directional=board.GetGem(1,4).GetComponentInChildren<PoisonBombGemView>();

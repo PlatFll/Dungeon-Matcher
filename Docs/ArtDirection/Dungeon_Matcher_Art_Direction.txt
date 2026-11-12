@@ -691,7 +691,9 @@ the existing board-owned timing, target selection, clear/reward and refill rules
 The user selected Poison A, Healing C, Directional D and Star A on 2026-11-12.
 Preserve those casing shapes and their separate 16px gem sockets. Poison uses
 subtle liquid/bubble motion; Healing emits tiny yellow plus signs; Directional
-uses one-pixel tremor; Star sways subtly with a diagonal native shine sweep.
+uses one-pixel outer-end tremor around a fixed central socket; Star stays fixed
+with only a diagonal native shine sweep. Whole-sprite idle drift is removed
+per the user correction on 2026-11-12.
 The updated directional blast is broad yellow-white fire with restrained amber
 edges. Sources and native LibreSprite loops: ArtSource/BombReadability/SelectedIdles.
 Animation and blast refinement await visual review; the Shield casing is unchanged. Do not stack

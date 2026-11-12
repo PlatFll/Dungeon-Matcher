@@ -47,6 +47,7 @@
     },
     {
       "family": "Row",
+      "resourceFolder": "RowIdle",
       "frames": 8,
       "milliseconds": 80,
       "canvas": [
@@ -57,44 +58,13 @@
         32,
         32
       ],
-      "offsets": [
-        [
-          0,
-          0
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          1
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          -1
-        ]
-      ],
-      "runtime": "whole-view native pixel translation"
+      "binaryAlpha": true,
+      "fixedSocket": true,
+      "runtime": "native outer-end counter-rock; root and central band fixed"
     },
     {
       "family": "Column",
+      "resourceFolder": "ColumnIdle",
       "frames": 8,
       "milliseconds": 80,
       "canvas": [
@@ -105,41 +75,9 @@
         32,
         31
       ],
-      "offsets": [
-        [
-          0,
-          0
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          1
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          -1
-        ]
-      ],
-      "runtime": "whole-view native pixel translation"
+      "binaryAlpha": true,
+      "fixedSocket": true,
+      "runtime": "native outer-end counter-rock; root and central band fixed"
     }
   ],
   "generationSpending": 0,

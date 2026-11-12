@@ -12,10 +12,11 @@ raw generations, unselected alternatives and the original review remain intact.
   movement and two staggered bubbles rise, open and pop through a seamless cycle.
 - Healing: 32 × 100 ms, 64×64. Body/socket stay fixed; three tiny yellow plus
   accents emerge, rise and disappear with a quiet rest between cycles.
-- Directional row/column: eight × 80 ms positions. Whole casing and gem move
-  together by at most one native pixel. No arbitrary rotation or scaling.
-- Star: 32 × 80 ms, 64×64. Subtle one-pixel sway plus a diagonal white highlight
-  through the light facets. Dark silhouette and the selected design are retained.
+- Directional row/column: eight × 80 ms native cels. Outer ends counter-rock by one pixel
+  around a stationary central band and gem socket. No whole-view movement,
+  arbitrary rotation or resampling.
+- Star: 32 × 80 ms, 64×64. Stationary silhouette with a diagonal white highlight
+  through the light facets. Every alpha pixel is identical to the selected still.
 - Row/Column blast: 64×64 native fronts/trails replace the earlier 64×32 art.
   Broad yellow-white flame cores, restrained amber rims, matching native height,
   bidirectional travel and the existing board mask. Gameplay footprint is unchanged.
@@ -28,16 +29,22 @@ static art. Pause freezes time; Reduced Motion returns the static designs.
 ## Verification actually completed
 
 - `Tools/Validate-Unity.ps1` passed, Unity 6000.3.19f1. Log:
-  `DungeonMatcher-UnityValidation-67742902-63f7-4ab2-895f-858eba0fef76.log`.
-- 83 automated tests passed, zero failures or skips. Exact results:
-  `Validation/SelectedIdles-tests.xml` (source run `reference-tests-20261112-081103.xml`).
+  `DungeonMatcher-UnityValidation-d107b7a9-fc44-4191-a7ee-9addd67d2ca9.log`.
+- After the fixed-center correction, all 9 affected bomb tests passed, zero
+  failures/skips: `Validation/AnchoredIdles-tests.xml` and its matching validator
+  record. The earlier broader 83-test run remains historical evidence in
+  `Validation/SelectedIdles-tests.xml`; it was not rerun for this localized change.
 - Actual Game scene at 720×1280, disposable account/profile. Captured 100 frames
   of selected idles plus actual Row, Column and Color Crystal swaps. Tests check
   all six gem sockets, hidden ordinary gems, board masking, completed moves,
   absence of generic directional bursts, pause, Reduced Motion, special-state
   replacement and star materialization/activation after animated idle frames.
-- 88 authored idle PNGs: 64×64, binary alpha, minimum one-pixel canvas clearance;
-  Poison/Healing gem cavities unchanged. `SelectedIdles/NativeValidation.json`.
+- 104 authored idle PNGs: 64×64, binary alpha, minimum two-pixel canvas clearance.
+  All four gem cavities are unchanged; row/column central bands are exact and
+  star alpha masks are identical in every frame. Each family retains actual
+  animated pixel changes. `SelectedIdles/NativeValidation.json`.
+- Runtime tests assert fixed row/column root and socket positions on all 100
+  captured Game frames while checking that their casing sprites keep animating.
 - Shield SHA-256 remains
   `3992f944830f2827dc16fd105695fe4112c0c5c1953d5bd6e467523e8ab49d40`.
   Rattlebones and six full-size gem masters are unchanged. The earlier 12 small

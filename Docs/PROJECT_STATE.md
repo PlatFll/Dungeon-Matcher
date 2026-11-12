@@ -20,13 +20,15 @@ The newer rules in this status and the owning design/architecture documents supe
 
 The user selected Poison A, Healing C, Directional D and Star A. These exact
 casings are bound on the review branch, with native bubbling, healing-cross,
-directional tremor and star-shine idles. Shield's casing remains unchanged.
+directional outer-end tremor around fixed gem sockets, and a stationary star
+with a shine-only idle. Shield's casing remains unchanged.
 The 16px source gems and 32px weakness facets use the current 64px gem palettes.
 Row/Column VFX now use broad yellow-white travelling fire instead of generic
 tile explosions; Color Crystal stars travel from source to target. Clear sets,
 rewards, damage and board timing remain under their existing owners. The latest
-Unity validator and 83 focused tests passed, including actual swaps and idle
-pause/replacement checks. Sources and Game captures: ArtSource/BombReadability/
+Unity validator and all 9 affected bomb tests passed after the fixed-center
+correction, including actual swaps and idle pause/replacement checks. The prior
+broader 83-test result remains recorded separately. Sources and Game captures: ArtSource/BombReadability/
 SelectedIdles. Draft PR #232 remains unmerged, awaiting animation visual approval.
 
 

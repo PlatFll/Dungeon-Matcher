@@ -22,7 +22,8 @@ public sealed class PoisonBombGemView : MonoBehaviour
     private void ApplyIdle()
     {
         shellRenderer.sprite = BombIdleArt.Frame(currentType, idleTime, still);
-        transform.localPosition = BombIdleArt.ShakeOffset(currentType, idleTime);
+        // Native idle cels rock around the fixed socket; the view never drifts.
+        transform.localPosition = Vector3.zero;
         if (sourceIconRenderer != null)
             sourceIconRenderer.transform.localPosition = BombIdleArt.SocketOffset(currentType);
     }

@@ -1,8 +1,17 @@
 {
   "shieldUnchanged": true,
   "rattlebonesUnchanged": true,
-  "frameCount": 88,
-  "minimumEdgeClearance": 1,
+  "frameCount": 104,
+  "minimumEdgeClearance": 2,
   "binaryAlpha": true,
-  "socketsUnchanged": true
+  "socketsUnchanged": true,
+  "starSilhouetteAnchored": true,
+  "directionalCentralBandsFixed": true,
+  "animatedFamilies": {
+    "Poison": 18,
+    "Healing": 26,
+    "Star": 10,
+    "RowIdle": 3,
+    "ColumnIdle": 3
+  }
 }
