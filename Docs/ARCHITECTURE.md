@@ -1105,16 +1105,20 @@ but the new-run menu and persistent selection setter exclude him. No save schema
 or stored progression is removed.
 
 
-### Shared Silver control display-size revision (2026-11-12, review pending)
+### Shared Silver control sizing and user-edited art (2026-11-12)
 
-`BattlePresentationSkin.Controls` owns the user-requested 1.5x display sizing
-for the wave, Settings, and both supply holders. It sizes RectTransforms uniformly
-with unit transforms and Point filtering; it does not modify the PNGs or the
-environment/board scale. Wave rails still tile between proportionate corners and
-center ornaments, with exact adjoining edges. Only these named Silver controls
-permit 1.5x display texels: on a 1x canvas they have alternating hard pixel widths;
-on a 2x canvas they render at an exact 3x source-pixel ratio. All other native
-character, ability, bar, frame and icon checks remain unchanged.
+`BattlePresentationSkin.Controls` owns the approved larger wave, Settings and
+supply holders. Their user-edited source canvases are 264x99, 84x84 and 105x105.
+Normal layouts display these at native logical scale; the former 1.5x enlargement
+is already present in the source and must not be applied again. Unit transforms
+and Point filtering remain required. Constrained layouts use the existing compact
+logical sizes through a uniform two-thirds source fit. This scoped compact fit
+does not change the native policy for actors, ability, meter, frames or icons.
+
+The wave uses five lossless source columns with widths 36/78/36/66/48. Only the
+two identical-column rails shorten. Logical widths advance in four-unit steps
+so both full-size and compact joins stay on physical pixel boundaries. Source
+padding, colors and ornament placement remain exactly as the user saved them.
 
 Top HUD widths below 400 logical pixels retain compact controls. Supply holders
 also retain compact sizing when their HUD is shorter than 156 logical pixels.

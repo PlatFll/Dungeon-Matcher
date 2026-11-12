@@ -49,13 +49,15 @@ integration. The exact saved 147x24 export now replaces that casing without
 changing its transparent fill window or the live charge behavior. Editable
 source, previous art and verification are in
 [UserEditedEnergyBar](../ArtSource/SilverRoyalRelicUI/UserEditedEnergyBar/README.md).
-The readiness/meter follow-up is on a separate branch, not yet merged,
-with actual Game evidence in [ReadinessAndMeter](../ArtSource/SilverRoyalRelicUI/ReadinessAndMeter/README.md).
-The same review branch now enlarges wave, Settings and supply controls by 50%
-on normal phone layouts, with compact controls retained where the row cannot fit.
-The ability frame, charge bar, board geometry and original sprite files remain
-unchanged. Holders grow outwards/upwards while keeping the ability and caption
-clear; their icons remain centered. This display-size follow-up also awaits review.
+The user approved the white-unavailable/color-ready behavior, visible meter and
+larger shared controls for integration and merge. Their final saved larger wave
+(264x99), Settings (84x84) and supply holder (105x105) now replace the earlier
+sources in every zone. The layout uses those native sizes without applying the
+50% enlargement twice; constrained screens retain the compact uniform fit.
+Wave rails remain modular, Settings square, icons centered and captions clear.
+The bar, four ability icons, potion/bomb drawings and board geometry are unchanged
+by this last import. Latest source authority and actual Game evidence:
+[UserEditedLargeControls](../ArtSource/SilverRoyalRelicUI/UserEditedLargeControls/README.md).
 Earlier generated art and user-edited source documents are preserved.
 See [production handoff and actual Game evidence](../ArtSource/SilverRoyalRelicUI/Production/README.md).
 

@@ -1208,3 +1208,14 @@ Do not rebuild over this manual edit from the historical meter generator. Its
 Unity PNG replaces only EnergyFrameSilver, preserving the existing GUID and
 live energy behavior. Larger controls opened for further manual editing remain
 separate copies; their current production source pixels are unchanged.
+
+
+2026-11-12 — Final user-edited larger controls approved for integration and merge
+The saved WavePlaqueSilver_Large (264x99), SettingsButtonSilver_Large (84x84)
+and PowerUpTileSilver_Large (105x105) are now the authoritative shared controls.
+Use their exact LibreSprite exports in ArtSource/SilverRoyalRelicUI/
+UserEditedLargeControls/Inputs. Preserve every authored pixel and source padding;
+wave modular pieces are lossless crops, not new drawings. Layout must account
+for the larger native sources rather than enlarge them twice. Potion/bomb icon
+copies were unchanged; retain their existing production files. The user-edited
+ability bar, four ability icons and all zone artwork remain unchanged.

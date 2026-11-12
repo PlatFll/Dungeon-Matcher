@@ -206,11 +206,11 @@ public static class GameplayPixelLayoutValidator
                 image.sprite == BattlePresentationSkin.Shared("Supply");
             if(silverTop || silverSupply)
             {
-                float requested = g.Scale * (silverTop ? BattlePresentationSkin.TopControlScale(owner.TopHud) : BattlePresentationSkin.SupplyControlScale(owner.BottomHud));
+                float requested = g.Scale * (silverTop ? BattlePresentationSkin.TopControlScale(owner.TopHud) : BattlePresentationSkin.SupplyControlScale(owner.BottomHud)) / BattlePresentationSkin.SilverControlSourceScale;
                 Require(Near(xRatio,requested) && Near(yRatio,requested),"Incorrect shared control enlargement: " + Path(image.transform),errors);
-                // Only odd-width wave strips can meet at half-pixel boundaries.
-                float grid=image.name.StartsWith("SilverWavePart")?2:1;
-                Require(Integral(bounds.xMin*grid)&&Integral(bounds.yMin*grid)&&Integral(bounds.xMax*grid)&&Integral(bounds.yMax*grid),
+                // Updated native strips retain whole physical vertices, including
+                // the compact two-thirds source fit. No seam tolerance needed.
+                Require(Integral(bounds.xMin)&&Integral(bounds.yMin)&&Integral(bounds.xMax)&&Integral(bounds.yMax),
                     "Off-grid enlarged control: " + Path(image.transform),errors);
                 continue;
             }

@@ -1,0 +1,100 @@
+{
+  "user_inputs": [
+    {
+      "name": "WavePlaqueSilver",
+      "ase_sha256": "feb36b2668fae37ac483a46df8c8a3bff1985d6b7c78060fa7833d522dce7543",
+      "png_sha256": "39f36486535958053ed2f2a031a07233b8618c4d1614ed0c8e5eeaea7642eb8f",
+      "size": [
+        264,
+        99
+      ]
+    },
+    {
+      "name": "SettingsButtonSilver",
+      "ase_sha256": "1d9a8619d69d1aa6a7073adfa4747216523c67a0cc08fdb3bcd403cb6c7c9b91",
+      "png_sha256": "006ec37234f7490937049606bcc58e5838b2581ca13d3fc0892a12c4dc50d15d",
+      "size": [
+        84,
+        84
+      ]
+    },
+    {
+      "name": "PowerUpTileSilver",
+      "ase_sha256": "552f4284833b93dc8c428d55b712fe9aadea577c1ff265c97dda8d02480b5020",
+      "png_sha256": "03bffb37e6e6ad63b030f8871e6e8b58611ee0a9520c14045eafdab4fae32c45",
+      "size": [
+        105,
+        105
+      ]
+    }
+  ],
+  "wave_slices": [
+    [
+      0,
+      36
+    ],
+    [
+      36,
+      114
+    ],
+    [
+      114,
+      150
+    ],
+    [
+      150,
+      216
+    ],
+    [
+      216,
+      264
+    ]
+  ],
+  "wave_reassembled_exact": true,
+  "production_sha256": {
+    "WavePlaqueSilver.png": "39f36486535958053ed2f2a031a07233b8618c4d1614ed0c8e5eeaea7642eb8f",
+    "SettingsButtonSilver.png": "006ec37234f7490937049606bcc58e5838b2581ca13d3fc0892a12c4dc50d15d",
+    "PowerUpTileSilver.png": "03bffb37e6e6ad63b030f8871e6e8b58611ee0a9520c14045eafdab4fae32c45",
+    "WavePart0.png": "548c1a8e942a1ae5f9598a6f24d4e4c7fca9f7ecc43ed748c2bbf5421144aad0",
+    "WavePart1.png": "f653a6af0d89f5597bc877c315cfd828321b84cb8be4768d9e26e27de051971e",
+    "WavePart2.png": "fd78317b711771a59f8d5a1cc0da20bf728785fac3d322d876d2d4f81a9a44a7",
+    "WavePart3.png": "08c4f47d86274f00885c2ae586018ea96ab3728d1ccb9ddaca98c8b9e1191b3a",
+    "WavePart4.png": "a1387a15003b344ea0d8db50904ba18cf3da2bbee716fd32d672a949d2ab3088"
+  },
+  "preserved_shared_png_sha256": {
+    "AbilityButtonSilver.png": "2b707445108430bc3d6170bcd7bdb00737c00cc7c38d6ea8550c6b4342e0dbbb",
+    "BullAbilityIcon.png": "f3f8755121a81c2f7c26ea762d20d4e849fc2d2b3cce33221e0b8716d294b207",
+    "BullAbilityIconReady.png": "d30580182a8ff952e29eebf22bc6f85aedad2bca1242aadaedfc39593de0ca47",
+    "EnergyFrameSilver.png": "194d2448a791edc78af5a9f4cd1ce341dc6ac83f5bb44cc176d42d3a547a942c",
+    "EnergyTrackSilver.png": "1ed54e607982195ce084151f68f2e1f20eac401cfb7e0e0096cd2f10357ca002",
+    "FluteAbilityIcon.png": "9845661b5ca39428f70732cf8548e55e2e8a549850ff4c80ab53b3b86cc66cac",
+    "FluteAbilityIconReady.png": "a2a44454f486b8083672a1d863062cd291eb3f282a5ed33fdbb7f2d396731e22",
+    "RattleBonesAbilityIcon.png": "291f6912db897028db818c22e7eebabae371132e88b544166a47ee9e37824b3f",
+    "RattleBonesAbilityReady.png": "bee0aeed527d7f8ba613981e094342b040e1815acd2d6542ebd1d148f3ac73e5",
+    "RevolverAbilityIcon.png": "ef21f57869c91d8335b4e7119cf028b0d6870c7aad694b6ea9d4d6cb6bbf5fe1",
+    "RevolverAbilityIconReady.png": "7b0bf1157181b74535933ff3bc10c1d315105baea2149cb19335d458da47194c"
+  },
+  "preserved_importer_sha256": {
+    "AbilityButtonSilver.png.meta": "fe69fca8ad0200032cf2638b03b45e46a2c0296df7febd3b8335a6cea7bdd6df",
+    "BullAbilityIcon.png.meta": "d77fc2ce59f9eda5d038cc3e2b4c1981e87a5c1ab3831a96b44f46d222a52576",
+    "BullAbilityIconReady.png.meta": "4eb9c2499446bcd093d40ab1930f3e3b953f0983cad34b30bacfdfbe6ccbeb0d",
+    "EnergyFrameSilver.png.meta": "a37c1c2771be2c51fff362e1f18abab9ee7793d2c0ac85f23bbfb9b6453a2d48",
+    "EnergyTrackSilver.png.meta": "de2ffe6c9c4ccb3b9ab8756bf921af5a45bd6670409c28a532e90f8ea5da8566",
+    "FluteAbilityIcon.png.meta": "31970c2b90a67007a54f8a3c9ad0760fc8e657da5f46142e72cbc8ed654ce262",
+    "FluteAbilityIconReady.png.meta": "b702a7f4adcca0e33713168d426cbd20faddc6960852940a8896a3b8efabf2f9",
+    "PowerUpTileSilver.png.meta": "42eeed9b58aeaa86ed096818ff766f95c79233784c040a5a74cb5ddedc84a5b3",
+    "RattleBonesAbilityIcon.png.meta": "01ee6478b6fa01fc6b231dadf394639c2e9e1cf20ce64a8d54af4f820123cf86",
+    "RattleBonesAbilityReady.png.meta": "c22576aa4c76d54666c7dd48074d33bdd2f855e314dd32558fed17613e31fde6",
+    "RevolverAbilityIcon.png.meta": "f6e3d04ba88c7febd2e547920f3be27674ed4dcdd5e0faf4904e8438fe789c54",
+    "RevolverAbilityIconReady.png.meta": "c692b58464e215df572f19ccbbd9bed23bdd304f8f4f1ee216ccbe5197a24a6d",
+    "SettingsButtonSilver.png.meta": "cc7cefefda45f7d64ae01104c7edf5dc01921a0e26a05a506e226f1585ef2ea6",
+    "WavePart0.png.meta": "61198144ab4600199ff149576e447a08df529daf6fbfcf2667faa076a4b21ce3",
+    "WavePart1.png.meta": "5de368fc9689ca49aa7bac874b83ffd4e2ec4cf243ab2c92532ede940882c505",
+    "WavePart2.png.meta": "12a71734d622f3968cb1c6d193a8efad590d06aefd5f47adca722de9bbc66b81",
+    "WavePart3.png.meta": "07d5f11079925906aa46ebde9264312bfe4605db58368176f3d4f65a4234a64d",
+    "WavePart4.png.meta": "e00b2f6c93a5c917added8689f1e0fa43088c95ac3073c7121efa6d98ab7728a",
+    "WavePlaqueSilver.png.meta": "7b0e2cf8b8e15427e76e9d4857a395eabb457531ea1619db501b5bb2d2858bb4"
+  },
+  "rattlebones_sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+  "generation_spend": 0
+}

@@ -17,7 +17,9 @@ public static partial class BattlePresentationSkin
         rect.localScale=Vector3.one;
     }
 
-    // User-requested 50% presentation enlargement; source PNGs stay untouched.
+    // User-edited controls now have 1.5x native canvases. Keep the approved
+    // logical sizes; do not apply the enlargement to the new artwork twice.
+    public const float SilverControlSourceScale=1.5f;
     // Small viewports retain the compact family so controls never cover each other.
     public static float TopControlScale(RectTransform top) => top.rect.width >= 400 ? 1.5f : 1;
     public static float SupplyControlScale(RectTransform hud) => hud.rect.width >= 400 && hud.rect.height >= 156 ? 1.5f : 1;
@@ -31,16 +33,17 @@ public static partial class BattlePresentationSkin
         // CanvasScaler already chooses one whole physical-pixel scale. Never map
         // these controls through the independently responsive environment height.
         float displayScale=TopControlScale(top);
-        Vector2 settingsSize=Shared("Settings").rect.size*displayScale;
+        Vector2 settingsSize=Shared("Settings").rect.size*(displayScale/SilverControlSourceScale);
         float right=top.rect.width-8, waveRight=right-settingsSize.x-8;
         Vector2 size;float left,y;
         if(kind=="Settings"){size=settingsSize;left=right-settingsSize.x;y=12;}
         else
         {
             float minLeft=Mathf.Ceil(top.rect.width*.29f)+6;
-            // Even source widths keep the 1.5x outer rectangle on physical pixels.
-            float width=Mathf.Min(176,Mathf.Floor((waveRight-minLeft)/displayScale/2)*2);
-            size=new Vector2(Mathf.Max(94,width)*displayScale,(Shared("Wave") ? 66 : 48)*displayScale);
+            // Four-unit logical widths keep the new native strips and compact
+            // two-thirds fit on physical pixel boundaries without gaps.
+            float width=Mathf.Min(176,Mathf.Floor((waveRight-minLeft)/displayScale/4)*4);
+            size=new Vector2(Mathf.Max(96,width)*displayScale,(Shared("Wave") ? 66 : 48)*displayScale);
             left=Mathf.Clamp(Mathf.Round((top.rect.width-size.x)*.5f),minLeft,waveRight-size.x);y=10;
         }
         rect.sizeDelta=size;rect.anchoredPosition=new Vector2(left,-y);GameplayPixelGrid.Snap(rect);
@@ -74,9 +77,12 @@ public static partial class BattlePresentationSkin
         // the five native child strips, never a resized copy underneath them.
         image.sprite=Shared("Wave");image.enabled=false;image.color=Color.clear;image.raycastTarget=false;
         var oldPendant=rect.Find("SharedWavePendant");if(oldPendant)oldPendant.gameObject.SetActive(false);
-        float nativeWidth=rect.rect.width/displayScale;
-        float railLeft=Mathf.Floor((nativeWidth-94)/2);
-        float[] widths={25,railLeft,44,nativeWidth-94-railLeft,25};
+        float artScale=displayScale/SilverControlSourceScale;
+        float nativeWidth=rect.rect.width/artScale;
+        // Exact user source columns: 36 / 78 / 36 / 66 / 48 at full width.
+        // Keep the authored padding and ornament placement, shortening rails only.
+        float railLeft=Mathf.Round((nativeWidth-120)/2)+6;
+        float[] widths={36,railLeft,36,nativeWidth-120-railLeft,48};
         float x=0;
         for(int i=0;i<5;i++)
         {
@@ -84,13 +90,13 @@ public static partial class BattlePresentationSkin
             var piece=rect.Find(name) as RectTransform;
             if(!piece) { piece=GameUi.Rect(name,rect,Vector2.zero,Vector2.zero);piece.gameObject.AddComponent<Image>();piece.SetAsFirstSibling(); }
             piece.anchorMin=piece.anchorMax=piece.pivot=new Vector2(0,1);
-            piece.sizeDelta=new Vector2(widths[i],66)*displayScale;piece.anchoredPosition=new Vector2(x*displayScale,0);
+            piece.sizeDelta=new Vector2(widths[i],99)*artScale;piece.anchoredPosition=new Vector2(x*artScale,0);
             var art=piece.GetComponent<Image>();art.sprite=Resources.Load<Sprite>("UI/BattlePresentation/Silver/WavePart"+i);
             art.type=i==1||i==3 ? Image.Type.Tiled : Image.Type.Simple;
             // All five strips use the same uniform scale and exact shared edges.
-            // Do not snap each strip separately: odd source widths at 1.5x share
-            // a half-pixel boundary, and independent rounding would open seams.
-            art.pixelsPerUnitMultiplier=art.canvas.referencePixelsPerUnit/art.sprite.pixelsPerUnit/displayScale;
+            // Source columns remain native at full size; compact layouts use
+            // a uniform two-thirds fit. Shared edges stay on physical pixels.
+            art.pixelsPerUnitMultiplier=art.canvas.referencePixelsPerUnit/art.sprite.pixelsPerUnit/artScale;
             art.color=Color.white;art.raycastTarget=false;x+=widths[i];
         }
         var label=rect.GetComponentInChildren<TMP_Text>();
@@ -111,7 +117,7 @@ public static partial class BattlePresentationSkin
     {
         var r=(RectTransform)button.transform;PrepareSharedControl(r);
         var hud=(RectTransform)r.parent;float displayScale=SupplyControlScale(hud);
-        r.anchorMin=r.anchorMax=r.pivot=Vector2.one*.5f;r.sizeDelta=Shared("Supply").rect.size*displayScale;
+        r.anchorMin=r.anchorMax=r.pivot=Vector2.one*.5f;r.sizeDelta=Shared("Supply").rect.size*(displayScale/SilverControlSourceScale);
         // Keep the original nine-pixel gap to the unchanged ability frame and
         // bottom edge above the caption; expand outwards and upwards. Reserve
         // six logical pixels above the visible 28px caption where it is shown.

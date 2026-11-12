@@ -98,11 +98,15 @@ public sealed class SilverRoyalRelicProductionTests
         Assert.That(plate.sprite.name,Is.EqualTo("AbilityButtonSilver"));
         Assert.That(controls.SettingsButton.image.sprite.name,Is.EqualTo("SettingsButtonSilver"));
         Assert.That(supply.All(im=>im.sprite.name=="PowerUpTileSilver"),Is.True);
+        Assert.That(controls.SettingsButton.image.sprite.rect.size,Is.EqualTo(new Vector2(84,84)));
+        foreach(var im in supply)Assert.That(im.sprite.rect.size,Is.EqualTo(new Vector2(105,105)));
         foreach(var im in supply.Concat(new[]{plate,controls.SettingsButton.image,view.Engraving}))
         {
             Assert.That(im.sprite.texture.filterMode,Is.EqualTo(FilterMode.Point));
-            float requested = supply.Contains(im) ? BattlePresentationSkin.SupplyControlScale(layout.BottomHud) :
-                im == controls.SettingsButton.image ? BattlePresentationSkin.TopControlScale(layout.TopHud) : 1;
+            // The new source canvases already contain the approved enlargement.
+            // Assert their actual display density independently of layout helpers.
+            float requested = supply.Contains(im) || im==controls.SettingsButton.image ?
+                (Screen.width>=720 ? 1 : 2f/3f) : 1;
             Assert.That(Bounds(im).width/im.sprite.rect.width,Is.EqualTo(layout.Current.Scale*requested).Within(.001));
             Assert.That(Bounds(im).height/im.sprite.rect.height,Is.EqualTo(layout.Current.Scale*requested).Within(.001));
             Assert.That(Bounds(im).xMin,Is.EqualTo(Mathf.Round(Bounds(im).xMin)).Within(.001));
@@ -120,6 +124,7 @@ public sealed class SilverRoyalRelicProductionTests
         foreach(var im in supply)Assert.That(Bounds(im).Overlaps(Bounds(plate)),Is.False,"Supply/ability margin");
         var wave=layout.TopHud.Find("WaveTracker").GetComponent<Image>();
         Assert.That(wave.sprite.name,Is.EqualTo("WavePlaqueSilver"));
+        Assert.That(wave.sprite.rect.size,Is.EqualTo(new Vector2(264,99)));
         Assert.That(wave.transform.Find("SharedWavePendant")?.gameObject.activeSelf??false,Is.False,"No duplicate skull");
         Assert.That(Bounds(wave).Overlaps(Bounds(controls.SettingsButton.image)),Is.False);
         var label=wave.GetComponentInChildren<TMP_Text>();Assert.That(label.text,Is.EqualTo("WAVE "+RunSession.Current.Waves.CurrentWave));
@@ -151,7 +156,7 @@ public sealed class SilverRoyalRelicProductionTests
             var pb=Bounds(part);
             Assert.That(pb.height,Is.EqualTo(66*expected*layout.Current.Scale).Within(.01));
             if(i>0)Assert.That(pb.xMin,Is.EqualTo(Bounds(wave.transform.Find("SilverWavePart"+(i-1)).GetComponent<Image>()).xMax).Within(.001),"No wave strip seam");
-            if(i==1||i==3)Assert.That(part.canvas.rootCanvas.scaleFactor*part.canvas.referencePixelsPerUnit/(part.sprite.pixelsPerUnit*part.pixelsPerUnitMultiplier),Is.EqualTo(expected*layout.Current.Scale).Within(.001));
+            if(i==1||i==3)Assert.That(part.canvas.rootCanvas.scaleFactor*part.canvas.referencePixelsPerUnit/(part.sprite.pixelsPerUnit*part.pixelsPerUnitMultiplier),Is.EqualTo(expected/1.5f*layout.Current.Scale).Within(.001));
         }
         var board=RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>().Where(s=>s.name.StartsWith("CellTile"));
         foreach(var tile in board)
