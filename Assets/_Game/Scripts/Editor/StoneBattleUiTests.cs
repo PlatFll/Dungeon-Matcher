@@ -92,7 +92,7 @@ public sealed class StoneBattleUiTests
                     run.Player.TryTakeDamage(25);yield return null;
                     var potion=all.Single(b=>b.name=="HealthPotion");Assert.That(potion.interactable,Is.True);int potions=run.Charges(ConsumableKind.HealthPotion);potion.onClick.Invoke();yield return null;Assert.That(run.Charges(ConsumableKind.HealthPotion),Is.EqualTo(potions-1));
                     var energy=run.Player.GetComponent<PlayerAbilityEnergy>();energy.AddEnergy(1000);yield return Wait(.7f);
-                    var ability=all.Single(b=>b.name=="AbilityButton");Assert.That(ability.interactable,Is.True);var stone=ability.GetComponent<StoneAbilityButtonView>();Assert.That(stone.IsRaised,Is.True);Assert.That(stone.Glow.color.a,Is.GreaterThan(.5f));int beforeEnergy=energy.CurrentEnergy;ability.onClick.Invoke();yield return null;Assert.That(energy.CurrentEnergy,Is.LessThan(beforeEnergy));
+                    var ability=all.Single(b=>b.name=="AbilityButton");Assert.That(ability.interactable,Is.True);var stone=ability.GetComponent<StoneAbilityButtonView>();Assert.That(stone.IsRaised,Is.True);Assert.That(stone.Glow.color.a,Is.Zero);int beforeEnergy=energy.CurrentEnergy;ability.onClick.Invoke();yield return null;Assert.That(energy.CurrentEnergy,Is.LessThan(beforeEnergy));
                     yield return Until(()=>!run.Board.IsBusy);
                 }
                 }

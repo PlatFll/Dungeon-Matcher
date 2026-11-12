@@ -71,7 +71,7 @@ public sealed class SilverRoyalRelicProductionTests
             var controller=run.Player.GetComponent<PlayerAbilityController>();var energy=run.Player.GetComponent<PlayerAbilityEnergy>();
             energy.AddEnergy(1000);yield return Wait(.4f);
             var view=Object.FindFirstObjectByType<StoneAbilityButtonView>();Assert.That(view.IsRaised,Is.True);
-            Assert.That(view.Glow.color.a,Is.GreaterThan(.5f));
+            Assert.That(view.Glow.color.a,Is.Zero,"Ready reveals the full-color icon");
             ScreenCapture.CaptureScreenshot(Path.GetFullPath(Root+"/Preview/"+zones[c]+"-"+ids[c]+"-ready.png"));yield return Wait(.2f);
             Time.timeScale=0;var position=view.Slab.anchoredPosition;var alpha=view.Glow.color.a;yield return Wait(.15f);
             Assert.That(view.Slab.anchoredPosition,Is.EqualTo(position));Assert.That(view.Glow.color.a,Is.EqualTo(alpha));Time.timeScale=1;
@@ -79,7 +79,7 @@ public sealed class SilverRoyalRelicProductionTests
             try
             {
                 PlayerPrefs.SetInt(PresentationPreferences.ReducedMotionKey,1);yield return null;yield return null;
-                Assert.That(view.Slab.anchoredPosition,Is.EqualTo(Vector2.zero));Assert.That(view.Glow.color.a,Is.GreaterThan(.5f));
+                Assert.That(view.Slab.anchoredPosition,Is.EqualTo(Vector2.zero));Assert.That(view.Glow.color.a,Is.Zero,"Ready reveals the full-color icon");
             }
             finally{if(hadMotion)PlayerPrefs.SetInt(PresentationPreferences.ReducedMotionKey,oldMotion);else PlayerPrefs.DeleteKey(PresentationPreferences.ReducedMotionKey);}
             int charge=energy.CurrentEnergy;buttons.Single(b=>b.name=="AbilityButton").onClick.Invoke();yield return null;

@@ -1,0 +1,158 @@
+[
+  {
+    "id": "skeleton",
+    "name": "Rattlebones",
+    "x": 256,
+    "y": 46,
+    "width": 208,
+    "height": 115,
+    "screenWidth": 720,
+    "screenHeight": 1280,
+    "fps": 30,
+    "frames": 240,
+    "icon": "RattleBonesAbilityIcon",
+    "nativePopSteps": [
+      [
+        -1.0,
+        2.0
+      ],
+      [
+        -1.0,
+        3.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "fillWidths": [
+      0.0,
+      29.0,
+      58.0,
+      88.0,
+      117.0,
+      0.0
+    ]
+  },
+  {
+    "id": "dungeon_attender",
+    "name": "Minotaur",
+    "x": 256,
+    "y": 46,
+    "width": 208,
+    "height": 115,
+    "screenWidth": 720,
+    "screenHeight": 1280,
+    "fps": 30,
+    "frames": 240,
+    "icon": "BullAbilityIcon",
+    "nativePopSteps": [
+      [
+        -1.0,
+        2.0
+      ],
+      [
+        -1.0,
+        3.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "fillWidths": [
+      0.0,
+      29.0,
+      58.0,
+      88.0,
+      117.0,
+      0.0
+    ]
+  },
+  {
+    "id": "kobold_gunner",
+    "name": "Kobold",
+    "x": 256,
+    "y": 46,
+    "width": 208,
+    "height": 115,
+    "screenWidth": 720,
+    "screenHeight": 1280,
+    "fps": 30,
+    "frames": 240,
+    "icon": "RevolverAbilityIcon",
+    "nativePopSteps": [
+      [
+        -1.0,
+        2.0
+      ],
+      [
+        -1.0,
+        3.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "fillWidths": [
+      0.0,
+      29.0,
+      58.0,
+      88.0,
+      117.0,
+      0.0
+    ]
+  },
+  {
+    "id": "bardley",
+    "name": "Bardley",
+    "x": 256,
+    "y": 46,
+    "width": 208,
+    "height": 115,
+    "screenWidth": 720,
+    "screenHeight": 1280,
+    "fps": 30,
+    "frames": 240,
+    "icon": "FluteAbilityIcon",
+    "nativePopSteps": [
+      [
+        -1.0,
+        2.0
+      ],
+      [
+        -1.0,
+        3.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "fillWidths": [
+      0.0,
+      29.0,
+      58.0,
+      88.0,
+      117.0,
+      50.0
+    ]
+  }
+]

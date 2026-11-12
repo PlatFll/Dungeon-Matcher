@@ -1177,3 +1177,14 @@ This is material coloring of the supplied symbols, not a new global palette.
 The five user-supplied silver UI PNGs and current character sprites are unchanged.
 Sources, exact masks, LibreSprite round trips and Game-scene evidence:
 ArtSource/SilverRoyalRelicUI/IconColorRevision/.
+
+
+2026-11-12 — Ability readiness and silver energy meter revision
+The user requested white ability icons while not ready, revealing the existing
+full-color icons when ready with the native pop-out. This supersedes the older
+white-ready pulse only. Preserve the four edited icon drawings and color files.
+The energy meter follows the current silver bevel/gold accent family; reuse the
+147x24 Stage03 silver casing and make its 117x8 center transparent for live fill.
+No character, five user-supplied UI PNG, environment or gameplay palette changes.
+Native LibreSprite source and actual Game review: ArtSource/SilverRoyalRelicUI/
+ReadinessAndMeter/. This follow-up awaits visual review; no generation spending.

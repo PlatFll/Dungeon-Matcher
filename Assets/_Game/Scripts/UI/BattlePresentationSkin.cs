@@ -37,7 +37,7 @@ public static partial class BattlePresentationSkin
     public static Sprite Shared(string name)
     {
         string silver = name switch { "Ability"=>"AbilityButtonSilver", "Settings"=>"SettingsButtonSilver",
-            "Supply"=>"PowerUpTileSilver", "Wave"=>"WavePlaqueSilver", _=>null };
+            "Supply"=>"PowerUpTileSilver", "Wave"=>"WavePlaqueSilver", "Energy"=>"EnergyFrameSilver", "EnergyTrack"=>"EnergyTrackSilver", _=>null };
         if(silver!=null && Resources.Load<Sprite>("UI/BattlePresentation/Silver/"+silver) is Sprite approved)return approved;
         string stone = name switch { "Ability"=>"AbilityPlate", "Settings"=>"Settings", "Supply"=>"Supply", _=>null };
         if(stone!=null && Resources.Load<Sprite>("UI/BattlePresentation/Stone/"+stone) is Sprite plate)return plate;
