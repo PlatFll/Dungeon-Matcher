@@ -20,7 +20,7 @@ html='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewpor
 <h2>Actual Unity Game scene</h2><p>Real Game-scene captures on a disposable profile: the first board displays all six gem colors in the selected casings, plus unchanged shields. The other captures activate the bombs through real swaps. Gameplay, clear footprints and refill timing are unchanged.</p>
 <div class="game"><div class="card"><h3>Selected idles in-game</h3><img src="Unity-SelectedIdles.gif"><p>Rows from top: poison, healing, row, column, shield, star. Normal gems remain in the outer columns.</p><a href="Unity-SelectedIdles-000.png">Full-resolution screenshot</a></div><div class="card"><h3>Row blast</h3><img src="Unity-RowBomb.gif"><p>Broader yellow-white blast travels left and right.</p><a href="Unity-RowBomb-035.png">Full-resolution impact</a></div><div class="card"><h3>Column blast</h3><img src="Unity-ColumnBomb.gif"><p>Matching native blast travels up and down.</p><a href="Unity-ColumnBomb-035.png">Full-resolution impact</a></div></div>
 <p><a href="../Manifest.json">Animation manifest</a> · <a href="../../ReviewNotes.md">Verification notes</a> · <a href="https://github.com/PlatFll/Dungeon-Matcher/pull/232">Draft PR #232</a></p>
-<script>const defs=[['Poison','Poison A',24,100,[32,38],'Subtle liquid movement; staggered bubbles rise, open and pop.'],['Healing','Healing C',32,100,[32,36],'Tiny yellow plus signs rise in occasional pulses.'],['Row','Directional D · Row',8,80,[32,32],'Outer ends tremble by one pixel; center and gem stay fixed.'],['Column','Directional D · Column',8,80,[32,31],'Vertical ends tremble around the stationary gem socket.'],['Star','Star A',32,80,null,'Stationary star with a diagonal shine sweep only.']];let entries=[],images={},elapsed=0,running=true,last=0;
+<script>const defs=[['Poison','Poison A',24,100,[32,38],'Subtle liquid movement; staggered bubbles rise, open and pop.'],['Healing','Healing C',32,100,[32,36],'Tiny yellow plus signs rise in occasional pulses.'],['Row','Directional D · Row',8,80,[32,32],'The entire bomb rocks as one rigid piece around its fixed center.'],['Column','Directional D · Column',8,80,[32,31],'The entire vertical bomb rocks in place, including its casing and socket.'],['Star','Star A',32,80,null,'Stationary star with a diagonal shine sweep only.']];let entries=[],images={},elapsed=0,running=true,last=0;
 function framePath(id,f){return 'Frames/'+((id==='Row'||id==='Column')?id+'Idle':id)+'/'+id+'_'+String(f).padStart(2,'0')+'.png'}
 function pic(path){if(!images[path]){images[path]=new Image;images[path].src=path}return images[path]}
 for(const [id,label,n,ms,socket,desc] of defs){let el=document.createElement('div');el.className='card';el.innerHTML='<h3>'+label+'</h3><div class="art"></div><p>'+desc+'</p><small>1× native + 2× nearest-neighbor · <span></span></small><p><a href="../Editable/'+id+'.aseprite">LibreSprite source</a></p>';document.querySelector('#cards').append(el);let canvases=[];for(let scale of [1,2]){let c=document.createElement('canvas');c.width=c.height=64;c.style.width=c.style.height=(64*scale)+'px';el.querySelector('.art').append(c);canvases.push(c)}entries.push({id,n,ms,socket,canvases,span:el.querySelector('span')});for(let f=0;f<n;f++)pic(framePath(id,f))}
@@ -28,7 +28,7 @@ function render(t){if(last&&running)elapsed+=(t-last)*Number(document.querySelec
 document.querySelector('#play').onclick=e=>{running=!running;e.target.textContent=running?'Pause':'Play'};document.querySelector('#step').onclick=()=>{running=false;document.querySelector('#play').textContent='Play';elapsed+=100};requestAnimationFrame(render);</script></html>'''
 (out/'Review.html').write_text(html,encoding='utf-8')
 checks={};checks['shieldUnchanged']=hashlib.sha256((root/'Assets/_Game/Art/Board/Bombs/ShieldBomb.png').read_bytes()).hexdigest()=='3992f944830f2827dc16fd105695fe4112c0c5c1953d5bd6e467523e8ab49d40';checks['rattlebonesUnchanged']=hashlib.sha256((root/'Docs/ArtDirection/Audit2026-10/media/skeleton-still.png').read_bytes()).hexdigest()=='705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c'
-checks['frameCount']=0;checks['minimumEdgeClearance']=64;checks['binaryAlpha']=True;checks['socketsUnchanged']=True;checks['starSilhouetteAnchored']=True;checks['directionalCentralBandsFixed']=True;checks['animatedFamilies']={}
+checks['frameCount']=0;checks['minimumEdgeClearance']=64;checks['binaryAlpha']=True;checks['poisonHealingSocketsUnchanged']=True;checks['starSilhouetteAnchored']=True;checks['directionalWholeUnitRotation']=True;checks['directionalGemCompositesRigid']=True;checks['animatedFamilies']={}
 for fam,source,cy in [('Poison','PoisonA',38),('Healing','HealingC',36),('Star','StarA',None),('RowIdle','DirectionalD',32),('ColumnIdle','DirectionalD-Column',31)]:
     still=Image.open(art/f'Candidates/Cleaned/{source}.png').convert('RGBA')
     # Generated originals carry (0,1,2) beneath zero alpha. Compare visible RGBA
@@ -39,16 +39,23 @@ for fam,source,cy in [('Poison','PoisonA',38),('Healing','HealingC',36),('Star',
         im=Image.open(p).convert('RGBA');b=im.getbbox();checks['frameCount']+=1;unique.add(hashlib.sha256(im.tobytes()).hexdigest())
         if fam=='Star':checks['starSilhouetteAnchored'] &= im.getchannel('A').tobytes()==still.getchannel('A').tobytes()
         if fam in ['RowIdle','ColumnIdle']:
-            band=(20,0,45,64) if fam=='RowIdle' else (0,19,64,44)
-            checks['directionalCentralBandsFixed'] &= im.crop(band).tobytes()==still.crop(band).tobytes()
+            angle=[0,3,0,-3,0,3,0,-3][int(p.stem.rsplit('_',1)[1])]
+            expected=still.rotate(angle,resample=Image.Resampling.NEAREST,center=(32,cy))
+            checks['directionalWholeUnitRotation'] &= im.tobytes()==expected.tobytes()
+            for gp in (root/'Assets/_Game/Art/Gems/Small gems/Gesm16').glob('*.png'):
+                gem=Image.open(gp).convert('RGBA');whole=still.copy()
+                whole.alpha_composite(gem,(24,cy-8))
+                whole=whole.rotate(angle,resample=Image.Resampling.NEAREST,center=(32,cy))
+                rendered=im.copy();rendered.alpha_composite(gem,(24,cy-8))
+                checks['directionalGemCompositesRigid'] &= rendered.tobytes()==whole.tobytes()
         checks['minimumEdgeClearance']=min(checks['minimumEdgeClearance'],b[0],b[1],64-b[2],64-b[3]);checks['binaryAlpha'] &= set(im.getchannel('A').getdata())<={0,255}
-        if cy:
+        if cy and fam not in ['RowIdle','ColumnIdle']:
             for y in range(cy-10,cy+11):
                 for x in range(22,43):
-                    if (x-32)**2+(y-cy)**2<=100:checks['socketsUnchanged'] &= im.getpixel((x,y))==still.getpixel((x,y))
+                    if (x-32)**2+(y-cy)**2<=100:checks['poisonHealingSocketsUnchanged'] &= im.getpixel((x,y))==still.getpixel((x,y))
     checks['animatedFamilies'][fam]=len(unique);assert len(unique)>1,(fam,'idle lost its animation')
-assert checks['starSilhouetteAnchored'] and checks['directionalCentralBandsFixed'] and checks['frameCount']==104
-assert checks['shieldUnchanged'] and checks['rattlebonesUnchanged'] and checks['binaryAlpha'] and checks['socketsUnchanged'] and checks['minimumEdgeClearance']>0,checks
+assert checks['starSilhouetteAnchored'] and checks['directionalWholeUnitRotation'] and checks['directionalGemCompositesRigid'] and checks['frameCount']==104
+assert checks['shieldUnchanged'] and checks['rattlebonesUnchanged'] and checks['binaryAlpha'] and checks['poisonHealingSocketsUnchanged'] and checks['minimumEdgeClearance']>0,checks
 (art/'SelectedIdles/NativeValidation.json').write_text(json.dumps(checks,indent=2)+'\n')
 serve=Path(r'C:/Users/USER/.codex/visualizations/2026/10/10/01a127fb-8a65-7d73-9061-df9dc2d9843a/AbilityReadinessReview/BombRefinement')
 shutil.copytree(art/'SelectedIdles',serve/'SelectedIdles',dirs_exist_ok=True);shutil.copy2(art/'ReviewNotes.md',serve/'ReviewNotes.md')

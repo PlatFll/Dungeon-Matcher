@@ -111,25 +111,25 @@ for name,(ims,ms,socket) in families.items():
         b=im.getbbox();assert b[0]>0 and b[1]>0 and b[2]<64 and b[3]<64,(name,i,b)
     editable(name,ims,ms);preview(name,ims,ms,socket)
     manifest.append({'family':name,'frames':len(ims),'milliseconds':ms,'canvas':[64,64],'socket':socket,'binaryAlpha':True})
-# Counter-rock only the outer ends by one native pixel. The entire central band,
-# socket and gem stay fixed; no whole-sprite translation, rotation or resampling.
-phases=[0,1,0,-1,0,1,0,-1]
+# Rock the complete rigid bomb about its socket: no separate moving sides,
+# no translation, and no filtered pixels. Bake the whole-unit turn into native cels.
+angles=[0,3,0,-3,0,3,0,-3]
 for name,src,socket in [('Row','DirectionalD',[32,32]),('Column','DirectionalD-Column',[32,31])]:
     ims=[];folder=RES/(name+'Idle');folder.mkdir(exist_ok=True)
-    for i,phase in enumerate(phases):
-        im=Image.new('RGBA',(64,64))
-        for axis in range(64):
-            center=socket[0] if name=='Row' else socket[1]
-            offset=-phase if axis<center-12 else phase if axis>center+12 else 0
-            if name=='Row':im.paste(base[src].crop((axis,0,axis+1,64)),(axis,offset))
-            else:im.paste(base[src].crop((0,axis,64,axis+1)),(offset,axis))
-        # The socket/central shell must be identical through the complete loop.
-        protected=(20,0,45,64) if name=='Row' else (0,19,64,44)
-        assert im.crop(protected).tobytes()==base[src].crop(protected).tobytes()
+    for i,angle in enumerate(angles):
+        im=base[src].rotate(angle,resample=Image.Resampling.NEAREST,center=tuple(socket))
+        # At this tiny angle, every native 16px gem remains the exact same pixel
+        # arrangement. Verify composing the fixed gem equals turning the whole unit.
+        for gp in (ROOT/'Assets/_Game/Art/Gems/Small gems/Gesm16').glob('*.png'):
+            gem=canonical(Image.open(gp));combined=base[src].copy()
+            combined.alpha_composite(gem,(socket[0]-8,socket[1]-8))
+            combined=combined.rotate(angle,resample=Image.Resampling.NEAREST,center=tuple(socket))
+            separate=im.copy();separate.alpha_composite(gem,(socket[0]-8,socket[1]-8))
+            assert combined.tobytes()==separate.tobytes(),(name,i,gp.name,'rigid gem alignment')
         bounds=im.getbbox();assert min(bounds[0],bounds[1],64-bounds[2],64-bounds[3])>0
         p=folder/f'{name}_{i:02}.png';im.save(p);meta(p);ims.append(im)
     editable(name,ims,80);preview(name,ims,80,socket)
-    manifest.append({'family':name,'resourceFolder':name+'Idle','frames':8,'milliseconds':80,'canvas':[64,64],'socket':socket,'binaryAlpha':True,'fixedSocket':True,'runtime':'native outer-end counter-rock; root and central band fixed'})
+    manifest.append({'family':name,'resourceFolder':name+'Idle','frames':8,'milliseconds':80,'canvas':[64,64],'socket':socket,'binaryAlpha':True,'fixedSocket':True,'anglesDegrees':angles,'runtime':'whole rigid bomb rocks around fixed socket; baked nearest-pixel cels, no root translation'})
     p=RES/f'{name}.png';base[src].save(p);meta(p)
 # Preserve existing Unity GUIDs for approved replacements; static fallbacks use exact chosen sources.
 for src,dst in [('PoisonA','Assets/_Game/Art/Board/Bombs/PoisonBomb.png'),('HealingC','Assets/_Game/Art/Board/Bombs/HealingBomb.png'),('StarA','Assets/_Game/Art/Gems/Special Overlays/StarColorBomb.png')]:shutil.copyfile(SRC/(src+'.png'),ROOT/dst)

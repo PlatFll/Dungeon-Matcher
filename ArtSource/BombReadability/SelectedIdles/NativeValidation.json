@@ -4,9 +4,10 @@
   "frameCount": 104,
   "minimumEdgeClearance": 2,
   "binaryAlpha": true,
-  "socketsUnchanged": true,
+  "poisonHealingSocketsUnchanged": true,
   "starSilhouetteAnchored": true,
-  "directionalCentralBandsFixed": true,
+  "directionalWholeUnitRotation": true,
+  "directionalGemCompositesRigid": true,
   "animatedFamilies": {
     "Poison": 18,
     "Healing": 26,
