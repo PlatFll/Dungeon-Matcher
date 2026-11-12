@@ -1177,3 +1177,45 @@ This is material coloring of the supplied symbols, not a new global palette.
 The five user-supplied silver UI PNGs and current character sprites are unchanged.
 Sources, exact masks, LibreSprite round trips and Game-scene evidence:
 ArtSource/SilverRoyalRelicUI/IconColorRevision/.
+
+
+2026-11-12 — Ability readiness and silver energy meter revision
+The user requested white ability icons while not ready, revealing the existing
+full-color icons when ready with the native pop-out. This supersedes the older
+white-ready pulse only. Preserve the four edited icon drawings and color files.
+The energy meter follows the current silver bevel/gold accent family; reuse the
+147x24 Stage03 silver casing and make its 117x8 center transparent for live fill.
+No character, five user-supplied UI PNG, environment or gameplay palette changes.
+Native LibreSprite source and actual Game review: ArtSource/SilverRoyalRelicUI/
+ReadinessAndMeter/. This follow-up awaits visual review; no generation spending.
+
+
+2026-11-12 — Larger shared silver controls, review requested
+The user requested approximately 50% larger wave plaque, power-up holders and
+Settings. Enlarge their display uniformly while preserving the user-cleaned PNGs,
+silver/gold colors and proportions. Keep Settings square, wave strips joined,
+icons centered and the existing ability/energy art unchanged. Compact layouts
+retain the smaller size where the larger controls would overlap. This is a scoped
+Point-filtered presentation-size change, not permission to resample source art,
+scale the board, recolor sprites, or alter other controls. No generation spending.
+
+
+2026-11-12 — User-edited energy bar accepted for Game integration
+The saved AbilityBarSilver.ase supersedes the earlier generated casing. Use
+the exact LibreSprite export in ArtSource/SilverRoyalRelicUI/UserEditedEnergyBar/:
+147x24, ten opaque colors, binary alpha, unchanged 117x8 transparent fill window.
+Do not rebuild over this manual edit from the historical meter generator. Its
+Unity PNG replaces only EnergyFrameSilver, preserving the existing GUID and
+live energy behavior. Larger controls opened for further manual editing remain
+separate copies; their current production source pixels are unchanged.
+
+
+2026-11-12 — Final user-edited larger controls approved for integration and merge
+The saved WavePlaqueSilver_Large (264x99), SettingsButtonSilver_Large (84x84)
+and PowerUpTileSilver_Large (105x105) are now the authoritative shared controls.
+Use their exact LibreSprite exports in ArtSource/SilverRoyalRelicUI/
+UserEditedLargeControls/Inputs. Preserve every authored pixel and source padding;
+wave modular pieces are lossless crops, not new drawings. Layout must account
+for the larger native sources rather than enlarge them twice. Potion/bomb icon
+copies were unchanged; retain their existing production files. The user-edited
+ability bar, four ability icons and all zone artwork remain unchanged.

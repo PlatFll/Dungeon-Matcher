@@ -8,7 +8,7 @@ public sealed class StoneAbilityButtonView : MonoBehaviour
 {
     private Image slab, engraving, glow;
     private Button button;
-    private float lift, glowClock;
+    private float lift;
     private bool ready;
     private Sprite centeredSource;
     private Vector2 iconPosition;
@@ -49,7 +49,6 @@ public sealed class StoneAbilityButtonView : MonoBehaviour
         {
             ready=controller.CanActivate;
             lift=PresentationPreferences.ReducedMotion ? (ready?1:0) : Mathf.MoveTowards(lift,ready?1:0,Time.deltaTime/0.16f);
-            glowClock+=Time.deltaTime;
         }
         // One native pixel horizontally and three vertically imply slab depth.
         // Reduced Motion retains the ready cue without any positional movement.
@@ -57,8 +56,9 @@ public sealed class StoneAbilityButtonView : MonoBehaviour
             new Vector2(-Mathf.Round(lift),Mathf.Round(lift*3));
         GameplayPixelGrid.Snap(slab.rectTransform);
         slab.color=Color.white;engraving.color=Color.white;
-        float shine=PresentationPreferences.ReducedMotion ? .75f : Mathf.Round((.72f+.10f*Mathf.Sin(glowClock*3))*8)/8;
-        glow.color=new Color(1,1,1,ready?shine:0);
+        // The existing white mask is the unavailable state. Ready reveals the
+        // unchanged full-color icon as the slab lifts; no white wash over it.
+        glow.color=new Color(1,1,1,ready?0:1);
         glow.enabled=glow.sprite!=null;
     }
 

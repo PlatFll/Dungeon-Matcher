@@ -17,6 +17,13 @@ public static partial class BattlePresentationSkin
         rect.localScale=Vector3.one;
     }
 
+    // User-edited controls now have 1.5x native canvases. Keep the approved
+    // logical sizes; do not apply the enlargement to the new artwork twice.
+    public const float SilverControlSourceScale=1.5f;
+    // Small viewports retain the compact family so controls never cover each other.
+    public static float TopControlScale(RectTransform top) => top.rect.width >= 400 ? 1.5f : 1;
+    public static float SupplyControlScale(RectTransform hud) => hud.rect.width >= 400 && hud.rect.height >= 156 ? 1.5f : 1;
+
     public static void PlaceTopControl(RectTransform rect, string kind, RectTransform top)
     {
         if(!rect || !top)return;
@@ -25,21 +32,24 @@ public static partial class BattlePresentationSkin
         rect.anchorMin=rect.anchorMax=rect.pivot=new Vector2(0,1);
         // CanvasScaler already chooses one whole physical-pixel scale. Never map
         // these controls through the independently responsive environment height.
-        Vector2 settingsSize=Shared("Settings").rect.size;
+        float displayScale=TopControlScale(top);
+        Vector2 settingsSize=Shared("Settings").rect.size*(displayScale/SilverControlSourceScale);
         float right=top.rect.width-8, waveRight=right-settingsSize.x-8;
         Vector2 size;float left,y;
         if(kind=="Settings"){size=settingsSize;left=right-settingsSize.x;y=12;}
         else
         {
             float minLeft=Mathf.Ceil(top.rect.width*.29f)+6;
-            float width=Mathf.Min(176,Mathf.Floor(waveRight-minLeft));
-            size=new Vector2(Mathf.Max(94,width),Shared("Wave") ? 66 : 48);
+            // Four-unit logical widths keep the new native strips and compact
+            // two-thirds fit on physical pixel boundaries without gaps.
+            float width=Mathf.Min(176,Mathf.Floor((waveRight-minLeft)/displayScale/4)*4);
+            size=new Vector2(Mathf.Max(96,width)*displayScale,(Shared("Wave") ? 66 : 48)*displayScale);
             left=Mathf.Clamp(Mathf.Round((top.rect.width-size.x)*.5f),minLeft,waveRight-size.x);y=10;
         }
         rect.sizeDelta=size;rect.anchoredPosition=new Vector2(left,-y);GameplayPixelGrid.Snap(rect);
         if(kind=="Wave")
         {
-            if(Shared("Wave")) { PlaceSilverWave(rect); return; }
+            if(Shared("Wave")) { PlaceSilverWave(rect,displayScale); return; }
             var image=rect.GetComponent<Image>();
             image.sprite=Resources.Load<Sprite>("UI/BattlePresentation/Stone/WaveBody") ??
                 Resources.Load<Sprite>("UI/BattlePresentation/Unified/WaveBody");
@@ -58,7 +68,7 @@ public static partial class BattlePresentationSkin
 
     }
 
-    private static void PlaceSilverWave(RectTransform rect)
+    private static void PlaceSilverWave(RectTransform rect,float displayScale)
     {
         // User-authored PNG split into five exact columns: shorten only straight
         // rails. Corners, center diamond and skull always retain native pixels.
@@ -67,8 +77,12 @@ public static partial class BattlePresentationSkin
         // the five native child strips, never a resized copy underneath them.
         image.sprite=Shared("Wave");image.enabled=false;image.color=Color.clear;image.raycastTarget=false;
         var oldPendant=rect.Find("SharedWavePendant");if(oldPendant)oldPendant.gameObject.SetActive(false);
-        float railLeft=Mathf.Floor((rect.rect.width-94)/2);
-        float[] widths={25,railLeft,44,rect.rect.width-94-railLeft,25};
+        float artScale=displayScale/SilverControlSourceScale;
+        float nativeWidth=rect.rect.width/artScale;
+        // Exact user source columns: 36 / 78 / 36 / 66 / 48 at full width.
+        // Keep the authored padding and ornament placement, shortening rails only.
+        float railLeft=Mathf.Round((nativeWidth-120)/2)+6;
+        float[] widths={36,railLeft,36,nativeWidth-120-railLeft,48};
         float x=0;
         for(int i=0;i<5;i++)
         {
@@ -76,12 +90,14 @@ public static partial class BattlePresentationSkin
             var piece=rect.Find(name) as RectTransform;
             if(!piece) { piece=GameUi.Rect(name,rect,Vector2.zero,Vector2.zero);piece.gameObject.AddComponent<Image>();piece.SetAsFirstSibling(); }
             piece.anchorMin=piece.anchorMax=piece.pivot=new Vector2(0,1);
-            piece.sizeDelta=new Vector2(widths[i],66);piece.anchoredPosition=new Vector2(x,0);
+            piece.sizeDelta=new Vector2(widths[i],99)*artScale;piece.anchoredPosition=new Vector2(x*artScale,0);
             var art=piece.GetComponent<Image>();art.sprite=Resources.Load<Sprite>("UI/BattlePresentation/Silver/WavePart"+i);
             art.type=i==1||i==3 ? Image.Type.Tiled : Image.Type.Simple;
-            // Match one source pixel to one canvas unit, independent of import PPU.
-            art.pixelsPerUnitMultiplier=art.canvas.referencePixelsPerUnit/art.sprite.pixelsPerUnit;
-            art.color=Color.white;art.raycastTarget=false;GameplayPixelGrid.Snap(piece);x+=widths[i];
+            // All five strips use the same uniform scale and exact shared edges.
+            // Source columns remain native at full size; compact layouts use
+            // a uniform two-thirds fit. Shared edges stay on physical pixels.
+            art.pixelsPerUnitMultiplier=art.canvas.referencePixelsPerUnit/art.sprite.pixelsPerUnit/artScale;
+            art.color=Color.white;art.raycastTarget=false;x+=widths[i];
         }
         var label=rect.GetComponentInChildren<TMP_Text>();
         if(label)
@@ -89,9 +105,9 @@ public static partial class BattlePresentationSkin
             label.rectTransform.anchorMin=Vector2.zero;label.rectTransform.anchorMax=Vector2.one;
             // TMP's line metrics exceed the visible capitals. Leave metric room
             // while centering the actual glyphs inside the source's dark recess.
-            label.rectTransform.offsetMin=new Vector2(18,9);label.rectTransform.offsetMax=new Vector2(-18,-9);
+            label.rectTransform.offsetMin=new Vector2(18,9)*displayScale;label.rectTransform.offsetMax=new Vector2(-18,-9)*displayScale;
             label.textWrappingMode=TextWrappingModes.NoWrap;label.overflowMode=TextOverflowModes.Overflow;
-            PixelTextFitter.ApplyNativeMenu(label,48);
+            PixelTextFitter.ApplyNativeMenu(label,48*displayScale);
         }
     }
 
@@ -100,8 +116,19 @@ public static partial class BattlePresentationSkin
     public static void PlaceSupply(Button button, Image icon, int index)
     {
         var r=(RectTransform)button.transform;PrepareSharedControl(r);
-        r.anchorMin=r.anchorMax=r.pivot=Vector2.one*.5f;r.sizeDelta=Shared("Supply").rect.size;
-        r.anchoredPosition=new Vector2(index==0?-132:132,BottomControlY((RectTransform)r.parent));GameplayPixelGrid.Snap(r);
-        PrepareSharedControl(icon.rectTransform);GameplayPixelGrid.FitImage(icon,new Vector2(48,48));
+        var hud=(RectTransform)r.parent;float displayScale=SupplyControlScale(hud);
+        r.anchorMin=r.anchorMax=r.pivot=Vector2.one*.5f;r.sizeDelta=Shared("Supply").rect.size*(displayScale/SilverControlSourceScale);
+        // Keep the original nine-pixel gap to the unchanged ability frame and
+        // bottom edge above the caption; expand outwards and upwards. Reserve
+        // six logical pixels above the visible 28px caption where it is shown.
+        float x=97+r.sizeDelta.x*.5f;
+        float y=BottomControlY(hud)+(r.sizeDelta.y-70)*.5f;
+        if(displayScale>1)y=Mathf.Max(y,-hud.rect.height*.5f+51+r.sizeDelta.y*.5f);
+        r.anchoredPosition=new Vector2(index==0?-x:x,y);GameplayPixelGrid.Snap(r);
+        PrepareSharedControl(icon.rectTransform);
+        icon.rectTransform.anchorMin=icon.rectTransform.anchorMax=icon.rectTransform.pivot=Vector2.one*.5f;
+        icon.rectTransform.anchoredPosition=Vector2.zero;
+        GameplayPixelGrid.FitImage(icon,new Vector2(48,48)*displayScale);
+        if(r.Find("Cooldown") is RectTransform cooldown)cooldown.sizeDelta=new Vector2(52,52)*displayScale;
     }
 }

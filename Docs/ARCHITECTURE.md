@@ -642,7 +642,7 @@ Opened settings and main menu keep their existing skins and menu music selection
 - **Phone board sizing:** the board fills the available width or remaining height, whichever limits it, using uniform fractional scaling when needed. This supersedes the earlier integer-only / below-552px exception following phone feedback: that policy nearly halved the board width at 1080px. Canvas and HUD art retain integer scaling; board source texels can occupy uneven physical pixel widths under Point filtering. The validator checks the assigned ratio and uniform frame scaling rather than requiring integer board texels.
 - `ResponsiveModularFrameFitter` owns only frame internals and keeps native corners/edge density. Tiling may terminate at a whole source-texel boundary; partial texels and arbitrary tile-density scaling are forbidden. `BottomHudModularFrameController` builds the shared frame but never resizes the HUD or positions the ability. Mirrored frame pieces retain unit-magnitude axis signs for reflection.
 - `PlayerAreaThreeSliceFrameController` retains the custom player frame and owns its section geometry, including the arena's native 16px border plus a six-pixel interior gap. The player section retains its pre-expansion height: min(290, available TopHUD height) minus the existing 22px top/bottom insets, vertically centered in the battle area with at most half a logical pixel of grid rounding. Its character/base floor receives the same centering offset so the player HUD retains its internal arrangement. The battle enclosure can grow beyond its 320px preferred height while this player frame remains capped. The former `PlayerAreaFrameSpacingController` is removed. `TopBattleLayoutController` builds battle content; `TopBattlePresentationController` consumes the assigned height and positions the floor and contents without partitioning the screen.
-- `AbilityButtonUI` owns its 176x64 button, native 144x32 teal energy art, and display-only integer fill steps. It never resizes its enclosing HUD. Pixel-art UI roots use `(1,1,1)`, with native dimensions or source-texel-compatible RectTransform sizes. `GameplayPixelGrid` and `PixelPerfectBattleCharacterUI` use the same physical screen phase; character width and height share one integer physical source-texel ratio rather than independently rounded dimensions. Board gems use native presentation scale; generation, matching, energy, damage, and shield behavior remain independent of this presentation policy.
+- `AbilityButtonUI` owns the shared 176x66 button, native 147x24 silver energy frame with a transparent 117x8 live-fill window, and display-only integer fill steps. The existing 176x64/144x32 layout remains a legacy fallback. It never resizes its enclosing HUD. Pixel-art UI roots use `(1,1,1)`, with native dimensions or source-texel-compatible RectTransform sizes. `GameplayPixelGrid` and `PixelPerfectBattleCharacterUI` use the same physical screen phase; character width and height share one integer physical source-texel ratio rather than independently rounded dimensions. Board gems use native presentation scale; generation, matching, energy, damage, and shield behavior remain independent of this presentation policy.
 - `PlayerHudCenteringController` is the final owner of the player sprite/gem/health-bar stack after responsive layout and pixel sizing. It keeps four logical pixels between their fixed containers, then centers their combined bounds inside PlayerPanel. A disabled legacy Image does not hide a container whose modular health-bar children still render. The stack uses full fixed animation bounds, never per-pose opaque bounds.
 - Combat idle production sources live in `ArtSource/CombatIdles/`. Explicit editor helper `CombatIdleImporter.Run` copies the PNGs unchanged and authors Point/FullRect sprites and looping `Image.m_Sprite` clips under `Assets/_Game/Art/CombatIdles/` and `Assets/_Game/Animations/CombatIdles/`. All four loops contain nine 130 ms frames (1.17 seconds). All four use fixed 64×64 slices and bottom-center pivots; Bardley's source contact is now normalized to row 63 across idle and ability. Existing `PlayerBattleCharacterPresenter` and `EnemyVisualPresenter` consume the four definition references. Animation curves contain no transforms or combat events; gameplay/impact timing retains its existing owners. `CombatIdleValidation.Run` is an opt-in graphics-enabled batch Play Mode check of the production Game scene; see `Docs/Validation/COMBAT_IDLE_VALIDATION.md`.
 - Combat actions live in `ArtSource/CombatActions/`. `CombatActionImporter.Run` extends the existing four controllers: 8-frame, 680 ms Farmer/Pan auto-attacks and 10-frame, 880 ms player ability casts, each returning to Idle. Enemy sheets are 96×64 with a 16-pixel symmetric canvas expansion; existing 64-pixel reference sizing preserves body scale and bottom-center floor. Player idle/cast slices are both 64×64.
@@ -1103,3 +1103,27 @@ CharacterSelectionSettings separates known saved identities from currently
 selectable characters. Gideon remains known for save sanitation/continuation,
 but the new-run menu and persistent selection setter exclude him. No save schema
 or stored progression is removed.
+
+
+### Shared Silver control sizing and user-edited art (2026-11-12)
+
+`BattlePresentationSkin.Controls` owns the approved larger wave, Settings and
+supply holders. Their user-edited source canvases are 264x99, 84x84 and 105x105.
+Normal layouts display these at native logical scale; the former 1.5x enlargement
+is already present in the source and must not be applied again. Unit transforms
+and Point filtering remain required. Constrained layouts use the existing compact
+logical sizes through a uniform two-thirds source fit. This scoped compact fit
+does not change the native policy for actors, ability, meter, frames or icons.
+
+The wave uses five lossless source columns with widths 36/78/36/66/48. Only the
+two identical-column rails shorten. Logical widths advance in four-unit steps
+so both full-size and compact joins stay on physical pixel boundaries. Source
+padding, colors and ornament placement remain exactly as the user saved them.
+
+Top HUD widths below 400 logical pixels retain compact controls. Supply holders
+also retain compact sizing when their HUD is shorter than 156 logical pixels.
+The larger holders preserve the nine-unit ability gap and keep at least six
+logical pixels above the optional caption, raising within the HUD when necessary.
+Potion/bomb icons use the established integer pixel fitter, and quantity labels
+stay inside their holder. Board dimensions, shared section mapping, hit callbacks,
+and energy/gameplay authority are unchanged.

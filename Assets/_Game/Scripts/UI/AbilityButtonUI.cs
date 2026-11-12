@@ -129,8 +129,14 @@ public sealed class AbilityButtonUI : MonoBehaviour
         bar.sizeDelta=new Vector2(147,24);bar.anchoredPosition=new Vector2(0,46);GameplayPixelGrid.Snap(bar);
         var frame=bar.Find("EnergyFrame")?.GetComponent<Image>();
         if(frame){frame.sprite=BattlePresentationSkin.Shared("Energy");frame.rectTransform.sizeDelta=new Vector2(147,24);GameplayPixelGrid.Snap(frame.rectTransform);}
-        // Native interior is 107x8; retain the existing fill and charge authority.
-        energyBarMaximumWidth=107;
+        // The silver rim has a 117x8 native transparent window, centered in
+        // its 147x24 canvas. The existing controller still owns charge/spending.
+        energyBarMaximumWidth=117;
+        var track=bar.Find("EmptyEnergyTrack") as RectTransform;
+        if(track){track.sizeDelta=new Vector2(117,8);track.anchoredPosition=new Vector2(15,0);}
+        if(energyBarFillMask){energyBarFillMask.anchoredPosition=new Vector2(15,0);energyBarFillMask.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,8);}
+        if(track && track.TryGetComponent<Image>(out var trackImage))trackImage.pixelsPerUnitMultiplier=trackImage.canvas.referencePixelsPerUnit/trackImage.sprite.pixelsPerUnit;
+        if(energyFill){energyFill.rectTransform.sizeDelta=new Vector2(117,8);energyFill.pixelsPerUnitMultiplier=energyFill.canvas.referencePixelsPerUnit/energyFill.sprite.pixelsPerUnit;}
         ApplyEnergyVisual(displayedCharge);
     }
 
@@ -404,7 +410,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private void BuildFinalizedEnergyBar()
     {
         var frame = BattlePresentationSkin.Shared("Energy") ?? GameplayThemeSkin.Current?.energyFrame ?? FinalizedUiSkin.Load("EnergyFrame");
-        var track = FinalizedUiSkin.Load("EnergyTrack");
+        var track = BattlePresentationSkin.Shared("EnergyTrack") ?? FinalizedUiSkin.Load("EnergyTrack");
         var fill = BattlePresentationSkin.Shared("EnergyFill") ?? FinalizedUiSkin.Load("EnergyFill");
         if (frame == null || track == null || fill == null) return;
         if (transform.Find(AbilityEnergyBarName) is not RectTransform root) return;

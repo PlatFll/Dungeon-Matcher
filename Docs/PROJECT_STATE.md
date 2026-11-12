@@ -26,10 +26,11 @@ The user supplied and approved five final PNGs for the actual shared battle UI:
 wave plaque 176×66, Settings 56×56, supply holder 70×70, ability frame 176×66,
 and a separate 41×38 Rattlebones icon. These exact files now override the old
 stone controls in every zone through the existing BattlePresentationSkin.
-The wave's native corners, diamond and skull stay fixed while only straight
+The wave's corners, diamond and skull retain their proportions while only straight
 rail lengths respond to screen width. Each ability definition still owns its
 icon; the existing slab view centers the visible drawing above the shared frame
-and preserves its ready lift, white glow, pause and Reduced Motion behavior.
+and preserves its native ready lift, pause and Reduced Motion behavior. The
+latest requested state is white while unavailable, full color when ready.
 The user subsequently cleaned the Minotaur bull, Kobold revolver and Bardley
 flute in LibreSprite and authorized their palette-only coloring and integration.
 Their exact edited masks now use the current Minotaur fur/horn/amber colors,
@@ -38,8 +39,26 @@ three ability definitions bind separate native icons and matching ready masks;
 their original edits and old assets remain preserved. Sources and evidence:
 [icon color revision](../ArtSource/SilverRoyalRelicUI/IconColorRevision/README.md).
 No new generation spending was needed.
-Energy-bar artwork and charge logic, gameplay, environments and other UI remain
-unchanged. Earlier generated art and user-edited source documents are preserved.
+The shared energy meter now uses the matching 147x24 silver casing with a
+transparent 117x8 charge window. Its previous opaque painted center hid the
+live fill even though charge updated correctly. The native fill mask now fits
+that window; energy generation, costs and spending remain unchanged. The five
+user-supplied PNGs, colored icons, environments and other UI remain unchanged.
+The user subsequently cleaned the bar in LibreSprite and requested its Game
+integration. The exact saved 147x24 export now replaces that casing without
+changing its transparent fill window or the live charge behavior. Editable
+source, previous art and verification are in
+[UserEditedEnergyBar](../ArtSource/SilverRoyalRelicUI/UserEditedEnergyBar/README.md).
+The user approved the white-unavailable/color-ready behavior, visible meter and
+larger shared controls for integration and merge. Their final saved larger wave
+(264x99), Settings (84x84) and supply holder (105x105) now replace the earlier
+sources in every zone. The layout uses those native sizes without applying the
+50% enlargement twice; constrained screens retain the compact uniform fit.
+Wave rails remain modular, Settings square, icons centered and captions clear.
+The bar, four ability icons, potion/bomb drawings and board geometry are unchanged
+by this last import. Latest source authority and actual Game evidence:
+[UserEditedLargeControls](../ArtSource/SilverRoyalRelicUI/UserEditedLargeControls/README.md).
+Earlier generated art and user-edited source documents are preserved.
 See [production handoff and actual Game evidence](../ArtSource/SilverRoyalRelicUI/Production/README.md).
 
 ## Hearth flame and full-tile Marine Net — production approved (2026-11-10)

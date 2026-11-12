@@ -198,6 +198,22 @@ public static class GameplayPixelLayoutValidator
             Vector2 source = image.sprite.rect.size;
             float xRatio = bounds.width / source.x, yRatio = bounds.height / source.y;
             report += $"UI art {Path(image.transform)} bounds={bounds}, source={source}, ratios=({xRatio},{yRatio})\n";
+            bool silverTop = (image.name == "Settings" && image.sprite == BattlePresentationSkin.Shared("Settings")) ||
+                (image.transform.parent?.name == "WaveTracker" &&
+                 (image.name == "SilverWavePart0" || image.name == "SilverWavePart2" || image.name == "SilverWavePart4") &&
+                 image.sprite == Resources.Load<Sprite>("UI/BattlePresentation/Silver/WavePart" + image.name[^1]));
+            bool silverSupply = (image.name == "HealthPotion" || image.name == "Bomb") &&
+                image.sprite == BattlePresentationSkin.Shared("Supply");
+            if(silverTop || silverSupply)
+            {
+                float requested = g.Scale * (silverTop ? BattlePresentationSkin.TopControlScale(owner.TopHud) : BattlePresentationSkin.SupplyControlScale(owner.BottomHud)) / BattlePresentationSkin.SilverControlSourceScale;
+                Require(Near(xRatio,requested) && Near(yRatio,requested),"Incorrect shared control enlargement: " + Path(image.transform),errors);
+                // Updated native strips retain whole physical vertices, including
+                // the compact two-thirds source fit. No seam tolerance needed.
+                Require(Integral(bounds.xMin)&&Integral(bounds.yMin)&&Integral(bounds.xMax)&&Integral(bounds.yMax),
+                    "Off-grid enlarged control: " + Path(image.transform),errors);
+                continue;
+            }
             Require(Integral(bounds.xMin) && Integral(bounds.yMin) && Integral(bounds.xMax) && Integral(bounds.yMax),
                 $"Fractional UI art vertices {Path(image.transform)}: {bounds}", errors);
             if(image.TryGetComponent<ReferenceKitSurface>(out var registered))

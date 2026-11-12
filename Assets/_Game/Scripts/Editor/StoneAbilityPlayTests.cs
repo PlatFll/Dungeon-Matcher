@@ -50,17 +50,17 @@ public sealed class StoneAbilityPlayTests
         Assert.That(run.Player.Definition.PlayerId,Is.EqualTo(id));
         foreach(var enemy in run.Waves.ActiveEnemies)typeof(EnemyActor).GetField("currentHealth",BindingFlags.Instance|BindingFlags.NonPublic).SetValue(enemy,10000);
         var view=Object.FindFirstObjectByType<StoneAbilityButtonView>();Assert.That(view,Is.Not.Null);
-        Assert.That(view.Engraving.sprite,Is.SameAs(controller.ActiveAbility.StoneEngraving));Assert.That(view.IsRaised,Is.False);Assert.That(view.Glow.color.a,Is.Zero);
+        Assert.That(view.Engraving.sprite,Is.SameAs(controller.ActiveAbility.StoneEngraving));Assert.That(view.IsRaised,Is.False);Assert.That(view.Glow.color.a,Is.EqualTo(1));
         string dir=Root+"/"+id;Directory.CreateDirectory(dir);Shot(dir+"/Charging.png");yield return Pause(.2f);
         Time.captureFramerate=30;run.Player.GetComponent<PlayerAbilityEnergy>().AddEnergy(1000);
         for(int f=0;f<24;f++){Shot(dir+"/Rise"+f.ToString("D3")+".png");yield return null;}
         Time.captureFramerate=oldCapture;yield return Until(()=>view.IsRaised);
-        Assert.That(view.Slab.anchoredPosition,Is.EqualTo(new Vector2(-1,3)));Assert.That(view.Glow.color.a,Is.GreaterThan(.5f));
+        Assert.That(view.Slab.anchoredPosition,Is.EqualTo(new Vector2(-1,3)));Assert.That(view.Glow.color.a,Is.Zero,"Ready reveals the full-color icon");
         Shot(dir+"/Ready.png");yield return Pause(.2f);
         Time.timeScale=0;var paused=view.Slab.anchoredPosition;var alpha=view.Glow.color.a;yield return Pause(.2f);
         Assert.That(view.Slab.anchoredPosition,Is.EqualTo(paused));Assert.That(view.Glow.color.a,Is.EqualTo(alpha));Time.timeScale=1;
         PlayerPrefs.SetInt(PresentationPreferences.ReducedMotionKey,1);yield return null;yield return null;
-        Assert.That(view.Slab.anchoredPosition,Is.EqualTo(Vector2.zero));Assert.That(view.Glow.color.a,Is.GreaterThan(.5f));
+        Assert.That(view.Slab.anchoredPosition,Is.EqualTo(Vector2.zero));Assert.That(view.Glow.color.a,Is.Zero,"Ready reveals the full-color icon");
         PlayerPrefs.SetInt(PresentationPreferences.ReducedMotionKey,0);yield return null;yield return null;
         if(id=="kobold_gunner"||id=="dungeon_attender")
         {
@@ -92,7 +92,7 @@ public sealed class StoneAbilityPlayTests
         }
         else
         {
-            // The same slab has one native rise and a restrained white pulse.
+            // The same slab has one native rise and its unchanged full-color ready icon.
             Time.captureFramerate=30;for(int f=0;f<36;f++){Shot(dir+"/Frame"+f.ToString("D3")+".png");yield return null;}Time.captureFramerate=oldCapture;
         }
         yield return Pause(.2f);
