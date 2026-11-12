@@ -280,7 +280,9 @@ public class Gem :
             SpecialType ==
                 GemSpecialType.HealingBomb ||
             SpecialType ==
-                GemSpecialType.ShieldBomb;
+                GemSpecialType.ShieldBomb ||
+            SpecialType == GemSpecialType.RowBomb ||
+            SpecialType == GemSpecialType.ColumnBomb;
     }
 
     private void RefreshSpecialBombVisual()
@@ -335,7 +337,8 @@ public class Gem :
             board.GetSpecialBombSourceIcon(
                 Type
             ),
-            spriteRenderer
+            spriteRenderer,
+            SpecialType
         );
     }
 

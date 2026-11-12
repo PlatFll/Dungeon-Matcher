@@ -95,8 +95,8 @@ public sealed class BombLineVFX : MonoBehaviour
         if (!native)
         {
             // Missing optional art never blocks the authoritative board clear.
-            fallback.transform.localScale = new Vector3(reach * 2 * cellSize,.25f * cellSize,cellSize);
-            fallback.color = new Color(1,.55f,.12f,alpha);
+            fallback.transform.localScale = new Vector3(reach * 2 * cellSize,.8f * cellSize,cellSize);
+            fallback.color = new Color(1,.9f,.35f,alpha);
             return;
         }
         transform.localScale = Vector3.one * cellSize;
@@ -110,7 +110,7 @@ public sealed class BombLineVFX : MonoBehaviour
             heads[i].color = new Color(1,1,1,alpha);
             trails[i].enabled = reach > 0 && alpha > 0;
             trails[i].sprite = trailFrames[frame % trailFrames.Length];
-            trails[i].size = new Vector2(reach,.5f);
+            trails[i].size = new Vector2(reach,trailFrames[frame % trailFrames.Length].bounds.size.y);
             trails[i].transform.localPosition = new Vector3(sign * reach / 2,0,0);
             trails[i].color = new Color(1,1,1,alpha);
         }

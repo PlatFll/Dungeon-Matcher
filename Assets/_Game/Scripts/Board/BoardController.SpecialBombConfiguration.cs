@@ -57,6 +57,10 @@ public partial class BoardController
     {
         switch (specialType)
         {
+            case GemSpecialType.RowBomb:
+            case GemSpecialType.ColumnBomb:
+                return BombIdleArt.DirectionalStill(specialType);
+
             case GemSpecialType.PoisonBomb:
                 return poisonBombSprite;
 

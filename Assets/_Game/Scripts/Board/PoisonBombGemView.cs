@@ -8,6 +8,26 @@ public sealed class PoisonBombGemView : MonoBehaviour
 
     private SpriteRenderer shellRenderer;
     private SpriteRenderer sourceIconRenderer;
+    private GemSpecialType currentType;
+    private Sprite still;
+    private float idleTime;
+
+    private void Update()
+    {
+        if (shellRenderer == null || !shellRenderer.enabled) return;
+        idleTime += Time.deltaTime;
+        ApplyIdle();
+    }
+
+    private void ApplyIdle()
+    {
+        shellRenderer.sprite = BombIdleArt.Frame(currentType, idleTime, still);
+        transform.localPosition = BombIdleArt.ShakeOffset(currentType, idleTime);
+        if (sourceIconRenderer != null)
+            sourceIconRenderer.transform.localPosition = BombIdleArt.SocketOffset(currentType);
+    }
+
+    private void OnDisable() { Hide(); }
 
     private MaterialPropertyBlock shellPropertyBlock;
     private MaterialPropertyBlock sourceIconPropertyBlock;
@@ -60,7 +80,8 @@ public sealed class PoisonBombGemView : MonoBehaviour
     public void Show(
         Sprite bombSprite,
         Sprite sourceGemIcon,
-        SpriteRenderer templateRenderer)
+        SpriteRenderer templateRenderer,
+        GemSpecialType specialType = GemSpecialType.None)
     {
         EnsureRenderers(
             templateRenderer
@@ -71,8 +92,10 @@ public sealed class PoisonBombGemView : MonoBehaviour
             return;
         }
 
-        shellRenderer.sprite =
-            bombSprite;
+        currentType = specialType;
+        still = bombSprite;
+        idleTime = 0f;
+        shellRenderer.sprite = bombSprite;
 
         shellRenderer.color =
             Color.white;
@@ -94,10 +117,15 @@ public sealed class PoisonBombGemView : MonoBehaviour
         }
 
         SetFlashAmount(0f);
+        ApplyIdle();
     }
 
     public void Hide()
     {
+        currentType = GemSpecialType.None;
+        still = null;
+        idleTime = 0;
+        transform.localPosition = Vector3.zero;
         SetFlashAmount(0f);
 
         if (shellRenderer != null)

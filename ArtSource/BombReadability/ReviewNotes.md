@@ -1,40 +1,64 @@
-# Bomb readability and VFX review — 2026-11-12
+# Selected bomb idles and yellow blast review — 2026-11-12
 
-Branch: `codex/bomb-readability-and-vfx`. Review-only casing selection; no merge.
+Branch: `codex/bomb-readability-and-vfx`. Draft PR #232. Not merged.
 
-## Review choices
+## Selected artwork and motion
 
-- Poison A–D, Healing A–D, Directional A–D (paired row/column orientation studies).
-- White Star A–C. Star B is used for the gameplay review; source/prefab GUID retained.
-- Socket centers are explicit in `Candidates/selection.json`. Each casing has a 23px dark cavity for a separate unchanged-size 16px gem. Shape/lighting finishing for the selected column counterpart can follow selection.
-- ShieldBomb.png remains SHA-256 `3992f944830f2827dc16fd105695fe4112c0c5c1953d5bd6e467523e8ab49d40`.
+The user selected **Poison A, Healing C, Directional D and Star A**. The exact
+cleaned casing PNGs are the static production fallbacks on this branch. Earlier
+raw generations, unselected alternatives and the original review remain intact.
 
-The other casing PNGs are deliberately not bound to the production prefabs yet. The current casings remain visible in gameplay captures until the user chooses replacements.
+- Poison: 24 × 100 ms, 64×64. Metal body/socket stay fixed. One-pixel liquid
+  movement and two staggered bubbles rise, open and pop through a seamless cycle.
+- Healing: 32 × 100 ms, 64×64. Body/socket stay fixed; three tiny yellow plus
+  accents emerge, rise and disappear with a quiet rest between cycles.
+- Directional row/column: eight × 80 ms positions. Whole casing and gem move
+  together by at most one native pixel. No arbitrary rotation or scaling.
+- Star: 32 × 80 ms, 64×64. Subtle one-pixel sway plus a diagonal white highlight
+  through the light facets. Dark silhouette and the selected design are retained.
+- Row/Column blast: 64×64 native fronts/trails replace the earlier 64×32 art.
+  Broad yellow-white flame cores, restrained amber rims, matching native height,
+  bidirectional travel and the existing board mask. Gameplay footprint is unchanged.
 
-## Completed palette and VFX revision
+The selected loops were finalized as actual multi-frame LibreSprite sources,
+re-exported and compared byte-for-byte after transparent RGB normalization.
+The runtime uses those exact PNG cels; optional missing sequences fall back to
+static art. Pause freezes time; Reduced Motion returns the static designs.
 
-Twelve small gem variants use the corresponding current board-gem facet colors. Original geometry/alpha and weakness gold rims are exact. The six 64px master gems and Rattlebones are unchanged. `Palette/Manifest.json` records every map and preservation hash; original files and exact LibreSprite round trips are retained.
+## Verification actually completed
 
-Row/Column presentation uses two animated native flame fronts and tiled fire trails. The existing board SpriteMask clips them at the grid boundary. No generic per-cell explosion is emitted for the directional-only footprint. Utility bombs, consumable/Bardley bursts, damage, rewards, targets and refill timing are preserved. A real-play test caught and fixed the previous tile-library suppression of the dedicated directional event.
+- `Tools/Validate-Unity.ps1` passed, Unity 6000.3.19f1. Log:
+  `DungeonMatcher-UnityValidation-67742902-63f7-4ab2-895f-858eba0fef76.log`.
+- 83 automated tests passed, zero failures or skips. Exact results:
+  `Validation/SelectedIdles-tests.xml` (source run `reference-tests-20261112-081103.xml`).
+- Actual Game scene at 720×1280, disposable account/profile. Captured 100 frames
+  of selected idles plus actual Row, Column and Color Crystal swaps. Tests check
+  all six gem sockets, hidden ordinary gems, board masking, completed moves,
+  absence of generic directional bursts, pause, Reduced Motion, special-state
+  replacement and star materialization/activation after animated idle frames.
+- 88 authored idle PNGs: 64×64, binary alpha, minimum one-pixel canvas clearance;
+  Poison/Healing gem cavities unchanged. `SelectedIdles/NativeValidation.json`.
+- Shield SHA-256 remains
+  `3992f944830f2827dc16fd105695fe4112c0c5c1953d5bd6e467523e8ab49d40`.
+  Rattlebones and six full-size gem masters are unchanged. The earlier 12 small
+  gem recolors remain exact to their approved/current palette mapping.
+- Visual review: body silhouettes stay stable, the sockets hold all six gems,
+  bubbles/crosses remain small accents, the star shine crosses its facets, and
+  the broader blast reads clearly at native board scale without crossing the mask.
+- No real-device or Android build test. New animations/blast await user review.
 
-Color Crystal stars snapshot the source and destination, travel on the native pixel grid, land before the existing flash, then shrink through native frames. Board resolution still owns every removal. Reduced Motion disables star travel and moving flame fronts. Pools clean up on disable; Time.deltaTime respects pause.
+## PixelLab and editable sources
 
-## Evidence
+Original candidate production used 40 generations (four 16-candidate jobs).
+This idle and blast revision used **zero additional generations**. Existing
+PixelLab outputs were the approved source; motion was authored at native pixel
+resolution and exported through LibreSprite. Receipts: `Candidates/jobs.json`.
 
-- Mandatory `Tools/Validate-Unity.ps1`: passed Unity 6000.3.19f1 Final log: `DungeonMatcher-UnityValidation-29651482-cdec-4ff9-90fc-c49f78e537bf.log`.
-- 81 focused automated checks passed, zero failures/skips: bomb visuals, actual swaps, tile bursts, crystal chaining/validity, Board Feel.
-- After the final flame-art polish, all 7 affected native/presentation/play checks passed again; this is repeat coverage, not 7 additional unique tests.
-- `.utmp/ThreeZonePresentation/reference-tests-20261112-064514.xml`: 81/81.
-- `.utmp/ThreeZonePresentation/reference-tests-20261112-064850.xml`: 7/7 final art capture.
-- Actual Game scene at 720×1280, disposable account: 100 frames each for row, column and Color Crystal swaps. The review GIFs are nearest-neighbor half-size and deliberately slowed; full native screenshots are alongside them.
-- Native PNG checks: 39 new candidate/effect exports, binary alpha; 12 preserved gem masks; unchanged masters/Shield/Rattlebones.
-- LibreSprite: exact PNG round trips for candidate stills and recolors; real multi-frame ASE sources for three VFX sequences, with exact pixel comparison after export.
-- No real-device or Android build test for this review. Casing approval remains pending.
+`SelectedIdles/Editable` contains five animation sources, native GIF imports and
+`Sheets` contains verified strips. `Effects/Editable` contains the revised fire
+loops. The regeneration recipes live in `Scripts`; no generative service is
+called by them. Review: `SelectedIdles/Preview/Review.html`, with 1×/2× native
+playback, all six gem choices, pause/step controls and real Unity GIFs/screenshots.
 
-## PixelLab usage
-
-Four native 64×64 Pro jobs, 16 raw candidates each, 10 generations each: **40 generations total**. Balance 3667.90 → 3627.90; no cash credits spent. Approved Rattlebones and Shield images were the actual supported image inputs. Job IDs, costs and source hashes are in `Candidates/jobs.json`. No additional provider was used.
-
-## Sources
-
-`Candidates/Raw` is immutable provider output. `Candidates/Editable`, `Palette/Editable` and `Effects/Editable` contain LibreSprite sources. `Scripts` contains native drawing/recolor recipes; update the documented local LibreSprite executable path if running on another machine. New casing PNGs remain candidates, not approved production replacements.
+Gameplay, utility-bomb effects, damage/rewards, UI, characters, environments and
+unrelated user edits are unchanged. Main and the primary Unity checkout are untouched.

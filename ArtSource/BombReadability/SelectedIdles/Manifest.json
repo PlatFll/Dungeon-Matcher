@@ -1,0 +1,147 @@
+{
+  "selected": [
+    "Poison A",
+    "Healing C",
+    "Directional D",
+    "Star A"
+  ],
+  "sequences": [
+    {
+      "family": "Poison",
+      "frames": 24,
+      "milliseconds": 100,
+      "canvas": [
+        64,
+        64
+      ],
+      "socket": [
+        32,
+        38
+      ],
+      "binaryAlpha": true
+    },
+    {
+      "family": "Healing",
+      "frames": 32,
+      "milliseconds": 100,
+      "canvas": [
+        64,
+        64
+      ],
+      "socket": [
+        32,
+        36
+      ],
+      "binaryAlpha": true
+    },
+    {
+      "family": "Star",
+      "frames": 32,
+      "milliseconds": 80,
+      "canvas": [
+        64,
+        64
+      ],
+      "socket": null,
+      "binaryAlpha": true
+    },
+    {
+      "family": "Row",
+      "frames": 8,
+      "milliseconds": 80,
+      "canvas": [
+        64,
+        64
+      ],
+      "socket": [
+        32,
+        32
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "runtime": "whole-view native pixel translation"
+    },
+    {
+      "family": "Column",
+      "frames": 8,
+      "milliseconds": 80,
+      "canvas": [
+        64,
+        64
+      ],
+      "socket": [
+        32,
+        31
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "runtime": "whole-view native pixel translation"
+    }
+  ],
+  "generationSpending": 0,
+  "method": "Direct native cel editing; LibreSprite import/export with exact RGBA round-trip check"
+}

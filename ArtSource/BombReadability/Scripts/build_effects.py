@@ -8,24 +8,25 @@ OUT=ROOT/'ArtSource/BombReadability/Effects'
 RES=ROOT/'Assets/_Game/Resources/VFX/BombRefinement'
 LIBRE='C:/Users/USER/Downloads/libresprite-development-windows-x86_64/libresprite.exe'
 for p in [OUT/'Editable',OUT/'Frames',RES/'FireHead',RES/'FireTrail',RES/'StarGlint']:p.mkdir(parents=True,exist_ok=True)
-FIRE=['#A3290C','#E75B11','#FF9833','#FFD35B','#FFF3B4','#FFFFFF']
+FIRE=['#D88418','#FFC52E','#FFE85B','#FFF3A2','#FFFBD6','#FFFFFF']
 def flame(frame,trail=False):
-    s=Sprite(64,32,palette=FIRE)
-    # Four connected tongues flow right; no random particles or airbrushed alpha.
+    s=Sprite(64,64,palette=FIRE)
+    shift=[0,2,1,-1,-2,0][frame]
     if trail:
-        shift=[0,2,1,-1,-2,0][frame]
-        s.polygon([(0,10),(7,8),(13,3+shift),(18,8),(25,7),(31,10),(39,3-shift),(44,8),(52,6),(58,10),(63,10),(63,23),(56,23),(50,28-shift),(43,23),(37,26),(29,22),(22,27+shift),(16,23),(8,25),(0,23)],FIRE[0])
-        s.polygon([(0,12),(11,9),(15,6+shift),(18,11),(29,12),(38,7),(43,12),(52,9),(57,13),(63,12),(63,21),(52,22),(48,25-shift),(41,21),(30,20),(23,24),(15,20),(7,23),(0,21)],FIRE[1])
-        s.polygon([(0,14),(13,12),(18,10+shift),(24,14),(36,12),(40,9),(45,14),(56,12),(63,14),(63,20),(52,20),(46,23),(40,19),(29,19),(22,21),(13,18),(0,20)],FIRE[2])
-        s.polygon([(0,16),(15,14),(23,16),(31,14),(41,15),(49,14),(56,16),(63,16),(63,18),(50,19),(41,17),(29,18),(20,18),(13,16),(0,18)],FIRE[3])
-        for x,w in [(3,8),(26,6),(47,9)]:s.rect(x,16,x+w,17,FIRE[4])
+        # Broad connected blast body. Opposing edges match across the tiled repeat.
+        s.polygon([(0,12),(8,12),(13,6+shift),(20,12),(28,9),(36,13),(44,5-shift),(51,12),(57,10),(63,12),(63,51),(56,51),(48,58-shift),(40,51),(32,55),(24,50),(16,58+shift),(8,51),(0,51)],FIRE[0])
+        s.polygon([(0,15),(10,15),(14,10+shift),(22,16),(30,12),(38,16),(44,10-shift),(53,16),(63,15),(63,48),(53,48),(47,53),(39,47),(30,51),(23,46),(15,53+shift),(7,48),(0,48)],FIRE[1])
+        s.polygon([(0,18),(13,18),(18,14+shift),(26,20),(34,17),(43,20),(49,15),(55,18),(63,18),(63,45),(52,45),(44,49),(36,44),(28,47),(20,43),(12,49),(0,45)],FIRE[2])
+        s.polygon([(0,23),(9,22),(18,24),(26,21),(34,25),(43,22),(53,25),(63,23),(63,40),(54,41),(44,38),(34,43),(24,38),(14,42),(0,40)],FIRE[3])
+        s.polygon([(0,29),(16,27),(25,30),(34,27),(43,31),(53,28),(63,29),(63,35),(51,37),(42,34),(33,38),(22,34),(12,37),(0,35)],FIRE[4])
+        for x,w in [(4,8),(28,8),(48,10)]:s.rect(x,31,x+w,33,FIRE[5])
     else:
-        shift=[0,1,2,1,0,-1][frame%6]
-        points=[(2,14),(12,11),(5,5),(22,8),(29,3+shift),(37,8),(44,6),(45,11),(57,15),(60,17),(49,20),(48,24),(38,23),(32,29-shift),(25,24),(11,26),(18,21),(2,19)]
-        s.polygon(points,FIRE[0]);s.polygon([(6,15),(22,12),(15,8),(30,10),(32,6+shift),(39,13),(45,11),(54,16),(47,19),(42,22),(34,21),(30,25),(25,21),(17,22),(23,18),(6,18)],FIRE[1])
-        s.polygon([(9,15),(27,13),(23,10),(34,13),(39,10),(43,15),(51,17),(41,20),(34,18),(30,22),(26,18),(9,18)],FIRE[2])
-        s.polygon([(14,16),(31,14),(36,13),(41,16),(46,17),(38,19),(31,17),(14,18)],FIRE[3])
-        s.polygon([(19,16),(34,15),(39,17),(33,18),(19,17)],FIRE[4]);s.rect(28,16,34,16,FIRE[5])
+        s.polygon([(2,19),(15,18),(7,9),(25,14),(30,4+shift),(40,11),(48,8),(51,17),(58,20),(62,28),(61,37),(55,42),(51,51),(43,50),(34,59-shift),(26,51),(12,55),(19,44),(3,46),(13,36),(2,31)],FIRE[0])
+        s.polygon([(8,21),(23,21),(17,14),(29,18),(32,10+shift),(41,16),(46,14),(49,22),(56,25),(59,31),(56,38),(49,40),(47,47),(39,45),(33,53),(28,46),(20,48),(25,39),(10,41),(19,32),(8,28)],FIRE[1])
+        s.polygon([(13,24),(28,23),(25,17),(34,22),(38,16),(44,23),(52,26),(56,32),(51,37),(44,38),(40,45),(34,42),(29,47),(29,38),(17,39),(24,32),(13,29)],FIRE[2])
+        s.polygon([(18,27),(31,27),(34,22),(39,27),(46,27),(51,32),(45,36),(38,35),(34,41),(31,35),(21,36),(28,31),(18,30)],FIRE[3])
+        s.polygon([(25,29),(36,27),(42,29),(46,32),(41,35),(35,33),(30,36),(31,32),(25,32)],FIRE[4])
+        s.polygon([(32,30),(39,29),(42,32),(36,33),(32,32)],FIRE[5])
     return s
 def star(frame):
     s=Sprite(32,32,palette=['#FFFFFF','#FFF3D8','#DDEAFF','#A9E0FF','#DD92F7','#FF98A0','#D5FFAD'])
@@ -57,10 +58,10 @@ for name,frames in families.items():
     for im in pngs:
         canvas=Image.new('RGBA',im.size,'#202433');canvas.alpha_composite(im);bg.append(canvas.convert('RGB').resize((im.width*4,im.height*4),Image.Resampling.NEAREST))
     bg[0].save(OUT/f'{name}.gif',save_all=True,append_images=bg[1:],duration=60,loop=0)
-preview=Image.new('RGB',(768,240),'#202433');d=ImageDraw.Draw(preview)
+preview=Image.new('RGB',(768,450),'#202433');d=ImageDraw.Draw(preview)
 for row,(name,frames) in enumerate(families.items()):
-    d.text((4,row*80+1),name,fill='white')
+    d.text((4,row*150+1),name,fill='white')
     for i in range(len(frames)):
-        im=Image.open(RES/name/f'{name}_{i:02}.png').convert('RGBA').resize((128 if row<2 else 64,64),Image.Resampling.NEAREST);preview.paste(im,(i*(128 if row<2 else 80),row*80+16),im)
+        im=Image.open(RES/name/f'{name}_{i:02}.png').convert('RGBA').resize((128 if row<2 else 64,128 if row<2 else 64),Image.Resampling.NEAREST);preview.paste(im,(i*(128 if row<2 else 80),row*150+16),im)
 preview.save(OUT/'EffectFrames.png');(OUT/'Manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print('20 native effect frames exported; binary alpha and six-color fire palette verified.')

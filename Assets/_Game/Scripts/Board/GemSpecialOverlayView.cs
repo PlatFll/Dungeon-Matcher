@@ -135,6 +135,8 @@ public sealed class GemSpecialOverlayView :
 
     private float nextShimmerTime;
 
+    private GemSpecialType currentSpecial;
+    private float idleTime;
     private bool isMaterializing;
     private bool isActivationPulsing;
 
@@ -162,6 +164,15 @@ public sealed class GemSpecialOverlayView :
             isMaterializing ||
             isActivationPulsing)
         {
+            return;
+        }
+
+        if (currentSpecial == GemSpecialType.ColorCrystal)
+        {
+            idleTime += Time.deltaTime;
+            overlayRenderer.sprite = BombIdleArt.Frame(currentSpecial, idleTime, colorCrystalSprite);
+            overlayRenderer.color = Color.white;
+            transform.localScale = normalScale;
             return;
         }
 
@@ -229,8 +240,9 @@ public sealed class GemSpecialOverlayView :
                 GetComponent<SpriteRenderer>();
         }
 
-        Sprite selectedSprite =
-            GetSprite(specialType);
+        currentSpecial = specialType;
+        idleTime = 0f;
+        Sprite selectedSprite = GetSprite(specialType);
 
         if (selectedSprite == null)
         {
@@ -273,12 +285,12 @@ public sealed class GemSpecialOverlayView :
         }
 
         if (overlayRenderer == null ||
-            overlayRenderer.sprite !=
-                colorCrystalSprite)
+            currentSpecial != GemSpecialType.ColorCrystal)
         {
             yield break;
         }
 
+        overlayRenderer.sprite = colorCrystalSprite;
         isMaterializing = true;
         isActivationPulsing = false;
 
@@ -415,12 +427,12 @@ public sealed class GemSpecialOverlayView :
         }
 
         if (overlayRenderer == null ||
-            overlayRenderer.sprite !=
-                colorCrystalSprite)
+            currentSpecial != GemSpecialType.ColorCrystal)
         {
             yield break;
         }
 
+        overlayRenderer.sprite = colorCrystalSprite;
         isActivationPulsing = true;
 
         shimmerStartTime = -1f;
@@ -581,6 +593,8 @@ public sealed class GemSpecialOverlayView :
 
     public void Hide()
     {
+        currentSpecial = GemSpecialType.None;
+        idleTime = 0f;
         isMaterializing = false;
         isActivationPulsing = false;
 
@@ -692,6 +706,7 @@ public sealed class GemSpecialOverlayView :
 
     private void ScheduleNextShimmer()
     {
+        if (currentSpecial == GemSpecialType.ColorCrystal) return;
         float minimumDelay =
             Mathf.Max(
                 0f,
