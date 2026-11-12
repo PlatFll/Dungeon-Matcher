@@ -680,9 +680,16 @@ footprint with hard pixel clusters. Generic explosions are warm with cool smoke;
 poison is green gas; shield is a cool blue crest; healing is a warm ring with pale
 restorative sparkles. Do not apply character outline rules to these luminous VFX.
 
-Every affected cleared tile plays its appropriate burst at the shatter event.
-Directional bombs, Bardley explosions and the Bomb consumable share the generic
-burst. Poison, Shield and Healing Bombs keep their distinct effects. Do not stack
+Every affected utility-bomb tile plays its appropriate burst at the shatter event.
+2026-11-12 directional revision: Row and Column bombs use native yellow/orange
+fire travelling both ways from the source, clipped to the board. They no longer
+repeat the generic explosion on each tile. Bardley and the Bomb consumable retain
+the generic burst; Poison, Shield and Healing keep their distinct effects.
+The white Color Crystal star uses sparse pastel reflections. Native star cues
+travel from its source to the selected gems before their target flash. Preserve
+the existing board-owned timing, target selection, clear/reward and refill rules.
+Casing candidates in ArtSource/BombReadability remain pending user selection;
+the approved Shield casing is unchanged. Do not stack
 multiple opaque effects on one collateral cell or hide a preserved special with
 a destruction animation. The dissipating tail can overlap refill; do not slow the
 board for the effect. Source JSON owns exposures, not an arbitrary Unity FPS.

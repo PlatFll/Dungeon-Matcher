@@ -16,6 +16,20 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ---
 
+## Bomb readability review (2026-11-12, pending visual selection)
+
+The bomb-readability branch retains Shield's casing and the current production
+casings while presenting four alternatives each for Poison, Healing and the
+paired directional family. The 16px source gems and 32px weakness facets now
+match the current 64px gem palettes without changing alpha masks or gold rims.
+Three white-star candidates are preserved; Star B is used for review playback.
+Directional VFX use two travelling native flame fronts instead of generic tile
+explosions, and Color Crystal stars travel from source to target. Clear sets,
+rewards, damage, utility effects and board timing remain under their existing
+owners. Sources, PixelLab receipts and review evidence: ArtSource/BombReadability.
+No casing selection or merge approval is implied by this checkpoint.
+
+
 ## 0. Document contract
 
 ### Last updated

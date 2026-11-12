@@ -3,373 +3,124 @@ using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(SpriteRenderer))]
-public sealed class BombLineVFX :
-    MonoBehaviour
+public sealed class BombLineVFX : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    SpriteRenderer fallback;
+    readonly SpriteRenderer[] heads = new SpriteRenderer[2];
+    readonly SpriteRenderer[] trails = new SpriteRenderer[2];
+    static Sprite[] headFrames, trailFrames;
+    float targetLength, cellSize, lifetime, elapsedTime;
+    bool isPlaying;
+    Action<BombLineVFX> releaseAction;
+    public bool IsPlaying => isPlaying;
 
-    private GemSpecialType specialType;
-
-    private float targetLength;
-    private float cellSize;
-    private float lifetime;
-    private float elapsedTime;
-
-    private Action<BombLineVFX>
-        releaseAction;
-
-    private bool isPlaying;
-
-    public bool IsPlaying =>
-        isPlaying;
-
-    private void Awake()
+    public void ConfigureRendering(Sprite squareSprite, string sortingLayerName, int sortingOrder)
     {
-        CacheReferences();
-    }
-
-    private void CacheReferences()
-    {
-        if (spriteRenderer == null)
+        fallback = GetComponent<SpriteRenderer>();
+        fallback.sprite = squareSprite;
+        Configure(fallback, sortingLayerName, sortingOrder);
+        if (headFrames == null) headFrames = Load("FireHead");
+        if (trailFrames == null) trailFrames = Load("FireTrail");
+        for (int i = 0; i < 2; i++)
         {
-            spriteRenderer =
-                GetComponent<SpriteRenderer>();
+            if (heads[i] == null) heads[i] = Child("FireFront" + i);
+            if (trails[i] == null) trails[i] = Child("FireTrail" + i);
+            Configure(heads[i], sortingLayerName, sortingOrder + 1);
+            Configure(trails[i], sortingLayerName, sortingOrder);
+            trails[i].drawMode = SpriteDrawMode.Tiled;
+            trails[i].tileMode = SpriteTileMode.Continuous;
+            heads[i].flipX = i == 0;
+            trails[i].flipX = i == 0;
         }
     }
-
-    public void ConfigureRendering(
-        Sprite squareSprite,
-        string sortingLayerName,
-        int sortingOrder)
+    static Sprite[] Load(string name)
     {
-        CacheReferences();
-
-        spriteRenderer.sprite =
-            squareSprite;
-
-        spriteRenderer.sortingLayerName =
-            sortingLayerName;
-
-        spriteRenderer.sortingOrder =
-            sortingOrder;
-
-        /*
-         * The board already owns a rectangular SpriteMask.
-         * Keeping the beam inside that mask makes it vanish
-         * exactly at the playable board edge, even when the
-         * bomb is close to one side of the board.
-         */
-        spriteRenderer.maskInteraction =
-            SpriteMaskInteraction
-                .VisibleInsideMask;
+        var frames = Resources.LoadAll<Sprite>("VFX/BombRefinement/" + name);
+        Array.Sort(frames, (a,b) => string.CompareOrdinal(a.name,b.name));
+        return frames;
     }
-
-    public void Play(
-        GemSpecialType bombSpecialType,
-        Vector3 localPosition,
-        float fullLength,
-        float boardCellSize,
-        float duration,
-        Action<BombLineVFX> onFinished)
+    SpriteRenderer Child(string name)
     {
-        CacheReferences();
-
-        if (spriteRenderer == null ||
-            (
-                bombSpecialType !=
-                    GemSpecialType.RowBomb &&
-                bombSpecialType !=
-                    GemSpecialType.ColumnBomb
-            ))
-        {
-            onFinished?.Invoke(this);
-            return;
-        }
-
-        specialType =
-            bombSpecialType;
-
-        targetLength =
-            Mathf.Max(
-                0.01f,
-                fullLength
-            );
-
-        cellSize =
-            Mathf.Max(
-                0.01f,
-                boardCellSize
-            );
-
-        lifetime =
-            Mathf.Max(
-                0.05f,
-                duration
-            );
-
-        elapsedTime = 0f;
-
-        releaseAction =
-            onFinished;
-
-        transform.localPosition =
-            localPosition;
-
-        transform.localRotation =
-            Quaternion.identity;
-
-        spriteRenderer.color =
-            Color.white;
-
-        spriteRenderer.enabled = true;
-
+        var child = new GameObject(name);
+        child.transform.SetParent(transform, false);
+        return child.AddComponent<SpriteRenderer>();
+    }
+    static void Configure(SpriteRenderer renderer, string layer, int order)
+    {
+        renderer.sortingLayerName = layer;
+        renderer.sortingOrder = order;
+        renderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+        renderer.enabled = false;
+    }
+    public void Play(GemSpecialType type, Vector3 localPosition, float fullLength,
+        float boardCellSize, float duration, Action<BombLineVFX> onFinished)
+    {
+        if (fallback == null || (type != GemSpecialType.RowBomb && type != GemSpecialType.ColumnBomb))
+        { onFinished?.Invoke(this); return; }
+        targetLength = Mathf.Max(.01f, fullLength);
+        cellSize = Mathf.Max(.01f, boardCellSize);
+        lifetime = Mathf.Max(.05f, duration);
+        elapsedTime = 0;
+        releaseAction = onFinished;
+        transform.localPosition = localPosition;
+        // Only a quarter turn; no arbitrary rotation or stretched sprite pixels.
+        transform.localRotation = Quaternion.Euler(0,0,type == GemSpecialType.ColumnBomb ? 90 : 0);
+        transform.localScale = Vector3.one * cellSize;
         isPlaying = true;
-
         gameObject.SetActive(true);
-
-        ApplyVisualState(0f);
+        ApplyVisualState(0);
     }
-
-    private void Update()
+    void Update()
     {
-        if (!isPlaying)
-        {
-            return;
-        }
-
-        elapsedTime +=
-            Time.deltaTime;
-
-        float normalizedTime =
-            Mathf.Clamp01(
-                elapsedTime /
-                lifetime
-            );
-
-        ApplyVisualState(
-            normalizedTime
-        );
-
+        if (!isPlaying) return;
+        elapsedTime += Time.deltaTime;
+        ApplyVisualState(Mathf.Clamp01(elapsedTime / lifetime));
         if (elapsedTime >= lifetime)
         {
-            Finish();
+            isPlaying = false;
+            var callback = releaseAction;
+            releaseAction = null;
+            Hide();
+            callback?.Invoke(this);
         }
     }
-
-    private void ApplyVisualState(
-        float normalizedTime)
+    void ApplyVisualState(float t)
     {
-        /*
-         * Reach the board edges quickly, but leave a short
-         * tail at full extension so the player can read the
-         * row/column direction before the beam disappears.
-         */
-        float lengthProgress =
-            Mathf.InverseLerp(
-                0f,
-                0.72f,
-                normalizedTime
-            );
-
-        lengthProgress =
-            EaseOutCubic(
-                lengthProgress
-            );
-
-        float startingLength =
-            cellSize *
-            0.10f;
-
-        float currentLength =
-            Mathf.Lerp(
-                startingLength,
-                targetLength,
-                lengthProgress
-            );
-
-        float currentThickness =
-            CalculateThickness(
-                normalizedTime
-            ) *
-            cellSize;
-
-        if (specialType ==
-            GemSpecialType.RowBomb)
+        bool reduced = PresentationPreferences.ReducedMotion;
+        float progress = reduced ? 1 : Mathf.Clamp01(t / .72f);
+        float reach = Mathf.Round(progress * targetLength / (2 * cellSize) * 64) / 64;
+        float alpha = reduced ? .38f * (1-t) : 1 - Mathf.InverseLerp(.72f,1,t);
+        bool native = headFrames != null && headFrames.Length > 0 && trailFrames != null && trailFrames.Length > 0;
+        fallback.enabled = !native;
+        if (!native)
         {
-            transform.localScale =
-                new Vector3(
-                    currentLength,
-                    currentThickness,
-                    1f
-                );
-        }
-        else
-        {
-            transform.localScale =
-                new Vector3(
-                    currentThickness,
-                    currentLength,
-                    1f
-                );
-        }
-
-        /*
-         * Stay fully opaque during the punch and recoil,
-         * then disappear sharply near the end.
-         */
-        float fadeProgress =
-            Mathf.InverseLerp(
-                0.68f,
-                1f,
-                normalizedTime
-            );
-
-        fadeProgress =
-            SmoothStep(
-                fadeProgress
-            );
-
-        Color color =
-            Color.white;
-
-        color.a =
-            1f -
-            fadeProgress;
-
-        spriteRenderer.color =
-            color;
-    }
-
-    private static float CalculateThickness(
-        float normalizedTime)
-    {
-        /*
-         * The beam begins narrow, punches outward to roughly
-         * one full cell of thickness, then recoils into a
-         * tighter streak while it finishes leaving the board.
-         * This is the small "bounce" at the center of the hit.
-         */
-        if (normalizedTime < 0.16f)
-        {
-            float progress =
-                Mathf.InverseLerp(
-                    0f,
-                    0.16f,
-                    normalizedTime
-                );
-
-            return Mathf.Lerp(
-                0.16f,
-                1.04f,
-                SmoothStep(progress)
-            );
-        }
-
-        if (normalizedTime < 0.44f)
-        {
-            float progress =
-                Mathf.InverseLerp(
-                    0.16f,
-                    0.44f,
-                    normalizedTime
-                );
-
-            return Mathf.Lerp(
-                1.04f,
-                0.40f,
-                EaseOutCubic(progress)
-            );
-        }
-
-        if (normalizedTime < 0.80f)
-        {
-            float progress =
-                Mathf.InverseLerp(
-                    0.44f,
-                    0.80f,
-                    normalizedTime
-                );
-
-            return Mathf.Lerp(
-                0.40f,
-                0.28f,
-                progress
-            );
-        }
-
-        float endingProgress =
-            Mathf.InverseLerp(
-                0.80f,
-                1f,
-                normalizedTime
-            );
-
-        return Mathf.Lerp(
-            0.28f,
-            0.02f,
-            SmoothStep(endingProgress)
-        );
-    }
-
-    private static float SmoothStep(
-        float value)
-    {
-        value =
-            Mathf.Clamp01(value);
-
-        return
-            value *
-            value *
-            (3f - 2f * value);
-    }
-
-    private static float EaseOutCubic(
-        float value)
-    {
-        value =
-            Mathf.Clamp01(value);
-
-        float inverse =
-            1f - value;
-
-        return
-            1f -
-            inverse *
-            inverse *
-            inverse;
-    }
-
-    private void Finish()
-    {
-        if (!isPlaying)
-        {
+            // Missing optional art never blocks the authoritative board clear.
+            fallback.transform.localScale = new Vector3(reach * 2 * cellSize,.25f * cellSize,cellSize);
+            fallback.color = new Color(1,.55f,.12f,alpha);
             return;
         }
-
-        isPlaying = false;
-
-        Action<BombLineVFX> callback =
-            releaseAction;
-
-        releaseAction = null;
-
-        callback?.Invoke(this);
+        transform.localScale = Vector3.one * cellSize;
+        int frame = reduced ? 0 : Mathf.FloorToInt(elapsedTime / .045f);
+        for (int i = 0; i < 2; i++)
+        {
+            float sign = i == 0 ? -1 : 1;
+            heads[i].enabled = !reduced && alpha > 0;
+            heads[i].sprite = headFrames[frame % headFrames.Length];
+            heads[i].transform.localPosition = new Vector3(sign * reach,0,0);
+            heads[i].color = new Color(1,1,1,alpha);
+            trails[i].enabled = reach > 0 && alpha > 0;
+            trails[i].sprite = trailFrames[frame % trailFrames.Length];
+            trails[i].size = new Vector2(reach,.5f);
+            trails[i].transform.localPosition = new Vector3(sign * reach / 2,0,0);
+            trails[i].color = new Color(1,1,1,alpha);
+        }
     }
-
-    public void StopImmediately()
+    void Hide()
     {
-        isPlaying = false;
-        releaseAction = null;
-
-        gameObject.SetActive(false);
+        if (fallback != null) fallback.enabled = false;
+        for (int i=0;i<2;i++)
+        { if(heads[i]!=null) heads[i].enabled=false; if(trails[i]!=null) trails[i].enabled=false; }
     }
-
-    private void OnDisable()
-    {
-        isPlaying = false;
-        elapsedTime = 0f;
-
-        transform.localScale =
-            Vector3.one;
-    }
+    public void StopImmediately() { isPlaying=false;releaseAction=null;Hide();gameObject.SetActive(false); }
+    void OnDisable() { isPlaying=false;elapsedTime=0;releaseAction=null;Hide();transform.localScale=Vector3.one; }
 }

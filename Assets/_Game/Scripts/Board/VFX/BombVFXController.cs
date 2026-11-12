@@ -111,6 +111,7 @@ public sealed class BombVFXController :
 
     private void OnDisable()
     {
+        StopAllCoroutines();
         Unsubscribe();
         StopAllEffectsImmediately();
     }
@@ -222,9 +223,7 @@ public sealed class BombVFXController :
             );
         }
 
-        SpawnWhitePixelSprinkle(
-            boardLocalPosition
-        );
+        // The native fire fronts provide the directional hit cue.
     }
 
     private float CalculateBeamLength(

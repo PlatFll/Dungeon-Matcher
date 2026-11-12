@@ -90,6 +90,8 @@ public partial class BoardController
             int priority = hasKind ? 0 : -1;
             foreach (Gem bomb in bombs)
             {
+                // Directional bombs own one travelling line effect, not repeated tile explosions.
+                if (bomb.SpecialType == GemSpecialType.RowBomb || bomb.SpecialType == GemSpecialType.ColumnBomb) continue;
                 if (!BombCoversCell(bomb, target.Column, target.Row)) continue;
                 TileBurstKind candidate = BurstKindFor(bomb.SpecialType);
                 // A special's own cell keeps its material. Overlapping collateral

@@ -41,8 +41,6 @@ public sealed class TileBurstPresentationTests
         assets.Clear();
     }
 
-    [TestCase(GemSpecialType.RowBomb, TileBurstKind.Explosion, 7)]
-    [TestCase(GemSpecialType.ColumnBomb, TileBurstKind.Explosion, 8)]
     [TestCase(GemSpecialType.PoisonBomb, TileBurstKind.Poison, 9)]
     [TestCase(GemSpecialType.HealingBomb, TileBurstKind.Healing, 9)]
     [TestCase(GemSpecialType.ShieldBomb, TileBurstKind.Shield, 9)]
@@ -58,6 +56,15 @@ public sealed class TileBurstPresentationTests
         Assert.That(contexts[0].WorldPositions.Distinct().Count(), Is.EqualTo(count));
         CollectionAssert.AreEquivalent(clear.Select(g => root.transform.TransformPoint(board.GetCellLocalPosition(g.Column, g.Row))), contexts[0].WorldPositions);
         CollectionAssert.AreEqual(before, grid, "snapshot cannot change the authoritative grid");
+    }
+
+    [TestCase(GemSpecialType.RowBomb, 7)]
+    [TestCase(GemSpecialType.ColumnBomb, 8)]
+    public void DirectionalClearRetainsEveryTargetWithoutGenericTileExplosions(GemSpecialType special,int count)
+    {
+        grid[3,3].SetSpecialType(special);var clear=Expand(grid[3,3]);var before=(Gem[,])grid.Clone();
+        Assert.That(clear.Count,Is.EqualTo(count));Assert.That(Snapshot(clear),Is.Empty);
+        CollectionAssert.AreEqual(before,grid,"Presentation must not alter the clear set or grid");
     }
 
     [Test]
@@ -84,8 +91,12 @@ public sealed class TileBurstPresentationTests
         var clear = Expand(grid[3, 3]);
         var a = Snapshot(clear);
         var b = Snapshot(new HashSet<Gem>(clear.Reverse()));
-        Assert.That(a.SelectMany(c => c.WorldPositions).Distinct().Count(), Is.EqualTo(clear.Count));
-        Assert.That(a.Sum(c => c.TileCount), Is.EqualTo(clear.Count));
+        var utilityCenters = new[]{grid[3,3],grid[4,3],grid[3,4]};
+        var utilityTargets=clear.Where(g=>utilityCenters.Any(c=>Math.Abs(c.Column-g.Column)<=1 && Math.Abs(c.Row-g.Row)<=1)).ToArray();
+        Assert.That(a.SelectMany(c => c.WorldPositions).Distinct().Count(), Is.EqualTo(utilityTargets.Length));
+        Assert.That(a.Sum(c => c.TileCount), Is.EqualTo(utilityTargets.Length));
+        CollectionAssert.AreEquivalent(utilityTargets.Select(g=>board.GetCellLocalPosition(g.Column,g.Row)),a.SelectMany(c=>c.WorldPositions));
+        Assert.That(a.Any(c=>c.Kind==TileBurstKind.Explosion),Is.False);
         for (int i = 0; i < a.Length; i++)
         {
             Assert.That(a[i].Kind, Is.EqualTo(b[i].Kind));
@@ -93,7 +104,7 @@ public sealed class TileBurstPresentationTests
         }
         Assert.That(a.Single(c => c.Kind == TileBurstKind.Poison).WorldPositions,
             Does.Contain(board.GetCellLocalPosition(3, 3)));
-        Assert.That(a.Single(c => c.Kind == TileBurstKind.Explosion).WorldPositions,
+        Assert.That(a.Single(c => c.Kind == TileBurstKind.Healing).WorldPositions,
             Does.Contain(board.GetCellLocalPosition(2, 3)));
     }
 
@@ -128,7 +139,7 @@ public sealed class TileBurstPresentationTests
     [TestCase(false, 0)]
     public void CueOccursAtShatterOnlyWhenSpecialActivationIsAllowed(bool activate, int expected)
     {
-        grid[3, 3].SetSpecialType(GemSpecialType.RowBomb);
+        grid[3, 3].SetSpecialType(GemSpecialType.PoisonBomb);
         var clear = Expand(grid[3, 3]);
         Set(board, "matchFlashDuration", 0f); Set(board, "matchWhiteHoldDuration", .1f);
         Set(board, "matchPostBurstDelay", .1f);
