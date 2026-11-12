@@ -26,7 +26,7 @@ The user supplied and approved five final PNGs for the actual shared battle UI:
 wave plaque 176×66, Settings 56×56, supply holder 70×70, ability frame 176×66,
 and a separate 41×38 Rattlebones icon. These exact files now override the old
 stone controls in every zone through the existing BattlePresentationSkin.
-The wave's native corners, diamond and skull stay fixed while only straight
+The wave's corners, diamond and skull retain their proportions while only straight
 rail lengths respond to screen width. Each ability definition still owns its
 icon; the existing slab view centers the visible drawing above the shared frame
 and preserves its native ready lift, pause and Reduced Motion behavior. The
@@ -46,6 +46,11 @@ that window; energy generation, costs and spending remain unchanged. The five
 user-supplied PNGs, colored icons, environments and other UI remain unchanged.
 The readiness/meter follow-up is on a separate branch pending visual review,
 with actual Game evidence in [ReadinessAndMeter](../ArtSource/SilverRoyalRelicUI/ReadinessAndMeter/README.md).
+The same review branch now enlarges wave, Settings and supply controls by 50%
+on normal phone layouts, with compact controls retained where the row cannot fit.
+The ability frame, charge bar, board geometry and original sprite files remain
+unchanged. Holders grow outwards/upwards while keeping the ability and caption
+clear; their icons remain centered. This display-size follow-up also awaits review.
 Earlier generated art and user-edited source documents are preserved.
 See [production handoff and actual Game evidence](../ArtSource/SilverRoyalRelicUI/Production/README.md).
 

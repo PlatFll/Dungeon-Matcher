@@ -15,7 +15,7 @@ using Object=UnityEngine.Object;
 
 public sealed class SilverRoyalRelicProductionTests
 {
-    const string Root="ArtSource/SilverRoyalRelicUI/Production";
+    const string Root=".utmp/SilverControlSizing";
     IDisposable profile,selection;
     static void Size(int w,int h)=>typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.NonPublic|BindingFlags.Static).Invoke(null,new object[]{new Vector2Int(w,h)});
     static IEnumerator Until(Func<bool> ready){float end=Time.realtimeSinceStartup+90;while(!ready()){Assert.That(Time.realtimeSinceStartup,Is.LessThan(end));yield return null;}}
@@ -101,8 +101,10 @@ public sealed class SilverRoyalRelicProductionTests
         foreach(var im in supply.Concat(new[]{plate,controls.SettingsButton.image,view.Engraving}))
         {
             Assert.That(im.sprite.texture.filterMode,Is.EqualTo(FilterMode.Point));
-            Assert.That(Bounds(im).width/im.sprite.rect.width,Is.EqualTo(layout.Current.Scale).Within(.001));
-            Assert.That(Bounds(im).height/im.sprite.rect.height,Is.EqualTo(layout.Current.Scale).Within(.001));
+            float requested = supply.Contains(im) ? BattlePresentationSkin.SupplyControlScale(layout.BottomHud) :
+                im == controls.SettingsButton.image ? BattlePresentationSkin.TopControlScale(layout.TopHud) : 1;
+            Assert.That(Bounds(im).width/im.sprite.rect.width,Is.EqualTo(layout.Current.Scale*requested).Within(.001));
+            Assert.That(Bounds(im).height/im.sprite.rect.height,Is.EqualTo(layout.Current.Scale*requested).Within(.001));
             Assert.That(Bounds(im).xMin,Is.EqualTo(Mathf.Round(Bounds(im).xMin)).Within(.001));
             Assert.That(Bounds(im).yMin,Is.EqualTo(Mathf.Round(Bounds(im).yMin)).Within(.001));
         }
@@ -123,9 +125,34 @@ public sealed class SilverRoyalRelicProductionTests
         var label=wave.GetComponentInChildren<TMP_Text>();Assert.That(label.text,Is.EqualTo("WAVE "+RunSession.Current.Waves.CurrentWave));
         string saved=label.text;
         foreach(string value in new[]{"WAVE 1","WAVE 99999"})
-        {label.text=value;PixelTextFitter.ApplyNativeMenu(label,48);label.ForceMeshUpdate();Assert.That(label.textBounds.size.x,Is.LessThanOrEqualTo(label.rectTransform.rect.width+.1f));
+        {label.text=value;PixelTextFitter.ApplyNativeMenu(label,48*BattlePresentationSkin.TopControlScale(layout.TopHud));label.ForceMeshUpdate();Assert.That(label.textBounds.size.x,Is.LessThanOrEqualTo(label.rectTransform.rect.width+.1f));
          if(value=="WAVE 1")Assert.That(label.fontSize,Is.GreaterThanOrEqualTo(32),"Readable capitals within the new plaque");}
-        label.text=saved;PixelTextFitter.ApplyNativeMenu(label,48);
+        label.text=saved;PixelTextFitter.ApplyNativeMenu(label,48*BattlePresentationSkin.TopControlScale(layout.TopHud));
+        // Requested large-phone sizes, fixed compact fallback, and precise rail
+        // joins are independent of the production helper's implementation.
+        float expected = Screen.width>=720 ? 1.5f : 1;
+        Assert.That(Bounds(controls.SettingsButton.image).size,Is.EqualTo(Vector2.one*56*expected*layout.Current.Scale));
+        foreach(var im in supply)
+        {
+            Assert.That(Bounds(im).size,Is.EqualTo(Vector2.one*70*expected*layout.Current.Scale));
+            var iconRect=im.transform.Find("Icon") as RectTransform;
+            var ib=GameplayPixelLayoutController.ScreenRect(iconRect);
+            Assert.That(Vector2.Distance(ib.center,Bounds(im).center),Is.LessThan(.8f));
+            Assert.That(ib.width,Is.EqualTo(48*expected*layout.Current.Scale).Within(.01f));
+            var count=im.transform.Find("CountBacking") as RectTransform;
+            var cb=GameplayPixelLayoutController.ScreenRect(count);
+            Assert.That(Bounds(im).Contains(cb.min)&&Bounds(im).Contains(cb.max),Is.True,"Count stays inside holder");
+            var hint=layout.BottomHud.Find("ConsumableHint") as RectTransform;
+            if(hint.gameObject.activeInHierarchy)Assert.That(Bounds(im).Overlaps(GameplayPixelLayoutController.ScreenRect(hint)),Is.False,"Holder clears HUD caption");
+        }
+        for(int i=0;i<5;i++)
+        {
+            var part=wave.transform.Find("SilverWavePart"+i).GetComponent<Image>();
+            var pb=Bounds(part);
+            Assert.That(pb.height,Is.EqualTo(66*expected*layout.Current.Scale).Within(.01));
+            if(i>0)Assert.That(pb.xMin,Is.EqualTo(Bounds(wave.transform.Find("SilverWavePart"+(i-1)).GetComponent<Image>()).xMax).Within(.001),"No wave strip seam");
+            if(i==1||i==3)Assert.That(part.canvas.rootCanvas.scaleFactor*part.canvas.referencePixelsPerUnit/(part.sprite.pixelsPerUnit*part.pixelsPerUnitMultiplier),Is.EqualTo(expected*layout.Current.Scale).Within(.001));
+        }
         var board=RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>().Where(s=>s.name.StartsWith("CellTile"));
         foreach(var tile in board)
         {var lo=Camera.main.WorldToScreenPoint(tile.bounds.min);var hi=Camera.main.WorldToScreenPoint(tile.bounds.max);var b=Rect.MinMaxRect(lo.x,lo.y,hi.x,hi.y);

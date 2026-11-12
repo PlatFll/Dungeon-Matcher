@@ -198,6 +198,22 @@ public static class GameplayPixelLayoutValidator
             Vector2 source = image.sprite.rect.size;
             float xRatio = bounds.width / source.x, yRatio = bounds.height / source.y;
             report += $"UI art {Path(image.transform)} bounds={bounds}, source={source}, ratios=({xRatio},{yRatio})\n";
+            bool silverTop = (image.name == "Settings" && image.sprite == BattlePresentationSkin.Shared("Settings")) ||
+                (image.transform.parent?.name == "WaveTracker" &&
+                 (image.name == "SilverWavePart0" || image.name == "SilverWavePart2" || image.name == "SilverWavePart4") &&
+                 image.sprite == Resources.Load<Sprite>("UI/BattlePresentation/Silver/WavePart" + image.name[^1]));
+            bool silverSupply = (image.name == "HealthPotion" || image.name == "Bomb") &&
+                image.sprite == BattlePresentationSkin.Shared("Supply");
+            if(silverTop || silverSupply)
+            {
+                float requested = g.Scale * (silverTop ? BattlePresentationSkin.TopControlScale(owner.TopHud) : BattlePresentationSkin.SupplyControlScale(owner.BottomHud));
+                Require(Near(xRatio,requested) && Near(yRatio,requested),"Incorrect shared control enlargement: " + Path(image.transform),errors);
+                // Only odd-width wave strips can meet at half-pixel boundaries.
+                float grid=image.name.StartsWith("SilverWavePart")?2:1;
+                Require(Integral(bounds.xMin*grid)&&Integral(bounds.yMin*grid)&&Integral(bounds.xMax*grid)&&Integral(bounds.yMax*grid),
+                    "Off-grid enlarged control: " + Path(image.transform),errors);
+                continue;
+            }
             Require(Integral(bounds.xMin) && Integral(bounds.yMin) && Integral(bounds.xMax) && Integral(bounds.yMax),
                 $"Fractional UI art vertices {Path(image.transform)}: {bounds}", errors);
             if(image.TryGetComponent<ReferenceKitSurface>(out var registered))

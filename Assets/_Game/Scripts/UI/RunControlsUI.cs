@@ -206,7 +206,8 @@ public sealed class RunControlsUI : MonoBehaviour
             Vector2 countSize=new Vector2(cooldown>0?60:22,16);
             charges[i].rectTransform.sizeDelta=countSize;
             ((RectTransform)charges[i].transform.parent).sizeDelta=countSize;
-            ((RectTransform)charges[i].transform.parent).anchoredPosition=new Vector2(cooldown>0?0:23,-24);
+            float holderScale=BattlePresentationSkin.HasUnifiedControls?BattlePresentationSkin.SupplyControlScale((RectTransform)slots[i].transform.parent):1;
+            ((RectTransform)charges[i].transform.parent).anchoredPosition=new Vector2(cooldown>0?0:23,-24)*holderScale;
         }
         hint.rectTransform.anchoredPosition=new Vector2(0,-((RectTransform)hint.transform.parent).rect.height*.5f+31);
         UpdateLesson();

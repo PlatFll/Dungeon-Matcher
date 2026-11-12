@@ -1103,3 +1103,23 @@ CharacterSelectionSettings separates known saved identities from currently
 selectable characters. Gideon remains known for save sanitation/continuation,
 but the new-run menu and persistent selection setter exclude him. No save schema
 or stored progression is removed.
+
+
+### Shared Silver control display-size revision (2026-11-12, review pending)
+
+`BattlePresentationSkin.Controls` owns the user-requested 1.5x display sizing
+for the wave, Settings, and both supply holders. It sizes RectTransforms uniformly
+with unit transforms and Point filtering; it does not modify the PNGs or the
+environment/board scale. Wave rails still tile between proportionate corners and
+center ornaments, with exact adjoining edges. Only these named Silver controls
+permit 1.5x display texels: on a 1x canvas they have alternating hard pixel widths;
+on a 2x canvas they render at an exact 3x source-pixel ratio. All other native
+character, ability, bar, frame and icon checks remain unchanged.
+
+Top HUD widths below 400 logical pixels retain compact controls. Supply holders
+also retain compact sizing when their HUD is shorter than 156 logical pixels.
+The larger holders preserve the nine-unit ability gap and keep at least six
+logical pixels above the optional caption, raising within the HUD when necessary.
+Potion/bomb icons use the established integer pixel fitter, and quantity labels
+stay inside their holder. Board dimensions, shared section mapping, hit callbacks,
+and energy/gameplay authority are unchanged.
