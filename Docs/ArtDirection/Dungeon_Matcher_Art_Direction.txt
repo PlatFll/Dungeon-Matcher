@@ -1198,3 +1198,13 @@ icons centered and the existing ability/energy art unchanged. Compact layouts
 retain the smaller size where the larger controls would overlap. This is a scoped
 Point-filtered presentation-size change, not permission to resample source art,
 scale the board, recolor sprites, or alter other controls. No generation spending.
+
+
+2026-11-12 — User-edited energy bar accepted for Game integration
+The saved AbilityBarSilver.ase supersedes the earlier generated casing. Use
+the exact LibreSprite export in ArtSource/SilverRoyalRelicUI/UserEditedEnergyBar/:
+147x24, ten opaque colors, binary alpha, unchanged 117x8 transparent fill window.
+Do not rebuild over this manual edit from the historical meter generator. Its
+Unity PNG replaces only EnergyFrameSilver, preserving the existing GUID and
+live energy behavior. Larger controls opened for further manual editing remain
+separate copies; their current production source pixels are unchanged.

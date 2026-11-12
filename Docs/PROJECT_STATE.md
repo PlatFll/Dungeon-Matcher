@@ -44,7 +44,12 @@ transparent 117x8 charge window. Its previous opaque painted center hid the
 live fill even though charge updated correctly. The native fill mask now fits
 that window; energy generation, costs and spending remain unchanged. The five
 user-supplied PNGs, colored icons, environments and other UI remain unchanged.
-The readiness/meter follow-up is on a separate branch pending visual review,
+The user subsequently cleaned the bar in LibreSprite and requested its Game
+integration. The exact saved 147x24 export now replaces that casing without
+changing its transparent fill window or the live charge behavior. Editable
+source, previous art and verification are in
+[UserEditedEnergyBar](../ArtSource/SilverRoyalRelicUI/UserEditedEnergyBar/README.md).
+The readiness/meter follow-up is on a separate branch, not yet merged,
 with actual Game evidence in [ReadinessAndMeter](../ArtSource/SilverRoyalRelicUI/ReadinessAndMeter/README.md).
 The same review branch now enlarges wave, Settings and supply controls by 50%
 on normal phone layouts, with compact controls retained where the row cannot fit.
