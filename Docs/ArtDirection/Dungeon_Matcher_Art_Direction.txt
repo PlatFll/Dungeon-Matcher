@@ -694,7 +694,9 @@ subtle liquid/bubble motion; Healing emits tiny yellow plus signs; Directional
 rocks as one complete rigid bomb around its fixed socket, including the body
 and central plate. Only moving its outer sides was rejected. Use subtle native
 whole-unit turning cels, not positional drift. Star stays fixed with only its
-diagonal shine sweep. This reflects the latest user correction on 2026-11-12.
+diagonal shine sweep. The 2026-11-14 correction requires that shine to traverse
+the entire reflective footprint, from the first corner through the opposite
+tip, before disappearing; preserve the stationary silhouette and loop timing.
 The updated directional blast is broad yellow-white fire with restrained amber
 edges. Sources and native LibreSprite loops: ArtSource/BombReadability/SelectedIdles.
 Animation and blast refinement await visual review; the Shield casing is unchanged. Do not stack

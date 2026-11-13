@@ -47,11 +47,16 @@ def healing(i):
             d.line((x-r,y,x+r,y),fill=color);d.line((x,y-r,x,y+r),fill=color)
             if 2<=age<6:d.point((x,y),fill='#FFF7C0')
     return im
+# Use the complete reflective footprint, including the farthest star tip.
+star_facets=[(x,y) for y in range(64) for x in range(64)
+             if base['StarA'].getpixel((x,y))[3] and min(base['StarA'].getpixel((x,y))[:3])>75]
+star_sweep_start=min(x+y for x,y in star_facets)-4
+star_sweep_end=max(x+y for x,y in star_facets)+4
 def star(i):
     im=base['StarA'].copy()
-    # Diagonal native highlight crosses the opaque light facets, protecting the dark contour.
+    # Enter before the first tip and leave beyond the opposite tip within the same exposures.
     if 7<=i<=22:
-        beam=-20+(i-7)*7
+        beam=round(star_sweep_start+(star_sweep_end-star_sweep_start)*(i-7)/15)
         for y in range(64):
             for x in range(64):
                 p=im.getpixel((x,y));dist=abs(x+y-beam)

@@ -11,8 +11,14 @@
   "animatedFamilies": {
     "Poison": 18,
     "Healing": 26,
-    "Star": 10,
+    "Star": 15,
     "RowIdle": 3,
     "ColumnIdle": 3
-  }
+  },
+  "starGlintFullCoverage": true,
+  "starGlintOnlyReflectivePixels": true,
+  "starGlintDiagonalRange": [
+    28,
+    108
+  ]
 }

@@ -17,7 +17,9 @@ raw generations, unselected alternatives and the original review remain intact.
   together. Nearest-pixel native cels preserve hard edges and source colors.
   The rejected separate-side motion is superseded.
 - Star: 32 × 80 ms, 64×64. Stationary silhouette with a diagonal white highlight
-  through the light facets. Every alpha pixel is identical to the selected still.
+  through all the light facets, reaching the opposite tip before disappearing.
+  The 2026-11-14 correction derives travel from the full reflective footprint,
+  replacing the shortened sweep. Loop timing and every alpha pixel are unchanged.
 - Row/Column blast: 64×64 native fronts/trails replace the earlier 64×32 art.
   Broad yellow-white flame cores, restrained amber rims, matching native height,
   bidirectional travel and the existing board mask. Gameplay footprint is unchanged.
@@ -28,6 +30,14 @@ The runtime uses those exact PNG cels; optional missing sequences fall back to
 static art. Pause freezes time; Reduced Motion returns the static designs.
 
 ## Verification actually completed
+
+- 2026-11-14 full-star-glint correction: the existing actual Game idle/lifecycle
+  test passed again (1/1), including 100 fresh frames at 720×1280.
+  `Validation/FullStarGlint-tests.xml` and `FullStarGlint.json` record this run.
+  Native checks verify every reflective nonwhite pixel catches the light and
+  that the glint reaches the far tip, without altering alpha or dark contours.
+  Runtime C#, directional/poison/healing loops and all blast art are unchanged;
+  their preceding validation remains applicable. No new device/build test.
 
 - `Tools/Validate-Unity.ps1` passed, Unity 6000.3.19f1. Log:
   `DungeonMatcher-UnityValidation-d107b7a9-fc44-4191-a7ee-9addd67d2ca9.log`.
