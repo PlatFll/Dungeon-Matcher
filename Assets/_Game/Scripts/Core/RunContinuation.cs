@@ -49,7 +49,7 @@ public sealed class RunContinuation : MonoBehaviour
     }
     public static bool SupportsSnapshot(RunCombatSnapshot saved)
     {
-        if(saved==null || saved.board?.forestRulesVersion>2 || saved.board?.dungeonRulesVersion>1 ||
+        if(saved==null || saved.board?.forestRulesVersion>2 || saved.board?.dungeonRulesVersion>2 ||
             saved.board?.aquatic?.version>AquaticEnvironmentState.CurrentVersion ||
             !MineEnvironmentState.Supports(saved.board) || !FrostGemSnapshot.Supports(saved.board)) return false;
         if (saved.enemies != null) foreach (var enemy in saved.enemies)

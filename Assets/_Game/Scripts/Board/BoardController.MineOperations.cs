@@ -145,11 +145,13 @@ public partial class BoardController
                     endpoint = step; stopped = true; break; // Even a just-broken first stone ends the projectile.
                 }
                 var gem = GetGem(cell.x, cell.y);
-                if (gem != null && gem.SpecialType == GemSpecialType.None) cleared.Add(gem);
+                if (gem != null) cleared.Add(gem);
             }
             SmallMineDrillPresented?.Invoke(request.MineHorizontal,request.MineLane,endpoint,stopped);
             ExecuteMineDrillPower(new BoardMutationRequest { MineDrillId = request.MineHorizontal ? 1 : 2, MinePower = 1 });
-            if (cleared.Count > 0) yield return ClearMatches(cleared, null);
+            var crystals = new List<BombTriggeredCrystalRequest>();
+            if (cleared.Count > 0) yield return ClearDrillImpacts(cleared, crystals);
+            yield return ResolveBombTriggeredCrystalRequests(crystals);
             yield return ResolveEnvironmentalBoardChange();
         }
         finally { resolvingUnrewardedEnvironment = prior; }

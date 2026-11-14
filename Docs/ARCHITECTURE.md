@@ -356,8 +356,19 @@ occupancy for dungeon crumbling tiles. `ZoneRuntimeContext` queues it after lega
 completed moves; `CombatMoveClock` advances it before actor opportunities in its
 profiles. Only one path runs per move. `BoardMiningVFX` observes shake, break and
 materialization cues; it never sets occupancy or deadlines. Snapshot schema
-`dungeonRulesVersion=1` saves the next pulse and each cell's restoration move.
-Board photographs preserve present zone-hole state and deadlines.
+`dungeonRulesVersion=2` saves the next pulse, each warned cell's break move and
+each hole's restoration move. Versions 0/1 remain supported without synthesizing
+warnings; existing holes retain their deadlines. Warning cells do not enter mined
+occupancy until the following accepted move and must pass safety checks again.
+Board photographs preserve present warning/hole state and deadlines; travel clears
+them in the detached destination snapshot.
+
+Bomb-pair swaps seed the first pass of the existing cascade resolver with both
+bombs plus the pre-clear matches; match and collateral reports remain disjoint.
+Drills use the same bomb expansion/clear owners. Only actual bomb footprints earn
+their established effects, while ordinary machine clears and cascades stay
+unrewarded. Crystal requests are deduplicated and deferred until the launch batch
+has exited, preventing gravity from moving later drill targets.
 
 Environmental vines have zone lifetime, independent of wave/reward UI lifetime.
 `PrepareZoneArrival` cleans a detached destination board snapshot inside the

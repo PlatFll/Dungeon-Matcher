@@ -1,0 +1,253 @@
+{
+  "base": "d2a3857d83647f06248743a3d52d065bc42f942a",
+  "branch": "codex/bomb-chain-dungeon-turn-fixes",
+  "runs": [
+    {
+      "file": "reference-tests-20261114-040604.xml",
+      "result": "Passed",
+      "total": 39
+    },
+    {
+      "file": "reference-tests-20261114-041116.xml",
+      "result": "Passed",
+      "total": 12
+    },
+    {
+      "file": "reference-tests-20261114-041323.xml",
+      "result": "Passed",
+      "total": 3
+    }
+  ],
+  "distinct_passed": 53,
+  "cases": {
+    "BombRefinementTests.FireTravelsBothWaysAtNativeScaleAndRespectsTheBoardMask(RowBomb,0)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "BombRefinementTests.FireTravelsBothWaysAtNativeScaleAndRespectsTheBoardMask(ColumnBomb,90)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "BombRefinementTests.IdleFramesKeepNativeScaleAndDirectionalSocketsStayAnchored": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "BombRefinementTests.NativeSequencesArePointFilteredFullRectAndComplete": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "BombRefinementTests.StarStartsAtSourceArrivesBeforeFlashAndDoesNotFollowMovedTargets": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(RowBomb)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ColumnBomb)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(PoisonBomb)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(HealingBomb)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ShieldBomb)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(RowBomb)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ColumnBomb)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(PoisonBomb)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(HealingBomb)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ShieldBomb)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.NonPreservingExpansionAndNullSeedsRetainTheirExistingSemantics": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.OverlappingCollateralQueuesOneCrystalRequestAndPlanningChangesNoState": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.PendingConvertedBombRemainsProtectedUntilItsOwnTurn": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(False)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(True)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "ForestFoundationPlayTests.DrillContactActivatesEachBombFamilyAndChainsOnlyOnce": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "ForestFoundationPlayTests.DungeonCornerAndPillarActualGamePhonePreview": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041323.xml"
+    },
+    "ForestFoundationPlayTests.IronveinFullDrillNeverStopsAtTheFirstOfTwoObsidianStones": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "ForestFoundationPlayTests.IronveinSixDrillGameplayDoesNotDependOnTheView": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "ForestFoundationPlayTests.IronveinSixDrillsPenetrateObsidianAndOverlappingRowsClearOnceWithoutRewards": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.ActualExpandedClearHasOneCenteredBurstPerDestroyedTile(PoisonBomb,Poison,9)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.ActualExpandedClearHasOneCenteredBurstPerDestroyedTile(HealingBomb,Healing,9)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.ActualExpandedClearHasOneCenteredBurstPerDestroyedTile(ShieldBomb,Shield,9)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.ConsumableFootprintAndCrackedCollateralUseGenericArtWithSpecialOverrides": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.CornerBlastExcludesHoleProtectedCrystalAndPreservedReward": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.CueOccursAtShatterOnlyWhenSpecialActivationIsAllowed(True,1)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.CueOccursAtShatterOnlyWhenSpecialActivationIsAllowed(False,0)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.DirectionalClearRetainsEveryTargetWithoutGenericTileExplosions(RowBomb,7)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.DirectionalClearRetainsEveryTargetWithoutGenericTileExplosions(ColumnBomb,8)": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.GravityContactCoalescesOnceAndDoesNotCountOrdinaryMoves": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.ImportedLibraryContainsAllFourCenteredNativeFamilies": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.MissingArtIsOptionalAndDisablingPresenterClearsAllItsRenderers": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.OrdinaryMatchHasNoBombCueAndSnapshotDoesNotFollowMovedGem": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "TileBurstPresentationTests.OverlappingChainIsStableDeduplicatedAndKeepsSpecialCenterIdentity": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-040604.xml"
+    },
+    "ForestFoundationPlayTests.BombSwapAlsoClearsTheColorMatchAtBothNewPositions": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.CrumbleWarningDoesNotConsumeThinkingOrFreeActionsAndRechecksSpecials": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentCrumblePausesAndReturnsAfterTwoMovesAcrossResume": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentCrumbleRespectsSpecialsPinsStructuresAndUsefulMoves": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentCrumbleSharesMinerCapacityAndRestoresOnlyItsOwnCells": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.IronveinSmallDrillBreaksFirstStoneButNeverTouchesSecond": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.IronveinSmallDrillPresentationUsesActualStopAndPauses": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.PortableDrillActivatesBombsAndKeepsItsSinglePowerFeed": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.SlipperyInvalidFinalArrangementReversesWithoutTakingAMove": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.SlipperyPreviewRotationSpecialMovementAndSingleAcceptance": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.SlipperyRequiresFloodingAndContinuesWithoutSavingAPreview": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.SlipperyStaleForecastClearsBeforeInputCanConfirmChangedPieces": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041116.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentPhotoKeepsCurrentHoleDeadlinesAndCannotResurrectReturnedHoles": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041323.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentTravelSnapshotRestoresZoneHolesWithoutChangingSourceOnWriteFailure": {
+      "result": "Passed",
+      "run": "reference-tests-20261114-041323.xml"
+    }
+  },
+  "screenshots": {
+    "1080x1920-after.png": "c4da8038305e13f408fe936e9b266def79f0675895c7c59b74561c3d6a0825af",
+    "1080x1920-before.png": "0ed647f12805582d24b0aae2bd2049a17c565eefacb2afb3026bbe956bdd5be4",
+    "1080x2400-after.png": "d6907d38734213c5f287cc2baa85207d132ebf538ceea6cae353bca434301a68",
+    "1080x2400-before.png": "ee484fd4950ec2d97a329655bb537ff138179b805b6b4d534790cc63ab061f7e",
+    "1080x2400-safe-after.png": "e8275f9e057b7e8580e07c2ed627fb5ad5888b6c647fcc45d0aa6d22db827ece",
+    "1080x2400-safe-before.png": "adfb3014d59b7794b18f6cbb7d99014c57a5317accdbc9125dbf1ec4944d02d4",
+    "360x640-after.png": "4cc39ebf1362c3529d7b069c6ffb13a750f6eb9bdafaba09160ece2d55e873bd",
+    "360x640-before.png": "c0906aa6e1524a55cc5ea1df21fbe2a574df4f11e358ac309b8b9f36ca4a90fc",
+    "720x1280-after.png": "3bec013b48903596480d1f947436e03cbd19881f01a8210be4b2f50d766be14e",
+    "720x1280-before.png": "ea23df34b2f6d06a40e32813ce9baaad4dce4d2b1d37078e40972aec2219bcc5"
+  },
+  "compilation": {
+    "result": "Passed",
+    "unity": "6000.3.19f1",
+    "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-c2faff4a-0ccb-4713-8f94-713564612bf3.log"
+  }
+}

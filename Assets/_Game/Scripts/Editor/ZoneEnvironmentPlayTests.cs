@@ -84,14 +84,23 @@ public sealed partial class ForestFoundationPlayTests
         float start=Time.realtimeSinceStartup;yield return Until(()=>Time.realtimeSinceStartup>start+.2f,"paused shake");
         Assert.That(tile.localPosition,Is.EqualTo(position));Assert.That(board.GetGem(first.x,first.y).transform.localPosition,Is.EqualTo(gemPosition));
         Run.GetComponent<RunControlsUI>().Close();yield return Stable();
+        var warning=Run.Continuation.Capture().board;
+        Assert.That(warning.cells.Count(c=>c.crumbleBreakMove==5),Is.EqualTo(cells.Count));
+        Assert.That(warning.cells.Any(c=>c.crumbleRestoreMove>0),Is.False,"warning never breaks on the same move");
+        foreach(var cell in cells) Assert.That(board.IsCellPlayable(cell.x,cell.y),Is.True);
+        yield return CaptureEnvironment("dungeon-warning-tiles");
+        yield return ResumeRoster();board=Run.Board;
+        Assert.That(board.CrumblingTileWarnings.Count,Is.EqualTo(cells.Count),"Continue preserves warning");
+        yield return EnvironmentMove();
         var broken=Run.Continuation.Capture().board;
-        Assert.That(broken.cells.Count(c=>c.crumbleRestoreMove==6),Is.EqualTo(cells.Count));
+        Assert.That(broken.cells.Count(c=>c.crumbleRestoreMove==7),Is.EqualTo(cells.Count));
+        tile=board.transform.Find($"CellTiles/CellTile_{first.x}_{first.y}");
         foreach(var cell in cells) {Assert.That(board.GetGem(cell.x,cell.y),Is.Null);Assert.That(board.IsCellPlayable(cell.x,cell.y),Is.False);}
         Assert.That(tile.localPosition,Is.EqualTo(board.GetCellLocalPosition(first.x,first.y)));
         yield return CaptureEnvironment("dungeon-broken-tiles");
         yield return EnvironmentMove();Assert.That(Run.Continuation.Capture().board.cells.Count(c=>c.crumbleRestoreMove>0),Is.EqualTo(cells.Count));
         yield return ResumeRoster();board=Run.Board;
-        Assert.That(board.CompletedValidPlayerMoves,Is.EqualTo(5));
+        Assert.That(board.CompletedValidPlayerMoves,Is.EqualTo(6));
         foreach(var cell in cells) Assert.That(board.IsCellMined(cell.x,cell.y),Is.True);
         yield return EnvironmentMove();
         foreach(var cell in cells)
@@ -111,6 +120,9 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(board.TryQueueTopUpMovablePins(owner,3,null,null),Is.True);yield return Stable();
         var pins=Run.Continuation.Capture().board.cells.Where(c=>c.pinned).Select(c=>c.identity).ToArray();
         board.QueueZoneEnvironment(4);yield return Stable();
+        Assert.That(board.CrumblingTileWarnings.Count,Is.InRange(1,2));
+        Assert.That(Run.Continuation.Capture().board.cells.Any(c=>c.crumbleRestoreMove>0),Is.False);
+        board.QueueZoneEnvironment(5);yield return Stable();
         var after=Run.Continuation.Capture().board;
         Assert.That(after.cells.Any(c=>c.identity==specialId&&c.special==GemSpecialType.ColorCrystal),Is.True);
         Assert.That(after.cells.Where(c=>c.pinned).Select(c=>c.identity),Is.EquivalentTo(pins));
@@ -125,21 +137,21 @@ public sealed partial class ForestFoundationPlayTests
     {
         yield return LaunchDungeonHazards();var board=Run.Board;
         var memory=board.CaptureBoardMemory(Run.Waves.ContinuationOwnerSlot);
-        for(int i=0;i<4;i++) yield return EnvironmentMove();
+        for(int i=0;i<5;i++) yield return EnvironmentMove();
         var holes=board.CaptureBoardMemory(Run.Waves.ContinuationOwnerSlot);
-        Assert.That(holes.cells.Any(c=>c.crumbleRestoreMove==6),Is.True);
+        Assert.That(holes.cells.Any(c=>c.crumbleRestoreMove==7),Is.True);
         Assert.That(board.TryRestoreBoardMemory(memory,Run.Waves.ContinuationEnemy),Is.True);
-        Assert.That(Run.Continuation.Capture().board.cells.Count(c=>c.crumbleRestoreMove==6),Is.EqualTo(holes.cells.Count(c=>c.crumbleRestoreMove==6)));
+        Assert.That(Run.Continuation.Capture().board.cells.Count(c=>c.crumbleRestoreMove==7),Is.EqualTo(holes.cells.Count(c=>c.crumbleRestoreMove==7)));
         yield return EnvironmentMove();yield return EnvironmentMove();
         Assert.That(board.TryRestoreBoardMemory(holes,Run.Waves.ContinuationEnemy),Is.True);
         Assert.That(Run.Continuation.Capture().board.cells.Any(c=>c.crumbleRestoreMove>0),Is.False);
-        Assert.That(board.CompletedValidPlayerMoves,Is.EqualTo(6));
+        Assert.That(board.CompletedValidPlayerMoves,Is.EqualTo(7));
     }
 
     [UnityTest] public IEnumerator EnvironmentTravelSnapshotRestoresZoneHolesWithoutChangingSourceOnWriteFailure()
     {
         yield return LaunchDungeonHazards();var board=Run.Board;
-        for(int i=0;i<4;i++) yield return EnvironmentMove();
+        for(int i=0;i<5;i++) yield return EnvironmentMove();
         Run.Travel.enabled=false;Run.Travel.State.stage=1;Run.Travel.State.destination="magical-forest";
         KillEncounter();yield return Until(()=>Run.Continuation.CanCapture,"source settles");
         var before=Run.Continuation.Capture().board;
@@ -223,7 +235,7 @@ public sealed partial class ForestFoundationPlayTests
             PresentationPreferences.SetReducedMotion(true);
             board.CellMiningStarted+=(x,y,duration)=>{if(duration>0) board.StartCoroutine(CaptureEnvironment("dungeon-white-break"));};
             board.CellMaterializing+=(x,y,duration)=>board.StartCoroutine(CaptureEnvironment("dungeon-white-return"));
-            for(int i=0;i<4;i++) yield return EnvironmentMove();
+            for(int i=0;i<5;i++) yield return EnvironmentMove();
             Assert.That(Run.Continuation.Capture().board.cells.Count(c=>c.mined),Is.EqualTo(4));
             Assert.That(Run.Continuation.Capture().board.cells.Count(c=>c.crumbleRestoreMove>0),Is.EqualTo(1));
             yield return EnvironmentMove();yield return EnvironmentMove();

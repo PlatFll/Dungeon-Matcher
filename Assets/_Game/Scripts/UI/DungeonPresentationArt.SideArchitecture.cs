@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,6 +51,28 @@ public sealed partial class DungeonPresentationArt
             SideCandleShelf(art,column,shelfY,side==0?"Side_Candles_Tall":"Side_Candles_Mixed",21);
             // The lower cluster rests directly on the heavy base, without another floating shelf.
             art.Image(side==0?"Side_Candles_Short":"Side_Candles_Tall",column,4,height-23-(side==0?22:21));
+            // One grounded corner grouping on each side. Existing approved
+            // native props rest on rubble at the physical bottom, outside HUD.
+            var corner = DungeonPixelLabBattleArt.Rect(side == 0 ? "Left corner dressing" : "Right corner dressing",
+                sideArchitecture, side == 0 ? 0 : width-60, height-62, 60, 62);
+            art.Image("Rubble",corner,side==0?6:0,33);
+            art.Image(side==0?"Jar":"Barrel",corner,side==0?0:20,side==0?14:6);
+            art.Image("Bones",corner,side==0?27:0,34);
+            // Use actual vertical overlap too: on tall phones the formation
+            // sits below the buttons and can remain completely on-screen.
+            // Only narrow layouts need the outer stones to peek off-screen.
+            var controls = layout.BottomHud.GetComponentsInChildren<Button>()
+                .Select(b => GameplayPixelLayoutController.ScreenRect((RectTransform)b.transform)).ToArray();
+            float outward = 0;
+            foreach (var prop in corner.GetComponentsInChildren<Image>())
+            {
+                var rect = GameplayPixelLayoutController.ScreenRect(prop.rectTransform);
+                foreach (var button in controls)
+                    if (rect.yMin < button.yMax && rect.yMax > button.yMin)
+                        outward = Mathf.Max(outward, side == 0 ? rect.xMax-button.xMin : button.xMax-rect.xMin);
+            }
+            corner.anchoredPosition += Vector2.right * (Mathf.Ceil(outward/scale) * (side == 0 ? -1 : 1));
+
         }
     }
 

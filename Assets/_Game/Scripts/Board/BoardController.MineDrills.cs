@@ -81,6 +81,7 @@ public partial class BoardController
         resolvingUnrewardedEnvironment = true;
         deferRoyalBannerGravity = true;
         var visited = new HashSet<Vector2Int>();
+        var crystals = new List<BombTriggeredCrystalRequest>();
         try
         {
             foreach (var drill in firing)
@@ -114,11 +115,10 @@ public partial class BoardController
                         }
                         if (royalBannerCells.TryGetValue(cell, out var banner)) CompleteRoyalBannerRemoval(banner);
                         var gem = GetGem(cell.x, cell.y);
-                        // Retain the canonical unrewarded clear. The launch cell
-                        // bypasses preparation flash; later cells finish shattering
-                        // while the bit is still outside them, before entry travel.
-                        if (gem != null) yield return ClearMatchesWithOrderedBursts(
-                            new HashSet<Gem> { gem }, null, false, null, null, immediateImpact: first);
+                        // Ordinary drilling remains unrewarded. A struck bomb
+                        // detonates through the existing bomb resolver at contact.
+                        if (gem != null) yield return ClearDrillImpacts(
+                            new HashSet<Gem> { gem }, crystals, first);
                     }
                     if (!first)
                     {
@@ -142,6 +142,9 @@ public partial class BoardController
             }
             deferRoyalBannerGravity = false;
             ResolvePendingRoyalBannerGravity();
+            // Stars wait until every reserved projectile has left the board;
+            // their established charge/refill sequence cannot move drill targets.
+            yield return ResolveBombTriggeredCrystalRequests(crystals);
             yield return ResolveEnvironmentalBoardChange();
         }
         finally
@@ -152,4 +155,26 @@ public partial class BoardController
         }
         MineChanged?.Invoke(); MineDrillBatchSettled?.Invoke();
     }
+
+    private IEnumerator ClearDrillImpacts(HashSet<Gem> impacts,
+        List<BombTriggeredCrystalRequest> crystals, bool immediateImpact = false)
+    {
+        var bombs = new HashSet<Gem>();
+        foreach (var gem in impacts)
+            if (gem != null && IsChainReactiveBomb(gem.SpecialType)) bombs.Add(gem);
+        var expanded = BuildBombExpandedClearSet(bombs, true, out var triggered);
+        foreach (var gem in impacts)
+            if (gem != null && gem.SpecialType == GemSpecialType.ColorCrystal)
+                triggered.Add(new BombTriggeredCrystalRequest(gem, gem.Type));
+        foreach (var request in triggered)
+            if (!crystals.Exists(r => r.CrystalGem == request.CrystalGem)) crystals.Add(request);
+        // Only actual bomb effects earn their existing combat effects/rewards.
+        // The drill's ordinary cells, refill cascades and intake stay unrewarded.
+        if (expanded.Count > 0) ReportBombClearsToCombat(null, expanded, 0);
+        foreach (var gem in impacts)
+            if (gem != null && gem.SpecialType != GemSpecialType.ColorCrystal) expanded.Add(gem);
+        if (expanded.Count > 0) yield return ClearMatchesWithOrderedBursts(
+            expanded, null, true, null, null, immediateImpact: immediateImpact);
+    }
+
 }
