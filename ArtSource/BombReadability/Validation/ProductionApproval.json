@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-14",
+  "testedRuntimeCommit": "85b68d2fb2a1151ab3da3bafbf38dd6a7a2f0bf9",
+  "unity": "6000.3.19f1",
+  "compilerCommand": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "compilerExitCode": 0,
+  "compilerLog": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-b90d110c-4454-4042-b696-1fd5919afb26.log",
+  "compilerLogSHA256": "53521f6c9f355556b8f78e7e499bd57860540a29911b13ae2a6638ee8d290215",
+  "tests": {
+    "result": "Passed",
+    "total": "23",
+    "passed": "23",
+    "failed": "0",
+    "skipped": "0"
+  },
+  "filter": "BombRefinementTests;BombRefinementPlayTests;TileBurstPresentationTests",
+  "productionReferences": "Game.unity and GemPrefab GUIDs match the approved Poison A, Healing C and Star A exports. Row/Column use approved Directional D Resources assets. All idle and VFX families are shared across zones.",
+  "approvedStillPixelEquality": true,
+  "shieldUnchanged": true,
+  "rattlebonesUnchanged": true,
+  "actualGameTests": [
+    "SelectedIdlesInActualGameAndLifecycleChecks",
+    "RowBombActualSwap",
+    "ColumnBombActualSwap",
+    "ColorStarActualSwap"
+  ],
+  "realDeviceTest": false,
+  "androidBuildTest": false,
+  "additionalGenerationSpend": 0,
+  "userApproval": "User approved all bomb sprites, animations and VFX for actual game integration and explicitly authorized merging PR #232."
+}

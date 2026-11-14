@@ -1,0 +1,593 @@
+{
+  "shield_unchanged": true,
+  "Rattlebones_unchanged": true,
+  "six_board_gems_unchanged": true,
+  "12_small_gem_alpha_masks_unchanged": true,
+  "new_art": [
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/DirectionalA-Column.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        7,
+        1,
+        50,
+        63
+      ],
+      "sha256": "3f5c9ce7140f26a56b6f88ef1730075253b21417275a67769f3a224ae7faf186"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/DirectionalA.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        1,
+        7,
+        63,
+        50
+      ],
+      "sha256": "e00fa969733c46e4197b57e974d5ac196ffdbdc189ef6c7a64eaf7c7ebbe24d4"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/DirectionalB-Column.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        11,
+        4,
+        52,
+        60
+      ],
+      "sha256": "ac4e253865a072947785df4a23f3ae048517a12761edf23e1470a3a698ed5970"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/DirectionalB.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        4,
+        11,
+        60,
+        52
+      ],
+      "sha256": "c90f7e341d89f56e533e6d544c88ce0c700815589fc296cc6f082b2b51a8e616"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/DirectionalC-Column.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        11,
+        2,
+        52,
+        62
+      ],
+      "sha256": "b727f298a7300df43cbc790275d3e9c2856767143ac6cedfc9c9230d2e78d6ac"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/DirectionalC.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        2,
+        11,
+        62,
+        52
+      ],
+      "sha256": "3e66c3f594813b7d021d4d26bdccb07d5c9dbb11b7a8dd5b4b46bc290e483b2b"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/DirectionalD-Column.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        11,
+        4,
+        53,
+        60
+      ],
+      "sha256": "e4c66d387cd939346376af6c8ef134db181e0ad85121a20f279b081d8c74e0e1"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/DirectionalD.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        4,
+        11,
+        60,
+        53
+      ],
+      "sha256": "44417a20648157c0706d3dee57326661c1fd4bbeba68787d236f584fd99a0656"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/HealingA.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        6,
+        5,
+        59,
+        61
+      ],
+      "sha256": "5caf4665e6b4f222f36a22b653a6b10d516feee48c9fcc8a30326a868a1712ec"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/HealingB.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        5,
+        3,
+        60,
+        61
+      ],
+      "sha256": "e8a29dec6ebda6f90706e2eb501c8c334aba83f0a996a1986ef51944f022b1c7"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/HealingC.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        8,
+        5,
+        57,
+        59
+      ],
+      "sha256": "f7b1bbeee1e651a1112d9819d1c15f22ee652cc52eb5af146ea96b0ab66b2858"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/HealingD.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        7,
+        5,
+        57,
+        60
+      ],
+      "sha256": "4642db43a872deab871d61bac21b54f697533557210d09265a541f1be0445bba"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/PoisonA.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        6,
+        2,
+        59,
+        58
+      ],
+      "sha256": "6809a5b4fd3435db89ff453deb03e94983ac5ddbfd0046b7601f202872ba2b96"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/PoisonB.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        11,
+        7,
+        53,
+        58
+      ],
+      "sha256": "2b4c0518f503070873c90a66275e6f5af486e19d6c8c6c54308dfa942c7a1d89"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/PoisonC.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        15,
+        1,
+        52,
+        60
+      ],
+      "sha256": "7dbe46f9322eb0d2f8312826486652272ed228b402ad315caa7267df7eb417b0"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/PoisonD.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 20,
+      "bounds": [
+        5,
+        3,
+        60,
+        59
+      ],
+      "sha256": "966708e7a41a65950521eb80dd47259d6ef6bfca0ac71c886faa8910ce31ea94"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/StarA.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 12,
+      "bounds": [
+        2,
+        3,
+        62,
+        60
+      ],
+      "sha256": "f9ddb0c27f74b2db77f9382ee9d314802dcd074de75bed756064a27d21a8d349"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/StarB.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 15,
+      "bounds": [
+        2,
+        2,
+        62,
+        60
+      ],
+      "sha256": "307ba1d2ae34aae76e19c9ff6c35b2d2ee0dfd9814e948845723d4b064b7b2c6"
+    },
+    {
+      "path": "ArtSource/BombReadability/Candidates/Cleaned/StarC.png",
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 14,
+      "bounds": [
+        2,
+        2,
+        62,
+        60
+      ],
+      "sha256": "3788e6c5403ba1959e1f51acb1789bd2c31698a0c2cc13be5b80ac02bc0f7937"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireHead/FireHead_00.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        2,
+        3,
+        61,
+        30
+      ],
+      "sha256": "505e816047153b24ba8f8c75c57c84656718d8286f136ffaa308cce87aaa9330"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireHead/FireHead_01.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        2,
+        4,
+        61,
+        29
+      ],
+      "sha256": "e947b72dca89e137c87c0ab997e29e850f7e1ed1e18ab091553fc5899946ec1c"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireHead/FireHead_02.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        2,
+        5,
+        61,
+        28
+      ],
+      "sha256": "cb76e02b6de2ebb13841ff43ea3ccf0a317bd8ef0c21786f582fb0f146efcf99"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireHead/FireHead_03.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        2,
+        4,
+        61,
+        29
+      ],
+      "sha256": "e947b72dca89e137c87c0ab997e29e850f7e1ed1e18ab091553fc5899946ec1c"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireHead/FireHead_04.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        2,
+        3,
+        61,
+        30
+      ],
+      "sha256": "505e816047153b24ba8f8c75c57c84656718d8286f136ffaa308cce87aaa9330"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireHead/FireHead_05.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        2,
+        2,
+        61,
+        31
+      ],
+      "sha256": "91022c610b26ed06616c692412367b7e921b21d43d0bd4e3a204f71f91984466"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireTrail/FireTrail_00.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 5,
+      "bounds": [
+        0,
+        3,
+        64,
+        29
+      ],
+      "sha256": "3f28e607b157858f43de76831b63e6811b47ebc525331f5c311107d35dcde42c"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireTrail/FireTrail_01.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 5,
+      "bounds": [
+        0,
+        1,
+        64,
+        30
+      ],
+      "sha256": "23cb8dc81042b2f9b9e23541f08ed74c124f73e4584af5ff861c2f8d1f8c87ae"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireTrail/FireTrail_02.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 5,
+      "bounds": [
+        0,
+        2,
+        64,
+        29
+      ],
+      "sha256": "888cd65705a962ad77bcae11ef05657ed16da9507e70fdfd0b2e9f39215e7774"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireTrail/FireTrail_03.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 5,
+      "bounds": [
+        0,
+        2,
+        64,
+        30
+      ],
+      "sha256": "28bb58f3b0ffc54132aa343fd8ac29d277c233df352ab30362aa6bbc56ecf5d9"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireTrail/FireTrail_04.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 5,
+      "bounds": [
+        0,
+        1,
+        64,
+        31
+      ],
+      "sha256": "948e819c15e0f493240f7a34359ddc7ac4b6330e190a54dcbbac0a93c77e0be3"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/FireTrail/FireTrail_05.png",
+      "size": [
+        64,
+        32
+      ],
+      "opaque_colors": 5,
+      "bounds": [
+        0,
+        3,
+        64,
+        29
+      ],
+      "sha256": "3f28e607b157858f43de76831b63e6811b47ebc525331f5c311107d35dcde42c"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/StarGlint/StarGlint_00.png",
+      "size": [
+        32,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        11,
+        11,
+        22,
+        21
+      ],
+      "sha256": "33decf36b9227bcf81f9b2de88de1dcda69b290e730bdd8339df9f510f6dbd62"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/StarGlint/StarGlint_01.png",
+      "size": [
+        32,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        9,
+        9,
+        24,
+        23
+      ],
+      "sha256": "611ec7d4e96c305b4bdb80a9291f00b801b16f9341220291d2f0ac3f41be7c02"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/StarGlint/StarGlint_02.png",
+      "size": [
+        32,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        6,
+        6,
+        27,
+        25
+      ],
+      "sha256": "50dc1b3cde44897a0ba3a239e89ad530a507419100d20ff6008eb24d5bb76a4e"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/StarGlint/StarGlint_03.png",
+      "size": [
+        32,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        4,
+        3,
+        29,
+        28
+      ],
+      "sha256": "55ecb198de7c94493e95e1eb81aebd2cf6a705cc3a8107246df11a0879be10d6"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/StarGlint/StarGlint_04.png",
+      "size": [
+        32,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        6,
+        5,
+        27,
+        26
+      ],
+      "sha256": "215452fbe10da1641d091f4f9b242dd65308f67d8e2fed86571846fe8fee8d09"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/StarGlint/StarGlint_05.png",
+      "size": [
+        32,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        8,
+        8,
+        25,
+        23
+      ],
+      "sha256": "b22634b663df7849c612ed608c0856f8b1641225edf30e5318a146cd7a12be7a"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/StarGlint/StarGlint_06.png",
+      "size": [
+        32,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        10,
+        10,
+        23,
+        22
+      ],
+      "sha256": "ce4fccaf007a525cd8c3fd1c14512cb82de20faa64f46322d59d6d49cbbfb6bc"
+    },
+    {
+      "path": "Assets/_Game/Resources/VFX/BombRefinement/StarGlint/StarGlint_07.png",
+      "size": [
+        32,
+        32
+      ],
+      "opaque_colors": 6,
+      "bounds": [
+        13,
+        13,
+        20,
+        19
+      ],
+      "sha256": "4f1cf421af0d25899751725994fa0dfb8966b070bf088e67c90a9071b7e7e1fb"
+    }
+  ]
+}

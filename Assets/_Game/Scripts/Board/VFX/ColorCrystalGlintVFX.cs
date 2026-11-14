@@ -7,6 +7,9 @@ public sealed class ColorCrystalGlintVFX :
     MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
+    private static Sprite[] nativeFrames;
+    private Vector3 sourcePosition, targetPosition;
+    private float boardCellSize = 1f;
 
     private Gem targetGem;
 
@@ -52,6 +55,11 @@ public sealed class ColorCrystalGlintVFX :
         int sortingOrder)
     {
         CacheReferences();
+        if (nativeFrames == null)
+        {
+            nativeFrames = Resources.LoadAll<Sprite>("VFX/BombRefinement/StarGlint");
+            Array.Sort(nativeFrames, (a,b) => string.CompareOrdinal(a.name,b.name));
+        }
 
         spriteRenderer.sprite =
             starSprite;
@@ -75,12 +83,14 @@ public sealed class ColorCrystalGlintVFX :
         float targetFlashDuration,
         float rotationDegrees,
         Color color,
-        Action<ColorCrystalGlintVFX> onFinished)
+        Action<ColorCrystalGlintVFX> onFinished, Vector3? launchOrigin = null, float cellSize = 1f)
     {
         CacheReferences();
 
-        targetGem =
-            gem;
+        targetGem = gem;
+        targetPosition = localPosition;
+        sourcePosition = launchOrigin ?? localPosition;
+        boardCellSize = Mathf.Max(.01f,cellSize);
 
         baseSize =
             Mathf.Max(
@@ -207,6 +217,24 @@ public sealed class ColorCrystalGlintVFX :
 
     private void ApplyVisualState()
     {
+        float travel = Mathf.Clamp01(elapsedTime / (peakTime * .8f));
+        Vector3 position = PresentationPreferences.ReducedMotion ? targetPosition : Vector3.Lerp(sourcePosition,targetPosition,travel);
+        float pixel = boardCellSize / 64f;
+        position.x = Mathf.Round(position.x / pixel) * pixel;
+        position.y = Mathf.Round(position.y / pixel) * pixel;
+        transform.localPosition = position;
+        if (nativeFrames != null && nativeFrames.Length > 0)
+        {
+            int frame = elapsedTime < peakTime
+                ? Mathf.Min(3,Mathf.FloorToInt(elapsedTime / peakTime * 4))
+                : Mathf.Min(7,4 + Mathf.FloorToInt((elapsedTime-peakTime) / (duration-peakTime) * 4));
+            if (PresentationPreferences.ReducedMotion) frame = 1;
+            spriteRenderer.sprite = nativeFrames[Mathf.Min(frame,nativeFrames.Length-1)];
+            spriteRenderer.color = Color.white;
+            transform.localRotation = Quaternion.identity;
+            transform.localScale = Vector3.one * boardCellSize;
+            return;
+        }
         float visualScale;
 
         if (elapsedTime < FirstGrowEnd)

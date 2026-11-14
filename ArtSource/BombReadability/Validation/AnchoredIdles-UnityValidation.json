@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "unity": "6000.3.19f1",
+  "command": "Tools/Validate-Unity.ps1",
+  "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-d107b7a9-fc44-4191-a7ee-9addd67d2ca9.log",
+  "sha256": "46717c22bc4142cae36c89fe4d0071ee2820fd923bba7f0a4c9ceb0193ea51ca",
+  "tests": 9,
+  "failures": 0,
+  "skipped": 0,
+  "filter": "BombRefinementTests;BombRefinementPlayTests",
+  "realDeviceTest": false,
+  "sourceSha256": {
+    "Assets/_Game/Scripts/Board/BombIdleArt.cs": "04398812a0845fa0603e769570cad4d8cf2956e2b7f998e4164cba83aca81d95",
+    "Assets/_Game/Scripts/Board/PoisonBombGemView.cs": "e6c8fd69999c9df91c92bd14d2a66bfc50abb4d91ae01fa54ce7538f9402cef4",
+    "Assets/_Game/Scripts/Editor/BombRefinementTests.cs": "b7b5cf8505f7e910b46ff8059d7c9205a2e57166cc8fce2a5d1e773c16cfe63c"
+  }
+}

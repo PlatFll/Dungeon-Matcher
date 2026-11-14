@@ -1,0 +1,249 @@
+[
+  {
+    "id": "PoisonA",
+    "family": "Poison",
+    "raw_index": 0,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      38
+    ],
+    "alpha": "binary",
+    "status": "Selected by user 2026-11-12; idle animation revision pending review",
+    "sha256": "6809a5b4fd3435db89ff453deb03e94983ac5ddbfd0046b7601f202872ba2b96"
+  },
+  {
+    "id": "PoisonB",
+    "family": "Poison",
+    "raw_index": 3,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      38
+    ],
+    "alpha": "binary",
+    "status": "candidate, not approved",
+    "sha256": "2b4c0518f503070873c90a66275e6f5af486e19d6c8c6c54308dfa942c7a1d89"
+  },
+  {
+    "id": "PoisonC",
+    "family": "Poison",
+    "raw_index": 6,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      37
+    ],
+    "alpha": "binary",
+    "status": "candidate, not approved",
+    "sha256": "7dbe46f9322eb0d2f8312826486652272ed228b402ad315caa7267df7eb417b0"
+  },
+  {
+    "id": "PoisonD",
+    "family": "Poison",
+    "raw_index": 14,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      37
+    ],
+    "alpha": "binary",
+    "status": "candidate, not approved",
+    "sha256": "966708e7a41a65950521eb80dd47259d6ef6bfca0ac71c886faa8910ce31ea94"
+  },
+  {
+    "id": "HealingA",
+    "family": "Healing",
+    "raw_index": 0,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      37
+    ],
+    "alpha": "binary",
+    "status": "candidate, not approved",
+    "sha256": "5caf4665e6b4f222f36a22b653a6b10d516feee48c9fcc8a30326a868a1712ec"
+  },
+  {
+    "id": "HealingB",
+    "family": "Healing",
+    "raw_index": 1,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      39
+    ],
+    "alpha": "binary",
+    "status": "candidate, not approved",
+    "sha256": "e8a29dec6ebda6f90706e2eb501c8c334aba83f0a996a1986ef51944f022b1c7"
+  },
+  {
+    "id": "HealingC",
+    "family": "Healing",
+    "raw_index": 9,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      36
+    ],
+    "alpha": "binary",
+    "status": "Selected by user 2026-11-12; idle animation revision pending review",
+    "sha256": "f7b1bbeee1e651a1112d9819d1c15f22ee652cc52eb5af146ea96b0ab66b2858"
+  },
+  {
+    "id": "HealingD",
+    "family": "Healing",
+    "raw_index": 15,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      37
+    ],
+    "alpha": "binary",
+    "status": "candidate, not approved",
+    "sha256": "4642db43a872deab871d61bac21b54f697533557210d09265a541f1be0445bba"
+  },
+  {
+    "id": "DirectionalA",
+    "family": "Directional",
+    "raw_index": 0,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      32
+    ],
+    "alpha": "binary",
+    "status": "candidate, not approved",
+    "sha256": "e00fa969733c46e4197b57e974d5ac196ffdbdc189ef6c7a64eaf7c7ebbe24d4",
+    "column_socket": [
+      32,
+      31
+    ]
+  },
+  {
+    "id": "DirectionalB",
+    "family": "Directional",
+    "raw_index": 5,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      32
+    ],
+    "alpha": "binary",
+    "status": "candidate, not approved",
+    "sha256": "c90f7e341d89f56e533e6d544c88ce0c700815589fc296cc6f082b2b51a8e616",
+    "column_socket": [
+      32,
+      31
+    ]
+  },
+  {
+    "id": "DirectionalC",
+    "family": "Directional",
+    "raw_index": 11,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      30
+    ],
+    "alpha": "binary",
+    "status": "candidate, not approved",
+    "sha256": "3e66c3f594813b7d021d4d26bdccb07d5c9dbb11b7a8dd5b4b46bc290e483b2b",
+    "column_socket": [
+      30,
+      31
+    ]
+  },
+  {
+    "id": "DirectionalD",
+    "family": "Directional",
+    "raw_index": 15,
+    "size": [
+      64,
+      64
+    ],
+    "socket": [
+      32,
+      32
+    ],
+    "alpha": "binary",
+    "status": "Selected by user 2026-11-12; idle animation revision pending review",
+    "sha256": "44417a20648157c0706d3dee57326661c1fd4bbeba68787d236f584fd99a0656",
+    "column_socket": [
+      32,
+      31
+    ]
+  },
+  {
+    "id": "StarA",
+    "family": "Star",
+    "raw_index": 2,
+    "size": [
+      64,
+      64
+    ],
+    "socket": null,
+    "alpha": "binary",
+    "status": "Selected by user 2026-11-12; idle animation revision pending review",
+    "sha256": "f9ddb0c27f74b2db77f9382ee9d314802dcd074de75bed756064a27d21a8d349"
+  },
+  {
+    "id": "StarB",
+    "family": "Star",
+    "raw_index": 7,
+    "size": [
+      64,
+      64
+    ],
+    "socket": null,
+    "alpha": "binary",
+    "status": "candidate, not approved",
+    "sha256": "307ba1d2ae34aae76e19c9ff6c35b2d2ee0dfd9814e948845723d4b064b7b2c6"
+  },
+  {
+    "id": "StarC",
+    "family": "Star",
+    "raw_index": 13,
+    "size": [
+      64,
+      64
+    ],
+    "socket": null,
+    "alpha": "binary",
+    "status": "candidate, not approved",
+    "sha256": "3788e6c5403ba1959e1f51acb1789bd2c31698a0c2cc13be5b80ac02bc0f7937"
+  }
+]

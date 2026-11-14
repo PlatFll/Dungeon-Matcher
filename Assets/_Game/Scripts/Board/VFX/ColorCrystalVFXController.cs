@@ -125,6 +125,7 @@ public sealed class ColorCrystalVFXController :
             yield break;
         }
 
+        Vector3 source = boardController.transform.InverseTransformPoint(context.CrystalGem.transform.position);
         yield return PlayCrystalPulse(
             context.CrystalGem
         );
@@ -139,7 +140,7 @@ public sealed class ColorCrystalVFXController :
                 context.TargetGems[index];
 
             if (!TryPlayTargetGlint(
-                    targetGem))
+                    targetGem, source))
             {
                 continue;
             }
@@ -222,13 +223,14 @@ public sealed class ColorCrystalVFXController :
             yield break;
         }
 
+        Vector3 source = boardController.transform.InverseTransformPoint(context.CrystalGem.transform.position);
         yield return PlayCrystalPulse(
             context.CrystalGem
         );
 
         StartCoroutine(
             PlayTargetGlintSweep(
-                context.TargetGems,
+                context.TargetGems, source,
                 Mathf.Max(
                     0f,
                     targetStartDelay
@@ -259,7 +261,7 @@ public sealed class ColorCrystalVFXController :
     }
 
     private IEnumerator PlayTargetGlintSweep(
-        Gem[] targetGems,
+        Gem[] targetGems, Vector3 source,
         float startDelay,
         float sweepDuration)
     {
@@ -289,7 +291,7 @@ public sealed class ColorCrystalVFXController :
                  index++)
             {
                 TryPlayTargetGlint(
-                    targetGems[index]
+                    targetGems[index], source
                 );
             }
 
@@ -334,7 +336,7 @@ public sealed class ColorCrystalVFXController :
                 TryPlayTargetGlint(
                     targetGems[
                         nextTargetIndex
-                    ]
+                    ], source
                 );
 
                 nextTargetIndex++;
@@ -360,7 +362,7 @@ public sealed class ColorCrystalVFXController :
     }
 
     private bool TryPlayTargetGlint(
-        Gem targetGem)
+        Gem targetGem, Vector3 source)
     {
         if (targetGem == null ||
             boardController == null)
@@ -396,7 +398,7 @@ public sealed class ColorCrystalVFXController :
             targetFlashDuration,
             glintRotationDegrees,
             glintColor,
-            ReleaseGlint
+            ReleaseGlint, source, boardController.CellSize
         );
 
         return true;
@@ -681,6 +683,7 @@ public sealed class ColorCrystalVFXController :
 
     private void OnDisable()
     {
+        StopAllCoroutines();
         StopAllGlintsImmediately();
     }
 

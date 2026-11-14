@@ -1,0 +1,24 @@
+{
+  "shieldUnchanged": true,
+  "rattlebonesUnchanged": true,
+  "frameCount": 104,
+  "minimumEdgeClearance": 2,
+  "binaryAlpha": true,
+  "poisonHealingSocketsUnchanged": true,
+  "starSilhouetteAnchored": true,
+  "directionalWholeUnitRotation": true,
+  "directionalGemCompositesRigid": true,
+  "animatedFamilies": {
+    "Poison": 18,
+    "Healing": 26,
+    "Star": 15,
+    "RowIdle": 3,
+    "ColumnIdle": 3
+  },
+  "starGlintFullCoverage": true,
+  "starGlintOnlyReflectivePixels": true,
+  "starGlintDiagonalRange": [
+    28,
+    108
+  ]
+}
