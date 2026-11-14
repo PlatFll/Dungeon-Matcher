@@ -699,7 +699,8 @@ the entire reflective footprint, from the first corner through the opposite
 tip, before disappearing; preserve the stationary silhouette and loop timing.
 The updated directional blast is broad yellow-white fire with restrained amber
 edges. Sources and native LibreSprite loops: ArtSource/BombReadability/SelectedIdles.
-Animation and blast refinement await visual review; the Shield casing is unchanged. Do not stack
+The user approved these animations and blast refinements for production and merge
+on 2026-11-14; the Shield casing is unchanged. Do not stack
 multiple opaque effects on one collateral cell or hide a preserved special with
 a destruction animation. The dissipating tail can overlap refill; do not slow the
 board for the effect. Source JSON owns exposures, not an arbitrary Unity FPS.

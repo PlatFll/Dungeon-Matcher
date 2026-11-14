@@ -1,6 +1,6 @@
 # Selected bomb idles and yellow blast review — 2026-11-12
 
-Branch: `codex/bomb-readability-and-vfx`. Draft PR #232. Not merged.
+Branch: `codex/bomb-readability-and-vfx`. PR #232. User approved production integration and merge on 2026-11-14.
 
 ## Selected artwork and motion
 
@@ -30,6 +30,13 @@ The runtime uses those exact PNG cels; optional missing sequences fall back to
 static art. Pause freezes time; Reduced Motion returns the static designs.
 
 ## Verification actually completed
+
+- Production approval pass (2026-11-14): `Tools/Validate-Unity.ps1` passed again;
+  all 23 bomb/tile-presentation tests passed with no failures or skipped checks.
+  Actual Game tests exercised idle playback, pause/replacement, row and column
+  detonation, and Color Crystal activation. Game/GemPrefab GUIDs and approved
+  still pixel equality were independently checked. Evidence:
+  `Validation/ProductionApproval.json` and `ProductionApproval-tests.xml`.
 
 - 2026-11-14 full-star-glint correction: the existing actual Game idle/lifecycle
   test passed again (1/1), including 100 fresh frames at 720×1280.
@@ -65,7 +72,7 @@ static art. Pause freezes time; Reduced Motion returns the static designs.
 - Visual review: body silhouettes stay stable, the sockets hold all six gems,
   bubbles/crosses remain small accents, the star shine crosses its facets, and
   the broader blast reads clearly at native board scale without crossing the mask.
-- No real-device or Android build test. New animations/blast await user review.
+- No real-device or Android build test. New animations/blast were approved by the user for production and merge.
 
 ## PixelLab and editable sources
 

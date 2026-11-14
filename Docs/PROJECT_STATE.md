@@ -16,22 +16,24 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ---
 
-## Bomb readability review (2026-11-12, selected designs; animation review)
+## Approved bomb presentation (2026-11-14)
 
 The user selected Poison A, Healing C, Directional D and Star A. These exact
-casings are bound on the review branch, with native bubbling, healing-cross,
+casings are bound in the shared production Game presentation, with native bubbling, healing-cross,
 whole-unit directional rocking around fixed gem sockets, and a stationary star
 with a complete corner-to-corner shine-only idle. Shield's casing remains unchanged.
 The 16px source gems and 32px weakness facets use the current 64px gem palettes.
 Row/Column VFX now use broad yellow-white travelling fire instead of generic
 tile explosions; Color Crystal stars travel from source to target. Clear sets,
-rewards, damage and board timing remain under their existing owners. The latest
-Unity validator and all 9 affected bomb tests passed after the whole-bomb shake
-correction, including actual swaps and idle pause/replacement checks. The prior
-broader 83-test result remains recorded separately. Sources and Game captures: ArtSource/BombReadability/
-SelectedIdles. Draft PR #232 remains unmerged, awaiting animation visual approval.
-The 2026-11-14 full-star-glint art correction passed native full-surface coverage
-and a fresh actual Game idle/lifecycle test; runtime code remains unchanged.
+rewards, damage and board timing remain under their existing owners. The user
+approved these sprites, animations and VFX for production and authorized PR #232's
+merge. Fresh Unity compilation and all 23 affected bomb/tile-presentation checks
+passed, including actual Game swaps and idle pause/replacement checks. Native
+verification confirms the complete star glint, fixed silhouettes and approved
+still pixels. Production Game/GemPrefab references and Resources assets resolve
+to the selected art. See ArtSource/BombReadability/Validation/ProductionApproval.json
+and ProductionApproval-tests.xml; the prior broader 83-test run remains separate.
+No Android build or physical-device test was performed for this approval pass.
 
 
 ## 0. Document contract
