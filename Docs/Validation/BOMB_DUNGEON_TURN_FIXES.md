@@ -8,9 +8,9 @@ Base: `d2a3857d83647f06248743a3d52d065bc42f942a` (PR #232).
 - Drill impacts formerly used non-activating clears. Both machine and portable drills now use the existing bomb expansion and clear pipeline. Bomb footprints preserve their combat/utility effects; ordinary drill cells and environmental cascades remain unrewarded. Crystal requests are deduplicated and finish after the reserved drill batch exits. Fuel cannot recursively feed from the bomb chain.
 - Bomb-pair swaps formerly removed both seeds before finding color matches. The existing cascade resolver now captures those matches first and unions the two activation seeds, with disjoint match/collateral reporting.
 - Dungeon tiles formerly waited only 480 ms before breaking in the same move. Warnings now persist until the next accepted move, recheck safety then break. Example: warn 4, break 5, restore 7. Version-2 saves retain warning deadlines; versions 0/1 remain supported. Pause, photographs and travel preserve their intended timing semantics.
-- Upper Dungeon pillar shafts now continue beyond the physical top edge. Grounded jar/barrel, rubble and bone groups reuse approved native art at the lower corners. On narrow screens they shift outward only where their vertical extent meets a live control.
+- Upper Dungeon pillar shafts now continue beyond the physical top edge. Two large connected stone buttress foundations now replace the rejected small prop groups. PixelLab sources were cleaned and joined to the current columns in LibreSprite; each corner is one native sprite. The existing world canvas keeps them behind the unchanged controls.
 
-UI button dimensions, gameplay layout, enemy floor line, gems, characters and approved artwork files are unchanged. No generation credits spent.
+UI button dimensions, gameplay layout, enemy floor line, gems, characters and approved artwork files are unchanged. This art follow-up used 31 PixelLab generations ($0 credits); the preceding gameplay pass used none.
 
 ## Automated verification
 
@@ -28,7 +28,15 @@ The tests run through the editor test runner; gameplay cases enter Play Mode and
 
 Required compilation validator: **passed** via `Tools/Validate-Unity.ps1` with Unity 6000.3.19f1. Log: `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-c2faff4a-0ccb-4713-8f94-713564612bf3.log`.
 
-## Visual evidence
+## Connected-foundation follow-up (2026-11-14)
+
+[Current actual Game review](../../ArtSource/DungeonCornerFoundations/Preview/Review.html). Both foundations are 112×128 native, binary alpha, nine opaque colors and one connected silhouette each. Existing approved source PNGs remain unchanged. The fresh `reference-tests-20261114-044818.xml` run passed its actual Game preview across five phone/safe-area sizes. It checks column joints, native scale, board silhouette exclusion, foreground UI ordering and unchanged final UI geometry. The earlier bounding-box exclusion for small props was replaced with actual alpha/board exclusion and canvas ordering for the user-requested large background architecture.
+
+Initial preview assertions ran before invisible InspectEnemy hitboxes had settled after a resize. The capture now waits for three identical rendered-frame layouts; all exact rectangle assertions remain. Same-paused-frame image comparisons confirm that changes stay in the foundation region and the upper scene/board are pixel-identical.
+
+Fresh `Tools/Validate-Unity.ps1` passed with Unity 6000.3.19f1; log `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-46acc7ea-0c6d-438c-9f42-32896a9444e1.log`. The 53 gameplay/presentation checks above are previous-pass evidence; gameplay files are unchanged in this art follow-up. No real-device or Android build test. New lineage and evidence: `ArtSource/DungeonCornerFoundations/`.
+
+## Earlier visual evidence (superseded small-prop arrangement)
 
 [Interactive comparison](../../ArtSource/BombDungeonTurnFixes/Preview/Review.html)
 

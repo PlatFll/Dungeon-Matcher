@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.Rendering;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -21,7 +23,7 @@ public sealed partial class ForestFoundationPlayTests
         yield return Stable();
         yield return Until(()=>Run.Waves.ActiveEnemies.All(e=>e.GetComponent<EnemyLifecycleVFX>()?.IsSpawning!=true),"all preview enemies materialized");
         yield return new WaitForSeconds(.3f);
-        string root=Path.GetFullPath(".utmp/BombDungeonFixes");Directory.CreateDirectory(root);
+        string root=Path.GetFullPath(".utmp/DungeonCornerFoundations");Directory.CreateDirectory(root);
         foreach(var size in new[]{new Vector3Int(720,1280,0),new Vector3Int(1080,1920,0),
             new Vector3Int(1080,2400,0),new Vector3Int(1080,2400,1),new Vector3Int(360,640,0)})
         {
@@ -31,6 +33,9 @@ public sealed partial class ForestFoundationPlayTests
             yield return Until(()=>Screen.width==size.x&&Screen.height==size.y,"preview size");
             GameplayPixelLayoutController.ValidationSafeArea=size.z==1?new Rect(24,96,size.x-48,size.y-216):(Rect?)null;
             yield return new WaitForSeconds(.5f);Time.timeScale=0;yield return null;Canvas.ForceUpdateCanvases();
+            // Let late-frame native anchors run after the layout rebuild before
+            // recording geometry, exactly as they do for a rendered frame.
+            yield return null;
             var layout=Object.FindFirstObjectByType<GameplayPixelLayoutController>();
             Assert.That(GameplayPixelLayoutValidator.Validate(layout,out var report),Is.Empty,report);
             DungeonHybridIntegrationTests.AssertNativeLayers(layout);
@@ -40,14 +45,51 @@ public sealed partial class ForestFoundationPlayTests
             Assert.That(capitals.Length,Is.EqualTo(3));
             foreach(var cap in capitals)Assert.That(GameplayPixelLayoutController.ScreenRect(cap.rectTransform).yMin,
                 Is.GreaterThan(Screen.height),"pillar ends beyond the physical screen");
-            var corners=world.Find("Side architecture").Cast<Transform>().Where(t=>t.name.EndsWith("corner dressing")).ToArray();
-            Assert.That(corners.Length,Is.EqualTo(2));
-            var buttons=layout.BottomHud.GetComponentsInChildren<Button>().Select(b=>GameplayPixelLayoutController.ScreenRect((RectTransform)b.transform)).ToArray();
-            yield return CaptureDungeonTurnScreen(root+"/diagnostic-"+size.x+"x"+size.y+".png");
-            foreach(var corner in corners)foreach(var image in corner.GetComponentsInChildren<Image>())
+            var architecture=world.Find("Side architecture");
+            Assert.That(architecture.Cast<Transform>().Any(t=>t.name.EndsWith("corner dressing")),Is.False,
+                "Rejected small-prop group must not remain behind the new foundation");
+            var corners=architecture.GetComponentsInChildren<Image>().Where(i=>i.name.StartsWith("Dungeon_Foundation_")).ToArray();
+            Assert.That(corners.Length,Is.EqualTo(2),"Exactly one connected sprite per corner");
+            var boardRect=GameplayPixelLayoutController.ScreenRect(layout.BoardArea);
+            Dictionary<int,Rect> uiRects=null;
+            yield return SettledDungeonButtonRects(layout,r=>uiRects=r);
+            foreach(var corner in corners)
             {
-                var rect=GameplayPixelLayoutController.ScreenRect(image.rectTransform);
-                foreach(var button in buttons)Assert.That(rect.Overlaps(button),Is.False,image.name+" "+rect+" stays outside live button "+button);
+                Assert.That(corner.sprite.rect.size,Is.EqualTo(new Vector2(112,128)));
+                Assert.That(corner.rectTransform.sizeDelta,Is.EqualTo(corner.sprite.rect.size),"Native art must not stretch");
+                Assert.That(corner.raycastTarget,Is.False);
+                Assert.That(corner.sprite.texture.filterMode,Is.EqualTo(FilterMode.Point));
+                var rect=GameplayPixelLayoutController.ScreenRect(corner.rectTransform);
+                float scale=DungeonPixelLabBattleArt.PhysicalPixelScale;
+                Assert.That(rect.width,Is.EqualTo(112*scale).Within(.1f));
+                Assert.That(rect.height,Is.EqualTo(128*scale).Within(.1f));
+                Assert.That(rect.yMin,Is.EqualTo(-2*scale).Within(.1f),"Foot ends at physical screen edge, not safe-area edge");
+                bool isLeft=corner.name.EndsWith("Left");
+                Assert.That(isLeft?rect.xMin:rect.xMax,Is.EqualTo(isLeft?-11*scale:Screen.width+11*scale).Within(.1f));
+                var column=architecture.Find(isLeft?"Left pillar":"Right pillar");
+                var shaft=column.Find("Side_Shaft").GetComponent<Image>();
+                var shaftRect=GameplayPixelLayoutController.ScreenRect(shaft.rectTransform);
+                Assert.That(shaftRect.yMin,Is.EqualTo(rect.yMax).Within(.1f),"No stacked foot or gap at column/foundation joint");
+                Assert.That(column.Find("Side_Base"),Is.Null,"The previous foot must not be stacked on this asset");
+                // Check the actual alpha silhouette, not its mostly transparent
+                // bounding box: broad feet may extend below/behind the HUD,
+                // while the upper column must stay outside the playable board.
+                var png=new Texture2D(2,2);png.LoadImage(File.ReadAllBytes(UnityEditor.AssetDatabase.GetAssetPath(corner.sprite)));
+                for(int y=0;y<png.height;y++)for(int x=0;x<png.width;x++)
+                {
+                    var color=png.GetPixel(x,y);
+                    Assert.That(color.a==0||color.a==1,Is.True,"Binary native alpha");
+                    if(color.a==0)continue;
+                    var screen=new Vector2(rect.xMin+(x+.5f)*scale,rect.yMin+(y+.5f)*scale);
+                    Assert.That(boardRect.Contains(screen),Is.False,"Foundation silhouette must stay outside the playable board: "+screen);
+                }
+                Object.Destroy(png);
+            }
+            foreach(var button in layout.BottomHud.GetComponentsInChildren<Button>())
+            {
+                var canvas=button.GetComponentInParent<Canvas>();
+                Assert.That(canvas.rootCanvas.renderMode==RenderMode.ScreenSpaceOverlay ||
+                    canvas.sortingOrder>world.GetComponent<Canvas>().sortingOrder,Is.True,"Live UI renders above large environment foundations");
             }
             string geometry=JsonUtility.ToJson(new DungeonHybridIntegrationTests.Geometry{
                 top=GameplayPixelLayoutController.ScreenRect(layout.TopHud),board=GameplayPixelLayoutController.ScreenRect(layout.BoardArea),
@@ -56,19 +98,33 @@ public sealed partial class ForestFoundationPlayTests
             string name=size.x+"x"+size.y+(size.z==1?"-safe":"");
             File.WriteAllText(root+"/"+name+".txt",report+"\n"+geometry);
             yield return CaptureDungeonTurnScreen(root+"/"+name+"-after.png");
-            // Reproduce the exact old decoration arrangement for a same-frame
-            // comparison. UI, characters, gems and native art remain untouched.
+            // Same paused Game frame with candidate art hidden is a diagnostic
+            // reference for unchanged HUD and board geometry, not historical art.
             foreach(var corner in corners)corner.gameObject.SetActive(false);
-            var upper=structure.GetComponentsInChildren<Image>().Where(i=>i.name=="Support_Core"&&i.rectTransform.anchoredPosition.y>-16).ToArray();
-            foreach(var shaft in upper)shaft.gameObject.SetActive(false);
-            foreach(var cap in capitals){var p=cap.rectTransform.anchoredPosition;cap.rectTransform.anchoredPosition=new Vector2(p.x,0);}
-            yield return CaptureDungeonTurnScreen(root+"/"+name+"-before.png");
-            Set(layout.GetComponent<DungeonPresentationArt>(),"pixelLabGeometry",null);
-            Call(layout.GetComponent<DungeonPresentationArt>(),"UpdatePixelLabDungeon");
-            yield return null;
-            Assert.That(GameplayPixelLayoutController.ScreenRect(layout.BoardArea),Is.EqualTo(JsonUtility.FromJson<DungeonHybridIntegrationTests.Geometry>(geometry).board));
+            yield return CaptureDungeonTurnScreen(root+"/"+name+"-without-foundations.png");
+            foreach(var corner in corners)corner.gameObject.SetActive(true);
+            yield return null;Canvas.ForceUpdateCanvases();yield return null;
+            Dictionary<int,Rect> afterRects=null;
+            yield return SettledDungeonButtonRects(layout,r=>afterRects=r);
+            foreach(var button in layout.GetComponentsInChildren<Button>())
+                Assert.That(afterRects[button.GetInstanceID()],Is.EqualTo(uiRects[button.GetInstanceID()]),button.name+" dimensions/positions remain unchanged");
+            Assert.That(GameplayPixelLayoutController.ScreenRect(layout.BoardArea),Is.EqualTo(boardRect));
+
         }
         Time.timeScale=1;
+    }
+    static IEnumerator SettledDungeonButtonRects(GameplayPixelLayoutController layout,Action<Dictionary<int,Rect>> accept)
+    {
+        Dictionary<int,Rect> previous=null;int stableFrames=0;
+        Action<ScriptableRenderContext,Camera[]> rendered=(context,cameras)=>
+        {
+            var current=layout.GetComponentsInChildren<Button>().ToDictionary(b=>b.GetInstanceID(),b=>GameplayPixelLayoutController.ScreenRect((RectTransform)b.transform));
+            bool same=previous!=null && previous.Count==current.Count && current.All(p=>previous.TryGetValue(p.Key,out var value)&&value==p.Value);
+            stableFrames=same?stableFrames+1:0;previous=current;
+        };
+        RenderPipelineManager.endFrameRendering+=rendered;
+        try { yield return Until(()=>stableFrames>=3,"native controls settle after rendered layout");accept(previous); }
+        finally { RenderPipelineManager.endFrameRendering-=rendered; }
     }
     static IEnumerator CaptureDungeonTurnScreen(string path)
     {
