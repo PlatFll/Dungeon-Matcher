@@ -19,10 +19,11 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(board.TryQueuePlaceMineStones(Run.Waves.ActiveEnemies[0],2,6,MineStoneStage.Obsidian),Is.True);
         yield return Stable(); Assert.That(MineCells().Length,Is.EqualTo(2));
         Assert.That(MineCells().All(c=>c.y==row&&c.durability==3),Is.True);
+        for(int x=0;x<board.Width;x++) board.GetGem(x,row)?.SetSpecialType(GemSpecialType.None);
         int reports=0;board.BoardClearResolved+=_=>reports++;
         board.Mine.drills[0].lane=row;board.TryQueueMineDrillPower(1,4);yield return Stable();
         Assert.That(board.MineStoneCount,Is.Zero,"both 3-hit stones are removed by the same penetrating drill");
-        Assert.That(reports,Is.Zero,"crossed special gems do not detonate");
+        Assert.That(reports,Is.Zero,"ordinary drill clears remain unrewarded");
     }
 
     [UnityTest] public IEnumerator IronveinManualIntakeLaunchWaitsForActorWorkAndKeepsBoardOwned()
@@ -50,6 +51,9 @@ public sealed partial class ForestFoundationPlayTests
         yield return Stable(); var stones = MineCells(); Assert.That(stones.Length, Is.GreaterThan(0));
         var first = stones.OrderBy(c=>c.x).First();
         board.Mine.drills[0].lane = first.y; board.Mine.drills[1].lane = first.y;
+        // This case isolates ordinary machine rewards. Star/bomb activation is
+        // covered separately; the fixture's counterplay star must not be struck.
+        board.GetGem(board.Width-1,0)?.SetSpecialType(GemSpecialType.None);
         var before = Run.Continuation.Capture().board;
         var removed = before.cells.Where(c=>c.hasGem && board.Mine.drills.Any(d=>d.lane==c.y)).Select(c=>c.identity).ToArray();
         int reports=0,settles=0;var launches=new List<int>();

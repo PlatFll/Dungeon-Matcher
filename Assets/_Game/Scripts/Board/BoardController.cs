@@ -850,14 +850,20 @@ public partial class BoardController : MonoBehaviour
         }
     }
 
-    private IEnumerator ResolveCascades(
+    private IEnumerator ResolveCascades(HashSet<Gem> matches, Gem preferredGem, Gem fallbackGem)
+    {
+        return ResolveCascadesWithActivations(matches, preferredGem, fallbackGem, null);
+    }
+
+    private IEnumerator ResolveCascadesWithActivations(
         HashSet<Gem> matches,
         Gem preferredGem,
-        Gem fallbackGem)
+        Gem fallbackGem,
+        HashSet<Gem> activationSeeds)
     {
         int cascadeNumber = 1;
 
-        while (matches.Count > 0)
+        while (matches.Count > 0 || activationSeeds?.Count > 0)
         {
             Debug.Log(
                 $"Cascade {cascadeNumber}: " +
@@ -878,9 +884,12 @@ public partial class BoardController : MonoBehaviour
             List<BombTriggeredCrystalRequest>
                 triggeredCrystalRequests = new List<BombTriggeredCrystalRequest>();
 
+            var seeds = new HashSet<Gem>(matches);
+            if (activationSeeds != null) seeds.UnionWith(activationSeeds);
+            activationSeeds = null;
             HashSet<Gem> expandedClearSet =
-                resolvingUnrewardedEnvironment ? new HashSet<Gem>(matches) : BuildBombExpandedClearSet(
-                    matches,
+                resolvingUnrewardedEnvironment ? seeds : BuildBombExpandedClearSet(
+                    seeds,
                     true,
                     out triggeredCrystalRequests
                 );

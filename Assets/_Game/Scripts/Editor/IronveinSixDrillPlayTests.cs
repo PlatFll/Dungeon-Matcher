@@ -90,8 +90,9 @@ public sealed partial class ForestFoundationPlayTests
         yield return LaunchMine();var b=Run.Board;var d=b.Mine.drills.Single(x=>x.id==id);
         int first=d.fromRight?b.Width-1:0,next=first+(d.fromRight?-1:1),row=d.lane;
         var originals=Enumerable.Range(0,b.Width).Select(x=>b.GetGem(x,row)).ToArray();
-        // Launch must also remove a special immediately without activating it.
-        originals[first].SetSpecialType(GemSpecialType.ColorCrystal);
+        // An ordinary launch cell shatters immediately; specials are covered
+        // separately by the bomb-contact regression tests.
+        originals[first].SetSpecialType(GemSpecialType.None);
         var contacts=new Dictionary<int,float>();var entries=new List<int>();bool launched=false;float launchTime=0;
         b.MineDrillFired+=(f,_,__)=>{if(f==id){launched=true;launchTime=Time.time;}};
         b.MineDrillBoring+=(f,cell,seconds)=>{

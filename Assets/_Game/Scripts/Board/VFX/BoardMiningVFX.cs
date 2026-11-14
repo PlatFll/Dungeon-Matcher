@@ -17,7 +17,6 @@ public sealed class BoardMiningVFX :
 
     private Texture2D runtimeTexture;
     private Sprite runtimeSquareSprite;
-    private Coroutine shakeRoutine;
     private readonly Dictionary<Transform, Vector3> shakenOrigins = new Dictionary<Transform, Vector3>();
 
     private readonly Dictionary<Vector2Int, Coroutine>
@@ -45,7 +44,7 @@ public sealed class BoardMiningVFX :
     {
         Unsubscribe();
         StopAllFlashes();
-        StopShake();
+        RestoreShakeOrigins();
     }
 
     private void Subscribe()
@@ -66,8 +65,6 @@ public sealed class BoardMiningVFX :
 
         boardController.CellRestored +=
             HandleCellRestored;
-        boardController.CellsShaking -= HandleCellsShaking;
-        boardController.CellsShaking += HandleCellsShaking;
         boardController.CellMaterializing -= HandleCellMaterializing;
         boardController.CellMaterializing += HandleCellMaterializing;
     }
@@ -84,7 +81,6 @@ public sealed class BoardMiningVFX :
 
         boardController.CellRestored -=
             HandleCellRestored;
-        boardController.CellsShaking -= HandleCellsShaking;
         boardController.CellMaterializing -= HandleCellMaterializing;
     }
 
@@ -221,38 +217,22 @@ public sealed class BoardMiningVFX :
         );
     }
 
-    private void HandleCellsShaking(IReadOnlyList<Vector2Int> cells, float duration)
+    private void LateUpdate()
     {
-        StopShake();
-        foreach (var cell in cells)
+        // Move only tile artwork. Never fight gem dragging, swaps or gravity.
+        // Time.time freezes with pause; native-pixel offsets cannot blur sprites.
+        RestoreShakeOrigins();
+        if (boardController == null) return;
+        foreach (var warning in boardController.CrumblingTileWarnings)
         {
+            var cell = warning.Key;
             var tile = transform.Find($"{CellTileContainerName}/CellTile_{cell.x}_{cell.y}");
-            var gem = boardController.GetGem(cell.x, cell.y);
-            if (tile != null) shakenOrigins[tile] = tile.localPosition;
-            if (gem != null) shakenOrigins[gem.transform] = gem.transform.localPosition;
+            if (tile == null) continue;
+            shakenOrigins[tile] = tile.localPosition;
+            float pixels = PresentationPreferences.ReducedMotion ? 0 :
+                Mathf.Round(Mathf.Sin(Time.time * 38f + cell.x + cell.y));
+            tile.localPosition += Vector3.right * (pixels * boardController.CellSize / 64f);
         }
-        shakeRoutine = StartCoroutine(ShakeCells(duration));
-    }
-
-    private IEnumerator ShakeCells(float duration)
-    {
-        float elapsed = 0;
-        while (elapsed < duration || Time.timeScale <= 0f)
-        {
-            if (Time.timeScale <= 0f) { yield return null; continue; }
-            float pixels = PresentationPreferences.ReducedMotion ? 0 : Mathf.Round(Mathf.Sin(elapsed * 70f));
-            var offset = Vector3.right * (pixels * boardController.CellSize / 64f);
-            foreach (var entry in shakenOrigins) if (entry.Key != null) entry.Key.localPosition = entry.Value + offset;
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        RestoreShakeOrigins(); shakeRoutine = null;
-    }
-
-    private void StopShake()
-    {
-        if (shakeRoutine != null) StopCoroutine(shakeRoutine);
-        shakeRoutine = null; RestoreShakeOrigins();
     }
 
     private void RestoreShakeOrigins()

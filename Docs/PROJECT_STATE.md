@@ -16,6 +16,20 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ---
 
+## Bomb contacts and Dungeon warning/decoration revision (2026-11-14, review branch)
+
+`codex/bomb-chain-dungeon-turn-fixes` fixes drill-triggered bomb activation and
+ordinary matches formed by swapping two bombs. Dungeon crumbling now warns for
+one accepted move before breaking; version-2 cell deadlines support Continue,
+photographs and travel while preserving version-1 saves and two-move restoration.
+The production Dungeon presentation repeats upper pillar shafts beyond the
+physical screen. The rejected small corner prop groups are replaced on the review
+branch by two connected PixelLab/LibreSprite stone buttress foundations, with
+native joints to the existing side masonry. See `ArtSource/DungeonCornerFoundations/`.
+UI button dimensions, board geometry and approved sprite pixels are unchanged.
+Validation and review evidence: `Docs/Validation/BOMB_DUNGEON_TURN_FIXES.md`.
+This follow-up is awaiting review; it has not been merged.
+
 ## Approved bomb presentation (2026-11-14)
 
 The user selected Poison A, Healing C, Directional D and Star A. These exact

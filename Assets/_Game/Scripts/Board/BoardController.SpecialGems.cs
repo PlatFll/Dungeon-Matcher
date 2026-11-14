@@ -49,17 +49,11 @@ public partial class BoardController
 
     private IEnumerator ResolveSpecialPairActivation(Gem first, Gem second)
     {
-        // The physical swap has already placed both seeds at their new origins.
-        // One expanded set deduplicates overlapping clears and chained specials.
-        var seeds = new HashSet<Gem> { first, second };
-        var expanded = BuildBombExpandedClearSet(seeds, true, out var crystals);
-        ReportBombClearsToCombat(null, expanded, 0);
-        yield return ClearMatchesWithBurstTargets(expanded, null, true, null);
-        yield return ResolveBombTriggeredCrystalRequests(crystals);
-        yield return CollapseAndRefillBoard();
-        var matches = FindAllMatches();
-        if (matches.Count > 0) yield return ResolveCascades(matches, null, null);
-        else if (!HasAvailableMove()) yield return ReshuffleBoard();
+        // Capture matches BEFORE either swapped bomb disappears. The canonical
+        // resolver reports ordinary matches and bomb collateral exactly once,
+        // and retains the normal four/five-match creation rules.
+        yield return ResolveCascadesWithActivations(FindAllMatches(), first, second,
+            new HashSet<Gem> { first, second });
     }
 
     [Header("Bomb-Triggered Crystal Charge")]

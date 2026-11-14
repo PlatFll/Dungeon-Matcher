@@ -61,14 +61,19 @@ empty dispenser does not reload until the terminal 180 ms burst finishes, then
 the new bit peeks out over 160 ms. Presentation events observe this sequence;
 missing/disabled VFX cannot block or change clears. Thinking/menu pause freezes
 the timeline. Overlapping row cells clear once. There is no refill between passes; one canonical
-environmental settlement follows the batch. No actor damage is dealt by machines.
+environmental settlement follows the batch. Ordinary machine clears deal no actor damage.
 
-This environmental source removes crossed special gems without activation.
-Its refill cascades use the same resolver with combat reporting, special creation
-and special activation suppressed for that transaction. No energy, HP damage,
-healing, shield grants or recursive drill fuel can come from the machine clear.
-Other environmental operations and all player clears retain their established
-semantics. The small Bore projectile is a separate later-phase operation.
+2026-11-14 correction: crossed bombs activate through the canonical bomb expansion
+and clear path, including chains, blast VFX and their normal damage/utility effects.
+Overlapping blasts clear each gem once. Directly struck stars use their own gem
+color; stars reached by a blast retain that bomb's color attribution. They remain
+reserved until all charged launchers exit, then use the established crystal
+charge/refill sequence. No refill can move a later projectile's targets.
+Only actual bomb effects use combat reporting. Ordinary machine clears and their
+refill cascades still suppress combat rewards, special creation and activation;
+neither those clears nor bomb collateral recursively feeds drill intakes.
+Small Bore uses the same bomb-impact path but retains its one-hit/first-stone stop.
+Other environmental operations and all player clears retain their established semantics.
 
 Mine snapshot v3 saves six machine lanes, sides, charges and the last
 contributing manual action. Legacy v1/v2 saves keep existing IDs, charge and
