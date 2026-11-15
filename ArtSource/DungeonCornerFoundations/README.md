@@ -1,4 +1,4 @@
-# Dungeon lower-corner foundations — review candidate
+# Dungeon lower-corner foundations — approved production artwork
 
 The user rejected the small jar/barrel/rubble/bone groups in PR #233 and requested large connected corner formations comparable in coverage to the Snowy Mountain corners.
 
@@ -6,7 +6,7 @@ The user rejected the small jar/barrel/rubble/bone groups in PR #233 and request
 
 Two 112×128 native buttress foundations replace the separate prop groups, the previous column feet and their overlapping lower candles. Each is one connected silhouette containing broad fitted stone courses, an inset candle niche and a short attached chain. The upper stem uses the current Side_Shaft pixels; an authored shoulder joins it to the generated foundation. Existing columns terminate at that native joint. The foot reaches the physical bottom edge, with outer bedrock intentionally peeking off-screen. The background remains behind the live controls.
 
-Only the lower corner formations and their local masonry joins change in this revision. The previously extended upper pillars, board size, gems, actors, enemy floor line, UI sizes and gameplay fixes are retained. Original approved PNGs are untouched. This is bound to the actual Game scene on the review branch, not merged to main or user-approved artwork.
+Only the lower corner formations and their local masonry joins change in this revision. The previously extended upper pillars, board size, gems, actors, enemy floor line, UI sizes and gameplay fixes are retained. Original approved PNGs are untouched. The user approved the final actual-Game result on 2026-11-15 and explicitly authorized production use and PR #233 merge.
 
 ## PixelLab and LibreSprite lineage
 
@@ -30,4 +30,4 @@ Successful test evidence: `Unity-preview-tests.xml`; numeric/source checks: `Art
 
 Required `Tools/Validate-Unity.ps1` passed with Unity 6000.3.19f1. Log: `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-46acc7ea-0c6d-438c-9f42-32896a9444e1.log`.
 
-No Android build or physical-device test. No merge. Awaiting the user's visual review.
+No Android build or physical-device test. The user approved this final result and authorized merge on 2026-11-15. See `ProductionApproval.json` for the exact approved source hashes and fresh compilation evidence.

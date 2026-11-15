@@ -1,6 +1,6 @@
 # Bomb contacts and Dungeon turn / presentation fixes
 
-Status: implemented on `codex/bomb-chain-dungeon-turn-fixes`, awaiting user review. Not merged.
+Status: final visuals/gameplay approved by the user on 2026-11-15; PR #233 merge explicitly authorized.
 Base: `d2a3857d83647f06248743a3d52d065bc42f942a` (PR #232).
 
 ## Behavior and causes
@@ -47,3 +47,7 @@ The before view reconstructs only the former decoration placement inside the sam
 Full result/log files remain under `.utmp/ThreeZonePresentation`; the committed `ArtSource/BombDungeonTurnFixes/Verification.json` lists test results and screenshot SHA-256 values. Screenshots are unedited Unity captures.
 
 No Android build or real-device test was performed for this follow-up. No merge to main.
+
+## Production approval — 2026-11-15
+
+The user approved PR #233 and requested the new corners and gameplay fixes in the actual game. The reviewed head was `4deab3684f2dc6a7d18098e42857a73ddadea85b`, with main at `d2a3857d83647f06248743a3d52d065bc42f942a`. Actual Game build-scene inclusion, Dungeon presentation routing, Resources bindings and both sprite GUIDs were checked. The previously passing 53 gameplay checks and five-layout foundation preview match unchanged runtime sources. Fresh `Tools/Validate-Unity.ps1` passed with Unity 6000.3.19f1; log `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-438a46ec-21fd-40d8-b45a-29224da7d98e.log`. No new generation, gameplay/UI edits or device test. Local main-checkout edits were inventoried and do not overlap PR files.

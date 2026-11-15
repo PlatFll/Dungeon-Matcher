@@ -16,7 +16,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ---
 
-## Bomb contacts and Dungeon warning/decoration revision (2026-11-14, review branch)
+## Approved bomb contacts and Dungeon warning/foundation revision (2026-11-15)
 
 `codex/bomb-chain-dungeon-turn-fixes` fixes drill-triggered bomb activation and
 ordinary matches formed by swapping two bombs. Dungeon crumbling now warns for
@@ -28,7 +28,11 @@ branch by two connected PixelLab/LibreSprite stone buttress foundations, with
 native joints to the existing side masonry. See `ArtSource/DungeonCornerFoundations/`.
 UI button dimensions, board geometry and approved sprite pixels are unchanged.
 Validation and review evidence: `Docs/Validation/BOMB_DUNGEON_TURN_FIXES.md`.
-This follow-up is awaiting review; it has not been merged.
+The user approved the final actual-Game visuals and gameplay fixes on 2026-11-15
+and authorized PR #233 to main. The approved production presentation binds both
+new foundation sprites through `Resources/UI/BattlePresentation/DungeonPixelLab`.
+Fresh pre-merge Unity compilation passed; existing gameplay and five-size actual
+Game evidence matches the unchanged runtime sources. No real-device test.
 
 ## Approved bomb presentation (2026-11-14)
 
