@@ -1,0 +1,19 @@
+{
+  "args": {
+    "image_url": "https://api.pixellab.ai/mcp/images/cd9a65c5-5255-4f51-b39a-9fb7926938d6/download?index=0",
+    "width": 128,
+    "height": 128,
+    "no_background": true,
+    "seed": 74146,
+    "description": "Create the matching RIGHT corner counterpart. Put the vertical pier and candle niche on the RIGHT, with the broad connected stone foundation tapering down to the LEFT. Keep exactly this chunky purple masonry style, size, block scale, simplicity and one connected silhouette. Keep the light coming from TOP LEFT; do not mirror the lighting. Two small candles in the inset niche. No extra props. Transparent background."
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 672c782d-bd44-4db7-b2a5-39108cdf168c\njob_id: 672c782d-bd44-4db7-b2a5-39108cdf168c\nmodel: pixen\nedit: Create the matching RIGHT corner counterpart. Put the vertical pier and candle niche on the RIGHT, with the broad connected stone foundation tapering down to the LEFT. Keep exactly this chunky purple masonry style, size, block scale, simplicity and one connected silhouette. Keep the light coming from TOP LEFT; do not mirror the lighting. Two small candles in the inset niche. No extra props. Transparent background.\nsource: 128x128px\nsize: 128x128px\ntransparent: True\nseed: 74146\nasset_id: f00e045f-89ba-5ebe-a85d-53b4b70c87a5\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"672c782d-bd44-4db7-b2a5-39108cdf168c\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/672c782d-bd44-4db7-b2a5-39108cdf168c/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+      }
+    ],
+    "isError": false
+  }
+}

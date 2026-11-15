@@ -1,0 +1,125 @@
+{
+  "created": "2026-11-14",
+  "status": "candidate-generation",
+  "budget": {
+    "balance_before": 3627.9,
+    "requests": 20
+  },
+  "approved_uploads": [
+    "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+    "Assets/_Game/Art/DungeonSideArchitecture/Side_Shaft.png",
+    "Assets/_Game/Art/SnowyMountainApproved/Corner_Left.png"
+  ],
+  "Left": {
+    "args": {
+      "width": 128,
+      "height": 192,
+      "no_background": true,
+      "max_colors": 18,
+      "palette": [
+        "#151423",
+        "#241f3a",
+        "#302940",
+        "#382d55",
+        "#4e3d6c",
+        "#67537d",
+        "#877299",
+        "#3c3443",
+        "#57465b",
+        "#2c2933",
+        "#453b3d",
+        "#66544a",
+        "#8f7659",
+        "#b79c6d",
+        "#d9c49a",
+        "#ebe0bd",
+        "#9a7049",
+        "#4d4134"
+      ],
+      "palette_name": "Dungeon Matcher muted violet masonry and aged candle wax",
+      "style_image_url": "upload:6cafa8ac-29ae-4708-9742-4f4618df4084",
+      "style_copy": [
+        "outline",
+        "detail",
+        "shading"
+      ],
+      "reference_images": [
+        {
+          "url": "upload:40173a40-447d-4756-8f3c-2148b5cdee76",
+          "usage": "EXACT dungeon masonry material: muted purple-gray chunky smooth stone blocks, simple clean bevels, matching mortar and block scale. This is the structure to join at the top."
+        },
+        {
+          "url": "upload:337dcd82-a0eb-4b10-9899-c2143e3d4294",
+          "usage": "Only large unified corner mass and connected silhouette; make a DUNGEON stone architectural counterpart, not snow or ice, no copied colors."
+        }
+      ],
+      "seed": 74126,
+      "description": "Single LARGE cohesive dungeon corner foundation asset for a portrait pixel-art game, NOT a scene and NOT a sheet of little objects. Front 2D sidescroller view, subtle top surfaces only. Ancient purple masonry buttress grows organically into one wide grounded stepped foundation of big fitted stones, supported by a few connected worn bedrock planes at its foot. Heavy believable construction. One continuous silhouette from tall outer pier through broad lower stone mass; no loose floating objects. Surface language matches the reference masonry exactly, simple chunky broad planar shading, strong controlled dark separation, crisp native pixels, no dithering or speckled texture, no painterly softness. Lighting top left. Keep quiet broad surfaces. On the lower ledge a small recessed pair of aged candles, entirely attached to that main architecture, and one short fixed iron chain can be a subtle accent; the stone is 90 percent of the design. NO barrels, jars, scattered bones, treasure, vegetation, crystals, skull faces or UI. LEFT BOTTOM screen corner: outer tall straight masonry shaft on LEFT, narrow upper shaft occupies x=4 to x=36. The silhouette widens gently towards the RIGHT only in the lower half and forms a broad 116-pixel wide stable bottom footing. Inner upper right half stays transparent for HUD. Fill 184 pixels of canvas height and most of canvas width at the base, generous 4 pixel transparent safety margin. Top shaft has NO capital or finial, it is intended to continue into the existing vertical wall above. Clean sharp pixel stair-step silhouette. The connected lower footing must look like large architecture supporting a dungeon, not little rubble piled around a prop."
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: e6b37d9b-9693-42e3-bbd2-87ab25146bcf\njob_id: e6b37d9b-9693-42e3-bbd2-87ab25146bcf\nmodel: pro\ndescription: Single LARGE cohesive dungeon corner foundation asset for a portrait pixel-art game, NOT a scene and NOT a sheet of little objects. Front 2D sidescroller view, subtle top surfaces only. Ancient purple masonry buttress grows organically into one wide grounded stepped foundation of big fitted stones, supported by a few connected worn bedrock planes at its foot. Heavy believable construction. One continuous silhouette from tall outer pier through broad lower stone mass; no loose floating objects. Surface language matches the reference masonry exactly, simple chunky broad planar shading, strong controlled dark separation, crisp native pixels, no dithering or speckled texture, no painterly softness. Lighting top left. Keep quiet broad surfaces. On the lower ledge a small recessed pair of aged candles, entirely attached to that main architecture, and one short fixed iron chain can be a subtle accent; the stone is 90 percent of the design. NO barrels, jars, scattered bones, treasure, vegetation, crystals, skull faces or UI. LEFT BOTTOM screen corner: outer tall straight masonry shaft on LEFT, narrow upper shaft occupies x=4 to x=36. The silhouette widens gently towards the RIGHT only in the lower half and forms a broad 116-pixel wide stable bottom footing. Inner upper right half stays transparent for HUD. Fill 184 pixels of canvas height and most of canvas width at the base, generous 4 pixel transparent safety margin. Top shaft has NO capital or finial, it is intended to continue into the existing vertical wall above. Clean sharp pixel stair-step silhouette. The connected lower footing must look like large architecture supporting a dungeon, not little rubble piled around a prop.\nsize: 128x192px\ntransparent: True\ncandidates: 1\nreferences: 2\nstyle_image: yes (outline, detail, shading)\npalette: 18 colours (Dungeon Matcher muted violet masonry and aged candle wax)\nmax colours: 18 per image\nseed: 74126\nasset_id: 9605ff14-e224-5ac7-9292-c05abdd382d1\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"e6b37d9b-9693-42e3-bbd2-87ab25146bcf\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/e6b37d9b-9693-42e3-bbd2-87ab25146bcf/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "Right": {
+    "args": {
+      "width": 128,
+      "height": 192,
+      "no_background": true,
+      "max_colors": 18,
+      "palette": [
+        "#151423",
+        "#241f3a",
+        "#302940",
+        "#382d55",
+        "#4e3d6c",
+        "#67537d",
+        "#877299",
+        "#3c3443",
+        "#57465b",
+        "#2c2933",
+        "#453b3d",
+        "#66544a",
+        "#8f7659",
+        "#b79c6d",
+        "#d9c49a",
+        "#ebe0bd",
+        "#9a7049",
+        "#4d4134"
+      ],
+      "palette_name": "Dungeon Matcher muted violet masonry and aged candle wax",
+      "style_image_url": "upload:6cafa8ac-29ae-4708-9742-4f4618df4084",
+      "style_copy": [
+        "outline",
+        "detail",
+        "shading"
+      ],
+      "reference_images": [
+        {
+          "url": "upload:40173a40-447d-4756-8f3c-2148b5cdee76",
+          "usage": "EXACT dungeon masonry material: muted purple-gray chunky smooth stone blocks, simple clean bevels, matching mortar and block scale. This is the structure to join at the top."
+        },
+        {
+          "url": "upload:337dcd82-a0eb-4b10-9899-c2143e3d4294",
+          "usage": "Only large unified corner mass and connected silhouette; make a DUNGEON stone architectural counterpart, not snow or ice, no copied colors."
+        }
+      ],
+      "seed": 74129,
+      "description": "Single LARGE cohesive dungeon corner foundation asset for a portrait pixel-art game, NOT a scene and NOT a sheet of little objects. Front 2D sidescroller view, subtle top surfaces only. Ancient purple masonry buttress grows organically into one wide grounded stepped foundation of big fitted stones, supported by a few connected worn bedrock planes at its foot. Heavy believable construction. One continuous silhouette from tall outer pier through broad lower stone mass; no loose floating objects. Surface language matches the reference masonry exactly, simple chunky broad planar shading, strong controlled dark separation, crisp native pixels, no dithering or speckled texture, no painterly softness. Lighting top left. Keep quiet broad surfaces. On the lower ledge a small recessed pair of aged candles, entirely attached to that main architecture, and one short fixed iron chain can be a subtle accent; the stone is 90 percent of the design. NO barrels, jars, scattered bones, treasure, vegetation, crystals, skull faces or UI. RIGHT BOTTOM screen corner: outer tall straight masonry shaft on RIGHT, narrow upper shaft occupies x=92 to x=124. The silhouette widens gently towards the LEFT only in the lower half and forms a broad 116-pixel wide stable bottom footing. Inner upper left half stays transparent for HUD. Fill 184 pixels of canvas height and most of canvas width at the base, generous 4 pixel transparent safety margin. Top shaft has NO capital or finial, it is intended to continue into the existing vertical wall above. Clean sharp pixel stair-step silhouette. The connected lower footing must look like large architecture supporting a dungeon, not little rubble piled around a prop."
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 1e7e347a-5e66-4ba3-ae60-af29efda9138\njob_id: 1e7e347a-5e66-4ba3-ae60-af29efda9138\nmodel: pro\ndescription: Single LARGE cohesive dungeon corner foundation asset for a portrait pixel-art game, NOT a scene and NOT a sheet of little objects. Front 2D sidescroller view, subtle top surfaces only. Ancient purple masonry buttress grows organically into one wide grounded stepped foundation of big fitted stones, supported by a few connected worn bedrock planes at its foot. Heavy believable construction. One continuous silhouette from tall outer pier through broad lower stone mass; no loose floating objects. Surface language matches the reference masonry exactly, simple chunky broad planar shading, strong controlled dark separation, crisp native pixels, no dithering or speckled texture, no painterly softness. Lighting top left. Keep quiet broad surfaces. On the lower ledge a small recessed pair of aged candles, entirely attached to that main architecture, and one short fixed iron chain can be a subtle accent; the stone is 90 percent of the design. NO barrels, jars, scattered bones, treasure, vegetation, crystals, skull faces or UI. RIGHT BOTTOM screen corner: outer tall straight masonry shaft on RIGHT, narrow upper shaft occupies x=92 to x=124. The silhouette widens gently towards the LEFT only in the lower half and forms a broad 116-pixel wide stable bottom footing. Inner upper left half stays transparent for HUD. Fill 184 pixels of canvas height and most of canvas width at the base, generous 4 pixel transparent safety margin. Top shaft has NO capital or finial, it is intended to continue into the existing vertical wall above. Clean sharp pixel stair-step silhouette. The connected lower footing must look like large architecture supporting a dungeon, not little rubble piled around a prop.\nsize: 128x192px\ntransparent: True\ncandidates: 1\nreferences: 2\nstyle_image: yes (outline, detail, shading)\npalette: 18 colours (Dungeon Matcher muted violet masonry and aged candle wax)\nmax colours: 18 per image\nseed: 74129\nasset_id: 6012504b-f4d2-5169-9ceb-92430ffa472b\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"1e7e347a-5e66-4ba3-ae60-af29efda9138\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/1e7e347a-5e66-4ba3-ae60-af29efda9138/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

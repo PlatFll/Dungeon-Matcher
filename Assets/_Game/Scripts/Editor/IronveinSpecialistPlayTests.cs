@@ -67,12 +67,16 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(board.TryQueuePlaceMineStones(owner,2,6,MineStoneStage.Obsidian),Is.True);yield return Stable();
         var stones=board.MineStoneTargets().OrderBy(t=>t.Cell.x).ToArray();Assert.That(stones.Length,Is.EqualTo(2));
         Call(board,"DamageMineStoneExact",stones[0].Cell,2);
+        // Special placeholders constrained stone placement above. This test
+        // isolates ordinary drill contact and the first-stone stopping rule.
+        for(int y=0;y<board.Height;y++)for(int x=0;x<board.Width;x++)
+            if(board.GetGem(x,y)!=null)board.GetGem(x,y).SetSpecialType(GemSpecialType.None);
         bool? edge=null;int reports=0;board.BoardClearResolved+=_=>reports++;
-        int preserved=board.GetGem(0,row).BoardIdentity;
+        int impacted=board.GetGem(0,row).BoardIdentity;
         Assert.That(board.TryQueueSmallMineDrill(owner,true,row,value=>edge=value),Is.True);yield return Stable();
         Assert.That(edge,Is.False);Assert.That(board.FindMineStone(stones[0].State.id),Is.Null);
         Assert.That(board.FindMineStone(stones[1].State.id)?.Durability,Is.EqualTo(3));
-        Assert.That(board.GetGem(0,row).BoardIdentity,Is.EqualTo(preserved),"portable drill skips specials");
+        Assert.That(Run.Continuation.Capture().board.cells.Any(c=>c.hasGem&&c.identity==impacted),Is.False,"portable drill clears its ordinary path before stopping");
         Assert.That(board.Mine.drills[0].charge,Is.EqualTo(1));Assert.That(reports,Is.Zero);
     }
 

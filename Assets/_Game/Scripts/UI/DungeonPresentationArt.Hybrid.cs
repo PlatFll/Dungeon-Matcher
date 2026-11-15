@@ -55,11 +55,14 @@ public sealed partial class DungeonPresentationArt
         var structure=DungeonPixelLabBattleArt.Rect("Structure",pixelLabContent,0,0,width,height);
         foreach(int x in new[]{0,96,width-36})
         {
-            art.Image("Support_Capital",structure,x,0);
+            // Continue the native shaft beyond the physical display, including
+            // camera cutouts. The upper termination belongs above the screen.
+            int shaftTop = 16 + 28 * Mathf.FloorToInt((top - 16) / 28f);
+            art.Image("Support_Capital",structure,x,shaftTop-16);
             // Every column lands at the same wall/floor junction, including
             // the posts behind the portrait. Trim only the final shaft repeat.
             int footTop = rear - (int)art.Sprite("Support_Foot").rect.height;
-            for(int y=16;y<footTop;y+=28)
+            for(int y=shaftTop;y<footTop;y+=28)
             {
                 var shaft=art.Image("Support_Core",structure,x,y);
                 if(y+28>footTop)

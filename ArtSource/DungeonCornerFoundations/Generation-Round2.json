@@ -1,0 +1,35 @@
+{
+  "args": {
+    "width": 128,
+    "height": 128,
+    "no_background": true,
+    "max_colors": 24,
+    "seed": 74145,
+    "style_image_url": "upload:6cafa8ac-29ae-4708-9742-4f4618df4084",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:40173a40-447d-4756-8f3c-2148b5cdee76",
+        "usage": "Dungeon architectural material and exact muted violet stone color family, clean fitted brick planes. The asset should feel part of this masonry."
+      },
+      {
+        "url": "upload:337dcd82-a0eb-4b10-9899-c2143e3d4294",
+        "usage": "The broad chunky connected silhouette and generous lower corner coverage are the important target. Replace snowy rocks with DUNGEON purple stone architecture, no snow or ice."
+      }
+    ],
+    "description": "A single large LEFT lower corner dungeon architectural foundation, 2D front-facing pixel art game environment sprite. Rich chunky ancient stonework: a stout dressed-stone vertical pier on the left grows into a broad integrated splayed base of massive beveled purple stone courses with a few worn bedrock planes around the foot. ONE cohesive sculpted architectural formation, like a ruined cathedral buttress foundation, heavy and grounded. Clearly larger than a barrel or a small prop. Broad footprint fills the bottom edge and tapers smoothly toward a 32px-wide flat-topped continuation shaft on the left at the top. Interior space above the sloping right contour is transparent. NO floating stones, no thin tall needle shape, no random rubble pile. Strong connected masonry silhouette, large appealing stone planes, varied but fitted blocks, restrained chips in the contour, quieter clean surfaces without speckled texture. A small dark inset recess near the outer left side contains two chunky wax candles and a short attached iron chain, an architectural secondary detail not a separate object. Restrained rich lavender-purple stone with deep violet mortar exactly in the family of the masonry reference, top left lighting, readable 2-3 tone planes. Native crisp pixel edges, no soft AA. Fill most of this 128x128 canvas with the substantial base while retaining transparent safety margins. No skulls, banners, barrels, crates, jars, vegetation, gems, characters, text or UI."
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: cd9a65c5-5255-4f51-b39a-9fb7926938d6\njob_id: cd9a65c5-5255-4f51-b39a-9fb7926938d6\nmodel: pro\ndescription: A single large LEFT lower corner dungeon architectural foundation, 2D front-facing pixel art game environment sprite. Rich chunky ancient stonework: a stout dressed-stone vertical pier on the left grows into a broad integrated splayed base of massive beveled purple stone courses with a few worn bedrock planes around the foot. ONE cohesive sculpted architectural formation, like a ruined cathedral buttress foundation, heavy and grounded. Clearly larger than a barrel or a small prop. Broad footprint fills the bottom edge and tapers smoothly toward a 32px-wide flat-topped continuation shaft on the left at the top. Interior space above the sloping right contour is transparent. NO floating stones, no thin tall needle shape, no random rubble pile. Strong connected masonry silhouette, large appealing stone planes, varied but fitted blocks, restrained chips in the contour, quieter clean surfaces without speckled texture. A small dark inset recess near the outer left side contains two chunky wax candles and a short attached iron chain, an architectural secondary detail not a separate object. Restrained rich lavender-purple stone with deep violet mortar exactly in the family of the masonry reference, top left lighting, readable 2-3 tone planes. Native crisp pixel edges, no soft AA. Fill most of this 128x128 canvas with the substantial base while retaining transparent safety margins. No skulls, banners, barrels, crates, jars, vegetation, gems, characters, text or UI.\nsize: 128x128px\ntransparent: True\ncandidates: 4\nreferences: 2\nstyle_image: yes (outline, detail, shading)\nmax colours: 24 per image\nseed: 74145\nasset_id: 654ca7a4-e971-5989-ab23-320778197ef1\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"cd9a65c5-5255-4f51-b39a-9fb7926938d6\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/cd9a65c5-5255-4f51-b39a-9fb7926938d6/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+      }
+    ],
+    "isError": false
+  }
+}

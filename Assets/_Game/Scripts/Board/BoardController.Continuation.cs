@@ -19,7 +19,7 @@ public partial class BoardController
     {
         if(!CanCaptureContinuation) throw new InvalidOperationException("Board is resolving an action.");
         var saved=new BoardCombatSnapshot { width=width,height=height,moves=completedValidPlayerMoves,nextBanner=nextRoyalBannerId, nextGem=nextGemIdentity, refillRandom=RefillRandomState, forestRulesVersion=2,nextRootId=nextRootId,nextVineGrowthMove=nextVineGrowthMove };
-        saved.dungeonRulesVersion=1;saved.nextCrumbleMove=nextCrumbleMove;
+        saved.dungeonRulesVersion=2;saved.nextCrumbleMove=nextCrumbleMove;
         saved.aquatic=CaptureAquatic();
         saved.mine=CaptureMine();
         saved.frost=CaptureFrost();saved.nextFrostSeedMove=nextFrostSeedMove;
@@ -38,6 +38,7 @@ public partial class BoardController
             }
             if(minedCellOwners.TryGetValue(cell,out int mine)) { value.mined=true; value.mineOwner=ownerSlot(mine); }
             if(crumbleRestoreMoves.TryGetValue(cell,out int restoreMove)) value.crumbleRestoreMove=restoreMove;
+            if(crumbleBreakMoves.TryGetValue(cell,out int breakMove)) value.crumbleBreakMove=breakMove;
             if(barricadeCells.TryGetValue(cell,out var barricade))
             {
                 value.barricade=true; value.barricadeOwner=ownerSlot(barricade.OwnerInstanceId);
@@ -152,6 +153,11 @@ public partial class BoardController
                     else gem.gameObject.AddComponent<PinnedGemOverlayView>().Initialize(gem,this,owner,
                         pinnedGemOverlaySprite,pinnedGemBrightness,0,0,0);
                 }
+            }
+            if(value.crumbleBreakMove>0 && !value.mined)
+            {
+                crumbleBreakMoves[cell]=value.crumbleBreakMove;
+                EnsureMiningVFX();
             }
             if(value.mined)
             {

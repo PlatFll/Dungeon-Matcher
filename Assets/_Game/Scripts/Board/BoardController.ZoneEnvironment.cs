@@ -10,6 +10,8 @@ public partial class BoardController
     private const float TileReturnSeconds = .18f;
     private int nextCrumbleMove = 4;
     private readonly Dictionary<Vector2Int, int> crumbleRestoreMoves = new Dictionary<Vector2Int, int>();
+    private readonly Dictionary<Vector2Int, int> crumbleBreakMoves = new Dictionary<Vector2Int, int>();
+    public IReadOnlyDictionary<Vector2Int, int> CrumblingTileWarnings => crumbleBreakMoves;
     public event Action<IReadOnlyList<Vector2Int>, float> CellsShaking;
     public event Action<int, int, float> CellMaterializing;
 
@@ -37,6 +39,7 @@ public partial class BoardController
         {
             bool due = move >= nextCrumbleMove;
             foreach (int deadline in crumbleRestoreMoves.Values) due |= move >= deadline;
+            foreach (int deadline in crumbleBreakMoves.Values) due |= move >= deadline;
             if (!due) return;
             EnqueueBoardMutation(new BoardMutationRequest {
                 Kind = BoardMutationKind.AdvanceCrumblingTiles, EnvironmentMove = move });
@@ -74,41 +77,61 @@ public partial class BoardController
             }
             yield return ResolveEnvironmentalBoardChange();
         }
+        // A warning created after move N can only break after move N+1.
+        // Recheck the settled board: a new special, pin or enemy warning is safe.
+        var due = new List<Vector2Int>();
+        foreach (var pair in crumbleBreakMoves) if (move >= pair.Value) due.Add(pair.Key);
+        var breaking = new List<Vector2Int>();
+        foreach (var cell in due)
+        {
+            crumbleBreakMoves.Remove(cell);
+            if (!HasCrumbleCapacity() || !BuildMineableCellList().Contains(cell) ||
+                IsProtectedWarningTarget(GetGem(cell.x, cell.y))) continue;
+            minedCellOwners[cell] = CrumblingTileOwner;
+            crumbleRestoreMoves[cell] = move + 2;
+            breaking.Add(cell);
+        }
+        if (breaking.Count > 0)
+        {
+            var removed = new HashSet<Gem>();
+            foreach (var cell in breaking)
+            {
+                CellMiningStarted?.Invoke(cell.x, cell.y, MiningTileFlashDuration);
+                var gem = GetGem(cell.x, cell.y);
+                if (gem == null) continue;
+                removed.Add(gem);
+                GemMatchVFXRequested?.Invoke(new GemMatchVFXContext(gem.Type, 1, 0,
+                    new[] {gem.transform.position}, matchFlashDuration));
+            }
+            yield return ClearMatches(removed, null);
+            yield return ResolveEnvironmentalBoardChange();
+        }
         if (move < nextCrumbleMove || RunSession.Current.Player.IsDefeated) yield break;
         nextCrumbleMove = move + Mathf.Max(3, zone.crumbleCadenceMoves);
         int count = GameplayRandom.Range(1, 3);
-        var breaking = new List<Vector2Int>();
-        // Reserve each choice before checking the next. Existing mines, roots,
-        // warnings, specials, chains and the useful-response budget all count.
-        for (int i = 0; i < count; i++)
+        var warning = new List<Vector2Int>();
+        // Temporary reservations only during planning ensure that the combined
+        // candidate set leaves a useful move. Warning cells remain playable.
+        try
         {
-            if (minedCellOwners.Count >= BalanceV1.Current.maximumGlobalMines ||
-                minedCellOwners.Count + barricadeCells.Count >= BalanceV1.Current.maximumGlobalStructures) break;
-            var candidates = BuildMineableCellList();
-            candidates.RemoveAll(cell => IsProtectedWarningTarget(GetGem(cell.x, cell.y)));
-            if (candidates.Count == 0) break;
-            var selected = candidates[GameplayRandom.Range(0, candidates.Count)];
-            minedCellOwners[selected] = CrumblingTileOwner;
-            crumbleRestoreMoves[selected] = move + 2;
-            breaking.Add(selected);
+            for (int i = 0; i < count && HasCrumbleCapacity(); i++)
+            {
+                var candidates = BuildMineableCellList();
+                candidates.RemoveAll(cell => crumbleBreakMoves.ContainsKey(cell) ||
+                    IsProtectedWarningTarget(GetGem(cell.x, cell.y)));
+                if (candidates.Count == 0) break;
+                var selected = candidates[GameplayRandom.Range(0, candidates.Count)];
+                minedCellOwners[selected] = CrumblingTileOwner;
+                crumbleBreakMoves[selected] = move + 1;
+                warning.Add(selected);
+            }
         }
-        if (breaking.Count == 0) yield break;
-        CellsShaking?.Invoke(breaking, CrumbleShakeSeconds);
-        yield return new WaitForSeconds(CrumbleShakeSeconds);
-        var removed = new HashSet<Gem>();
-        foreach (var cell in breaking)
-        {
-            CellMiningStarted?.Invoke(cell.x, cell.y, MiningTileFlashDuration);
-            var gem = GetGem(cell.x, cell.y);
-            if (gem == null) continue;
-            removed.Add(gem);
-            GemMatchVFXRequested?.Invoke(new GemMatchVFXContext(gem.Type, 1, 0,
-                new[] {gem.transform.position}, matchFlashDuration));
-        }
-        // Environmental removal: no reward report and no special creation.
-        yield return ClearMatches(removed, null);
-        yield return ResolveEnvironmentalBoardChange();
+        finally { foreach (var cell in warning) minedCellOwners.Remove(cell); }
+        if (warning.Count > 0) CellsShaking?.Invoke(warning, CrumbleShakeSeconds);
     }
+
+    private bool HasCrumbleCapacity() => minedCellOwners.Count < BalanceV1.Current.maximumGlobalMines &&
+        minedCellOwners.Count + barricadeCells.Count < BalanceV1.Current.maximumGlobalStructures;
 
     /// <summary>Clean only zone-owned effects in a detached travel checkpoint.</summary>
     public void PrepareZoneArrival(BoardCombatSnapshot saved, ZoneDefinition destination)
@@ -120,11 +143,12 @@ public partial class BoardController
         saved.aquatic = destination.periodicallyFloods ? new AquaticEnvironmentState { lastSettledMove = saved.moves } : null;
         saved.warnings.RemoveAll(w => w.environmental);
         saved.nextVineGrowthMove = saved.moves + Mathf.Max(1, destination.vineCadenceMoves);
-        saved.dungeonRulesVersion = 1;
+        saved.dungeonRulesVersion = 2;
         saved.nextCrumbleMove = saved.moves + Mathf.Max(3, destination.crumbleCadenceMoves);
         var openings = new List<BoardCellSnapshot>();
         foreach (var cell in saved.cells)
         {
+            cell.crumbleBreakMove = 0;
             bool root = cell.barricade && IsRootStyle(cell.barricadeStyle);
             if (cell.crumbleRestoreMove <= 0 && !root && cell.barricadeStyle != EnemyBarricadeStyle.AirCoffer &&
                 !(cell.barricade && (cell.barricadeStyle == EnemyBarricadeStyle.MineStone ||

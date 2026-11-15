@@ -72,7 +72,7 @@ public sealed class RunCombatSnapshot
     public int thornSafeSide, thornDamage;
     public long rootOwnerId;
     public bool rootSpreading;
-    public int crumbleRestoreMove;
+    public int crumbleRestoreMove, crumbleBreakMove;
     public MineStoneState mineStone;
 }
 [Serializable] public sealed class BoardWarningSnapshot

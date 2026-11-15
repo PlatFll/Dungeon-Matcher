@@ -115,7 +115,13 @@ after exactly one durability hit on the first stone, even if it breaks. Shared
 environmental drills penetrate and destroy every intended object in their lane.
 The 2026-10-28 approved revision makes all six visible side launchers functional
 row drills, alternating left/right intakes. They retain four-charge saturation,
-manual intake rules and unrewarded clears. Launch instantly destroys the first
+manual intake rules and unrewarded ordinary drill clears. A bomb struck by either
+drill type now activates with its normal footprint, chaining and utility effects;
+only those bomb clears use their established combat rewards. Color Crystals charge
+until the reserved projectile batch exits, then follow the existing crystal
+sequence (a direct hit uses the star's gem color). Ordinary machine clears and
+their cascades remain unrewarded and cannot feed another drill.
+Launch instantly destroys the first
 cell. At each subsequent occupied cell the bit spins against its near face,
 waits for destruction, then advances into that cell. Empty cells offer no
 resistance. It bursts at the far end and reloads only afterward; the board remains locked until the
@@ -298,15 +304,19 @@ leave when the run transitions to another zone. Optional art never owns effects.
 ### Dungeon crumbling tiles and Royal Arbalist
 
 Purple Dungeon uses **crumbling tiles**. The starting tuning is a pulse every
-four accepted player moves, choosing one or two safe ordinary cells. Tile and
-gem shake together for 480 ms, flash fully white and break. The holes skip gravity
-and refill until two further accepted moves finish; then they flash white,
+four accepted player moves, choosing one or two safe ordinary cells. The selected
+tile artwork shakes while the player chooses their next move, remaining playable.
+It breaks only after the next accepted move settles: warning after move 4, break
+after move 5. Safety, protected targets and structure capacity are checked again
+at break time; an unsafe cell's warning expires without moving to another cell.
+The holes skip gravity and refill until two further accepted moves finish (move 7
+in this example); then they flash white,
 materialize and refill through normal board resolution. Invalid swaps, supplies,
 skills and cascades do not advance the deadline. Specials, pinned gems, active
 warning targets and existing structures are protected. Shared structure limits
 and useful-response checks may reduce or skip a pulse. Pause freezes presentation;
-reduced motion removes the shake. Hole deadlines persist through waves and saves,
-and Gideon's photograph cannot rewind or resurrect them. Cadence is provisional.
+reduced motion removes the shake. Warning and hole deadlines persist through waves
+and saves, and Gideon's photograph cannot rewind or resurrect either state. Cadence is provisional.
 
 Crossbow Guard remains the baseline Special with one chained gem per use. Royal
 Arbalist is a Special and board disruptor: retain double-shot basic attacks and
@@ -315,7 +325,11 @@ the existing six restrictions globally. His dedicated two-shot ability animation
 uses approved native drawings with a separate contact for each chain. Normal
 chain counterplay, safe targeting, cancellation and owner cleanup apply.
 
-Travel removes the departing zone's vines, roots and crumbling holes before the
+Swapping two bombs also resolves ordinary color matches formed at their new
+positions. Capture these matches before either bomb disappears, deduplicate their
+overlap with bomb collateral, and retain normal match rewards and special creation.
+
+Travel removes the departing zone's vines, roots, crumble warnings and holes before the
 destination is revealed. Ordinary gems and specials carry over. Reopened zone
 cells receive ordinary gems without a free match or reward during the atomic
 handoff. Failed checkpoint writes leave the source board intact.

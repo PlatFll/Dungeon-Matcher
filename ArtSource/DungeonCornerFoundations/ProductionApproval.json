@@ -1,0 +1,25 @@
+{
+  "approved_on": "2026-11-15",
+  "pr": 233,
+  "reviewed_head": "4deab3684f2dc6a7d18098e42857a73ddadea85b",
+  "user_approval": "Merge PR #233 to main and make sure the new dungeon corners and gameplay fixes are in the actual game.",
+  "merge_authorized": true,
+  "actual_game_scene": "Assets/_Game/Scenes/Game.unity",
+  "production_binding": "Assets/_Game/Resources/UI/BattlePresentation/DungeonPixelLab.asset",
+  "artwork": {
+    "Assets/_Game/Art/DungeonCornerFoundations/Dungeon_Foundation_Left.png": "29b0bdbbf2bcb63a32cffb194887485b666d30bb4dfe66b22ec1c9405aea71e5",
+    "Assets/_Game/Art/DungeonCornerFoundations/Dungeon_Foundation_Right.png": "b8818c64eade18436b79b07388edb210fd85a8ae1471ef105be08560db1c6824"
+  },
+  "fresh_unity_compilation": {
+    "passed": true,
+    "version": "6000.3.19f1",
+    "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-438a46ec-21fd-40d8-b45a-29224da7d98e.log"
+  },
+  "reused_evidence": [
+    "ArtSource/BombDungeonTurnFixes/Verification.json",
+    "ArtSource/DungeonCornerFoundations/Verification.json"
+  ],
+  "reuse_reason": "Approved runtime sources and main base are unchanged since those successful checks.",
+  "real_device_test": false,
+  "additional_generations": 0
+}

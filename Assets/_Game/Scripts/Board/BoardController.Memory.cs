@@ -115,6 +115,9 @@ public partial class BoardController
             cell.mined=true;cell.crumbleRestoreMove=entry.Value;
             reopenedMines.RemoveAll(p=>p==entry.Key);
         }
+        // Like holes, warning deadlines belong to the live turn, not the photo.
+        foreach (var cell in saved.cells)
+            cell.crumbleBreakMove = crumbleBreakMoves.TryGetValue(new Vector2Int(cell.x, cell.y), out int deadline) ? deadline : 0;
         ReconcileAquaticMemory(saved, reopenedMines);
         ReconcileMineMemory(saved, reopenedMines);
         ReconcileFrostMemory(saved);
