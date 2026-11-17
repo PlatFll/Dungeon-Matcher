@@ -87,13 +87,11 @@ public sealed partial class CrystalResonanceRuntime : MonoBehaviour, IWaveProgre
         if (State.pendingWave == 0 || run.Waves.IsWaveActive || run.Board.IsBusy ||
             !run.Waves.CanCaptureContinuation || run.MoveClock?.IsBlockingWaveProgression == true || run.NeedsSaveRetry) return;
         int wave = State.pendingWave;
-        int charge = Tuning.normalCharge;
+        int charge = Tuning.BaseCharge(EnemyCategory.Normal, run.Zone.Definition);
         foreach (var enemy in run.Waves.OriginalEncounterDefinitions)
         {
             if (enemy == null) continue;
-            charge = Math.Max(charge, enemy.Category == EnemyCategory.Boss ? Tuning.bossCharge :
-                enemy.Category == EnemyCategory.Miniboss ? Tuning.minibossCharge :
-                enemy.Category == EnemyCategory.Special ? Tuning.pressureCharge : Tuning.normalCharge);
+            charge = Math.Max(charge, Tuning.BaseCharge(enemy.Category, run.Zone.Definition));
         }
         int masteryAward = State.PendingMastery, previousCharge = State.charge;
         if (!State.Bank(wave, charge, Tuning)) return;

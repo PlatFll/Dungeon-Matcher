@@ -47,6 +47,8 @@ public sealed class ZoneDefinition : ScriptableObject
     public ZoneTestEncounter[] developmentEncounters;
     public ZoneTestEncounter[] liveEncounters;
     [Header("Crystal Resonance global-depth content (legacy fixtures remain separate)")]
+    [Tooltip("Fixed zone cadence overrides. Zero inherits shared awards; never derived from player power or time.")]
+    [Min(0)] public int resonanceNormalChargeOverride, resonancePressureChargeOverride;
     public int[] resonanceTierStarts = { 1, 6, 13, 25, 45 };
     public float[] resonanceThreatBudgets = { 4, 6, 8, 11, 12 };
     public ZoneDepthMember[] resonancePool = Array.Empty<ZoneDepthMember>();

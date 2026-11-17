@@ -6,6 +6,24 @@ using UnityEngine;
 public sealed class CrystalResonanceDirectorTests
 {
     [Test]
+    public void ProductionChargeCadenceUsesExplicitCourtOverrideAndUnchangedBossAwards()
+    {
+        var tuning = CrystalResonanceTuning.Current;
+        int count = 0;
+        foreach (var zone in Resources.LoadAll<ZoneDefinition>("Zones").Where(z => z.eligibleForLiveTravel))
+        {
+            count++;
+            bool court = zone.zoneId == "drowned-court";
+            Assert.AreEqual(court ? 5 : 4, tuning.BaseCharge(EnemyCategory.Normal, zone), zone.zoneId);
+            Assert.AreEqual(court ? 6 : 5, tuning.BaseCharge(EnemyCategory.Special, zone), zone.zoneId);
+            Assert.AreEqual(10, tuning.BaseCharge(EnemyCategory.Miniboss, zone), zone.zoneId);
+            Assert.AreEqual(14, tuning.BaseCharge(EnemyCategory.Boss, zone), zone.zoneId);
+        }
+        Assert.AreEqual(5, count);
+        Assert.AreEqual(4, tuning.BaseCharge(EnemyCategory.Normal));
+        Assert.AreEqual(5, tuning.BaseCharge(EnemyCategory.Special));
+    }
+    [Test]
     public void EveryZoneAndTierHasLegalRepeatableCapstonesAfterUniquePoolExhaustion()
     {
         foreach (var zone in Resources.LoadAll<ZoneDefinition>("Zones"))

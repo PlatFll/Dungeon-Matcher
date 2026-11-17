@@ -10,10 +10,18 @@ public sealed class CrystalResonanceTuning
 {
     public int capacity = 100;
     public int[] milestones = { 12, 40, 70 };
-    public int normalCharge = 5, pressureCharge = 6, minibossCharge = 10, bossCharge = 14;
+    public int normalCharge = 4, pressureCharge = 5, minibossCharge = 10, bossCharge = 14;
     public int approachMinimum = 78, approachMaximum = 88;
     public int matchGemScore = 10, specialGemScore = 15, masteryScore = 50, victoryScore = 100;
     public int maximumBoardScorePerEncounter = 600;
+    public int BaseCharge(EnemyCategory category, ZoneDefinition zone = null)
+    {
+        if (category == EnemyCategory.Boss) return bossCharge;
+        if (category == EnemyCategory.Miniboss) return minibossCharge;
+        if (category == EnemyCategory.Special)
+            return zone != null && zone.resonancePressureChargeOverride > 0 ? zone.resonancePressureChargeOverride : pressureCharge;
+        return zone != null && zone.resonanceNormalChargeOverride > 0 ? zone.resonanceNormalChargeOverride : normalCharge;
+    }
     private static CrystalResonanceTuning current;
     public static CrystalResonanceTuning Current => current ??= Load();
     private static CrystalResonanceTuning Load()
