@@ -1,290 +1,89 @@
 # Dungeon Matcher — Progression and Run Pacing
 
-## Purpose and authority
-
-This document defines the finalized high-level progression, encounter-pacing, replayability, and faction-escalation philosophy for Dungeon Matcher.
-
-It is authoritative for how chapters/eras, enemy pools, milestone encounters, card cadence, encounter speed, and post-King progression should be designed.
-
-Where older documentation or prototype data describes chapters as strict exact-wave scripts (for example, fixed wave-8 / wave-16 chapter endpoints or exact per-wave enemy lists), this document supersedes that interpretation. Existing exact-wave numbers may still be used as temporary tuning anchors or guaranteed milestone gates where explicitly justified, but they are not the default chapter model.
-
-This document does not freeze final balance values. Exact spawn weights, threat costs, HP values, card rewards, and encounter durations remain tunable unless explicitly finalized elsewhere.
-
-## Core pacing goal
-
-Dungeon Matcher is a mobile match-3 battler and should feel fast, varied, readable, and replayable.
-
-The run must not become a sequence of slow HP-sponge fights. Difficulty should increasingly come from enemy combinations, behavior, board pressure, prioritization, and interaction complexity rather than simply making every enemy take much longer to kill.
-
-A strong build and skilled play should sometimes allow the player to destroy a wave very quickly. The game should not artificially slow a successful player merely because a wave is meant to be difficult.
-
-The intended rhythm is frequent change: new compositions, new enemy families, new board-pressure patterns, card choices, milestone enemies, and occasional major bosses should keep the run from feeling repetitive.
-
-## Chapters are weighted progression eras, not scripts
-
-A chapter/era means:
-
-> Around this part of the run, these enemies become the dominant population and the narrative focus shifts toward this faction.
-
-A chapter does **not** mean:
-
-> Wave 1 is always enemy A, wave 2 is always enemy B, wave 3 is always enemy C.
-
-Ordinary encounters should be procedurally composed from overlapping weighted pools.
-
-New factions rise in weight as the run progresses. Previous factions decline in weight rather than disappearing immediately. Different runs should therefore produce different enemy sequences and mixed compositions while still communicating a clear escalation.
-
-Eligibility, weights, encounter constraints, category limits, active-slot limits, milestone rules, and threat budgets shape the composition without turning the run into a fixed encounter script.
-
-## Finalized opening escalation
-
-The opening world progression is:
-
-**LOCALS / VILLAGERS → GUARDS → KNIGHTS → ROYAL FORCES → THE KING → ADVENTURER GUILD → WIDER FANTASY WORLD**
-
-This replaces the older idea that Mercenaries and the Adventurer Guild must appear before the King.
-
-Mercenaries remain a valid faction, but they fit better after the King as part of the wider post-King world rather than as a mandatory pre-King chapter.
-
-### Why this order is locked
-
-The first arc should be easy to read narratively and should reach a major payoff quickly enough for a mobile run.
-
-1. **Locals / Villagers** — ordinary people investigate or stumble into the dungeon.
-2. **Guards** — the town responds because the locals cannot handle the threat.
-3. **Knights** — the Crown now takes the dungeon seriously.
-4. **Royal Forces** — the kingdom commits its elite military.
-5. **The King** — the first true major Boss and climax of the opening kingdom arc.
-6. **Adventurer Guild** — after the King fails, news spreads and professional monster-fighters begin entering the dungeon.
-7. **Wider fantasy world** — Guild parties, mercenaries, monster hunters, rival powers, famous adventurers, cultists, mages, bounty hunters, and other factions can expand the long-term roster.
-
-The King is therefore the boundary between two broad narrative phases:
-
-- **Act 1: the Kingdom reacts to the dungeon.**
-- **Act 2: the wider world discovers the dungeon.**
-
-## Overlapping faction pools
-
-Old enemies should remain relevant after their introductory era.
-
-When Guards become dominant, Locals should still appear.
-
-When Knights become dominant, Guards should remain common and Locals should become less frequent.
-
-When Royal Forces become dominant, Knights should remain common, Guards occasional, and Locals rare.
-
-After the King, the dungeon can contain almost anything introduced previously because the world has now become aware of it. Guards, Knights, villagers, failed expeditions, escorts, treasure seekers, lost townsfolk, and Guild parties can plausibly overlap.
-
-This serves both narrative logic and replayability. Existing enemies should not be discarded merely because a newer faction exists.
-
-### Example weighting philosophy
-
-These numbers are examples for tuning direction, not permanent balance values:
-
-| Current era | New/dominant faction | Previous faction | Older factions |
-| --- | ---: | ---: | ---: |
-| Guards | ~65% Guards | ~35% Locals | — |
-| Knights | ~60% Knights | ~30% Guards | ~10% Locals |
-| Royal Forces | ~55% Royals | ~30% Knights | ~10% Guards, ~5% Locals |
-| Guild | ~50% Guild | ~20% Royals | ~15% Knights, ~10% Guards, ~5% Locals |
-
-Weights should also shift gradually inside an era rather than changing abruptly at one exact wave.
-
-For example, early Royal progression might still be mostly Knights, while later Royal progression becomes mostly Royal units.
-
-## First-pass run-position anchors
-
-Approximate wave positions are useful for pacing and tuning, but they are **not exact chapter boundaries or deterministic scripts**.
-
-Balance v1 starts Locals at wave 1, Guards at 6, Knights at 11, and Royals at 19, retaining declining older-faction weight tails. Sixteen authored recipes (45% opportunity) mix with constrained random rolls. Milestones use the following once-per-run windows, starting at 35% and rising to certainty at the window end:
-
-| Leader | Window | Opening escorts |
-| --- | --- | --- |
-| Town Marshal | 7–8 | One local |
-| Siege Sergeant | 12–14 | One guard |
-| Knight Captain | 18–20 | Two knights |
-| The Minister | 24–26 | One royal |
-| King | 29–30 | Required Minister |
-
-The King/Minister pairing deliberately permits a Minister who appeared earlier as a milestone. Other named leaders do not respawn. Guild-era content is a future expansion; defeating the King formation continues the same endless run. Current Normal/Special factions remain eligible in weighted formations, with the existing named-leader exclusion and threat constraints. These are adjustable opening-arc anchors, not deterministic surrounding-wave scripts.
-
-## Milestone mini-bosses
-
-Town Marshal, Siege Sergeant, Knight Captain, and similar enemies should be treated as milestone encounters or strongly biased milestone opportunities rather than ordinary chapter endpoints that force every surrounding wave to be identical.
-
-The generator may strongly increase the chance of an appropriate mini-boss near the end of its faction-heavy era, or guarantee that the player eventually sees it within an acceptable window, while still allowing different surrounding encounters in different runs.
-
-The King is different because he is a major narrative Boss and progression gate. A guaranteed King encounter around the first major run milestone is appropriate.
-
-## The King target
-
-Balance v1 targets a King encounter around **wave 30**, before the opening arc becomes overlong. An eligible run reaches him in the wave-29–30 opportunity with the required Minister escort. The complete formation fits its threat budget. Current measured timings and remaining tuning risks are in [BALANCE_V1.md](BALANCE_V1.md).
-
-## Cards and run rhythm
-
-Cards appear after completed waves **2, 5, 9, 13, 17, 21, 25 and 28**, after the board settles and before the next encounter. An early choice starts build differentiation; later stretches contain three or four encounters between choices. Eight choices are available before the King. Afterward, card opportunities continue every four waves starting at completed wave 32; exhausted legal card pools skip safely through the existing draft path. A successful unusually strong run may clear faster; there is no artificial delay, death wave or hidden level gate.
-
-## Encounter duration philosophy
-
-Dungeon Matcher should avoid slow, repetitive HP-sponge combat.
-
-Approximate experience targets are:
-
-| Encounter type | Balance v1 target |
-| --- | --- |
-| Regular wave | 12–24 seconds |
-| Pressure formation | 20–35 seconds |
-| Mini-boss formation | 30–50 seconds |
-| King formation | 45–80 seconds |
-| Beginner attempt | 2–4 minutes |
-| Ordinary repeat attempt | 4–8 minutes |
-| Successful opening arc, including choices/transitions | 10–14 minutes |
-
-These are not hard timers and should not be enforced mechanically. They are pacing targets for balance review.
-
-A strong build may clear a wave far faster, including occasional ~10-second clears. That is desirable feedback for successful play.
-
-If encounters routinely exceed these ranges because enemies simply have too much HP, the preferred fix is not automatically to make everything deal more damage. Re-evaluate health, composition, ability cadence, threat density, and encounter structure.
-
-## Difficulty should come from composition, not only stats
-
-Increasing difficulty should prioritize:
-
-- more meaningful enemy combinations;
-- competing target priorities;
-- readable board pressure;
-- interacting abilities;
-- higher-risk compositions;
-- more demanding but understandable timing;
-- stronger use of previously learned mechanics.
-
-Numerical scaling still matters, but it should support these systems rather than replace them.
-
-Do not simultaneously inflate enemy HP, enemy count, action frequency, and board interference without accounting for the total encounter burden. That creates slow, oppressive waves rather than interesting difficulty.
-
-## Encounter threat budget direction
-
-Balance v1 implements a **threat budget** in addition to active-slot and category constraints, with bounded random retries and legal fallback compositions. Authored recipes also specify their complete formation cost and restrictions.
-
-Each enemy consumes a threat cost based on its pressure. A simple Normal enemy costs little; a high-impact Special or Mini-boss costs more. Current values are in [BALANCE_V1.md](BALANCE_V1.md).
-
-Illustrative only:
-
-- Farmer: threat 1
-- basic Guard: threat 2
-- Shield Knight: threat 3
-- dangerous caster: threat 4
-- Mini-boss: threat 7
-
-If an encounter has a budget of 7, several different valid compositions might be generated rather than always producing the same trio.
-
-The threat budget must account for **behavioral and mechanical pressure**, not just HP. A defensive unit, board manipulator, healer, or coordination enemy may deserve a higher cost even if its raw health is modest.
-
-This prevents the generator from accidentally creating combinations such as three high-HP defensive enemies that turn one mobile wave into a long grind.
-
-The threat budget should rise over the run, but complexity and dangerous synergies should consume budget too.
-
-Threat budgets complement the existing slot/category constraints and safe board-placement checks; no single cost value substitutes for validating mechanical combinations.
-
-## Replayability rules
-
-Named Mini-boss and Boss identities appear once per run as leaders. WaveController tracks successfully spawned leaders independently of wave number and applies exclusions to weighted selection and fallbacks. The King's required Minister escort is the explicit narrative exception; if that escort appeared in the immediately preceding encounter, the King pairing is deferred intact. Normal and Special enemies remain repeatable. Authored recipes avoid an immediate repeat, while the overlapping weighted pools provide variety between runs.
-
-Replayability is a core pacing requirement, not a secondary bonus.
-
-Ordinary runs should differ in:
-
-- exact enemy sequence;
-- mixed faction composition;
-- which older enemies reappear;
-- timing of some milestone encounters inside their allowed windows;
-- card/build choices;
-- resulting tactical priorities.
-
-The run should still communicate progression even when two players see different exact encounters.
-
-Avoid exact-wave override tables for ordinary chapter progression unless a specific narrative/tutorial/boss reason requires a guaranteed encounter.
-
-## Post-King world design
-
-### Implemented opening-arc teaching and replay support
-
-The revised implementation retains weighted eras, eight card choices and the King window at 29-30. Unseen mechanics receive gentler formations with at most two actors and a normal escort: Miner by 6, Crossbow by 10, Barricade by 11, Shield Knight by 16, Standard Bearer by 22 and Court Mage by 23. Their earlier opportunity windows remain weighted; these deadlines are teaching guarantees, not deterministic ordinary-wave scripts. Milestones take priority. The encounter immediately after a milestone prefers normal-enemy relief unless an introduction deadline is due. Combat interference must retain an immediate useful response (weakness damage, needed affinity healing, special use/creation or obstacle clearing), in addition to legal board motion. Interruptible marks require immediate board counterplay, and overlapping warnings receive separate minimum response windows.
-
-A run may span multiple visits through Suspend/Continue. Free practice and non-expiring No Supplies / Board Only challenges support voluntary replay after the King; no new currency, attendance timer or paid refill is introduced. The King ends the opening narrative milestone; combat continues until death or explicit End Run. The current roster supplies later waves while new zones are developed. Encounter-duration bands are tuning prompts, never minimum fight lengths; there is no mandatory early-loss timer.
-
-### Connected zone visits
-
-The initial dungeon still uses the weighted-era opening above. After an entire
-apex formation dies and rewards finish, the crystal selects another eligible
-zone. Dungeon, magical forest, Drowned Court and Ironvein Excavation are available; the crystal
-randomly chooses an eligible destination other than the current zone. Global
-wave depth continues across every handoff.
-
-Forest has six starter identities and seven approved additions, with eighteen
-local encounter anchors, varied escorts and relief bands. Court has fourteen
-identities and thirty-two weighted recipes. Returns to the dungeon use its existing weighted
-pool before a local-wave-18 King rematch. These are temporary content anchors,
-not a finalized deterministic script or evidence of ten-minute forest visits.
-Expanded behavior and encounter content must provide substantial visits without
-minimum waiting time, player-power scaling or HP padding. Travel preserves the
-board and resources and does not heal. See [the travel contract](Forest/CRYSTAL_TRAVEL.md).
-
-Ironvein uses 41 weighted recipes, saved teaching history and once-per-visit
-Machinist (8–10), Sentinel (22–24) and Grand Delver (28–30) opportunities. New
-mechanics get a gentle first formation, minibosses get normal-only relief, and
-all formations respect the mine's WaveSpawnProfile threat curve and shared slot/
-role caps. These are provisional content windows, not fixed ordinary scripts.
-The roughly 7–10+ minute visit remains a human-playtest target; no minimum time,
-HP padding or player-power correction enforces it. See
-[the mine implementation and evidence](IronveinExcavation/IMPLEMENTATION.md).
-
-After the King loses, the game should deliberately become broader rather than simply introducing a stronger linear replacement faction.
-
-The Adventurer Guild becomes the first major post-King pillar because professional parties now have a reason to investigate the dungeon.
-
-Guild content can introduce much broader combat roles such as:
-
-- Warrior / Fighter
-- Paladin
-- Rogue
-- Archer / Ranger
-- Mage
-- Cleric / Healer
-- Alchemist
-- Bard
-- Summoner
-- other specialized adventurer classes
-
-Older enemies remain eligible in mixed encounters.
-
-Mercenaries also fit naturally in this phase as hired specialists, bounty hunters, or competing expeditions rather than as a mandatory chapter before the King.
-
-Later content can expand into famous adventurers, rival kingdoms, monster hunters, cults, powerful mages, and other world factions without undermining the clean opening kingdom arc.
-
-## Design review checklist
-
-When adding or balancing a chapter, enemy pool, milestone, card cadence, or encounter generator, ask:
-
-1. Does this keep the match-3 layer fast and responsive?
-2. Does it create new decisions rather than only adding HP?
-3. Can different runs produce meaningfully different compositions?
-4. Do older enemies still have useful opportunities to reappear?
-5. Does the current faction feel dominant without requiring deterministic wave scripts?
-6. Is the total encounter burden appropriate for a mobile session?
-7. Does a difficult enemy combination consume enough encounter budget/capacity?
-8. Are cards or other build decisions arriving frequently enough to change how the run feels?
-9. Is the next major narrative payoff close enough that the run does not feel padded?
-10. Does the escalation still read clearly as Locals → Guards → Knights → Royal Forces → King → Guild / wider world?
-
-## Locked summary
-
-The finalized progression philosophy is:
-
-**weighted overlapping spawn eras + procedural encounter composition + milestone mini-bosses + an early card followed by longer play stretches + fast combat + a first major King boss around wave 30 + persistent eligibility for older factions + post-King expansion into the Adventurer Guild and wider fantasy world.**
-
-The finalized opening narrative order is:
-
-**LOCALS / VILLAGERS → GUARDS → KNIGHTS → ROYAL FORCES → THE KING → ADVENTURER GUILD → WIDER FANTASY WORLD.**
-
-Future progression work should preserve this structure unless the user explicitly approves a new direction.
+## Authority
+
+The user-approved Crystal Resonance redesign (2026-11-17) supersedes fixed-wave
+King, wave-based card cadence, local-wave apex travel and permanent eligibility
+for every old faction. Existing account/economy, combat, board, shield and move
+clock rules remain authoritative in their owners. Stage 09 implementation is
+untested; numbers below are provisional data, not measured results.
+
+## Progression loop
+
+Score is cumulative for the run and separate from Gold and Resonance. The local
+meter has capacity 100. Complete settled victories bank base charge: ordinary 5,
+pressure 6, miniboss 10, major boss 14 (highest original member category, once per
+formation; summons never add charge). Up to three once-per-encounter mastery
+points come from a deliberate 4+ match, intentional special setup/chain, and a
+targeted counter to a visible threat. Enemy/passive environment clears and
+automatic cascades cannot farm mastery. Provisional +1 feedback never commits
+charge; a loss discards it. Victory banking waits for board, enemy and move-clock
+settlement and successful save. Overflow above 100 is reported, not carried.
+
+At 12/40/70 charge, queue one choice from up to three legal cards. No modal opens
+mid-combat; crossed notches resolve sequentially before spawning/travel. The
+first 12-point draft of a run introduces Board/Ability/Survival when legal.
+The established catalog, stack limits, eligibility and once-per-run refinement
+remain. An exhausted legal catalog consumes the notch safely without granting
+an invented card. Saved offers and selections survive Continue exactly.
+
+Each visit draws and saves an independent 78–88 approach threshold. Crossing it
+schedules one current-zone capstone for the next encounter. The capstone may be
+an elite formation, miniboss or occasional major boss. Selection includes the
+entire formation, prerequisites, named history, escorts, depth and threat budget.
+No fixed-wave King, forced Dungeon trip or guaranteed major boss exists. At 100
+the crystal stays sealed until the whole selected formation (including summons)
+is defeated and rewards/cards settle. If that happens below 100, ordinary
+encounters finish charging the meter. The capstone cannot be skipped or rerolled
+by Suspend/Continue. Existing durable travel chooses another ready zone; it
+preserves score/resources/board and resets local charge only at atomic arrival.
+
+## Depth and coherent factions
+
+Global encounter depth continues through visits. Current tier starts are
+1/6/13/25/45; ordinary budgets 4/6/8/11/12. Three actor slots, at most two board
+disruptors and one support, apply to complete formations. Authored capstone
+budgets include escorts. Bounded procedural fallback uses eligible same-zone
+members and adjacent faction families, never unrelated Dungeon enemies.
+
+Dungeon goes locals → guards → knights → royals. Locals end after tier 1;
+knights/royals dominate later returns. King requires deep eligibility and prior
+royal mechanics, and retains the required Minister. This is narrative eligibility,
+not a promised wave or ordered campaign. Named leaders are once per run except
+the explicit required Minister escort. Other zones use their actual approved
+early/late rosters and escalating combinations. No Guild content exists yet.
+Late roster breadth outside Dungeon is limited; report repetition rather than
+inventing enemies, raising every HP pool or making early villagers eternal.
+
+Recent ordinary recipes (three) and capstone formations (four) are avoided when
+alternatives exist. Major bosses have a two-visit separation. Provisional kind
+weights are elite 6, miniboss 4, major 2 (3 at the deepest tier), rolled before
+escort variants. Repeatable same-zone elite reserves remain when unique leaders
+are exhausted. New mechanics get at most two actors and one unseen special;
+existing threat response/placement constraints still own fairness.
+
+## Pacing and skill
+
+Typical successful visits aim for **5–7 real minutes**, including card reading
+and transition. First card at 30–90 seconds is a hypothesis. These are measured
+targets, never clocks, mandatory delay, HP padding or player-power correction.
+Early failures are separate from successful visits. Strong players/builds may
+travel faster. Defensive legal play may take longer. Tune the smallest causal
+composition/cadence/reward parameter after actual Game-scene evidence.
+
+Difficulty should come from readable telegraphs, meaningful counters, coherent
+combinations, target priority and decisions. Avoid simultaneous inflation of HP,
+actor count, cadence and interference. Bot proxies may expose failures or skill
+differences; they cannot certify human enjoyment. Preserve source/seed/profile,
+accepted inputs, outcomes, pacing distributions and remaining uncertainties.
+See [validation protocol](CrystalResonance/VALIDATION_PLAN.md).
+
+## Chronological design history
+
+- September 2026: weighted Kingdom eras, named milestone windows and eight wave
+  drafts replaced exact chapter scripts; King around wave 30 was a tuning anchor.
+- October 2026: connected zones used local apex windows and atomic travel.
+- November 17, 2026: explicit user redesign replaces those live schedules with
+  Resonance cards/capstones and global-depth five-zone eligibility. Legacy
+  isolated fixtures retain their recorded contracts. Historical validation is
+  not evidence for the new director. Guild/wider-world content remains future.

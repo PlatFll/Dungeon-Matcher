@@ -1,3 +1,32 @@
+## Crystal Resonance redesign — 2026-11-17, implemented but untested
+
+This branch replaces live new-run fixed-wave progression with cumulative score
+and a separate 100-point per-zone Resonance meter. Full settled victories bank
+provisional 5/6/10/14 base charge plus at most three deliberate mastery points.
+Pending mastery is visible but cannot open a reward/trip. Cards queue at 12/40/70
+and resolve one at a time after combat settles. A saved 78–88 threshold schedules
+one current-zone elite/miniboss/occasional major capstone; 100 stays sealed until
+the full formation dies. No fixed King wave, mandatory Dungeon visit, mandatory
+major boss per visit, or capstone skip remains in the live path.
+
+All five zones use global-depth member eligibility and coherent recipe data.
+Dungeon locals expire after tier 1; royals/knights carry deep revisits. Other
+zones retain their existing roster and escalate combinations; no Guild or new
+late enemy art was invented. Existing atomic travel, hazard cleanup, combat,
+shield and economy owners are preserved. Score carries over; only a committed
+arrival resets local charge. See [the design](PROGRESSION_PACING.md),
+[ownership](CrystalResonance/IMPLEMENTATION.md),
+[migration](CrystalResonance/SAVE_MIGRATION.md), and
+[validation plan](CrystalResonance/VALIDATION_PLAN.md).
+
+**Stages 01–09: no compiler, Unity, test, validator, screenshot or playtest was
+run. All new behavior is UNVALIDATED.** Stage 10 must establish correctness,
+real Game-scene legal-input results, five phone layouts and tuning evidence.
+The typical successful 5–7 minute visit and first card at 30–90 seconds are
+hypotheses, not enforced timers or demonstrated results. Policy runs cannot
+certify human enjoyment. Previous validation counts below apply to their own
+historical sources, not this redesign.
+
 # Revised implementation status — 2026-09-15
 
 The user approved implementation of the revised design, retired Bardley's testing override and authorized merging after validation. Yesterday's Balance v1 PR #157 and documentation PR #152 were merged first. See [DESIGN_V2_IMPLEMENTATION.md](DESIGN_V2_IMPLEMENTATION.md) for the exact scope, balance decisions and executed evidence.
@@ -1135,16 +1164,7 @@ This isolated fixture loop remains separate from the temporary menu picker. Modu
 implemented for review. The original forest cue is explicitly temporary and needs
 listening approval. Full content must
 support substantial visits without forced waits, power scaling or HP padding.
-The launch plan is dungeon, magical forest and aquatic; crystal destinations
-are random among eligible regions. Dungeon, forest and Drowned Court connect after entire apex
-formations. Global depth continues. New live travel retains the unified move profile across all four zones; legacy
-saves and explicitly isolated forest tests keep their recorded profiles. Eighteen local starter encounters are temporary forest content anchors.
-Thornkeeper, Berserker, Bloomcaller, Snapvine, Drummer, Briar Archer and Ancient
-Treant C now have definition-selected kits and nine added test formations. Eight
-live formations extend the existing temporary bands. The seven selected blocker
-designs and dense-vine motion replace their earlier bindings. Aquatic implementation
-is in review; substantial-visit pacing still needs human evidence. See [the roster contract](Forest/EXPANDED_ROSTER.md) and
-[crystal travel](Forest/CRYSTAL_TRAVEL.md).
+The connected live zones are Dungeon, Magical Forest, Drowned Court, Ironvein Excavation and Frostwake Peaks. Travel follows 100 Resonance plus the completed same-zone capstone and settled drafts. Global depth and unified move clocks continue. Older isolated forest fixtures retain their loop. Existing roster/art contracts remain unchanged; substantial-visit pacing needs Stage 10 evidence.
 
 ## Bardley production balance (testing override retired)
 
@@ -1158,7 +1178,7 @@ Thaleah Fat is the approved global face (2026-09-29). The unmodified TTF and att
 
 ## Supported run endpoint
 
-The run continues after the **King formation**, using connected dungeon, forest and Drowned Court visits until the player dies or explicitly ends the attempt. The King clear is journaled once; rewards settle at the actual end of the run. Card opportunities continue at wave 32 and every four completed waves afterward. Further zones, Guild enemies and later bosses remain future content.
+The run spans all five existing zones until death or explicit End Run. King rewards remain exactly-once account events, but the King is optional. Each visit offers cards at Resonance 12/40/70 and travels after 100 plus full capstone completion. Guild content remains future work.
 
 ---
 
@@ -1382,42 +1402,18 @@ It is a guiding rule, not a requirement that every boss move must appear identic
 
 # 17. Current encounter generation and opening arc
 
-The current opening run uses a hybrid system:
+Live travel-enabled runs use the five-zone Crystal Resonance director inside
+WaveController. Global depth tiers begin at 1/6/13/25/45, provisionally. Normal
+whole-formation budgets are 4/6/8/11/12, with at most three actors, two disruptors
+and one support. Each ZoneDefinition declares eligible members, tier weights,
+coherent ordinary recipes and complete capstone budgets. New pressure mechanics
+receive small first formations. Named leaders are once per run; the King's
+required Minister is the explicit escort exception. No leader is guaranteed.
 
-- weighted overlapping faction eras;
-- constrained random compositions;
-- authored encounter recipes;
-- threat budgets;
-- active-slot/category limits;
-- once-per-run milestone leaders;
-- milestone windows instead of deterministic surrounding wave scripts.
-
-Current enemy slots: **3**.
-
-Current authored-recipe opportunity: **45%**, otherwise constrained weighted generation.
-
-Current faction anchors:
-
-- Locals from wave 1
-- Guards become available around wave 6
-- Knights around wave 11
-- Royals around wave 19
-
-Current milestone windows:
-
-| Leader | Window | Escort model |
-| --- | --- | --- |
-| Town Marshal | 7–8 | one local escort |
-| Siege Sergeant | 12–14 | one guard escort |
-| Knight Captain | 18–20 | two knight escorts |
-| The Minister | 24–26 | one royal escort |
-| King | 29–30 | required Minister |
-
-Mini-bosses should not routinely be isolated just because they are milestone enemies. The **whole formation** must be budgeted.
-
-Old factions decline gradually rather than disappearing immediately. Named leaders generally do not respawn in the same run; the King’s required Minister pairing is the current explicit narrative exception.
-
-Full recipes, enemy base stats and threat values: `Docs/BALANCE_V1.md`.
+The 78–88 saved approach threshold schedules the next current-zone formation,
+not a teleport. Repeatable elite reserves prevent exhausted named pools from
+softlocking travel. Local waves and old milestone windows remain historical
+fixture inputs only. Exact data and limitations: [matrix](CrystalResonance/ENCOUNTER_MATRIX.md).
 
 ---
 
@@ -1578,7 +1574,7 @@ Merged PR #157 supplied the first connected meta/balance layer, extended by the 
 - 16 authored encounter recipes;
 - threat-budget and disruption-cap rules;
 - escorted milestone formations;
-- King around waves 29–30;
+- historical King window around waves 29–30 (superseded by Crystal Resonance);
 - Crossbow/Captain shared falling-chain behavior;
 - obstacle/interference caps and legality checks;
 - Potion/Bomb Shop;
@@ -1737,4 +1733,4 @@ Before answering a broad project question or implementing a feature:
 
 If only a very short refresher is needed:
 
-**Dungeon Matcher** = portrait mobile pixel-art match-3 dungeon battler where the player is the dungeon monster defending an artifact. Match gems → exploit enemy weaknesses → heal via affinity → charge character abilities → create/chains specials → survive attacks and board interference scheduled by accepted moves → choose temporary run cards → defeat increasingly serious invaders. Permanent per-character levels bought with shared Gold raise the starting floor; account-wide Gem Mastery unlocks and optional Potion/Bomb consumables support progression. Runs use weighted overlapping factions plus authored formations, with miniboss escorts and the King around wave 30. Cards are the primary run-to-run differentiator. Skill must let strong players exceed the expected progression curve; permanent power creates soft walls, never hard gates. Visual identity is crisp dark-purple dungeon pixel art with charming monster characters, jewel gems and warm torch accents. Runs continue past the King with the current roster until death or explicit End Run. Balance v1 exists but still needs human tuning, especially Bardley vs RattleBones.
+**Dungeon Matcher** is a portrait pixel-art match-3 battler. Match gems, exploit weaknesses, counter visible threats, build temporary card synergies and charge character abilities. Global depth escalates coherent zone rosters. Per-visit Resonance rewards intentional mastery and full victories, offers cards at 12/40/70, then opens travel only after 100 and the same-zone capstone. Cumulative score is separate from Resonance and Gold. Runs continue through five zones until death or explicit End Run; major bosses are occasional. Permanent levels raise starting strength without hard gates or adaptive enemy correction. Human enjoyment and device performance remain separate acceptance work.

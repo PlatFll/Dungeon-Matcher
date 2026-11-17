@@ -209,15 +209,15 @@ New production runs use the unified experiment above. Explicit historical forest
 fixtures and existing saves retain their profile. The older compatibility rules
 are in [the legacy timing contract](Forest/FOUNDATION_CONTRACT.md).
 
-The launch plan is dungeon, magical forest and aquatic, developed one zone at a
-time. Crystal travel chooses randomly among eligible destinations other than the
-current zone; there is no player route selection. Dungeon, forest and Drowned Court are connected
-after their entire apex formations die and any card reward is chosen. The split
+All five implemented zones are connected. Crystal travel chooses randomly among
+ready destinations other than the current zone; there is no player route
+selection. Travel requires 100 Resonance, the complete selected same-zone
+capstone and all queued card rewards settled. The split
 pink crystal shakes, smoke covers gameplay, and the destination is restored under
 cover. Settings remains usable. The run, board, resources and global depth carry
 over; travel does not heal or end a run. See [the travel contract](Forest/CRYSTAL_TRAVEL.md).
-For the current testing build only, new runs may start in Dungeon, Magical
-Forest or Drowned Court through a temporary menu picker. This changes the starting location;
+For the current testing build only, new runs may start in any ready zone
+through a temporary menu picker. This changes the starting location;
 crystal destinations during the run still follow the existing random rule.
 Continue restores its saved location and Retry starts the current live zone.
 Remove this testing choice for the full game.
@@ -346,7 +346,7 @@ The established battle loop is:
 4. Once the accepted move has completely settled, enemies advance turn-counted pressure and may queue board interference. Enemy auto-attacks provide separate real-time pressure.
 5. Defeating the active enemies completes the wave; the next wave begins only after the old board resolution has finished.
 
-The approved Balance v1 loop awards a choice of one from up to three legal run cards after waves 2, 5, 9, 13, 17, 21, 25 and 28. Defeating the King formation completes the opening milestone and the same run continues until death or an explicit End Run. The current Normal/Special roster continues in weighted formations; Guild zones remain future content. Further card opportunities occur every four completed waves from wave 32. Completed waves are journaled during combat and pay shared Gold Coins once on death or an explicit End Run/Retry. Suspend preserves the same attempt; legacy journals without a combat snapshot settle once during recovery. Gold buys independent character levels or optional consumables; see [BALANCE_V1.md](BALANCE_V1.md) for editable numerical decisions and measured evidence.
+Live travel-enabled runs use cumulative score plus a separate 100-point per-zone Resonance meter. Full safe victories bank provisional base charge 5/6/10/14 plus up to three intentional mastery points. Cards queue at 12/40/70, one-of-three after safe combat settlement. A saved 78–88 threshold schedules a same-zone elite/miniboss/occasional major capstone. Travel requires 100 and its complete defeat, then all cards/rewards settle. No fixed King wave or forced Dungeon visit remains. Existing Gold settlement, levels and consumables are unchanged. See [PROGRESSION_PACING.md](PROGRESSION_PACING.md) and [implementation status](CrystalResonance/IMPLEMENTATION.md).
 
 ## Core match-3 design philosophy
 
@@ -454,7 +454,7 @@ behavior uses explicit mechanic capabilities. Draft eligibility may depend on
 stable player and active-ability IDs, but never display names. Card drafting has
 its own deterministic random stream and cannot perturb encounter generation.
 
-Balance v1 authorizes independent gold-purchased character levels (cap 20), shared one-time mastery unlocks, optional equipped consumables, hybrid authored/weighted formations, escorted milestones and a King opportunity at waves 29–30. No XP, hidden level gate or adaptive player-power scaling is used. Permanent levels set starting strength; run cards reset each run. The economy and pacing targets remain adjustable balance data in [BALANCE_V1.md](BALANCE_V1.md). Post-King content remains future work.
+Independent gold-purchased character levels (cap 20), shared mastery unlocks and optional consumables remain. Global-depth five-zone recipes and occasional eligible capstones replace the old guaranteed King window. No XP, hidden level gate, timer, HP padding or adaptive player-power scaling is introduced. Temporary cards reset only at run end; the 5–7 minute typical successful visit is a Stage 10 measurement target.
 
 ## Presentation and pixel-art readability principles
 
@@ -646,7 +646,7 @@ These are finalized gameplay rules. Timing and presentation numeric values not l
 
 Chapters are weighted enemy spawn eras, not fixed wave-by-wave encounter scripts. Ordinary compositions vary across runs. Eligibility thresholds, declining older-enemy weights, rising Crown weights, category caps and two-to-three active slots govern selection. The same encounter seed and generation calls produce the same compositions. This does not promise replay determinism for the entire board or combat timeline.
 
-Balance v1 uses overlapping pools: Locals from wave 1, Guards from 6, Knights from 11, Royals from 19, and King around 29–30. Older enemies retain a declining weight tail. Marshal, Sergeant, Captain and Minister appear once in escorted opportunity windows. Sixteen editable recipes alternate teaching, practice, combinations and breathing room with constrained random formations. Whole-formation threat and disruption/support limits apply. See [BALANCE_V1.md](BALANCE_V1.md) for the complete schedule.
+Crystal Resonance uses depth tiers 1/6/13/25/45 with zone-specific pools, coherent recipes and complete formation budgets. Dungeon locals expire after tier 1; later visits use guards/knights/royals as eligible. Named leaders remain once per run except the required Minister escort. No named leader must appear in every run. Existing enemy identities/kits and summon ownership are preserved. See [encounter matrix](CrystalResonance/ENCOUNTER_MATRIX.md).
 
 Sword Knight reuses `Enemy_Knight` and its stable ID. He is the Normal Crown melee baseline, with no signature ability. Spear Knight remains Normal with his existing two-hit normal attack. Shield Knight is Special. Knight Captain is a Mini-boss who owns professional formation coordination, distinct from Marshal summoning/interception and Sergeant fortification/siege pressure.
 
@@ -668,7 +668,7 @@ Gold is shared; each character level is independent. Shop purchases and equip st
 
 The main menu provides Play/Continue, Characters, Shop, Gem Mastery, free practice and post-King challenges. Its gear exposes the same persistent Music, SFX, Vibration and Reduced Motion preferences as in-run settings. Settings provides Resume, Suspend to Menu, confirmed End Run/Retry, independent persistent music/SFX/vibration controls and reduced motion. Suspend preserves this attempt without offline combat time. End Run pays completed waves once; unfinished waves pay nothing. Continued attempts retain their original character, level, mastery, build, charges, board, enemies and pending accepted actions. Account upgrades and supply changes are unavailable during an active run. Legacy journals without combat snapshots settle once on load.
 
-The first draft after wave 2 offers legal Board, Ability and Survival directions. Later drafts remain weighted. One free Refine per run replaces an offer with eligible unoffered cards in the selected theme; exhausted themes spend nothing. Offers, choices and refinement survive Continue. Eight choices remain the control cadence. Practice copies the current profile, provides three free charges of each supply, and never writes gold, stock, records or progression to the real profile. No Supplies and Board Only unlock after the King, use separate best-wave/win records and pay normal rewards. Board Only also disables ability activation and Ability-theme cards.
+The first 12-Resonance draft introduces legal Board, Ability and Survival directions. Every visit queues choices at 12/40/70. One free Refine per run replaces the current offer with eligible unoffered cards; exhausted themes spend nothing. Exact offers, selections and refinement survive Continue. Practice remains disposable and never writes real account rewards. No Supplies and Board Only retain their existing King unlock/account records; an optional King clear still unlocks them. Board Only disables abilities and Ability cards.
 
 Tap portraits for paused inspection of HP/shield, weakness, seconds until attack, move counters, owned restrictions and warning deadlines. Guide also explains board rules, ability refunds and the current build. Brief first-exposure tips point to inspection and can be revisited through Guide. Bomb requires footprint preview then confirmation; obstacle exceptions are explained before spending. Death shows the ending wave, actual last damage, scrollable build, earned rewards, supply replacement value, remaining owned stock, Retry and Change Build. Supply replacement value is informational, never an extra deduction. All runtime text and numbers use centrally configured Thaleah bitmap typography, sized to their containers. Sprites and the font atlas retain Point filtering. Healing feedback is green, shield gains bright blue, normal damage white and poison dark green; floating numbers show actual amounts and fade above actors.
 

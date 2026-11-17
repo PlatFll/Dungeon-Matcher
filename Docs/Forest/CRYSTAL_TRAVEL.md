@@ -2,8 +2,7 @@
 
 The user approved connecting dungeon and forest travel on 2026-10-03. New normal
 runs default to the dungeon. The temporary testing picker can instead start a
-fresh live run in the magical forest, with seconds effects and move-based
-abilities. Continue retains its saved zone; travel destinations remain random.
+fresh live run in any ready zone, with the unified accepted-move profile. Continue retains its saved zone; travel destinations remain random.
 Isolated Editor forest fixtures retain their separate
 save and loop; they do not opt into live travel automatically.
 Older forest checkpoints without travel metadata also retain that isolated loop;
@@ -11,24 +10,25 @@ schema zero distinguishes Unity's default nested JSON object from a travel save.
 
 ## Encounters and destinations
 
-The initial kingdom progression and King window are unchanged. A zone specifies
-its apex enemy explicitly. Travel begins only after the entire formation dies,
-the board and enemy cleanup settle, rewards are recorded, and any card choice
-finishes. Boss rank alone cannot trigger travel.
+Live travel-enabled runs use Crystal Resonance in all five regions: Dungeon,
+Magical Forest, Drowned Court, Ironvein Excavation and Frostwake Peaks. A complete
+selected current-zone capstone and 100 banked charge are both required. Board,
+enemy actions, move clock, victory journal and sequential card drafts must settle.
+Legacy apex/local-wave triggers are bypassed for these runs. No forced King,
+Dungeon visit or major-boss-per-visit requirement remains.
 
-The destination stream is separate from encounter and card randomness. It picks
-uniformly among eligible regions other than the current one and saves the result
-before the presentation begins. With the two available regions this alternates
-dungeon and forest. Aquatic is unavailable. No destination choice is shown.
+Global depth continues. The saved destination stream picks uniformly among ready
+regions other than the current one. It is separate from encounters, cards,
+board refill and capstone selection. The destination is saved before cover.
+Depth/member/formation data lives in ZoneDefinition; see
+[the current contract](../PROGRESSION_PACING.md). Existing fixtures without live
+travel retain their historical loops. No travel heal, run cap or minimum timer.
 
-Global wave/depth continues. Forest currently uses eighteen local encounters from
-authored bands, with Warden checkpoints at 8 and 14 and a Matriarch formation at
-18. The bands vary escorts and include relief encounters. Dungeon returns use
-the existing depth-appropriate weighted pool, then a King rematch at local wave
-18 with one of three escort formations. The initial kingdom is not compressed.
-These are starter-content tuning anchors, not proof of a complete ten-minute
-visit or a finalized full forest roster. There is no waiting timer, player-power
-scaling, HP padding, run cap or automatic heal.
+Nested Resonance schema 1 carries score and receipt cursor through arrival; only
+the detached destination snapshot resets local charge/notches/capstone/timers.
+Failed checkpoint writes preserve the source. A legacy already-pending trip is
+honored once. Other old live saves start local Resonance at zero and preserve
+combat/clock/resources; see [migration](../CrystalResonance/SAVE_MIGRATION.md).
 
 ## Durable handoff
 
@@ -56,7 +56,7 @@ the existing recovery UI while the durable destination checkpoint is preserved.
 HP, shield, energy, cards, supply counts/cooldowns, ordinary gems, player-created
 specials and their board identities carry over. Environmental vines persist
 through ordinary waves and perk choices. The atomic destination checkpoint
-removes source-zone vines, roots and crumbling holes before reveal; it fills
+removes source-zone vines, roots, frost, mine/court hazards, warnings and crumbling holes before reveal; it fills
 reopened cells with safe ordinary gems from the refill stream. That stream is
 otherwise unchanged. Existing producer cleanup removes old enemies and their
 owned hazards. Failed writes leave the source board untouched.
