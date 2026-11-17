@@ -631,7 +631,7 @@ These are finalized gameplay rules. Timing and presentation numeric values not l
 
 ### Siege Sergeant
 
-- Chapter 2 Mini-boss with a Spear/Crossbow Guard escort, appearing once in a weighted wave-12–14 opportunity.
+- Guard-era Mini-boss with a Spear/Crossbow Guard escort. Live Crystal Resonance runs select him through eligible current-zone capstone data, once per run; the old wave-12–14 opportunity is historical.
 - Balance v1 base stats: 240 HP, one 5-damage hit every 11 seconds, normal stagger, and 10 damage for a failed hammer warning. Shared global HP/damage scaling applies.
 - One special opportunity every 4 valid completed player moves, locked against difficulty shortening. Start with Hold the Line, then alternate successful fortification and hammer-warning casts. At the six-block cap, use the hammer instead of banking an instant replacement wall. With no legal targets, retry after another valid move rather than consume a no-op cast or loop every frame.
 - **Hold the Line:** place three one-hit wooden blockades as a contiguous horizontal or vertical run. Enumerate legal full runs and choose one randomly. If none fits, choose three distinct random legal cells; if capacity or available cells permit fewer, place only that many. Cap at six blocks owned by this Sergeant. Holes, existing blockades, pinned gems and special gems are excluded. Other barricade enemies retain their existing placement semantics.

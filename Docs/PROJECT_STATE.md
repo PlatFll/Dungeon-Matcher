@@ -1,31 +1,40 @@
-## Crystal Resonance redesign — 2026-11-17, implemented but untested
+## Crystal Resonance redesign — 2026-11-17, unmerged review candidate
 
-This branch replaces live new-run fixed-wave progression with cumulative score
-and a separate 100-point per-zone Resonance meter. Full settled victories bank
-provisional 5/6/10/14 base charge plus at most three deliberate mastery points.
-Pending mastery is visible but cannot open a reward/trip. Cards queue at 12/40/70
-and resolve one at a time after combat settles. A saved 78–88 threshold schedules
-one current-zone elite/miniboss/occasional major capstone; 100 stays sealed until
-the full formation dies. No fixed King wave, mandatory Dungeon visit, mandatory
-major boss per visit, or capstone skip remains in the live path.
+The actual Game scene now uses cumulative score and a separate 100-point
+per-zone Resonance meter. Settled full victories bank 4/5/10/14 ordinary,
+pressure, miniboss and major charge; Drowned Court explicitly retains 5/6
+ordinary/pressure awards after the global reduction increased sampled attrition.
+Up to three intentional mastery points remain provisional until victory. Cards
+queue at 12/40/70 and resolve after safe settlement. A persisted 78–88 threshold
+schedules a same-zone capstone; 100 remains sealed until its complete formation
+and all rewards settle. No fixed King, forced Dungeon visit or guaranteed major
+boss each visit remains in the live path.
 
-All five zones use global-depth member eligibility and coherent recipe data.
-Dungeon locals expire after tier 1; royals/knights carry deep revisits. Other
-zones retain their existing roster and escalate combinations; no Guild or new
-late enemy art was invented. Existing atomic travel, hazard cleanup, combat,
-shield and economy owners are preserved. Score carries over; only a committed
-arrival resets local charge. See [the design](PROGRESSION_PACING.md),
+All five zones use global-depth eligibility and coherent formation data. Dungeon
+locals expire after tier 1; deep visits use eligible knights/royals. Existing
+board, combat, HP/shield, character powers, economy and durable travel owners are
+preserved. Score carries across travel; local charge resets only at committed
+arrival. Approved source sprites are unchanged; the new HUD composition and
+native particles remain visual candidates for user review.
+
+Stages 01–09 honored the complete testing embargo. Stage 10 passed the required
+local Unity compiler validator, 272 full balance checks and 40 focused checks
+after final tuning. Windows and Android development builds succeeded. Actual x1
+Game-scene policy runs, native accepted-input journals, five-zone/phone captures,
+save/travel tests and separate deep diagnostics are recorded in the
+[final evidence report](Validation/CRYSTAL_RESONANCE_V1_FINAL.md).
+
+**Balance acceptance remains provisional.** Some typical visits remain below
+5–7 minutes; Court/deep attrition, short capstones and mechanics exposure need
+human review. The target is not enforced by timers, HP padding or power-based
+compensation. Natural losses and source-separated samples remain in the report;
+earlier-source coverage is not presented as final-tuning coverage. No physical
+phone was attached, and policy runs cannot certify human enjoyment.
+
+This focused branch is for one unmerged PR. No merge is authorized. See
 [ownership](CrystalResonance/IMPLEMENTATION.md),
-[migration](CrystalResonance/SAVE_MIGRATION.md), and
-[validation plan](CrystalResonance/VALIDATION_PLAN.md).
-
-**Stages 01–09: no compiler, Unity, test, validator, screenshot or playtest was
-run. All new behavior is UNVALIDATED.** Stage 10 must establish correctness,
-real Game-scene legal-input results, five phone layouts and tuning evidence.
-The typical successful 5–7 minute visit and first card at 30–90 seconds are
-hypotheses, not enforced timers or demonstrated results. Policy runs cannot
-certify human enjoyment. Previous validation counts below apply to their own
-historical sources, not this redesign.
+[migration](CrystalResonance/SAVE_MIGRATION.md),
+[design](PROGRESSION_PACING.md), and [tuning decision](Validation/CrystalResonanceEvidence/tuning-decision.json).
 
 # Revised implementation status — 2026-09-15
 
@@ -1247,9 +1256,7 @@ Current implementation:
 - Card eligibility can depend on character, ability, permanent shared unlocks, equipped mastery and meaningful mechanic availability.
 - Cost/energy cards are eligible for production Bardley at cost 80. Generic eligibility still excludes dead energy choices in isolated low-cost test fixtures.
 
-Current card milestones after completed waves:
-
-**2, 5, 9, 13, 17, 21, 25, 28**
+Current card milestones are **12, 40 and 70 committed Resonance per visit**, each after safe combat settlement. The old wave sequence 2/5/9/13/17/21/25/28 is historical and is not used by live travel-enabled runs.
 
 Desired build identities include:
 

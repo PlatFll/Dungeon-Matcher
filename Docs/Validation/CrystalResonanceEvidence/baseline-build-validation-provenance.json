@@ -1,0 +1,45 @@
+{
+  "base": "fac476ad15300f68cae48ee68385323782667439",
+  "unity": "6000.3.19f1",
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "validatorExitCode": 0,
+  "validatorLogName": "DungeonMatcher-UnityValidation-682cae59-6592-468d-a15b-9b842ad2dc0a.log",
+  "validatorLogSha256": "78cfec1d40fee2b20bdfb89865c67bcc88f4fa32d2fbe6d8f1f3c7aaafe1aec8",
+  "recordedExecution": "Pipeline 17351: Windows build, mandatory validator, then matrix3; each exit checked.",
+  "buildCommands": [
+    "Unity.exe -batchmode -quit -projectPath PROJECT -buildTarget Android -executeMethod CrystalResonanceBuild.Android -logFile LOG",
+    "Unity.exe -batchmode -quit -projectPath PROJECT -buildTarget Win64 -executeMethod CrystalResonanceBuild.Windows -logFile LOG"
+  ],
+  "sourceManifest": "source-manifest.json",
+  "manifestSha256": "70b9a16eaa7db7501fef8ae467d1122fc1e90cb429362a397f557a901ccfc05c",
+  "currentRawByteDifferences": [],
+  "builds": [
+    {
+      "report": "Android.json",
+      "result": "Succeeded",
+      "errors": 0,
+      "warnings": 7,
+      "reportSha256": "1acc0550bc0bd5ce981355f97d86b3a255a8a602c008d300128d3b1c596d65a8",
+      "artifactFileBytes": 86693163,
+      "artifactSha256": "3cde2549b26d5f9446d3da9c25c66e02c5a654a59014065031b89333b1bd7d47",
+      "deviceTested": false
+    },
+    {
+      "report": "StandaloneWindows64.json",
+      "result": "Succeeded",
+      "errors": 0,
+      "warnings": 6,
+      "reportSha256": "68b004f796ddce6b2c3de050f45cfc4dc57e35c32c3869af80633ad7cc131ab6",
+      "artifactFileBytes": 667136,
+      "artifactSha256": "1377ae95b8d09103b4f304eab912fd826afcc94ef4daf3a3dfd350014b78562e",
+      "deviceTested": false
+    }
+  ],
+  "physicalDevice": "adb devices -l returned no devices",
+  "sourceNotes": [
+    "272/37 executed against batch030133 runtime source before HUD contrast and Editor coffer changes.",
+    "Expanded39 before one explicit Farmer fixture correction; failing test then rerun and passed.",
+    "Both builds and latest validator follow that correction; batch062332 captures matching code/data.",
+    "Unity-generated settings/meta/prefab reserialization is excluded from feature commits. Raw source differences after cleanup must be reviewed, not ignored."
+  ]
+}

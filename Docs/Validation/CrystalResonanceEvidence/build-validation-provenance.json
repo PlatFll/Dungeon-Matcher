@@ -1,0 +1,51 @@
+{
+  "base": "fac476ad15300f68cae48ee68385323782667439",
+  "unity": "6000.3.19f1",
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "validatorExitCode": 0,
+  "validatorLogName": "DungeonMatcher-UnityValidation-a3fa965e-8d06-42ee-bf95-fc9ecd443a4a.log",
+  "validatorLogSha256": "154eaee8e3c8a4eb76a3a9648ab68c2f278e14cd1e47213b487035b409301567",
+  "recordedExecution": "Final build/validator exits are checked separately; this record binds their files to the selected played-source manifest.",
+  "buildCommands": [
+    "Unity.exe -batchmode -quit -projectPath PROJECT -buildTarget Android -executeMethod CrystalResonanceBuild.Android -logFile LOG",
+    "Unity.exe -batchmode -quit -projectPath PROJECT -buildTarget Win64 -executeMethod CrystalResonanceBuild.Windows -logFile LOG"
+  ],
+  "sourceManifest": "source-manifest.json",
+  "manifestSha256": "dd64a7f6d54aa949d6f226e249c9e8bfe4ab0fff38a27e19b26606c614a56034",
+  "currentRawByteDifferences": [
+    {
+      "path": "ProjectSettings/TimeManager.asset",
+      "expected": "3396f52fdc16d445024e01d7a2d99db6f0a37569d1d73c0302e9ffb857d90287",
+      "actual": "6c320ee59ae1e55aa74558f012437f63cb9de59d69fda62fc321c4f1971c52cb"
+    }
+  ],
+  "builds": [
+    {
+      "report": "Android.json",
+      "result": "Succeeded",
+      "errors": 0,
+      "warnings": 7,
+      "reportSha256": "a24b5dd41543849c91a7adcae192ebf72121691c66498038526066a2bd946f4d",
+      "artifactFileBytes": 89848421,
+      "artifactSha256": "2363beda4f58388ed803e8128b51ebbf258558ef11021dfbc2f23ec2f4e199a7",
+      "deviceTested": false
+    },
+    {
+      "report": "StandaloneWindows64.json",
+      "result": "Succeeded",
+      "errors": 0,
+      "warnings": 6,
+      "reportSha256": "f06be7a47ad0fa39933e4a7736a9db0b6f28ab3b9a9c0035edd49089338eb58d",
+      "artifactFileBytes": 667136,
+      "artifactSha256": "1377ae95b8d09103b4f304eab912fd826afcc94ef4daf3a3dfd350014b78562e",
+      "deviceTested": false
+    }
+  ],
+  "physicalDevice": "adb devices -l returned no devices",
+  "sourceNotes": [
+    "Baseline272/37 executed against batch030133 runtime source before HUD contrast and Editor coffer changes.",
+    "Expanded39 before one explicit Farmer fixture correction; failing test then rerun and passed.",
+    "Final build reports and validator follow the final retained tuning decision; candidate regression reruns are separately recorded in the test ledger.",
+    "Unity-generated settings/meta/prefab reserialization is excluded from feature commits. Raw source differences after cleanup must be reviewed, not ignored."
+  ]
+}

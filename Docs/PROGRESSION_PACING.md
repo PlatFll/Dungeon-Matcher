@@ -5,15 +5,21 @@
 The user-approved Crystal Resonance redesign (2026-11-17) supersedes fixed-wave
 King, wave-based card cadence, local-wave apex travel and permanent eligibility
 for every old faction. Existing account/economy, combat, board, shield and move
-clock rules remain authoritative in their owners. Stage 09 implementation is
-untested; numbers below are provisional data, not measured results.
+clock rules remain authoritative in their owners. Stage 10 objective checks and
+real Game-scene policy samples have executed; see the
+[validation report](Validation/CRYSTAL_RESONANCE_V1_FINAL.md). Award values remain
+provisional. Measured timing varies by zone/build and does not establish that
+every zone meets the 5–7 minute target.
 
 ## Progression loop
 
 Score is cumulative for the run and separate from Gold and Resonance. The local
-meter has capacity 100. Complete settled victories bank base charge: ordinary 5,
-pressure 6, miniboss 10, major boss 14 (highest original member category, once per
-formation; summons never add charge). Up to three once-per-encounter mastery
+meter has capacity 100. Complete settled victories bank base charge: ordinary 4,
+pressure 5, miniboss 10, major boss 14. Drowned Court explicitly overrides
+ordinary/pressure to 5/6 after the global reduction increased sampled attrition.
+These are fixed zone data, never derived from player power, oxygen or elapsed
+time. The highest original member category banks once per formation; summons
+never add charge. Up to three once-per-encounter mastery
 points come from a deliberate 4+ match, intentional special setup/chain, and a
 targeted counter to a visible threat. Enemy/passive environment clears and
 automatic cascades cannot farm mastery. Provisional +1 feedback never commits

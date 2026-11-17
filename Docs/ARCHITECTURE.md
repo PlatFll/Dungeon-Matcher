@@ -1139,4 +1139,4 @@ and energy/gameplay authority are unchanged.
 
 ## Crystal Resonance (2026-11-17)
 
-Live progression now follows [the authoritative ownership record](CrystalResonance/IMPLEMENTATION.md). WaveController remains the sole spawn owner; BoardController remains the sole resolver. RunSession owns score/local Resonance and receipt persistence; RunUpgradeCoordinator consumes sequential safe notches; existing atomic travel resets only the committed destination copy. Stage 09 source is untested; see the validation plan for pending gates.
+Live progression now follows [the authoritative ownership record](CrystalResonance/IMPLEMENTATION.md). WaveController remains the sole spawn owner; BoardController remains the sole resolver. RunSession owns score/local Resonance and receipt persistence; RunUpgradeCoordinator consumes sequential safe notches; existing atomic travel resets only the committed destination copy. Stage 10 compilation, affected regressions and real Game input samples have executed; see [the evidence and acceptance limits](Validation/CRYSTAL_RESONANCE_V1_FINAL.md).

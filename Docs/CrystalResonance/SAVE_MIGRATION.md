@@ -27,5 +27,8 @@ water, ice, mine-stone/drill and crumble state are reset by their established
 fields; ordinary gem IDs and player specials survive. Zone holes use saved refill
 randomness. No broad status purge or player heal was added.
 
-Source implementation only. Save/reload, failed-write, card and transition
-regressions are deferred to Stage 10; none have been executed at this checkpoint.
+Stage 10 exercised legacy/future schemas, receipt cursors, saved capstones,
+ordered draft queues, pending-swap recovery, settled full-meter travel and failed
+atomic arrival. The exact executed cases and limits are recorded in
+[the validation report](../Validation/CRYSTAL_RESONANCE_V1_FINAL.md).
+This is not a claim that every interruption or device storage failure is covered.

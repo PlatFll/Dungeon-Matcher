@@ -1,0 +1,190 @@
+{
+  "batch": ".utmp\\CrystalResonance\\Playtest\\20261117-030133",
+  "kind": "offline recorded-evidence audit; NOT replay execution",
+  "finishedCases": 15,
+  "incompleteCases": [],
+  "failures": [],
+  "cases": [
+    {
+      "case": "pass2-novice-dungeon-L1-8201",
+      "nativeBoundaries": 179,
+      "nativeActions": {
+        "swap": 164,
+        "card": 5,
+        "ability": 7,
+        "potion": 3
+      },
+      "journalSha256": "110aaf1e55206eb16f419bb38b6e6d4aafd5dc57acb2f850c9c919aad97f27e2",
+      "failures": []
+    },
+    {
+      "case": "pass2-novice-frostwake-L1-9404",
+      "nativeBoundaries": 181,
+      "nativeActions": {
+        "swap": 163,
+        "card": 6,
+        "ability": 9,
+        "potion": 3
+      },
+      "journalSha256": "15262e18a71577634640f77a4d8218ffe0355d0d635b9886629be650dd5252b8",
+      "failures": []
+    },
+    {
+      "case": "pass2-policy2-dungeon_attender-L5-9401",
+      "nativeBoundaries": 282,
+      "nativeActions": {
+        "swap": 247,
+        "card": 10,
+        "ability": 22,
+        "potion": 3
+      },
+      "journalSha256": "b50fa52f719cbd1af3d441a738c3647c3dafb6eed5eb9991467ce322cc523c9b",
+      "failures": []
+    },
+    {
+      "case": "pass2-policy3-bardley-L5-9402",
+      "nativeBoundaries": 352,
+      "nativeActions": {
+        "swap": 277,
+        "ability": 60,
+        "card": 12,
+        "potion": 3
+      },
+      "journalSha256": "6cc2a5617322f7d0eb841db823a1f140f3eb655bdf8a1ed1c7aa9fc17e06b5ae",
+      "failures": []
+    },
+    {
+      "case": "pass2-policy4-kobold_gunner-L5-9403",
+      "nativeBoundaries": 327,
+      "nativeActions": {
+        "swap": 263,
+        "card": 9,
+        "ability": 49,
+        "bomb": 3,
+        "potion": 3
+      },
+      "journalSha256": "0cba0ed96437ba52f6caf5170b902c3c813fa6ace4c735fe80cc3a6b74a2a7d7",
+      "failures": []
+    },
+    {
+      "case": "pass2-typical-drowned-court-L1-9203",
+      "nativeBoundaries": 72,
+      "nativeActions": {
+        "swap": 64,
+        "potion": 3,
+        "card": 2,
+        "ability": 3
+      },
+      "journalSha256": "b40c4efe2f3bd78d3d5d14d0d35077747d75300e734bb413ac6f5cd8533a5acb",
+      "failures": []
+    },
+    {
+      "case": "pass2-typical-drowned-court-L5-8303",
+      "nativeBoundaries": 228,
+      "nativeActions": {
+        "swap": 203,
+        "card": 9,
+        "ability": 13,
+        "potion": 3
+      },
+      "journalSha256": "b48da4a7a1da2a67bd28b8b284a7481d268a7294fdf12d79c4f9f2dfd5f07d10",
+      "failures": []
+    },
+    {
+      "case": "pass2-typical-dungeon-L1-9201",
+      "nativeBoundaries": 135,
+      "nativeActions": {
+        "swap": 118,
+        "card": 6,
+        "ability": 9,
+        "potion": 2
+      },
+      "journalSha256": "1128b177647d25ccc2fe393a99407c8b7c4d04c1ba482946a93ae070519ebbaf",
+      "failures": []
+    },
+    {
+      "case": "pass2-typical-dungeon-L5-8301",
+      "nativeBoundaries": 230,
+      "nativeActions": {
+        "swap": 205,
+        "card": 9,
+        "ability": 13,
+        "potion": 3
+      },
+      "journalSha256": "066764b943198a7529bacfd17866ed8337821090007b23474156ce43b09d748b",
+      "failures": []
+    },
+    {
+      "case": "pass2-typical-frostwake-peaks-L1-9205",
+      "nativeBoundaries": 230,
+      "nativeActions": {
+        "swap": 210,
+        "card": 6,
+        "ability": 12,
+        "potion": 2
+      },
+      "journalSha256": "5811cc7d47219df410cac45be888eca5871ba5b5efb678f54e1017d5ce76fbd0",
+      "failures": []
+    },
+    {
+      "case": "pass2-typical-frostwake-peaks-L5-8305",
+      "nativeBoundaries": 263,
+      "nativeActions": {
+        "swap": 235,
+        "card": 9,
+        "ability": 17,
+        "potion": 2
+      },
+      "journalSha256": "7f779a41aa341fe19d6fdd27862561959b9ad4a3cd8f47739a6b0e153d0462f6",
+      "failures": []
+    },
+    {
+      "case": "pass2-typical-ironvein-excavation-L1-9204",
+      "nativeBoundaries": 162,
+      "nativeActions": {
+        "swap": 144,
+        "card": 5,
+        "ability": 10,
+        "potion": 3
+      },
+      "journalSha256": "9486b521b52782ddba185746853a5749c5d01f41a4ecae4d656a499cbd08d30b",
+      "failures": []
+    },
+    {
+      "case": "pass2-typical-ironvein-excavation-L5-8304",
+      "nativeBoundaries": 216,
+      "nativeActions": {
+        "swap": 193,
+        "card": 8,
+        "ability": 12,
+        "potion": 3
+      },
+      "journalSha256": "1eafb24edc7c8ad32f07a36a509c664abaa2b88dad24c251162b8cd51ecbfacb",
+      "failures": []
+    },
+    {
+      "case": "pass2-typical-magical-forest-L1-9202",
+      "nativeBoundaries": 139,
+      "nativeActions": {
+        "swap": 126,
+        "ability": 6,
+        "card": 4,
+        "potion": 3
+      },
+      "journalSha256": "a1b2faac0e6ee1c7594685faa115a24d6db5f3e0a9c693b38d56027a75bd907f",
+      "failures": []
+    },
+    {
+      "case": "pass2-typical-magical-forest-L5-8302",
+      "nativeBoundaries": 262,
+      "nativeActions": {
+        "swap": 232,
+        "card": 9,
+        "ability": 18,
+        "potion": 3
+      },
+      "journalSha256": "144a30535ee45d482d51368a30d4c9ba63e48c71caccdbdf52d8525fe5cd70ac",
+      "failures": []
+    }
+  ]
+}

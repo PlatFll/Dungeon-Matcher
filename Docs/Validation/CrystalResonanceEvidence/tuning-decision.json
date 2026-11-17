@@ -1,0 +1,397 @@
+{
+  "status": "retained",
+  "variant": "shared4/5 with explicit Court5/6",
+  "summary": "Retain shared ordinary/pressure awards at 4/5, with an explicit fixed Drowned Court override restoring 5/6. Miniboss/major awards stay 10/14 everywhere. This is a provisional balance choice, not certification of the 5\u20137 minute target.\n\nThe uniform 4/5 experiment completed 9/13 cases; all four defeats were Court, including a previously successful level-5 seed 8303 which defeated its capstone but died at 93 charge. Restoring Court 5/6 completed that same typical case in 268.8s. The final source received fresh compilation, 272 balance checks and 40 focused checks before its actual-input follow-up.\n\nIn the uniform 4/5 trial, typical level-1 Dungeon median was 298.8s across two seeds, Frostwake 293.0s across two, Mine 313.2s across one, and Forest 229.7s across one. The fresh final-source Forest case completed in 269.1s. Forest and Court therefore remain below the target in these typical-policy observations. These small samples support only provisional cadence decisions. Defensive Forest first-card timing reached 116.3s, so another indiscriminate reward reduction could worsen that delay. No timers, artificial delay, HP padding, hazard nerf or power compensation was introduced. Court level-1/deep attrition and very brief high-power capstones remain unresolved acceptance questions.",
+  "comparisonArtifact": "20261117-073354-comparison.md",
+  "finalComparisonArtifact": "20261117-084917-comparison.md",
+  "baselineAwards": [
+    5,
+    6,
+    10,
+    14
+  ],
+  "uniformTrialAwards": [
+    4,
+    5,
+    10,
+    14
+  ],
+  "finalSharedAwards": [
+    4,
+    5,
+    10,
+    14
+  ],
+  "finalCourtAwards": [
+    5,
+    6,
+    10,
+    14
+  ],
+  "finalExactSourceBatch": "20261117-084917",
+  "finalExactSourceCoverage": [
+    {
+      "zone": "drowned-court",
+      "completed": 2,
+      "defeats": 1,
+      "seeds": [
+        8303,
+        71875,
+        90347
+      ],
+      "policies": [
+        0,
+        1,
+        4
+      ]
+    },
+    {
+      "zone": "magical-forest",
+      "completed": 1,
+      "defeats": 0,
+      "seeds": [
+        71876
+      ],
+      "policies": [
+        1
+      ]
+    }
+  ],
+  "unchangedNonCourtAwardSupportingBatch": "20261117-073354",
+  "provenanceCaveat": "Earlier batches retain separate source hashes and outcomes. The final exact-source batch is not claimed to repeat every earlier natural deep run or six completed visits per zone. Non-Court awards/rosters are unchanged from the uniform trial; Court awards restore the baseline.",
+  "finalCases": [
+    {
+      "label": "final-aggressive-court-L5-90347",
+      "zone": "drowned-court",
+      "seed": 90347,
+      "character": "kobold_gunner",
+      "level": 5,
+      "policy": 4,
+      "outcome": "visit limit",
+      "completedVisits": 1,
+      "wallSeconds": 272.86199951171875
+    },
+    {
+      "label": "final-new-typical-forest-L1-71876",
+      "zone": "magical-forest",
+      "seed": 71876,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "outcome": "visit limit",
+      "completedVisits": 1,
+      "wallSeconds": 269.11724853515625
+    },
+    {
+      "label": "final-novice-court-L1-71875",
+      "zone": "drowned-court",
+      "seed": 71875,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 0,
+      "outcome": "defeat",
+      "completedVisits": 0,
+      "wallSeconds": 261.8326416015625
+    },
+    {
+      "label": "final-typical-court-L5-8303",
+      "zone": "drowned-court",
+      "seed": 8303,
+      "character": "skeleton",
+      "level": 5,
+      "policy": 1,
+      "outcome": "visit limit",
+      "completedVisits": 1,
+      "wallSeconds": 268.8025817871094
+    }
+  ],
+  "allBatchCoverage": {
+    "20261117-030133": [
+      {
+        "zone": "drowned-court",
+        "completed": 1,
+        "defeats": 2,
+        "seeds": [
+          8303,
+          9203,
+          9401
+        ],
+        "policies": [
+          1,
+          2
+        ]
+      },
+      {
+        "zone": "dungeon",
+        "completed": 10,
+        "defeats": 3,
+        "seeds": [
+          8201,
+          8301,
+          8302,
+          8304,
+          8305,
+          9201,
+          9202,
+          9204,
+          9205,
+          9401,
+          9402,
+          9403,
+          9404
+        ],
+        "policies": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "zone": "frostwake-peaks",
+        "completed": 7,
+        "defeats": 2,
+        "seeds": [
+          8201,
+          8301,
+          8303,
+          8305,
+          9201,
+          9205,
+          9401,
+          9402,
+          9404
+        ],
+        "policies": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "zone": "ironvein-excavation",
+        "completed": 5,
+        "defeats": 1,
+        "seeds": [
+          8301,
+          8302,
+          8303,
+          8304,
+          9204,
+          9403
+        ],
+        "policies": [
+          1,
+          4
+        ]
+      },
+      {
+        "zone": "magical-forest",
+        "completed": 6,
+        "defeats": 2,
+        "seeds": [
+          8302,
+          8304,
+          8305,
+          9202,
+          9401,
+          9402,
+          9403
+        ],
+        "policies": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "20261117-062332": [
+      {
+        "zone": "drowned-court",
+        "completed": 4,
+        "defeats": 1,
+        "seeds": [
+          8303,
+          9203,
+          40117,
+          61729,
+          90347
+        ],
+        "policies": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "zone": "dungeon",
+        "completed": 6,
+        "defeats": 0,
+        "seeds": [
+          8201,
+          100719
+        ],
+        "policies": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "zone": "frostwake-peaks",
+        "completed": 0,
+        "defeats": 1,
+        "seeds": [
+          100719
+        ],
+        "policies": [
+          2
+        ]
+      },
+      {
+        "zone": "ironvein-excavation",
+        "completed": 2,
+        "defeats": 0,
+        "seeds": [
+          71871,
+          100719
+        ],
+        "policies": [
+          1,
+          2
+        ]
+      },
+      {
+        "zone": "magical-forest",
+        "completed": 1,
+        "defeats": 0,
+        "seeds": [
+          100719
+        ],
+        "policies": [
+          2
+        ]
+      }
+    ],
+    "20261117-073354": [
+      {
+        "zone": "drowned-court",
+        "completed": 0,
+        "defeats": 4,
+        "seeds": [
+          8303,
+          9203,
+          71874,
+          71875
+        ],
+        "policies": [
+          0,
+          1
+        ]
+      },
+      {
+        "zone": "dungeon",
+        "completed": 4,
+        "defeats": 0,
+        "seeds": [
+          8201,
+          9201,
+          71872
+        ],
+        "policies": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "zone": "frostwake-peaks",
+        "completed": 2,
+        "defeats": 0,
+        "seeds": [
+          9205,
+          71873
+        ],
+        "policies": [
+          1
+        ]
+      },
+      {
+        "zone": "ironvein-excavation",
+        "completed": 1,
+        "defeats": 0,
+        "seeds": [
+          9204
+        ],
+        "policies": [
+          1
+        ]
+      },
+      {
+        "zone": "magical-forest",
+        "completed": 2,
+        "defeats": 0,
+        "seeds": [
+          9202,
+          9402
+        ],
+        "policies": [
+          1,
+          3
+        ]
+      }
+    ],
+    "20261117-084917": [
+      {
+        "zone": "drowned-court",
+        "completed": 2,
+        "defeats": 1,
+        "seeds": [
+          8303,
+          71875,
+          90347
+        ],
+        "policies": [
+          0,
+          1,
+          4
+        ]
+      },
+      {
+        "zone": "magical-forest",
+        "completed": 1,
+        "defeats": 0,
+        "seeds": [
+          71876
+        ],
+        "policies": [
+          1
+        ]
+      }
+    ]
+  },
+  "unchanged": [
+    "enemy HP and damage",
+    "player stats",
+    "oxygen/flood rules",
+    "response windows",
+    "card delays",
+    "12/40/70 milestones",
+    "78\u201388 threshold",
+    "mastery cap3",
+    "enemy pool/recipe data",
+    "capstone and travel gates"
+  ],
+  "remainingIssues": [
+    "5\u20137 minute typical target is not demonstrated across all zones/profiles; small same-source samples cannot establish population pacing.",
+    "Court level1 and natural deep attrition need human counterplay review; no unavailable-response proof is claimed.",
+    "Strong profiles can erase reserve capstones before mechanics execute; do not pad HP or punish strong builds solely for speed.",
+    "Some first drafts fall outside30\u201390 seconds, especially slow defensive Forest.",
+    "Final exact-source coverage is narrower than historical correctness/deep evidence; no physical device or human enjoyment approval."
+  ]
+}

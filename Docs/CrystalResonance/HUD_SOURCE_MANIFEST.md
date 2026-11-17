@@ -1,8 +1,10 @@
 # HUD candidate source lineage
 
-Stage 07 source inspection only; no rendered screenshot, audio playback or Unity
-test has run. Candidate overlays are native UI rectangles/pooled pixels authored
-in CrystalResonanceHud.cs; no raster replacement or image generation occurred.
+Stage 07 authored source without running Unity. Stage 10 subsequently captured
+the actual Game HUD in five zones and five portrait/safe-area profiles, with
+separate charge/motion cases. Candidate overlays are native UI rectangles/pooled
+pixels in CrystalResonanceHud.cs; no raster replacement or generation occurred.
+See the validation report for exact coverage; listening/device approval remains open.
 
 | Source | SHA-256 | Read-only inspection |
 |---|---|---|
@@ -18,5 +20,8 @@ Native pixels use integer snapped placement and the crystal's fitted source pixe
 scale; the existing UIPixelParticle has optional bounded-reuse/no-resample mode.
 Its default consumers retain their prior behavior. Original audio cue resources
 are reused through CombatAudioController's volume/cooldown/voice/preferences flow.
-The new layout and sparkle overlays require final in-game visual/listening review.
+Actual Frostwake captures exposed low contrast; an opaque native dark backing
+now keeps milestone/capstone feedback readable over snow. Automated bounds and
+pause checks pass; visual evidence remains a candidate for user acceptance.
+Audio routing was tested, but human listening approval has not been obtained.
 No new approved sprite or new golden reference is claimed.

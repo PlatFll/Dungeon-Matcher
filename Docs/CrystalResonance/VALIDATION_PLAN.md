@@ -1,7 +1,9 @@
-# Stage 10 validation plan — not yet executed
+# Stage 10 validation protocol
 
-Stages 01–09: no compilation, Unity launch, tests, validation commands,
-screenshots or playtests. This file is preparation, not evidence.
+Stages 01–09 had no compilation, Unity launch, tests, validation commands,
+screenshots or playtests. Stage 10 execution is recorded separately in
+[CRYSTAL_RESONANCE_V1_FINAL](../Validation/CRYSTAL_RESONANCE_V1_FINAL.md).
+This protocol is the intended coverage, not a substitute for that evidence.
 
 1. Run Tools/Validate-Unity.ps1, preserve exact command/source commit and log.
 2. Run CrystalResonanceStateTests/DirectorTests plus affected board attribution,

@@ -1,6 +1,9 @@
-# Crystal Resonance ownership — Stage 09 source record
+# Crystal Resonance ownership
 
-Status: implemented, **NOT RUN**. This describes source, not runtime evidence.
+Implemented in stages 01–09; objective Stage 10 checks and Game-scene samples
+have executed. This file describes ownership. See the separate
+[validation report](../Validation/CRYSTAL_RESONANCE_V1_FINAL.md) for measured
+results, sample limitations and remaining acceptance work.
 
 | Responsibility | Existing/new owner and boundary |
 |---|---|
@@ -36,6 +39,16 @@ applying, consumes the head notch, saves the resulting build and releases only
 when the queue is empty. Existing atomic action recovery handles interruption.
 PortalReady itself holds spawning until ZoneTravelController claims its gate,
 preventing a next-wave race. Existing account victory remains a separate owner.
+
+## Fixed zone cadence
+
+CrystalResonanceTuning.BaseCharge resolves category awards for the existing
+banking owner. Shared ordinary/pressure awards are 4/5; optional zero-default
+ZoneDefinition overrides inherit those values. Court serializes 5/6 explicitly.
+Miniboss/major awards stay 10/14 everywhere. This changes neither enemy stats nor
+the per-visit gates and never reads player level, power, elapsed time or hazards.
+The whole original formation still contributes only its highest category once.
+See the final tuning decision for actual before/after runs and remaining gaps.
 
 ## RNG and saved selection
 
@@ -73,9 +86,10 @@ assets hold added serialized profiles with existing enemy GUIDs. No second board
 resolver or travel implementation was introduced. The approved split-pink gem,
 silver plaque and existing audio clips are reused; see HUD_SOURCE_MANIFEST.md.
 
-Visual spacing, fair compositions, runtime save races, real pacing and policy
-strength differences are **unverified**, not inferred from source review. All
-mandatory validation and five-zone/phone checks remain Stage 10 work. Existing
-enemy scripts and replay tests may assume historical schedules; change fixtures
-only when their intent truly concerns an isolated old contract, never hide a
-new live-path failure. See VALIDATION_PLAN.md and SAVE_MIGRATION.md.
+The required compiler validator, affected regressions, save/travel edge tests,
+five-zone portrait layouts and real Game input samples have executed in Stage 10.
+These checks do not establish universal fairness or human enjoyment. Pacing and
+natural deep coverage remain bounded by the recorded samples; see the validation
+report. Historical schedule-dependent diagnostic fixtures now explicitly choose
+the actors relevant to their contract, without weakening production rules.
+See VALIDATION_PLAN.md and SAVE_MIGRATION.md.
