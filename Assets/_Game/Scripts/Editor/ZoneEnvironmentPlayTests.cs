@@ -150,7 +150,12 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator EnvironmentTravelSnapshotRestoresZoneHolesWithoutChangingSourceOnWriteFailure()
     {
-        yield return LaunchDungeonHazards();var board=Run.Board;
+        // This fixture isolates zone-owned holes. A randomly chosen builder can
+        // leave a legitimate, enemy-owned barricade that travel must preserve.
+        var farmer=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_Farmer.asset");
+        using(ResonanceEncounterFixture.OnNextGame(new[]{farmer},"Zone-hole travel fixture"))
+            yield return LaunchDungeonHazards();
+        var board=Run.Board;
         for(int i=0;i<5;i++) yield return EnvironmentMove();
         Run.Travel.enabled=false;Set(Run.Waves,"advanceWavesAutomatically",false);Run.Travel.State.stage=1;Run.Travel.State.destination="magical-forest";
         KillEncounter();yield return Until(()=>!Run.Waves.IsWaveActive && Run.Continuation.CanCapture,"source settles");

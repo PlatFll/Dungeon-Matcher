@@ -72,7 +72,10 @@ def main():
                     warningWithoutImmediateMarkedMatch=sum(int(d['warnings'])>0 and d['counterAvailable']!='True' for d in decisions),
                     visibleCounterOpportunities=sum(d['counterAvailable']=='True' for d in decisions),visibleCountersChosen=sum(d['counterChosen']=='True' for d in decisions),
                     lowAirOpportunities=sum(int(d['air']) in (0,1,2) and d['bubbleAvailable']=='True' for d in decisions),
-                    lowAirResponses=sum(int(d['air']) in (0,1,2) and d['bubbleChosen']=='True' for d in decisions))
+                    lowAirResponses=sum(int(d['air']) in (0,1,2) and d['bubbleChosen']=='True' for d in decisions),
+                    lowAirCofferOpportunities=sum(int(d['air']) in (0,1,2) and d.get('cofferAvailable')=='True' for d in decisions),
+                    lowAirCofferResponses=sum(int(d['air']) in (0,1,2) and d.get('cofferChosen')=='True' for d in decisions),
+                    cofferObservationRecorded=any('cofferAvailable' in d for d in decisions))
                 if not record['completed'] and result['outcome']=='visit limit' and record['acceptedSwaps']==0 and record['bankedEncounters']==0:
                     record['outcome']='arrival only; next visit not attempted'
                 record['startTier']=sum(record['startDepth']>=cut for cut in (6,13,25,45))
@@ -117,7 +120,8 @@ def main():
     columns=['batch','label','seed','character','level','policy','zone','visit','completed','outcome','startDepth','endDepth',
              'wallSeconds','firstCardSeconds','bankedEncounters','acceptedSwaps','acceptedAbilities','acceptedPotions','acceptedBombs',
              'health','playerDamage','baseCharge','masteryCharge','overflow','enemySpecials','distinctRecipes','immediateRecipeRepeats',
-             'visibleCounterOpportunities','visibleCountersChosen','lowAirOpportunities','lowAirResponses']
+             'visibleCounterOpportunities','visibleCountersChosen','lowAirOpportunities','lowAirResponses',
+             'cofferObservationRecorded','lowAirCofferOpportunities','lowAirCofferResponses']
     with (args.output/'visits.csv').open('w',encoding='utf-8',newline='') as stream:
         writer=csv.DictWriter(stream,fieldnames=columns,extrasaction='ignore');writer.writeheader();writer.writerows(visits)
     lines=['# Actual Unity proxy measurements','', '| Zone | Policy | Level | Completed | Seeds | Median seconds | p25 / p75 | Min / max |','|---|---|---|---:|---:|---:|---|---|']

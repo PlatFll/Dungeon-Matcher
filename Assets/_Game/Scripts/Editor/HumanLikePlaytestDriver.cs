@@ -42,10 +42,15 @@ public sealed class HumanLikePlaytestDriver
         if(Time.time<nextAction)return;
         if(run.Player.CurrentHealth<run.Player.MaximumHealth*(Style==ResonancePlaystyle.Defensive?.65f:.35f) && run.TryUsePotion())
         { ActionLog?.Invoke("potion");waitForSettledBoard=true;return; }
+        var options=run.Board.GetImmediateResponses();
+        // The visible coffer is stored oxygen, not an unrelated obstacle. Prefer
+        // a known AIR response to a non-targeted ability when already suffocating.
+        bool urgentAir=Style!=ResonancePlaystyle.Novice && run.Board.IsFlooded && run.Board.Aquatic.air<=2 &&
+            options.Any(o=>HitsAirCoffer(run,o) || o.Clears.Any(g=>g!=null && run.Board.Aquatic.bubbles.Contains(g.BoardIdentity)));
         var ability=run.Player.GetComponent<PlayerAbilityController>();
-        if(ability!=null && ability.CanActivate && (Style!=ResonancePlaystyle.Novice || decisions.NextDouble()<.4) && ability.TryActivate())
+        if(!urgentAir && ability!=null && ability.CanActivate && (Style!=ResonancePlaystyle.Novice || decisions.NextDouble()<.4) && ability.TryActivate())
         { Abilities++;ActionLog?.Invoke("ability");waitForSettledBoard=true;return; }
-        var options=run.Board.GetImmediateResponses(); if(options.Count==0)return;
+        if(options.Count==0)return;
         var warnings=run.Board.CaptureContinuation(run.Waves.ContinuationOwnerSlot).warnings;
         var ranked=options.Select(o=>new KeyValuePair<BoardController.ResponseOption,float>(o,Score(run,o,warnings)))
             .OrderByDescending(p=>p.Value).ToArray();
@@ -60,11 +65,19 @@ public sealed class HumanLikePlaytestDriver
         bool Bubbles(BoardController.ResponseOption option)=>run.Board.IsFlooded && option.Clears.Any(g=>g!=null && run.Board.Aquatic.bubbles.Contains(g.BoardIdentity));
         ActionLog?.Invoke("decision:legal="+options.Count+";warnings="+warnings.Count+
             ";counterAvailable="+options.Any(Answers)+";counterChosen="+Answers(chosen)+
-            ";air="+(run.Board.IsFlooded?run.Board.Aquatic.air:-1)+";bubbleAvailable="+options.Any(Bubbles)+";bubbleChosen="+Bubbles(chosen));
+            ";air="+(run.Board.IsFlooded?run.Board.Aquatic.air:-1)+";bubbleAvailable="+options.Any(Bubbles)+";bubbleChosen="+Bubbles(chosen)+
+            ";cofferAvailable="+options.Any(o=>HitsAirCoffer(run,o))+";cofferChosen="+HitsAirCoffer(run,chosen)+
+            ";cofferCharges="+(run.Board.Aquatic?.coffer?.charges??0));
         int x=chosen.Source.Column,y=chosen.Source.Row,tx=chosen.Target.Column,ty=chosen.Target.Row;
         // The same TrySwap command and BeforePlayerSwap journal as touch input; no direct board writes.
         run.Board.ReplayPlayerSwap(x,y,tx,ty); Swaps++;
         ActionLog?.Invoke("swap:"+x+","+y+">"+tx+","+ty);waitForSettledBoard=true;
+    }
+    private static bool HitsAirCoffer(RunSession run,BoardController.ResponseOption option)
+    {
+        var coffer=run.Board.IsFlooded?run.Board.Aquatic.coffer:null;
+        return coffer!=null && coffer.charges>0 && option.Clears.Any(g=>g!=null &&
+            Mathf.Abs(option.FinalCell(g).x-coffer.x)+Mathf.Abs(option.FinalCell(g).y-coffer.y)==1);
     }
     private float Delay()
     {
@@ -87,6 +100,9 @@ public sealed class HumanLikePlaytestDriver
                     Mathf.Abs(x-option.Target.Column)+Mathf.Abs(y-option.Target.Row)<=2)value+=6;
             }
         if(option.BreaksObstacle)value+=novice?1:12;
+        if(HitsAirCoffer(run,option))
+            value+=run.Board.Aquatic.air<=2?(novice?8:80):
+                run.Board.Aquatic.bubbles.Count==0?(novice?4:50):(defensive?18:10);
         foreach(var gem in option.Clears)
         {
             if(gem==null)continue;

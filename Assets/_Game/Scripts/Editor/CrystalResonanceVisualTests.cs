@@ -54,7 +54,29 @@ public sealed partial class ForestFoundationPlayTests
                 foreach(int charge in new[]{80,100})
                 {
                     state.charge=charge;Run.Resonance.Restore(state);yield return new WaitForSeconds(.5f);
+                    if(charge==100)
+                    {
+                        var feedback=hud.transform.Find("ResonanceFeedback").GetComponent<TMPro.TMP_Text>();
+                        var backing=hud.transform.Find("ResonanceFeedbackBacking").GetComponent<Image>();
+                        feedback.ForceMeshUpdate();Assert.IsTrue(backing.enabled);
+                        Assert.That(backing.color.a,Is.EqualTo(1));Assert.That(backing.color.maxColorComponent,Is.LessThan(.1f));
+                        var corners=new Vector3[4];backing.rectTransform.GetWorldCorners(corners);
+                        Vector3 minimum=feedback.rectTransform.TransformPoint(feedback.textBounds.min);
+                        Vector3 maximum=feedback.rectTransform.TransformPoint(feedback.textBounds.max);
+                        Assert.That(minimum.x,Is.GreaterThanOrEqualTo(corners[0].x));
+                        Assert.That(maximum.x,Is.LessThanOrEqualTo(corners[2].x));
+                        Assert.That(minimum.y,Is.GreaterThanOrEqualTo(corners[0].y));
+                        Assert.That(maximum.y,Is.LessThanOrEqualTo(corners[2].y));
+                    }
                     ScreenCapture.CaptureScreenshot(Path.Combine(dir,zone+"-"+charge+".png"));yield return null;yield return null;
+                }
+                if(zone=="frostwake-peaks")
+                {
+                    typeof(CrystalResonanceHud).GetMethod("Approaching",BindingFlags.Instance|BindingFlags.NonPublic).Invoke(hud,null);
+                    yield return null;yield return null;
+                    var feedback=hud.transform.Find("ResonanceFeedback").GetComponent<TMPro.TMP_Text>();
+                    feedback.ForceMeshUpdate();Assert.IsFalse(feedback.isTextOverflowing,"long approach message fits native steps");
+                    ScreenCapture.CaptureScreenshot(Path.Combine(dir,"frostwake-approach-contrast.png"));yield return null;yield return null;
                 }
                 if(zone=="dungeon")
                 {

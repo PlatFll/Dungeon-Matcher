@@ -9,7 +9,7 @@ public sealed class CrystalResonanceHud : MonoBehaviour
     private CrystalResonanceRuntime resonance;
     private RectTransform root, track;
     private TMP_Text score, caption, notice;
-    private Image committed, pending, crystal, highlight;
+    private Image committed, pending, crystal, highlight, noticeBacking;
     private readonly Image[] notches = new Image[3];
     private readonly UIPixelParticle[] motes = new UIPixelParticle[28];
     private Vector2 priorSize;
@@ -33,6 +33,7 @@ public sealed class CrystalResonanceHud : MonoBehaviour
         highlight = Picture("ChargeGlint", root, Light);
         for (int i = 0; i < notches.Length; i++) notches[i] = Picture("CardNotch" + resonance.Tuning.milestones[i], track, Gold);
         caption = GameUi.Label("ResonanceCaption", root, "", Vector2.zero, Vector2.zero, 16);
+        noticeBacking = Picture("ResonanceFeedbackBacking", root, new Color32(10,13,17,255));
         notice = GameUi.Label("ResonanceFeedback", root, "", Vector2.zero, Vector2.zero, 16);
         caption.textWrappingMode = notice.textWrappingMode = TextWrappingModes.NoWrap;
         for (int i = 0; i < motes.Length; i++)
@@ -79,7 +80,7 @@ public sealed class CrystalResonanceHud : MonoBehaviour
             Position(notches[i].rectTransform,x, -pixel, pixel,6*pixel);
         }
         Position(highlight.rectTransform,27*s,29*s,2*pixel,pixel);
-        DrawFill();
+        DrawFill(); DrawNoticeBacking();
     }
     private void RefreshScore()
     {
@@ -111,9 +112,23 @@ public sealed class CrystalResonanceHud : MonoBehaviour
             notches[i].color=(resonance.State.claimedMask&(1<<i))!=0 ? Light :
                 (resonance.State.triggeredMask&(1<<i))!=0 ? Pale : Gold;
     }
+    private void DrawNoticeBacking()
+    {
+        if (noticeBacking == null || notice == null) return;
+        noticeBacking.enabled = !string.IsNullOrEmpty(notice.text);
+        if (!noticeBacking.enabled) return;
+        PixelTextFitter.ApplyNativeMenu(notice,16*root.rect.height/66f);
+        float width = Mathf.Min(root.rect.width, Mathf.Ceil((notice.preferredWidth + 6*pixel)/pixel)*pixel);
+        float x = Mathf.Round((root.rect.width-width)*.5f/pixel)*pixel;
+        float top = -notice.rectTransform.anchoredPosition.y;
+        float y = Mathf.Floor((top-pixel)/pixel)*pixel;
+        float bottom = Mathf.Ceil((top+notice.rectTransform.rect.height+pixel)/pixel)*pixel;
+        Position(noticeBacking.rectTransform,x,y,width,bottom-y);
+    }
     private void Mastery(ResonanceMastery earned)
     {
         notice.text="+1 RESONANCE  (PENDING)"; notice.color=Light; noticeTime=1.4f; flash=.3f;
+        DrawNoticeBacking();
         CombatAudioController.PlayMechanism(CombatSoundCue.ResonanceMastery);
         if (PresentationPreferences.ReducedMotion) return;
         var mote=FreeMote(); if (mote==null) return;
@@ -127,6 +142,7 @@ public sealed class CrystalResonanceHud : MonoBehaviour
     private void Approaching()
     {
         notice.text="A POWERFUL PRESENCE APPROACHES";notice.color=Pale;noticeTime=2.2f;flash=.55f;
+        DrawNoticeBacking();
         CombatAudioController.PlayMechanism(CombatSoundCue.CapstoneApproach);
     }
     public void Tick()
@@ -139,7 +155,7 @@ public sealed class CrystalResonanceHud : MonoBehaviour
         float dt=Time.deltaTime;
         if (dt<=0 || RunSession.Current?.Continuation?.IsRestoring==true) return;
         phase+=dt; flash=Mathf.Max(0,flash-dt);noticeTime=Mathf.Max(0,noticeTime-dt);
-        if (noticeTime==0 && notice.text!=idleNotice) notice.text=idleNotice;
+        if (noticeTime==0 && notice.text!=idleNotice) { notice.text=idleNotice; DrawNoticeBacking(); }
         pending.color=reduced || (int)(phase*4)%2==0 ? Pale : Light;
         highlight.enabled=resonance.Committed>=70 || flash>0;
         highlight.color=resonance.Committed>=100 || flash>0 ? Light : Pale;
