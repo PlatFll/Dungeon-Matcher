@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public sealed class RunUpgradeCoordinator :
+public sealed partial class RunUpgradeCoordinator :
     MonoBehaviour,
     IWaveProgressionGate
 {
@@ -65,6 +65,7 @@ public sealed class RunUpgradeCoordinator :
     public void RestoreContinuation(RunCombatSnapshot saved)
     {
         CleanupIntermission(); refinementUsed=saved.refinementUsed;
+        heldResonanceNotch = saved.resonance?.version == 1 ? saved.resonance.activeNotch : 0;
         if(saved.waveActive || saved.draftWave!=saved.wave || saved.draft.Count==0) return;
         var choices=new List<RunUpgradeDefinition>();
         foreach(string id in saved.draft)
@@ -83,8 +84,10 @@ public sealed class RunUpgradeCoordinator :
     {
         var run = RunSession.Current;
         if (run == null) return true;
-        return AccountProgression.Current.StoreDraft(run.RunId, heldCompletedWave,
+        bool stored = AccountProgression.Current.StoreDraft(run.RunId, heldCompletedWave,
             choices.ConvertAll(card => card.UpgradeId), refined);
+        // The notch and exact offer share a durable checkpoint before UI opens.
+        return stored && (heldResonanceNotch == 0 || run.Continuation?.SaveNow() == true);
     }
 
     public static bool ShouldOfferUpgradeAfterWave(int completedWave)
@@ -134,6 +137,7 @@ public sealed class RunUpgradeCoordinator :
 
     private void HandleWaveCompleted(int completedWave)
     {
+        if (Resonance?.Enabled == true) return; // This run uses committed notches only.
         if (!isActiveAndEnabled ||
             !ShouldOfferUpgradeAfterWave(completedWave) ||
             isHoldingProgression ||
@@ -171,7 +175,10 @@ public sealed class RunUpgradeCoordinator :
     private IEnumerator OpenChoiceAfterBoardSettles(int completedWave)
     {
         object session = activeChoiceSession;
-        while (boardController != null && boardController.IsBusy)
+        yield return null; // Keep coroutine ownership valid even when already settled.
+        while ((boardController != null && boardController.IsBusy) ||
+               RunSession.Current?.MoveClock?.IsBlockingWaveProgression == true ||
+               (waveController != null && !waveController.CanCaptureContinuation))
         {
             if (!IsCurrentIntermission(session, completedWave))
             {
@@ -208,14 +215,10 @@ public sealed class RunUpgradeCoordinator :
             yield break;
         }
 
-        List<RunUpgradeDefinition> choices =
-            UpgradeDraftGenerator.Generate(
-                runtime.Catalog,
-                runtime,
-                playerActor,
-                completedWave,
-                runtime.GetDraftRandom()
-            );
+        List<RunUpgradeDefinition> choices = SavedResonanceOffer() ??
+            UpgradeDraftGenerator.Generate(runtime.Catalog, runtime, playerActor,
+                completedWave, runtime.GetDraftRandom(), UpgradeDraftGenerator.DefaultChoiceCount,
+                Resonance?.Enabled == true ? Resonance.State.visit == 0 && heldResonanceNotch == 12 : (bool?)null);
 
         if (choices.Count == 0)
         {
@@ -224,7 +227,9 @@ public sealed class RunUpgradeCoordinator :
                 $"{completedWave}. Wave progression will continue.",
                 this
             );
+            if (heldResonanceNotch != 0) Resonance?.CompleteDraft(heldResonanceNotch);
             ReleaseProgression();
+            RunSession.Current?.Continuation?.SaveNow();
             openRoutine = null;
             yield break;
         }
@@ -301,6 +306,7 @@ public sealed class RunUpgradeCoordinator :
         // different, newer choice's gate when the old application returns.
         if (ReferenceEquals(activeChoiceSession, session))
         {
+            if (heldResonanceNotch != 0) Resonance?.CompleteDraft(heldResonanceNotch);
             var run=RunSession.Current;
             if(run!=null) { AccountProgression.Current.ClearDraft(run.RunId); run.Continuation?.SaveNow(); }
             ReleaseProgression();
@@ -326,6 +332,8 @@ public sealed class RunUpgradeCoordinator :
         // A hidden/disabled view cannot leave an invisible modal locking the
         // board. This follows the coordinator's existing cancellation policy:
         // abandon the choice without awarding anything; release only our token.
+        if (heldResonanceNotch != 0 && !selectionCommitted && isActiveAndEnabled)
+            return; // Preserve the exact offer and reopen after a temporary view disable.
         if (isHoldingProgression) CleanupIntermission();
     }
 
@@ -362,6 +370,7 @@ public sealed class RunUpgradeCoordinator :
     private void ReleaseProgression()
     {
         activeChoiceSession = null;
+        heldResonanceNotch = 0;
         offeredChoices.Clear();
         inputBlock?.Dispose();
         inputBlock = null;

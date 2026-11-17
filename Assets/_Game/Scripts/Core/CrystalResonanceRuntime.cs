@@ -11,7 +11,8 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
     public long RunScore => State?.score ?? 0;
     public int Committed => State?.charge ?? 0;
     public int Pending => State?.PendingMastery ?? 0;
-    public bool IsBlockingWaveProgression => Enabled && State.pendingWave > 0;
+    public bool HasPendingDrafts => Enabled && (State.pendingNotches.Count > 0 || State.activeNotch != 0);
+    public bool IsBlockingWaveProgression => Enabled && (State.pendingWave > 0 || HasPendingDrafts);
     public event Action Changed;
     public event Action<ResonanceMastery> MasteryEarned;
     public event Action<int> EncounterBanked;
@@ -73,6 +74,20 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
         if (!State.Bank(wave, charge, Tuning)) return;
         EncounterBanked?.Invoke(wave); Changed?.Invoke();
         run.Continuation?.SaveNow();
+    }
+    public int BeginNextDraft()
+    {
+        if (!Enabled || State.pendingNotches.Count == 0) return 0;
+        State.activeNotch = State.pendingNotches[0]; return State.activeNotch;
+    }
+    public bool CompleteDraft(int notch)
+    {
+        if (!Enabled || notch == 0 || State.activeNotch != notch ||
+            State.pendingNotches.Count == 0 || State.pendingNotches[0] != notch) return false;
+        int index = Array.IndexOf(Tuning.milestones, notch);
+        if (index < 0) return false;
+        State.claimedMask |= 1 << index; State.pendingNotches.RemoveAt(0); State.activeNotch = 0;
+        Changed?.Invoke(); return true;
     }
     public CrystalResonanceSnapshot Capture() => Enabled ? State.Copy() : null;
     public void Restore(CrystalResonanceSnapshot saved)
