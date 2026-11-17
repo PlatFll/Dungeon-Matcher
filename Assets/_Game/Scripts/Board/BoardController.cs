@@ -684,7 +684,7 @@ public partial class BoardController : MonoBehaviour
                 first,
                 interactionSecond))
         {
-            NotifyValidPlayerMoveAccepted();
+            NotifyValidPlayerMoveAccepted(first, interactionSecond);
             yield return
                 ResolveDoubleColorCrystalActivation(
                     first,
@@ -712,7 +712,7 @@ public partial class BoardController : MonoBehaviour
 
         if (createdSpecial)
         {
-            NotifyValidPlayerMoveAccepted();
+            NotifyValidPlayerMoveAccepted(first, interactionSecond);
             /*
              * A straight five, L, or T creates a new crystal.
              * Materialize it before beginning the resulting
@@ -776,7 +776,7 @@ public partial class BoardController : MonoBehaviour
 
         if (activatedColorCrystal)
         {
-            if (!createdSpecial) NotifyValidPlayerMoveAccepted();
+            if (!createdSpecial) NotifyValidPlayerMoveAccepted(first, interactionSecond);
             yield return ResolveColorCrystalActivation(
                 crystalClearSet,
                 crystalTargetType,
@@ -790,7 +790,7 @@ public partial class BoardController : MonoBehaviour
 
         if (IsSpecialPairSwap(first, interactionSecond))
         {
-            NotifyValidPlayerMoveAccepted();
+            NotifyValidPlayerMoveAccepted(first, interactionSecond);
             yield return ResolveSpecialPairActivation(first, interactionSecond);
             isBusy = false;
             NotifyValidPlayerMoveCompleted();
@@ -832,7 +832,7 @@ public partial class BoardController : MonoBehaviour
         }
         else
         {
-            NotifyValidPlayerMoveAccepted();
+            NotifyValidPlayerMoveAccepted(first, interactionSecond);
             yield return ResolveCascades(
                 matches,
                 first,

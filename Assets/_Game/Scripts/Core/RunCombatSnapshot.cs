@@ -10,6 +10,7 @@ public sealed class RunCombatSnapshot
     public int version = 1;
     public CombatClockSnapshot clock;
     public ZoneTravelSnapshot travel;
+    public CrystalResonanceSnapshot resonance;
     public int decreeAppliedMove;
     public long sequence;
     public int wave;

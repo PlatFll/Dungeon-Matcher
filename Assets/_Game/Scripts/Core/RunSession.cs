@@ -12,6 +12,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
     public CombatMoveClock MoveClock { get; private set; }
     public ZoneRuntimeContext Zone { get; private set; }
     public ZoneTravelController Travel { get; private set; }
+    public CrystalResonanceRuntime Resonance { get; private set; }
     public string RunId { get; private set; }
     public bool IsFinished { get; private set; }
     public bool IsVictory { get; private set; }
@@ -102,6 +103,8 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
             MoveClock.ActionSettled += StatusActionSettled;
         }
         Board.SpecialPairSwapsEnabled = CombatMoveClock.RevisedEnemyPressure;
+        Resonance=gameObject.AddComponent<CrystalResonanceRuntime>();
+        Resonance.Initialize(this,continued?.checkpoint);
         Continuation=gameObject.AddComponent<RunContinuation>();
         Continuation.Initialize(this,account,continued?.checkpoint,continued?.tape);
         gameObject.AddComponent<RunFrameRecorder>();

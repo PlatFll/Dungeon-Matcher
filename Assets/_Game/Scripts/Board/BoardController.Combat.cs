@@ -98,6 +98,7 @@ public partial class BoardController
                     triggerGemCount
                 );
 
+            ReportProgressionMatch(clearContext, deliberatePlayerClear);
             BoardClearResolved?.Invoke(clearContext);
 
             bool damagedMatchingEnemy = false;
@@ -138,6 +139,7 @@ public partial class BoardController
         // Run-upgrade gameplay reads one deterministic description of the
         // specials participating in this authoritative expanded clear. It is
         // deliberately emitted from combat reporting rather than VFX.
+        ReportProgressionSpecial(expandedClearSet);
         ReportRunUpgradeSpecialClearPrepared(expandedClearSet);
 
         try
@@ -189,6 +191,7 @@ public partial class BoardController
                         BoardMatchType.Other
                     );
 
+                EmitProgression(clearContext.GemCount, true);
                 BoardClearResolved?.Invoke(clearContext);
 
                 bool damagedMatchingEnemy = false;

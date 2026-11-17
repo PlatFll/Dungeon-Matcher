@@ -104,7 +104,11 @@ public partial class BoardController
         {
             if(threat.Ended || (threat.RequiresVine && !vineRemoved)) continue;
             if(threat.FrostColumn>=0 && !playerClear)continue;
-            if(threat.Cells.Remove(cell)) threat.Answered=true;
+            if(threat.Cells.Remove(cell))
+            {
+                if (!threat.Answered && playerClear) ReportProgressionCounter();
+                threat.Answered=true;
+            }
         }
     }
 

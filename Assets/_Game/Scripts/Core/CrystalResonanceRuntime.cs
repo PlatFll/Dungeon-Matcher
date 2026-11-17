@@ -1,0 +1,92 @@
+using System;
+using UnityEngine;
+
+/// <summary>Owns score/charge receipts and settlement, not combat or encounter construction.</summary>
+[DisallowMultipleComponent]
+public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGate
+{
+    public CrystalResonanceSnapshot State { get; private set; }
+    public CrystalResonanceTuning Tuning => CrystalResonanceTuning.Current;
+    public bool Enabled => State?.version == 1;
+    public long RunScore => State?.score ?? 0;
+    public int Committed => State?.charge ?? 0;
+    public int Pending => State?.PendingMastery ?? 0;
+    public bool IsBlockingWaveProgression => Enabled && State.pendingWave > 0;
+    public event Action Changed;
+    public event Action<ResonanceMastery> MasteryEarned;
+    public event Action<int> EncounterBanked;
+    private RunSession run;
+
+    public void Initialize(RunSession owner, RunCombatSnapshot saved)
+    {
+        run = owner;
+        // Isolated historical fixtures preserve their old progression contract.
+        if (run.Travel?.State.enabled != true) return;
+        if (saved?.resonance?.version == 1) State = saved.resonance.Copy();
+        else
+        {
+            State = new CrystalResonanceSnapshot { version = 1, capstoneRandom = CrystalResonanceSnapshot.Seed(run.RunId),
+                lastBankedWave = saved == null ? 0 : (saved.waveActive ? Math.Max(0, saved.wave - 1) : saved.wave), migratedLegacy = saved != null };
+            State.StartVisit(run.Zone.Definition.zoneId, run.Travel.State.visit, Tuning);
+            // A durable legacy trip has already been earned. Finish it, then reset at arrival.
+            if (saved?.travel?.stage > 0) { State.charge = Tuning.capacity; State.capstonePhase = ResonanceCapstonePhase.Defeated; }
+            if (saved?.waveActive == true) State.BeginEncounter(run.RunId, saved.wave);
+        }
+        run.Board.RestoreProgressionReceiptSequence(State.lastReceipt);
+        run.Board.ProgressionReceipt += Receive;
+        run.Waves.WaveCompleted += WaveEnded;
+        run.Waves.RegisterProgressionGate(this);
+        run.Player.Defeated += Defeated;
+    }
+    public void BeginEncounter(int wave)
+    {
+        if (!Enabled) return;
+        State.BeginEncounter(run.RunId, wave); Changed?.Invoke();
+    }
+    private void Receive(BoardProgressionReceipt receipt)
+    {
+        if (!Enabled || run.IsFinished || run.Player.IsDefeated) return;
+        if (!State.Receive(receipt, Tuning, out var earned)) return;
+        if (earned != ResonanceMastery.None) MasteryEarned?.Invoke(earned);
+        Changed?.Invoke();
+    }
+    private void WaveEnded(int wave)
+    {
+        if (Enabled && State.active && wave == State.activeWave && wave > State.lastBankedWave)
+            State.pendingWave = wave; // Synchronous gate prevents next-wave leakage.
+    }
+    private void Update()
+    {
+        if (!Enabled || run.IsFinished || run.Player.IsDefeated || Time.timeScale <= 0 ||
+            run.Continuation?.IsRestoring == true) return;
+        if (State.pendingWave == 0 || run.Waves.IsWaveActive || run.Board.IsBusy ||
+            !run.Waves.CanCaptureContinuation || run.MoveClock?.IsBlockingWaveProgression == true || run.NeedsSaveRetry) return;
+        int wave = State.pendingWave;
+        int charge = Tuning.normalCharge;
+        foreach (var enemy in run.Waves.OriginalEncounterDefinitions)
+        {
+            if (enemy == null) continue;
+            charge = Math.Max(charge, enemy.Category == EnemyCategory.Boss ? Tuning.bossCharge :
+                enemy.Category == EnemyCategory.Miniboss ? Tuning.minibossCharge :
+                enemy.Category == EnemyCategory.Special ? Tuning.pressureCharge : Tuning.normalCharge);
+        }
+        if (!State.Bank(wave, charge, Tuning)) return;
+        EncounterBanked?.Invoke(wave); Changed?.Invoke();
+        run.Continuation?.SaveNow();
+    }
+    public CrystalResonanceSnapshot Capture() => Enabled ? State.Copy() : null;
+    public void Restore(CrystalResonanceSnapshot saved)
+    {
+        if (saved?.version != 1) return;
+        State = saved.Copy(); run.Board.RestoreProgressionReceiptSequence(State.lastReceipt); Changed?.Invoke();
+    }
+    private void Defeated(PlayerActor player)
+    { if (Enabled) { State.DiscardPending(); Changed?.Invoke(); } }
+    private void OnDestroy()
+    {
+        if (run == null) return;
+        if (run.Board != null) run.Board.ProgressionReceipt -= Receive;
+        if (run.Player != null) run.Player.Defeated -= Defeated;
+        if (run.Waves != null) { run.Waves.WaveCompleted -= WaveEnded; run.Waves.UnregisterProgressionGate(this); }
+    }
+}

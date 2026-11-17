@@ -247,6 +247,7 @@ public sealed partial class WaveController :
         int spawningWave = currentWave;
         isSpawningWave = true;
 
+        RunSession.Current?.Resonance?.BeginEncounter(currentWave);
         selectedRecipeMembers = null;
         CurrentPlan =
             waveSpawnProfile.CreatePlan(currentWave, EncounterRandom);
