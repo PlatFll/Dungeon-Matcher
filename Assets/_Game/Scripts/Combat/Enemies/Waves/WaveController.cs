@@ -249,6 +249,14 @@ public sealed partial class WaveController :
 
         RunSession.Current?.Resonance?.BeginEncounter(currentWave);
         selectedRecipeMembers = null;
+        selectedMilestoneLeader = null;
+        ZoneTestEncounter developmentEncounter = null;
+        if (RunSession.Current?.Resonance?.Enabled == true)
+        {
+            developmentEncounter = RunSession.Current.Zone.Encounter(currentWave, EncounterRandom);
+        }
+        else
+        {
         CurrentPlan =
             waveSpawnProfile.CreatePlan(currentWave, EncounterRandom);
         selectedMilestoneLeader = waveSpawnProfile.SelectMilestone(currentWave, EncounterRandom,
@@ -273,7 +281,8 @@ public sealed partial class WaveController :
             CurrentPlan = new WaveSpawnPlan(currentWave, recipe.id + ": " + recipe.purpose, categories);
         }
 
-        var developmentEncounter = RunSession.Current?.Zone?.Encounter(currentWave,EncounterRandom);
+        developmentEncounter = RunSession.Current?.Zone?.Encounter(currentWave,EncounterRandom);
+        }
         if (developmentEncounter != null)
         {
             var categories = new List<EnemyCategory>();
@@ -458,6 +467,7 @@ public sealed partial class WaveController :
         );
 
         waveSpawnCoroutine = null;
+        RecordResonanceFormation(developmentEncounter);
         WaveStarted?.Invoke(spawningWave);
 
         // Fast kills during spawning may have queued completion already.

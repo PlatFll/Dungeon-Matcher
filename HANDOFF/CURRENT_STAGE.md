@@ -1,22 +1,26 @@
 # Crystal Resonance implementation checkpoint
 
-Stage 3; branch `codex/crystal-resonance-zone-director`.
+Stage 4; branch `codex/crystal-resonance-zone-director`.
 Base updated main: `fac476ad15300f68cae48ee68385323782667439`.
 Prior user edits remain untouched in the other checkouts.
 
-Connected committed 12/40/70 notches to existing RunUpgradeCoordinator.
-Resonance runs bypass wave-date drafts. Runtime holds progression across every
-queued notch; coordinator holds board input for each offer. Same-wave multiple
-offers use activeNotch identity, recorded selections and the existing draft RNG.
-Offer plus notch are checkpointed before presentation. Empty legal pools consume
-only that notch safely; partial offers retain existing honest behavior.
-Temporarily hidden offers reopen without rerolling; persisted offers are reused.
-First-run first notch retains Board/Ability/Survival directions; refinement remains
-once per run. Legacy saved visible offers restore with notch zero and finish once.
-Source reviewed only; stage 08 will add lifecycle/Continue integration cases.
+Extended ZoneDefinition/ZoneTestEncounter with serialized per-zone depth pools,
+five tiers, strict min/max, per-tier weights, family compatibility, authored
+ordinary/elite/leader recipes, prerequisites and whole-formation budgets.
+WaveController's existing spawn routine selects these recipes for Resonance
+runs; legacy fixed/milestone RNG is bypassed. Actors still use existing slots,
+stat curves, summons and death completion. Same-zone constrained weighted patrol
+and legal relief replace cross-zone fallthrough. First unseen special gets a
+normal escort, at most two actors; no multi-unseen-special introductory formation.
+Dungeon locals end after tier 1; guards/knights/royals overlap. All five zone
+assets now have explicit pools and recipes. Named formations are reserved for
+stage 05. Source matrix: Docs/CrystalResonance/ENCOUNTER_MATRIX.md.
+Unchanged: enemy stats/abilities/art, global HP curve, hazards and GUID identities.
+Content gap: non-Dungeon deep tiers reuse strongest existing legal kits, not new
+Guild/late enemies. No runtime/data validator has executed.
 
 
 Tests/compilation/runtime validation: **NOT RUN — deferred to Stage 10**.
 No Unity process, compiler, validator, test or screenshot has been invoked for stages 01–09.
 Art: existing approved sources retained; no new locked production sprites.
-Next: stage 4 in the attached prompt pack. No intermediate PR or merge.
+Next: stage 5 in the attached prompt pack. No intermediate PR or merge.
