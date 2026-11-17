@@ -17,6 +17,7 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
     public bool PortalReady => Enabled && Committed >= Tuning.capacity &&
         State.capstonePhase == ResonanceCapstonePhase.Defeated && !HasPendingDrafts && State.pendingWave == 0 && !State.active && !IsSavePending;
     public bool Sealed => Enabled && Committed >= Tuning.capacity && State.capstonePhase != ResonanceCapstonePhase.Defeated;
+    public Vector3 LastMasteryOrigin { get; private set; }
     public event Action CapstoneApproaching;
     public event Action Changed;
     public event Action<ResonanceMastery> MasteryEarned;
@@ -62,7 +63,7 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
     {
         if (!Enabled || run.IsFinished || run.Player.IsDefeated) return;
         if (!State.Receive(receipt, Tuning, out var earned)) return;
-        if (earned != ResonanceMastery.None) MasteryEarned?.Invoke(earned);
+        if (earned != ResonanceMastery.None) { LastMasteryOrigin = receipt.Origin; MasteryEarned?.Invoke(earned); }
         Changed?.Invoke();
     }
     private void WaveEnded(int wave)

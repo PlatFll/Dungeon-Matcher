@@ -8,7 +8,8 @@ public enum CombatSoundCue
     MineRail, MineSmallDrill, MineLargeDrill, MineStoneHarden, MineStoneBreak,
     MineFuse, MineBlast, MineOre, MineRivet, MineHammer, MinePiston, MineMechBreak,
     AttenderJump, AttenderStep, AttenderCrash, KoboldSpin, KoboldShot, KoboldRicochet,
-    Swap, InvalidSwap, SpecialCreated, BlockerHit, BlockerBreak, CrystalCharge, CrystalImpact
+    Swap, InvalidSwap, SpecialCreated, BlockerHit, BlockerBreak, CrystalCharge, CrystalImpact,
+    ResonanceMastery, ResonanceNotch, CapstoneApproach, ResonanceFull
 }
 
 /// <summary>Small, fixed mix policy. All clips have the same authored peak ceiling.</summary>
@@ -20,6 +21,10 @@ public static class CombatSoundMix
     {
         switch (cue)
         {
+            case CombatSoundCue.ResonanceMastery: return .16f;
+            case CombatSoundCue.ResonanceNotch: return .22f;
+            case CombatSoundCue.CapstoneApproach: return .18f;
+            case CombatSoundCue.ResonanceFull: return .24f;
             case CombatSoundCue.Swap: return .09f;
             case CombatSoundCue.InvalidSwap: return .12f;
             case CombatSoundCue.SpecialCreated: return .29f;
@@ -61,6 +66,10 @@ public static class CombatSoundMix
     {
         switch (cue)
         {
+            case CombatSoundCue.ResonanceMastery: return .45f;
+            case CombatSoundCue.ResonanceNotch:
+            case CombatSoundCue.CapstoneApproach:
+            case CombatSoundCue.ResonanceFull: return .8f;
             case CombatSoundCue.GemLand: return 0.085f;
             case CombatSoundCue.GemMatch: return 0.07f;
             case CombatSoundCue.PoisonTick: return 0.12f;

@@ -8,20 +8,23 @@ public readonly struct BoardProgressionReceipt
     public readonly int Move, GemCount;
     public readonly bool Special;
     public readonly ResonanceMastery Mastery;
-    public BoardProgressionReceipt(long sequence, int move, int gems, bool special, ResonanceMastery mastery)
-    { Sequence = sequence; Move = move; GemCount = gems; Special = special; Mastery = mastery; }
+    public readonly UnityEngine.Vector3 Origin;
+    public BoardProgressionReceipt(long sequence, int move, int gems, bool special, ResonanceMastery mastery, UnityEngine.Vector3 origin = default)
+    { Origin = origin; Sequence = sequence; Move = move; GemCount = gems; Special = special; Mastery = mastery; }
 }
 public partial class BoardController
 {
     public event Action<BoardProgressionReceipt> ProgressionReceipt;
     private long progressionReceiptSequence;
     private bool progressionManualAction;
+    private UnityEngine.Vector3 progressionOrigin;
     private readonly HashSet<int> deliberateSpecials = new HashSet<int>();
     public void RestoreProgressionReceiptSequence(long sequence)
     { progressionReceiptSequence = Math.Max(progressionReceiptSequence, sequence); }
     private void BeginProgressionMove(Gem first, Gem second)
     {
         progressionManualAction = true; deliberateSpecials.Clear();
+        progressionOrigin = first != null ? first.transform.position : transform.position;
         if (first != null && first.SpecialType != GemSpecialType.None) deliberateSpecials.Add(first.BoardIdentity);
         if (second != null && second.SpecialType != GemSpecialType.None) deliberateSpecials.Add(second.BoardIdentity);
         if (deliberateSpecials.Count >= 2) EmitProgression(0, true, ResonanceMastery.SpecialSetup);
@@ -31,7 +34,7 @@ public partial class BoardController
         // Enemy/environment cascades and passive drill chains are not intentional matching.
         if (!progressionManualAction || ResolvingEnvironmentalMutation) return;
         ProgressionReceipt?.Invoke(new BoardProgressionReceipt(++progressionReceiptSequence,
-            completedValidPlayerMoves + 1, count, special, mastery));
+            completedValidPlayerMoves + 1, count, special, mastery, progressionOrigin));
     }
     private void ReportProgressionMatch(BoardClearContext context, bool deliberate)
     {

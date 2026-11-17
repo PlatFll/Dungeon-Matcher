@@ -83,7 +83,12 @@ public sealed class CombatAudioController : MonoBehaviour
         focused = Application.isFocused;
         foreach (CombatSoundCue cue in Enum.GetValues(typeof(CombatSoundCue)))
         {
-            var clip = Resources.Load<AudioClip>("Audio/Combat/" + cue);
+            // Reuse the project's original short cues; no new licensed/audio manager dependency.
+            var source = cue == CombatSoundCue.ResonanceMastery ? CombatSoundCue.SpecialCreated :
+                cue == CombatSoundCue.ResonanceNotch ? CombatSoundCue.ShieldGain :
+                cue == CombatSoundCue.CapstoneApproach ? CombatSoundCue.CrystalCharge :
+                cue == CombatSoundCue.ResonanceFull ? CombatSoundCue.RattlebonesAbility : cue;
+            var clip = Resources.Load<AudioClip>("Audio/Combat/" + source);
             var choices = new List<AudioClip>();
             if (clip != null) choices.Add(clip);
             for (int v = 1; v <= 3; v++)
