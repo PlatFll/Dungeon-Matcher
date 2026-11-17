@@ -43,7 +43,9 @@ public sealed class CrystalResonanceSnapshot
     public List<string> seenLeaders = new List<string>();
     public List<string> recentRecipes = new List<string>();
     public List<string> seenMechanics = new List<string>();
-    public int capstoneWave;
+    public int capstoneWave, capstoneKind, lastMajorVisit = -10;
+    public string capstoneEncounterId;
+    public List<string> recentCapstones = new List<string>();
     public float visitSeconds, combatSeconds, draftSeconds, travelSeconds;
     public int encountersThisVisit, masteryThisVisit;
     public int PendingMastery => CountBits(masteryMask);
@@ -62,7 +64,7 @@ public sealed class CrystalResonanceSnapshot
         triggeredMask = claimedMask = activeNotch = pendingWave = 0;
         active = false; pendingNotches.Clear(); recentRecipes.Clear();
         capstonePhase = ResonanceCapstonePhase.Unselected; capstoneId = null;
-        capstoneMembers.Clear(); capstoneWave = 0; formationSeed = 0;
+        capstoneMembers.Clear(); capstoneWave = capstoneKind = 0; formationSeed = 0; capstoneEncounterId = null;
         var random = new SavedRandom(capstoneRandom);
         approachThreshold = random.Next(tuning.approachMinimum, tuning.approachMaximum + 1);
         capstoneRandom = random.State;

@@ -605,3 +605,39 @@ MonoBehaviour:
     prerequisites:
     - royal_swordsman
     - court_mage
+  - label: Reserve Local search
+    members:
+    - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+    - {fileID: 11400000, guid: 655f6b9c480740719f00f56e0169908d, type: 2}
+    weight: 1
+    minimumDepthTier: 0
+    maximumDepthTier: 1
+    resonanceKind: 1
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Reserve Knight patrol
+    members:
+    - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+    - {fileID: 11400000, guid: 3446e21fb60447829950580946a51eff, type: 2}
+    weight: 1
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Reserve Royal vanguard
+    members:
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    - {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+    weight: 1
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 5.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []

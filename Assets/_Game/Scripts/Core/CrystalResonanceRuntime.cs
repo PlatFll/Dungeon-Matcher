@@ -13,6 +13,10 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
     public int Pending => State?.PendingMastery ?? 0;
     public bool HasPendingDrafts => Enabled && (State.pendingNotches.Count > 0 || State.activeNotch != 0);
     public bool IsBlockingWaveProgression => Enabled && (State.pendingWave > 0 || HasPendingDrafts);
+    public bool PortalReady => Enabled && Committed >= Tuning.capacity &&
+        State.capstonePhase == ResonanceCapstonePhase.Defeated && !HasPendingDrafts && State.pendingWave == 0 && !State.active;
+    public bool Sealed => Enabled && Committed >= Tuning.capacity && State.capstonePhase != ResonanceCapstonePhase.Defeated;
+    public event Action CapstoneApproaching;
     public event Action Changed;
     public event Action<ResonanceMastery> MasteryEarned;
     public event Action<int> EncounterBanked;
@@ -72,8 +76,29 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
                 enemy.Category == EnemyCategory.Special ? Tuning.pressureCharge : Tuning.normalCharge);
         }
         if (!State.Bank(wave, charge, Tuning)) return;
+        if (State.capstonePhase == ResonanceCapstonePhase.InProgress && State.capstoneWave == wave &&
+            State.encounterId == State.capstoneEncounterId)
+            State.capstonePhase = ResonanceCapstonePhase.Defeated;
+        ScheduleCapstone(wave + 1);
         EncounterBanked?.Invoke(wave); Changed?.Invoke();
         run.Continuation?.SaveNow();
+    }
+    private void ScheduleCapstone(int nextWave)
+    {
+        if (State.capstonePhase != ResonanceCapstonePhase.Unselected || Committed < State.approachThreshold) return;
+        // Only this independent stream selects capstones; no board/card/destination RNG is consumed.
+        var random = new SavedRandom(State.capstoneRandom);
+        State.formationSeed = (uint)random.Next(1, int.MaxValue);
+        State.capstoneRandom = random.State;
+        var recipe = WaveController.ChooseResonanceCapstone(run.Zone.Definition, nextWave, State, new SavedRandom(State.formationSeed));
+        State.capstoneId = recipe.label; State.capstoneKind = (int)recipe.resonanceKind;
+        State.capstoneMembers.Clear(); foreach (var member in recipe.members) State.capstoneMembers.Add(member.EnemyId);
+        State.capstoneWave = nextWave; State.capstoneEncounterId = run.RunId + ":" + State.visit + ":" + nextWave;
+        State.capstonePhase = ResonanceCapstonePhase.Scheduled;
+        string key = State.zoneId + ":" + recipe.label;
+        State.recentCapstones.Add(key); while (State.recentCapstones.Count > 4) State.recentCapstones.RemoveAt(0);
+        if (recipe.resonanceKind == ZoneEncounterKind.MajorBoss) State.lastMajorVisit = State.visit;
+        CapstoneApproaching?.Invoke();
     }
     public int BeginNextDraft()
     {

@@ -860,3 +860,15 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites:
     - pearl_thief
+  - label: Reserve Outer patrol
+    members:
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    weight: 1
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []

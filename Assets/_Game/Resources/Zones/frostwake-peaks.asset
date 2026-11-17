@@ -1049,3 +1049,15 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites:
     - harpoon_hunter
+  - label: Reserve Outer patrol
+    members:
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 1
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []

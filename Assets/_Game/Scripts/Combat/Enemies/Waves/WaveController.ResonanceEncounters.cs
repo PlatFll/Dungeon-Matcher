@@ -10,6 +10,20 @@ public sealed partial class WaveController
     public ZoneTestEncounter SelectResonanceEncounter(ZoneDefinition zone, int depth, System.Random random)
     {
         var state = RunSession.Current.Resonance.State;
+        if (state.capstonePhase == ResonanceCapstonePhase.Scheduled)
+        {
+            if (depth != state.capstoneWave) throw new InvalidOperationException("Scheduled capstone cannot be skipped.");
+            var locked = new List<EnemyDefinition>();
+            foreach (string id in state.capstoneMembers)
+            {
+                var member = Array.Find(zone.enemies, enemy => enemy != null && enemy.EnemyId == id);
+                if (member == null) throw new InvalidOperationException("Saved capstone member is unavailable: " + id);
+                locked.Add(member);
+            }
+            state.capstonePhase = ResonanceCapstonePhase.InProgress;
+            return new ZoneTestEncounter { label = state.capstoneId, members = locked.ToArray(),
+                resonanceKind = (ZoneEncounterKind)state.capstoneKind };
+        }
         int tier = zone.ResonanceTier(depth);
         var choices = new List<ZoneTestEncounter>();
         foreach (var recipe in zone.resonanceEncounters)
@@ -19,6 +33,36 @@ public sealed partial class WaveController
         if (fresh.Count > 0) choices = fresh;
         if (choices.Count > 0) return PickDepthRecipe(choices, random);
         return BuildDepthWeightedEncounter(zone, tier, state, random);
+    }
+    public static ZoneTestEncounter ChooseResonanceCapstone(ZoneDefinition zone, int depth,
+        CrystalResonanceSnapshot state, System.Random random)
+    {
+        int tier = zone.ResonanceTier(depth);
+        var candidates = new List<ZoneTestEncounter>();
+        foreach (var recipe in zone.resonanceEncounters)
+        {
+            if (recipe.resonanceKind == ZoneEncounterKind.Ordinary ||
+                !ResonanceFormationLegal(zone, recipe, tier, state, true)) continue;
+            if (recipe.resonanceKind == ZoneEncounterKind.MajorBoss && state.visit - state.lastMajorVisit < 2) continue;
+            int unseen = recipe.members.Count(e => e.Category != EnemyCategory.Normal && !state.seenMechanics.Contains(e.EnemyId));
+            if (unseen > 1 && !recipe.allowRepeatedRequiredEscort) continue;
+            candidates.Add(recipe);
+        }
+        var fresh = candidates.FindAll(r => !state.recentCapstones.Contains(zone.zoneId + ":" + r.label));
+        if (fresh.Count > 0) candidates = fresh;
+        if (candidates.Count == 0)
+            throw new InvalidOperationException("Missing legal same-zone reserve capstone: " + zone.zoneId + "/" + tier);
+        // Pick kind first, so adding authored escort variants doesn't inflate major-boss frequency.
+        int[] weights = { 0, 6, 4, tier >= 4 ? 3 : 2 };
+        int total = 0;
+        for (int kind = 1; kind <= 3; kind++) if (candidates.Exists(r => (int)r.resonanceKind == kind)) total += weights[kind];
+        int roll = random.Next(total), selected = 1;
+        for (int kind = 1; kind <= 3; kind++)
+        {
+            if (!candidates.Exists(r => (int)r.resonanceKind == kind)) continue;
+            roll -= weights[kind]; if (roll < 0) { selected = kind; break; }
+        }
+        return PickDepthRecipe(candidates.FindAll(r => (int)r.resonanceKind == selected), random);
     }
     public static bool ResonanceFormationLegal(ZoneDefinition zone, ZoneTestEncounter recipe, int tier,
         CrystalResonanceSnapshot state, bool capstone)
@@ -66,12 +110,12 @@ public sealed partial class WaveController
         foreach (var recipe in candidates) { pick -= Math.Max(1, recipe.weight); if (pick < 0) return recipe; }
         return candidates[candidates.Count - 1];
     }
-    private ZoneTestEncounter BuildDepthWeightedEncounter(ZoneDefinition zone, int tier,
+    private static ZoneTestEncounter BuildDepthWeightedEncounter(ZoneDefinition zone, int tier,
         CrystalResonanceSnapshot state, System.Random random)
     {
         var candidates = new List<ZoneDepthMember>();
         foreach (var entry in zone.resonancePool)
-            if (entry.enemy != null && entry.enemy.Category <= EnemyCategory.Special && entry.Weight(tier) > 0) candidates.Add(entry);
+            if (entry.enemy != null && (int)entry.enemy.Category <= (int)EnemyCategory.Special && entry.Weight(tier) > 0) candidates.Add(entry);
         var members = new List<EnemyDefinition>(); int family = -1;
         for (int attempt = 0; attempt < 24 && members.Count < (tier == 0 ? 2 : 3); attempt++)
         {
