@@ -3,7 +3,7 @@ using UnityEngine;
 
 /// <summary>Owns score/charge receipts and settlement, not combat or encounter construction.</summary>
 [DisallowMultipleComponent]
-public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGate
+public sealed partial class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGate
 {
     public CrystalResonanceSnapshot State { get; private set; }
     public CrystalResonanceTuning Tuning => CrystalResonanceTuning.Current;
@@ -53,18 +53,21 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
         run.Waves.WaveCompleted += WaveEnded;
         run.Waves.RegisterProgressionGate(this);
         run.Player.Defeated += Defeated;
+        run.Player.DamageTaken += TelemetryDamage;
+        run.Board.ValidPlayerMoveAccepted += TelemetryMove;
+        run.Waves.EnemySpawned += TelemetryEnemy;
     }
     public void BeginEncounter(int wave)
     {
         if (!Enabled) return;
-        State.BeginEncounter(run.RunId, wave); Changed?.Invoke();
+        State.BeginEncounter(run.RunId, wave); Record("encounter_begin"); Changed?.Invoke();
     }
     private void Receive(BoardProgressionReceipt receipt)
     {
         if (!Enabled || run.IsFinished || run.Player.IsDefeated) return;
         if (!State.Receive(receipt, Tuning, out var earned)) return;
         if (earned != ResonanceMastery.None) { LastMasteryOrigin = receipt.Origin; MasteryEarned?.Invoke(earned); }
-        Changed?.Invoke();
+        Record("receipt", earned.ToString(), receipt.GemCount); Changed?.Invoke();
     }
     private void WaveEnded(int wave)
     {
@@ -73,6 +76,7 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
     }
     private void Update()
     {
+        TickTelemetryTime();
         if (!Enabled || run.IsFinished || run.Player.IsDefeated || Time.timeScale <= 0 ||
             run.Continuation?.IsRestoring == true) return;
         if (IsSavePending)
@@ -91,10 +95,12 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
                 enemy.Category == EnemyCategory.Miniboss ? Tuning.minibossCharge :
                 enemy.Category == EnemyCategory.Special ? Tuning.pressureCharge : Tuning.normalCharge);
         }
+        int masteryAward = State.PendingMastery, previousCharge = State.charge;
         if (!State.Bank(wave, charge, Tuning)) return;
+        Record("victory_bank", "base=" + charge + ";mastery=" + masteryAward + ";overflow=" + Math.Max(0,previousCharge+charge+masteryAward-100));
         if (State.capstonePhase == ResonanceCapstonePhase.InProgress && State.capstoneWave == wave &&
             State.encounterId == State.capstoneEncounterId)
-            State.capstonePhase = ResonanceCapstonePhase.Defeated;
+        { State.capstonePhase = ResonanceCapstonePhase.Defeated; Record("capstone_defeated", State.capstoneId); }
         ScheduleCapstone(wave + 1);
         EncounterBanked?.Invoke(wave); Changed?.Invoke();
         IsSavePending = run.Continuation != null;
@@ -115,7 +121,7 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
         string key = State.zoneId + ":" + recipe.label;
         State.recentCapstones.Add(key); while (State.recentCapstones.Count > 4) State.recentCapstones.RemoveAt(0);
         if (recipe.resonanceKind == ZoneEncounterKind.MajorBoss) State.lastMajorVisit = State.visit;
-        CapstoneApproaching?.Invoke();
+        Record("capstone_scheduled", State.capstoneId, State.capstoneKind); CapstoneApproaching?.Invoke();
     }
     public int BeginNextDraft()
     {
@@ -129,6 +135,7 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
         int index = Array.IndexOf(Tuning.milestones, notch);
         if (index < 0) return false;
         State.claimedMask |= 1 << index; State.pendingNotches.RemoveAt(0); State.activeNotch = 0;
+        Record("notch_claimed", notch.ToString());
         IsSavePending = run.Continuation != null; Changed?.Invoke(); return true;
     }
     public CrystalResonanceSnapshot Capture() => Enabled ? State.Copy() : null;
@@ -138,12 +145,15 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
         State = saved.Copy(); IsSavePending = false; run.Board.RestoreProgressionReceiptSequence(State.lastReceipt); Changed?.Invoke();
     }
     private void Defeated(PlayerActor player)
-    { if (Enabled) { State.DiscardPending(); Changed?.Invoke(); } }
+    { if (Enabled) { Record("defeat", run.Player.CaptureContinuation().lastDamage); State.DiscardPending(); Changed?.Invoke(); } }
     private void OnDestroy()
     {
         if (run == null) return;
         if (run.Board != null) run.Board.ProgressionReceipt -= Receive;
-        if (run.Player != null) run.Player.Defeated -= Defeated;
+        if (run.Player != null) { run.Player.Defeated -= Defeated; run.Player.DamageTaken -= TelemetryDamage; }
+        if (run.Board != null) run.Board.ValidPlayerMoveAccepted -= TelemetryMove;
+        if (run.Waves != null) run.Waves.EnemySpawned -= TelemetryEnemy;
+        foreach (var enemy in telemetryEnemies) if (enemy != null) enemy.SpecialAbilityUsed -= TelemetrySpecial;
         if (run.Waves != null) { run.Waves.WaveCompleted -= WaveEnded; run.Waves.UnregisterProgressionGate(this); }
     }
 }

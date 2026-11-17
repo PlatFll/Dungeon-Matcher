@@ -254,6 +254,7 @@ public sealed partial class RunUpgradeCoordinator :
                 yield return new WaitForSecondsRealtime(1f);
             }
         }
+        RunSession.Current?.Resonance?.Record("card_offer", string.Join("+", choices.ConvertAll(c => c.UpgradeId)), heldResonanceNotch);
         choiceUI.SetRefinement(this);
         inputBlock = boardController != null
             ? boardController.AcquireExternalInputBlock()
@@ -306,6 +307,7 @@ public sealed partial class RunUpgradeCoordinator :
         // different, newer choice's gate when the old application returns.
         if (ReferenceEquals(activeChoiceSession, session))
         {
+            Resonance?.Record("card_selected", definition.UpgradeId, heldResonanceNotch);
             if (heldResonanceNotch != 0) Resonance?.CompleteDraft(heldResonanceNotch);
             var run=RunSession.Current;
             if(run!=null) { AccountProgression.Current.ClearDraft(run.RunId); run.Continuation?.SaveNow(); }

@@ -146,6 +146,7 @@ public sealed partial class WaveController
     {
         var resonance = RunSession.Current?.Resonance;
         if (resonance?.Enabled != true || recipe == null) return;
+        resonance.Record("formation", recipe.label + ":" + string.Join("+", originalEncounterDefinitions.Select(e => e.EnemyId + "/" + e.Category + "/" + e.ThreatCost)));
         var state = resonance.State;
         state.recentRecipes.Add(recipe.label); while (state.recentRecipes.Count > 3) state.recentRecipes.RemoveAt(0);
         foreach (var member in originalEncounterDefinitions)

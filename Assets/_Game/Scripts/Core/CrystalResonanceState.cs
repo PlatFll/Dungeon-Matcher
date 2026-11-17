@@ -47,7 +47,8 @@ public sealed class CrystalResonanceSnapshot
     public string capstoneEncounterId;
     public List<string> recentCapstones = new List<string>();
     public float visitSeconds, combatSeconds, draftSeconds, travelSeconds;
-    public int encountersThisVisit, masteryThisVisit;
+    public int encountersThisVisit, masteryThisVisit, movesThisVisit, damageThisVisit;
+    public float runSeconds, pausedSeconds;
     public int PendingMastery => CountBits(masteryMask);
     public static int CountBits(int bits) => ((bits & 1) != 0 ? 1 : 0) + ((bits & 2) != 0 ? 1 : 0) + ((bits & 4) != 0 ? 1 : 0);
     public CrystalResonanceSnapshot Copy() => JsonUtility.FromJson<CrystalResonanceSnapshot>(JsonUtility.ToJson(this));
@@ -69,7 +70,7 @@ public sealed class CrystalResonanceSnapshot
         approachThreshold = random.Next(tuning.approachMinimum, tuning.approachMaximum + 1);
         capstoneRandom = random.State;
         visitSeconds = combatSeconds = draftSeconds = travelSeconds = 0;
-        encountersThisVisit = masteryThisVisit = 0;
+        encountersThisVisit = masteryThisVisit = movesThisVisit = damageThisVisit = 0;
     }
     public void BeginEncounter(string runId, int wave)
     {
@@ -136,7 +137,7 @@ public sealed class CrystalResonanceSnapshot
         if (value.capstonePhase == ResonanceCapstonePhase.Scheduled && value.capstoneWave != combat.wave + 1) return false;
         if (value.capstonePhase == ResonanceCapstonePhase.InProgress &&
             (value.capstoneWave != combat.wave || !value.active || value.capstoneEncounterId != value.encounterId)) return false;
-        foreach (float seconds in new[] { value.visitSeconds, value.combatSeconds, value.draftSeconds, value.travelSeconds })
+        foreach (float seconds in new[] { value.visitSeconds, value.combatSeconds, value.draftSeconds, value.travelSeconds, value.runSeconds, value.pausedSeconds })
             if (float.IsNaN(seconds) || float.IsInfinity(seconds) || seconds < 0) return false;
         return true;
     }

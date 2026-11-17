@@ -35,9 +35,12 @@ public partial class BoardController
             return;
         }
 
+        if (deliberatePlayerClear) MarkDeliberateClear(matches);
         RegisterAquaticClear(matches, deliberatePlayerClear);
         RegisterMinePlayerMatch(matches, deliberatePlayerClear);
+        int pinsBefore = pinnedGemOwners.Count;
         BreakPinsAdjacentToMatches(matches);
+        if (deliberatePlayerClear && pinnedGemOwners.Count < pinsBefore) EmitProgression(0, false, ResonanceMastery.TacticalCounter);
         DamageBarricadesForClear(matches, null, deliberatePlayerClear);
 
         List<List<Gem>> matchGroups =
@@ -139,7 +142,7 @@ public partial class BoardController
         // Run-upgrade gameplay reads one deterministic description of the
         // specials participating in this authoritative expanded clear. It is
         // deliberately emitted from combat reporting rather than VFX.
-        ReportProgressionSpecial(expandedClearSet);
+        ReportProgressionSpecial(expandedClearSet, cascadeDepth == 0);
         ReportRunUpgradeSpecialClearPrepared(expandedClearSet);
 
         try

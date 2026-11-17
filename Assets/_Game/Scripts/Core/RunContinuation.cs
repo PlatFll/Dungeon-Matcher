@@ -154,7 +154,9 @@ public sealed class RunContinuation : MonoBehaviour
         if(!SupportsSnapshot(saved)) return false;
         if(!account.StoreCheckpoint(session.RunId,saved)) {Error=account.LastError;return false;}
         session.Board.ReplayLegacyBoardFeel = false;
-        checkpoint=saved;tape=NewTape();Error=null;return true;
+        checkpoint=saved;tape=NewTape();Error=null;
+        session.Resonance?.Record("travel_committed", destination);
+        return true;
     }
     private RunReplayTape NewTape() => new RunReplayTape { boardFeelVersion = session.Board.BoardFeelVersion };
     public void BeginFrame()

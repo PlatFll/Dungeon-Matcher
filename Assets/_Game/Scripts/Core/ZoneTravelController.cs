@@ -61,7 +61,7 @@ public sealed class ZoneTravelController : MonoBehaviour,IWaveProgressionGate
         {
             var random = State.random == 0 ? new SavedRandom(run.Waves.EncounterSeed ^ 0x36741) : new SavedRandom(State.random);
             string next = ChooseDestination(State.zoneId, Resources.LoadAll<ZoneDefinition>("Zones"), random);
-            if (next != null) { State.random = random.State; State.destination = next; State.stage = 1; }
+            if (next != null) { State.random = random.State; State.destination = next; State.stage = 1; run.Resonance.Record("travel_pending", next); }
         }
         if(!IsBlockingWaveProgression || processing || run.Continuation==null || run.Continuation.IsRestoring ||
             !run.Continuation.CanCapture || run.NeedsSaveRetry || run.GetComponent<RunControlsUI>()?.IsModalOpen==true) return;

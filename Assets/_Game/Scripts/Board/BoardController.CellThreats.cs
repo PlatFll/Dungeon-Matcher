@@ -106,7 +106,7 @@ public partial class BoardController
             if(threat.FrostColumn>=0 && !playerClear)continue;
             if(threat.Cells.Remove(cell))
             {
-                if (!threat.Answered && playerClear) ReportProgressionCounter();
+                if (!threat.Answered && playerClear) ReportProgressionCounter(cell);
                 threat.Answered=true;
             }
         }

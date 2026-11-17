@@ -713,6 +713,7 @@ public partial class BoardController : MonoBehaviour
         if (createdSpecial)
         {
             NotifyValidPlayerMoveAccepted(first, interactionSecond);
+            EmitProgression(0, false, ResonanceMastery.DeliberateMatch);
             /*
              * A straight five, L, or T creates a new crystal.
              * Materialize it before beginning the resulting
