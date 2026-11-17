@@ -61,15 +61,17 @@ public sealed class CrystalResonanceHud : MonoBehaviour
         if (priorSize == root.rect.size && Mathf.Approximately(priorScale,scale)) return;
         priorSize = root.rect.size; priorScale = scale;
         float w = root.rect.width, h = root.rect.height, s = h / 66f;
+        // A one-native-pixel descriptor leaves space for large, legible score digits.
+        RefreshScore();
         // Existing frame, settings, actor anchors and board hitboxes stay in their original layout.
-        Position(score.rectTransform, 44*s, 19*s, w-62*s, 20*s);
+        Position(score.rectTransform, 44*s, 19*s, w-76*s, 20*s);
         score.alignment = TextAlignmentOptions.Center; PixelTextFitter.ApplyNativeMenu(score, 28*s);
         Position(crystal.rectTransform, 15*s, 24*s, 28*s, 26*s);
         GameplayPixelGrid.FitImage(crystal, new Vector2(28,26)*s);
         pixel = crystal.sprite != null ? crystal.rectTransform.rect.width / crystal.sprite.rect.width : 1/scale;
-        Position(caption.rectTransform,44*s,34*s,w-62*s,13*s); PixelTextFitter.ApplyNativeMenu(caption,16*s);
-        trackWidth = Mathf.Floor((w-64*s)/pixel)*pixel;
-        Position(track,45*s,47*s,trackWidth,4*pixel);
+        Position(caption.rectTransform,44*s,34*s,w-76*s,13*s); PixelTextFitter.ApplyNativeMenu(caption,16*s);
+        trackWidth = Mathf.Floor((w-78*s)/pixel)*pixel;
+        Position(track,45*s,44*s,trackWidth,4*pixel);
         Position(notice.rectTransform,0,h+1*s,w,16*s); PixelTextFitter.ApplyNativeMenu(notice,16*s);
         for (int i=0;i<notches.Length;i++)
         {
@@ -79,9 +81,15 @@ public sealed class CrystalResonanceHud : MonoBehaviour
         Position(highlight.rectTransform,27*s,29*s,2*pixel,pixel);
         DrawFill();
     }
+    private void RefreshScore()
+    {
+        float scale=score.canvas!=null?Mathf.Max(.01f,score.canvas.rootCanvas.scaleFactor):1;
+        string em=(16/scale).ToString("0.###",System.Globalization.CultureInfo.InvariantCulture);
+        score.richText=true;score.text="<size="+em+">SCORE</size> "+resonance.RunScore.ToString("N0");
+    }
     private void Changed()
     {
-        score.text = "SCORE " + resonance.RunScore.ToString("N0");
+        RefreshScore();
         caption.text = resonance.Sealed ? "100/100  SEALED" : resonance.PortalReady ? "100/100  READY" :
             "RESONANCE " + resonance.Committed + "/100";
         if (resonance.State.triggeredMask != previousMask)
@@ -109,7 +117,10 @@ public sealed class CrystalResonanceHud : MonoBehaviour
         CombatAudioController.PlayMechanism(CombatSoundCue.ResonanceMastery);
         if (PresentationPreferences.ReducedMotion) return;
         var mote=FreeMote(); if (mote==null) return;
-        Vector2 start=(Vector2)root.InverseTransformPoint(resonance.LastMasteryOrigin)-root.rect.center;
+        var canvas=score.canvas.rootCanvas;
+        var screen=Camera.main!=null ? (Vector2)Camera.main.WorldToScreenPoint(resonance.LastMasteryOrigin) : (Vector2)resonance.LastMasteryOrigin;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(root,screen,canvas.renderMode==RenderMode.ScreenSpaceOverlay?null:canvas.worldCamera,out var start);
+        start-=root.rect.center;
         Vector2 end=(Vector2)track.localPosition+new Vector2(trackWidth*.5f,0)-root.rect.center;
         mote.PlayToward(start,end,.4f,2*pixel,Light,pixel);
     }
@@ -137,7 +148,7 @@ public sealed class CrystalResonanceHud : MonoBehaviour
         if (resonance.Committed>=70)
         {
             emission+=dt;
-            float interval=resonance.Committed>=100 ? .09f : resonance.Committed>=80 ? .065f : .28f;
+            float interval=resonance.Committed>=100 ? .045f : resonance.Committed>=80 ? .065f : .28f;
             if (emission>=interval) { emission=0; Burst(resonance.Committed>=80?2:1); }
         }
         for(int i=0;i<notches.Length;i++)

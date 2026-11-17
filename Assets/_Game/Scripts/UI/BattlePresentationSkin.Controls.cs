@@ -100,7 +100,7 @@ public static partial class BattlePresentationSkin
             art.color=Color.white;art.raycastTarget=false;x+=widths[i];
         }
         var label=rect.GetComponentInChildren<TMP_Text>();
-        if(label)
+        if(label && RunSession.Current?.Resonance?.Enabled != true)
         {
             label.rectTransform.anchorMin=Vector2.zero;label.rectTransform.anchorMax=Vector2.one;
             // TMP's line metrics exceed the visible capitals. Leave metric room

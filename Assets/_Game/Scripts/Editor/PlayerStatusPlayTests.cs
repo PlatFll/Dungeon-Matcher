@@ -37,8 +37,8 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator LegacyDungeonFearKeepsItsSourceThroughContinue()
     {
-        SceneManager.LoadScene("Game"); yield return Stable();
-        Assert.That(Run.MoveClock, Is.Null);
+        yield return LaunchUnified();yield return LegacyCombatTestProfile.Load();
+        Assert.That(CombatMoveClock.Active, Is.False,"explicit legacy-seconds checkpoint");
         var source = Run.Waves.ActiveEnemies[0]; long id = source.PersistentId;
         Assert.That(id, Is.GreaterThan(0));
         foreach (var enemy in Run.Waves.ActiveEnemies) enemy.GetComponent<EnemyAutoAttack>().StopAttacking();

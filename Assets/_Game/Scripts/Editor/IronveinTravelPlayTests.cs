@@ -13,7 +13,7 @@ public sealed partial class ForestFoundationPlayTests
     private IEnumerator MineNaturalContinue()
     {
         yield return LaunchMine(true);QuietKitFixture();
-        Assert.That(Run.Travel.State.mineEncounters.seen.Count,Is.GreaterThan(0),"actual wave start records history");
+        Assert.That(Run.Resonance.State.seenMechanics.Count,Is.GreaterThan(0),"actual wave start records history");
         Set(Run.Waves,"advanceWavesAutomatically",false);KillEncounter();
         yield return Until(()=>!Run.Waves.IsWaveActive && Run.Continuation.CanCapture,"entrance clears");
         Set(Run.Waves,"currentWave",2);Run.Waves.SpawnCurrentWave();yield return Stable();QuietKitFixture();
@@ -21,12 +21,15 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(Run.Board.Mine.naturalStoneIntroduced,Is.True);
         Assert.That(Run.Board.MineStoneCount,Is.EqualTo(1));
         var stone=Run.Board.MineStoneTargets().Single();Assert.That(stone.State.ownerId,Is.Zero);
-        string history=JsonUtility.ToJson(Run.Travel.State.mineEncounters);
+        string history=string.Join("|",Run.Resonance.State.seenMechanics)+"/"+string.Join("|",Run.Resonance.State.recentRecipes);
         yield return ResumeRoster();
-        Assert.That(JsonUtility.ToJson(Run.Travel.State.mineEncounters),Is.EqualTo(history));
+        Assert.That(string.Join("|",Run.Resonance.State.seenMechanics)+"/"+string.Join("|",Run.Resonance.State.recentRecipes),Is.EqualTo(history));
         Assert.That(Run.Board.Mine.naturalStoneIntroduced,Is.True);
         Assert.That(Run.Board.MineStoneTargets().Single().State.id,Is.EqualTo(stone.State.id));
-        yield return EnvironmentMove();Assert.That(Run.Board.MineStoneCount,Is.EqualTo(1),"no second natural lesson on resume");
+        yield return EnvironmentMove();
+        Assert.That(Run.Board.Mine.naturalStoneIntroduced,Is.True);
+        Assert.That(Run.Board.MineStoneTargets().All(s=>s.State.id==stone.State.id),Is.True,
+            "a legal response may destroy the first stone; resume must not seed a second lesson");
     }
 
     [UnityTest] public IEnumerator IronveinFourZoneTravelCleansSourceAndPreservesResources()
@@ -58,6 +61,8 @@ public sealed partial class ForestFoundationPlayTests
             {Run.Board.QueueEnvironmentalVine(Run.Board.GetGem(0,0));yield return StableAfterCourtWave();}
             if(Run.Zone.Definition.periodicallyFloods)
             {Run.Board.Aquatic.StartFlood(12,Run.Board.CompletedValidPlayerMoves);Run.Board.Aquatic.air=1;}
+            yield return Until(()=>Run.Resonance.State.pendingWave==0,"source Resonance bank settles");
+            ResonanceEncounterFixture.EarnedExit(Run);
             var before=Run.Continuation.Capture();
             Run.Travel.State.stage=1;Run.Travel.State.destination=destination;
             Assert.That(Run.Continuation.TryCommitZoneTravel(destination),Is.True);

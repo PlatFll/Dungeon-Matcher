@@ -15,6 +15,12 @@ public enum CombatSoundCue
 /// <summary>Small, fixed mix policy. All clips have the same authored peak ceiling.</summary>
 public static class CombatSoundMix
 {
+    // Resonance reuses the approved short clips; cue gain/cooldown remain independent.
+    public static CombatSoundCue ResourceCue(CombatSoundCue cue) =>
+        cue == CombatSoundCue.ResonanceMastery ? CombatSoundCue.SpecialCreated :
+        cue == CombatSoundCue.ResonanceNotch ? CombatSoundCue.ShieldGain :
+        cue == CombatSoundCue.CapstoneApproach ? CombatSoundCue.CrystalCharge :
+        cue == CombatSoundCue.ResonanceFull ? CombatSoundCue.RattlebonesAbility : cue;
     public const int VoiceCount = 6;
     public const float GainBudget = 0.8f;
     public static float Gain(CombatSoundCue cue)

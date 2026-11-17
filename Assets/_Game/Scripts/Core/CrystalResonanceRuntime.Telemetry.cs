@@ -46,6 +46,6 @@ public sealed partial class CrystalResonanceRuntime
     private void TelemetryDamage(PlayerActor player, int amount)
     { if (Enabled) { State.damageThisVisit+=amount; Record("player_damage", "", amount); } }
     private void TelemetryEnemy(EnemyActor enemy)
-    { if (enemy!=null) { telemetryEnemies.Add(enemy); enemy.SpecialAbilityUsed+=TelemetrySpecial; } }
+    { if (enemy!=null) { telemetryEnemies.RemoveAll(previous=>previous==null); telemetryEnemies.Add(enemy); enemy.SpecialAbilityUsed+=TelemetrySpecial; } }
     private void TelemetrySpecial(EnemyActor enemy) => Record("enemy_special", enemy.Definition.EnemyId);
 }

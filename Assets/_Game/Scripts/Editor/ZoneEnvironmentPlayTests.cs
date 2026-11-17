@@ -152,8 +152,10 @@ public sealed partial class ForestFoundationPlayTests
     {
         yield return LaunchDungeonHazards();var board=Run.Board;
         for(int i=0;i<5;i++) yield return EnvironmentMove();
-        Run.Travel.enabled=false;Run.Travel.State.stage=1;Run.Travel.State.destination="magical-forest";
-        KillEncounter();yield return Until(()=>Run.Continuation.CanCapture,"source settles");
+        Run.Travel.enabled=false;Set(Run.Waves,"advanceWavesAutomatically",false);Run.Travel.State.stage=1;Run.Travel.State.destination="magical-forest";
+        KillEncounter();yield return Until(()=>!Run.Waves.IsWaveActive && Run.Continuation.CanCapture,"source settles");
+        yield return Until(()=>Run.Resonance.State.pendingWave==0,"source Resonance bank settles");
+        ResonanceEncounterFixture.EarnedExit(Run);
         var before=Run.Continuation.Capture().board;
         Assert.That(before.cells.Count(c=>c.crumbleRestoreMove>0),Is.InRange(1,2));
         var cleaned=JsonUtility.FromJson<BoardCombatSnapshot>(JsonUtility.ToJson(before));
@@ -161,7 +163,7 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(cleaned.cells.Any(c=>c.crumbleRestoreMove>0||c.mined),Is.False);
         Assert.That(cleaned.cells.All(c=>c.hasGem),Is.True);
         Assert.That(JsonUtility.ToJson(Run.Continuation.Capture().board),Is.EqualTo(JsonUtility.ToJson(before)));
-        Assert.That(Run.Continuation.SaveNow(),Is.True);byte[] durable=File.ReadAllBytes(path);
+        Assert.That(Run.Continuation.SaveNow(),Is.True,"source save: "+Run.Continuation.Error+"; finished="+Run.IsFinished+"; active="+Run.Waves.IsWaveActive);byte[] durable=File.ReadAllBytes(path);
         using(var locked=new FileStream(path+".tmp",FileMode.Create,FileAccess.ReadWrite,FileShare.None))
         {
             LogAssert.Expect(LogType.Error,new System.Text.RegularExpressions.Regex("Could not save account"));

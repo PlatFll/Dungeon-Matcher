@@ -24,6 +24,12 @@ public sealed partial class WaveController
             return new ZoneTestEncounter { label = state.capstoneId, members = locked.ToArray(),
                 resonanceKind = (ZoneEncounterKind)state.capstoneKind };
         }
+        return SelectResonanceOrdinary(zone, depth, state, random);
+    }
+    // Shared production selector exposed for deterministic selection-only validation.
+    public static ZoneTestEncounter SelectResonanceOrdinary(ZoneDefinition zone, int depth,
+        CrystalResonanceSnapshot state, System.Random random)
+    {
         int tier = zone.ResonanceTier(depth);
         var choices = new List<ZoneTestEncounter>();
         foreach (var recipe in zone.resonanceEncounters)
@@ -31,7 +37,7 @@ public sealed partial class WaveController
                 ResonanceFormationLegal(zone, recipe, tier, state, false) && IntroductionSafe(recipe, state)) choices.Add(recipe);
         var fresh = choices.FindAll(r => !state.recentRecipes.Contains(r.label));
         if (fresh.Count > 0) choices = fresh;
-        if (choices.Count > 0) return PickDepthRecipe(choices, random);
+        if (choices.Count > 0) return PickDepthRecipe(zone, tier, choices, random);
         return BuildDepthWeightedEncounter(zone, tier, state, random);
     }
     public static ZoneTestEncounter ChooseResonanceCapstone(ZoneDefinition zone, int depth,
@@ -62,7 +68,7 @@ public sealed partial class WaveController
             if (!candidates.Exists(r => (int)r.resonanceKind == kind)) continue;
             roll -= weights[kind]; if (roll < 0) { selected = kind; break; }
         }
-        return PickDepthRecipe(candidates.FindAll(r => (int)r.resonanceKind == selected), random);
+        return PickDepthRecipe(zone, tier, candidates.FindAll(r => (int)r.resonanceKind == selected), random);
     }
     public static bool ResonanceFormationLegal(ZoneDefinition zone, ZoneTestEncounter recipe, int tier,
         CrystalResonanceSnapshot state, bool capstone)
@@ -103,11 +109,21 @@ public sealed partial class WaveController
             if (member.Category != EnemyCategory.Normal && !state.seenMechanics.Contains(member.EnemyId)) unseen++;
         return unseen == 0 || (unseen == 1 && recipe.members.Length <= 2);
     }
-    private static ZoneTestEncounter PickDepthRecipe(List<ZoneTestEncounter> candidates, System.Random random)
+    public static float ResonanceRecipeWeight(ZoneDefinition zone, int tier, ZoneTestEncounter recipe)
     {
-        int total = 0; foreach (var recipe in candidates) total += Math.Max(1, recipe.weight);
-        int pick = random.Next(total);
-        foreach (var recipe in candidates) { pick -= Math.Max(1, recipe.weight); if (pick < 0) return recipe; }
+        // Pool fade must affect authored formations too, not only the rare fallback.
+        // Average members rather than summing so actor count cannot inflate frequency.
+        float total = 0;
+        foreach (var member in recipe.members)
+            total += Array.Find(zone.resonancePool, entry => entry.enemy == member)?.Weight(tier) ?? 0;
+        return recipe.members.Length == 0 ? 0 : recipe.weight * total / recipe.members.Length;
+    }
+    private static ZoneTestEncounter PickDepthRecipe(ZoneDefinition zone, int tier,
+        List<ZoneTestEncounter> candidates, System.Random random)
+    {
+        float total = 0; foreach (var recipe in candidates) total += ResonanceRecipeWeight(zone, tier, recipe);
+        float pick = (float)random.NextDouble() * total;
+        foreach (var recipe in candidates) { pick -= ResonanceRecipeWeight(zone, tier, recipe); if (pick < 0) return recipe; }
         return candidates[candidates.Count - 1];
     }
     private static ZoneTestEncounter BuildDepthWeightedEncounter(ZoneDefinition zone, int tier,

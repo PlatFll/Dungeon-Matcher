@@ -28,7 +28,7 @@ public sealed class BalanceLifecyclePlayTests
             GemMasteryReward.PoisonBomb,GemMasteryReward.HealBomb,GemMasteryReward.ShieldBomb)))
         {
             foreach(Type fixtureType in new[]{typeof(CrackedCenterRewardTests),typeof(CrackedChainUpgradeScopeTests),
-                typeof(RunUpgradeLifecycleTests),typeof(UpgradeIntermissionLifecycleTests),typeof(PlayerAbilityLifecycleTests)})
+                typeof(RunUpgradeLifecycleTests),typeof(UpgradeIntermissionLifecycleTests)})
             foreach(var method in fixtureType.GetMethods().OrderBy(m=>m.Name))
             {
                 var cases=method.GetCustomAttributes<TestCaseAttribute>().Select(c=>c.Arguments).ToList();

@@ -21,7 +21,9 @@ public sealed partial class ForestFoundationPlayTests
         try
         {
             yield return LaunchUnified();
-            Run.Travel.State.visit=1;Run.Waves.SpawnCurrentWave();yield return Stable();
+            Run.Travel.State.visit=1;
+            ResonanceEncounterFixture.Lock(Run,zone.liveEncounters[0].members,"Approved revision diagnostic kit");
+            Run.Waves.SpawnCurrentWave();yield return Stable();
         }
         finally{zone.liveEncounters=recipes;zone.developmentEncounters=development;zone.encounterBudget=budget;}
         Set(Run.Waves,"advanceWavesAutomatically",false);PreserveRoster();

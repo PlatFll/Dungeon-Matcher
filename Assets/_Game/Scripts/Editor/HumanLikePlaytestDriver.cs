@@ -11,6 +11,7 @@ public sealed class HumanLikePlaytestDriver
     public readonly ResonancePlaystyle Style;
     private readonly System.Random decisions;
     private float nextAction, cardReady = -1;
+    private bool waitForSettledBoard=true;
     public int Swaps { get; private set; }
     public int Abilities { get; private set; }
     public int CardPicks { get; private set; }
@@ -34,12 +35,16 @@ public sealed class HumanLikePlaytestDriver
             return;
         }
         cardReady=-1;
-        if(Time.time<nextAction || !run.Waves.IsWaveActive || !run.Continuation.CanCapture || run.Board.IsExternalInputBlocked) return;
+        if(!run.Waves.IsWaveActive || !run.Continuation.CanCapture || run.Board.IsExternalInputBlocked) return;
+        // Read/consider the newly visible settled board. Counting this delay while
+        // gems are still falling let the proxy react instantly to an unseen result.
+        if(waitForSettledBoard){waitForSettledBoard=false;nextAction=Time.time+Delay();return;}
+        if(Time.time<nextAction)return;
         if(run.Player.CurrentHealth<run.Player.MaximumHealth*(Style==ResonancePlaystyle.Defensive?.65f:.35f) && run.TryUsePotion())
-        { ActionLog?.Invoke("potion");nextAction=Time.time+.35f;return; }
+        { ActionLog?.Invoke("potion");waitForSettledBoard=true;return; }
         var ability=run.Player.GetComponent<PlayerAbilityController>();
         if(ability!=null && ability.CanActivate && (Style!=ResonancePlaystyle.Novice || decisions.NextDouble()<.4) && ability.TryActivate())
-        { Abilities++;ActionLog?.Invoke("ability");nextAction=Time.time+.45f;return; }
+        { Abilities++;ActionLog?.Invoke("ability");waitForSettledBoard=true;return; }
         var options=run.Board.GetImmediateResponses(); if(options.Count==0)return;
         var warnings=run.Board.CaptureContinuation(run.Waves.ContinuationOwnerSlot).warnings;
         var ranked=options.Select(o=>new KeyValuePair<BoardController.ResponseOption,float>(o,Score(run,o,warnings)))
@@ -49,11 +54,17 @@ public sealed class HumanLikePlaytestDriver
         if(!run.Board.IsHintMoveStillValid(chosen.Source,chosen.Target))return;
         if(Style==ResonancePlaystyle.Aggressive && run.Waves.ActiveEnemies.Count>=2 && run.CanUse(ConsumableKind.Bomb) &&
             decisions.NextDouble()<.12 && run.TryUseBomb(chosen.Target))
-        { ActionLog?.Invoke("bomb:"+chosen.Target.Column+","+chosen.Target.Row);nextAction=Time.time+Delay();return; }
+        { ActionLog?.Invoke("bomb:"+chosen.Target.Column+","+chosen.Target.Row);waitForSettledBoard=true;return; }
+        bool Answers(BoardController.ResponseOption option)=>option.Clears.Any(g=>g!=null && warnings.Any(w=>
+            !w.environmental && w.kind!=2 && w.targets.Contains(option.FinalCell(g).y*run.Board.Width+option.FinalCell(g).x)));
+        bool Bubbles(BoardController.ResponseOption option)=>run.Board.IsFlooded && option.Clears.Any(g=>g!=null && run.Board.Aquatic.bubbles.Contains(g.BoardIdentity));
+        ActionLog?.Invoke("decision:legal="+options.Count+";warnings="+warnings.Count+
+            ";counterAvailable="+options.Any(Answers)+";counterChosen="+Answers(chosen)+
+            ";air="+(run.Board.IsFlooded?run.Board.Aquatic.air:-1)+";bubbleAvailable="+options.Any(Bubbles)+";bubbleChosen="+Bubbles(chosen));
         int x=chosen.Source.Column,y=chosen.Source.Row,tx=chosen.Target.Column,ty=chosen.Target.Row;
         // The same TrySwap command and BeforePlayerSwap journal as touch input; no direct board writes.
         run.Board.ReplayPlayerSwap(x,y,tx,ty); Swaps++;
-        ActionLog?.Invoke("swap:"+x+","+y+">"+tx+","+ty);nextAction=Time.time+Delay();
+        ActionLog?.Invoke("swap:"+x+","+y+">"+tx+","+ty);waitForSettledBoard=true;
     }
     private float Delay()
     {
@@ -64,12 +75,27 @@ public sealed class HumanLikePlaytestDriver
     }
     private float Score(RunSession run,BoardController.ResponseOption option,List<BoardWarningSnapshot> warnings)
     {
-        bool novice=Style==ResonancePlaystyle.Novice, defensive=Style==ResonancePlaystyle.Defensive;
-        float value=option.Clears.Count+(option.CreatesSpecial?(novice?2:18):0)+(option.UsesSpecial?(novice?5:24):0);
+        bool novice=Style==ResonancePlaystyle.Novice, defensive=Style==ResonancePlaystyle.Defensive, skilled=Style==ResonancePlaystyle.Skilled;
+        float value=option.Clears.Count+(option.CreatesSpecial?(novice?2:skilled?28:18):0)+(option.UsesSpecial?(novice?5:skilled?36:24):0);
+        // A visible setup heuristic: create a special near an existing bomb for
+        // a future chain. This sees current positions only, never the refill stream.
+        if(skilled && option.CreatesSpecial)
+            for(int x=0;x<run.Board.Width;x++)for(int y=0;y<run.Board.Height;y++)
+            {
+                var nearby=run.Board.GetGem(x,y);
+                if(nearby!=null && nearby.SpecialType!=GemSpecialType.None &&
+                    Mathf.Abs(x-option.Target.Column)+Mathf.Abs(y-option.Target.Row)<=2)value+=6;
+            }
         if(option.BreaksObstacle)value+=novice?1:12;
         foreach(var gem in option.Clears)
         {
             if(gem==null)continue;
+            // Oxygen bubbles and ice are visible board information. A typical
+            // policy must respond to low AIR instead of blindly taking damage.
+            var water=run.Board.Aquatic;
+            if(run.Board.IsFlooded && water.bubbles.Contains(gem.BoardIdentity))
+                value+=water.air<=2?(novice?8:50):(defensive?12:5);
+            if(run.Board.IceStage(gem)!=FrostStage.None)value+=novice?1:defensive?12:8;
             if(gem.Type==run.Player.Definition.AffinityGemType && run.Player.CurrentHealth<run.Player.MaximumHealth)
                 value+=defensive?9:3;
             foreach(var enemy in run.Waves.ActiveEnemies)

@@ -164,7 +164,7 @@ public sealed class WaveTrackerUI :
             );
 
         if (RunSession.Current?.Resonance?.Enabled == true)
-        { waveText.text = "SCORE " + RunSession.Current.Resonance.RunScore; displayedWave = safeWaveNumber; return; }
+        { if(resonanceHud==null) waveText.text = "SCORE " + RunSession.Current.Resonance.RunScore.ToString("N0"); displayedWave = safeWaveNumber; return; }
         waveText.text =
             string.Format(
                 waveLabelFormat,

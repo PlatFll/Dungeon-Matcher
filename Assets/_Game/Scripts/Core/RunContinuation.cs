@@ -18,6 +18,11 @@ public sealed class RunContinuation : MonoBehaviour
     public bool IsRestoring { get; private set; }
     public bool IsReplaying { get; private set; }
     public bool ExecutingReplayAction { get; private set; }
+#if UNITY_EDITOR
+    // Optional diagnostic observation of the already-durable native input.
+    // Not compiled into players; never changes acceptance or replay ownership.
+    public event Action<RunCombatSnapshot,RunReplayTape> ValidationActionRecorded;
+#endif
     public string Error { get; private set; }
     public bool CanCapture => session!=null && session.InitialStateReady && !session.IsFinished && !IsRestoring &&
         session.Player!=null && session.Player.IsInitialized && !session.Player.IsDefeated &&
@@ -190,7 +195,13 @@ public sealed class RunContinuation : MonoBehaviour
         var actions=tape.frames[tape.frames.Count-1].actions; actions.Add(action);
         ConsumableKind? supply=action.kind==RunActionKind.Potion?ConsumableKind.HealthPotion:
             action.kind==RunActionKind.Bomb?ConsumableKind.Bomb:(ConsumableKind?)null;
-        if(account.AcceptRecordedAction(session.RunId,tape,supply)) return true;
+        if(account.AcceptRecordedAction(session.RunId,tape,supply))
+        {
+#if UNITY_EDITOR
+            ValidationActionRecorded?.Invoke(checkpoint,tape);
+#endif
+            return true;
+        }
         actions.RemoveAt(actions.Count-1); Error=account.LastError; return false;
     }
     private void Execute(RunRecordedAction action)

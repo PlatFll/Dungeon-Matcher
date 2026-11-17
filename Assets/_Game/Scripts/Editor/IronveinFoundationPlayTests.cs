@@ -21,6 +21,7 @@ public sealed partial class ForestFoundationPlayTests
                 members=zone.enemies.Where(e=>e.EnemyId=="pickaxe_delver" || e.EnemyId=="rivet_gunner" || e.EnemyId=="packbeetle").ToArray()}};
         }
         RunLaunchOptions.ForestPrototype = false; RunLaunchOptions.StartingZone = "ironvein-excavation";
+        using var formation=live?null:ResonanceEncounterFixture.OnNextGame(zone.liveEncounters[0].members,"Mine diagnostic kit");
         try { SceneManager.LoadScene("Game"); yield return Stable(); }
         finally {zone.liveEncounters=old;zone.encounterBudget=budget;}
         PreserveRoster();

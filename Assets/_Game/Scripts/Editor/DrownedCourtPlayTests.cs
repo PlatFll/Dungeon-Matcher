@@ -19,6 +19,7 @@ public sealed partial class ForestFoundationPlayTests
         if(ids.Length>0) zone.liveEncounters=new[]{new ZoneTestEncounter{label="Court regression formation",
             members=ids.Select(id=>zone.enemies.Single(e=>e.EnemyId==id)).ToArray()}};
         RunLaunchOptions.StartingZone="drowned-court";
+        using var formation=ids.Length==0?null:ResonanceEncounterFixture.OnNextGame(zone.liveEncounters[0].members,"Court diagnostic kit");
         SceneManager.LoadScene("Game");yield return Stable();
         zone.eligibleForLiveTravel=eligible;zone.liveEncounters=recipes;
         Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("drowned-court"));

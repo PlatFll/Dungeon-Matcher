@@ -115,6 +115,7 @@ public sealed class UIPixelParticle :
 
         float deltaTime =
             Time.deltaTime;
+        if (deltaTime <= 0) return;
 
         elapsedTime +=
             deltaTime;
