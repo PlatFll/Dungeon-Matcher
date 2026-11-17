@@ -102,5 +102,43 @@ public sealed class CrystalResonanceSnapshot
             { triggeredMask |= 1 << i; pendingNotches.Add(tuning.milestones[i]); }
         return true;
     }
+    public static bool Supports(CrystalResonanceSnapshot value, RunCombatSnapshot combat)
+    {
+        if (value == null || value.version == 0) return true; // Explicit legacy migration, never inferred charge.
+        if (value.version != 1 || value.score < 0 || value.lastReceipt < 0 || value.charge < 0 || value.charge > 100 ||
+            value.masteryMask < 0 || value.masteryMask > 7 || value.boardScore < 0 || value.visit < 0 ||
+            value.lastBankedWave < 0 || value.lastBankedWave > combat.wave || value.activeWave < 0 ||
+            value.approachThreshold < 78 || value.approachThreshold > 88 || value.capstoneRandom == 0 ||
+            value.pendingNotches == null || value.seenLeaders == null || value.recentRecipes == null ||
+            value.seenMechanics == null || value.recentCapstones == null || value.capstoneMembers == null ||
+            value.triggeredMask < 0 || value.triggeredMask > 7 || value.claimedMask < 0 ||
+            (value.claimedMask & ~value.triggeredMask) != 0 ||
+            combat.travel?.version != 1 || value.visit != combat.travel.visit || value.zoneId != combat.travel.zoneId) return false;
+        if (value.active && (value.activeWave != combat.wave || value.activeWave <= value.lastBankedWave ||
+            string.IsNullOrEmpty(value.encounterId))) return false;
+        if (value.pendingWave != 0 && (!value.active || value.pendingWave != value.activeWave)) return false;
+        int previous = 0, queuedMask = 0;
+        int[] notches = { 12, 40, 70 };
+        foreach (int notch in value.pendingNotches)
+        {
+            int index = Array.IndexOf(notches, notch);
+            if (index < 0 || notch <= previous || value.charge < notch) return false;
+            previous = notch; queuedMask |= 1 << index;
+        }
+        if (queuedMask != (value.triggeredMask & ~value.claimedMask) ||
+            (value.activeNotch != 0 && (value.pendingNotches.Count == 0 || value.activeNotch != value.pendingNotches[0]))) return false;
+        if (!Enum.IsDefined(typeof(ResonanceCapstonePhase), value.capstonePhase)) return false;
+        bool selected = value.capstonePhase != ResonanceCapstonePhase.Unselected;
+        bool legacyTrip = value.migratedLegacy && value.capstonePhase == ResonanceCapstonePhase.Defeated && combat.travel.stage == 1;
+        if (selected && !legacyTrip && (string.IsNullOrEmpty(value.capstoneId) || string.IsNullOrEmpty(value.capstoneEncounterId) ||
+            value.capstoneMembers.Count < 1 || value.capstoneMembers.Count > 3 || value.formationSeed == 0 ||
+            value.capstoneWave <= 0 || value.capstoneKind < 1 || value.capstoneKind > 3)) return false;
+        if (value.capstonePhase == ResonanceCapstonePhase.Scheduled && value.capstoneWave != combat.wave + 1) return false;
+        if (value.capstonePhase == ResonanceCapstonePhase.InProgress &&
+            (value.capstoneWave != combat.wave || !value.active || value.capstoneEncounterId != value.encounterId)) return false;
+        foreach (float seconds in new[] { value.visitSeconds, value.combatSeconds, value.draftSeconds, value.travelSeconds })
+            if (float.IsNaN(seconds) || float.IsInfinity(seconds) || seconds < 0) return false;
+        return true;
+    }
     public void DiscardPending() { active = false; masteryMask = pendingWave = 0; }
 }

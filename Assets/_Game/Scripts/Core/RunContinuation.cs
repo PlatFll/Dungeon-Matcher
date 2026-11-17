@@ -49,7 +49,7 @@ public sealed class RunContinuation : MonoBehaviour
     }
     public static bool SupportsSnapshot(RunCombatSnapshot saved)
     {
-        if(saved==null || saved.board?.forestRulesVersion>2 || saved.board?.dungeonRulesVersion>2 ||
+        if(saved==null || !CrystalResonanceSnapshot.Supports(saved.resonance, saved) || saved.board?.forestRulesVersion>2 || saved.board?.dungeonRulesVersion>2 ||
             saved.board?.aquatic?.version>AquaticEnvironmentState.CurrentVersion ||
             !MineEnvironmentState.Supports(saved.board) || !FrostGemSnapshot.Supports(saved.board)) return false;
         if (saved.enemies != null) foreach (var enemy in saved.enemies)
@@ -132,13 +132,17 @@ public sealed class RunContinuation : MonoBehaviour
     {
         if(!CanCapture || session.Waves.IsWaveActive || session.Travel?.State.stage!=1 ||
             session.Travel.State.destination!=destination) return false;
+        if (session.Resonance?.Enabled == true && (!session.Resonance.PortalReady ||
+            session.Waves.GetComponent<RunUpgradeCoordinator>()?.IsBlockingWaveProgression == true)) return false;
         var zone=Resources.Load<ZoneDefinition>("Zones/"+destination);
-        if(!ZoneTravelController.DestinationReady(zone)) return false;
+        if(destination == session.Travel.State.zoneId || !ZoneTravelController.DestinationReady(zone)) return false;
         var saved=Capture();
         if (saved.travel.zoneId == "drowned-court") saved.travel.completedCourtVisits++;
         saved.travel.zoneId=destination;saved.travel.stage=2;saved.travel.visit++;
         saved.travel.visitStartWave=saved.wave+1;
         saved.travel.mineEncounters=new MineEncounterProgress();
+        // Reset the detached destination copy only. Failed writes leave the visible source intact.
+        saved.resonance?.StartVisit(destination, saved.travel.visit, CrystalResonanceTuning.Current);
         // Keep the run's established effect units. Legacy seconds never become moves.
         if(saved.clock==null)
             saved.clock=new CombatClockSnapshot{profile=CombatClockSnapshot.LegacyEffectsProfile,

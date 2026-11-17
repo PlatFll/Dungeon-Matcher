@@ -22,7 +22,7 @@ public sealed partial class RunUpgradeCoordinator
             }
             return;
         }
-        if (!Resonance.HasPendingDrafts || waveController == null || waveController.IsWaveActive ||
+        if (Resonance.IsSavePending || !Resonance.HasPendingDrafts || waveController == null || waveController.IsWaveActive ||
             boardController == null || boardController.IsBusy || !waveController.CanCaptureContinuation ||
             run.MoveClock?.IsBlockingWaveProgression == true || run.GetComponent<RunControlsUI>()?.IsModalOpen == true ||
             runtime?.Catalog == null || choiceUI == null || !choiceUI.isActiveAndEnabled) return;

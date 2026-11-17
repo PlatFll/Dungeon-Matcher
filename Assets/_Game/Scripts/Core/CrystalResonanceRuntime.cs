@@ -12,9 +12,10 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
     public int Committed => State?.charge ?? 0;
     public int Pending => State?.PendingMastery ?? 0;
     public bool HasPendingDrafts => Enabled && (State.pendingNotches.Count > 0 || State.activeNotch != 0);
-    public bool IsBlockingWaveProgression => Enabled && (State.pendingWave > 0 || HasPendingDrafts);
+    public bool IsSavePending { get; private set; }
+    public bool IsBlockingWaveProgression => Enabled && (State.pendingWave > 0 || HasPendingDrafts || IsSavePending || PortalReady);
     public bool PortalReady => Enabled && Committed >= Tuning.capacity &&
-        State.capstonePhase == ResonanceCapstonePhase.Defeated && !HasPendingDrafts && State.pendingWave == 0 && !State.active;
+        State.capstonePhase == ResonanceCapstonePhase.Defeated && !HasPendingDrafts && State.pendingWave == 0 && !State.active && !IsSavePending;
     public bool Sealed => Enabled && Committed >= Tuning.capacity && State.capstonePhase != ResonanceCapstonePhase.Defeated;
     public event Action CapstoneApproaching;
     public event Action Changed;
@@ -34,8 +35,17 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
                 lastBankedWave = saved == null ? 0 : (saved.waveActive ? Math.Max(0, saved.wave - 1) : saved.wave), migratedLegacy = saved != null };
             State.StartVisit(run.Zone.Definition.zoneId, run.Travel.State.visit, Tuning);
             // A durable legacy trip has already been earned. Finish it, then reset at arrival.
-            if (saved?.travel?.stage > 0) { State.charge = Tuning.capacity; State.capstonePhase = ResonanceCapstonePhase.Defeated; }
+            if (saved?.travel?.stage == 1) { State.charge = Tuning.capacity; State.capstonePhase = ResonanceCapstonePhase.Defeated; }
             if (saved?.waveActive == true) State.BeginEncounter(run.RunId, saved.wave);
+            if (saved?.seenEnemies != null)
+                foreach (var zone in Resources.LoadAll<ZoneDefinition>("Zones"))
+                    foreach (var enemy in zone.enemies)
+                        if (enemy != null && saved.seenEnemies.Contains(enemy.name))
+                        {
+                            if (!State.seenMechanics.Contains(enemy.EnemyId)) State.seenMechanics.Add(enemy.EnemyId);
+                            if ((enemy.Category == EnemyCategory.Miniboss || enemy.Category == EnemyCategory.Boss) &&
+                                !State.seenLeaders.Contains(enemy.EnemyId)) State.seenLeaders.Add(enemy.EnemyId);
+                        }
         }
         run.Board.RestoreProgressionReceiptSequence(State.lastReceipt);
         run.Board.ProgressionReceipt += Receive;
@@ -64,6 +74,11 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
     {
         if (!Enabled || run.IsFinished || run.Player.IsDefeated || Time.timeScale <= 0 ||
             run.Continuation?.IsRestoring == true) return;
+        if (IsSavePending)
+        {
+            if (run.Continuation?.CanCapture == true && run.Continuation.SaveNow()) IsSavePending = false;
+            else return;
+        }
         if (State.pendingWave == 0 || run.Waves.IsWaveActive || run.Board.IsBusy ||
             !run.Waves.CanCaptureContinuation || run.MoveClock?.IsBlockingWaveProgression == true || run.NeedsSaveRetry) return;
         int wave = State.pendingWave;
@@ -81,7 +96,8 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
             State.capstonePhase = ResonanceCapstonePhase.Defeated;
         ScheduleCapstone(wave + 1);
         EncounterBanked?.Invoke(wave); Changed?.Invoke();
-        run.Continuation?.SaveNow();
+        IsSavePending = run.Continuation != null;
+        if (IsSavePending && run.Continuation.CanCapture && run.Continuation.SaveNow()) IsSavePending = false;
     }
     private void ScheduleCapstone(int nextWave)
     {
@@ -112,13 +128,13 @@ public sealed class CrystalResonanceRuntime : MonoBehaviour, IWaveProgressionGat
         int index = Array.IndexOf(Tuning.milestones, notch);
         if (index < 0) return false;
         State.claimedMask |= 1 << index; State.pendingNotches.RemoveAt(0); State.activeNotch = 0;
-        Changed?.Invoke(); return true;
+        IsSavePending = run.Continuation != null; Changed?.Invoke(); return true;
     }
     public CrystalResonanceSnapshot Capture() => Enabled ? State.Copy() : null;
     public void Restore(CrystalResonanceSnapshot saved)
     {
         if (saved?.version != 1) return;
-        State = saved.Copy(); run.Board.RestoreProgressionReceiptSequence(State.lastReceipt); Changed?.Invoke();
+        State = saved.Copy(); IsSavePending = false; run.Board.RestoreProgressionReceiptSequence(State.lastReceipt); Changed?.Invoke();
     }
     private void Defeated(PlayerActor player)
     { if (Enabled) { State.DiscardPending(); Changed?.Invoke(); } }

@@ -38,9 +38,9 @@ public sealed partial class RunUpgradeCoordinator :
         if (choices.Count == 0) return false;
         // Accepted direction is already durable in the action journal. A later
         // snapshot failure must not permit another refinement.
-        PersistDraft(choices,true);
         refinementUsed = true;
         offeredChoices.Clear(); offeredChoices.UnionWith(choices);
+        PersistDraft(choices,true);
         RunSession.Current?.Continuation?.SaveNow();
         object session = activeChoiceSession;
         return choiceUI.Show(choices, card => ReferenceEquals(activeChoiceSession, session) && TrySelectUpgrade(card));
