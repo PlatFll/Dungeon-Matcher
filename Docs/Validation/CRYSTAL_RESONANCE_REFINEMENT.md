@@ -2,7 +2,8 @@
 
 November 18, 2026. Existing draft PR #234 only; **not merged**.
 The pilot below is completed evidence, not a completed final acceptance pass.
-The 20-case independent matrix, deep runs and final builds remain outstanding.
+The original 20-case matrix has completed. Deep runs, a spread-seed coverage
+expansion and final builds remain outstanding.
 Historical results remain unchanged in CRYSTAL_RESONANCE_V1_FINAL.md.
 
 ## A. Implementation
@@ -110,6 +111,61 @@ and Berserker formations caused sustained damage; the skilled final formation
 lasted 15 swaps, rather than an unexplained instant kill. All profiles consumed
 their available potions naturally. One seed at L1 is insufficient to classify
 this as an unfair zone or justify a blanket nerf. The larger matrix is required.
+
+## C2. Completed 20-case matrix (consecutive-seed sample)
+
+Batch 20261118-020131 finished with Unity exit 0, no runtime errors and an independent
+audit of 4,664 durable inputs with zero invariant failures. Seventeen attempts
+ended in natural defeat; three reached the configured three-visit observation
+limit alive. There were 30 completed visits: 20 Dungeon, 7 Forest and 3 Frostwake.
+The longest attempt lasted 20.35 minutes but ended in defeat; it is not a claimed
+successful deep run.
+
+| Profile | Median completed Dungeon seconds | Median Dungeon swaps | Forest completed/attempted |
+|---|---:|---:|---:|
+| Novice | 495.5 | 121.5 | 0/4 |
+| Typical | 316.9 | 84.5 | 0/4 |
+| Skilled | 259.0 | 81.0 | 4/4 |
+| Defensive | 378.6 | 74.0 | 2/4 |
+| Aggressive | 338.1 | 86.0 | 1/4 |
+
+All profiles use the same four character/level pairs per seed group, so this
+table is descriptive across those pairs. Separate exact rows, HP damage, casts,
+cards, threat diagnostics, formations, capstones and causes of death remain in
+main-summary.json. Do not infer skill solely from elapsed time.
+
+No immediate recipe repeats occurred. Forest completions ranged 220.9–526.3s;
+Frostwake completions 255.7–366.8s. There was a Briar Matriarch major-boss capstone,
+alongside elites and guardians: major bosses were not mandatory. Completed
+capstones ranged 7.314–86.367s in this batch; brief victories remain earned play,
+not automatic failures. The historical 3.7-second case still requires comparison
+with deep new runs. Forest first-card outliers of 108.3s (novice) and 101.3s
+(defensive) persisted; the Frostwake aggressive first card reached 117.2s.
+These are flags for encounter/decision review, not grounds for uniform rewards.
+
+### Sampling limitation discovered and corrected prospectively
+
+Every original named seed 19001–19005 chose Forest as its first destination; the
+surviving third visits all reached Frostwake. Source inspection found no forced
+Forest route. The travel selector sorts the four eligible other zones and uses
+the first xorshift draw of encounterSeed XOR 0x36741. These tightly adjacent
+experimental seeds yielded fractions 0.8130–0.8135, all selecting the same index.
+This is biased coverage from the experiment's seed selection, not evidence that
+Court or Ironvein worked naturally. A Court arrival-only row is not a played
+Court visit.
+
+All original runs remain evidence. They are not counted as a representative
+five-zone sample. An additional **predeclared five widely spread seeds per policy**
+is committed in spread-seed-protocol.json (commit 81c93d8), plus four independently
+derived deep seeds. SHA-256 maps fixed labels to 31-bit seeds; no candidate
+destination draws were inspected and no seeds rejected to obtain favorable
+routes/outcomes. The policy still cannot inspect future RNG. No game RNG,
+durable save format, travel weighting or mechanics were changed.
+
+Pilot versus main full source-manifest comparison found exactly one changed
+file: the offline analyzer's consistent-metadata correction. Assets, scripts,
+zone data and ProjectSettings were byte-identical before the two executions.
+Batches remain separate in the report. Deep/spread evidence is still pending.
 
 ## D. Adjustments and historical outliers
 

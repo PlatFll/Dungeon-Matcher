@@ -45,26 +45,43 @@ See Docs/Validation/CRYSTAL_RESONANCE_REFINEMENT.md and its new evidence directo
 Pilot Dungeon swaps novice119/skilled71, damage315/140; Forest losses atdepth27–33.
 No gameplay balance change justified from one seed; inspect main/deep next.
 
-ACTIVE main matrix: batch20261118-020131, 20 natural cases, seeds19002–19005,
-four characters atL1/L5, all five profiles, max3 visits/30min each. Root PID17724.
-Job state .utmp/CrystalResonance/Refinement/jobs/main-20261118-020113/job.json.
-One-shot completion waiter PID30432 is VERIFIED waiting for that process.
-Queue wakeup was verified twice (probe and completed pilot); it posts to chat
-01a127fb-8a65-7d73-9061-df9dc2d9843a. No model polling required.
-The corrected wrapper invokes a native child and reads LASTEXITCODE; explicit
-exit0/7 probes passed. It analyzes/audits after Unity exits and notifies once.
-A claim file prevents duplicate notifications; failed notifications do not retry.
-Do not start another Unity job or edit Assets while the current job is running.
-Known serialized import noise must be inspected/restored only after owned exit.
+Main matrix batch20261118-020131 COMPLETE:20 cases,17 natural defeats,3 alive
+at3-visit limit. Unity/analysis/audit all exit0;4,664 accepted inputs audited.
+30 completed visits (20Dungeon,7Forest,3Frostwake); no immediate recipe repeats.
+Main report/artifacts now curated in Docs/Validation/CrystalResonanceRefinementEvidence.
+The source delta against pilot is ONLY the offline analyzer; runtime/data unchanged.
+Typical Forest0/4 vs skilled4/4; all20 Dungeon cleared. Do not infer fairness
+solely from win rate or thinking time; examine decisions, supports and counters.
 
-Next on notification: read job + analysis/audit once, check all20 cases and
-failures. Compare sources explicitly: pilot b689187 vs main cdfae32 differs only
-in offline analyzer, not gameplay/zone/policy source. Full source manifests
-include Assets/Packages/ProjectSettings/Tools. Keep batches separate in reports.
-Then run four deep L10 Dungeon-first attempts (max45min, natural deaths retained):
-scratch cr_refine_launch_group.ps1 -Group deep. Its wrapper auto-arms a verified
-single completion waiter. Assess sparse natural zones and extend if warranted.
-Never substitute direct-zone fixtures for natural progression evidence.
+Sampling flaw found: all original consecutive seeds19001–19005 picked Forest
+first and surviving third visits Frostwake. Travel first xorshift fractions all
+0.8130–0.8135: tightly clustered experimental seeds, NOT a forced Forest route.
+Do not present the25 original runs as representative five-zone coverage.
+Commit81c93d8 predeclared spread-seed-protocol.json BEFORE testing any new route.
+SHA256(fixed prefix|label) to positive31bit seeds; no desired-outcome selection.
+New wide group:5 spread seeds*5 policies=25 natural runs, same character/level
+pairs, max3visits/1800s each. Not started yet. Preserve original sample separately.
+
+ACTIVE DEEP batch20261118-063014, four L10 natural Dungeon-first attempts,
+spread seeds per committed protocol. Max10 visits/2700s, real deaths retained.
+Wrapper PID34856; verified one-shot completion waiter PID17540.
+Job state .utmp/CrystalResonance/Refinement/jobs/deep-20261118-062955/job.json.
+No model polling required; completion queues to this same chat. Do not launch
+another Unity job or edit Assets while active. Notify claim prevents duplicates.
+Known import noise must be reviewed/restored only after owned Unity exits.
+Scratch cr_refine_background.ps1 uses native child LASTEXITCODE (exit0/7 verified)
+and automatically analyzes/audits/notifies once; no retry or model change.
+Waiter cr_refine_notify.ps1 observes only own wrapper, never kills processes.
+Launch tool: scratch/cr_refine_launch_group.ps1 -Group deep|wide|main|pilot.
+
+NEXT ON DEEP COMPLETION: inspect job+analysis/audit once, deep survival,
+Court/Ironvein/return coverage, capstone mechanics and pressure. Then launch
+-Group wide (predeclared25 cases) unless actual bug requires targeted correction.
+Do not silently substitute direct-zone fixtures for missing natural evidence.
+Keep source-separated batches; current production code/data remain b689187,
+offline analyzer cdfae32; later commits only reports and seed protocol.
+After wide: measure fairness/strategic metrics, firstcards and caps, any smallest
+justified tuning + affected reruns; no timers/HP padding or manufactured success.
 
 After evidence: investigate Court/Forest/capstones, only targeted justified
 tuning + affected retests, final validator, Android/Windows builds, curated A–F
