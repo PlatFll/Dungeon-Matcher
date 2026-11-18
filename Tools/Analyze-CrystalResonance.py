@@ -31,7 +31,10 @@ def main():
         for casepath in sorted(batch.glob('*/case.json')):
             folder=casepath.parent;case=json.loads(casepath.read_text());events=read_rows(folder/'events.jsonl');actions=read_rows(folder/'actions.jsonl')
             result=json.loads((folder/'result.json').read_text()) if (folder/'result.json').exists() else dict(outcome='RUNNING/INCOMPLETE')
-            cases.append(dict(batch=batch.name,**case,**result))
+            for shared in case.keys() & result.keys():
+                if case[shared] != result[shared]:
+                    raise ValueError(f'Config/result disagree on {shared}: {folder}')
+            cases.append({'batch':batch.name,**case,**result})
             if not (folder/'visits.csv').exists():continue
             for row in csv.DictReader((folder/'visits.csv').open()):
                 visit=int(row['visit']);selected=[e for e in events if e['visit']==visit]
