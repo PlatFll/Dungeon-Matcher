@@ -86,3 +86,22 @@ justified tuning + affected reruns; no timers/HP padding or manufactured success
 After evidence: investigate Court/Forest/capstones, only targeted justified
 tuning + affected retests, final validator, Android/Windows builds, curated A–F
 report. Push/update existing draft PR234; never merge or create another PR.
+
+LATEST USER STEERING / PRESERVATION AUDIT (November18,07:38UTC):
+Before new playtests, inspected every Playtest directory and process chain.
+No tests started/deleted/overwritten/restarted/interrupted this turn.
+Deep remains the only active batch:2closed,typical Minotaur third active,fourth
+Kobold pending at inspection. Snapshot safe: Inspection/audit-20261118-073806-51e6f8.
+New offline copied-case audit passed777durableinputs,8completedvisits,2realdeaths.
+Skilled14.6min diedDungeonrevisitdepth71;defBard33min diedFrostcapdepth85 after
+successfulCourt/Ironveinvisits. Do not pool partial snapshot into final batch
+again or claim wholedeepcomplete. Final fulljobanalysis will supersede snapshot.
+Historicalfailed20261117-014621 retained(EditorSearchDatabaseexception);oldroot
+pass1/probe1 are inactive incompleteprobes,notrunning. All77closedrecordsinventory
+parsed;nointegrityerrors. See C3report/existing-runs-inspection.json.
+Userrequires clean Unity/test-process shutdown AFTER work; verify owned process
+exit includingimportworkers,wrapper,notifier. Do not kill activebatch or unrelated
+processes. Existing notifier17540 already armed; do not create another waiter.
+Future tests/builds must use NEW output paths and preserve existinglogs/results.
+Do not launch any new test until currentbatch ends and itsresult is inspected.
+No tuning until intended natural evidence is reviewed including failures.

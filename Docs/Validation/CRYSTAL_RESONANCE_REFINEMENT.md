@@ -167,6 +167,54 @@ file: the offline analyzer's consistent-metadata correction. Assets, scripts,
 zone data and ProjectSettings were byte-identical before the two executions.
 Batches remain separate in the report. Deep/spread evidence is still pending.
 
+## C3. Existing-run preservation audit (07:38 UTC, November 18)
+
+The user noticed that the detached playtest continued after chat responses.
+Before any additional test launch, all Playtest directories and the live process
+chain were inspected. No run was deleted, overwritten, restarted or interrupted.
+`existing-runs-inspection.json` records the inventory and local evidence paths.
+
+The pilot (5 cases) and main matrix (20 cases) were finished. The one active batch
+was deep `20261118-063014`: two finished cases, the typical Minotaur third case
+running, and the aggressive Kobold fourth case not started yet. Unity PID23680
+belonged to this batch, with two import workers. Wrapper34856/runner22420 and
+the existing one-shot completion waiter17540 accounted for its remaining job
+processes. No duplicate pilot/main Unity process was found. This is a point-in-time
+inventory, not a promise that live process IDs remain current.
+
+Historical batch `20261117-014621` retains its FAILED status and Unity Editor
+SearchDatabase ArgumentOutOfRangeException. Its recorded result remains usable
+as failure evidence, not a clean technical pass. Five other historical batches
+contain 49 finalized cases. Root-level `pass1-novice-dungeon-L1-8201` and
+`probe1-novice-dungeon-L1-8201` are old incomplete probes with no live owner or
+result.json, not still-running tests. They are excluded from completed timings.
+The earliest historical batches lack source/config provenance and are not
+pooled with the new attention-v2 runs.
+
+All 77 finalized case records across the inspected directories parsed without
+integrity errors; existing closed native journals also passed gzip/JSON and
+requested-versus-accepted counts. This does not convert the historical runtime
+failure into a pass. Live gzip/checkpoint files were left alone. Complete
+append-only text rows showed ongoing third-case progress. Only the two closed
+deep cases were copied to a **new** inspection snapshot; their offline audit
+passed 777 accepted commands, without changing any original evidence.
+
+These two deep L10 attempts both ended in natural defeat. Skilled Rattlebones
+completed Dungeon, Forest, Frostwake and Ironvein before dying on a Dungeon
+revisit at depth71 after 877.4s (14.6 minutes). Defensive Bardley completed
+Dungeon, Court, Frostwake and Ironvein, then died against the Iceborn Champion
+capstone at depth85 after 1980.4s (33.0 minutes). The latter's completed Court
+visit took 400.7s with 79 swaps, 15 ability casts and six enemy specials. This
+adds genuine natural Court/Ironvein evidence, not a claim that every zone is
+balanced. Its 33-minute attempt is a real loss, not a successful survival claim.
+
+The skilled Forest guardian fell in 4.544s; defensive capstones lasted 24.1–41.3s.
+The short earned result remains a review flag rather than grounds for adding HP
+or timing gates. No balance change is justified from a partially completed batch.
+The already-armed completion waiter will resume this chat after the job exits.
+After all intended work, verify Unity, import workers, runner, wrapper and
+notifier have exited; do not terminate unrelated Unity/Hub processes.
+
 ## D. Adjustments and historical outliers
 
 No gameplay numeric or formation adjustments have been made in this refinement.
