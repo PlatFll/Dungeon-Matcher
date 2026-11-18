@@ -15,6 +15,7 @@ using UnityEngine.SceneManagement;
     public ResonancePlaystyle policy=ResonancePlaystyle.Typical;
     public int seed=8201,level=1,maxVisits=2;
     public float maxSeconds=1500;
+    public bool diagnosticStart;
 }
 [Serializable] public sealed class ResonancePlaytestConfig { public ResonancePlaytestCase[] cases; public bool capture=true; }
 
@@ -84,10 +85,13 @@ public static class CrystalResonancePlaytest
         string profilePath=Path.Combine(folder,"account.json");
         var save=new AccountSave{potions=3,bombs=3,equipPotions=true,equipBombs=true};
         save.characters.Add(new CharacterProgress{id=sample.character,level=sample.level});
-        // Explicit disposable starting profile/zone selection, no depth/HP/charge grants in a played run.
-        save.run=new AccountRunJournal { id="cr-"+sample.seed+"-"+sample.character,playerId=sample.character,level=sample.level,
-            supportsContinuation=true,potionCharges=3,bombCharges=3,initialPotionCharges=3,initialBombCharges=3,
-            checkpoint=new RunCombatSnapshot { version=2, clock=new CombatClockSnapshot {profile=CombatClockSnapshot.UnifiedProfile,zoneId=sample.zone}, travel=new ZoneTravelSnapshot {version=1,enabled=true,zoneId=sample.zone} } };
+        // Natural runs enter the genuine fresh-run path (no fabricated Continue).
+        // The run ID/capstone seed is recorded in the initial account and native
+        // checkpoints; sample.seed controls initial board/encounter streams only.
+        if(sample.zone!="dungeon" && !sample.diagnosticStart)
+            throw new InvalidOperationException("Non-Dungeon starts must be explicitly labeled diagnosticStart.");
+        RunLaunchOptions.ClearDevelopmentLaunch();
+        if(sample.diagnosticStart)RunLaunchOptions.StartingZone=sample.zone;
         File.WriteAllText(profilePath,JsonUtility.ToJson(save));profile=AccountProgression.UseDisposableProfile(profilePath);
         selection=CharacterSelectionSettings.UseTemporarySelection(sample.character);mastery=GemMasterySettings.UseTemporaryLoadout(GemMasteryLoadout.Default);
         UnityEngine.Random.InitState(sample.seed);Time.timeScale=1;Application.runInBackground=true;
@@ -107,6 +111,7 @@ public static class CrystalResonancePlaytest
         SceneManager.LoadScene("Game");float loadDeadline=Time.realtimeSinceStartup+60;
         while(RunSession.Current==null || !RunSession.Current.InitialStateReady || RunSession.Current.Continuation.IsRestoring)
         { if(Time.realtimeSinceStartup>loadDeadline)throw new Exception("Initial Game load did not settle");yield return null; }
+        File.Copy(profilePath,Path.Combine(folder,"initial-account.json"),true);
         events=new StreamWriter(Path.Combine(folder,"events.jsonl")){AutoFlush=true};
         var actions=new StreamWriter(Path.Combine(folder,"actions.jsonl")){AutoFlush=true};
         nativeJournal=new StreamWriter(new System.IO.Compression.GZipStream(
@@ -161,14 +166,14 @@ public static class CrystalResonancePlaytest
                 yield return null;
             }
             var end=RunSession.Current;string result=end!=null && end.IsFinished?"defeat":completed>=sample.maxVisits?"visit limit":"censored duration limit";
-            File.WriteAllText(Path.Combine(folder,"result.json"),JsonUtility.ToJson(new Result {outcome=result,wallSeconds=Time.realtimeSinceStartup-start,completedVisits=completed,swaps=driver.Swaps,abilities=driver.Abilities,cards=driver.CardPicks},true));
+            File.WriteAllText(Path.Combine(folder,"result.json"),JsonUtility.ToJson(new Result {outcome=result,wallSeconds=Time.realtimeSinceStartup-start,completedVisits=completed,swaps=driver.Swaps,abilities=driver.Abilities,cards=driver.CardPicks,policyVersion=HumanLikePlaytestDriver.PolicyVersion,diagnosticStart=sample.diagnosticStart},true));
             if(end!=null)File.AppendAllText(Path.Combine(folder,"visits.csv"),FormattableString.Invariant($"{zone},{visit},false,{Time.realtimeSinceStartup-visitStart:0.###},{end.Waves.CurrentWave},{end.Resonance.RunScore},{end.Player.CurrentHealth}\n"));
         }
         finally { actions.Dispose(); events?.Dispose();events=null;nativeJournal?.Dispose();nativeJournal=null; }
         SceneManager.LoadScene("MainMenu");yield return null;Cleanup();
     }
     [Serializable] private sealed class InputRow { public float wall; public string action;public int visit; }
-    [Serializable] private sealed class Result { public string outcome; public float wallSeconds;public int completedVisits,swaps,abilities,cards; }
+    [Serializable] private sealed class Result { public string outcome,policyVersion;public bool diagnosticStart; public float wallSeconds;public int completedVisits,swaps,abilities,cards; }
     [Serializable] private sealed class NativeBoundary {public RunCombatSnapshot checkpoint;public RunReplayTape tape;}
     private static void RecordNative(RunCombatSnapshot checkpoint,RunReplayTape tape)
         => nativeJournal?.WriteLine(JsonUtility.ToJson(new NativeBoundary{checkpoint=checkpoint,tape=tape}));

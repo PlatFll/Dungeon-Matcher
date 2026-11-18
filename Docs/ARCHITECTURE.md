@@ -324,14 +324,14 @@ width through `EnemyWeaknessIndicatorUI`; the weakness gem and active status are
 centered together beneath HP. Disabling/removing the intent view releases that
 width. These layout rules do not resize character art or affect combat state.
 
-`MainMenuController` temporarily offers ready `ZoneDefinition` entries before a
-fresh launch. `RunLaunchOptions.StartingZone` is a one-use handoff, consumed and
-validated by `RunSession`; an existing checkpoint always wins. A fresh start in any ready zone
-installs `unified-accepted-moves-v3` before actors initialize and
-enables the normal travel controller. It never uses the isolated fixture flag.
-`RunLaunchOptions.TestingZonePickerEnabled` controls this temporary menu and
-same-zone Retry behavior; disable it for release. No zone preference or new
-account/save schema is introduced.
+`MainMenuController` starts the Game directly and clears stale development
+requests. Fresh standard/Practice/challenge runs and Retry always begin in Dungeon;
+Continue restores its checkpoint zone/state. `RunLaunchOptions.StartingZone` exists
+only under UNITY_EDITOR, is consumed once by RunSession, and is ignored whenever
+a saved run exists. Explicit Editor diagnostics retain live travel and the unified
+move profile; the older Forest fixture remains isolated. Both menu entry and Retry
+clear development flags. No player-facing zone picker, saved zone preference or
+new persistence schema is introduced. Random eligible travel is unchanged.
 
 `ForestDevelopmentEntry` selects a disposable account and an Editor-only launch
 flag. `RunSession` installs `ZoneRuntimeContext` for every run, and

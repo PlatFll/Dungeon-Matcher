@@ -97,7 +97,7 @@ public sealed class ZoneTravelController : MonoBehaviour,IWaveProgressionGate
         finally { if(this!=null) processing=false; }
     }
     public static bool TestingReady(ZoneDefinition zone) => DestinationReady(zone) ||
-        (RunLaunchOptions.TestingZonePickerEnabled && zone != null && zone.eligibleForTesting &&
+        (Application.isEditor && zone != null && zone.eligibleForTesting &&
          zone.developmentEncounters?.Length > 0 && zone.enemies?.Length > 0);
     public static bool DestinationReady(ZoneDefinition zone) => zone!=null && zone.eligibleForLiveTravel &&
         zone.enemies?.Length>0 && zone.resonancePool?.Length>0 && zone.resonanceEncounters?.Length>0 &&

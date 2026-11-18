@@ -8,10 +8,16 @@ for every old faction. Existing account/economy, combat, board, shield and move
 clock rules remain authoritative in their owners. Stage 10 objective checks and
 real Game-scene policy samples have executed; see the
 [validation report](Validation/CRYSTAL_RESONANCE_V1_FINAL.md). Award values remain
-provisional. Measured timing varies by zone/build and does not establish that
-every zone meets the 5–7 minute target.
+provisional. The November 18 refinement makes Dungeon-first starts permanent and
+clarifies that visit duration is a flexible design reference, not a pass/fail band.
 
 ## Progression loop
+
+Fresh standard, Practice and challenge runs and every Retry start in the Kingdom
+Dungeon. Continue restores the exact saved zone and resources. The starting-zone
+picker is removed from ordinary navigation; explicit Editor tools retain isolated
+zone diagnostics. After the first visit, random eligible travel can select any
+other ready zone, including Dungeon on a later visit. No fixed-wave return exists.
 
 Score is cumulative for the run and separate from Gold and Resonance. The local
 meter has capacity 100. Complete settled victories bank base charge: ordinary 4,
@@ -70,12 +76,15 @@ existing threat response/placement constraints still own fairness.
 
 ## Pacing and skill
 
-Typical successful visits aim for **5–7 real minutes**, including card reading
-and transition. First card at 30–90 seconds is a hypothesis. These are measured
-targets, never clocks, mandatory delay, HP padding or player-power correction.
-Early failures are separate from successful visits. Strong players/builds may
-travel faster. Defensive legal play may take longer. Tune the smallest causal
-composition/cadence/reward parameter after actual Game-scene evidence.
+**5–7 real minutes is a soft reference**, including card reading and transition.
+Skilled players may finish in 3–4 minutes, typical players in 4–7, and defensive
+players may take longer. A 4:30 visit is not intrinsically too short. Evaluate
+duration alongside encounter variety/coherence, decisions, mechanics exposure,
+card choices and the capstone. First card at 30–90 seconds remains a hypothesis.
+Never enforce timers, minimum waves, delayed travel, HP padding or player-power
+correction to hit these bands. Early failures are distinct from successful visits.
+Tune only the smallest causal change supported by actual Game-scene evidence;
+earned strong builds retain their speed.
 
 Difficulty should come from readable telegraphs, meaningful counters, coherent
 combinations, target priority and decisions. Avoid simultaneous inflation of HP,

@@ -76,6 +76,44 @@ def main():
                     lowAirCofferOpportunities=sum(int(d['air']) in (0,1,2) and d.get('cofferAvailable')=='True' for d in decisions),
                     lowAirCofferResponses=sum(int(d['air']) in (0,1,2) and d.get('cofferChosen')=='True' for d in decisions),
                     cofferObservationRecorded=any('cofferAvailable' in d for d in decisions))
+                # Policy-v2 diagnostics describe visible heuristics, not proven
+                # tactical errors. Missing legacy fields stay explicitly absent.
+                record['policyVersion']=result.get('policyVersion','legacy-full-scan')
+                record['diagnosticStart']=case.get('diagnosticStart',case['zone']!='dungeon')
+                modern=[d for d in decisions if 'noticed' in d]
+                cast_decisions=[dict(part.split('=',1) for part in a['action'].split(':',1)[1].split(';'))
+                    for a in actions if a['visit']==visit and a['action'].startswith('abilityDecision:')]
+                card_decisions=[dict(part.split('=',1) for part in a['action'].split(':',1)[1].split(';'))
+                    for a in actions if a['visit']==visit and a['action'].startswith('cardDecision:')]
+                record['decisionQuality']=dict(
+                    sampledMoves=len(modern),
+                    meanAttentionFraction=round(statistics.mean(int(d['noticed'])/int(d['legal']) for d in modern),3) if modern else None,
+                    heuristicSuboptimalMoves=sum(float(d['heuristicGap'])>=5 for d in modern),
+                    heuristicGapTotal=round(sum(float(d['heuristicGap']) for d in modern),2),
+                    markedCounterOverlooked=sum(d['counterAvailable']=='True' and d['counterNoticed']!='True' for d in modern),
+                    markedCounterNotChosen=sum(d['counterAvailable']=='True' and d['counterChosen']!='True' for d in modern),
+                    markedCounterSeenButNotChosen=sum(d['counterNoticed']=='True' and d['counterChosen']!='True' for d in modern),
+                    priorityOpportunities=sum(d['priorityAvailable']=='True' for d in modern),
+                    priorityNotChosen=sum(d['priorityAvailable']=='True' and d['priorityChosen']!='True' for d in modern),
+                    specialCreatesSelected=sum(d['createsSpecial']=='True' for d in modern),
+                    specialUsesSelected=sum(d['usesSpecial']=='True' for d in modern),
+                    visibleFollowupSelections=sum(int(d['visibleFollowups'])>0 for d in modern),
+                    smallRemainderCasts=sum(d['smallRemainder']=='True' for d in cast_decisions),
+                    castsWithMarkedAnswerAvailable=sum(d['counterAvailable']=='True' for d in cast_decisions),
+                    castsAtLowAir=sum(d['urgentAir']=='True' for d in cast_decisions),
+                    offPreferenceCards=sum(d['offPreference']=='True' for d in card_decisions))
+                record['encounterHistory']=[]
+                for formation in formations:
+                    bank=next((e for e in banks if e['depth']==formation['depth']),None)
+                    local=[e for e in selected if e['depth']==formation['depth']]
+                    beginning=next((e for e in local if e['kind']=='encounter_begin'),formation)
+                    record['encounterHistory'].append(dict(depth=formation['depth'],formation=formation['detail'],
+                        completed=bank is not None,seconds=round(bank['wall']-beginning['wall'],3) if bank else None,
+                        acceptedSwaps=sum(e['kind']=='move_accepted' for e in local),
+                        enemySpecials=[e['detail'] for e in local if e['kind']=='enemy_special'],
+                        healthAtFormation=formation['health'],healthAtBank=bank['health'] if bank else None,
+                        damage=sum(e['value'] for e in local if e['kind']=='player_damage')))
+                record['deathCause']=next((e['detail'] for e in selected if e['kind']=='defeat'),None)
                 if not record['completed'] and result['outcome']=='visit limit' and record['acceptedSwaps']==0 and record['bankedEncounters']==0:
                     record['outcome']='arrival only; next visit not attempted'
                 record['startTier']=sum(record['startDepth']>=cut for cut in (6,13,25,45))
@@ -115,13 +153,16 @@ def main():
         'Enemy telegraph response counters cover visible marked-gem responses; they do not certify every attack as fair.',
         'Accepted swaps, abilities and consumables are separate; card picks do not consume a combat action.',
         'Warning-without-immediate-marked-match counts include environmental/cell warnings and alternative counters; they are not proof of unavoidable damage.',
-        'Different levels/characters must be separated before interpreting skill effects.'])
+        'Different levels/characters must be separated before interpreting skill effects.',
+        'Policy-v2 suboptimal/priority/cast flags are visible heuristic diagnostics, not proof of a tactical mistake; specials or killing a caster can answer threats indirectly.',
+        'Policy-v2 attention does not model touch error, memory, reading comprehension or human enjoyment. The skilled policy sees all visible legal responses, never hidden refill or future offers.',
+        'Fresh-run IDs and capstone seeds are captured in initial-account/native journals. The named seed initializes board and encounter streams; matching named seeds alone does not prove identical whole runs.'])
     (args.output/'summary.json').write_text(json.dumps(payload,indent=2),encoding='utf-8')
     columns=['batch','label','seed','character','level','policy','zone','visit','completed','outcome','startDepth','endDepth',
              'wallSeconds','firstCardSeconds','bankedEncounters','acceptedSwaps','acceptedAbilities','acceptedPotions','acceptedBombs',
              'health','playerDamage','baseCharge','masteryCharge','overflow','enemySpecials','distinctRecipes','immediateRecipeRepeats',
              'visibleCounterOpportunities','visibleCountersChosen','lowAirOpportunities','lowAirResponses',
-             'cofferObservationRecorded','lowAirCofferOpportunities','lowAirCofferResponses']
+             'cofferObservationRecorded','lowAirCofferOpportunities','lowAirCofferResponses','policyVersion','diagnosticStart','deathCause']
     with (args.output/'visits.csv').open('w',encoding='utf-8',newline='') as stream:
         writer=csv.DictWriter(stream,fieldnames=columns,extrasaction='ignore');writer.writeheader();writer.writerows(visits)
     lines=['# Actual Unity proxy measurements','', '| Zone | Policy | Level | Completed | Seeds | Median seconds | p25 / p75 | Min / max |','|---|---|---|---:|---:|---:|---|---|']

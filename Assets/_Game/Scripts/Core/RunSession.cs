@@ -78,13 +78,12 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         }
         if (Player != null) { Player.Defeated += OnDefeated; Player.DamageTaken += OnDamage; }
         runStartedAt = Time.unscaledTime;
-        bool forestRequested=RunLaunchOptions.ForestPrototype && Debug.isDebugBuild;
+        bool forestRequested=RunLaunchOptions.ForestPrototype && Application.isEditor;
         string forestProfile=RunLaunchOptions.ForestClockProfile;
         RunLaunchOptions.ForestClockProfile=CombatClockSnapshot.HybridProfile;
         RunLaunchOptions.ForestPrototype=false;
-        string requestedZone=RunLaunchOptions.StartingZone;
-        RunLaunchOptions.StartingZone=null;
-        bool selectedStart=continued==null && !forestRequested && RunLaunchOptions.TestingZonePickerEnabled &&
+        string requestedZone=RunLaunchOptions.ConsumeDevelopmentZone();
+        bool selectedStart=continued==null && !forestRequested && Application.isEditor &&
             !string.IsNullOrEmpty(requestedZone) &&
             ZoneTravelController.TestingReady(Resources.Load<ZoneDefinition>("Zones/"+requestedZone));
         string newZone=forestRequested?"magical-forest":selectedStart?requestedZone:"dungeon";
@@ -249,11 +248,10 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         var active = account.ActiveRun;
         if (active != null && active.id == RunId && !account.FinalizeRun(RunId, scene == "Game" ? "Retry" : "Quit to Menu")) return false;
         transitioning = true;
+        RunLaunchOptions.ClearDevelopmentLaunch();
         if (scene == "Game")
         {
             RunLaunchOptions.Practice = IsPractice; RunLaunchOptions.Challenge = Challenge;
-            if(RunLaunchOptions.TestingZonePickerEnabled && Travel?.State.enabled==true)
-                RunLaunchOptions.StartingZone=Zone.Definition.zoneId;
         }
         CancelTargeting();
         // Scene unload disposes the existing actor/board/ability/attack owners.

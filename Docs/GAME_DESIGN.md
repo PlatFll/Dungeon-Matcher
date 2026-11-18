@@ -216,11 +216,13 @@ capstone and all queued card rewards settled. The split
 pink crystal shakes, smoke covers gameplay, and the destination is restored under
 cover. Settings remains usable. The run, board, resources and global depth carry
 over; travel does not heal or end a run. See [the travel contract](Forest/CRYSTAL_TRAVEL.md).
-For the current testing build only, new runs may start in any ready zone
-through a temporary menu picker. This changes the starting location;
-crystal destinations during the run still follow the existing random rule.
-Continue restores its saved location and Retry starts the current live zone.
-Remove this testing choice for the full game.
+Every normal new run and Retry begins in the Kingdom Dungeon. Player-facing
+Practice and challenges also begin there. This is a permanent rule, not a release
+toggle. Continue restores the exact saved zone/state. Ordinary navigation never
+offers a starting-zone picker. Explicit Editor tools may launch isolated zones
+for diagnostics; those samples are not natural Dungeon-first progression evidence.
+After the first visit, crystal travel randomly chooses another eligible zone;
+later visits may return to Dungeon, without any forced global-wave appointment.
 Forest has six starter kits plus seven approved roster additions, modular woodland,
 gameplay-only timber UI and an original temporary music cue for review.
 The additions are Thornkeeper, Berserker, Bloomcaller, Snapvine, Drummer, Briar
@@ -454,7 +456,7 @@ behavior uses explicit mechanic capabilities. Draft eligibility may depend on
 stable player and active-ability IDs, but never display names. Card drafting has
 its own deterministic random stream and cannot perturb encounter generation.
 
-Independent gold-purchased character levels (cap 20), shared mastery unlocks and optional consumables remain. Global-depth five-zone recipes and occasional eligible capstones replace the old guaranteed King window. No XP, hidden level gate, timer, HP padding or adaptive player-power scaling is introduced. Temporary cards reset only at run end; the 5–7 minute typical successful visit is a Stage 10 measurement target.
+Independent gold-purchased character levels (cap 20), shared mastery unlocks and optional consumables remain. Global-depth five-zone recipes and occasional eligible capstones replace the old guaranteed King window. No XP, hidden level gate, timer, HP padding or adaptive player-power scaling is introduced. Temporary cards reset only at run end; 5–7 minutes per successful visit is a soft reference. Skilled 3–4 minute, typical 4–7 minute and longer defensive visits may all be appropriate. Judge coherent encounters, meaningful decisions, mechanics exposure and card choices alongside time; 4:30 is not inherently too short.
 
 ## Presentation and pixel-art readability principles
 

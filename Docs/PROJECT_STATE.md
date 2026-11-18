@@ -24,9 +24,10 @@ Game-scene policy runs, native accepted-input journals, five-zone/phone captures
 save/travel tests and separate deep diagnostics are recorded in the
 [final evidence report](Validation/CRYSTAL_RESONANCE_V1_FINAL.md).
 
-**Balance acceptance remains provisional.** Some typical visits remain below
-5–7 minutes; Court/deep attrition, short capstones and mechanics exposure need
-human review. The target is not enforced by timers, HP padding or power-based
+**Balance acceptance remains provisional.** Visit duration is a soft reference:
+skilled 3–4 minute, typical 4–7 minute and longer defensive visits may all be valid.
+Court/deep attrition, capstone composition and mechanics exposure need review;
+a 4:30 visit is not inherently too short. The target is not enforced by timers, HP padding or power-based
 compensation. Natural losses and source-separated samples remain in the report;
 earlier-source coverage is not presented as final-tuning coverage. No physical
 phone was attached, and policy runs cannot certify human enjoyment.
@@ -1141,15 +1142,14 @@ Current exact tables and cost formula live in `Docs/BALANCE_V1.md`.
 
 These are **not bugs** unless the user explicitly changes direction.
 
-## Forest starter production test
+## Permanent Dungeon-first starts (2026-11-18 refinement)
 
-The temporary in-game starting-zone picker offers currently playable regions
-before creating a fresh run. Back cancels without creating a journal or spending
-supplies. Saved runs bypass it, and practice preserves any saved normal attempt.
-Retry starts a new attempt in the current live zone. The choice is consumed at
-scene handoff; ongoing zone and timing state use the existing checkpoint.
-The picker is deliberately enabled in the current build for testing and must be
-disabled with `RunLaunchOptions.TestingZonePickerEnabled` before full release.
+Standard new runs, Retry, player-facing Practice and challenges begin in Dungeon.
+Continue preserves the saved zone/state. The temporary menu picker and same-zone
+Retry behavior are retired. Explicit Editor-only starting-zone requests remain
+available for isolated diagnostics, with saved checkpoints taking precedence.
+Random eligible travel after the first visit is unchanged; Dungeon can return
+randomly, never because of a fixed wave. This is permanent gameplay direction.
 
 Dungeon's provisional zone pulse breaks one or two safe ordinary cells every four
 accepted moves. Holes return after two more moves; special gems, chains, warnings

@@ -34,138 +34,102 @@ public sealed partial class ForestFoundationPlayTests
     }
     private static Button ZoneMenuButton(string name)=>GameObject.Find(name)?.GetComponent<Button>();
     private static Button MainPlayButton()=> (Button)Get(UnityEngine.Object.FindFirstObjectByType<MainMenuController>(),"playButton");
-    private static IEnumerator CaptureZonePicker(string name)
+    [UnityTest] public IEnumerator DungeonFirstMenuStartsImmediatelyWithoutPicker()
     {
-        string folder=Path.GetFullPath(".utmp/ForestValidation/ZonePicker");Directory.CreateDirectory(folder);
-        yield return null;ScreenCapture.CaptureScreenshot(Path.Combine(folder,name+".png"));yield return null;yield return null;
-    }
-    private static void CheckZonePickerLayout()
-    {
-        var picker=GameObject.Find("TestingZonePicker").GetComponent<RectTransform>();
-        var corners=new Vector3[4];picker.GetWorldCorners(corners);
-        foreach(var corner in corners)
-        {
-            var screen=RectTransformUtility.WorldToScreenPoint(null,corner);
-            Assert.That(screen.x,Is.InRange(0f,(float)Screen.width));Assert.That(screen.y,Is.InRange(0f,(float)Screen.height));
-        }
-        foreach(var text in picker.GetComponentsInChildren<TMP_Text>())
-        {
-            text.ForceMeshUpdate();Assert.That(text.isTextOverflowing,Is.False,text.name);
-            Assert.That(text.font,Is.SameAs(GameUi.TmpFont));
-        }
-    }
-
-    [UnityTest] public IEnumerator ZonePickerCancelCreatesNoRunAndFitsPortraitScreens()
-    {
-        yield return OpenZoneMenu();string original=File.ReadAllText(path);
-        ClickZoneMenuButton(MainPlayButton());yield return null;
-        var menu=UnityEngine.Object.FindFirstObjectByType<MainMenuController>();menu.PlayGame();
-        Assert.That(UnityEngine.Object.FindObjectsByType<RectTransform>(FindObjectsSortMode.None).Count(t=>t.name=="TestingZonePicker"),Is.EqualTo(1));
-        var zoneButtons=GameObject.Find("TestingZonePicker").GetComponentsInChildren<Button>().Where(b=>b.name.StartsWith("StartZone_")).ToArray();
-        CollectionAssert.AreEquivalent(new[]{"StartZone_dungeon","StartZone_magical-forest","StartZone_drowned-court","StartZone_ironvein-excavation","StartZone_frostwake-peaks"},zoneButtons.Select(b=>b.name));
-        foreach(var size in new[]{new Vector2Int(720,1280),new Vector2Int(1080,2400)})
-        {
-            typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,new object[]{size});
-            yield return Until(()=>Screen.width==size.x&&Screen.height==size.y,"menu resized");
-            for(int frame=0;frame<6;frame++)yield return null;
-            CheckZonePickerLayout();yield return CaptureZonePicker("picker-"+size.x+"x"+size.y);
-        }
-        ClickZoneMenuButton(ZoneMenuButton("Back"));yield return null;
+        yield return OpenZoneMenu();
+        // Ordinary navigation discards a stale diagnostic request, even in Editor.
+        RunLaunchOptions.StartingZone="drowned-court";
+        RunLaunchOptions.ForestPrototype=true;
+        ClickZoneMenuButton(MainPlayButton());yield return Stable();
+        Assert.That(RunLaunchOptions.TestingZonePickerEnabled,Is.False);
         Assert.That(GameObject.Find("TestingZonePicker"),Is.Null);
-        Assert.That(MainPlayButton().gameObject.activeInHierarchy,Is.True);
-        Assert.That(AccountProgression.Current.ActiveRun,Is.Null);
-        Assert.That(File.ReadAllText(path),Is.EqualTo(original));
+        Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("dungeon"));
+        Assert.That(Run.Waves.CurrentWave,Is.EqualTo(1));
+        Assert.That(Run.Travel.State.enabled,Is.True);
+        Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
         Assert.That(RunLaunchOptions.StartingZone,Is.Null);
     }
 
-    [UnityTest] public IEnumerator ZonePickerReturnsToCharacterSelectionOnBack()
+    [UnityTest] public IEnumerator DungeonFirstEditorZonesContinueExactlyAndRetryDungeon()
     {
-        yield return OpenZoneMenu();var menu=UnityEngine.Object.FindFirstObjectByType<MainMenuController>();
-        menu.ShowCharacterSelect();yield return null;menu.PlayGame();yield return null;
-        ClickZoneMenuButton(ZoneMenuButton("Back"));yield return null;
-        Assert.That(GameObject.Find("CharacterSelectScreen"),Is.Not.Null);
-        Assert.That(AccountProgression.Current.ActiveRun,Is.Null);
+        foreach(string zone in new[]{"magical-forest","drowned-court","ironvein-excavation","frostwake-peaks"})
+        {
+            RunLaunchOptions.StartingZone=zone;SceneManager.LoadScene("Game");yield return Stable();
+            Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo(zone),"explicit Editor-only launch");
+            Assert.That(Run.Travel.State.enabled,Is.True);
+            Assert.That(RunLaunchOptions.StartingZone,Is.Null);
+            string id=Run.RunId;var before=Run.Continuation.Capture();
+            Assert.That(Run.SuspendToMenu(),Is.True);yield return null;yield return null;
+            // Bypass menu clearing to prove the checkpoint itself wins over a developer request.
+            RunLaunchOptions.StartingZone="dungeon";SceneManager.LoadScene("Game");
+            yield return Until(()=>Run?.InitialStateReady==true&&!Run.Continuation.IsRestoring,"saved zone resumes");
+            Run.GetComponent<RunControlsUI>().Close();yield return Stable();
+            Assert.That(Run.RunId,Is.EqualTo(id));Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo(zone));
+            var after=Run.Continuation.Capture();AssertBoardCarryover(before.board,after.board);
+            Assert.That(after.player.health,Is.EqualTo(before.player.health));
+            Assert.That(after.player.shield,Is.EqualTo(before.player.shield));
+            var comparable=after.resonance.Copy();
+            // Continue opens paused, then this fixture resumes to a stable board.
+            // Observe that elapsed clocks advance normally; every non-clock field is exact.
+            foreach(var field in typeof(CrystalResonanceSnapshot).GetFields().Where(f=>f.FieldType==typeof(float)))
+            {
+                float old=(float)field.GetValue(before.resonance),current=(float)field.GetValue(comparable);
+                Assert.That(current,Is.InRange(old,old+5),field.Name);
+                field.SetValue(comparable,old);
+            }
+            Assert.That(JsonUtility.ToJson(comparable),Is.EqualTo(JsonUtility.ToJson(before.resonance)));
+            RunLaunchOptions.StartingZone=zone;
+            Assert.That(Run.ExitTo("Game"),Is.True);yield return Stable();
+            Assert.That(Run.RunId,Is.Not.EqualTo(id));Assert.That(Run.Waves.CurrentWave,Is.EqualTo(1));
+            Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("dungeon"));
+            Assert.That(RunLaunchOptions.StartingZone,Is.Null);
+            Assert.That(Run.ExitTo("MainMenu"),Is.True);yield return null;yield return null;
+        }
     }
 
-    [UnityTest] public IEnumerator ZonePickerForestStartsLiveContinuesExactlyAndRetriesForest()
+    [UnityTest] public IEnumerator DungeonFirstPracticePreservesSavedOtherZoneAndRetriesDungeon()
     {
-        yield return OpenZoneMenu();ClickZoneMenuButton(MainPlayButton());yield return null;
-        ClickZoneMenuButton(ZoneMenuButton("StartZone_magical-forest"));yield return Stable();
-        Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("magical-forest"));
-        Assert.That(Run.Travel.State.enabled,Is.True);Assert.That(Run.Travel.LocalWave,Is.EqualTo(1));
-        Assert.That(Run.Travel.State.visit,Is.Zero);Assert.That(Run.Waves.CurrentWave,Is.EqualTo(1));
-        Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
-        Assert.That(CombatMoveClock.MoveBasics,Is.True);Assert.That(CombatMoveClock.MoveEffects,Is.True);
-        Assert.That(RunLaunchOptions.StartingZone,Is.Null);Assert.That(Run.IsPractice,Is.False);
-        Assert.That(Run.Waves.ActiveEnemies.All(e=>Run.Zone.Definition.enemies.Contains(e.Definition)),Is.True);
-        Assert.That(UnityEngine.Object.FindFirstObjectByType<BattleBackgroundTilemapController>().ActiveEnvironment.EnvironmentId,Is.EqualTo("forest-woodland"));
-        yield return CaptureZonePicker("forest-start");
-        string id=Run.RunId;var before=Run.Continuation.Capture();
-        Assert.That(Run.SuspendToMenu(),Is.True);yield return null;yield return null;
-        RunLaunchOptions.StartingZone="dungeon"; // A stale request must never replace a Continue.
-        ClickZoneMenuButton(MainPlayButton());yield return null;
-        yield return Until(()=>Run?.InitialStateReady==true && !Run.Continuation.IsRestoring,"continued forest");
-        Run.GetComponent<RunControlsUI>().Close();yield return Stable();
-        Assert.That(GameObject.Find("TestingZonePicker"),Is.Null);Assert.That(Run.RunId,Is.EqualTo(id));
-        Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("magical-forest"));
-        AssertBoardCarryover(before.board,Run.Continuation.Capture().board);
-        Assert.That(Run.Travel.State.enabled,Is.True);
-        Assert.That(Run.ExitTo("Game"),Is.True);yield return Stable();
-        Assert.That(Run.RunId,Is.Not.EqualTo(id));Assert.That(Run.Waves.CurrentWave,Is.EqualTo(1));
-        Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("magical-forest"));
-        Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
-    }
-
-    [UnityTest] public IEnumerator ZonePickerDungeonKeepsOriginalOpening()
-    {
-        yield return OpenZoneMenu();ClickZoneMenuButton(MainPlayButton());yield return null;
-        ClickZoneMenuButton(ZoneMenuButton("StartZone_dungeon"));yield return Stable();
-        Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("dungeon"));Assert.That(Run.MoveClock,Is.Null);
-        Assert.That(Run.Travel.State.enabled,Is.True);Assert.That(Run.Travel.State.visit,Is.Zero);
-        Assert.That(Run.Zone.Encounter(1,new System.Random(1)),Is.Null,"existing kingdom generator owns the opening");
-        Assert.That(Run.Waves.CurrentWave,Is.EqualTo(1));Assert.That(RunLaunchOptions.StartingZone,Is.Null);
-    }
-
-    [UnityTest] public IEnumerator ZonePickerPracticeCanCancelOrStartWithoutReplacingSavedRun()
-    {
-        SceneManager.LoadScene("Game");yield return Stable();string id=Run.RunId;
-        Assert.That(Run.SuspendToMenu(),Is.True);yield return null;yield return null;
+        RunLaunchOptions.StartingZone="drowned-court";SceneManager.LoadScene("Game");yield return Stable();
+        string id=Run.RunId;Assert.That(Run.SuspendToMenu(),Is.True);yield return null;yield return null;
         string original=File.ReadAllText(path);
-        ClickZoneMenuButton(ZoneMenuButton("PracticeButton"));yield return null;
-        ClickZoneMenuButton(ZoneMenuButton("Back"));yield return null;
-        Assert.That(RunLaunchOptions.Practice,Is.False);Assert.That(AccountProgression.Current.ActiveRun.id,Is.EqualTo(id));
-        ClickZoneMenuButton(ZoneMenuButton("PracticeButton"));yield return null;
-        ClickZoneMenuButton(ZoneMenuButton("StartZone_magical-forest"));yield return Stable();
-        Assert.That(Run.IsPractice,Is.True);Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("magical-forest"));
+        ClickZoneMenuButton(ZoneMenuButton("PracticeButton"));yield return Stable();
+        Assert.That(Run.IsPractice,Is.True);Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("dungeon"));
         Assert.That(File.ReadAllText(path),Is.EqualTo(original));
+        Assert.That(Run.ExitTo("Game"),Is.True);yield return Stable();
+        Assert.That(Run.IsPractice,Is.True);Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("dungeon"));
         Assert.That(Run.ExitTo("MainMenu"),Is.True);yield return null;yield return null;
         Assert.That(AccountProgression.Current.ActiveRun.id,Is.EqualTo(id));
-        Assert.That(File.ReadAllText(path),Is.EqualTo(original));Assert.That(RunLaunchOptions.Practice,Is.False);
+        Assert.That(File.ReadAllText(path),Is.EqualTo(original));
         ClickZoneMenuButton(MainPlayButton());yield return null;
-        yield return Until(()=>Run?.InitialStateReady==true && !Run.Continuation.IsRestoring,"saved dungeon resumes");
+        yield return Until(()=>Run?.InitialStateReady==true&&!Run.Continuation.IsRestoring,"Continue through menu");
         Run.GetComponent<RunControlsUI>().Close();yield return Stable();
-        Assert.That(Run.RunId,Is.EqualTo(id));Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("dungeon"));
+        Assert.That(Run.RunId,Is.EqualTo(id));Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("drowned-court"));
         Assert.That(Run.IsPractice,Is.False);
     }
 
-    [UnityTest] public IEnumerator ZonePickerPreservesChallengeAndCancelsPendingMode()
+    [UnityTest] public IEnumerator DungeonFirstChallengesKeepRulesAcrossRetry()
     {
         profile.Dispose();File.WriteAllText(path,JsonUtility.ToJson(new AccountSave{firstKingClaimed=true}));
         profile=AccountProgression.UseDisposableProfile(path);
-        yield return OpenZoneMenu();ClickZoneMenuButton(ZoneMenuButton("ChallengesButton"));yield return null;
-        ClickZoneMenuButton(ZoneMenuButton("Challenge2"));yield return null;
-        ClickZoneMenuButton(ZoneMenuButton("Back"));yield return null;
-        Assert.That(GameObject.Find("Challenges"),Is.Not.Null);Assert.That(RunLaunchOptions.Challenge,Is.EqualTo(RunChallenge.Standard));
-        ClickZoneMenuButton(ZoneMenuButton("Challenge2"));yield return null;
-        ClickZoneMenuButton(ZoneMenuButton("StartZone_magical-forest"));yield return Stable();
-        Assert.That(Run.Challenge,Is.EqualTo(RunChallenge.BoardOnly));Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("magical-forest"));
-        Assert.That(Run.Player.GetComponent<PlayerAbilityController>().CanActivate,Is.False);
+        foreach(int mode in new[]{1,2})
+        {
+            yield return OpenZoneMenu();ClickZoneMenuButton(ZoneMenuButton("ChallengesButton"));yield return null;
+            ClickZoneMenuButton(ZoneMenuButton("Challenge"+mode));yield return Stable();
+            Assert.That(Run.Challenge,Is.EqualTo((RunChallenge)mode));
+            Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("dungeon"));
+            if(mode==2)Assert.That(Run.Player.GetComponent<PlayerAbilityController>().CanActivate,Is.False);
+            Assert.That(Run.ExitTo("Game"),Is.True);yield return Stable();
+            Assert.That(Run.Challenge,Is.EqualTo((RunChallenge)mode));
+            Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("dungeon"));
+            Assert.That(Run.ExitTo("MainMenu"),Is.True);yield return null;yield return null;
+        }
     }
 
-    [UnityTest] public IEnumerator ZonePickerUnavailableRequestFallsBackAndIsConsumed()
+    [UnityTest] public IEnumerator DungeonFirstInvalidDeveloperZoneIsConsumed()
     {
         RunLaunchOptions.StartingZone="aquatic";SceneManager.LoadScene("Game");yield return Stable();
-        Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("dungeon"));Assert.That(RunLaunchOptions.StartingZone,Is.Null);
-        Assert.That(Run.MoveClock,Is.Null);Assert.That(Run.Travel.State.enabled,Is.True);
+        Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("dungeon"));
+        Assert.That(RunLaunchOptions.StartingZone,Is.Null);Assert.That(Run.MoveClock,Is.Not.Null);
+        Assert.That(Run.Travel.State.enabled,Is.True);
     }
 }

@@ -1,14 +1,48 @@
-# Crystal Resonance — Stage 10 implementation and evidence complete
+# Crystal Resonance refinement — in progress, no merge
 
-- Branch: codex/crystal-resonance-zone-director; updated-main base fac476ad15300f68cae48ee68385323782667439. Dedicated worktree; other checkouts preserved.
-- Stages01–09 committed in order with no testing. Stage10 checkpoints d3986498 and18ce6355; final fixes/evidence are in the subsequent focused commits.
-- Source: attached START_HERE/master/stages01–10/protocol, current AGENTS/RTK, project state/design/pacing/architecture/balance, art guide/reference register and actual source images.
-- Owners: BoardController receipts/resolution; RunSession Resonance/score; WaveController compositions; RunUpgradeCoordinator safe cards; existing durable travel and account journal.
-- Delivered: separate score/100 meter, bounded pending mastery and feedback, 12/40/70 drafts, saved78–88 same-zone capstones, five-zone depth pools, complete formation seal, source cleanup and continuation, native shining/pouring HUD, opt-in telemetry and real-input policy harness.
-- Final cadence: shared4/5/10/14; explicit Court5/6 ordinary/pressure. No HP/damage/time-gate/power scaling. See tuning-decision.json for rejected global Court reduction and exact samples.
-- Validation actually executed: Tools/Validate-Unity.ps1 exit0; final272/272 balance and40/40 focused checks; Windows/Android builds succeeded. Native journals and all observed failures archived. Earlier failures/corrections remain in the ledger.
-- Visual: five zones×five phone profiles at70;80/100/six-digit score on final1080×2400 profile;18 motion frames, pause/reduced/missing references. No new source sprite approval inferred.
-- Natural deep revisits: Forest31–45 and Dungeon47–61. Other deep combinations have explicitly diagnostic fixtures, not natural timing claims.
-- Compatibility: no new combat/save resolver, versioned Resonance snapshot, explicit legacy migration, existing scene bindings and new script metas. Production enemy/player/source art unchanged.
-- Remaining acceptance: precise pacing/attrition/exposure gaps in Docs/Validation/CRYSTAL_RESONANCE_V1_FINAL.md; policy samples do not certify human enjoyment. No physical device attached.
-- Next action: review the one unmerged PR and perform the documented phone/human acceptance session. NEVER merge without the user's explicit authorization.
+Existing branch codex/crystal-resonance-zone-director / draft PR #234.
+Task start cae70c1d; clean at start and origin fetched. Other checkouts preserved.
+User brief: November 18 attachment 11ffe724-9eb9-4683-92c7-aefe1d567607/Pasted text.txt.
+
+Implemented: permanent Dungeon-first menu/Retry/Practice/challenges; Editor-only
+isolated starts; exact checkpoint precedence. Limited-attention five-profile
+policy attention-v2, visible-only cascade heuristic, cast/card choices, diagnostic
+logs. Natural runner creates genuine new runs. Non-Dungeon cases require
+diagnosticStart=true. Initial run IDs/capstone seeds are recorded, not fabricated.
+Owner docs now treat visit duration as a soft reference. No gameplay balance
+numbers, enemy formations/stats or approved art changed in this refinement.
+
+Validation: required Validate-Unity.ps1 passed (79f66a36 log in system Temp).
+Full balance 272/272 passed. Affected suite 47/48 passed; failed new test assumed
+aggressive could not use a bomb before its first swap. Corrected it to compare
+every submitted command kind with durable acceptance, still exactly one swap.
+Rerun of that test plus new five-zone normal/excellent/pending/reduced-motion
+fixture: 2/2 passed (8692ef89 XML). Earlier cascade/clock fixture failures were
+corrected and rerun (09f0f8e7 XML). Ledger preserves every failure/correction:
+.utmp/CrystalResonance/Refinement/Regression/ledger.json.
+Across latest results all 49 distinct affected checks pass; this is not one
+single 49-test run. Final required validator/builds remain after playtesting.
+
+Fresh HUD captures: .utmp/CrystalResonance/Visual (five zones/five phone profiles,
+70/80/100, reduced motion, 18 motion frames), Refinement/Feedback (15 states).
+Viewed representative actual full frames in every zone, large score, snowy
+approach, mastery and pending. No health/input overlap observed. Crystal/plaque
+source hashes unchanged. No physical phone or human enjoyment certification.
+
+Historical outliers: Refinement/baseline-findings.md and baseline-outliers.json.
+3.693s Court elite was one earned color-crystal/column-bomb combo in a strong
+depth-59 build, not evidence for HP padding. Prior Forest defensive 116s first
+card used flat healing priority even with 5 HP missing; policy now scales it.
+
+Next: pilot (5 profiles, skeleton L1 seed19001), review actual outcomes, then
+20 more natural cases (seeds19002–19005, four characters, L1/L5) and four deep
+natural L10 attempts capped45min. Keep deaths/censoring, never force progress.
+Scratch cr_refine_matrix.py config + cr_refine_background.ps1 waiter can run groups.
+Do not start overlapping Unity jobs. The waiter records PID, exit, logs/artifacts
+and attempts one same-chat codex queue notification, without retries/model changes.
+Queue probe accepted ID01a1ec2d-1311-71a2-8fbb-586f15872bd6; wakeup not yet observed.
+Check .utmp/CrystalResonance/Refinement/jobs for live/completed job state.
+
+After evidence: investigate Court/Forest/capstones, only targeted justified
+tuning + affected retests, final validator, Android/Windows builds, curated A–F
+report. Push/update existing draft PR234; never merge or create another PR.
