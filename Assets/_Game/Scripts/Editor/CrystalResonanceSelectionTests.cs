@@ -64,6 +64,26 @@ public sealed class CrystalResonanceSelectionTests
         }
     }
 
+    [Test] public void FirstFloodKnownMechanicPatrolsHaveDifferentEscortPairs()
+    {
+        var zone=Resources.Load<ZoneDefinition>("Zones/drowned-court");
+        var state=new CrystalResonanceSnapshot();
+        state.seenMechanics.AddRange(new[]{"moray_siphoner","conch_marshal"});
+        // Actual first-visit histories can know only these two flood-safe kits.
+        // All-roster/dry selection statistics hid their identical heavy escorts.
+        var patrols=zone.resonanceEncounters.Where(r=>r.resonanceKind==ZoneEncounterKind.Ordinary &&
+            r.members.Length==3 && r.members.All(e=>e.canFightFlooded &&
+                (e.Category==EnemyCategory.Normal || state.seenMechanics.Contains(e.EnemyId))) &&
+            BoardController.FirstFloodLessonSafe(r.members) &&
+            WaveController.ResonanceFormationLegal(zone,r,2,state,false)).ToArray();
+        var pairs=patrols.Select(r=>string.Join("+",r.members.Where(e=>e.Category==EnemyCategory.Normal)
+            .Select(e=>e.EnemyId).OrderBy(id=>id))).Distinct().ToArray();
+        Assert.GreaterOrEqual(patrols.Length,2,"Keep distinct taught pressure mechanics available.");
+        Assert.GreaterOrEqual(pairs.Length,2,"Changing the caster must not always retain the same heavy escort pair.");
+        Assert.IsTrue(patrols.Any(r=>r.members.Any(e=>e.EnemyId=="hammerhead_bruiser")),
+            "Retain a heavy patrol; this is variety, not removal of Court pressure.");
+    }
+
     [Test] public void QueenCapstoneKeepsApprovedCourtCultureAndCompleteEscortBudget()
     {
         var zone=Resources.Load<ZoneDefinition>("Zones/drowned-court");

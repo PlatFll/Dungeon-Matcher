@@ -1,18 +1,24 @@
-# Crystal Resonance recovery — active, no merge
+# Crystal Resonance final Court escort pass — no merge
 
-Current user requests full recovery, evidence-based tuning, final natural runs,
-final validation and PR234 update. Do not finish while owned Unity jobs run.
-Branch codex/crystal-resonance-zone-director; baseline7e306f72. Prior62runs recovered,
-no old jobs alive. Inventory and original hashes in CrystalResonanceRecoveryEvidence.
+PR234/branch codex/crystal-resonance-zone-director. User requires complete supervision,
+final report/updatePR; do not finish while ownedUnity processes run; do not merge.
+All original overnight62refinement runs and50older results/two partials preserved.
+Source90bc batch20261118-193833-880306 completed13cases,25visits,12deaths,onealive
+45minlimit;3270nativecommands auditpassed. Validator/56focused/272balance and both
+builds passed. No ownedUnity/test processes remained after pipelinecompletion.
+Source90bc archives/provenance now in CrystalResonanceRecoveryEvidence/batch13-*.
 
-New corrections: prefer different adjacent special across recipe labels; one
-current-depth normal relief after capstone if charge remains; Editor three-piece
-slide predictor; HP-source/AIR telemetry. No numerical balance/art/ability changes.
-Three defects reproduced; initial corrected32checks passed. Final two additional
-regressions and full validator/balance/builds/natural13case batch pending.
-Predeclared final-protocol.json:5affected-route profiles,5freshspread,3deepL10.
-Do not restart old tests. Preserve every failure. No new PR or merge.
+Confirmed after raw review: every early known Moray/Conch three-actor patrol used
+Spearman+Hammerhead. Added first-flood pair-diversity regression; olddata failed0/1
+asexpected(e749d33b). MorayPatrol now replacesHammerhead withNeedlefin, oneGUIDonly.
+Stats/oxygen/rewards/otherformationsunchanged. Nine affected natural cases predeclared
+in escort-protocol.json; otherfour90bc routesneverCourt andneednotduplicate.
+Three deep attempts alreadyobserved90bc; affectedBardL10deep willrerun, twootherdeep
+routesneverCourt retainedwiththeiractualsource. Decision/retentioncriteria recorded.
 
-All shell commands rtk. Source changes now being committed before final checks.
-Scratch cr_recovery_* helpers in existing visualizations path. No queue notifier
-will be armed: supervise the new foreground pipeline to completion in this task.
+Next: clean onlyknownUnityimportnoise, reviewfullnewdiff, commit source/protocol,
+then requiredvalidator, affected57checks, relevantbalance/builds and9naturalcases.
+Newpipeline not yetlaunched. Originalpipeline completed, monitor60330closed.
+Use scratchcr_recovery_* scripts; noqueue notifier. Collectallnewresults, compare,
+finishcuration/reports/state/handoff, commit/push andupdateexistingdraftPR234.
+Allshellcommandsrtk. Worktreewrites/gitescalated. Noartchanges/subagents.

@@ -92,3 +92,38 @@ Automated accepted-input policies cannot establish human learning, touch comfort
 reading, fatigue or enjoyment. Queen/late-visit coverage is not guaranteed by a
 natural route. Retain unsuccessful attempts and report those gaps. Physical
 Android touch/audio/performance remains human acceptance work. Do not merge.
+
+## Completed thirteen-case pass and final focused tuning
+
+Source `90bc53b9a872c3cd895ed4e4fdc3ee71f277ba60` completed all 13 natural cases:
+12 defeats, one 45-minute living limit, 25 completed visits and 3,270 durable
+commands. The native audit found no failures. Required Unity validation, 56
+focused tests, 272 distinct balance tests and Android/Windows builds passed.
+Original results, full source hashes, checkpoints and input journals are archived
+as `batch13-*`.
+
+Across all five zones, incoming ordinary encounters repeated the previous special
+zero times in 485 pairs; all 22 observed post-capstone follow-ups were normal-only.
+Two capstone transitions reused a previously taught special; those are explicitly
+outside the ordinary preference. The selection changes are retained.
+
+The five targeted L1 Court attempts all died. Their 49 Court encounters included
+12 three-actor ordinary patrols, all using Spearman/Hammerhead. Those two escorts
+accounted for 1,075 of 1,525 reported HP damage; suffocation accounted for five.
+A second seed/character (novice Bardley) entered the Moray patrol with 85 HP and
+died there. Stronger defensive Rattlebones and Bardley builds completed Court.
+This supports varying the pressure composition, not globally weakening oxygen
+or enemy stats.
+
+The first-flood regression failed with only one legal escort pair when Moray/Conch
+were the known flood-safe mechanics. Only `Patrol moray_siphoner` now exchanges
+its Hammerhead for the existing Needlefin. It keeps Moray, Spearman, three actors,
+tier eligibility, weight and threat budget. Conch's heavy patrol and capstones
+are unchanged. `escort-decision.json` predeclares the retention criteria; all nine
+Court-playing cases, including successes and failures, will be rerun naturally.
+The other four never visited Court and remain separate unchanged-route evidence.
+
+Recorded damage is cumulative reported HP damage (including possible overkill),
+not net HP loss; some environmental hits still use the generic label `Damage`.
+No policy models full ordinary-attack countdown planning or invalid-swap discovery.
+These are explicit limits on claims of unfairness and human enjoyment.

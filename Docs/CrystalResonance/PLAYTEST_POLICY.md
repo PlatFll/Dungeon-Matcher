@@ -54,6 +54,9 @@ indirectly, and spending a cast to preserve health may be sensible.
 
 The native durable journal independently verifies acceptance. Compare swaps,
 casts, supplies, health loss, mastery, counters and encounters alongside time.
+All profiles receive legal candidates and therefore omit invalid-swap discovery costs.
+They do not fully plan around ordinary enemy attack countdowns or long-horizon
+resource use; this limits conclusions about unavoidable damage and optimal play.
 No policy models touch slips, actual reading/comprehension, fatigue, long-term
 learning or enjoyment. It cannot certify human fun or device performance.
 

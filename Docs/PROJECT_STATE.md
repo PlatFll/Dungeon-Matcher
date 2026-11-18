@@ -12,9 +12,17 @@ oxygen, charge reward, shield, ability, economy or approved art value changed.
 The 3.693-second historical capstone was Dungeon's Royal elite; its earned fast
 clear remains valid power expression. Earlier wording naming Court was corrected.
 
-Three new defect reproductions failed before fixes; all 32 affected checks passed
-after correction. A fresh 13-case natural final-source protocol and final required
-validation/builds are pending. Do not treat this checkpoint as completed evidence.
+Source `90bc53b` passed the required validator, 56 focused checks and 272 balance
+checks, plus Android/Windows builds. Its 13 natural runs completed 25 visits:
+12 defeats and one 45-minute living limit (six visits). All 3,270 durable inputs
+passed the audit. Incoming ordinary encounters repeated the previous special
+zero times in 485 pairs; all 22 post-capstone follow-ups were normal-only.
+
+The new Court evidence still showed one heavy pair in every three-actor patrol
+available with only Moray/Conch taught. Moray's patrol now substitutes Needlefin
+for Hammerhead; Conch's heavy formation and all caps remain intact. A first-flood
+escort-diversity regression reproduced the problem. Nine affected natural cases
+are predeclared for final-source retesting; this checkpoint is not final acceptance.
 See [recovery report](Validation/CRYSTAL_RESONANCE_RECOVERY.md) and the preserved
 [previous refinement](Validation/CRYSTAL_RESONANCE_REFINEMENT.md).
 

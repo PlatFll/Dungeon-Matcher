@@ -70,7 +70,10 @@ inventing enemies, raising every HP pool or making early villagers eternal.
 Court ordinary formations include the existing Needlefin and Shellback roster,
 with Reef scout/salvage pairs and varied patrol escorts. This corrects their
 omission from authored live recipes and reduces reliance on one heavy escort
-pair. Queen Nacre retains the approved Nacre Court escort identity (Conch
+pair. Moray's routine patrol uses a Needlefin escort beside its Spearman, so
+first-flood Moray and Conch patrols do not both reuse the same heavy pair. The
+Conch heavy patrol and capstone escorts remain available. Queen Nacre retains
+the approved Nacre Court escort identity (Conch
 Marshal); her formation budget includes both actors. Enemy stats, oxygen rules
 and other capstone formations are unchanged.
 

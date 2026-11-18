@@ -1,0 +1,122 @@
+{
+  "sourceCommit": "90bc53b9a872c3cd895ed4e4fdc3ee71f277ba60",
+  "sourceManifestSha256": "d4dbe9bb37d2fc4b93ed397ca1e6dfd539323ce36c37ba9fbe45a8e2f187eaaf",
+  "validator": {
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-ad7e1e73-4aa5-41f4-8434-dd2f46db389e.log",
+    "sha256": "e6f293194dd15e3dcedd20b1ce88c737c1471e711bfe056b40d1a1b35c84e85a",
+    "passed": true
+  },
+  "tests": [
+    {
+      "path": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\ForestValidation\\210068e6-a159-4d5d-9083-f8b385156c4f.xml",
+      "sha256": "b3600a9ffc52178f2670013ac88c7574a415c04a5179748d4c87d5d385c84646",
+      "result": {
+        "id": "2",
+        "testcasecount": "56",
+        "result": "Passed",
+        "total": "56",
+        "passed": "56",
+        "failed": "0",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-11-18 19:29:22Z",
+        "end-time": "2026-11-18 19:29:28Z",
+        "duration": "6.102299"
+      },
+      "total": 56
+    },
+    {
+      "path": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\balance\\balance-editmode.xml",
+      "sha256": "9a83e3453e6bd0f48fce545c874b33acc310bfd771885fc4d04d7d4ab4f03d24",
+      "result": {
+        "id": "2",
+        "testcasecount": "272",
+        "result": "Passed",
+        "total": "272",
+        "passed": "272",
+        "failed": "0",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-11-18 19:33:12Z",
+        "end-time": "2026-11-18 19:33:13Z",
+        "duration": "0.9190346"
+      },
+      "total": 272
+    }
+  ],
+  "distinctTestCount": 328,
+  "builds": [
+    {
+      "target": "Android",
+      "summary": {
+        "result": "Succeeded",
+        "artifact": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\Build\\Android-20261118-193318-883bc7df3b5349b4ba811d7bff3cb562\\DungeonMatcher-CrystalResonance.apk",
+        "unity": "6000.3.19f1",
+        "errors": 0,
+        "warnings": 7,
+        "bytes": 1474527901,
+        "seconds": 191.3198797,
+        "deviceTested": false
+      },
+      "runner": {
+        "target": "Android",
+        "pid": 23404,
+        "exitCode": 0,
+        "startedUtc": "2026-11-18T19:33:18.3061792Z",
+        "finishedUtc": "2026-11-18T19:36:56.5390726Z",
+        "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\Build\\Android-20261118-193318-883bc7df3b5349b4ba811d7bff3cb562\\unity.log",
+        "head": "90bc53b9a872c3cd895ed4e4fdc3ee71f277ba60"
+      },
+      "artifactSha256": "ee793f3c9f80a378e288000fde5d40a7c730656abf806d068954e95c25b9f6e5"
+    },
+    {
+      "target": "Windows",
+      "summary": {
+        "result": "Succeeded",
+        "artifact": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\Build\\Windows-20261118-193658-69428f4a1be347ba881e40d70c621d26\\Windows/DungeonMatcher.exe",
+        "unity": "6000.3.19f1",
+        "errors": 0,
+        "warnings": 6,
+        "bytes": 453278751,
+        "seconds": 18.5456206,
+        "deviceTested": false
+      },
+      "runner": {
+        "target": "Windows",
+        "pid": 6192,
+        "exitCode": 0,
+        "startedUtc": "2026-11-18T19:36:59.0004667Z",
+        "finishedUtc": "2026-11-18T19:37:39.6806941Z",
+        "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\Build\\Windows-20261118-193658-69428f4a1be347ba881e40d70c621d26\\unity.log",
+        "head": "90bc53b9a872c3cd895ed4e4fdc3ee71f277ba60"
+      },
+      "artifactSha256": "1377ae95b8d09103b4f304eab912fd826afcc94ef4daf3a3dfd350014b78562e"
+    }
+  ],
+  "archives": [
+    {
+      "file": "batch13-recorded-inputs.zip",
+      "bytes": 13180231,
+      "sha256": "f0ed7a587bc983e6ccf825ed30e3d1850fbbacc25fe08b48f6b5c92e388f5885"
+    },
+    {
+      "file": "batch13-validation-logs.zip",
+      "bytes": 339149,
+      "sha256": "2c7499dfeef164e76b8651f408c51080973264cd7a2f831f26da0eb7d89016fa"
+    },
+    {
+      "file": "batch13-build-logs.zip",
+      "bytes": 164574,
+      "sha256": "52963abbc475cec1cbc0dc61e21f498f86879a94164b47b49f50c5dd84987267"
+    }
+  ],
+  "recordedCases": 13,
+  "acceptedCommands": 3270,
+  "note": "Before Court-escort tuning. Complete original evidence remains untouched. These are not pooled with later source versions."
+}
