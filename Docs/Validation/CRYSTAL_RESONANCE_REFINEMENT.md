@@ -505,7 +505,7 @@ attention-v2 scales that preference by missing health. The pilot Forest first
 cards arrived 30.7–75.6 seconds. Different seeds/starts mean this does not prove a
 controlled fix for the historical 116-second direct-Forest outlier.
 
-The historical 3.693-second depth 59 Court elite was defeated by one accepted
+The historical 3.693-second depth 59 Dungeon Royal elite was defeated by one accepted
 color-crystal/column-bomb combination with a strong accumulated card build.
 That is evidence of earned combo power, not a reason to add HP padding. In the
 new deep batch, two of thirteen completed capstones lasted under ten seconds;

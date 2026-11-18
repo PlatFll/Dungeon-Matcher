@@ -35,6 +35,26 @@ public sealed partial class WaveController
         foreach (var recipe in zone.resonanceEncounters)
             if (recipe.resonanceKind == ZoneEncounterKind.Ordinary &&
                 ResonanceFormationLegal(zone, recipe, tier, state, false) && IntroductionSafe(recipe, state)) choices.Add(recipe);
+        // Preserve the existing post-leader breathing space if charge remains.
+        // Saved bank/capstone identity makes this exactly one ordinary encounter;
+        // it neither delays an earned portal nor relaxes current-depth eligibility.
+        if (state.capstonePhase == ResonanceCapstonePhase.Defeated && state.capstoneWave > 0 &&
+            state.lastBankedWave == state.capstoneWave)
+        {
+            var relief = choices.FindAll(r => r.members.Length <= 2 && r.members.All(e => e.Category == EnemyCategory.Normal));
+            if (relief.Count > 0) choices = relief;
+        }
+        // Learn/Patrol/Combined labels can hide the same pressure mechanic.
+        // Prefer a different special next when legal alternatives exist. Normal
+        // escorts may recur; never exhaust the pool or loosen tide/role limits.
+        string previousLabel = state.recentRecipes.LastOrDefault();
+        var previous = Array.Find(zone.resonanceEncounters, r => r.label == previousLabel);
+        if (previous != null)
+        {
+            var previousSpecials = previous.members.Where(e => e.Category != EnemyCategory.Normal).ToArray();
+            var varied = choices.FindAll(r => !r.members.Any(previousSpecials.Contains));
+            if (varied.Count > 0) choices = varied;
+        }
         var fresh = choices.FindAll(r => !state.recentRecipes.Contains(r.label));
         if (fresh.Count > 0) choices = fresh;
         if (choices.Count > 0) return PickDepthRecipe(zone, tier, choices, random);

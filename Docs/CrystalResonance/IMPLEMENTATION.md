@@ -60,7 +60,10 @@ reroll. Depth is global and never resets on travel. Seen mechanics/leaders and
 recent capstones carry across visits. Major cooldown is two visits.
 
 Ordinary recipes use current-zone eligibility, introduction safety, whole threat
-and role budgets, tide compatibility and recent-recipe exclusions. Bounded
+and role budgets, tide compatibility and recent-recipe exclusions. Saved recent recipe identities also avoid adjacent
+special-enemy variants when alternatives exist. The saved defeated capstone wave
+and last banked wave identify the single post-capstone relief choice, without new
+save fields or extra encounters. Bounded
 procedural fallback uses weighted members/adjacent families. Capstones select a
 legal kind then an authored whole formation. Repeatable same-zone elite reserves
 remain after unique leaders are spent. Missing legal data raises an explicit

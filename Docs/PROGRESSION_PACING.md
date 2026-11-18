@@ -75,7 +75,12 @@ Marshal); her formation budget includes both actors. Enemy stats, oxygen rules
 and other capstone formations are unchanged.
 
 Recent ordinary recipes (three) and capstone formations (four) are avoided when
-alternatives exist. Major bosses have a two-visit separation. Provisional kind
+alternatives exist. Ordinary selection also prefers not to repeat the immediately
+previous special enemy through a differently named recipe. This is a preference,
+never a relaxed legality check or an exhausted-pool error. If charge remains after
+a capstone, the first following ordinary encounter uses an eligible normal-only
+one/two-actor relief formation where available. Its saved capstone/bank identity
+limits relief to one encounter; an already-earned portal is never delayed. Major bosses have a two-visit separation. Provisional kind
 weights are elite 6, miniboss 4, major 2 (3 at the deepest tier), rolled before
 escort variants. Repeatable same-zone elite reserves remain when unique leaders
 are exhausted. New mechanics get at most two actors and one unseen special;

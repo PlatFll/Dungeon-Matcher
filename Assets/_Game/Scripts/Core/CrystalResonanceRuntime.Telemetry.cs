@@ -9,6 +9,7 @@ public sealed class ResonanceTelemetryEvent
     public int visit, depth, moves, charge, pending, value, health, shield, capstonePhase, approach;
     public long score, receipt;
     public float wall, visitSeconds, runSeconds, combatSeconds, draftSeconds, travelSeconds;
+    public int air = -1, wetMoves, freeBubbles, cofferCharges;
     public uint refillRandom, capstoneRandom;
     public int encounterSeed;
 }
@@ -26,6 +27,10 @@ public sealed partial class CrystalResonanceRuntime
             approach=State.approachThreshold,charge=State.charge,pending=State.PendingMastery,
             score=State.score,receipt=State.lastReceipt,moves=run.Board.CompletedValidPlayerMoves,
             health=run.Player.CurrentHealth,shield=run.Player.CurrentShield,
+            air=run.Board.IsFlooded ? run.Board.Aquatic.air : -1,
+            wetMoves=run.Board.IsFlooded ? run.Board.Aquatic.wetMoves : 0,
+            freeBubbles=run.Board.IsFlooded ? run.Board.Aquatic.bubbles.Count : 0,
+            cofferCharges=run.Board.IsFlooded ? run.Board.Aquatic.coffer?.charges ?? 0 : 0,
             wall=Time.realtimeSinceStartup,visitSeconds=State.visitSeconds,runSeconds=State.runSeconds,
             combatSeconds=State.combatSeconds,draftSeconds=State.draftSeconds,travelSeconds=State.travelSeconds,
             refillRandom=run.Board.RefillRandomState,capstoneRandom=State.capstoneRandom,encounterSeed=run.Waves.EncounterSeed });
@@ -44,7 +49,7 @@ public sealed partial class CrystalResonanceRuntime
     }
     private void TelemetryMove(int move) { if (Enabled) { State.movesThisVisit++; Record("move_accepted", "", move); } }
     private void TelemetryDamage(PlayerActor player, int amount)
-    { if (Enabled) { State.damageThisVisit+=amount; Record("player_damage", "", amount); } }
+    { if (Enabled) { State.damageThisVisit+=amount; Record("player_damage", player.LastDamageSummary, amount); } }
     private void TelemetryEnemy(EnemyActor enemy)
     { if (enemy!=null) { telemetryEnemies.RemoveAll(previous=>previous==null); telemetryEnemies.Add(enemy); enemy.SpecialAbilityUsed+=TelemetrySpecial; } }
     private void TelemetrySpecial(EnemyActor enemy) => Record("enemy_special", enemy.Definition.EnemyId);
