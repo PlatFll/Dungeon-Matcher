@@ -2,6 +2,7 @@
 
 Existing branch codex/crystal-resonance-zone-director / draft PR #234.
 Task start cae70c1d; clean at start and origin fetched. Other checkouts preserved.
+Implementation checkpoint committed locally as b689187; not pushed yet.
 User brief: November 18 attachment 11ffe724-9eb9-4683-92c7-aefe1d567607/Pasted text.txt.
 
 Implemented: permanent Dungeon-first menu/Retry/Practice/challenges; Editor-only
@@ -34,14 +35,36 @@ Historical outliers: Refinement/baseline-findings.md and baseline-outliers.json.
 depth-59 build, not evidence for HP padding. Prior Forest defensive 116s first
 card used flat healing priority even with 5 HP missing; policy now scales it.
 
-Next: pilot (5 profiles, skeleton L1 seed19001), review actual outcomes, then
-20 more natural cases (seeds19002–19005, four characters, L1/L5) and four deep
-natural L10 attempts capped45min. Keep deaths/censoring, never force progress.
-Scratch cr_refine_matrix.py config + cr_refine_background.ps1 waiter can run groups.
-Do not start overlapping Unity jobs. The waiter records PID, exit, logs/artifacts
-and attempts one same-chat codex queue notification, without retries/model changes.
-Queue probe accepted ID01a1ec2d-1311-71a2-8fbb-586f15872bd6; wakeup not yet observed.
-Check .utmp/CrystalResonance/Refinement/jobs for live/completed job state.
+Pilot batch 20261118-010917 completed all five natural L1 skeleton/seed19001
+cases, each cleared Dungeon then died in Forest. Unity exit0/no errors. The
+outer helper falsely failed on a null process ExitCode; original failure kept.
+Analyzer also had duplicate identical diagnosticStart keyword metadata; fixed
+in offline-only commit cdfae32. Re-analysis and native audit pass:876 accepted
+inputs, no invariant failures. Do NOT repeat the pilot because of helper failure.
+See Docs/Validation/CRYSTAL_RESONANCE_REFINEMENT.md and its new evidence directory.
+Pilot Dungeon swaps novice119/skilled71, damage315/140; Forest losses atdepth27–33.
+No gameplay balance change justified from one seed; inspect main/deep next.
+
+ACTIVE main matrix: batch20261118-020131, 20 natural cases, seeds19002–19005,
+four characters atL1/L5, all five profiles, max3 visits/30min each. Root PID17724.
+Job state .utmp/CrystalResonance/Refinement/jobs/main-20261118-020113/job.json.
+One-shot completion waiter PID30432 is VERIFIED waiting for that process.
+Queue wakeup was verified twice (probe and completed pilot); it posts to chat
+01a127fb-8a65-7d73-9061-df9dc2d9843a. No model polling required.
+The corrected wrapper invokes a native child and reads LASTEXITCODE; explicit
+exit0/7 probes passed. It analyzes/audits after Unity exits and notifies once.
+A claim file prevents duplicate notifications; failed notifications do not retry.
+Do not start another Unity job or edit Assets while the current job is running.
+Known serialized import noise must be inspected/restored only after owned exit.
+
+Next on notification: read job + analysis/audit once, check all20 cases and
+failures. Compare sources explicitly: pilot b689187 vs main cdfae32 differs only
+in offline analyzer, not gameplay/zone/policy source. Full source manifests
+include Assets/Packages/ProjectSettings/Tools. Keep batches separate in reports.
+Then run four deep L10 Dungeon-first attempts (max45min, natural deaths retained):
+scratch cr_refine_launch_group.ps1 -Group deep. Its wrapper auto-arms a verified
+single completion waiter. Assess sparse natural zones and extend if warranted.
+Never substitute direct-zone fixtures for natural progression evidence.
 
 After evidence: investigate Court/Forest/capstones, only targeted justified
 tuning + affected retests, final validator, Android/Windows builds, curated A–F

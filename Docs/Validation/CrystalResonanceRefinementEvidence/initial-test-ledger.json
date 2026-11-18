@@ -1,0 +1,100 @@
+[
+  {
+    "path": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\ForestValidation\\6f298b2d-c1ab-4594-8703-1568c329cf35.xml",
+    "sha256": "283c5e398ee5ecf1fdf334876df07cb2d122ea92786f3ae2fb6a5c682a297091",
+    "result": {
+      "id": "2",
+      "testcasecount": "8",
+      "result": "Failed(Child)",
+      "total": "8",
+      "passed": "6",
+      "failed": "2",
+      "inconclusive": "0",
+      "skipped": "0",
+      "asserts": "0",
+      "engine-version": "3.5.0.0",
+      "clr-version": "4.0.30319.42000",
+      "start-time": "2026-11-18 00:49:27Z",
+      "end-time": "2026-11-18 00:49:35Z",
+      "duration": "7.4414998"
+    },
+    "failures": [
+      {
+        "test": "ForestFoundationPlayTests.CrystalResonanceVisibleFollowupUsesOnlyAlreadyVisiblePieces",
+        "message": "  visible second row falls into a match\n  Expected: greater than or equal to 3\n  But was:  0\n"
+      },
+      {
+        "test": "ForestFoundationPlayTests.DungeonFirstEditorZonesContinueExactlyAndRetryDungeon",
+        "message": "  Expected string length 876 but was 873. Strings differ at index 650.\n  Expected: \"...pstones\":[],\"visitSeconds\":0.6098895072937012,\"combatSecon...\"\n  But was:  \"...pstones\":[],\"visitSeconds\":0.672248125076294,\"combatSecond...\"\n  --------------------------------------------^\n"
+      }
+    ]
+  },
+  {
+    "path": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\ForestValidation\\09f0f8e7-48e0-40f3-8e38-eddc28ea94a8.xml",
+    "sha256": "e4407111c15992638048fbf5777388fe8d92a8f3a0a2de0d6c0f4df823219785",
+    "result": {
+      "id": "2",
+      "testcasecount": "2",
+      "result": "Passed",
+      "total": "2",
+      "passed": "2",
+      "failed": "0",
+      "inconclusive": "0",
+      "skipped": "0",
+      "asserts": "0",
+      "engine-version": "3.5.0.0",
+      "clr-version": "4.0.30319.42000",
+      "start-time": "2026-11-18 00:52:11Z",
+      "end-time": "2026-11-18 00:52:28Z",
+      "duration": "17.4207841"
+    },
+    "failures": []
+  },
+  {
+    "path": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\ForestValidation\\3de68810-c5ee-47dc-aa03-cb8d4a429c5c.xml",
+    "sha256": "7720dc78bdc787b2cdfecbb2c246fc2457493238543e80a48e5da6850ca8926b",
+    "result": {
+      "id": "2",
+      "testcasecount": "48",
+      "result": "Failed(Child)",
+      "total": "48",
+      "passed": "47",
+      "failed": "1",
+      "inconclusive": "0",
+      "skipped": "0",
+      "asserts": "0",
+      "engine-version": "3.5.0.0",
+      "clr-version": "4.0.30319.42000",
+      "start-time": "2026-11-18 01:01:43Z",
+      "end-time": "2026-11-18 01:01:47Z",
+      "duration": "3.1891495"
+    },
+    "failures": [
+      {
+        "test": "ForestFoundationPlayTests.CrystalResonancePolicyUsesJournaledLegalInputForEveryStyle",
+        "message": "  ordinary durable command path\n  Expected: 1\n  But was:  2\n"
+      }
+    ]
+  },
+  {
+    "path": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\ForestValidation\\8692ef89-d90d-4137-83c6-d1b177ad638e.xml",
+    "sha256": "5a7da43e74ef16ebe7fa29057657869c6b72a196bee6a95239d26373e1f2a922",
+    "result": {
+      "id": "2",
+      "testcasecount": "2",
+      "result": "Passed",
+      "total": "2",
+      "passed": "2",
+      "failed": "0",
+      "inconclusive": "0",
+      "skipped": "0",
+      "asserts": "0",
+      "engine-version": "3.5.0.0",
+      "clr-version": "4.0.30319.42000",
+      "start-time": "2026-11-18 01:04:32Z",
+      "end-time": "2026-11-18 01:04:56Z",
+      "duration": "24.0103788"
+    },
+    "failures": []
+  }
+]
