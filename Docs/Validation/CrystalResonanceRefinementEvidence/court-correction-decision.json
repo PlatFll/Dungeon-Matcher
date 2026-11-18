@@ -1,0 +1,48 @@
+{
+  "reason": "Two eligible basic identities omitted from all live authored Court recipes; all six three-member routine patrols shared the same heavy pair. Nine played Court visits exposed neither omitted identity.",
+  "baselineCases": 54,
+  "baselineCourtCompleted": 1,
+  "baselineCourtDefeats": 8,
+  "changes": {
+    "newRecipes": {
+      "Reef scouts": {
+        "members": [
+          "reef_spearman",
+          "needlefin_skirmisher"
+        ],
+        "weight": 3
+      },
+      "Salvage escort": {
+        "members": [
+          "needlefin_skirmisher",
+          "shellback_porter"
+        ],
+        "weight": 2
+      }
+    },
+    "thirdEscortReplacements": {
+      "Patrol pearl_thief": "needlefin_skirmisher",
+      "Patrol reef_netweaver": "needlefin_skirmisher",
+      "Patrol puffer_sentinel": "shellback_porter"
+    },
+    "queenEscort": {
+      "before": "hammerhead_bruiser",
+      "after": "conch_marshal",
+      "formationBudgetBefore": 6.5,
+      "formationBudgetAfter": 7.5,
+      "reason": "Restore the approved Nacre Court-only Queen escort contract, using the existing Queen command pairing."
+    }
+  },
+  "unchanged": [
+    "enemy stats",
+    "oxygen",
+    "Resonance awards",
+    "all capstones except Queen escort/budget",
+    "other zones",
+    "core resolution",
+    "approved art"
+  ],
+  "retest": "court-correction-protocol.json",
+  "acceptance": "Require actual roster exposure/variety and preserved legal mechanics; do not tune until every proxy wins or reaches a duration target.",
+  "status": "implemented; affected validation and natural reruns pending"
+}

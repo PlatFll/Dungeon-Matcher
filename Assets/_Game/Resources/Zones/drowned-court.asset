@@ -610,6 +610,30 @@ MonoBehaviour:
     oncePerRun: 0
     allowRepeatedRequiredEscort: 0
     prerequisites: []
+  - label: Reef scouts
+    members:
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    weight: 3
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Salvage escort
+    members:
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+    weight: 2
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
   - label: Learn pearl_thief
     members:
     - {fileID: 11400000, guid: c22540a470bcf0245ae8f7bf1b29eb0c, type: 2}
@@ -626,7 +650,7 @@ MonoBehaviour:
     members:
     - {fileID: 11400000, guid: c22540a470bcf0245ae8f7bf1b29eb0c, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
-    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
     weight: 4
     minimumDepthTier: 1
     maximumDepthTier: 4
@@ -651,7 +675,7 @@ MonoBehaviour:
     members:
     - {fileID: 11400000, guid: 82091cda3a792ac42871f6a8d4a9fdf9, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
-    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
     weight: 4
     minimumDepthTier: 1
     maximumDepthTier: 4
@@ -676,7 +700,7 @@ MonoBehaviour:
     members:
     - {fileID: 11400000, guid: a44f2455cec6a354e81f96b6041f7ea7, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
-    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
     weight: 4
     minimumDepthTier: 1
     maximumDepthTier: 4
@@ -852,12 +876,12 @@ MonoBehaviour:
   - label: Capstone queen_nacre
     members:
     - {fileID: 11400000, guid: 5c2b431ba48565b4fbef4543e60a4339, type: 2}
-    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
     weight: 2
     minimumDepthTier: 3
     maximumDepthTier: 4
     resonanceKind: 3
-    resonanceThreatBudget: 6.5
+    resonanceThreatBudget: 7.5
     oncePerRun: 1
     allowRepeatedRequiredEscort: 0
     prerequisites:

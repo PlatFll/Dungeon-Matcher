@@ -51,7 +51,7 @@ public sealed class BalanceLifecyclePlayTests
                 }
             }
         }
-        File.WriteAllText(".utmp/balance-lifecycle-play.txt",$"Executed in Unity Play Mode: {passed} passed; {failures.Count} failed.\n"+string.Join("\n\n",failures));
+        File.WriteAllText(".utmp/balance-lifecycle-play-"+Guid.NewGuid().ToString("N")+".txt",$"Executed in Unity Play Mode: {passed} passed; {failures.Count} failed.\n"+string.Join("\n\n",failures));
         yield return new ExitPlayMode();
         Assert.That(failures,Is.Empty,string.Join("\n",failures));
     }

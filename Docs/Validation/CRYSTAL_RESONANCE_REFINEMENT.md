@@ -2,8 +2,8 @@
 
 November 18, 2026. Existing draft PR #234 only; **not merged**.
 The pilot below is completed evidence, not a completed final acceptance pass.
-The original 20-case matrix and four deep attempts have completed. The
-spread-seed coverage expansion and final builds remain outstanding.
+All four planned batches (54 runs) have completed. The focused Court formation
+correction, affected reruns and final validation/builds are in progress.
 Historical results remain unchanged in CRYSTAL_RESONANCE_V1_FINAL.md.
 
 ## A. Implementation
@@ -16,8 +16,8 @@ clear stale diagnostic requests. Random eligible travel remains unchanged.
 
 RunLaunchOptions, RunSession, ZoneTravelController and MainMenuController own
 these narrow launch changes. No second board resolver or damage path was added.
-Enemy stats, shield rules, abilities, rewards, zone recipes and approved sprites
-have not been adjusted during this refinement. Design/state/pacing owner docs
+Enemy stats, shield rules, abilities, rewards and approved sprites remain unchanged.
+The focused Court formation correction is described in section D. Design/state/pacing owner docs
 now describe permanent Dungeon-first starts and flexible visit duration.
 
 HumanLikePlaytestDriver attention-v2 varies attention, weakness/telegraph
@@ -64,6 +64,31 @@ powershell -ExecutionPolicy Bypass -File Tools/Run-UnityScenario.ps1 -Method Cry
 
 Shell invocations used the required rtk proxy prefix. The final validator and
 Windows/Android builds must follow the remaining work.
+
+## B2. Court correction checks
+
+After the formation correction, `Tools/Test-Balance.ps1 -OutputDirectory
+.utmp/CrystalResonance/Refinement/Regression/court-correction-20261118` passed
+272/272 with Unity exit 0. The focused Court/director/state/continuation suite
+passed 45/47 initially. Both failures were obsolete timing fixtures: an immediate
+basic outside accepted resolution, and seconds-based Stagger expiry. The runtime
+already follows the approved unified move contract. Corrected fixtures retain
+inflation/deflation and interruption checks while additionally verifying no
+thinking-time attack/recovery, one due attack, and full move-based suppression.
+
+The two-test rerun passed Tribute and exposed Puffer's second legacy assumption:
+four setup moves instead of the existing v3 three-move special cadence. The
+fixture now uses the actor's authoritative requirement and asserts two full
+future responses. Its final rerun passed. Thus **47 distinct affected checks
+pass across the latest results**, not one clean 47-test execution. Every failed
+XML/log remains in `court-correction-test-results.zip` and its ledger. No runtime
+code or enemy value changed to satisfy those failures. The Court contract now
+labels its historical seconds profile and links the current move rules.
+
+The final required `Tools/Validate-Unity.ps1` returned exit 0; log `DungeonMatcher-UnityValidation-37d7d691-92cb-4dc6-83d9-022236a0fe81.log`.
+Test/build output changes preserve old artifacts using unique paths. Full commands,
+failure messages and source paths remain in the ledger/logs. Android/Windows
+builds and natural affected reruns still follow; this is not final acceptance.
 
 ## C. Completed pilot evidence
 
@@ -165,8 +190,8 @@ durable save format, travel weighting or mechanics were changed.
 Pilot versus main full source-manifest comparison found exactly one changed
 file: the offline analyzer's consistent-metadata correction. Assets, scripts,
 zone data and ProjectSettings were byte-identical before the two executions.
-Batches remain separate in the report. Completed deep evidence appears below;
-the spread-seed matrix remains pending.
+Batches remain separate in the report. Completed deep and spread-seed evidence
+appears below.
 
 ## C3. Existing-run preservation audit (07:38 UTC, November 18)
 
@@ -272,7 +297,7 @@ hash differences: Unity converted the three Consumable sprite metadata files
 from CRLF to LF and added trailing spaces to empty fields. Exact prior/current
 hashes and normalized contents were verified; every other source file matches
 deep byte-for-byte. Gameplay and automated regression assertions are unchanged.
-The batch has one existing completion notifier; it is still in progress.
+The batch completed and its one-shot notifier exited; see section C5.
 
 The actual Court capstone screenshot `deep-court-capstone.png` was inspected;
 the score/Resonance plaque and approach message remain separate from HP and
@@ -281,9 +306,89 @@ presented as proof of a visible boss. Recorded event timestamps use the Unity
 process clock; action timestamps are case-relative. Use encounter/depth and
 journal identity for per-encounter analysis rather than comparing unlike clocks.
 
+## C5. Completed spread-seed matrix and causal review
+
+Batch `20261118-080102` completed all 25 predeclared cases with Unity/analysis/audit
+exit 0. The audit checked 5,731 durable commands without invariant failures.
+Twenty-two runs ended in natural defeat; three reached the three-visit limit
+alive. There were 39 completed visits: 25 Dungeon, nine Frostwake, three Ironvein
+and two Forest. Seven Court visits all ended in defeat. Failed visits remain in
+the summary and are excluded only from **completed-visit timing** distributions.
+
+| Profile | Median Dungeon seconds | Median Dungeon swaps | Runs ending in defeat |
+|---|---:|---:|---:|
+| Novice | 469.3 | 118.0 | 5/5 |
+| Typical | 307.0 | 88.0 | 5/5 |
+| Skilled | 222.9 | 68.0 | 4/5 |
+| Defensive | 382.3 | 83.0 | 4/5 |
+| Aggressive | 314.8 | 94.0 | 4/5 |
+
+The defensive L5 Minotaur completed Dungeon/Frostwake/Ironvein and remained
+alive at the 26.62-minute observation limit. Skilled L5 Minotaur and aggressive
+L1 Bardley likewise completed three visits alive after 17.60 and 16.88 minutes.
+This supplies a successful observed continuation inside the 20–45-minute target,
+not a claim of a complete endless-run victory or human enjoyment. All 54 fresh
+refinement attempts are retained across four batches: 48 deaths, six living
+observation-limit endpoints and 87 completed zone visits. Source differences
+are explicitly recorded rather than silently pooled as one balance version.
+
+No immediate recipe repeats occurred. That label-level check did not detect
+repeated escort structure: Court's ordinary library used the same Spearman and
+Hammerhead pair in all six three-actor routine patrols. Needlefin Skirmisher and
+Shellback Porter both had positive ordinary pool weights but appeared in **zero**
+authored live recipes; the always-available authored choices prevented fallback
+from supplying them. Across the nine played Court visits in deep/wide, neither
+appeared. This is concrete lost roster variety, independent of run win rate.
+
+Court's seven new failed visits ended with enemy basics as their final recorded
+hit. Low-air immediate bubble answers were chosen in 38/44 opportunities. The
+telemetry's cumulative player_damage records omit damage-source detail, so a
+last-hit label cannot establish the full suffocation contribution. All five L1
+Rattlebones cases reached Court with 45–90 HP; late L5 Kobolds had 115 HP and
+no potions left in that visit. Defensive missed four bubble opportunities,
+whereas skilled answered all available ones. These findings justify examining
+composition and entry resources; they do not justify a blanket oxygen nerf.
+
+Forest's new 116.1-second novice first draft involved a 17-swap Mender lesson,
+then an eight-swap Thornkeeper lesson and another Mender patrol. The Mender
+healed repeatedly. Other new first-card intervals were under 90s except a
+95.3s novice Ironvein visit. Together with prior outliers this warrants human
+priority/clarity review, not globally accelerating charge or every card notch.
+
+Wide capstones under ten seconds numbered four: three Dungeon and one Ironvein.
+The deep sample's short victories were a minority, while other caps exposed
+longer pressure. No timer, HP padding or forced boss mechanic was added.
+The wide Unity, runner, wrapper and notifier were gone at 13:32:11 UTC;
+`wide-shutdown.json` records the clean process inventory.
+
 ## D. Adjustments and historical outliers
 
-No gameplay numeric or formation adjustments have been made in this refinement.
+The sole gameplay balance correction in this refinement changes Court formation
+data: add Reef scouts (Spearman + Needlefin, weight 3) and Salvage escort
+(Needlefin + Shellback, weight 2), both legal across existing depth tiers. Replace
+the Hammerhead escort with Needlefin in Thief/Netweaver patrols and Shellback in
+Puffer patrols. Heavy Marshal/Siphoner/Cantor patrols, member stats,
+oxygen, charge awards and all other zones remain unchanged. The objective is
+restoring eligible roster variety and varying repeated heavy pressure, not
+forcing a time or success rate. A production-selector regression checks all four
+ordinary identities and varied escort pairs at every tier.
+
+Capstone contract review also found Queen Nacre paired with a Reef Hammerhead,
+contradicting the approved Nacre Court-only escort contract. Restore the existing
+Queen + Conch Marshal pairing and its complete 7.5 threat cost (previously 6.5
+for Queen + Hammerhead). This is an authored formation budget, not an enemy-stat
+multiplier. Other capstones, kind weights, uniqueness and prerequisites remain
+unchanged. A regression checks faction identity and full escort legality.
+
+Eight new natural reruns are declared in `court-correction-protocol.json`: all
+seven failed wide Court scenarios plus the successful deep defensive control.
+They use new names and directories; original results are untouched. Named seeds
+alone do not pair production run IDs/capstone streams, and recipe changes alter
+later RNG consumption, so survival differences will be descriptive, not proof
+that the correction alone caused each outcome. Retest results are pending.
+
+Editor build outputs, balance XML/logs and selection-distribution files now use
+unique destinations or reject existing targets, preserving the user's evidence.
 The historical defensive policy overvalued healing even with only 5 HP missing;
 attention-v2 scales that preference by missing health. The pilot Forest first
 cards arrived 30.7–75.6 seconds. Different seeds/starts mean this does not prove a
@@ -293,22 +398,26 @@ The historical 3.693-second depth 59 Court elite was defeated by one accepted
 color-crystal/column-bomb combination with a strong accumulated card build.
 That is evidence of earned combo power, not a reason to add HP padding. In the
 new deep batch, two of thirteen completed capstones lasted under ten seconds;
-others included a 64.6-second Grand Delver. Review the remaining spread sample
-before treating brief capstones as a systematic composition problem.
+others included a 64.6-second Grand Delver. The completed spread sample also contains a minority of short capstones; this
+does not establish a systematic composition failure.
 
 ## E. Remaining concerns
 
-Broader low-level Court/Ironvein coverage and spread-seed comparison remain
-outstanding. The deep sample includes natural revisits and 25/33-minute attempts,
-but both longer attempts ended in defeat. Successful longer continuations are
-not established. Forest attrition needs cross-seed review. Marked-response heuristics do not capture every indirect
-counter; special explosions or killing a caster can solve threats. No policy
-models human reading, fatigue, learning, touch slips or enjoyment.
+Low-level Court attrition remains a concern after the baseline spread matrix;
+the focused formation correction still needs its new natural reruns. Forest
+first-card outliers and the longer late-Dungeon return need human priority and
+clarity review. One defensive L5 run remained alive at its 26.62-minute limit;
+the L10 deep attempts ending after 25 and 33 minutes were losses. These outcomes
+are retained separately rather than relabeling losses as successful runs.
+
+Marked-response heuristics do not capture every indirect counter; special
+explosions or killing a caster can solve threats. Damage telemetry lacks source
+detail for cumulative HP loss. No policy models human reading, fatigue, learning,
+touch slips or enjoyment. No physical-device acceptance has occurred.
 
 ## F. Current recommendation
 
 Implementation and initial technical checks support continuing the actual-game
 evaluation. This is **not yet the final human-acceptance recommendation**.
-Complete the matrix, investigate supported concerns, rerun affected checks after
-any tuning, build both targets, then update this report and the existing draft PR.
-Never merge without explicit authorization.
+Complete the affected Court reruns and final checks/builds, then update this
+report and the existing draft PR. Never merge without explicit authorization.

@@ -1,3 +1,18 @@
+## Crystal Resonance refinement — 2026-11-18, unmerged
+
+Fresh standard, Retry, Practice and challenge runs permanently start in Dungeon;
+Continue restores the exact saved zone. Explicit Editor diagnostics remain.
+The improved five-profile visible-state policy completed 54 natural runs across
+pilot/main/deep/spread batches, preserving losses and source provenance. This is
+automated actual-Game evidence, not human enjoyment or device acceptance.
+Court review found two eligible ordinary enemies absent from every authored live
+recipe and six patrols sharing one heavy escort pair. A focused formation-only
+correction restores Needlefin/Shellback exposure and varies three patrol escorts.
+Queen Nacre uses the existing Court Conch Marshal escort instead of the
+unintended Reef Hammerhead. Stats, oxygen and charge rewards are unchanged.
+Targeted reruns and final validation/builds are pending; do not treat the correction as accepted yet.
+See [the refinement report](Validation/CRYSTAL_RESONANCE_REFINEMENT.md).
+
 ## Crystal Resonance redesign — 2026-11-17, unmerged review candidate
 
 The actual Game scene now uses cumulative score and a separate 100-point

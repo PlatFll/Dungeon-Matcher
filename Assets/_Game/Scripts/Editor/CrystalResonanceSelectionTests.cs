@@ -38,8 +38,46 @@ public sealed class CrystalResonanceSelectionTests
             foreach(var entry in counts.OrderBy(e=>e.Key))lines.Add(zone.zoneId+","+tier+","+entry.Key+","+entry.Value);
         }
         Directory.CreateDirectory(".utmp/CrystalResonance");
-        File.WriteAllLines(".utmp/CrystalResonance/selection-distribution.csv",lines);
+        File.WriteAllLines(".utmp/CrystalResonance/selection-distribution-"+Guid.NewGuid().ToString("N")+".csv",lines);
     }
+    [Test] public void CourtOrdinaryRosterAndEscortPairsRemainReachableAtEveryTier()
+    {
+        var zone=Resources.Load<ZoneDefinition>("Zones/drowned-court");
+        var state=new CrystalResonanceSnapshot();
+        state.seenMechanics.AddRange(zone.enemies.Select(e=>e.EnemyId));
+        for(int tier=0;tier<5;tier++)
+        {
+            var seen=new HashSet<string>();var escortPairs=new HashSet<string>();
+            for(int seed=1;seed<=500;seed++)
+            {
+                var recipe=WaveController.SelectResonanceOrdinary(zone,zone.resonanceTierStarts[tier],state,
+                    new SavedRandom(unchecked((uint)seed*2654435761u)));
+                Assert.IsTrue(WaveController.ResonanceFormationLegal(zone,recipe,tier,state,false));
+                var normals=recipe.members.Where(e=>e.Category==EnemyCategory.Normal).Select(e=>e.EnemyId).OrderBy(id=>id).ToArray();
+                foreach(var id in normals)seen.Add(id);
+                if(recipe.members.Length==3 && normals.Length==2)escortPairs.Add(string.Join("+",normals));
+            }
+            var eligible=zone.resonancePool.Where(e=>e.Weight(tier)>0 && e.enemy.Category==EnemyCategory.Normal)
+                .Select(e=>e.enemy.EnemyId).ToArray();
+            CollectionAssert.AreEquivalent(eligible,seen,"Eligible ordinary Court roster disappeared at tier "+tier);
+            if(tier>=1)Assert.GreaterOrEqual(escortPairs.Count,3,"Routine patrols should not all reuse one heavy pair");
+        }
+    }
+
+    [Test] public void QueenCapstoneKeepsApprovedCourtCultureAndCompleteEscortBudget()
+    {
+        var zone=Resources.Load<ZoneDefinition>("Zones/drowned-court");
+        var state=new CrystalResonanceSnapshot();state.seenMechanics.AddRange(zone.enemies.Select(e=>e.EnemyId));
+        var queens=zone.resonanceEncounters.Where(r=>r.members.Any(e=>e.EnemyId=="queen_nacre")).ToArray();
+        Assert.IsNotEmpty(queens);
+        foreach(var recipe in queens)
+        {
+            Assert.IsTrue(recipe.members.All(e=>e.Faction=="Nacre Court"),recipe.label);
+            Assert.LessOrEqual(recipe.members.Sum(e=>e.ThreatCost),recipe.resonanceThreatBudget);
+            Assert.IsTrue(WaveController.ResonanceFormationLegal(zone,recipe,4,state,true));
+        }
+    }
+
     [Test] public void EmptyAuthoredOrdinaryLibraryHasBoundedSameZoneFallbackAtEveryTier()
     {
         foreach(var original in Resources.LoadAll<ZoneDefinition>("Zones").Where(z=>z.eligibleForLiveTravel))

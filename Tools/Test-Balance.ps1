@@ -1,15 +1,16 @@
 [CmdletBinding()]
-param([string]$UnityPath = $env:UNITY_EXE)
+param([string]$UnityPath = $env:UNITY_EXE, [string]$OutputDirectory)
 $ErrorActionPreference = 'Stop'
 $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $versionText = Get-Content -LiteralPath (Join-Path $projectRoot 'ProjectSettings/ProjectVersion.txt') -Raw
 $version = [regex]::Match($versionText, '(?m)^m_EditorVersion:\s*(\S+)').Groups[1].Value
 if (-not $UnityPath) { $UnityPath = Join-Path $env:ProgramFiles "Unity/Hub/Editor/$version/Editor/Unity.exe" }
 if (-not (Test-Path -LiteralPath $UnityPath)) { throw "Install Unity $version or provide -UnityPath." }
-$outputRoot = Join-Path $projectRoot '.utmp'
+$outputRoot = if ($OutputDirectory) { [IO.Path]::GetFullPath($OutputDirectory) } else { Join-Path $projectRoot ('.utmp/BalanceValidation/' + [Guid]::NewGuid().ToString('N')) }
 New-Item -Path $outputRoot -ItemType Directory -Force | Out-Null
 $resultPath = Join-Path $outputRoot 'balance-editmode.xml'
 $logPath = Join-Path $outputRoot 'balance-editmode.log'
+if ((Test-Path -LiteralPath $resultPath) -or (Test-Path -LiteralPath $logPath)) { throw 'Refusing to overwrite existing balance evidence. Use a new output directory.' }
 $testFilter = 'PlayerAbilityLifecycleTests;DesignV2ContinuationTests;DesignV2Tests;BalanceV1Tests;BalanceLifecyclePlayTests;BalanceDisruptionPlayTests;BalanceFreshShapesPlayTests;RunUpgradeSystemTests;GameOverRecoveryTests;EnemyDamageResultTests;CrystalChainAttributionTests;CrystalBoardValidityTests;ReshufflePinReservationTests;WaveDeathLifecycleTests;EnemySpecialExecutionGuardTests;BarricadeBannerGravityTests;RoyalAssaultParticipantLifetimeTests;TownMarshalStaggerTests;BoardPointerIdentityTests'
 $started = Get-Date
 $arguments = @('-batchmode', '-projectPath', ('"{0}"' -f $projectRoot), '-runTests', '-testPlatform', 'EditMode', '-testFilter', $testFilter, '-testResults', ('"{0}"' -f $resultPath), '-logFile', ('"{0}"' -f $logPath))

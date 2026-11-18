@@ -67,6 +67,13 @@ early/late rosters and escalating combinations. No Guild content exists yet.
 Late roster breadth outside Dungeon is limited; report repetition rather than
 inventing enemies, raising every HP pool or making early villagers eternal.
 
+Court ordinary formations include the existing Needlefin and Shellback roster,
+with Reef scout/salvage pairs and varied patrol escorts. This corrects their
+omission from authored live recipes and reduces reliance on one heavy escort
+pair. Queen Nacre retains the approved Nacre Court escort identity (Conch
+Marshal); her formation budget includes both actors. Enemy stats, oxygen rules
+and other capstone formations are unchanged.
+
 Recent ordinary recipes (three) and capstone formations (four) are avoided when
 alternatives exist. Major bosses have a two-visit separation. Provisional kind
 weights are elite 6, miniboss 4, major 2 (3 at the deepest tier), rolled before

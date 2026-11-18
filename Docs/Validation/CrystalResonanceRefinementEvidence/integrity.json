@@ -1,4 +1,20 @@
 {
+  "court-correction-decision.json": {
+    "bytes": 1639,
+    "sha256": "639bd505a94401afdc7f72ba85c272ac5dd1cb88cf036ad0c0c647c12073ac87"
+  },
+  "court-correction-protocol.json": {
+    "bytes": 2672,
+    "sha256": "25fbbfd51f625b3131253ebcbed4dac4054b10a31bb444b513ca8ed8d1348f13"
+  },
+  "court-correction-test-ledger.json": {
+    "bytes": 6123,
+    "sha256": "eb370f42606d8d557ba4e48f176cb08ccac14c163549374e0aeac72506ddea32"
+  },
+  "court-correction-test-results.zip": {
+    "bytes": 345828,
+    "sha256": "0c6d7fe3823255e0195d9461a504cc8b31b0357b447430b1bef47c9626dc8c24"
+  },
   "deep-audit.json": {
     "bytes": 1745,
     "sha256": "c82b0959f27a476027af29fa0672430066c24213de4483c8d1d53f30c591bb49"
@@ -131,8 +147,40 @@
     "bytes": 2510,
     "sha256": "f42bb06bfdf3568efc0d391e16261c96bbe7b3844cf7d31e4c39f9b73e47f3ee"
   },
+  "wide-audit.json": {
+    "bytes": 9093,
+    "sha256": "069536a75eac37d242451358136f03a4fdddbd2428a2be4fb8d6e9a9a2069f11"
+  },
+  "wide-config.json": {
+    "bytes": 6861,
+    "sha256": "4c6bc0cb3737e475504abe42df68e5ee937286eed3a2f526e5805610cb719885"
+  },
+  "wide-job.json": {
+    "bytes": 642,
+    "sha256": "350cd8e367483368f0965c6eae3f40262a0098c314bcc2adef6e87843bd2dcde"
+  },
   "wide-launch-check.json": {
     "bytes": 1626,
     "sha256": "bfa8eb2f5b07ccb1abe4d88e03e714c88a8c9b082c609f081638b1bbe70e742a"
+  },
+  "wide-recorded-inputs.zip": {
+    "bytes": 21721820,
+    "sha256": "9b9d21b7b47a5f64b0dc27431c90b277d3b4bb49eaa571d1671ca42c110cc1c5"
+  },
+  "wide-shutdown.json": {
+    "bytes": 145,
+    "sha256": "683032f89defd1d7f487b242caba864bafe76cc3a6f1d861c679d6011f213487"
+  },
+  "wide-source-manifest.json": {
+    "bytes": 1319601,
+    "sha256": "65e3f335c99c158d889d2ba2ffad5be19c3963086ff8eaceb35eaccdb491ea90"
+  },
+  "wide-summary.json": {
+    "bytes": 588702,
+    "sha256": "bc85d41b80bda93563119325f072618e42146f9a2b0e79c510b2c6f364b4575f"
+  },
+  "wide-visits.csv": {
+    "bytes": 14894,
+    "sha256": "79475a9317c5edcde3f0f81221555d042001061334aab22fbcd4c82b12b77593"
   }
 }

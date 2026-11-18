@@ -79,7 +79,7 @@ public sealed class BalanceFreshShapesPlayTests
     private static IEnumerator CaptureMenu(string name)
     {
         if(SystemInfo.graphicsDeviceType==UnityEngine.Rendering.GraphicsDeviceType.Null)yield break;
-        string directory=Path.GetFullPath(".utmp/CharacterResetMenu");Directory.CreateDirectory(directory);
+        string directory=Path.GetFullPath(".utmp/CharacterResetMenu/"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(directory);
         yield return null;yield return null;
         ScreenCapture.CaptureScreenshot(Path.Combine(directory,name+".png"));
         yield return null;yield return null;
@@ -123,7 +123,7 @@ public sealed class BalanceFreshShapesPlayTests
                 Assert.That(RunSession.Current.ExitTo("MainMenu"),Is.True);yield return null;
             }
         }
-        File.WriteAllText(".utmp/balance-fresh-shapes-play.txt","PASS: actual settled swaps create Row Bomb, Column Bomb and Color Crystal on fresh level-1 profiles. Disposable saves and temporary loadouts; original preferences unchanged.\n");
+        File.WriteAllText(".utmp/balance-fresh-shapes-play-"+Guid.NewGuid().ToString("N")+".txt","PASS: actual settled swaps create Row Bomb, Column Bomb and Color Crystal on fresh level-1 profiles. Disposable saves and temporary loadouts; original preferences unchanged.\n");
         yield return new ExitPlayMode();
     }
     private static void Color(Gem gem,int type,Sprite[] sprites)=>gem.SetType((GemType)type,sprites[type]);

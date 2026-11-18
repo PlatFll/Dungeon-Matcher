@@ -74,8 +74,11 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(kit.IsPreparing,Is.False);Assert.That(kit.MarkedBubbles,Is.Empty);
         Assert.That(board.Aquatic.bubbles.Contains(marks[1])&&board.Aquatic.bubbles.Contains(marks[2]),Is.True);
         Assert.That(Run.Waves.ActiveEnemies.Sum(e=>e.FortifiedStacks),Is.Zero);
-        float end=Time.time+1.2f;yield return Until(()=>Time.time>=end,"ordinary stagger expires");
+        float end=Time.time+1.2f;yield return Until(()=>Time.time>=end,"thinking leaves move-based stagger intact");
+        Assert.That(queen.GetComponent<EnemyStagger>().IsStaggered,Is.True);
+        yield return Move();
         Assert.That(queen.GetComponent<EnemyStagger>().IsStaggered,Is.False);Assert.That(kit.BlocksBasic,Is.False);
+        Assert.That(queen.CurrentSpecialTurnCount,Is.Zero,"the full staggered action suppresses readiness");
         yield return Move();Assert.That(queen.CurrentSpecialTurnCount,Is.EqualTo(1));
     }
     [UnityTest] public IEnumerator CourtRevisionTributeRoundRobinCapsQueenAndPreservesMuster()
