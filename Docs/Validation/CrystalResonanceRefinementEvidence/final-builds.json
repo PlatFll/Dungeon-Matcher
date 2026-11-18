@@ -1,0 +1,60 @@
+{
+  "sourceGameplayCommit": "e12d9a2015ba4beba01c21e89abdff9ba2e64cf3",
+  "buildHead": "b7c9e2aa17b912ee1b0bd039ffd2dd3e2a492219",
+  "unity": "6000.3.19f1",
+  "platforms": [
+    {
+      "target": "Android",
+      "evidence": {
+        "result": "Succeeded",
+        "artifact": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\Build\\Android-20261118-152710-4884803053854e5a98a1d1acd01bf12a\\DungeonMatcher-CrystalResonance.apk",
+        "unity": "6000.3.19f1",
+        "errors": 0,
+        "warnings": 7,
+        "bytes": 1456160125,
+        "seconds": 202.7084669,
+        "deviceTested": false
+      },
+      "runner": {
+        "target": "Android",
+        "pid": 13232,
+        "exitCode": 0,
+        "startedUtc": "2026-11-18T15:27:10.3948760Z",
+        "finishedUtc": "2026-11-18T15:31:09.4599837Z",
+        "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\Build\\Android-20261118-152710-4884803053854e5a98a1d1acd01bf12a\\unity.log",
+        "head": "b7c9e2aa17b912ee1b0bd039ffd2dd3e2a492219"
+      },
+      "artifactBytes": 89848159,
+      "artifactSha256": "5e494ea93b5743de0b0bb0ae3089862b6004c6ae4b399da570e00fb0a40a638b",
+      "logSha256": "a6d341ae9f0010d0f5b8b2e2b5d37479406b8a00d9cfeaed99637e10612482d5"
+    },
+    {
+      "target": "Windows",
+      "evidence": {
+        "result": "Succeeded",
+        "artifact": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\Build\\Windows-20261118-153121-f33d1dfef6914cd983795369e5ac1b88\\Windows/DungeonMatcher.exe",
+        "unity": "6000.3.19f1",
+        "errors": 0,
+        "warnings": 6,
+        "bytes": 453277367,
+        "seconds": 34.0719308,
+        "deviceTested": false
+      },
+      "runner": {
+        "target": "Windows",
+        "pid": 29380,
+        "exitCode": 0,
+        "startedUtc": "2026-11-18T15:31:22.0183206Z",
+        "finishedUtc": "2026-11-18T15:32:18.6189919Z",
+        "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\Build\\Windows-20261118-153121-f33d1dfef6914cd983795369e5ac1b88\\unity.log",
+        "head": "b7c9e2aa17b912ee1b0bd039ffd2dd3e2a492219"
+      },
+      "artifactBytes": 667136,
+      "artifactSha256": "1377ae95b8d09103b4f304eab912fd826afcc94ef4daf3a3dfd350014b78562e",
+      "logSha256": "a133923e7426244f5fcadf0f5c6b95a23a84705a49693248d0c980941d964268"
+    }
+  ],
+  "deviceTested": false,
+  "shutdownCheckedUtc": "2026-11-18T15:33:34.127431+00:00",
+  "remainingOwnedProcesses": []
+}

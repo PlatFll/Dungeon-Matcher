@@ -1,17 +1,26 @@
-## Crystal Resonance refinement — 2026-11-18, unmerged
+## Crystal Resonance refinement — 2026-11-18, unmerged acceptance candidate
 
 Fresh standard, Retry, Practice and challenge runs permanently start in Dungeon;
 Continue restores the exact saved zone. Explicit Editor diagnostics remain.
-The improved five-profile visible-state policy completed 54 natural runs across
-pilot/main/deep/spread batches, preserving losses and source provenance. This is
-automated actual-Game evidence, not human enjoyment or device acceptance.
-Court review found two eligible ordinary enemies absent from every authored live
-recipe and six patrols sharing one heavy escort pair. A focused formation-only
-correction restores Needlefin/Shellback exposure and varies three patrol escorts.
-Queen Nacre uses the existing Court Conch Marshal escort instead of the
-unintended Reef Hammerhead. Stats, oxygen and charge rewards are unchanged.
-Targeted reruns and final validation/builds are pending; do not treat the correction as accepted yet.
-See [the refinement report](Validation/CRYSTAL_RESONANCE_REFINEMENT.md).
+The five-profile visible-state policy completed 62 natural runs across five
+source-separated batches: 56 defeats, six living observation-limit endpoints,
+99 completed visits and 14,180 durable accepted inputs. Every failure is retained.
+These are actual-Game automated results, not human enjoyment or device acceptance.
+
+Court formation data now exposes the previously omitted Needlefin/Shellback,
+varies three heavy patrol escorts and restores Queen + Conch Marshal's approved
+Court identity/full threat budget. Stats, oxygen and charge rewards are unchanged.
+Six played affected Court visits exposed the missing enemies; two completed and
+four failed. Both planned L5 Kobold attempts died in Forest before Court.
+Low-level attrition, heavy escort concentration, Forest first-card outliers and
+long late-Dungeon returns remain precise human balance review concerns.
+
+Required Unity validation, 272 balance checks and all 47 latest affected checks
+passed (initial failures and fixture corrections are preserved). Prior launch/
+save/HUD/phone-layout checks still cover unchanged code. Android and Windows
+development builds passed; no physical phone test. All owned processes exited.
+PR #234 is technically ready for human acceptance testing, but remains draft
+and unmerged. See [the complete A–F report](Validation/CRYSTAL_RESONANCE_REFINEMENT.md).
 
 ## Crystal Resonance redesign — 2026-11-17, unmerged review candidate
 

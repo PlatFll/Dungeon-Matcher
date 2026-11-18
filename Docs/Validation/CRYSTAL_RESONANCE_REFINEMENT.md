@@ -1,9 +1,9 @@
-# Crystal Resonance V1 refinement — work in progress
+# Crystal Resonance V1 refinement — completed technical review
 
 November 18, 2026. Existing draft PR #234 only; **not merged**.
-The pilot below is completed evidence, not a completed final acceptance pass.
-All four planned batches (54 runs) have completed. The focused Court formation
-correction, affected reruns and final validation/builds are in progress.
+All five refinement batches (62 runs) have completed. The focused Court
+correction, affected regressions and both platform builds passed.
+Technical readiness is separate from balance, human-enjoyment and device acceptance.
 Historical results remain unchanged in CRYSTAL_RESONANCE_V1_FINAL.md.
 
 ## A. Implementation
@@ -62,8 +62,8 @@ powershell -ExecutionPolicy Bypass -File Tools/Test-ForestFoundation.ps1 -Graphi
 powershell -ExecutionPolicy Bypass -File Tools/Run-UnityScenario.ps1 -Method CrystalResonancePlaytest.Run -Name CrystalResonance-refine-pilot
 ```
 
-Shell invocations used the required rtk proxy prefix. The final validator and
-Windows/Android builds must follow the remaining work.
+Shell invocations used the required rtk proxy prefix. Final correction validation
+and platform builds are recorded below.
 
 ## B2. Court correction checks
 
@@ -88,7 +88,36 @@ labels its historical seconds profile and links the current move rules.
 The final required `Tools/Validate-Unity.ps1` returned exit 0; log `DungeonMatcher-UnityValidation-37d7d691-92cb-4dc6-83d9-022236a0fe81.log`.
 Test/build output changes preserve old artifacts using unique paths. Full commands,
 failure messages and source paths remain in the ledger/logs. Android/Windows
-builds and natural affected reruns still follow; this is not final acceptance.
+builds and natural affected reruns are recorded below; these checks do not certify
+human balance acceptance.
+
+## B3. Final builds and source verification
+
+Unity 6000.3.19f1 development builds succeeded on the committed correction:
+
+| Target | Result | Errors | Build-report warnings | Build seconds |
+|---|---|---:|---:|---:|
+| Android | Succeeded | 0 | 7 | 202.7s |
+| Windows | Succeeded | 0 | 6 | 34.1s |
+
+Each launch used a fresh `DM_CR_BUILD_OUTPUT` directory and Unity's `-batchmode
+-quit -buildTarget Android/Win64 -executeMethod CrystalResonanceBuild.Android/Windows`.
+Exact runner timestamps, source HEAD, output paths, executable/APK hashes and
+artifact byte counts are in `final-builds.json`; complete logs and summaries are
+in `final-build-logs.zip`. The APK and Windows folder remain local in
+`.utmp/CrystalResonance/Refinement/Build/`. No existing build was overwritten.
+Compiler deprecation/unused-member and URP shader warnings are retained in logs;
+the successful build is not evidence of physical-device graphics/performance.
+
+The required validator passed after the final C# fixture changes. The 272 balance
+checks predate only those test-fixture corrections; production code/data is the
+same. All affected fixtures were rerun, preserving failures. The prior launch,
+policy, presentation, mobile-layout, hazard-cleanup and continuation evidence
+still covers unchanged owners. No broad screenshot rerun overwrote earlier files.
+Guarded cleanup restored only inspected Unity metadata/serialization rewrites.
+All test/build-owned processes were absent at 2026-11-18T15:33:34.127431+00:00. No job is left
+playing after delivery. Original incomplete probes and the historical failed
+Editor run remain preserved and explicitly excluded from completed-run statistics.
 
 ## C. Completed pilot evidence
 
@@ -361,6 +390,86 @@ longer pressure. No timer, HP padding or forced boss mechanic was added.
 The wide Unity, runner, wrapper and notifier were gone at 13:32:11 UTC;
 `wide-shutdown.json` records the clean process inventory.
 
+## C6. Completed affected Court reruns
+
+Batch `20261118-135947`, gameplay source **e12d9a20**, executed all eight
+predeclared Dungeon-first cases. Unity, analysis and the independent native-input
+audit returned 0, checking **1,471 accepted commands** with no invariant failures.
+All eight runs eventually ended in natural defeat; they completed 12 visits
+(eight Dungeon, two Court, one Frostwake, one Ironvein). Failed visits are retained.
+
+| Profile / character | Full run minutes | Completed visits | Court result |
+|---|---:|---:|---|
+| Novice / skeleton L1 | 8.70 | 1 | Defeat after 136.5s / 30 swaps |
+| Typical / kobold_gunner L5 | 8.88 | 1 | Not reached; died in Forest |
+| Typical / skeleton L1 | 5.92 | 1 | Defeat after 57.5s / 16 swaps |
+| Skilled / kobold_gunner L5 | 7.12 | 1 | Not reached; died in Forest |
+| Skilled / skeleton L1 | 7.11 | 1 | Defeat after 218.5s / 72 swaps |
+| Defensive / bardley L10 | 27.46 | 4 | Completed after 318.3s / 54 swaps |
+| Defensive / skeleton L1 | 12.98 | 2 | Completed after 375.1s / 84 swaps |
+| Aggressive / skeleton L1 | 7.32 | 1 | Defeat after 119.4s / 34 swaps |
+
+Needlefin appeared 12 times and Shellback four times across the six played Court
+visits; both were absent across the nine baseline deep/wide visits. The new Reef
+scouts and Salvage escort appeared naturally, and the Puffer patrol used its new
+Shellback escort. This establishes the lost-roster correction in actual Game
+encounters. It does not establish that every authored patrol or the revised
+Queen formation was naturally sampled. Queen's faction/budget/selection and
+underlying Conch/Queen mechanics passed automated checks; this batch did not
+spawn Queen Nacre. Heavy Spearman/Hammerhead escort pairs still appeared in 16
+three-actor encounters; late Court repertoire remains concentrated.
+
+The five L1 Rattlebones Court attempts now include one completion (defensive,
+375.1s, 84 swaps, six casts, three potions and three bombs; departed with 25 HP).
+The other four died, including skilled at the Breakwater Captain capstone after
+answering all eight immediate low-AIR opportunities. Typical died after 57.5s,
+with Moray Siphoner delivering the final hit. The defensive L10 Bardley control
+completed Court in 318.3s with 54 swaps, 13 casts and two potions, then died in
+Frostwake after a 27.46-minute run. That is a real deep defeat, not a survival win.
+
+Across these Court visits the policies chose 43/45 immediately visible low-AIR
+bubble responses. Seventeen Court special casts were observed, including eleven
+Moray, two Conch, two Puffer, one Captain and one Netweaver. First cards arrived
+22.1–52.7s. Capstones were current-zone elite/guardian formations; the two
+completed Court caps lasted 14.0 and 23.4s. Across the whole batch one of twelve
+completed capstones was under ten seconds (Dungeon, 9.167s). No immediate recipe
+repeat or capstone-skipping audit failure occurred.
+
+This is **descriptive affected coverage, not a paired causal win-rate trial**.
+Production run IDs independently seed capstones, and later recipe choices alter
+RNG consumption. Both L5 Kobold reruns died in Forest before Court, so they are
+failed natural attempts, not evidence for late Court improvement. Baseline and
+correction timing distributions remain separate. The only gameplay-data delta
+is the Court asset; Editor/test/output changes and three normalized sprite-meta
+rewrites are listed in `wide-to-court-source-delta.json`.
+
+All Court-owned Unity, import workers, runner, wrapper and notifier were gone at
+15:26:44 UTC. The original batches, failures and partial probes remain intact.
+Across the five refinement batches there are **62 attempts, 56 natural defeats,
+six living observation-limit endpoints, 99 completed visits and 14,180 accepted
+commands**. These are coverage totals across explicitly different versions,
+not pooled final-balance statistics.
+
+## C7. Skill, decisions and flexible pacing
+
+The pre-correction spread matrix used the same five character/level/seed setups
+for each profile. Across their five Dungeon visits, novice/typical/skilled/
+defensive/aggressive used 584/438/397/447/486 accepted swaps and took cumulative
+1360/840/700/885/1000 HP damage. Abilities numbered 37/35/37/31/49. Those action
+and damage differences provide strategic evidence beyond thinking delays, while
+cards, capstone streams and board histories still prevent a strict paired trial.
+The observer flagged 274/86/0/76/139 moves as below its visible heuristic;
+skilled's zero reflects sharing that heuristic, not human perfection.
+
+Opening Dungeon compositions, later royal returns, all five natural destinations,
+and current-zone elites/guardians/major bosses were recorded across the separate
+batches. Beginner and typical failures remain prominent after travel. The prior
+26.62-minute defensive L5 continuation alive at the three-visit limit meets an
+observed long-success target; longer deep runs also ended in defeat. Neither
+short earned capstones nor 3–4 minute skilled visits justify adding HP or timers.
+Forest's occasional 100–117s first drafts and the 682.4s deep Dungeon revisit
+remain specific pacing/clarity concerns, not global duration failures.
+
 ## D. Adjustments and historical outliers
 
 The sole gameplay balance correction in this refinement changes Court formation
@@ -385,7 +494,9 @@ seven failed wide Court scenarios plus the successful deep defensive control.
 They use new names and directories; original results are untouched. Named seeds
 alone do not pair production run IDs/capstone streams, and recipe changes alter
 later RNG consumption, so survival differences will be descriptive, not proof
-that the correction alone caused each outcome. Retest results are pending.
+that the correction alone caused each outcome. Completed results are in C6:
+roster exposure is restored, low-level attrition remains, and no further blanket
+stat, oxygen or charge change is justified from this sample.
 
 Editor build outputs, balance XML/logs and selection-distribution files now use
 unique destinations or reject existing targets, preserving the user's evidence.
@@ -403,8 +514,9 @@ does not establish a systematic composition failure.
 
 ## E. Remaining concerns
 
-Low-level Court attrition remains a concern after the baseline spread matrix;
-the focused formation correction still needs its new natural reruns. Forest
+Low-level Court attrition remains after the correction: four of five L1 Court
+attempts died. Heavy escort concentration and unobserved Queen/late-Kobold natural
+coverage remain open. Oxygen-source attribution is incomplete. Forest
 first-card outliers and the longer late-Dungeon return need human priority and
 clarity review. One defensive L5 run remained alive at its 26.62-minute limit;
 the L10 deep attempts ending after 25 and 33 minutes were losses. These outcomes
@@ -415,9 +527,21 @@ explosions or killing a caster can solve threats. Damage telemetry lacks source
 detail for cumulative HP loss. No policy models human reading, fatigue, learning,
 touch slips or enjoyment. No physical-device acceptance has occurred.
 
-## F. Current recommendation
+## F. Recommendation
 
-Implementation and initial technical checks support continuing the actual-game
-evaluation. This is **not yet the final human-acceptance recommendation**.
-Complete the affected Court reruns and final checks/builds, then update this
-report and the existing draft PR. Never merge without explicit authorization.
+**Technically ready for human acceptance testing on this unmerged branch.**
+Dungeon-first production starts, exact Continue, legal-input policy execution,
+settled cards, current-zone complete-formation capstones, durable travel and
+source-hazard cleanup have executed evidence. Android and Windows builds pass.
+All intended batches have finished, every outcome is preserved, and no owned
+Unity/test/build process remains running.
+
+**Production balance acceptance remains open; keep PR #234 draft and unmerged.**
+The measured correction restores Court roster exposure but does not establish
+low-level fairness. Human review should prioritize Court entry resources/Moray
+pressure and oxygen readability, Forest early support target priority, late
+Dungeon encounter length, and whether short earned capstones feel satisfying.
+Queen's revised escort has static/selection/mechanics coverage but lacks a natural
+appearance in the affected batch. No phone, human comprehension or enjoyment
+claim is made. Do not add timers, HP padding or blanket charge buffs to force
+these proxies into a duration or success target.
