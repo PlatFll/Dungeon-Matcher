@@ -1,0 +1,60 @@
+{
+  "batch": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261118-063014",
+  "kind": "offline recorded-evidence audit; NOT replay execution",
+  "finishedCases": 4,
+  "incompleteCases": [],
+  "failures": [],
+  "cases": [
+    {
+      "case": "refine-deep-p1-dungeon_attender-L10-1339892460",
+      "nativeBoundaries": 413,
+      "nativeActions": {
+        "swap": 362,
+        "card": 10,
+        "ability": 38,
+        "potion": 3
+      },
+      "journalSha256": "c8959fc484758b91f4a837a7f2099e62a7b354b959238a8b583ca5040f9563e0",
+      "failures": []
+    },
+    {
+      "case": "refine-deep-p2-skeleton-L10-1076357966",
+      "nativeBoundaries": 311,
+      "nativeActions": {
+        "swap": 275,
+        "card": 12,
+        "ability": 20,
+        "potion": 3,
+        "bomb": 1
+      },
+      "journalSha256": "532f3362de29f9ff516dceaeb8370080e224aa439a5e7bd530e30ae3282577a0",
+      "failures": []
+    },
+    {
+      "case": "refine-deep-p3-bardley-L10-1012792767",
+      "nativeBoundaries": 466,
+      "nativeActions": {
+        "swap": 361,
+        "card": 15,
+        "ability": 85,
+        "potion": 3,
+        "bomb": 2
+      },
+      "journalSha256": "267413c5667fc6e1cf27060899e4106bdfc9d7e8f8e2be4489b728733cd07919",
+      "failures": []
+    },
+    {
+      "case": "refine-deep-p4-kobold_gunner-L10-333684335",
+      "nativeBoundaries": 248,
+      "nativeActions": {
+        "bomb": 3,
+        "swap": 206,
+        "ability": 29,
+        "card": 7,
+        "potion": 3
+      },
+      "journalSha256": "7ed59262d9d0471519b9ffb4b72193711692b6f2cb598fcab9b7a52d1ac519a1",
+      "failures": []
+    }
+  ]
+}

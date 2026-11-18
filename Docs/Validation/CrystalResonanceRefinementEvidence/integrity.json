@@ -1,7 +1,47 @@
 {
+  "deep-audit.json": {
+    "bytes": 1745,
+    "sha256": "c82b0959f27a476027af29fa0672430066c24213de4483c8d1d53f30c591bb49"
+  },
+  "deep-config.json": {
+    "bytes": 1188,
+    "sha256": "b7983aab81b09dce263f4aaf4b8888cda57ccb3df9ea7f8a971d3233a0a7c20b"
+  },
+  "deep-court-capstone.png": {
+    "bytes": 242931,
+    "sha256": "d85e318fa5dfead80c2089f957c3c0518d97b19164901ee48f3e98afe204717f"
+  },
+  "deep-job.json": {
+    "bytes": 643,
+    "sha256": "95ef6d15775ffffc032b77de2a5e0862088786dc23865de416af15e27dd5869c"
+  },
+  "deep-recorded-inputs.zip": {
+    "bytes": 6193170,
+    "sha256": "a67b7ab0f27391d5ced157057a82a550a7244ae9e0fc07ee3b2a9f9d164bb6f3"
+  },
+  "deep-shutdown.json": {
+    "bytes": 268,
+    "sha256": "d19871e3a892f327ec6ea641b41969579e65a33ea573a66f15880cb4e2d702c5"
+  },
+  "deep-source-manifest.json": {
+    "bytes": 1319601,
+    "sha256": "eff3d1205d8989731eceb6845275e78e20e085ba44fae024f506c9b3024fd2cd"
+  },
+  "deep-summary.json": {
+    "bytes": 178297,
+    "sha256": "51ab99b72dc39ba8f7a05daee1ba9dfcd98f273a411ce16158fb3c3bd9d9cd1f"
+  },
+  "deep-visits.csv": {
+    "bytes": 4264,
+    "sha256": "083029e28751a9e5f18b77611f0a17fd0920703e7cff18f15484ee6273366090"
+  },
   "dungeon-mobile.png": {
     "bytes": 117680,
     "sha256": "c5e6bc94cc2b9891d8404844c966b0b3739987d6ad824c413b557e7f0319dfbb"
+  },
+  "existing-runs-inspection.json": {
+    "bytes": 5428,
+    "sha256": "ec6763c492f7bd4ab1263259b58c9031f6f7a83d64e4807bcb3ba578acc4e36a"
   },
   "initial-test-ledger.json": {
     "bytes": 3666,
@@ -34,6 +74,10 @@
   "main-summary.json": {
     "bytes": 472562,
     "sha256": "24c0ef1c63d53cbc1650030d0e112d180dc01684c40b0665d182b179802b48ca"
+  },
+  "main-to-deep-source-delta.json": {
+    "bytes": 4,
+    "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
   },
   "main-visits.csv": {
     "bytes": 11054,
@@ -86,5 +130,9 @@
   "spread-seed-protocol.json": {
     "bytes": 2510,
     "sha256": "f42bb06bfdf3568efc0d391e16261c96bbe7b3844cf7d31e4c39f9b73e47f3ee"
+  },
+  "wide-launch-check.json": {
+    "bytes": 1626,
+    "sha256": "bfa8eb2f5b07ccb1abe4d88e03e714c88a8c9b082c609f081638b1bbe70e742a"
   }
 }

@@ -2,8 +2,8 @@
 
 November 18, 2026. Existing draft PR #234 only; **not merged**.
 The pilot below is completed evidence, not a completed final acceptance pass.
-The original 20-case matrix has completed. Deep runs, a spread-seed coverage
-expansion and final builds remain outstanding.
+The original 20-case matrix and four deep attempts have completed. The
+spread-seed coverage expansion and final builds remain outstanding.
 Historical results remain unchanged in CRYSTAL_RESONANCE_V1_FINAL.md.
 
 ## A. Implementation
@@ -165,7 +165,8 @@ durable save format, travel weighting or mechanics were changed.
 Pilot versus main full source-manifest comparison found exactly one changed
 file: the offline analyzer's consistent-metadata correction. Assets, scripts,
 zone data and ProjectSettings were byte-identical before the two executions.
-Batches remain separate in the report. Deep/spread evidence is still pending.
+Batches remain separate in the report. Completed deep evidence appears below;
+the spread-seed matrix remains pending.
 
 ## C3. Existing-run preservation audit (07:38 UTC, November 18)
 
@@ -215,6 +216,71 @@ The already-armed completion waiter will resume this chat after the job exits.
 After all intended work, verify Unity, import workers, runner, wrapper and
 notifier have exited; do not terminate unrelated Unity/Hub processes.
 
+## C4. Completed deep attempts
+
+Batch `20261118-063014` completed all four L10 Dungeon-first attempts. Unity,
+analysis and the independent recorded-input audit exited 0. The audit checked
+1,438 durable accepted commands with no invariant failures; there are 13
+completed zone visits and four natural defeats. The 07:38 inspection snapshot
+above is a subset of this batch and must not be counted a second time.
+
+| Profile / character | Run minutes | Completed visits | Death depth | Natural route (last visit failed) |
+|---|---:|---:|---:|---|
+| Typical / dungeon_attender | 25.08 | 3 | 62 | dungeon → frostwake-peaks → dungeon → magical-forest |
+| Skilled / skeleton | 14.62 | 4 | 71 | dungeon → magical-forest → frostwake-peaks → ironvein-excavation → dungeon |
+| Defensive / bardley | 33.01 | 4 | 85 | dungeon → drowned-court → frostwake-peaks → ironvein-excavation → frostwake-peaks |
+| Aggressive / kobold_gunner | 13.65 | 2 | 41 | dungeon → ironvein-excavation → drowned-court |
+
+The typical and defensive attempts lasted 25.08 and 33.01 minutes, respectively,
+but both died. There is no successful 45-minute survival claim. All five zones
+were played naturally; a typical Dungeon revisit completed, while a skilled
+Dungeon revisit and a defensive Frostwake revisit ended in defeat.
+
+Court evidence now includes one defensive Bardley completion (400.7s, 79 swaps,
+15 casts, 480 cumulative HP damage) and one aggressive Kobold death after arriving
+with 85 HP (112.1s, 30 swaps, 280 cumulative damage). The defensive policy chose
+14/16 immediately visible low-air bubble answers; aggressive chose 4/4. The
+Kobold's last hit was Hammerhead Bruiser after sustained formation damage, not
+proof that oxygen alone caused the loss. These are different characters/seeds
+and only two visits: they do not establish low-level Court fairness.
+
+Completed capstones ranged 4.544–73.360s. Two of thirteen lasted under ten
+seconds. The Grand Delver major boss appeared in Ironvein alongside other visits'
+elites/guardians, so a major boss was not guaranteed. No immediate recipe repeats
+were observed. The typical late Dungeon revisit took 682.4s and 154 swaps:
+Royal chain lesson/vanguard formations took 15–20 swaps each. This is an
+encounter/decision review flag, not a reason to impose duration targets.
+
+All previous deep-owned Unity, import-worker, runner, wrapper and notifier PIDs
+were absent at 07:57:59 UTC; no Unity process remained. The completion notifier
+queued exactly once and exited. `deep-shutdown.json` preserves that check.
+The original batch, failed records and earlier inspection copies are unchanged.
+
+The predeclared five spread seeds per policy are still needed to broaden
+low-level natural destinations. No gameplay numbers or formations have been
+changed on the basis of this small deep sample. Final balance decisions follow
+that remaining matrix, including all of its failures.
+
+The main and deep source manifests are byte-identical across Assets, ProjectSettings, Packages and Tools.
+
+The remaining matrix started as batch `20261118-080102`, job
+`wide-20261118-080039`, after confirming the previous processes were gone and no
+wide batch/log/config already existed. Its 25 cases exactly match the previously
+committed spread-seed protocol. Prior staging inputs were additionally preserved
+in a new inspection folder. `wide-launch-check.json` records the three source
+hash differences: Unity converted the three Consumable sprite metadata files
+from CRLF to LF and added trailing spaces to empty fields. Exact prior/current
+hashes and normalized contents were verified; every other source file matches
+deep byte-for-byte. Gameplay and automated regression assertions are unchanged.
+The batch has one existing completion notifier; it is still in progress.
+
+The actual Court capstone screenshot `deep-court-capstone.png` was inspected;
+the score/Resonance plaque and approach message remain separate from HP and
+board controls. An Ironvein end-visit capture was a transition frame and is not
+presented as proof of a visible boss. Recorded event timestamps use the Unity
+process clock; action timestamps are case-relative. Use encounter/depth and
+journal identity for per-encounter analysis rather than comparing unlike clocks.
+
 ## D. Adjustments and historical outliers
 
 No gameplay numeric or formation adjustments have been made in this refinement.
@@ -225,14 +291,17 @@ controlled fix for the historical 116-second direct-Forest outlier.
 
 The historical 3.693-second depth 59 Court elite was defeated by one accepted
 color-crystal/column-bomb combination with a strong accumulated card build.
-That is evidence of earned combo power, not a reason to add HP padding. Whether
-deep capstones routinely fail to expose mechanics remains for the new deep runs.
+That is evidence of earned combo power, not a reason to add HP padding. In the
+new deep batch, two of thirteen completed capstones lasted under ten seconds;
+others included a 64.6-second Grand Delver. Review the remaining spread sample
+before treating brief capstones as a systematic composition problem.
 
 ## E. Remaining concerns
 
-Court coverage, other natural destinations, more seeds/characters/levels, late
-revisits and 20–45-minute natural attempts remain outstanding. Forest attrition
-needs cross-seed review. Marked-response heuristics do not capture every indirect
+Broader low-level Court/Ironvein coverage and spread-seed comparison remain
+outstanding. The deep sample includes natural revisits and 25/33-minute attempts,
+but both longer attempts ended in defeat. Successful longer continuations are
+not established. Forest attrition needs cross-seed review. Marked-response heuristics do not capture every indirect
 counter; special explosions or killing a caster can solve threats. No policy
 models human reading, fatigue, learning, touch slips or enjoyment.
 

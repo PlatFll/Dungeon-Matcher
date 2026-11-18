@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "label": "refine-deep-p2-skeleton-L10-1076357966",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 2,
+      "seed": 1076357966,
+      "level": 10,
+      "maxVisits": 10,
+      "maxSeconds": 2700,
+      "diagnosticStart": false
+    },
+    {
+      "label": "refine-deep-p3-bardley-L10-1012792767",
+      "zone": "dungeon",
+      "character": "bardley",
+      "policy": 3,
+      "seed": 1012792767,
+      "level": 10,
+      "maxVisits": 10,
+      "maxSeconds": 2700,
+      "diagnosticStart": false
+    },
+    {
+      "label": "refine-deep-p1-dungeon_attender-L10-1339892460",
+      "zone": "dungeon",
+      "character": "dungeon_attender",
+      "policy": 1,
+      "seed": 1339892460,
+      "level": 10,
+      "maxVisits": 10,
+      "maxSeconds": 2700,
+      "diagnosticStart": false
+    },
+    {
+      "label": "refine-deep-p4-kobold_gunner-L10-333684335",
+      "zone": "dungeon",
+      "character": "kobold_gunner",
+      "policy": 4,
+      "seed": 333684335,
+      "level": 10,
+      "maxVisits": 10,
+      "maxSeconds": 2700,
+      "diagnosticStart": false
+    }
+  ],
+  "capture": true,
+  "samplingProtocol": "sha256-prespecified-v1"
+}

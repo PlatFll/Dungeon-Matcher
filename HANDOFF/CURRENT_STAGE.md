@@ -1,107 +1,102 @@
-# Crystal Resonance refinement — in progress, no merge
+# Crystal Resonance refinement — active coverage batch; no merge
 
-Existing branch codex/crystal-resonance-zone-director / draft PR #234.
-Task start cae70c1d; clean at start and origin fetched. Other checkouts preserved.
-Implementation checkpoint committed locally as b689187; not pushed yet.
-User brief: November 18 attachment 11ffe724-9eb9-4683-92c7-aefe1d567607/Pasted text.txt.
+Branch codex/crystal-resonance-zone-director; existing draft PR #234 only.
+Task-start cae70c1d; origin fetched then, clean start. Local changes are not yet
+pushed. User brief: attachment 11ffe724-9eb9-4683-92c7-aefe1d567607/Pasted text.txt.
+Current report: Docs/Validation/CRYSTAL_RESONANCE_REFINEMENT.md (A–F, WIP).
 
-Implemented: permanent Dungeon-first menu/Retry/Practice/challenges; Editor-only
-isolated starts; exact checkpoint precedence. Limited-attention five-profile
-policy attention-v2, visible-only cascade heuristic, cast/card choices, diagnostic
-logs. Natural runner creates genuine new runs. Non-Dungeon cases require
-diagnosticStart=true. Initial run IDs/capstone seeds are recorded, not fabricated.
-Owner docs now treat visit duration as a soft reference. No gameplay balance
-numbers, enemy formations/stats or approved art changed in this refinement.
+## User constraints
+Preserve every existing test/log/result, including failures and inactive probes.
+Never delete, overwrite or restart old tests. New tests need distinct output
+paths. Do not interrupt a running intended batch. Analyze failures as evidence.
+After all intended work, verify owned Unity, import workers, runner, wrapper and
+completion notifier have exited. Do not terminate unrelated processes. No merge.
 
-Validation: required Validate-Unity.ps1 passed (79f66a36 log in system Temp).
-Full balance 272/272 passed. Affected suite 47/48 passed; failed new test assumed
-aggressive could not use a bomb before its first swap. Corrected it to compare
-every submitted command kind with durable acceptance, still exactly one swap.
-Rerun of that test plus new five-zone normal/excellent/pending/reduced-motion
-fixture: 2/2 passed (8692ef89 XML). Earlier cascade/clock fixture failures were
-corrected and rerun (09f0f8e7 XML). Ledger preserves every failure/correction:
-.utmp/CrystalResonance/Refinement/Regression/ledger.json.
-Across latest results all 49 distinct affected checks pass; this is not one
-single 49-test run. Final required validator/builds remain after playtesting.
+## Implemented and validated
+b689187: permanent Dungeon-first new/Retry/Practice/challenge; exact saved-zone
+Continue; explicit Editor-only diagnostics. attention-v2 five-profile policy
+uses limited attention and imperfect visible-only decisions, no future RNG.
+Fresh genuine BeginRun/account; recorded initial run IDs/capstone seeds.
+cdfae32: offline analyzer accepts identical shared config/result metadata and
+rejects conflicts. No gameplay numeric/formation/art change in this refinement.
+Owner docs reflect Dungeon-first and flexible pacing; no timers/HP padding.
 
-Fresh HUD captures: .utmp/CrystalResonance/Visual (five zones/five phone profiles,
-70/80/100, reduced motion, 18 motion frames), Refinement/Feedback (15 states).
-Viewed representative actual full frames in every zone, large score, snowy
-approach, mastery and pending. No health/input overlap observed. Crystal/plaque
-source hashes unchanged. No physical phone or human enjoyment certification.
+Validate-Unity.ps1 PASS (Temp79f66a36 log). Balance272/272 PASS. Across latest
+results all49 affected checks pass, NOT one49-test execution: initial47/48;
+incorrect new test assumed no bomb before swap, corrected to journaled all
+accepted commands; rerun+newfeedback2/2. Earlier cascade/clock fixture failures
+also corrected/rerun2/2. Ledger and raw failures preserved in Refinement/Regression
+and curated initial-test-results.zip. Final validator/builds remain.
+Actual HUD5zones*5phones,70/80/100,largeScore,motion18frames,reducedmotion,plus
+normal/excellent/pending feedback checked. Approved sprites unchanged. No phone
+test or human-enjoyment certification.
 
-Historical outliers: Refinement/baseline-findings.md and baseline-outliers.json.
-3.693s Court elite was one earned color-crystal/column-bomb combo in a strong
-depth-59 build, not evidence for HP padding. Prior Forest defensive 116s first
-card used flat healing priority even with 5 HP missing; policy now scales it.
+## Completed actual-game evidence
+All source-separated evidence/configs/journals are curated in
+Docs/Validation/CrystalResonanceRefinementEvidence.
+- Pilot20261118-010917:5 cases,5Dungeon completions,5Forest deaths;876durable inputs.
+  Outer wrapper nullExitCode falsely failed; original preserved, actualUnity0.
+  Offline duplicate-key error fixed separately; recovered analysis/audit pass.
+- Main20261118-020131:20 cases,17deaths,3alive at3visit limit;30completed visits
+  (20Dungeon,7Forest,3Frostwake);4664durableinputs,audit0fail. TypicalForest0/4,
+  skilled4/4. No immediate recipe repeats. First-card outliers108/101/117seconds.
+- Deep20261118-063014:4L10cases,ALL NATURAL DEFEATS;13completedvisits,1438durable
+  inputs,audit0fail. TypicalMinotaur25.08min(3visits),skilledRattle14.62min(4),
+  defensiveBard33.01min(4),aggressiveKobold13.65min(2). All5zones played naturally;
+  Dungeon return completed, Dungeon/Frost returns also failed. Not successful
+  45min survival. Court defensive400.7s completion vs aggressive112.1sdeath;
+  low-air immediate bubble answers14/16 vs4/4, not proof of oxygen unfairness.
+  Caps4.544–73.360s;2/13under10s,GrandDelvermajor plus elites/guardians. Typical
+  lateDungeon682.4s/154swaps;Royal formations15–20swaps each. Review flag, not HP tuning.
+  Main/deep manifests identical; pilot/main differs ONLY offlineanalyzer.
+  Previous Unity23680,workers10744/38456,runner22420,rtk16348,wrapper34856,
+  notifier17540 ALL gone at07:57:59UTC. deep-shutdown.json records clean exit.
 
-Pilot batch 20261118-010917 completed all five natural L1 skeleton/seed19001
-cases, each cleared Dungeon then died in Forest. Unity exit0/no errors. The
-outer helper falsely failed on a null process ExitCode; original failure kept.
-Analyzer also had duplicate identical diagnosticStart keyword metadata; fixed
-in offline-only commit cdfae32. Re-analysis and native audit pass:876 accepted
-inputs, no invariant failures. Do NOT repeat the pilot because of helper failure.
-See Docs/Validation/CRYSTAL_RESONANCE_REFINEMENT.md and its new evidence directory.
-Pilot Dungeon swaps novice119/skilled71, damage315/140; Forest losses atdepth27–33.
-No gameplay balance change justified from one seed; inspect main/deep next.
+Audit38711fe: all Playtestdirs/processes inspected BEFORE new tests. Historical
+20261117-014621 FAILED(EditorSearchDatabase exception) retained;5otherhistorical
+batches49closedcases;rootpass1/probe1inactivepartials excluded. At07:38deep2closed
+snapshot audited777inputs; this is SUBSET of full deep, never count twice.
 
-Main matrix batch20261118-020131 COMPLETE:20 cases,17 natural defeats,3 alive
-at3-visit limit. Unity/analysis/audit all exit0;4,664 accepted inputs audited.
-30 completed visits (20Dungeon,7Forest,3Frostwake); no immediate recipe repeats.
-Main report/artifacts now curated in Docs/Validation/CrystalResonanceRefinementEvidence.
-The source delta against pilot is ONLY the offline analyzer; runtime/data unchanged.
-Typical Forest0/4 vs skilled4/4; all20 Dungeon cleared. Do not infer fairness
-solely from win rate or thinking time; examine decisions, supports and counters.
+## Sampling and active job
+Original consecutive seeds19001–19005 all traveledForest thenFrost because first
+xorshift draws clustered(.8130–.8135), not forced gameplayrouting. Preserve those
+25cases asForest-heavy evidence, not five-zone representativecoverage.
+Commit81c93d8 predeclared SHA256-spread seeds BEFORE destination inspection.
+Wide25 newruns =5spreadseeds*5policies,4chars,L1/L5,3visits/1800s cap,naturaldeaths.
+Previous staginginputs copied into Inspection/pre-wide-inputs; originalbatchfiles
+untouched. No priorwidejob/log/config/cases existed; noUnityprocess beforelaunch.
 
-Sampling flaw found: all original consecutive seeds19001–19005 picked Forest
-first and surviving third visits Frostwake. Travel first xorshift fractions all
-0.8130–0.8135: tightly clustered experimental seeds, NOT a forced Forest route.
-Do not present the25 original runs as representative five-zone coverage.
-Commit81c93d8 predeclared spread-seed-protocol.json BEFORE testing any new route.
-SHA256(fixed prefix|label) to positive31bit seeds; no desired-outcome selection.
-New wide group:5 spread seeds*5 policies=25 natural runs, same character/level
-pairs, max3visits/1800s each. Not started yet. Preserve original sample separately.
+ACTIVE WIDE batch20261118-080102, jobwide-20261118-080039, wrapper6848,
+verified one-shot notifier21384. Job path:
+.utmp/CrystalResonance/Refinement/jobs/wide-20261118-080039/job.json
+Launch check confirms exact25 predeclaredcases. Source differs fromdeep ONLY
+threeknownConsumablemeta trailingwhitespace/lineending rewrites; hashes and
+normalizedfilecontent verified. All otherfiles byteidentical. Strictinitial
+manifestassert caughtthis; not silently ignored. See Inspection/wide-launch-check.json.
+Do NOT start duplicatejobs, editAssets whileactive, or arm anothernotifier.
+The existing local waiter queues completion into this same chat; no modelpolling.
 
-ACTIVE DEEP batch20261118-063014, four L10 natural Dungeon-first attempts,
-spread seeds per committed protocol. Max10 visits/2700s, real deaths retained.
-Wrapper PID34856; verified one-shot completion waiter PID17540.
-Job state .utmp/CrystalResonance/Refinement/jobs/deep-20261118-062955/job.json.
-No model polling required; completion queues to this same chat. Do not launch
-another Unity job or edit Assets while active. Notify claim prevents duplicates.
-Known import noise must be reviewed/restored only after owned Unity exits.
-Scratch cr_refine_background.ps1 uses native child LASTEXITCODE (exit0/7 verified)
-and automatically analyzes/audits/notifies once; no retry or model change.
-Waiter cr_refine_notify.ps1 observes only own wrapper, never kills processes.
-Launch tool: scratch/cr_refine_launch_group.ps1 -Group deep|wide|main|pilot.
+## Next actions on completion
+Read job/analysis/audit ONCE and verify ownedprocess exit. Preserve failures.
+Review all intended completed evidence: Court attrition, Forest firstcards,
+lateDungeon/shortcapstones, composition/mechanics/strategic counters. Tune only
+small justifiedissues, then affected regressions AND new natural affected reruns.
+Keep sourceversion/batches separate. Do not manufacture successfuldeep outcomes.
+Complete final required validator + relevant tests + Android/Windows builds.
+IMPORTANT existing CrystalResonanceBuild.cs hardcodes .utmp/CrystalResonance/Build;
+old buildhelper would overwrite. Afterwide, allow a unique outputfolder (or other
+safe approach) before final builds, keeping old artifacts intact. Existing
+Test-Balance helper also uses fixedXML: use newoutput location, not overwrite.
+Old regression failures remain evidence, not to be erased.
 
-NEXT ON DEEP COMPLETION: inspect job+analysis/audit once, deep survival,
-Court/Ironvein/return coverage, capstone mechanics and pressure. Then launch
--Group wide (predeclared25 cases) unless actual bug requires targeted correction.
-Do not silently substitute direct-zone fixtures for missing natural evidence.
-Keep source-separated batches; current production code/data remain b689187,
-offline analyzer cdfae32; later commits only reports and seed protocol.
-After wide: measure fairness/strategic metrics, firstcards and caps, any smallest
-justified tuning + affected reruns; no timers/HP padding or manufactured success.
+Review full relevantdiff includingnewfiles, update ownerstate/report A–F and
+existing draftPR234. Push localcommits onlyafter actual finalvalidation/report.
+No newPR, no merge. Verify finalclean shutdown and report limitations honestly.
 
-After evidence: investigate Court/Forest/capstones, only targeted justified
-tuning + affected retests, final validator, Android/Windows builds, curated A–F
-report. Push/update existing draft PR234; never merge or create another PR.
-
-LATEST USER STEERING / PRESERVATION AUDIT (November18,07:38UTC):
-Before new playtests, inspected every Playtest directory and process chain.
-No tests started/deleted/overwritten/restarted/interrupted this turn.
-Deep remains the only active batch:2closed,typical Minotaur third active,fourth
-Kobold pending at inspection. Snapshot safe: Inspection/audit-20261118-073806-51e6f8.
-New offline copied-case audit passed777durableinputs,8completedvisits,2realdeaths.
-Skilled14.6min diedDungeonrevisitdepth71;defBard33min diedFrostcapdepth85 after
-successfulCourt/Ironveinvisits. Do not pool partial snapshot into final batch
-again or claim wholedeepcomplete. Final fulljobanalysis will supersede snapshot.
-Historicalfailed20261117-014621 retained(EditorSearchDatabaseexception);oldroot
-pass1/probe1 are inactive incompleteprobes,notrunning. All77closedrecordsinventory
-parsed;nointegrityerrors. See C3report/existing-runs-inspection.json.
-Userrequires clean Unity/test-process shutdown AFTER work; verify owned process
-exit includingimportworkers,wrapper,notifier. Do not kill activebatch or unrelated
-processes. Existing notifier17540 already armed; do not create another waiter.
-Future tests/builds must use NEW output paths and preserve existinglogs/results.
-Do not launch any new test until currentbatch ends and itsresult is inspected.
-No tuning until intended natural evidence is reviewed including failures.
+Helpers in scratch /visualizations/2026/10/10/01a127fb-8a65-7d73-9061-df9dc2d9843a:
+cr_refine_background.ps1,cr_refine_notify.ps1,cr_refine_launch_group.ps1.
+Do not rerun existing collection/report scripts: many deliberately refuse
+existing targets; originals must remain intact. ThreeConsumable PNGmeta files
+have reviewed whitespace-only Unity importnoise; leave until Unityexits then
+guardedcleanup. No userasset changes. Gitwrites/worktreewrites requireescalation.
+Every shell command rtk-prefixed. No subagents authorized.
