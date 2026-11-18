@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "reason": "Consecutive seeds19001..19005 correlated on the first xorshift draw. Retain that completed matrix as Forest-heavy evidence; expand coverage.",
+  "priorFirstTravelFractions": {
+    "19001": 0.8132311361841857,
+    "19002": 0.8130422860849649,
+    "19003": 0.8131052358075976,
+    "19004": 0.8134047265630215,
+    "19005": 0.8134676762856543
+  },
+  "method": "SHA-256 of UTF8 fixed prefix plus declared label, first4 bytes big endian masked positive31-bit. Fixed prefix: Dungeon Matcher Crystal Resonance refinement 2026-11-18|",
+  "selection": "All listed labels retained before running or inspecting their destination draws; no seed was selected/rejected for outcome or desired route.",
+  "natural": [
+    {
+      "label": "natural-sample-1",
+      "seed": 762463853,
+      "character": "skeleton",
+      "level": 1,
+      "policies": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "label": "natural-sample-2",
+      "seed": 795264865,
+      "character": "skeleton",
+      "level": 1,
+      "policies": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "label": "natural-sample-3",
+      "seed": 2082779316,
+      "character": "bardley",
+      "level": 1,
+      "policies": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "label": "natural-sample-4",
+      "seed": 1744289676,
+      "character": "dungeon_attender",
+      "level": 5,
+      "policies": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "label": "natural-sample-5",
+      "seed": 1215592394,
+      "character": "kobold_gunner",
+      "level": 5,
+      "policies": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "deep": [
+    {
+      "label": "deep-2-skeleton",
+      "seed": 1076357966,
+      "character": "skeleton",
+      "level": 10,
+      "policy": 2
+    },
+    {
+      "label": "deep-3-bardley",
+      "seed": 1012792767,
+      "character": "bardley",
+      "level": 10,
+      "policy": 3
+    },
+    {
+      "label": "deep-1-dungeon_attender",
+      "seed": 1339892460,
+      "character": "dungeon_attender",
+      "level": 10,
+      "policy": 1
+    },
+    {
+      "label": "deep-4-kobold_gunner",
+      "seed": 333684335,
+      "character": "kobold_gunner",
+      "level": 10,
+      "policy": 4
+    }
+  ],
+  "limits": "Natural3 visits/1800 seconds; deep10 visits/2700 seconds; natural deaths retained. All start Dungeon, no midrun grants."
+}
