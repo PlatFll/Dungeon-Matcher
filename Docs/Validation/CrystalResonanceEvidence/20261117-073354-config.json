@@ -1,0 +1,135 @@
+{
+  "cases": [
+    {
+      "label": "charge45-typical-dungeon-L1-9201",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 9201,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-typical-magical-forest-L1-9202",
+      "zone": "magical-forest",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 9202,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-typical-drowned-court-L1-9203",
+      "zone": "drowned-court",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 9203,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-typical-ironvein-excavation-L1-9204",
+      "zone": "ironvein-excavation",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 9204,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-typical-frostwake-peaks-L1-9205",
+      "zone": "frostwake-peaks",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 9205,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-typical-court-L5-8303",
+      "zone": "drowned-court",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 8303,
+      "level": 5,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-matched-novice-L1-8201",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 0,
+      "seed": 8201,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-matched-skilled-L1-8201",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 2,
+      "seed": 8201,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-defensive-forest-L5-9402",
+      "zone": "magical-forest",
+      "character": "bardley",
+      "policy": 3,
+      "seed": 9402,
+      "level": 5,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-new-typical-dungeon-L1-71872",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 71872,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-new-typical-frost-L1-71873",
+      "zone": "frostwake-peaks",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 71873,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-new-typical-court-L1-71874",
+      "zone": "drowned-court",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 71874,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "charge45-new-novice-court-L1-71875",
+      "zone": "drowned-court",
+      "character": "skeleton",
+      "policy": 0,
+      "seed": 71875,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    }
+  ],
+  "capture": true
+}

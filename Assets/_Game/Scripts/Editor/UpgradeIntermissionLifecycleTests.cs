@@ -451,7 +451,9 @@ public sealed class UpgradeIntermissionLifecycleTests
         Set(coordinator, "selectionCommitted", false);
         Set(coordinator, "isHoldingProgression", true);
         Set(coordinator, "activeChoiceSession", new object());
-        return (IEnumerator)Call(coordinator, "OpenChoiceAfterBoardSettles", wave);
+        var opening=(IEnumerator)Call(coordinator, "OpenChoiceAfterBoardSettles", wave);
+        Assert.That(opening.MoveNext(),Is.True,"one frame installs coroutine ownership before opening");
+        return opening;
     }
 
     private void OpenChoice(int wave = 5)

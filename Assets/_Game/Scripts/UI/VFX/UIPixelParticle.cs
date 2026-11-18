@@ -16,7 +16,13 @@ public sealed class UIPixelParticle :
     private float lifetime;
     private float elapsedTime;
 
-    private bool isPlaying;
+    private bool isPlaying, pooled, toward;
+    private float pixelStep;
+    private Vector2 precisePosition, startPosition, destination;
+    public bool IsPlaying => isPlaying;
+    public void Stop() { isPlaying = false; gameObject.SetActive(false); }
+    public void PlayToward(Vector2 start, Vector2 end, float duration, float size, Color color, float nativePixel)
+    { Play(start, Vector2.zero, duration, size, color, true, nativePixel); toward = true; destination = end; }
 
     private void Awake()
     {
@@ -43,10 +49,11 @@ public sealed class UIPixelParticle :
         Vector2 initialVelocity,
         float duration,
         float size,
-        Color color)
+        Color color, bool reuse = false, float nativePixel = 0)
     {
         CacheReferences();
-
+        pooled = reuse; pixelStep = nativePixel; toward = false;
+        startPosition = precisePosition = localPosition;
         velocity =
             initialVelocity;
 
@@ -108,13 +115,15 @@ public sealed class UIPixelParticle :
 
         float deltaTime =
             Time.deltaTime;
+        if (deltaTime <= 0) return;
 
         elapsedTime +=
             deltaTime;
 
-        rectTransform.anchoredPosition +=
-            velocity *
-            deltaTime;
+        precisePosition = toward ? Vector2.Lerp(startPosition, destination, Mathf.Clamp01(elapsedTime / lifetime)) :
+            precisePosition + velocity * deltaTime;
+        rectTransform.anchoredPosition = pixelStep > 0 ? new Vector2(
+            Mathf.Round(precisePosition.x / pixelStep), Mathf.Round(precisePosition.y / pixelStep)) * pixelStep : precisePosition;
 
         /*
          * Gradually slows horizontal movement while
@@ -143,14 +152,12 @@ public sealed class UIPixelParticle :
         Color currentColor =
             startingColor;
 
-        currentColor.a =
-            1f - normalizedTime;
+        currentColor.a = pixelStep > 0 ? 1 : 1f - normalizedTime;
 
         particleImage.color =
             currentColor;
 
-        float scale =
-            Mathf.Lerp(
+        float scale = pixelStep > 0 ? 1 : Mathf.Lerp(
                 1f,
                 0.35f,
                 normalizedTime
@@ -162,7 +169,7 @@ public sealed class UIPixelParticle :
 
         if (elapsedTime >= lifetime)
         {
-            Destroy(gameObject);
+            if (pooled) Stop(); else Destroy(gameObject);
         }
     }
 }

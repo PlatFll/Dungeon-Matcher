@@ -18,6 +18,11 @@ public sealed class RunContinuation : MonoBehaviour
     public bool IsRestoring { get; private set; }
     public bool IsReplaying { get; private set; }
     public bool ExecutingReplayAction { get; private set; }
+#if UNITY_EDITOR
+    // Optional diagnostic observation of the already-durable native input.
+    // Not compiled into players; never changes acceptance or replay ownership.
+    public event Action<RunCombatSnapshot,RunReplayTape> ValidationActionRecorded;
+#endif
     public string Error { get; private set; }
     public bool CanCapture => session!=null && session.InitialStateReady && !session.IsFinished && !IsRestoring &&
         session.Player!=null && session.Player.IsInitialized && !session.Player.IsDefeated &&
@@ -49,7 +54,7 @@ public sealed class RunContinuation : MonoBehaviour
     }
     public static bool SupportsSnapshot(RunCombatSnapshot saved)
     {
-        if(saved==null || saved.board?.forestRulesVersion>2 || saved.board?.dungeonRulesVersion>2 ||
+        if(saved==null || !CrystalResonanceSnapshot.Supports(saved.resonance, saved) || saved.board?.forestRulesVersion>2 || saved.board?.dungeonRulesVersion>2 ||
             saved.board?.aquatic?.version>AquaticEnvironmentState.CurrentVersion ||
             !MineEnvironmentState.Supports(saved.board) || !FrostGemSnapshot.Supports(saved.board)) return false;
         if (saved.enemies != null) foreach (var enemy in saved.enemies)
@@ -132,13 +137,17 @@ public sealed class RunContinuation : MonoBehaviour
     {
         if(!CanCapture || session.Waves.IsWaveActive || session.Travel?.State.stage!=1 ||
             session.Travel.State.destination!=destination) return false;
+        if (session.Resonance?.Enabled == true && (!session.Resonance.PortalReady ||
+            session.Waves.GetComponent<RunUpgradeCoordinator>()?.IsBlockingWaveProgression == true)) return false;
         var zone=Resources.Load<ZoneDefinition>("Zones/"+destination);
-        if(!ZoneTravelController.DestinationReady(zone)) return false;
+        if(destination == session.Travel.State.zoneId || !ZoneTravelController.DestinationReady(zone)) return false;
         var saved=Capture();
         if (saved.travel.zoneId == "drowned-court") saved.travel.completedCourtVisits++;
         saved.travel.zoneId=destination;saved.travel.stage=2;saved.travel.visit++;
         saved.travel.visitStartWave=saved.wave+1;
         saved.travel.mineEncounters=new MineEncounterProgress();
+        // Reset the detached destination copy only. Failed writes leave the visible source intact.
+        saved.resonance?.StartVisit(destination, saved.travel.visit, CrystalResonanceTuning.Current);
         // Keep the run's established effect units. Legacy seconds never become moves.
         if(saved.clock==null)
             saved.clock=new CombatClockSnapshot{profile=CombatClockSnapshot.LegacyEffectsProfile,
@@ -150,7 +159,9 @@ public sealed class RunContinuation : MonoBehaviour
         if(!SupportsSnapshot(saved)) return false;
         if(!account.StoreCheckpoint(session.RunId,saved)) {Error=account.LastError;return false;}
         session.Board.ReplayLegacyBoardFeel = false;
-        checkpoint=saved;tape=NewTape();Error=null;return true;
+        checkpoint=saved;tape=NewTape();Error=null;
+        session.Resonance?.Record("travel_committed", destination);
+        return true;
     }
     private RunReplayTape NewTape() => new RunReplayTape { boardFeelVersion = session.Board.BoardFeelVersion };
     public void BeginFrame()
@@ -184,7 +195,13 @@ public sealed class RunContinuation : MonoBehaviour
         var actions=tape.frames[tape.frames.Count-1].actions; actions.Add(action);
         ConsumableKind? supply=action.kind==RunActionKind.Potion?ConsumableKind.HealthPotion:
             action.kind==RunActionKind.Bomb?ConsumableKind.Bomb:(ConsumableKind?)null;
-        if(account.AcceptRecordedAction(session.RunId,tape,supply)) return true;
+        if(account.AcceptRecordedAction(session.RunId,tape,supply))
+        {
+#if UNITY_EDITOR
+            ValidationActionRecorded?.Invoke(checkpoint,tape);
+#endif
+            return true;
+        }
         actions.RemoveAt(actions.Count-1); Error=account.LastError; return false;
     }
     private void Execute(RunRecordedAction action)

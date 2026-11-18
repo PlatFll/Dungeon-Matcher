@@ -11,7 +11,8 @@ public static class UpgradeDraftGenerator
         PlayerActor playerActor,
         int currentWave,
         Random random,
-        int choiceCount = DefaultChoiceCount)
+        int choiceCount = DefaultChoiceCount,
+        bool? introductoryDirections = null)
     {
         List<RunUpgradeDefinition> eligible =
             new List<RunUpgradeDefinition>();
@@ -39,7 +40,7 @@ public static class UpgradeDraftGenerator
 
         // The first draft establishes distinct, usable directions. Subsequent
         // offers retain weighted variety and all normal eligibility rules.
-        if (BalanceV1.Current.cardWaves.Length > 0 && currentWave == BalanceV1.Current.cardWaves[0] && choiceCount >= 3)
+        if ((introductoryDirections ?? (BalanceV1.Current.cardWaves.Length > 0 && currentWave == BalanceV1.Current.cardWaves[0])) && choiceCount >= 3)
         {
             foreach (RunUpgradeTheme theme in Enum.GetValues(typeof(RunUpgradeTheme)))
             {

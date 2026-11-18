@@ -35,7 +35,7 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
     }
     private void EncounterScenery(int wave)
     {
-        if(UsesTeachingEncounters && run.Travel?.State.enabled==true && pendingMineEncounter!=null)
+        if(run.Resonance?.Enabled != true && UsesTeachingEncounters && run.Travel?.State.enabled==true && pendingMineEncounter!=null)
         {
             MineEncounterSelector.Record(run.Travel.State.mineEncounters ??= new MineEncounterProgress(),
                 pendingMineEncounter,run.Waves.OriginalEncounterDefinitions,run.Travel.LocalWave,wave);
@@ -57,6 +57,7 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
     }
     public ZoneTestEncounter Encounter(int wave,System.Random random)
     {
+        if (run.Resonance?.Enabled == true) return run.Waves.SelectResonanceEncounter(Definition, wave, random);
         if(run.Travel?.State.enabled!=true) return Definition.zoneId=="dungeon" ? null : TestEncounter(wave);
         // Preserve the existing opening kingdom progression through its first King.
         if(Definition.zoneId=="dungeon" && run.Travel.State.visit==0) return null;

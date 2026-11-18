@@ -1,0 +1,12 @@
+{
+  "baselineBatch": "20261117-073354",
+  "finalBatch": "20261117-084917",
+  "changedManifestPaths": [
+    "Assets/_Game/Resources/Zones/drowned-court.asset",
+    "Assets/_Game/Scripts/Core/CrystalResonanceRuntime.cs",
+    "Assets/_Game/Scripts/Core/CrystalResonanceState.cs",
+    "Assets/_Game/Scripts/Core/ZoneDefinition.cs",
+    "Assets/_Game/Scripts/Editor/CrystalResonanceDirectorTests.cs"
+  ],
+  "scope": "Explicit Court5/6 reward data plus shared award lookup and its production-data test. Other zone awards/rosters and human-like policy are unchanged."
+}

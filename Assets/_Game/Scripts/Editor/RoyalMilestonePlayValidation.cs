@@ -83,10 +83,10 @@ public static class RoyalMilestonePlayValidation
 
         yield return SpawnBoss("CourtMage");
         EnemyActor mage=Find("CourtMage"); Prime(mage,5);
-        yield return Until(()=>board.GetFrozenGemCountForOwner(mage.GetInstanceID())==1 && !board.IsBusy,"freeze placed");
+        yield return Until(()=>board.CountOwnedIce(mage.PersistentId)==1 && !board.IsBusy,"freeze placed");
         Gem frozen=null;
         for(int y=0;y<board.Height;y++) for(int x=0;x<board.Width;x++)
-            if(board.IsGemFrozen(GemAt(x,y))) frozen=GemAt(x,y);
+            if(board.IceStage(GemAt(x,y))!=FrostStage.None) frozen=GemAt(x,y);
         Check(frozen!=null,"frozen identity");
         Check(board.TryQueuePlaceRoyalBanner(king),"standard footprint fixture accepted");
         yield return Until(()=>board.GetRoyalBannerCountForOwner(king.GetInstanceID())==1 && !board.IsBusy,"standard footprint fixture placed");
@@ -108,7 +108,7 @@ public static class RoyalMilestonePlayValidation
             Check(board.GetRoyalBannerCountForOwner(king.GetInstanceID())==1,"bombardment preserves Standard before normal gravity");
         },success=>Check(success,"lane completion"),()=>false),"bombardment accepted");
         yield return Until(()=>lanes.Ended && !board.IsBusy,"bombardment settles");
-        Check(frozen==null && board.GetFrozenGemCountForOwner(mage.GetInstanceID())==0,"freeze destruction cleanup");
+        Check(frozen==null && board.CountOwnedIce(mage.PersistentId)==0,"freeze destruction cleanup");
         Check(pulses==1,"one bombardment direct impact");
         // Resulting genuine cascades may activate the preserved bomb; direct-clear
         // exclusion is independently covered by the editor suite.
@@ -162,6 +162,7 @@ public static class RoyalMilestonePlayValidation
         foreach(string prior in new[]{"TownMarshal","SiegeSergeant","KnightCaptain","RoyalArchbishop"})seen.Add(Data(prior));
         // Each scenario is an independent run fixture, not a repeated encounter.
         ((HashSet<EnemyDefinition>)Get(waves,"previousEncounterLeaders")).Clear();
+        ResonanceEncounterFixture.Lock(RunSession.Current,new[]{Data("King"),Data("RoyalArchbishop")},"Royal mechanics diagnostic");
         waves.SpawnCurrentWave();
         yield return Until(()=>waves.ActiveEnemies.Count==2 && !(bool)Get(waves,"isSpawningWave"),"King opening composition");
         king=Find("King"); bishop=Find("RoyalArchbishop"); Check(king!=null && bishop!=null,"King plus Archbishop");

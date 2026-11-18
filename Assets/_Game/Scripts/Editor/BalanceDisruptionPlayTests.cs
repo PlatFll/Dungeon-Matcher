@@ -95,7 +95,7 @@ public sealed class BalanceDisruptionPlayTests
             Assert.That(Count("pinnedGemOwners"),Is.Zero,"owner death releases remaining chains");AssertResponse();DestroyOwners();
             Assert.That(RunSession.Current.ExitTo("MainMenu"),Is.True);yield return null;
         }
-        File.WriteAllText(".utmp/balance-disruption-play.txt","PASS: two Miners; queued Miner + two Barricade Guards; global/per-owner caps; legal responses after each formation; normal mine cleanup and persistent orphaned walls; two Crossbows + Captain share movable chains; manual chain swaps rejected; Bomb breaking and death cleanup. Real Game scenes and authoritative mutation coroutines.\n");
+        File.WriteAllText(".utmp/balance-disruption-play-"+Guid.NewGuid().ToString("N")+".txt","PASS: two Miners; queued Miner + two Barricade Guards; global/per-owner caps; legal responses after each formation; normal mine cleanup and persistent orphaned walls; two Crossbows + Captain share movable chains; manual chain swaps rejected; Bomb breaking and death cleanup. Real Game scenes and authoritative mutation coroutines.\n");
         yield return new ExitPlayMode();
     }
     [UnityTest] public IEnumerator RoyalMechanicsResolveWithEscortsInActualPlayMode()
@@ -112,7 +112,7 @@ public sealed class BalanceDisruptionPlayTests
             yield return (IEnumerator)typeof(RoyalMilestonePlayValidation).GetMethod("Scenarios",BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,null);
             Assert.That(RunSession.Current.ExitTo("MainMenu"),Is.True);yield return null;
         }
-        File.WriteAllText(".utmp/balance-royal-play.txt","PASS: existing Royal production-coroutine scenarios: simultaneous King/Archbishop marks, three real swaps, Standard/Mage bombardment, blessed full Lancer command, owner death cancellation and limited reinforcements. Deliberate high-HP scenario fixtures, not pacing measurements.\n");
+        File.WriteAllText(".utmp/balance-royal-play-"+Guid.NewGuid().ToString("N")+".txt","PASS: existing Royal production-coroutine scenarios: simultaneous King/Archbishop marks, three real swaps, Standard/Mage bombardment, blessed full Lancer command, owner death cancellation and limited reinforcements. Deliberate high-HP scenario fixtures, not pacing measurements.\n");
         yield return new ExitPlayMode();
     }
     private EnemyActor Owner<T>(string name) where T:MonoBehaviour,IEnemySpecialAbilityRuntime

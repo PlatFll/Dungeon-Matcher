@@ -1,0 +1,6082 @@
+{
+  "sources": [
+    {
+      "batch": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261118-063014",
+      "manifestSha256": "eff3d1205d8989731eceb6845275e78e20e085ba44fae024f506c9b3024fd2cd",
+      "runnerErrors": false,
+      "completion": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment."
+    }
+  ],
+  "cases": [
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p1-dungeon_attender-L10-1339892460",
+      "zone": "dungeon",
+      "character": "dungeon_attender",
+      "policy": 1,
+      "seed": 1339892460,
+      "level": 10,
+      "maxVisits": 10,
+      "maxSeconds": 2700.0,
+      "diagnosticStart": false,
+      "outcome": "defeat",
+      "policyVersion": "attention-v2",
+      "wallSeconds": 1504.739501953125,
+      "completedVisits": 3,
+      "swaps": 362,
+      "abilities": 38,
+      "cards": 10
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p2-skeleton-L10-1076357966",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 2,
+      "seed": 1076357966,
+      "level": 10,
+      "maxVisits": 10,
+      "maxSeconds": 2700.0,
+      "diagnosticStart": false,
+      "outcome": "defeat",
+      "policyVersion": "attention-v2",
+      "wallSeconds": 877.356201171875,
+      "completedVisits": 4,
+      "swaps": 275,
+      "abilities": 20,
+      "cards": 12
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p3-bardley-L10-1012792767",
+      "zone": "dungeon",
+      "character": "bardley",
+      "policy": 3,
+      "seed": 1012792767,
+      "level": 10,
+      "maxVisits": 10,
+      "maxSeconds": 2700.0,
+      "diagnosticStart": false,
+      "outcome": "defeat",
+      "policyVersion": "attention-v2",
+      "wallSeconds": 1980.3682861328125,
+      "completedVisits": 4,
+      "swaps": 361,
+      "abilities": 85,
+      "cards": 15
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p4-kobold_gunner-L10-333684335",
+      "zone": "dungeon",
+      "character": "kobold_gunner",
+      "policy": 4,
+      "seed": 333684335,
+      "level": 10,
+      "maxVisits": 10,
+      "maxSeconds": 2700.0,
+      "diagnosticStart": false,
+      "outcome": "defeat",
+      "policyVersion": "attention-v2",
+      "wallSeconds": 819.02294921875,
+      "completedVisits": 2,
+      "swaps": 206,
+      "abilities": 29,
+      "cards": 7
+    }
+  ],
+  "visits": [
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p1-dungeon_attender-L10-1339892460",
+      "seed": 1339892460,
+      "character": "dungeon_attender",
+      "level": 10,
+      "policy": 1,
+      "zone": "dungeon",
+      "visit": 0,
+      "completed": true,
+      "wallSeconds": 280.547,
+      "outcome": "completed",
+      "startDepth": 1,
+      "endDepth": 18,
+      "health": 210,
+      "score": 8195,
+      "bankedEncounters": 18,
+      "acceptedSwaps": 76,
+      "acceptedAbilities": 5,
+      "acceptedPotions": 0,
+      "acceptedBombs": 0,
+      "baseCharge": 88,
+      "masteryCharge": 14,
+      "overflow": 2,
+      "firstCardSeconds": 22.924,
+      "combatSeconds": 247.59498596191406,
+      "draftSeconds": 24.257265090942383,
+      "travelSeconds": 0.956234335899353,
+      "playerDamage": 95,
+      "enemySpecials": 4,
+      "specialEnemies": [
+        "miner"
+      ],
+      "uniqueEnemies": [
+        "barricade_villager",
+        "basket_villager",
+        "crossbow_guard",
+        "farmer",
+        "knight",
+        "miner",
+        "pan_villager",
+        "shield_knight",
+        "spear_guard",
+        "spear_knight",
+        "town_marshal"
+      ],
+      "recipes": [
+        "Excavation lesson",
+        "Local search",
+        "Timber lesson",
+        "Village watch",
+        "Excavation lesson",
+        "Local search",
+        "Town boundary",
+        "Chain patrol",
+        "Timber lesson",
+        "Excavation lesson",
+        "Town boundary",
+        "Village watch",
+        "Knight patrol",
+        "Chain patrol",
+        "Shield lesson",
+        "Knight advance",
+        "Marshal escort",
+        "Chain patrol"
+      ],
+      "distinctRecipes": 10,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "opening_volley",
+        "chain_reaction",
+        "cascade_catalyst"
+      ],
+      "capstones": [
+        {
+          "id": "Marshal escort",
+          "kind": 2,
+          "scheduledAfterDepth": 16,
+          "encounterDepth": 17
+        }
+      ],
+      "capstoneSeconds": [
+        9.204
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 76,
+        "meanAttentionFraction": 0.768,
+        "heuristicSuboptimalMoves": 17,
+        "heuristicGapTotal": 327.63,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 2,
+        "priorityNotChosen": 0,
+        "specialCreatesSelected": 21,
+        "specialUsesSelected": 16,
+        "visibleFollowupSelections": 2,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 1,
+          "formation": "Excavation lesson:miner/Special/2+farmer/Normal/1",
+          "completed": true,
+          "seconds": 11.659,
+          "acceptedSwaps": 4,
+          "enemySpecials": [
+            "miner"
+          ],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 5
+        },
+        {
+          "depth": 2,
+          "formation": "Local search:farmer/Normal/1+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 3.75,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 0
+        },
+        {
+          "depth": 3,
+          "formation": "Timber lesson:barricade_villager/Special/2+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 6.032,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 0
+        },
+        {
+          "depth": 4,
+          "formation": "Village watch:pan_villager/Normal/1+farmer/Normal/1",
+          "completed": true,
+          "seconds": 9.26,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 0
+        },
+        {
+          "depth": 5,
+          "formation": "Excavation lesson:miner/Special/2+farmer/Normal/1",
+          "completed": true,
+          "seconds": 16.2,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "miner"
+          ],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 5
+        },
+        {
+          "depth": 6,
+          "formation": "Local search:farmer/Normal/1+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 7.789,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 205,
+          "damage": 5
+        },
+        {
+          "depth": 7,
+          "formation": "Town boundary:spear_guard/Normal/1.5+pan_villager/Normal/1",
+          "completed": true,
+          "seconds": 6.411,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 205,
+          "healthAtBank": 210,
+          "damage": 0
+        },
+        {
+          "depth": 8,
+          "formation": "Chain patrol:crossbow_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 32.203,
+          "acceptedSwaps": 11,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 20
+        },
+        {
+          "depth": 9,
+          "formation": "Timber lesson:barricade_villager/Special/2+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 7.744,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 205,
+          "damage": 5
+        },
+        {
+          "depth": 10,
+          "formation": "Excavation lesson:miner/Special/2+farmer/Normal/1",
+          "completed": true,
+          "seconds": 25.397,
+          "acceptedSwaps": 9,
+          "enemySpecials": [
+            "miner",
+            "miner"
+          ],
+          "healthAtFormation": 205,
+          "healthAtBank": 210,
+          "damage": 15
+        },
+        {
+          "depth": 11,
+          "formation": "Town boundary:spear_guard/Normal/1.5+pan_villager/Normal/1",
+          "completed": true,
+          "seconds": 13.302,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 0
+        },
+        {
+          "depth": 12,
+          "formation": "Village watch:pan_villager/Normal/1+farmer/Normal/1",
+          "completed": true,
+          "seconds": 11.169,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 205,
+          "damage": 5
+        },
+        {
+          "depth": 13,
+          "formation": "Knight patrol:knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 22.411,
+          "acceptedSwaps": 8,
+          "enemySpecials": [],
+          "healthAtFormation": 205,
+          "healthAtBank": 190,
+          "damage": 20
+        },
+        {
+          "depth": 14,
+          "formation": "Chain patrol:crossbow_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 15.959,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 210,
+          "damage": 5
+        },
+        {
+          "depth": 15,
+          "formation": "Shield lesson:shield_knight/Special/2.5+knight/Normal/2",
+          "completed": true,
+          "seconds": 28.021,
+          "acceptedSwaps": 10,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 10
+        },
+        {
+          "depth": 16,
+          "formation": "Knight advance:crossbow_guard/Special/2+knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 10.451,
+          "acceptedSwaps": 0,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 0
+        },
+        {
+          "depth": 17,
+          "formation": "Marshal escort:town_marshal/Miniboss/4+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 9.204,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 0
+        },
+        {
+          "depth": 18,
+          "formation": "Chain patrol:crossbow_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 10.103,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 0
+        }
+      ],
+      "deathCause": null,
+      "startTier": 0,
+      "endTier": 2
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p1-dungeon_attender-L10-1339892460",
+      "seed": 1339892460,
+      "character": "dungeon_attender",
+      "level": 10,
+      "policy": 1,
+      "zone": "frostwake-peaks",
+      "visit": 1,
+      "completed": true,
+      "wallSeconds": 319.759,
+      "outcome": "completed",
+      "startDepth": 19,
+      "endDepth": 37,
+      "health": 140,
+      "score": 17980,
+      "bankedEncounters": 19,
+      "acceptedSwaps": 75,
+      "acceptedAbilities": 8,
+      "acceptedPotions": 0,
+      "acceptedBombs": 0,
+      "baseCharge": 94,
+      "masteryCharge": 11,
+      "overflow": 5,
+      "firstCardSeconds": 39.161,
+      "combatSeconds": 283.81414794921875,
+      "draftSeconds": 25.62839126586914,
+      "travelSeconds": 2.125122547149658,
+      "playerDamage": 240,
+      "enemySpecials": 5,
+      "specialEnemies": [
+        "frostblade_reaver",
+        "rime_skald",
+        "shieldmaiden"
+      ],
+      "uniqueEnemies": [
+        "frostblade_reaver",
+        "frostfang_wolf",
+        "harpoon_hunter",
+        "hearthkeeper",
+        "iceborn_raider",
+        "rime_skald",
+        "rimecarver",
+        "shieldmaiden"
+      ],
+      "recipes": [
+        "Learn frostblade_reaver",
+        "Learn harpoon_hunter",
+        "Learn hearthkeeper",
+        "Patrol frostblade_reaver",
+        "Outer patrol",
+        "Learn rimecarver",
+        "Patrol hearthkeeper",
+        "Patrol frostblade_reaver",
+        "Patrol harpoon_hunter",
+        "Learn shieldmaiden",
+        "Patrol hearthkeeper",
+        "Learn frostblade_reaver",
+        "Patrol frostblade_reaver",
+        "Learn hearthkeeper",
+        "Patrol harpoon_hunter",
+        "Learn rimecarver",
+        "Elite frostblade_reaver",
+        "Patrol rime_skald",
+        "Learn frostblade_reaver"
+      ],
+      "distinctRecipes": 11,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "bombsmith",
+        "glass_cannon",
+        "boss_hunter"
+      ],
+      "capstones": [
+        {
+          "id": "Elite frostblade_reaver",
+          "kind": 1,
+          "scheduledAfterDepth": 34,
+          "encounterDepth": 35
+        }
+      ],
+      "capstoneSeconds": [
+        33.365
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 75,
+        "meanAttentionFraction": 0.773,
+        "heuristicSuboptimalMoves": 18,
+        "heuristicGapTotal": 350.85,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 16,
+        "priorityNotChosen": 6,
+        "specialCreatesSelected": 18,
+        "specialUsesSelected": 22,
+        "visibleFollowupSelections": 5,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 19,
+          "formation": "Learn frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 9.771,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 0
+        },
+        {
+          "depth": 20,
+          "formation": "Learn harpoon_hunter:harpoon_hunter/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 14.115,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 0
+        },
+        {
+          "depth": 21,
+          "formation": "Learn hearthkeeper:hearthkeeper/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 12.603,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 0
+        },
+        {
+          "depth": 22,
+          "formation": "Patrol frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 11.345,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 0
+        },
+        {
+          "depth": 23,
+          "formation": "Outer patrol:iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 10.886,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 210,
+          "damage": 5
+        },
+        {
+          "depth": 24,
+          "formation": "Learn rimecarver:rimecarver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 10.136,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 205,
+          "damage": 15
+        },
+        {
+          "depth": 25,
+          "formation": "Patrol hearthkeeper:hearthkeeper/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 14.444,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 205,
+          "healthAtBank": 205,
+          "damage": 5
+        },
+        {
+          "depth": 26,
+          "formation": "Patrol frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 27.144,
+          "acceptedSwaps": 9,
+          "enemySpecials": [],
+          "healthAtFormation": 205,
+          "healthAtBank": 185,
+          "damage": 40
+        },
+        {
+          "depth": 27,
+          "formation": "Patrol harpoon_hunter:harpoon_hunter/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 16.11,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 180,
+          "damage": 0
+        },
+        {
+          "depth": 28,
+          "formation": "Learn shieldmaiden:shieldmaiden/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 21.679,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "shieldmaiden"
+          ],
+          "healthAtFormation": 180,
+          "healthAtBank": 180,
+          "damage": 15
+        },
+        {
+          "depth": 29,
+          "formation": "Patrol hearthkeeper:hearthkeeper/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 17.241,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 165,
+          "damage": 15
+        },
+        {
+          "depth": 30,
+          "formation": "Learn frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 11.59,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 165,
+          "healthAtBank": 170,
+          "damage": 10
+        },
+        {
+          "depth": 31,
+          "formation": "Patrol frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 9.365,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 180,
+          "damage": 0
+        },
+        {
+          "depth": 32,
+          "formation": "Learn hearthkeeper:hearthkeeper/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 7.997,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 180,
+          "damage": 0
+        },
+        {
+          "depth": 33,
+          "formation": "Patrol harpoon_hunter:harpoon_hunter/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 10.881,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 180,
+          "damage": 30
+        },
+        {
+          "depth": 34,
+          "formation": "Learn rimecarver:rimecarver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 14.873,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 175,
+          "damage": 15
+        },
+        {
+          "depth": 35,
+          "formation": "Elite frostblade_reaver:frostblade_reaver/Special/2+rime_skald/Special/2.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 33.365,
+          "acceptedSwaps": 11,
+          "enemySpecials": [
+            "frostblade_reaver",
+            "rime_skald",
+            "frostblade_reaver"
+          ],
+          "healthAtFormation": 175,
+          "healthAtBank": 165,
+          "damage": 45
+        },
+        {
+          "depth": 36,
+          "formation": "Patrol rime_skald:rime_skald/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 11.854,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 165,
+          "healthAtBank": 170,
+          "damage": 0
+        },
+        {
+          "depth": 37,
+          "formation": "Learn frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 18.383,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "frostblade_reaver"
+          ],
+          "healthAtFormation": 170,
+          "healthAtBank": 140,
+          "damage": 45
+        }
+      ],
+      "deathCause": null,
+      "startTier": 2,
+      "endTier": 3
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p1-dungeon_attender-L10-1339892460",
+      "seed": 1339892460,
+      "character": "dungeon_attender",
+      "level": 10,
+      "policy": 1,
+      "zone": "dungeon",
+      "visit": 2,
+      "completed": true,
+      "wallSeconds": 682.388,
+      "outcome": "completed",
+      "startDepth": 38,
+      "endDepth": 55,
+      "health": 140,
+      "score": 30705,
+      "bankedEncounters": 18,
+      "acceptedSwaps": 154,
+      "acceptedAbilities": 18,
+      "acceptedPotions": 2,
+      "acceptedBombs": 0,
+      "baseCharge": 86,
+      "masteryCharge": 18,
+      "overflow": 4,
+      "firstCardSeconds": 51.068,
+      "combatSeconds": 648.2266235351562,
+      "draftSeconds": 25.474851608276367,
+      "travelSeconds": 2.1311607360839844,
+      "playerDamage": 775,
+      "enemySpecials": 4,
+      "specialEnemies": [
+        "court_mage"
+      ],
+      "uniqueEnemies": [
+        "court_mage",
+        "crossbow_guard",
+        "knight",
+        "royal_arbalist",
+        "royal_lancer",
+        "royal_standard_bearer",
+        "royal_swordsman",
+        "shield_knight",
+        "spear_knight"
+      ],
+      "recipes": [
+        "Court ice lesson",
+        "Shield lesson",
+        "Royal chain lesson",
+        "Knight advance",
+        "Standard guard",
+        "Royal vanguard",
+        "Court ice lesson",
+        "Court pressure",
+        "Standard guard",
+        "Royal chain lesson",
+        "Royal vanguard",
+        "Court ice lesson",
+        "Royal fireline",
+        "Shield lesson",
+        "Court pressure",
+        "Reserve Royal vanguard",
+        "Royal chain lesson",
+        "Royal vanguard"
+      ],
+      "distinctRecipes": 9,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "executioner",
+        "prototype_siegebreaker",
+        "prototype_mana_spark"
+      ],
+      "capstones": [
+        {
+          "id": "Reserve Royal vanguard",
+          "kind": 1,
+          "scheduledAfterDepth": 52,
+          "encounterDepth": 53
+        }
+      ],
+      "capstoneSeconds": [
+        73.36
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 154,
+        "meanAttentionFraction": 0.779,
+        "heuristicSuboptimalMoves": 35,
+        "heuristicGapTotal": 720.01,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 19,
+        "priorityNotChosen": 11,
+        "specialCreatesSelected": 43,
+        "specialUsesSelected": 42,
+        "visibleFollowupSelections": 2,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 38,
+          "formation": "Court ice lesson:court_mage/Special/3+royal_lancer/Normal/2.5",
+          "completed": true,
+          "seconds": 32.156,
+          "acceptedSwaps": 8,
+          "enemySpecials": [],
+          "healthAtFormation": 140,
+          "healthAtBank": 170,
+          "damage": 30
+        },
+        {
+          "depth": 39,
+          "formation": "Shield lesson:shield_knight/Special/2.5+knight/Normal/2",
+          "completed": true,
+          "seconds": 16.736,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 180,
+          "damage": 5
+        },
+        {
+          "depth": 40,
+          "formation": "Royal chain lesson:royal_arbalist/Special/2.5+royal_swordsman/Normal/2.5",
+          "completed": true,
+          "seconds": 8.553,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 180,
+          "damage": 0
+        },
+        {
+          "depth": 41,
+          "formation": "Knight advance:crossbow_guard/Special/2+knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 50.127,
+          "acceptedSwaps": 15,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 135,
+          "damage": 65
+        },
+        {
+          "depth": 42,
+          "formation": "Standard guard:royal_standard_bearer/Special/3+royal_swordsman/Normal/2.5",
+          "completed": true,
+          "seconds": 21.103,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 140,
+          "damage": 10
+        },
+        {
+          "depth": 43,
+          "formation": "Royal vanguard:royal_swordsman/Normal/2.5+royal_lancer/Normal/2.5",
+          "completed": true,
+          "seconds": 31.854,
+          "acceptedSwaps": 7,
+          "enemySpecials": [],
+          "healthAtFormation": 140,
+          "healthAtBank": 180,
+          "damage": 35
+        },
+        {
+          "depth": 44,
+          "formation": "Court ice lesson:court_mage/Special/3+royal_lancer/Normal/2.5",
+          "completed": true,
+          "seconds": 30.555,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "court_mage"
+          ],
+          "healthAtFormation": 180,
+          "healthAtBank": 180,
+          "damage": 20
+        },
+        {
+          "depth": 45,
+          "formation": "Court pressure:court_mage/Special/3+royal_standard_bearer/Special/3+royal_swordsman/Normal/2.5",
+          "completed": true,
+          "seconds": 39.131,
+          "acceptedSwaps": 9,
+          "enemySpecials": [
+            "court_mage",
+            "court_mage"
+          ],
+          "healthAtFormation": 180,
+          "healthAtBank": 180,
+          "damage": 35
+        },
+        {
+          "depth": 46,
+          "formation": "Standard guard:royal_standard_bearer/Special/3+royal_swordsman/Normal/2.5",
+          "completed": true,
+          "seconds": 37.107,
+          "acceptedSwaps": 10,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 150,
+          "damage": 50
+        },
+        {
+          "depth": 47,
+          "formation": "Royal chain lesson:royal_arbalist/Special/2.5+royal_swordsman/Normal/2.5",
+          "completed": true,
+          "seconds": 75.736,
+          "acceptedSwaps": 18,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 130,
+          "damage": 110
+        },
+        {
+          "depth": 48,
+          "formation": "Royal vanguard:royal_swordsman/Normal/2.5+royal_lancer/Normal/2.5",
+          "completed": true,
+          "seconds": 40.653,
+          "acceptedSwaps": 11,
+          "enemySpecials": [],
+          "healthAtFormation": 130,
+          "healthAtBank": 135,
+          "damage": 75
+        },
+        {
+          "depth": 49,
+          "formation": "Court ice lesson:court_mage/Special/3+royal_lancer/Normal/2.5",
+          "completed": true,
+          "seconds": 14.449,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 180,
+          "damage": 0
+        },
+        {
+          "depth": 50,
+          "formation": "Royal fireline:royal_arbalist/Special/2.5+royal_lancer/Normal/2.5+royal_swordsman/Normal/2.5",
+          "completed": true,
+          "seconds": 28.13,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 170,
+          "damage": 25
+        },
+        {
+          "depth": 51,
+          "formation": "Shield lesson:shield_knight/Special/2.5+knight/Normal/2",
+          "completed": true,
+          "seconds": 16.781,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 175,
+          "damage": 15
+        },
+        {
+          "depth": 52,
+          "formation": "Court pressure:court_mage/Special/3+royal_standard_bearer/Special/3+royal_swordsman/Normal/2.5",
+          "completed": true,
+          "seconds": 28.217,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "court_mage"
+          ],
+          "healthAtFormation": 175,
+          "healthAtBank": 180,
+          "damage": 30
+        },
+        {
+          "depth": 53,
+          "formation": "Reserve Royal vanguard:royal_swordsman/Normal/2.5+royal_lancer/Normal/2.5",
+          "completed": true,
+          "seconds": 73.359,
+          "acceptedSwaps": 20,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 145,
+          "damage": 150
+        },
+        {
+          "depth": 54,
+          "formation": "Royal chain lesson:royal_arbalist/Special/2.5+royal_swordsman/Normal/2.5",
+          "completed": true,
+          "seconds": 40.022,
+          "acceptedSwaps": 10,
+          "enemySpecials": [],
+          "healthAtFormation": 145,
+          "healthAtBank": 150,
+          "damage": 45
+        },
+        {
+          "depth": 55,
+          "formation": "Royal vanguard:royal_swordsman/Normal/2.5+royal_lancer/Normal/2.5",
+          "completed": true,
+          "seconds": 63.512,
+          "acceptedSwaps": 15,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 140,
+          "damage": 75
+        }
+      ],
+      "deathCause": null,
+      "startTier": 3,
+      "endTier": 4
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p1-dungeon_attender-L10-1339892460",
+      "seed": 1339892460,
+      "character": "dungeon_attender",
+      "level": 10,
+      "policy": 1,
+      "zone": "magical-forest",
+      "visit": 3,
+      "completed": false,
+      "wallSeconds": 222.044,
+      "outcome": "defeat",
+      "startDepth": 56,
+      "endDepth": 62,
+      "health": 0,
+      "score": 35300,
+      "bankedEncounters": 6,
+      "acceptedSwaps": 57,
+      "acceptedAbilities": 7,
+      "acceptedPotions": 1,
+      "acceptedBombs": 0,
+      "baseCharge": 30,
+      "masteryCharge": 6,
+      "overflow": 0,
+      "firstCardSeconds": 66.674,
+      "combatSeconds": 212.4490509033203,
+      "draftSeconds": 6.6189470291137695,
+      "travelSeconds": 1.183461308479309,
+      "playerDamage": 465,
+      "enemySpecials": 7,
+      "specialEnemies": [
+        "briar_archer",
+        "orc_bloomcaller",
+        "orc_rootbinder"
+      ],
+      "uniqueEnemies": [
+        "briar_archer",
+        "elven_scout",
+        "elven_thornkeeper",
+        "orc_berserker",
+        "orc_bloomcaller",
+        "orc_rootbinder",
+        "orc_trailguard"
+      ],
+      "recipes": [
+        "Learn orc_bloomcaller",
+        "Learn orc_berserker",
+        "Learn orc_rootbinder",
+        "Learn briar_archer",
+        "Patrol briar_archer",
+        "Patrol orc_bloomcaller",
+        "Learn elven_thornkeeper"
+      ],
+      "distinctRecipes": 7,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "prepared_casting"
+      ],
+      "capstones": [],
+      "capstoneSeconds": [],
+      "telegraphDecisionPoints": 3,
+      "warningWithoutImmediateMarkedMatch": 1,
+      "visibleCounterOpportunities": 2,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 57,
+        "meanAttentionFraction": 0.759,
+        "heuristicSuboptimalMoves": 12,
+        "heuristicGapTotal": 170.34,
+        "markedCounterOverlooked": 1,
+        "markedCounterNotChosen": 2,
+        "markedCounterSeenButNotChosen": 1,
+        "priorityOpportunities": 9,
+        "priorityNotChosen": 4,
+        "specialCreatesSelected": 13,
+        "specialUsesSelected": 16,
+        "visibleFollowupSelections": 6,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 1,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 56,
+          "formation": "Learn orc_bloomcaller:orc_bloomcaller/Special/2.5+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 25.422,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "orc_bloomcaller"
+          ],
+          "healthAtFormation": 140,
+          "healthAtBank": 95,
+          "damage": 60
+        },
+        {
+          "depth": 57,
+          "formation": "Learn orc_berserker:orc_berserker/Special/2.5+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 39.011,
+          "acceptedSwaps": 10,
+          "enemySpecials": [],
+          "healthAtFormation": 95,
+          "healthAtBank": 120,
+          "damage": 85
+        },
+        {
+          "depth": 58,
+          "formation": "Learn orc_rootbinder:orc_rootbinder/Special/3+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 38.027,
+          "acceptedSwaps": 11,
+          "enemySpecials": [
+            "orc_rootbinder",
+            "orc_rootbinder",
+            "orc_rootbinder"
+          ],
+          "healthAtFormation": 120,
+          "healthAtBank": 160,
+          "damage": 60
+        },
+        {
+          "depth": 59,
+          "formation": "Learn briar_archer:briar_archer/Special/2.5+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 28.755,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "briar_archer"
+          ],
+          "healthAtFormation": 160,
+          "healthAtBank": 180,
+          "damage": 15
+        },
+        {
+          "depth": 60,
+          "formation": "Patrol briar_archer:briar_archer/Special/2.5+elven_scout/Normal/1.5+orc_trailguard/Normal/2",
+          "completed": true,
+          "seconds": 19.644,
+          "acceptedSwaps": 4,
+          "enemySpecials": [
+            "briar_archer"
+          ],
+          "healthAtFormation": 180,
+          "healthAtBank": 180,
+          "damage": 15
+        },
+        {
+          "depth": 61,
+          "formation": "Patrol orc_bloomcaller:orc_bloomcaller/Special/2.5+elven_scout/Normal/1.5+orc_trailguard/Normal/2",
+          "completed": true,
+          "seconds": 49.132,
+          "acceptedSwaps": 16,
+          "enemySpecials": [
+            "orc_bloomcaller"
+          ],
+          "healthAtFormation": 180,
+          "healthAtBank": 15,
+          "damage": 205
+        },
+        {
+          "depth": 62,
+          "formation": "Learn elven_thornkeeper:elven_thornkeeper/Special/2.5+elven_scout/Normal/1.5",
+          "completed": false,
+          "seconds": null,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 15,
+          "healthAtBank": null,
+          "damage": 25
+        }
+      ],
+      "deathCause": "Last hit: Elven Scout\n10 HP lost \u00b7 0 shield absorbed",
+      "startTier": 4,
+      "endTier": 4
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p2-skeleton-L10-1076357966",
+      "seed": 1076357966,
+      "character": "skeleton",
+      "level": 10,
+      "policy": 2,
+      "zone": "dungeon",
+      "visit": 0,
+      "completed": true,
+      "wallSeconds": 181.326,
+      "outcome": "completed",
+      "startDepth": 1,
+      "endDepth": 18,
+      "health": 190,
+      "score": 7365,
+      "bankedEncounters": 18,
+      "acceptedSwaps": 55,
+      "acceptedAbilities": 4,
+      "acceptedPotions": 0,
+      "acceptedBombs": 0,
+      "baseCharge": 89,
+      "masteryCharge": 11,
+      "overflow": 0,
+      "firstCardSeconds": 18.426,
+      "combatSeconds": 147.09585571289062,
+      "draftSeconds": 25.573959350585938,
+      "travelSeconds": 0.9579606056213379,
+      "playerDamage": 85,
+      "enemySpecials": 2,
+      "specialEnemies": [
+        "shield_knight",
+        "siege_sergeant"
+      ],
+      "uniqueEnemies": [
+        "barricade_guard",
+        "barricade_villager",
+        "basket_villager",
+        "crossbow_guard",
+        "farmer",
+        "knight",
+        "miner",
+        "pan_villager",
+        "shield_knight",
+        "siege_sergeant",
+        "spear_guard",
+        "spear_knight"
+      ],
+      "recipes": [
+        "Local search",
+        "Timber lesson",
+        "Village watch",
+        "Excavation lesson",
+        "Local search",
+        "Timber lesson",
+        "Chain patrol",
+        "Town boundary",
+        "Excavation lesson",
+        "Village watch",
+        "Chain patrol",
+        "Guard fortification",
+        "Knight advance",
+        "Shield lesson",
+        "Knight patrol",
+        "Guard fortification",
+        "Knight advance",
+        "Siege escort"
+      ],
+      "distinctRecipes": 11,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "bombsmith",
+        "cascade_catalyst",
+        "opening_volley"
+      ],
+      "capstones": [
+        {
+          "id": "Siege escort",
+          "kind": 2,
+          "scheduledAfterDepth": 17,
+          "encounterDepth": 18
+        }
+      ],
+      "capstoneSeconds": [
+        15.973
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 55,
+        "meanAttentionFraction": 1.0,
+        "heuristicSuboptimalMoves": 0,
+        "heuristicGapTotal": 0.0,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 5,
+        "priorityNotChosen": 1,
+        "specialCreatesSelected": 16,
+        "specialUsesSelected": 18,
+        "visibleFollowupSelections": 3,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 1,
+          "formation": "Local search:farmer/Normal/1+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 2.421,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 2,
+          "formation": "Timber lesson:barricade_villager/Special/2+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 8.803,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 185,
+          "damage": 5
+        },
+        {
+          "depth": 3,
+          "formation": "Village watch:pan_villager/Normal/1+farmer/Normal/1",
+          "completed": true,
+          "seconds": 5.727,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 185,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 4,
+          "formation": "Excavation lesson:miner/Special/2+farmer/Normal/1",
+          "completed": true,
+          "seconds": 8.698,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 185,
+          "damage": 5
+        },
+        {
+          "depth": 5,
+          "formation": "Local search:farmer/Normal/1+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 1.561,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 185,
+          "healthAtBank": 185,
+          "damage": 0
+        },
+        {
+          "depth": 6,
+          "formation": "Timber lesson:barricade_villager/Special/2+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 3.183,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 185,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 7,
+          "formation": "Chain patrol:crossbow_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 2.897,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 8,
+          "formation": "Town boundary:spear_guard/Normal/1.5+pan_villager/Normal/1",
+          "completed": true,
+          "seconds": 2.619,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 9,
+          "formation": "Excavation lesson:miner/Special/2+farmer/Normal/1",
+          "completed": true,
+          "seconds": 6.426,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 5
+        },
+        {
+          "depth": 10,
+          "formation": "Village watch:pan_villager/Normal/1+farmer/Normal/1",
+          "completed": true,
+          "seconds": 3.436,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 11,
+          "formation": "Chain patrol:crossbow_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 13.329,
+          "acceptedSwaps": 7,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 185,
+          "damage": 10
+        },
+        {
+          "depth": 12,
+          "formation": "Guard fortification:barricade_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 4.075,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 185,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 13,
+          "formation": "Knight advance:crossbow_guard/Special/2+knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 10.415,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 180,
+          "damage": 10
+        },
+        {
+          "depth": 14,
+          "formation": "Shield lesson:shield_knight/Special/2.5+knight/Normal/2",
+          "completed": true,
+          "seconds": 26.394,
+          "acceptedSwaps": 11,
+          "enemySpecials": [
+            "shield_knight"
+          ],
+          "healthAtFormation": 180,
+          "healthAtBank": 185,
+          "damage": 25
+        },
+        {
+          "depth": 15,
+          "formation": "Knight patrol:knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 11.055,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 185,
+          "healthAtBank": 190,
+          "damage": 10
+        },
+        {
+          "depth": 16,
+          "formation": "Guard fortification:barricade_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 4.647,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 17,
+          "formation": "Knight advance:crossbow_guard/Special/2+knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 14.877,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 10
+        },
+        {
+          "depth": 18,
+          "formation": "Siege escort:siege_sergeant/Miniboss/4+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 15.973,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "siege_sergeant"
+          ],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 5
+        }
+      ],
+      "deathCause": null,
+      "startTier": 0,
+      "endTier": 2
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p2-skeleton-L10-1076357966",
+      "seed": 1076357966,
+      "character": "skeleton",
+      "level": 10,
+      "policy": 2,
+      "zone": "magical-forest",
+      "visit": 1,
+      "completed": true,
+      "wallSeconds": 202.378,
+      "outcome": "completed",
+      "startDepth": 19,
+      "endDepth": 35,
+      "health": 160,
+      "score": 15605,
+      "bankedEncounters": 17,
+      "acceptedSwaps": 62,
+      "acceptedAbilities": 4,
+      "acceptedPotions": 2,
+      "acceptedBombs": 0,
+      "baseCharge": 87,
+      "masteryCharge": 16,
+      "overflow": 3,
+      "firstCardSeconds": 22.243,
+      "combatSeconds": 170.12435913085938,
+      "draftSeconds": 22.954275131225586,
+      "travelSeconds": 2.125786304473877,
+      "playerDamage": 300,
+      "enemySpecials": 6,
+      "specialEnemies": [
+        "briar_archer",
+        "elven_thornkeeper",
+        "orc_bloomcaller"
+      ],
+      "uniqueEnemies": [
+        "ancient_treant",
+        "briar_archer",
+        "elven_mender",
+        "elven_scout",
+        "elven_thornkeeper",
+        "orc_bloomcaller",
+        "orc_drummer",
+        "orc_trailguard"
+      ],
+      "recipes": [
+        "Outer patrol",
+        "Learn orc_bloomcaller",
+        "Quiet patrol",
+        "Learn elven_thornkeeper",
+        "Learn orc_drummer",
+        "Learn elven_mender",
+        "Patrol orc_drummer",
+        "Learn briar_archer",
+        "Quiet patrol",
+        "Patrol elven_thornkeeper",
+        "Learn orc_drummer",
+        "Learn briar_archer",
+        "Patrol briar_archer",
+        "Patrol orc_bloomcaller",
+        "Patrol elven_thornkeeper",
+        "Guardian ancient_treant",
+        "Patrol briar_archer"
+      ],
+      "distinctRecipes": 12,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "executioner",
+        "chain_reaction",
+        "boss_hunter"
+      ],
+      "capstones": [
+        {
+          "id": "Guardian ancient_treant",
+          "kind": 2,
+          "scheduledAfterDepth": 33,
+          "encounterDepth": 34
+        }
+      ],
+      "capstoneSeconds": [
+        4.544
+      ],
+      "telegraphDecisionPoints": 4,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 4,
+      "visibleCountersChosen": 1,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 62,
+        "meanAttentionFraction": 1.0,
+        "heuristicSuboptimalMoves": 0,
+        "heuristicGapTotal": 0.0,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 3,
+        "markedCounterSeenButNotChosen": 3,
+        "priorityOpportunities": 9,
+        "priorityNotChosen": 5,
+        "specialCreatesSelected": 22,
+        "specialUsesSelected": 24,
+        "visibleFollowupSelections": 2,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 19,
+          "formation": "Outer patrol:elven_scout/Normal/1.5+orc_trailguard/Normal/2",
+          "completed": true,
+          "seconds": 3.995,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 20,
+          "formation": "Learn orc_bloomcaller:orc_bloomcaller/Special/2.5+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 12.788,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 5
+        },
+        {
+          "depth": 21,
+          "formation": "Quiet patrol:elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 2.787,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 22,
+          "formation": "Learn elven_thornkeeper:elven_thornkeeper/Special/2.5+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 6.9,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 23,
+          "formation": "Learn orc_drummer:orc_drummer/Special/2.5+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 4.154,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 24,
+          "formation": "Learn elven_mender:elven_mender/Special/2.5+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 3.012,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 25,
+          "formation": "Patrol orc_drummer:orc_drummer/Special/2.5+elven_scout/Normal/1.5+orc_trailguard/Normal/2",
+          "completed": true,
+          "seconds": 10.353,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 185,
+          "damage": 5
+        },
+        {
+          "depth": 26,
+          "formation": "Learn briar_archer:briar_archer/Special/2.5+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 15.233,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "briar_archer"
+          ],
+          "healthAtFormation": 185,
+          "healthAtBank": 155,
+          "damage": 30
+        },
+        {
+          "depth": 27,
+          "formation": "Quiet patrol:elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 2.903,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 155,
+          "damage": 0
+        },
+        {
+          "depth": 28,
+          "formation": "Patrol elven_thornkeeper:elven_thornkeeper/Special/2.5+elven_scout/Normal/1.5+orc_trailguard/Normal/2",
+          "completed": true,
+          "seconds": 22.94,
+          "acceptedSwaps": 9,
+          "enemySpecials": [
+            "elven_thornkeeper",
+            "elven_thornkeeper"
+          ],
+          "healthAtFormation": 155,
+          "healthAtBank": 135,
+          "damage": 55
+        },
+        {
+          "depth": 29,
+          "formation": "Learn orc_drummer:orc_drummer/Special/2.5+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 7.904,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 130,
+          "damage": 10
+        },
+        {
+          "depth": 30,
+          "formation": "Learn briar_archer:briar_archer/Special/2.5+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 3.919,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 130,
+          "healthAtBank": 140,
+          "damage": 0
+        },
+        {
+          "depth": 31,
+          "formation": "Patrol briar_archer:briar_archer/Special/2.5+elven_scout/Normal/1.5+orc_trailguard/Normal/2",
+          "completed": true,
+          "seconds": 5.617,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 140,
+          "healthAtBank": 145,
+          "damage": 0
+        },
+        {
+          "depth": 32,
+          "formation": "Patrol orc_bloomcaller:orc_bloomcaller/Special/2.5+elven_scout/Normal/1.5+orc_trailguard/Normal/2",
+          "completed": true,
+          "seconds": 20.556,
+          "acceptedSwaps": 8,
+          "enemySpecials": [
+            "orc_bloomcaller"
+          ],
+          "healthAtFormation": 145,
+          "healthAtBank": 130,
+          "damage": 40
+        },
+        {
+          "depth": 33,
+          "formation": "Patrol elven_thornkeeper:elven_thornkeeper/Special/2.5+elven_scout/Normal/1.5+orc_trailguard/Normal/2",
+          "completed": true,
+          "seconds": 17.764,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "elven_thornkeeper"
+          ],
+          "healthAtFormation": 130,
+          "healthAtBank": 135,
+          "damage": 75
+        },
+        {
+          "depth": 34,
+          "formation": "Guardian ancient_treant:ancient_treant/Miniboss/5+elven_scout/Normal/1.5",
+          "completed": true,
+          "seconds": 4.544,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 145,
+          "damage": 0
+        },
+        {
+          "depth": 35,
+          "formation": "Patrol briar_archer:briar_archer/Special/2.5+elven_scout/Normal/1.5+orc_trailguard/Normal/2",
+          "completed": true,
+          "seconds": 24.719,
+          "acceptedSwaps": 9,
+          "enemySpecials": [
+            "briar_archer"
+          ],
+          "healthAtFormation": 145,
+          "healthAtBank": 160,
+          "damage": 80
+        }
+      ],
+      "deathCause": null,
+      "startTier": 2,
+      "endTier": 3
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p2-skeleton-L10-1076357966",
+      "seed": 1076357966,
+      "character": "skeleton",
+      "level": 10,
+      "policy": 2,
+      "zone": "frostwake-peaks",
+      "visit": 2,
+      "completed": true,
+      "wallSeconds": 251.901,
+      "outcome": "completed",
+      "startDepth": 36,
+      "endDepth": 52,
+      "health": 135,
+      "score": 24490,
+      "bankedEncounters": 17,
+      "acceptedSwaps": 83,
+      "acceptedAbilities": 6,
+      "acceptedPotions": 1,
+      "acceptedBombs": 0,
+      "baseCharge": 84,
+      "masteryCharge": 17,
+      "overflow": 1,
+      "firstCardSeconds": 39.486,
+      "combatSeconds": 222.76089477539062,
+      "draftSeconds": 19.78840446472168,
+      "travelSeconds": 2.1245996952056885,
+      "playerDamage": 335,
+      "enemySpecials": 8,
+      "specialEnemies": [
+        "hearthkeeper",
+        "rime_skald",
+        "rimecarver",
+        "shieldmaiden"
+      ],
+      "uniqueEnemies": [
+        "frostfang_wolf",
+        "harpoon_hunter",
+        "hearthkeeper",
+        "iceborn_raider",
+        "rime_skald",
+        "rimecarver",
+        "shieldmaiden"
+      ],
+      "recipes": [
+        "Quiet patrol",
+        "Learn shieldmaiden",
+        "Learn rimecarver",
+        "Learn hearthkeeper",
+        "Learn rime_skald",
+        "Patrol shieldmaiden",
+        "Patrol rimecarver",
+        "Patrol hearthkeeper",
+        "Learn shieldmaiden",
+        "Patrol rime_skald",
+        "Learn harpoon_hunter",
+        "Learn hearthkeeper",
+        "Patrol hearthkeeper",
+        "Patrol rime_skald",
+        "Elite rimecarver",
+        "Patrol shieldmaiden",
+        "Learn rime_skald"
+      ],
+      "distinctRecipes": 11,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "prototype_siegebreaker",
+        "prototype_gem_grinder",
+        "prototype_gem_grinder"
+      ],
+      "capstones": [
+        {
+          "id": "Elite rimecarver",
+          "kind": 1,
+          "scheduledAfterDepth": 49,
+          "encounterDepth": 50
+        }
+      ],
+      "capstoneSeconds": [
+        19.783
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 83,
+        "meanAttentionFraction": 1.0,
+        "heuristicSuboptimalMoves": 0,
+        "heuristicGapTotal": 0.0,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 31,
+        "priorityNotChosen": 12,
+        "specialCreatesSelected": 21,
+        "specialUsesSelected": 18,
+        "visibleFollowupSelections": 1,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 36,
+          "formation": "Quiet patrol:iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 3.447,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 160,
+          "healthAtBank": 165,
+          "damage": 0
+        },
+        {
+          "depth": 37,
+          "formation": "Learn shieldmaiden:shieldmaiden/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 7.348,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 165,
+          "healthAtBank": 175,
+          "damage": 0
+        },
+        {
+          "depth": 38,
+          "formation": "Learn rimecarver:rimecarver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 26.018,
+          "acceptedSwaps": 12,
+          "enemySpecials": [
+            "rimecarver",
+            "rimecarver"
+          ],
+          "healthAtFormation": 175,
+          "healthAtBank": 135,
+          "damage": 55
+        },
+        {
+          "depth": 39,
+          "formation": "Learn hearthkeeper:hearthkeeper/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 19.69,
+          "acceptedSwaps": 8,
+          "enemySpecials": [
+            "hearthkeeper"
+          ],
+          "healthAtFormation": 135,
+          "healthAtBank": 115,
+          "damage": 25
+        },
+        {
+          "depth": 40,
+          "formation": "Learn rime_skald:rime_skald/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 9.173,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 115,
+          "healthAtBank": 120,
+          "damage": 5
+        },
+        {
+          "depth": 41,
+          "formation": "Patrol shieldmaiden:shieldmaiden/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 21.812,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "shieldmaiden"
+          ],
+          "healthAtFormation": 120,
+          "healthAtBank": 165,
+          "damage": 65
+        },
+        {
+          "depth": 42,
+          "formation": "Patrol rimecarver:rimecarver/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 11.603,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 165,
+          "healthAtBank": 150,
+          "damage": 20
+        },
+        {
+          "depth": 43,
+          "formation": "Patrol hearthkeeper:hearthkeeper/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 7.249,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 44,
+          "formation": "Learn shieldmaiden:shieldmaiden/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 6.747,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 45,
+          "formation": "Patrol rime_skald:rime_skald/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 20.635,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "rime_skald"
+          ],
+          "healthAtFormation": 190,
+          "healthAtBank": 165,
+          "damage": 40
+        },
+        {
+          "depth": 46,
+          "formation": "Learn harpoon_hunter:harpoon_hunter/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 8.005,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 165,
+          "healthAtBank": 160,
+          "damage": 15
+        },
+        {
+          "depth": 47,
+          "formation": "Learn hearthkeeper:hearthkeeper/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 21.257,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "hearthkeeper"
+          ],
+          "healthAtFormation": 160,
+          "healthAtBank": 165,
+          "damage": 40
+        },
+        {
+          "depth": 48,
+          "formation": "Patrol hearthkeeper:hearthkeeper/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 9.55,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 165,
+          "healthAtBank": 155,
+          "damage": 15
+        },
+        {
+          "depth": 49,
+          "formation": "Patrol rime_skald:rime_skald/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 6.862,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 160,
+          "damage": 0
+        },
+        {
+          "depth": 50,
+          "formation": "Elite rimecarver:rimecarver/Special/2+hearthkeeper/Special/2.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 19.783,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "rimecarver",
+            "hearthkeeper"
+          ],
+          "healthAtFormation": 160,
+          "healthAtBank": 160,
+          "damage": 10
+        },
+        {
+          "depth": 51,
+          "formation": "Patrol shieldmaiden:shieldmaiden/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 18.983,
+          "acceptedSwaps": 7,
+          "enemySpecials": [],
+          "healthAtFormation": 160,
+          "healthAtBank": 125,
+          "damage": 45
+        },
+        {
+          "depth": 52,
+          "formation": "Learn rime_skald:rime_skald/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 4.57,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 125,
+          "healthAtBank": 135,
+          "damage": 0
+        }
+      ],
+      "deathCause": null,
+      "startTier": 3,
+      "endTier": 4
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p2-skeleton-L10-1076357966",
+      "seed": 1076357966,
+      "character": "skeleton",
+      "level": 10,
+      "policy": 2,
+      "zone": "ironvein-excavation",
+      "visit": 3,
+      "completed": true,
+      "wallSeconds": 223.044,
+      "outcome": "completed",
+      "startDepth": 53,
+      "endDepth": 69,
+      "health": 20,
+      "score": 33625,
+      "bankedEncounters": 17,
+      "acceptedSwaps": 70,
+      "acceptedAbilities": 5,
+      "acceptedPotions": 0,
+      "acceptedBombs": 1,
+      "baseCharge": 83,
+      "masteryCharge": 18,
+      "overflow": 1,
+      "firstCardSeconds": 29.138,
+      "combatSeconds": 187.83963012695312,
+      "draftSeconds": 25.89800262451172,
+      "travelSeconds": 2.1284618377685547,
+      "playerDamage": 355,
+      "enemySpecials": 4,
+      "specialEnemies": [
+        "bore_engineer",
+        "seismic_smith"
+      ],
+      "uniqueEnemies": [
+        "bore_engineer",
+        "ore_hauler",
+        "pickaxe_delver",
+        "rail_switcher",
+        "rivet_gunner",
+        "seismic_smith",
+        "vein_surveyor"
+      ],
+      "recipes": [
+        "Learn bore_engineer",
+        "Learn rail_switcher",
+        "Learn seismic_smith",
+        "Patrol bore_engineer",
+        "Combined bore_engineer",
+        "Learn bore_engineer",
+        "Learn rail_switcher",
+        "Patrol bore_engineer",
+        "Patrol seismic_smith",
+        "Learn seismic_smith",
+        "Quiet patrol",
+        "Learn vein_surveyor",
+        "Learn ore_hauler",
+        "Patrol ore_hauler",
+        "Reserve Outer patrol",
+        "Patrol rail_switcher",
+        "Combined bore_engineer"
+      ],
+      "distinctRecipes": 12,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "glass_cannon",
+        "chromatic_conductor",
+        "prototype_gem_grinder"
+      ],
+      "capstones": [
+        {
+          "id": "Reserve Outer patrol",
+          "kind": 1,
+          "scheduledAfterDepth": 66,
+          "encounterDepth": 67
+        }
+      ],
+      "capstoneSeconds": [
+        17.284
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 70,
+        "meanAttentionFraction": 1.0,
+        "heuristicSuboptimalMoves": 0,
+        "heuristicGapTotal": 0.0,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 6,
+        "priorityNotChosen": 4,
+        "specialCreatesSelected": 25,
+        "specialUsesSelected": 24,
+        "visibleFollowupSelections": 8,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 53,
+          "formation": "Learn bore_engineer:bore_engineer/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 10.141,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 135,
+          "damage": 15
+        },
+        {
+          "depth": 54,
+          "formation": "Learn rail_switcher:rail_switcher/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 16.814,
+          "acceptedSwaps": 6,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 140,
+          "damage": 25
+        },
+        {
+          "depth": 55,
+          "formation": "Learn seismic_smith:seismic_smith/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 4.044,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 140,
+          "healthAtBank": 140,
+          "damage": 0
+        },
+        {
+          "depth": 56,
+          "formation": "Patrol bore_engineer:bore_engineer/Special/3+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 5.895,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 140,
+          "healthAtBank": 150,
+          "damage": 0
+        },
+        {
+          "depth": 57,
+          "formation": "Combined bore_engineer:bore_engineer/Special/3+seismic_smith/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 21.58,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "seismic_smith",
+            "seismic_smith"
+          ],
+          "healthAtFormation": 150,
+          "healthAtBank": 110,
+          "damage": 70
+        },
+        {
+          "depth": 58,
+          "formation": "Learn bore_engineer:bore_engineer/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 3.69,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 110,
+          "healthAtBank": 110,
+          "damage": 0
+        },
+        {
+          "depth": 59,
+          "formation": "Learn rail_switcher:rail_switcher/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 4.898,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 110,
+          "healthAtBank": 125,
+          "damage": 0
+        },
+        {
+          "depth": 60,
+          "formation": "Patrol bore_engineer:bore_engineer/Special/3+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 19.098,
+          "acceptedSwaps": 7,
+          "enemySpecials": [],
+          "healthAtFormation": 125,
+          "healthAtBank": 115,
+          "damage": 35
+        },
+        {
+          "depth": 61,
+          "formation": "Patrol seismic_smith:seismic_smith/Special/3+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 7.84,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 115,
+          "healthAtBank": 125,
+          "damage": 0
+        },
+        {
+          "depth": 62,
+          "formation": "Learn seismic_smith:seismic_smith/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 10.396,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 125,
+          "healthAtBank": 95,
+          "damage": 35
+        },
+        {
+          "depth": 63,
+          "formation": "Quiet patrol:pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 7.32,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 95,
+          "healthAtBank": 100,
+          "damage": 0
+        },
+        {
+          "depth": 64,
+          "formation": "Learn vein_surveyor:vein_surveyor/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 7.682,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 100,
+          "healthAtBank": 115,
+          "damage": 0
+        },
+        {
+          "depth": 65,
+          "formation": "Learn ore_hauler:ore_hauler/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 6.24,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 115,
+          "healthAtBank": 105,
+          "damage": 15
+        },
+        {
+          "depth": 66,
+          "formation": "Patrol ore_hauler:ore_hauler/Special/2.5+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 12.745,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 105,
+          "healthAtBank": 150,
+          "damage": 0
+        },
+        {
+          "depth": 67,
+          "formation": "Reserve Outer patrol:pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 17.284,
+          "acceptedSwaps": 7,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 100,
+          "damage": 60
+        },
+        {
+          "depth": 68,
+          "formation": "Patrol rail_switcher:rail_switcher/Special/2.5+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 16.705,
+          "acceptedSwaps": 7,
+          "enemySpecials": [],
+          "healthAtFormation": 100,
+          "healthAtBank": 55,
+          "damage": 55
+        },
+        {
+          "depth": 69,
+          "formation": "Combined bore_engineer:bore_engineer/Special/3+seismic_smith/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 15.43,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "bore_engineer",
+            "seismic_smith"
+          ],
+          "healthAtFormation": 55,
+          "healthAtBank": 20,
+          "damage": 45
+        }
+      ],
+      "deathCause": null,
+      "startTier": 4,
+      "endTier": 4
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p2-skeleton-L10-1076357966",
+      "seed": 1076357966,
+      "character": "skeleton",
+      "level": 10,
+      "policy": 2,
+      "zone": "dungeon",
+      "visit": 4,
+      "completed": false,
+      "wallSeconds": 18.706,
+      "outcome": "defeat",
+      "startDepth": 70,
+      "endDepth": 71,
+      "health": 0,
+      "score": 34485,
+      "bankedEncounters": 1,
+      "acceptedSwaps": 5,
+      "acceptedAbilities": 1,
+      "acceptedPotions": 0,
+      "acceptedBombs": 0,
+      "baseCharge": 4,
+      "masteryCharge": 1,
+      "overflow": 0,
+      "firstCardSeconds": null,
+      "combatSeconds": 17.71685028076172,
+      "draftSeconds": 0.0,
+      "travelSeconds": 1.170350432395935,
+      "playerDamage": 40,
+      "enemySpecials": 0,
+      "specialEnemies": [],
+      "uniqueEnemies": [
+        "royal_arbalist",
+        "royal_lancer",
+        "royal_swordsman"
+      ],
+      "recipes": [
+        "Royal vanguard",
+        "Royal chain lesson"
+      ],
+      "distinctRecipes": 2,
+      "immediateRecipeRepeats": 0,
+      "cards": [],
+      "capstones": [],
+      "capstoneSeconds": [],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 5,
+        "meanAttentionFraction": 1.0,
+        "heuristicSuboptimalMoves": 0,
+        "heuristicGapTotal": 0.0,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 0,
+        "priorityNotChosen": 0,
+        "specialCreatesSelected": 4,
+        "specialUsesSelected": 2,
+        "visibleFollowupSelections": 0,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 70,
+          "formation": "Royal vanguard:royal_swordsman/Normal/2.5+royal_lancer/Normal/2.5",
+          "completed": true,
+          "seconds": 11.121,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 20,
+          "healthAtBank": 20,
+          "damage": 15
+        },
+        {
+          "depth": 71,
+          "formation": "Royal chain lesson:royal_arbalist/Special/2.5+royal_swordsman/Normal/2.5",
+          "completed": false,
+          "seconds": null,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 20,
+          "healthAtBank": null,
+          "damage": 25
+        }
+      ],
+      "deathCause": "Last hit: Royal Swordsman\n10 HP lost \u00b7 0 shield absorbed",
+      "startTier": 4,
+      "endTier": 4
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p3-bardley-L10-1012792767",
+      "seed": 1012792767,
+      "character": "bardley",
+      "level": 10,
+      "policy": 3,
+      "zone": "dungeon",
+      "visit": 0,
+      "completed": true,
+      "wallSeconds": 308.695,
+      "outcome": "completed",
+      "startDepth": 1,
+      "endDepth": 19,
+      "health": 135,
+      "score": 7670,
+      "bankedEncounters": 19,
+      "acceptedSwaps": 64,
+      "acceptedAbilities": 8,
+      "acceptedPotions": 0,
+      "acceptedBombs": 0,
+      "baseCharge": 86,
+      "masteryCharge": 15,
+      "overflow": 1,
+      "firstCardSeconds": 21.94,
+      "combatSeconds": 276.0296325683594,
+      "draftSeconds": 24.384113311767578,
+      "travelSeconds": 0.9573880434036255,
+      "playerDamage": 135,
+      "enemySpecials": 1,
+      "specialEnemies": [
+        "barricade_guard"
+      ],
+      "uniqueEnemies": [
+        "barricade_guard",
+        "barricade_villager",
+        "basket_villager",
+        "crossbow_guard",
+        "farmer",
+        "knight",
+        "miner",
+        "pan_villager",
+        "shield_knight",
+        "spear_guard",
+        "spear_knight"
+      ],
+      "recipes": [
+        "Timber lesson",
+        "Village watch",
+        "Local search",
+        "Excavation lesson",
+        "Timber lesson",
+        "Town boundary",
+        "Local search",
+        "Chain patrol",
+        "Timber lesson",
+        "Town boundary",
+        "Village watch",
+        "Guard fortification",
+        "Shield lesson",
+        "Chain patrol",
+        "Knight patrol",
+        "Knight advance",
+        "Reserve Knight patrol",
+        "Shield lesson",
+        "Knight patrol"
+      ],
+      "distinctRecipes": 11,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "prototype_thicker_hide",
+        "prototype_mana_spark",
+        "prototype_efficient_casting"
+      ],
+      "capstones": [
+        {
+          "id": "Reserve Knight patrol",
+          "kind": 1,
+          "scheduledAfterDepth": 16,
+          "encounterDepth": 17
+        }
+      ],
+      "capstoneSeconds": [
+        24.06
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 64,
+        "meanAttentionFraction": 0.876,
+        "heuristicSuboptimalMoves": 7,
+        "heuristicGapTotal": 110.36,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 7,
+        "priorityNotChosen": 2,
+        "specialCreatesSelected": 15,
+        "specialUsesSelected": 8,
+        "visibleFollowupSelections": 9,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 1,
+          "formation": "Timber lesson:barricade_villager/Special/2+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 7.216,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 150,
+          "damage": 0
+        },
+        {
+          "depth": 2,
+          "formation": "Village watch:pan_villager/Normal/1+farmer/Normal/1",
+          "completed": true,
+          "seconds": 7.032,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 150,
+          "damage": 0
+        },
+        {
+          "depth": 3,
+          "formation": "Local search:farmer/Normal/1+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 6.21,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 150,
+          "damage": 0
+        },
+        {
+          "depth": 4,
+          "formation": "Excavation lesson:miner/Special/2+farmer/Normal/1",
+          "completed": true,
+          "seconds": 16.654,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 165,
+          "damage": 5
+        },
+        {
+          "depth": 5,
+          "formation": "Timber lesson:barricade_villager/Special/2+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 7.178,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 165,
+          "healthAtBank": 170,
+          "damage": 0
+        },
+        {
+          "depth": 6,
+          "formation": "Town boundary:spear_guard/Normal/1.5+pan_villager/Normal/1",
+          "completed": true,
+          "seconds": 13.736,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 165,
+          "damage": 5
+        },
+        {
+          "depth": 7,
+          "formation": "Local search:farmer/Normal/1+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 15.895,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 165,
+          "healthAtBank": 170,
+          "damage": 5
+        },
+        {
+          "depth": 8,
+          "formation": "Chain patrol:crossbow_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 9.842,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 170,
+          "damage": 0
+        },
+        {
+          "depth": 9,
+          "formation": "Timber lesson:barricade_villager/Special/2+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 10.473,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 165,
+          "damage": 5
+        },
+        {
+          "depth": 10,
+          "formation": "Town boundary:spear_guard/Normal/1.5+pan_villager/Normal/1",
+          "completed": true,
+          "seconds": 17.458,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 165,
+          "healthAtBank": 170,
+          "damage": 5
+        },
+        {
+          "depth": 11,
+          "formation": "Village watch:pan_villager/Normal/1+farmer/Normal/1",
+          "completed": true,
+          "seconds": 5.068,
+          "acceptedSwaps": 0,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 170,
+          "damage": 0
+        },
+        {
+          "depth": 12,
+          "formation": "Guard fortification:barricade_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 21.242,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "barricade_guard"
+          ],
+          "healthAtFormation": 170,
+          "healthAtBank": 170,
+          "damage": 10
+        },
+        {
+          "depth": 13,
+          "formation": "Shield lesson:shield_knight/Special/2.5+knight/Normal/2",
+          "completed": true,
+          "seconds": 15.088,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 170,
+          "damage": 0
+        },
+        {
+          "depth": 14,
+          "formation": "Chain patrol:crossbow_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 6.777,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 170,
+          "damage": 0
+        },
+        {
+          "depth": 15,
+          "formation": "Knight patrol:knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 33.484,
+          "acceptedSwaps": 8,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 135,
+          "damage": 40
+        },
+        {
+          "depth": 16,
+          "formation": "Knight advance:crossbow_guard/Special/2+knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 19.365,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 125,
+          "damage": 20
+        },
+        {
+          "depth": 17,
+          "formation": "Reserve Knight patrol:knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 24.06,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 125,
+          "healthAtBank": 140,
+          "damage": 15
+        },
+        {
+          "depth": 18,
+          "formation": "Shield lesson:shield_knight/Special/2.5+knight/Normal/2",
+          "completed": true,
+          "seconds": 20.689,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 140,
+          "healthAtBank": 130,
+          "damage": 15
+        },
+        {
+          "depth": 19,
+          "formation": "Knight patrol:knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 18.02,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 130,
+          "healthAtBank": 135,
+          "damage": 10
+        }
+      ],
+      "deathCause": null,
+      "startTier": 0,
+      "endTier": 2
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p3-bardley-L10-1012792767",
+      "seed": 1012792767,
+      "character": "bardley",
+      "level": 10,
+      "policy": 3,
+      "zone": "drowned-court",
+      "visit": 1,
+      "completed": true,
+      "wallSeconds": 400.74,
+      "outcome": "completed",
+      "startDepth": 20,
+      "endDepth": 34,
+      "health": 120,
+      "score": 15900,
+      "bankedEncounters": 15,
+      "acceptedSwaps": 79,
+      "acceptedAbilities": 15,
+      "acceptedPotions": 3,
+      "acceptedBombs": 0,
+      "baseCharge": 89,
+      "masteryCharge": 12,
+      "overflow": 1,
+      "firstCardSeconds": 56.208,
+      "combatSeconds": 368.13848876953125,
+      "draftSeconds": 24.167945861816406,
+      "travelSeconds": 2.1237804889678955,
+      "playerDamage": 480,
+      "enemySpecials": 6,
+      "specialEnemies": [
+        "moray_siphoner",
+        "pearl_cantor",
+        "puffer_sentinel"
+      ],
+      "uniqueEnemies": [
+        "hammerhead_bruiser",
+        "moray_siphoner",
+        "pearl_cantor",
+        "pearl_thief",
+        "puffer_sentinel",
+        "reef_spearman"
+      ],
+      "recipes": [
+        "Learn puffer_sentinel",
+        "Outer patrol",
+        "Patrol puffer_sentinel",
+        "Learn moray_siphoner",
+        "Learn pearl_cantor",
+        "Learn pearl_thief",
+        "Combined pearl_thief",
+        "Patrol pearl_cantor",
+        "Learn moray_siphoner",
+        "Learn pearl_thief",
+        "Patrol moray_siphoner",
+        "Patrol pearl_cantor",
+        "Learn puffer_sentinel",
+        "Elite pearl_thief",
+        "Patrol pearl_thief"
+      ],
+      "distinctRecipes": 11,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "cascade_catalyst",
+        "prototype_thicker_hide",
+        "executioner"
+      ],
+      "capstones": [
+        {
+          "id": "Elite pearl_thief",
+          "kind": 1,
+          "scheduledAfterDepth": 32,
+          "encounterDepth": 33
+        }
+      ],
+      "capstoneSeconds": [
+        32.298
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 16,
+      "lowAirResponses": 14,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 79,
+        "meanAttentionFraction": 0.826,
+        "heuristicSuboptimalMoves": 14,
+        "heuristicGapTotal": 319.78,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 6,
+        "priorityNotChosen": 2,
+        "specialCreatesSelected": 19,
+        "specialUsesSelected": 17,
+        "visibleFollowupSelections": 1,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 4,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 20,
+          "formation": "Learn puffer_sentinel:puffer_sentinel/Special/2.5+reef_spearman/Normal/1.5",
+          "completed": true,
+          "seconds": 18.911,
+          "acceptedSwaps": 4,
+          "enemySpecials": [
+            "puffer_sentinel"
+          ],
+          "healthAtFormation": 135,
+          "healthAtBank": 140,
+          "damage": 20
+        },
+        {
+          "depth": 21,
+          "formation": "Outer patrol:reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+          "completed": true,
+          "seconds": 35.117,
+          "acceptedSwaps": 8,
+          "enemySpecials": [],
+          "healthAtFormation": 140,
+          "healthAtBank": 155,
+          "damage": 55
+        },
+        {
+          "depth": 22,
+          "formation": "Patrol puffer_sentinel:puffer_sentinel/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+          "completed": true,
+          "seconds": 14.195,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 145,
+          "damage": 35
+        },
+        {
+          "depth": 23,
+          "formation": "Learn moray_siphoner:moray_siphoner/Special/2.5+reef_spearman/Normal/1.5",
+          "completed": true,
+          "seconds": 24.652,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "moray_siphoner"
+          ],
+          "healthAtFormation": 145,
+          "healthAtBank": 165,
+          "damage": 5
+        },
+        {
+          "depth": 24,
+          "formation": "Learn pearl_cantor:pearl_cantor/Special/2.5+reef_spearman/Normal/1.5",
+          "completed": true,
+          "seconds": 13.434,
+          "acceptedSwaps": 3,
+          "enemySpecials": [
+            "pearl_cantor"
+          ],
+          "healthAtFormation": 165,
+          "healthAtBank": 170,
+          "damage": 15
+        },
+        {
+          "depth": 25,
+          "formation": "Learn pearl_thief:pearl_thief/Special/2.5+reef_spearman/Normal/1.5",
+          "completed": true,
+          "seconds": 22.844,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 170,
+          "healthAtBank": 160,
+          "damage": 15
+        },
+        {
+          "depth": 26,
+          "formation": "Combined pearl_thief:pearl_thief/Special/2.5+moray_siphoner/Special/2.5+reef_spearman/Normal/1.5",
+          "completed": true,
+          "seconds": 19.858,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 160,
+          "healthAtBank": 170,
+          "damage": 10
+        },
+        {
+          "depth": 27,
+          "formation": "Patrol pearl_cantor:pearl_cantor/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+          "completed": true,
+          "seconds": 19.595,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 190,
+          "damage": 0
+        },
+        {
+          "depth": 28,
+          "formation": "Learn moray_siphoner:moray_siphoner/Special/2.5+reef_spearman/Normal/1.5",
+          "completed": true,
+          "seconds": 41.062,
+          "acceptedSwaps": 11,
+          "enemySpecials": [
+            "moray_siphoner",
+            "moray_siphoner"
+          ],
+          "healthAtFormation": 190,
+          "healthAtBank": 140,
+          "damage": 65
+        },
+        {
+          "depth": 29,
+          "formation": "Learn pearl_thief:pearl_thief/Special/2.5+reef_spearman/Normal/1.5",
+          "completed": true,
+          "seconds": 31.443,
+          "acceptedSwaps": 7,
+          "enemySpecials": [],
+          "healthAtFormation": 140,
+          "healthAtBank": 175,
+          "damage": 50
+        },
+        {
+          "depth": 30,
+          "formation": "Patrol moray_siphoner:moray_siphoner/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+          "completed": true,
+          "seconds": 34.052,
+          "acceptedSwaps": 8,
+          "enemySpecials": [
+            "moray_siphoner"
+          ],
+          "healthAtFormation": 175,
+          "healthAtBank": 135,
+          "damage": 70
+        },
+        {
+          "depth": 31,
+          "formation": "Patrol pearl_cantor:pearl_cantor/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+          "completed": true,
+          "seconds": 15.164,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 145,
+          "damage": 0
+        },
+        {
+          "depth": 32,
+          "formation": "Learn puffer_sentinel:puffer_sentinel/Special/2.5+reef_spearman/Normal/1.5",
+          "completed": true,
+          "seconds": 15.615,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 145,
+          "healthAtBank": 140,
+          "damage": 15
+        },
+        {
+          "depth": 33,
+          "formation": "Elite pearl_thief:pearl_thief/Special/2.5+moray_siphoner/Special/2.5+hammerhead_bruiser/Normal/1.5",
+          "completed": true,
+          "seconds": 32.298,
+          "acceptedSwaps": 7,
+          "enemySpecials": [],
+          "healthAtFormation": 140,
+          "healthAtBank": 175,
+          "damage": 50
+        },
+        {
+          "depth": 34,
+          "formation": "Patrol pearl_thief:pearl_thief/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+          "completed": true,
+          "seconds": 29.868,
+          "acceptedSwaps": 6,
+          "enemySpecials": [],
+          "healthAtFormation": 175,
+          "healthAtBank": 120,
+          "damage": 75
+        }
+      ],
+      "deathCause": null,
+      "startTier": 2,
+      "endTier": 3
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p3-bardley-L10-1012792767",
+      "seed": 1012792767,
+      "character": "bardley",
+      "level": 10,
+      "policy": 3,
+      "zone": "frostwake-peaks",
+      "visit": 2,
+      "completed": true,
+      "wallSeconds": 417.852,
+      "outcome": "completed",
+      "startDepth": 35,
+      "endDepth": 52,
+      "health": 160,
+      "score": 26030,
+      "bankedEncounters": 18,
+      "acceptedSwaps": 73,
+      "acceptedAbilities": 19,
+      "acceptedPotions": 0,
+      "acceptedBombs": 0,
+      "baseCharge": 89,
+      "masteryCharge": 14,
+      "overflow": 3,
+      "firstCardSeconds": 44.172,
+      "combatSeconds": 380.54132080078125,
+      "draftSeconds": 27.386581420898438,
+      "travelSeconds": 2.12821102142334,
+      "playerDamage": 395,
+      "enemySpecials": 11,
+      "specialEnemies": [
+        "frostblade_reaver",
+        "harpoon_hunter",
+        "hearthkeeper",
+        "rime_skald",
+        "rimecarver",
+        "shieldmaiden"
+      ],
+      "uniqueEnemies": [
+        "frostblade_reaver",
+        "frostfang_wolf",
+        "harpoon_hunter",
+        "hearthkeeper",
+        "iceborn_raider",
+        "rime_skald",
+        "rimecarver",
+        "shieldmaiden"
+      ],
+      "recipes": [
+        "Learn rimecarver",
+        "Learn rime_skald",
+        "Patrol rime_skald",
+        "Learn frostblade_reaver",
+        "Patrol frostblade_reaver",
+        "Learn shieldmaiden",
+        "Learn harpoon_hunter",
+        "Learn frostblade_reaver",
+        "Patrol rimecarver",
+        "Quiet patrol",
+        "Patrol shieldmaiden",
+        "Learn harpoon_hunter",
+        "Patrol harpoon_hunter",
+        "Combined frostblade_reaver",
+        "Patrol rimecarver",
+        "Elite rimecarver",
+        "Learn harpoon_hunter",
+        "Learn rime_skald"
+      ],
+      "distinctRecipes": 13,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "prototype_thicker_hide",
+        "glass_cannon",
+        "prototype_efficient_casting"
+      ],
+      "capstones": [
+        {
+          "id": "Elite rimecarver",
+          "kind": 1,
+          "scheduledAfterDepth": 49,
+          "encounterDepth": 50
+        }
+      ],
+      "capstoneSeconds": [
+        28.054
+      ],
+      "telegraphDecisionPoints": 2,
+      "warningWithoutImmediateMarkedMatch": 1,
+      "visibleCounterOpportunities": 1,
+      "visibleCountersChosen": 1,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 73,
+        "meanAttentionFraction": 0.798,
+        "heuristicSuboptimalMoves": 14,
+        "heuristicGapTotal": 160.16,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 11,
+        "priorityNotChosen": 6,
+        "specialCreatesSelected": 18,
+        "specialUsesSelected": 24,
+        "visibleFollowupSelections": 5,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 1,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 35,
+          "formation": "Learn rimecarver:rimecarver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 9.269,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 120,
+          "healthAtBank": 135,
+          "damage": 0
+        },
+        {
+          "depth": 36,
+          "formation": "Learn rime_skald:rime_skald/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 10.775,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 150,
+          "damage": 0
+        },
+        {
+          "depth": 37,
+          "formation": "Patrol rime_skald:rime_skald/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 21.443,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 170,
+          "damage": 25
+        },
+        {
+          "depth": 38,
+          "formation": "Learn frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 9.26,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 190,
+          "healthAtBank": 200,
+          "damage": 0
+        },
+        {
+          "depth": 39,
+          "formation": "Patrol frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 26.91,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "frostblade_reaver"
+          ],
+          "healthAtFormation": 200,
+          "healthAtBank": 210,
+          "damage": 25
+        },
+        {
+          "depth": 40,
+          "formation": "Learn shieldmaiden:shieldmaiden/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 22.892,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 210,
+          "healthAtBank": 190,
+          "damage": 30
+        },
+        {
+          "depth": 41,
+          "formation": "Learn harpoon_hunter:harpoon_hunter/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 26.847,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "harpoon_hunter"
+          ],
+          "healthAtFormation": 190,
+          "healthAtBank": 180,
+          "damage": 45
+        },
+        {
+          "depth": 42,
+          "formation": "Learn frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 28.631,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "frostblade_reaver"
+          ],
+          "healthAtFormation": 180,
+          "healthAtBank": 185,
+          "damage": 10
+        },
+        {
+          "depth": 43,
+          "formation": "Patrol rimecarver:rimecarver/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 24.572,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "rimecarver"
+          ],
+          "healthAtFormation": 180,
+          "healthAtBank": 145,
+          "damage": 55
+        },
+        {
+          "depth": 44,
+          "formation": "Quiet patrol:iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 9.003,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 145,
+          "healthAtBank": 155,
+          "damage": 0
+        },
+        {
+          "depth": 45,
+          "formation": "Patrol shieldmaiden:shieldmaiden/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 48.581,
+          "acceptedSwaps": 12,
+          "enemySpecials": [
+            "shieldmaiden",
+            "shieldmaiden",
+            "shieldmaiden"
+          ],
+          "healthAtFormation": 155,
+          "healthAtBank": 155,
+          "damage": 75
+        },
+        {
+          "depth": 46,
+          "formation": "Learn harpoon_hunter:harpoon_hunter/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 9.229,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 180,
+          "damage": 0
+        },
+        {
+          "depth": 47,
+          "formation": "Patrol harpoon_hunter:harpoon_hunter/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 27.492,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "harpoon_hunter"
+          ],
+          "healthAtFormation": 180,
+          "healthAtBank": 130,
+          "damage": 50
+        },
+        {
+          "depth": 48,
+          "formation": "Combined frostblade_reaver:frostblade_reaver/Special/2+rime_skald/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 11.018,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 130,
+          "healthAtBank": 155,
+          "damage": 0
+        },
+        {
+          "depth": 49,
+          "formation": "Patrol rimecarver:rimecarver/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 12.957,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 175,
+          "damage": 0
+        },
+        {
+          "depth": 50,
+          "formation": "Elite rimecarver:rimecarver/Special/2+hearthkeeper/Special/2.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 28.054,
+          "acceptedSwaps": 4,
+          "enemySpecials": [
+            "rimecarver",
+            "hearthkeeper"
+          ],
+          "healthAtFormation": 175,
+          "healthAtBank": 180,
+          "damage": 10
+        },
+        {
+          "depth": 51,
+          "formation": "Learn harpoon_hunter:harpoon_hunter/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 15.551,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 165,
+          "damage": 15
+        },
+        {
+          "depth": 52,
+          "formation": "Learn rime_skald:rime_skald/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 38.028,
+          "acceptedSwaps": 9,
+          "enemySpecials": [
+            "rime_skald"
+          ],
+          "healthAtFormation": 165,
+          "healthAtBank": 160,
+          "damage": 55
+        }
+      ],
+      "deathCause": null,
+      "startTier": 3,
+      "endTier": 4
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p3-bardley-L10-1012792767",
+      "seed": 1012792767,
+      "character": "bardley",
+      "level": 10,
+      "policy": 3,
+      "zone": "ironvein-excavation",
+      "visit": 3,
+      "completed": true,
+      "wallSeconds": 476.834,
+      "outcome": "completed",
+      "startDepth": 53,
+      "endDepth": 70,
+      "health": 125,
+      "score": 34995,
+      "bankedEncounters": 18,
+      "acceptedSwaps": 81,
+      "acceptedAbilities": 23,
+      "acceptedPotions": 0,
+      "acceptedBombs": 0,
+      "baseCharge": 90,
+      "masteryCharge": 14,
+      "overflow": 4,
+      "firstCardSeconds": 39.787,
+      "combatSeconds": 441.3396301269531,
+      "draftSeconds": 25.575056076049805,
+      "travelSeconds": 2.119978666305542,
+      "playerDamage": 550,
+      "enemySpecials": 12,
+      "specialEnemies": [
+        "ore_hauler",
+        "rail_switcher",
+        "seismic_smith",
+        "stonewright"
+      ],
+      "uniqueEnemies": [
+        "bore_engineer",
+        "ore_hauler",
+        "pickaxe_delver",
+        "powder_sapper",
+        "rail_switcher",
+        "rivet_gunner",
+        "seismic_smith",
+        "stonewright",
+        "vein_surveyor"
+      ],
+      "recipes": [
+        "Learn rail_switcher",
+        "Learn seismic_smith",
+        "Learn powder_sapper",
+        "Patrol seismic_smith",
+        "Patrol rail_switcher",
+        "Learn seismic_smith",
+        "Learn vein_surveyor",
+        "Patrol powder_sapper",
+        "Patrol rail_switcher",
+        "Learn bore_engineer",
+        "Patrol bore_engineer",
+        "Learn rail_switcher",
+        "Patrol rail_switcher",
+        "Patrol seismic_smith",
+        "Learn ore_hauler",
+        "Learn rail_switcher",
+        "Elite stonewright",
+        "Patrol powder_sapper"
+      ],
+      "distinctRecipes": 11,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "chain_reaction",
+        "opening_volley",
+        "bombsmith"
+      ],
+      "capstones": [
+        {
+          "id": "Elite stonewright",
+          "kind": 1,
+          "scheduledAfterDepth": 68,
+          "encounterDepth": 69
+        }
+      ],
+      "capstoneSeconds": [
+        41.32
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 81,
+        "meanAttentionFraction": 0.799,
+        "heuristicSuboptimalMoves": 24,
+        "heuristicGapTotal": 505.33,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 10,
+        "priorityNotChosen": 5,
+        "specialCreatesSelected": 21,
+        "specialUsesSelected": 16,
+        "visibleFollowupSelections": 9,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 53,
+          "formation": "Learn rail_switcher:rail_switcher/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 25.126,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 160,
+          "healthAtBank": 135,
+          "damage": 40
+        },
+        {
+          "depth": 54,
+          "formation": "Learn seismic_smith:seismic_smith/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 12.463,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 145,
+          "damage": 35
+        },
+        {
+          "depth": 55,
+          "formation": "Learn powder_sapper:powder_sapper/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 12.223,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 145,
+          "healthAtBank": 145,
+          "damage": 10
+        },
+        {
+          "depth": 56,
+          "formation": "Patrol seismic_smith:seismic_smith/Special/3+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 39.736,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "seismic_smith",
+            "seismic_smith"
+          ],
+          "healthAtFormation": 145,
+          "healthAtBank": 135,
+          "damage": 80
+        },
+        {
+          "depth": 57,
+          "formation": "Patrol rail_switcher:rail_switcher/Special/2.5+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 26.861,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "rail_switcher"
+          ],
+          "healthAtFormation": 135,
+          "healthAtBank": 85,
+          "damage": 60
+        },
+        {
+          "depth": 58,
+          "formation": "Learn seismic_smith:seismic_smith/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 19.547,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 85,
+          "healthAtBank": 85,
+          "damage": 20
+        },
+        {
+          "depth": 59,
+          "formation": "Learn vein_surveyor:vein_surveyor/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 11.991,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 85,
+          "healthAtBank": 80,
+          "damage": 15
+        },
+        {
+          "depth": 60,
+          "formation": "Patrol powder_sapper:powder_sapper/Special/3+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 27.343,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 80,
+          "healthAtBank": 105,
+          "damage": 10
+        },
+        {
+          "depth": 61,
+          "formation": "Patrol rail_switcher:rail_switcher/Special/2.5+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 9.498,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 105,
+          "healthAtBank": 115,
+          "damage": 0
+        },
+        {
+          "depth": 62,
+          "formation": "Learn bore_engineer:bore_engineer/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 15.158,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 115,
+          "healthAtBank": 110,
+          "damage": 15
+        },
+        {
+          "depth": 63,
+          "formation": "Patrol bore_engineer:bore_engineer/Special/3+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 20.19,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 110,
+          "healthAtBank": 135,
+          "damage": 25
+        },
+        {
+          "depth": 64,
+          "formation": "Learn rail_switcher:rail_switcher/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 34.274,
+          "acceptedSwaps": 6,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 145,
+          "damage": 30
+        },
+        {
+          "depth": 65,
+          "formation": "Patrol rail_switcher:rail_switcher/Special/2.5+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 27.416,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "rail_switcher"
+          ],
+          "healthAtFormation": 145,
+          "healthAtBank": 130,
+          "damage": 25
+        },
+        {
+          "depth": 66,
+          "formation": "Patrol seismic_smith:seismic_smith/Special/3+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 38.358,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "seismic_smith",
+            "seismic_smith"
+          ],
+          "healthAtFormation": 130,
+          "healthAtBank": 100,
+          "damage": 55
+        },
+        {
+          "depth": 67,
+          "formation": "Learn ore_hauler:ore_hauler/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 18.579,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 100,
+          "healthAtBank": 125,
+          "damage": 5
+        },
+        {
+          "depth": 68,
+          "formation": "Learn rail_switcher:rail_switcher/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 44.408,
+          "acceptedSwaps": 10,
+          "enemySpecials": [
+            "rail_switcher",
+            "rail_switcher"
+          ],
+          "healthAtFormation": 125,
+          "healthAtBank": 125,
+          "damage": 45
+        },
+        {
+          "depth": 69,
+          "formation": "Elite stonewright:stonewright/Special/2.5+ore_hauler/Special/2.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 41.32,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "stonewright",
+            "ore_hauler",
+            "stonewright",
+            "ore_hauler"
+          ],
+          "healthAtFormation": 125,
+          "healthAtBank": 80,
+          "damage": 70
+        },
+        {
+          "depth": 70,
+          "formation": "Patrol powder_sapper:powder_sapper/Special/3+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 16.811,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 80,
+          "healthAtBank": 125,
+          "damage": 10
+        }
+      ],
+      "deathCause": null,
+      "startTier": 4,
+      "endTier": 4
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p3-bardley-L10-1012792767",
+      "seed": 1012792767,
+      "character": "bardley",
+      "level": 10,
+      "policy": 3,
+      "zone": "frostwake-peaks",
+      "visit": 4,
+      "completed": false,
+      "wallSeconds": 376.247,
+      "outcome": "defeat",
+      "startDepth": 71,
+      "endDepth": 85,
+      "health": 0,
+      "score": 42325,
+      "bankedEncounters": 14,
+      "acceptedSwaps": 64,
+      "acceptedAbilities": 20,
+      "acceptedPotions": 0,
+      "acceptedBombs": 2,
+      "baseCharge": 69,
+      "masteryCharge": 11,
+      "overflow": 0,
+      "firstCardSeconds": 28.534,
+      "combatSeconds": 342.3885498046875,
+      "draftSeconds": 27.830841064453125,
+      "travelSeconds": 1.1637383699417114,
+      "playerDamage": 510,
+      "enemySpecials": 9,
+      "specialEnemies": [
+        "frostblade_reaver",
+        "iceborn_champion",
+        "rime_skald",
+        "rimecarver"
+      ],
+      "uniqueEnemies": [
+        "frostblade_reaver",
+        "frostfang_wolf",
+        "harpoon_hunter",
+        "hearthkeeper",
+        "iceborn_champion",
+        "iceborn_raider",
+        "rime_skald",
+        "rimecarver",
+        "shieldmaiden"
+      ],
+      "recipes": [
+        "Learn shieldmaiden",
+        "Patrol shieldmaiden",
+        "Patrol frostblade_reaver",
+        "Quiet patrol",
+        "Learn frostblade_reaver",
+        "Combined frostblade_reaver",
+        "Learn rime_skald",
+        "Patrol rimecarver",
+        "Learn frostblade_reaver",
+        "Learn rimecarver",
+        "Patrol frostblade_reaver",
+        "Patrol rimecarver",
+        "Patrol hearthkeeper",
+        "Learn harpoon_hunter",
+        "Guardian iceborn_champion"
+      ],
+      "distinctRecipes": 12,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "prototype_gem_grinder",
+        "prototype_mana_spark",
+        "chromatic_conductor"
+      ],
+      "capstones": [
+        {
+          "id": "Guardian iceborn_champion",
+          "kind": 2,
+          "scheduledAfterDepth": 84,
+          "encounterDepth": 85
+        }
+      ],
+      "capstoneSeconds": [],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 64,
+        "meanAttentionFraction": 0.876,
+        "heuristicSuboptimalMoves": 9,
+        "heuristicGapTotal": 96.66,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 8,
+        "priorityNotChosen": 3,
+        "specialCreatesSelected": 15,
+        "specialUsesSelected": 14,
+        "visibleFollowupSelections": 2,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 71,
+          "formation": "Learn shieldmaiden:shieldmaiden/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 15.325,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 125,
+          "healthAtBank": 180,
+          "damage": 0
+        },
+        {
+          "depth": 72,
+          "formation": "Patrol shieldmaiden:shieldmaiden/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 11.024,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 180,
+          "healthAtBank": 180,
+          "damage": 0
+        },
+        {
+          "depth": 73,
+          "formation": "Patrol frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 20.262,
+          "acceptedSwaps": 3,
+          "enemySpecials": [
+            "frostblade_reaver"
+          ],
+          "healthAtFormation": 180,
+          "healthAtBank": 150,
+          "damage": 45
+        },
+        {
+          "depth": 74,
+          "formation": "Quiet patrol:iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 3.499,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 155,
+          "damage": 0
+        },
+        {
+          "depth": 75,
+          "formation": "Learn frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 10.371,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 170,
+          "damage": 0
+        },
+        {
+          "depth": 76,
+          "formation": "Combined frostblade_reaver:frostblade_reaver/Special/2+rime_skald/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 29.85,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "frostblade_reaver"
+          ],
+          "healthAtFormation": 170,
+          "healthAtBank": 170,
+          "damage": 20
+        },
+        {
+          "depth": 77,
+          "formation": "Learn rime_skald:rime_skald/Special/2.5+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 33.58,
+          "acceptedSwaps": 8,
+          "enemySpecials": [
+            "rime_skald",
+            "rime_skald"
+          ],
+          "healthAtFormation": 170,
+          "healthAtBank": 100,
+          "damage": 80
+        },
+        {
+          "depth": 78,
+          "formation": "Patrol rimecarver:rimecarver/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 12.709,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 100,
+          "healthAtBank": 115,
+          "damage": 0
+        },
+        {
+          "depth": 79,
+          "formation": "Learn frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 27.578,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 115,
+          "healthAtBank": 125,
+          "damage": 40
+        },
+        {
+          "depth": 80,
+          "formation": "Learn rimecarver:rimecarver/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 46.092,
+          "acceptedSwaps": 10,
+          "enemySpecials": [
+            "rimecarver",
+            "rimecarver",
+            "rimecarver"
+          ],
+          "healthAtFormation": 125,
+          "healthAtBank": 110,
+          "damage": 70
+        },
+        {
+          "depth": 81,
+          "formation": "Patrol frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 28.151,
+          "acceptedSwaps": 4,
+          "enemySpecials": [
+            "frostblade_reaver"
+          ],
+          "healthAtFormation": 110,
+          "healthAtBank": 75,
+          "damage": 50
+        },
+        {
+          "depth": 82,
+          "formation": "Patrol rimecarver:rimecarver/Special/2+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 37.854,
+          "acceptedSwaps": 9,
+          "enemySpecials": [],
+          "healthAtFormation": 75,
+          "healthAtBank": 65,
+          "damage": 75
+        },
+        {
+          "depth": 83,
+          "formation": "Patrol hearthkeeper:hearthkeeper/Special/2.5+iceborn_raider/Normal/1.5+frostfang_wolf/Normal/1.5",
+          "completed": true,
+          "seconds": 25.397,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 65,
+          "healthAtBank": 60,
+          "damage": 30
+        },
+        {
+          "depth": 84,
+          "formation": "Learn harpoon_hunter:harpoon_hunter/Special/2+iceborn_raider/Normal/1.5",
+          "completed": true,
+          "seconds": 18.177,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 60,
+          "healthAtBank": 75,
+          "damage": 20
+        },
+        {
+          "depth": 85,
+          "formation": "Guardian iceborn_champion:iceborn_champion/Miniboss/5+iceborn_raider/Normal/1.5",
+          "completed": false,
+          "seconds": null,
+          "acceptedSwaps": 5,
+          "enemySpecials": [
+            "iceborn_champion"
+          ],
+          "healthAtFormation": 75,
+          "healthAtBank": null,
+          "damage": 80
+        }
+      ],
+      "deathCause": "Last hit: Iceborn Champion\n10 HP lost \u00b7 0 shield absorbed",
+      "startTier": 4,
+      "endTier": 4
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p4-kobold_gunner-L10-333684335",
+      "seed": 333684335,
+      "character": "kobold_gunner",
+      "level": 10,
+      "policy": 4,
+      "zone": "dungeon",
+      "visit": 0,
+      "completed": true,
+      "wallSeconds": 296.924,
+      "outcome": "completed",
+      "startDepth": 1,
+      "endDepth": 19,
+      "health": 155,
+      "score": 9060,
+      "bankedEncounters": 19,
+      "acceptedSwaps": 74,
+      "acceptedAbilities": 9,
+      "acceptedPotions": 0,
+      "acceptedBombs": 3,
+      "baseCharge": 87,
+      "masteryCharge": 14,
+      "overflow": 1,
+      "firstCardSeconds": 23.585,
+      "combatSeconds": 259.2928161621094,
+      "draftSeconds": 28.54720687866211,
+      "travelSeconds": 0.9569020867347717,
+      "playerDamage": 150,
+      "enemySpecials": 3,
+      "specialEnemies": [
+        "barricade_guard",
+        "shield_knight"
+      ],
+      "uniqueEnemies": [
+        "barricade_guard",
+        "barricade_villager",
+        "basket_villager",
+        "crossbow_guard",
+        "farmer",
+        "knight",
+        "miner",
+        "pan_villager",
+        "shield_knight",
+        "spear_guard",
+        "spear_knight"
+      ],
+      "recipes": [
+        "Village watch",
+        "Excavation lesson",
+        "Timber lesson",
+        "Local search",
+        "Village watch",
+        "Excavation lesson",
+        "Chain patrol",
+        "Guard fortification",
+        "Local search",
+        "Town boundary",
+        "Village watch",
+        "Chain patrol",
+        "Knight patrol",
+        "Knight advance",
+        "Guard fortification",
+        "Shield lesson",
+        "Knight elite",
+        "Knight advance",
+        "Knight patrol"
+      ],
+      "distinctRecipes": 11,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "chromatic_conductor",
+        "prototype_mana_spark",
+        "prototype_efficient_casting"
+      ],
+      "capstones": [
+        {
+          "id": "Knight elite",
+          "kind": 1,
+          "scheduledAfterDepth": 16,
+          "encounterDepth": 17
+        }
+      ],
+      "capstoneSeconds": [
+        18.65
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 74,
+        "meanAttentionFraction": 0.785,
+        "heuristicSuboptimalMoves": 21,
+        "heuristicGapTotal": 251.03,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 5,
+        "priorityNotChosen": 2,
+        "specialCreatesSelected": 14,
+        "specialUsesSelected": 17,
+        "visibleFollowupSelections": 0,
+        "smallRemainderCasts": 2,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 1,
+          "formation": "Village watch:pan_villager/Normal/1+farmer/Normal/1",
+          "completed": true,
+          "seconds": 6.921,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 155,
+          "damage": 0
+        },
+        {
+          "depth": 2,
+          "formation": "Excavation lesson:miner/Special/2+farmer/Normal/1",
+          "completed": true,
+          "seconds": 5.797,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 155,
+          "damage": 0
+        },
+        {
+          "depth": 3,
+          "formation": "Timber lesson:barricade_villager/Special/2+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 9.379,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 155,
+          "damage": 5
+        },
+        {
+          "depth": 4,
+          "formation": "Local search:farmer/Normal/1+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 10.729,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 145,
+          "damage": 10
+        },
+        {
+          "depth": 5,
+          "formation": "Village watch:pan_villager/Normal/1+farmer/Normal/1",
+          "completed": true,
+          "seconds": 8.198,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 145,
+          "healthAtBank": 145,
+          "damage": 5
+        },
+        {
+          "depth": 6,
+          "formation": "Excavation lesson:miner/Special/2+farmer/Normal/1",
+          "completed": true,
+          "seconds": 18.098,
+          "acceptedSwaps": 8,
+          "enemySpecials": [],
+          "healthAtFormation": 145,
+          "healthAtBank": 150,
+          "damage": 10
+        },
+        {
+          "depth": 7,
+          "formation": "Chain patrol:crossbow_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 16.896,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 155,
+          "damage": 10
+        },
+        {
+          "depth": 8,
+          "formation": "Guard fortification:barricade_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 22.702,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "barricade_guard",
+            "barricade_guard"
+          ],
+          "healthAtFormation": 155,
+          "healthAtBank": 150,
+          "damage": 10
+        },
+        {
+          "depth": 9,
+          "formation": "Local search:farmer/Normal/1+basket_villager/Normal/1",
+          "completed": true,
+          "seconds": 5.543,
+          "acceptedSwaps": 1,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 155,
+          "damage": 0
+        },
+        {
+          "depth": 10,
+          "formation": "Town boundary:spear_guard/Normal/1.5+pan_villager/Normal/1",
+          "completed": true,
+          "seconds": 13.993,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 150,
+          "damage": 10
+        },
+        {
+          "depth": 11,
+          "formation": "Village watch:pan_villager/Normal/1+farmer/Normal/1",
+          "completed": true,
+          "seconds": 10.979,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 145,
+          "damage": 5
+        },
+        {
+          "depth": 12,
+          "formation": "Chain patrol:crossbow_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 11.214,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 145,
+          "healthAtBank": 145,
+          "damage": 0
+        },
+        {
+          "depth": 13,
+          "formation": "Knight patrol:knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 12.781,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 145,
+          "healthAtBank": 150,
+          "damage": 15
+        },
+        {
+          "depth": 14,
+          "formation": "Knight advance:crossbow_guard/Special/2+knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 25.065,
+          "acceptedSwaps": 6,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 150,
+          "damage": 25
+        },
+        {
+          "depth": 15,
+          "formation": "Guard fortification:barricade_guard/Special/2+spear_guard/Normal/1.5",
+          "completed": true,
+          "seconds": 13.945,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 145,
+          "damage": 10
+        },
+        {
+          "depth": 16,
+          "formation": "Shield lesson:shield_knight/Special/2.5+knight/Normal/2",
+          "completed": true,
+          "seconds": 23.292,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "shield_knight"
+          ],
+          "healthAtFormation": 145,
+          "healthAtBank": 150,
+          "damage": 10
+        },
+        {
+          "depth": 17,
+          "formation": "Knight elite:shield_knight/Special/2.5+knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 18.65,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 155,
+          "damage": 15
+        },
+        {
+          "depth": 18,
+          "formation": "Knight advance:crossbow_guard/Special/2+knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 10.381,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 155,
+          "damage": 0
+        },
+        {
+          "depth": 19,
+          "formation": "Knight patrol:knight/Normal/2+spear_knight/Normal/2",
+          "completed": true,
+          "seconds": 14.178,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 155,
+          "damage": 10
+        }
+      ],
+      "deathCause": null,
+      "startTier": 0,
+      "endTier": 2
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p4-kobold_gunner-L10-333684335",
+      "seed": 333684335,
+      "character": "kobold_gunner",
+      "level": 10,
+      "policy": 4,
+      "zone": "ironvein-excavation",
+      "visit": 1,
+      "completed": true,
+      "wallSeconds": 410.021,
+      "outcome": "completed",
+      "startDepth": 20,
+      "endDepth": 36,
+      "health": 85,
+      "score": 18230,
+      "bankedEncounters": 17,
+      "acceptedSwaps": 102,
+      "acceptedAbilities": 15,
+      "acceptedPotions": 2,
+      "acceptedBombs": 0,
+      "baseCharge": 94,
+      "masteryCharge": 10,
+      "overflow": 4,
+      "firstCardSeconds": 51.594,
+      "combatSeconds": 377.7174377441406,
+      "draftSeconds": 23.3338623046875,
+      "travelSeconds": 2.1306228637695312,
+      "playerDamage": 580,
+      "enemySpecials": 15,
+      "specialEnemies": [
+        "bore_engineer",
+        "grand_delver",
+        "seismic_smith",
+        "stonewright"
+      ],
+      "uniqueEnemies": [
+        "bore_engineer",
+        "grand_delver",
+        "ore_hauler",
+        "pickaxe_delver",
+        "powder_sapper",
+        "rivet_gunner",
+        "seismic_smith",
+        "stonewright",
+        "vein_surveyor"
+      ],
+      "recipes": [
+        "Learn vein_surveyor",
+        "Learn seismic_smith",
+        "Patrol seismic_smith",
+        "Learn bore_engineer",
+        "Learn stonewright",
+        "Patrol stonewright",
+        "Patrol bore_engineer",
+        "Learn powder_sapper",
+        "Learn ore_hauler",
+        "Patrol stonewright",
+        "Learn vein_surveyor",
+        "Combined bore_engineer",
+        "Patrol seismic_smith",
+        "Learn powder_sapper",
+        "Learn bore_engineer",
+        "Combined bore_engineer",
+        "Capstone grand_delver"
+      ],
+      "distinctRecipes": 11,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "prepared_casting",
+        "prototype_mana_spark",
+        "bombsmith"
+      ],
+      "capstones": [
+        {
+          "id": "Capstone grand_delver",
+          "kind": 3,
+          "scheduledAfterDepth": 35,
+          "encounterDepth": 36
+        }
+      ],
+      "capstoneSeconds": [
+        64.569
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 102,
+        "meanAttentionFraction": 0.715,
+        "heuristicSuboptimalMoves": 34,
+        "heuristicGapTotal": 585.71,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 2,
+        "priorityNotChosen": 0,
+        "specialCreatesSelected": 18,
+        "specialUsesSelected": 19,
+        "visibleFollowupSelections": 7,
+        "smallRemainderCasts": 2,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 0,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 20,
+          "formation": "Learn vein_surveyor:vein_surveyor/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 9.416,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 155,
+          "healthAtBank": 150,
+          "damage": 5
+        },
+        {
+          "depth": 21,
+          "formation": "Learn seismic_smith:seismic_smith/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 15.713,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "seismic_smith"
+          ],
+          "healthAtFormation": 150,
+          "healthAtBank": 145,
+          "damage": 15
+        },
+        {
+          "depth": 22,
+          "formation": "Patrol seismic_smith:seismic_smith/Special/3+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 23.801,
+          "acceptedSwaps": 9,
+          "enemySpecials": [
+            "seismic_smith",
+            "seismic_smith"
+          ],
+          "healthAtFormation": 145,
+          "healthAtBank": 110,
+          "damage": 65
+        },
+        {
+          "depth": 23,
+          "formation": "Learn bore_engineer:bore_engineer/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 13.229,
+          "acceptedSwaps": 4,
+          "enemySpecials": [
+            "bore_engineer"
+          ],
+          "healthAtFormation": 110,
+          "healthAtBank": 85,
+          "damage": 25
+        },
+        {
+          "depth": 24,
+          "formation": "Learn stonewright:stonewright/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 33.156,
+          "acceptedSwaps": 12,
+          "enemySpecials": [
+            "stonewright",
+            "stonewright"
+          ],
+          "healthAtFormation": 85,
+          "healthAtBank": 120,
+          "damage": 30
+        },
+        {
+          "depth": 25,
+          "formation": "Patrol stonewright:stonewright/Special/2.5+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 18.897,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "stonewright"
+          ],
+          "healthAtFormation": 120,
+          "healthAtBank": 115,
+          "damage": 20
+        },
+        {
+          "depth": 26,
+          "formation": "Patrol bore_engineer:bore_engineer/Special/3+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 19.362,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 115,
+          "healthAtBank": 105,
+          "damage": 30
+        },
+        {
+          "depth": 27,
+          "formation": "Learn powder_sapper:powder_sapper/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 12.116,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 105,
+          "healthAtBank": 115,
+          "damage": 20
+        },
+        {
+          "depth": 28,
+          "formation": "Learn ore_hauler:ore_hauler/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 21.503,
+          "acceptedSwaps": 4,
+          "enemySpecials": [],
+          "healthAtFormation": 115,
+          "healthAtBank": 130,
+          "damage": 15
+        },
+        {
+          "depth": 29,
+          "formation": "Patrol stonewright:stonewright/Special/2.5+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 9.683,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 130,
+          "healthAtBank": 135,
+          "damage": 0
+        },
+        {
+          "depth": 30,
+          "formation": "Learn vein_surveyor:vein_surveyor/Special/2.5+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 17.62,
+          "acceptedSwaps": 5,
+          "enemySpecials": [],
+          "healthAtFormation": 135,
+          "healthAtBank": 125,
+          "damage": 25
+        },
+        {
+          "depth": 31,
+          "formation": "Combined bore_engineer:bore_engineer/Special/3+seismic_smith/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 33.602,
+          "acceptedSwaps": 9,
+          "enemySpecials": [
+            "bore_engineer",
+            "seismic_smith",
+            "seismic_smith"
+          ],
+          "healthAtFormation": 125,
+          "healthAtBank": 100,
+          "damage": 65
+        },
+        {
+          "depth": 32,
+          "formation": "Patrol seismic_smith:seismic_smith/Special/3+pickaxe_delver/Normal/1.5+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 20.689,
+          "acceptedSwaps": 6,
+          "enemySpecials": [
+            "seismic_smith"
+          ],
+          "healthAtFormation": 100,
+          "healthAtBank": 130,
+          "damage": 25
+        },
+        {
+          "depth": 33,
+          "formation": "Learn powder_sapper:powder_sapper/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 5.319,
+          "acceptedSwaps": 0,
+          "enemySpecials": [],
+          "healthAtFormation": 130,
+          "healthAtBank": 155,
+          "damage": 0
+        },
+        {
+          "depth": 34,
+          "formation": "Learn bore_engineer:bore_engineer/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 25.211,
+          "acceptedSwaps": 7,
+          "enemySpecials": [
+            "bore_engineer"
+          ],
+          "healthAtFormation": 155,
+          "healthAtBank": 150,
+          "damage": 30
+        },
+        {
+          "depth": 35,
+          "formation": "Combined bore_engineer:bore_engineer/Special/3+seismic_smith/Special/3+pickaxe_delver/Normal/1.5",
+          "completed": true,
+          "seconds": 33.76,
+          "acceptedSwaps": 8,
+          "enemySpecials": [],
+          "healthAtFormation": 150,
+          "healthAtBank": 115,
+          "damage": 65
+        },
+        {
+          "depth": 36,
+          "formation": "Capstone grand_delver:grand_delver/Boss/7+rivet_gunner/Normal/1.5",
+          "completed": true,
+          "seconds": 64.568,
+          "acceptedSwaps": 14,
+          "enemySpecials": [
+            "grand_delver",
+            "grand_delver",
+            "grand_delver"
+          ],
+          "healthAtFormation": 115,
+          "healthAtBank": 85,
+          "damage": 145
+        }
+      ],
+      "deathCause": null,
+      "startTier": 2,
+      "endTier": 3
+    },
+    {
+      "batch": "20261118-063014",
+      "label": "refine-deep-p4-kobold_gunner-L10-333684335",
+      "seed": 333684335,
+      "character": "kobold_gunner",
+      "level": 10,
+      "policy": 4,
+      "zone": "drowned-court",
+      "visit": 2,
+      "completed": false,
+      "wallSeconds": 112.078,
+      "outcome": "defeat",
+      "startDepth": 37,
+      "endDepth": 41,
+      "health": 0,
+      "score": 21025,
+      "bankedEncounters": 4,
+      "acceptedSwaps": 30,
+      "acceptedAbilities": 5,
+      "acceptedPotions": 1,
+      "acceptedBombs": 0,
+      "baseCharge": 24,
+      "masteryCharge": 3,
+      "overflow": 0,
+      "firstCardSeconds": 52.674,
+      "combatSeconds": 103.12263488769531,
+      "draftSeconds": 6.96482515335083,
+      "travelSeconds": 1.1766363382339478,
+      "playerDamage": 280,
+      "enemySpecials": 4,
+      "specialEnemies": [
+        "conch_marshal",
+        "puffer_sentinel"
+      ],
+      "uniqueEnemies": [
+        "conch_marshal",
+        "hammerhead_bruiser",
+        "moray_siphoner",
+        "puffer_sentinel",
+        "reef_spearman"
+      ],
+      "recipes": [
+        "Learn conch_marshal",
+        "Learn moray_siphoner",
+        "Learn puffer_sentinel",
+        "Patrol conch_marshal",
+        "Patrol puffer_sentinel"
+      ],
+      "distinctRecipes": 5,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "prototype_strong_remedy"
+      ],
+      "capstones": [],
+      "capstoneSeconds": [],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 4,
+      "lowAirResponses": 4,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "policyVersion": "attention-v2",
+      "diagnosticStart": false,
+      "decisionQuality": {
+        "sampledMoves": 30,
+        "meanAttentionFraction": 0.758,
+        "heuristicSuboptimalMoves": 11,
+        "heuristicGapTotal": 164.03,
+        "markedCounterOverlooked": 0,
+        "markedCounterNotChosen": 0,
+        "markedCounterSeenButNotChosen": 0,
+        "priorityOpportunities": 10,
+        "priorityNotChosen": 6,
+        "specialCreatesSelected": 7,
+        "specialUsesSelected": 9,
+        "visibleFollowupSelections": 0,
+        "smallRemainderCasts": 0,
+        "castsWithMarkedAnswerAvailable": 0,
+        "castsAtLowAir": 2,
+        "offPreferenceCards": 0
+      },
+      "encounterHistory": [
+        {
+          "depth": 37,
+          "formation": "Learn conch_marshal:conch_marshal/Special/2.5+reef_spearman/Normal/1.5",
+          "completed": true,
+          "seconds": 38.787,
+          "acceptedSwaps": 13,
+          "enemySpecials": [
+            "conch_marshal",
+            "conch_marshal"
+          ],
+          "healthAtFormation": 85,
+          "healthAtBank": 50,
+          "damage": 115
+        },
+        {
+          "depth": 38,
+          "formation": "Learn moray_siphoner:moray_siphoner/Special/2.5+reef_spearman/Normal/1.5",
+          "completed": true,
+          "seconds": 11.688,
+          "acceptedSwaps": 3,
+          "enemySpecials": [],
+          "healthAtFormation": 50,
+          "healthAtBank": 45,
+          "damage": 20
+        },
+        {
+          "depth": 39,
+          "formation": "Learn puffer_sentinel:puffer_sentinel/Special/2.5+reef_spearman/Normal/1.5",
+          "completed": true,
+          "seconds": 15.119,
+          "acceptedSwaps": 4,
+          "enemySpecials": [
+            "puffer_sentinel"
+          ],
+          "healthAtFormation": 45,
+          "healthAtBank": 90,
+          "damage": 30
+        },
+        {
+          "depth": 40,
+          "formation": "Patrol conch_marshal:conch_marshal/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+          "completed": true,
+          "seconds": 27.265,
+          "acceptedSwaps": 8,
+          "enemySpecials": [
+            "conch_marshal"
+          ],
+          "healthAtFormation": 90,
+          "healthAtBank": 40,
+          "damage": 70
+        },
+        {
+          "depth": 41,
+          "formation": "Patrol puffer_sentinel:puffer_sentinel/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+          "completed": false,
+          "seconds": null,
+          "acceptedSwaps": 2,
+          "enemySpecials": [],
+          "healthAtFormation": 40,
+          "healthAtBank": null,
+          "damage": 45
+        }
+      ],
+      "deathCause": "Last hit: Hammerhead Bruiser\n15 HP lost \u00b7 0 shield absorbed",
+      "startTier": 3,
+      "endTier": 3
+    }
+  ],
+  "distributions": [
+    {
+      "zone": "drowned-court",
+      "policy": "3",
+      "level": "10",
+      "timing": {
+        "n": 1,
+        "median": 400.74,
+        "p25": 400.74,
+        "p75": 400.74,
+        "minimum": 400.74,
+        "maximum": 400.74
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 56.208,
+        "p25": 56.208,
+        "p75": 56.208,
+        "minimum": 56.208,
+        "maximum": 56.208
+      },
+      "encounters": {
+        "n": 1,
+        "median": 15,
+        "p25": 15.0,
+        "p75": 15.0,
+        "minimum": 15,
+        "maximum": 15
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 79,
+        "p25": 79.0,
+        "p75": 79.0,
+        "minimum": 79,
+        "maximum": 79
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "bardley"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "drowned-court",
+      "policy": "all",
+      "level": "all",
+      "timing": {
+        "n": 1,
+        "median": 400.74,
+        "p25": 400.74,
+        "p75": 400.74,
+        "minimum": 400.74,
+        "maximum": 400.74
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 56.208,
+        "p25": 56.208,
+        "p75": 56.208,
+        "minimum": 56.208,
+        "maximum": 56.208
+      },
+      "encounters": {
+        "n": 1,
+        "median": 15,
+        "p25": 15.0,
+        "p75": 15.0,
+        "minimum": 15,
+        "maximum": 15
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 79,
+        "p25": 79.0,
+        "p75": 79.0,
+        "minimum": 79,
+        "maximum": 79
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "bardley"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "dungeon",
+      "policy": "1",
+      "level": "10",
+      "timing": {
+        "n": 2,
+        "median": 481.468,
+        "p25": 381.007,
+        "p75": 581.928,
+        "minimum": 280.547,
+        "maximum": 682.388
+      },
+      "firstCard": {
+        "n": 2,
+        "median": 36.996,
+        "p25": 29.96,
+        "p75": 44.032,
+        "minimum": 22.924,
+        "maximum": 51.068
+      },
+      "encounters": {
+        "n": 2,
+        "median": 18.0,
+        "p25": 18.0,
+        "p75": 18.0,
+        "minimum": 18,
+        "maximum": 18
+      },
+      "manualSwaps": {
+        "n": 2,
+        "median": 115.0,
+        "p25": 95.5,
+        "p75": 134.5,
+        "minimum": 76,
+        "maximum": 154
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "dungeon_attender"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "dungeon",
+      "policy": "2",
+      "level": "10",
+      "timing": {
+        "n": 1,
+        "median": 181.326,
+        "p25": 181.326,
+        "p75": 181.326,
+        "minimum": 181.326,
+        "maximum": 181.326
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 18.426,
+        "p25": 18.426,
+        "p75": 18.426,
+        "minimum": 18.426,
+        "maximum": 18.426
+      },
+      "encounters": {
+        "n": 1,
+        "median": 18,
+        "p25": 18.0,
+        "p75": 18.0,
+        "minimum": 18,
+        "maximum": 18
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 55,
+        "p25": 55.0,
+        "p75": 55.0,
+        "minimum": 55,
+        "maximum": 55
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "skeleton"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "dungeon",
+      "policy": "3",
+      "level": "10",
+      "timing": {
+        "n": 1,
+        "median": 308.695,
+        "p25": 308.695,
+        "p75": 308.695,
+        "minimum": 308.695,
+        "maximum": 308.695
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 21.94,
+        "p25": 21.94,
+        "p75": 21.94,
+        "minimum": 21.94,
+        "maximum": 21.94
+      },
+      "encounters": {
+        "n": 1,
+        "median": 19,
+        "p25": 19.0,
+        "p75": 19.0,
+        "minimum": 19,
+        "maximum": 19
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 64,
+        "p25": 64.0,
+        "p75": 64.0,
+        "minimum": 64,
+        "maximum": 64
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "bardley"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "dungeon",
+      "policy": "4",
+      "level": "10",
+      "timing": {
+        "n": 1,
+        "median": 296.924,
+        "p25": 296.924,
+        "p75": 296.924,
+        "minimum": 296.924,
+        "maximum": 296.924
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 23.585,
+        "p25": 23.585,
+        "p75": 23.585,
+        "minimum": 23.585,
+        "maximum": 23.585
+      },
+      "encounters": {
+        "n": 1,
+        "median": 19,
+        "p25": 19.0,
+        "p75": 19.0,
+        "minimum": 19,
+        "maximum": 19
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 74,
+        "p25": 74.0,
+        "p75": 74.0,
+        "minimum": 74,
+        "maximum": 74
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "kobold_gunner"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "dungeon",
+      "policy": "all",
+      "level": "all",
+      "timing": {
+        "n": 5,
+        "median": 296.924,
+        "p25": 280.547,
+        "p75": 308.695,
+        "minimum": 181.326,
+        "maximum": 682.388
+      },
+      "firstCard": {
+        "n": 5,
+        "median": 22.924,
+        "p25": 21.94,
+        "p75": 23.585,
+        "minimum": 18.426,
+        "maximum": 51.068
+      },
+      "encounters": {
+        "n": 5,
+        "median": 18,
+        "p25": 18.0,
+        "p75": 19.0,
+        "minimum": 18,
+        "maximum": 19
+      },
+      "manualSwaps": {
+        "n": 5,
+        "median": 74,
+        "p25": 64.0,
+        "p75": 76.0,
+        "minimum": 55,
+        "maximum": 154
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "bardley",
+        "dungeon_attender",
+        "kobold_gunner",
+        "skeleton"
+      ],
+      "independentSeeds": 4
+    },
+    {
+      "zone": "frostwake-peaks",
+      "policy": "1",
+      "level": "10",
+      "timing": {
+        "n": 1,
+        "median": 319.759,
+        "p25": 319.759,
+        "p75": 319.759,
+        "minimum": 319.759,
+        "maximum": 319.759
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 39.161,
+        "p25": 39.161,
+        "p75": 39.161,
+        "minimum": 39.161,
+        "maximum": 39.161
+      },
+      "encounters": {
+        "n": 1,
+        "median": 19,
+        "p25": 19.0,
+        "p75": 19.0,
+        "minimum": 19,
+        "maximum": 19
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 75,
+        "p25": 75.0,
+        "p75": 75.0,
+        "minimum": 75,
+        "maximum": 75
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "dungeon_attender"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "frostwake-peaks",
+      "policy": "2",
+      "level": "10",
+      "timing": {
+        "n": 1,
+        "median": 251.901,
+        "p25": 251.901,
+        "p75": 251.901,
+        "minimum": 251.901,
+        "maximum": 251.901
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 39.486,
+        "p25": 39.486,
+        "p75": 39.486,
+        "minimum": 39.486,
+        "maximum": 39.486
+      },
+      "encounters": {
+        "n": 1,
+        "median": 17,
+        "p25": 17.0,
+        "p75": 17.0,
+        "minimum": 17,
+        "maximum": 17
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 83,
+        "p25": 83.0,
+        "p75": 83.0,
+        "minimum": 83,
+        "maximum": 83
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "skeleton"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "frostwake-peaks",
+      "policy": "3",
+      "level": "10",
+      "timing": {
+        "n": 1,
+        "median": 417.852,
+        "p25": 417.852,
+        "p75": 417.852,
+        "minimum": 417.852,
+        "maximum": 417.852
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 44.172,
+        "p25": 44.172,
+        "p75": 44.172,
+        "minimum": 44.172,
+        "maximum": 44.172
+      },
+      "encounters": {
+        "n": 1,
+        "median": 18,
+        "p25": 18.0,
+        "p75": 18.0,
+        "minimum": 18,
+        "maximum": 18
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 73,
+        "p25": 73.0,
+        "p75": 73.0,
+        "minimum": 73,
+        "maximum": 73
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "bardley"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "frostwake-peaks",
+      "policy": "all",
+      "level": "all",
+      "timing": {
+        "n": 3,
+        "median": 319.759,
+        "p25": 285.83,
+        "p75": 368.805,
+        "minimum": 251.901,
+        "maximum": 417.852
+      },
+      "firstCard": {
+        "n": 3,
+        "median": 39.486,
+        "p25": 39.323,
+        "p75": 41.829,
+        "minimum": 39.161,
+        "maximum": 44.172
+      },
+      "encounters": {
+        "n": 3,
+        "median": 18,
+        "p25": 17.5,
+        "p75": 18.5,
+        "minimum": 17,
+        "maximum": 19
+      },
+      "manualSwaps": {
+        "n": 3,
+        "median": 75,
+        "p25": 74.0,
+        "p75": 79.0,
+        "minimum": 73,
+        "maximum": 83
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "bardley",
+        "dungeon_attender",
+        "skeleton"
+      ],
+      "independentSeeds": 3
+    },
+    {
+      "zone": "ironvein-excavation",
+      "policy": "2",
+      "level": "10",
+      "timing": {
+        "n": 1,
+        "median": 223.044,
+        "p25": 223.044,
+        "p75": 223.044,
+        "minimum": 223.044,
+        "maximum": 223.044
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 29.138,
+        "p25": 29.138,
+        "p75": 29.138,
+        "minimum": 29.138,
+        "maximum": 29.138
+      },
+      "encounters": {
+        "n": 1,
+        "median": 17,
+        "p25": 17.0,
+        "p75": 17.0,
+        "minimum": 17,
+        "maximum": 17
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 70,
+        "p25": 70.0,
+        "p75": 70.0,
+        "minimum": 70,
+        "maximum": 70
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "skeleton"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "ironvein-excavation",
+      "policy": "3",
+      "level": "10",
+      "timing": {
+        "n": 1,
+        "median": 476.834,
+        "p25": 476.834,
+        "p75": 476.834,
+        "minimum": 476.834,
+        "maximum": 476.834
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 39.787,
+        "p25": 39.787,
+        "p75": 39.787,
+        "minimum": 39.787,
+        "maximum": 39.787
+      },
+      "encounters": {
+        "n": 1,
+        "median": 18,
+        "p25": 18.0,
+        "p75": 18.0,
+        "minimum": 18,
+        "maximum": 18
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 81,
+        "p25": 81.0,
+        "p75": 81.0,
+        "minimum": 81,
+        "maximum": 81
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "bardley"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "ironvein-excavation",
+      "policy": "4",
+      "level": "10",
+      "timing": {
+        "n": 1,
+        "median": 410.021,
+        "p25": 410.021,
+        "p75": 410.021,
+        "minimum": 410.021,
+        "maximum": 410.021
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 51.594,
+        "p25": 51.594,
+        "p75": 51.594,
+        "minimum": 51.594,
+        "maximum": 51.594
+      },
+      "encounters": {
+        "n": 1,
+        "median": 17,
+        "p25": 17.0,
+        "p75": 17.0,
+        "minimum": 17,
+        "maximum": 17
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 102,
+        "p25": 102.0,
+        "p75": 102.0,
+        "minimum": 102,
+        "maximum": 102
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "kobold_gunner"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "ironvein-excavation",
+      "policy": "all",
+      "level": "all",
+      "timing": {
+        "n": 3,
+        "median": 410.021,
+        "p25": 316.533,
+        "p75": 443.428,
+        "minimum": 223.044,
+        "maximum": 476.834
+      },
+      "firstCard": {
+        "n": 3,
+        "median": 39.787,
+        "p25": 34.462,
+        "p75": 45.691,
+        "minimum": 29.138,
+        "maximum": 51.594
+      },
+      "encounters": {
+        "n": 3,
+        "median": 17,
+        "p25": 17.0,
+        "p75": 17.5,
+        "minimum": 17,
+        "maximum": 18
+      },
+      "manualSwaps": {
+        "n": 3,
+        "median": 81,
+        "p25": 75.5,
+        "p75": 91.5,
+        "minimum": 70,
+        "maximum": 102
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "bardley",
+        "kobold_gunner",
+        "skeleton"
+      ],
+      "independentSeeds": 3
+    },
+    {
+      "zone": "magical-forest",
+      "policy": "2",
+      "level": "10",
+      "timing": {
+        "n": 1,
+        "median": 202.378,
+        "p25": 202.378,
+        "p75": 202.378,
+        "minimum": 202.378,
+        "maximum": 202.378
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 22.243,
+        "p25": 22.243,
+        "p75": 22.243,
+        "minimum": 22.243,
+        "maximum": 22.243
+      },
+      "encounters": {
+        "n": 1,
+        "median": 17,
+        "p25": 17.0,
+        "p75": 17.0,
+        "minimum": 17,
+        "maximum": 17
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 62,
+        "p25": 62.0,
+        "p75": 62.0,
+        "minimum": 62,
+        "maximum": 62
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "skeleton"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "magical-forest",
+      "policy": "all",
+      "level": "all",
+      "timing": {
+        "n": 1,
+        "median": 202.378,
+        "p25": 202.378,
+        "p75": 202.378,
+        "minimum": 202.378,
+        "maximum": 202.378
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 22.243,
+        "p25": 22.243,
+        "p75": 22.243,
+        "minimum": 22.243,
+        "maximum": 22.243
+      },
+      "encounters": {
+        "n": 1,
+        "median": 17,
+        "p25": 17.0,
+        "p75": 17.0,
+        "minimum": 17,
+        "maximum": 17
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 62,
+        "p25": 62.0,
+        "p75": 62.0,
+        "minimum": 62,
+        "maximum": 62
+      },
+      "levels": [
+        10
+      ],
+      "characters": [
+        "skeleton"
+      ],
+      "independentSeeds": 1
+    }
+  ],
+  "depthDistributions": [
+    {
+      "zone": "drowned-court",
+      "policy": 3,
+      "level": 10,
+      "startTier": 2,
+      "timing": {
+        "n": 1,
+        "median": 400.74,
+        "p25": 400.74,
+        "p75": 400.74,
+        "minimum": 400.74,
+        "maximum": 400.74
+      }
+    },
+    {
+      "zone": "dungeon",
+      "policy": 1,
+      "level": 10,
+      "startTier": 0,
+      "timing": {
+        "n": 1,
+        "median": 280.547,
+        "p25": 280.547,
+        "p75": 280.547,
+        "minimum": 280.547,
+        "maximum": 280.547
+      }
+    },
+    {
+      "zone": "dungeon",
+      "policy": 1,
+      "level": 10,
+      "startTier": 3,
+      "timing": {
+        "n": 1,
+        "median": 682.388,
+        "p25": 682.388,
+        "p75": 682.388,
+        "minimum": 682.388,
+        "maximum": 682.388
+      }
+    },
+    {
+      "zone": "dungeon",
+      "policy": 2,
+      "level": 10,
+      "startTier": 0,
+      "timing": {
+        "n": 1,
+        "median": 181.326,
+        "p25": 181.326,
+        "p75": 181.326,
+        "minimum": 181.326,
+        "maximum": 181.326
+      }
+    },
+    {
+      "zone": "dungeon",
+      "policy": 3,
+      "level": 10,
+      "startTier": 0,
+      "timing": {
+        "n": 1,
+        "median": 308.695,
+        "p25": 308.695,
+        "p75": 308.695,
+        "minimum": 308.695,
+        "maximum": 308.695
+      }
+    },
+    {
+      "zone": "dungeon",
+      "policy": 4,
+      "level": 10,
+      "startTier": 0,
+      "timing": {
+        "n": 1,
+        "median": 296.924,
+        "p25": 296.924,
+        "p75": 296.924,
+        "minimum": 296.924,
+        "maximum": 296.924
+      }
+    },
+    {
+      "zone": "frostwake-peaks",
+      "policy": 1,
+      "level": 10,
+      "startTier": 2,
+      "timing": {
+        "n": 1,
+        "median": 319.759,
+        "p25": 319.759,
+        "p75": 319.759,
+        "minimum": 319.759,
+        "maximum": 319.759
+      }
+    },
+    {
+      "zone": "frostwake-peaks",
+      "policy": 2,
+      "level": 10,
+      "startTier": 3,
+      "timing": {
+        "n": 1,
+        "median": 251.901,
+        "p25": 251.901,
+        "p75": 251.901,
+        "minimum": 251.901,
+        "maximum": 251.901
+      }
+    },
+    {
+      "zone": "frostwake-peaks",
+      "policy": 3,
+      "level": 10,
+      "startTier": 3,
+      "timing": {
+        "n": 1,
+        "median": 417.852,
+        "p25": 417.852,
+        "p75": 417.852,
+        "minimum": 417.852,
+        "maximum": 417.852
+      }
+    },
+    {
+      "zone": "ironvein-excavation",
+      "policy": 2,
+      "level": 10,
+      "startTier": 4,
+      "timing": {
+        "n": 1,
+        "median": 223.044,
+        "p25": 223.044,
+        "p75": 223.044,
+        "minimum": 223.044,
+        "maximum": 223.044
+      }
+    },
+    {
+      "zone": "ironvein-excavation",
+      "policy": 3,
+      "level": 10,
+      "startTier": 4,
+      "timing": {
+        "n": 1,
+        "median": 476.834,
+        "p25": 476.834,
+        "p75": 476.834,
+        "minimum": 476.834,
+        "maximum": 476.834
+      }
+    },
+    {
+      "zone": "ironvein-excavation",
+      "policy": 4,
+      "level": 10,
+      "startTier": 2,
+      "timing": {
+        "n": 1,
+        "median": 410.021,
+        "p25": 410.021,
+        "p75": 410.021,
+        "minimum": 410.021,
+        "maximum": 410.021
+      }
+    },
+    {
+      "zone": "magical-forest",
+      "policy": 2,
+      "level": 10,
+      "startTier": 2,
+      "timing": {
+        "n": 1,
+        "median": 202.378,
+        "p25": 202.378,
+        "p75": 202.378,
+        "minimum": 202.378,
+        "maximum": 202.378
+      }
+    }
+  ],
+  "coverage": {
+    "dungeon": {
+      "completed": 5,
+      "defeats": 1,
+      "censored": 0,
+      "seeds": [
+        333684335,
+        1012792767,
+        1076357966,
+        1339892460
+      ],
+      "policies": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "tiers": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "naturalRevisits": 1
+    },
+    "frostwake-peaks": {
+      "completed": 3,
+      "defeats": 1,
+      "censored": 0,
+      "seeds": [
+        1012792767,
+        1076357966,
+        1339892460
+      ],
+      "policies": [
+        1,
+        2,
+        3
+      ],
+      "tiers": [
+        2,
+        3,
+        4
+      ],
+      "naturalRevisits": 0
+    },
+    "magical-forest": {
+      "completed": 1,
+      "defeats": 1,
+      "censored": 0,
+      "seeds": [
+        1076357966
+      ],
+      "policies": [
+        2
+      ],
+      "tiers": [
+        2,
+        3
+      ],
+      "naturalRevisits": 0
+    },
+    "ironvein-excavation": {
+      "completed": 3,
+      "defeats": 0,
+      "censored": 0,
+      "seeds": [
+        333684335,
+        1012792767,
+        1076357966
+      ],
+      "policies": [
+        2,
+        3,
+        4
+      ],
+      "tiers": [
+        2,
+        3,
+        4
+      ],
+      "naturalRevisits": 0
+    },
+    "drowned-court": {
+      "completed": 1,
+      "defeats": 1,
+      "censored": 0,
+      "seeds": [
+        1012792767
+      ],
+      "policies": [
+        3
+      ],
+      "tiers": [
+        2,
+        3
+      ],
+      "naturalRevisits": 0
+    }
+  },
+  "limitations": [
+    "Actual Unity Game-scene legal-input proxy, not human enjoyment approval.",
+    "Completed wall time includes thinking, card reading and travel; incomplete visits are excluded from timing distributions.",
+    "First-card interval is measured from first observation of that visit; incoming reveal may overlap it.",
+    "Enemy telegraph response counters cover visible marked-gem responses; they do not certify every attack as fair.",
+    "Accepted swaps, abilities and consumables are separate; card picks do not consume a combat action.",
+    "Warning-without-immediate-marked-match counts include environmental/cell warnings and alternative counters; they are not proof of unavoidable damage.",
+    "Different levels/characters must be separated before interpreting skill effects.",
+    "Policy-v2 suboptimal/priority/cast flags are visible heuristic diagnostics, not proof of a tactical mistake; specials or killing a caster can answer threats indirectly.",
+    "Policy-v2 attention does not model touch error, memory, reading comprehension or human enjoyment. The skilled policy sees all visible legal responses, never hidden refill or future offers.",
+    "Fresh-run IDs and capstone seeds are captured in initial-account/native journals. The named seed initializes board and encounter streams; matching named seeds alone does not prove identical whole runs."
+  ]
+}

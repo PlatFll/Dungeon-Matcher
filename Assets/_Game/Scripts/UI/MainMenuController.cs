@@ -36,8 +36,6 @@ public sealed class MainMenuController : MonoBehaviour
     private TMP_Text accountLabel;
     private RectTransform challengePanel;
     private Button endSavedRun;
-    private RectTransform zonePicker;
-    private GameObject zonePickerOrigin;
     private MainMenuArtwork menuArtwork;
 
     private void Start()
@@ -148,7 +146,7 @@ public sealed class MainMenuController : MonoBehaviour
 
     public void PlayGame()
     {
-        if (isLoadingGame || zonePicker != null)
+        if (isLoadingGame)
         {
             return;
         }
@@ -178,53 +176,9 @@ public sealed class MainMenuController : MonoBehaviour
             return;
         }
 
-        RunLaunchOptions.StartingZone = null;
-        if (RunLaunchOptions.TestingZonePickerEnabled &&
-            (RunLaunchOptions.Practice || AccountProgression.Current.ActiveRun == null))
-        {
-            ShowZonePicker();
-            return;
-        }
+        RunLaunchOptions.ClearDevelopmentLaunch();
 
         LoadGame();
-    }
-
-    private void ShowZonePicker()
-    {
-        var zones = Resources.LoadAll<ZoneDefinition>("Zones")
-            .Where(ZoneTravelController.TestingReady)
-            .OrderBy(zone => zone.zoneId == "dungeon" ? 0 : 1)
-            .ThenBy(zone => zone.displayName).ToArray();
-        if (zones.Length == 0) { LoadGame(); return; }
-
-        zonePickerOrigin = characterSelectScreen != null && characterSelectScreen.gameObject.activeSelf
-            ? characterSelectScreen.gameObject
-            : challengePanel != null && challengePanel.gameObject.activeSelf ? challengePanel.gameObject : homeScreen;
-        zonePickerOrigin.SetActive(false);
-        float height = 260 + zones.Length * 80;
-        zonePicker = GameUi.Panel("TestingZonePicker", homeScreen.transform.parent, new Vector2(440, height));
-        GameUi.Label("Title", zonePicker, "Choose starting zone", new Vector2(390, 60), new Vector2(0, height / 2 - 48), 28);
-        GameUi.Label("TestingNote", zonePicker, "Temporary testing option", new Vector2(390, 40), new Vector2(0, height / 2 - 96), 18);
-        for (int i = 0; i < zones.Length; i++)
-        {
-            var zone = zones[i];
-            GameUi.Button("StartZone_" + zone.zoneId, zonePicker, zone.displayName,
-                new Vector2(360, 64), new Vector2(0, height / 2 - 168 - i * 80), () =>
-                {
-                    if (isLoadingGame || !ZoneTravelController.TestingReady(zone)) return;
-                    RunLaunchOptions.StartingZone = zone.zoneId;
-                    LoadGame();
-                });
-        }
-        GameUi.Button("Back", zonePicker, "Back", new Vector2(280, 48), new Vector2(0, -height / 2 + 48), () =>
-        {
-            RunLaunchOptions.StartingZone = null;
-            RunLaunchOptions.Practice = false;
-            RunLaunchOptions.Challenge = RunChallenge.Standard;
-            Destroy(zonePicker.gameObject);
-            zonePicker = null;
-            if (zonePickerOrigin != null) zonePickerOrigin.SetActive(true);
-        });
     }
 
     private void LoadGame()

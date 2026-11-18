@@ -1,0 +1,57 @@
+{
+  "batch": ".utmp\\CrystalResonance\\Playtest\\20261117-084917",
+  "kind": "offline recorded-evidence audit; NOT replay execution",
+  "finishedCases": 4,
+  "incompleteCases": [],
+  "failures": [],
+  "cases": [
+    {
+      "case": "final-aggressive-court-L5-90347",
+      "nativeBoundaries": 89,
+      "nativeActions": {
+        "swap": 71,
+        "ability": 10,
+        "card": 3,
+        "bomb": 3,
+        "potion": 2
+      },
+      "journalSha256": "6e5b6847054536e4b0f7e73ac2326239a15e1f86b8f2e4224c556bd9625b94e8",
+      "failures": []
+    },
+    {
+      "case": "final-new-typical-forest-L1-71876",
+      "nativeBoundaries": 86,
+      "nativeActions": {
+        "swap": 77,
+        "card": 3,
+        "ability": 6
+      },
+      "journalSha256": "1f2ef2704196957f5b6da8c5fbca678b0cc84541b31b2fccf1816e5c532de57f",
+      "failures": []
+    },
+    {
+      "case": "final-novice-court-L1-71875",
+      "nativeBoundaries": 77,
+      "nativeActions": {
+        "swap": 69,
+        "card": 2,
+        "ability": 3,
+        "potion": 3
+      },
+      "journalSha256": "6dfb4f70742dbe9ca1e5e5dca05417656c016f625f99e7fa8d6e1459325fcf05",
+      "failures": []
+    },
+    {
+      "case": "final-typical-court-L5-8303",
+      "nativeBoundaries": 93,
+      "nativeActions": {
+        "swap": 83,
+        "card": 3,
+        "ability": 4,
+        "potion": 3
+      },
+      "journalSha256": "81d05a71ab0b7186d6fdd8b9fab34078ad0490249857a76a474b992e550bd44e",
+      "failures": []
+    }
+  ]
+}

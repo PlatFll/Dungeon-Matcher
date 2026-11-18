@@ -268,6 +268,7 @@ public partial class BoardController
 
     private void NotifyValidPlayerMoveCompleted()
     {
+        progressionManualAction = false; deliberateSpecials.Clear();
         completedValidPlayerMoves++;
         ValidPlayerMoveCompleted?.Invoke(completedValidPlayerMoves);
     }

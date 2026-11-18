@@ -1,0 +1,163 @@
+{
+  "batch": ".utmp\\CrystalResonance\\Playtest\\20261117-073354",
+  "kind": "offline recorded-evidence audit; NOT replay execution",
+  "finishedCases": 13,
+  "incompleteCases": [],
+  "failures": [],
+  "cases": [
+    {
+      "case": "charge45-defensive-forest-L5-9402",
+      "nativeBoundaries": 116,
+      "nativeActions": {
+        "swap": 99,
+        "ability": 12,
+        "card": 3,
+        "potion": 2
+      },
+      "journalSha256": "6713c1f7076937eceb118e404207d99b9e963518a3497dd51c1338889ce96ca3",
+      "failures": []
+    },
+    {
+      "case": "charge45-matched-novice-L1-8201",
+      "nativeBoundaries": 118,
+      "nativeActions": {
+        "swap": 109,
+        "card": 3,
+        "ability": 5,
+        "potion": 1
+      },
+      "journalSha256": "74ea316230e214fbe802ca292ce82a24e964681f435d36168b85ccc5787a59f1",
+      "failures": []
+    },
+    {
+      "case": "charge45-matched-skilled-L1-8201",
+      "nativeBoundaries": 99,
+      "nativeActions": {
+        "swap": 89,
+        "card": 3,
+        "ability": 6,
+        "potion": 1
+      },
+      "journalSha256": "7af7ef53f68e70654fab3b232164002010a5a824132526ee7b9204a167bd926d",
+      "failures": []
+    },
+    {
+      "case": "charge45-new-novice-court-L1-71875",
+      "nativeBoundaries": 72,
+      "nativeActions": {
+        "swap": 65,
+        "ability": 2,
+        "card": 2,
+        "potion": 3
+      },
+      "journalSha256": "95d7886c1c35229972b467f4694f50b658e1614ecbc735697d86e560a6f1540d",
+      "failures": []
+    },
+    {
+      "case": "charge45-new-typical-court-L1-71874",
+      "nativeBoundaries": 95,
+      "nativeActions": {
+        "swap": 84,
+        "ability": 5,
+        "card": 3,
+        "potion": 3
+      },
+      "journalSha256": "76b2e56ef3b8f3109d642395ccc99b16dd91c4b4d9ec5b7a66e0a59b4ea86276",
+      "failures": []
+    },
+    {
+      "case": "charge45-new-typical-dungeon-L1-71872",
+      "nativeBoundaries": 72,
+      "nativeActions": {
+        "swap": 65,
+        "ability": 4,
+        "card": 3
+      },
+      "journalSha256": "d5afad4fdea06213e7da1f32afa1364dc6c2e00e326c2dc9253f6737f5c90b51",
+      "failures": []
+    },
+    {
+      "case": "charge45-new-typical-frost-L1-71873",
+      "nativeBoundaries": 78,
+      "nativeActions": {
+        "swap": 70,
+        "ability": 5,
+        "card": 3
+      },
+      "journalSha256": "72eba27f46c8c576669f55184a20296bc790f85e38d2b7769cb697e8efa74663",
+      "failures": []
+    },
+    {
+      "case": "charge45-typical-court-L5-8303",
+      "nativeBoundaries": 106,
+      "nativeActions": {
+        "swap": 96,
+        "card": 3,
+        "ability": 4,
+        "potion": 3
+      },
+      "journalSha256": "ceec3ba568b3bbb0f1cf4ead3f663e2f3fa6d0e82b1169296026c5783f39c079",
+      "failures": []
+    },
+    {
+      "case": "charge45-typical-drowned-court-L1-9203",
+      "nativeBoundaries": 91,
+      "nativeActions": {
+        "swap": 81,
+        "potion": 3,
+        "ability": 4,
+        "card": 3
+      },
+      "journalSha256": "d3701bfe88931f0e534b160a039522b5c875a8efcc776f7ae20079a980c7a04a",
+      "failures": []
+    },
+    {
+      "case": "charge45-typical-dungeon-L1-9201",
+      "nativeBoundaries": 114,
+      "nativeActions": {
+        "swap": 102,
+        "ability": 6,
+        "card": 3,
+        "potion": 3
+      },
+      "journalSha256": "833cec3d11bc1aff535ad4774f199e1036989ae61ffa4a93ff71833db04fd651",
+      "failures": []
+    },
+    {
+      "case": "charge45-typical-frostwake-peaks-L1-9205",
+      "nativeBoundaries": 112,
+      "nativeActions": {
+        "swap": 101,
+        "card": 3,
+        "ability": 5,
+        "potion": 3
+      },
+      "journalSha256": "dbedca1d98de68f6025c87db0ea3e1eeacf8732276c2b2a913a6f842053186bb",
+      "failures": []
+    },
+    {
+      "case": "charge45-typical-ironvein-excavation-L1-9204",
+      "nativeBoundaries": 103,
+      "nativeActions": {
+        "swap": 91,
+        "card": 3,
+        "ability": 6,
+        "potion": 3
+      },
+      "journalSha256": "83632d8ba189b47ebff7935d24faa44aba36ab4188386da9fe1efedb57d70877",
+      "failures": []
+    },
+    {
+      "case": "charge45-typical-magical-forest-L1-9202",
+      "nativeBoundaries": 73,
+      "nativeActions": {
+        "swap": 64,
+        "ability": 5,
+        "card": 3,
+        "potion": 1
+      },
+      "journalSha256": "ba85be52b9d0faa297519f30dfd64fb6218478485c9b506d529754f1af55af9d",
+      "failures": []
+    }
+  ]
+}

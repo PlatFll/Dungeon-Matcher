@@ -1,0 +1,138 @@
+{
+  "method": "First visits matched by exact zone/seed/character/level/policy; deaths separate; only completed pairs receive a duration delta.",
+  "baselineSummaries": [
+    ".utmp\\CrystalResonance\\Analysis\\20261117-030133\\summary.json",
+    ".utmp\\CrystalResonance\\Analysis\\20261117-062332\\summary.json",
+    ".utmp\\CrystalResonance\\Analysis\\20261117-073354\\summary.json"
+  ],
+  "candidateSummary": ".utmp\\CrystalResonance\\Analysis\\20261117-084917\\summary.json",
+  "cases": [
+    {
+      "label": "final-aggressive-court-L5-90347",
+      "zone": "drowned-court",
+      "seed": 90347,
+      "character": "kobold_gunner",
+      "level": 5,
+      "policy": 4,
+      "baselineBatch": "20261117-062332",
+      "candidateBatch": "20261117-084917",
+      "baselineOutcome": "completed",
+      "candidateOutcome": "completed",
+      "baselineSeconds": 272.542,
+      "candidateSeconds": 272.858,
+      "completedTimeDelta": 0.316,
+      "baselineEncounters": 15,
+      "candidateEncounters": 15,
+      "baselineFirstCard": 28.683,
+      "candidateFirstCard": 28.755,
+      "baselineHealth": 115,
+      "candidateHealth": 115,
+      "baselineCapstones": [
+        {
+          "id": "Elite reef_netweaver",
+          "kind": 1,
+          "scheduledAfterDepth": 13,
+          "encounterDepth": 14
+        }
+      ],
+      "candidateCapstones": [
+        {
+          "id": "Elite reef_netweaver",
+          "kind": 1,
+          "scheduledAfterDepth": 13,
+          "encounterDepth": 14
+        }
+      ]
+    },
+    {
+      "label": "final-new-typical-forest-L1-71876",
+      "zone": "magical-forest",
+      "seed": 71876,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "baselineBatch": null,
+      "candidateBatch": "20261117-084917",
+      "baselineOutcome": "new seed/profile",
+      "candidateOutcome": "completed",
+      "baselineSeconds": null,
+      "candidateSeconds": 269.114,
+      "completedTimeDelta": null,
+      "baselineEncounters": null,
+      "candidateEncounters": 18,
+      "baselineFirstCard": null,
+      "candidateFirstCard": 23.913,
+      "baselineHealth": null,
+      "candidateHealth": 60,
+      "baselineCapstones": [],
+      "candidateCapstones": [
+        {
+          "id": "Guardian ancient_treant",
+          "kind": 2,
+          "scheduledAfterDepth": 15,
+          "encounterDepth": 16
+        }
+      ]
+    },
+    {
+      "label": "final-novice-court-L1-71875",
+      "zone": "drowned-court",
+      "seed": 71875,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 0,
+      "baselineBatch": "20261117-073354",
+      "candidateBatch": "20261117-084917",
+      "baselineOutcome": "defeat",
+      "candidateOutcome": "defeat",
+      "baselineSeconds": 241.682,
+      "candidateSeconds": 261.833,
+      "completedTimeDelta": null,
+      "baselineEncounters": 8,
+      "candidateEncounters": 10,
+      "baselineFirstCard": 67.803,
+      "candidateFirstCard": 56.049,
+      "baselineHealth": 0,
+      "candidateHealth": 0,
+      "baselineCapstones": [],
+      "candidateCapstones": []
+    },
+    {
+      "label": "final-typical-court-L5-8303",
+      "zone": "drowned-court",
+      "seed": 8303,
+      "character": "skeleton",
+      "level": 5,
+      "policy": 1,
+      "baselineBatch": "20261117-073354",
+      "candidateBatch": "20261117-084917",
+      "baselineOutcome": "defeat",
+      "candidateOutcome": "completed",
+      "baselineSeconds": 295.466,
+      "candidateSeconds": 268.797,
+      "completedTimeDelta": null,
+      "baselineEncounters": 16,
+      "candidateEncounters": 15,
+      "baselineFirstCard": 33.772,
+      "candidateFirstCard": 33.678,
+      "baselineHealth": 0,
+      "candidateHealth": 50,
+      "baselineCapstones": [
+        {
+          "id": "Elite pearl_thief",
+          "kind": 1,
+          "scheduledAfterDepth": 15,
+          "encounterDepth": 16
+        }
+      ],
+      "candidateCapstones": [
+        {
+          "id": "Elite pearl_thief",
+          "kind": 1,
+          "scheduledAfterDepth": 13,
+          "encounterDepth": 14
+        }
+      ]
+    }
+  ]
+}

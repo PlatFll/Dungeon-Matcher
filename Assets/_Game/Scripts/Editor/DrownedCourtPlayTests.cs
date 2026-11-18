@@ -19,6 +19,7 @@ public sealed partial class ForestFoundationPlayTests
         if(ids.Length>0) zone.liveEncounters=new[]{new ZoneTestEncounter{label="Court regression formation",
             members=ids.Select(id=>zone.enemies.Single(e=>e.EnemyId==id)).ToArray()}};
         RunLaunchOptions.StartingZone="drowned-court";
+        using var formation=ids.Length==0?null:ResonanceEncounterFixture.OnNextGame(zone.liveEncounters[0].members,"Court diagnostic kit");
         SceneManager.LoadScene("Game");yield return Stable();
         zone.eligibleForLiveTravel=eligible;zone.liveEncounters=recipes;
         Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("drowned-court"));
@@ -233,16 +234,26 @@ public sealed partial class ForestFoundationPlayTests
     {
         yield return LaunchCourt("puffer_sentinel","shellback_porter");
         var puffer=Enemy("puffer_sentinel");var ability=puffer.GetComponent<AquaticEnemyAbility>();
-        for(int i=0;i<4;i++)yield return Move();
+        for(int i=0;i<puffer.SpecialTurnRequirement;i++)yield return Move();
         Assert.That(ability.IsPreparing,Is.True);Assert.That(ability.BlocksBasic,Is.False);
+        Assert.That(ability.ResponseMoves,Is.EqualTo(2),"inflation begins with two full future responses");
         Assert.That(puffer.SpecialIdleState,Is.EqualTo("InflatedIdle"));
-        var attack=puffer.GetComponent<EnemyAutoAttack>();attack.SetActionPaused(this,false);
-        Assert.That(attack.PerformAttackImmediately(),Is.True);
-        yield return Until(()=>!attack.IsAttackSequenceInProgress,"inflated basic reaches impact and recovery");
+        var attack=puffer.GetComponent<EnemyAutoAttack>();
+        // New Court runs use the unified move clock. A basic cannot bypass its
+        // accepted-action phase; make one naturally due on the next legal swap.
+        var ready=new EnemyCombatSnapshot();attack.CaptureContinuation(ready);
+        ready.unifiedAttackRemaining=1;attack.RestoreContinuation(ready);
+        attack.SetActionPaused(this,false);
+        Assert.That(attack.PerformAttackImmediately(),Is.False,"thinking cannot grant an extra basic");
+        int impacts=0;attack.AttackResolved+=(_,damage,finishes)=>impacts++;
+        yield return Move();
+        Assert.That(impacts,Is.EqualTo(1),"one due inflated basic reaches impact and recovery");
+        Assert.That(attack.IsAttackSequenceInProgress,Is.False);
         attack.SetActionPaused(this,true);
         Assert.That(puffer.SpecialAutoAttackState,Is.EqualTo("InflatedAttack"));
-        Assert.That(ability.ResponseMoves,Is.EqualTo(2),"a timed basic spends no response move");
-        yield return Move();yield return Move();
+        Assert.That(ability.IsPreparing,Is.True);
+        Assert.That(ability.ResponseMoves,Is.EqualTo(1),"exactly one accepted response was spent");
+        yield return Move();
         Assert.That(ability.IsPreparing,Is.False);Assert.That(puffer.SpecialIdleState,Is.Null);
         Assert.That(puffer.SpecialAutoAttackState,Is.Null);Assert.That(puffer.HasAnimationActionInProgress,Is.False);
     }

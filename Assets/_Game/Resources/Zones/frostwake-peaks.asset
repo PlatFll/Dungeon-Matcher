@@ -644,3 +644,420 @@ MonoBehaviour:
   vineCadenceMoves: 2
   maximumVineSpreadPerPulse: 2
   maximumVineOverlays: 12
+  resonanceTierStarts: 01000000060000000d000000190000002d000000
+  resonanceThreatBudgets:
+  - 4
+  - 6
+  - 8
+  - 11
+  - 12
+  resonancePool:
+  - enemy: {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 10
+    - 7
+    - 4
+    - 1
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 10
+    - 7
+    - 4
+    - 1
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: ec4c8f273ddb25840a7bd050425a2318, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 10
+    - 7
+    summonOnly: 0
+  resonanceEncounters:
+  - label: Outer patrol
+    members:
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 4
+    minimumDepthTier: 0
+    maximumDepthTier: 2
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Quiet patrol
+    members:
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 1
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn harpoon_hunter
+    members:
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 3
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol harpoon_hunter
+    members:
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn rimecarver
+    members:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 3
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol rimecarver
+    members:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn shieldmaiden
+    members:
+    - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol shieldmaiden
+    members:
+    - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn rime_skald
+    members:
+    - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol rime_skald
+    members:
+    - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn hearthkeeper
+    members:
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol hearthkeeper
+    members:
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn frostblade_reaver
+    members:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol frostblade_reaver
+    members:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 4
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Combined rimecarver
+    members:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Elite rimecarver
+    members:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 5
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Combined frostblade_reaver
+    members:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Elite frostblade_reaver
+    members:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 5
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Veteran patrol
+    members:
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 4
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 5.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Guardian glacier_troll
+    members:
+    - {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 2
+    resonanceThreatBudget: 6.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Guardian iceborn_champion
+    members:
+    - {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 4
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 2
+    resonanceThreatBudget: 6.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Capstone jarl_haldra
+    members:
+    - {fileID: 11400000, guid: ec4c8f273ddb25840a7bd050425a2318, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 2
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 3
+    resonanceThreatBudget: 8.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites:
+    - harpoon_hunter
+  - label: Reserve Outer patrol
+    members:
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    weight: 1
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []

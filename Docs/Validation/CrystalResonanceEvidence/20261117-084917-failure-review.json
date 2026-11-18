@@ -1,0 +1,72 @@
+{
+  "method": "Observed failures; no unavoidable-damage inference",
+  "cases": [
+    {
+      "case": "final-novice-court-L1-71875",
+      "zone": "drowned-court",
+      "visit": 0,
+      "depth": 11,
+      "charge": 64,
+      "pending": 0,
+      "lastDamage": "Last hit: Reef Spearman\n10 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Patrol pearl_thief:pearl_thief/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 9,
+          "amount": 10,
+          "healthAfter": 45,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 5,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 10,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 5,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 20,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 5,
+          "healthAfter": 5,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 11,
+          "amount": 5,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 11,
+          "amount": 10,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=19;warnings=0;counterAvailable=False;counterChosen=False;air=0;bubbleAvailable=True;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=10;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=11;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=12;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0"
+      ],
+      "capstonePhase": 0
+    }
+  ]
+}

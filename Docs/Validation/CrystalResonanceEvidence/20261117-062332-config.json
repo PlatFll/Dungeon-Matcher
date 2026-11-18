@@ -1,0 +1,115 @@
+{
+  "cases": [
+    {
+      "label": "response-typical-court-L1-9203",
+      "zone": "drowned-court",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 9203,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "response-typical-court-L5-8303",
+      "zone": "drowned-court",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 8303,
+      "level": 5,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "response-skilled-court-L5-40117",
+      "zone": "drowned-court",
+      "character": "dungeon_attender",
+      "policy": 2,
+      "seed": 40117,
+      "level": 5,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "response-defensive-court-L5-61729",
+      "zone": "drowned-court",
+      "character": "bardley",
+      "policy": 3,
+      "seed": 61729,
+      "level": 5,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "response-aggressive-court-L5-90347",
+      "zone": "drowned-court",
+      "character": "kobold_gunner",
+      "policy": 4,
+      "seed": 90347,
+      "level": 5,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "matched-typical-skeleton-L1-8201",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 8201,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "matched-skilled-skeleton-L1-8201",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 2,
+      "seed": 8201,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "matched-defensive-skeleton-L1-8201",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 3,
+      "seed": 8201,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "matched-aggressive-skeleton-L1-8201",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 4,
+      "seed": 8201,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "coverage-typical-mine-L1-71871",
+      "zone": "ironvein-excavation",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 71871,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900
+    },
+    {
+      "label": "depth-skilled-skeleton-L10-100719",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 2,
+      "seed": 100719,
+      "level": 10,
+      "maxVisits": 8,
+      "maxSeconds": 7200
+    }
+  ],
+  "capture": true
+}

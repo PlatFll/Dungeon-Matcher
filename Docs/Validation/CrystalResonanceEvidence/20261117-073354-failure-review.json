@@ -1,0 +1,273 @@
+{
+  "method": "Observed failures; no unavoidable-damage inference",
+  "cases": [
+    {
+      "case": "charge45-new-novice-court-L1-71875",
+      "zone": "drowned-court",
+      "visit": 0,
+      "depth": 9,
+      "charge": 46,
+      "pending": 0,
+      "lastDamage": "Last hit: Pearl Cantor\n5 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Patrol pearl_cantor:pearl_cantor/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 8,
+          "amount": 5,
+          "healthAfter": 60,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 10,
+          "healthAfter": 60,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 20,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 5,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 10,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 20,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 10,
+          "healthAfter": 5,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 9,
+          "amount": 5,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=2;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=10;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=9;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=13;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0"
+      ],
+      "capstonePhase": 0
+    },
+    {
+      "case": "charge45-new-typical-court-L1-71874",
+      "zone": "drowned-court",
+      "visit": 0,
+      "depth": 14,
+      "charge": 74,
+      "pending": 0,
+      "lastDamage": "Last hit: Reef Spearman\n10 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Learn reef_netweaver:reef_netweaver/Special/2.5+reef_spearman/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 13,
+          "amount": 10,
+          "healthAfter": 55,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 13,
+          "amount": 10,
+          "healthAfter": 50,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 13,
+          "amount": 20,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 13,
+          "amount": 10,
+          "healthAfter": 25,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 13,
+          "amount": 10,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 13,
+          "amount": 5,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 14,
+          "amount": 5,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 14,
+          "amount": 10,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=12;warnings=0;counterAvailable=False;counterChosen=False;air=3;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=14;warnings=0;counterAvailable=False;counterChosen=False;air=2;bubbleAvailable=True;bubbleChosen=True;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=11;warnings=0;counterAvailable=False;counterChosen=False;air=3;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=11;warnings=0;counterAvailable=False;counterChosen=False;air=2;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0"
+      ],
+      "capstonePhase": 0
+    },
+    {
+      "case": "charge45-typical-court-L5-8303",
+      "zone": "drowned-court",
+      "visit": 0,
+      "depth": 17,
+      "charge": 93,
+      "pending": 0,
+      "lastDamage": "Last hit: Reef Spearman\n10 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Patrol pearl_cantor:pearl_cantor/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 16,
+          "amount": 5,
+          "healthAfter": 70,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 16,
+          "amount": 25,
+          "healthAfter": 45,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 16,
+          "amount": 25,
+          "healthAfter": 70,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 16,
+          "amount": 25,
+          "healthAfter": 45,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 16,
+          "amount": 5,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 16,
+          "amount": 25,
+          "healthAfter": 25,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 16,
+          "amount": 25,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 17,
+          "amount": 10,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=3;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=6;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=5;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=3;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0"
+      ],
+      "capstonePhase": 3
+    },
+    {
+      "case": "charge45-typical-drowned-court-L1-9203",
+      "zone": "drowned-court",
+      "visit": 0,
+      "depth": 15,
+      "charge": 75,
+      "pending": 0,
+      "lastDamage": "Last hit: Hammerhead Bruiser\n25 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Patrol pearl_cantor:pearl_cantor/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 14,
+          "amount": 10,
+          "healthAfter": 75,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 14,
+          "amount": 10,
+          "healthAfter": 65,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 14,
+          "amount": 15,
+          "healthAfter": 55,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 14,
+          "amount": 10,
+          "healthAfter": 45,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 14,
+          "amount": 15,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 14,
+          "amount": 10,
+          "healthAfter": 25,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 15,
+          "amount": 10,
+          "healthAfter": 25,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 15,
+          "amount": 25,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=8;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=15;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=13;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=11;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0"
+      ],
+      "capstonePhase": 0
+    }
+  ]
+}

@@ -706,3 +706,478 @@ MonoBehaviour:
   vineCadenceMoves: 2
   maximumVineSpreadPerPulse: 2
   maximumVineOverlays: 12
+  resonanceTierStarts: 01000000060000000d000000190000002d000000
+  resonanceThreatBudgets:
+  - 4
+  - 6
+  - 8
+  - 11
+  - 12
+  resonancePool:
+  - enemy: {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 10
+    - 7
+    - 4
+    - 1
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 10
+    - 7
+    - 4
+    - 1
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 73f2aac8e2c553142a3869d151ebb53d, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    summonOnly: 1
+  - enemy: {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 10
+    - 7
+    summonOnly: 0
+  resonanceEncounters:
+  - label: Outer patrol
+    members:
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 4
+    minimumDepthTier: 0
+    maximumDepthTier: 2
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Quiet patrol
+    members:
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 1
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn stonewright
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 3
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol stonewright
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn ore_hauler
+    members:
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 3
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol ore_hauler
+    members:
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn vein_surveyor
+    members:
+    - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol vein_surveyor
+    members:
+    - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn powder_sapper
+    members:
+    - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol powder_sapper
+    members:
+    - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn rail_switcher
+    members:
+    - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol rail_switcher
+    members:
+    - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn bore_engineer
+    members:
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol bore_engineer
+    members:
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 4
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn seismic_smith
+    members:
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol seismic_smith
+    members:
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 4
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Combined stonewright
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Elite stonewright
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 5
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 6.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Combined bore_engineer
+    members:
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 7.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Elite bore_engineer
+    members:
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 5
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 7.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Veteran patrol
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 4
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 5.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Guardian siege_machinist
+    members:
+    - {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 2
+    resonanceThreatBudget: 6.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Guardian obsidian_sentinel
+    members:
+    - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 4
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 2
+    resonanceThreatBudget: 6.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Capstone grand_delver
+    members:
+    - {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 2
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 3
+    resonanceThreatBudget: 8.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites:
+    - stonewright
+  - label: Reserve Outer patrol
+    members:
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 1
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []

@@ -128,16 +128,19 @@ public sealed class DesignV2ContinuationTests
         using(CharacterSelectionSettings.UseTemporarySelection("bardley"))
         {
             SceneManager.LoadScene("Game"); yield return Stable();
-            for(int wave=1;wave<=2;wave++)
+            for(int wave=1;wave<=4;wave++)
             {
                 int wanted=wave;
                 yield return Until(()=>RunSession.Current.Waves.CurrentWave==wanted && RunSession.Current.Continuation.CanCapture,"wave spawns");
                 foreach(var enemy in RunSession.Current.Waves.ActiveEnemies.ToArray()) enemy.ResolveDirectDamage(99999);
+                yield return Until(()=>RunSession.Current.Resonance.State.lastBankedWave==wanted,"victory banks");
+                if(RunSession.Current.Resonance.HasPendingDrafts)break;
             }
             yield return Until(()=>UnityEngine.Object.FindFirstObjectByType<UpgradeChoiceUI>()?.IsOpen==true,"first real card choice");
             var run=RunSession.Current;
             Assert.That(run.Continuation.SaveNow(),Is.True);
             var draft=AccountProgression.Current.ActiveRun.checkpoint.draft.ToArray();
+            int completedDraftWave=run.Waves.CurrentWave;
             Assert.That(draft.Length,Is.EqualTo(3));
             Assert.That(run.SuspendToMenu(),Is.True); yield return null;
             using(AccountProgression.UseDisposableProfile(path))
@@ -158,7 +161,7 @@ public sealed class DesignV2ContinuationTests
                 Assert.That(coordinator.TryRefine(RunUpgradeTheme.Board),Is.False);
                 Assert.That(coordinator.SelectRecordedCard(chosen),Is.True);
                 Assert.That(coordinator.SelectRecordedCard(chosen),Is.False);
-                yield return Until(()=>run.Waves.CurrentWave==3 && run.Continuation.CanCapture,"chosen build continues");
+                yield return Until(()=>run.Waves.CurrentWave==completedDraftWave+1 && run.Continuation.CanCapture,"chosen build continues");
                 Assert.That(RunUpgradeRuntime.Current.GetStackCount(chosen),Is.EqualTo(1));
                 Assert.That(run.Continuation.SaveNow(),Is.True);
                 Assert.That(run.SuspendToMenu(),Is.True); yield return null;
@@ -214,7 +217,9 @@ public sealed class DesignV2ContinuationTests
             using(AccountProgression.UseDisposableProfile(path))
             using(CharacterSelectionSettings.UseTemporarySelection("skeleton"))
             {
-                SceneManager.LoadScene("Game");yield return Stable();
+                // Reserve two summon slots explicitly; ordinary depth-one formations may contain two actors.
+                using(var fixture=ResonanceEncounterFixture.OnNextGame(new[]{AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_Farmer.asset")},"Owner restoration diagnostic"))
+                {SceneManager.LoadScene("Game");yield return Stable();}
                 yield return LegacyCombatTestProfile.Load();var run=RunSession.Current;
                 Assert.That(run.Player.GetComponent<PlayerAbilityEnergy>().CurrentEnergy,Is.EqualTo(20));
                 foreach(string name in pair)

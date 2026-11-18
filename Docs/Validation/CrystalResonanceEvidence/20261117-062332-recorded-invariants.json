@@ -1,0 +1,139 @@
+{
+  "batch": ".utmp\\CrystalResonance\\Playtest\\20261117-062332",
+  "kind": "offline recorded-evidence audit; NOT replay execution",
+  "finishedCases": 11,
+  "incompleteCases": [],
+  "failures": [],
+  "cases": [
+    {
+      "case": "coverage-typical-mine-L1-71871",
+      "nativeBoundaries": 84,
+      "nativeActions": {
+        "swap": 75,
+        "card": 3,
+        "ability": 5,
+        "potion": 1
+      },
+      "journalSha256": "69466063fdeb1f608d2625d5339cb024c27e7fa97c6550a193e9cf289a81afe6",
+      "failures": []
+    },
+    {
+      "case": "depth-skilled-skeleton-L10-100719",
+      "nativeBoundaries": 312,
+      "nativeActions": {
+        "swap": 279,
+        "card": 12,
+        "ability": 18,
+        "potion": 3
+      },
+      "journalSha256": "1a5298fb6f83ec3d5f54c131618d42010f04585e737b8b491070b0ca6c3d100b",
+      "failures": []
+    },
+    {
+      "case": "matched-aggressive-skeleton-L1-8201",
+      "nativeBoundaries": 81,
+      "nativeActions": {
+        "swap": 70,
+        "card": 3,
+        "ability": 5,
+        "bomb": 3
+      },
+      "journalSha256": "7e5958df1509f25d68bb16dd49e56619699779ca6d56db52169a582b094afdca",
+      "failures": []
+    },
+    {
+      "case": "matched-defensive-skeleton-L1-8201",
+      "nativeBoundaries": 76,
+      "nativeActions": {
+        "swap": 69,
+        "card": 3,
+        "ability": 4
+      },
+      "journalSha256": "4c5bc2ba63b75b8e87d6691a68cd4be1b35038acf8d477acd1df85678a0613a8",
+      "failures": []
+    },
+    {
+      "case": "matched-skilled-skeleton-L1-8201",
+      "nativeBoundaries": 92,
+      "nativeActions": {
+        "swap": 84,
+        "card": 3,
+        "ability": 5
+      },
+      "journalSha256": "dc5d459a6dab1a46dc38a6945cfd71648b076ebd3515d6f6700ac67c7f868bc0",
+      "failures": []
+    },
+    {
+      "case": "matched-typical-skeleton-L1-8201",
+      "nativeBoundaries": 84,
+      "nativeActions": {
+        "swap": 75,
+        "card": 3,
+        "ability": 6
+      },
+      "journalSha256": "b4e06d1facdb58ec3f68097b764cb9b7d0c704f35f35613c1d2afe8fe8b68730",
+      "failures": []
+    },
+    {
+      "case": "response-aggressive-court-L5-90347",
+      "nativeBoundaries": 89,
+      "nativeActions": {
+        "swap": 71,
+        "ability": 10,
+        "card": 3,
+        "bomb": 3,
+        "potion": 2
+      },
+      "journalSha256": "663ea82099df3ec9086aceb5719e08f7962ddda64a27dad5c263eacaaad4a23e",
+      "failures": []
+    },
+    {
+      "case": "response-defensive-court-L5-61729",
+      "nativeBoundaries": 94,
+      "nativeActions": {
+        "swap": 79,
+        "ability": 11,
+        "card": 3,
+        "potion": 1
+      },
+      "journalSha256": "138944ab6565d022612c0a03ad4ecff5a28b5f029c575af5d9683d5cde9edea6",
+      "failures": []
+    },
+    {
+      "case": "response-skilled-court-L5-40117",
+      "nativeBoundaries": 96,
+      "nativeActions": {
+        "swap": 84,
+        "ability": 8,
+        "card": 3,
+        "potion": 1
+      },
+      "journalSha256": "9913df7bd77b183b34ab3a5c12413b9cfe2cb39c2bfae74a6b085a43f53ea540",
+      "failures": []
+    },
+    {
+      "case": "response-typical-court-L1-9203",
+      "nativeBoundaries": 82,
+      "nativeActions": {
+        "swap": 74,
+        "potion": 3,
+        "card": 2,
+        "ability": 3
+      },
+      "journalSha256": "80bea27fcc1a1c474f99de2b11ec962ebff8547288f7591da5d767ab5e373585",
+      "failures": []
+    },
+    {
+      "case": "response-typical-court-L5-8303",
+      "nativeBoundaries": 93,
+      "nativeActions": {
+        "swap": 83,
+        "card": 3,
+        "ability": 4,
+        "potion": 3
+      },
+      "journalSha256": "5148eaca22ff802700ee05993d2f7e64a821a9c5aa9707ce27e34f4e1bdb8efb",
+      "failures": []
+    }
+  ]
+}

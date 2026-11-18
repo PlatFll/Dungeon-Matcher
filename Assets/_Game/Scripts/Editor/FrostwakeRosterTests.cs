@@ -44,6 +44,7 @@ public sealed partial class ForestFoundationPlayTests
         var recipes=zone.liveEncounters;var budget=zone.encounterBudget;
         zone.encounterBudget=null;zone.liveEncounters=new[]{new ZoneTestEncounter{label="Frostwake kit fixture",
             members=ids.Select(id=>zone.enemies.Single(d=>d.EnemyId==id)).ToArray()}};
+        using var formation=ResonanceEncounterFixture.OnNextGame(zone.liveEncounters[0].members,"Frostwake diagnostic kit");
         try {yield return LaunchUnified("frostwake-peaks");}
         finally {zone.liveEncounters=recipes;zone.encounterBudget=budget;}
         Set(Run.Waves,"advanceWavesAutomatically",false);PreserveRoster();

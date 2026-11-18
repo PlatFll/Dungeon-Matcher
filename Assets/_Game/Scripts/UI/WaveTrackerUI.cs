@@ -20,6 +20,7 @@ public sealed class WaveTrackerUI :
         "WAVE {0}";
 
     private int displayedWave;
+    private CrystalResonanceHud resonanceHud;
 
     private void Awake()
     {
@@ -89,6 +90,11 @@ public sealed class WaveTrackerUI :
 
     private void LateUpdate()
     {
+        if (RunSession.Current?.Resonance?.Enabled == true)
+        {
+            if (resonanceHud == null) { resonanceHud = gameObject.AddComponent<CrystalResonanceHud>(); resonanceHud.Initialize(waveText); }
+            resonanceHud.Tick(); return;
+        }
         // Continue restores an existing encounter without firing WaveStarted.
         // Read its depth for presentation without replaying gameplay events.
         if (waveController != null && displayedWave != waveController.CurrentWave)
@@ -157,6 +163,8 @@ public sealed class WaveTrackerUI :
                 waveNumber
             );
 
+        if (RunSession.Current?.Resonance?.Enabled == true)
+        { if(resonanceHud==null) waveText.text = "SCORE " + RunSession.Current.Resonance.RunScore.ToString("N0"); displayedWave = safeWaveNumber; return; }
         waveText.text =
             string.Format(
                 waveLabelFormat,

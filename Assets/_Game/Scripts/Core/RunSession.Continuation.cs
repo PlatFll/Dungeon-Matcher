@@ -11,9 +11,11 @@ public sealed partial class RunSession
         saved.refinementUsed=journal.refinementUsed;
         saved.potionCooldown=cooldowns[0]; saved.bombCooldown=cooldowns[1];
         saved.travel=Travel?.Capture();
+        saved.resonance=Resonance?.Capture();
     }
     public void RestoreContinuation(RunCombatSnapshot saved)
     {
+        Resonance?.Restore(saved.resonance);
         cooldowns[0]=saved.potionCooldown; cooldowns[1]=saved.bombCooldown;
         hasMilestone=hasKing=false;
         foreach(var data in Waves.OriginalEncounterDefinitions)

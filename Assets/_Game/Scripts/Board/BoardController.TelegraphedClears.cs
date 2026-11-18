@@ -53,6 +53,8 @@ public partial class BoardController
         foreach (var threat in new List<GemSetThreat>(gemSetThreats))
         {
             bool removed=threat.Targets.Remove(gem);
+            if (removed && !threat.Environmental && threat.Owner != null && !threat.Owner.IsDefeated)
+                ReportProgressionCounter(gem);
             if(removed && threat.CancelOnAnyTargetLost) CancelGemSetThreat(threat);
             if(threat.Vine && (threat.ParentGemId==gem.BoardIdentity || threat.Targets.Count==0)) CancelGemSetThreat(threat);
         }
