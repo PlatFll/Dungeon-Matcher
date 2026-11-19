@@ -162,6 +162,9 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
         EnemyDamageResult result =
             enemyActor.ResolveDamageWithoutFeedback(resolvedTickDamage);
 
+        if (result.Applied)
+            RunSession.Current?.Resonance?.Record("enemy_poison_tick", "existing poison", result.HealthDamage,
+                enemyActor, result.ShieldDamage);
         enemyActor.NotifyStatusDamageReceived(result.HealthDamage + result.ShieldDamage);
 
         // HP-only poison feedback stays unchanged. Do not include shield loss

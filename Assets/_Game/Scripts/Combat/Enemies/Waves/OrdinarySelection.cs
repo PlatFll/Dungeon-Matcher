@@ -75,7 +75,10 @@ public static class OrdinarySelection
         var families = choices.GroupBy(Family).ToList();
         float PressureWeight(ZoneTestEncounter r) => role == OrdinaryRole.Pressure &&
             newest.Take(4).Count(h => h.pressureFamily == PressureKey(r)) >= 2 ? weights.repeatedPressure : 1f;
-        var family = Draw(families, f => f.Max(r => r.familyWeight * PressureWeight(r)), rng);
+        // Adjust the family's baseline by its mean recurrence factor, not by variant count.
+        var family = Draw(families, f => f.First().familyWeight *
+            f.Sum(r => WaveController.ResonanceRecipeWeight(zone, tier, r) * PressureWeight(r)) /
+            f.Sum(r => WaveController.ResonanceRecipeWeight(zone, tier, r)), rng);
         float VariantWeight(ZoneTestEncounter r)
         {
             string escorts = Escorts(r.members);

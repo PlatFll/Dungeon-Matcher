@@ -10,6 +10,36 @@ using UnityEngine;
 public sealed class CrystalResonanceSelectionTests
 {
     [Test]
+    public void IndependentSelectionsExposeWeightedOrdinaryMembersAtEveryDepth()
+    {
+        var lines = new List<string> { "zone,tier,recipe,memberMultiset,phase,role,count" };
+        foreach (var zone in Resources.LoadAll<ZoneDefinition>("Zones").Where(z => z.eligibleForLiveTravel))
+        for (int tier = 0; tier < 5; tier++)
+        {
+            var state = new CrystalResonanceSnapshot { zoneId = zone.zoneId, encountersThisVisit = 3 };
+            state.seenMechanics.AddRange(zone.enemies.Select(e => e.EnemyId));
+            var coverage = new HashSet<EnemyDefinition>();
+            var histogram = new Dictionary<string, int>();
+            for (uint seed = 1; seed <= 10000; seed++)
+            {
+                var choice = WaveController.SelectResonanceOrdinary(zone, zone.resonanceTierStarts[tier], state,
+                    new SavedRandom(unchecked(2654435761u * seed)));
+                foreach (var member in choice.members) coverage.Add(member);
+                string key = string.Join(",", zone.zoneId, tier.ToString(), choice.label,
+                    string.Join("+", choice.members.Select(e => e.EnemyId).OrderBy(id => id)),
+                    choice.selectedPhase, choice.selectedRole);
+                histogram.TryGetValue(key, out int count);
+                histogram[key] = count + 1;
+            }
+            foreach (var entry in zone.resonancePool.Where(e => e.Weight(tier) > 0 && (int)e.enemy.Category <= 1))
+                Assert.Contains(entry.enemy, coverage.ToList(), zone.zoneId + "/" + tier + "/" + entry.enemy.EnemyId);
+            lines.AddRange(histogram.OrderBy(pair => pair.Key).Select(pair => pair.Key + "," + pair.Value));
+        }
+        Directory.CreateDirectory(".utmp/SelectionExpansion");
+        File.WriteAllLines(".utmp/SelectionExpansion/distribution-" + Guid.NewGuid().ToString("N") + ".csv", lines);
+    }
+
+    [Test]
     public void RecordedMultisetSurvivesContinueAndDifferentLabels()
     {
         var zone = Resources.Load<ZoneDefinition>("Zones/ironvein-excavation");

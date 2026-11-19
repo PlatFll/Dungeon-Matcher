@@ -366,8 +366,8 @@ MonoBehaviour:
     maximumDepthTier: 4
     resonanceKind: 0
     resonanceThreatBudget: 6.5
-    phaseMask: 6
-    ordinaryRole: 1
+    phaseMask: 4
+    ordinaryRole: 2
     formationFamily: Guild expedition
     familyWeight: 2
     prerequisites:
@@ -382,8 +382,8 @@ MonoBehaviour:
     maximumDepthTier: 4
     resonanceKind: 0
     resonanceThreatBudget: 7.5
-    phaseMask: 6
-    ordinaryRole: 1
+    phaseMask: 4
+    ordinaryRole: 2
     formationFamily: Guild expedition
     familyWeight: 2
     prerequisites:
@@ -708,7 +708,7 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Court pressure
-    phaseMask: 6
+    phaseMask: 4
     ordinaryRole: 2
     formationFamily: Royal guard
     familyWeight: 3
@@ -725,7 +725,7 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Royal fireline
-    phaseMask: 6
+    phaseMask: 4
     ordinaryRole: 2
     formationFamily: Royal guard
     familyWeight: 3

@@ -621,8 +621,8 @@ MonoBehaviour:
     maximumDepthTier: 4
     resonanceKind: 0
     resonanceThreatBudget: 6
-    phaseMask: 6
-    ordinaryRole: 1
+    phaseMask: 4
+    ordinaryRole: 2
     formationFamily: Nacre Court
     familyWeight: 2
   - label: Nacre gate
@@ -916,7 +916,7 @@ MonoBehaviour:
     members:
     - {fileID: 11400000, guid: d6932a1dbb5fd024caed6c9ca2e91e8c, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
-    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
     weight: 4
     minimumDepthTier: 2
     maximumDepthTier: 4

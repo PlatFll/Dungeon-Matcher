@@ -49,17 +49,49 @@ public sealed class EnemyDamageResultTests
         Assert.That(reportedShield, Is.EqualTo(expectedShieldLoss));
     }
 
+    [TestCase(GemType.Ruby, 80)]
+    [TestCase(GemType.Sapphire, 100)]
+    public void TauntUsesOriginalWeaknessAndBlocksOnlyNewAttacks(GemType color, int shieldWarriorHp)
+    {
+        var bulwark = Enemy("Shield");
+        var ally = Enemy("Protected", color);
+        var combat = Combat(bulwark, ally);
+        var run = ObjectWith<RunSession>("Run");
+        var current = typeof(RunSession).GetProperty("Current");
+        var previous = current.GetValue(null);
+        try
+        {
+            Set(run, "<Waves>k__BackingField", combat.WaveController);
+            current.SetValue(null, run);
+            bulwark.StartGuildTaunt(1);
+            combat.ResolveFixedGemDamage(new BoardClearContext(color, 3, 0, BoardClearSource.Bomb), 20);
+            Assert.AreEqual(shieldWarriorHp, bulwark.CurrentHealth);
+            Assert.AreEqual(100, ally.CurrentHealth);
+            Assert.IsFalse(ally.CanReceivePlayerAttack);
+            Assert.IsFalse(ally.ResolveDirectDamage(25).Applied);
+            combat.ApplyPoisonToAllEnemies();
+            Assert.IsNull(ally.GetComponent<EnemyPoisonStatus>());
+            Assert.AreEqual(5, ally.ResolveDamageWithoutFeedback(5).HealthDamage);
+            bulwark.ClearGuildTaunt();
+            Assert.IsTrue(ally.CanReceivePlayerAttack);
+            Assert.AreEqual(color, ally.AssignedGemType);
+        }
+        finally { current.SetValue(null, previous); }
+    }
+
     [TestCase(1)]
     [TestCase(2)]
     [TestCase(3)]
     public void TauntPreservesWeaknessAndRemainingFutureMovesOnContinue(int remaining)
     {
         var actor = Enemy("Shield", GemType.Sapphire);
+        Set(actor.Definition, "specialAbilityKind", EnemySpecialAbilityKind.GuildTaunt);
         actor.StartGuildTaunt(10);
         actor.SettleGuildTaunt(10);
         for (int i = 1; i <= 3 - remaining; i++) actor.SettleGuildTaunt(10 + i);
         var save = actor.CaptureContinuation(0);
         var restored = Enemy("Restored", GemType.Sapphire);
+        Set(restored.Definition, "specialAbilityKind", EnemySpecialAbilityKind.GuildTaunt);
         restored.RestoreContinuation(save);
         Assert.AreEqual(remaining, restored.GuildTauntMoves);
         Assert.AreEqual(GemType.Sapphire, restored.AssignedGemType);

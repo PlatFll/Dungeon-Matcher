@@ -25,7 +25,7 @@ Source inventory of authored recipes. Counts describe eligible memberships with 
 | Learn conch_marshal | 1–4 | conch_marshal, reef_spearman | ordinary | 4 | 3 |
 | Patrol conch_marshal | 1–4 | conch_marshal, reef_spearman, hammerhead_bruiser | ordinary | 5.5 | 4 |
 | Learn moray_siphoner | 2–4 | moray_siphoner, reef_spearman | ordinary | 4 | 3 |
-| Patrol moray_siphoner | 2–4 | moray_siphoner, reef_spearman, hammerhead_bruiser | ordinary | 5.5 | 4 |
+| Patrol moray_siphoner | 2–4 | moray_siphoner, reef_spearman, needlefin_skirmisher | ordinary | 5.5 | 4 |
 | Combined reef_netweaver | 2–4 | reef_netweaver, conch_marshal, reef_spearman | ordinary | 6.5 | 3 |
 | Elite reef_netweaver | 1–4 | reef_netweaver, conch_marshal, hammerhead_bruiser | elite | 6.5 | 5 |
 | Combined pearl_thief | 2–4 | pearl_thief, moray_siphoner, reef_spearman | ordinary | 6.5 | 3 |

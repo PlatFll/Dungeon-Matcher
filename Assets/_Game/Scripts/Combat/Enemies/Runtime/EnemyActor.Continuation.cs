@@ -15,7 +15,8 @@ public sealed partial class EnemyActor
     };
     public void RestoreContinuation(EnemyCombatSnapshot saved)
     {
-        GuildTauntMoves = Mathf.Clamp(saved.guildTauntRemaining, 0, 3);
+        GuildTauntMoves = definition.SpecialAbilityKind == EnemySpecialAbilityKind.GuildTaunt ?
+            Mathf.Clamp(saved.guildTauntRemaining, 0, 3) : 0;
         lastGuildTauntMove = saved.guildTauntLastMove;
         if (saved.persistentId > 0) PersistentId=saved.persistentId;
         currentHealth=Mathf.Min(CombatAmounts.Health(saved.health),MaxHealth);

@@ -86,6 +86,10 @@ public sealed partial class WaveController
             if (member.RequiredBossEscort != null && Array.IndexOf(recipe.members, member.RequiredBossEscort) < 0) return false;
             threat += member.ThreatCost; if (member.IsBoardDisruptor) disruptors++; if (member.IsSupport) supports++;
         }
+        if (!capstone && recipe.members.Any(e => e.Category == EnemyCategory.Boss || e.Category == EnemyCategory.Miniboss)) return false;
+        if (!capstone && recipe.members.Any(e => e.SpecialAbilityKind == EnemySpecialAbilityKind.GuildTaunt) &&
+            recipe.members.Count(e => e.SpecialAbilityKind == EnemySpecialAbilityKind.GuildTaunt ||
+                e.SpecialAbilityKind == EnemySpecialAbilityKind.GuildInstantHeal) > 1) return false;
         if (recipe.prerequisites != null && Array.Exists(recipe.prerequisites, id => !state.seenMechanics.Contains(id))) return false;
         float budget = zone.resonanceThreatBudgets[Mathf.Min(tier, zone.resonanceThreatBudgets.Length - 1)];
         // An authored capstone budget includes every escort; it is not a stat multiplier.

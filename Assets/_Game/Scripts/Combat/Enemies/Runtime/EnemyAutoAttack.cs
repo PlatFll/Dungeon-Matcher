@@ -188,8 +188,10 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         foreach (float value in modifiers.Values) result *= value;
         return result;
     }
+    private int contactInSequence;
     private float ConsumeSequenceDamageMultiplier()
     {
+        contactInSequence = 0;
         float result = Product(damageModifiers) * Product(nextSequenceModifiers) * commandDamageMultiplier;
         activeSequenceModifierOwners.Clear();
         foreach (var entry in nextSequenceModifiers) activeSequenceModifierOwners.Add(entry.Key);
@@ -793,9 +795,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         int attackDamage)
     {
         bool damageApplied =
-            playerTarget.TryTakeDamage(
+            playerTarget.TryTakeAttributedDamage(
                 attackDamage,
-                enemyActor, "basic contact"
+                enemyActor, ++contactInSequence == 1 ? "basic contact" : "follow-up contact"
             );
 
         AttackResolved?.Invoke(

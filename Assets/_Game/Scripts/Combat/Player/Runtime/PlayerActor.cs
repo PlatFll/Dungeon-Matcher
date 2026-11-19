@@ -192,9 +192,11 @@ public sealed partial class PlayerActor : MonoBehaviour
         );
     }
 
-    public bool TryTakeDamage(
-        int amount,
-        UnityEngine.Object source = null, string damageReason = null)
+    public bool TryTakeDamage(int amount, UnityEngine.Object source = null) =>
+        TryTakeAttributedDamage(amount, source, null);
+
+    public bool TryTakeAttributedDamage(
+        int amount, UnityEngine.Object source, string damageReason)
     {
         if (!CanReceiveDamage || amount <= 0)
         {
@@ -260,7 +262,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         }
 
         if (actualHealthDamage > 0 || shieldDamage > 0)
-            DamageResolved?.Invoke(attacker, damageReason ?? (attacker != null ? attacker.Definition.SpecialAbilityKind.ToString() : cause),
+            DamageResolved?.Invoke(attacker, damageReason ?? (attacker?.Definition != null ? attacker.Definition.SpecialAbilityKind.ToString() : cause),
                 actualHealthDamage, shieldDamage);
 
         if (currentHealth == 0)

@@ -159,7 +159,7 @@ public partial class BoardController
         if(retaliations>0 && FrostRules!=null)
         {
             var player=combatController?.PlayerActor;
-            for(int i=0;i<retaliations;i++)player?.TryTakeDamage(FrostRules.bifrostRetaliation, null, "Bifrost retaliation");
+            for(int i=0;i<retaliations;i++)player?.TryTakeAttributedDamage(FrostRules.bifrostRetaliation, null, "Bifrost retaliation");
             if(player!=null && !player.IsDefeated)player.Statuses.Apply(FrostRules.frostbite);
         }
         if(changed)PublishFrost();
