@@ -870,6 +870,10 @@ MonoBehaviour:
     summonOnly: 0
   resonanceEncounters:
   - label: Ore scout
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Ore caravan
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
     - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
@@ -879,6 +883,10 @@ MonoBehaviour:
     resonanceKind: 0
     resonanceThreatBudget: 3
   - label: Drill feed
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Ore caravan
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -888,6 +896,10 @@ MonoBehaviour:
     resonanceKind: 0
     resonanceThreatBudget: 3
   - label: Brittle choice
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Ore caravan
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
     - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
@@ -900,6 +912,10 @@ MonoBehaviour:
     prerequisites:
     - stonewright
   - label: Outer patrol
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Excavation crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
     - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
@@ -912,6 +928,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Quiet patrol
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Excavation crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
     weight: 1
@@ -923,6 +943,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn stonewright
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Excavation crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -935,6 +959,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol stonewright
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Excavation crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -948,6 +976,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn ore_hauler
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Ore caravan
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -960,6 +992,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol ore_hauler
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Ore caravan
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -973,6 +1009,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn vein_surveyor
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Excavation crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -985,6 +1025,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol vein_surveyor
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Excavation crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -998,6 +1042,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn powder_sapper
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Bore crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -1010,6 +1058,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol powder_sapper
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Bore crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -1023,6 +1075,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn rail_switcher
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Bore crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -1035,6 +1091,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol rail_switcher
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Bore crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -1048,6 +1108,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn bore_engineer
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Bore crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -1060,6 +1124,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol bore_engineer
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Bore crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -1073,6 +1141,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn seismic_smith
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Bore crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -1085,6 +1157,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol seismic_smith
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Bore crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
@@ -1098,6 +1174,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Combined stonewright
+    phaseMask: 6
+    ordinaryRole: 2
+    formationFamily: Ore caravan
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
     - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
@@ -1124,6 +1204,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Combined bore_engineer
+    phaseMask: 6
+    ordinaryRole: 2
+    formationFamily: Bore crew
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
     - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}

@@ -457,6 +457,10 @@ MonoBehaviour:
     summonOnly: 0
   resonanceEncounters:
   - label: Lone rootbinder
+    phaseMask: 1
+    ordinaryRole: 3
+    formationFamily: Woodland Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
     weight: 2
@@ -465,6 +469,10 @@ MonoBehaviour:
     resonanceKind: 0
     resonanceThreatBudget: 3
   - label: Outer patrol
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Path Wardens
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
     - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
@@ -477,6 +485,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Quiet patrol
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Path Wardens
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
     weight: 1
@@ -488,6 +500,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn elven_mender
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Grove Wardens
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -500,6 +516,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol elven_mender
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Grove Wardens
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -513,6 +533,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn orc_rootbinder
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Woodland Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -525,6 +549,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol orc_rootbinder
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Woodland Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -538,6 +566,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn elven_thornkeeper
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Briar Wardens
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: b166b659b9320094f96e1e34c7bae8ff, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -550,6 +582,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol elven_thornkeeper
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Briar Wardens
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: b166b659b9320094f96e1e34c7bae8ff, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -563,6 +599,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn orc_berserker
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Woodland Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -575,6 +615,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol orc_berserker
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Woodland Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -588,6 +632,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn orc_bloomcaller
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Woodland Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 971fa3191157e494ba63eb4d5d30708d, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -600,6 +648,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol orc_bloomcaller
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Woodland Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 971fa3191157e494ba63eb4d5d30708d, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -613,6 +665,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn orc_drummer
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Woodland Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 02fc1c169367a7947b48495b664c906a, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -625,6 +681,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol orc_drummer
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Woodland Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 02fc1c169367a7947b48495b664c906a, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -638,6 +698,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn briar_archer
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Briar Wardens
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -650,6 +714,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol briar_archer
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Briar Wardens
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -663,6 +731,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Combined orc_rootbinder
+    phaseMask: 6
+    ordinaryRole: 2
+    formationFamily: Woodland Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
     - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
@@ -689,6 +761,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Combined briar_archer
+    phaseMask: 6
+    ordinaryRole: 2
+    formationFamily: Briar Wardens
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
     - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}

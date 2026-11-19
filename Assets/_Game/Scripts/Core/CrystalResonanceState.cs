@@ -49,6 +49,9 @@ public sealed class CrystalResonanceSnapshot
     public uint formationSeed;
     public List<string> capstoneMembers = new List<string>();
     public List<string> seenLeaders = new List<string>();
+    // Additive v1 save fields. Older snapshots begin with an empty visit history.
+    public List<EncounterHistoryEntry> formationHistory = new List<EncounterHistoryEntry>();
+    public List<string> taughtZones = new List<string>();
     public List<string> recentRecipes = new List<string>();
     public List<string> seenMechanics = new List<string>();
     public int capstoneWave, capstoneKind, lastMajorVisit = -10;
@@ -72,6 +75,7 @@ public sealed class CrystalResonanceSnapshot
         zoneId = zone; visit = visitIndex; charge = masteryMask = boardScore = 0;
         triggeredMask = claimedMask = activeNotch = pendingWave = 0;
         active = false; pendingNotches.Clear(); recentRecipes.Clear();
+        formationHistory?.Clear();
         capstonePhase = ResonanceCapstonePhase.Unselected; capstoneId = null;
         capstoneMembers.Clear(); capstoneWave = capstoneKind = 0; formationSeed = 0; capstoneEncounterId = null;
         var random = new SavedRandom(capstoneRandom);

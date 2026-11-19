@@ -10,6 +10,24 @@ using UnityEngine;
 public sealed class CrystalResonanceSelectionTests
 {
     [Test]
+    public void RecordedMultisetSurvivesContinueAndDifferentLabels()
+    {
+        var zone = Resources.Load<ZoneDefinition>("Zones/ironvein-excavation");
+        var state = new CrystalResonanceSnapshot { zoneId = zone.zoneId, encountersThisVisit = 3 };
+        state.seenMechanics.AddRange(zone.enemies.Select(e => e.EnemyId));
+        var first = WaveController.SelectResonanceOrdinary(zone, 15, state, new SavedRandom(321));
+        OrdinarySelection.Remember(state, first, first.members);
+        var restored = state.Copy();
+        string prior = string.Join("+", first.members.Select(e => e.EnemyId).OrderBy(id => id));
+        for (uint seed = 1; seed <= 128; seed++)
+        {
+            var r = WaveController.SelectResonanceOrdinary(zone, 15, restored, new SavedRandom(seed));
+            Assert.AreNotEqual(prior, string.Join("+", r.members.Select(e => e.EnemyId).OrderBy(id => id)));
+            Assert.AreEqual(r.label, WaveController.SelectResonanceOrdinary(zone, 15, state, new SavedRandom(seed)).label);
+        }
+    }
+
+    [Test]
     public void EveryWeightedOrdinaryMemberHasAuthoredExposure()
     {
         foreach (var zone in Resources.LoadAll<ZoneDefinition>("Zones").Where(z => z.eligibleForLiveTravel))
