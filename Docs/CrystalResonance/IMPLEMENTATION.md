@@ -60,7 +60,12 @@ reroll. Depth is global and never resets on travel. Seen mechanics/leaders and
 recent capstones carry across visits. Major cooldown is two visits.
 
 Ordinary recipes use current-zone eligibility, introduction safety, whole threat
-and role budgets, tide compatibility and recent-recipe exclusions. Bounded
+and role budgets, and tide compatibility. The selection-repair expansion replaces
+the original recent-label preference with a four-entry formation history. It
+records actual member IDs, escort pairs, roles and pressure families. The next
+ordinary draw uses global depth to weight Early, Mid and Late, then draws a role,
+a family and an authored variant. A new visit clears the local history and
+preserves the run's mechanic and teaching history. Bounded
 procedural fallback uses weighted members/adjacent families. Capstones select a
 legal kind then an authored whole formation. Repeatable same-zone elite reserves
 remain after unique leaders are spent. Missing legal data raises an explicit
@@ -77,7 +82,7 @@ leaders are seen; test dry/wet Court contexts. Preserve response placement caps.
 Do not force a named leader every visit or invent content to fill absent tiers.
 Update the encounter matrix, design status and affected validation evidence.
 
-## Source review and limits
+## November 17 source review and limits
 
 No scene, prefab, enemy sprite, player definition, shop, wallet, health-bar or
 shield asset is changed. New scripts have .meta files; runtime services attach

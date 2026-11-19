@@ -1,3 +1,16 @@
+## Selection repair and non-boss expansion — stacked review candidate, 2026-11-19
+
+Five travel zones now use authored Early, Mid and Late ordinary formations with
+member-based recurrence. Ironvein can roll its Packbeetle from authored ordinary
+recipes. Ten new enemies use the approved character stills and production motion.
+The Guild Bulwark uses K06 Road Escort. The Bulwark's three-move Taunt and the
+Chirurgeon's single-target field heal share the existing enemy action pipeline.
+The feature branch is based on the Crystal Resonance review candidate.
+Both development players built. Ten natural Dungeon-first runs completed 21
+visits, and all 2,442 recorded inputs matched their durable journals. Stage 08
+also exercised both Guild specials inside the production Game scene.
+[Expansion handoff](../HANDOFF/SELECTION_EXPANSION.md)
+
 ## Crystal Resonance refinement — 2026-11-18, unmerged acceptance candidate
 
 Fresh standard, Retry, Practice and challenge runs permanently start in Dungeon;

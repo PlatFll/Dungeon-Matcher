@@ -62,10 +62,9 @@ Dungeon goes locals → guards → knights → royals. Locals end after tier 1;
 knights/royals dominate later returns. King requires deep eligibility and prior
 royal mechanics, and retains the required Minister. This is narrative eligibility,
 not a promised wave or ordered campaign. Named leaders are once per run except
-the explicit required Minister escort. Other zones use their actual approved
-early/late rosters and escalating combinations. No Guild content exists yet.
-Late roster breadth outside Dungeon is limited; report repetition rather than
-inventing enemies, raising every HP pool or making early villagers eternal.
+the explicit required Minister escort. The November 19 expansion adds Adventurer Guild formations to Dungeon from depth 25. The Guild
+Swordsman introduces the faction before the Bulwark or Chirurgeon is eligible.
+Court, Forest, Frostwake and Ironvein draw their own expanded rosters.
 
 Court ordinary formations include the existing Needlefin and Shellback roster,
 with Reef scout/salvage pairs and varied patrol escorts. This corrects their
@@ -74,8 +73,13 @@ pair. Queen Nacre retains the approved Nacre Court escort identity (Conch
 Marshal); her formation budget includes both actors. Enemy stats, oxygen rules
 and other capstone formations are unchanged.
 
-Recent ordinary recipes (three) and capstone formations (four) are avoided when
-alternatives exist. Major bosses have a two-visit separation. Provisional kind
+Eligible ordinary encounters draw a complexity phase (Early, Mid or Late), then a
+role, a formation family and a member variant. The phase draw depends on global
+depth. Early visits introduce unfamiliar mechanics in small groups. The previous
+two actual member multisets are avoided when another legal choice exists.
+Repeated escort pairs and pressure families lose weight. A fresh arrival resets
+the local formation history and preserves which zones and mechanics the run has
+taught. Capstones retain their separate four-formation history. Major bosses have a two-visit separation. Provisional kind
 weights are elite 6, miniboss 4, major 2 (3 at the deepest tier), rolled before
 escort variants. Repeatable same-zone elite reserves remain when unique leaders
 are exhausted. New mechanics get at most two actors and one unseen special;

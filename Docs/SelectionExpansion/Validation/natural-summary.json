@@ -1,0 +1,1353 @@
+{
+  "source": "f3ed12bd8806b7874749d4f05f3d523f14398266",
+  "batch": "20261119-082420",
+  "completion": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment.",
+  "cases": [
+    {
+      "label": "aggressive-209311",
+      "seed": 209311,
+      "policy": 4,
+      "character": "skeleton",
+      "level": 8,
+      "outcome": "defeat",
+      "seconds": 698.3798828125,
+      "visits": 2,
+      "moves": 206,
+      "abilities": 13,
+      "cards": 8,
+      "sequence": [
+        "dungeon",
+        "frostwake-peaks",
+        "magical-forest"
+      ],
+      "deepest": 47,
+      "guildReturnFormations": 0
+    },
+    {
+      "label": "aggressive-717229",
+      "seed": 717229,
+      "policy": 4,
+      "character": "skeleton",
+      "level": 8,
+      "outcome": "visit limit",
+      "seconds": 506.197265625,
+      "visits": 2,
+      "moves": 145,
+      "abilities": 11,
+      "cards": 6,
+      "sequence": [
+        "dungeon",
+        "frostwake-peaks"
+      ],
+      "deepest": 38,
+      "guildReturnFormations": 0
+    },
+    {
+      "label": "defensive-121909",
+      "seed": 121909,
+      "policy": 3,
+      "character": "bardley",
+      "level": 3,
+      "outcome": "visit limit",
+      "seconds": 906.552734375,
+      "visits": 2,
+      "moves": 175,
+      "abilities": 28,
+      "cards": 6,
+      "sequence": [
+        "dungeon",
+        "ironvein-excavation"
+      ],
+      "deepest": 36,
+      "guildReturnFormations": 0
+    },
+    {
+      "label": "defensive-972283",
+      "seed": 972283,
+      "policy": 3,
+      "character": "bardley",
+      "level": 3,
+      "outcome": "visit limit",
+      "seconds": 813.73291015625,
+      "visits": 2,
+      "moves": 170,
+      "abilities": 23,
+      "cards": 6,
+      "sequence": [
+        "dungeon",
+        "frostwake-peaks"
+      ],
+      "deepest": 34,
+      "guildReturnFormations": 0
+    },
+    {
+      "label": "novice-41339",
+      "seed": 41339,
+      "policy": 0,
+      "character": "skeleton",
+      "level": 1,
+      "outcome": "visit limit",
+      "seconds": 1047.528076171875,
+      "visits": 2,
+      "moves": 263,
+      "abilities": 14,
+      "cards": 6,
+      "sequence": [
+        "dungeon",
+        "frostwake-peaks"
+      ],
+      "deepest": 37,
+      "guildReturnFormations": 0
+    },
+    {
+      "label": "novice-904681",
+      "seed": 904681,
+      "policy": 0,
+      "character": "skeleton",
+      "level": 1,
+      "outcome": "defeat",
+      "seconds": 883.3111572265625,
+      "visits": 1,
+      "moves": 222,
+      "abilities": 11,
+      "cards": 6,
+      "sequence": [
+        "dungeon",
+        "frostwake-peaks"
+      ],
+      "deepest": 33,
+      "guildReturnFormations": 0
+    },
+    {
+      "label": "skilled-14281",
+      "seed": 14281,
+      "policy": 2,
+      "character": "dungeon_attender",
+      "level": 8,
+      "outcome": "visit limit",
+      "seconds": 1606.10986328125,
+      "visits": 4,
+      "moves": 438,
+      "abilities": 51,
+      "cards": 12,
+      "sequence": [
+        "dungeon",
+        "drowned-court",
+        "ironvein-excavation",
+        "dungeon"
+      ],
+      "deepest": 69,
+      "guildReturnFormations": 3
+    },
+    {
+      "label": "skilled-456217",
+      "seed": 456217,
+      "policy": 2,
+      "character": "dungeon_attender",
+      "level": 8,
+      "outcome": "visit limit",
+      "seconds": 598.023681640625,
+      "visits": 2,
+      "moves": 183,
+      "abilities": 17,
+      "cards": 6,
+      "sequence": [
+        "dungeon",
+        "magical-forest"
+      ],
+      "deepest": 37,
+      "guildReturnFormations": 0
+    },
+    {
+      "label": "typical-58439",
+      "seed": 58439,
+      "policy": 1,
+      "character": "kobold_gunner",
+      "level": 4,
+      "outcome": "visit limit",
+      "seconds": 649.2109375,
+      "visits": 2,
+      "moves": 175,
+      "abilities": 16,
+      "cards": 6,
+      "sequence": [
+        "dungeon",
+        "frostwake-peaks"
+      ],
+      "deepest": 35,
+      "guildReturnFormations": 0
+    },
+    {
+      "label": "typical-960931",
+      "seed": 960931,
+      "policy": 1,
+      "character": "kobold_gunner",
+      "level": 4,
+      "outcome": "visit limit",
+      "seconds": 616.95751953125,
+      "visits": 2,
+      "moves": 162,
+      "abilities": 15,
+      "cards": 6,
+      "sequence": [
+        "dungeon",
+        "ironvein-excavation"
+      ],
+      "deepest": 35,
+      "guildReturnFormations": 0
+    }
+  ],
+  "playtestCaseCount": 10,
+  "outcomes": {
+    "defeat": 2,
+    "visit limit": 8
+  },
+  "completedVisits": 21,
+  "totalRecordedVisits": 31,
+  "durableActions": 2442,
+  "formationsByEnemy": {
+    "pan_villager": 34,
+    "farmer": 64,
+    "basket_villager": 41,
+    "barricade_villager": 23,
+    "miner": 25,
+    "spear_guard": 59,
+    "shield_knight": 20,
+    "knight": 46,
+    "spear_knight": 28,
+    "barricade_guard": 24,
+    "crossbow_guard": 28,
+    "knight_captain": 4,
+    "iceborn_raider": 96,
+    "rimecarver": 23,
+    "harpoon_hunter": 10,
+    "frostfang_wolf": 22,
+    "rime_skald": 14,
+    "shieldmaiden": 8,
+    "hearthkeeper": 19,
+    "frostblade_reaver": 16,
+    "glacier_troll": 1,
+    "elven_pathblade": 4,
+    "elven_scout": 25,
+    "orc_bloomcaller": 3,
+    "orc_berserker": 3,
+    "orc_rootbinder": 3,
+    "briar_archer": 7,
+    "orc_trailguard": 6,
+    "elven_mender": 4,
+    "orc_drummer": 2,
+    "iceborn_axeman": 7,
+    "pickaxe_delver": 47,
+    "rail_switcher": 3,
+    "stonewright": 10,
+    "packbeetle": 5,
+    "vein_surveyor": 4,
+    "ore_hauler": 11,
+    "bore_engineer": 7,
+    "seismic_smith": 8,
+    "powder_sapper": 3,
+    "rivet_gunner": 8,
+    "obsidian_sentinel": 2,
+    "town_marshal": 2,
+    "jarl_haldra": 1,
+    "needlefin_skirmisher": 4,
+    "reef_spearman": 9,
+    "pearl_thief": 1,
+    "shellback_porter": 2,
+    "pearl_cantor": 1,
+    "moray_siphoner": 2,
+    "nacre_halberdier": 2,
+    "nacre_duelist": 2,
+    "conch_marshal": 3,
+    "reef_netweaver": 2,
+    "puffer_sentinel": 1,
+    "queen_nacre": 1,
+    "royal_swordsman": 7,
+    "royal_lancer": 5,
+    "court_mage": 4,
+    "royal_standard_bearer": 2,
+    "guild_ranger": 3,
+    "royal_arbalist": 2,
+    "guild_swordsman": 1,
+    "orc_slinghunter": 1,
+    "elven_thornkeeper": 2,
+    "iceborn_champion": 1,
+    "ore_ram": 1
+  },
+  "specialContactsByEnemy": {
+    "knight_captain": 13,
+    "harpoon_hunter": 5,
+    "rimecarver": 16,
+    "frostblade_reaver": 19,
+    "rime_skald": 14,
+    "glacier_troll": 1,
+    "briar_archer": 4,
+    "barricade_villager": 3,
+    "barricade_guard": 8,
+    "shield_knight": 10,
+    "rail_switcher": 2,
+    "stonewright": 6,
+    "ore_hauler": 4,
+    "seismic_smith": 10,
+    "obsidian_sentinel": 5,
+    "hearthkeeper": 12,
+    "jarl_haldra": 5,
+    "miner": 9,
+    "town_marshal": 6,
+    "shieldmaiden": 5,
+    "pearl_cantor": 1,
+    "moray_siphoner": 1,
+    "reef_netweaver": 3,
+    "queen_nacre": 4,
+    "conch_marshal": 1,
+    "bore_engineer": 3,
+    "court_mage": 5,
+    "orc_rootbinder": 3,
+    "elven_mender": 1,
+    "elven_thornkeeper": 1,
+    "iceborn_champion": 2
+  },
+  "damageBySource": {
+    "farmer": 90,
+    "pan_villager": 55,
+    "spear_guard": 270,
+    "knight_captain": 130,
+    "knight": 515,
+    "spear_knight": 585,
+    "iceborn_raider": 1255,
+    "harpoon_hunter": 75,
+    "frostfang_wolf": 95,
+    "rimecarver": 130,
+    "frostblade_reaver": 290,
+    "rime_skald": 130,
+    "Bifrost retaliation": 110,
+    "glacier_troll": 20,
+    "elven_scout": 160,
+    "orc_bloomcaller": 10,
+    "orc_berserker": 110,
+    "briar_archer": 110,
+    "orc_trailguard": 150,
+    "orc_drummer": 10,
+    "barricade_villager": 35,
+    "hearthkeeper": 110,
+    "basket_villager": 50,
+    "crossbow_guard": 90,
+    "barricade_guard": 75,
+    "shield_knight": 110,
+    "rail_switcher": 30,
+    "stonewright": 85,
+    "pickaxe_delver": 535,
+    "vein_surveyor": 15,
+    "seismic_smith": 210,
+    "ore_hauler": 60,
+    "powder_sapper": 30,
+    "rivet_gunner": 50,
+    "obsidian_sentinel": 120,
+    "miner": 60,
+    "town_marshal": 40,
+    "iceborn_axeman": 65,
+    "jarl_haldra": 150,
+    "shieldmaiden": 90,
+    "reef_spearman": 175,
+    "needlefin_skirmisher": 30,
+    "shellback_porter": 40,
+    "pearl_cantor": 5,
+    "moray_siphoner": 5,
+    "reef_netweaver": 15,
+    "queen_nacre": 105,
+    "conch_marshal": 15,
+    "nacre_duelist": 15,
+    "packbeetle": 10,
+    "bore_engineer": 50,
+    "royal_swordsman": 255,
+    "royal_lancer": 210,
+    "royal_standard_bearer": 70,
+    "court_mage": 60,
+    "royal_arbalist": 50,
+    "guild_ranger": 20,
+    "guild_swordsman": 30,
+    "elven_pathblade": 25,
+    "orc_rootbinder": 10,
+    "elven_mender": 5,
+    "elven_thornkeeper": 15,
+    "iceborn_champion": 140,
+    "ore_ram": 20
+  },
+  "mechanics": {
+    "pan_villager": {
+      "formations": 34,
+      "specials": 0,
+      "hpLoss": 55,
+      "shieldLoss": 0,
+      "firstDepth": 1
+    },
+    "farmer": {
+      "formations": 64,
+      "specials": 0,
+      "hpLoss": 90,
+      "shieldLoss": 0,
+      "firstDepth": 1
+    },
+    "basket_villager": {
+      "formations": 41,
+      "specials": 0,
+      "hpLoss": 50,
+      "shieldLoss": 0,
+      "firstDepth": 1
+    },
+    "barricade_villager": {
+      "formations": 23,
+      "specials": 3,
+      "hpLoss": 35,
+      "shieldLoss": 0,
+      "firstDepth": 1
+    },
+    "miner": {
+      "formations": 25,
+      "specials": 9,
+      "hpLoss": 60,
+      "shieldLoss": 0,
+      "firstDepth": 1
+    },
+    "spear_guard": {
+      "formations": 59,
+      "specials": 0,
+      "hpLoss": 270,
+      "shieldLoss": 0,
+      "firstDepth": 6
+    },
+    "shield_knight": {
+      "formations": 20,
+      "specials": 10,
+      "hpLoss": 110,
+      "shieldLoss": 0,
+      "firstDepth": 13
+    },
+    "knight": {
+      "formations": 46,
+      "specials": 0,
+      "hpLoss": 515,
+      "shieldLoss": 0,
+      "firstDepth": 13
+    },
+    "spear_knight": {
+      "formations": 28,
+      "specials": 0,
+      "hpLoss": 585,
+      "shieldLoss": 0,
+      "firstDepth": 13
+    },
+    "barricade_guard": {
+      "formations": 24,
+      "specials": 8,
+      "hpLoss": 75,
+      "shieldLoss": 0,
+      "firstDepth": 6
+    },
+    "crossbow_guard": {
+      "formations": 28,
+      "specials": 0,
+      "hpLoss": 90,
+      "shieldLoss": 0,
+      "firstDepth": 6
+    },
+    "knight_captain": {
+      "formations": 4,
+      "specials": 13,
+      "hpLoss": 130,
+      "shieldLoss": 0,
+      "firstDepth": 18
+    },
+    "iceborn_raider": {
+      "formations": 96,
+      "specials": 0,
+      "hpLoss": 1255,
+      "shieldLoss": 0,
+      "firstDepth": 18
+    },
+    "rimecarver": {
+      "formations": 23,
+      "specials": 16,
+      "hpLoss": 130,
+      "shieldLoss": 0,
+      "firstDepth": 19
+    },
+    "harpoon_hunter": {
+      "formations": 10,
+      "specials": 5,
+      "hpLoss": 75,
+      "shieldLoss": 0,
+      "firstDepth": 20
+    },
+    "frostfang_wolf": {
+      "formations": 22,
+      "specials": 0,
+      "hpLoss": 95,
+      "shieldLoss": 0,
+      "firstDepth": 20
+    },
+    "rime_skald": {
+      "formations": 14,
+      "specials": 14,
+      "hpLoss": 130,
+      "shieldLoss": 0,
+      "firstDepth": 23
+    },
+    "shieldmaiden": {
+      "formations": 8,
+      "specials": 5,
+      "hpLoss": 90,
+      "shieldLoss": 0,
+      "firstDepth": 21
+    },
+    "hearthkeeper": {
+      "formations": 19,
+      "specials": 12,
+      "hpLoss": 110,
+      "shieldLoss": 0,
+      "firstDepth": 18
+    },
+    "frostblade_reaver": {
+      "formations": 16,
+      "specials": 19,
+      "hpLoss": 290,
+      "shieldLoss": 0,
+      "firstDepth": 19
+    },
+    "Bifrost retaliation": {
+      "formations": 0,
+      "specials": 0,
+      "hpLoss": 110,
+      "shieldLoss": 0,
+      "firstDepth": 24
+    },
+    "glacier_troll": {
+      "formations": 1,
+      "specials": 1,
+      "hpLoss": 20,
+      "shieldLoss": 0,
+      "firstDepth": 37
+    },
+    "elven_pathblade": {
+      "formations": 4,
+      "specials": 0,
+      "hpLoss": 25,
+      "shieldLoss": 0,
+      "firstDepth": 21
+    },
+    "elven_scout": {
+      "formations": 25,
+      "specials": 0,
+      "hpLoss": 160,
+      "shieldLoss": 0,
+      "firstDepth": 22
+    },
+    "orc_bloomcaller": {
+      "formations": 3,
+      "specials": 0,
+      "hpLoss": 10,
+      "shieldLoss": 0,
+      "firstDepth": 37
+    },
+    "orc_berserker": {
+      "formations": 3,
+      "specials": 0,
+      "hpLoss": 110,
+      "shieldLoss": 0,
+      "firstDepth": 34
+    },
+    "orc_rootbinder": {
+      "formations": 3,
+      "specials": 3,
+      "hpLoss": 10,
+      "shieldLoss": 0,
+      "firstDepth": 28
+    },
+    "briar_archer": {
+      "formations": 7,
+      "specials": 4,
+      "hpLoss": 110,
+      "shieldLoss": 0,
+      "firstDepth": 22
+    },
+    "orc_trailguard": {
+      "formations": 6,
+      "specials": 0,
+      "hpLoss": 150,
+      "shieldLoss": 0,
+      "firstDepth": 20
+    },
+    "elven_mender": {
+      "formations": 4,
+      "specials": 1,
+      "hpLoss": 5,
+      "shieldLoss": 0,
+      "firstDepth": 21
+    },
+    "orc_drummer": {
+      "formations": 2,
+      "specials": 0,
+      "hpLoss": 10,
+      "shieldLoss": 0,
+      "firstDepth": 23
+    },
+    "iceborn_axeman": {
+      "formations": 7,
+      "specials": 0,
+      "hpLoss": 65,
+      "shieldLoss": 0,
+      "firstDepth": 21
+    },
+    "pickaxe_delver": {
+      "formations": 47,
+      "specials": 0,
+      "hpLoss": 535,
+      "shieldLoss": 0,
+      "firstDepth": 19
+    },
+    "rail_switcher": {
+      "formations": 3,
+      "specials": 2,
+      "hpLoss": 30,
+      "shieldLoss": 0,
+      "firstDepth": 21
+    },
+    "stonewright": {
+      "formations": 10,
+      "specials": 6,
+      "hpLoss": 85,
+      "shieldLoss": 0,
+      "firstDepth": 22
+    },
+    "packbeetle": {
+      "formations": 5,
+      "specials": 0,
+      "hpLoss": 10,
+      "shieldLoss": 0,
+      "firstDepth": 23
+    },
+    "vein_surveyor": {
+      "formations": 4,
+      "specials": 0,
+      "hpLoss": 15,
+      "shieldLoss": 0,
+      "firstDepth": 21
+    },
+    "ore_hauler": {
+      "formations": 11,
+      "specials": 4,
+      "hpLoss": 60,
+      "shieldLoss": 0,
+      "firstDepth": 20
+    },
+    "bore_engineer": {
+      "formations": 7,
+      "specials": 3,
+      "hpLoss": 50,
+      "shieldLoss": 0,
+      "firstDepth": 19
+    },
+    "seismic_smith": {
+      "formations": 8,
+      "specials": 10,
+      "hpLoss": 210,
+      "shieldLoss": 0,
+      "firstDepth": 27
+    },
+    "powder_sapper": {
+      "formations": 3,
+      "specials": 0,
+      "hpLoss": 30,
+      "shieldLoss": 0,
+      "firstDepth": 29
+    },
+    "rivet_gunner": {
+      "formations": 8,
+      "specials": 0,
+      "hpLoss": 50,
+      "shieldLoss": 0,
+      "firstDepth": 22
+    },
+    "obsidian_sentinel": {
+      "formations": 2,
+      "specials": 5,
+      "hpLoss": 120,
+      "shieldLoss": 0,
+      "firstDepth": 34
+    },
+    "town_marshal": {
+      "formations": 2,
+      "specials": 6,
+      "hpLoss": 40,
+      "shieldLoss": 0,
+      "firstDepth": 16
+    },
+    "jarl_haldra": {
+      "formations": 1,
+      "specials": 5,
+      "hpLoss": 150,
+      "shieldLoss": 0,
+      "firstDepth": 34
+    },
+    "needlefin_skirmisher": {
+      "formations": 4,
+      "specials": 0,
+      "hpLoss": 30,
+      "shieldLoss": 0,
+      "firstDepth": 20
+    },
+    "reef_spearman": {
+      "formations": 9,
+      "specials": 0,
+      "hpLoss": 175,
+      "shieldLoss": 0,
+      "firstDepth": 20
+    },
+    "pearl_thief": {
+      "formations": 1,
+      "specials": 0,
+      "hpLoss": 0,
+      "shieldLoss": 0,
+      "firstDepth": 21
+    },
+    "shellback_porter": {
+      "formations": 2,
+      "specials": 0,
+      "hpLoss": 40,
+      "shieldLoss": 0,
+      "firstDepth": 22
+    },
+    "pearl_cantor": {
+      "formations": 1,
+      "specials": 1,
+      "hpLoss": 5,
+      "shieldLoss": 0,
+      "firstDepth": 23
+    },
+    "moray_siphoner": {
+      "formations": 2,
+      "specials": 1,
+      "hpLoss": 5,
+      "shieldLoss": 0,
+      "firstDepth": 24
+    },
+    "nacre_halberdier": {
+      "formations": 2,
+      "specials": 0,
+      "hpLoss": 0,
+      "shieldLoss": 0,
+      "firstDepth": 26
+    },
+    "nacre_duelist": {
+      "formations": 2,
+      "specials": 0,
+      "hpLoss": 15,
+      "shieldLoss": 0,
+      "firstDepth": 26
+    },
+    "conch_marshal": {
+      "formations": 3,
+      "specials": 1,
+      "hpLoss": 15,
+      "shieldLoss": 0,
+      "firstDepth": 27
+    },
+    "reef_netweaver": {
+      "formations": 2,
+      "specials": 3,
+      "hpLoss": 15,
+      "shieldLoss": 0,
+      "firstDepth": 29
+    },
+    "puffer_sentinel": {
+      "formations": 1,
+      "specials": 0,
+      "hpLoss": 0,
+      "shieldLoss": 0,
+      "firstDepth": 31
+    },
+    "queen_nacre": {
+      "formations": 1,
+      "specials": 4,
+      "hpLoss": 105,
+      "shieldLoss": 0,
+      "firstDepth": 32
+    },
+    "royal_swordsman": {
+      "formations": 7,
+      "specials": 0,
+      "hpLoss": 255,
+      "shieldLoss": 0,
+      "firstDepth": 53
+    },
+    "royal_lancer": {
+      "formations": 5,
+      "specials": 0,
+      "hpLoss": 210,
+      "shieldLoss": 0,
+      "firstDepth": 53
+    },
+    "court_mage": {
+      "formations": 4,
+      "specials": 5,
+      "hpLoss": 60,
+      "shieldLoss": 0,
+      "firstDepth": 55
+    },
+    "royal_standard_bearer": {
+      "formations": 2,
+      "specials": 0,
+      "hpLoss": 70,
+      "shieldLoss": 0,
+      "firstDepth": 56
+    },
+    "guild_ranger": {
+      "formations": 3,
+      "specials": 0,
+      "hpLoss": 20,
+      "shieldLoss": 0,
+      "firstDepth": 58
+    },
+    "royal_arbalist": {
+      "formations": 2,
+      "specials": 0,
+      "hpLoss": 50,
+      "shieldLoss": 0,
+      "firstDepth": 61
+    },
+    "guild_swordsman": {
+      "formations": 1,
+      "specials": 0,
+      "hpLoss": 30,
+      "shieldLoss": 0,
+      "firstDepth": 69
+    },
+    "orc_slinghunter": {
+      "formations": 1,
+      "specials": 0,
+      "hpLoss": 0,
+      "shieldLoss": 0,
+      "firstDepth": 20
+    },
+    "elven_thornkeeper": {
+      "formations": 2,
+      "specials": 1,
+      "hpLoss": 15,
+      "shieldLoss": 0,
+      "firstDepth": 30
+    },
+    "iceborn_champion": {
+      "formations": 1,
+      "specials": 2,
+      "hpLoss": 140,
+      "shieldLoss": 0,
+      "firstDepth": 34
+    },
+    "ore_ram": {
+      "formations": 1,
+      "specials": 0,
+      "hpLoss": 20,
+      "shieldLoss": 0,
+      "firstDepth": 29
+    }
+  },
+  "selectionPhaseRoleFamily": {
+    "Early/Relief/Village watch": 33,
+    "Early/Introduction/Village watch": 14,
+    "Early/Standard/Village watch": 25,
+    "Mid/Standard/Town garrison": 31,
+    "Mid/Standard/Village watch": 9,
+    "Early/Standard/Town garrison": 16,
+    "Mid/Relief/Village watch": 6,
+    "Mid/Standard/Knight company": 25,
+    "Early/Standard/Knight company": 6,
+    "Unbanded/Capstone/Local patrol": 21,
+    "Mid/Introduction/Mountain hunters": 11,
+    "Early/Introduction/Mountain hunters": 2,
+    "Mid/Standard/Mountain hunters": 20,
+    "Mid/Introduction/Hall guard": 8,
+    "Mid/Standard/Hall guard": 16,
+    "Late/Standard/Mountain hunters": 7,
+    "Mid/Relief/Mountain hunters": 13,
+    "Mid/Pressure/Mountain hunters": 5,
+    "Late/Relief/Mountain hunters": 3,
+    "Mid/Relief/Grove defenders": 4,
+    "Mid/Introduction/Woodland clans": 1,
+    "Mid/Standard/Woodland clans": 5,
+    "Mid/Standard/Grove defenders": 4,
+    "Late/Pressure/Grove defenders": 1,
+    "Late/Standard/Grove defenders": 3,
+    "Late/Introduction/Woodland clans": 2,
+    "Early/Introduction/Town garrison": 7,
+    "Early/Introduction/Hall guard": 1,
+    "Late/Pressure/Mountain hunters": 3,
+    "Late/Standard/Hall guard": 7,
+    "Mid/Introduction/Knight company": 3,
+    "Mid/Introduction/Bore crew": 8,
+    "Early/Introduction/Excavation crew": 1,
+    "Mid/Standard/Ore caravan": 4,
+    "Mid/Introduction/Excavation crew": 2,
+    "Late/Introduction/Ore caravan": 1,
+    "Mid/Standard/Bore crew": 7,
+    "Mid/Pressure/Ore caravan": 1,
+    "Mid/Standard/Excavation crew": 4,
+    "Late/Pressure/Bore crew": 1,
+    "Mid/Relief/Ore caravan": 1,
+    "Late/Pressure/Ore caravan": 3,
+    "Early/Standard/Mountain hunters": 2,
+    "Late/Introduction/Hall guard": 1,
+    "Early/Introduction/Knight company": 1,
+    "Mid/Relief/Reef Clans": 1,
+    "Early/Introduction/Reef Clans": 2,
+    "Mid/Standard/Reef Clans": 4,
+    "Mid/Introduction/Nacre Court": 2,
+    "Late/Standard/Nacre Court": 2,
+    "Mid/Introduction/Reef Clans": 1,
+    "Late/Pressure/Reef Clans": 1,
+    "Mid/Introduction/Ore caravan": 1,
+    "Late/Relief/Ore caravan": 3,
+    "Late/Standard/Bore crew": 1,
+    "Mid/Relief/Excavation crew": 3,
+    "Mid/Pressure/Bore crew": 1,
+    "Late/Standard/Ore caravan": 1,
+    "Late/Relief/Excavation crew": 2,
+    "Late/Standard/Excavation crew": 2,
+    "Late/Standard/Knight company": 5,
+    "Late/Relief/Royal guard": 1,
+    "Mid/Introduction/Royal guard": 1,
+    "Late/Introduction/Royal guard": 2,
+    "Late/Standard/Guild expedition": 1,
+    "Late/Standard/Royal guard": 1,
+    "Late/Pressure/Royal guard": 2,
+    "Mid/Standard/Guild expedition": 1,
+    "Mid/Standard/Royal guard": 1,
+    "Late/Relief/Guild expedition": 1,
+    "Mid/Introduction/Grove defenders": 3,
+    "Early/Standard/Woodland clans": 1,
+    "Late/Relief/Grove defenders": 2,
+    "Late/Pressure/Woodland clans": 1,
+    "Mid/Introduction/Town garrison": 1,
+    "Early/Introduction/Ore caravan": 1
+  },
+  "earliestCardsByZone": {
+    "drowned-court": [
+      30.451
+    ],
+    "dungeon": [
+      20.254,
+      13.812,
+      33.643,
+      45.313,
+      49.743,
+      57.396,
+      13.873,
+      112.889,
+      9.265,
+      26.368,
+      27.708
+    ],
+    "frostwake-peaks": [
+      12.275,
+      23.215,
+      51.687,
+      47.572,
+      64.966,
+      39.021
+    ],
+    "ironvein-excavation": [
+      42.547,
+      45.65,
+      42.169
+    ],
+    "magical-forest": [
+      58.752,
+      39.927
+    ]
+  },
+  "completedVisitSecondsByZone": {
+    "drowned-court": [
+      315.456
+    ],
+    "dungeon": [
+      207.481,
+      251.811,
+      374.905,
+      291.89,
+      489.721,
+      439.029,
+      293.827,
+      678.197,
+      275.023,
+      300.724,
+      285.252
+    ],
+    "frostwake-peaks": [
+      293.328,
+      254.38,
+      521.838,
+      557.802,
+      348.482
+    ],
+    "ironvein-excavation": [
+      531.643,
+      318.624,
+      331.7
+    ],
+    "magical-forest": [
+      322.996
+    ]
+  },
+  "naturalGuildReturnCount": 3,
+  "limitations": [
+    "Actual Unity Game-scene legal-input proxy, not human enjoyment approval.",
+    "Completed wall time includes thinking, card reading and travel; incomplete visits are excluded from timing distributions.",
+    "First-card interval is measured from first observation of that visit; incoming reveal may overlap it.",
+    "Enemy telegraph response counters cover visible marked-gem responses; they do not certify every attack as fair.",
+    "Accepted swaps, abilities and consumables are separate; card picks do not consume a combat action.",
+    "Warning-without-immediate-marked-match counts include environmental/cell warnings and alternative counters; they are not proof of unavoidable damage.",
+    "Different levels/characters must be separated before interpreting skill effects.",
+    "Policy-v2 suboptimal/priority/cast flags are visible heuristic diagnostics, not proof of a tactical mistake; specials or killing a caster can answer threats indirectly.",
+    "Policy-v2 attention does not model touch error, memory, reading comprehension or human enjoyment. The skilled policy sees all visible legal responses, never hidden refill or future offers.",
+    "Fresh-run IDs and capstone seeds are captured in initial-account/native journals. The named seed initializes board and encounter streams; matching named seeds alone does not prove identical whole runs."
+  ],
+  "intervalsBetweenMechanicFormations": {
+    "elven_mender": [
+      {
+        "case": "aggressive-209311",
+        "visit": 2,
+        "zone": "magical-forest",
+        "depths": [
+          45,
+          47
+        ],
+        "encountersBetween": [
+          1
+        ]
+      },
+      {
+        "case": "skilled-456217",
+        "visit": 1,
+        "zone": "magical-forest",
+        "depths": [
+          21,
+          29
+        ],
+        "encountersBetween": [
+          7
+        ]
+      }
+    ],
+    "packbeetle": [
+      {
+        "case": "defensive-121909",
+        "visit": 1,
+        "zone": "ironvein-excavation",
+        "depths": [
+          23,
+          33
+        ],
+        "encountersBetween": [
+          9
+        ]
+      },
+      {
+        "case": "skilled-14281",
+        "visit": 2,
+        "zone": "ironvein-excavation",
+        "depths": [
+          36,
+          39,
+          48
+        ],
+        "encountersBetween": [
+          2,
+          8
+        ]
+      }
+    ],
+    "moray_siphoner": [
+      {
+        "case": "skilled-14281",
+        "visit": 1,
+        "zone": "drowned-court",
+        "depths": [
+          24,
+          28
+        ],
+        "encountersBetween": [
+          3
+        ]
+      }
+    ],
+    "royal_": [
+      {
+        "case": "skilled-14281",
+        "visit": 3,
+        "zone": "dungeon",
+        "depths": [
+          53,
+          55,
+          56,
+          59,
+          60,
+          61,
+          62,
+          66,
+          67
+        ],
+        "encountersBetween": [
+          1,
+          0,
+          2,
+          0,
+          0,
+          0,
+          3,
+          0
+        ]
+      }
+    ],
+    "guild_": [
+      {
+        "case": "skilled-14281",
+        "visit": 3,
+        "zone": "dungeon",
+        "depths": [
+          58,
+          64,
+          69
+        ],
+        "encountersBetween": [
+          5,
+          4
+        ]
+      }
+    ]
+  },
+  "nativeSnapshotExposure": {
+    "packbeetleObserved": [
+      [
+        "defensive-121909",
+        1,
+        "ironvein-excavation",
+        23
+      ],
+      [
+        "defensive-121909",
+        1,
+        "ironvein-excavation",
+        33
+      ],
+      [
+        "skilled-14281",
+        2,
+        "ironvein-excavation",
+        36
+      ],
+      [
+        "skilled-14281",
+        2,
+        "ironvein-excavation",
+        39
+      ],
+      [
+        "skilled-14281",
+        2,
+        "ironvein-excavation",
+        48
+      ]
+    ],
+    "orePoweredActorObserved": [
+      [
+        "defensive-121909",
+        1,
+        "ironvein-excavation",
+        28,
+        57,
+        "stonewright"
+      ],
+      [
+        "defensive-121909",
+        1,
+        "ironvein-excavation",
+        28,
+        59,
+        "pickaxe_delver"
+      ],
+      [
+        "defensive-121909",
+        1,
+        "ironvein-excavation",
+        33,
+        70,
+        "rivet_gunner"
+      ],
+      [
+        "skilled-14281",
+        2,
+        "ironvein-excavation",
+        35,
+        75,
+        "pickaxe_delver"
+      ],
+      [
+        "skilled-14281",
+        2,
+        "ironvein-excavation",
+        36,
+        77,
+        "pickaxe_delver"
+      ],
+      [
+        "skilled-14281",
+        2,
+        "ironvein-excavation",
+        46,
+        97,
+        "pickaxe_delver"
+      ],
+      [
+        "skilled-14281",
+        2,
+        "ironvein-excavation",
+        46,
+        98,
+        "rivet_gunner"
+      ],
+      [
+        "skilled-14281",
+        2,
+        "ironvein-excavation",
+        50,
+        104,
+        "stonewright"
+      ]
+    ],
+    "forestMenderChannelObserved": [
+      [
+        "skilled-456217",
+        1,
+        "magical-forest",
+        29,
+        58
+      ]
+    ]
+  },
+  "lastDurableCheckpoint": [
+    {
+      "case": "aggressive-209311",
+      "lastDurableCheckpointZone": "magical-forest",
+      "hp": 10,
+      "shield": 0,
+      "potions": 0,
+      "bombs": 0
+    },
+    {
+      "case": "aggressive-717229",
+      "lastDurableCheckpointZone": "frostwake-peaks",
+      "hp": 100,
+      "shield": 0,
+      "potions": 2,
+      "bombs": 0
+    },
+    {
+      "case": "defensive-121909",
+      "lastDurableCheckpointZone": "ironvein-excavation",
+      "hp": 55,
+      "shield": 0,
+      "potions": 0,
+      "bombs": 3
+    },
+    {
+      "case": "defensive-972283",
+      "lastDurableCheckpointZone": "frostwake-peaks",
+      "hp": 80,
+      "shield": 0,
+      "potions": 0,
+      "bombs": 3
+    },
+    {
+      "case": "novice-41339",
+      "lastDurableCheckpointZone": "frostwake-peaks",
+      "hp": 115,
+      "shield": 0,
+      "potions": 0,
+      "bombs": 3
+    },
+    {
+      "case": "novice-904681",
+      "lastDurableCheckpointZone": "frostwake-peaks",
+      "hp": 10,
+      "shield": 0,
+      "potions": 0,
+      "bombs": 0
+    },
+    {
+      "case": "skilled-14281",
+      "lastDurableCheckpointZone": "dungeon",
+      "hp": 75,
+      "shield": 0,
+      "potions": 0,
+      "bombs": 3
+    },
+    {
+      "case": "skilled-456217",
+      "lastDurableCheckpointZone": "magical-forest",
+      "hp": 165,
+      "shield": 0,
+      "potions": 3,
+      "bombs": 3
+    },
+    {
+      "case": "typical-58439",
+      "lastDurableCheckpointZone": "frostwake-peaks",
+      "hp": 15,
+      "shield": 0,
+      "potions": 0,
+      "bombs": 3
+    },
+    {
+      "case": "typical-960931",
+      "lastDurableCheckpointZone": "ironvein-excavation",
+      "hp": 110,
+      "shield": 0,
+      "potions": 0,
+      "bombs": 1
+    }
+  ],
+  "ordinaryOnlyRecurrenceByZone": {
+    "dungeon": {
+      "ordinary": 193,
+      "sameAsPreviousTwo": 1
+    },
+    "frostwake-peaks": {
+      "ordinary": 99
+    },
+    "magical-forest": {
+      "ordinary": 27
+    },
+    "ironvein-excavation": {
+      "ordinary": 48
+    },
+    "drowned-court": {
+      "ordinary": 13
+    }
+  },
+  "recurrenceAgainstActualFormationHistory": {
+    "dungeon": {
+      "ordinary": 193
+    },
+    "frostwake-peaks": {
+      "ordinary": 99
+    },
+    "magical-forest": {
+      "ordinary": 27
+    },
+    "ironvein-excavation": {
+      "ordinary": 48
+    },
+    "drowned-court": {
+      "ordinary": 13
+    }
+  }
+}

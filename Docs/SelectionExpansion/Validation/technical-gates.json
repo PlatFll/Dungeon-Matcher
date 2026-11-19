@@ -1,0 +1,199 @@
+{
+  "Focused-84dcc0b": {
+    "source": "84dcc0b5296a8e29b513478fb8ec656f3d878570",
+    "startedUtc": "2026-11-19T08:00:05.7438175Z",
+    "phase": "focused",
+    "pid": 29648,
+    "finishedUtc": "2026-11-19T08:03:57.0193364Z",
+    "exitCode": 2,
+    "evidence": ".utmp/SelectionExpansion/Focused-84dcc0b/job.json",
+    "artifactSha256": "1ee9ad585690ea96f888f2a780d0fae5f4748e7e4b9221d8c160a61b0b8acdcb",
+    "tests": {
+      "total": "42",
+      "passed": "36",
+      "failed": "6",
+      "skipped": "0"
+    },
+    "failedCases": [
+      "ForestFoundationPlayTests.ExpansionGalleryCourt",
+      "ForestFoundationPlayTests.ExpansionGalleryForest",
+      "ForestFoundationPlayTests.ExpansionGalleryFrostwake",
+      "ForestFoundationPlayTests.ExpansionGalleryGuildFrontLine",
+      "ForestFoundationPlayTests.ExpansionGalleryGuildHealer",
+      "ForestFoundationPlayTests.ExpansionGalleryIronvein"
+    ]
+  },
+  "Gallery-a9a18c2b": {
+    "source": "a9a18c2b9caf34062327d97229c13783f425c72f",
+    "startedUtc": "2026-11-19T08:08:40.1012370Z",
+    "phase": "gallery",
+    "pid": 24592,
+    "finishedUtc": "2026-11-19T08:09:34.2033851Z",
+    "exitCode": 0,
+    "evidence": ".utmp/SelectionExpansion/Gallery-a9a18c2b/job.json",
+    "artifactSha256": "5ff69ff2073ae8d5d7e12b4d26a6bb772cb5976df8f2321a7b236fae1e852aea",
+    "tests": {
+      "total": "6",
+      "passed": "6",
+      "failed": "0",
+      "skipped": "0"
+    },
+    "failedCases": []
+  },
+  "FinalFocused-a9a18c2b": {
+    "source": "a9a18c2b9caf34062327d97229c13783f425c72f",
+    "startedUtc": "2026-11-19T08:10:15.9078448Z",
+    "phase": "focused",
+    "pid": 20140,
+    "finishedUtc": "2026-11-19T08:15:27.4730401Z",
+    "exitCode": 0,
+    "evidence": ".utmp/SelectionExpansion/FinalFocused-a9a18c2b/job.json",
+    "artifactSha256": "c8660ebb6d537d6f14f36b25a427a1eef7fcd60980c9851484383e5a41e8421c",
+    "tests": {
+      "total": "43",
+      "passed": "43",
+      "failed": "0",
+      "skipped": "0"
+    },
+    "failedCases": []
+  },
+  "gallery-f3ed12bd": {
+    "source": "f3ed12bd8806b7874749d4f05f3d523f14398266",
+    "startedUtc": "2026-11-19T08:21:55.7182932Z",
+    "phase": "gallery",
+    "pid": 33168,
+    "finishedUtc": "2026-11-19T08:22:45.9845797Z",
+    "exitCode": 0,
+    "evidence": ".utmp/SelectionExpansion/gallery-f3ed12bd/job.json",
+    "artifactSha256": "5f6ece9dda10a1664315bde8f1725beeb224773288ea10a997c622b9fc91b545",
+    "tests": {
+      "total": "6",
+      "passed": "6",
+      "failed": "0",
+      "skipped": "0"
+    },
+    "failedCases": []
+  },
+  "windows-f3ed12bd": {
+    "source": "f3ed12bd8806b7874749d4f05f3d523f14398266",
+    "startedUtc": "2026-11-19T08:22:46.2933138Z",
+    "phase": "windows",
+    "pid": 16472,
+    "finishedUtc": "2026-11-19T08:24:04.5339020Z",
+    "exitCode": 0,
+    "build": {
+      "result": "Succeeded",
+      "unity": "6000.3.19f1",
+      "errors": 0,
+      "warnings": 6,
+      "bytes": 462608823,
+      "seconds": 66.86960619999999,
+      "deviceTested": false
+    },
+    "evidence": ".utmp/SelectionExpansion/windows-f3ed12bd",
+    "localArtifact": ".utmp/SelectionExpansion/windows-f3ed12bd/Windows/DungeonMatcher.exe",
+    "fileBytes": 667136,
+    "fileSha256": "1377ae95b8d09103b4f304eab912fd826afcc94ef4daf3a3dfd350014b78562e"
+  },
+  "Balance-84dcc0b": {
+    "source": "84dcc0b5296a8e29b513478fb8ec656f3d878570",
+    "evidence": ".utmp/SelectionExpansion/Balance-84dcc0b/balance-editmode.xml",
+    "artifactSha256": "9a21cbc6077850bdd3190ff63f3e70fd01ed3f81ef4ad50406221d5f0ac7bd14",
+    "tests": {
+      "total": "278",
+      "passed": "278",
+      "failed": "0",
+      "skipped": "0"
+    }
+  },
+  "FinalBalance-f3ed12bd": {
+    "source": "f3ed12bd8806b7874749d4f05f3d523f14398266",
+    "evidence": ".utmp/SelectionExpansion/FinalBalance-f3ed12bd/balance-editmode.xml",
+    "artifactSha256": "4aaf205d65228dc2ebb30279036d97cbee9a62c26bae5bcf0e87a6f730c2c627",
+    "tests": {
+      "total": "278",
+      "passed": "278",
+      "failed": "0",
+      "skipped": "0"
+    }
+  },
+  "android-f3ed12bd": {
+    "source": "f3ed12bd8806b7874749d4f05f3d523f14398266",
+    "startedUtc": "2026-11-19T10:43:19.0952389Z",
+    "phase": "android",
+    "pid": 13360,
+    "finishedUtc": "2026-11-19T10:49:41.3696955Z",
+    "exitCode": 0,
+    "build": {
+      "result": "Succeeded",
+      "unity": "6000.3.19f1",
+      "errors": 0,
+      "warnings": 7,
+      "bytes": 1463868595,
+      "seconds": 301.78872559999996,
+      "deviceTested": false
+    },
+    "evidence": ".utmp/SelectionExpansion/android-f3ed12bd",
+    "localArtifact": ".utmp/SelectionExpansion/android-f3ed12bd/DungeonMatcher-CrystalResonance.apk",
+    "fileBytes": 87334553,
+    "fileSha256": "b57bd4acac3466a081d8bce70a101f79a74ace394fc818b7a2924a6727f84d7e"
+  },
+  "finalSequence": [
+    {
+      "phase": "validator",
+      "source": "f3ed12bd8806b7874749d4f05f3d523f14398266",
+      "startedUtc": "2026-11-19T08:18:11.0867639Z",
+      "finishedUtc": "2026-11-19T08:18:25.2951454Z",
+      "exitCode": 0
+    },
+    {
+      "phase": "balance",
+      "source": "f3ed12bd8806b7874749d4f05f3d523f14398266",
+      "startedUtc": "2026-11-19T08:18:25.2997637Z",
+      "finishedUtc": "2026-11-19T08:21:55.4511244Z",
+      "exitCode": 0
+    },
+    {
+      "phase": "gallery",
+      "source": "f3ed12bd8806b7874749d4f05f3d523f14398266",
+      "startedUtc": "2026-11-19T08:21:55.4511244Z",
+      "finishedUtc": "2026-11-19T08:22:46.0170521Z",
+      "exitCode": 0
+    },
+    {
+      "phase": "windows",
+      "source": "f3ed12bd8806b7874749d4f05f3d523f14398266",
+      "startedUtc": "2026-11-19T08:22:46.0185862Z",
+      "finishedUtc": "2026-11-19T08:24:04.5547102Z",
+      "exitCode": 0
+    },
+    {
+      "phase": "policy",
+      "source": "f3ed12bd8806b7874749d4f05f3d523f14398266",
+      "startedUtc": "2026-11-19T08:24:04.5557147Z",
+      "finishedUtc": "2026-11-19T10:43:18.7900949Z",
+      "exitCode": 0
+    },
+    {
+      "phase": "android",
+      "source": "f3ed12bd8806b7874749d4f05f3d523f14398266",
+      "startedUtc": "2026-11-19T10:43:18.7907333Z",
+      "finishedUtc": "2026-11-19T10:49:41.3995133Z",
+      "exitCode": 0
+    }
+  ],
+  "shutdown": {
+    "checkedUtc": "2026-11-19T10:50:41.3196899Z",
+    "ownedUnityJobPids": [
+      13360,
+      20140,
+      29648,
+      24592,
+      33168,
+      24844,
+      16472
+    ],
+    "completedJobs": 7,
+    "liveOwned": []
+  }
+}

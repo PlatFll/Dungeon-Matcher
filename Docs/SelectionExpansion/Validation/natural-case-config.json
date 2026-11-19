@@ -1,0 +1,115 @@
+{
+  "cases": [
+    {
+      "label": "novice-41339",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 0,
+      "seed": 41339,
+      "level": 1,
+      "maxVisits": 2,
+      "maxSeconds": 1050,
+      "diagnosticStart": false
+    },
+    {
+      "label": "novice-904681",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 0,
+      "seed": 904681,
+      "level": 1,
+      "maxVisits": 2,
+      "maxSeconds": 1050,
+      "diagnosticStart": false
+    },
+    {
+      "label": "typical-960931",
+      "zone": "dungeon",
+      "character": "kobold_gunner",
+      "policy": 1,
+      "seed": 960931,
+      "level": 4,
+      "maxVisits": 2,
+      "maxSeconds": 1050,
+      "diagnosticStart": false
+    },
+    {
+      "label": "typical-58439",
+      "zone": "dungeon",
+      "character": "kobold_gunner",
+      "policy": 1,
+      "seed": 58439,
+      "level": 4,
+      "maxVisits": 2,
+      "maxSeconds": 1050,
+      "diagnosticStart": false
+    },
+    {
+      "label": "skilled-456217",
+      "zone": "dungeon",
+      "character": "dungeon_attender",
+      "policy": 2,
+      "seed": 456217,
+      "level": 8,
+      "maxVisits": 2,
+      "maxSeconds": 1050,
+      "diagnosticStart": false
+    },
+    {
+      "label": "skilled-14281",
+      "zone": "dungeon",
+      "character": "dungeon_attender",
+      "policy": 2,
+      "seed": 14281,
+      "level": 8,
+      "maxVisits": 4,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "defensive-121909",
+      "zone": "dungeon",
+      "character": "bardley",
+      "policy": 3,
+      "seed": 121909,
+      "level": 3,
+      "maxVisits": 2,
+      "maxSeconds": 1050,
+      "diagnosticStart": false
+    },
+    {
+      "label": "defensive-972283",
+      "zone": "dungeon",
+      "character": "bardley",
+      "policy": 3,
+      "seed": 972283,
+      "level": 3,
+      "maxVisits": 2,
+      "maxSeconds": 1050,
+      "diagnosticStart": false
+    },
+    {
+      "label": "aggressive-717229",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 4,
+      "seed": 717229,
+      "level": 8,
+      "maxVisits": 2,
+      "maxSeconds": 1050,
+      "diagnosticStart": false
+    },
+    {
+      "label": "aggressive-209311",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 4,
+      "seed": 209311,
+      "level": 8,
+      "maxVisits": 4,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    }
+  ],
+  "capture": true
+}
