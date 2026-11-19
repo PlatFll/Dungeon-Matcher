@@ -1,0 +1,51 @@
+{
+  "enemy": "guild_bulwark",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/K06.png",
+  "firstFrameSHA256": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
+  "seed": 485127,
+  "count": 8,
+  "prompt": "One grounded melee blow with a heavy iron mace toward screen LEFT. Keep the grip and opaque dark iron mace head visibly connected by its shaft in every pose. Anticipate by lifting the mace vertically in the left half of the frame. Extend the arm to the far LEFT at chest height in a single horizontal strike, pause at contact then recover. Shield stays on the right of the body throughout. Bareheaded brown-haired guild guard, rust red scarf, same approved figure and size. No magic, no glint, no impact FX, no sparks, no white trails, no target. Stationary camera and feet.",
+  "id": "3915cd92-70a1-4344-8162-12ab7637c425",
+  "receipt": "id: 3915cd92-70a1-4344-8162-12ab7637c425\njob_id: 3915cd92-70a1-4344-8162-12ab7637c425\naction: One grounded melee blow with a heavy iron mace toward screen LEFT. Keep the grip and opaque dark iron mace head visibly connected by its shaft in every pose. Anticipate by lifting the mace vertically in the left half of the frame. Extend the arm to the far LEFT at chest height in a single horizontal strike, pause at contact then recover. Shield stays on the right of the body throughout. Bareheaded brown-haired guild guard, rust red scarf, same approved figure and size. No magic, no glint, no impact FX, no sparks, no white trails, no target. Stationary camera and feet.\nframes: 8\nsize: 112x88px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 485127\nasset_id: 04925115-9fe5-5e97-9d23-5d30b975f0bf\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3915cd92-70a1-4344-8162-12ab7637c425\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/3915cd92-70a1-4344-8162-12ab7637c425/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "correctionOf": "1fedd6c5-3360-4163-a459-c667615b44d8",
+  "lastFrameSHA256": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/3915cd92-70a1-4344-8162-12ab7637c425/00.png",
+      "sha256": "d7a74404acb3d75ac72c6acc24c60c6ceb7e5c8b38c4095c126d2584ea60138f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/3915cd92-70a1-4344-8162-12ab7637c425/01.png",
+      "sha256": "823de61ff65f0e0acf43e2ca60fabee7a5786d1bf862332808f46384f7ddbbb1"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/3915cd92-70a1-4344-8162-12ab7637c425/02.png",
+      "sha256": "20bb91a3ecd44df9fb80a967a25cec252ae71f594c7bb67b151c4961f251e62f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/3915cd92-70a1-4344-8162-12ab7637c425/03.png",
+      "sha256": "7f07d8be5eded07ae0c9439469dd11136729f4efda14454f27ad5af254a50008"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/3915cd92-70a1-4344-8162-12ab7637c425/04.png",
+      "sha256": "2c37e23618d0ff132b88b6fc2b0442f4643df1da2b1b8d9796b423f96f8bb08f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/3915cd92-70a1-4344-8162-12ab7637c425/05.png",
+      "sha256": "ff9342c50be6d0e864651513eacfc7a5b5b2ec0fc3c55435bedc093249ac3b4f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/3915cd92-70a1-4344-8162-12ab7637c425/06.png",
+      "sha256": "e237f932332db12effb765ad7c825bf570b158a90b9ea8d00491ecca49a38703"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/3915cd92-70a1-4344-8162-12ab7637c425/07.png",
+      "sha256": "65fd816da3559895ea51ac376a427d5c6ce6ada3a99ab3939bb05ce31d5b41ed"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/3915cd92-70a1-4344-8162-12ab7637c425/08.png",
+      "sha256": "2f36d8da6cdf4a3a1f8b1cc8c21ecfea98027f5a030ff63771d50e0706cbad71"
+    }
+  ]
+}

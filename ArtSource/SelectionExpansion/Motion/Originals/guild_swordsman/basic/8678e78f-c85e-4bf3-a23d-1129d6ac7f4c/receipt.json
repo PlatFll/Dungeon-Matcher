@@ -1,0 +1,49 @@
+{
+  "enemy": "guild_swordsman",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+  "firstFrameSHA256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+  "seed": 385101,
+  "count": 8,
+  "prompt": "Step from the back foot and slash the short sword diagonally to screen-left once. The sword stays gripped through the cut; recoil into guard. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "8678e78f-c85e-4bf3-a23d-1129d6ac7f4c",
+  "receipt": "id: 8678e78f-c85e-4bf3-a23d-1129d6ac7f4c\njob_id: 8678e78f-c85e-4bf3-a23d-1129d6ac7f4c\naction: Step from the back foot and slash the short sword diagonally to screen-left once. The sword stays gripped through the cut; recoil into guard. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385101\nasset_id: 3f48c5db-db39-508e-859b-02022a4867be\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"8678e78f-c85e-4bf3-a23d-1129d6ac7f4c\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/8678e78f-c85e-4bf3-a23d-1129d6ac7f4c/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/8678e78f-c85e-4bf3-a23d-1129d6ac7f4c/00.png",
+      "sha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/8678e78f-c85e-4bf3-a23d-1129d6ac7f4c/01.png",
+      "sha256": "285285147215d0f714d71497db7dcfce7b1187863aa8e1e1f58126f01168c948"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/8678e78f-c85e-4bf3-a23d-1129d6ac7f4c/02.png",
+      "sha256": "ec629ab75ecb27c4b106c8015aa45c5fff65790681b1378c59039c4c2a9534c1"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/8678e78f-c85e-4bf3-a23d-1129d6ac7f4c/03.png",
+      "sha256": "5dacd91b1e9f33a043d948ad668572d9031940d35d051c94439e8723d7023684"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/8678e78f-c85e-4bf3-a23d-1129d6ac7f4c/04.png",
+      "sha256": "c45cf71a8a7513ee2cba93422151c7c6bff581e1a7b9c87baa832da2058ea3f3"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/8678e78f-c85e-4bf3-a23d-1129d6ac7f4c/05.png",
+      "sha256": "6ad54b3ac0b5a8d7f920545cb1bf4095c9e9158fa9ef6ecc1a4fab9ade98a4a6"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/8678e78f-c85e-4bf3-a23d-1129d6ac7f4c/06.png",
+      "sha256": "404f27c57bd687aeade9a56e382cb93bb60110b602276145a0596293142df433"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/8678e78f-c85e-4bf3-a23d-1129d6ac7f4c/07.png",
+      "sha256": "96481d3b0a93d6998265cb25f9a2370107cc0fe4e44a7fdebbc8d3c513c5befa"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/8678e78f-c85e-4bf3-a23d-1129d6ac7f4c/08.png",
+      "sha256": "d2e839dd207b02fdb9a4d6a5cdd33c0e3a54f3eec7e930d5aa28b9b4d6367ac2"
+    }
+  ]
+}

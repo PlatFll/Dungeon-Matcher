@@ -1,0 +1,1087 @@
+[
+  {
+    "enemy": "elven_pathblade",
+    "state": "basic",
+    "jobId": "a1c03f73-d759-4a99-8c74-ca84acf39b2e",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/elven_pathblade.png",
+    "identitySHA256": "17488569d807d02bbc6fb73f587a12ffc01630b57c4c608733ed80c666a9b7bf",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      1
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      60,
+      100,
+      80
+    ],
+    "totalMs": 680,
+    "impactMs": 320,
+    "sourcePaletteSize": 31,
+    "floor": 4,
+    "cellSHA256": [
+      "4de5d1cad9d612c08ec8c23d34d9e697faee71b865fe023d5225ddad231ff455",
+      "b8c3d17dcfb0bb610ee5481fdcde630cf69e9abe037e15604060711be6731cd8",
+      "08c1bae88a1a70833946eede3615b2ead98b29585406366d624fbd100dc5b1e0",
+      "3a6f3abfeff45ab11b2457ffb324b4a2a0b6c36fc197a8e5766018d309b0ed02",
+      "b893cc143a948b0d34f8114ec3f344460793ee0951728ff105c18bf3c62472e8",
+      "96b8297812153e812f97dabf752cf9f6bf0d393c79b96c8a132f03667331c27f",
+      "bab9e927e38827cfa250083fdfa21b9d2751727c800ce335ca1f8d9732babe1e",
+      "b8c3d17dcfb0bb610ee5481fdcde630cf69e9abe037e15604060711be6731cd8"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/basic/sheet.png",
+    "sheetSHA256": "c53057d5ac93745cc5cd1924145f6e6a816584873c695f2ee4ac585603c76097",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/basic/source.aseprite",
+    "editableSHA256": "fd51c5ba4f2ee3b5cecfbb7ad1cb670ab8697786ec4d0b415fedf0db62b13f33",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/basic/preview.gif"
+  },
+  {
+    "enemy": "elven_pathblade",
+    "state": "idle",
+    "jobId": "4329b92c-2531-4b82-a061-10c578a0caec",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/elven_pathblade.png",
+    "identitySHA256": "17488569d807d02bbc6fb73f587a12ffc01630b57c4c608733ed80c666a9b7bf",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      2,
+      1
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      200,
+      200,
+      200,
+      190,
+      190,
+      190
+    ],
+    "totalMs": 1170,
+    "impactMs": null,
+    "sourcePaletteSize": 31,
+    "floor": 4,
+    "cellSHA256": [
+      "4de5d1cad9d612c08ec8c23d34d9e697faee71b865fe023d5225ddad231ff455",
+      "f2a56d7c1769b555a1a4e3e2c91ae36f30546241fa76ed7f985bacdf1c6f8999",
+      "14bb5509821e6e3d0b3e497a0438fd463ea415d14afa35555f4a882040427911",
+      "06796680df3cd4d738be1c1a3e40647ebf28b413191b7a619bc080160f60597d",
+      "14bb5509821e6e3d0b3e497a0438fd463ea415d14afa35555f4a882040427911",
+      "f2a56d7c1769b555a1a4e3e2c91ae36f30546241fa76ed7f985bacdf1c6f8999"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/idle/sheet.png",
+    "sheetSHA256": "f69d372d56e1192ded0615f549b90a4c007f572073bf57bf31ef8f5a6e5d8674",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/idle/source.aseprite",
+    "editableSHA256": "eb957b1b5b4fe20f081e47e92ab174595f4a453230afc961de43f2d96b99df19",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/idle/preview.gif"
+  },
+  {
+    "enemy": "guild_bulwark",
+    "state": "basic",
+    "jobId": "3915cd92-70a1-4344-8162-12ab7637c425",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/K06.png",
+    "identitySHA256": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
+    "sourceIndices": [
+      0,
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      60,
+      100,
+      80
+    ],
+    "totalMs": 680,
+    "impactMs": 320,
+    "sourcePaletteSize": 59,
+    "floor": 4,
+    "cellSHA256": [
+      "e3a872a3a60d68c1163b8b59ed595bcfb5db61491f3c459bac41b79b9a50d753",
+      "ebc9d40c668173c8ae9f68a2b0bca531d843d56f14f83eb6dc6d8be57c8d4f3a",
+      "d75f6d874008217f293947d41605c5166b1aa57aff2750a86c003938f41095d9",
+      "80e925c95ca7d05894da1680062fa0f9ed36807f69626f54e566aa2d4ed22600",
+      "97ba80cc95d0777eec24f6486dd82e43ee3a22300987f0777e7132f4a5ee43a1",
+      "ebc9d40c668173c8ae9f68a2b0bca531d843d56f14f83eb6dc6d8be57c8d4f3a",
+      "d75f6d874008217f293947d41605c5166b1aa57aff2750a86c003938f41095d9",
+      "e3a872a3a60d68c1163b8b59ed595bcfb5db61491f3c459bac41b79b9a50d753"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/basic/sheet.png",
+    "sheetSHA256": "600289801b2ec789adbc7a080a5241fc01eabd8e18c9d571f1daa9e74ada5d18",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/basic/source.aseprite",
+    "editableSHA256": "3a3a95d56f5c061c74565c1c6db717a102f4d6e05f8f822769abcaafb016b052",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/basic/preview.gif"
+  },
+  {
+    "enemy": "guild_bulwark",
+    "state": "idle",
+    "jobId": "98faae4e-03c3-4c17-903f-5fee01a1a58c",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/K06.png",
+    "identitySHA256": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      4,
+      3,
+      1
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "totalMs": 1170,
+    "impactMs": null,
+    "sourcePaletteSize": 59,
+    "floor": 4,
+    "cellSHA256": [
+      "e3a872a3a60d68c1163b8b59ed595bcfb5db61491f3c459bac41b79b9a50d753",
+      "4bec984a9b97d0c47ace0274493e0685f317d48ea95749d896a3fed571b46fda",
+      "9f2ab2f72cd83a07b2e7e083a7d734efeba1a3923e5259f9c1b0f296517f4a4a",
+      "47f3443d5fa50241ffd053298aec112be4aad85ce474c26c5b4bf2016afea044",
+      "41c625964a8303a8cb71d9e8fa0215bc090de4b94f8cd38013faea7647df4777",
+      "4cb4a541bc05c6661ff24962f80ab5a450504e5da080fb1f6befc05e4394903b",
+      "41c625964a8303a8cb71d9e8fa0215bc090de4b94f8cd38013faea7647df4777",
+      "47f3443d5fa50241ffd053298aec112be4aad85ce474c26c5b4bf2016afea044",
+      "4bec984a9b97d0c47ace0274493e0685f317d48ea95749d896a3fed571b46fda"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/idle/sheet.png",
+    "sheetSHA256": "6263c8c3cf562ed94e19ee22e773b0e84676d597baba398e6bb4301197ea810e",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/idle/source.aseprite",
+    "editableSHA256": "b0f27f1d60a95e8ef2465b54ad5e17b9f78205cdc219c506ce744321306d3840",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/idle/preview.gif"
+  },
+  {
+    "enemy": "guild_bulwark",
+    "state": "special",
+    "jobId": "5923f3a8-1f68-4c2d-ad3e-23765c1adf40",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/K06.png",
+    "identitySHA256": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      9,
+      10,
+      1
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      70,
+      70,
+      80,
+      70,
+      70,
+      90,
+      80,
+      70,
+      80,
+      100
+    ],
+    "totalMs": 780,
+    "impactMs": 360,
+    "sourcePaletteSize": 59,
+    "floor": 4,
+    "cellSHA256": [
+      "e3a872a3a60d68c1163b8b59ed595bcfb5db61491f3c459bac41b79b9a50d753",
+      "ed53ac4eef10f1b711a88bed637990c68892f2f3f21db9a66e0ad82ef4f13bc5",
+      "739a331c5af00496b6b46a545f55ef9ebf07ba7f3bb939f824aaf3ecfa2213e9",
+      "c408dd19bbd663204760a2ff43110bfd326762d7a0c85e0abeacc675755bda49",
+      "88f1ec2353f78641870abffbbcef37a562343cdd922a0406d104e89ab85f0ba1",
+      "cf4ddc06001c86ecedd19e9f6a7be469d27d6e8c83396c7cbf0aed6d8f6352f2",
+      "1975d43e7777712be0dd5a311d0e83f5d527a77c02bbdf250b4d68ad5cedf4e8",
+      "d4730edd88c6e97085f18647896fc08f263a26cd2f89c6e1b063e916b99b9917",
+      "9eed5199bf155c830da43845929a72efe61ed9d66c42aaf3c07432e27875b688",
+      "ed53ac4eef10f1b711a88bed637990c68892f2f3f21db9a66e0ad82ef4f13bc5"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/special/sheet.png",
+    "sheetSHA256": "d4855d62d147c80724bbf4d2c1d9aea3239dd573c12e32d2fd78cd863d0f50b1",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/special/source.aseprite",
+    "editableSHA256": "21da03be70bdec96797a99dedc295de03451fa214c1686552e34b821b183f476",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/special/preview.gif"
+  },
+  {
+    "enemy": "guild_chirurgeon",
+    "state": "basic",
+    "jobId": "32e145a3-2202-46a8-b1d9-92702ce18262",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_chirurgeon.png",
+    "identitySHA256": "97501e38ed69b1cb6c1919a229f71f0c3c7d87f26491ec5365cbbb2d5cc1c613",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      60,
+      100,
+      80
+    ],
+    "totalMs": 680,
+    "impactMs": 320,
+    "sourcePaletteSize": 33,
+    "floor": 4,
+    "cellSHA256": [
+      "b5182a93d6b3741c99d68a9c5dcacc6dad3a7edaf366e719babc55162b361f4f",
+      "7223f8730a3ceaad974b6bfb8f25f6adb2c84ca597b7d612a62336e591fa177c",
+      "2f2753b8f64e21ddba42af49cb1de3e05e94e11e6410f974419838ff5668677c",
+      "2a521b6c0431efd89975f6cb97dc06dfe6d5f96465ebe766abed9a54fd7438f1",
+      "bfa47d10858145ec74a525edea41051ed58edbcd0f9e7478e799a728b0f2ae3a",
+      "64d8c6ec01fabbac58da7b62b57f205bcc48a3a2dfa7c588e363ba5597daa5de",
+      "fccc17f956968a2a1067f502a068d7054848a0efb861882f3210fe020c2cc558",
+      "2fd368c232b13278790724316915ceb47027c1ed565a7294b1e5fa95c8b3d005"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/basic/sheet.png",
+    "sheetSHA256": "c4d64897bfc0925216b962709bcfdf70717f3f28d6b41b2b06c74d80502ef515",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/basic/source.aseprite",
+    "editableSHA256": "c7dd14ec483f3c083bb3d99a15395184d5cc51a1e3dd987b272117bf5ed0b2db",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/basic/preview.gif"
+  },
+  {
+    "enemy": "guild_chirurgeon",
+    "state": "idle",
+    "jobId": "b78cebac-dcfb-448a-add9-ba5a9d0d39d2",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_chirurgeon.png",
+    "identitySHA256": "97501e38ed69b1cb6c1919a229f71f0c3c7d87f26491ec5365cbbb2d5cc1c613",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "totalMs": 1170,
+    "impactMs": null,
+    "sourcePaletteSize": 33,
+    "floor": 4,
+    "cellSHA256": [
+      "b5182a93d6b3741c99d68a9c5dcacc6dad3a7edaf366e719babc55162b361f4f",
+      "95116588aa2502ae7077941bfbf80bf4efe9f7f6a81e84fc72b53a158efb04aa",
+      "22dee3a7cef05dbbb0b73a7b1f79cc89a42398e72098d6e0f0dc344e390c6c09",
+      "6a0aaff9954bb837c8673e1a613505387b34d1448121973dbc5e982e7614a877",
+      "8d27f827497403bee0101f82304953db7e2742d0265b15b20fc1f0b429095ddb",
+      "c06fcc5ff4cebb832a9348d137873aae62cdd5614927a57dcdc8a35ea8014ac5",
+      "aa7a330b1d73ff2eb9a94b299c95328d98ec73611ecf32c5899b2c2e58bc5752",
+      "37533e919d852fe034791218a703833b28d34a1ddf22534be3a86c3d3167ed07",
+      "260b3363b4b7274311da4c7902fb9855d497ebad59af33c7f607819a02476ede"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/idle/sheet.png",
+    "sheetSHA256": "4fa0b263bfcc9bf883ec8e87a538430216c9831463772daecd23fa8e5d3cecc7",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/idle/source.aseprite",
+    "editableSHA256": "790179f16ec2488f53742f46c895f043935ad39713094239697f94f4cb6287cc",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/idle/preview.gif"
+  },
+  {
+    "enemy": "guild_chirurgeon",
+    "state": "special",
+    "jobId": "0cab0c66-e125-4195-a00e-e3293f89c33c",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_chirurgeon.png",
+    "identitySHA256": "97501e38ed69b1cb6c1919a229f71f0c3c7d87f26491ec5365cbbb2d5cc1c613",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      70,
+      70,
+      80,
+      70,
+      70,
+      90,
+      80,
+      70,
+      80,
+      100
+    ],
+    "totalMs": 780,
+    "impactMs": 360,
+    "sourcePaletteSize": 33,
+    "floor": 4,
+    "cellSHA256": [
+      "b5182a93d6b3741c99d68a9c5dcacc6dad3a7edaf366e719babc55162b361f4f",
+      "dde8aaffcbe1692c2c924bb6428398adb1f4d76dd4df30dd6424a97b728ac0c1",
+      "b615cd406f33844c9bbfbc012397a3d22e681f75bd7225d1ba94062af0c4609c",
+      "147f52d4425a7679d46e0ef17589caafa314c3e39259ab4cab88a1de10268609",
+      "b26901f834211f51a6e976614d5c0063b967e08cb8783c4e10e598c227ba7f24",
+      "bd50f9adc21e07cace06b3f9366beea71963468bd1cacd1e227f70facf2d3f07",
+      "426c28c029acafd415c4ec9dd8bf0b2bbff2b578878b1406293ed662b26bab08",
+      "20682c0427eaaaeb68587a15f64bb33f232160354e965149c4475643414cd9d7",
+      "a0d1a086d9d46e9718fd05f238e7856fc3bd3bad8f8c3cd1bd58aefd6d5f34f8",
+      "d1fd4f127b5126b236d10f40685ddc1fc8938297ae027efa40aad77319b2c9b4"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/special/sheet.png",
+    "sheetSHA256": "6be14b3968d8c8d4f4c4786d462a47b7ed86364a2b69c9c0d0cd302dbbb21786",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/special/source.aseprite",
+    "editableSHA256": "bf3215fc9e9995c1e12acc8e2c601e6f1aa45f2ff8bba877778cd21e6485b02c",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/special/preview.gif"
+  },
+  {
+    "enemy": "guild_ranger",
+    "state": "basic",
+    "jobId": "bc499b5f-0743-4903-8ee0-b4506a729d82",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/R2.png",
+    "identitySHA256": "3e7fb908dbc705637cab341ab810164f641ebb55fd325662984ba3385c6ed92b",
+    "sourceIndices": [
+      0,
+      2,
+      1,
+      2,
+      4,
+      2,
+      4,
+      7
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      60,
+      100,
+      80
+    ],
+    "totalMs": 680,
+    "impactMs": 320,
+    "sourcePaletteSize": 68,
+    "floor": 4,
+    "cellSHA256": [
+      "96544f42a7505cfa37776a78551978886cba1e7e28b6bbf8f456c63a6ef624cb",
+      "4b646ebc34b3eb1cb76dfa7f15f543bd47c0431f8ed36c123094d8fc7b1e4c00",
+      "0e29cd4b06385b5cec8bcca7da5e4e3c9bc2fb6aa043f251e2eac73530bb6805",
+      "4b646ebc34b3eb1cb76dfa7f15f543bd47c0431f8ed36c123094d8fc7b1e4c00",
+      "72538f8f8e62cb52a143478ba80679a670283b6124bb0188fa6277b07ff5e67c",
+      "4b646ebc34b3eb1cb76dfa7f15f543bd47c0431f8ed36c123094d8fc7b1e4c00",
+      "72538f8f8e62cb52a143478ba80679a670283b6124bb0188fa6277b07ff5e67c",
+      "6f3b42eee23e8546e49e252bf4f1d63258cc8b9950591030175506a6bf8052d6"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_ranger/basic/sheet.png",
+    "sheetSHA256": "922f7a99b6eee8419a249d82e44a9c153a4e638fb8c795f59455352b6071f33d",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_ranger/basic/source.aseprite",
+    "editableSHA256": "67954c7982eda8d4c41869293eee15f0241f56e9a7160d0f2e276053e8b8a98f",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_ranger/basic/preview.gif"
+  },
+  {
+    "enemy": "guild_ranger",
+    "state": "idle",
+    "jobId": "f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/R2.png",
+    "identitySHA256": "3e7fb908dbc705637cab341ab810164f641ebb55fd325662984ba3385c6ed92b",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      1
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      300,
+      290,
+      290,
+      290
+    ],
+    "totalMs": 1170,
+    "impactMs": null,
+    "sourcePaletteSize": 68,
+    "floor": 4,
+    "cellSHA256": [
+      "96544f42a7505cfa37776a78551978886cba1e7e28b6bbf8f456c63a6ef624cb",
+      "9e772c2112f25bc56f7d24f1acc775d479cc9572fa1bb3b20d858de245918e4b",
+      "f7c8ba3f47e0ef8d1b8f99b64f7ba80a658ec7d617ae5d0cde4e2ba666bd78cf",
+      "9e772c2112f25bc56f7d24f1acc775d479cc9572fa1bb3b20d858de245918e4b"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_ranger/idle/sheet.png",
+    "sheetSHA256": "888259f5fe557ced7aa6e96dfe81bb301cf1034455ed1ebdc3542d5dbc968160",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_ranger/idle/source.aseprite",
+    "editableSHA256": "072b9166dda139d2659ce4bb50e6b25eb8762a54642413e471947f856b79474c",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_ranger/idle/preview.gif"
+  },
+  {
+    "enemy": "guild_swordsman",
+    "state": "basic",
+    "jobId": "111b0342-4255-41ee-9153-a48df6c91e27",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+    "identitySHA256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      60,
+      100,
+      80
+    ],
+    "totalMs": 680,
+    "impactMs": 320,
+    "sourcePaletteSize": 31,
+    "floor": 4,
+    "cellSHA256": [
+      "78cb1afd3eb264aa32c519a1d07f592ce6924db439c731db73462cc3e3749a5e",
+      "9a3bce135d68155aff8ea5c0e2231e612c336d3eb9e954f0a4c66c192ede5cf6",
+      "e0a0e33b0f6475f9973924a974cafc516f6508fb4814c40ef37662cfeae76a91",
+      "e2e37a19f872e5b8ab6f8e324f010e330a5cf28534448d6b9d737f0d898aa224",
+      "6c2c1ff6f6f872c2181d5b1fb09da1adb4b37fc2b6fb1608d488b3a02593899e",
+      "1fdf9bcbf9f0856e1e6ef2f368de23e70c6ef781ab0731efb36ecd0aab412f3c",
+      "bd661fda9a7c3ababa96652e5f24c67ebec9df4586e475fdbea5fba26291f41d",
+      "b95117aa3aa559fd4e5ec48cbeb0ef3a93b6ea0e327851406c64ebf73c62626e"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_swordsman/basic/sheet.png",
+    "sheetSHA256": "ac9577110dd7148507ff61807efaa6769475ebd0b396dd31bba2db48901d2503",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_swordsman/basic/source.aseprite",
+    "editableSHA256": "f4997743861748622fadf64e0f78cf4e74d445e5ce4f633bf38bbf600b92f607",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_swordsman/basic/preview.gif"
+  },
+  {
+    "enemy": "guild_swordsman",
+    "state": "idle",
+    "jobId": "5a591c4c-3b6d-48f8-b01c-d5c1c3bd64eb",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+    "identitySHA256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "totalMs": 1170,
+    "impactMs": null,
+    "sourcePaletteSize": 31,
+    "floor": 4,
+    "cellSHA256": [
+      "78cb1afd3eb264aa32c519a1d07f592ce6924db439c731db73462cc3e3749a5e",
+      "495bfcac11b1c68f4cc7e48eff46c33aa65afe22077818347aa674105cf32a7b",
+      "2628e8145f7fc05704a50c5f0418826b9a4f050d112193ee3682e6895ca701b7",
+      "ad2f9914ee738fa48ebc707b4feda4704781c26a923565e8edd25ddaa881c78b",
+      "5337b9239a10b5b6e5fa76aa0565a8cc2c55350a7454db88497bd8e3ed626510",
+      "cf1300f58a01ba9ef30015831d0407730159ece5fb1f985620dd6632713a2e64",
+      "950bdd7f119499e57f736a3b9477cc2cde0e8a9da7805fe660d76ee271d473b2",
+      "0e3674b1863cd088dd278364306d63d7fa175ce1b95ac7e4f18fa1deca3ddacf",
+      "cc0f4c2433bf384c0c210c06240ae4902fff584b49d068b72e7e30d393429f2d"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_swordsman/idle/sheet.png",
+    "sheetSHA256": "3b99c5eb9fa3466b896cab53ade44d844273c59b916086a6c5cca02eed7c971e",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_swordsman/idle/source.aseprite",
+    "editableSHA256": "959d6047e9a82dc185a5328cc736e274dfe1eeea0dd9069b68c76a8cf3832457",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_swordsman/idle/preview.gif"
+  },
+  {
+    "enemy": "iceborn_axeman",
+    "state": "basic",
+    "jobId": "f1f6677e-2482-464a-9f5a-5727bcaa5d01",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/iceborn_axeman.png",
+    "identitySHA256": "a221bb0f20214e3ff88a510432084c121cc3ea1dfd52850cb0b4aa57cd38ab37",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      1
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      60,
+      100,
+      80
+    ],
+    "totalMs": 680,
+    "impactMs": 320,
+    "sourcePaletteSize": 44,
+    "floor": 4,
+    "cellSHA256": [
+      "7f0e2f7902ec2bc69baf0214d250ce4362f9b158a8cfa09e2c04df5a4de309cc",
+      "adf6fdc2bdecff45f71d91d86a21e98a4c5f810b6ba7a6df31cc51aa6320dd08",
+      "7b88783c585dea1861fabeecbe58fe3471adf482c7224217bb70c08a888f18fd",
+      "08ba3c8203b898272ab77410dbb35246c9e651178528b4306c97058ff796bdf8",
+      "6129a851867fee12b521b1f55c1a7082d04e70ab92c18edb1446b8edec462d18",
+      "97797e9b76ffbfa83f723a4460fad570d9aa344b397f170432afd3a65259fae5",
+      "7c54130053ed6e7a7c1e1871defc3c64bf66b4c1e9f748e86aa8a1f718526106",
+      "adf6fdc2bdecff45f71d91d86a21e98a4c5f810b6ba7a6df31cc51aa6320dd08"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/iceborn_axeman/basic/sheet.png",
+    "sheetSHA256": "1560e03bb5872b529be5ea183034cc3a31e018596ca15f3ec69604ed4d1822bc",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/iceborn_axeman/basic/source.aseprite",
+    "editableSHA256": "8256a25c4dc5badd0b35e2f30183c047a4a1006364786abd2835085a56176dd4",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/iceborn_axeman/basic/preview.gif"
+  },
+  {
+    "enemy": "iceborn_axeman",
+    "state": "idle",
+    "jobId": "674c923a-e437-4900-bb37-bceed1c38d0e",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/iceborn_axeman.png",
+    "identitySHA256": "a221bb0f20214e3ff88a510432084c121cc3ea1dfd52850cb0b4aa57cd38ab37",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "totalMs": 1170,
+    "impactMs": null,
+    "sourcePaletteSize": 44,
+    "floor": 4,
+    "cellSHA256": [
+      "7f0e2f7902ec2bc69baf0214d250ce4362f9b158a8cfa09e2c04df5a4de309cc",
+      "482af74a2e1eb4fca54c1dbf6f207b3a640811fdc78546af234f56b819c4b463",
+      "93602c2d58524cdd3d60536f2ddc8c12ab866430dc71907ff68c5b027d3a15df",
+      "a683e060b12ddaaa74442a5a055ed678677f9c9b5644ffb5609af564892d0844",
+      "a4c80943e8ba83e520612ab88bf625416e7df3b02b79a82bc93839a2117936b6",
+      "5ddc867dea6050410382bb79fac5955bd355d0f2942c3ba34c1a423f80a38497",
+      "2a16b2e6a03ef31bb77258a35845541bfaadee2aec107d67d874bdae964f5e99",
+      "8d71b2b3aea1df72430ea75e90ca117517763a200809e6ca9786e08700190f71",
+      "047573e209ad11345da73d26a840690609236ae6d576be0b41f378b25bd89a5c"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/iceborn_axeman/idle/sheet.png",
+    "sheetSHA256": "c9d72d50d4d878631a673270db91b7c851ded04e25cb47994d99b1c895d59c25",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/iceborn_axeman/idle/source.aseprite",
+    "editableSHA256": "cfd9470de4f515c382bee2263cb152e58efe5d3d72331200a668256522696517",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/iceborn_axeman/idle/preview.gif"
+  },
+  {
+    "enemy": "nacre_duelist",
+    "state": "basic",
+    "jobId": "43d3c851-8f88-4171-a12e-42f975ebfaf4",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/nacre_duelist.png",
+    "identitySHA256": "354ff348ce40a1610bfccb475047b862725b2fa1fad3d5f93463ea41204a82a5",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      60,
+      100,
+      80
+    ],
+    "totalMs": 680,
+    "impactMs": 320,
+    "sourcePaletteSize": 71,
+    "floor": 4,
+    "cellSHA256": [
+      "e91a5049042423b55ca26ae2d2b68d399b89135a69d5110d2797251edaa12173",
+      "a6c87f8a9ef1d7a7334dd8db2a3ef61e2596fa1bab2f49a7ca7a372623a1e1fd",
+      "e06a57d5c1d76ab36cc0cc8482782d0dab44e53ff13788dff6c46619df049835",
+      "41e738f5e4608325f4c0e57e6cdcf1b0df27a2d7d72d8f093bd2447adae33074",
+      "411e08d76dc2983ad445785162dba550d23f4573b9e94299e8346a522c2ff987",
+      "08301fd48b95adfc7bec79bdcecaf1d751c26b5b69a47732cc36c54e2f6d98ce",
+      "5f17a8b0e0bd474449d55e7720a11e99f0fda81b0b52fe1a9ef95a3b966510d2",
+      "5d9313214d5dbdac7db7e603f77205a1abd3c26a5edc8ba32730491d290babba"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/nacre_duelist/basic/sheet.png",
+    "sheetSHA256": "fef997b4cfe916e3df39b025042482a0cb9b46222339fdd68e693f0a60e3d23f",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/nacre_duelist/basic/source.aseprite",
+    "editableSHA256": "e24e152a8edd421c4ab16d05efb69d25574665b637af0f4a7f4eb9797a72f91c",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/nacre_duelist/basic/preview.gif"
+  },
+  {
+    "enemy": "nacre_duelist",
+    "state": "idle",
+    "jobId": "4c54d5a3-c522-4c0c-aabe-64e4df4b43f9",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/nacre_duelist.png",
+    "identitySHA256": "354ff348ce40a1610bfccb475047b862725b2fa1fad3d5f93463ea41204a82a5",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      3,
+      2,
+      1
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      150,
+      150,
+      150,
+      150,
+      150,
+      140,
+      140,
+      140
+    ],
+    "totalMs": 1170,
+    "impactMs": null,
+    "sourcePaletteSize": 71,
+    "floor": 4,
+    "cellSHA256": [
+      "e91a5049042423b55ca26ae2d2b68d399b89135a69d5110d2797251edaa12173",
+      "37734cbb17f16f9f2b1d09bf54f7aba501872799ac549abe44be3c8f903c188e",
+      "f0dc580ad44622a481df6d5ae572265082e2901d406a25695e3bff66739c66c0",
+      "88d8005ca9a6467e8ec541e14c7eafa86ee91524e1d8bf9c31106552d307d2e5",
+      "6409f9a38e7e288db37ee52a4e6ad33ce42ae477df75db6dbe12e4c85a549dd2",
+      "88d8005ca9a6467e8ec541e14c7eafa86ee91524e1d8bf9c31106552d307d2e5",
+      "f0dc580ad44622a481df6d5ae572265082e2901d406a25695e3bff66739c66c0",
+      "37734cbb17f16f9f2b1d09bf54f7aba501872799ac549abe44be3c8f903c188e"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/nacre_duelist/idle/sheet.png",
+    "sheetSHA256": "f85277387359a540a142a2c26774dbf7964f505a05f3c42d152232036c68d529",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/nacre_duelist/idle/source.aseprite",
+    "editableSHA256": "49ad0155dc30e6be92279870b36cc54c812f3855f42090f5a013072e94d8d5a0",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/nacre_duelist/idle/preview.gif"
+  },
+  {
+    "enemy": "nacre_halberdier",
+    "state": "basic",
+    "jobId": "95f1bd8d-277a-4845-9cdf-73732d1907cd",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/nacre_halberdier.png",
+    "identitySHA256": "674d1c1620f22a018258e9a456363a3bf791df3aba128e629292dd9ba17a6e92",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      1
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      60,
+      100,
+      80
+    ],
+    "totalMs": 680,
+    "impactMs": 320,
+    "sourcePaletteSize": 33,
+    "floor": 4,
+    "cellSHA256": [
+      "24856bf3e4fb6b46eb79b846dda8c8c55c5e609273b8cabd662d44f366fd2a32",
+      "cbd9c721ab461cb2750b2fa348556b53218e1cb8201fe58d200c1c60c31cfdc5",
+      "5f5c8fa88626b3f40cefb2f501c5f465d65261ba5ec9496989d9d4facf3c40e7",
+      "b3d25c40aac90ca946f7d6ebcf1efb3db9ba36f548ea7b7be7c709e3d83adc58",
+      "5238b4e1b2422d9d86b127671cb13d0acdd669e95f6a77db1abffbd2324cb9c4",
+      "19b28173c877d77724f18e3c3ae5699c0bde2d8640bdbb63ea5372f545a87020",
+      "f8f311c16752bac41675a623aa3a6463114743bc4911418be47e93209a0855a4",
+      "cbd9c721ab461cb2750b2fa348556b53218e1cb8201fe58d200c1c60c31cfdc5"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/nacre_halberdier/basic/sheet.png",
+    "sheetSHA256": "34bc10778585f023395165bd609bb922f401ee15f7cdf5ef166b565b12424b53",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/nacre_halberdier/basic/source.aseprite",
+    "editableSHA256": "f58d63af353adca44cbec8f40c6597c5498646349252a89622a682b689111da7",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/nacre_halberdier/basic/preview.gif"
+  },
+  {
+    "enemy": "nacre_halberdier",
+    "state": "idle",
+    "jobId": "75eb66d6-f910-4750-a562-e91d910b4ce5",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/nacre_halberdier.png",
+    "identitySHA256": "674d1c1620f22a018258e9a456363a3bf791df3aba128e629292dd9ba17a6e92",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "totalMs": 1170,
+    "impactMs": null,
+    "sourcePaletteSize": 33,
+    "floor": 4,
+    "cellSHA256": [
+      "24856bf3e4fb6b46eb79b846dda8c8c55c5e609273b8cabd662d44f366fd2a32",
+      "147076eda404e1f7ea30134d3856f45fad163f9e037ab8781bbff8d0f2743b3d",
+      "b1642a3b9643010cf3e35bed1b72e004c62518f1c398ec7d4ea81e178110557d",
+      "f8e4ad24032bee78df448d26edf5f9e2c0a0125e33e1068d26e6c3db3e1bc949",
+      "bd923f23002d9e3b18c606d37aeaac5a20738474535aab8e0f6afb4bb706a540",
+      "6cd1fb742ee20ffc4cad46ba980a42124522639a718a81921902fbb65c9295ba",
+      "ee03376af5607da5287d528cbe075cb62a1b8f0165e535d10e766b1c2c4537d1",
+      "eb92e1f38ec483799ef9947e214d49c4eaa8a26abe734b126574635b1660d5a4",
+      "8c24b89b1bf394b2b2419777a4ecd36a07fc537a637e262b0a84e2395c0d00a4"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/nacre_halberdier/idle/sheet.png",
+    "sheetSHA256": "0b70d1035fa1ced9c27868aead63add80813b62d343610ffa7b95cbedf38d8fd",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/nacre_halberdier/idle/source.aseprite",
+    "editableSHA256": "ec9cf476a325f331616b191409a2e367c9ab1ea159c53105b988c58960e12b0d",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/nacre_halberdier/idle/preview.gif"
+  },
+  {
+    "enemy": "orc_slinghunter",
+    "state": "basic",
+    "jobId": "f1f1fa7b-1912-4f80-80c6-ea2a23fea743",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/O5.png",
+    "identitySHA256": "253a3af9f47ee95ac04a1187efdb4d5fda1da455fc4cda36b2b626e94274a91d",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      3,
+      4,
+      7
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      60,
+      100,
+      80
+    ],
+    "totalMs": 680,
+    "impactMs": 320,
+    "sourcePaletteSize": 36,
+    "floor": 4,
+    "cellSHA256": [
+      "6b94c2a6a2548db033684599d176a1e4045d5361bcf27c5a8e6be34588fa644e",
+      "7cf4ce275100f091b8627e6095ab428b85844615f417a005b27adf193bdc4b92",
+      "adf02d98f0325d39a13e858eef15a4dbe76105107693398c300693840ee7a747",
+      "978c5d5c4959d18f57b96f5bb601d2c7578afaf6eebb3112082cbd0b09e5ed2e",
+      "94139b4c36d2b487dd068f6465da0fe2b26ac1fc9758867e49d40f0193c71d00",
+      "978c5d5c4959d18f57b96f5bb601d2c7578afaf6eebb3112082cbd0b09e5ed2e",
+      "94139b4c36d2b487dd068f6465da0fe2b26ac1fc9758867e49d40f0193c71d00",
+      "6aca3a931d31877da1d096c81ef196424103292330607c18fc4f1abfbb45cd2e"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/orc_slinghunter/basic/sheet.png",
+    "sheetSHA256": "5c52d0371730af4d7f46858307bc0bf7b60e53f61bc19d03c01cc6140f5e7f41",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/orc_slinghunter/basic/source.aseprite",
+    "editableSHA256": "08b38b6b5babc1639b2ef22d0378508fd46b44eda6bf4768f226703c5549fcdb",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/orc_slinghunter/basic/preview.gif"
+  },
+  {
+    "enemy": "orc_slinghunter",
+    "state": "idle",
+    "jobId": "1e05d48a-3d91-4b16-aa90-82470c6e5dc9",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/O5.png",
+    "identitySHA256": "253a3af9f47ee95ac04a1187efdb4d5fda1da455fc4cda36b2b626e94274a91d",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      1
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      300,
+      290,
+      290,
+      290
+    ],
+    "totalMs": 1170,
+    "impactMs": null,
+    "sourcePaletteSize": 36,
+    "floor": 4,
+    "cellSHA256": [
+      "6b94c2a6a2548db033684599d176a1e4045d5361bcf27c5a8e6be34588fa644e",
+      "72a30d947dc908957e853b6e1f77eb58022de34164bc68811af27509af0fca84",
+      "213daa529a15c022798bd87920ae2f62e6f88c69d1d8195aecca4b6d875f721d",
+      "72a30d947dc908957e853b6e1f77eb58022de34164bc68811af27509af0fca84"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/orc_slinghunter/idle/sheet.png",
+    "sheetSHA256": "ef0d42fb7f258a554f8c3045080774192e64806db9ca8d44917d06ca67dfd8ec",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/orc_slinghunter/idle/source.aseprite",
+    "editableSHA256": "e8436bdc1b476bebd4040752dac2925f068cc0a22e3e35325886b89339faa6f1",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/orc_slinghunter/idle/preview.gif"
+  },
+  {
+    "enemy": "ore_ram",
+    "state": "basic",
+    "jobId": "7a22c776-096f-4858-b680-19248938f066",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/ore_ram-A.png",
+    "identitySHA256": "34bf80499e0547162f86997c78c8b6bc9caae89a3822fcdc8c98b65161562909",
+    "sourceIndices": [
+      0,
+      7,
+      1,
+      5,
+      4,
+      6,
+      7,
+      8
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      60,
+      100,
+      80
+    ],
+    "totalMs": 680,
+    "impactMs": 320,
+    "sourcePaletteSize": 48,
+    "floor": 4,
+    "cellSHA256": [
+      "8759687ec9037abbdbec95d49edf9e00da33bde01fbc44329d4c68d80b04f58a",
+      "beb343efe3569ba8987a7be1cfdf0078cea5b9a0b6f209c38784fea40d7614a6",
+      "a90e7decce8926d40f471e43803d83e814db69f170b9f319757927f019e348ee",
+      "cbd220f9bef4505247eea979551d4695ea58113b464b64ecf26ca2b16c953cf3",
+      "66f55963e07f908d2a965ea45c600dc780c44493fb1a5dc631d565df9ee053bf",
+      "fd73929a7507de15fd6a31dac95cc3d65a32a747ffaa5a4fa5cb27df9d19c4f8",
+      "beb343efe3569ba8987a7be1cfdf0078cea5b9a0b6f209c38784fea40d7614a6",
+      "fc90e395e0e4fd397fee1ffb2ce1f06f4e3965904adfef13494ca44601bffb1d"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/ore_ram/basic/sheet.png",
+    "sheetSHA256": "42a0d794c7d570e084a4628ea640064a75a6e65431c9c661bfd26be305711497",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/ore_ram/basic/source.aseprite",
+    "editableSHA256": "b9492c7dc04bc6b2bbe32641896c7af936f282951676855643452ed6d3d9938a",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/ore_ram/basic/preview.gif"
+  },
+  {
+    "enemy": "ore_ram",
+    "state": "idle",
+    "jobId": "3671332d-f86e-4f5b-917c-418ccbeb34f2",
+    "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/ore_ram-A.png",
+    "identitySHA256": "34bf80499e0547162f86997c78c8b6bc9caae89a3822fcdc8c98b65161562909",
+    "sourceIndices": [
+      0,
+      7,
+      6,
+      8
+    ],
+    "frameSize": [
+      128,
+      104
+    ],
+    "durationsMs": [
+      300,
+      290,
+      290,
+      290
+    ],
+    "totalMs": 1170,
+    "impactMs": null,
+    "sourcePaletteSize": 48,
+    "floor": 4,
+    "cellSHA256": [
+      "8759687ec9037abbdbec95d49edf9e00da33bde01fbc44329d4c68d80b04f58a",
+      "e3d165eefe3bd975c3cc45d3dc513f0e429e11f27d17168003b04e63950b6d48",
+      "a9cbc9119f950024ede2164c9a21caebc140a7ab16d4dc14dfaad4a78ca16c9d",
+      "4bf933ae923f13b8166e9c3c48ec9fbebf23ea534c1311903f406376a4254332"
+    ],
+    "sheet": "ArtSource/SelectionExpansion/Motion/Production/ore_ram/idle/sheet.png",
+    "sheetSHA256": "20c13913044d56a9b6cbd91b394b465f8722269c36c45f6c8fc8741117de7492",
+    "editable": "ArtSource/SelectionExpansion/Motion/Production/ore_ram/idle/source.aseprite",
+    "editableSHA256": "2051546adf6120de11eeeb5cbc4b6dc908f4616256614b45c0869fd2ae1bc2fe",
+    "preview": "ArtSource/SelectionExpansion/Motion/Production/ore_ram/idle/preview.gif"
+  }
+]

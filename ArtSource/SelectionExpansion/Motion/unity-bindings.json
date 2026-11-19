@@ -1,0 +1,461 @@
+[
+  {
+    "enemy": "guild_swordsman",
+    "definition": "Assets/_Game/Data/Enemies/guild_swordsman.asset",
+    "definitionGUID": "c9e8f656c29e5e6f97428f2e41c8528f",
+    "controller": "Assets/_Game/Animations/SelectionExpansion/GuildSwordsman.controller",
+    "controllerGUID": "2c491b6084585a7583a2fcb5c839f5cd",
+    "states": [
+      {
+        "state": "basic",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/GuildSwordsman_AutoAttack.png",
+        "textureGUID": "07ab9a699d2b5c52834e991cad463643",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/GuildSwordsman_AutoAttack.anim",
+        "clipGUID": "1749b2ea4be4582484712790a6688efd",
+        "frameIDs": [
+          -1668813367999771754,
+          680912729682206110,
+          7683303328919629281,
+          333567343182393787,
+          -8698481626375229640,
+          -4327361189043072742,
+          -2600292908516918750,
+          754930113594996681
+        ]
+      },
+      {
+        "state": "idle",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/GuildSwordsman_Idle.png",
+        "textureGUID": "50be4cda31ae57c2b272cd4fcee8e87d",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/GuildSwordsman_Idle.anim",
+        "clipGUID": "5d9147a350d952fdbc5363f4346600a2",
+        "frameIDs": [
+          6173652910176214276,
+          -425146202250016676,
+          -7271105721297214292,
+          5138214857900020082,
+          7613736580326182561,
+          -6511339450569676777,
+          -2254857019139997869,
+          -2943182021137802410,
+          7595231974241157644
+        ]
+      }
+    ]
+  },
+  {
+    "enemy": "guild_ranger",
+    "definition": "Assets/_Game/Data/Enemies/guild_ranger.asset",
+    "definitionGUID": "5a5813e83bec588b8ec5239f67d23792",
+    "controller": "Assets/_Game/Animations/SelectionExpansion/GuildRanger.controller",
+    "controllerGUID": "90cb6d3284ca5a4ab0f806480560815c",
+    "states": [
+      {
+        "state": "basic",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/GuildRanger_AutoAttack.png",
+        "textureGUID": "b853d8429e365090905de087ff083b46",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/GuildRanger_AutoAttack.anim",
+        "clipGUID": "38f3e0cc1b725c7db7609c914b427d09",
+        "frameIDs": [
+          -8739525760647220274,
+          -305763379113597135,
+          2949335208073143574,
+          -2149067295537977395,
+          5543414454718775519,
+          7108868326224357517,
+          1405786225285000420,
+          2787935707839831727
+        ]
+      },
+      {
+        "state": "idle",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/GuildRanger_Idle.png",
+        "textureGUID": "1f40a43c731253fe8116d616489090d4",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/GuildRanger_Idle.anim",
+        "clipGUID": "f870f865fcfd55d0a9eb8192cc253810",
+        "frameIDs": [
+          5032473303024786656,
+          -3839149469969210164,
+          1529622742666822897,
+          -1785154781422373089
+        ]
+      }
+    ]
+  },
+  {
+    "enemy": "guild_bulwark",
+    "definition": "Assets/_Game/Data/Enemies/guild_bulwark.asset",
+    "definitionGUID": "9fa5fbe2a220532c9d9f63c66b2a7c8b",
+    "controller": "Assets/_Game/Animations/SelectionExpansion/GuildBulwark.controller",
+    "controllerGUID": "4c7eb49c62b75b9cacd04e6493915ca7",
+    "states": [
+      {
+        "state": "basic",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/GuildBulwark_AutoAttack.png",
+        "textureGUID": "2a01f76817bd545b9dcef39a9d7d3407",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/GuildBulwark_AutoAttack.anim",
+        "clipGUID": "e1e871f2bb965c1bacdf45d2f43d00ba",
+        "frameIDs": [
+          1578454266586157858,
+          1471189747021842194,
+          -7667656568264646673,
+          8216418373781638579,
+          -2287463246857805166,
+          -5525969448723905140,
+          -7078475751122991147,
+          -7226666739482598216
+        ]
+      },
+      {
+        "state": "idle",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/GuildBulwark_Idle.png",
+        "textureGUID": "8506a2b19c8454cf8b48d61248c49a83",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/GuildBulwark_Idle.anim",
+        "clipGUID": "628556dd0c4c5d1689b19463283bdabb",
+        "frameIDs": [
+          -9014381626295313848,
+          25982108323483570,
+          46364412018739865,
+          6234913581128945187,
+          385491116115081311,
+          -3201654594388373320,
+          -3859093744908034218,
+          1919206564646582272,
+          4911709296963112150
+        ]
+      },
+      {
+        "state": "special",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/GuildBulwark_Ability.png",
+        "textureGUID": "83c571f69e72586b86532cdd779e6190",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/GuildBulwark_Ability.anim",
+        "clipGUID": "420ee75f38bc5adc99af4ee9d3a512e4",
+        "frameIDs": [
+          2658740026338047152,
+          3546477480672623290,
+          -560695069800002037,
+          -4087586070781893842,
+          -1646368560801968449,
+          -5970379103256811572,
+          -7676760016106082969,
+          -7328904093365498297,
+          -3375689642323438471,
+          5101043621269927013
+        ]
+      }
+    ]
+  },
+  {
+    "enemy": "guild_chirurgeon",
+    "definition": "Assets/_Game/Data/Enemies/guild_chirurgeon.asset",
+    "definitionGUID": "e0e870cd969d50ccb29642de4688c56a",
+    "controller": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon.controller",
+    "controllerGUID": "f12b1b1349a2515a98a4fe052cceb2ea",
+    "states": [
+      {
+        "state": "basic",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/GuildChirurgeon_AutoAttack.png",
+        "textureGUID": "c06b75bde8795982b1f0f0115a66eb2b",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_AutoAttack.anim",
+        "clipGUID": "6c98dd30c3e1545687725f89471caae3",
+        "frameIDs": [
+          1072515572652897117,
+          3527384891557678986,
+          349658646305314498,
+          8564787791018894654,
+          -3460812130605830874,
+          -830253833963755815,
+          5700876394688542430,
+          -5136170185450569451
+        ]
+      },
+      {
+        "state": "idle",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/GuildChirurgeon_Idle.png",
+        "textureGUID": "80223b3976bd5051ac3926edb0603019",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_Idle.anim",
+        "clipGUID": "c5b9a531d5d155c5bcf6564683f826f7",
+        "frameIDs": [
+          5153509163430004693,
+          2583484186188629673,
+          2441308243727515828,
+          -2746337537490641365,
+          -5587410606967449068,
+          -5872301464605446263,
+          -2172553984610796959,
+          -4005167087214989597,
+          1354993297828485674
+        ]
+      },
+      {
+        "state": "special",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/GuildChirurgeon_Ability.png",
+        "textureGUID": "29ed462991715775b330e835ff6e193d",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_Ability.anim",
+        "clipGUID": "906a0f8ba0d75b67a890f3648b5384c3",
+        "frameIDs": [
+          -1074971095488112212,
+          -8326141684511166716,
+          -7987199937231064028,
+          -2687787594555317661,
+          -4370269741276647076,
+          5587791237819734582,
+          2048441390670834905,
+          5837833597366324641,
+          3520798804857148642,
+          -1513860128911224411
+        ]
+      }
+    ]
+  },
+  {
+    "enemy": "nacre_duelist",
+    "definition": "Assets/_Game/Data/Enemies/DrownedCourt/nacre_duelist.asset",
+    "definitionGUID": "8acc2d2be5cd510d8d7306c3013598ae",
+    "controller": "Assets/_Game/Animations/SelectionExpansion/NacreDuelist.controller",
+    "controllerGUID": "edf2a9b327d75cb2a0aa40c402b7b2dd",
+    "states": [
+      {
+        "state": "basic",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/NacreDuelist_AutoAttack.png",
+        "textureGUID": "3da5142743c556e99cd580cce0e54b9c",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/NacreDuelist_AutoAttack.anim",
+        "clipGUID": "948c6a47cb225a368221e16f139fd945",
+        "frameIDs": [
+          -6886146740471734503,
+          8718695965486836456,
+          8613544386982470872,
+          -8859728981405432182,
+          1838649210157967001,
+          4861332917823561442,
+          8535727485430588583,
+          3946322437317648414
+        ]
+      },
+      {
+        "state": "idle",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/NacreDuelist_Idle.png",
+        "textureGUID": "b027a2fe07c95973b6a25d4d7243b733",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/NacreDuelist_Idle.anim",
+        "clipGUID": "295357a60ad8596eb3df28ed0875e1a8",
+        "frameIDs": [
+          5565686285583119918,
+          -3414851773820173746,
+          5011889541269372923,
+          -7340782232167549588,
+          -2883558645805465340,
+          -7389465114076891209,
+          4490961887700459791,
+          -3379870555736638700
+        ]
+      }
+    ]
+  },
+  {
+    "enemy": "nacre_halberdier",
+    "definition": "Assets/_Game/Data/Enemies/DrownedCourt/nacre_halberdier.asset",
+    "definitionGUID": "0348b4eb81ab5a078ae949965155eb91",
+    "controller": "Assets/_Game/Animations/SelectionExpansion/NacreHalberdier.controller",
+    "controllerGUID": "485f465e1af9518b952f63073938ffdb",
+    "states": [
+      {
+        "state": "basic",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/NacreHalberdier_AutoAttack.png",
+        "textureGUID": "1f6640b66bf65dfc8561fc4c46a6fe7b",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/NacreHalberdier_AutoAttack.anim",
+        "clipGUID": "657d954bb10153af9a02cefcb994cf14",
+        "frameIDs": [
+          3091114282533807730,
+          -3909273471979986896,
+          4528536916949582985,
+          -4822665530141655541,
+          5002837172707742666,
+          4106044041521236728,
+          -1127603250318796847,
+          -2600838194716628967
+        ]
+      },
+      {
+        "state": "idle",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/NacreHalberdier_Idle.png",
+        "textureGUID": "76b8dd435e7e51daab98574fe62b3ad0",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/NacreHalberdier_Idle.anim",
+        "clipGUID": "4f3860c345975b15aa8b55d1fb9ed58a",
+        "frameIDs": [
+          1583170791656930038,
+          396064370898867315,
+          -3499032092511060194,
+          8533876701161837586,
+          2002356290851505210,
+          -8343879261254746373,
+          3677809485294837108,
+          5693651974478406260,
+          -7778004742832091724
+        ]
+      }
+    ]
+  },
+  {
+    "enemy": "elven_pathblade",
+    "definition": "Assets/_Game/Data/Enemies/Forest/elven_pathblade.asset",
+    "definitionGUID": "2532f87afcdc548285eda0ccf6c2cb6e",
+    "controller": "Assets/_Game/Animations/SelectionExpansion/ElvenPathblade.controller",
+    "controllerGUID": "2fd268edb4795683879e0d6617fe8d8c",
+    "states": [
+      {
+        "state": "basic",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/ElvenPathblade_AutoAttack.png",
+        "textureGUID": "f081909a76815d74bdd0920e9a680037",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/ElvenPathblade_AutoAttack.anim",
+        "clipGUID": "322d3d746d2351c18dfa4905c71fbf40",
+        "frameIDs": [
+          -6903624200337216730,
+          977729245142378666,
+          2524287029126136912,
+          -4199343223706055309,
+          1537644887686521989,
+          2085402126166821819,
+          -4436453292857023068,
+          -8279301170908976176
+        ]
+      },
+      {
+        "state": "idle",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/ElvenPathblade_Idle.png",
+        "textureGUID": "0d94f06320d4503cbb9a73bc593880c1",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/ElvenPathblade_Idle.anim",
+        "clipGUID": "e855ddc6ffe75672bd0e2c79a1f910ce",
+        "frameIDs": [
+          -5072605962931436220,
+          -1390003134830213611,
+          4830097077173895054,
+          2120777559940194297,
+          -3136455431000879336,
+          8850276746896436273
+        ]
+      }
+    ]
+  },
+  {
+    "enemy": "orc_slinghunter",
+    "definition": "Assets/_Game/Data/Enemies/Forest/orc_slinghunter.asset",
+    "definitionGUID": "60de8c925c985c5ab912d7a5d0d790bd",
+    "controller": "Assets/_Game/Animations/SelectionExpansion/OrcSlinghunter.controller",
+    "controllerGUID": "35b42afde2185b00bf1e852be15f4525",
+    "states": [
+      {
+        "state": "basic",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/OrcSlinghunter_AutoAttack.png",
+        "textureGUID": "f239bb812e8d5fd4b62c292c6d35fb94",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/OrcSlinghunter_AutoAttack.anim",
+        "clipGUID": "62d1054a54415ab8b3799bccd1d14149",
+        "frameIDs": [
+          3536876514759765050,
+          1311052889754423987,
+          -1055785414232538341,
+          -2587852339992564587,
+          -5000025624777481132,
+          -5578606207793332352,
+          7222563286514883402,
+          -6883388010117476949
+        ]
+      },
+      {
+        "state": "idle",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/OrcSlinghunter_Idle.png",
+        "textureGUID": "9075f6fd091a5bc4bfbb0a67dba76886",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/OrcSlinghunter_Idle.anim",
+        "clipGUID": "8fc038b98878512c973c297a24666a80",
+        "frameIDs": [
+          -4118737122942687939,
+          -3935347863429767194,
+          -2948039404403222530,
+          -7264732813690575626
+        ]
+      }
+    ]
+  },
+  {
+    "enemy": "iceborn_axeman",
+    "definition": "Assets/_Game/Data/Enemies/Frostwake/iceborn_axeman.asset",
+    "definitionGUID": "1d79103fd9a2515f8a2a3901f06e62b6",
+    "controller": "Assets/_Game/Animations/SelectionExpansion/IcebornAxeman.controller",
+    "controllerGUID": "11762a83bb72599c9df7b2790a9dfc1c",
+    "states": [
+      {
+        "state": "basic",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/IcebornAxeman_AutoAttack.png",
+        "textureGUID": "4bd3f904e8715521911ae2fd7b96e72f",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/IcebornAxeman_AutoAttack.anim",
+        "clipGUID": "0428eb2ebd9f51838842af0266115156",
+        "frameIDs": [
+          971911362682378167,
+          -3481944365753766075,
+          5681591374726332195,
+          5188472987805194863,
+          2542718870549186981,
+          -7700201689932180212,
+          -3838165598132445622,
+          -2249921672783663251
+        ]
+      },
+      {
+        "state": "idle",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/IcebornAxeman_Idle.png",
+        "textureGUID": "21a316a147335279a64fcd7977354988",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/IcebornAxeman_Idle.anim",
+        "clipGUID": "076edda6ebc4519db501a2fd48811c4f",
+        "frameIDs": [
+          -5650085611136228735,
+          -3584415308396773215,
+          -3867530651917433658,
+          -3212356309499064997,
+          2518678181990740031,
+          -3652214978640591112,
+          -7169702618906307382,
+          1080160207263253584,
+          5439938904763495170
+        ]
+      }
+    ]
+  },
+  {
+    "enemy": "ore_ram",
+    "definition": "Assets/_Game/Data/Enemies/Ironvein/ore_ram.asset",
+    "definitionGUID": "b8cec865b0105ba39fe1c0d9b4c9be63",
+    "controller": "Assets/_Game/Animations/SelectionExpansion/OreRam.controller",
+    "controllerGUID": "dce1451076715b71b7e98a647f4350ca",
+    "states": [
+      {
+        "state": "basic",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/OreRam_AutoAttack.png",
+        "textureGUID": "b406042ec927595b852e7da21aee4eb1",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/OreRam_AutoAttack.anim",
+        "clipGUID": "abd9baad555351069e0e7fc95ba83c9c",
+        "frameIDs": [
+          -5361254879265941849,
+          951912154687469787,
+          -1917884781924655607,
+          -418704391531215481,
+          -8288351368154376297,
+          6516225243843267659,
+          6932662810458345022,
+          -586804134998160210
+        ]
+      },
+      {
+        "state": "idle",
+        "sheet": "Assets/_Game/Art/SelectionExpansion/OreRam_Idle.png",
+        "textureGUID": "a74abe8d0f195f1fa517678504629eea",
+        "clip": "Assets/_Game/Animations/SelectionExpansion/OreRam_Idle.anim",
+        "clipGUID": "4e5c761b14585ffcaca5aa1bb6de1c6b",
+        "frameIDs": [
+          2416342367057087092,
+          7992946242030967566,
+          5604128406024065827,
+          -9089147666598595162
+        ]
+      }
+    ]
+  }
+]

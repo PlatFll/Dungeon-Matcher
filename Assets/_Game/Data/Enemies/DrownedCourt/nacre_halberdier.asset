@@ -45,6 +45,8 @@ MonoBehaviour:
   oreWeaponEligible: 0
   minimumWave: 1
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 0}
-  animationControllerOverride: {fileID: 0}
-  visualSize: {x: 240, y: 240}
+  fallbackVisualSprite: {fileID: 1583170791656930038, guid: 76b8dd435e7e51daab98574fe62b3ad0, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: 485f465e1af9518b952f63073938ffdb, type: 2}
+  visualSize: {x: 128, y: 128}
+  timeAutoAttackFromAnimation: 1
+  useAuthoredAutoAttackMotion: 1

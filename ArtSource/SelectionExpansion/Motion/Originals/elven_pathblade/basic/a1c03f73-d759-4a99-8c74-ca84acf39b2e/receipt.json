@@ -1,0 +1,49 @@
+{
+  "enemy": "elven_pathblade",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/elven_pathblade.png",
+  "firstFrameSHA256": "17488569d807d02bbc6fb73f587a12ffc01630b57c4c608733ed80c666a9b7bf",
+  "seed": 385110,
+  "count": 8,
+  "prompt": "Push off the rear foot for one diagonal cut to the left. The blade passes in a crisp arc, knees bend, recover to stance. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "a1c03f73-d759-4a99-8c74-ca84acf39b2e",
+  "receipt": "id: a1c03f73-d759-4a99-8c74-ca84acf39b2e\njob_id: a1c03f73-d759-4a99-8c74-ca84acf39b2e\naction: Push off the rear foot for one diagonal cut to the left. The blade passes in a crisp arc, knees bend, recover to stance. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385110\nasset_id: a58203f3-9384-552c-b83e-5ae05d88f91f\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"a1c03f73-d759-4a99-8c74-ca84acf39b2e\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/a1c03f73-d759-4a99-8c74-ca84acf39b2e/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/elven_pathblade/basic/a1c03f73-d759-4a99-8c74-ca84acf39b2e/00.png",
+      "sha256": "17488569d807d02bbc6fb73f587a12ffc01630b57c4c608733ed80c666a9b7bf"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/elven_pathblade/basic/a1c03f73-d759-4a99-8c74-ca84acf39b2e/01.png",
+      "sha256": "35b29cc32d5b900f8c0bb6950d3d64683b3ae5dd4e57c7409dc68b657d950b25"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/elven_pathblade/basic/a1c03f73-d759-4a99-8c74-ca84acf39b2e/02.png",
+      "sha256": "56f30d0d0738e4c573c978f74be637731dc0b7f578a048b69013965993a19fc7"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/elven_pathblade/basic/a1c03f73-d759-4a99-8c74-ca84acf39b2e/03.png",
+      "sha256": "1809f234023e402d3d7d51e5d660040d0960a340cfd64c7acc7a6b0a8ac9b830"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/elven_pathblade/basic/a1c03f73-d759-4a99-8c74-ca84acf39b2e/04.png",
+      "sha256": "9dd0ab6bf505751c77b3eb80c772cd396b23dbd7370dffbee774134700f225c9"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/elven_pathblade/basic/a1c03f73-d759-4a99-8c74-ca84acf39b2e/05.png",
+      "sha256": "16937e2333891dd3aa1f173d146dafcc7196be21bea015fd77d6a3bdb600f3a3"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/elven_pathblade/basic/a1c03f73-d759-4a99-8c74-ca84acf39b2e/06.png",
+      "sha256": "12a47df02557b280a58fefdde40a9007aaaaea6bb591faf8e241f47dc9cd1448"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/elven_pathblade/basic/a1c03f73-d759-4a99-8c74-ca84acf39b2e/07.png",
+      "sha256": "404d53f9dcd43f3ad9ce0fea197229be8a96d0b0d6de1433b1c17ae1f497fcb8"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/elven_pathblade/basic/a1c03f73-d759-4a99-8c74-ca84acf39b2e/08.png",
+      "sha256": "92978510caa9f1be3c89a1279cb87101065b8b112885ab1623b49913b8e88caf"
+    }
+  ]
+}

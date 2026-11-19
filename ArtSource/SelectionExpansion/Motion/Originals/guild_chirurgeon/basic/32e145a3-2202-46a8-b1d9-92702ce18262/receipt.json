@@ -1,0 +1,49 @@
+{
+  "enemy": "guild_chirurgeon",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_chirurgeon.png",
+  "firstFrameSHA256": "97501e38ed69b1cb6c1919a229f71f0c3c7d87f26491ec5365cbbb2d5cc1c613",
+  "seed": 385104,
+  "count": 8,
+  "prompt": "Lean forward for a short staff strike left, tap once then recover to the starting guard. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "32e145a3-2202-46a8-b1d9-92702ce18262",
+  "receipt": "id: 32e145a3-2202-46a8-b1d9-92702ce18262\njob_id: 32e145a3-2202-46a8-b1d9-92702ce18262\naction: Lean forward for a short staff strike left, tap once then recover to the starting guard. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385104\nasset_id: c249d5e7-132e-5a61-afc7-0f13e189e6c6\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"32e145a3-2202-46a8-b1d9-92702ce18262\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/32e145a3-2202-46a8-b1d9-92702ce18262/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/basic/32e145a3-2202-46a8-b1d9-92702ce18262/00.png",
+      "sha256": "97501e38ed69b1cb6c1919a229f71f0c3c7d87f26491ec5365cbbb2d5cc1c613"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/basic/32e145a3-2202-46a8-b1d9-92702ce18262/01.png",
+      "sha256": "12fe9d044b1a151c2f04876401c5e31a72b5409e2135ce72f281994d185485ac"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/basic/32e145a3-2202-46a8-b1d9-92702ce18262/02.png",
+      "sha256": "c72e4323286cabfea39e110f8c44e370556862aa1e28f05d074a5af6bfb8e79a"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/basic/32e145a3-2202-46a8-b1d9-92702ce18262/03.png",
+      "sha256": "35e575997e427d62e76880a0010cf6356a65333322f196ff3ce84f479ef70386"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/basic/32e145a3-2202-46a8-b1d9-92702ce18262/04.png",
+      "sha256": "652ca9f42018df5f8c1a01f565dcce41afb457c3a063a88220d13707dce334a1"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/basic/32e145a3-2202-46a8-b1d9-92702ce18262/05.png",
+      "sha256": "81e2664ccfa34156d822ee413298ba46dabc1568221584a20c31f6f343501a88"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/basic/32e145a3-2202-46a8-b1d9-92702ce18262/06.png",
+      "sha256": "16c3410477b831fa6656b902dfdf186a8ef46f6df299632ff582428041827561"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/basic/32e145a3-2202-46a8-b1d9-92702ce18262/07.png",
+      "sha256": "013252ade3f8d0aac63bce931fdc00c66426bd3f8a91105a5f04e3560c7453ed"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/basic/32e145a3-2202-46a8-b1d9-92702ce18262/08.png",
+      "sha256": "69bacad69cd483546a63fdffed48aa8252039c2024f67531e39ec449910776ee"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "enemy": "ore_ram",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/ore_ram-A.png",
+  "firstFrameSHA256": "34bf80499e0547162f86997c78c8b6bc9caae89a3822fcdc8c98b65161562909",
+  "seed": 585116,
+  "count": 8,
+  "prompt": "The heavy horned quadruped crouches, compresses knees, thrusts its HEAD AND BODY horizontally toward the left with its horns leading in one battering ram charge, stamps to a stop, and recoils to the exact initial pose. Keep horns and tail rigid and the same length. No sparks, smoke or extra limbs.",
+  "id": "7a22c776-096f-4858-b680-19248938f066",
+  "receipt": "id: 7a22c776-096f-4858-b680-19248938f066\njob_id: 7a22c776-096f-4858-b680-19248938f066\ndescription: The heavy horned quadruped crouches, compresses knees, thrusts its HEAD AND BODY horizontally toward the left with its horns leading in one battering ram charge, stamps to a stop, and recoils to the exact initial pose. Keep horns and tail rigid and the same length. No sparks, smoke or extra limbs.\nframes: 8\nsize: 112x88px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 585116\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7a22c776-096f-4858-b680-19248938f066\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/7a22c776-096f-4858-b680-19248938f066/download (423 + Retry-After until ready; ?index=N for the Nth of several images)\nasset_id: ca24993a-9f5e-5c10-bff9-ddc253883e22\nasset_status: pending (saved to your gallery when generation completes)",
+  "subject": "A compact four-legged stone and iron ram with two heavy curled horns and a round amber joint.",
+  "tool": "animate_image_pixminimax",
+  "correctionOf": "a85ad145-5f6e-46bd-bc99-1077fac9d4dc",
+  "lastFrameSHA256": "34bf80499e0547162f86997c78c8b6bc9caae89a3822fcdc8c98b65161562909",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/7a22c776-096f-4858-b680-19248938f066/00.png",
+      "sha256": "8101c4ad073549f975061b231137afbb575a5a49f23ff0a2fa3b0ba52c627f8e"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/7a22c776-096f-4858-b680-19248938f066/01.png",
+      "sha256": "0b32ca8ba02d6d1f9561a0b1b357b1188df90a0d5e0c03b2b8019edf1691315e"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/7a22c776-096f-4858-b680-19248938f066/02.png",
+      "sha256": "31f93dbdcd8a97d22c2e9691c708a4c94a13b0afcfec7cba6c516cc92bee4c4d"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/7a22c776-096f-4858-b680-19248938f066/03.png",
+      "sha256": "79fd0a990fd3711aa4ee077654861259161b475584245303608247e9c0474f36"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/7a22c776-096f-4858-b680-19248938f066/04.png",
+      "sha256": "fe5176b6aaafb49380ca4a3c0360429fbcfb588744ea5b746cbffc4bf209a6a5"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/7a22c776-096f-4858-b680-19248938f066/05.png",
+      "sha256": "f4d09c1fa623a8174d8b657b0f6691ed90c6a0f3caefc4b12a5aa8d031ddf98d"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/7a22c776-096f-4858-b680-19248938f066/06.png",
+      "sha256": "23c5045ac26340cb5785a2a25f9bebb0c55d4349fe0bb12b502066ddbcbbac3e"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/7a22c776-096f-4858-b680-19248938f066/07.png",
+      "sha256": "57ee23fae8755d06eca6a1b6acc7cd33a14a759f6a7f9079ee0f14078d81ac59"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/7a22c776-096f-4858-b680-19248938f066/08.png",
+      "sha256": "9b10b368b93a115bdd8a6aad5abeceaa6634e30a1f0059310fc010490d12d166"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "enemy": "guild_ranger",
+  "state": "idle",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/R2.png",
+  "firstFrameSHA256": "3e7fb908dbc705637cab341ab810164f641ebb55fd325662984ba3385c6ed92b",
+  "seed": 385121,
+  "count": 8,
+  "prompt": "Keep the musket shouldered and eyes on target. A small breath shifts the elbows, barrel settles, boots stay still. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f",
+  "receipt": "id: f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f\njob_id: f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f\naction: Keep the musket shouldered and eyes on target. A small breath shifts the elbows, barrel settles, boots stay still. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385121\nasset_id: 9c7d91e2-83ea-5be6-b444-7d57aa86b74c\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/idle/f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f/00.png",
+      "sha256": "ff2367bd24f3f6255d8f4d306bb4dea652e8b6555ade440c39931c95fd56b558"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/idle/f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f/01.png",
+      "sha256": "44d82c4413b97069ca2aebc326b621e7011ce79d033400fead5a49b84580a3be"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/idle/f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f/02.png",
+      "sha256": "68e8658a5f659907ed704d2363591fd44b52814ac2860cb844fd7261c5c1af3d"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/idle/f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f/03.png",
+      "sha256": "c81ccc0fa9ea994ab54efd3f292aae85f7b895b4a911af8a70daa69baf18bea9"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/idle/f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f/04.png",
+      "sha256": "526d83bba3e5301242d827de2a1a08765548cedba6386c799ac355c68a40cfc4"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/idle/f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f/05.png",
+      "sha256": "905aae1d49911aaaf0c71a252235f746cec8fbcb29e9dd27eebb95b136acf9ac"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/idle/f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f/06.png",
+      "sha256": "506f9583065785faf281791b4894ce76b55b4a3d3cd5798c90affa462de1916b"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/idle/f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f/07.png",
+      "sha256": "2b74c9f2cfa93bc8d9740ab49ba216aa1c6d8174010aee32c43cbc53f2dacb46"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/idle/f3f0dd39-d9f0-4011-80b8-33de6ff1ec9f/08.png",
+      "sha256": "10c7e6e27bbbba8e8525cdd10450ac0b7935459a6594ee62bc6ce342e7bcdb9e"
+    }
+  ]
+}
