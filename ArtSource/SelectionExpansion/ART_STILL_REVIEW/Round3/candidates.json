@@ -1,0 +1,126 @@
+[
+  {
+    "enemy": "nacre_duelist",
+    "name": "Scallopguard rapier",
+    "appearance": "A fluted scallop guards the grip. Sea-green and pearl highlights run along the tapered blade.",
+    "status": "identity selected; weapon revision awaiting approval",
+    "nativeFile": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/nacre_duelist.png",
+    "nativeSHA256": "354ff348ce40a1610bfccb475047b862725b2fa1fad3d5f93463ea41204a82a5",
+    "editableFile": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/nacre_duelist.aseprite",
+    "editableSHA256": "1e9d7ba806755cbaba57b700fc0146099beb5af3d1445d342ad7607bcedd21ec",
+    "source": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/nacre_duelist-A.png",
+    "sourceSHA256": "7cd430cb30a3661ef4e0dc2a820d0867504acd0c4b73119f48b29dc936d6942f",
+    "jobId": null,
+    "sourceJobId": "20d41419-199b-47a5-8e23-212017f8339e",
+    "sourceOption": "round 2 A",
+    "nativeCanvas": [
+      112,
+      88
+    ],
+    "bounds": [
+      20,
+      25,
+      85,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "opaqueColors": 71,
+    "change": "172 edited pixels confined to blade, shell guard and knuckle bow. Everything outside [20,29,47,57) is RGBA-identical to Round 2 A."
+  },
+  {
+    "enemy": "guild_ranger",
+    "name": "Kneeling ranger",
+    "appearance": "Black hair and an ochre headband leave the ear visible. A split blue riding coat falls behind the kneeling archer.",
+    "status": "candidate awaiting identity approval",
+    "nativeFile": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/guild_ranger.png",
+    "nativeSHA256": "5605f79d02055ba3e939d7ac7b5dbb10f5d47b42acee5e08951096fbf9ff13f1",
+    "editableFile": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/guild_ranger.aseprite",
+    "editableSHA256": "f3ca9e2f39e23a6195c269afbdeb054d4a0c1062c69c3ff145d0310e3447ccfa",
+    "source": "ArtSource/SelectionExpansion/Originals/Round3/guild_ranger/15.png",
+    "sourceSHA256": "4982dce82fc4f736cde977b1213b28fd17b3c2e2f0ccc9b47d7195f49f784aae",
+    "jobId": "c63884e5-aa77-499d-bc66-6d93478ce26a",
+    "sourceJobId": "c63884e5-aa77-499d-bc66-6d93478ce26a",
+    "sourceOption": "15",
+    "nativeCanvas": [
+      112,
+      88
+    ],
+    "bounds": [
+      28,
+      25,
+      84,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "opaqueColors": 60,
+    "change": "Mirrored and placed unscaled on the common floor line."
+  },
+  {
+    "enemy": "guild_bulwark",
+    "name": "Pavise guard",
+    "appearance": "An ochre mantle and mail sleeve break up the blue gambeson. The open-faced warden plants a tall pavise and carries the mace over one shoulder.",
+    "status": "candidate awaiting identity approval",
+    "nativeFile": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/guild_bulwark.png",
+    "nativeSHA256": "6d6a4fac82fcfe1898a5ae9501dd74d2e0eb02ea45a456570b324e540ca4dabf",
+    "editableFile": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/guild_bulwark.aseprite",
+    "editableSHA256": "9ac3b2c664b8168c8d39722db9f242889a5dd7678950dac8f74e9175f0a98849",
+    "source": "ArtSource/SelectionExpansion/Originals/Round3/guild_bulwark/14.png",
+    "sourceSHA256": "21f675bb89df591691496a1d22dcce80589192f9a8d5f467dd2b087f4b319872",
+    "jobId": "52546405-776d-48cd-898d-a8de645c04e5",
+    "sourceJobId": "52546405-776d-48cd-898d-a8de645c04e5",
+    "sourceOption": "14",
+    "nativeCanvas": [
+      112,
+      88
+    ],
+    "bounds": [
+      29,
+      26,
+      83,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "opaqueColors": 60,
+    "change": "Mirrored and placed unscaled on the common floor line."
+  },
+  {
+    "enemy": "orc_slinghunter",
+    "name": "Low sling cast",
+    "appearance": "The hunter leans forward in a teal wrap and rust scarf, with the loaded sling stretched across the waist.",
+    "status": "candidate awaiting identity approval",
+    "nativeFile": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/orc_slinghunter.png",
+    "nativeSHA256": "d47dc6e843789b6bcef9a28184eb44cc2f019da0f59e7fe54a42fe48fef5784d",
+    "editableFile": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/orc_slinghunter.aseprite",
+    "editableSHA256": "a97292d72ae86324d54f4779f1541f6a3a087a7f29f8e6e50fa62522ddc3a4c5",
+    "source": "ArtSource/SelectionExpansion/Originals/Round3/orc_slinghunter/07.png",
+    "sourceSHA256": "6a4db36d17c22eaf009ccccecad691fec07b0657d64050fb11b18b59cd3d3680",
+    "jobId": "d472f529-d204-4597-a403-4fa746aac94f",
+    "sourceJobId": "d472f529-d204-4597-a403-4fa746aac94f",
+    "sourceOption": "7",
+    "nativeCanvas": [
+      112,
+      88
+    ],
+    "bounds": [
+      27,
+      23,
+      84,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "opaqueColors": 42,
+    "change": "Mirrored and placed unscaled on the common floor line."
+  }
+]

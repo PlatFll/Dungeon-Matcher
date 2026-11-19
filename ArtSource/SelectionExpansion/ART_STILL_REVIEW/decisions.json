@@ -40,6 +40,14 @@
       "source": "ArtSource/SelectionExpansion/Originals/iceborn_axeman/06.png",
       "sourceSHA256": "593de02b43809688ee30e64c9ed8c9746cfd5e8e8d7e78a02407049824ef2549",
       "option": 6
+    },
+    {
+      "enemy": "ore_ram",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/ore_ram-A.png",
+      "nativeSHA256": "34bf80499e0547162f86997c78c8b6bc9caae89a3822fcdc8c98b65161562909",
+      "source": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/ore_ram.png",
+      "sourceSHA256": "4ec4397e14bb775180790a755a18140e2764228b03bdb3ebc185211b922c971a",
+      "option": "Round 2 A"
     }
   ],
   "rejected": [
@@ -82,7 +90,82 @@
       "source": "ArtSource/SelectionExpansion/Originals/ore_ram/07.png",
       "sourceSHA256": "ed9fe578dd6db0e8cb261b10e308e57863163dc2a000ad062ad2e4a7e947fb69",
       "option": 7
+    },
+    {
+      "enemy": "guild_ranger",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/guild_ranger-A.png",
+      "nativeSHA256": "54f0616ae867b5b1ef36a6d642ba140b32e55f3a135b81958e2d0957cc4100c6",
+      "source": "ArtSource/SelectionExpansion/Originals/Round2/guild_ranger/04.png",
+      "sourceSHA256": "aec1c0d05014b9f73075ec9374abdfd60446e9711bf87fcff00effd3bd30e5ca",
+      "option": "Round 2 A",
+      "status": "rejected in marked review"
+    },
+    {
+      "enemy": "guild_ranger",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/guild_ranger-B.png",
+      "nativeSHA256": "b52e4248867f434feb9ce120ff37304ab7d7c7ff28d14bd6c4230db2f3d5a390",
+      "source": "ArtSource/SelectionExpansion/Originals/Round2/guild_ranger/11.png",
+      "sourceSHA256": "6d7be7edd5867fcdc341cb8689a99dd8ef58be815023b6b00724157bbfd8e00f",
+      "option": "Round 2 B",
+      "status": "rejected in marked review"
+    },
+    {
+      "enemy": "guild_bulwark",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/guild_bulwark-A.png",
+      "nativeSHA256": "e34d9b13d52e6983a72a8b76b8ea2356fc70b53818e3f921ec2c7ba4f2497c86",
+      "source": "ArtSource/SelectionExpansion/Originals/Round2/guild_bulwark/05.png",
+      "sourceSHA256": "e250bf1b98a978ff92ccee77c85b2004664ac0cba51e08a4225bd2d76d7b0c99",
+      "option": "Round 2 A",
+      "status": "rejected in marked review"
+    },
+    {
+      "enemy": "guild_bulwark",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/guild_bulwark-B.png",
+      "nativeSHA256": "8a85a53884e50d3861bfbfbb941e2c6917caa6bb1781829d371357d2c338d47f",
+      "source": "ArtSource/SelectionExpansion/Originals/Round2/guild_bulwark/12.png",
+      "sourceSHA256": "3d1a9e9099750d22c25d36d3899599cbdeba83ca3415f8b7838d4d7fcca8d06d",
+      "option": "Round 2 B",
+      "status": "rejected in marked review"
+    },
+    {
+      "enemy": "nacre_duelist",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/nacre_duelist-B.png",
+      "nativeSHA256": "6d0ad622252bcb534c24a2c23ea858a12e2d1bd644c6437453254fe1d8fe0897",
+      "source": "ArtSource/SelectionExpansion/Originals/Round2/nacre_duelist/09.png",
+      "sourceSHA256": "df927c9eb0348b92d46edb13e1996c27be5fb824102a65912a4aa24aa552b0ad",
+      "option": "Round 2 B",
+      "status": "not selected"
+    },
+    {
+      "enemy": "orc_slinghunter",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/orc_slinghunter-A.png",
+      "nativeSHA256": "bcc9aacb26ac5d7f530950006928fb6cac2f33946dd0f66b48f1ce2ca925012d",
+      "source": "ArtSource/SelectionExpansion/Originals/Round2/orc_slinghunter/02.png",
+      "sourceSHA256": "c3b105bdcff3c0280dde355811d659e84ed32ab8b0d91af74b805b9dc1874111",
+      "option": "Round 2 A",
+      "status": "rejected in marked review"
+    },
+    {
+      "enemy": "orc_slinghunter",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/orc_slinghunter-B.png",
+      "nativeSHA256": "b0cae1d12bb170782eb5e2bb79d98f190d1155b2d7dd206e8edbaf900f69b2d2",
+      "source": "ArtSource/SelectionExpansion/Originals/Round2/orc_slinghunter/11.png",
+      "sourceSHA256": "2b301d1e21bd2b06eba5de5c5f53966be8202cb7e8bd709754a2dd32edb39baa",
+      "option": "Round 2 B",
+      "status": "rejected in marked review"
     }
   ],
-  "pending": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/candidates.json"
+  "pending": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/candidates.json",
+  "selectedWithRevision": [
+    {
+      "enemy": "nacre_duelist",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/nacre_duelist-A.png",
+      "nativeSHA256": "7cd430cb30a3661ef4e0dc2a820d0867504acd0c4b73119f48b29dc936d6942f",
+      "option": "Round 2 A",
+      "request": "Keep the chosen body and pose, give him an underwater-inspired rapier.",
+      "revisedFile": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/nacre_duelist.png",
+      "revisedSHA256": "354ff348ce40a1610bfccb475047b862725b2fa1fad3d5f93463ea41204a82a5"
+    }
+  ],
+  "round2Evidence": "User-annotated contact sheet codex-clipboard-14291485-7978-44c1-be32-9757fda628f6.png, user selected Nacre A with a new underwater-inspired rapier and checked the corrected Ore Ram. User directed new outfits and poses with the same race proportions for the other three."
 }

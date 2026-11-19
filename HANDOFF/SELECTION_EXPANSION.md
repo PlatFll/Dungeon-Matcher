@@ -4,8 +4,8 @@ The separate branch `codex/selection-repair-nonboss` starts at published PR #234
 
 ## Still approval
 
-The user's marked board supersedes the earlier blanket approval. Guild Swordsman, Elven Guild Chirurgeon, Nacre Halberdier, Elven Pathblade and Iceborn Axeman are locked to the five PNG hashes in [decisions.json](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json). The other five original choices are archived.
+Six final still hashes are locked in [decisions.json](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json), including the corrected Ore Ram. The user selected Nacre A’s body and requested an underwater-inspired rapier. The other three require new outfits and poses with unchanged race proportions.
 
-[Round two](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/Review.html) compares two candidates each for Ranger, Bulwark, Duelist and Slinghunter with the relevant race references. Ore Ram has one local pickaxe-removal edit. All nine candidate hashes, sources and editable files are in the round-two register. Four completed additional PixelLab jobs cost 40 generations. Total still generation cost is 140. No animation jobs have started.
+[Round three](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/Review.html) shows the revised Nacre weapon, kneeling Guild Ranger, Guild Bulwark in a pavise stance, and low-casting Orc Slinghunter with their source references. Await approval of these four exact hashes. All current PixelLab still jobs completed. Native 112 × 88 exports match their editable LibreSprite source pixels.
 
-Record the user's specific round-two selections before stage 07. Use each locked PNG as the identity input for PixelLab animation and export through LibreSprite. Stage 08 owns the repository validator, suites, game runs, screenshots and build checks. Stage 09 opens the stacked draft PR targeting `codex/crystal-resonance-zone-director`.
+After the outstanding approvals, run stage 07 character animation using each locked source. Stage 08 owns Unity validation and game testing, then stage 09 opens a stacked draft PR targeting `codex/crystal-resonance-zone-director`. No animation job or Unity test has started.
