@@ -81,7 +81,7 @@ public sealed class CrystalResonanceSelectionTests
             var state=new CrystalResonanceSnapshot{version=1,zoneId=zone.zoneId,visit=4};
             state.seenMechanics.AddRange(zone.enemies.Select(e=>e.EnemyId));
             var counts=new Dictionary<string,int>();var kinds=new HashSet<ZoneEncounterKind>();
-            for(int seed=1;seed<=500;seed++)
+            for(int seed=1;seed<=10000;seed++)
             {
                 var ordinary=WaveController.SelectResonanceOrdinary(zone,zone.resonanceTierStarts[tier],state,new SavedRandom(unchecked((uint)seed*2654435761u)));
                 Assert.AreEqual(ZoneEncounterKind.Ordinary,ordinary.resonanceKind);
@@ -103,6 +103,62 @@ public sealed class CrystalResonanceSelectionTests
         Directory.CreateDirectory(".utmp/CrystalResonance");
         File.WriteAllLines(".utmp/CrystalResonance/selection-distribution-"+Guid.NewGuid().ToString("N")+".csv",lines);
     }
+    [Test]
+    public void FortifiedRosterAndLegacyRostersHaveLegalFirstVisitsReliefAndReserveCapstones()
+    {
+        var expanded = new HashSet<string> {
+            "guild_swordsman", "guild_ranger", "guild_bulwark", "guild_chirurgeon", "nacre_duelist",
+            "nacre_halberdier", "elven_pathblade", "orc_slinghunter", "iceborn_axeman", "ore_ram"
+        };
+        var counts = new Dictionary<string, int>();
+        foreach (var source in Resources.LoadAll<ZoneDefinition>("Zones").Where(z => z.eligibleForLiveTravel))
+        foreach (bool legacy in new[] { false, true })
+        {
+            var zone = UnityEngine.Object.Instantiate(source);
+            try
+            {
+                if (legacy)
+                {
+                    zone.enemies = zone.enemies.Where(e => !expanded.Contains(e.EnemyId)).ToArray();
+                    zone.resonancePool = zone.resonancePool.Where(p => zone.enemies.Contains(p.enemy)).ToArray();
+                }
+                for (int tier = 0; tier < 5; tier++)
+                foreach (bool relief in new[] { false, true })
+                {
+                    var state = new CrystalResonanceSnapshot { zoneId = zone.zoneId, encountersThisVisit = relief ? 4 : 1 };
+                    state.seenLeaders.AddRange(zone.enemies.Where(e => (int)e.Category >= (int)EnemyCategory.Miniboss).Select(e => e.EnemyId));
+                    if (relief)
+                    {
+                        state.seenMechanics.AddRange(zone.enemies.Select(e => e.EnemyId));
+                        state.capstonePhase = ResonanceCapstonePhase.Defeated;
+                        state.capstoneWave = state.lastBankedWave = 9;
+                    }
+                    int depth = zone.resonanceTierStarts[tier];
+                    for (uint seed = 1; seed <= 10000; seed++)
+                    {
+                        var random = new SavedRandom(unchecked(seed * 2654435761u));
+                        var ordinary = WaveController.SelectResonanceOrdinary(zone, depth, state, random);
+                        var reserve = WaveController.ChooseResonanceCapstone(zone, depth, state, random);
+                        Assert.IsTrue(WaveController.ResonanceFormationLegal(zone, ordinary, tier, state, false));
+                        Assert.IsTrue(WaveController.ResonanceFormationLegal(zone, reserve, tier, state, true));
+                        Assert.AreEqual(ZoneEncounterKind.Elite, reserve.resonanceKind);
+                        foreach (var recipe in new[] { ordinary, reserve })
+                        {
+                            string key = string.Join(",", zone.zoneId, tier, legacy, relief, recipe.resonanceKind, recipe.label);
+                            counts.TryGetValue(key, out int count);
+                            counts[key] = count + 1;
+                        }
+                    }
+                }
+            }
+            finally { UnityEngine.Object.DestroyImmediate(zone); }
+        }
+        Directory.CreateDirectory(".utmp/SelectionExpansion");
+        var rows = counts.OrderBy(p => p.Key).Select(p => p.Key + "," + p.Value);
+        File.WriteAllLines(".utmp/SelectionExpansion/contexts-" + Guid.NewGuid().ToString("N") + ".csv",
+            new[] { "zone,tier,originalRoster,postCapstone,kind,formation,count" }.Concat(rows));
+    }
+
     [Test] public void CourtOrdinaryRosterAndEscortPairsRemainReachableAtEveryTier()
     {
         var zone=Resources.Load<ZoneDefinition>("Zones/drowned-court");
