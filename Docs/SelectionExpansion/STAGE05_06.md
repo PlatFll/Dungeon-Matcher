@@ -1,6 +1,6 @@
 # Enemy identity review
 
-[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round8/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
+[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
 
 The first ten PixelLab Pro jobs returned 160 stills at a cost of 100 generations. The user's marked contact sheet approved the Swordsman, Chirurgeon, Halberdier, Pathblade and Axeman and requested revisions for the other five. The first board and its original files remain available.
 
@@ -39,3 +39,7 @@ One PixelLab Pro job returned four Guild Bulwark stills for 10 generations. The 
 The user declined all four seventh-round designs and asked to see the game’s human characters used as actual PixelLab inputs. One 64 × 64 PixelLab Pro job used the current production Farmer and Pan Villager stills and the approved Guild Swordsman and Ranger stills as four labelled images. Rattlebones supplied the rendering reference. The [generation record](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round8/jobs.json) records the exact images, hashes, settings and 16 provider originals. The job cost 10 generations.
 
 The [review](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round8/Review.html) aligns the four shortlisted sprites and all four human inputs at the same pixel scale. Twelve more choices are expandable. The native PNGs were reopened from the LibreSprite files and compared byte-for-byte in RGBA. The new stills occupy 54–59 pixels vertically on the same 112 × 88 canvas and floor used by the Guild Swordsman. Approval is pending for the Bulwark.
+
+## Ninth review
+
+The user requested the game’s Shield Knight as the art reference. Its enemy definition binds ShieldKnight_Idle_00 in the current idle sheet. The native 112 × 88 frame was extracted from that import rectangle and supplied directly to PixelLab as the main pose and equipment reference. The approved Guild Swordsman supplied the human and faction reference, with Rattlebones in the rendering-style field. One 64 × 64 PixelLab Pro job returned sixteen originals for 10 generations. The [job record](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/jobs.json) records the exact binding, source hashes, inputs and outputs. The [stills and comparison](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/Review.html) are awaiting selection. The sixteen LibreSprite documents were reopened and compared against their native PNGs. K03 uses the Knight’s gold lion device at native size. K14 carries a pair of ochre chevrons.
