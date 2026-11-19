@@ -308,6 +308,33 @@ MonoBehaviour:
     - 1
     summonOnly: 0
   resonanceEncounters:
+  - label: Royal gate detail
+    members:
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    weight: 2
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+  - label: Royal siege sappers
+    members:
+    - {fileID: 11400000, guid: 1b41367eaef540e7b4fbc553bf6d5a28, type: 2}
+    - {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+    weight: 2
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+  - label: Royal crossbow detail
+    members:
+    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    weight: 2
+    minimumDepthTier: 4
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
   - label: Local search
     members:
     - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}

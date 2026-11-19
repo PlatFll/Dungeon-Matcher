@@ -869,6 +869,36 @@ MonoBehaviour:
     - 7
     summonOnly: 0
   resonanceEncounters:
+  - label: Ore scout
+    members:
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 4
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 3
+  - label: Drill feed
+    members:
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 4
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 3
+  - label: Brittle choice
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    prerequisites:
+    - stonewright
   - label: Outer patrol
     members:
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}

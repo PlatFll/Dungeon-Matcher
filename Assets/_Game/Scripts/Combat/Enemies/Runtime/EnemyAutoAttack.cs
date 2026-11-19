@@ -795,7 +795,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         bool damageApplied =
             playerTarget.TryTakeDamage(
                 attackDamage,
-                enemyActor
+                enemyActor, "basic contact"
             );
 
         AttackResolved?.Invoke(

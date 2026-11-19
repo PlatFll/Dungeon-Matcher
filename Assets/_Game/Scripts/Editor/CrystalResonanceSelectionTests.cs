@@ -9,6 +9,21 @@ using UnityEngine;
 // Selection statistics/fixtures only. Never included in played visit timing.
 public sealed class CrystalResonanceSelectionTests
 {
+    [Test]
+    public void EveryWeightedOrdinaryMemberHasAuthoredExposure()
+    {
+        foreach (var zone in Resources.LoadAll<ZoneDefinition>("Zones").Where(z => z.eligibleForLiveTravel))
+        {
+            var state = new CrystalResonanceSnapshot();
+            state.seenMechanics.AddRange(zone.enemies.Select(e => e.EnemyId));
+            for (int tier = 0; tier < 5; tier++)
+            foreach (var entry in zone.resonancePool.Where(e => e.Weight(tier) > 0 && (int)e.enemy.Category <= (int)EnemyCategory.Special))
+                Assert.IsTrue(zone.resonanceEncounters.Any(r => r.resonanceKind == ZoneEncounterKind.Ordinary &&
+                    r.members.Contains(entry.enemy) && WaveController.ResonanceFormationLegal(zone, r, tier, state, false)),
+                    zone.zoneId + "/" + tier + "/" + entry.enemy.EnemyId);
+        }
+    }
+
     [Test] public void OrdinaryAndCapstoneSelectionsRespectAllFiveDepthPools()
     {
         var lines=new List<string>{"zone,tier,kind,recipe,count"};

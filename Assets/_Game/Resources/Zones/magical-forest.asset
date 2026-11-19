@@ -456,6 +456,14 @@ MonoBehaviour:
     - 4
     summonOnly: 0
   resonanceEncounters:
+  - label: Lone rootbinder
+    members:
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    weight: 2
+    minimumDepthTier: 0
+    maximumDepthTier: 0
+    resonanceKind: 0
+    resonanceThreatBudget: 3
   - label: Outer patrol
     members:
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}

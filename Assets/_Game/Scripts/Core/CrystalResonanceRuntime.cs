@@ -53,7 +53,8 @@ public sealed partial class CrystalResonanceRuntime : MonoBehaviour, IWaveProgre
         run.Waves.WaveCompleted += WaveEnded;
         run.Waves.RegisterProgressionGate(this);
         run.Player.Defeated += Defeated;
-        run.Player.DamageTaken += TelemetryDamage;
+        run.Player.DamageResolved += TelemetryDamage;
+        run.Board.AirReceipt += TelemetryAir;
         run.Board.ValidPlayerMoveAccepted += TelemetryMove;
         run.Waves.EnemySpawned += TelemetryEnemy;
     }
@@ -148,7 +149,8 @@ public sealed partial class CrystalResonanceRuntime : MonoBehaviour, IWaveProgre
     {
         if (run == null) return;
         if (run.Board != null) run.Board.ProgressionReceipt -= Receive;
-        if (run.Player != null) { run.Player.Defeated -= Defeated; run.Player.DamageTaken -= TelemetryDamage; }
+        if (run.Board != null) run.Board.AirReceipt -= TelemetryAir;
+        if (run.Player != null) { run.Player.Defeated -= Defeated; run.Player.DamageResolved -= TelemetryDamage; }
         if (run.Board != null) run.Board.ValidPlayerMoveAccepted -= TelemetryMove;
         if (run.Waves != null) run.Waves.EnemySpawned -= TelemetryEnemy;
         foreach (var enemy in telemetryEnemies) if (enemy != null) enemy.SpecialAbilityUsed -= TelemetrySpecial;
