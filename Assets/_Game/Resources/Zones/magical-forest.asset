@@ -17,6 +17,8 @@ MonoBehaviour:
   eligibleForLiveTravel: 1
   affiliatedGem: 3
   enemies:
+  - {fileID: 11400000, guid: 60de8c925c985c5ab912d7a5d0d790bd, type: 2}
+  - {fileID: 11400000, guid: 2532f87afcdc548285eda0ccf6c2cb6e, type: 2}
   - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
   - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
   - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
@@ -312,6 +314,28 @@ MonoBehaviour:
   - 11
   - 12
   resonancePool:
+  - enemy: {fileID: 11400000, guid: 60de8c925c985c5ab912d7a5d0d790bd, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 4
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 2532f87afcdc548285eda0ccf6c2cb6e, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 4
+    - 4
+    - 4
+    - 4
+    summonOnly: 0
   - enemy: {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
     minimumTier: 0
     maximumTier: 4
@@ -456,6 +480,59 @@ MonoBehaviour:
     - 4
     summonOnly: 0
   resonanceEncounters:
+  - label: Drumline
+    members:
+    - {fileID: 11400000, guid: 02fc1c169367a7947b48495b664c906a, type: 2}
+    - {fileID: 11400000, guid: 60de8c925c985c5ab912d7a5d0d790bd, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.5
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Woodland Clans
+    familyWeight: 3
+  - label: Sling patrol
+    members:
+    - {fileID: 11400000, guid: 60de8c925c985c5ab912d7a5d0d790bd, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Forest orcs
+    familyWeight: 3
+  - label: Field escort
+    members:
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 2532f87afcdc548285eda0ccf6c2cb6e, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Grove Wardens
+    familyWeight: 3
+  - label: Pathblade scouts
+    members:
+    - {fileID: 11400000, guid: 2532f87afcdc548285eda0ccf6c2cb6e, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 3
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Forest elves
+    familyWeight: 3
   - label: Lone rootbinder
     phaseMask: 1
     ordinaryRole: 3

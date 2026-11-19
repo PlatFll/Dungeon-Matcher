@@ -19,6 +19,10 @@ MonoBehaviour:
   crumbleCadenceMoves: 4
   affiliatedGem: 5
   enemies:
+  - {fileID: 11400000, guid: e0e870cd969d50ccb29642de4688c56a, type: 2}
+  - {fileID: 11400000, guid: 9fa5fbe2a220532c9d9f63c66b2a7c8b, type: 2}
+  - {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+  - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
   - {fileID: 11400000, guid: 1b41367eaef540e7b4fbc553bf6d5a28, type: 2}
   - {fileID: 11400000, guid: cf3b9a8c35434f72afc9567d6c0835de, type: 2}
   - {fileID: 11400000, guid: 655f6b9c480740719f00f56e0169908d, type: 2}
@@ -76,6 +80,50 @@ MonoBehaviour:
   - 11
   - 12
   resonancePool:
+  - enemy: {fileID: 11400000, guid: e0e870cd969d50ccb29642de4688c56a, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 4
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 9fa5fbe2a220532c9d9f63c66b2a7c8b, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 4
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 4
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 4
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 4
+    - 4
+    summonOnly: 0
   - enemy: {fileID: 11400000, guid: 1b41367eaef540e7b4fbc553bf6d5a28, type: 2}
     minimumTier: 1
     maximumTier: 4
@@ -308,6 +356,93 @@ MonoBehaviour:
     - 1
     summonOnly: 0
   resonanceEncounters:
+  - label: Guild aid party
+    members:
+    - {fileID: 11400000, guid: e0e870cd969d50ccb29642de4688c56a, type: 2}
+    - {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+    - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.5
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Guild expedition
+    familyWeight: 2
+    prerequisites:
+    - guild_swordsman
+  - label: Guild rearguard
+    members:
+    - {fileID: 11400000, guid: 9fa5fbe2a220532c9d9f63c66b2a7c8b, type: 2}
+    - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    - {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 7.5
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Guild expedition
+    familyWeight: 2
+    prerequisites:
+    - guild_swordsman
+  - label: Guild field medicine
+    members:
+    - {fileID: 11400000, guid: e0e870cd969d50ccb29642de4688c56a, type: 2}
+    - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Guild expedition
+    familyWeight: 2
+    prerequisites:
+    - guild_swordsman
+  - label: Guild shield lesson
+    members:
+    - {fileID: 11400000, guid: 9fa5fbe2a220532c9d9f63c66b2a7c8b, type: 2}
+    - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Guild expedition
+    familyWeight: 2
+    prerequisites:
+    - guild_swordsman
+  - label: Guild trail party
+    members:
+    - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    - {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Guild expedition
+    familyWeight: 2
+  - label: Guild outrider
+    members:
+    - {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 2
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Guild expedition
+    familyWeight: 2
   - label: Royal gate detail
     phaseMask: 7
     ordinaryRole: 0

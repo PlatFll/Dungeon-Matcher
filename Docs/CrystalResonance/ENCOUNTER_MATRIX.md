@@ -6,6 +6,10 @@ Source inventory of authored recipes. Counts describe eligible memberships with 
 
 | Recipe | Tier | Members | Kind | Budget | Weight |
 |---|---|---|---|---:|---:|
+| Nacre honor guard | 3–4 | conch_marshal, nacre_halberdier, nacre_duelist | ordinary | 6 | 3 |
+| Nacre gate | 3–4 | nacre_halberdier, nacre_duelist | ordinary | 3.5 | 3 |
+| Pearl retinue | 2–4 | pearl_cantor, nacre_duelist | ordinary | 4 | 3 |
+| Nacre scouts | 2–4 | nacre_duelist, shellback_porter | ordinary | 3 | 3 |
 | Outer patrol | 0–2 | reef_spearman, hammerhead_bruiser | ordinary | 4 | 4 |
 | Quiet patrol | 0–4 | reef_spearman | ordinary | 4 | 1 |
 | Reef scouts | 0–4 | reef_spearman, needlefin_skirmisher | ordinary | 4 | 3 |
@@ -36,6 +40,12 @@ Source inventory of authored recipes. Counts describe eligible memberships with 
 
 | Recipe | Tier | Members | Kind | Budget | Weight |
 |---|---|---|---|---:|---:|
+| Guild aid party | 3–4 | guild_chirurgeon, guild_ranger, guild_swordsman | ordinary | 6.5 | 3 |
+| Guild rearguard | 3–4 | guild_bulwark, guild_swordsman, guild_ranger | ordinary | 7.5 | 3 |
+| Guild field medicine | 3–4 | guild_chirurgeon, guild_swordsman | ordinary | 4.5 | 3 |
+| Guild shield lesson | 3–4 | guild_bulwark, guild_swordsman | ordinary | 5.5 | 3 |
+| Guild trail party | 3–4 | guild_swordsman, guild_ranger | ordinary | 4 | 3 |
+| Guild outrider | 3–4 | guild_ranger | ordinary | 2 | 3 |
 | Royal gate detail | 3–4 | spear_guard, royal_swordsman | ordinary | 4 | 2 |
 | Royal siege sappers | 3–4 | barricade_guard, royal_lancer | ordinary | 4.5 | 2 |
 | Royal crossbow detail | 4–4 | crossbow_guard, royal_swordsman | ordinary | 4.5 | 2 |
@@ -71,6 +81,8 @@ Source inventory of authored recipes. Counts describe eligible memberships with 
 
 | Recipe | Tier | Members | Kind | Budget | Weight |
 |---|---|---|---|---:|---:|
+| Hall hearthguard | 1–4 | hearthkeeper, iceborn_axeman | ordinary | 4.5 | 3 |
+| Hall patrol | 1–4 | iceborn_axeman, iceborn_raider | ordinary | 3.5 | 3 |
 | Outer patrol | 0–2 | iceborn_raider, frostfang_wolf | ordinary | 4 | 4 |
 | Quiet patrol | 0–4 | iceborn_raider | ordinary | 4 | 1 |
 | Learn harpoon_hunter | 0–4 | harpoon_hunter, iceborn_raider | ordinary | 4 | 3 |
@@ -99,6 +111,8 @@ Source inventory of authored recipes. Counts describe eligible memberships with 
 
 | Recipe | Tier | Members | Kind | Budget | Weight |
 |---|---|---|---|---:|---:|
+| Bore escort | 2–4 | bore_engineer, ore_ram, rivet_gunner | ordinary | 6.5 | 3 |
+| Haulage relief | 2–4 | ore_ram, packbeetle | ordinary | 3.5 | 3 |
 | Ore scout | 0–4 | packbeetle, rivet_gunner | ordinary | 3 | 4 |
 | Drill feed | 0–4 | packbeetle, pickaxe_delver | ordinary | 3 | 4 |
 | Brittle choice | 2–4 | stonewright, packbeetle, pickaxe_delver | ordinary | 5.5 | 3 |
@@ -132,6 +146,10 @@ Source inventory of authored recipes. Counts describe eligible memberships with 
 
 | Recipe | Tier | Members | Kind | Budget | Weight |
 |---|---|---|---|---:|---:|
+| Drumline | 2–4 | orc_drummer, orc_slinghunter, orc_trailguard | ordinary | 6.5 | 3 |
+| Sling patrol | 2–4 | orc_slinghunter, orc_trailguard | ordinary | 4 | 3 |
+| Field escort | 1–4 | elven_mender, elven_pathblade | ordinary | 4 | 3 |
+| Pathblade scouts | 1–4 | elven_pathblade, elven_scout | ordinary | 3 | 3 |
 | Lone rootbinder | 0–0 | orc_rootbinder | ordinary | 3 | 2 |
 | Outer patrol | 0–2 | elven_scout, orc_trailguard | ordinary | 4 | 4 |
 | Quiet patrol | 0–4 | elven_scout | ordinary | 4 | 1 |

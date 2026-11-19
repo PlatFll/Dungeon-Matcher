@@ -18,6 +18,7 @@ MonoBehaviour:
   eligibleForTesting: 1
   affiliatedGem: 4
   enemies:
+  - {fileID: 11400000, guid: 1d79103fd9a2515f8a2a3901f06e62b6, type: 2}
   - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
   - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
   - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
@@ -652,6 +653,17 @@ MonoBehaviour:
   - 11
   - 12
   resonancePool:
+  - enemy: {fileID: 11400000, guid: 1d79103fd9a2515f8a2a3901f06e62b6, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 4
+    - 4
+    - 4
+    - 4
+    summonOnly: 0
   - enemy: {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
     minimumTier: 0
     maximumTier: 4
@@ -774,6 +786,32 @@ MonoBehaviour:
     - 7
     summonOnly: 0
   resonanceEncounters:
+  - label: Hall hearthguard
+    members:
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    - {fileID: 11400000, guid: 1d79103fd9a2515f8a2a3901f06e62b6, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Hall guard
+    familyWeight: 2
+  - label: Hall patrol
+    members:
+    - {fileID: 11400000, guid: 1d79103fd9a2515f8a2a3901f06e62b6, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 3.5
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Hall guard
+    familyWeight: 2
   - label: Outer patrol
     phaseMask: 7
     ordinaryRole: 1

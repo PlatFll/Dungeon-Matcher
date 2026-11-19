@@ -18,6 +18,7 @@ MonoBehaviour:
   eligibleForTesting: 1
   affiliatedGem: 1
   enemies:
+  - {fileID: 11400000, guid: b8cec865b0105ba39fe1c0d9b4c9be63, type: 2}
   - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
   - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
   - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
@@ -714,6 +715,17 @@ MonoBehaviour:
   - 11
   - 12
   resonancePool:
+  - enemy: {fileID: 11400000, guid: b8cec865b0105ba39fe1c0d9b4c9be63, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 4
+    - 4
+    - 4
+    summonOnly: 0
   - enemy: {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
     minimumTier: 0
     maximumTier: 4
@@ -869,6 +881,33 @@ MonoBehaviour:
     - 7
     summonOnly: 0
   resonanceEncounters:
+  - label: Bore escort
+    members:
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    - {fileID: 11400000, guid: b8cec865b0105ba39fe1c0d9b4c9be63, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.5
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Ore caravan
+    familyWeight: 2
+  - label: Haulage relief
+    members:
+    - {fileID: 11400000, guid: b8cec865b0105ba39fe1c0d9b4c9be63, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 3.5
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Ore caravan
+    familyWeight: 2
   - label: Ore scout
     phaseMask: 7
     ordinaryRole: 0

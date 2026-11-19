@@ -17,6 +17,8 @@ MonoBehaviour:
   eligibleForLiveTravel: 1
   affiliatedGem: 4
   enemies:
+  - {fileID: 11400000, guid: 0348b4eb81ab5a078ae949965155eb91, type: 2}
+  - {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
   - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
   - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
   - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
@@ -432,6 +434,28 @@ MonoBehaviour:
   - 11
   - 12
   resonancePool:
+  - enemy: {fileID: 11400000, guid: 0348b4eb81ab5a078ae949965155eb91, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 4
+    - 4
+    - 4
+    summonOnly: 0
   - enemy: {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
     minimumTier: 0
     maximumTier: 4
@@ -587,6 +611,59 @@ MonoBehaviour:
     - 4
     summonOnly: 1
   resonanceEncounters:
+  - label: Nacre honor guard
+    members:
+    - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
+    - {fileID: 11400000, guid: 0348b4eb81ab5a078ae949965155eb91, type: 2}
+    - {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Nacre Court
+    familyWeight: 2
+  - label: Nacre gate
+    members:
+    - {fileID: 11400000, guid: 0348b4eb81ab5a078ae949965155eb91, type: 2}
+    - {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 3.5
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Nacre Court
+    familyWeight: 2
+  - label: Pearl retinue
+    members:
+    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
+    - {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Nacre Court
+    familyWeight: 2
+  - label: Nacre scouts
+    members:
+    - {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 3
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Nacre Court
+    familyWeight: 2
   - label: Outer patrol
     phaseMask: 7
     ordinaryRole: 1
