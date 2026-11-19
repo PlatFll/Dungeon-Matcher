@@ -162,6 +162,22 @@ public sealed class EnemyWeaknessIndicatorUI :
             );
     }
 
+    private bool tauntHidden;
+    public void SyncTaunt(EnemyActor enemy)
+    {
+        bool hidden = enemy != null && !enemy.IsDefeated && enemy.IsProtectedByTaunt;
+        if (hidden == tauntHidden) return;
+        tauntHidden = hidden;
+        bool animate = !PresentationPreferences.ReducedMotion && Time.timeScale > 0 &&
+            RunSession.Current?.Continuation?.IsRestoring != true;
+        if (hidden)
+        {
+            if (animate && indicatorImage.enabled && indicatorImage.sprite != null) SpawnBurstParticles();
+            HideImmediate();
+        }
+        else if (enemy != null && !enemy.IsDefeated) Show(enemy.AssignedGemType, animate);
+    }
+
     public void PlayDefeat()
     {
         if (!isInitialized ||

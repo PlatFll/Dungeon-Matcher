@@ -33,6 +33,9 @@ public readonly struct CombatStatusDisplay
         var charge=actor.GetComponent<ShieldbreakerChargeRuntime>();
         if(charge?.RecoveryMoves>0)output.Add(new CombatStatusDisplay("MarshalRetreat","Recovering",charge.RecoveryMoves.ToString(),
             "Shieldbreaker recovery: no attacks or new channel until the remaining accepted moves finish."));
+        if (actor.GuildTauntMoves > 0)
+            output.Add(new CombatStatusDisplay("RoyalStandard", "TAUNT", actor.GuildTauntMoves.ToString(),
+                "Only this warrior can receive new attacks. Defeat or stagger it to expose its allies."));
         var ember=actor.GetComponent<HearthEmberRuntime>();
         if(ember?.HasEmber==true)output.Add(new CombatStatusDisplay("Burn","Hearth Ember",ember.RemainingMoves.ToString(),
             "One-hit Ember heals its fixed ally 5 HP per future move. Destroy it to thaw nearby ice."));

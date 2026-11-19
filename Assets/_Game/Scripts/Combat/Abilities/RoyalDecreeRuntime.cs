@@ -280,7 +280,7 @@ public sealed class RoyalDecreeRuntime :
         if (!IsActive ||
             currentTarget != null ||
             spawnedEnemy == null ||
-            !spawnedEnemy.CanReceiveDamage)
+            !spawnedEnemy.CanReceivePlayerAttack)
         {
             return;
         }
@@ -306,7 +306,7 @@ public sealed class RoyalDecreeRuntime :
 
     private void EnsureValidTarget()
     {
-        if (currentTarget != null && currentTarget.CanReceiveDamage)
+        if (currentTarget != null && currentTarget.CanReceivePlayerAttack)
         {
             return;
         }
@@ -350,7 +350,7 @@ public sealed class RoyalDecreeRuntime :
         {
             EnemyActor enemy = enemies[index];
 
-            if (enemy != null && enemy.CanReceiveDamage)
+            if (enemy != null && enemy.CanReceivePlayerAttack)
             {
                 return true;
             }
@@ -373,7 +373,7 @@ public sealed class RoyalDecreeRuntime :
         {
             EnemyActor enemy = enemies[index];
 
-            if (enemy != null && enemy.CanReceiveDamage)
+            if (enemy != null && enemy.CanReceivePlayerAttack)
             {
                 aliveEnemyCount++;
             }
@@ -391,7 +391,7 @@ public sealed class RoyalDecreeRuntime :
         {
             EnemyActor enemy = enemies[index];
 
-            if (enemy == null || !enemy.CanReceiveDamage)
+            if (enemy == null || !enemy.CanReceivePlayerAttack)
             {
                 continue;
             }

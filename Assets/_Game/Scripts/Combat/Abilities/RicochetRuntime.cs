@@ -25,7 +25,7 @@ public sealed class RicochetRuntime : SequentialBoardAbilityRuntime
     private void Ricochet(int step,Vector2Int cell,RicochetAbilityDefinition ability)
     {
         var living=new List<EnemyActor>();
-        foreach(var enemy in Wave.ActiveEnemies)if(enemy!=null && enemy.IsInitialized && enemy.CanReceiveDamage)living.Add(enemy);
+        foreach(var enemy in Wave.ActiveEnemies)if(enemy!=null && enemy.IsInitialized && enemy.CanReceivePlayerAttack)living.Add(enemy);
         if(living.Count==0)return;
         var target=living[GameplayRandom.Range(0,living.Count)];
         // Central actor interception is one hop. Count the actual recipient,

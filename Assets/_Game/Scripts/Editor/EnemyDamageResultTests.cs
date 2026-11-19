@@ -49,6 +49,45 @@ public sealed class EnemyDamageResultTests
         Assert.That(reportedShield, Is.EqualTo(expectedShieldLoss));
     }
 
+    [TestCase(1)]
+    [TestCase(2)]
+    [TestCase(3)]
+    public void TauntPreservesWeaknessAndRemainingFutureMovesOnContinue(int remaining)
+    {
+        var actor = Enemy("Shield", GemType.Sapphire);
+        actor.StartGuildTaunt(10);
+        actor.SettleGuildTaunt(10);
+        for (int i = 1; i <= 3 - remaining; i++) actor.SettleGuildTaunt(10 + i);
+        var save = actor.CaptureContinuation(0);
+        var restored = Enemy("Restored", GemType.Sapphire);
+        restored.RestoreContinuation(save);
+        Assert.AreEqual(remaining, restored.GuildTauntMoves);
+        Assert.AreEqual(GemType.Sapphire, restored.AssignedGemType);
+        for (int i = 4 - remaining; i <= 3; i++)
+        {
+            restored.SettleGuildTaunt(10 + i);
+            restored.SettleGuildTaunt(10 + i);
+        }
+        Assert.AreEqual(0, restored.GuildTauntMoves);
+    }
+
+    [Test]
+    public void ChirurgeonSelectsOneMostWoundedOtherAndClampsHealing()
+    {
+        var healer = Enemy("Medic");
+        var first = Enemy("First");
+        var second = Enemy("Second");
+        var roster = new[] { healer, first, second };
+        healer.TryTakeDamage(50);
+        Assert.IsNull(GuildSupportAbility.WoundedAlly(healer, roster));
+        first.TryTakeDamage(10);
+        second.TryTakeDamage(5);
+        Assert.AreSame(first, GuildSupportAbility.WoundedAlly(healer, roster));
+        Assert.AreEqual(10, first.RestoreHealth(10));
+        Assert.AreSame(second, GuildSupportAbility.WoundedAlly(healer, roster));
+        Assert.AreEqual(5, second.RestoreHealth(10));
+    }
+
     [Test]
     public void BreakingShieldDoesNotReduceTheFollowingHit()
     {

@@ -113,6 +113,7 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
         if (enemyActor == null ||
             !enemyActor.IsInitialized ||
             enemyActor.IsDefeated ||
+            enemyActor.IsProtectedByTaunt ||
             duration <= 0f ||
             interval <= 0f ||
             damagePerTick <= 0)

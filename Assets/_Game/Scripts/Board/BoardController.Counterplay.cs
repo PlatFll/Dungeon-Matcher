@@ -135,6 +135,13 @@ public partial class BoardController
         }
     }
 
+    public bool CanImmediatelyMatch(GemType type)
+    {
+        var colorResponses = GetImmediateResponses().Where(option =>
+            option.Clears.Any(gem => gem != null && gem.Type == type)).ToList();
+        return colorResponses.Count > 0 && (UsefulResponseValidator == null || UsefulResponseValidator(colorResponses));
+    }
+
     private HashSet<Gem> ImmediatelyClearableOrdinaryGems()
     {
         var targets = new HashSet<Gem>();
