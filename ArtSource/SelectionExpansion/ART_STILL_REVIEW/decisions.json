@@ -48,6 +48,15 @@
       "source": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/ore_ram.png",
       "sourceSHA256": "4ec4397e14bb775180790a755a18140e2764228b03bdb3ebc185211b922c971a",
       "option": "Round 2 A"
+    },
+    {
+      "enemy": "nacre_duelist",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/nacre_duelist.png",
+      "nativeSHA256": "354ff348ce40a1610bfccb475047b862725b2fa1fad3d5f93463ea41204a82a5",
+      "source": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/nacre_duelist-A.png",
+      "sourceSHA256": "7cd430cb30a3661ef4e0dc2a820d0867504acd0c4b73119f48b29dc936d6942f",
+      "option": "Round 3",
+      "status": "user-approved identity and shell rapier"
     }
   ],
   "rejected": [
@@ -153,9 +162,36 @@
       "sourceSHA256": "2b301d1e21bd2b06eba5de5c5f53966be8202cb7e8bd709754a2dd32edb39baa",
       "option": "Round 2 B",
       "status": "rejected in marked review"
+    },
+    {
+      "enemy": "guild_ranger",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/guild_ranger.png",
+      "nativeSHA256": "5605f79d02055ba3e939d7ac7b5dbb10f5d47b42acee5e08951096fbf9ff13f1",
+      "source": "ArtSource/SelectionExpansion/Originals/Round3/guild_ranger/15.png",
+      "sourceSHA256": "4982dce82fc4f736cde977b1213b28fd17b3c2e2f0ccc9b47d7195f49f784aae",
+      "option": "Round 3",
+      "status": "rejected in third marked review"
+    },
+    {
+      "enemy": "guild_bulwark",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/guild_bulwark.png",
+      "nativeSHA256": "6d6a4fac82fcfe1898a5ae9501dd74d2e0eb02ea45a456570b324e540ca4dabf",
+      "source": "ArtSource/SelectionExpansion/Originals/Round3/guild_bulwark/14.png",
+      "sourceSHA256": "21f675bb89df591691496a1d22dcce80589192f9a8d5f467dd2b087f4b319872",
+      "option": "Round 3",
+      "status": "rejected in third marked review"
+    },
+    {
+      "enemy": "orc_slinghunter",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/orc_slinghunter.png",
+      "nativeSHA256": "d47dc6e843789b6bcef9a28184eb44cc2f019da0f59e7fe54a42fe48fef5784d",
+      "source": "ArtSource/SelectionExpansion/Originals/Round3/orc_slinghunter/07.png",
+      "sourceSHA256": "6a4db36d17c22eaf009ccccecad691fec07b0657d64050fb11b18b59cd3d3680",
+      "option": "Round 3",
+      "status": "rejected in third marked review"
     }
   ],
-  "pending": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/candidates.json",
+  "pending": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/candidates.json",
   "selectedWithRevision": [
     {
       "enemy": "nacre_duelist",
@@ -164,8 +200,10 @@
       "option": "Round 2 A",
       "request": "Keep the chosen body and pose, give him an underwater-inspired rapier.",
       "revisedFile": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/nacre_duelist.png",
-      "revisedSHA256": "354ff348ce40a1610bfccb475047b862725b2fa1fad3d5f93463ea41204a82a5"
+      "revisedSHA256": "354ff348ce40a1610bfccb475047b862725b2fa1fad3d5f93463ea41204a82a5",
+      "status": "requested weapon accepted in third marked review"
     }
   ],
-  "round2Evidence": "User-annotated contact sheet codex-clipboard-14291485-7978-44c1-be32-9757fda628f6.png, user selected Nacre A with a new underwater-inspired rapier and checked the corrected Ore Ram. User directed new outfits and poses with the same race proportions for the other three."
+  "round2Evidence": "User-annotated contact sheet codex-clipboard-14291485-7978-44c1-be32-9757fda628f6.png, user selected Nacre A with a new underwater-inspired rapier and checked the corrected Ore Ram. User directed new outfits and poses with the same race proportions for the other three.",
+  "round3Evidence": "User-marked screenshot codex-clipboard-2de17734-aa7c-4253-985b-7a20b856abbf.png checks the revised Nacre Duelist and crosses out the other three Round 3 candidates. User called them too generic and approved 30 further PixelLab generations for three signature equipment concepts."
 }

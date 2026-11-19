@@ -4,8 +4,8 @@ The separate branch `codex/selection-repair-nonboss` starts at published PR #234
 
 ## Still approval
 
-Six final still hashes are locked in [decisions.json](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json), including the corrected Ore Ram. The user selected Nacre A’s body and requested an underwater-inspired rapier. The other three require new outfits and poses with unchanged race proportions.
+Seven identities are locked in [decisions.json](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json), including the corrected Ore Ram and Nacre Duelist with his shell rapier. The Ranger, Bulwark and Slinghunter in the third review were rejected. Their PNGs have been archived.
 
-[Round three](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/Review.html) shows the revised Nacre weapon, kneeling Guild Ranger, Guild Bulwark in a pavise stance, and low-casting Orc Slinghunter with their source references. Await approval of these four exact hashes. All current PixelLab still jobs completed. Native 112 × 88 exports match their editable LibreSprite source pixels.
+[Round four](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/Review.html) presents the outstanding equipment and identity candidates. The round used the 30 additional PixelLab generations authorized by the user. All three jobs completed. The PNG exports match the editable LibreSprite sources. No more jobs are pending.
 
-After the outstanding approvals, run stage 07 character animation using each locked source. Stage 08 owns Unity validation and game testing, then stage 09 opens a stacked draft PR targeting `codex/crystal-resonance-zone-director`. No animation job or Unity test has started.
+Once the user approves the three identities, record the exact hashes and proceed through stage 07 PixelLab animation, stage 08 validation and stage 09 stacked draft PR targeting `codex/crystal-resonance-zone-director`. No animation or Unity testing has started.

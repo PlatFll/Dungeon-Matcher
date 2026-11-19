@@ -1,6 +1,6 @@
 # Enemy identity review
 
-[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
+[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
 
 The first ten PixelLab Pro jobs returned 160 stills at a cost of 100 generations. The user's marked contact sheet approved the Swordsman, Chirurgeon, Halberdier, Pathblade and Axeman and requested revisions for the other five. The first board and its original files remain available.
 
@@ -10,4 +10,8 @@ The Ore Ram uses the first-round PNG directly for a local removal of 121 pickaxe
 
 ## Third review
 
-Nacre A retains the selected body and stance. The blade, guard and knuckle bow were edited by hand on the native canvas, then round-tripped through LibreSprite. The other three candidates have new outfits and poses, using the Elven Pathblade, Guild Swordsman and Orc Trailguard as anatomical references. Each of those three jobs used the verified Rattlebones rendering reference and returned 16 originals for 10 generations. All 48 sources and the exact reference inputs are in the [third-round ledger](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/jobs.json). The total still cost is 170 generations. Approval is pending for the revised weapon and three new candidates.
+Nacre A retains the selected body and stance. The blade, guard and knuckle bow were edited by hand on the native canvas, then round-tripped through LibreSprite. The other three candidates have new outfits and poses, using the Elven Pathblade, Guild Swordsman and Orc Trailguard as anatomical references. Each of those three jobs used the verified Rattlebones rendering reference and returned 16 originals for 10 generations. All 48 sources and the exact reference inputs are in the [third-round ledger](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/jobs.json). The total still cost is 170 generations. The user approved the shell rapier and rejected the other three outfits as too generic.
+
+## Fourth review
+
+The user approved 30 more generations for distinct field equipment. Three original native-pixel equipment drawings were supplied to PixelLab along with the actual Rattlebones style PNG and an anatomy reference per enemy. The [fourth-round ledger](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/jobs.json) records the inputs, exact prompts, source hashes, provider receipts and the 48 original outputs. The total still cost to date is 200 generations. The chosen bodies and their equipment have editable LibreSprite sources. The three new identities await user selection.
