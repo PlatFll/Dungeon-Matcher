@@ -1,6 +1,6 @@
 # Enemy identity review
 
-[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round7/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
+[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round8/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
 
 The first ten PixelLab Pro jobs returned 160 stills at a cost of 100 generations. The user's marked contact sheet approved the Swordsman, Chirurgeon, Halberdier, Pathblade and Axeman and requested revisions for the other five. The first board and its original files remain available.
 
@@ -33,3 +33,9 @@ The marked sixth review approved the shouldered-musket R2 and the red-scarf O5. 
 ## Seventh review
 
 One PixelLab Pro job returned four Guild Bulwark stills for 10 generations. The current Rattlebones rendering master, approved Guild Swordsman and an original four-pose study guided the job. The [review](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round7/Review.html) shows all four at native scale and integer zoom. Each has a 112 × 96 transparent PNG, a matching LibreSprite document and an archived provider original. The [ledger](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round7/candidates.json) records the native edits and hashes. Nine identities are approved. The Bulwark awaits selection.
+
+## Eighth review
+
+The user declined all four seventh-round designs and asked to see the game’s human characters used as actual PixelLab inputs. One 64 × 64 PixelLab Pro job used the current production Farmer and Pan Villager stills and the approved Guild Swordsman and Ranger stills as four labelled images. Rattlebones supplied the rendering reference. The [generation record](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round8/jobs.json) records the exact images, hashes, settings and 16 provider originals. The job cost 10 generations.
+
+The [review](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round8/Review.html) aligns the four shortlisted sprites and all four human inputs at the same pixel scale. Twelve more choices are expandable. The native PNGs were reopened from the LibreSprite files and compared byte-for-byte in RGBA. The new stills occupy 54–59 pixels vertically on the same 112 × 88 canvas and floor used by the Guild Swordsman. Approval is pending for the Bulwark.
