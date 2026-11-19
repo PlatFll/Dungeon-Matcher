@@ -23,8 +23,8 @@ MonoBehaviour:
   threatCost: 2
   isBoardDisruptor: 0
   isSupport: 0
-  description: A plain, readable single-contact basic attacker. No automatic personal shield, spell, multi-target strike or board manipulation. Its role is a straightforward kill target
-    around which true Guild teamwork operates.
+  useDescriptionForInspection: 1
+  description: A Guild frontliner who strikes once with his sword. Watch his attack counter while you deal with his escorts.
   baseMaxHealth: 105
   baseDamage: 10
   baseFollowUpDamage: 0

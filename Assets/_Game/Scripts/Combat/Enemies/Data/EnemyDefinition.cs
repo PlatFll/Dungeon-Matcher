@@ -95,6 +95,9 @@ public sealed class EnemyDefinition : ScriptableObject
     [TextArea(2, 4)]
     private string description;
 
+    [SerializeField] private bool useDescriptionForInspection;
+    public bool UseDescriptionForInspection => useDescriptionForInspection;
+
     [Header("Prefab")]
 
     [SerializeField]

@@ -23,7 +23,8 @@ MonoBehaviour:
   threatCost: 2
   isBoardDisruptor: 0
   isSupport: 0
-  description: A Guild musketeer who fires a quick two-shot volley. Each shot lands as a separate hit.
+  useDescriptionForInspection: 1
+  description: Fires two musket shots in quick succession. Each shot lands separately.
   baseMaxHealth: 80
   baseDamage: 5
   baseFollowUpDamage: 5

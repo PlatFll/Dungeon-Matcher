@@ -23,8 +23,8 @@ MonoBehaviour:
   threatCost: 2
   isBoardDisruptor: 0
   isSupport: 0
-  description: Basic-only slow, readable heavy axe impact. No automatic Frostbite, ice creation or temperature meter. Adds another grounded escort beside Reaver and Hearthkeeper, reducing
-    Raider/Wolf repetition.
+  useDescriptionForInspection: 1
+  description: Winds up for a single heavy axe blow. Use the turns before it lands to focus his weakness.
   baseMaxHealth: 95
   baseDamage: 15
   baseFollowUpDamage: 0

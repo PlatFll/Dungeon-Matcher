@@ -23,8 +23,8 @@ MonoBehaviour:
   threatCost: 2
   isBoardDisruptor: 0
   isSupport: 0
-  description: Basic-only hefty worker/automaton with a longer visible windup before one heavy physical basic. It may receive existing Ore-Powered effects if compatible and documented,
-    but must not create new machines, stone objects, drill infrastructure or a unique status.
+  useDescriptionForInspection: 1
+  description: Lowers its head for one heavy charge. Ore can strengthen its next attack.
   baseMaxHealth: 95
   baseDamage: 15
   baseFollowUpDamage: 0

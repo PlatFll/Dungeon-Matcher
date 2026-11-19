@@ -23,8 +23,8 @@ MonoBehaviour:
   threatCost: 2.5
   isBoardDisruptor: 0
   isSupport: 1
-  description: User-directed INSTANT HEAL. Female elf in Guild equipment raises staff once and immediately restores 10 HP to one wounded OTHER ally (rounded/clamped normally), without
-    any channel or delayed cast. No self-heal or shield. Five accepted moves between successful heals initially; skip healing if no wounded other ally.
+  useDescriptionForInspection: 1
+  description: Field Medicine restores up to 10 HP to the wounded ally with the lowest health percentage. She can heal once every five moves. Focus a wounded enemy before her staff flashes.
   baseMaxHealth: 75
   baseDamage: 5
   baseFollowUpDamage: 0

@@ -23,8 +23,8 @@ MonoBehaviour:
   threatCost: 2
   isBoardDisruptor: 0
   isSupport: 0
-  description: Basic-only heavier attacker with an announced slow full-body halberd swing. No independent spell, buffs, bubble theft or extra oxygen tax. Provides alternative pressure
-    to Needlefin and Nacre Duelist.
+  useDescriptionForInspection: 1
+  description: The Halberdier takes a slower swing with a harder hit. Its attack counter gives you time to strike first.
   baseMaxHealth: 90
   baseDamage: 15
   baseFollowUpDamage: 0

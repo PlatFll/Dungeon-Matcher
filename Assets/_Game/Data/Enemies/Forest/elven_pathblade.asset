@@ -23,7 +23,8 @@ MonoBehaviour:
   threatCost: 1.5
   isBoardDisruptor: 0
   isSupport: 0
-  description: Basic-only one-hit melee attacker; no vine or root generation. Creates an alternative to Scout/Trailguard in existing Forest compositions.
+  useDescriptionForInspection: 1
+  description: An elven skirmisher who steps in for one blade strike. Watch the attack counter when other Forest enemies demand your attention.
   baseMaxHealth: 75
   baseDamage: 10
   baseFollowUpDamage: 0

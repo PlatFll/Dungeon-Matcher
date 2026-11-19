@@ -67,6 +67,7 @@ public sealed partial class ForestFoundationPlayTests
         var actors = Run.Waves.ActiveEnemies.ToArray();
         foreach (var actor in actors)
         {
+            StringAssert.Contains(actor.Definition.Description, CombatGuide.Enemy(actor));
             Assert.IsTrue(EnemyVisualPresenter.TryApplyFallbackOnly(actor.gameObject, actor.Definition.FallbackVisualSprite));
             Assert.IsTrue(EnemyVisualPresenter.TryApply(actor.gameObject, actor.Definition));
         }

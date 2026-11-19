@@ -23,9 +23,8 @@ MonoBehaviour:
   threatCost: 3.5
   isBoardDisruptor: 0
   isSupport: 1
-  description: User-directed TAUNT. For 3 future accepted moves, visually shatter/hide the weakness mini-gems on all OTHER living enemies, preserve their exact underlying weakness types,
-    and block new player-origin enemy damage to them. Only Bulwark is a valid enemy damage target. Full source-specific gameplay/visual/Continue contract in SPECS/TAUNT_AND_INSTANT_HEAL.md.
-    Start cooldown after expiration; no automatic retiming or companion stacking.
+  useDescriptionForInspection: 1
+  description: Taunt hides allied weaknesses and protects the other enemies for three moves. Match his weakness to hurt him. Stagger or defeat him to expose his allies sooner.
   baseMaxHealth: 150
   baseDamage: 5
   baseFollowUpDamage: 0

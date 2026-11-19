@@ -23,8 +23,8 @@ MonoBehaviour:
   threatCost: 2
   isBoardDisruptor: 0
   isSupport: 0
-  description: Basic-only two-contact sling-stone sequence where engine supports two normal contacts; no rooting, vine production, Bloodrage or special marks. Adds melee/ranged variance
-    to Orc Berserker/Drummer pairings.
+  useDescriptionForInspection: 1
+  description: The Slinghunter fires two stones in quick succession. Each stone deals a separate hit.
   baseMaxHealth: 65
   baseDamage: 5
   baseFollowUpDamage: 5
