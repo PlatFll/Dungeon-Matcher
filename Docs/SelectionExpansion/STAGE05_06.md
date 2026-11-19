@@ -1,6 +1,6 @@
 # Enemy identity review
 
-[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
+[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round7/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
 
 The first ten PixelLab Pro jobs returned 160 stills at a cost of 100 generations. The user's marked contact sheet approved the Swordsman, Chirurgeon, Halberdier, Pathblade and Axeman and requested revisions for the other five. The first board and its original files remain available.
 
@@ -29,3 +29,7 @@ The user selected O5 with its red scarf and requested removal of the cape. The r
 The user supplied `possible2.png` for the tank’s compact stature and specified a bareheaded human in Guild clothes with a large shield. The Ranger is a human musketeer. Two PixelLab jobs used the current Rattlebones style image and Guild clothing reference. The Bulwark job also received the exact supplied stature reference. Both jobs finished, cost 20 generations total and returned 32 originals. The [sixth review](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/Review.html) presents two native shield designs, two musket poses and the local orc edit. Five 112 × 88 PNGs were reopened from their editable LibreSprite sources. The Ranger description reflects the new identity; the two-contact combat data is unchanged.
 
 The marked sixth review approved the shouldered-musket R2 and the red-scarf O5. The decision ledger locks both exact revised PNG hashes. Both proposed tanks were declined. Nine of the ten identities now have approved stills.
+
+## Seventh review
+
+One PixelLab Pro job returned four Guild Bulwark stills for 10 generations. The current Rattlebones rendering master, approved Guild Swordsman and an original four-pose study guided the job. The [review](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round7/Review.html) shows all four at native scale and integer zoom. Each has a 112 × 96 transparent PNG, a matching LibreSprite document and an archived provider original. The [ledger](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round7/candidates.json) records the native edits and hashes. Nine identities are approved. The Bulwark awaits selection.
