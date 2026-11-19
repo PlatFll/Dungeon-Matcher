@@ -1,6 +1,6 @@
 # Enemy identity review
 
-[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
+[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
 
 The first ten PixelLab Pro jobs returned 160 stills at a cost of 100 generations. The user's marked contact sheet approved the Swordsman, Chirurgeon, Halberdier, Pathblade and Axeman and requested revisions for the other five. The first board and its original files remain available.
 
@@ -14,4 +14,10 @@ Nacre A retains the selected body and stance. The blade, guard and knuckle bow w
 
 ## Fourth review
 
-The user approved 30 more generations for distinct field equipment. Three original native-pixel equipment drawings were supplied to PixelLab along with the actual Rattlebones style PNG and an anatomy reference per enemy. The [fourth-round ledger](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/jobs.json) records the inputs, exact prompts, source hashes, provider receipts and the 48 original outputs. The total still cost to date is 200 generations. The chosen bodies and their equipment have editable LibreSprite sources. The three new identities await user selection.
+The user approved 30 more generations for distinct field equipment. Three original native-pixel equipment drawings were supplied to PixelLab along with the actual Rattlebones style PNG and an anatomy reference per enemy. The [fourth-round ledger](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/jobs.json) records the inputs, exact prompts, source hashes, provider receipts and the 48 original outputs. The total still cost to date is 200 generations. The chosen bodies and their equipment have editable LibreSprite sources. The user declined these three identities and requested twenty alternatives.
+
+## Fifth review
+
+The user asked for about twenty stills total. The [concept picker](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Review.html) offers seven Guild shield tanks (T1–T7), seven Guild rangers (R1–R7) and six small forest orcs with rigid Y-fork slingshots (O1–O6). The Orc Slinghunter art and motion brief now uses a fork, bands and pebble pouch. Its two-contact basic attack remains the gameplay contract.
+
+Eleven PixelLab Pro jobs completed at a total cost of 120 generations this round, including replacement sheets for clipped lineups and a compact orc sheet. The jobs register identifies which outputs were selected. All native source pixels were retained after isolating each figure and, where needed, mirroring its facing. The larger shield and bow studies have additional native canvas space. The six orcs occupy 30–38 pixels vertically. These are design choices under review; final combat sizing and character animation are pending. Seven previously approved identities retain their locked hashes.

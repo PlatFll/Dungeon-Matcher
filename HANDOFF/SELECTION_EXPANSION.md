@@ -4,8 +4,8 @@ The separate branch `codex/selection-repair-nonboss` starts at published PR #234
 
 ## Still approval
 
-Seven identities are locked in [decisions.json](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json), including the corrected Ore Ram and Nacre Duelist with his shell rapier. The Ranger, Bulwark and Slinghunter in the third review were rejected. Their PNGs have been archived.
+Seven stills are locked in [decisions.json](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json). The three Round 4 equipment designs were rejected. The user requested twenty new concepts total and a small orc equipped with a forked slingshot.
 
-[Round four](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/Review.html) presents the outstanding equipment and identity candidates. The round used the 30 additional PixelLab generations authorized by the user. All three jobs completed. The PNG exports match the editable LibreSprite sources. No more jobs are pending.
+[Round five](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Review.html) has seven shield tanks, seven rangers and six orcs. Record one explicit T, R and O selection. The approval candidates are individually hashed in Round5/candidates.json. Review native combat sizing for the selected larger studies before animation and preserve the approved silhouette. If a redraw is required for native combat scale, show the revised identity before producing its animations.
 
-Once the user approves the three identities, record the exact hashes and proceed through stage 07 PixelLab animation, stage 08 validation and stage 09 stacked draft PR targeting `codex/crystal-resonance-zone-director`. No animation or Unity testing has started.
+All eleven PixelLab jobs completed and their originals are retained. Each candidate was exported and reopened through LibreSprite. The compact orcs are pictured at 2× in the contact sheet and at selectable scale in the picker. Stage 07 animation and stage 08 Unity validation remain pending. Stage 09 opens a stacked draft PR into `codex/crystal-resonance-zone-director`.

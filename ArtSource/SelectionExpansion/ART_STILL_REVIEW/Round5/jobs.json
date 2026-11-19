@@ -1,0 +1,548 @@
+[
+  {
+    "id": "tank1",
+    "group": "tank",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "d49f1110-8e9f-497f-8c06-9ee263376451",
+    "status": "completed",
+    "assetId": "afc06bed-5f06-5705-b704-caa1cb7e2ac4",
+    "cost": 10,
+    "seed": 890990,
+    "canvas": [
+      256,
+      64
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+        "sha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+        "usage": "Broad human adventurers matching this cast\u2019s head, limbs, steel and blue Guild cloth. Individual faces and armor. Every single subject must hold a very large shield."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Layout/tank1.png",
+        "sha256": "422be992e8a899e57745330c29a83ed584a966d38122553fdb16e1dafc79059f",
+        "usage": "Original rough blocking diagram for side-by-side spacing and distinct handheld silhouettes only. Render a full separate clothed character in each column."
+      }
+    ],
+    "description": "A transparent single-row concept lineup for Dungeon Matcher: EXACTLY 4 DIFFERENT individual Guild Bulwark characters, one complete full-body sprite centered in each equal-width 64px column from left to right. No typography or ground. Treat the layout diagram as column spacing and equipment silhouette only; independently fully design every character. No duplicates, rotation sheets, consecutive animation frames, touching, detached gear or shared scenery. Full feet on a common ground line, blank gutters. Native three-quarter side view toward screen LEFT. Model crisp small-screen clusters, thin dark contours and upper-left light on the primary rendering style image. Show the face and distinguishing gear. Broad human adventurers matching this cast\u2019s head, limbs, steel and blue Guild cloth. Individual faces and armor. Every single subject must hold a very large shield.\n1. a broad salt-and-pepper-haired human captain in a split navy surcoat, braced behind a tall sharply POINTED KITE shield with one steel spine. Visible short iron mace beside rear boot, compact triangular stance.\n2. a stocky russet-bearded guild veteran in a woven ochre hood and dark mail, shoulder rolled forward under an enormous ROUND ring-rimmed oaken shield with one raised brass central boss, visible face peering over shield.\n3. a tall dark-skinned woman with a short plait and off-white padded high collar, upright behind a shoulder-high square PAVISE with a rectangular sight notch, dark olive rawhide and blue band across middle; broad unbroken silhouette.\n4. a compact shaven-headed human with indigo sash, leaning forward under a broad crescent-topped bronze PELTA shield, swept tips rising on both sides, exposed brows and massive strapped forearm, mace behind hip.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round5",
+    "sourceHashes": {
+      "tank1-1.png": "8b3345cc19d0bcfb383249f0270114a578014d505d1c6072416126327ceb0527"
+    },
+    "disposition": "Archived during visual review due to clipped outlines in the lineup. The replacement square compositions supplied the chosen native sprites.",
+    "selected": []
+  },
+  {
+    "id": "ranger1",
+    "group": "ranger",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "7823e95c-96e0-4f97-96b8-5aa0f20ef9be",
+    "status": "completed",
+    "assetId": "dd1223d6-47c9-5023-ad55-2b1950f654a7",
+    "cost": 10,
+    "seed": 890991,
+    "canvas": [
+      256,
+      64
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/elven_pathblade.png",
+        "sha256": "17488569d807d02bbc6fb73f587a12ffc01630b57c4c608733ed80c666a9b7bf",
+        "usage": "Elven proportions and pixel cluster scale. Humans and elves in Guild travel leathers; different meaningful builds, faces, bows, wardrobe and stances. All wield actual bows, with open bow curves and visible strings."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Layout/ranger1.png",
+        "sha256": "6d209a88c7211cfebdb22edd2abe2d18fce258f1af656c5a3e9583ab87264935",
+        "usage": "Original rough blocking diagram for side-by-side spacing and distinct handheld silhouettes only. Render a full separate clothed character in each column."
+      }
+    ],
+    "description": "A transparent single-row concept lineup for Dungeon Matcher: EXACTLY 4 DIFFERENT individual Guild Ranger characters, one complete full-body sprite centered in each equal-width 64px column from left to right. No typography or ground. Treat the layout diagram as column spacing and equipment silhouette only; independently fully design every character. No duplicates, rotation sheets, consecutive animation frames, touching, detached gear or shared scenery. Full feet on a common ground line, blank gutters. Native three-quarter side view toward screen LEFT. Model crisp small-screen clusters, thin dark contours and upper-left light on the primary rendering style image. Show the face and distinguishing gear. Elven proportions and pixel cluster scale. Humans and elves in Guild travel leathers; different meaningful builds, faces, bows, wardrobe and stances. All wield actual bows, with open bow curves and visible strings.\n1. a long-eared female elf captain standing tall with heavy vertical yew longbow, one shoulder in indigo, auburn side braid, long split-tail cream archer tunic; aim downrange to the left.\n2. a dark-curled human tracker with a compact horn-tipped shortbow drawn at the hip, cropped navy field jacket with ochre stitching, broad sash, short boots, forward lunging shot.\n3. a rangy silver-haired elf wayfinder with wide olive shoulder wrap folded across chest, light sleeveless blue leather, long slanting ashwood bow resting forward, head cocked to listen in profile.\n4. a mature dark-skinned human woman with short silver coils, prominent brick-red padded shooting sleeve and split hip-quiver, squared stance, tight recurved bow held high at full draw.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round5",
+    "sourceHashes": {
+      "ranger1-1.png": "6804dcd7993735648cabd5822b8820cca1259e4ec9dd5a25be53b971f22445dc"
+    },
+    "disposition": "Archived during visual review due to clipped outlines in the lineup. The replacement square compositions supplied the chosen native sprites.",
+    "selected": []
+  },
+  {
+    "id": "orc1",
+    "group": "orc",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "39704209-4a6b-4c74-9916-752e3a0d89da",
+    "status": "completed",
+    "assetId": "9c1a55b3-adcd-55db-ba92-85dc8f9260e0",
+    "cost": 10,
+    "seed": 890992,
+    "canvas": [
+      192,
+      64
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/orc_trailguard-still.png",
+        "sha256": "e8621e70149e13c19c1db958c6a190fa40cf76b6b9e2f69ad4dcba56f02e295d",
+        "usage": "Forest orc: distinctive jaw, lower tusks, olive skin and strong forearms. These are SMAll compact relatives, 36\u201343 native pixels tall with short legs, around three quarters the height of our adult adventurers. Each holds a handheld Y-fork slingshot with two rigid prongs, two elastic bands and a pebble pocket. The fork needs to project past the body for legibility."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Layout/orc1.png",
+        "sha256": "68cb4335c2c17f4527525539141c6999d65514b3595c08a1283267a937b2e124",
+        "usage": "Original rough blocking diagram for side-by-side spacing and distinct handheld silhouettes only. Render a full separate clothed character in each column."
+      }
+    ],
+    "description": "A transparent single-row concept lineup for Dungeon Matcher: EXACTLY 3 DIFFERENT individual Orc Slinghunter characters, one complete full-body sprite centered in each equal-width 64px column from left to right. No typography or ground. Treat the layout diagram as column spacing and equipment silhouette only; independently fully design every character. No duplicates, rotation sheets, consecutive animation frames, touching, detached gear or shared scenery. Full feet on a common ground line, blank gutters. Native three-quarter side view toward screen LEFT. Model crisp small-screen clusters, thin dark contours and upper-left light on the primary rendering style image. Show the face and distinguishing gear. Forest orc: distinctive jaw, lower tusks, olive skin and strong forearms. These are SMAll compact relatives, 36\u201343 native pixels tall with short legs, around three quarters the height of our adult adventurers. Each holds a handheld Y-fork slingshot with two rigid prongs, two elastic bands and a pebble pocket. The fork needs to project past the body for legibility.\n1. a short stout olive-green orc, wide-set eyes, little tusks, tousled ear tips and a floppy plum cap. Big Y-FORK SLINGSHOT at chest height, one stretched band loop back to cheek, feet wide and planted.\n2. a small adult moss-green orc with two upright tusks, red crest of hair, striped ochre waist sash, one boot on tiptoe, oversized UPRIGHT forked wood slingshot held high to one side; other hand holding loaded leather pouch.\n3. a short squat dark olive orc with bare scalp, chipped ear, ochre-hide vest and visible little tusks, crouching very low with a pale carved forked bone slingshot up front, stones in a round belt pouch.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round5",
+    "sourceHashes": {
+      "orc1-1.png": "281e1901e4d8fb3ce07eaa137180e51b9a25f69c24a9f3d85f9f42a17ffaa149"
+    },
+    "disposition": "Archived full-sized slingshot concepts. The compact six-orc sheet supplied the shorter silhouettes chosen for this picker.",
+    "selected": []
+  },
+  {
+    "id": "tank5",
+    "group": "tank",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "61591614-ed10-4653-8d2e-7d013db0be84",
+    "status": "completed",
+    "assetId": "6d102c94-593c-51ba-bbeb-56a7bdab40dd",
+    "cost": 10,
+    "seed": 890993,
+    "canvas": [
+      240,
+      96
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+        "sha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+        "usage": "Broad human adventurers matching this cast\u2019s head, limbs, steel and blue Guild cloth. Individual faces and armor. Every single subject must hold a very large shield."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Layout/tank5.png",
+        "sha256": "7121bea8a9352a0cd2f0af2aecc1c99533b8f3d8ef4fb8cc47a40752d25c3d52",
+        "usage": "Original rough blocking diagram for side-by-side spacing and distinct handheld silhouettes only. Render a full separate clothed character in each column."
+      }
+    ],
+    "description": "A transparent single-row concept lineup for Dungeon Matcher: EXACTLY 3 DIFFERENT individual Guild Bulwark characters, one complete full-body sprite centered in each of THREE equally spaced 80px columns from left to right. No typography or ground. Treat the layout diagram as column spacing and equipment silhouette only; independently fully design every character. No duplicates, rotation sheets, consecutive animation frames, touching, detached gear or shared scenery. Full feet on a common ground line, blank gutters. Native three-quarter side view toward screen LEFT. Model crisp small-screen clusters, thin dark contours and upper-left light on the primary rendering style image. Show the face and distinguishing gear. Broad human adventurers matching this cast\u2019s head, limbs, steel and blue Guild cloth. Individual faces and armor. Every single subject must hold a very large shield.\n1. heavy-set human woman with cropped red hair, raised asymmetric plate collar, low side-on blocking stance; big HEXAGONAL dull-iron shield with fluted angled faces and flat corners, one narrow blue stripe.\n2. weathered human road guard, low-brimmed kettle helm, blue mail apron, broad oval WOVEN REED SHIELD reinforced by two vertical iron bands, advancing on one foot, open bearded face above the rim.\n3. scarred brown-skinned veteran with a braided mustache, blue short-sleeved tabard over mail, large wine-and-charcoal ribbed HEATER shield with a deep pale chevron across its upper half, turned outward as he raises the mace behind his shoulder. Keep the full head, two boot soles, shield, bow and equipment at least 8px from every canvas edge. Center modest complete figures vertically at native pixel scale, with generous empty space both under their soles and above their heads.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round5",
+    "sourceHashes": {
+      "tank5-1.png": "5b3328ef4c00fee95029ebf231be1414f51d72c27ed25dd35fe2edf491c6556a"
+    },
+    "disposition": "Archived during visual review due to clipped outlines in the lineup. The replacement square compositions supplied the chosen native sprites.",
+    "selected": []
+  },
+  {
+    "id": "ranger5",
+    "group": "ranger",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "e6bdf4cb-0da9-4f0c-89e9-32a9e2e8ee12",
+    "status": "completed",
+    "assetId": "8a7518fa-afe4-5726-a116-8f79bbd77148",
+    "cost": 10,
+    "seed": 890994,
+    "canvas": [
+      240,
+      96
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/elven_pathblade.png",
+        "sha256": "17488569d807d02bbc6fb73f587a12ffc01630b57c4c608733ed80c666a9b7bf",
+        "usage": "Elven proportions and pixel cluster scale. Humans and elves in Guild travel leathers; different meaningful builds, faces, bows, wardrobe and stances. All wield actual bows, with open bow curves and visible strings."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Layout/ranger5.png",
+        "sha256": "35e0dcbfcb3c975b17790b44b7818cd7fb54096960f357415142608ae6d3dc4c",
+        "usage": "Original rough blocking diagram for side-by-side spacing and distinct handheld silhouettes only. Render a full separate clothed character in each column."
+      }
+    ],
+    "description": "A transparent single-row concept lineup for Dungeon Matcher: EXACTLY 3 DIFFERENT individual Guild Ranger characters, one complete full-body sprite centered in each of THREE equally spaced 80px columns from left to right. No typography or ground. Treat the layout diagram as column spacing and equipment silhouette only; independently fully design every character. No duplicates, rotation sheets, consecutive animation frames, touching, detached gear or shared scenery. Full feet on a common ground line, blank gutters. Native three-quarter side view toward screen LEFT. Model crisp small-screen clusters, thin dark contours and upper-left light on the primary rendering style image. Show the face and distinguishing gear. Elven proportions and pixel cluster scale. Humans and elves in Guild travel leathers; different meaningful builds, faces, bows, wardrobe and stances. All wield actual bows, with open bow curves and visible strings.\n1. a wiry adult elf with high black ponytail and one exposed long ear, slate-blue short feather-cut mantle and moss leggings, stepping downhill with compact swept-limb bow aimed low.\n2. a sandy-haired adult human ranger in short rust riding vest, wide leather chaps and low navy brimmed trail hat, crouched to nock a broad, nearly horizontal bow across his forward knee.\n3. an angular brown elf with a swept-back undercut, one ochre half-cape and single blue sleeve, longbow at full draw by the cheek with the rear elbow set high, open gap between the limbs and string. Keep the full head, two boot soles, shield, bow and equipment at least 8px from every canvas edge. Center modest complete figures vertically at native pixel scale, with generous empty space both under their soles and above their heads.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round5",
+    "sourceHashes": {
+      "ranger5-1.png": "dabaa9d3212077d3fc76c227d8185d5fdd9920b69210e1613f84d2bff9e37c83"
+    },
+    "disposition": "Archived during visual review due to clipped outlines in the lineup. The replacement square compositions supplied the chosen native sprites.",
+    "selected": []
+  },
+  {
+    "id": "orc4",
+    "group": "orc",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "4e1ad2b9-a15a-477a-9cfd-3e740fe6dd48",
+    "status": "completed",
+    "assetId": "987c8add-2a26-5082-b93e-b8cbbbb2031c",
+    "cost": 10,
+    "seed": 890995,
+    "canvas": [
+      240,
+      96
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/orc_trailguard-still.png",
+        "sha256": "e8621e70149e13c19c1db958c6a190fa40cf76b6b9e2f69ad4dcba56f02e295d",
+        "usage": "Forest orc: distinctive jaw, lower tusks, olive skin and strong forearms. These are SMAll compact relatives, 36\u201343 native pixels tall with short legs, around three quarters the height of our adult adventurers. Each holds a handheld Y-fork slingshot with two rigid prongs, two elastic bands and a pebble pocket. The fork needs to project past the body for legibility."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Layout/orc4.png",
+        "sha256": "64d70d17a8634487ec0336c3ada1e3ac6496e48d78b94082231268044c82fc80",
+        "usage": "Original rough blocking diagram for side-by-side spacing and distinct handheld silhouettes only. Render a full separate clothed character in each column."
+      }
+    ],
+    "description": "A transparent single-row concept lineup for Dungeon Matcher: EXACTLY 3 DIFFERENT individual Orc Slinghunter characters, one complete full-body sprite centered in each of THREE equally spaced 80px columns from left to right. No typography or ground. Treat the layout diagram as column spacing and equipment silhouette only; independently fully design every character. No duplicates, rotation sheets, consecutive animation frames, touching, detached gear or shared scenery. Full feet on a common ground line, blank gutters. Native three-quarter side view toward screen LEFT. Model crisp small-screen clusters, thin dark contours and upper-left light on the primary rendering style image. Show the face and distinguishing gear. Forest orc: distinctive jaw, lower tusks, olive skin and strong forearms. These are SMAll compact relatives, 36\u201343 native pixels tall with short legs, around three quarters the height of our adult adventurers. Each holds a handheld Y-fork slingshot with two rigid prongs, two elastic bands and a pebble pocket. The fork needs to project past the body for legibility.\n1. a little wiry orc with sideways ears, small tusks, rust-red topknot, faded blue patched tunic. Leans back while drawing a clearly Y-shaped dark forked slingshot, arms wide, pale stretched bands.\n2. a knee-high chubby olive orc with cream lower fangs and round nose, cropped moss rain cape and berry-red scarf, torso angled forward, crooked Y-shaped branch slingshot held out front at the ready.\n3. a very short older green orc with grey brow tufts, prominent jaw, lower tusks, faded plum vest and cross-body shot bag; hunches to sight down an upright broad fork slingshot with leather grip and clearly visible narrow elastic bands. Keep the full head, two boot soles, shield, bow and equipment at least 8px from every canvas edge. Center modest complete figures vertically at native pixel scale, with generous empty space both under their soles and above their heads.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round5",
+    "sourceHashes": {
+      "orc4-1.png": "f920612acd7cfd1965f2c884fab8200b185a79a8cee713454da0d6b7ab09721e"
+    },
+    "disposition": "Archived full-sized slingshot concepts. The compact six-orc sheet supplied the shorter silhouettes chosen for this picker.",
+    "selected": []
+  },
+  {
+    "id": "tank1_sq",
+    "group": "tank",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "1bdb5bda-9cac-4d26-91e1-786a29c1c182",
+    "status": "completed",
+    "assetId": "2d34e8e0-82dd-5975-a867-04eaa4c792c2",
+    "cost": 15,
+    "seed": 891040,
+    "canvas": [
+      144,
+      144
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+        "sha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+        "usage": "Broad human adventurers matching this cast\u2019s head, limbs, steel and blue Guild cloth. Individual faces and armor. Every single subject must hold a very large shield."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Layout/tank1_sq.png",
+        "sha256": "c51d472bb9472032fa2b0cfd3d478c8e071ed7cc6d1c7d98469cd63828ba207d",
+        "usage": "Original rough blocking diagram for two-by-two square grid spacing and distinct handheld silhouettes only. Render a full separate clothed character in each column."
+      }
+    ],
+    "description": "2 BY 2 CHARACTER SELECT GRID. Precisely four complete unique separate fully visible human Guild armored shield tanks with OVERSIZED SHIELDS on transparent background. Use the four thumbnail positions in the supplied square composition reference: top left, top right, bottom left, bottom right. ONE entire figure per quadrant. Keep generous transparent padding around every head, sole and weapon, independent of adjacent cells. Diminutive native RPG battle sprites in west-facing three-quarter view. Main rendering guide is Rattlebones; do not copy his anatomy. No text, grid, terrain or projections. Each body should occupy about 46\u201352 pixels vertically with 8 pixels or more of clear space from cell edges. In reading order: (1) a broad salt-and-pepper-haired human captain in a split navy surcoat, braced behind a tall sharply POINTED KITE shield with one steel spine. Visible short iron mace beside rear boot, compact triangular stance. (2) a stocky russet-bearded guild veteran in a woven ochre hood and dark mail, shoulder rolled forward under an enormous ROUND ring-rimmed oaken shield with one raised brass central boss, visible face peering over shield. (3) a tall dark-skinned woman with a short plait and off-white padded high collar, upright behind a shoulder-high square PAVISE with a rectangular sight notch, dark olive rawhide and blue band across middle; broad unbroken silhouette. (4) a compact shaven-headed human with indigo sash, leaning forward under a broad crescent-topped bronze PELTA shield, swept tips rising on both sides, exposed brows and massive strapped forearm, mace behind hip.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round5",
+    "sourceHashes": {
+      "tank1_sq-1.png": "4039fcf9620dc6c1c6e5f921e97285b91d4eabd1e08efb9a630890a7173dad8e",
+      "tank1_sq-2.png": "7e8199c6c44b42039319bf3b31d4b59b2870bf57514ca598730161958d00be34",
+      "tank1_sq-3.png": "e708669d38c15d3e2f03c2ed8eb14ec1dbdbb08d1254457df65ec98f6cfe139b",
+      "tank1_sq-4.png": "457a6a38e1f3efb9209ad5dc490e5cefb004daa4ab1189679108d29bbd6e649a"
+    },
+    "disposition": "Native concepts selected for the picker. See selected IDs and candidate hashes.",
+    "selected": [
+      "T1",
+      "T2",
+      "T3",
+      "T4"
+    ]
+  },
+  {
+    "id": "ranger1_sq",
+    "group": "ranger",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "eca945d2-9d08-4878-95b1-deacf2ad6a2b",
+    "status": "completed",
+    "assetId": "59efbe7b-9ecc-52df-a89d-ab5ee8c74bb4",
+    "cost": 15,
+    "seed": 891041,
+    "canvas": [
+      144,
+      144
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/elven_pathblade.png",
+        "sha256": "17488569d807d02bbc6fb73f587a12ffc01630b57c4c608733ed80c666a9b7bf",
+        "usage": "Elven proportions and pixel cluster scale. Humans and elves in Guild travel leathers; different meaningful builds, faces, bows, wardrobe and stances. All wield actual bows, with open bow curves and visible strings."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Layout/ranger1_sq.png",
+        "sha256": "ff77889480cbb998bbfecb575f703ca3d36cf685d24c09c133adb1149d9b39e5",
+        "usage": "Original rough blocking diagram for two-by-two square grid spacing and distinct handheld silhouettes only. Render a full separate clothed character in each column."
+      }
+    ],
+    "description": "2 BY 2 CHARACTER SELECT GRID. Precisely four complete unique separate fully visible Guild Rangers with distinct bows and headgear on transparent background. Use the four thumbnail positions in the supplied square composition reference: top left, top right, bottom left, bottom right. ONE entire figure per quadrant. Keep generous transparent padding around every head, sole and weapon, independent of adjacent cells. Diminutive native RPG battle sprites in west-facing three-quarter view. Main rendering guide is Rattlebones; do not copy his anatomy. No text, grid, terrain or projections. Each body should occupy about 46\u201352 pixels vertically with 8 pixels or more of clear space from cell edges. In reading order: (1) a long-eared female elf captain standing tall with heavy vertical yew longbow, one shoulder in indigo, auburn side braid, long split-tail cream archer tunic; aim downrange to the left. (2) a dark-curled human tracker with a compact horn-tipped shortbow drawn at the hip, cropped navy field jacket with ochre stitching, broad sash, short boots, forward lunging shot. (3) a rangy silver-haired elf wayfinder with wide olive shoulder wrap folded across chest, light sleeveless blue leather, long slanting ashwood bow resting forward, head cocked to listen in profile. (4) a mature dark-skinned human woman with short silver coils, prominent brick-red padded shooting sleeve and split hip-quiver, squared stance, tight recurved bow held high at full draw.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round5",
+    "sourceHashes": {
+      "ranger1_sq-1.png": "feb38b658e8166c08d61a7a53804bfe15968b765ba4ecacd8152941828eb8f9d",
+      "ranger1_sq-2.png": "68af5c1026ea9007eec6c96df15e29147efef4c7645e3568c9fb80dcb5ed492c",
+      "ranger1_sq-3.png": "8a5c0133309b378c3177e2be0aceedfc53416922dae738c1f74158e396fbcb97",
+      "ranger1_sq-4.png": "2f28ee5b677411201cbc6e6e9812c58021801314b5c34247b09047ac7bcd98da"
+    },
+    "disposition": "Native concepts selected for the picker. See selected IDs and candidate hashes.",
+    "selected": [
+      "R1",
+      "R2",
+      "R3",
+      "R4"
+    ]
+  },
+  {
+    "id": "orcsm",
+    "group": "orc",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "48bef18a-073d-4ef1-bd53-5318bab91a82",
+    "status": "completed",
+    "assetId": "9aa2c8cd-b842-5f2e-8900-7a2fec8f835b",
+    "cost": 10,
+    "seed": 897444,
+    "canvas": [
+      132,
+      88
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/orc_trailguard-still.png",
+        "sha256": "e8621e70149e13c19c1db958c6a190fa40cf76b6b9e2f69ad4dcba56f02e295d",
+        "usage": "Forest orc: distinctive jaw, lower tusks, olive skin and strong forearms. These are SMAll compact relatives, 36\u201343 native pixels tall with short legs, around three quarters the height of our adult adventurers. Each holds a handheld Y-fork slingshot with two rigid prongs, two elastic bands and a pebble pocket. The fork needs to project past the body for legibility."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Layout/orcsm.png",
+        "sha256": "7777bd023b9983ca569cc1a4eb39270f9ddd897663bd089749b7f98a27501009",
+        "usage": "Original rough blocking diagram for three-column two-row grid spacing and distinct handheld silhouettes only. Render a full separate clothed character in each column."
+      }
+    ],
+    "description": "Exactly SIX SEPARATE SMALL FOREST ORC sprites arranged in a 3-column by 2-row contact sheet on transparent background. Leave a generous gutter and whole heads, legs and feet in each of the six cells. Each complete compact, tusked, green orc stands 28-38 native pixels high. Each clearly carries a rigid forked Y-shaped SLINGSHOT: two prongs, elastic bands joined at a single leather pebble pocket, one short handle. Friendly readable pixel forms, big heads and stubby legs, visible lower tusks, broad jaw and short hefty forearms. Give each individual a distinctive face, pose and outfit, in left-facing three-quarter combat view. One figurine per cell in the given layout; no labels, shadows or scenery.  Reading order: top left freckled tracker with a floppy plum cap, front foot forward; top middle red-crested leaper in ochre sash with fork held high; top right bare-scalped crouching ambusher with pale bone fork; bottom left wiry youth with swept ears and patched navy tunic, fully drawn bands; bottom middle pot-bellied scout in a moss cape and berry scarf, leaning forward; bottom right grey-browed little veteran with shot bag and plum vest, sighting along his upright fork.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round5",
+    "sourceHashes": {
+      "orcsm-1.png": "1ee0513857a29337e5e891d694bac417b8fed5db59a17f128a33a66c2e5e2994",
+      "orcsm-2.png": "5edeaf732ce36cda5d9dd8f2f0d1fd241dde5ac5ff00b04b43e242b031e89ab2",
+      "orcsm-3.png": "f86cb2bb4a7fdb37ffd0f4e3f73049399a378fd660656326012bfef62bc39d32",
+      "orcsm-4.png": "34f1be89b91b51219f013c3254d3cc4a88f519fdf34d8fe4d50f2e4a99175323"
+    },
+    "disposition": "Native concepts selected for the picker. See selected IDs and candidate hashes.",
+    "selected": [
+      "O1",
+      "O2",
+      "O3",
+      "O4",
+      "O5",
+      "O6"
+    ]
+  },
+  {
+    "id": "tank5_sq",
+    "group": "tank",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "a1f8254d-2fc4-47a8-9c73-059128ad10f2",
+    "status": "completed",
+    "assetId": "f866b80f-52fe-5fd6-8b3a-3d4987ac80e8",
+    "cost": 10,
+    "seed": 891063,
+    "canvas": [
+      128,
+      128
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+        "sha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+        "usage": "Broad human adventurers matching this cast\u2019s head, limbs, steel and blue Guild cloth. Individual faces and armor. Every single subject must hold a very large shield."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Layout/tank5_sq.png",
+        "sha256": "594fcd6a1b49ad7b1374e3b5ce4336b3868aadf1a245a984247eef85728c455b",
+        "usage": "Original rough blocking diagram for two-by-two square grid spacing and distinct handheld silhouettes only. Render a full separate clothed character in each column."
+      }
+    ],
+    "description": "Square 2x2 pixel-art CHARACTER SELECT screen of FOUR DIFFERENT full-body battle sprites, individually centered in their quadrant in reading order. Subjects isolated by wide transparent gutters, whole boots, head and weapon, about half to two-thirds the height of each allocated cell. Side-view towards the left, no text, cropped body or scenery. Match the golden sprite rendering and the supplied faction anatomy. (1) heavy-set human woman with cropped red hair, raised asymmetric plate collar, low side-on blocking stance; big HEXAGONAL dull-iron shield with fluted angled faces and flat corners, one narrow blue stripe. (2) weathered human road guard, low-brimmed kettle helm, blue mail apron, broad oval WOVEN REED SHIELD reinforced by two vertical iron bands, advancing on one foot, open bearded face above the rim. (3) scarred brown-skinned veteran with a braided mustache, blue short-sleeved tabard over mail, large wine-and-charcoal ribbed HEATER shield with a deep pale chevron across its upper half, turned outward as he raises the mace behind his shoulder. (4) Reserve design: dark curly-haired human shieldbearer seen side-on with a broad sapphire teardrop shield.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round5",
+    "sourceHashes": {
+      "tank5_sq-1.png": "10e83b13012d8ed7c2d035b62081f2fb5f28b25c50603ad318e9b0aaa6fa2e3e",
+      "tank5_sq-2.png": "d28023c3e9ce447919979d8be9966d50ddd9d608c4c664d8852e3b8d149a2d47",
+      "tank5_sq-3.png": "d0c12eeaadabe75f47b6032e41bb4594fd4b38af8d97de08c4a879a8f3a79a5a",
+      "tank5_sq-4.png": "d92712c4f816ac9fda07a372308e80b0e4dfd65447ad5f8b77f236d253fc44f3"
+    },
+    "disposition": "Native concepts selected for the picker. See selected IDs and candidate hashes.",
+    "selected": [
+      "T5",
+      "T6",
+      "T7"
+    ]
+  },
+  {
+    "id": "ranger5_sq",
+    "group": "ranger",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "dea3c5fc-0aea-48b6-b044-45040c94387f",
+    "status": "completed",
+    "assetId": "fe0e371b-ad8a-5d97-bdac-11e57247d5b0",
+    "cost": 10,
+    "seed": 891064,
+    "canvas": [
+      128,
+      128
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/elven_pathblade.png",
+        "sha256": "17488569d807d02bbc6fb73f587a12ffc01630b57c4c608733ed80c666a9b7bf",
+        "usage": "Elven proportions and pixel cluster scale. Humans and elves in Guild travel leathers; different meaningful builds, faces, bows, wardrobe and stances. All wield actual bows, with open bow curves and visible strings."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Layout/ranger5_sq.png",
+        "sha256": "da8bef64da429465f37d7b75f9ff926e6bb0abb894f572d350aea5ef67c90684",
+        "usage": "Original rough blocking diagram for two-by-two square grid spacing and distinct handheld silhouettes only. Render a full separate clothed character in each column."
+      }
+    ],
+    "description": "Square 2x2 pixel-art CHARACTER SELECT screen of FOUR DIFFERENT full-body battle sprites, individually centered in their quadrant in reading order. Subjects isolated by wide transparent gutters, whole boots, head and weapon, about half to two-thirds the height of each allocated cell. Side-view towards the left, no text, cropped body or scenery. Match the golden sprite rendering and the supplied faction anatomy. (1) a wiry adult elf with high black ponytail and one exposed long ear, slate-blue short feather-cut mantle and moss leggings, stepping downhill with compact swept-limb bow aimed low. (2) a sandy-haired adult human ranger in short rust riding vest, wide leather chaps and low navy brimmed trail hat, crouched to nock a broad, nearly horizontal bow across his forward knee. (3) an angular brown elf with a swept-back undercut, one ochre half-cape and single blue sleeve, longbow at full draw by the cheek with the rear elbow set high, open gap between the limbs and string. (4) Reserve design: hoodless human ranger in an olive and indigo shawl, drawn bow at the shoulder.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round5",
+    "sourceHashes": {
+      "ranger5_sq-1.png": "23dee02650c51d8a55258bf7acbf575b64a5ed15f6e9b902ce3ede91c85b3772",
+      "ranger5_sq-2.png": "4996cb95c9432e7217038f42c3eb0720a4985d158868c7cfb5f097f0fbbe659d",
+      "ranger5_sq-3.png": "030b533f86b430eb31de2caa8e3d175958347d9fa38e4bfdb63207c0653e00b2",
+      "ranger5_sq-4.png": "010d79c297bb18e866d6eee4c79a5201dfee86f6f94a198b138f74d1b3154e53"
+    },
+    "disposition": "Native concepts selected for the picker. See selected IDs and candidate hashes.",
+    "selected": [
+      "R5",
+      "R6",
+      "R7"
+    ]
+  }
+]

@@ -189,9 +189,36 @@
       "sourceSHA256": "6a4db36d17c22eaf009ccccecad691fec07b0657d64050fb11b18b59cd3d3680",
       "option": "Round 3",
       "status": "rejected in third marked review"
+    },
+    {
+      "enemy": "guild_ranger",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/guild_ranger.png",
+      "nativeSHA256": "b2671bf906b746b15f40c62a0e0b23065fd3beee08bb692ba4cc52d6cc70cbf0",
+      "source": "ArtSource/SelectionExpansion/Originals/Round4/guild_ranger/06.png",
+      "sourceSHA256": "aa903c14ae61dcb0e07ed3f074fb16ff98fb624ae06971758a7553bc957f557a",
+      "option": "Round 4",
+      "status": "rejected by user after fourth review"
+    },
+    {
+      "enemy": "guild_bulwark",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/guild_bulwark.png",
+      "nativeSHA256": "2bdad053b4e39bda3ea6b65c733e1ff7723d2a26dda58de4b987b9962d49073c",
+      "source": "ArtSource/SelectionExpansion/Originals/Round4/guild_bulwark/12.png",
+      "sourceSHA256": "7cca89d047d00af2e2aa31e2d97b71bbf4ad03040470ddfc462f886a142d8a0f",
+      "option": "Round 4",
+      "status": "rejected by user after fourth review"
+    },
+    {
+      "enemy": "orc_slinghunter",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/orc_slinghunter.png",
+      "nativeSHA256": "976564979eefea7f36a206ea99200a132bcbc6bf057a6ac8064d4ac3452bc86b",
+      "source": "ArtSource/SelectionExpansion/Originals/Round4/orc_slinghunter/15.png",
+      "sourceSHA256": "d37b529ad64d4b14afdbcc02b65e7396622db3636f2a99603cd4f0e56d3dd9e5",
+      "option": "Round 4",
+      "status": "rejected by user after fourth review"
     }
   ],
-  "pending": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/candidates.json",
+  "pending": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/candidates.json",
   "selectedWithRevision": [
     {
       "enemy": "nacre_duelist",
@@ -205,5 +232,6 @@
     }
   ],
   "round2Evidence": "User-annotated contact sheet codex-clipboard-14291485-7978-44c1-be32-9757fda628f6.png, user selected Nacre A with a new underwater-inspired rapier and checked the corrected Ore Ram. User directed new outfits and poses with the same race proportions for the other three.",
-  "round3Evidence": "User-marked screenshot codex-clipboard-2de17734-aa7c-4253-985b-7a20b856abbf.png checks the revised Nacre Duelist and crosses out the other three Round 3 candidates. User called them too generic and approved 30 further PixelLab generations for three signature equipment concepts."
+  "round3Evidence": "User-marked screenshot codex-clipboard-2de17734-aa7c-4253-985b-7a20b856abbf.png checks the revised Nacre Duelist and crosses out the other three Round 3 candidates. User called them too generic and approved 30 further PixelLab generations for three signature equipment concepts.",
+  "round4Evidence": "User rejected all three Round 4 stills and requested approximately twenty total fresh ideas: a Guild tank with a big shield, a Guild ranger and a small orc with a forked slingshot. User confirmed approximately twenty total across the three."
 }
