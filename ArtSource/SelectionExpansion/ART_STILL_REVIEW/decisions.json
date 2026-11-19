@@ -75,6 +75,16 @@
       "sourceSHA256": "281246ad20a80819945c481658cdd3a4dd5ed906ba89f5d22f411ff1157fe5cf",
       "option": "Round 6 O5",
       "status": "user-approved identity and red-scarf edit"
+    },
+    {
+      "enemy": "guild_bulwark",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/K06.png",
+      "nativeSHA256": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
+      "source": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/06.png",
+      "sourceSHA256": "2ff6dc89da539577b6f56769a0ec57c2cceb954840ca7d5a5774cdc11ab4d39a",
+      "option": "Round 9 K06 Road Escort",
+      "status": "user-approved identity",
+      "jobId": "1d385755-b88e-49df-b960-6d99872d18b2"
     }
   ],
   "rejected": [
@@ -470,7 +480,7 @@
       "status": "rejected by user after seventh review"
     }
   ],
-  "pending": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/candidates.json",
+  "pending": null,
   "selectedWithRevision": [
     {
       "enemy": "nacre_duelist",
@@ -498,10 +508,8 @@
   "round4Evidence": "User rejected all three Round 4 stills and requested approximately twenty total fresh ideas: a Guild tank with a big shield, a Guild ranger and a small orc with a forked slingshot. User confirmed approximately twenty total across the three.",
   "round5Evidence": "User-marked codex-clipboard-1092c9de-bcb4-42af-bf59-b5bd38cdaa8a.png and accompanying message chose O5 with a cape edit and declined the rest. User supplied possible2.png for the bareheaded human tank\u2019s stature, requested Guild clothing and a big shield, and specified a human firearm Ranger.",
   "round6Evidence": "Marked image codex-clipboard-13ce50c6-369a-49f1-a354-85ce1da5aa40.png. Checks on R2 and the revised O5. Crosses on T1, T2 and the displayed stature reference. R1 did not receive a selection.",
-  "awaitingNewStill": [
-    "guild_bulwark"
-  ],
+  "awaitingNewStill": [],
   "round7Evidence": "User requested better Guild Bulwark options. Four fresh stills are available for individual selection.",
   "round8Evidence": "The user rejected the seventh review and requested new PixelLab designs using Dungeon Matcher humans as image references. Round 8 presents sixteen stills for review.",
-  "round9Evidence": "User directed the Guild Bulwark to use the Shield Knight as reference before selecting a still. Round 9 uses the current bound ShieldKnight_Idle_00 frame as its principal pose and equipment input."
+  "round9Evidence": "User directed the Guild Bulwark to use the Shield Knight as reference before selecting a still. Round 9 uses the current bound ShieldKnight_Idle_00 frame as its principal pose and equipment input. User selected K06 Road Escort in codex-clipboard-17d8b946-f3bc-417e-8b8b-5688114be59f.png."
 }
