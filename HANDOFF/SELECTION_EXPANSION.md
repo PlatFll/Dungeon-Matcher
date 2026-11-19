@@ -4,8 +4,6 @@ The separate branch `codex/selection-repair-nonboss` starts at published PR #234
 
 ## Still approval
 
-Seven completed identities are locked in [decisions.json](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json). O5 is the user-selected eighth identity with a requested cape removal. The older human concepts and the other five orcs from round five were rejected. The current Ranger brief is a human musketeer and the tank brief follows the stature in `possible2.png`.
+Nine approved identity hashes are recorded in [decisions.json](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json), including the [shouldered-musket Ranger](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/R2.png) and the [scarf-only Orc Slinghunter](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/O5.png). Both round-six tanks were declined. The Guild Bulwark is the only outstanding identity.
 
-[Round six](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/Review.html) presents two Bulwarks (T1, T2), two Rangers (R1, R2) and the revised O5. Record the user’s choices against the exact Round6/candidates.json hashes. The two jobs completed within the 20-generation authorization. All 32 original outputs and five native editable sources were retained. Unity has not been launched.
-
-After the three remaining approvals, run stage 07 using the locked stills as animation inputs. Stage 08 owns Unity validation and game checks. Stage 09 opens the stacked draft PR targeting `codex/crystal-resonance-zone-director`.
+The marked sixth review also crosses out the displayed stature reference. Clarify the next tank direction before commissioning another concept. The seven earlier approvals are preserved. New Bulwark animation requires its own approved still. Stage 08 owns Unity validation and game checks; the eventual draft PR targets `codex/crystal-resonance-zone-director`.

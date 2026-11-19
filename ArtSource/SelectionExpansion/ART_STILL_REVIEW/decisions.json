@@ -57,6 +57,24 @@
       "sourceSHA256": "7cd430cb30a3661ef4e0dc2a820d0867504acd0c4b73119f48b29dc936d6942f",
       "option": "Round 3",
       "status": "user-approved identity and shell rapier"
+    },
+    {
+      "enemy": "guild_ranger",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/R2.png",
+      "nativeSHA256": "3e7fb908dbc705637cab341ab810164f641ebb55fd325662984ba3385c6ed92b",
+      "source": "ArtSource/SelectionExpansion/Originals/Round6/ranger/06.png",
+      "sourceSHA256": "c40a194bb6d033171ee010bdea23f8614cd194799498e19788445787e3be49ef",
+      "option": "Round 6 R2",
+      "status": "user-approved identity"
+    },
+    {
+      "enemy": "orc_slinghunter",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/O5.png",
+      "nativeSHA256": "253a3af9f47ee95ac04a1187efdb4d5fda1da455fc4cda36b2b626e94274a91d",
+      "source": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/O5.png",
+      "sourceSHA256": "281246ad20a80819945c481658cdd3a4dd5ed906ba89f5d22f411ff1157fe5cf",
+      "option": "Round 6 O5",
+      "status": "user-approved identity and red-scarf edit"
     }
   ],
   "rejected": [
@@ -387,9 +405,36 @@
       "sourceSHA256": "1ee0513857a29337e5e891d694bac417b8fed5db59a17f128a33a66c2e5e2994",
       "option": "Round 5 O6",
       "status": "rejected in fifth marked review"
+    },
+    {
+      "enemy": "guild_bulwark",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/T1.png",
+      "nativeSHA256": "981ce066bf3c4623587f8b133cb3c250de10f12dbe35fb6138abd63c57da01d1",
+      "source": "ArtSource/SelectionExpansion/Originals/Round6/bulwark/04.png",
+      "sourceSHA256": "9c664e5e1278246431fa23b045f9bdfe23a095f1b31eae01f8278be8a6fa7eed",
+      "option": "Round 6 T1",
+      "status": "rejected in marked sixth review"
+    },
+    {
+      "enemy": "guild_bulwark",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/T2.png",
+      "nativeSHA256": "a93a78d6738b0e320e4ca5fb103c59f326d5540bc07b579d2c20fdb8ee06d35e",
+      "source": "ArtSource/SelectionExpansion/Originals/Round6/bulwark/11.png",
+      "sourceSHA256": "c184c9abc8a0feecd01f67152b5d7d1ce50cd5826893e344ede4e3ea7372ca34",
+      "option": "Round 6 T2",
+      "status": "rejected in marked sixth review"
+    },
+    {
+      "enemy": "guild_ranger",
+      "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/R1.png",
+      "nativeSHA256": "37d0bdef55f7837e917d319b5fdbd006189e51ec42e4d71334bfef4cfcdf7967",
+      "source": "ArtSource/SelectionExpansion/Originals/Round6/ranger/02.png",
+      "sourceSHA256": "9ab2399b4c78300a0549fa2c3d3707c20c2bc98097c61e711512602f1c64dccf",
+      "option": "Round 6 R1",
+      "status": "not selected"
     }
   ],
-  "pending": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/candidates.json",
+  "pending": null,
   "selectedWithRevision": [
     {
       "enemy": "nacre_duelist",
@@ -408,11 +453,16 @@
       "option": "Round 5 O5",
       "request": "Remove his cape and keep his red scarf.",
       "revisedFile": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/O5.png",
-      "revisedSHA256": "253a3af9f47ee95ac04a1187efdb4d5fda1da455fc4cda36b2b626e94274a91d"
+      "revisedSHA256": "253a3af9f47ee95ac04a1187efdb4d5fda1da455fc4cda36b2b626e94274a91d",
+      "status": "cape removal accepted in marked sixth review"
     }
   ],
   "round2Evidence": "User-annotated contact sheet codex-clipboard-14291485-7978-44c1-be32-9757fda628f6.png, user selected Nacre A with a new underwater-inspired rapier and checked the corrected Ore Ram. User directed new outfits and poses with the same race proportions for the other three.",
   "round3Evidence": "User-marked screenshot codex-clipboard-2de17734-aa7c-4253-985b-7a20b856abbf.png checks the revised Nacre Duelist and crosses out the other three Round 3 candidates. User called them too generic and approved 30 further PixelLab generations for three signature equipment concepts.",
   "round4Evidence": "User rejected all three Round 4 stills and requested approximately twenty total fresh ideas: a Guild tank with a big shield, a Guild ranger and a small orc with a forked slingshot. User confirmed approximately twenty total across the three.",
-  "round5Evidence": "User-marked codex-clipboard-1092c9de-bcb4-42af-bf59-b5bd38cdaa8a.png and accompanying message chose O5 with a cape edit and declined the rest. User supplied possible2.png for the bareheaded human tank\u2019s stature, requested Guild clothing and a big shield, and specified a human firearm Ranger."
+  "round5Evidence": "User-marked codex-clipboard-1092c9de-bcb4-42af-bf59-b5bd38cdaa8a.png and accompanying message chose O5 with a cape edit and declined the rest. User supplied possible2.png for the bareheaded human tank\u2019s stature, requested Guild clothing and a big shield, and specified a human firearm Ranger.",
+  "round6Evidence": "Marked image codex-clipboard-13ce50c6-369a-49f1-a354-85ce1da5aa40.png. Checks on R2 and the revised O5. Crosses on T1, T2 and the displayed stature reference. R1 did not receive a selection.",
+  "awaitingNewStill": [
+    "guild_bulwark"
+  ]
 }
