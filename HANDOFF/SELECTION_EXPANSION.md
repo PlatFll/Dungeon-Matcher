@@ -4,8 +4,8 @@ The separate branch `codex/selection-repair-nonboss` starts at published PR #234
 
 ## Still approval
 
-Seven stills are locked in [decisions.json](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json). The three Round 4 equipment designs were rejected. The user requested twenty new concepts total and a small orc equipped with a forked slingshot.
+Seven completed identities are locked in [decisions.json](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json). O5 is the user-selected eighth identity with a requested cape removal. The older human concepts and the other five orcs from round five were rejected. The current Ranger brief is a human musketeer and the tank brief follows the stature in `possible2.png`.
 
-[Round five](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Review.html) has seven shield tanks, seven rangers and six orcs. Record one explicit T, R and O selection. The approval candidates are individually hashed in Round5/candidates.json. Review native combat sizing for the selected larger studies before animation and preserve the approved silhouette. If a redraw is required for native combat scale, show the revised identity before producing its animations.
+[Round six](../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/Review.html) presents two Bulwarks (T1, T2), two Rangers (R1, R2) and the revised O5. Record the user’s choices against the exact Round6/candidates.json hashes. The two jobs completed within the 20-generation authorization. All 32 original outputs and five native editable sources were retained. Unity has not been launched.
 
-All eleven PixelLab jobs completed and their originals are retained. Each candidate was exported and reopened through LibreSprite. The compact orcs are pictured at 2× in the contact sheet and at selectable scale in the picker. Stage 07 animation and stage 08 Unity validation remain pending. Stage 09 opens a stacked draft PR into `codex/crystal-resonance-zone-director`.
+After the three remaining approvals, run stage 07 using the locked stills as animation inputs. Stage 08 owns Unity validation and game checks. Stage 09 opens the stacked draft PR targeting `codex/crystal-resonance-zone-director`.

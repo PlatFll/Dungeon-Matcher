@@ -1,6 +1,6 @@
 # Enemy identity review
 
-[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
+[Current comparison and native sources](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/Review.html) · [Individual approval decisions](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/decisions.json)
 
 The first ten PixelLab Pro jobs returned 160 stills at a cost of 100 generations. The user's marked contact sheet approved the Swordsman, Chirurgeon, Halberdier, Pathblade and Axeman and requested revisions for the other five. The first board and its original files remain available.
 
@@ -21,3 +21,9 @@ The user approved 30 more generations for distinct field equipment. Three origin
 The user asked for about twenty stills total. The [concept picker](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round5/Review.html) offers seven Guild shield tanks (T1–T7), seven Guild rangers (R1–R7) and six small forest orcs with rigid Y-fork slingshots (O1–O6). The Orc Slinghunter art and motion brief now uses a fork, bands and pebble pouch. Its two-contact basic attack remains the gameplay contract.
 
 Eleven PixelLab Pro jobs completed at a total cost of 120 generations this round, including replacement sheets for clipped lineups and a compact orc sheet. The jobs register identifies which outputs were selected. All native source pixels were retained after isolating each figure and, where needed, mirroring its facing. The larger shield and bow studies have additional native canvas space. The six orcs occupy 30–38 pixels vertically. These are design choices under review; final combat sizing and character animation are pending. Seven previously approved identities retain their locked hashes.
+
+## Sixth review
+
+The user selected O5 with its red scarf and requested removal of the cape. The revised O5 differs from the chosen PNG at 114 positions in the cape and shoulder outline. The face, scarf, slingshot, feet and alignment are preserved. All other Round 5 identities were declined.
+
+The user supplied `possible2.png` for the tank’s compact stature and specified a bareheaded human in Guild clothes with a large shield. The Ranger is a human musketeer. Two PixelLab jobs used the current Rattlebones style image and Guild clothing reference. The Bulwark job also received the exact supplied stature reference. Both jobs finished, cost 20 generations total and returned 32 originals. The [sixth review](../../ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/Review.html) presents two native shield designs, two musket poses and the local orc edit. Five 112 × 88 PNGs were reopened from their editable LibreSprite sources. The Ranger description reflects the new identity; the two-contact combat data is unchanged.
