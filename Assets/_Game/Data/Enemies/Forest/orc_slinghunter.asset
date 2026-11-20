@@ -24,11 +24,11 @@ MonoBehaviour:
   isBoardDisruptor: 0
   isSupport: 0
   useDescriptionForInspection: 1
-  description: The Slinghunter fires two stones in quick succession. Each stone deals a separate hit.
+  description: The Slinghunter fires one stone, then catches his balance.
   baseMaxHealth: 65
   baseDamage: 5
-  baseFollowUpDamage: 5
-  followUpAttackDelay: 0.18
+  baseFollowUpDamage: 0
+  followUpAttackDelay: 0
   baseAttackInterval: 4
   firstAttackMoves: 3
   attackMoves: 3

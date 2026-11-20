@@ -26,6 +26,15 @@ TextureImporter:
   - first:
       213: -2249921672783663251
     second: IcebornAxeman_AutoAttack_07
+  - first:
+      213: 8271385284887734554
+    second: IcebornAxeman_AutoAttack_08
+  - first:
+      213: 2304326740618242434
+    second: IcebornAxeman_AutoAttack_09
+  - first:
+      213: 3883257596195684331
+    second: IcebornAxeman_AutoAttack_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -309,6 +318,72 @@ TextureImporter:
       indices:
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: IcebornAxeman_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a19602ac71dd9c270800000000000000
+      internalID: 8271385284887734554
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcebornAxeman_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 289ebf436fc9aff10800000000000000
+      internalID: 2304326740618242434
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcebornAxeman_AutoAttack_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: befb498953a14e530800000000000000
+      internalID: 3883257596195684331
+      vertices: []
+      indices:
+      edges: []
+      weights: []
     outline: []
     customData:
     physicsShape: []
@@ -331,6 +406,9 @@ TextureImporter:
       IcebornAxeman_AutoAttack_05: -7700201689932180212
       IcebornAxeman_AutoAttack_06: -3838165598132445622
       IcebornAxeman_AutoAttack_07: -2249921672783663251
+      IcebornAxeman_AutoAttack_08: 8271385284887734554
+      IcebornAxeman_AutoAttack_09: 2304326740618242434
+      IcebornAxeman_AutoAttack_10: 3883257596195684331
   mipmapLimitGroupName:
   pSDRemoveMatte: 0
   userData:

@@ -1,50 +1,47 @@
 {
   "enemy": "guild_bulwark",
   "state": "basic",
-  "jobId": "3915cd92-70a1-4344-8162-12ab7637c425",
   "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/K06.png",
   "identitySHA256": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
-  "sourceIndices": [
-    0,
-    2,
-    3,
-    4,
-    1,
-    2,
-    3,
-    0
-  ],
   "frameSize": [
     128,
-    104
+    112
   ],
   "durationsMs": [
-    80,
-    80,
-    120,
-    40,
-    120,
+    70,
     60,
-    100,
-    80
+    60,
+    60,
+    50,
+    20,
+    90,
+    40,
+    70,
+    60,
+    100
   ],
   "totalMs": 680,
   "impactMs": 320,
-  "sourcePaletteSize": 59,
-  "floor": 4,
+  "sourcePaletteSize": 62,
+  "floor": 14,
   "cellSHA256": [
-    "e3a872a3a60d68c1163b8b59ed595bcfb5db61491f3c459bac41b79b9a50d753",
-    "ebc9d40c668173c8ae9f68a2b0bca531d843d56f14f83eb6dc6d8be57c8d4f3a",
-    "d75f6d874008217f293947d41605c5166b1aa57aff2750a86c003938f41095d9",
-    "80e925c95ca7d05894da1680062fa0f9ed36807f69626f54e566aa2d4ed22600",
-    "97ba80cc95d0777eec24f6486dd82e43ee3a22300987f0777e7132f4a5ee43a1",
-    "ebc9d40c668173c8ae9f68a2b0bca531d843d56f14f83eb6dc6d8be57c8d4f3a",
-    "d75f6d874008217f293947d41605c5166b1aa57aff2750a86c003938f41095d9",
-    "e3a872a3a60d68c1163b8b59ed595bcfb5db61491f3c459bac41b79b9a50d753"
+    "e7e122f7303ec452fb3f3a4374671a4bafe95d1ca7af4454b97e51c437bcfdb3",
+    "fbb4954a60844be281a0c2d9f2a86ab2faf0c239d3c3557a10c8be310bea31d7",
+    "ddb9ff2ff7fb8bce6745bb661afbf1543f50ed765dae1967c8e391ca1a894e4a",
+    "00518349047897c9daa91c9801fd9edd67883789a940e40e47e20d1488315389",
+    "2ced60f0e817af6ab85393892de6e5bca388eb3c89755923bd493650df2575fe",
+    "0b0362ddc8d7678a4568aeed9da5d1a4de304b2da3d45b1d1df47561dcb8c2df",
+    "2bf56ff549f962769a8c3b3add73f8b9ac82fff21fa55a57f2a06fad8e48de82",
+    "132037b7e926de3bf414f8f93a3447a48dd59c074ff4e91fef6cff833f14fce7",
+    "9bfb54d8aba3a30b7d0ffec0e3f702eaac6baaaf6735479759df2bf7e0c08ea0",
+    "fbb4954a60844be281a0c2d9f2a86ab2faf0c239d3c3557a10c8be310bea31d7",
+    "e7e122f7303ec452fb3f3a4374671a4bafe95d1ca7af4454b97e51c437bcfdb3"
   ],
   "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/basic/sheet.png",
-  "sheetSHA256": "600289801b2ec789adbc7a080a5241fc01eabd8e18c9d571f1daa9e74ada5d18",
+  "sheetSHA256": "73fe945a1588a5e7f6f6a507dfcd213d4f2fd0833b06cecbc834f1232e2f9561",
   "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/basic/source.aseprite",
-  "editableSHA256": "3a3a95d56f5c061c74565c1c6db717a102f4d6e05f8f822769abcaafb016b052",
-  "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/basic/preview.gif"
+  "editableSHA256": "ac8e14b8c778a8880bf07c9955500adad690099ef379ecd1af73622140870b81",
+  "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/basic/preview.gif",
+  "approvedRevision": "Revision02",
+  "approvalSource": "ArtSource/SelectionExpansion/Motion/Review/Revision02/Clips/guild_bulwark_basic"
 }

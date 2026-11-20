@@ -1,0 +1,55 @@
+{
+  "enemy": "orc_slinghunter",
+  "state": "basic",
+  "frameSize": [
+    128,
+    112
+  ],
+  "durationsMs": [
+    80,
+    80,
+    90,
+    70,
+    60,
+    70,
+    50,
+    60,
+    60,
+    60
+  ],
+  "oldDurations": [
+    80,
+    80,
+    120,
+    40,
+    120,
+    60,
+    100,
+    80
+  ],
+  "oldSize": [
+    128,
+    104
+  ],
+  "floorMargin": 14,
+  "oldFloor": 4,
+  "minimumMargin": 14,
+  "totalMs": 680,
+  "impactMs": 320,
+  "identity": "253a3af9f47ee95ac04a1187efdb4d5fda1da455fc4cda36b2b626e94274a91d",
+  "notes": "Draw, release, redraw and release. The two stones leave the same fork at 320 and 500 ms.",
+  "frameHashes": [
+    "e561ec710a8dd7f9f5d69557a3fc5705e412f558cd4884373be967e025ee928c",
+    "6a158686031ed4eed47d9575c87e0cd0dc6ecb62307173974b0f12481aca9d2c",
+    "af4fd5de9be585f5f10a4f8df864f51024a5e6ec72324f0fe5feeb8b319a03c6",
+    "80b81de97dd55f607ce873122c5acdb2bcbf79ee3622a2e03595280e6232fa55",
+    "12ba58d9d049b97a1d8ba146cffdac78d62c1f5e31298cb0b0946e6e02c7e5c6",
+    "204ae69c3cfed174b6bfb744b5e716cd5d095c361a00176ffe2af24e3fa8d93e",
+    "80b81de97dd55f607ce873122c5acdb2bcbf79ee3622a2e03595280e6232fa55",
+    "b5b8827ec9a30a27f5f6c1e9a8ed56d4aca0d58a6a2e7eb3ca260771bb3f5eb7",
+    "de008feb2a68668ce7490eff611c614f8add688f36888a267a101f54c44adc45",
+    "e561ec710a8dd7f9f5d69557a3fc5705e412f558cd4884373be967e025ee928c"
+  ],
+  "sheetSHA256": "7b15ba7a388c9e1ecd6bbd62a923ecc29b937f391f1815cb53a7a44a62baf270",
+  "editableSHA256": "59ccbcea7b42e5a0d63375cd9ef49e62009cebab1b36cdf7981ba3bf4c9398e5"
+}

@@ -26,6 +26,18 @@ TextureImporter:
   - first:
       213: -2600838194716628967
     second: NacreHalberdier_AutoAttack_07
+  - first:
+      213: -3791402794290108615
+    second: NacreHalberdier_AutoAttack_08
+  - first:
+      213: 7431561059166616077
+    second: NacreHalberdier_AutoAttack_09
+  - first:
+      213: 3015163838062560994
+    second: NacreHalberdier_AutoAttack_10
+  - first:
+      213: -2083769141420580690
+    second: NacreHalberdier_AutoAttack_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -309,6 +321,94 @@ TextureImporter:
       indices:
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: NacreHalberdier_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9372aed0f3b326bc0800000000000000
+      internalID: -3791402794290108615
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NacreHalberdier_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a7042c865322760800000000000000
+      internalID: 7431561059166616077
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NacreHalberdier_AutoAttack_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e68253298308d920800000000000000
+      internalID: 3015163838062560994
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NacreHalberdier_AutoAttack_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0a4b39107f413e0800000000000000
+      internalID: -2083769141420580690
+      vertices: []
+      indices:
+      edges: []
+      weights: []
     outline: []
     customData:
     physicsShape: []
@@ -331,6 +431,10 @@ TextureImporter:
       NacreHalberdier_AutoAttack_05: 4106044041521236728
       NacreHalberdier_AutoAttack_06: -1127603250318796847
       NacreHalberdier_AutoAttack_07: -2600838194716628967
+      NacreHalberdier_AutoAttack_08: -3791402794290108615
+      NacreHalberdier_AutoAttack_09: 7431561059166616077
+      NacreHalberdier_AutoAttack_10: 3015163838062560994
+      NacreHalberdier_AutoAttack_11: -2083769141420580690
   mipmapLimitGroupName:
   pSDRemoveMatte: 0
   userData:

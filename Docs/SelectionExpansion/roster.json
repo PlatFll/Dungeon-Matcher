@@ -170,15 +170,15 @@
     "faction": "Forest orcs",
     "hp": "0.8\u20130.95 \u00d7 current Forest normal median",
     "threat": "~2 provisional",
-    "kit": "Basic-only two-contact sling-stone sequence where engine supports two normal contacts; no rooting, vine production, Bloodrage or special marks. Adds melee/ranged variance to Orc Berserker/Drummer pairings.",
+    "kit": "Fires one sling stone per basic attack. Adds ranged pressure to Orc Berserker and Drummer formations.",
     "look": "Small olive-skinned forest orc based on the chosen O5 silhouette, with a red neck scarf, bare back and forked slingshot. Preserve the face, size, stocky stance and weapon of O5.",
-    "motion": "Idle: settle the forked slingshot in the leading hand. Basic: draw, release, reload and release a second stone as two visible normal contacts. No lingering stones on the board.",
+    "motion": "The Slinghunter draws once, releases one stone, stumbles back and recovers.",
     "asset": "Assets/_Game/Data/Enemies/Forest/orc_slinghunter.asset",
     "guid": "60de8c925c985c5ab912d7a5d0d790bd",
     "stats": [
       65,
       5,
-      5,
+      0,
       3,
       2
     ]

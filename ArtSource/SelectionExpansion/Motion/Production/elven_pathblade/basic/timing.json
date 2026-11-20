@@ -1,50 +1,45 @@
 {
   "enemy": "elven_pathblade",
   "state": "basic",
-  "jobId": "a1c03f73-d759-4a99-8c74-ca84acf39b2e",
   "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/elven_pathblade.png",
   "identitySHA256": "17488569d807d02bbc6fb73f587a12ffc01630b57c4c608733ed80c666a9b7bf",
-  "sourceIndices": [
-    0,
-    1,
-    2,
-    3,
-    6,
-    7,
-    8,
-    1
-  ],
   "frameSize": [
     128,
-    104
+    112
   ],
   "durationsMs": [
-    80,
-    80,
-    120,
-    40,
-    120,
+    90,
     60,
+    70,
     100,
-    80
+    100,
+    40,
+    40,
+    60,
+    50,
+    70
   ],
   "totalMs": 680,
   "impactMs": 320,
   "sourcePaletteSize": 31,
-  "floor": 4,
+  "floor": 14,
   "cellSHA256": [
-    "4de5d1cad9d612c08ec8c23d34d9e697faee71b865fe023d5225ddad231ff455",
-    "b8c3d17dcfb0bb610ee5481fdcde630cf69e9abe037e15604060711be6731cd8",
-    "08c1bae88a1a70833946eede3615b2ead98b29585406366d624fbd100dc5b1e0",
-    "3a6f3abfeff45ab11b2457ffb324b4a2a0b6c36fc197a8e5766018d309b0ed02",
-    "b893cc143a948b0d34f8114ec3f344460793ee0951728ff105c18bf3c62472e8",
-    "96b8297812153e812f97dabf752cf9f6bf0d393c79b96c8a132f03667331c27f",
-    "bab9e927e38827cfa250083fdfa21b9d2751727c800ce335ca1f8d9732babe1e",
-    "b8c3d17dcfb0bb610ee5481fdcde630cf69e9abe037e15604060711be6731cd8"
+    "e790755f741bc82ee04e0cd4b7e6e39297cc5adb9efd190c17e598112bdafff0",
+    "aaef25c07300b1df37f0bd7438077b6c90db4cd625499a705f456c5919a95cde",
+    "73f5b41be811230f9c1c8161b88aedbf94a3ae24d88ad961320e2769d09666d1",
+    "95f2f2fa46b3789fb3b940c5d9034a2340dc33b9685c5056a807ded282947c8f",
+    "6840b96695a7e317a816ebcad2ebbbcd2349014bec0db10c191649c6d71711a0",
+    "ce5e7e0fc6b22f20038dea480e6ea53b4afd8474aef5f3d3f0a3075630e0e01e",
+    "858b67f05f005c49a8e27b39ddb0f979b8904e3f68991e1b2e223db342343ea5",
+    "8a64452ff1a32965a22d5d5f1cd3ca123f6cb814c1786c105ef3b695a959531f",
+    "73f5b41be811230f9c1c8161b88aedbf94a3ae24d88ad961320e2769d09666d1",
+    "e790755f741bc82ee04e0cd4b7e6e39297cc5adb9efd190c17e598112bdafff0"
   ],
   "sheet": "ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/basic/sheet.png",
-  "sheetSHA256": "c53057d5ac93745cc5cd1924145f6e6a816584873c695f2ee4ac585603c76097",
+  "sheetSHA256": "d6ba046114fb2fc88f1707fae86a1f9fa6ea429aae5a022a29b7d1e87b54eb3e",
   "editable": "ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/basic/source.aseprite",
-  "editableSHA256": "fd51c5ba4f2ee3b5cecfbb7ad1cb670ab8697786ec4d0b415fedf0db62b13f33",
-  "preview": "ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/basic/preview.gif"
+  "editableSHA256": "a251c150b7f91dbaa7eec29392d1d010721583d83d037e79795e62c54f04038e",
+  "preview": "ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/basic/preview.gif",
+  "approvedRevision": "Revision01",
+  "approvalSource": "ArtSource/SelectionExpansion/Motion/Review/Revision01/Clips/elven_pathblade_basic"
 }

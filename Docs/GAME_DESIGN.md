@@ -655,6 +655,7 @@ call conceals its allies' weakness facets and protects them against new player
 attacks for three subsequent accepted moves. Its own weakness remains playable.
 Defeating or staggering the Bulwark releases protection. Existing poison continues.
 The Guild Chirurgeon restores up to 10 HP to one wounded ally at staff contact.
+The Orc Slinghunter fires one stone per basic attack. Its recovery carries no damage.
 It chooses the lowest remaining health fraction and skips full-health parties.
 The [expansion roster](SelectionExpansion/roster.json) lists all ten enemies.
 

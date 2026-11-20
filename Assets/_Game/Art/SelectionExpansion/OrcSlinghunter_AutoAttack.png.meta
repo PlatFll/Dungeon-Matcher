@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: -6883388010117476949
     second: OrcSlinghunter_AutoAttack_07
+  - first:
+      213: -4900976631484071012
+    second: OrcSlinghunter_AutoAttack_08
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -309,6 +312,28 @@ TextureImporter:
       indices:
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c93c6eb58bb3cfbb0800000000000000
+      internalID: -4900976631484071012
+      vertices: []
+      indices:
+      edges: []
+      weights: []
     outline: []
     customData:
     physicsShape: []
@@ -331,6 +356,7 @@ TextureImporter:
       OrcSlinghunter_AutoAttack_05: -5578606207793332352
       OrcSlinghunter_AutoAttack_06: 7222563286514883402
       OrcSlinghunter_AutoAttack_07: -6883388010117476949
+      OrcSlinghunter_AutoAttack_08: -4900976631484071012
   mipmapLimitGroupName:
   pSDRemoveMatte: 0
   userData:

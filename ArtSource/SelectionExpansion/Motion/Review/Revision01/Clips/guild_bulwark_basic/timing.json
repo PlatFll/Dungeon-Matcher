@@ -1,0 +1,55 @@
+{
+  "enemy": "guild_bulwark",
+  "state": "basic",
+  "frameSize": [
+    128,
+    112
+  ],
+  "durationsMs": [
+    80,
+    70,
+    80,
+    90,
+    100,
+    40,
+    70,
+    50,
+    50,
+    50
+  ],
+  "oldDurations": [
+    80,
+    80,
+    120,
+    40,
+    120,
+    60,
+    100,
+    80
+  ],
+  "oldSize": [
+    128,
+    104
+  ],
+  "floorMargin": 14,
+  "oldFloor": 4,
+  "minimumMargin": 14,
+  "totalMs": 680,
+  "impactMs": 320,
+  "identity": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
+  "notes": "One forward shield check from guard, with the off-hand mace following the torso.",
+  "frameHashes": [
+    "e7e122f7303ec452fb3f3a4374671a4bafe95d1ca7af4454b97e51c437bcfdb3",
+    "bf3482ede3f511823ebd73ce7d50c41a15e61750e1a415e23b2dc84ff1590e1f",
+    "4479164b04caea99a23e27646ed9209963fc91fdc5f69a571a981f1bb6323996",
+    "34e8af1a8ce56d03feb79ef8bacf43708dc38610f54e1ad574a6b2fd33482116",
+    "a1b009179b7d2f61bd8b45cb0839639996968af8262422aff49bf79bebdd9268",
+    "a1b009179b7d2f61bd8b45cb0839639996968af8262422aff49bf79bebdd9268",
+    "34e8af1a8ce56d03feb79ef8bacf43708dc38610f54e1ad574a6b2fd33482116",
+    "4479164b04caea99a23e27646ed9209963fc91fdc5f69a571a981f1bb6323996",
+    "bf3482ede3f511823ebd73ce7d50c41a15e61750e1a415e23b2dc84ff1590e1f",
+    "e7e122f7303ec452fb3f3a4374671a4bafe95d1ca7af4454b97e51c437bcfdb3"
+  ],
+  "sheetSHA256": "eefc7f2e511fb865d3ac7dec0f8f8de277212e76a0b4c4670e37237cfd90e0ad",
+  "editableSHA256": "2db651ddf63ef445a8dc0d0df64f9418255ab31f669e015af2bd0b1fedd6b07c"
+}

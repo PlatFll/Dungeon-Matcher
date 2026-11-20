@@ -32,6 +32,15 @@ TextureImporter:
   - first:
       213: -1513860128911224411
     second: GuildChirurgeon_Ability_09
+  - first:
+      213: 1858397007647915889
+    second: GuildChirurgeon_Ability_10
+  - first:
+      213: -3751602442696369641
+    second: GuildChirurgeon_Ability_11
+  - first:
+      213: -8123460408621673369
+    second: GuildChirurgeon_Ability_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -359,6 +368,72 @@ TextureImporter:
       indices:
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Ability_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17fb0847b3a5ac910800000000000000
+      internalID: 1858397007647915889
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Ability_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a58988471afebc0800000000000000
+      internalID: -3751602442696369641
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Ability_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 764d72d5ccba34f80800000000000000
+      internalID: -8123460408621673369
+      vertices: []
+      indices:
+      edges: []
+      weights: []
     outline: []
     customData:
     physicsShape: []
@@ -383,6 +458,9 @@ TextureImporter:
       GuildChirurgeon_Ability_07: 5837833597366324641
       GuildChirurgeon_Ability_08: 3520798804857148642
       GuildChirurgeon_Ability_09: -1513860128911224411
+      GuildChirurgeon_Ability_10: 1858397007647915889
+      GuildChirurgeon_Ability_11: -3751602442696369641
+      GuildChirurgeon_Ability_12: -8123460408621673369
   mipmapLimitGroupName:
   pSDRemoveMatte: 0
   userData:

@@ -26,6 +26,15 @@ TextureImporter:
   - first:
       213: -7226666739482598216
     second: GuildBulwark_AutoAttack_07
+  - first:
+      213: -559475901163744908
+    second: GuildBulwark_AutoAttack_08
+  - first:
+      213: 8267836786259711506
+    second: GuildBulwark_AutoAttack_09
+  - first:
+      213: -3205905009340757105
+    second: GuildBulwark_AutoAttack_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -309,6 +318,72 @@ TextureImporter:
       indices:
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GuildBulwark_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4715eb2d1a75c38f0800000000000000
+      internalID: -559475901163744908
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildBulwark_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 216dae190c14db270800000000000000
+      internalID: 8267836786259711506
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildBulwark_AutoAttack_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b499e21665283d0800000000000000
+      internalID: -3205905009340757105
+      vertices: []
+      indices:
+      edges: []
+      weights: []
     outline: []
     customData:
     physicsShape: []
@@ -331,6 +406,9 @@ TextureImporter:
       GuildBulwark_AutoAttack_05: -5525969448723905140
       GuildBulwark_AutoAttack_06: -7078475751122991147
       GuildBulwark_AutoAttack_07: -7226666739482598216
+      GuildBulwark_AutoAttack_08: -559475901163744908
+      GuildBulwark_AutoAttack_09: 8267836786259711506
+      GuildBulwark_AutoAttack_10: -3205905009340757105
   mipmapLimitGroupName:
   pSDRemoveMatte: 0
   userData:

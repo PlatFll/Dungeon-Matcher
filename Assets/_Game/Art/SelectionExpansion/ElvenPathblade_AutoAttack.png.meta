@@ -26,6 +26,12 @@ TextureImporter:
   - first:
       213: -8279301170908976176
     second: ElvenPathblade_AutoAttack_07
+  - first:
+      213: 4586352675034152442
+    second: ElvenPathblade_AutoAttack_08
+  - first:
+      213: -148301684440521002
+    second: ElvenPathblade_AutoAttack_09
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -309,6 +315,50 @@ TextureImporter:
       indices:
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afdb21a557ff5af30800000000000000
+      internalID: 4586352675034152442
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d6a45b576021fdf0800000000000000
+      internalID: -148301684440521002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
     outline: []
     customData:
     physicsShape: []
@@ -331,6 +381,8 @@ TextureImporter:
       ElvenPathblade_AutoAttack_05: 2085402126166821819
       ElvenPathblade_AutoAttack_06: -4436453292857023068
       ElvenPathblade_AutoAttack_07: -8279301170908976176
+      ElvenPathblade_AutoAttack_08: 4586352675034152442
+      ElvenPathblade_AutoAttack_09: -148301684440521002
   mipmapLimitGroupName:
   pSDRemoveMatte: 0
   userData:

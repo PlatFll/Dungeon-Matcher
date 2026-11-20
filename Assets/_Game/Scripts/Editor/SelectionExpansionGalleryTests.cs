@@ -22,6 +22,70 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest] public IEnumerator ExpansionGalleryIronvein() =>
         CaptureExpansionFormation("ironvein-excavation", "ore_ram");
 
+    [UnityTest] public IEnumerator ExpansionSlinghunterSingleHitToHealth() => VerifySlinghunterContact(false);
+    [UnityTest] public IEnumerator ExpansionSlinghunterSingleHitBreaksShield() => VerifySlinghunterContact(true);
+
+    private IEnumerator VerifySlinghunterContact(bool shielded)
+    {
+        const string zoneId = "magical-forest";
+        var zone = Resources.Load<ZoneDefinition>("Zones/" + zoneId);
+        var definition = zone.enemies.Single(e => e.EnemyId == "orc_slinghunter");
+        RunLaunchOptions.StartingZone = zoneId;
+        using (ResonanceEncounterFixture.OnNextGame(new[] { definition }, "Single sling stone"))
+        {
+            SceneManager.LoadScene("Game");
+            yield return Stable();
+        }
+
+        var orc = Run.Waves.ActiveEnemies.Single();
+        Assert.That(orc.Definition, Is.EqualTo(definition));
+        yield return Until(() => orc.GetComponent<EnemyLifecycleVFX>()?.IsSpawning != true, "Slinghunter settles");
+        var attack = orc.GetComponent<EnemyAutoAttack>();
+        var player = Run.Player;
+        Assert.That(orc.FollowUpDamage, Is.Zero);
+        Assert.That(player.CurrentShield, Is.Zero);
+        if (shielded) player.GrantShield(1);
+        int before = player.CurrentHealth;
+        int resolved = 0;
+        int attributed = 0;
+        string reason = null;
+        int hpLoss = 0;
+        int shieldLoss = 0;
+        System.Action<EnemyAutoAttack, int, bool> onAttack = (source, amount, applied) => resolved++;
+        System.Action<EnemyActor, string, int, int> onDamage = (source, kind, hp, shield) =>
+        {
+            if (source != orc) return;
+            attributed++;
+            reason = kind;
+            hpLoss += hp;
+            shieldLoss += shield;
+        };
+        attack.AttackResolved += onAttack;
+        player.DamageResolved += onDamage;
+        try
+        {
+            // Isolate a due attack, then let the regular accepted-swap pipeline run it.
+            Set(attack, "unifiedRemaining", 1);
+            yield return Move();
+            yield return Until(() => resolved > 0 && !attack.IsAttackSequenceInProgress, "single shot and recovery");
+            yield return new WaitForSeconds(0.4f);
+            Assert.That(resolved, Is.EqualTo(1), "All attack contacts, including any blocked follow-up");
+            Assert.That(attributed, Is.EqualTo(1));
+            Assert.That(reason, Is.EqualTo("basic contact"));
+            Assert.That(hpLoss, Is.EqualTo(shielded ? 0 : orc.Damage));
+            Assert.That(shieldLoss, Is.EqualTo(shielded ? 1 : 0));
+            Assert.That(player.CurrentHealth, Is.EqualTo(before - hpLoss));
+            Assert.That(player.CurrentShield, Is.Zero);
+            TestContext.Out.WriteLine($"Slinghunter contacts={resolved}; attributed={attributed}; HP {before}->{player.CurrentHealth}; shield {(shielded ? 1 : 0)}->{player.CurrentShield}; move={Run.MoveClock.Tick}");
+        }
+        finally
+        {
+            attack.AttackResolved -= onAttack;
+            player.DamageResolved -= onDamage;
+        }
+    }
+
+
     private IEnumerator CaptureExpansionFormation(string zoneId, params string[] members)
     {
         var zone = Resources.Load<ZoneDefinition>("Zones/" + zoneId);
@@ -41,6 +105,10 @@ public sealed partial class ForestFoundationPlayTests
 
         string output = Path.GetFullPath(Path.Combine(".utmp", "SelectionExpansion", "Gallery", TestContext.CurrentContext.Test.Name));
         Directory.CreateDirectory(output);
+        string capture = System.Environment.GetEnvironmentVariable("DM_APPROVED_MOTION_CAPTURE");
+        if (!string.IsNullOrEmpty(capture) && zoneId != "ironvein-excavation")
+            yield return CaptureApprovedMotion(Path.Combine(capture, TestContext.CurrentContext.Test.Name), Run.Waves.ActiveEnemies.ToArray());
+
         foreach (string state in new[] { "Idle", "AutoAttack", "Ability" })
         {
             bool any = false;
@@ -140,6 +208,77 @@ public sealed partial class ForestFoundationPlayTests
             PresentationPreferences.SetReducedMotion(reduced);
         }
     }
+
+    private static IEnumerator CaptureApprovedMotion(string folder, EnemyActor[] actors)
+    {
+        // Record the imported controller poses on the real Game canvas. Suppress sampling
+        // events only during the visual capture; combat assertions run at normal speed.
+        Directory.CreateDirectory(folder);
+        var animators = actors.Select(e => e.GetComponentsInChildren<Animator>(true)
+            .Single(a => a.runtimeAnimatorController == e.Definition.AnimationControllerOverride)).ToArray();
+        var speeds = animators.Select(a => a.speed).ToArray();
+        var fireEvents = animators.Select(a => a.fireEvents).ToArray();
+        var rows = new System.Collections.Generic.List<string> { "enemy,xMin,yMin,xMax,yMax,screenWidth,screenHeight" };
+        for (int i = 0; i < actors.Length; i++)
+        {
+            var image = animators[i].GetComponent<Image>();
+            var corners = new Vector3[4];
+            image.rectTransform.GetWorldCorners(corners);
+            var canvas = image.canvas.rootCanvas;
+            var camera = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera;
+            var points = corners.Select(c => RectTransformUtility.WorldToScreenPoint(camera, c)).ToArray();
+            rows.Add(string.Join(",", actors[i].Definition.EnemyId,
+                Mathf.FloorToInt(points.Min(p => p.x)), Mathf.FloorToInt(points.Min(p => p.y)),
+                Mathf.CeilToInt(points.Max(p => p.x)), Mathf.CeilToInt(points.Max(p => p.y)), Screen.width, Screen.height));
+        }
+        File.WriteAllLines(Path.Combine(folder, "actors.csv"), rows);
+        try
+        {
+            foreach (var animator in animators) { animator.fireEvents = false; animator.speed = 0f; }
+            foreach (string state in new[] { "Idle", "AutoAttack", "Ability" })
+            {
+                var hash = Animator.StringToHash("Base Layer." + state);
+                var clips = animators.Select(a => a.runtimeAnimatorController.animationClips
+                    .FirstOrDefault(c => c.name.EndsWith("_" + state, System.StringComparison.Ordinal))).ToArray();
+                if (clips.All(c => c == null)) continue;
+                var times = new System.Collections.Generic.SortedSet<int> { 0 };
+                foreach (var clip in clips.Where(c => c != null))
+                {
+                    var binding = UnityEditor.AnimationUtility.GetObjectReferenceCurveBindings(clip).Single();
+                    foreach (var key in UnityEditor.AnimationUtility.GetObjectReferenceCurve(clip, binding))
+                        times.Add(Mathf.RoundToInt(key.time * 1000));
+                }
+                foreach (int ms in times)
+                {
+                    for (int i = 0; i < clips.Length; i++)
+                    {
+                        if (clips[i] == null) continue;
+                        int duration = Mathf.RoundToInt(clips[i].length * 1000);
+                        float sample = (Mathf.Min(ms, duration - 1) + .25f) / duration;
+                        animators[i].Play(hash, 0, sample);
+                        animators[i].Update(0f);
+                        Assert.That(animators[i].GetComponent<Image>().sprite.name,
+                            Does.StartWith(clips[i].name + "_"), "visible sprite from the production clip");
+                    }
+                    yield return null;
+                    string png = Path.Combine(folder, state + "-" + ms.ToString("D4") + ".png");
+                    ScreenCapture.CaptureScreenshot(png);
+                    yield return Until(() => File.Exists(png) && new FileInfo(png).Length > 0, "rendered Game frame");
+                }
+            }
+        }
+        finally
+        {
+            for (int i = 0; i < animators.Length; i++)
+            {
+                animators[i].Play("Base Layer.Idle", 0, 0f);
+                animators[i].Update(0f);
+                animators[i].speed = speeds[i];
+                animators[i].fireEvents = fireEvents[i];
+            }
+        }
+    }
+
 
     private static IEnumerator CaptureGalleryState(string output, string state)
     {
