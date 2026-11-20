@@ -10,6 +10,7 @@ public partial class BoardController
 
     public void SetTargetSelection(Func<Gem, bool> accept)
     {
+        ClearPointerFeedback();
         pointerStartGem = null;
         ClearSelection();
         targetSelection = accept;

@@ -87,6 +87,7 @@ public sealed class AccountProgression
     private readonly string file;
     private AccountSave state;
     private AccountSave beforeReplay;
+    private bool loadedFromBackup;
     public bool IsPractice { get; private set; }
     public event Action Changed;
     public event Action<GemSpecialType> Unlocked;
@@ -112,7 +113,12 @@ public sealed class AccountProgression
     public AccountProgression(string saveFile, bool migrateLegacy = false)
     {
         file = saveFile;
-        state = Load(saveFile) ?? Load(saveFile + ".bak");
+        state = Load(saveFile);
+        if (state == null)
+        {
+            state = Load(saveFile + ".bak");
+            loadedFromBackup = state != null;
+        }
         if (state == null)
         {
             if (File.Exists(saveFile) || File.Exists(saveFile + ".bak"))
@@ -366,6 +372,7 @@ public sealed class AccountProgression
             }
             if (File.Exists(file)) ReplaceSaveFile(temporary);
             else File.Move(temporary, file);
+            loadedFromBackup = false;
             state = next;
             LastError = null;
         }
@@ -384,9 +391,13 @@ public sealed class AccountProgression
         // Windows readers can briefly deny delete/replace sharing. Retry only
         // errors that leave both original filenames intact, using the same
         // flushed transaction. Never publish wallet state before replacement.
+        // A recovered wallet must not rotate its damaged primary over its last good backup.
+        string previous = loadedFromBackup
+            ? file + ".unreadable-" + Guid.NewGuid().ToString("N")
+            : file + ".bak";
         for (int attempt = 0; ; attempt++)
         {
-            try { File.Replace(temporary, file, file + ".bak"); return; }
+            try { File.Replace(temporary, file, previous); return; }
             catch (IOException exception) when (attempt < 3 && IsTemporaryReplaceLock(exception))
             { System.Threading.Thread.Sleep(20 * (attempt + 1)); }
         }
@@ -422,9 +433,17 @@ public sealed class AccountProgression
     }
     private static AccountSave Load(string path)
     {
-        if (!File.Exists(path)) return null;
-        try { return JsonUtility.FromJson<AccountSave>(File.ReadAllText(path)); }
-        catch (Exception exception) when (exception is IOException || exception is ArgumentException) { return null; }
+        string json;
+        for (int attempt = 0; ; attempt++)
+        {
+            try { json = File.ReadAllText(path); break; }
+            catch (FileNotFoundException) { return null; }
+            catch (DirectoryNotFoundException) { return null; }
+            catch (IOException exception) when (attempt < 3 && IsTemporaryReplaceLock(exception))
+            { System.Threading.Thread.Sleep(20 * (attempt + 1)); }
+        }
+        try { return JsonUtility.FromJson<AccountSave>(json); }
+        catch (ArgumentException) { return null; }
     }
     private static void Normalize(AccountSave save)
     {
@@ -446,7 +465,7 @@ public sealed class AccountProgression
         if (save.run != null)
         {
             save.run.completedWaves = Mathf.Clamp(save.run.completedWaves, 0, 10000);
-            save.run.milestoneCount = Mathf.Clamp(save.run.milestoneCount, 0, 4);
+            save.run.milestoneCount = Mathf.Clamp(save.run.milestoneCount, 0, save.run.completedWaves);
             save.run.potionCharges = Mathf.Clamp(save.run.potionCharges, 0, Math.Min(3, save.potions));
             save.run.bombCharges = Mathf.Clamp(save.run.bombCharges, 0, Math.Min(3, save.bombs));
         }
