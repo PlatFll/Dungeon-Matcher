@@ -9,6 +9,30 @@ using UnityEngine.UI;
 
 public sealed partial class ForestFoundationPlayTests
 {
+    [UnityTest]
+    public IEnumerator MinerRendersAllThreeProductionClips()
+    {
+        var zone = Resources.Load<ZoneDefinition>("Zones/dungeon");
+        var miner = zone.enemies.Single(e => e.EnemyId == "miner");
+        using (ResonanceEncounterFixture.OnNextGame(new[] { miner }, "Miner motion review"))
+        {
+            RunLaunchOptions.StartingZone = zone.zoneId;
+            SceneManager.LoadScene("Game");
+            yield return Stable();
+        }
+        var actor = Run.Waves.ActiveEnemies.Single();
+        Assert.That(actor.Definition, Is.SameAs(miner));
+        yield return Until(() => actor.GetComponent<EnemyLifecycleVFX>()?.IsSpawning != true, "Miner settles");
+        var animator = actor.GetComponentsInChildren<Animator>(true)
+            .Single(a => a.runtimeAnimatorController == miner.AnimationControllerOverride);
+        foreach (var state in new[] { "Idle", "AutoAttack", "Ability" })
+            Assert.That(animator.HasState(0, Animator.StringToHash("Base Layer." + state)), Is.True, state);
+
+        var folder = System.Environment.GetEnvironmentVariable("DM_APPROVED_MOTION_CAPTURE");
+        if (!string.IsNullOrEmpty(folder))
+            yield return CaptureApprovedMotion(Path.Combine(folder, "Miner"), new[] { actor });
+    }
+
     [UnityTest] public IEnumerator ExpansionGalleryGuildFrontLine() =>
         CaptureExpansionFormation("dungeon", "guild_bulwark", "guild_ranger", "guild_swordsman");
     [UnityTest] public IEnumerator ExpansionGalleryGuildHealer() =>
