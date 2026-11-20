@@ -44,7 +44,9 @@ public sealed partial class ForestFoundationPlayTests
         var player = Run.Player;
         Assert.That(orc.FollowUpDamage, Is.Zero);
         Assert.That(player.CurrentShield, Is.Zero);
-        if (shielded) player.GrantShield(1);
+        int startingShield = shielded ? CombatAmounts.Step : 0;
+        if (shielded) Assert.That(player.GrantShield(startingShield), Is.EqualTo(startingShield));
+        Assert.That(player.CurrentShield, Is.EqualTo(startingShield));
         int before = player.CurrentHealth;
         int resolved = 0;
         int attributed = 0;
@@ -73,10 +75,10 @@ public sealed partial class ForestFoundationPlayTests
             Assert.That(attributed, Is.EqualTo(1));
             Assert.That(reason, Is.EqualTo("basic contact"));
             Assert.That(hpLoss, Is.EqualTo(shielded ? 0 : orc.Damage));
-            Assert.That(shieldLoss, Is.EqualTo(shielded ? 1 : 0));
+            Assert.That(shieldLoss, Is.EqualTo(startingShield));
             Assert.That(player.CurrentHealth, Is.EqualTo(before - hpLoss));
             Assert.That(player.CurrentShield, Is.Zero);
-            TestContext.Out.WriteLine($"Slinghunter contacts={resolved}; attributed={attributed}; HP {before}->{player.CurrentHealth}; shield {(shielded ? 1 : 0)}->{player.CurrentShield}; move={Run.MoveClock.Tick}");
+            TestContext.Out.WriteLine($"Slinghunter contacts={resolved}; attributed={attributed}; HP {before}->{player.CurrentHealth}; shield {startingShield}->{player.CurrentShield}; move={Run.MoveClock.Tick}");
         }
         finally
         {
