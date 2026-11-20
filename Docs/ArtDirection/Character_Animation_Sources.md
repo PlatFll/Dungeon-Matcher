@@ -2,6 +2,8 @@
 
 Use this index with the [animation SOP](Character_Animation_SOP.md). Each entry comes from a bound controller in the audited selection-expansion checkout. The sheet column opens the imported idle. A native source link appears where its production image has the exact recorded cohesion hash. The history link identifies the earlier acting or frame-selection record. The [audit inventory](CastMotionAudit/Review.html#coverage) links the individual action clips and their textures.
 
+The [production repair record](CastMotionRepairs/Review.html) links the latest editable sources for the corrected states, including the five updated Frostwake and playable clips.
+
 ## Acting history
 
 ### Playable characters

@@ -738,6 +738,8 @@ and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_D
 
 ## Character animation workflow and audit
 
+The [production repair comparison](ArtDirection/CastMotionRepairs/Review.html) covers 17 expansion animations and the 23 clips behind the 20 cast-audit findings. The comparison includes the previous game drawings and the later Swordsman, Halberdier and Axeman review versions. The actual game resolves the repaired sheets through the existing controllers and sprite IDs.
+
 The [character animation SOP](ArtDirection/Character_Animation_SOP.md) and [per-character source index](ArtDirection/Character_Animation_Sources.md) trace the current cast back to its production drawings. The [cast audit](ArtDirection/CastMotionAudit/Review.html) includes timed playback, finding-specific frames and repair proposals. The [expansion polish review](../ArtSource/SelectionExpansion/Motion/Review/Revision03/Review.html) compares the revised native artwork with the current Unity sources.
 
 ## Global art-direction audit (2026-10-11)

@@ -8,7 +8,7 @@ Start at the player or enemy definition. Resolve its controller, state, clip, an
 
 Open the current first pose, the accepted actor still and the current Rattlebones reference at native scale. Verify the registered reference hashes. For human proportions compare the actor in a floor-aligned lineup with Farmer, Pan or an appropriate armored human. Record the silhouette, eye design, facing, material colors, weapon hand, shield side and floor row. Preserve helmeted heads, pearl faces, tusks, glowing mineral eyes and mechanical lenses according to that actor’s approval.
 
-Keep the current sheet, native file, pivot, sub-sprite rectangles and exposure list as the before version. Read the latest correction before choosing an older source. Farmer’s hand-edited idle supersedes the earlier take. The Puffer Sentinel’s restored face, Ironvein’s west-facing repairs and the later shark-tail edit all have precedence over earlier exports. This chat explicitly restricted the black-eye change to the ten expansion enemies.
+Keep the current sheet, native file, pivot, sub-sprite rectangles and exposure list as the before version. Read the latest correction before choosing an older source. Farmer’s hand-edited idle supersedes the earlier take. The Puffer Sentinel’s restored face, Ironvein’s west-facing repairs and the later shark-tail edit all have precedence over earlier exports. The expansion eye cleanup applied only to the ten new enemies. The Nacre Halberdier has a flat pearl-white eye inside his visor by explicit character direction. Carry that color through blinking and weapon poses.
 
 ## 2. Block the action in native pixels
 

@@ -25,7 +25,9 @@
     "path": "Docs/ArtDirection/EnemyCohesion2026-10/royal_swordsman-still.png",
     "sha256": "f7d4896847862dd507afefcf3853854b5115d5578d4235012564cc0e05f46b77",
     "prod": "Assets/_Game/Art/CombatIdles/RoyalSwordsman_Idle.png",
-    "prodSHA256": "c9bfa06b8a06eb4bb1348e4b6d0bd8e47112db7c2abc29e170816f8838495ae9"
+    "prodSHA256": "0225066790edbb4613f63449f09c5132b49c32b6faf924c1409b7738a955a62b",
+    "productionSHA256AtStillGeneration": "c9bfa06b8a06eb4bb1348e4b6d0bd8e47112db7c2abc29e170816f8838495ae9",
+    "productionChange": "Cast motion audit repair to two non-reference idle cels. The image used for generation is unchanged."
   },
   {
     "name": "Elven Mender",
