@@ -4,11 +4,10 @@ using System.Reflection;
 using NUnit.Framework;
 using UnityEngine;
 
-// EditMode only. Synthetic assets/actors avoid changing player preferences or
-// authored content. Event delivery below is controlled; real scene/wave timing
-// and reward presentation still require the final combined Play Mode pass.
+// Run the synthetic actors in Play Mode so activation, re-enable and teardown
+// use Unity callbacks. Wave and board notifications are controlled by the case.
 [NonParallelizable]
-public sealed class RunUpgradeLifecycleTests
+public sealed class RunUpgradeLifecycleTests : UpgradeLifecyclePlayFixture
 {
     private const BindingFlags Flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
     private readonly List<UnityEngine.Object> assets = new List<UnityEngine.Object>();

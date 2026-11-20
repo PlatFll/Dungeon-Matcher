@@ -73,6 +73,8 @@ error instead of silently spawning foreign enemies or skipping a capstone.
 
 ## Adding content
 
+The Drowned Court and Frostwake kit importers rebuild the identities in their own authored kit lists. The two Nacre warriors and the Iceborn Axeman have separate Selection Expansion registrations. Reimporting base kits retains those local entries in their existing relative order ahead of the authored base list. Removing an expansion entry from the zone keeps it removed on reimport. If a kit source later owns an identity itself, its authored definition and order take precedence. Changes to membership, depth eligibility and formation recipes belong together in the zone definition.
+
 Add approved EnemyDefinition references to the zone roster and depth pool;
 declare min/max tiers, per-tier weights, family and summon-only status. Add
 coherent ordinary teaching/practice recipes and budget the entire capstone with

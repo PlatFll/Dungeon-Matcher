@@ -11,7 +11,13 @@ public sealed class FrostwakeEncounterTests
     [Test] public void FrostwakeWeightedVisitsTeachEveryIdentityWithReliefAndRepeatableSaveState()
     {
         var zone=Resources.Load<ZoneDefinition>("Zones/frostwake-peaks");
-        Assert.That(zone.enemies.Length,Is.EqualTo(11));var signatures=new HashSet<string>();
+        var original = FrostwakeZoneImporter.Ids;
+        CollectionAssert.AreEquivalent(original.Concat(new[] { "iceborn_axeman" }), zone.enemies.Select(e => e.EnemyId));
+        CollectionAssert.AreEquivalent(original, zone.liveEncounters.SelectMany(r => r.members).Select(e => e.EnemyId).Distinct());
+        var axeman = zone.enemies.Single(e => e.EnemyId == "iceborn_axeman");
+        Assert.That(zone.resonanceEncounters.Any(r => r.resonanceKind == ZoneEncounterKind.Ordinary &&
+            r.members.Contains(axeman)), Is.True);
+        var signatures = new HashSet<string>();
         for(int seed=1;seed<=100;seed++)
         {
             var progress=new MineEncounterProgress();var random=new SavedRandom(seed);var labels=new List<string>();
@@ -29,7 +35,7 @@ public sealed class FrostwakeEncounterTests
                 labels.Add(chosen.label);
                 if(chosen.members.Contains(zone.apexEnemy))break;
             }
-            CollectionAssert.AreEquivalent(zone.enemies.Select(e=>e.EnemyId),progress.seen);
+            CollectionAssert.AreEquivalent(original, progress.seen);
             signatures.Add(string.Join("|",labels));
         }
         Assert.That(signatures.Count,Is.GreaterThan(80));

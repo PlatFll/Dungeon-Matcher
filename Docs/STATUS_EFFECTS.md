@@ -8,7 +8,10 @@ Values below are conservative, data-driven prototypes, not finalized balance.
 
 The backend is implemented by `PlayerStatusRuntime`, owned by `PlayerActor`, with
 eight definitions in `Resources/PlayerStatuses`. Ironvein's Seismic Smith applies
-Rattled; the original seven retain no production caster assignment.
+Rattled through Faultline. Frostwake’s Frostblade Reaver casts Frostbite through
+`ApplyPlayerStatus`. Bifrost retaliation and Haldra’s Bifrost Glacier Cleave also
+apply the shared Frostbite definition. The remaining six statuses have no
+production enemy assignment.
 New unified runs use dedicated 24px PixelLab icons with outlined runtime move
 counters in the existing player panel. The original seven 16px assets remain for
 legacy views. Enemy effects and Royal Decree share the new visual grammar; the

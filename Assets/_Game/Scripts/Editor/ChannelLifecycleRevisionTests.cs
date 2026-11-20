@@ -68,7 +68,10 @@ public sealed partial class ForestFoundationPlayTests
             stage=1,cycle=1,dueMove=10,targetId=Enemy("reef_spearman").PersistentId,action="BOARDING"}},_=>null);
         stagger.ApplyStagger(1,1);Assert.That(stagger.IsStaggered,Is.True);
         Assert.That(kit.IsPreparing,Is.False);Assert.That(kit.BlocksBasic,Is.False);
-        float end=Time.time+1.2f;yield return Until(()=>Time.time>=end,"ordinary seconds Stagger finishes");
+        yield return new WaitForSeconds(1.2f);
+        Assert.That(stagger.IsStaggered, Is.True, "Thinking does not consume a unified Stagger turn.");
+        Assert.That(stagger.RemainingStaggerTime, Is.EqualTo(1f), "Current pressure rules grant one full future turn.");
+        yield return Move();
         Assert.That(stagger.IsStaggered,Is.False);Assert.That(kit.BlocksBasic,Is.False);
         yield return Move();Assert.That(actor.CurrentSpecialTurnCount,Is.EqualTo(1));
     }

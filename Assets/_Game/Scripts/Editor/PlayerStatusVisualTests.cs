@@ -76,22 +76,44 @@ public sealed partial class ForestFoundationPlayTests
 
 public sealed class PlayerStatusAssetTests
 {
-    [Test] public void NativeIconsAndDataRemainProvisionalAndUnassigned()
+    [Test] public void NativeStatusIconsAndApprovedCasterAssignmentsMatchProduction()
     {
-        var definitions=Resources.LoadAll<PlayerStatusDefinition>("PlayerStatuses"); Assert.That(definitions.Length,Is.EqualTo(8));
-        foreach(var data in definitions)
+        var definitions = Resources.LoadAll<PlayerStatusDefinition>("PlayerStatuses");
+        CollectionAssert.AreEquivalent(System.Enum.GetValues(typeof(PlayerStatusKind)), definitions.Select(data => data.kind).ToArray());
+        foreach (var data in definitions)
         {
-            int native=data.kind==PlayerStatusKind.Rattled?32:16;
-            Assert.That(data.icon.rect.size,Is.EqualTo(new Vector2(native,native))); Assert.That(data.durationMoves,Is.EqualTo(data.kind==PlayerStatusKind.Rattled?2:3));
-            var importer=(TextureImporter)AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(data.icon));
-            Assert.That(importer.filterMode,Is.EqualTo(FilterMode.Point)); Assert.That(importer.mipmapEnabled,Is.False);
-            Assert.That(importer.textureCompression,Is.EqualTo(TextureImporterCompression.Uncompressed));
+            int native = data.kind == PlayerStatusKind.Rattled ? 32 : 16;
+            Assert.That(data.icon, Is.Not.Null, data.name);
+            Assert.That(data.icon.rect.size, Is.EqualTo(new Vector2(native, native)), data.name);
+            Assert.That(data.durationMoves, Is.EqualTo(data.kind == PlayerStatusKind.Rattled ? 2 : 3), data.name);
+            var importer = (TextureImporter)AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(data.icon));
+            Assert.That(importer.filterMode, Is.EqualTo(FilterMode.Point), data.name);
+            Assert.That(importer.mipmapEnabled, Is.False, data.name);
+            Assert.That(importer.textureCompression, Is.EqualTo(TextureImporterCompression.Uncompressed), data.name);
         }
-        foreach(var guid in AssetDatabase.FindAssets("t:EnemyDefinition",new[]{"Assets/_Game"}))
-        {
-            var data=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(AssetDatabase.GUIDToAssetPath(guid));
-            if(data.EnemyId=="seismic_smith")Assert.That(data.appliedPlayerStatus.kind,Is.EqualTo(PlayerStatusKind.Rattled));
-            else Assert.That(data.appliedPlayerStatus,Is.Null,data.EnemyId);
-        }
+
+        var enemies = AssetDatabase.FindAssets("t:EnemyDefinition", new[] { "Assets/_Game" })
+            .Select(guid => AssetDatabase.LoadAssetAtPath<EnemyDefinition>(AssetDatabase.GUIDToAssetPath(guid))).ToArray();
+        var casters = enemies.Where(enemy => enemy.appliedPlayerStatus != null ||
+            enemy.SpecialAbilityKind == EnemySpecialAbilityKind.ApplyPlayerStatus ||
+            enemy.SpecialAbilityKind == EnemySpecialAbilityKind.Faultline).ToArray();
+        CollectionAssert.AreEquivalent(new[] { "frostblade_reaver", "seismic_smith" },
+            casters.Select(enemy => enemy.EnemyId).ToArray());
+
+        var frostbite = definitions.Single(data => data.kind == PlayerStatusKind.Frostbite);
+        var reaver = casters.Single(enemy => enemy.EnemyId == "frostblade_reaver");
+        Assert.That(reaver.HasSpecialAbility, Is.True);
+        Assert.That(reaver.SpecialAbilityKind, Is.EqualTo(EnemySpecialAbilityKind.ApplyPlayerStatus));
+        Assert.That(reaver.appliedPlayerStatus, Is.SameAs(frostbite));
+
+        var smith = casters.Single(enemy => enemy.EnemyId == "seismic_smith");
+        Assert.That(smith.HasSpecialAbility, Is.True);
+        Assert.That(smith.SpecialAbilityKind, Is.EqualTo(EnemySpecialAbilityKind.Faultline));
+        Assert.That(smith.appliedPlayerStatus, Is.SameAs(definitions.Single(data => data.kind == PlayerStatusKind.Rattled)));
+
+        var sharedIce = Resources.Load<FrostwakeRules>("Zones/FrostwakeRules");
+        Assert.That(sharedIce, Is.Not.Null);
+        Assert.That(sharedIce.frostbite, Is.SameAs(frostbite), "Bifrost and Glacier Cleave use the shared Frostbite definition.");
+        Assert.That(Resources.Load<ZoneDefinition>("Zones/frostwake-peaks").frostwakeRules, Is.SameAs(sharedIce));
     }
 }

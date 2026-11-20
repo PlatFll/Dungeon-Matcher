@@ -106,7 +106,8 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest] public IEnumerator CourtMaterialAndRosterImportsAreNativeAndComplete()
     {
         yield return LaunchCourt("queen_nacre","reef_spearman","hammerhead_bruiser");
-        Assert.That(Run.Zone.Definition.enemies.Length,Is.EqualTo(14));
+        CollectionAssert.AreEquivalent(DrownedCourtImporter.Ids.Concat(new[] { "nacre_duelist", "nacre_halberdier" }),
+            Run.Zone.Definition.enemies.Select(e => e.EnemyId));
         Assert.That(Run.Zone.Definition.liveEncounters.Length,Is.EqualTo(32));
         foreach(var definition in Run.Zone.Definition.enemies)
         {
