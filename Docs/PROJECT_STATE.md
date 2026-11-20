@@ -736,6 +736,10 @@ need human play/listening feedback. No device performance claim is made.
 See [scope, decisions and validation](FrostwakePlayables/IMPLEMENTATION.md)
 and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_DESIGNS.json).
 
+## Character animation workflow and audit
+
+The [character animation SOP](ArtDirection/Character_Animation_SOP.md) and [per-character source index](ArtDirection/Character_Animation_Sources.md) trace the current cast back to its production drawings. The [cast audit](ArtDirection/CastMotionAudit/Review.html) includes timed playback, finding-specific frames and repair proposals. The [expansion polish review](../ArtSource/SelectionExpansion/Motion/Review/Revision03/Review.html) compares the revised native artwork with the current Unity sources.
+
 ## Global art-direction audit (2026-10-11)
 
 The canonical art guide is now v1.17.2, including the global menu and three-zone battle direction. Rattlebones is the explicitly designated
