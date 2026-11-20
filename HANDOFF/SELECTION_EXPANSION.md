@@ -6,6 +6,8 @@ audit, pool repairs, phase selection and recurrence, ten enemy definitions,
 Guild support mechanics, approved character art and Unity motion bindings.
 K06 Road Escort is the Guild Bulwark.
 
+The [approved animation update](../Docs/SelectionExpansion/GameScene/ApprovedMotion/README.md) binds the revised idles and actions in the Game scene and verifies a single Slinghunter hit against health and shield. The earlier build and natural-run results below describe the pre-animation source.
+
 The final production code and definitions are at
 f3ed12bd8806b7874749d4f05f3d523f14398266. The required Unity validator,
 278 balance tests, the affected Crystal Resonance and Game-scene checks,

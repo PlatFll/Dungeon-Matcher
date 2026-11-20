@@ -1,5 +1,7 @@
 # Technical and Game-scene validation
 
+For the later approved motion and single-contact update, see [the final-source Game-scene checks and footage](../GameScene/ApprovedMotion/README.md).
+
 Unity 6000.3.19f1 ran on Windows. The original no-compilation gate ended after
 stage 07. The final production code and definitions are at
 f3ed12bd8806b7874749d4f05f3d523f14398266.

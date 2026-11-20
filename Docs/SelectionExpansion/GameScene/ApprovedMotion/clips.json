@@ -1,0 +1,129 @@
+[
+  {
+    "id": "guild_swordsman",
+    "name": "Guild Swordsman",
+    "zone": "Dungeon",
+    "clips": {
+      "idle": {
+        "key": "guild_swordsman_idle",
+        "title": "Idle",
+        "durationMs": 3510,
+        "impactMs": null
+      }
+    }
+  },
+  {
+    "id": "guild_bulwark",
+    "name": "Guild Bulwark",
+    "zone": "Dungeon",
+    "clips": {
+      "idle": {
+        "key": "guild_bulwark_idle",
+        "title": "Idle",
+        "durationMs": 4680,
+        "impactMs": null
+      },
+      "basic": {
+        "key": "guild_bulwark_basic",
+        "title": "Basic attack",
+        "durationMs": 680,
+        "impactMs": 320
+      }
+    }
+  },
+  {
+    "id": "guild_chirurgeon",
+    "name": "Elven Chirurgeon",
+    "zone": "Dungeon",
+    "clips": {
+      "idle": {
+        "key": "guild_chirurgeon_idle",
+        "title": "Idle",
+        "durationMs": 3510,
+        "impactMs": null
+      },
+      "special": {
+        "key": "guild_chirurgeon_special",
+        "title": "Heal",
+        "durationMs": 780,
+        "impactMs": 360
+      }
+    }
+  },
+  {
+    "id": "nacre_halberdier",
+    "name": "Nacre Halberdier",
+    "zone": "Drowned Court",
+    "clips": {
+      "idle": {
+        "key": "nacre_halberdier_idle",
+        "title": "Idle",
+        "durationMs": 4680,
+        "impactMs": null
+      },
+      "basic": {
+        "key": "nacre_halberdier_basic",
+        "title": "Basic attack",
+        "durationMs": 680,
+        "impactMs": 320
+      }
+    }
+  },
+  {
+    "id": "elven_pathblade",
+    "name": "Elven Pathblade",
+    "zone": "Magical Forest",
+    "clips": {
+      "idle": {
+        "key": "elven_pathblade_idle",
+        "title": "Idle",
+        "durationMs": 3510,
+        "impactMs": null
+      },
+      "basic": {
+        "key": "elven_pathblade_basic",
+        "title": "Basic attack",
+        "durationMs": 680,
+        "impactMs": 320
+      }
+    }
+  },
+  {
+    "id": "orc_slinghunter",
+    "name": "Orc Slinghunter",
+    "zone": "Magical Forest",
+    "clips": {
+      "idle": {
+        "key": "orc_slinghunter_idle",
+        "title": "Idle",
+        "durationMs": 3510,
+        "impactMs": null
+      },
+      "basic": {
+        "key": "orc_slinghunter_basic",
+        "title": "Basic attack",
+        "durationMs": 680,
+        "impactMs": 320
+      }
+    }
+  },
+  {
+    "id": "iceborn_axeman",
+    "name": "Iceborn Axeman",
+    "zone": "Frostwake Peaks",
+    "clips": {
+      "idle": {
+        "key": "iceborn_axeman_idle",
+        "title": "Idle",
+        "durationMs": 3510,
+        "impactMs": null
+      },
+      "basic": {
+        "key": "iceborn_axeman_basic",
+        "title": "Basic attack",
+        "durationMs": 680,
+        "impactMs": 320
+      }
+    }
+  }
+]

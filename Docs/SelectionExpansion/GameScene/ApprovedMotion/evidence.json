@@ -1,0 +1,581 @@
+{
+  "gameSource": "7356a2c804e0c9702f4f48f1b811509006c41875",
+  "unity": "6000.3.19f1",
+  "tests": {
+    "result": "Passed",
+    "total": "18",
+    "passed": "18",
+    "failed": "0",
+    "skipped": "0",
+    "duration": "3.6987602"
+  },
+  "clipEvidence": [
+    {
+      "enemy": "guild_swordsman",
+      "state": "idle",
+      "scene": "Game",
+      "zone": "Dungeon",
+      "cels": 26,
+      "durationMs": 3510,
+      "contactMs": null,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        817,
+        316,
+        1009,
+        541
+      ],
+      "minimumVisibleColorAgreement": 0.9445,
+      "medianVisibleColorAgreement": 0.9478,
+      "captureSHA256": [
+        "14a713b6fb98cf87c9f60d41223492740207741000f020eef23930a4a77fd156",
+        "84ae514c67e87b46c3ba65801f39af8d0cbb0869fe1dfe4cb435407d55fcd209",
+        "699e1bdc54a906d3775f0e0adf5013330aaeed4595f3eebe67d30aa3d898d6ed",
+        "6b20ec49ceba95a3f30a3084dd8b6ce17dfc424577dc8cd3be6c33bd0d0ac4a9",
+        "03fe56184827502a5b253cbbf69945a14ed97234a79607a54ff959b992ee2192",
+        "0fa12b6bc4d09a15d238ca409a17f734ca9c9f17317a431ef4369fda6cf9fe26",
+        "5607104a0000443f753a45bee3be5a72ddad0e5d90a29a703c6caa2c4a46ffc2",
+        "31cf541ace5edafe3dd8c1c533352c5c8acebb4407c0b0a9f512e38e5d1bbe0d",
+        "cef8c0508bc07751d4b081e0577175852e7fbc470d057c6b6debcfae08bb7068",
+        "bc7540b74bbc7b059b5e5b42d38ee8f60b3d78df53d523e0d3a21aa571840442",
+        "d59845667d4672f5e3493cc19c76a76d97a54acdc4723f0038b7a93832f4bcb9",
+        "b67b550ad4e0798cc220f8b21298e86834a85769656011ea41ee12412f844781",
+        "ceb506cd567079fd93bf2064e314fd46eef888d68cf921b2ddd63c7edbe16144",
+        "395b26e7284fa3c2da4dca665a49c89b889ceccce9b36cdbd27329b7c040b25c",
+        "85dcbfc90f0e09b34471caebed9d98c5c0ee9ebd0b37a09c4c34f1001b2484db",
+        "71b0ec4ab412697d83d2d069cd73636baf0a21aecc15e3871ebbe04430bef34f",
+        "32f6e0401f974c8005464d20a6c5c9d74606450345c8531b0c268defd6704737",
+        "8ec1e00f895e418255bcabb4d66f8827db1139c9fc2e5e91977242f3d4953b32",
+        "771965612d73d89687368ef5c85d2a8e0c8622d275f9b6f819d920d82edb6adc",
+        "65e7786868aeea09698d59ce08deb1b67702468212e266d2b158a93150e834eb",
+        "649fb245e73a0abc5a73906676a6294d25ca583b6f3f86cdc4150efc3ba968e5",
+        "4f7046a9d49f9fc423455a904f35d379d876c27ff666a812a2f02a52bf49c0a2",
+        "86cb55001c1b6128e87b901ad33398174c660810fefa2b465308eb5c52bcf68f",
+        "ff3ef8f8413eec1b01621afd1f86fa6e69dfda089d6035646f7ee0d799408e99",
+        "e5080ef6304353881e153581186c972377e054c09c4dab01b3d1dcbc73ecb5d2",
+        "31cf541ace5edafe3dd8c1c533352c5c8acebb4407c0b0a9f512e38e5d1bbe0d"
+      ]
+    },
+    {
+      "enemy": "guild_bulwark",
+      "state": "idle",
+      "scene": "Game",
+      "zone": "Dungeon",
+      "cels": 33,
+      "durationMs": 4680,
+      "contactMs": null,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        359,
+        313,
+        584,
+        541
+      ],
+      "minimumVisibleColorAgreement": 0.9563,
+      "medianVisibleColorAgreement": 0.966,
+      "captureSHA256": [
+        "14a713b6fb98cf87c9f60d41223492740207741000f020eef23930a4a77fd156",
+        "84ae514c67e87b46c3ba65801f39af8d0cbb0869fe1dfe4cb435407d55fcd209",
+        "699e1bdc54a906d3775f0e0adf5013330aaeed4595f3eebe67d30aa3d898d6ed",
+        "6b20ec49ceba95a3f30a3084dd8b6ce17dfc424577dc8cd3be6c33bd0d0ac4a9",
+        "03fe56184827502a5b253cbbf69945a14ed97234a79607a54ff959b992ee2192",
+        "0fa12b6bc4d09a15d238ca409a17f734ca9c9f17317a431ef4369fda6cf9fe26",
+        "5607104a0000443f753a45bee3be5a72ddad0e5d90a29a703c6caa2c4a46ffc2",
+        "31cf541ace5edafe3dd8c1c533352c5c8acebb4407c0b0a9f512e38e5d1bbe0d",
+        "cef8c0508bc07751d4b081e0577175852e7fbc470d057c6b6debcfae08bb7068",
+        "bc7540b74bbc7b059b5e5b42d38ee8f60b3d78df53d523e0d3a21aa571840442",
+        "d59845667d4672f5e3493cc19c76a76d97a54acdc4723f0038b7a93832f4bcb9",
+        "b67b550ad4e0798cc220f8b21298e86834a85769656011ea41ee12412f844781",
+        "ceb506cd567079fd93bf2064e314fd46eef888d68cf921b2ddd63c7edbe16144",
+        "395b26e7284fa3c2da4dca665a49c89b889ceccce9b36cdbd27329b7c040b25c",
+        "85dcbfc90f0e09b34471caebed9d98c5c0ee9ebd0b37a09c4c34f1001b2484db",
+        "edfbf9270c4f86a759280ec1118b3f4c3e5baf9cb6891fad5a61f64195e0db72",
+        "a14cd6765767a556d78d7b7a933951caeb58cdb671d3b1dded5535646c283529",
+        "8e4ee5957e17587c2d341a224c4e181beeb9dba7c4cd8818e57d286968e3d762",
+        "b66ef6bb7140e60cf9fe45561aa752c03ea32819ef9201ed4c047eb745ca3dca",
+        "8ec1e00f895e418255bcabb4d66f8827db1139c9fc2e5e91977242f3d4953b32",
+        "649fb245e73a0abc5a73906676a6294d25ca583b6f3f86cdc4150efc3ba968e5",
+        "4f7046a9d49f9fc423455a904f35d379d876c27ff666a812a2f02a52bf49c0a2",
+        "86cb55001c1b6128e87b901ad33398174c660810fefa2b465308eb5c52bcf68f",
+        "ff3ef8f8413eec1b01621afd1f86fa6e69dfda089d6035646f7ee0d799408e99",
+        "e5080ef6304353881e153581186c972377e054c09c4dab01b3d1dcbc73ecb5d2",
+        "31cf541ace5edafe3dd8c1c533352c5c8acebb4407c0b0a9f512e38e5d1bbe0d",
+        "56e7843b2a3fbcd41a9958b8cd37b3815d7bc24ced6dace7b66b14feba9585bd",
+        "c1f664989f889d903c407d111f618a9533545a017ea44a48f500dbf22e19c42d",
+        "8a54aca0d6eda36c9dcb80cd42de99ae4eac5e27b6d00d83baf502ee95c037a3",
+        "9f3e2879badb440b54dd4918dab46862394670c914ac356f02c0489b021311c3",
+        "258e1750f299db653683a630b39029f2ca4ab6cf5b37bf81f3cb7e49cef9c9bf",
+        "ef830c2e53c3aea67f8c1c00bad542f04b54ce18a5a548233f04aedf115c3f7c",
+        "85dcbfc90f0e09b34471caebed9d98c5c0ee9ebd0b37a09c4c34f1001b2484db"
+      ]
+    },
+    {
+      "enemy": "guild_bulwark",
+      "state": "basic",
+      "scene": "Game",
+      "zone": "Dungeon",
+      "cels": 11,
+      "durationMs": 680,
+      "contactMs": 320,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        317,
+        313,
+        587,
+        541
+      ],
+      "minimumVisibleColorAgreement": 0.9604,
+      "medianVisibleColorAgreement": 0.9722,
+      "captureSHA256": [
+        "4ef331b215549dae9562c6cb7556fa67e1fa7c3d2d7360b935659393edc6ae90",
+        "5b22b4f6607b0f074dd134021ede639bcba6bae639464b1a1106447def4e58b1",
+        "4b5af2147ab58c1ec47ba8d81bfd86953426adacde70ab54ffc426e0062b4a6e",
+        "f12f0bad45330f5345d34839441f39fb73f32c2387e25c0977a12f55ae37c4de",
+        "a11a49d211b2361a563699a69a68f1074dde74f9cb04721fc4a9132f0b0d3f60",
+        "c9b8f387323ed62819cb6ebb04afcc5cf0d83ea87c60bb69fbd970283fabda41",
+        "f73fd12789164090e2c3a43f0fbb51deffd0d562fc44e538a363a5c302a057f8",
+        "349ba332dff935763ce98ed27ddab504a815e356f577a8d09a4a598e189abde1",
+        "df12ebdb4d25d8f55ada818cb2d3ee93688ae95df372879ddbe8026943d43d8a",
+        "d459a38da41b4cb679ebf998815e5650c831e441caaf0eae372c2d72bb0be5d3",
+        "82a4baaadf0227c2f0018a684609193043fa0f442f6014ce46f28300e5f071ac"
+      ]
+    },
+    {
+      "enemy": "guild_chirurgeon",
+      "state": "idle",
+      "scene": "Game",
+      "zone": "Dungeon",
+      "cels": 26,
+      "durationMs": 3510,
+      "contactMs": null,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        386,
+        316,
+        560,
+        541
+      ],
+      "minimumVisibleColorAgreement": 0.9445,
+      "medianVisibleColorAgreement": 0.9492,
+      "captureSHA256": [
+        "97b7f86756a55fcc4838b80554bfe7ac64d830183474bc6726da9b3d62bceee4",
+        "4c53088043f7b8dcfd63a6cdd9e99b23cd9c29e33f473b264e96eaaf2f6d9672",
+        "fd77d812c284e51376556cdc7565e330c03ee361167f73eb853d7b9434e3cde9",
+        "36d4475bcb93e0afdf5212db01356c4a5ca7a490b377fa9bee7983957faf1f2c",
+        "eda65e9d978aecc540a14a9871523e1d9c816488a2ba4294bc138d8b41134b07",
+        "87bd69034934359968ed46dd9b4ebd199fa08f734d2c3a9db84a558d5a947b29",
+        "ed9fcccbf5d44c98d5c6711808f9ed4b7d9c70e652f6cf257b31c6067922be89",
+        "32986c121a01e85687ceb46ca4b2f97eb8db734c4c57a8ae0a235ca30ae6b36e",
+        "23e09b432c98b8681038351beed8815b87d7167822c34524f787184625af6a96",
+        "749b4f53f5d3b5a63654cf69c57b41de6d4f6239bb17f8a199e78dde783bd320",
+        "297bd175e8ab620e20b6ab60b1f39b072aa4d013d6f110cdebd27999de51df63",
+        "7e528c12b37fbb32a5efa09df7d4dd41fadcbc2903291c29f9dcf62c682ce84a",
+        "c527efa57ff74add74080d4ad1bab96d04e85c2409bcb90534ec3bbd4b8886db",
+        "cd962d47d1e5367e147895c3666cd6f551aadf818de651866777f7505bcab073",
+        "ff4b119af990d700c3689d156ed14090abae948a101a10b7c10fdc84bc6efa1f",
+        "52ad45ceef947a9d1596a93a93cd46d9ef4be620ae19a8ecb6eaf4ff02470ea7",
+        "48f3a4fb37a61acdf9af09330f7e0ead579944d46738d44569eb66efb142ff62",
+        "07ed9c6b8c1d8486cd8b7edfbd1fccdba672fb6cd313a23cfa393c9b74d68e9b",
+        "29566423a20137f6bb9999fd22e4f929fa3063c3394dad56a95f584371dc0d0b",
+        "c1076c4e847e58454dbbe04d4feb10e46d9e0f27336ead0040b985272325ae84",
+        "cb1b9117a9dccdd9ed4767816cf48d81adb2f1909fdec3cc06b4257fe313d922",
+        "6eb0f0a8816f81ae75422c6aacfa974b63ef92778df851c9bc4ecdde47d6c3a5",
+        "07bc93b4498dfcda0f4005c9c3bbb89104e7038860e369a3e8058388a48c536f",
+        "3b36df10a86da07dc47f5f1cb059170494cb9e21b3ab3bd16a7199c1e3c0491e",
+        "fd5a5fddd261685da370b289db2f71a26cdcd5db34bafe621cf1f4d2d53d2490",
+        "01c54eb3eaae773af63e236a91189335fb4604d50b1a6a1e2c79b8b117453229"
+      ]
+    },
+    {
+      "enemy": "guild_chirurgeon",
+      "state": "special",
+      "scene": "Game",
+      "zone": "Dungeon",
+      "cels": 13,
+      "durationMs": 780,
+      "contactMs": 360,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        377,
+        289,
+        557,
+        541
+      ],
+      "minimumVisibleColorAgreement": 0.9478,
+      "medianVisibleColorAgreement": 0.9483,
+      "captureSHA256": [
+        "e9ba56e807055f2306b5ce2b5bfb1efa2d2c0f429c65fa018305f4e8261fc2fe",
+        "926329b69d2f1c907ed29d257b2803ed311721185840cbd26eefc01a535690e1",
+        "ed06693f69daa1d978262d317822ce4ac1f17aca6e5c1683663a030b75310c83",
+        "c0104e2003e7e10fc3dcca1d5097e5dd345aa05a44c1c99a5268d3077099f588",
+        "1656fcc811ce685cf24d690e3288469f215621315d3ff960feda3f4b209b1a83",
+        "e652f60193a37135e84789dc481285479188aea979ea958a411ea7bd245f5884",
+        "df19ed9ef9596b69874eedf5cf5ecb58dfb76aa0152c95e77ba464cc4ed97260",
+        "c6eeea266f88f8b626c6a0e00d90dd2f3155b73e4c10e938c2e797e49d2b5e9e",
+        "d7bc4a5f18f79207c949b32b1827e13866c79806edd192bd295825276c451f9c",
+        "ac830d05ea603a400268ac55e0079662bee634229c8c63ed0af1b02fcb28e39a",
+        "3ae3d6db366280b9cdacb2675ebd08bec20db2e96fde835c0412d03e7320d2a0",
+        "60729039a3be3069a714f0169a1cd84f21093c170bc880a90f9a12486f65469a",
+        "56c96a4f5b87ed60adbc17ad3cba31da212daf9b801e0d2670ae63bda1d73a56"
+      ]
+    },
+    {
+      "enemy": "nacre_halberdier",
+      "state": "idle",
+      "scene": "Game",
+      "zone": "Drowned Court",
+      "cels": 32,
+      "durationMs": 4680,
+      "contactMs": null,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        588,
+        304,
+        795,
+        541
+      ],
+      "minimumVisibleColorAgreement": 0.9574,
+      "medianVisibleColorAgreement": 0.9601,
+      "captureSHA256": [
+        "0efb23a373632a7994cb5832c9e8319f35a1751e651a2fb1525f91980c216948",
+        "fda3e50330ea3abdb3f50316f22221083971e7bb0016a254dcf609e9fdceef00",
+        "b2fff7b4c1bb39903ed34bd533c686f1eff4282c9b94fe24abcb75ae7df91c0b",
+        "357980a4c572235b2eff9d70d597c694879345f93df91f1e02a65c7812b8b2c1",
+        "de62986f9523c0ad441d0be6a9fba7100cc77714a5988de69925e93ab191bcea",
+        "9339c8410f5812ae95b75f077e1a1c3a7fe5418561c0ac3b6d11587d0be5bb95",
+        "0861f757d60ae6f7cd8d011fab49777cbe0ecd91ae92c231b95449f0097f677c",
+        "f96f4a707259a17032819f459ebd91cf3226c663c6553dad480957b35ed5c89a",
+        "2eca19608decd5595a107d3f85b8c95d78d5769962a3253e0c9b54425dd0c3a6",
+        "f58dbb55226ca10a36fb03908d47a9015410846f1f8959bfc24f91ecca544392",
+        "b3174b4d95276265016fe1b29ad72913853a11269ba7ebdb047b1d4b0a0a8bf2",
+        "c7422b79fc5a8f3c4db21b138aa04cc5c130771eb61fba07df8a9e73279185a1",
+        "7001ee8fcb19143c2d00e5ec42cc3c5272df902e5131ee5b10bd4cd29767836d",
+        "0d6032396ce00eef8ef1cff50ebea99f58590e1377d13db41dc728cdcbe42aa5",
+        "739aafa68e015d6e66724af2f7be6d0cb904dafdf3dfce7ae128c6734fcc79c4",
+        "4fa35c330e2a30964abec7bf57c80e9cb4d62c0f29e7663f6a13615a0df8ca6a",
+        "bf40358af589860ba940eac30f5b9d02bfd6118aeef31dacb8ed56a031862abc",
+        "5b1f296c59830aaf071b5adfe1c49217697a181becbf8f9613bcb5618a2e731c",
+        "be7363f6391b97a81ecd0957a6fcab75743a085788df2fd174e233b29153b28f",
+        "4908a9e40f5ca730b8f92925b7577ac3fdd5016857f8b987d907b1977c576707",
+        "2ae502ee295d4c10124da5530e829be8b0f1fcb95d508ce2ea88bb7f894a60ef",
+        "340eef9bcadea1be65743615fbed7390c62ed16fd295c5da67b7057e6feae3ef",
+        "13a08d14033f0d6670271adb1f9caaf36d3585a0cfe8c78aa7a93e4a36db2461",
+        "f0c8fec3fd14e0efd84896a39bb4471562ccf1f4286a3c54065c814fb311ec00",
+        "ce65ded61cc7be10917546ded0d8a6474886f337c58a885b329539d0d147c74e",
+        "184b9b65866769949cb0dbc9190482b08c3abd6704f2773df57c161a3943f71a",
+        "edbbe8889a9ad6b82f5457d39d6ed99efcf0e0ea8c2a9507eec09530555a4f35",
+        "99fcf10e8fec6b283831713ebce05c47d0d38ce77d2e727a7e9df4a26eaac935",
+        "04d43a19a568da2772b5c1dbe1d72097835ccd84418434f54396e31b937df0c1",
+        "009baea5300a0649c3544b3178693ab62228ab3c5ab7e4ee6503e1180dcf3913",
+        "0853f5a94e3f49bd868b78f7d33b4994e5a00f826e01f8963142d7e88f37452e",
+        "d60622b7087dc6b5f47fff1a7a959b99001f3885804b7dc94fd3daf96630a78e"
+      ]
+    },
+    {
+      "enemy": "nacre_halberdier",
+      "state": "basic",
+      "scene": "Game",
+      "zone": "Drowned Court",
+      "cels": 12,
+      "durationMs": 680,
+      "contactMs": 320,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        495,
+        259,
+        804,
+        541
+      ],
+      "minimumVisibleColorAgreement": 0.9552,
+      "medianVisibleColorAgreement": 0.9601,
+      "captureSHA256": [
+        "227568d3194e6b9dcbf4bdb7aff434432ec613570249eb5a0a00824820751e84",
+        "86178a0c602b699fd85f7cb054e541d48b7972f1ff594d1495a7e04295baeaae",
+        "c1c25229454ca7604972058c5a6c1ac747debd1f65d95d328cf4da1a95b16b6e",
+        "af2508161f47d8613d93ade30e30f7c96b8dd62dd287fd6d815629c1d4cc117d",
+        "a7a505d224cb0aa5d2c4b1335344dbbf2a3b71131b444efccfcf70ef4c5d0a85",
+        "2c657d205f8b73a9b4f7328b1f49edf757abe87915b4745afd6c4a94b9cdc593",
+        "321d38d2de5efce56153ebd1bdaec13ab21ee82112ecf08a58208cafe27e8c83",
+        "538e91eabb2fdaa6bfc7e2dea80f4cdc4016d362f05e4caf7d07b030059fbdc6",
+        "be8882478f3e0b963074685fed58ce08506b834d3f589238793a203be9a672a7",
+        "7269abc4dad46b1fa84d1a70b65bf98e1ac78e1317df48d0de82cb5960c8ee27",
+        "6f3cadacfd8abc99817de2751bca21989f013db6fa606f507b6d6f16d464edc8",
+        "0528662bb740fa679dc3943506f53cfc3c14505f0dfce8a5f061cff389b00dea"
+      ]
+    },
+    {
+      "enemy": "elven_pathblade",
+      "state": "idle",
+      "scene": "Game",
+      "zone": "Magical Forest",
+      "cels": 25,
+      "durationMs": 3510,
+      "contactMs": null,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        371,
+        337,
+        572,
+        541
+      ],
+      "minimumVisibleColorAgreement": 1.0,
+      "medianVisibleColorAgreement": 1.0,
+      "captureSHA256": [
+        "df19b318565022783905cbb9be81480a199b7fb1f1b912c1359d98dabdb4a23a",
+        "b8316bf3aacc10da4b28f3fabec44a71ab4401c6e224ede26abe844192e5eb69",
+        "ce50b6d9132fd18852234f699880f41c11256d448f96e482d99863f3ac57da4f",
+        "952cb8bf33ef9df3ce954b468454130e3c682b0fcc4d10bfc28a03c02a36f99e",
+        "1d12cf23ec04e739e42a4ccc96d303d177edcc047f7c53cc4aa444ca2f4d0457",
+        "83937ca956b1c7f48e72973c4e7089b2475984370e38e7d4631d847d172194d6",
+        "a727436b05231f6fc58bc2f39c381227a633c01784becd9d2cd5a8cdcd83de10",
+        "31ec7b31ce3e62a8739cad64f3b5d0696fe1bd56bea794ca2fc4cc6e88a918aa",
+        "92175e0ce1fbcfbd3e35d259faad7cef9632b63c976752cd5054f2bbb6039855",
+        "5162a81d211a4fc598a1f866d5841a0edd69e579cc0a06122dd5b91d68785909",
+        "3fab0b0501f91bae4dafd6686fe8ba986eb0a052bd3f33d864486f2321e8065c",
+        "4d838942b89ca55965b17aa8bc210c7997d0e1d88d7d2a6e6ff304246f512e52",
+        "b39a79b178ea2fc6884a5210635b193efbe3370bb832737e074256d8cdc6a41c",
+        "2d621c4b4074f7a05ce471d2c513728750d266d5edaa33ca2c8279a7ea33d882",
+        "e074b4050f4380ef8bed7f3e0743e1103cb37b89ce4611f530a97402536e4c02",
+        "59024ad6e62b35aeefb5e27fc49a8b6112943212ce109cfcb46e0cca53f8cdfd",
+        "a097ef91643aecd15469b49d777ed57e686f2e88f0c002f3f0111c658313a577",
+        "41b53091bd36751e16422f1eb69ed34382436cf60658d46198f8ce50aeaaa86a",
+        "53d9361faa0d51cbe935fd08daa4406415ceb142973e7c5cbb793c40133886ba",
+        "e6d3c26f757becadc778ab62e78e3a502101e6d863a2b35f5841689976e893bd",
+        "d9f5f98cead7af436b62d093f2812c76b76f65c2e06258bfb062975c20d256f6",
+        "0730530e5915aa7e7937a5796e3bec9c26c9e70563128e2ced22e75384f552f6",
+        "0f018ad4be2f8661ec96322547bd89c88ff2e82dfc43b6ab5d082618d0dc24bc",
+        "a7e9da568942a50694de5f425e7b38a524ae7e8b1adc2696ffc6abe10c6b92ca",
+        "0c12a07dcbaeca8b0dd8cafac79f92250b4f644dae1426984fa4b4ca4c8682c8"
+      ]
+    },
+    {
+      "enemy": "elven_pathblade",
+      "state": "basic",
+      "scene": "Game",
+      "zone": "Magical Forest",
+      "cels": 10,
+      "durationMs": 680,
+      "contactMs": 320,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        302,
+        346,
+        572,
+        541
+      ],
+      "minimumVisibleColorAgreement": 1.0,
+      "medianVisibleColorAgreement": 1.0,
+      "captureSHA256": [
+        "7058480f74a1de8456e18c7713bcd5060b94aab3322c2d322c4ec7ce85ebdd68",
+        "ebb80e1b95ff5ed35b304bc0550ed267fa867ab1aaf8c819ea01be69883e1b58",
+        "09bdc6856e2dbdb82a6394c55b2228eaa2d2ca70d9637ebf7628d1133568c1ad",
+        "11461b7fa148355dfcbbbd8c71e77f38831b90b1b87555df9ee07a027d1ce47c",
+        "8a4851ece094542be5a10dce9d1b7bbfeb51d9a2402aefcf9d8259f91072f432",
+        "e9aab36b312360752e9a44da807405d2eea158c484f9a5c7323ee725763217b0",
+        "613f2edc7d48dff43b2764ec6a33272adc04764a7b91b0bf02da915c613f437a",
+        "8c7a867bec2a216b39d768aa08e66319aa074611440d9159dd66dd2f8082b356",
+        "c5b5acd7866d5ae0811bdb89b5fa46d1243e75cdf5c6c41c07666f90616bce0f",
+        "4a25e0e5dba6c65487bded8f1859826c53b6e7ee6d599c42424f5c505a9b65bb"
+      ]
+    },
+    {
+      "enemy": "orc_slinghunter",
+      "state": "idle",
+      "scene": "Game",
+      "zone": "Magical Forest",
+      "cels": 23,
+      "durationMs": 3510,
+      "contactMs": null,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        615,
+        388,
+        750,
+        541
+      ],
+      "minimumVisibleColorAgreement": 1.0,
+      "medianVisibleColorAgreement": 1.0,
+      "captureSHA256": [
+        "df19b318565022783905cbb9be81480a199b7fb1f1b912c1359d98dabdb4a23a",
+        "ce50b6d9132fd18852234f699880f41c11256d448f96e482d99863f3ac57da4f",
+        "952cb8bf33ef9df3ce954b468454130e3c682b0fcc4d10bfc28a03c02a36f99e",
+        "1d12cf23ec04e739e42a4ccc96d303d177edcc047f7c53cc4aa444ca2f4d0457",
+        "83937ca956b1c7f48e72973c4e7089b2475984370e38e7d4631d847d172194d6",
+        "a727436b05231f6fc58bc2f39c381227a633c01784becd9d2cd5a8cdcd83de10",
+        "31ec7b31ce3e62a8739cad64f3b5d0696fe1bd56bea794ca2fc4cc6e88a918aa",
+        "5162a81d211a4fc598a1f866d5841a0edd69e579cc0a06122dd5b91d68785909",
+        "3fab0b0501f91bae4dafd6686fe8ba986eb0a052bd3f33d864486f2321e8065c",
+        "4d838942b89ca55965b17aa8bc210c7997d0e1d88d7d2a6e6ff304246f512e52",
+        "b39a79b178ea2fc6884a5210635b193efbe3370bb832737e074256d8cdc6a41c",
+        "2d621c4b4074f7a05ce471d2c513728750d266d5edaa33ca2c8279a7ea33d882",
+        "a097ef91643aecd15469b49d777ed57e686f2e88f0c002f3f0111c658313a577",
+        "4009f97899e36bb5b9df07e8727642a409135108220abfe61be562177ad9866a",
+        "5f0c5de4c7ef7bc1443017d1641a7e6271930a58f1f11f4c6039da279a850871",
+        "282662e2241b9ee799b391c7e75129ecf17079e2b1fedfa80a7e62f9d5de933d",
+        "40d9e0828db0823c7bfb923c2458eb8bf14f52ca4ebfaf19506696d80f4152f6",
+        "e6d3c26f757becadc778ab62e78e3a502101e6d863a2b35f5841689976e893bd",
+        "d9f5f98cead7af436b62d093f2812c76b76f65c2e06258bfb062975c20d256f6",
+        "0730530e5915aa7e7937a5796e3bec9c26c9e70563128e2ced22e75384f552f6",
+        "0f018ad4be2f8661ec96322547bd89c88ff2e82dfc43b6ab5d082618d0dc24bc",
+        "a7e9da568942a50694de5f425e7b38a524ae7e8b1adc2696ffc6abe10c6b92ca",
+        "0c12a07dcbaeca8b0dd8cafac79f92250b4f644dae1426984fa4b4ca4c8682c8"
+      ]
+    },
+    {
+      "enemy": "orc_slinghunter",
+      "state": "basic",
+      "scene": "Game",
+      "zone": "Magical Forest",
+      "cels": 9,
+      "durationMs": 680,
+      "contactMs": 320,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        534,
+        388,
+        783,
+        541
+      ],
+      "minimumVisibleColorAgreement": 1.0,
+      "medianVisibleColorAgreement": 1.0,
+      "captureSHA256": [
+        "7058480f74a1de8456e18c7713bcd5060b94aab3322c2d322c4ec7ce85ebdd68",
+        "620ca56342c6d522cecd60c814c9cc888fef32b963e8665fa9f93611e84a5dd3",
+        "b357ebbc4d1504ad77be0122e5bd1b7d898b5562800c8d2fc4a16a080791e2ce",
+        "8a4851ece094542be5a10dce9d1b7bbfeb51d9a2402aefcf9d8259f91072f432",
+        "884e639cc234229c7b8aa2a1c0051242ae02903e2b71263f89401234d72b9c45",
+        "c3af1617dc03e7d9c80d7283d789911c046a1a51ab690218b3b688295c06de88",
+        "1714d4a59d711c2b94b41a4b1a18e104e4e8b22986bb6a88706c36eeb478b982",
+        "7d343d2a11c3aa70606e7f7aaaf7884de8a6a0710229e52e02009b0e5fe092ed",
+        "26d0e5badc1e7d3446a969c64552f1fb7292488e7a83ac00bcfc882c1495f50b"
+      ]
+    },
+    {
+      "enemy": "iceborn_axeman",
+      "state": "idle",
+      "scene": "Game",
+      "zone": "Frostwake Peaks",
+      "cels": 25,
+      "durationMs": 3510,
+      "contactMs": null,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        347,
+        319,
+        569,
+        541
+      ],
+      "minimumVisibleColorAgreement": 0.9546,
+      "medianVisibleColorAgreement": 0.958,
+      "captureSHA256": [
+        "53ca883606c6674a872571f5216e1cf60637824a4ffd46b720f072e940aab86b",
+        "9f247124d3f21bfec3b9d143857537a16be343eee9f15f70693f70c1c09e9719",
+        "e0ef4c37ce61348b36498579943044f49fbf0bf8bc81fcf8a760da7219ac6269",
+        "531f216e85168693d046f7caa35a1d0eec8e4cdbed004bc5f2008e11f6a7ca69",
+        "7aa6bbdce378ac548b00e34dd9943863a600d1244e891a2704cfbe2376d5f393",
+        "54e09f84805b457d40d028e31965116fcd9b206cd9e19debdf3e3f292a4c0190",
+        "7e44ae8fc63560bac6122e78eb02ab9f5608639250f210533e91231e2d0bad3b",
+        "d2eee6fe7cba68a0436eac2a7b808365a9e5666d3c70c3f44b2205ccda912bea",
+        "e40aa1cb69cf8b84d3b4236c278e2f436a7774839c7e7b738b605de285e285e6",
+        "8782c40bb13dc2e0d4df9b81bc690a861afe28adb39c8595fc89d748ac703c35",
+        "83c4d4e363e04369a8bb50a136cfc4015562fa6d1eabbdd7f665a2c9a9af118e",
+        "988177d038880621dd87019a2dafa6202acbeba35c200638489a1bd8aa108cea",
+        "50c1f0dcbbf3703638de73f0bd8643565f32a7f4f29c77f3ae2d33f01ef420c1",
+        "e5c815b84de1d05f6e52f3c8d75f239bec49907198d10df32e79ce00c7472326",
+        "ef9eeebb9db55136cafd6fddcc322d98241aeeac9bc6f469d0b19ba73f09baf3",
+        "e9e36c6e0a490db9830a0ee1348228dd45dd2beab68947e69ac304a34746bfa5",
+        "2519676a11d230a86f0e091bf3754f287412b4d93cde4813d68dc1d648620bf2",
+        "d33f7d1cd7daed350bcb093743edb5d66efe12a58fde5fd372df3af04e9cb07a",
+        "5819a29c7447c857715ba3302585164e36a7c5c737967c2b61f8d193235451c0",
+        "f5e430c3f5ab7032baddc88e09a18c582c7f5abf31a9f20a9e61e0f6f104a61a",
+        "c8d4b176ac9a463c8257cdc219cd013fbdda9694689eac85c91429295ac7ee47",
+        "fd41ad62ba2f463d94fd573a8d0336686b99ba524fdf1d1b8294b2aeee38171c",
+        "8f0f82b39d8a9d31b58b287154a4c15c8d58d39acb0698c668422db0d3bcb6d0",
+        "b9eb6d9b8a830edbfbab0cc24d9641a4309cc25c51700e01c90ab1649fa0345a",
+        "196780c00a0259c197702f32a84f2c1f5cb30f2747d5e3cd266834140d47593c"
+      ]
+    },
+    {
+      "enemy": "iceborn_axeman",
+      "state": "basic",
+      "scene": "Game",
+      "zone": "Frostwake Peaks",
+      "cels": 11,
+      "durationMs": 680,
+      "contactMs": 320,
+      "capturePixels": [
+        1080,
+        1920
+      ],
+      "detailCrop": [
+        302,
+        232,
+        569,
+        541
+      ],
+      "minimumVisibleColorAgreement": 0.8983,
+      "medianVisibleColorAgreement": 0.9519,
+      "captureSHA256": [
+        "5157bb68ab73271884ee7ee500711f63479a21a68788e7b30b3132d4d148ae4f",
+        "49cf499f02c30fabff5299bdca5c8fcde8d588ed7b8e2f2f1b2bab6c6d056964",
+        "6ccd93d0d85ff37eaea40aeb60a38ef5475716b1409d9f3bb41d32d31491aa6b",
+        "11bd373e19423db95cfe9c3e910afaa469aa72e292b1642e2547eecebfd29063",
+        "572225b28a285e69a24e6d02d8cac70fc91c09789dad6be05ecd561ee9da49bf",
+        "ed8a6edb87863c9622a575c798cbd6987cd0d5484dae695983b8709e012a2031",
+        "e0f424cc5a3ee572b80f7177cc0a9bfebda1987429bab8e001ea628bf2652b6a",
+        "921d8604f7cfed540341d375ba22b1b636fe13f2d9d620136cf6e86b45d649f8",
+        "73be79fa2ad76a1ec0c1fba7332aa6ede2d0c9333b57eb354d4309b02e941636",
+        "f059db973b1531020a60a54c2f1aa05edf60edd4e8399a5c58d62050cc00875d",
+        "5ff36a3a8acfc0209377d6e99bbf70fe26432dfeb54c737cc977c1e5c184caa3"
+      ]
+    }
+  ],
+  "singleShot": [
+    {
+      "name": "ExpansionSlinghunterSingleHitBreaksShield",
+      "result": "Passed",
+      "observation": "Slinghunter contacts=1; attributed=1; HP 100->100; shield 5->0; move=1"
+    },
+    {
+      "name": "ExpansionSlinghunterSingleHitToHealth",
+      "result": "Passed",
+      "observation": "Slinghunter contacts=1; attributed=1; HP 100->95; shield 0->0; move=1"
+    }
+  ]
+}
