@@ -1,0 +1,145 @@
+{
+  "baseline": "84dde2216224e2ae92cbd3d148ebf6c08a6d8662",
+  "runtimeSource": "000a2815615bbd4de844d7aeb710a81a11ff7725",
+  "unityVersion": "6000.3.19f1",
+  "assetValidation": "PASS: 395 textures; 2951 preserved sprite IDs; 353 verified clip sources; 64 forms. 17494 assertions.",
+  "portraitValidation": "PASS: 5902 pose/portrait cases in the production Game scene; fixed source floor and center; integer texel scale; horizontal/vertical screen and parent-mask containment. Transparent overhang accepted and actual artwork escape rejected by the layout validator. No physical-device claim.",
+  "tests": [
+    {
+      "name": "ForestFoundationPlayTests.ExpansionGalleryForest",
+      "result": "Passed",
+      "seconds": "7.903002"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ExpansionGalleryGuildHealer",
+      "result": "Passed",
+      "seconds": "7.810989"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ExpansionGalleryIronvein",
+      "result": "Passed",
+      "seconds": "6.470369"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ExpansionSlinghunterSingleHitBreaksShield",
+      "result": "Passed",
+      "seconds": "7.295952"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ExpansionSlinghunterSingleHitToHealth",
+      "result": "Passed",
+      "seconds": "7.260132"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinDelverPilotContinueAndOneWeakerReserveSuit",
+      "result": "Passed",
+      "seconds": "10.343980"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinWholeRosterContactsAndPauseUseTheirNativeFrames",
+      "result": "Passed",
+      "seconds": "44.208170"
+    },
+    {
+      "name": "ForestFoundationPlayTests.MinerRendersAllThreeProductionClips",
+      "result": "Passed",
+      "seconds": "5.632695"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterAuthoredSnapvineBasic",
+      "result": "Passed",
+      "seconds": "7.262057"
+    },
+    {
+      "name": "ForestRosterMotionTests.EveryApprovedActorHasNativeMotionAndExactlyOneBasicContact",
+      "result": "Passed",
+      "seconds": "0.042982"
+    }
+  ],
+  "xmlSHA256": "c57f0d7771be2de162facfe5b8300aedea2e4d155bd216c146099ae316dd1708",
+  "captureSources": [
+    {
+      "actor": "Orc Slinghunter",
+      "image": "Idle-d7712e1e84bb4e6bb026745c14065194.png",
+      "sourceSHA256": "ac8f324846d8187bf8ef53a0cdd447a2297b46aea22421bdfb7e64e635fda17c",
+      "screenSize": [
+        1080,
+        1920
+      ],
+      "crop": [
+        557,
+        367,
+        823,
+        526
+      ]
+    },
+    {
+      "actor": "Guild Chirurgeon",
+      "image": "Idle-2488ca2417b94c8dbc1452aa987e5a60.png",
+      "sourceSHA256": "339d14962a0fe33d49224e11d2782eaf3287161392d0d39bb934f748e7d3be57",
+      "screenSize": [
+        1080,
+        1920
+      ],
+      "crop": [
+        340,
+        367,
+        606,
+        526
+      ]
+    },
+    {
+      "actor": "Ore Ram",
+      "image": "Idle-14561b1a06724f0a9623bd4130c55880.png",
+      "sourceSHA256": "4bbe3ca2a0692a9b9c692cbfa562621958f7f9c55ebd449a073aee63dedc22d8",
+      "screenSize": [
+        1080,
+        1920
+      ],
+      "crop": [
+        340,
+        367,
+        606,
+        526
+      ]
+    },
+    {
+      "actor": "Snapvine",
+      "image": "snapvine-1920.png",
+      "sourceSHA256": "b88bcab9f07973cfb23d1bc7aedf212de04babca7ce869a14bacf74aae483fb9",
+      "screenSize": [
+        1080,
+        1920
+      ],
+      "crop": [
+        340,
+        367,
+        606,
+        526
+      ]
+    }
+  ],
+  "coverage": {
+    "actorClips": 465,
+    "otherClips": 34,
+    "actorKeys": 4343,
+    "otherKeys": 3200,
+    "clipTextures": 495,
+    "presentationTracks": 78,
+    "presentationKeys": 2529,
+    "proceduralComponents": 124,
+    "changedSincePriorProceduralInventory": [
+      "EnemyMoveIntentView",
+      "CombatStatusStrip",
+      "CourtFloodGraphic",
+      "PlayerStatusPanel"
+    ]
+  },
+  "changed": {
+    "textures": 28,
+    "boundClips": 26,
+    "fallbackStills": 2,
+    "changedNativeSpriteCells": 170,
+    "singleFrameNativePixels": 59
+  }
+}

@@ -1,5 +1,7 @@
 # Animation review
 
+[Open the follow-up continuity and material review](MaterialContinuity/Review.html) for the 2026-11-21 changes. The Miner player and receipts below document the preceding revision.
+
 [Open the before-and-after player](Review.html). It opens on the Dungeon Miner in the Game scene. Choose a character and action to compare both versions on the same clock. Pause to step through the exposures or zoom in on the Miner’s waist.
 
 ## The Miner
