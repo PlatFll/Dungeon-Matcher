@@ -40,14 +40,18 @@ public sealed partial class ForestFoundationPlayTests
                 actor.SetSpecialTurnRequirement(999);
                 Set(attack,"unifiedRemaining",1);
                 Assert.That(attack.PerformAttackImmediately(),Is.False,id+" waits for a player move");
-                int previousMoves=Run.Board.CompletedValidPlayerMoves;
-                Run.Board.StartCoroutine(EnvironmentMove());
+                PrepareSafeMove();
+                var board=Run.Board;
+                int previousMoves=board.CompletedValidPlayerMoves;
+                var from=board.GetGem(safeMoveFrom.x,safeMoveFrom.y);
+                var to=board.GetGem(safeMoveTo.x,safeMoveTo.y);
+                board.StartCoroutine((IEnumerator)Call(board,"TrySwap",from,to));
                 yield return Until(()=>attack.IsAttackSequenceInProgress,id+" starts an owned windup");
                 Time.timeScale=0;var pose=portrait.sprite;
                 yield return new WaitForSecondsRealtime(.08f);
                 Assert.That(portrait.sprite,Is.EqualTo(pose),id+" pauses with combat");
                 Assert.That(hits,Is.Zero,id+" paused windup cannot hit");Time.timeScale=1;
-                // A UnityTest can resume before the board-owned coroutine settles the other actors.
+                // This fixture owns the one settlement waiter, including all actors in the move.
                 yield return Until(()=>Run.Board.CompletedValidPlayerMoves==previousMoves+1 &&
                     Run.Continuation.CanCapture && !Run.MoveClock.IsResolving,id+" player move and all actors settle");
                 attack.AttackResolved-=ObserveContact;
