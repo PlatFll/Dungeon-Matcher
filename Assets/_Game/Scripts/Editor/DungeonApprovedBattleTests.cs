@@ -120,7 +120,7 @@ public sealed class DungeonApprovedBattleTests
         yield return new EnterPlayMode();
         integrated=TestContext.CurrentContext.Test.Name.StartsWith("Approved");
         string phase=integrated?"After":"Before";
-        string output=Path.GetFullPath(integrated ? "ArtSource/DungeonPixelLab/Diagnostics/Stage16/Regression" : Evidence+"/"+phase);Directory.CreateDirectory(output);
+        string output=Path.GetFullPath(integrated ? ".utmp/DungeonApprovedBattle/Regression" : Evidence+"/"+phase);Directory.CreateDirectory(output);
         using(CharacterSelectionSettings.UseTemporarySelection("skeleton"))
         foreach(string zone in new[]{"dungeon","magical-forest","drowned-court"})
         {
@@ -170,7 +170,13 @@ public sealed class DungeonApprovedBattleTests
                     var response=board.GetImmediateResponses().First();board.ReplayPlayerSwap(response.Source.Column,response.Source.Row,response.Target.Column,response.Target.Row);
                     yield return Until(()=>RunSession.Current.Continuation.CanCapture);
                     Assert.That(board.CaptureContinuation(id=>id).moves,Is.EqualTo(moves+1));
-                    var controls=Object.FindFirstObjectByType<RunControlsUI>();controls.OpenSettings();yield return null;controls.Close();yield return null;
+                    var controls = Object.FindFirstObjectByType<RunControlsUI>();
+                    Assert.That(controls.SettingsButton.IsActive() && controls.SettingsButton.IsInteractable(), Is.True);
+                    controls.SettingsButton.OnSubmit(new UnityEngine.EventSystems.BaseEventData(UnityEngine.EventSystems.EventSystem.current));
+                    yield return null;
+                    Assert.That(controls.IsModalOpen, Is.True);
+                    controls.Close(); yield return null;
+                    Assert.That(controls.IsModalOpen, Is.False);
                 }
                 SceneManager.LoadScene("MainMenu");yield return null;yield return null;
                 GameplayPixelLayoutController.ValidationSafeArea=null;Size(new Vector2Int(1080,1920));

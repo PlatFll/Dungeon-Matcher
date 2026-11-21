@@ -27,7 +27,9 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
     private EnemyAutoAttack attack;
     private EnemyActor target;
     private BoardController board;
-    private EnemyChannelSnapshot value = new EnemyChannelSnapshot();
+    // Version zero denotes an older serialized channel. New live owners start in the current format.
+    private static EnemyChannelSnapshot NewChannel() => new EnemyChannelSnapshot { version = 1 };
+    private EnemyChannelSnapshot value = NewChannel();
     public event Action Changed;
     public bool IsChanneling => value.state == 1;
     public bool BlocksBasic => IsChanneling;
@@ -39,7 +41,7 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
 
     public void InitializeSpecialAbility(EnemyActor owner, BoardController board, IReadOnlyList<EnemyActor> enemies)
     {
-        Cleanup(); actor=owner; roster=enemies; this.board=board; value=new EnemyChannelSnapshot();
+        Cleanup(); actor=owner; roster=enemies; this.board=board; value=NewChannel();
         if(board!=null) board.AquaticAnswer+=BubbleCollected;
         stagger=actor.GetComponent<EnemyStagger>(); attack=actor.GetComponent<EnemyAutoAttack>();
         actor.Defeated+=CasterDied;
@@ -116,7 +118,7 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
     public void RestoreContinuation(EnemyCombatSnapshot saved, Func<int,EnemyActor> enemyAt)
     {
         if(target!=null) target.Defeated-=RecipientDied;
-        value=saved.channel==null ? new EnemyChannelSnapshot() :
+        value=saved.channel==null ? NewChannel() :
             JsonUtility.FromJson<EnemyChannelSnapshot>(JsonUtility.ToJson(saved.channel)); target=null;
         if(value.version==0)
         {
