@@ -43,7 +43,7 @@ public sealed partial class ForestFoundationPlayTests
                 Assert.That(portrait.sprite,Is.EqualTo(pose),id+" pauses with combat");
                 Assert.That(hits,Is.Zero,id+" paused windup cannot hit");Time.timeScale=1;
                 yield return move;
-                Assert.That(attack.IsAttackSequenceInProgress,Is.False,id+" native basic completes");
+                yield return Until(()=>!attack.IsAttackSequenceInProgress,id+" native basic completes its recovery");
                 Assert.That(hits,Is.EqualTo(1),id);
                 // Completion is emitted 10 ms before the clip end; two Editor
                 // frames need not span that interval on a fast test machine.

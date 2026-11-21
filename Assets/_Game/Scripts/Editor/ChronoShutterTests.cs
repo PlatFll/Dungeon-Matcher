@@ -14,6 +14,12 @@ using UnityEngine.TestTools;
 
 public sealed class ChronoShutterTests
 {
+    [SetUp]
+    public void SetPortraitViewport()
+    {
+        GameplayPixelLayoutTests.SetGameViewSize(new Vector2Int(1080,1920));
+    }
+
     private const BindingFlags Fields = BindingFlags.Instance | BindingFlags.NonPublic;
 
     [Test] public void PlayableDefinitionUsesApprovedFramesAndDedicatedHold()

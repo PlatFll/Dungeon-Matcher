@@ -322,10 +322,12 @@ public sealed partial class ForestFoundationPlayTests
         using var destinations=new TravelDestinationFixture("dungeon","magical-forest","drowned-court");
         yield return LaunchCourt("shellback_porter");
         yield return Move();
-        string id=Run.RunId;long largest=0;int initialObjects=0;
+        string id=Run.RunId;long largest=0;
+        var baselineByZone=new Dictionary<string,int>();
         string[] route={"dungeon","drowned-court","magical-forest","drowned-court","dungeon","magical-forest"};
         for(int hop=0;hop<18;hop++)
         {
+            var sourceObjects=SceneManager.GetActiveScene().GetRootGameObjects();
             Run.Travel.enabled=false;Set(Run.Waves,"advanceWavesAutomatically",false);
             foreach(var enemy in Run.Waves.ActiveEnemies)enemy.GetComponent<EnemyAutoAttack>().SetActionPaused(this,true);
             KillEncounter();yield return Until(()=>!Run.Waves.IsWaveActive && Run.Continuation.CanCapture,"source encounter finishes");
@@ -363,8 +365,12 @@ public sealed partial class ForestFoundationPlayTests
             Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
             largest=Math.Max(largest,new System.IO.FileInfo(path).Length);
             int count=UnityEngine.Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None).Length;
-            if(hop==5)initialObjects=count;
-            if(hop>=6)Assert.That(count,Is.LessThan(initialObjects+250),"scene objects do not accumulate across trips");
+            Assert.That(sourceObjects.All(root=>root==null),Is.True,"departing Game scene roots have been destroyed");
+            Assert.That(UnityEngine.Object.FindObjectsByType<DungeonPresentationArt>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length,
+                Is.EqualTo(1),"only the new scene owns battle presentation");
+            if(baselineByZone.TryGetValue(destination,out var initialObjects))
+                Assert.That(count,Is.LessThan(initialObjects+250),destination+" objects do not accumulate on repeat visits");
+            else baselineByZone.Add(destination,count);
         }
         Assert.That(largest,Is.LessThan(500000),"eighteen handoffs keep this fixture's durable account below 500 KB");
         System.IO.File.WriteAllText(NewCourtEvidencePath("TravelSoak.txt"),"18 handoffs; 6 route repeats; largest account bytes="+largest+"; final visit="+Run.Travel.State.visit);

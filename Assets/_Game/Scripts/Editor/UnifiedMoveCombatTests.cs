@@ -52,9 +52,9 @@ public sealed class UnifiedMoveCombatTests
 
 public sealed partial class ForestFoundationPlayTests
 {
-    private IEnumerator LaunchWithTwoFreeSlots()
+    private IEnumerator LaunchWithTwoFreeSlots(string openerId="SpearGuard")
     {
-        var opener=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_SpearGuard.asset");
+        var opener=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_"+openerId+".asset");
         using(var formation=ResonanceEncounterFixture.OnNextGame(new[]{opener},"Two free summon slots"))
             yield return LaunchUnified();
         Assert.That(Run.Waves.ActiveEnemies.Count,Is.EqualTo(1));
@@ -200,13 +200,14 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator UnifiedHasteOwnersResumeAndExpireWithoutRemovingOtherSources()
     {
-        yield return LaunchWithTwoFreeSlots();
+        yield return LaunchWithTwoFreeSlots("Farmer");
         var marshalData=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_TownMarshal.asset");
         var drummerData=Resources.Load<ZoneDefinition>("Zones/magical-forest").enemies.First(d=>d.EnemyId=="orc_drummer");
         Assert.That(Run.Waves.TrySummonEnemy(marshalData,out var marshal),Is.True);
         Assert.That(Run.Waves.TrySummonEnemy(drummerData,out var drummer),Is.True);
         yield return Stable();DurableUnifiedFixture();
         var target=Run.Waves.ActiveEnemies[0];var attack=target.GetComponent<EnemyAutoAttack>();
+        Assert.That(attack.EffectiveMoveInterval,Is.EqualTo(3),"test recipient can actually be hastened");
         Set(attack,"unifiedRemaining",4);
         Call(drummer.GetComponent<ForestCombatAbility>(),"ApplyRhythm");
         marshal.GetComponent<TownMarshalEnemyAbility>().RestoreContinuation(new EnemyCombatSnapshot
