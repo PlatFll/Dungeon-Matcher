@@ -10,7 +10,7 @@ Each row in [the case ledger](case-results.csv) records the actual case, result 
 
 | Area | What failed | What changed |
 |---|---|---|
-| Miner and roster | In separate idle poses the Miner’s shirt hem moved away from the waist. Other clips had material noise, dropped details or discontinuous gear. | Corrected 48 production clips on 27 actors. On the Game capture, the Miner’s hip patch previously varied by up to 1,215 pixels and now stays identical across ten idle poses. See the [synchronized player](../../ArtDirection/AnimationSweep/Review.html). |
+| Miner and roster | The Miner had stray glove and trouser pixels on frame 2. Other clips had material noise, dropped details or discontinuous gear. | Corrected 48 production clips on 27 actors. The Miner idle now follows its original motion with 26 corrected pixels in the second pose. [Game comparison](../../ArtDirection/AnimationSweep/Review.html) |
 | Account and wallet | Ending an already suspended run truncated milestone history. A locked primary file could roll back the wallet. Saving after recovering a damaged primary could replace the last good backup. | Preserve all completed milestones, distinguish an inaccessible file from a malformed one and protect the recoverable copy. |
 | Board input | Opening a targeting mode or losing ownership with a gem held could strand its pressed tint and scale. | Release pressed visuals with the active pointer. Cases exercise takeover and stale release. |
 | Flood presentation | An empty, paused or still reduced-motion surface repeatedly rebuilt its mesh. | Dirty the geometry when the level or active surface changes. The active rise and bubbles retain their animation. |

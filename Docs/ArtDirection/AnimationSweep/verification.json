@@ -12,38 +12,38 @@
       1920
     ],
     "actorRect": [
-      257,
-      217,
-      689,
-      529
+      329,
+      317,
+      617,
+      525
     ],
     "hipRect": [
-      446,
-      460,
-      500,
-      496
+      455,
+      479,
+      491,
+      503
     ],
     "changedRGB": [
       [
         0,
-        1116,
+        496,
         0,
-        1035,
-        1215,
-        1215,
-        1035,
+        460,
+        540,
+        540,
+        460,
         0,
         0,
         0
       ],
       [
         0,
+        436,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        460,
+        540,
+        540,
+        460,
         0,
         0,
         0
@@ -61,7 +61,23 @@
       130,
       120,
       10
-    ]
+    ],
+    "nativeTexelScale": 2,
+    "screenPixelsChangedBetweenVersionsByExposure": [
+      0,
+      104,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "frameTwoRepairSource": "1144a3033dac9f208efd6ee8a4f377abe57ab903",
+    "beforeCapture": "frame-two-original-pixels (historical atlas 70881ad5, same executable)",
+    "afterCapture": "frame-two-Game"
   },
   "waist": {
     "region": [
@@ -84,7 +100,19 @@
     ],
     "afterChangedPixels": [
       0,
+      285,
       0,
+      298,
+      487,
+      487,
+      298,
+      0,
+      0,
+      0
+    ],
+    "changedPixelsBetweenVersionsByExposure": [
+      0,
+      26,
       0,
       0,
       0,
@@ -99,20 +127,14 @@
     {
       "actor": "miner",
       "state": "Idle",
-      "note": "Anchored the shirt hem, pelvis, trousers and pick to the same neutral drawing throughout the breath. The head settles into a redrawn neck joint and blinks.",
+      "note": "Restored the original idle. Cleaned 26 stray pixels under the gloves and across the trousers in frame 2. All other poses and timings match the previous animation.",
       "clip": "Assets/_Game/Animations/CombatIdles/Miner_Idle.anim",
       "texture": "Assets/_Game/Art/CombatIdles/Miner_Idle.png",
       "native": "ArtSource/EnemyArtCohesion/Native/Miner_Idle-9cf4c96f86.aseprite",
       "before": "5a454542fd5cded350c6f10d59556ed35cdc974ec9024c2470a40ac5dc94030b",
-      "after": "75c7bee73baa5dac7e7e8740c06d7bdb723e84672bc7ad55bdb8248bd04bf792",
+      "after": "e3d0ae79c2dfa3d8c686fa1e067df49a406bcad0ac6608d57a8b65a7b622d8f6",
       "changed": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
+        2
       ]
     },
     {
@@ -791,5 +813,6 @@
         4
       ]
     }
-  ]
+  ],
+  "minerIdleArtCommit": "1144a3033dac9f208efd6ee8a4f377abe57ab903"
 }

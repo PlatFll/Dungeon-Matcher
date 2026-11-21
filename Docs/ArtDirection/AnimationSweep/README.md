@@ -4,9 +4,9 @@
 
 ## The Miner
 
-The previous repair closed a gap on the pick. The lower torso still changed independently of the trousers. The new idle holds the same shirt hem, pelvis, grip and legs through the entire breathing loop. The neck, head, candle and eyelids carry the movement. His raised pick now stays in front of the shoulder with both hands on its shaft in the basic and special swings.
+The original Miner idle is back in the game. Only the second of its ten timed poses changes. It had a thin stray band across the trousers and leftover pixels below both gloves. The correction removes or recolors 26 native pixels. The head, pick movement, breathing and footing follow the original loop.
 
-Two independent measurements cover the reported fault. Across the ten idle exposures, the old lower-body region varied by up to 487 native pixels from the neutral pose. The same region is pixel-identical throughout the new loop. On the 1080 × 1920 Game canvas, the 54 × 36-pixel hip patch changed by up to 1,215 pixels before the repair and by zero pixels afterward. The review includes all 30 Game exposures on each side. The debugger steps the production animator to capture its exact poses. Combat event delivery is exercised separately in the Unity tests.
+LibreSprite exported the edited master. A full-sheet comparison with `70881ad5` found all differences in frame 2, within native coordinates x58–89 and y88–92. The clip still lasts 1,170 ms. Both versions were captured in the production Game scene at 1080 × 1920 using the same layout. Exactly 104 screen pixels changed on frame 2, at the 26 corrected texels rendered at 2×. The other nine actor captures matched exactly. Choose **2** under **Changed frames** and enable **Zoom to waist** to inspect the edit. [Frame 2 close-up](media/Miner-frame-2.png)
 
 The underground Pickaxe Delver is a different character. His apron stays connected across his 36 drawings. [Ironvein belt close-ups](media/ironvein-waist.png)
 
