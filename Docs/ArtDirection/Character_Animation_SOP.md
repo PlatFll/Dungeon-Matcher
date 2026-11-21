@@ -50,6 +50,12 @@ The Dungeon Miner is the reference case. As his torso lifted, a thin band remain
 
 Before exporting, compare the full RGBA sheet to the approved baseline. List the changed cel numbers, pixel counts and bounding boxes. Blink the difference mask over the edit and verify every changed pixel belongs to the joint being repaired. Compare every other cel, the exposure sequence, pivots, events and loop length. Reopen the editable master and compare its rendered pixels to the bound Unity sprites. Keep both versions on the same playback clock for review.
 
+### Tracing hands, armor and loose cloth
+
+Follow the sleeve to the cuff, the cuff to the palm, and the palm to the held object. Check the outline and the material inside it. A connected silhouette can hide a hollow wrist or a missing piece of armor. On the Guild Swordsman’s seventh attack drawing, the gold rim and outline stayed in place while the upper steel plate showed the room through it. Restore the same material and highlight direction as the neighboring drawing. On layered weapons, isolate the forearm, grip and rigid weapon before choosing the layer to repair.
+
+For a hanging cape, follow the attachment, the first bend and the free tip separately. Step through anticipation, lift, peak, release and return. When the body turns, the attachment follows the body, the long free panel follows a beat later and the shorter panel can move by a different amount. Trace both the outer silhouette and the interior fold at native resolution. Check the tip against boots, held equipment and the loop seam. The Guild Chirurgeon’s blue cape and the Jarl’s heavy cloak are useful references for different cloth weights. [Step through the grip and cloth comparisons](AnimationSweep/GripAndDrape/Review.html).
+
 ### Distinguishing flat shading from blur
 
 Look at the actor at native size beside Rattlebones and the closest approved material reference. A broad, uniform patch gives the eye a readable plane. Look for several almost-identical values following the same edge, a one-pixel fringe outside an outline, or scattered highlight islands that crawl over one material during a hold. Compare a lit base, a shadow and a selective highlight on the same surface. Verify point filtering, mipmaps and integer presentation before attributing softness to the drawing.

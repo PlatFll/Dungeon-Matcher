@@ -10,6 +10,8 @@ The production cast pass repaired 48 animation clips, including a frame-2 pixel 
 
 The follow-up fixed 59 pixels in nine Dungeon idles and simplified five enemy material palettes, including the Grand Delver pilot across ejection and remount. [Motion and shading review](ArtDirection/AnimationSweep/MaterialContinuity/Review.html)
 
+The enemy grip and cloth pass repaired 13 production clips across 11 enemies, including both free panels of the Guild Chirurgeon’s cape, the Swordsman’s steel shoulder, and the Ranger’s musket contacts. [Before and after](ArtDirection/AnimationSweep/GripAndDrape/Review.html) · [Frame-by-frame enemy roster](ArtDirection/AnimationSweep/GripAndDrape/Roster.html)
+
 The gameplay sweep corrected milestone retention and wallet recovery, board input release, flood rendering, roster reimports, idle-channel replay and small-screen combat layout. The case ledger records affected reruns and the source used for each. [Gameplay validation and Android build results](Validation/AnimationSweep/README.md)
 The feature branch is based on the Crystal Resonance review candidate.
 Both development players built. Ten natural Dungeon-first runs completed 21

@@ -19,3 +19,5 @@ The controller pass covered 465 clips and 4,343 timed sprite bindings across 90 
 The final changes touch 48 bound clips on 27 actors. Examples include the Elven Mender’s split collar, Queen Nacre’s held trident, the Reef Spearman’s late jab, the Stonewright’s detached steel, the Champion’s hammer socket and stray material colors. Every repaired clip has its own note in the player.
 
 LibreSprite reopened all 48 editable masters. Their 489 native cels matched the Unity textures at all 510 exposure intervals, including registration on the expanded canvases. The clip keys, events and import metadata retain their baseline hashes. [Repairs](verification.json) · [Native checks](native-checks.json) · [Actor coverage](actor-coverage.csv) · [Effect coverage](effects-coverage.csv) · [Other Unity clips](other-clips.csv)
+
+[Enemy grips, armor and loose cloth](GripAndDrape/Review.html) · [All enemy exposures](GripAndDrape/Roster.html)
