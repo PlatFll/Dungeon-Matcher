@@ -31,19 +31,27 @@ public sealed partial class ForestFoundationPlayTests
                 var expected=AnimationUtility.GetObjectReferenceCurve(clip,AnimationUtility.GetObjectReferenceCurveBindings(clip).Single())
                     .Last(k=>k.time<=impact+.001f).value;
                 int hits=0;
-                attack.AttackResolved+=(_,__,___)=>{hits++;Assert.That(portrait.sprite,Is.EqualTo(expected),id+" actual contact sprite");};
+                void ObserveContact(EnemyAutoAttack source,int damage,bool followup)
+                {
+                    hits++;Assert.That(portrait.sprite,Is.EqualTo(expected),id+" actual contact sprite");
+                }
+                attack.AttackResolved+=ObserveContact;
                 Run.Player.RestoreToFullHealth();
                 actor.SetSpecialTurnRequirement(999);
                 Set(attack,"unifiedRemaining",1);
                 Assert.That(attack.PerformAttackImmediately(),Is.False,id+" waits for a player move");
-                var move=Run.Board.StartCoroutine(EnvironmentMove());
+                int previousMoves=Run.Board.CompletedValidPlayerMoves;
+                Run.Board.StartCoroutine(EnvironmentMove());
                 yield return Until(()=>attack.IsAttackSequenceInProgress,id+" starts an owned windup");
                 Time.timeScale=0;var pose=portrait.sprite;
                 yield return new WaitForSecondsRealtime(.08f);
                 Assert.That(portrait.sprite,Is.EqualTo(pose),id+" pauses with combat");
                 Assert.That(hits,Is.Zero,id+" paused windup cannot hit");Time.timeScale=1;
-                yield return move;
-                yield return Until(()=>!attack.IsAttackSequenceInProgress,id+" native basic completes its recovery");
+                // A UnityTest can resume before the board-owned coroutine settles the other actors.
+                yield return Until(()=>Run.Board.CompletedValidPlayerMoves==previousMoves+1 &&
+                    Run.Continuation.CanCapture && !Run.MoveClock.IsResolving,id+" player move and all actors settle");
+                attack.AttackResolved-=ObserveContact;
+                Set(attack,"unifiedRemaining",999);
                 Assert.That(hits,Is.EqualTo(1),id);
                 // Completion is emitted 10 ms before the clip end; two Editor
                 // frames need not span that interval on a fast test machine.

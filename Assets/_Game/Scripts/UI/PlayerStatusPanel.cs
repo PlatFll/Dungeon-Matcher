@@ -95,7 +95,10 @@ public sealed class PlayerStatusPanel : MonoBehaviour
     {
         CombatStatusDisplay.Player(player, displayed);
         int columns = Mathf.Clamp(Mathf.FloorToInt((((RectTransform)transform).rect.width-8)/28),1,8);
-        strip.Show(displayed, columns, _ => RunSession.Current?.GetComponent<RunControlsUI>()?.OpenGuide(Describe()));
+        // Three rows can use the badges' own transparent padding on short phone viewports.
+        // Keep every 24px icon and its full button intact.
+        int rowStep = displayed.Count > 2 * columns ? 24 : 28;
+        strip.Show(displayed, columns, _ => RunSession.Current?.GetComponent<RunControlsUI>()?.OpenGuide(Describe()), rowStep);
     }
     public string Describe()
     {
