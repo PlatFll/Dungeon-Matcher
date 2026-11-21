@@ -45,7 +45,7 @@ public sealed partial class ForestFoundationPlayTests
 {
     [UnityTest] public IEnumerator UnifiedTwoChannelsResumeIndependentlyAndKeepTargetLinks()
     {
-        yield return LaunchUnified();
+        yield return LaunchWithTwoFreeSlots();
         var data=Resources.Load<ZoneDefinition>("Zones/magical-forest").enemies.First(d=>d.EnemyId=="elven_mender");
         Assert.That(Run.Waves.TrySummonEnemy(data,out var first),Is.True);
         Assert.That(Run.Waves.TrySummonEnemy(data,out var second),Is.True);
@@ -81,6 +81,7 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator UnifiedLeaderHudAndAnnouncementStayInsidePortrait()
     {
+        Directory.CreateDirectory(".utmp/UnifiedCombat/Visual");
         yield return LaunchMineKit("grand_delver","bore_engineer","powder_sapper");DurableUnifiedFixture();
         var boss=Enemy("grand_delver");
         yield return Until(()=>boss.GetComponent<EnemyUnifiedIntentView>()?.ActionRoot!=null,"leader intent initialized");

@@ -21,18 +21,31 @@ public sealed partial class ForestFoundationPlayTests
         var attack = pick.GetComponent<EnemyAutoAttack>();
         int presentations=0;
         attack.AttackStarted += _ => { presentations++; Assert.That(token.IsCurrentSequencePowered,Is.EqualTo(presentations==1)); };
-        int hp = Run.Player.CurrentHealth;
+        int beforeContact=0, afterContact=0, packet=0, contacts=0;
+        float mitigation=1;
+        attack.AttackStarted += _=>{
+            beforeContact=Run.Player.CurrentHealth+Run.Player.CurrentShield;
+            mitigation=Run.Player.Statuses.IncomingMultiplier*(Run.Player.CurrentShield>0?1-Run.Player.ShieldDamageReduction:1);
+        };
+        attack.AttackResolved += (_,amount,applied)=>{
+            Assert.That(applied,Is.True);
+            contacts++;packet=amount;afterContact=Run.Player.CurrentHealth+Run.Player.CurrentShield;
+        };
+        pick.SetSpecialTurnRequirement(999);
         Set(attack, "unifiedRemaining", 1);
         yield return EnvironmentMove();
         yield return Until(() => !attack.IsAttackSequenceInProgress, "powered basic finishes");
         Assert.That(token.IsPowered, Is.False);
         Assert.That(token.IsCurrentSequencePowered, Is.False);
-        Assert.That(hp - Run.Player.CurrentHealth, Is.EqualTo(CombatAmounts.Round(Mathf.RoundToInt(pick.Damage * 1.3f))));
-        hp = Run.Player.CurrentHealth;
+        Assert.That(contacts,Is.EqualTo(1));
+        Assert.That(packet,Is.EqualTo(Mathf.RoundToInt(pick.Damage*1.3f)));
+        Assert.That(beforeContact-afterContact,Is.EqualTo(CombatAmounts.Round(packet*(double)mitigation)));
         Set(attack, "unifiedRemaining", 1);
         yield return EnvironmentMove();
         yield return Until(() => !attack.IsAttackSequenceInProgress, "ordinary basic finishes");
-        Assert.That(hp - Run.Player.CurrentHealth, Is.EqualTo(CombatAmounts.Round(pick.Damage)));
+        Assert.That(contacts,Is.EqualTo(2));
+        Assert.That(packet,Is.EqualTo(pick.Damage));
+        Assert.That(beforeContact-afterContact,Is.EqualTo(CombatAmounts.Round(packet*(double)mitigation)));
     }
 
     [UnityTest] public IEnumerator IronveinPackbeetleDeathPowersEveryDrillAndLivingEligibleAllyOnce()

@@ -107,6 +107,7 @@ public sealed class PixelLabAttackPlayTests
                     yield return new WaitForSeconds(.3f);Time.timeScale=0;
                     animator.fireEvents=false;animator.Play("Idle",0,0);animator.Update(0);yield return null;
                     Rect baseline=ScreenRect(image);float idleScale=baseline.height/image.sprite.rect.height;
+                    float standingFloor=baseline.yMin+image.sprite.pivot.y*idleScale;
                     int elapsed=0;
                     for(int f=0;f<frames.Length;f++)
                     {
@@ -117,7 +118,8 @@ public sealed class PixelLabAttackPlayTests
                         Assert.That(scale,Is.EqualTo(idleScale).Within(.01f),entry.name+" native body scale");
                         Assert.That(scale,Is.EqualTo(Mathf.Round(scale)).Within(.01f),entry.name+" integer texels");
                         Assert.That(rect.center.x,Is.EqualTo(baseline.center.x).Within(.1f));
-                        Assert.That(rect.yMin,Is.EqualTo(baseline.yMin).Within(.1f),entry.name+" floor");
+                        Assert.That(rect.yMin+frames[f].pivot.y*scale,Is.EqualTo(standingFloor).Within(.1f),
+                            entry.name+" authored foot pivot remains on the same floor across padded canvases");
                         // Expanded canvases deliberately contain empty side margins.
                         // Check every visible texel, rather than the transparent rectangle.
                         Rect ink=VisibleBounds(frames[f],pixels,sourceWidth,rect);

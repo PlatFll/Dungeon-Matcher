@@ -209,7 +209,13 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest] public IEnumerator EnvironmentRoyalChainShotDeathBetweenContactsCancelsSecondBolt()
     {
         yield return SummonArbalist();var actor=Enemy("royal_arbalist");var board=Run.Board;
-        for(int i=0;i<3;i++) yield return EnvironmentMove();
+        int remaining=actor.SpecialTurnRequirement-actor.CurrentSpecialTurnCount;
+        Assert.That(remaining,Is.GreaterThan(0));
+        for(int i=1;i<remaining;i++)
+        {
+            yield return EnvironmentMove();
+            Assert.That(board.GetPinnedGemCountForOwner(actor.GetInstanceID()),Is.Zero);
+        }
         PrepareSafeMove();board.StartCoroutine((IEnumerator)Call(board,"TrySwap",board.GetGem(safeMoveFrom.x,safeMoveFrom.y),board.GetGem(safeMoveTo.x,safeMoveTo.y)));
         yield return Until(()=>board.GetPinnedGemCountForOwner(actor.GetInstanceID())==1,"first chain contact");
         Run.GetComponent<RunControlsUI>().OpenSettings();

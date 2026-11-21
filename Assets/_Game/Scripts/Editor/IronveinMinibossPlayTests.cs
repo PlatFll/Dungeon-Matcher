@@ -67,6 +67,7 @@ public sealed partial class ForestFoundationPlayTests
     {yield return MineSentinelExtraction();}
     private IEnumerator MineSentinelExtraction()
     {
+        avoidMineIntakes=true; // This cast exercises the unbroken Slam. A separate case fires a drill to cancel it.
         yield return LaunchMineKit("obsidian_sentinel","pickaxe_delver");var actor=Enemy("obsidian_sentinel");var board=Run.Board;
         board.TryQueuePlaceMineStones(actor,1,6);yield return Stable();yield return ReadyMine(actor);
         var kit=actor.GetComponent<MineEnemyAbility>();long id=kit.StoneId;Assert.That(kit.CastName,Is.EqualTo("DEVOUR"));

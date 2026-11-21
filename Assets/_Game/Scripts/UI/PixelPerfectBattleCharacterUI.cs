@@ -18,6 +18,9 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
     private bool hasApplied;
     private RectTransform enemyRoot;
     private Vector2 enemyRestPosition;
+    private EnemySlotUI enemySlot;
+    private RectTransform header;
+    private float standingHeight;
 
     private void Awake() => root = (RectTransform)transform;
 
@@ -30,7 +33,14 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         if (!isPlayer && image != observedImage)
         {
             enemyRoot = image.GetComponentInParent<EnemyActor>()?.transform as RectTransform;
-            if (enemyRoot != null) enemyRestPosition = enemyRoot.anchoredPosition;
+            if (enemyRoot != null)
+            {
+                enemyRestPosition = enemyRoot.anchoredPosition;
+                enemySlot = enemyRoot.GetComponentInParent<EnemySlotUI>();
+                var definition = enemyRoot.GetComponent<EnemyActor>().Definition;
+                standingHeight = definition?.FallbackVisualSprite?.rect.height ?? EnemyReferenceCanvasSize.y;
+                header = GetComponentInParent<GameplayPixelLayoutController>()?.TopHud?.Find("WaveTracker") as RectTransform;
+            }
         }
         // A new definition supplies an authored box and preserveAspect=true.
         // Animation sprite changes do not replace that box with our last result.
@@ -60,6 +70,15 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         }
         else
         {
+            // Select one whole-pixel scale from the standing art and the floor-to-header
+            // clearance. The current animation cel can extend beyond its standing canvas.
+            if (standingHeight > EnemyReferenceCanvasSize.y && enemySlot?.CombatBarRect != null && header != null)
+            {
+                float ceiling = GameplayPixelLayoutController.ScreenRect(header).yMin;
+                float freeHeight = ceiling - BattleFloorAnchor.EnemyFeetScreenY(enemySlot) - BattleFloorAnchor.PhysicalPixelScale;
+                if (freeHeight > 0)
+                    available.y = Mathf.Min(available.y, freeHeight / standingHeight * EnemyReferenceCanvasSize.y / image.canvas.rootCanvas.scaleFactor);
+            }
             GameplayPixelGrid.FitImage(image, available, EnemyReferenceCanvasSize);
             // The center-pivoted Image grows downward with taller canvases.
             // Compensate on the actor, leaving the layout-owned spawn anchor
@@ -72,11 +91,11 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
                 float sourceGroundOffset = Mathf.Max(0f, image.sprite.rect.height - EnemyReferenceCanvasSize.y) *
                     visual.pivot.y - image.sprite.pivot.y;
                 float canvasGroundOffset = sourceGroundOffset * (visual.rect.height / image.sprite.rect.height);
-                if(GetComponentInParent<EnemySlotUI>() is EnemySlotUI nativeSlot && nativeSlot.CombatBarRect != null)
+                if(enemySlot != null && enemySlot.CombatBarRect != null)
                 {
                     float scale=GameplayPixelLayoutController.ScreenRect(visual).height/image.sprite.rect.height;
                     float ground=GameplayPixelLayoutController.ScreenRect(root).center.y-32*scale;
-                    float platform=BattleFloorAnchor.EnemyFeetScreenY(nativeSlot);
+                    float platform=BattleFloorAnchor.EnemyFeetScreenY(enemySlot);
                     canvasGroundOffset+=(platform-ground)/image.canvas.rootCanvas.scaleFactor;
                 }
                 enemyRoot.anchoredPosition = enemyRestPosition + Vector2.up * canvasGroundOffset;

@@ -33,13 +33,17 @@ public sealed partial class ForestFoundationPlayTests
                 int hits=0;
                 attack.AttackResolved+=(_,__,___)=>{hits++;Assert.That(portrait.sprite,Is.EqualTo(expected),id+" actual contact sprite");};
                 Run.Player.RestoreToFullHealth();
-                Assert.That(attack.PerformAttackImmediately(),Is.True,id);
-                yield return null;
+                actor.SetSpecialTurnRequirement(999);
+                Set(attack,"unifiedRemaining",1);
+                Assert.That(attack.PerformAttackImmediately(),Is.False,id+" waits for a player move");
+                var move=Run.Board.StartCoroutine(EnvironmentMove());
+                yield return Until(()=>attack.IsAttackSequenceInProgress,id+" starts an owned windup");
                 Time.timeScale=0;var pose=portrait.sprite;
                 yield return new WaitForSecondsRealtime(.08f);
                 Assert.That(portrait.sprite,Is.EqualTo(pose),id+" pauses with combat");
                 Assert.That(hits,Is.Zero,id+" paused windup cannot hit");Time.timeScale=1;
-                yield return Until(()=>!attack.IsAttackSequenceInProgress,id+" native basic completes");
+                yield return move;
+                Assert.That(attack.IsAttackSequenceInProgress,Is.False,id+" native basic completes");
                 Assert.That(hits,Is.EqualTo(1),id);
                 // Completion is emitted 10 ms before the clip end; two Editor
                 // frames need not span that interval on a fast test machine.
@@ -67,14 +71,16 @@ public sealed partial class ForestFoundationPlayTests
             ScreenCapture.CaptureScreenshot(Path.Combine(dir,"phase08-"+expected+"-contact.png"));
         };
         Assert.That(ore.Grant(),Is.True);
-        Assert.That(attack.PerformAttackImmediately(),Is.True);
-        yield return Until(()=>!attack.IsAttackSequenceInProgress,"powered native clip completes");
+        actor.SetSpecialTurnRequirement(999);
+        Set(attack,"unifiedRemaining",1);
+        yield return EnvironmentMove();
+        Assert.That(attack.IsAttackSequenceInProgress,Is.False,"powered native clip completes");
         Assert.That(hits,Is.EqualTo(1));Assert.That(ore.IsPowered,Is.False);
-        yield return null;yield return null;
-        Assert.That(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"),Is.True);
+        yield return Until(()=>animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"),"powered recovery returns to Idle");
         expected="AutoAttack";frame=3;
-        Assert.That(attack.PerformAttackImmediately(),Is.True);
-        yield return Until(()=>!attack.IsAttackSequenceInProgress,"ordinary native clip completes");
+        Set(attack,"unifiedRemaining",1);
+        yield return EnvironmentMove();
+        Assert.That(attack.IsAttackSequenceInProgress,Is.False,"ordinary native clip completes");
         Assert.That(hits,Is.EqualTo(2));
         var layout=Object.FindFirstObjectByType<GameplayPixelLayoutController>();
         Assert.That(GameplayPixelLayoutValidator.Validate(layout,out var report),Is.Empty,report);

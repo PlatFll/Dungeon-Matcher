@@ -52,6 +52,14 @@ public sealed class UnifiedMoveCombatTests
 
 public sealed partial class ForestFoundationPlayTests
 {
+    private IEnumerator LaunchWithTwoFreeSlots()
+    {
+        var opener=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_SpearGuard.asset");
+        using(var formation=ResonanceEncounterFixture.OnNextGame(new[]{opener},"Two free summon slots"))
+            yield return LaunchUnified();
+        Assert.That(Run.Waves.ActiveEnemies.Count,Is.EqualTo(1));
+    }
+
     private IEnumerator LaunchUnified(string zone = "dungeon")
     {
         if (AccountProgression.Current.ActiveRun != null)
@@ -192,7 +200,7 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator UnifiedHasteOwnersResumeAndExpireWithoutRemovingOtherSources()
     {
-        yield return LaunchUnified();
+        yield return LaunchWithTwoFreeSlots();
         var marshalData=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_TownMarshal.asset");
         var drummerData=Resources.Load<ZoneDefinition>("Zones/magical-forest").enemies.First(d=>d.EnemyId=="orc_drummer");
         Assert.That(Run.Waves.TrySummonEnemy(marshalData,out var marshal),Is.True);
@@ -219,7 +227,7 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator UnifiedAllSpecialsPrecedeBasicsByRankThenSlot()
     {
-        yield return LaunchUnified();
+        yield return LaunchWithTwoFreeSlots();
         var shield = AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_ShieldKnight.asset");
         Assert.That(Run.Waves.TrySummonEnemy(shield, out var left), Is.True);
         Assert.That(Run.Waves.TrySummonEnemy(shield, out var right), Is.True);
