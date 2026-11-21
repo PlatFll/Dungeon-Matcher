@@ -47,3 +47,5 @@ The initial source inventory predates the new account, flood, pointer and Miner 
 | Win/loss pacing and behavior evidence | `ForestFoundationPlayTests.CrystalResonancePolicyUsesJournaledLegalInputForEveryStyle` | `ForestFoundationPlayTests.CrystalResonancePolicyAttentionCannotAlwaysInspectEveryAlternative` | The policy uses accepted input on the Game scene; visible lookahead is bounded. A diagnostic start proves mechanic reachability only. Human pacing, legibility, enjoyment and long-run policy outcomes require separate empirical evidence. |
 
 ## Full suite and source index
+
+[Validation results and executable gates](README.md) · [Every test execution](case-results.csv) · [Latest result for each case](coverage.csv) · [Versioned batch receipts](batches.csv)

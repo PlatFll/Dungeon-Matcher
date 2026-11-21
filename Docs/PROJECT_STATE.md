@@ -7,6 +7,8 @@ The Guild Bulwark uses K06 Road Escort. The Bulwark's three-move Taunt and the
 Chirurgeon's single-target field heal share the existing enemy action pipeline.
 The Orc Slinghunter now has one damaging stone per basic attack. Its approved stumble, the revised attacks and heal, and the seven living idles are bound to the production enemy controllers.
 The production cast pass repaired 48 animation clips, including the Dungeon Miner’s torso-to-leg joint. The review opens on synchronized before-and-after Game captures. [Animation review](ArtDirection/AnimationSweep/Review.html)
+
+The gameplay sweep corrected milestone retention and wallet recovery, board input release, flood rendering, roster reimports, idle-channel replay and small-screen combat layout. The case ledger records affected reruns and the source used for each. [Gameplay validation and Android build results](Validation/AnimationSweep/README.md)
 The feature branch is based on the Crystal Resonance review candidate.
 Both development players built. Ten natural Dungeon-first runs completed 21
 visits, and all 2,442 recorded inputs matched their durable journals. Stage 08
