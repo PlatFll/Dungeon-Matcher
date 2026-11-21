@@ -1,0 +1,2298 @@
+{
+  "baseline": "70881ad5faf2319f66031550fcc82cabe53e9901",
+  "method": "LibreSprite batch reopen and JSON frame durations; all positive-interval boundaries on the union of Unity and native key times; exact two-way registered RGBA after zeroing hidden RGB; clip and importer stable using LF-normalized SHA-256. Unity was not launched.",
+  "sheets": 48,
+  "passed": 48,
+  "runtimeKeys": 510,
+  "nativeCels": 489,
+  "positiveIntervals": 510,
+  "rows": [
+    {
+      "actor": "miner",
+      "state": "Idle",
+      "texture": "Assets/_Game/Art/CombatIdles/Miner_Idle.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Miner_Idle-9cf4c96f86.aseprite",
+      "clip": "Assets/_Game/Animations/CombatIdles/Miner_Idle.anim",
+      "failures": [],
+      "clipSourceSHA256": "0e5a902acccd3b8f13029a09ea37faa561eb4084e5b5b35d01f58f26c792de3b",
+      "textureMetaSourceSHA256": "e3dfcaa1783c9d970800247828a029b622b496bdc4a00e7e909204a3147fd000",
+      "clipMetaSourceSHA256": "5a29966e73072f62ace585ea944757184afba1716db2d9589dc434db836c418f",
+      "oldSHA256": "5a454542fd5cded350c6f10d59556ed35cdc974ec9024c2470a40ac5dc94030b",
+      "installedSHA256": "75c7bee73baa5dac7e7e8740c06d7bdb723e84672bc7ad55bdb8248bd04bf792",
+      "nativeSHA256": "e63459e601c80b003056909d3711d3cd09c6e2d624a89ff889dcdd65c3cd0e4d",
+      "atlasChangedPixels": 5971,
+      "alphaChangedPixels": 1213,
+      "visibleColorOnlyChanges": 4758,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 9,
+      "durationMs": 1170,
+      "nativeDurationMs": 1170,
+      "events": [],
+      "loop": true,
+      "changedUnityKeys": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        104
+      ],
+      "nativeSize": [
+        144,
+        104
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "miner",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/CombatActions/Miner_AutoAttack.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Miner_AutoAttack-2220950f35.aseprite",
+      "clip": "Assets/_Game/Animations/CombatActions/Miner_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "c494917eebb0ae4fe276c47139118ff970d2a332b6b5abc3faf45b1ed7be2ca4",
+      "textureMetaSourceSHA256": "294f2c82babc88ffa263b221ff5623da7b1710b29e6273e25f962c85d3b51233",
+      "clipMetaSourceSHA256": "cf48c8df77413c25db628524151d41d4fca6bfa4ec570cf540dcafe65ff672f8",
+      "oldSHA256": "e76f01e37274519ce1fda07a26d49513650042de2cdff12e2401d76847ae442c",
+      "installedSHA256": "4fae7063b7ced79ef07e56722839314bddc01206a38f3016a8f287f12ed4b837",
+      "nativeSHA256": "b6e0ce21264d6a41e3125f13876f161514864edac8233685b7db56f82b2b2c72",
+      "atlasChangedPixels": 1565,
+      "alphaChangedPixels": 1202,
+      "visibleColorOnlyChanges": 363,
+      "librespriteExit": 0,
+      "runtimeKeys": 9,
+      "nativeCels": 8,
+      "durationMs": 680,
+      "nativeDurationMs": 680,
+      "events": [
+        [
+          320,
+          "AutoAttackImpact"
+        ],
+        [
+          670,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        3,
+        4
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        104
+      ],
+      "nativeSize": [
+        144,
+        104
+      ],
+      "timeIntervalsCompared": 9,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "miner",
+      "state": "Ability",
+      "texture": "Assets/_Game/Art/CombatActions/Miner_Ability.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Miner_Ability-b50dc01fb4.aseprite",
+      "clip": "Assets/_Game/Animations/CombatActions/Miner_Ability.anim",
+      "failures": [],
+      "clipSourceSHA256": "2a0bdb32cb67dc59e355d59646228721e0d8fde4b6beef27350b4de40c77bbff",
+      "textureMetaSourceSHA256": "09646dd991a0af4a6994930b42847fdd6a56f6ecf90d3f5e0547a6e2972b07d7",
+      "clipMetaSourceSHA256": "87e17a36f71493400690a74f47119cfb4732d5602dce23064aa89fc56855ead2",
+      "oldSHA256": "41935fbae20a90812e1f9db69deed8802ba10c8512538671506a38b542553c8b",
+      "installedSHA256": "068ad220067b421556cdc91986e9131bcc4a41a7fadc8639f8e30ec5c92c22cb",
+      "nativeSHA256": "925a64e7c763892011d56e7af0d3e74753fcb6f81fed0ee46262f59ba71c233d",
+      "atlasChangedPixels": 801,
+      "alphaChangedPixels": 587,
+      "visibleColorOnlyChanges": 214,
+      "librespriteExit": 0,
+      "runtimeKeys": 11,
+      "nativeCels": 10,
+      "durationMs": 880,
+      "nativeDurationMs": 880,
+      "events": [
+        [
+          360,
+          "AbilityImpact"
+        ],
+        [
+          870,
+          "AbilityComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        4
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        104
+      ],
+      "nativeSize": [
+        144,
+        104
+      ],
+      "timeIntervalsCompared": 11,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "town_marshal",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/CombatActions/TownMarshal_AutoAttack.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/TownMarshal_AutoAttack-f223f22917.aseprite",
+      "clip": "Assets/_Game/Animations/CombatActions/TownMarshal_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "49d925c7450fda2e462555fb5ac8b85a93ba5d7cf044b8aa029ca6d659df4dd8",
+      "textureMetaSourceSHA256": "1e07e3664698d2ea7c28642fac508145027d35e38642904fd1e9a1dc44a7cdd5",
+      "clipMetaSourceSHA256": "c62e7cd8d534d46dd78d37725f4d119bdf59c3024730cc30355ad5cdde8fbe54",
+      "oldSHA256": "bb4ade6e0fb0763d40e62a83d1935d97decdd6401431d5cf2699d7b3da9a0d9b",
+      "installedSHA256": "463008347b3d512304b0a058cfd081b95bbfa7b69eec27afb09b9346f2b31e19",
+      "nativeSHA256": "c19ceab597feaf57a0d962eec174204f7f0686acf3d0bdb2544276bb88b3a7a8",
+      "atlasChangedPixels": 6,
+      "alphaChangedPixels": 0,
+      "visibleColorOnlyChanges": 6,
+      "librespriteExit": 0,
+      "runtimeKeys": 11,
+      "nativeCels": 10,
+      "durationMs": 680,
+      "nativeDurationMs": 680,
+      "events": [
+        [
+          320,
+          "AutoAttackImpact"
+        ],
+        [
+          670,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        4,
+        7
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        112,
+        88
+      ],
+      "nativeSize": [
+        112,
+        88
+      ],
+      "timeIntervalsCompared": 11,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "town_marshal",
+      "state": "Ability",
+      "texture": "Assets/_Game/Art/CombatActions/TownMarshal_Ability.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/TownMarshal_Ability-085a8c6c66.aseprite",
+      "clip": "Assets/_Game/Animations/CombatActions/TownMarshal_Ability.anim",
+      "failures": [],
+      "clipSourceSHA256": "4f8620e3b607c15dd92d296b978995057c7e7dcdb8e7ff9f09f703aec71eb1ce",
+      "textureMetaSourceSHA256": "c7a0adcba2585f66fbdb831d9a2695919f6714d31b07dab784257f90918039ca",
+      "clipMetaSourceSHA256": "479d331ad98f3f70efe17814b294b63cc67b606bf54415e544699780f660bac8",
+      "oldSHA256": "2b11e77d5d135c96a6a8739c38651a92ae3f3d1511e5def674e66c45438fda07",
+      "installedSHA256": "904a7c9a3d37fa060b8ac962e787e0d27129bd87e655bf91a46ef5f9a5f3e3b8",
+      "nativeSHA256": "f9fba23bb20ae3cebc143b7abba8c04f164ff387f736455230d72c1e61951ae5",
+      "atlasChangedPixels": 12,
+      "alphaChangedPixels": 0,
+      "visibleColorOnlyChanges": 12,
+      "librespriteExit": 0,
+      "runtimeKeys": 15,
+      "nativeCels": 14,
+      "durationMs": 840,
+      "nativeDurationMs": 840,
+      "events": [
+        [
+          120,
+          "AbilityBeat"
+        ],
+        [
+          830,
+          "AbilityComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        10,
+        11,
+        12
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        112,
+        88
+      ],
+      "nativeSize": [
+        112,
+        88
+      ],
+      "timeIntervalsCompared": 15,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "town_marshal",
+      "state": "Idle",
+      "texture": "Assets/_Game/Art/CombatIdles/TownMarshal_Idle.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/TownMarshal_Idle-eba647d7ff.aseprite",
+      "clip": "Assets/_Game/Animations/CombatIdles/TownMarshal_Idle.anim",
+      "failures": [],
+      "clipSourceSHA256": "336204f37306b5b549ed9a1b710cd2f81c1961c0fa0903283605cd98bd1d6a14",
+      "textureMetaSourceSHA256": "f1966fd73348308e997b8d3e8dbeed6aeb1001c1cfcd420f9ce4f2217eb2acb4",
+      "clipMetaSourceSHA256": "5702c10427e08986c3dc26c951876f0a8f2473a23de4d83cf24065978d0aa951",
+      "oldSHA256": "f087906f2a3e758ee4a68349e66249638544e894284e5d32311c7aa08e00852e",
+      "installedSHA256": "b470cdee4dacf42530f5149d521eb65776beb38224a0e9c3845d53e0405717eb",
+      "nativeSHA256": "b2f30327721729a55ce91e57f1eb77b67465db4eae421df378b611b54f1abb32",
+      "atlasChangedPixels": 11,
+      "alphaChangedPixels": 0,
+      "visibleColorOnlyChanges": 11,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 9,
+      "durationMs": 1170,
+      "nativeDurationMs": 1170,
+      "events": [],
+      "loop": true,
+      "changedUnityKeys": [
+        2,
+        4,
+        7,
+        8
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        112,
+        88
+      ],
+      "nativeSize": [
+        112,
+        88
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "conch_marshal",
+      "state": "Death",
+      "texture": "Assets/_Game/Art/DrownedCourt/conch_marshal_Death.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/conch_marshal_Death-e7b5c3974e.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/conch_marshal_Death.anim",
+      "failures": [],
+      "clipSourceSHA256": "5d287ad3e4f933466f88035198316311ef11b34c4cb040031500263b4902e843",
+      "textureMetaSourceSHA256": "e6fbceb125fe7ae689a1f027f4446dbcd7a59bb1267382ce1a4af0bb82bf6c27",
+      "clipMetaSourceSHA256": "ddb45743dad93fd1b6e31c885b940774e656603b688985c5430975c026d90590",
+      "oldSHA256": "209f2ed53b4e8626f802ef95a547020b374f2da0aac38bf7a5da1986043ecd71",
+      "installedSHA256": "0f75dacd6178f99a04570a63365bd1f9d62a883e06b0649630ef44ad10b2c4a1",
+      "nativeSHA256": "a006be8e1cba4c4bcd1408b2e101b1c43f8cf4feaf02c5b0b5f263d89c7353a8",
+      "atlasChangedPixels": 89,
+      "alphaChangedPixels": 1,
+      "visibleColorOnlyChanges": 88,
+      "librespriteExit": 0,
+      "runtimeKeys": 14,
+      "nativeCels": 14,
+      "durationMs": 780,
+      "nativeDurationMs": 780,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        9,
+        10,
+        11,
+        13,
+        14
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 14,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "lantern_warden",
+      "state": "Ability",
+      "texture": "Assets/_Game/Art/DrownedCourt/lantern_warden_Ability.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/lantern_warden_Ability-3277da8590.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/lantern_warden_Ability.anim",
+      "failures": [],
+      "clipSourceSHA256": "274b7a1cb61edc06f9a7de83d0fc5dc45d23a5315f61b8b318986f17530a8e3e",
+      "textureMetaSourceSHA256": "5e2839384fda431de2763fcab047c3f5856b426f7a5ce72c02c42712da42c910",
+      "clipMetaSourceSHA256": "7c56398bbcfe52087b0ddc29587d95d99fef9c3f991f7dd0aa3a1181bd3f44f7",
+      "oldSHA256": "069f1e0c54822994888fa4f90337e30c6df4b9872e53099137f7d364fe3b183c",
+      "installedSHA256": "2ae0c0cd375ae8fea9d5ecdd5ff3b0a47c8d6f68cfb6a1a2f97f0a27893a20e5",
+      "nativeSHA256": "b5dfdeabdc392edbfe0ccde3ef8baadf1341467baaae171f0b32044cf046065d",
+      "atlasChangedPixels": 1,
+      "alphaChangedPixels": 1,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 19,
+      "nativeCels": 19,
+      "durationMs": 930,
+      "nativeDurationMs": 930,
+      "events": [
+        [
+          350,
+          "AbilityImpact"
+        ],
+        [
+          350,
+          "AbilityBeat"
+        ],
+        [
+          920,
+          "AbilityComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        16
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        120
+      ],
+      "nativeSize": [
+        144,
+        120
+      ],
+      "timeIntervalsCompared": 19,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "lantern_warden",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/DrownedCourt/lantern_warden_AutoAttack.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/lantern_warden_AutoAttack-865990be0b.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/lantern_warden_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "825917422f9ff13b8a9515a2be669cc5cc722fa360745df068ac393c89496409",
+      "textureMetaSourceSHA256": "74a89b7a0fed0265bc7ebb3dfe499edb7dc3e0bfb48d917bbeb38e2c6bd082f3",
+      "clipMetaSourceSHA256": "134533ef913431f783dd2101ebdc4864eab6edfaed7323b16870416c7566371d",
+      "oldSHA256": "438e8191f60c6135662273fed134b03291d5ee8bc05907f97deb12dcb8f6bf56",
+      "installedSHA256": "3047f0c1104e035045c6eca17f0091a60586705a2327c25767f8d222508c98f7",
+      "nativeSHA256": "e10d4be772ad709daf391263fa0b6b44015abda5edf7d3e17ef1e441cb7c3c44",
+      "atlasChangedPixels": 14,
+      "alphaChangedPixels": 0,
+      "visibleColorOnlyChanges": 14,
+      "librespriteExit": 0,
+      "runtimeKeys": 14,
+      "nativeCels": 14,
+      "durationMs": 640,
+      "nativeDurationMs": 640,
+      "events": [
+        [
+          135,
+          "AutoAttackImpact"
+        ],
+        [
+          630,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        5
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        120
+      ],
+      "nativeSize": [
+        144,
+        120
+      ],
+      "timeIntervalsCompared": 14,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "lantern_warden",
+      "state": "Death",
+      "texture": "Assets/_Game/Art/DrownedCourt/lantern_warden_Death.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/lantern_warden_Death-33305e388d.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/lantern_warden_Death.anim",
+      "failures": [],
+      "clipSourceSHA256": "9b27b3f4338be5c249cbed569ef49771bb4a43d05dff96aa0ae3b1b0c82f2678",
+      "textureMetaSourceSHA256": "a599fd56c554ba4710bac84049dbea7a952da01278c7ba0a1b39adaca9f3bab4",
+      "clipMetaSourceSHA256": "ef66f77a82191d64c7f4366f6d0330ea90867a1735c9d580c64b9a22a2d6b3df",
+      "oldSHA256": "bb91824eed6ce7ad50150e5b02c1c0effd100a6fadd247aec428b36cc906c81b",
+      "installedSHA256": "78a4a49531d91489e132527a45f29f8a1302c319707951c9804446703b4ca2cc",
+      "nativeSHA256": "3697297d330acaf59e6eac0800d6386330e384cd9d2067a269737e6e398d26b3",
+      "atlasChangedPixels": 8,
+      "alphaChangedPixels": 2,
+      "visibleColorOnlyChanges": 6,
+      "librespriteExit": 0,
+      "runtimeKeys": 14,
+      "nativeCels": 14,
+      "durationMs": 780,
+      "nativeDurationMs": 780,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        5,
+        7,
+        8
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        120
+      ],
+      "nativeSize": [
+        144,
+        120
+      ],
+      "timeIntervalsCompared": 14,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "lantern_warden",
+      "state": "Release",
+      "texture": "Assets/_Game/Art/DrownedCourt/lantern_warden_Release.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/lantern_warden_Release-5dc7b2f49c.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/lantern_warden_Release.anim",
+      "failures": [],
+      "clipSourceSHA256": "a6dd739f626f0a6aee2120c71242343991a3f1bbb2a08c6eb0de5f6e84c35bfd",
+      "textureMetaSourceSHA256": "5a0171bd4ab4ec3e6997f9ca3a0b5288efe2c75473115b995a0bdb7456f1ba0b",
+      "clipMetaSourceSHA256": "dfa8b6c9beb50a28e2dce1a2c3862c82093e8074b0bf4b94214f64c91bd4f882",
+      "oldSHA256": "0e88a7397c310c306d96b210be365fbff3f696c8baf8b18d7b8749443baf8647",
+      "installedSHA256": "024a9ab41926849872f043d76a2024474426b848fcb9fa8830fdacaa74cf8fbe",
+      "nativeSHA256": "f4580f37dc1e0414dec5f0e0b945013c2f1773e32c7f86fff94cdc16ab380d8d",
+      "atlasChangedPixels": 1,
+      "alphaChangedPixels": 1,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 12,
+      "nativeCels": 12,
+      "durationMs": 530,
+      "nativeDurationMs": 530,
+      "events": [
+        [
+          45,
+          "AbilityImpact"
+        ],
+        [
+          45,
+          "AbilityBeat"
+        ],
+        [
+          520,
+          "AbilityComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        9
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        120
+      ],
+      "nativeSize": [
+        144,
+        120
+      ],
+      "timeIntervalsCompared": 12,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "needlefin_skirmisher",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/DrownedCourt/needlefin_skirmisher_AutoAttack.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/needlefin_skirmisher_AutoAttack-1692ac85e2.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/needlefin_skirmisher_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "9fa9c0a4247ce4afd801f4c64afd7c28db23cc8a4671c9de336dd9d5a5ade398",
+      "textureMetaSourceSHA256": "f4755b6927a7abd250bfc8ff891e52ad05a246d3e14037d103998518b958e29c",
+      "clipMetaSourceSHA256": "8cae683b2e2844395f940356c54e7995c26334de673d5f193c2fd0f2addc6f01",
+      "oldSHA256": "7a53cce797cd1f6563301d8fcb7df6abb60e6188efe5991ed983aff8e6cac3e5",
+      "installedSHA256": "23724314ceedea8ef025dd6837e4ee4432dd8f8913b853bbd94c3044a9ce79b1",
+      "nativeSHA256": "c3202bb398c394dd539e7b85ecd0b4c4c3ecbc19f35518ff72385b7846d12c4c",
+      "atlasChangedPixels": 19,
+      "alphaChangedPixels": 0,
+      "visibleColorOnlyChanges": 19,
+      "librespriteExit": 0,
+      "runtimeKeys": 17,
+      "nativeCels": 17,
+      "durationMs": 775,
+      "nativeDurationMs": 775,
+      "events": [
+        [
+          360,
+          "AutoAttackImpact"
+        ],
+        [
+          765,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        9,
+        10
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 17,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "needlefin_skirmisher",
+      "state": "Death",
+      "texture": "Assets/_Game/Art/DrownedCourt/needlefin_skirmisher_Death.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/needlefin_skirmisher_Death-54d4f9090b.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/needlefin_skirmisher_Death.anim",
+      "failures": [],
+      "clipSourceSHA256": "272983ea46e4a1bb0c20e8eb23de0d09fe7251f444fdf1545daef448f27b8f8f",
+      "textureMetaSourceSHA256": "9cfc426805d31e8e8b7b0d9fefc2e2229005eb9bd4d8b26244b408a7e2c6ed76",
+      "clipMetaSourceSHA256": "7ebf666b307ef0b89197500e57f3c2e806dcafca0128a87d0ad244c27db6426e",
+      "oldSHA256": "0b42b426957d134fa12d1f7b672667381775c00709ddc63a0991a2ee81600841",
+      "installedSHA256": "77530670bcb106dafde4c18ec4be9d539e1319d99fd441e2c4dbd62f62c90624",
+      "nativeSHA256": "952a2f3b2fdef0c24a43a90629b6e32ac68b58c5d20631ad03ee768f9f87254a",
+      "atlasChangedPixels": 56,
+      "alphaChangedPixels": 0,
+      "visibleColorOnlyChanges": 56,
+      "librespriteExit": 0,
+      "runtimeKeys": 14,
+      "nativeCels": 14,
+      "durationMs": 780,
+      "nativeDurationMs": 780,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        8,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 14,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "puffer_sentinel",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/DrownedCourt/puffer_sentinel_AutoAttack.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/puffer_sentinel_AutoAttack-c42fc79193.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/puffer_sentinel_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "03b65cf6620f5e3b4f78c1f0508e1188ed31798be256724bb26cba7b77aefeb8",
+      "textureMetaSourceSHA256": "9eda06196d69ef2d0479b8bf666eda78d3b448be436456dba788040fe90c15b6",
+      "clipMetaSourceSHA256": "5b2565a7efcba674c4bc434b0ef7f7cb0309642a70ba4a91df3eaae77eee5328",
+      "oldSHA256": "c12b3c63dc88be69f57f330ecc1e3f2e99ed43aa9db5089d0f44000f41dde765",
+      "installedSHA256": "98804fe5633ec61cdd52e3d346766a8c34b402747b6c3a02f5d98ab9d0364b41",
+      "nativeSHA256": "43dbba3bca73b7977a2a0398d1ed8cd99d6394a24929e0c0dec7399aeb14c022",
+      "atlasChangedPixels": 78,
+      "alphaChangedPixels": 5,
+      "visibleColorOnlyChanges": 73,
+      "librespriteExit": 0,
+      "runtimeKeys": 16,
+      "nativeCels": 16,
+      "durationMs": 730,
+      "nativeDurationMs": 730,
+      "events": [
+        [
+          270,
+          "AutoAttackImpact"
+        ],
+        [
+          720,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        7,
+        8,
+        9
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 16,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "puffer_sentinel",
+      "state": "InflatedAttack",
+      "texture": "Assets/_Game/Art/DrownedCourt/puffer_sentinel_InflatedAttack.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/puffer_sentinel_InflatedAttack-edfdf0effa.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/puffer_sentinel_InflatedAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "bf8c30e27cea5dee6dcc3ea04c96e578eac741cf7833f56d46190216363811d3",
+      "textureMetaSourceSHA256": "c09df0f39c228a65c75779be650765b369224defb69c12b20b41946cbea76e96",
+      "clipMetaSourceSHA256": "9a73e028e6a8203083f8eedfd75d66eff720be0c904570071bc2075e9a4ce2df",
+      "oldSHA256": "65d17fc1f0380aa0a3be2c892ad8c2e87cfd109ead898ea4da40ab3dbdb565c2",
+      "installedSHA256": "fb25eea4db00178e3668a0396760faf793df9dbd0b8c1ea49d219c8157e9dd9c",
+      "nativeSHA256": "ebcc706578a242f75579da764c33a9424e7aef01f6c3ca92ef5e23d470de1b4e",
+      "atlasChangedPixels": 39,
+      "alphaChangedPixels": 0,
+      "visibleColorOnlyChanges": 39,
+      "librespriteExit": 0,
+      "runtimeKeys": 16,
+      "nativeCels": 16,
+      "durationMs": 675,
+      "nativeDurationMs": 675,
+      "events": [
+        [
+          360,
+          "AutoAttackImpact"
+        ],
+        [
+          665,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        8,
+        10
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 16,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "queen_nacre",
+      "state": "ChannelHold",
+      "texture": "Assets/_Game/Art/DrownedCourt/queen_nacre_ChannelHold.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/queen_nacre_ChannelHold-b987140c5d.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/queen_nacre_ChannelHold.anim",
+      "failures": [],
+      "clipSourceSHA256": "0679ff19921665def052fb27e2a3d7a6aea0c72d1203053a28735fe597978400",
+      "textureMetaSourceSHA256": "115fd88146651ffcaca613718bc2af34490f57a0a59d5a563cbf98f76a2cb29a",
+      "clipMetaSourceSHA256": "3bc5cb84da36a1fda76b0ec6c480d712654917858d01d47b9c081c4a24301fe0",
+      "oldSHA256": "a0925ef7d797c56aa98004ec1fd324341791e4ed2b025303d841a9b426c6ec27",
+      "installedSHA256": "8eb317ce1310f324d3f5648c0937060c336609ef944472a4d482188ff011e611",
+      "nativeSHA256": "abc6e1d941c598989c7b87850a4e5dd5f801546c9375dbf97dd24fe51402deff",
+      "atlasChangedPixels": 2259,
+      "alphaChangedPixels": 1035,
+      "visibleColorOnlyChanges": 1224,
+      "librespriteExit": 0,
+      "runtimeKeys": 4,
+      "nativeCels": 4,
+      "durationMs": 540,
+      "nativeDurationMs": 540,
+      "events": [],
+      "loop": true,
+      "changedUnityKeys": [
+        2
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        120
+      ],
+      "nativeSize": [
+        144,
+        120
+      ],
+      "timeIntervalsCompared": 4,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "queen_nacre",
+      "state": "Death",
+      "texture": "Assets/_Game/Art/DrownedCourt/queen_nacre_Death.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/queen_nacre_Death-c24d4f81ef.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/queen_nacre_Death.anim",
+      "failures": [],
+      "clipSourceSHA256": "d7b74253c6298eca5a9f769a259c50f452792d1edc8bca2c0d006ff205194baf",
+      "textureMetaSourceSHA256": "9d745021934115b7eea5c38c5520bc13fd45f4455f2e542734f3e43e5e0f0ae3",
+      "clipMetaSourceSHA256": "77b266abb69db5d8dbf8ab444a56162a0b98414c9d1c9e52bcd7494f1b8a1c3a",
+      "oldSHA256": "8eb649479b644d67f17b2cf2566cdb17947f6b1f7233bba40000ecb8dd103a5e",
+      "installedSHA256": "63d39dab350a28b624e7c0c5cbb0ee15ea15c9aca7dc20e06b311f52c440bff9",
+      "nativeSHA256": "713ca9f408fe45f9e43a406c96d9c8b0974e9f7a2fd9a1e937052283b15f7177",
+      "atlasChangedPixels": 118,
+      "alphaChangedPixels": 0,
+      "visibleColorOnlyChanges": 118,
+      "librespriteExit": 0,
+      "runtimeKeys": 14,
+      "nativeCels": 14,
+      "durationMs": 780,
+      "nativeDurationMs": 780,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        8
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        120
+      ],
+      "nativeSize": [
+        144,
+        120
+      ],
+      "timeIntervalsCompared": 14,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "reef_netweaver",
+      "state": "Ability",
+      "texture": "Assets/_Game/Art/DrownedCourt/reef_netweaver_Ability.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/reef_netweaver_Ability-92014014e2.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/reef_netweaver_Ability.anim",
+      "failures": [],
+      "clipSourceSHA256": "e6442f90a1d7566b249dc6c11034e72e388869566df0bc91186d52ef41d9abfe",
+      "textureMetaSourceSHA256": "b09bd64003466e231664e7df95afc588c562c8cbba3884e9a993d7676b4ff52b",
+      "clipMetaSourceSHA256": "d76092ae3ece63c9f25438e88d5308813e3285a30e83349536774812e0a2511d",
+      "oldSHA256": "8c43f7116f2e3890ff3d4017d6c3bcde9f4397e46bbf604e61028cd94ef612de",
+      "installedSHA256": "b9269bcb3c9935a7605f67df6b089e088887ad47dc012a6adf617fc11a542e3f",
+      "nativeSHA256": "9f6cb7219c30e2f0d713dd0bdac3e34d3a423e151c654a4357703d32d685016a",
+      "atlasChangedPixels": 3,
+      "alphaChangedPixels": 3,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 19,
+      "nativeCels": 19,
+      "durationMs": 930,
+      "nativeDurationMs": 930,
+      "events": [
+        [
+          350,
+          "AbilityImpact"
+        ],
+        [
+          350,
+          "AbilityBeat"
+        ],
+        [
+          920,
+          "AbilityComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        13
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 19,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "reef_netweaver",
+      "state": "Release",
+      "texture": "Assets/_Game/Art/DrownedCourt/reef_netweaver_Release.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/reef_netweaver_Release-16140cf08e.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/reef_netweaver_Release.anim",
+      "failures": [],
+      "clipSourceSHA256": "45d913dde88f06301dfa7cced2952ca236ee57053562bdaebddc3d09686c7c6e",
+      "textureMetaSourceSHA256": "f5ab17184bba69e6a0de127629ccc02dfde365ebb691f835a2cc3ff60d500bb1",
+      "clipMetaSourceSHA256": "970e1a5ef18d709d3988a56f627875f925f63993ce92d063cd14e077a992cc23",
+      "oldSHA256": "da4f1076905d528b1815d2e5442649f019115230d6acfde9388191fd56b9434c",
+      "installedSHA256": "472d31bb29d9b8151650e48d042de9cd6edf115970bec22da1852ccc838aa21b",
+      "nativeSHA256": "d224d3034dc49fa2bcb585f3e4792ab291e6bad13c0d6bd1001f937ce367d838",
+      "atlasChangedPixels": 3,
+      "alphaChangedPixels": 3,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 12,
+      "nativeCels": 12,
+      "durationMs": 530,
+      "nativeDurationMs": 530,
+      "events": [
+        [
+          45,
+          "AbilityImpact"
+        ],
+        [
+          45,
+          "AbilityBeat"
+        ],
+        [
+          520,
+          "AbilityComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        6
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 12,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "reef_spearman",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/DrownedCourt/reef_spearman_AutoAttack.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/reef_spearman_AutoAttack-dc786c9937.aseprite",
+      "clip": "Assets/_Game/Animations/DrownedCourt/reef_spearman_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "553d921eb008a07a9b56d5fc84387db66db328aa1b4e7311d1f9537d38901e97",
+      "textureMetaSourceSHA256": "92e2ef1c292daad14fad244bffe56156e90c7198e2d1bfeb7600196079a8beba",
+      "clipMetaSourceSHA256": "aacb877d6cf77de4b11165677173e5338c1e18f065073dab4228852dc2631bf7",
+      "oldSHA256": "d85efc5402c4f2185102c77e47e778ec1b4fa77468c5b8a20dbe6828ca097e1e",
+      "installedSHA256": "614e0dd2fced9da3ceeed8496ea4b9eff6d2bf788ba72255b98a55e3ffe2cfe7",
+      "nativeSHA256": "cb80d3e75712a326911358c06c51c704bf2f9b57605809077b8f5d758cc071e3",
+      "atlasChangedPixels": 5003,
+      "alphaChangedPixels": 1879,
+      "visibleColorOnlyChanges": 3124,
+      "librespriteExit": 0,
+      "runtimeKeys": 16,
+      "nativeCels": 16,
+      "durationMs": 730,
+      "nativeDurationMs": 730,
+      "events": [
+        [
+          270,
+          "AutoAttackImpact"
+        ],
+        [
+          720,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        176,
+        104
+      ],
+      "nativeSize": [
+        176,
+        104
+      ],
+      "timeIntervalsCompared": 16,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "briar_archer",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/Forest/Roster/Briar_Archer_AutoAttack.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Briar_Archer_AutoAttack-535b320443.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Roster/Briar_Archer_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "7306a2d1fe263a069dd556997f12b33192828668e88664f2283114ea17c2c803",
+      "textureMetaSourceSHA256": "4fba61b53792fa93401c00926a8802a28ace9e4c8296876e01b8c9d10b1aa436",
+      "clipMetaSourceSHA256": "bcdd802c382babe06ac86c1c7d9f6c3e65ea77b7e87f62c02feec512d79a1eac",
+      "oldSHA256": "f6cb5d16b382342d90f0b94ba37a55c88bfc85c5d68732be6c6687c9a3c78381",
+      "installedSHA256": "6f2550d7f26fa6214f82c611c1a61cd544551c8298b571c2494496a6561a1206",
+      "nativeSHA256": "68232083fac5884145811f643f689a1a0b59a10d4c9fdf2ac394f77cc88552d0",
+      "atlasChangedPixels": 25,
+      "alphaChangedPixels": 25,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 10,
+      "durationMs": 765,
+      "nativeDurationMs": 765,
+      "events": [
+        [
+          420,
+          "AutoAttackImpact"
+        ],
+        [
+          755,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        3,
+        6,
+        7
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        104
+      ],
+      "nativeSize": [
+        144,
+        104
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "briar_archer",
+      "state": "ChannelHold",
+      "texture": "Assets/_Game/Art/Forest/Roster/Briar_Archer_ChannelHold.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Briar_Archer_ChannelHold-3f1f28c7a1.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Roster/Briar_Archer_ChannelHold.anim",
+      "failures": [],
+      "clipSourceSHA256": "c2c32f103cb6532ba00ecd5288d019060dfb0f315533a6258d79bfa9c39b51e4",
+      "textureMetaSourceSHA256": "bef2ff60afa6368b0994d6535a8e5bcfe68aaa0ea9b73a5bfba1c9d22b35ab65",
+      "clipMetaSourceSHA256": "4cb1d350bc62ac1a569f168deae2fab6108f2f72a8a1f2f631d18b53b92f5571",
+      "oldSHA256": "8bcaf4fdd3c237cf73bbe50e9343a90111e92d5de60e38e3f17d9cc553f7ba5c",
+      "installedSHA256": "10469cc2510f893e9b8692c1b1e044144d2f93bae2fe9b9212f551f5be686469",
+      "nativeSHA256": "770436480cca401d99754324107da53f10953a4a1aca4bb725adbdfe43f61a6e",
+      "atlasChangedPixels": 7,
+      "alphaChangedPixels": 7,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 2,
+      "nativeCels": 2,
+      "durationMs": 500,
+      "nativeDurationMs": 500,
+      "events": [],
+      "loop": true,
+      "changedUnityKeys": [
+        1,
+        2
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        104
+      ],
+      "nativeSize": [
+        144,
+        104
+      ],
+      "timeIntervalsCompared": 2,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "briar_archer",
+      "state": "ChannelStart",
+      "texture": "Assets/_Game/Art/Forest/Roster/Briar_Archer_ChannelStart.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Briar_Archer_ChannelStart-f98425e6cb.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Roster/Briar_Archer_ChannelStart.anim",
+      "failures": [],
+      "clipSourceSHA256": "721257e1d07c69e5bcbec8af20421ab41cd5e50e029bb967f50affd7ad19688a",
+      "textureMetaSourceSHA256": "56e12002a6bd4efedecd093cb48d5f46e62f709d54973bbd7d5d2fbb2042d825",
+      "clipMetaSourceSHA256": "b28017d9c60af6e13da5184d10ca1492a125b5db008ab33ec20da6deddec5ff9",
+      "oldSHA256": "464c8237a320ce68d6f2a69062721d8ca4f4a174dcc8129b13890969ba861267",
+      "installedSHA256": "eb03a7f5309846e5f4800f7d0efeba3c7eadd4c652504f7ce9df64419fae8e01",
+      "nativeSHA256": "72dc97b6e5de7a369c852e9e631243d421bf5ffbf98ac49843b1d093b90e8aa8",
+      "atlasChangedPixels": 7,
+      "alphaChangedPixels": 7,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 8,
+      "nativeCels": 8,
+      "durationMs": 650,
+      "nativeDurationMs": 650,
+      "events": [
+        [
+          510,
+          "AbilityImpact"
+        ],
+        [
+          510,
+          "AbilityBeat"
+        ],
+        [
+          640,
+          "AbilityComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        7,
+        8
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        104
+      ],
+      "nativeSize": [
+        144,
+        104
+      ],
+      "timeIntervalsCompared": 8,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "briar_archer",
+      "state": "Release",
+      "texture": "Assets/_Game/Art/Forest/Roster/Briar_Archer_Release.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Briar_Archer_Release-5a31eae84e.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Roster/Briar_Archer_Release.anim",
+      "failures": [],
+      "clipSourceSHA256": "bdcf4744f1611a12e6685b51a3224e8f86c7898a7304b52776e8080da7f4cdaa",
+      "textureMetaSourceSHA256": "acf211cf6622f707db85cc63f65d0d603242fcde69ddd343659fa1986dc2d301",
+      "clipMetaSourceSHA256": "f8efd393e55fe46408cab1c3dcdfc6e34ab3ee1561a6059e84673c2a1a8b50a2",
+      "oldSHA256": "dde2491489023630bdf09320f0965560f771196ce15f870b0296eec9111e3703",
+      "installedSHA256": "9fb6d8dc36bb7920cdbbc9327ed81d2706a6a01a2e8d0686de8074755c64fb4f",
+      "nativeSHA256": "be3addb7aa0868b58435fdf6ae705d66b6c1f54fdb0dfaab452490d2963962f1",
+      "atlasChangedPixels": 7,
+      "alphaChangedPixels": 7,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 8,
+      "nativeCels": 8,
+      "durationMs": 480,
+      "nativeDurationMs": 480,
+      "events": [
+        [
+          165,
+          "AbilityImpact"
+        ],
+        [
+          165,
+          "AbilityBeat"
+        ],
+        [
+          470,
+          "AbilityComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        1
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        104
+      ],
+      "nativeSize": [
+        144,
+        104
+      ],
+      "timeIntervalsCompared": 8,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "elven_mender",
+      "state": "Idle",
+      "texture": "Assets/_Game/Art/Forest/Production/Elven_Mender_Idle.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Elven_Mender_Idle-aebbb3d3fb.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Elven_Mender_Idle.anim",
+      "failures": [],
+      "clipSourceSHA256": "194a16d4e49c4f7a4e27a80446743f228170c167263d2bef79c0800521b8393c",
+      "textureMetaSourceSHA256": "151cbc9ad5866ca095bfe2b46cc0a78c3dbf974621f0b68e469919fe42c73c99",
+      "clipMetaSourceSHA256": "628049b7aba6be1e3b1ee9f1978818b49db42468283d05bed03f8ff6e01c99b8",
+      "oldSHA256": "ac180eb7d35cb166742c4aeb21c414e1238b3153c1f1892ffd46e90daeaec0c8",
+      "installedSHA256": "e10398007291a3b807a60c1bfba8c6a9bbe483f44cbacb82ce7eae4fb6e4791f",
+      "nativeSHA256": "25ae5ff236a5564f2e535840b7bcecff710218e5bba008a83a7aaca9850f575b",
+      "atlasChangedPixels": 66,
+      "alphaChangedPixels": 66,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 10,
+      "durationMs": 1170,
+      "nativeDurationMs": 1170,
+      "events": [],
+      "loop": true,
+      "changedUnityKeys": [
+        2,
+        7,
+        8
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        88
+      ],
+      "nativeSize": [
+        144,
+        88
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "elven_mender",
+      "state": "ChannelHold",
+      "texture": "Assets/_Game/Art/Forest/Production/Elven_Mender_ChannelHold.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Elven_Mender_ChannelHold-e352fa7e08.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Elven_Mender_ChannelHold.anim",
+      "failures": [],
+      "clipSourceSHA256": "1a6b001da601daebab6a5d1653fcf77ed9674dc13259d36eefe96a2ee5933012",
+      "textureMetaSourceSHA256": "f0e250af0ac5f805fe84eb25bbdc2bb4a4b523be29a03c7b6a02b1dfe48afa96",
+      "clipMetaSourceSHA256": "805644e1e701b445eb424eb59458aa65e691f82dcb3a3d4c9cc2517ca0c4ef4e",
+      "oldSHA256": "dd56e52917e3fc739d47debfbe73a6704641295081ca7e09ce2bc53082c55b9e",
+      "installedSHA256": "3f24593d65ca8a4b516b0ab4fe631fd525d3ed57c74bc65810dad9f890dd34fc",
+      "nativeSHA256": "5a6815ce85d8f7f84e19bedcf183e335d21db628e57449972bc47a3e9e2b2c42",
+      "atlasChangedPixels": 44,
+      "alphaChangedPixels": 44,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 5,
+      "nativeCels": 5,
+      "durationMs": 720,
+      "nativeDurationMs": 720,
+      "events": [],
+      "loop": true,
+      "changedUnityKeys": [
+        2,
+        4,
+        5
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        88
+      ],
+      "nativeSize": [
+        144,
+        88
+      ],
+      "timeIntervalsCompared": 5,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "elven_mender",
+      "state": "ChannelStart",
+      "texture": "Assets/_Game/Art/Forest/Production/Elven_Mender_ChannelStart.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Elven_Mender_ChannelStart-964ef919e8.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Elven_Mender_ChannelStart.anim",
+      "failures": [],
+      "clipSourceSHA256": "5fb992130e04f679bc001454386a0b6801c33061ab45a52016ad39b8bbe63d25",
+      "textureMetaSourceSHA256": "cccb3e7322576083a6a5239f9df3f1782f56a6f44c1b46ff100fa9979184950e",
+      "clipMetaSourceSHA256": "aae633ae21839f0770f329993dfc534f2843a31e52b320b66a311d4705e3ae8c",
+      "oldSHA256": "485e60d175835c523040c8859c515caec3e8fe6898be8b0708f103b4f893518b",
+      "installedSHA256": "36577ecea6e3c949dc92a267349785237532b5c8a6967f9203f13d7c61972988",
+      "nativeSHA256": "69c0d9d6022d77e6e8858222c8b6d57af52abf998fb5cefb75cf0da74aa29e85",
+      "atlasChangedPixels": 91,
+      "alphaChangedPixels": 91,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 10,
+      "durationMs": 700,
+      "nativeDurationMs": 700,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        2,
+        3,
+        7,
+        8
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        88
+      ],
+      "nativeSize": [
+        144,
+        88
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "elven_mender",
+      "state": "Release",
+      "texture": "Assets/_Game/Art/Forest/Production/Elven_Mender_Release.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Elven_Mender_Release-40e95d9cb2.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Elven_Mender_Release.anim",
+      "failures": [],
+      "clipSourceSHA256": "ebccf50571769fb8d6728554cdc380c7d7a4f63e0aedeab1e361588d973507f0",
+      "textureMetaSourceSHA256": "5298fbab1107b24c4fe85a0f5eec5ffbc9be3bae4224512381d9476b4b1817c7",
+      "clipMetaSourceSHA256": "6dd1e192f35766bd1a912904f3fb760dbebf93670ecaa2551cc79feec1fe09ed",
+      "oldSHA256": "d2506fb4f84c59fbf842163781aeb6e9aca302c589583b8b2fb085c528e3db37",
+      "installedSHA256": "33fd5ba9476d92a5485a6a86a8e9ce6b37b9857c1948061d7cc54ae81a7f8b3b",
+      "nativeSHA256": "5e977ceeee48d275b48e11efc533a811c2f2ec0dcaa48f8d06a5f59506b87724",
+      "atlasChangedPixels": 90,
+      "alphaChangedPixels": 90,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 10,
+      "durationMs": 610,
+      "nativeDurationMs": 610,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        2,
+        6,
+        7,
+        8
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        88
+      ],
+      "nativeSize": [
+        144,
+        88
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "elven_scout",
+      "state": "Death",
+      "texture": "Assets/_Game/Art/Forest/Production/Elven_Scout_Death.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Elven_Scout_Death-d1f8be9439.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Elven_Scout_Death.anim",
+      "failures": [],
+      "clipSourceSHA256": "f7595f7de2ce54af04e22a7add081dfd8c6ba2d777510c448c88585722b8eaa5",
+      "textureMetaSourceSHA256": "322767a7f95f9270a209bb3e9a833a6eb0707cd4ac7d2113e0063ddda205c957",
+      "clipMetaSourceSHA256": "11900fd6f2d23291449c5d562e3accc8b0a73e68211ea3eb5b871b2d691daec4",
+      "oldSHA256": "9073006b3500bb7839eb7f08284a715781dc296acc2a8f7a5dff5b8a18cd98d0",
+      "installedSHA256": "06d2e5ec00495b9e26a0ca9d366e298a69961bfd57d83e49161884a915ec1fa9",
+      "nativeSHA256": "63351ab803c049100d6b15c1dc0c514df218f6fcc0bc6bac6bc71fecd68ba72a",
+      "atlasChangedPixels": 9,
+      "alphaChangedPixels": 9,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 9,
+      "nativeCels": 9,
+      "durationMs": 555,
+      "nativeDurationMs": 555,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        3
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        88
+      ],
+      "nativeSize": [
+        144,
+        88
+      ],
+      "timeIntervalsCompared": 9,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "elven_thornkeeper",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/Forest/Roster/Elven_Thornkeeper_AutoAttack.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Elven_Thornkeeper_AutoAttack-7f6505517e.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Roster/Elven_Thornkeeper_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "9c8e6e58552d139368a7b439ee9cc061f973c2756ab01b59fad53312485dc83b",
+      "textureMetaSourceSHA256": "32a732ae5ec580b99d0870a36292ef48de3ddddaa87f7a650a6d6e4d7706d9cb",
+      "clipMetaSourceSHA256": "8098af02c5b60f9fdd16b3d162e398aefcfee55624283ff2123615689965efae",
+      "oldSHA256": "fd429965ac90ed5d9075b0a214dbee4607de4c7948125cbd5b3c34d46ace095e",
+      "installedSHA256": "ec91af3a82f3e1d53b4b75269b61d12232e952f472bc6d45f2470532eb8f56bb",
+      "nativeSHA256": "703d44756fb6be4bf276371519c5342fd777a12754d8b87bff6b0d5c0cd0b09c",
+      "atlasChangedPixels": 1,
+      "alphaChangedPixels": 1,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 10,
+      "durationMs": 765,
+      "nativeDurationMs": 765,
+      "events": [
+        [
+          500,
+          "AutoAttackImpact"
+        ],
+        [
+          755,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        4
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        104
+      ],
+      "nativeSize": [
+        144,
+        104
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "orc_rootbinder",
+      "state": "ChannelHold",
+      "texture": "Assets/_Game/Art/Forest/Production/Orc_Rootbinder_ChannelHold.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Orc_Rootbinder_ChannelHold-b657d51394.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Orc_Rootbinder_ChannelHold.anim",
+      "failures": [],
+      "clipSourceSHA256": "955e9e4a2d032f0835755f5f1b9d8e4e941213472d6402bfcd2772bf1770b8c9",
+      "textureMetaSourceSHA256": "4801691a32fed2a7cbb91496fb00eb4f1bc41278c241fffb8c83bcdd20ccec60",
+      "clipMetaSourceSHA256": "b9eb827a25210f5a4383b69c016205e1917ceef4bb653a63d417262702e5082d",
+      "oldSHA256": "f5e7f4d9534647805ca9f393b8740b140e3f0207cda38c092c07777c7b81dd2c",
+      "installedSHA256": "0ac6602f2064153a57a3338a41053fca7459abce49fefb98c29cbab778153513",
+      "nativeSHA256": "76579c41ab165a6694ad768b6b03ce52818f6ed30df7d3e0340c7194f00caaf2",
+      "atlasChangedPixels": 7,
+      "alphaChangedPixels": 7,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 5,
+      "nativeCels": 5,
+      "durationMs": 720,
+      "nativeDurationMs": 720,
+      "events": [],
+      "loop": true,
+      "changedUnityKeys": [
+        3,
+        4,
+        5
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        88
+      ],
+      "nativeSize": [
+        144,
+        88
+      ],
+      "timeIntervalsCompared": 5,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "orc_trailguard",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/Forest/Production/Orc_Trailguard_AutoAttack.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Orc_Trailguard_AutoAttack-a128ca25c0.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Orc_Trailguard_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "9276538cbba8c3d201327c17991790d5d59dab0ef6770dd769927505808373b1",
+      "textureMetaSourceSHA256": "39ae3441c5d97fd48746e23f5972fde6cf997e06b8df725a924cbac97ad04f09",
+      "clipMetaSourceSHA256": "ae20b3cda4ab0dead662d9276e54e41563dff8316d7b36861c35847972fe1364",
+      "oldSHA256": "f625b24abad9b02de895724f70dcf5e7b7b1b34767c1e203845430c21dcf2e43",
+      "installedSHA256": "a7414dae5bc73e8ff4f1babe731913eba94b08ab86cfbd78d26f60f795c6c924",
+      "nativeSHA256": "0782d2939fd6c49450c1b89140ed037b54ceb474ecfde7dacad4e1d87387b7db",
+      "atlasChangedPixels": 75,
+      "alphaChangedPixels": 0,
+      "visibleColorOnlyChanges": 75,
+      "librespriteExit": 0,
+      "runtimeKeys": 11,
+      "nativeCels": 11,
+      "durationMs": 660,
+      "nativeDurationMs": 660,
+      "events": [
+        [
+          270,
+          "AutoAttackImpact"
+        ],
+        [
+          650,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        5
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        88
+      ],
+      "nativeSize": [
+        144,
+        88
+      ],
+      "timeIntervalsCompared": 11,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "snapvine",
+      "state": "Death",
+      "texture": "Assets/_Game/Art/Forest/Roster/Snapvine_Death.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/Snapvine_Death-f90af5cabf.aseprite",
+      "clip": "Assets/_Game/Animations/Forest/Roster/Snapvine_Death.anim",
+      "failures": [],
+      "clipSourceSHA256": "3c9c912ace81c629486885d0542026d6775cf3690949bf7d2571426d19114d38",
+      "textureMetaSourceSHA256": "e20172454f0081d94f8abbd9b091e03502b6cbf609ac4c83014119d93f33ad8c",
+      "clipMetaSourceSHA256": "547ccab9ebc38c8abb0d6317342636a3871859805b810efe86512e7bea2158b5",
+      "oldSHA256": "570b50dda385228e14edad06bb971c2b1624ac1056d3ea3f633c3ab9402bfe97",
+      "installedSHA256": "f0dedcfb492e78365572e9e322196f1f751e6252f6e3400ee54b82ca03da0a19",
+      "nativeSHA256": "9f90dc88c9ccbd5f2fb15c33a73804fb175f321f7267ed9f14c7371358c1c1ca",
+      "atlasChangedPixels": 298,
+      "alphaChangedPixels": 0,
+      "visibleColorOnlyChanges": 298,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 10,
+      "durationMs": 960,
+      "nativeDurationMs": 960,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        144,
+        104
+      ],
+      "nativeSize": [
+        144,
+        104
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "rivet_turret",
+      "state": "Death",
+      "texture": "Assets/_Game/Art/Ironvein/rivet_turret_Death.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/rivet_turret_Death-5df4e29ace.aseprite",
+      "clip": "Assets/_Game/Animations/Ironvein/rivet_turret_Death.anim",
+      "failures": [],
+      "clipSourceSHA256": "0026167646e4bb513b26a9ea54caddf48b0410e94aff4299546221c681fac794",
+      "textureMetaSourceSHA256": "d49de8111b292fbbdd37d5f9504f2b6b5dc5452a5a6ee1cd1ab09b23a97525a8",
+      "clipMetaSourceSHA256": "9f5d4182f4e717b2f87a4b652c21fbce95c200b3f7d864d7198d012717710366",
+      "oldSHA256": "96040534a5c7578f64d270ea74552b13dd45c0759239889d7bbcb11b80e23b8f",
+      "installedSHA256": "a2a9683990637c0c8f3c534db15f7911dbfc2fd69af893624a472232830adbd8",
+      "nativeSHA256": "6d21e0a14544f3c7301cc753eda1a848f00f3a1549bc365973028c61f392a615",
+      "atlasChangedPixels": 1,
+      "alphaChangedPixels": 1,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 9,
+      "durationMs": 760,
+      "nativeDurationMs": 760,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        7
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "siege_machinist",
+      "state": "Idle",
+      "texture": "Assets/_Game/Art/Ironvein/siege_machinist_Idle.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/siege_machinist_Idle-97c418631e.aseprite",
+      "clip": "Assets/_Game/Animations/Ironvein/siege_machinist_Idle.anim",
+      "failures": [],
+      "clipSourceSHA256": "d71ed26aaa0c2215c2cff964dd5ad4c307852753960bb79af568b39d02f45b86",
+      "textureMetaSourceSHA256": "ca449472a3267d1941ac4ade69dc29cbcf940e1c3da0ff0b7554ae3b830d08ef",
+      "clipMetaSourceSHA256": "37e21547e994ebdb0f8050ac809d9f81e1bcd221d11ac3d9caf7e1fd696cd61c",
+      "oldSHA256": "eaffc4ac7e76e1d7cf0ce20c2e48ea923e27f497b5c0eb61334f0767b151a5f3",
+      "installedSHA256": "23be4bc0eba49dcf2ab23c482e07f0425f8c5221b25440a4a72b21612420566f",
+      "nativeSHA256": "f9402d00981a147750039bedff1efe4f6552eb88b9463c83fb69d894174a8a0f",
+      "atlasChangedPixels": 6,
+      "alphaChangedPixels": 6,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 6,
+      "nativeCels": 5,
+      "durationMs": 1100,
+      "nativeDurationMs": 1100,
+      "events": [],
+      "loop": true,
+      "changedUnityKeys": [
+        2,
+        3,
+        4
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 6,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "siege_machinist",
+      "state": "Death",
+      "texture": "Assets/_Game/Art/Ironvein/siege_machinist_Death.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/siege_machinist_Death-9d6251b277.aseprite",
+      "clip": "Assets/_Game/Animations/Ironvein/siege_machinist_Death.anim",
+      "failures": [],
+      "clipSourceSHA256": "4cc23d3d3cfe0f9b90bfa68005ceff90e8dfe35b58d5efcdcfd895175156f32e",
+      "textureMetaSourceSHA256": "be3d5f340ddf5b1987a4ef67caf0c5541465253be6557ab71b91469835904a77",
+      "clipMetaSourceSHA256": "7e4356053c809593284f65292d2390b6a0882e22dab7f052e90c7fe4e6904e0a",
+      "oldSHA256": "3a9237d022db505421279c98df49559d3c75602afba3cce4cf23813ddb4a7afe",
+      "installedSHA256": "edf0005ce9791bfbb39a44e2944d988dd3c66f535d3f394754f04f485d29188a",
+      "nativeSHA256": "4d4dbaf43e90ef7f1f3b7bedf78037805d344d7835153ba9f3edcb895d0aecb9",
+      "atlasChangedPixels": 5,
+      "alphaChangedPixels": 5,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 9,
+      "durationMs": 760,
+      "nativeDurationMs": 760,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "stonewright",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/Ironvein/stonewright_AutoAttack.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/stonewright_AutoAttack-a204d845ec.aseprite",
+      "clip": "Assets/_Game/Animations/Ironvein/stonewright_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "c80bdb6d17e0880261c8e32dc84f3eb8046113e79d64a8af1bf1cc099a6fc67c",
+      "textureMetaSourceSHA256": "3cdc7866c8a074fc41406913417e936823025f0dc06fb6b8486ff67f8f717e18",
+      "clipMetaSourceSHA256": "3fa655baeb2f03be62f2826708d332dbcb30ec9c92c89e8f8d6c650ffe844e0e",
+      "oldSHA256": "310f9efea332ac02a6173f893b05b6ef693676ad25461e0147de85914c9e6b4f",
+      "installedSHA256": "75eefcc22dd0e8a0e8d6945fcb9576d3472e35587aa214b724a13e916023c301",
+      "nativeSHA256": "4694bba1a80eb646b8f788fb4246a8e27386c737e29436486080ef644a17aa1e",
+      "atlasChangedPixels": 6,
+      "alphaChangedPixels": 6,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 13,
+      "nativeCels": 12,
+      "durationMs": 840,
+      "nativeDurationMs": 840,
+      "events": [
+        [
+          330,
+          "AutoAttackImpact"
+        ],
+        [
+          830,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        4
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 13,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "stonewright",
+      "state": "Ability",
+      "texture": "Assets/_Game/Art/Ironvein/stonewright_Ability.png",
+      "native": "ArtSource/EnemyArtCohesion/Native/stonewright_Ability-2b4cdaa00d.aseprite",
+      "clip": "Assets/_Game/Animations/Ironvein/stonewright_Ability.anim",
+      "failures": [],
+      "clipSourceSHA256": "e000951b1daaa8eaa027fca175c00db1e81c2cbc7ce91136bb6b552d14615b20",
+      "textureMetaSourceSHA256": "392290bcc1a5927c09e2e984ae7e4e86a688edb05f63255ae918984608ef426f",
+      "clipMetaSourceSHA256": "bac67a0ec640a137209e8347fb9177cd17a29410585fbc2c83f864bd98bee81b",
+      "oldSHA256": "310f9efea332ac02a6173f893b05b6ef693676ad25461e0147de85914c9e6b4f",
+      "installedSHA256": "75eefcc22dd0e8a0e8d6945fcb9576d3472e35587aa214b724a13e916023c301",
+      "nativeSHA256": "ad07c96fbe7a7624f42237b92cf740751b10116c800f95fa66f20ca3e35e49f4",
+      "atlasChangedPixels": 6,
+      "alphaChangedPixels": 6,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 13,
+      "nativeCels": 12,
+      "durationMs": 920,
+      "nativeDurationMs": 920,
+      "events": [
+        [
+          410,
+          "AbilityImpact"
+        ],
+        [
+          410,
+          "AbilityBeat"
+        ],
+        [
+          910,
+          "AbilityComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        4
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 13,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "frostblade_reaver",
+      "state": "Hit",
+      "texture": "Assets/_Game/Art/Frostwake/Motion/frostblade_reaver_Hit.png",
+      "native": "ArtSource/Frostwake/production/frostblade_reaver/Hit.aseprite",
+      "clip": "Assets/_Game/Animations/Frostwake/frostblade_reaver_Hit.anim",
+      "failures": [],
+      "clipSourceSHA256": "63eee78cb31ffc8dbe886a90aa08ce0e5bcc1e0b100d6e0828d6294fa501f65a",
+      "textureMetaSourceSHA256": "0278d302f66aeb19210ef809f2f6c5aedcce708f2354c86669acb023a667450e",
+      "clipMetaSourceSHA256": "9e1f6e3ac10e8c1f56b6bb90240636e6eb21a255e81d1a92c2b4dceaa73e0625",
+      "oldSHA256": "c2e9f05fb1104c1a5a6a06a082fc379ef45de819085d7e417b3353879f6fda45",
+      "installedSHA256": "60be94856e3d8af5e09c0a378a645cb01c0496c476680fc60e7f51a3d0ea654b",
+      "nativeSHA256": "5e944fdc6ae11f2819782872428778a327da038b739ade73860cd5007c62783a",
+      "atlasChangedPixels": 5,
+      "alphaChangedPixels": 5,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 6,
+      "nativeCels": 5,
+      "durationMs": 320,
+      "nativeDurationMs": 320,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        2
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 6,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "harpoon_hunter",
+      "state": "Hit",
+      "texture": "Assets/_Game/Art/Frostwake/Motion/harpoon_hunter_Hit.png",
+      "native": "ArtSource/Frostwake/production/harpoon_hunter/Hit.aseprite",
+      "clip": "Assets/_Game/Animations/Frostwake/harpoon_hunter_Hit.anim",
+      "failures": [],
+      "clipSourceSHA256": "fd9b557df71047f00bb51556c67d8cb3ca5526372f10e2d73f71f9539a360d58",
+      "textureMetaSourceSHA256": "a6b029de4e52d3a2e51ba260af12b9bc07cc5f262b03a720d390c6118c3ee8da",
+      "clipMetaSourceSHA256": "013a41932ad58a200e30f4155eafdae9f492e1243792ab74cf2059d89bac0c14",
+      "oldSHA256": "201908640bb454a2565de52dedd26ed8732266a53f851497d450bfa8f7ac9e7c",
+      "installedSHA256": "caae0c84d9e750c928fcfa1e94ea9373410758e803215787f4eec318d425a07b",
+      "nativeSHA256": "ed5bd2ad7f13547b44116e84b530d5e9d5f35db8b86dca758a9bcc85fa6929ce",
+      "atlasChangedPixels": 7,
+      "alphaChangedPixels": 7,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 6,
+      "nativeCels": 5,
+      "durationMs": 320,
+      "nativeDurationMs": 320,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 6,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "iceborn_champion",
+      "state": "Hit",
+      "texture": "Assets/_Game/Art/Frostwake/Motion/iceborn_champion_Hit.png",
+      "native": "ArtSource/Frostwake/production/iceborn_champion/Hit.aseprite",
+      "clip": "Assets/_Game/Animations/Frostwake/iceborn_champion_Hit.anim",
+      "failures": [],
+      "clipSourceSHA256": "bb22e94b54f950905df03f2f6839220434a73b5013bc4fb1a6f393c1c5863641",
+      "textureMetaSourceSHA256": "108236b7f1c96e60d69e8b057c0de7cf23d6c39a86da9aaf0a08d0ecc4999243",
+      "clipMetaSourceSHA256": "6344d112941dcda0e4cf1fc68f6d322f4accffefc76fc9a68afe13edbd2ccfef",
+      "oldSHA256": "7ff105864c0ac3fdd01952f61cff9b7929dccf8b2e4c4789d6f76f9f829047aa",
+      "installedSHA256": "963464900955682461bd06c838995a8ed90e3511d81f2d1093a1868a7f1d2465",
+      "nativeSHA256": "671dd2d0c29b8ac09f3a6c2b212d4e1c995fcd878e06ba8791b5b740f149b563",
+      "atlasChangedPixels": 3,
+      "alphaChangedPixels": 3,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 6,
+      "nativeCels": 5,
+      "durationMs": 320,
+      "nativeDurationMs": 320,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        2,
+        3
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 6,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "iceborn_champion",
+      "state": "Release",
+      "texture": "Assets/_Game/Art/Frostwake/Motion/iceborn_champion_Release.png",
+      "native": "ArtSource/Frostwake/production/iceborn_champion/Release.aseprite",
+      "clip": "Assets/_Game/Animations/Frostwake/iceborn_champion_Release.anim",
+      "failures": [],
+      "clipSourceSHA256": "9029f148aa7d07258c93361dfabbe0e89538b1a40291969026c1084375168daa",
+      "textureMetaSourceSHA256": "ea24667bbb110c9b53941527db68e1061dafcbde63eefb71e6ce2574a9cae80b",
+      "clipMetaSourceSHA256": "87ec96c4ae3fefcc55190037d824aeddef4fd82f3d0c78d88aae6ebcbd58d2a2",
+      "oldSHA256": "de4c0f6e8f6a5412ec8e40f5e0a2b48248b5b3f650a0ea8b2374d7a429d9b9c8",
+      "installedSHA256": "db62b9895f0a051428fda96f533ad89b2409009d0167ed13a31e21498ec35bc7",
+      "nativeSHA256": "87d3b6451f0f8ee46ac28a11c28e2b683f73c7385b33b145838626347e0663dd",
+      "atlasChangedPixels": 1,
+      "alphaChangedPixels": 1,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 9,
+      "durationMs": 880,
+      "nativeDurationMs": 880,
+      "events": [
+        [
+          360,
+          "AbilityImpact"
+        ],
+        [
+          360,
+          "AbilityBeat"
+        ],
+        [
+          870,
+          "AbilityComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        6
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "iceborn_raider",
+      "state": "Death",
+      "texture": "Assets/_Game/Art/Frostwake/Motion/iceborn_raider_Death.png",
+      "native": "ArtSource/Frostwake/production/iceborn_raider/Death.aseprite",
+      "clip": "Assets/_Game/Animations/Frostwake/iceborn_raider_Death.anim",
+      "failures": [],
+      "clipSourceSHA256": "ef1bbf5f0ddd4b4a53738aff28b383a01c5b81b0acf3778e73395a497a08d195",
+      "textureMetaSourceSHA256": "7abcba7ef431731e0ff4f8aca1814cbe1e3811c24c5b62bfbc785580aa9fc6e4",
+      "clipMetaSourceSHA256": "921fc89e5a07e994061e5802086809186d3499eebb003385e0467d40174c51de",
+      "oldSHA256": "a16cf8029bc87564074156d86b4f483fb8a10b8cd916f95292263ca708b35757",
+      "installedSHA256": "0a9d99d0b8afa8331038a6bbfaddf5dca86fd685e3a1ac698e2ad3e3dfc8f6b5",
+      "nativeSHA256": "d41037c976f90df33c79d6c1c981101122b550521872f93b29065d29ca15e45e",
+      "atlasChangedPixels": 8,
+      "alphaChangedPixels": 8,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 9,
+      "durationMs": 800,
+      "nativeDurationMs": 800,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "jarl_haldra",
+      "state": "Hit",
+      "texture": "Assets/_Game/Art/Frostwake/Motion/jarl_haldra_Hit.png",
+      "native": "ArtSource/Frostwake/production/jarl_haldra/Hit.aseprite",
+      "clip": "Assets/_Game/Animations/Frostwake/jarl_haldra_Hit.anim",
+      "failures": [],
+      "clipSourceSHA256": "d0b6e7ca258af07ac932bb55259b10676bba6f58d52aa67966cb2ed01617b4b0",
+      "textureMetaSourceSHA256": "32f53eca3756ce7fe68d0876d79b5bec280096dfa40721d9bcc8ab848098cafe",
+      "clipMetaSourceSHA256": "d6f57716da1e65d518d7a993fc260c293ba567379124a021b2ac64332687e710",
+      "oldSHA256": "5bd11f3a8b87e16e850d9d6c21275e5b5204acbd37cfaf8cfa8c07bfc9dc114e",
+      "installedSHA256": "808ccd1c6d35b2818e62c4375d1a0d48c0fffd5c1301658cf86f779bbb543c6b",
+      "nativeSHA256": "a7b984bf0ee0126213da5ccc61df799d886f7f8a3c1ccb3d08ced6518c4094a4",
+      "atlasChangedPixels": 2,
+      "alphaChangedPixels": 2,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 6,
+      "nativeCels": 5,
+      "durationMs": 320,
+      "nativeDurationMs": 320,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        3,
+        5,
+        6
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 6,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "rimecarver",
+      "state": "Hit",
+      "texture": "Assets/_Game/Art/Frostwake/Motion/rimecarver_Hit.png",
+      "native": "ArtSource/Frostwake/production/rimecarver/Hit.aseprite",
+      "clip": "Assets/_Game/Animations/Frostwake/rimecarver_Hit.anim",
+      "failures": [],
+      "clipSourceSHA256": "329bad54b850a8c50b024d52826ac29e29a12ec195e41611f66b64ea9ad4d165",
+      "textureMetaSourceSHA256": "1e54bf899d976f78bd5cd79901896515521a0f0269807e8b897d4a204021e829",
+      "clipMetaSourceSHA256": "9f5eccff49288b37abb8d2c52d20d85f58f86d575595b53bf7e9e5f1c06b1db4",
+      "oldSHA256": "d1ea9461629db998dc14fc09e5539908973a8db61053164b553ce47a1d816c63",
+      "installedSHA256": "b44abfe3bb5e83b6c2e9b010d4787de283825b546d45855876dc9b07bc99933b",
+      "nativeSHA256": "8e5d2f99fedf5df65f33a706ef19112ef3a5c2dd66e2ca1f9ad76a9d2d1df44a",
+      "atlasChangedPixels": 7,
+      "alphaChangedPixels": 7,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 6,
+      "nativeCels": 5,
+      "durationMs": 320,
+      "nativeDurationMs": 320,
+      "events": [],
+      "loop": false,
+      "changedUnityKeys": [
+        2,
+        3
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 6,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "rimecarver",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/Frostwake/Motion/rimecarver_AutoAttack.png",
+      "native": "ArtSource/Frostwake/production/rimecarver/AutoAttack.aseprite",
+      "clip": "Assets/_Game/Animations/Frostwake/rimecarver_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "1b5f2fa94dc39fef266f0895438abe3e8193829b98be2b44c661be0d7c27ff5b",
+      "textureMetaSourceSHA256": "78351947564afed2fac6734c9b6cd123807c56ff5fd3ba062d39705df636ba39",
+      "clipMetaSourceSHA256": "68bb373576ce014440356cdd511b7f2c8d850856ccccca4730397a4f7797d234",
+      "oldSHA256": "485d73cf798f5958c5c92842bdd58d13009cb9a7c09d6817de30778c9c4c5cb3",
+      "installedSHA256": "3a0369bbf15327be6de4f29577504b901b59758298f0b7e7c5527743894d7d10",
+      "nativeSHA256": "d137774ba5c834eaa2945cf674e81de97c9244444d7c3f70d772fe25b859dcd1",
+      "atlasChangedPixels": 1,
+      "alphaChangedPixels": 1,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 10,
+      "nativeCels": 9,
+      "durationMs": 680,
+      "nativeDurationMs": 680,
+      "events": [
+        [
+          320,
+          "AutoAttackImpact"
+        ],
+        [
+          670,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        7
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 10,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "guild_chirurgeon",
+      "state": "Ability",
+      "texture": "Assets/_Game/Art/SelectionExpansion/GuildChirurgeon_Ability.png",
+      "native": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/special/source.aseprite",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_Ability.anim",
+      "failures": [],
+      "clipSourceSHA256": "717fb91c47e351f33bfaec76cb27c3a411ce239471eb992e467348ed74db727b",
+      "textureMetaSourceSHA256": "88ad343cb643d56feb8e580a90e13b72b79c4e8fbe83e7e09c186dc25e7cdedb",
+      "clipMetaSourceSHA256": "0a623893029f65682065195a5f594241419aff4027302f46bcca1edbbd483058",
+      "oldSHA256": "c6dfc8ac4434a895e5a405628008525253ad1fa8221b636d26acd958c0061ce5",
+      "installedSHA256": "5b1cabb9f92d79d89ed4df9abf849a9d7ce0a22b5e455f32b78a5d59dc48cfc2",
+      "nativeSHA256": "6c0bb5c8c69a26836003b5e7cd2b8e4bb9e3987880edebfe81878213b70b1fca",
+      "atlasChangedPixels": 1,
+      "alphaChangedPixels": 1,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 14,
+      "nativeCels": 13,
+      "durationMs": 780,
+      "nativeDurationMs": 780,
+      "events": [
+        [
+          360,
+          "AbilityBeat"
+        ],
+        [
+          770,
+          "AbilityComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        7
+      ],
+      "nativeOffset": [
+        0,
+        -2
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        112
+      ],
+      "timeIntervalsCompared": 14,
+      "mismatchedIntervals": []
+    },
+    {
+      "actor": "ore_ram",
+      "state": "AutoAttack",
+      "texture": "Assets/_Game/Art/SelectionExpansion/OreRam_AutoAttack.png",
+      "native": "ArtSource/SelectionExpansion/Motion/Production/ore_ram/basic/source.aseprite",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/OreRam_AutoAttack.anim",
+      "failures": [],
+      "clipSourceSHA256": "5b9cda617947ed8e6fd311d8753a9aef8cf1ca7935d1deacdd7b5f57d3ae6a6c",
+      "textureMetaSourceSHA256": "17fa6d25650d2a68e8153d587c34c89c0f8f189d8e278628096e19dab6669afc",
+      "clipMetaSourceSHA256": "93a06be10c560ffd3a111d8a1ea78abc944708a9f762a6d9b6d5c02039302abc",
+      "oldSHA256": "42a0d794c7d570e084a4628ea640064a75a6e65431c9c661bfd26be305711497",
+      "installedSHA256": "f3c898383ac273de2dd7223c035e84addc901efbf424ff3b62f37af2bc12c048",
+      "nativeSHA256": "203ddcca2729a8bb11b1423738a83cac323f5ee6f7fd2d1896fb6aa4d74a22ca",
+      "atlasChangedPixels": 2,
+      "alphaChangedPixels": 2,
+      "visibleColorOnlyChanges": 0,
+      "librespriteExit": 0,
+      "runtimeKeys": 9,
+      "nativeCels": 8,
+      "durationMs": 680,
+      "nativeDurationMs": 680,
+      "events": [
+        [
+          320,
+          "AutoAttackImpact"
+        ],
+        [
+          670,
+          "AutoAttackComplete"
+        ]
+      ],
+      "loop": false,
+      "changedUnityKeys": [
+        4
+      ],
+      "nativeOffset": [
+        0,
+        0
+      ],
+      "runtimeSize": [
+        128,
+        104
+      ],
+      "nativeSize": [
+        128,
+        104
+      ],
+      "timeIntervalsCompared": 9,
+      "mismatchedIntervals": []
+    }
+  ]
+}
