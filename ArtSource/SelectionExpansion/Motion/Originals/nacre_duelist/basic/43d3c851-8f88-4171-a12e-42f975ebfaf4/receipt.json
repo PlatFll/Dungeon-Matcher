@@ -1,0 +1,49 @@
+{
+  "enemy": "nacre_duelist",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/nacre_duelist.png",
+  "firstFrameSHA256": "354ff348ce40a1610bfccb475047b862725b2fa1fad3d5f93463ea41204a82a5",
+  "seed": 385119,
+  "count": 8,
+  "prompt": "Draw the seashell rapier back then lunge and thrust once left; pull the blade back and recover to guard. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "43d3c851-8f88-4171-a12e-42f975ebfaf4",
+  "receipt": "id: 43d3c851-8f88-4171-a12e-42f975ebfaf4\njob_id: 43d3c851-8f88-4171-a12e-42f975ebfaf4\naction: Draw the seashell rapier back then lunge and thrust once left; pull the blade back and recover to guard. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385119\nasset_id: bfb994d7-b796-5af0-bb02-f5fe94f547e9\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"43d3c851-8f88-4171-a12e-42f975ebfaf4\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/43d3c851-8f88-4171-a12e-42f975ebfaf4/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/basic/43d3c851-8f88-4171-a12e-42f975ebfaf4/00.png",
+      "sha256": "beb55f7fad2679db554cc4f9adab2f06df3139bf709c48a41cb6aff8b49b19f8"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/basic/43d3c851-8f88-4171-a12e-42f975ebfaf4/01.png",
+      "sha256": "0a20fb3e545b0413c966c9d203ecb76cc6110ed6fafcafcc66aad68bce595a92"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/basic/43d3c851-8f88-4171-a12e-42f975ebfaf4/02.png",
+      "sha256": "1426ba907b0a2c81efa1290d3e9db556e7939fe36cce66140c844d543771cf36"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/basic/43d3c851-8f88-4171-a12e-42f975ebfaf4/03.png",
+      "sha256": "2cad0d80133dd1c4806adf8d1d29915056683eb4ba50a9e881f98aaae0754de7"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/basic/43d3c851-8f88-4171-a12e-42f975ebfaf4/04.png",
+      "sha256": "b299287707981c643c7df3bc74721998b897bfc3ed22e8e457b036b3fe31d29f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/basic/43d3c851-8f88-4171-a12e-42f975ebfaf4/05.png",
+      "sha256": "5bb5ed53149b80a11cb4d55f9629625b29675982460d6c4f6a4fb86bfc3658b6"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/basic/43d3c851-8f88-4171-a12e-42f975ebfaf4/06.png",
+      "sha256": "07062c19c1b89b7760890dd71be8d008f4a3b8312942279f6e674da329c0b92f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/basic/43d3c851-8f88-4171-a12e-42f975ebfaf4/07.png",
+      "sha256": "c6ab50467bf29414c08828d3dee3b1eb1fa23d05c6c7d9f0e53bac803a1a0a99"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/basic/43d3c851-8f88-4171-a12e-42f975ebfaf4/08.png",
+      "sha256": "c30058a1276739a8c2ec4ab5ddd04b83cfa9cfcdfc2babaaaa27273f0ad26169"
+    }
+  ]
+}

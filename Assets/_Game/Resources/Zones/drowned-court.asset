@@ -17,6 +17,8 @@ MonoBehaviour:
   eligibleForLiveTravel: 1
   affiliatedGem: 4
   enemies:
+  - {fileID: 11400000, guid: 0348b4eb81ab5a078ae949965155eb91, type: 2}
+  - {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
   - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
   - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
   - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
@@ -432,6 +434,28 @@ MonoBehaviour:
   - 11
   - 12
   resonancePool:
+  - enemy: {fileID: 11400000, guid: 0348b4eb81ab5a078ae949965155eb91, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 4
+    - 4
+    - 4
+    summonOnly: 0
   - enemy: {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
     minimumTier: 0
     maximumTier: 4
@@ -587,7 +611,64 @@ MonoBehaviour:
     - 4
     summonOnly: 1
   resonanceEncounters:
+  - label: Nacre honor guard
+    members:
+    - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
+    - {fileID: 11400000, guid: 0348b4eb81ab5a078ae949965155eb91, type: 2}
+    - {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6
+    phaseMask: 4
+    ordinaryRole: 2
+    formationFamily: Nacre Court
+    familyWeight: 2
+  - label: Nacre gate
+    members:
+    - {fileID: 11400000, guid: 0348b4eb81ab5a078ae949965155eb91, type: 2}
+    - {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 3.5
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Nacre Court
+    familyWeight: 2
+  - label: Pearl retinue
+    members:
+    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
+    - {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Nacre Court
+    familyWeight: 2
+  - label: Nacre scouts
+    members:
+    - {fileID: 11400000, guid: 8acc2d2be5cd510d8d7306c3013598ae, type: 2}
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 3
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Nacre Court
+    familyWeight: 2
   - label: Outer patrol
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
     - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
@@ -600,6 +681,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Quiet patrol
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
     weight: 1
@@ -611,6 +696,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Reef scouts
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
     - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
@@ -623,6 +712,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Salvage escort
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
     - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
@@ -635,6 +728,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn pearl_thief
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: c22540a470bcf0245ae8f7bf1b29eb0c, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
@@ -647,6 +744,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol pearl_thief
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: c22540a470bcf0245ae8f7bf1b29eb0c, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
@@ -660,6 +761,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn reef_netweaver
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 82091cda3a792ac42871f6a8d4a9fdf9, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
@@ -672,6 +777,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol reef_netweaver
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 82091cda3a792ac42871f6a8d4a9fdf9, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
@@ -685,6 +794,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn puffer_sentinel
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: a44f2455cec6a354e81f96b6041f7ea7, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
@@ -697,6 +810,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol puffer_sentinel
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: a44f2455cec6a354e81f96b6041f7ea7, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
@@ -710,6 +827,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn pearl_cantor
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Nacre Court
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
@@ -722,6 +843,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol pearl_cantor
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Nacre Court
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
@@ -735,6 +860,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn conch_marshal
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Nacre Court
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
@@ -747,6 +876,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol conch_marshal
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Nacre Court
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
@@ -760,6 +893,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn moray_siphoner
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: d6932a1dbb5fd024caed6c9ca2e91e8c, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
@@ -772,10 +909,14 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol moray_siphoner
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: d6932a1dbb5fd024caed6c9ca2e91e8c, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
-    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
     weight: 4
     minimumDepthTier: 2
     maximumDepthTier: 4
@@ -785,6 +926,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Combined reef_netweaver
+    phaseMask: 6
+    ordinaryRole: 2
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 82091cda3a792ac42871f6a8d4a9fdf9, type: 2}
     - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
@@ -811,6 +956,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Combined pearl_thief
+    phaseMask: 6
+    ordinaryRole: 2
+    formationFamily: Reef Clans
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: c22540a470bcf0245ae8f7bf1b29eb0c, type: 2}
     - {fileID: 11400000, guid: d6932a1dbb5fd024caed6c9ca2e91e8c, type: 2}

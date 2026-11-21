@@ -226,24 +226,27 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(attacker.RemainingAttackTime,Is.LessThan(accepted-.15f));
         Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
     }
-    [UnityTest] public IEnumerator RootWarningPlayerClearStaggersButTargetFizzleDoesNot()
+    [UnityTest] public IEnumerator RetiredWardenWarningRestoresTwiceWithoutPlantingOrStagger()
     {
-        yield return Launch(9,true);QuietKitFixture();var owner=Enemy("barkhide_warden");
-        var kit=owner.GetComponent<ForestMilestoneEnemyAbility>();var stagger=owner.GetComponent<EnemyStagger>();
-        BoardController.GemSetThreat warning=null;
-        Run.Board.TryQueueRootWarning(owner,1,2,false,true,w=>warning=w);yield return Stable();Assert.That(warning,Is.Not.Null);
-        kit.RestoreContinuation(new EnemyCombatSnapshot{forestMilestone=new ForestMilestoneSnapshot{version=2,state=1,sequence=1,deadline=warning.DueMove}},_=>null);
-        stagger.RestoreContinuation(new EnemyCombatSnapshot());
-        var targets=new System.Collections.Generic.HashSet<Gem>(warning.Targets);
-        Call(Run.Board,"DamageBarricadesAdjacentToClears",targets,null);
-        yield return (IEnumerator)Call(Run.Board,"ClearMatches",targets,null,false);
-        yield return (IEnumerator)Call(Run.Board,"ResolveEnvironmentalBoardChange");yield return Stable();
-        Assert.That(kit.Outcome,Is.EqualTo("Interrupted"));Assert.That(stagger.IsStaggered,Is.True);
-        stagger.RestoreContinuation(new EnemyCombatSnapshot());PrepareSafeMove();
-        Run.Board.TryQueueRootWarning(owner,1,2,false,true,w=>warning=w);yield return Stable();Assert.That(warning.Ended,Is.False);
-        kit.RestoreContinuation(new EnemyCombatSnapshot{forestMilestone=new ForestMilestoneSnapshot{version=2,state=1,sequence=2,resolvedSequence=1,deadline=warning.DueMove}},_=>null);
-        Run.Board.CancelGemSetThreat(warning);yield return Stable();
-        Assert.That(kit.Outcome,Is.EqualTo("Target lost"));Assert.That(stagger.IsStaggered,Is.False);
+        yield return Launch(9,true);
+        QuietKitFixture();
+        var owner=Enemy("barkhide_warden");
+        var kit=owner.GetComponent<ForestMilestoneEnemyAbility>();
+        var stagger=owner.GetComponent<EnemyStagger>();
+        var legacy=new EnemyCombatSnapshot{forestMilestone=new ForestMilestoneSnapshot{version=2,state=1,sequence=7,deadline=2}};
+        Run.Board.TryQueueRootWarning(owner,1,2,false,true,null);
+        yield return Stable();
+        kit.RestoreContinuation(legacy,_=>null);
+        var restored=new EnemyCombatSnapshot();
+        kit.CaptureContinuation(restored,_=>0);
+        Assert.That(restored.forestMilestone.resolvedSequence,Is.EqualTo(7));
+        Assert.That(restored.forestMilestone.deadline,Is.Zero);
+        Assert.That(kit.Outcome,Is.EqualTo("Rules updated"));
+        kit.RestoreContinuation(restored,_=>null);
+        Assert.That(kit.IsPreparing,Is.False);
+        Assert.That(kit.RootCount,Is.Zero);
+        Assert.That(stagger.IsStaggered,Is.False);
+        Assert.That(Run.Board.RestoredVineCast(owner),Is.Null);
     }
     [UnityTest] public IEnumerator LegacyVinePinsUpgradeWithoutRemovingRealChains()
     {

@@ -1,0 +1,53 @@
+{
+  "enemy": "guild_ranger",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/R2.png",
+  "firstFrameSHA256": "3e7fb908dbc705637cab341ab810164f641ebb55fd325662984ba3385c6ed92b",
+  "seed": 585122,
+  "count": 8,
+  "prompt": "Fire TWO fast shots to the LEFT from the shouldered musket. Show a sharp rearward barrel recoil and immediate forward recovery twice, tiny warm muzzle sparks at each discharge. Keep wood stock, long straight barrel and both gripping hands attached. End aiming left.",
+  "id": "bc499b5f-0743-4903-8ee0-b4506a729d82",
+  "receipt": "id: bc499b5f-0743-4903-8ee0-b4506a729d82\njob_id: bc499b5f-0743-4903-8ee0-b4506a729d82\ndescription: Fire TWO fast shots to the LEFT from the shouldered musket. Show a sharp rearward barrel recoil and immediate forward recovery twice, tiny warm muzzle sparks at each discharge. Keep wood stock, long straight barrel and both gripping hands attached. End aiming left.\nframes: 8\nsize: 112x88px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 585122\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"bc499b5f-0743-4903-8ee0-b4506a729d82\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/bc499b5f-0743-4903-8ee0-b4506a729d82/download (423 + Retry-After until ready; ?index=N for the Nth of several images)\nasset_id: e4abdadf-cafa-52d9-93a0-3163d92ee54a\nasset_status: pending (saved to your gallery when generation completes)",
+  "subject": "A human marksman holding a two-handed wood-stock musket at shoulder height.",
+  "tool": "animate_image_pixminimax",
+  "correctionOf": "d4cddb56-9c7c-4148-a63b-d43881cd9bca",
+  "lastFrameSHA256": "3e7fb908dbc705637cab341ab810164f641ebb55fd325662984ba3385c6ed92b",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/bc499b5f-0743-4903-8ee0-b4506a729d82/00.png",
+      "sha256": "ff2367bd24f3f6255d8f4d306bb4dea652e8b6555ade440c39931c95fd56b558"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/bc499b5f-0743-4903-8ee0-b4506a729d82/01.png",
+      "sha256": "ecf09c218b7857f04ced98cfe42b435251fe548d895a8c2870b73e1c1b489f8c"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/bc499b5f-0743-4903-8ee0-b4506a729d82/02.png",
+      "sha256": "0c917b4b3d60f9d73f6d7db33de1bb21645fdc53a18f4fc722d8e8e1db61d7d2"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/bc499b5f-0743-4903-8ee0-b4506a729d82/03.png",
+      "sha256": "583862f04ee2d79bf69bb06146254a39e0136d6b299c3fd763806de6d762ca40"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/bc499b5f-0743-4903-8ee0-b4506a729d82/04.png",
+      "sha256": "88df58889382a72dd746970ce2bf3267d07702d72db275060577bc81714d69db"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/bc499b5f-0743-4903-8ee0-b4506a729d82/05.png",
+      "sha256": "b4b8d7102b899bc97cb44f5247a30b28cb3e5e0cc15312b202abc494644f75b2"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/bc499b5f-0743-4903-8ee0-b4506a729d82/06.png",
+      "sha256": "7d8de58c776d0fbecd45d6fa0bc44811890d684a1fc2e96e0a455b174a023d3a"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/bc499b5f-0743-4903-8ee0-b4506a729d82/07.png",
+      "sha256": "6c63583cd7209f038849172d4d86d115b559117671896e86ca1e15ee613f344f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/bc499b5f-0743-4903-8ee0-b4506a729d82/08.png",
+      "sha256": "525c1904c905c305ad863a46e53276e0c533c7d425e624126aec5a7de17c502e"
+    }
+  ]
+}

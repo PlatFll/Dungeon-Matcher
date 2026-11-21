@@ -1,0 +1,55 @@
+[
+  {
+    "jobId": "be20e667-c458-41ea-9682-b3aa062d9084",
+    "assetId": "b4c31041-0936-5e3b-9db2-bf933d244189",
+    "tool": "PixelLab create_image_pro",
+    "status": "completed",
+    "generationCost": 10,
+    "requestedSize": [
+      88,
+      88
+    ],
+    "seed": 731906,
+    "description": "Character exploration sheet, four DIFFERENT guild shield-bearers in reading order, 2 by 2 separated full-body cels. Each is one attractive, memorable, hand-pixelled mobile RPG enemy. Observe distinct pose block-ins in the layout, invent the final rendering. Unhelmeted human, expressive large head, compact build, looking screen-left three-quarter, adventuring guild dress, a single imposing shield from shoulder to shin gripped close in front. Show face, boots, clothing and a small mace in secondary hand. A / muscular sun-browned caravan captain with thick swept-back dark hair, cropped beard, rolled ivory sleeve, short indigo tabard. Charging forward leading with a blue round shield in bronze rings; big readable raised bronze boss. B / a lean, white-templed old sergeant with a hooked nose and heavy eyebrows, one hand resting low on his mace, standing easy behind a towering oxblood hide pavise; narrow brass spine and swallowtail blue mantle. C / a red-braided stocky woman, low, weight over one bent leg, back heel dug in, quilted blue Guild jack. Large cream and navy quartered tear-shaped shield tipped up and out at an angle. D / a young powerful dark-skinned man with a crown of short curls, mustard gambeson, dark indigo baldric; shoulders turned into a fluted, swept steel shield, mace up behind opposite shoulder. Craft the silhouettes, sparing highlights, distinct eyes, strong hands and believable shield grip. Matching chunky anatomy and 3/4 faces with Guild Swordsman. Inspired and lived-in, rich cloth over small patches of mail. Rattlebones cluster economy and fine warm-black outline, top-left light, flat color shapes. Transparent margin all sides. No stage, text, labels, grids, helmets, scenic elements, logos, floating shields, skulls or crowns.",
+    "styleImage": {
+      "file": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "usage": "Current Rattlebones rendering master, outline, detail and shading."
+    },
+    "referenceImages": [
+      {
+        "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+        "sha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+        "usage": "Approved Guild Swordsman, human anatomy and the travelling guild clothing family only. Faces, builds, stances and equipment can differ."
+      },
+      {
+        "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round7/References/pose-studies.png",
+        "sha256": "38525df5a085d67da8a8318d6930405de89251286ce0d3a697f1df064b3f75a9",
+        "usage": "Original rough four-character composition and equipment silhouettes, reading order. Fully redraw each as a complete finished sprite. The colored blocks only guide the pose and attitude."
+      }
+    ],
+    "originals": [
+      {
+        "index": 0,
+        "file": "ArtSource/SelectionExpansion/Originals/Round7/bulwark/01.png",
+        "sha256": "88f4ba058b3a5870a1d0d3cbebd6cff72a46f90f968ee325c2f04b47c1dc5c79"
+      },
+      {
+        "index": 1,
+        "file": "ArtSource/SelectionExpansion/Originals/Round7/bulwark/02.png",
+        "sha256": "6da93def5c9bfcf32cb19bd8c462b404627aa37b22a52dd7fc91d543cda5bf0b"
+      },
+      {
+        "index": 2,
+        "file": "ArtSource/SelectionExpansion/Originals/Round7/bulwark/03.png",
+        "sha256": "a21dc90b3760f05e0ddae442ef178a75ffd5f4b6b109723a81e008e9f7679415"
+      },
+      {
+        "index": 3,
+        "file": "ArtSource/SelectionExpansion/Originals/Round7/bulwark/04.png",
+        "sha256": "8108e084890a4fff2c0987296be95893f520cd0d1c4ea9457c9f9b6c9bff120b"
+      }
+    ],
+    "receipt": "id: be20e667-c458-41ea-9682-b3aa062d9084\njob_id: be20e667-c458-41ea-9682-b3aa062d9084\nmodel: pro\ndescription: Character exploration sheet, four DIFFERENT guild shield-bearers in reading order, 2 by 2 separated full-body cels. Each is one attractive, memorable, hand-pixelled mobile RPG enemy. Observe distinct pose block-ins in the layout, invent the final rendering. Unhelmeted human, expressive large head, compact build, looking screen-left three-quarter, adventuring guild dress, a single imposing shield from shoulder to shin gripped close in front. Show face, boots, clothing and a small mace in secondary hand. A / muscular sun-browned caravan captain with thick swept-back dark hair, cropped beard, rolled ivory sleeve, short indigo tabard. Charging forward leading with a blue round shield in bronze rings; big readable raised bronze boss. B / a lean, white-templed old sergeant with a hooked nose and heavy eyebrows, one hand resting low on his mace, standing easy behind a towering oxblood hide pavise; narrow brass spine and swallowtail blue mantle. C / a red-braided stocky woman, low, weight over one bent leg, back heel dug in, quilted blue Guild jack. Large cream and navy quartered tear-shaped shield tipped up and out at an angle. D / a young powerful dark-skinned man with a crown of short curls, mustard gambeson, dark indigo baldric; shoulders turned into a fluted, swept steel shield, mace up behind opposite shoulder. Craft the silhouettes, sparing highlights, distinct eyes, strong hands and believable shield grip. Matching chunky anatomy and 3/4 faces with Guild Swordsman. Inspired and lived-in, rich cloth over small patches of mail. Rattlebones cluster economy and fine warm-black outline, top-left light, flat color shapes. Transparent margin all sides. No stage, text, labels, grids, helmets, scenic elements, logos, floating shields, skulls or crowns.\nsize: 88x88px\ntransparent: True\ncandidates: 4\nreferences: 2\nstyle_image: yes (outline, detail, shading)\nseed: 731906\nasset_id: b4c31041-0936-5e3b-9db2-bf933d244189\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"be20e667-c458-41ea-9682-b3aa062d9084\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/be20e667-c458-41ea-9682-b3aa062d9084/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  }
+]

@@ -15,6 +15,7 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
     public int width = 1080, height = 1920;
     public Rect safeArea = new Rect(0, 0, 1080, 1920);
     public bool fitScreenInPlayMode = true;
+    public bool fixedReferenceCanvas;
     public int LogicalHeight { get; private set; }
     public int PixelScale { get; private set; }
     public Rect ContentPixels { get; private set; }
@@ -157,7 +158,8 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
         var lookup = modules.ToDictionary(s => s.name, s => s);
         PixelScale = Mathf.FloorToInt(Mathf.Min(safeArea.width / 360f, safeArea.height / 640f));
         if (PixelScale < 1) throw new InvalidOperationException("Preview safe area must fit the 360x640 native reference.");
-        LogicalHeight = Mathf.Clamp(Mathf.FloorToInt(safeArea.height / PixelScale), 640, 800);
+        LogicalHeight = fixedReferenceCanvas ? manifest.height
+            : Mathf.Clamp(Mathf.FloorToInt(safeArea.height / PixelScale), manifest.height, 800);
         int extra = LogicalHeight - 640;
         ContentPixels = new Rect(Mathf.Floor(safeArea.x + (safeArea.width - 360 * PixelScale) / 2),
             Mathf.Floor(safeArea.y + (safeArea.height - LogicalHeight * PixelScale) / 2), 360 * PixelScale, LogicalHeight * PixelScale);

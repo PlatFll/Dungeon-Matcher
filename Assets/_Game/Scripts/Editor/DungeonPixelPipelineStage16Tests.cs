@@ -31,16 +31,33 @@ public sealed class DungeonPixelPipelineStage16Tests
         Assert.That(GameObject.Find("ApprovedDungeonSurround"),Is.Null);
         Assert.That(RunSession.Current.Board.transform.Find("BoardFrame").GetComponentsInChildren<SpriteRenderer>(),Is.Empty);
         var frame=layout.BoardArea.Find("DungeonPixelLabBoardFrame");Assert.That(frame,Is.Not.Null);
-        foreach(var im in world.GetComponentsInChildren<Image>())
+        var worldImages = world.GetComponentsInChildren<Image>();
+        if (art.UsesHybrid)
+        {
+            var inset = worldImages.Single(i => i.name == "Control_Inset");
+            Assert.That(inset.transform.parent.name, Is.EqualTo("Hybrid board backing"));
+            Assert.That(inset.type, Is.EqualTo(Image.Type.Tiled));
+        }
+        if (art.UsesSideArchitecture)
+            CollectionAssert.AreEquivalent(new[] { "Left pillar", "Right pillar" },
+                worldImages.Where(i => i.name == "Side_Shaft" && i.type == Image.Type.Tiled)
+                    .Select(i => i.transform.parent.name));
+        foreach(var im in worldImages)
         {
             Assert.That(im.raycastTarget,Is.False);Assert.That(im.sprite.texture.filterMode,Is.EqualTo(FilterMode.Point));
             var bounds=GameplayPixelLayoutController.ScreenRect(im.rectTransform);
             if(im.type==Image.Type.Tiled)
             {
-                // The hybrid board backing repeats below the SpriteRenderer board.
-                // Validate its texel density, not its variable surface dimensions.
-                Assert.That(im.name,Is.EqualTo("Control_Inset"));
-                Assert.That(im.GetComponentInParent<RectMask2D>(),Is.Not.Null);
+                if (im.name == "Control_Inset")
+                    Assert.That(im.transform.parent.GetComponent<RectMask2D>(), Is.Not.Null);
+                else
+                {
+                    Assert.That(art.UsesSideArchitecture, Is.True);
+                    Assert.That(im.name, Is.EqualTo("Side_Shaft"));
+                    Assert.That(im.transform.parent.parent.name, Is.EqualTo("Side architecture"));
+                    Assert.That(im.rectTransform.rect.width, Is.EqualTo(im.sprite.rect.width));
+                }
+                Assert.That(im.sprite, Is.SameAs(art.Sprite(im.name)), im.name);
                 Assert.That(im.pixelsPerUnit*im.pixelsPerUnitMultiplier,Is.EqualTo(1).Within(.001f));
                 var origin=world.worldCamera.WorldToScreenPoint(im.transform.TransformPoint(Vector3.zero));
                 var texel=world.worldCamera.WorldToScreenPoint(im.transform.TransformPoint(Vector3.right));

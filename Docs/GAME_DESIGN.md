@@ -650,6 +650,16 @@ Chapters are weighted enemy spawn eras, not fixed wave-by-wave encounter scripts
 
 Crystal Resonance uses depth tiers 1/6/13/25/45 with zone-specific pools, coherent recipes and complete formation budgets. Dungeon locals expire after tier 1; later visits use guards/knights/royals as eligible. Named leaders remain once per run except the required Minister escort. No named leader must appear in every run. Existing enemy identities/kits and summon ownership are preserved. See [encounter matrix](CrystalResonance/ENCOUNTER_MATRIX.md).
 
+Deep Dungeon visits can also encounter the Adventurer Guild. A Bulwark's shield
+call conceals its allies' weakness facets and protects them against new player
+attacks for three subsequent accepted moves. Its own weakness remains playable.
+Defeating or staggering the Bulwark releases protection. Existing poison continues.
+The Guild Chirurgeon restores up to 10 HP to one wounded ally at staff contact.
+The Orc Slinghunter fires one stone per basic attack. Its recovery carries no damage.
+It chooses the lowest remaining health fraction and skips full-health parties.
+The [expansion roster](SelectionExpansion/roster.json) lists all ten enemies.
+
+
 Sword Knight reuses `Enemy_Knight` and its stable ID. He is the Normal Crown melee baseline, with no signature ability. Spear Knight remains Normal with his existing two-hit normal attack. Shield Knight is Special. Knight Captain is a Mini-boss who owns professional formation coordination, distinct from Marshal summoning/interception and Sergeant fortification/siege pressure.
 
 ### Knight Captain

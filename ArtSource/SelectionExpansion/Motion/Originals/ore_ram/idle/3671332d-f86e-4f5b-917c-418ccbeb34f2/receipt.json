@@ -1,0 +1,49 @@
+{
+  "enemy": "ore_ram",
+  "state": "idle",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/ore_ram-A.png",
+  "firstFrameSHA256": "34bf80499e0547162f86997c78c8b6bc9caae89a3822fcdc8c98b65161562909",
+  "seed": 385115,
+  "count": 8,
+  "prompt": "Quiet grounded mechanical breathing. Horns dip one pixel with piston compression. Hooves planted. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "3671332d-f86e-4f5b-917c-418ccbeb34f2",
+  "receipt": "id: 3671332d-f86e-4f5b-917c-418ccbeb34f2\njob_id: 3671332d-f86e-4f5b-917c-418ccbeb34f2\naction: Quiet grounded mechanical breathing. Horns dip one pixel with piston compression. Hooves planted. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385115\nasset_id: 8f6e4f15-d175-50c0-9e49-2956e4c2c42a\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3671332d-f86e-4f5b-917c-418ccbeb34f2\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/3671332d-f86e-4f5b-917c-418ccbeb34f2/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/idle/3671332d-f86e-4f5b-917c-418ccbeb34f2/00.png",
+      "sha256": "8101c4ad073549f975061b231137afbb575a5a49f23ff0a2fa3b0ba52c627f8e"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/idle/3671332d-f86e-4f5b-917c-418ccbeb34f2/01.png",
+      "sha256": "ac28d575acd5279568f39c2d2c849286415e024008c381740fbc02b66a4b0c88"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/idle/3671332d-f86e-4f5b-917c-418ccbeb34f2/02.png",
+      "sha256": "fedcce2c39027141a071abeacc5dfcfad33da19d3f6192b4ab2d3784aacc407b"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/idle/3671332d-f86e-4f5b-917c-418ccbeb34f2/03.png",
+      "sha256": "ad492f41bfd14ea50406690ee18b39a4647d86ed0a15a051c1badd1726d86a5e"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/idle/3671332d-f86e-4f5b-917c-418ccbeb34f2/04.png",
+      "sha256": "4f649d6219fa85ec5e2d2e0d5fce472544042e33c9a2bb2b97b6eea5fce2d67e"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/idle/3671332d-f86e-4f5b-917c-418ccbeb34f2/05.png",
+      "sha256": "626f62507a4e4c8dfe4e382fac4763729499edc392fce2e5392beab48fa45527"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/idle/3671332d-f86e-4f5b-917c-418ccbeb34f2/06.png",
+      "sha256": "909e6575b3891da5384fe2610a7c13e61cb2d8aaf2bfa0d0434faa020947535e"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/idle/3671332d-f86e-4f5b-917c-418ccbeb34f2/07.png",
+      "sha256": "0cd69295ac2c161f4fd506a0d159c913119c521d72cbf6f4109b1044df37f69d"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/idle/3671332d-f86e-4f5b-917c-418ccbeb34f2/08.png",
+      "sha256": "c1956a3f8f5c400c23c9e8840acdc133caff089d8f54f8309b360b4461a3434c"
+    }
+  ]
+}

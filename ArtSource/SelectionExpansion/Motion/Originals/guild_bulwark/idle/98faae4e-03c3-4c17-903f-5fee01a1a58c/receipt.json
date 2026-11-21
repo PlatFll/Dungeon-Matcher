@@ -1,0 +1,49 @@
+{
+  "enemy": "guild_bulwark",
+  "state": "idle",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/K06.png",
+  "firstFrameSHA256": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
+  "seed": 385127,
+  "count": 8,
+  "prompt": "Feet planted. Breathe quietly behind the shield. Scarf settles and the mace hand flexes; shield angle changes very slightly. A closed calm idle loop. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "98faae4e-03c3-4c17-903f-5fee01a1a58c",
+  "receipt": "id: 98faae4e-03c3-4c17-903f-5fee01a1a58c\njob_id: 98faae4e-03c3-4c17-903f-5fee01a1a58c\naction: Feet planted. Breathe quietly behind the shield. Scarf settles and the mace hand flexes; shield angle changes very slightly. A closed calm idle loop. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385127\nasset_id: db501185-0703-56e1-8500-d305339cd948\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"98faae4e-03c3-4c17-903f-5fee01a1a58c\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/98faae4e-03c3-4c17-903f-5fee01a1a58c/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/idle/98faae4e-03c3-4c17-903f-5fee01a1a58c/00.png",
+      "sha256": "d7a74404acb3d75ac72c6acc24c60c6ceb7e5c8b38c4095c126d2584ea60138f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/idle/98faae4e-03c3-4c17-903f-5fee01a1a58c/01.png",
+      "sha256": "10c695ec865e453876b58a9eef4f192f9d3dc4c605c897c434ed26980a102b84"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/idle/98faae4e-03c3-4c17-903f-5fee01a1a58c/02.png",
+      "sha256": "4f53455115e46248ab76a4510be72d35237dc89c7411cf74cc8650dcbe41f7a5"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/idle/98faae4e-03c3-4c17-903f-5fee01a1a58c/03.png",
+      "sha256": "65f123d0d4032cd333b34f7f002b56dd22916adf9a96d1381038c15360fbc166"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/idle/98faae4e-03c3-4c17-903f-5fee01a1a58c/04.png",
+      "sha256": "c5ce6debc9d884e6839bcc29d59b36e89b3afab8b2f1e7f1d828263de3c96d13"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/idle/98faae4e-03c3-4c17-903f-5fee01a1a58c/05.png",
+      "sha256": "6a17aae4f48190dd72331c54da0b200032b9e571c64eb21010bc03851fa127d0"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/idle/98faae4e-03c3-4c17-903f-5fee01a1a58c/06.png",
+      "sha256": "150efc669c2dc347548f43e8347d8f8e4fa29a4f43b65363a4b0a60de348d6e0"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/idle/98faae4e-03c3-4c17-903f-5fee01a1a58c/07.png",
+      "sha256": "603cbd484ddc58ea581953e994fe83c5eae9e80b7b70aa4ec190a045811403fa"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/idle/98faae4e-03c3-4c17-903f-5fee01a1a58c/08.png",
+      "sha256": "2e520f7c907638039ab2786e1b40a2044c829a62205874ca2a856a97cb5996c4"
+    }
+  ]
+}

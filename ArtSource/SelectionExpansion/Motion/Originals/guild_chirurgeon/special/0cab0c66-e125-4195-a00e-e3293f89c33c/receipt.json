@@ -1,0 +1,57 @@
+{
+  "enemy": "guild_chirurgeon",
+  "state": "special",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_chirurgeon.png",
+  "firstFrameSHA256": "97501e38ed69b1cb6c1919a229f71f0c3c7d87f26491ec5365cbbb2d5cc1c613",
+  "seed": 385105,
+  "count": 10,
+  "prompt": "A quick single healing gesture: raise the staff tip in one clear arc and release at the middle, a brief hold then settle. No channel or extra character. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "0cab0c66-e125-4195-a00e-e3293f89c33c",
+  "receipt": "id: 0cab0c66-e125-4195-a00e-e3293f89c33c\njob_id: 0cab0c66-e125-4195-a00e-e3293f89c33c\naction: A quick single healing gesture: raise the staff tip in one clear arc and release at the middle, a brief hold then settle. No channel or extra character. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 10\nsize: 112x88px\ntransparent: True\nseed: 385105\nasset_id: 8cb8ba34-e795-5a35-8b44-398373292538\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"0cab0c66-e125-4195-a00e-e3293f89c33c\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/0cab0c66-e125-4195-a00e-e3293f89c33c/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/special/0cab0c66-e125-4195-a00e-e3293f89c33c/00.png",
+      "sha256": "97501e38ed69b1cb6c1919a229f71f0c3c7d87f26491ec5365cbbb2d5cc1c613"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/special/0cab0c66-e125-4195-a00e-e3293f89c33c/01.png",
+      "sha256": "bc1be51d226cf33205afea995391a57f35e9d564ad5db63a5d10c64c6e938dbe"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/special/0cab0c66-e125-4195-a00e-e3293f89c33c/02.png",
+      "sha256": "9542ec2ecc3459dcd3bb2d0e2daa334f96899c08b305377e624c654d62b9c658"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/special/0cab0c66-e125-4195-a00e-e3293f89c33c/03.png",
+      "sha256": "948d84ab3cbdb7bd235256528463422e708d1e48ffd8036e7477f6e5d44ffd27"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/special/0cab0c66-e125-4195-a00e-e3293f89c33c/04.png",
+      "sha256": "21f6d35aaa6613e5651a498f0d1b8e7c0c65cf123b7ef9b34c8fbe5a50fc7045"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/special/0cab0c66-e125-4195-a00e-e3293f89c33c/05.png",
+      "sha256": "b2ec55994cd6137dbf78cb88760e8bc3d809125f464e4c251cf983abdac32335"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/special/0cab0c66-e125-4195-a00e-e3293f89c33c/06.png",
+      "sha256": "04aa46341de86762642fb7a58b3b07a822966fc2a8d0657c36f6c6778347a159"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/special/0cab0c66-e125-4195-a00e-e3293f89c33c/07.png",
+      "sha256": "2671c6343cbaf9e4ef960c2febc8f7957a6359a5a3dc0667f0fd989efac00f37"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/special/0cab0c66-e125-4195-a00e-e3293f89c33c/08.png",
+      "sha256": "2577cf6f9360b3f1ef416dfcc081e24c06f572b187d6db9eb654b82fe3a0e423"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/special/0cab0c66-e125-4195-a00e-e3293f89c33c/09.png",
+      "sha256": "58f737ea3101cc2cc1c1de9ac56ea865bbdc8834e137d357e4f0343a9dd387a5"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/special/0cab0c66-e125-4195-a00e-e3293f89c33c/10.png",
+      "sha256": "655aada3d5f44c37717f3db0c32889221b0b1c3f8f3cba2b3f95afb3531beafd"
+    }
+  ]
+}

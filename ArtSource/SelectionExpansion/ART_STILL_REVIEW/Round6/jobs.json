@@ -1,0 +1,113 @@
+[
+  {
+    "enemy": "guild_bulwark",
+    "jobId": "48c31d80-6937-4377-a214-508a403c923c",
+    "tool": "PixelLab create_image_pro",
+    "galleryId": "91f6e246-c99c-5045-937f-d91c8a760332",
+    "cost": 10,
+    "status": "completed",
+    "description": "One isolated full-body native pixel-art combat sprite per candidate. Transparent background; face and front foot toward SCREEN LEFT in a readable three-quarter side view. Show whole hair, soles and equipment, with transparent pixels around all sides. Match the primary rendering image for bold clean grouped pixels, dark thin outline and upper-left shading. No text, shadows on the floor or scenery. A HUMAN Adventurer Guild shield-bearer with the exact stout stance and compact proportions of the stature reference: large rounded human head, neck set low between broad shoulders, short sturdy legs, thick boots, solid weight on two feet. Clearly uncovered head with dark cropped hair, eyebrows, nose, ears and determined eyes. No helmet, cap, mask or hood. The clothes must read immediately as Guild dress: indigo cloth tabard with an ochre edge, tan belt over a cream padded shirt, dark trousers, one dull iron shoulder piece and bracers. Keep a wide area of the blue tunic visible. Forward hand grips a BIG wood-and-iron Guild shield as tall as his shoulder to shin, stepped metal rim and a small brass Guild badge. Shield is offset outward to the left; face, tunic and rear boot remain visible. Short blunt mace at the far hip. A living guild hireling in travel clothes rather than a suit of plate. Suggest distinct human faces and shield outlines across the candidates while keeping the same stocky build.",
+    "seed": 901261,
+    "canvas": [
+      64,
+      64
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/References/possible2.png",
+        "sha256": "753a0fa2b76e197e3a8498ccd2df7947a30da9de13b3eaf645a89ce1720584d4",
+        "usage": "Stature and attitude ONLY: closely match head-to-body ratio, wide shoulders, feet spacing and short thick limbs of this exact knight. Replace his helmet with a bare human head; dress him in Guild cloth; exchange sword for a big shield."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+        "sha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+        "usage": "Adventurer Guild cloth and small brass fastenings, plus uncovered human facial anatomy. Borrow clothing vocabulary, not youthful swordsman build."
+      }
+    ],
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round6/bulwark",
+    "sourceHashes": {
+      "01.png": "900cd4bd2a4c37692c9296fe8fd2845c7c946be2e136b1b760e7db99219054a0",
+      "02.png": "dea980295973c5d6ecb4e3d59e94e940d654a5dc6e74252434e0567d515f69c3",
+      "03.png": "96cdac5b32827500db1a3cf5dce88c31e4e967cf7cc39d8c5e197f65441848fa",
+      "04.png": "9c664e5e1278246431fa23b045f9bdfe23a095f1b31eae01f8278be8a6fa7eed",
+      "05.png": "2a2e7925cab8650d2fc14f53922df8690aa147b0bb4b66fd34fad3f9ef90824f",
+      "06.png": "a5ce63ec348f9aa47f7a4ae7236e21477d74cd817c37cbd88702a2e7a20b83c1",
+      "07.png": "52835cf00acf06f8d69d72fb07724e7fdcc82e4e55cf6acbdc592a513ed55d30",
+      "08.png": "cb7e3f3e1ecaf3da012b2da5326ee58d8944d793ef3ab5ad7ce7e9ce8e0e5e1c",
+      "09.png": "51f3c35438797de0bf43a1e1ea4119ee6171b4f6cebea4ac627b1f2035046f1e",
+      "10.png": "1b1d52b531f520b9172a56ba57a367de92646978a3a3a04a7918c0c5e179947d",
+      "11.png": "c184c9abc8a0feecd01f67152b5d7d1ce50cd5826893e344ede4e3ea7372ca34",
+      "12.png": "4a1f5550c74bb9fc96d56ccdde97a92bccd4037ea829cd72101141087d7281b4",
+      "13.png": "1d0c5f5a3a7153f9a32945d256594ebcf20ad0846ed0dfc3172ca09466396e26",
+      "14.png": "ab5a99c164e563abfce2cd2e4f450dc6144fbcf6c76c5f6dc5de821abae0b89a",
+      "15.png": "9a3b29f4cc804e1e6d9b6a9e3834774d3b35b26c59b36182b889da2372f0fa75",
+      "16.png": "7d85b9f07d58150bac606bfc7b0c0c80fe36181444cdbe48f2823dd9191bff8d"
+    }
+  },
+  {
+    "enemy": "guild_ranger",
+    "jobId": "ce430467-0dec-4c35-8b78-9add72e986f5",
+    "tool": "PixelLab create_image_pro",
+    "galleryId": "fe3a3b81-ecba-57a4-a9a9-dbf2e0ac24cd",
+    "cost": 10,
+    "status": "completed",
+    "description": "One isolated full-body native pixel-art combat sprite per candidate. Transparent background; face and front foot toward SCREEN LEFT in a readable three-quarter side view. Show whole hair, soles and equipment, with transparent pixels around all sides. Match the primary rendering image for bold clean grouped pixels, dark thin outline and upper-left shading. No text, shadows on the floor or scenery. A HUMAN Guild musketeer. Unmistakable round human ears, adult face, weathered blue shooting coat or sleeveless indigo field jacket with brass Guild clasp, cream rolled shirtsleeves, worn boots and a compact shoulder satchel. Build is compact and nimble with a legible face. Carries an unmistakable long antique fantasy MUSKET with honey-brown wooden shoulder stock, dark gunmetal barrel and a crisp bright muzzle rim, long enough to read across his body. Show the stock seated in the shoulder and hands in distinct places on the stock and fore-end. Face and muzzle point to left; entire long gun fits within the frame. Across the set allow an at-ready shoulder pose and a slightly lowered carry pose, different mature human faces or hair. No bow, arrows, quiver, pointed ears or magic. Quiet medieval Guild palette. Strong uncluttered silhouette.",
+    "seed": 901262,
+    "canvas": [
+      64,
+      64
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+        "sha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+        "usage": "Human race proportions, round human ears and the Guild\u2019s indigo travel cloth, ochre trim and practical leather. Design a new adult marksman carrying a long wood-stock musket."
+      }
+    ],
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round6/ranger",
+    "sourceHashes": {
+      "01.png": "d119413ee5ffd6bcd2bf93451886e586ebaee222becf110c88a3a87efae0d6e7",
+      "02.png": "9ab2399b4c78300a0549fa2c3d3707c20c2bc98097c61e711512602f1c64dccf",
+      "03.png": "dd288877140b8feb04393f100c625a2d2d9820c4d142f735ad45d6f5071ac550",
+      "04.png": "ba3daa85800e1d2542ff9c38356d93f2d15969f50f0af70cb04ae6e915ef1d80",
+      "05.png": "6932ad2ac52e5013cae6f8468c2d7786ddf27460c007a92280f1a61a92596a71",
+      "06.png": "c40a194bb6d033171ee010bdea23f8614cd194799498e19788445787e3be49ef",
+      "07.png": "0e49c3371674b44e68359fd2cba185917cbb1db65647a859e46536521b22b6cc",
+      "08.png": "bbd8c3a246e3c79ef602d4209cf9ce77210cdc8251de8d858d47d00811e899c0",
+      "09.png": "d7a65ba444e21daf4aeaeba49a1e7acd1da094314323887632310b2a6360624f",
+      "10.png": "188f9b402f2752bb34c95c62861a93ab296404b5526bf79f820a65098e28e9d1",
+      "11.png": "b62c9d5d219703bc4c216fd153fa9cf3b1956a2e5edd0af0a23c52bce8b84468",
+      "12.png": "5f8fff8e4c85c259825090b6c834e5c6c48459279cb115641f1561da11da8127",
+      "13.png": "21ed5a638e240020a80dcd9939c403c4992681e452ea8a56c72d1e1dff1f8f4e",
+      "14.png": "ef3621ee2655c2069f85771191452bf2f63a0801a29d6c660bacca74fc607f22",
+      "15.png": "11aa37bf347b2447eef5584dce28deec0ff98b33cae7262dbaf9643145b8afeb",
+      "16.png": "6c44b97930291792523acb3a1f2837d7a4aaff3a8004b8d18c8e6c3064ed0653"
+    }
+  }
+]

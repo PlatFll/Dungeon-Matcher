@@ -28,26 +28,43 @@ public sealed class ForestFoundationTests
     {
         var zone=Resources.Load<ZoneDefinition>("Zones/magical-forest");Assert.That(zone,Is.Not.Null);
         Assert.That(zone.eligibleForLiveTravel,Is.True);
-        var expected=ForestProductionImporter.Names.Concat(ForestRosterImporter.Names).ToArray();
-        CollectionAssert.AreEquivalent(expected,zone.enemies.Select(e=>e.name));
-        CollectionAssert.AreEquivalent(expected,zone.developmentEncounters.SelectMany(e=>e.members).Distinct().Select(e=>e.name));
+        var original = ForestProductionImporter.Names.Concat(ForestRosterImporter.Names).ToArray();
+        var additions = new[] { "elven_pathblade", "orc_slinghunter" };
+        CollectionAssert.AreEquivalent(original.Concat(additions), zone.enemies.Select(e => e.name));
+        CollectionAssert.AreEquivalent(original, zone.developmentEncounters.SelectMany(e => e.members).Distinct().Select(e => e.name));
         foreach(var enemy in zone.enemies)
         {
             string path=AssetDatabase.GetAssetPath(enemy.FallbackVisualSprite);
             bool expanded=ForestRosterImporter.Names.Contains(enemy.name);
-            string source=Directory.GetFiles("ArtSource/EnemyArtCohesion/Sheets",Path.GetFileNameWithoutExtension(path)+"-*.png").Single();
-            CollectionAssert.AreEqual(File.ReadAllBytes(source),File.ReadAllBytes(path),enemy.name);
+            bool selectionEnemy = additions.Contains(enemy.EnemyId);
+            if (!selectionEnemy)
+            {
+                string source = Directory.GetFiles("ArtSource/EnemyArtCohesion/Sheets", Path.GetFileNameWithoutExtension(path) + "-*.png").Single();
+                CollectionAssert.AreEqual(File.ReadAllBytes(source), File.ReadAllBytes(path), enemy.name);
+            }
             var importer=(TextureImporter)AssetImporter.GetAtPath(path);
             Assert.That(importer.filterMode,Is.EqualTo(FilterMode.Point));Assert.That(importer.mipmapEnabled,Is.False);
             Assert.That(importer.textureCompression,Is.EqualTo(TextureImporterCompression.Uncompressed));
             Assert.That(enemy.AnimationControllerOverride,Is.Not.Null);
-            foreach(string state in new[]{"Idle","AutoAttack","Hit","Death"})
+            var states = selectionEnemy ? new[] { "Idle", "AutoAttack" } : new[] { "Idle", "AutoAttack", "Hit", "Death" };
+            foreach(string state in states)
                 Assert.That(enemy.AnimationControllerOverride.animationClips.Any(c=>c.name.EndsWith("_"+state)),Is.True,enemy.name+" "+state);
             Assert.That(enemy.Race,Is.Not.Empty);Assert.That(enemy.Faction,Is.Not.Empty);
             Assert.That(enemy.EligibleZones,Does.Contain("magical-forest"));Assert.That(enemy.FirstAttackMoves,Is.GreaterThan(0));
             var native=expanded?(enemy.name=="Ancient_Treant"?new Vector2(128,112):new Vector2(96,80)):
                 (enemy.name=="Briar_Matriarch"?new Vector2(96,96):new Vector2(64,64));
-            Assert.That(enemy.FallbackVisualSprite.rect.size,Is.EqualTo(native+new Vector2(48,24)),enemy.name);
+            var expectedSize = selectionEnemy ? new Vector2(128,104) : native + new Vector2(48,24);
+            Assert.That(enemy.FallbackVisualSprite.rect.size, Is.EqualTo(expectedSize), enemy.name);
+            if (selectionEnemy)
+            {
+                string stem = enemy.EnemyId == "elven_pathblade" ? "ElvenPathblade" : "OrcSlinghunter";
+                Assert.That(path, Is.EqualTo("Assets/_Game/Art/SelectionExpansion/" + stem + "_Idle.png"));
+                var idle = enemy.AnimationControllerOverride.animationClips.Single(c => c.name == stem + "_Idle");
+                var binding = AnimationUtility.GetObjectReferenceCurveBindings(idle).Single();
+                Assert.That(AnimationUtility.GetObjectReferenceCurve(idle, binding)[0].value, Is.EqualTo(enemy.FallbackVisualSprite));
+                Assert.That(zone.resonanceEncounters.Any(r => r.resonanceKind == ZoneEncounterKind.Ordinary &&
+                    r.members.Contains(enemy)), Is.True, enemy.EnemyId);
+            }
         }
         foreach(var cell in zone.theme.boardCells) Assert.That(cell.rect.size,Is.EqualTo(new Vector2(64,64)));
         Assert.That(zone.theme.panelBackground,Is.Not.EqualTo(zone.theme.generalBackground));

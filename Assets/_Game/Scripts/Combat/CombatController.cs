@@ -174,6 +174,8 @@ public sealed class CombatController : MonoBehaviour
         List<EnemyActor> enemySnapshot =
             new List<EnemyActor>(waveController.ActiveEnemies);
 
+        // Freeze eligible recipients for this clear. A later cascade is a new receipt.
+        enemySnapshot.RemoveAll(e => e == null || e.IsProtectedByTaunt);
         int enemiesHit = 0;
 
         foreach (EnemyActor enemy in enemySnapshot)
@@ -260,6 +262,7 @@ public sealed class CombatController : MonoBehaviour
         List<EnemyActor> enemySnapshot =
             new List<EnemyActor>(waveController.ActiveEnemies);
 
+        enemySnapshot.RemoveAll(e => e == null || e.IsProtectedByTaunt);
         int enemiesPoisoned = 0;
 
         foreach (EnemyActor enemy in enemySnapshot)

@@ -80,7 +80,7 @@ public sealed class DungeonSideViewPreviewTests
         var sceneBytes=File.ReadAllBytes(DungeonSideViewPreviewTools.ScenePath);
         EditorSceneManager.OpenScene(DungeonSideViewPreviewTools.ScenePath);
         var preview=Object.FindFirstObjectByType<DungeonSideViewArtPreview>();Assert.That(preview,Is.Not.Null);
-        string output=DungeonSideViewPreviewTools.Kit+"/Review/Unity";Directory.CreateDirectory(output);
+        string output=Path.GetFullPath(".utmp/DungeonSideViewPreview/Reference");Directory.CreateDirectory(output);
         var sizes=new[]{new Vector2Int(360,640),new Vector2Int(720,1280),new Vector2Int(1080,1920),new Vector2Int(1080,2400),new Vector2Int(1080,2400)};
         for(int index=0;index<sizes.Length;index++)
         {
@@ -88,7 +88,12 @@ public sealed class DungeonSideViewPreviewTests
             preview.safeArea=index==4?new Rect(24,80,1032,2200):new Rect(0,0,size.x,size.y);
             var target=new RenderTexture(size.x,size.y,24){antiAliasing=1,filterMode=FilterMode.Point};preview.previewCamera.targetTexture=target;
             preview.Rebuild();for(int frame=0;frame<4;frame++)yield return null;Canvas.ForceUpdateCanvases();
+            Assert.That(preview.fixedReferenceCanvas, Is.True);
             Assert.That(preview.Content.sizeDelta,Is.EqualTo(new Vector2(360,640)));
+            var screenRef = new Vector2(360,640) * preview.PixelScale;
+            var origin = new Vector2(Mathf.Floor(preview.safeArea.center.x - screenRef.x/2),
+                Mathf.Floor(preview.safeArea.center.y - screenRef.y/2));
+            Assert.That(preview.ContentPixels, Is.EqualTo(new Rect(origin, screenRef)));
             Assert.That(preview.Content.GetComponentsInChildren<Image>().Count(i=>i.name.StartsWith("Cell")),Is.EqualTo(64));
             Assert.That(preview.ContentPixels.xMin,Is.GreaterThanOrEqualTo(preview.safeArea.xMin));
             Assert.That(preview.ContentPixels.xMax,Is.LessThanOrEqualTo(preview.safeArea.xMax));

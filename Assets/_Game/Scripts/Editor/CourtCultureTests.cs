@@ -11,10 +11,16 @@ public sealed class CourtCultureTests
     [Test] public void SerializedCulturesAndRecipesMatchReviewedSource()
     {
         var zone=Resources.Load<ZoneDefinition>("Zones/drowned-court");
-        Assert.That(zone.enemies.Length,Is.EqualTo(14));
-        Assert.That(zone.enemies.Count(e=>e.Faction=="Reef Clans"),Is.EqualTo(10));
-        Assert.That(zone.enemies.Count(e=>e.Faction=="Nacre Court"),Is.EqualTo(4));
-        foreach(var enemy in zone.enemies) Assert.That(enemy.Faction,Is.EqualTo(DrownedCourtImporter.CultureFor(enemy.EnemyId)));
+        var additions = new[] { "nacre_duelist", "nacre_halberdier" };
+        CollectionAssert.AreEquivalent(DrownedCourtImporter.Ids.Concat(additions), zone.enemies.Select(e => e.EnemyId));
+        var original = zone.enemies.Where(e => DrownedCourtImporter.Ids.Contains(e.EnemyId)).ToArray();
+        Assert.That(original.Length, Is.EqualTo(14));
+        Assert.That(original.Count(e => e.Faction == "Reef Clans"), Is.EqualTo(10));
+        Assert.That(original.Count(e => e.Faction == "Nacre Court"), Is.EqualTo(4));
+        foreach (var enemy in original)
+            Assert.That(enemy.Faction, Is.EqualTo(DrownedCourtImporter.CultureFor(enemy.EnemyId)), enemy.EnemyId);
+        foreach (var id in additions)
+            Assert.That(zone.enemies.Single(e => e.EnemyId == id).Faction, Is.EqualTo("Nacre Court"), id);
         var source=JsonUtility.FromJson<Recipes>(File.ReadAllText("ArtSource/DrownedCourt/Production/Selected/encounters.json")).recipes;
         Assert.That(zone.liveEncounters.Length,Is.EqualTo(source.Length));
         for(int i=0;i<source.Length;i++)

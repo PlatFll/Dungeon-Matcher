@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
+  m_Name: nacre_duelist
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
+  enemyId: nacre_duelist
+  displayName: Nacre Duelist
+  race: Nacre merfolk
+  faction: Nacre Court
+  combatRole: Nacre Court basic fighter
+  category: 0
+  eligibleZones:
+  - drowned-court
+  threatCost: 1.5
+  isBoardDisruptor: 0
+  isSupport: 0
+  useDescriptionForInspection: 1
+  description: Strikes once with a quick shell-guard rapier thrust. Watch the sword counter to time your response.
+  baseMaxHealth: 65
+  baseDamage: 10
+  baseFollowUpDamage: 0
+  followUpAttackDelay: 0
+  baseAttackInterval: 4
+  firstAttackMoves: 3
+  attackMoves: 3
+  unifiedFirstAttackMoves: 3
+  unifiedAttackMoves: 3
+  pressureFirstAttackMoves: 3
+  pressureAttackMoves: 3
+  pressureSpecialTurns: 5
+  baseSpecialTurnRequirement: 5
+  lockSpecialTurnRequirement: 0
+  hasSpecialAbility: 0
+  specialAbilityKind: 0
+  canFightFlooded: 1
+  oreWeaponEligible: 0
+  minimumWave: 1
+  enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
+  fallbackVisualSprite: {fileID: 5565686285583119918, guid: b027a2fe07c95973b6a25d4d7243b733, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: edf2a9b327d75cb2a0aa40c402b7b2dd, type: 2}
+  visualSize: {x: 128, y: 128}
+  timeAutoAttackFromAnimation: 1
+  useAuthoredAutoAttackMotion: 1

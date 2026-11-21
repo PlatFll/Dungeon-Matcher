@@ -7,10 +7,9 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
 
-// EditMode: disposable actors, catalog and minimal button views. Drives the
-// existing open coroutine at yield boundaries; does NOT render the real UI,
-// run real waves or replace the final combined Play Mode validation.
-public sealed class UpgradeIntermissionLifecycleTests
+// Synthetic Play Mode actors, catalog and button views exercise the open
+// coroutine at its yield boundaries under normal Unity component lifecycles.
+public sealed class UpgradeIntermissionLifecycleTests : UpgradeLifecyclePlayFixture
 {
     private const BindingFlags Flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
     private readonly List<UnityEngine.Object> created = new List<UnityEngine.Object>();
@@ -30,8 +29,7 @@ public sealed class UpgradeIntermissionLifecycleTests
     [SetUp]
     public void SetUp()
     {
-        Assume.That(RunUpgradeRuntime.Current, Is.Null,
-            "Run outside Play Mode; never destroy a live run to make a fixture pass.");
+        Assert.That(RunUpgradeRuntime.Current, Is.Null, "The Play Mode fixture requires an isolated scene.");
         playerDefinition = Resources.Load<PlayerDefinition>("Players/Player_Skeleton");
         Assert.That(playerDefinition, Is.Not.Null);
         GameObject playerObject = NewObject("ChoiceFixture_Player");

@@ -156,6 +156,12 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(moving,Is.Not.Null);Assert.That(new Vector2Int(moving.Column,moving.Row),Is.Not.EqualTo(origin));
         Assert.That(judgmentWarning.Targets,Does.Contain(moving));
         int identity=moving.BoardIdentity;
+        if(!Run.Waves.HasFreeEnemySlot)
+        {
+            var escort=Run.Waves.ActiveEnemies.First(e=>e!=judgmentKing);
+            escort.ResolveDirectDamage(escort.CurrentHealth+escort.CurrentShield+100);
+            yield return Until(()=>Run.Waves.HasFreeEnemySlot && Run.Continuation.CanCapture,"escort's actual defeat releases its slot");
+        }
         var ministerData=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_RoyalArchbishop.asset");
         Assert.That(Run.Waves.TrySummonEnemy(ministerData,out var minister),Is.True);
         yield return Stable();QuietKitFixture();

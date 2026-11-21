@@ -65,7 +65,7 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 
 - Current native image: [royal_swordsman-still.png](EnemyCohesion2026-10/royal_swordsman-still.png) (112×88).
 - Extracted PNG SHA-256: `f7d4896847862dd507afefcf3853854b5115d5578d4235012564cc0e05f46b77`.
-- Production source: `Assets/_Game/Art/CombatIdles/RoyalSwordsman_Idle.png`; SHA-256 `c9bfa06b8a06eb4bb1348e4b6d0bd8e47112db7c2abc29e170816f8838495ae9`.
+- Production source: `Assets/_Game/Art/CombatIdles/RoyalSwordsman_Idle.png`; SHA-256 `2a1b46fdcfbb2ca56e99dcb28a29777b01510d98ddaf35555a9d45563956fd78`. The frame-2 sword-edge repair changed six pixels in the production sheet. The registered first drawing and its extracted PNG retain their approved hashes.
 - Unity GUID `515d6081feed5644fb014b27bfe1c414`, fileID `-4154602047249404397`, sprite `RoyalSwordsman_Idle_00`.
 - Extraction rectangle in PNG top-left coordinates: `[0, 0, 112, 88]` (right/bottom exclusive). Full expanded canvas; no scaling/trimming. Unity source-floor pivot: (56, 4).
 - Current controller: `Assets/_Game/Animations/CombatIdles/RoyalSwordsman_Idle.controller`.

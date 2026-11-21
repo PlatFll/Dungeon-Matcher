@@ -1,0 +1,79 @@
+animation,owner,cadence,status,keys
+Bomb idle / Poison,BombIdleArt.Frame,0.100s,production,24
+Bomb idle / Healing,BombIdleArt.Frame,0.100s,production,32
+Bomb idle / RowIdle,BombIdleArt.Frame,0.080s,production,8
+Bomb idle / ColumnIdle,BombIdleArt.Frame,0.080s,production,8
+Bomb idle / Star,BombIdleArt.Frame,0.080s,production,32
+Bomb effect / FireHead,BombLineVFX,0.045s,production,6
+Bomb effect / FireTrail,BombLineVFX,0.045s,production,6
+Bomb effect / StarGlint,ColorCrystalGlintVFX,source and target peak phase,production,8
+Hearth ember,HearthEmberFlameView,0.120s,production,8
+Tile burst / Explosion,TileBurstVFXController,"serialized 0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03",production,13
+Tile burst / PoisonExplosion,TileBurstVFXController,"serialized 0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03",production,13
+Tile burst / ShieldExplosion,TileBurstVFXController,"serialized 0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03",production,13
+Tile burst / HealingExplosion,TileBurstVFXController,"serialized 0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03",production,13
+DrownedCourtTheme / waterRippleFrames,GameplayThemeDefinition / CourtBoardEffects,one .24s ripple,production,3
+ForestTheme / vineSpreadFrames,GameplayThemeDefinition / VineOverlayMotion,0.045s,production,9
+ForestTheme / vineHitFrames,GameplayThemeDefinition / VineOverlayMotion,0.035s,production,9
+IronveinTheme / mineStoneStages,GameplayThemeDefinition / MineEnvironmentView,gameplay phase or per-emitter duration,production,3
+IronveinTheme / mineObsidianDamaged,GameplayThemeDefinition / MineEnvironmentView,gameplay phase or per-emitter duration,production,2
+IronveinTheme / mineCoreDamaged,GameplayThemeDefinition / MineEnvironmentView,gameplay phase or per-emitter duration,production,2
+IronveinTheme / mineDrillFrames,GameplayThemeDefinition / MineEnvironmentView,gameplay phase or per-emitter duration,production,5
+IronveinTheme / mineSmallDrillFrames,GameplayThemeDefinition / MineEnvironmentView,30 Hz,production,5
+IronveinTheme / mineOreFrames,GameplayThemeDefinition / MineEnvironmentView,gameplay phase or per-emitter duration,production,7
+IronveinTheme / mineFuseFrames,GameplayThemeDefinition / MineEnvironmentView,10 Hz,production,5
+IronveinTheme / mineCoreBreakFrames,GameplayThemeDefinition / MineEnvironmentView,.36s burst,production,9
+IronveinTheme / mineRowSpinFrames,GameplayThemeDefinition / MineEnvironmentView,24 Hz,production,8
+Forest / Subtle waterfall shimmer,ForestAmbientMotion,"kind 2, 12 fps, period 6, phase 0",production,24
+Forest / Wisp_Far_A,ForestAmbientMotion,"kind 0, 4.65 fps, period 3.9, phase 0.5",production,1
+Forest / Wisp_Far_B,ForestAmbientMotion,"kind 0, 5.04 fps, period 5.6000004, phase 1.8",production,1
+Forest / Wisp_Near,ForestAmbientMotion,"kind 0, 5.43 fps, period 7.3, phase 3.1",production,1
+Forest / Wisp_Aura,ForestAmbientMotion,"kind 0, 4.98 fps, period 8.3, phase 1.6",production,1
+Forest / Wisp_Core,ForestAmbientMotion,"kind 0, 4.98 fps, period 8.3, phase 1.6",production,1
+Forest / Warm firefly,ForestAmbientMotion,"kind 0, 4.77 fps, period 3.2, phase 0.9",production,1
+Forest / Hanging leaves,ForestAmbientMotion,"kind 1, 5 fps, period 12.5, phase 6.4",production,5
+Forest / Distant gold firefly,ForestAmbientMotion,"kind 0, 4.62 fps, period 2.1, phase 0.4",production,1
+Forest / Upper_Mote_A,ForestAmbientMotion,"kind 0, 4.83 fps, period 4.6, phase 1.1",production,1
+Forest / Upper_Mote_B,ForestAmbientMotion,"kind 0, 4.59 fps, period 2.7, phase 0.3",production,1
+Forest / Left hanging vine,ForestAmbientMotion,"kind 1, 5 fps, period 9.7, phase 0",production,5
+Forest / Right hanging vine,ForestAmbientMotion,"kind 1, 5 fps, period 11.099999, phase 3.2",production,5
+Forest / Varied forest spirit 0,ForestAmbientMotion,"kind 0, 4.5 fps, period 2.8, phase 0",production,4
+Forest / Varied forest spirit 1,ForestAmbientMotion,"kind 0, 4.689 fps, period 5.9, phase 0.63",production,4
+Forest / Varied forest spirit 2,ForestAmbientMotion,"kind 0, 4.878 fps, period 7.3, phase 1.26",production,4
+Forest / Varied forest spirit 3,ForestAmbientMotion,"kind 0, 5.067 fps, period 3.1, phase 1.89",production,4
+Forest / Varied forest spirit 5,ForestAmbientMotion,"kind 0, 5.445 fps, period 4.4, phase 3.15",production,1
+Forest / Varied forest spirit 6,ForestAmbientMotion,"kind 0, 5.634 fps, period 2.3, phase 3.78",production,4
+Forest / Warm lower firefly 1,ForestAmbientMotion,"kind 0, 1 fps, period 2.6, phase 0.2",production,1
+Forest / Warm lower firefly 2,ForestAmbientMotion,"kind 0, 1 fps, period 4.1, phase 2.6",production,1
+Forest / Warm lower firefly 3,ForestAmbientMotion,"kind 0, 1 fps, period 3.3, phase 1.8",production,1
+Forest / Warm lower firefly 4,ForestAmbientMotion,"kind 0, 1 fps, period 5, phase 0.6",production,1
+Forest / Warm lower firefly 5,ForestAmbientMotion,"kind 0, 1 fps, period 2.8, phase 1.7",production,1
+Forest / Warm lower firefly 6,ForestAmbientMotion,"kind 0, 1 fps, period 4.7, phase 3.3",production,1
+Forest / Warm lower firefly 7,ForestAmbientMotion,"kind 0, 1 fps, period 3.8, phase 0.8",production,1
+Forest / Warm lower firefly 8,ForestAmbientMotion,"kind 0, 1 fps, period 5.6, phase 4.6",production,1
+Court / ColumnLeftA_0_259,DrownedCourtAmbientMotion,0.083s,production,144
+Court / ColumnRightB_329_419,DrownedCourtAmbientMotion,0.083s,production,288
+Court / Clam,DrownedCourtAmbientMotion,0.083s,production,144
+Court / TopLeft,DrownedCourtAmbientMotion,0.083s,production,96
+Court / TopCenter,DrownedCourtAmbientMotion,0.083s,production,144
+Court / TopRight,DrownedCourtAmbientMotion,0.083s,production,96
+Court / ArenaEdge,DrownedCourtAmbientMotion,0.083s,production,144
+Court / BoardLeftHigh,DrownedCourtAmbientMotion,0.083s,production,144
+Court / BoardLeftLow,DrownedCourtAmbientMotion,0.083s,production,96
+Court / BoardRightHigh,DrownedCourtAmbientMotion,0.083s,production,144
+Court / BoardRightLow,DrownedCourtAmbientMotion,0.083s,production,96
+Court / BottomLeft,DrownedCourtAmbientMotion,0.083s,production,144
+Court / BottomRight,DrownedCourtAmbientMotion,0.083s,production,144
+Court / ClamReleaseA,DrownedCourtAmbientMotion,0.083s,production,144
+Court / ClamReleaseB,DrownedCourtAmbientMotion,0.083s,production,144
+Mountain / ice glint,SnowyMountainAmbientMotion,0.125s,production,6
+Fallback ambient / Bubble,BattleAmbientPresentation,drift and alpha,legacy presentation fallback,6
+Fallback ambient / Lantern,BattleAmbientPresentation,glow alpha,legacy presentation fallback,1
+Fallback ambient / Rune,BattleAmbientPresentation,glow alpha,legacy presentation fallback,1
+Fallback ambient / Torch,BattleAmbientPresentation,glow alpha,legacy presentation fallback,6
+Fallback ambient / Waterfall,BattleAmbientPresentation,0.167s,legacy presentation fallback,6
+poisonExplosionFrames,Game.unity / PoisonBombBurstVFX,authored phase,production,7
+Hero impact / DungeonAttender,PlayerImpactPresentation,0.040s,production,5
+Hero impact / Ricochet,PlayerImpactPresentation,0.040s,production,5
+Court / rising water surface,CourtFloodGraphic.OnPopulateMesh,0.083s,production,16
+Startup / studio ident,StudioIdentPlayer.ShowFrame,0.083s,production,30

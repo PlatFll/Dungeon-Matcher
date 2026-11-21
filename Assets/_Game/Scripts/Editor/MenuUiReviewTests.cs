@@ -68,8 +68,10 @@ public sealed class MenuUiReviewTests
             AudioPreferences.SetMusicMuted(music);AudioPreferences.SetSfxMuted(sfx);
             AudioPreferences.SetVibrationMuted(vibration);PresentationPreferences.SetReducedMotion(motion);
         }
-        Click("PlayButton");yield return null;Assert.That(GameObject.Find("TestingZonePicker"),Is.Not.Null);
-        Click("StartZone_dungeon");yield return Until(()=>RunSession.Current!=null&&RunSession.Current.Continuation.CanCapture&&RunSession.Current.Waves.IsWaveActive);
+        Click("PlayButton");
+        yield return Until(()=>RunSession.Current!=null && RunSession.Current.Continuation?.CanCapture==true && RunSession.Current.Waves.IsWaveActive);
+        Assert.That(RunSession.Current.Zone.Definition.zoneId,Is.EqualTo("dungeon"));
+        Assert.That(GameObject.Find("TestingZonePicker"),Is.Null,"normal Play goes straight to the Dungeon");
         string id=AccountProgression.Current.ActiveRun.id;
         var controls=Object.FindFirstObjectByType<RunControlsUI>();controls.OpenSettings();yield return null;
         Click("Retry");yield return null;Assert.That(GameObject.Find("Confirm"),Is.Not.Null);Assert.That(Time.timeScale,Is.Zero);

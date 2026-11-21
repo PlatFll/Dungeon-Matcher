@@ -715,7 +715,7 @@ public partial class BoardController
             // One retaliation per broken barrier; a simultaneous clear from
             // its safe side is a valid safe answer. Cascades/blasts never retaliate.
             if(state.Style==EnemyBarricadeStyle.Thorn && retaliate)
-                (combatController?.PlayerActor ?? RunSession.Current?.Player)?.TryTakeDamage(state.ThornDamage);
+                (combatController?.PlayerActor ?? RunSession.Current?.Player)?.TryTakeAttributedDamage(state.ThornDamage, null, "Thorn retaliation");
             // A broken obstacle opens a real gravity slot just like a
             // destroyed gem. Queue it with this clear's other openings;
             // do not move banners while clear targets are being reported.

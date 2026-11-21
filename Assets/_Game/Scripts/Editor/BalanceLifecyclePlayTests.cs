@@ -16,16 +16,9 @@ public sealed class BalanceLifecyclePlayTests
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
         yield return new EnterPlayMode();
         Assert.That(Application.isPlaying,Is.True,"Lifecycle assertions require real Unity callbacks.");
-        string path=Path.GetFullPath(".utmp/LifecycleProfiles/"+Guid.NewGuid().ToString("N")+".json");
-        Directory.CreateDirectory(Path.GetDirectoryName(path));
-        var save=new AccountSave();
-        foreach(GemSpecialType type in Enum.GetValues(typeof(GemSpecialType)))
-            if(BalanceV1.Current.UnlockLevel(type)!=int.MaxValue&&!save.unlocked.Contains(type))save.unlocked.Add(type);
-        File.WriteAllText(path,JsonUtility.ToJson(save));
         var failures=new List<string>();int passed=0;
-        using(AccountProgression.UseDisposableProfile(path))
-        using(GemMasterySettings.UseTemporaryLoadout(new GemMasteryLoadout(GemMasteryReward.ColorCrystal,
-            GemMasteryReward.PoisonBomb,GemMasteryReward.HealBomb,GemMasteryReward.ShieldBomb)))
+        using(UpgradeLifecyclePlayFixture.OpenTestAccount())
+        using(UpgradeLifecyclePlayFixture.OpenTestMastery())
         {
             foreach(Type fixtureType in new[]{typeof(CrackedCenterRewardTests),typeof(CrackedChainUpgradeScopeTests),
                 typeof(RunUpgradeLifecycleTests),typeof(UpgradeIntermissionLifecycleTests)})
@@ -55,4 +48,49 @@ public sealed class BalanceLifecyclePlayTests
         yield return new ExitPlayMode();
         Assert.That(failures,Is.Empty,string.Join("\n",failures));
     }
+}
+
+// The Unity runner wraps ordinary NUnit SetUp/Test/TearDown inside these two
+// coroutines. The pooled wrapper above enters once and invokes only NUnit hooks.
+public abstract class UpgradeLifecyclePlayFixture
+{
+    private IDisposable account;
+    private IDisposable mastery;
+
+    [UnitySetUp]
+    public IEnumerator EnterIsolatedUpgradeScene()
+    {
+        EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+        yield return new EnterPlayMode();
+        Assert.That(Application.isPlaying, Is.True, "Normal component lifecycles require Play Mode.");
+        account = OpenTestAccount();
+        mastery = OpenTestMastery();
+    }
+
+    [UnityTearDown]
+    public IEnumerator LeaveIsolatedUpgradeScene()
+    {
+        mastery?.Dispose();
+        account?.Dispose();
+        mastery = null;
+        account = null;
+        if (Application.isPlaying) yield return new ExitPlayMode();
+    }
+
+    internal static IDisposable OpenTestAccount()
+    {
+        string directory = Path.GetFullPath(".utmp/LifecycleProfiles");
+        Directory.CreateDirectory(directory);
+        string path = Path.Combine(directory, Guid.NewGuid().ToString("N") + ".json");
+        var save = new AccountSave();
+        foreach (GemSpecialType type in Enum.GetValues(typeof(GemSpecialType)))
+            if (BalanceV1.Current.UnlockLevel(type) != int.MaxValue && !save.unlocked.Contains(type))
+                save.unlocked.Add(type);
+        File.WriteAllText(path, JsonUtility.ToJson(save));
+        return AccountProgression.UseDisposableProfile(path);
+    }
+
+    internal static IDisposable OpenTestMastery() => GemMasterySettings.UseTemporaryLoadout(
+        new GemMasteryLoadout(GemMasteryReward.ColorCrystal, GemMasteryReward.PoisonBomb,
+            GemMasteryReward.HealBomb, GemMasteryReward.ShieldBomb));
 }

@@ -1,3 +1,24 @@
+## Selection repair and non-boss expansion — stacked review candidate, 2026-11-19
+
+Five travel zones now use authored Early, Mid and Late ordinary formations with
+member-based recurrence. Ironvein can roll its Packbeetle from authored ordinary
+recipes. Ten new enemies use the approved character stills and production motion.
+The Guild Bulwark uses K06 Road Escort. The Bulwark's three-move Taunt and the
+Chirurgeon's single-target field heal share the existing enemy action pipeline.
+The Orc Slinghunter now has one damaging stone per basic attack. Its approved stumble, the revised attacks and heal, and the seven living idles are bound to the production enemy controllers.
+The production cast pass repaired 48 animation clips, including a frame-2 pixel correction to the Dungeon Miner’s original idle. The review opens on synchronized before-and-after Game captures. [Animation review](ArtDirection/AnimationSweep/Review.html)
+
+The follow-up fixed 59 pixels in nine Dungeon idles and simplified five enemy material palettes, including the Grand Delver pilot across ejection and remount. [Motion and shading review](ArtDirection/AnimationSweep/MaterialContinuity/Review.html)
+
+The enemy grip and cloth pass repaired 13 production clips across 11 enemies, including both free panels of the Guild Chirurgeon’s cape, the Swordsman’s steel shoulder, and the Ranger’s musket contacts. [Before and after](ArtDirection/AnimationSweep/GripAndDrape/Review.html) · [Frame-by-frame enemy roster](ArtDirection/AnimationSweep/GripAndDrape/Roster.html)
+
+The gameplay sweep corrected milestone retention and wallet recovery, board input release, flood rendering, roster reimports, idle-channel replay and small-screen combat layout. The case ledger records affected reruns and the source used for each. [Gameplay validation and Android build results](Validation/AnimationSweep/README.md)
+The feature branch is based on the Crystal Resonance review candidate.
+Both development players built. Ten natural Dungeon-first runs completed 21
+visits, and all 2,442 recorded inputs matched their durable journals. Stage 08
+also exercised both Guild specials inside the production Game scene.
+[Expansion handoff](../HANDOFF/SELECTION_EXPANSION.md)
+
 ## Crystal Resonance refinement — 2026-11-18, unmerged acceptance candidate
 
 Fresh standard, Retry, Practice and challenge runs permanently start in Dungeon;
@@ -721,6 +742,12 @@ Enemy numbers, visit pacing, new scene composition and temporary music still
 need human play/listening feedback. No device performance claim is made.
 See [scope, decisions and validation](FrostwakePlayables/IMPLEMENTATION.md)
 and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_DESIGNS.json).
+
+## Character animation workflow and audit
+
+The [production repair comparison](ArtDirection/CastMotionRepairs/Review.html) covers 17 expansion animations and the 23 clips behind the 20 cast-audit findings. The comparison includes the previous game drawings and the later Swordsman, Halberdier and Axeman review versions. The actual game resolves the repaired sheets through the existing controllers and sprite IDs.
+
+The [character animation SOP](ArtDirection/Character_Animation_SOP.md) and [per-character source index](ArtDirection/Character_Animation_Sources.md) trace the current cast back to its production drawings. The [cast audit](ArtDirection/CastMotionAudit/Review.html) includes timed playback, finding-specific frames and repair proposals. The [expansion polish review](../ArtSource/SelectionExpansion/Motion/Review/Revision03/Review.html) compares the revised native artwork with the current Unity sources.
 
 ## Global art-direction audit (2026-10-11)
 

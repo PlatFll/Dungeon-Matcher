@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
 
+public enum OrdinaryRole { Relief, Standard, Pressure, Introduction }
+public enum EncounterPhase { Early, Mid, Late }
+
 public enum ZoneEncounterKind { Ordinary, Elite, Miniboss, MajorBoss }
 [Serializable]
 public sealed class ZoneDepthMember
@@ -17,6 +20,11 @@ public sealed class ZoneDepthMember
 public sealed class ZoneTestEncounter
 {
     public string label;
+    [Tooltip("Eligible complexity bands: Early 1, Mid 2, Late 4. Combine bits for reusable formations.")]
+    public int phaseMask = 7;
+    public OrdinaryRole ordinaryRole = OrdinaryRole.Standard;
+    public string formationFamily;
+    [Min(1)] public int familyWeight = 3;
     public int minimumDepthTier, maximumDepthTier = 4;
     public ZoneEncounterKind resonanceKind;
     public float resonanceThreatBudget = 12;
@@ -27,6 +35,14 @@ public sealed class ZoneTestEncounter
     [Min(1)] public int weight=1;
     // 0 either, 1 dry only, 2 flooded only. Whole-cast eligibility still applies.
     public int requiredTide;
+    [NonSerialized] public string selectedPhase, selectedRole;
+    public ZoneTestEncounter WithSelection(string phase, string role)
+    {
+        var copy = (ZoneTestEncounter)MemberwiseClone();
+        copy.selectedPhase = phase;
+        copy.selectedRole = role;
+        return copy;
+    }
     // Optional teaching metadata for a zone's weighted encounter library.
     public EnemyDefinition introduction;
     public int introduceByLocalWave;

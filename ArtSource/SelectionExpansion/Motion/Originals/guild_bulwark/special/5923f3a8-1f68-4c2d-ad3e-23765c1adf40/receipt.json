@@ -1,0 +1,57 @@
+{
+  "enemy": "guild_bulwark",
+  "state": "special",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/K06.png",
+  "firstFrameSHA256": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
+  "seed": 385129,
+  "count": 10,
+  "prompt": "Shield-thump challenge. Lift the mace across the body, turn the broad shield toward camera, strike the face of his own shield once in the middle, brace, then lower the mace into the opening guard. Feet rooted. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "5923f3a8-1f68-4c2d-ad3e-23765c1adf40",
+  "receipt": "id: 5923f3a8-1f68-4c2d-ad3e-23765c1adf40\njob_id: 5923f3a8-1f68-4c2d-ad3e-23765c1adf40\naction: Shield-thump challenge. Lift the mace across the body, turn the broad shield toward camera, strike the face of his own shield once in the middle, brace, then lower the mace into the opening guard. Feet rooted. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 10\nsize: 112x88px\ntransparent: True\nseed: 385129\nasset_id: 3fbf578d-681f-5520-ad79-76f82205941a\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"5923f3a8-1f68-4c2d-ad3e-23765c1adf40\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/special/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/00.png",
+      "sha256": "d7a74404acb3d75ac72c6acc24c60c6ceb7e5c8b38c4095c126d2584ea60138f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/special/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/01.png",
+      "sha256": "e0012861b26145c445f4aec67c86c94bee6d24fe335f6344b18a029ad5c92017"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/special/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/02.png",
+      "sha256": "15052766c8b5d848ddb2f527cd86135a6459599b32339c22ba5e4f6177ddde6b"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/special/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/03.png",
+      "sha256": "06bb6431e51e7d9589c52ca5d96072a4743b244cf5676faacea969e49fdffbf1"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/special/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/04.png",
+      "sha256": "9464cb4d83056b33e91c7b50877e6129e1b3192107069196451514e8491f9f69"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/special/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/05.png",
+      "sha256": "9a647c7837ff355500120317a8c1a803b0b0c4edf9daa850d4f2f6e8e0595161"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/special/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/06.png",
+      "sha256": "d88757adc5f34388c492778f17f9f2383ef8be1be2e39c1007a5783b3c6b55e9"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/special/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/07.png",
+      "sha256": "7447cbd0c629c427068cf6ff16cc0f5e6047f33c0d2c65fac13b003e3d7a910a"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/special/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/08.png",
+      "sha256": "dbe3b84d69016b14a2ca28e9e565b3775cd0b61b67bac28aa770d28a39f6ff33"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/special/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/09.png",
+      "sha256": "9f9e91cbd45fbb93efa0fcd5edc1dce1e2358b17e87e07cc5e9b495f96596075"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/special/5923f3a8-1f68-4c2d-ad3e-23765c1adf40/10.png",
+      "sha256": "caad27dc2d632ce4d3339e6efbd9d5dedce4af009d769135b862ce946233c5f9"
+    }
+  ]
+}

@@ -1,0 +1,3159 @@
+{
+  "drowned-court": {
+    "reef_spearman": {
+      "guid": "5c912c4409a23f8498d21871465be54b",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Reef Clans",
+      "role": "None",
+      "flood": 1,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Outer patrol",
+          "Quiet patrol",
+          "Reef scouts",
+          "Learn pearl_thief",
+          "Learn reef_netweaver"
+        ],
+        [
+          "Outer patrol",
+          "Quiet patrol",
+          "Reef scouts",
+          "Learn pearl_thief",
+          "Patrol pearl_thief",
+          "Learn reef_netweaver",
+          "Patrol reef_netweaver",
+          "Learn puffer_sentinel",
+          "Patrol puffer_sentinel",
+          "Learn pearl_cantor",
+          "Patrol pearl_cantor",
+          "Learn conch_marshal",
+          "Patrol conch_marshal"
+        ],
+        [
+          "Outer patrol",
+          "Quiet patrol",
+          "Reef scouts",
+          "Learn pearl_thief",
+          "Patrol pearl_thief",
+          "Learn reef_netweaver",
+          "Patrol reef_netweaver",
+          "Learn puffer_sentinel",
+          "Patrol puffer_sentinel",
+          "Learn pearl_cantor",
+          "Patrol pearl_cantor",
+          "Learn conch_marshal",
+          "Patrol conch_marshal",
+          "Learn moray_siphoner",
+          "Patrol moray_siphoner",
+          "Combined reef_netweaver",
+          "Combined pearl_thief"
+        ],
+        [
+          "Quiet patrol",
+          "Reef scouts",
+          "Learn pearl_thief",
+          "Patrol pearl_thief",
+          "Learn reef_netweaver",
+          "Patrol reef_netweaver",
+          "Learn puffer_sentinel",
+          "Patrol puffer_sentinel",
+          "Learn pearl_cantor",
+          "Patrol pearl_cantor",
+          "Learn conch_marshal",
+          "Patrol conch_marshal",
+          "Learn moray_siphoner",
+          "Patrol moray_siphoner",
+          "Combined reef_netweaver",
+          "Combined pearl_thief"
+        ],
+        [
+          "Quiet patrol",
+          "Reef scouts",
+          "Learn pearl_thief",
+          "Patrol pearl_thief",
+          "Learn reef_netweaver",
+          "Patrol reef_netweaver",
+          "Learn puffer_sentinel",
+          "Patrol puffer_sentinel",
+          "Learn pearl_cantor",
+          "Patrol pearl_cantor",
+          "Learn conch_marshal",
+          "Patrol conch_marshal",
+          "Learn moray_siphoner",
+          "Patrol moray_siphoner",
+          "Combined reef_netweaver",
+          "Combined pearl_thief"
+        ]
+      ]
+    },
+    "hammerhead_bruiser": {
+      "guid": "3543ecb33bba2a048a064a7eacc2f883",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Reef Clans",
+      "role": "None",
+      "flood": 1,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Outer patrol"
+        ],
+        [
+          "Outer patrol",
+          "Patrol pearl_cantor",
+          "Patrol conch_marshal"
+        ],
+        [
+          "Outer patrol",
+          "Patrol pearl_cantor",
+          "Patrol conch_marshal",
+          "Patrol moray_siphoner"
+        ],
+        [
+          "Patrol pearl_cantor",
+          "Patrol conch_marshal",
+          "Patrol moray_siphoner"
+        ],
+        [
+          "Patrol pearl_cantor",
+          "Patrol conch_marshal",
+          "Patrol moray_siphoner"
+        ]
+      ]
+    },
+    "needlefin_skirmisher": {
+      "guid": "c5bebdef7be09cb4a85e0ee30e606a0f",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Reef Clans",
+      "role": "None",
+      "flood": 1,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Reef scouts",
+          "Salvage escort"
+        ],
+        [
+          "Reef scouts",
+          "Salvage escort",
+          "Patrol pearl_thief",
+          "Patrol reef_netweaver"
+        ],
+        [
+          "Reef scouts",
+          "Salvage escort",
+          "Patrol pearl_thief",
+          "Patrol reef_netweaver"
+        ],
+        [
+          "Reef scouts",
+          "Salvage escort",
+          "Patrol pearl_thief",
+          "Patrol reef_netweaver"
+        ],
+        [
+          "Reef scouts",
+          "Salvage escort",
+          "Patrol pearl_thief",
+          "Patrol reef_netweaver"
+        ]
+      ]
+    },
+    "shellback_porter": {
+      "guid": "4f316f8d434114a4fac2cd9d56d49185",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Reef Clans",
+      "role": "None",
+      "flood": 1,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Salvage escort"
+        ],
+        [
+          "Salvage escort",
+          "Patrol puffer_sentinel"
+        ],
+        [
+          "Salvage escort",
+          "Patrol puffer_sentinel"
+        ],
+        [
+          "Salvage escort",
+          "Patrol puffer_sentinel"
+        ],
+        [
+          "Salvage escort",
+          "Patrol puffer_sentinel"
+        ]
+      ]
+    },
+    "pearl_thief": {
+      "guid": "c22540a470bcf0245ae8f7bf1b29eb0c",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Reef Clans",
+      "role": "PearlTheft",
+      "flood": 1,
+      "tierWeights": [
+        10,
+        7,
+        4,
+        1,
+        1
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Learn pearl_thief"
+        ],
+        [
+          "Learn pearl_thief",
+          "Patrol pearl_thief"
+        ],
+        [
+          "Learn pearl_thief",
+          "Patrol pearl_thief",
+          "Combined pearl_thief"
+        ],
+        [
+          "Learn pearl_thief",
+          "Patrol pearl_thief",
+          "Combined pearl_thief"
+        ],
+        [
+          "Learn pearl_thief",
+          "Patrol pearl_thief",
+          "Combined pearl_thief"
+        ]
+      ]
+    },
+    "pearl_cantor": {
+      "guid": "ef9ab294b32d3ff4a9919c861c8e5ffc",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Nacre Court",
+      "role": "ChannelHeal",
+      "flood": 1,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn pearl_cantor",
+          "Patrol pearl_cantor"
+        ],
+        [
+          "Learn pearl_cantor",
+          "Patrol pearl_cantor"
+        ],
+        [
+          "Learn pearl_cantor",
+          "Patrol pearl_cantor"
+        ],
+        [
+          "Learn pearl_cantor",
+          "Patrol pearl_cantor"
+        ]
+      ]
+    },
+    "conch_marshal": {
+      "guid": "8fd1e21bd3af1ab46b5d28c8f105b8e2",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Nacre Court",
+      "role": "RallyingConch",
+      "flood": 1,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn conch_marshal",
+          "Patrol conch_marshal"
+        ],
+        [
+          "Learn conch_marshal",
+          "Patrol conch_marshal",
+          "Combined reef_netweaver"
+        ],
+        [
+          "Learn conch_marshal",
+          "Patrol conch_marshal",
+          "Combined reef_netweaver"
+        ],
+        [
+          "Learn conch_marshal",
+          "Patrol conch_marshal",
+          "Combined reef_netweaver"
+        ]
+      ]
+    },
+    "moray_siphoner": {
+      "guid": "d6932a1dbb5fd024caed6c9ca2e91e8c",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Reef Clans",
+      "role": "MoraySiphon",
+      "flood": 1,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [
+          "Learn moray_siphoner",
+          "Patrol moray_siphoner",
+          "Combined pearl_thief"
+        ],
+        [
+          "Learn moray_siphoner",
+          "Patrol moray_siphoner",
+          "Combined pearl_thief"
+        ],
+        [
+          "Learn moray_siphoner",
+          "Patrol moray_siphoner",
+          "Combined pearl_thief"
+        ]
+      ]
+    },
+    "reef_netweaver": {
+      "guid": "82091cda3a792ac42871f6a8d4a9fdf9",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Reef Clans",
+      "role": "ThornySnare",
+      "flood": 1,
+      "tierWeights": [
+        10,
+        7,
+        4,
+        1,
+        1
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Learn reef_netweaver"
+        ],
+        [
+          "Learn reef_netweaver",
+          "Patrol reef_netweaver"
+        ],
+        [
+          "Learn reef_netweaver",
+          "Patrol reef_netweaver",
+          "Combined reef_netweaver"
+        ],
+        [
+          "Learn reef_netweaver",
+          "Patrol reef_netweaver",
+          "Combined reef_netweaver"
+        ],
+        [
+          "Learn reef_netweaver",
+          "Patrol reef_netweaver",
+          "Combined reef_netweaver"
+        ]
+      ]
+    },
+    "puffer_sentinel": {
+      "guid": "a44f2455cec6a354e81f96b6041f7ea7",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Reef Clans",
+      "role": "SpineGuard",
+      "flood": 1,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn puffer_sentinel",
+          "Patrol puffer_sentinel"
+        ],
+        [
+          "Learn puffer_sentinel",
+          "Patrol puffer_sentinel"
+        ],
+        [
+          "Learn puffer_sentinel",
+          "Patrol puffer_sentinel"
+        ],
+        [
+          "Learn puffer_sentinel",
+          "Patrol puffer_sentinel"
+        ]
+      ]
+    },
+    "breakwater_captain": {
+      "guid": "9c80a4f923c889948b046d1863cdc639",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": "Reef Clans",
+      "role": "BreakwaterCommand",
+      "flood": 1,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "lantern_warden": {
+      "guid": "2ade0c3f3af4f1d48a07f8dd07f0744c",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": "Nacre Court",
+      "role": "LanternPressure",
+      "flood": 1,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "queen_nacre": {
+      "guid": "5c2b431ba48565b4fbef4543e60a4339",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 3,
+      "faction": "Nacre Court",
+      "role": "AbyssalRegent",
+      "flood": 1,
+      "tierWeights": [
+        0,
+        0,
+        0,
+        10,
+        7
+      ],
+      "minTier": 3,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "skittercrab": {
+      "guid": "e6a662255a0b852458925e8298e8bf4f",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Reef Clans",
+      "role": "Summon",
+      "flood": 1,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": true,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    }
+  },
+  "dungeon": {
+    "barricade_guard": {
+      "guid": "1b41367eaef540e7b4fbc553bf6d5a28",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 1,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Guard fortification"
+        ],
+        [
+          "Guard fortification"
+        ],
+        [
+          "Royal siege sappers"
+        ],
+        [
+          "Royal siege sappers"
+        ]
+      ]
+    },
+    "barricade_villager": {
+      "guid": "cf3b9a8c35434f72afc9567d6c0835de",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        10,
+        7,
+        0,
+        0,
+        0
+      ],
+      "minTier": 0,
+      "maxTier": 1,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Timber lesson"
+        ],
+        [
+          "Timber lesson"
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    "basket_villager": {
+      "guid": "655f6b9c480740719f00f56e0169908d",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        10,
+        7,
+        0,
+        0,
+        0
+      ],
+      "minTier": 0,
+      "maxTier": 1,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Local search",
+          "Timber lesson"
+        ],
+        [
+          "Local search",
+          "Timber lesson"
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    "court_mage": {
+      "guid": "b2a9fefd5490455182d2f6f2740862f2",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        0,
+        10,
+        7
+      ],
+      "minTier": 3,
+      "maxTier": 4,
+      "family": 3,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [
+          "Court ice lesson",
+          "Court pressure"
+        ],
+        [
+          "Court ice lesson",
+          "Court pressure"
+        ]
+      ]
+    },
+    "crossbow_guard": {
+      "guid": "4b6fd7e690b34c219e51f1294a1b301a",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 1,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Chain patrol"
+        ],
+        [
+          "Chain patrol",
+          "Knight advance"
+        ],
+        [
+          "Knight advance"
+        ],
+        [
+          "Royal crossbow detail"
+        ]
+      ]
+    },
+    "farmer": {
+      "guid": "a76417e22f884fad9fc5f40479f897e7",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        10,
+        7,
+        0,
+        0,
+        0
+      ],
+      "minTier": 0,
+      "maxTier": 1,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Local search",
+          "Village watch",
+          "Excavation lesson"
+        ],
+        [
+          "Local search",
+          "Village watch",
+          "Excavation lesson"
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    "king": {
+      "guid": "b9de130924cb44f3b77befc8fa1c0438",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 3,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        0,
+        10,
+        7
+      ],
+      "minTier": 3,
+      "maxTier": 4,
+      "family": 3,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "knight": {
+      "guid": "6615ee48f5122354fb3bb48ee8cd8b8f",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 2,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [
+          "Knight patrol",
+          "Shield lesson",
+          "Knight advance"
+        ],
+        [
+          "Knight patrol",
+          "Shield lesson",
+          "Knight advance"
+        ],
+        [
+          "Knight patrol",
+          "Shield lesson"
+        ]
+      ]
+    },
+    "knight_captain": {
+      "guid": "cb5b4ce0108940d788ee9a219b2fe946",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 2,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "miner": {
+      "guid": "84831a37e3ae4a6aa1147fb4b1f8e6b9",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        10,
+        7,
+        0,
+        0,
+        0
+      ],
+      "minTier": 0,
+      "maxTier": 1,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Excavation lesson"
+        ],
+        [
+          "Excavation lesson"
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    "pan_villager": {
+      "guid": "36c47a216df94b9fae10c869929010fa",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        10,
+        7,
+        0,
+        0,
+        0
+      ],
+      "minTier": 0,
+      "maxTier": 1,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Village watch"
+        ],
+        [
+          "Village watch",
+          "Town boundary"
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    "royal_arbalist": {
+      "guid": "e0401922f77142049ae15844298a5eb7",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        0,
+        10,
+        7
+      ],
+      "minTier": 3,
+      "maxTier": 4,
+      "family": 3,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [
+          "Royal chain lesson",
+          "Royal fireline"
+        ],
+        [
+          "Royal chain lesson",
+          "Royal fireline"
+        ]
+      ]
+    },
+    "royal_arcanist": {
+      "guid": "8d684cf2178442b8b6e3d160fb5fac79",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        0,
+        10,
+        7
+      ],
+      "minTier": 3,
+      "maxTier": 4,
+      "family": 3,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "royal_lancer": {
+      "guid": "574ae9bff3c2431fb01239e7b48856f7",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        0,
+        10,
+        7
+      ],
+      "minTier": 3,
+      "maxTier": 4,
+      "family": 3,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [
+          "Royal siege sappers",
+          "Royal vanguard",
+          "Court ice lesson",
+          "Royal fireline"
+        ],
+        [
+          "Royal siege sappers",
+          "Royal vanguard",
+          "Court ice lesson",
+          "Royal fireline"
+        ]
+      ]
+    },
+    "royal_standard_bearer": {
+      "guid": "39f0ae90d3b445afbf8f722502c90a05",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        0,
+        10,
+        7
+      ],
+      "minTier": 3,
+      "maxTier": 4,
+      "family": 3,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [
+          "Standard guard",
+          "Court pressure"
+        ],
+        [
+          "Standard guard",
+          "Court pressure"
+        ]
+      ]
+    },
+    "royal_swordsman": {
+      "guid": "103ebefdbf0b40dcbf8f1e7c1537c2a3",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        0,
+        10,
+        7
+      ],
+      "minTier": 3,
+      "maxTier": 4,
+      "family": 3,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [
+          "Royal gate detail",
+          "Royal vanguard",
+          "Royal chain lesson",
+          "Standard guard",
+          "Court pressure",
+          "Royal fireline"
+        ],
+        [
+          "Royal gate detail",
+          "Royal crossbow detail",
+          "Royal vanguard",
+          "Royal chain lesson",
+          "Standard guard",
+          "Court pressure",
+          "Royal fireline"
+        ]
+      ]
+    },
+    "shield_knight": {
+      "guid": "7e5bdc7d5c3140a3a3fe37dc861dd4f0",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 2,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [
+          "Shield lesson"
+        ],
+        [
+          "Shield lesson"
+        ],
+        [
+          "Shield lesson"
+        ]
+      ]
+    },
+    "siege_sergeant": {
+      "guid": "9e704135ac48432c9bdb148a30da3e8a",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 2,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "spear_guard": {
+      "guid": "3e9ea0e381044e83b0b982c96c74c769",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 1,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Town boundary",
+          "Chain patrol",
+          "Guard fortification"
+        ],
+        [
+          "Chain patrol",
+          "Guard fortification"
+        ],
+        [
+          "Royal gate detail"
+        ],
+        [
+          "Royal gate detail"
+        ]
+      ]
+    },
+    "spear_knight": {
+      "guid": "3446e21fb60447829950580946a51eff",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 2,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [
+          "Knight patrol",
+          "Knight advance"
+        ],
+        [
+          "Knight patrol",
+          "Knight advance"
+        ],
+        [
+          "Knight patrol"
+        ]
+      ]
+    },
+    "town_marshal": {
+      "guid": "a8912c080c9d415082ff439864aefd06",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": null,
+      "role": null,
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 1,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    }
+  },
+  "frostwake-peaks": {
+    "iceborn_raider": {
+      "guid": "f4638a9a4d1f5ea4ab79d9dde442cf4c",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Iceborn Clans",
+      "role": "None",
+      "flood": 0,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Outer patrol",
+          "Quiet patrol",
+          "Learn harpoon_hunter",
+          "Learn rimecarver"
+        ],
+        [
+          "Outer patrol",
+          "Quiet patrol",
+          "Learn harpoon_hunter",
+          "Patrol harpoon_hunter",
+          "Learn rimecarver",
+          "Patrol rimecarver",
+          "Learn shieldmaiden",
+          "Patrol shieldmaiden",
+          "Learn rime_skald",
+          "Patrol rime_skald",
+          "Learn hearthkeeper",
+          "Patrol hearthkeeper"
+        ],
+        [
+          "Outer patrol",
+          "Quiet patrol",
+          "Learn harpoon_hunter",
+          "Patrol harpoon_hunter",
+          "Learn rimecarver",
+          "Patrol rimecarver",
+          "Learn shieldmaiden",
+          "Patrol shieldmaiden",
+          "Learn rime_skald",
+          "Patrol rime_skald",
+          "Learn hearthkeeper",
+          "Patrol hearthkeeper",
+          "Learn frostblade_reaver",
+          "Patrol frostblade_reaver",
+          "Combined rimecarver",
+          "Combined frostblade_reaver"
+        ],
+        [
+          "Quiet patrol",
+          "Learn harpoon_hunter",
+          "Patrol harpoon_hunter",
+          "Learn rimecarver",
+          "Patrol rimecarver",
+          "Learn shieldmaiden",
+          "Patrol shieldmaiden",
+          "Learn rime_skald",
+          "Patrol rime_skald",
+          "Learn hearthkeeper",
+          "Patrol hearthkeeper",
+          "Learn frostblade_reaver",
+          "Patrol frostblade_reaver",
+          "Combined rimecarver",
+          "Combined frostblade_reaver"
+        ],
+        [
+          "Quiet patrol",
+          "Learn harpoon_hunter",
+          "Patrol harpoon_hunter",
+          "Learn rimecarver",
+          "Patrol rimecarver",
+          "Learn shieldmaiden",
+          "Patrol shieldmaiden",
+          "Learn rime_skald",
+          "Patrol rime_skald",
+          "Learn hearthkeeper",
+          "Patrol hearthkeeper",
+          "Learn frostblade_reaver",
+          "Patrol frostblade_reaver",
+          "Combined rimecarver",
+          "Combined frostblade_reaver"
+        ]
+      ]
+    },
+    "harpoon_hunter": {
+      "guid": "9735cf06f0fa66344b63e7acd9f43dcc",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Iceborn Clans",
+      "role": "MountainStrike",
+      "flood": 0,
+      "tierWeights": [
+        10,
+        7,
+        4,
+        1,
+        1
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Learn harpoon_hunter"
+        ],
+        [
+          "Learn harpoon_hunter",
+          "Patrol harpoon_hunter"
+        ],
+        [
+          "Learn harpoon_hunter",
+          "Patrol harpoon_hunter"
+        ],
+        [
+          "Learn harpoon_hunter",
+          "Patrol harpoon_hunter"
+        ],
+        [
+          "Learn harpoon_hunter",
+          "Patrol harpoon_hunter"
+        ]
+      ]
+    },
+    "frostfang_wolf": {
+      "guid": "d1acf721d229e924b8e9012b607c52fc",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Iceborn Clans",
+      "role": "Fast attacker",
+      "flood": 0,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Outer patrol"
+        ],
+        [
+          "Outer patrol",
+          "Patrol harpoon_hunter",
+          "Patrol rimecarver",
+          "Patrol shieldmaiden",
+          "Patrol rime_skald",
+          "Patrol hearthkeeper"
+        ],
+        [
+          "Outer patrol",
+          "Patrol harpoon_hunter",
+          "Patrol rimecarver",
+          "Patrol shieldmaiden",
+          "Patrol rime_skald",
+          "Patrol hearthkeeper",
+          "Patrol frostblade_reaver"
+        ],
+        [
+          "Patrol harpoon_hunter",
+          "Patrol rimecarver",
+          "Patrol shieldmaiden",
+          "Patrol rime_skald",
+          "Patrol hearthkeeper",
+          "Patrol frostblade_reaver"
+        ],
+        [
+          "Patrol harpoon_hunter",
+          "Patrol rimecarver",
+          "Patrol shieldmaiden",
+          "Patrol rime_skald",
+          "Patrol hearthkeeper",
+          "Patrol frostblade_reaver"
+        ]
+      ]
+    },
+    "rimecarver": {
+      "guid": "04ab5bfb7d49dfb4bb0bc40029157f89",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Iceborn Clans",
+      "role": "Rimecarving",
+      "flood": 0,
+      "tierWeights": [
+        10,
+        7,
+        4,
+        1,
+        1
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Learn rimecarver"
+        ],
+        [
+          "Learn rimecarver",
+          "Patrol rimecarver"
+        ],
+        [
+          "Learn rimecarver",
+          "Patrol rimecarver",
+          "Combined rimecarver"
+        ],
+        [
+          "Learn rimecarver",
+          "Patrol rimecarver",
+          "Combined rimecarver"
+        ],
+        [
+          "Learn rimecarver",
+          "Patrol rimecarver",
+          "Combined rimecarver"
+        ]
+      ]
+    },
+    "shieldmaiden": {
+      "guid": "7ded4d544609358448e8cd0f18022078",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Iceborn Clans",
+      "role": "Shield support",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn shieldmaiden",
+          "Patrol shieldmaiden"
+        ],
+        [
+          "Learn shieldmaiden",
+          "Patrol shieldmaiden"
+        ],
+        [
+          "Learn shieldmaiden",
+          "Patrol shieldmaiden"
+        ],
+        [
+          "Learn shieldmaiden",
+          "Patrol shieldmaiden"
+        ]
+      ]
+    },
+    "rime_skald": {
+      "guid": "0649b81e31d4b0047b17094c9a31b920",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Iceborn Clans",
+      "role": "Speed support",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn rime_skald",
+          "Patrol rime_skald"
+        ],
+        [
+          "Learn rime_skald",
+          "Patrol rime_skald",
+          "Combined frostblade_reaver"
+        ],
+        [
+          "Learn rime_skald",
+          "Patrol rime_skald",
+          "Combined frostblade_reaver"
+        ],
+        [
+          "Learn rime_skald",
+          "Patrol rime_skald",
+          "Combined frostblade_reaver"
+        ]
+      ]
+    },
+    "hearthkeeper": {
+      "guid": "7f496e0d37e9fc349969c5b6ffeca9ca",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Iceborn Clans",
+      "role": "Healer",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn hearthkeeper",
+          "Patrol hearthkeeper"
+        ],
+        [
+          "Learn hearthkeeper",
+          "Patrol hearthkeeper",
+          "Combined rimecarver"
+        ],
+        [
+          "Learn hearthkeeper",
+          "Patrol hearthkeeper",
+          "Combined rimecarver"
+        ],
+        [
+          "Learn hearthkeeper",
+          "Patrol hearthkeeper",
+          "Combined rimecarver"
+        ]
+      ]
+    },
+    "frostblade_reaver": {
+      "guid": "cdeced1c7dc34c44e8718e0275e0c0cb",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Iceborn Clans",
+      "role": "ApplyPlayerStatus",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [
+          "Learn frostblade_reaver",
+          "Patrol frostblade_reaver",
+          "Combined frostblade_reaver"
+        ],
+        [
+          "Learn frostblade_reaver",
+          "Patrol frostblade_reaver",
+          "Combined frostblade_reaver"
+        ],
+        [
+          "Learn frostblade_reaver",
+          "Patrol frostblade_reaver",
+          "Combined frostblade_reaver"
+        ]
+      ]
+    },
+    "glacier_troll": {
+      "guid": "602f00605fd9e0c469866d5e8786b38c",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": "Iceborn Clans",
+      "role": "MountainStrike",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "iceborn_champion": {
+      "guid": "8b0e146452fd36443ae1c1c537b24664",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": "Iceborn Clans",
+      "role": "MountainStrike",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "jarl_haldra": {
+      "guid": "ec4c8f273ddb25840a7bd050425a2318",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 3,
+      "faction": "Iceborn Clans",
+      "role": "GlacierCleave",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        0,
+        10,
+        7
+      ],
+      "minTier": 3,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    }
+  },
+  "ironvein-excavation": {
+    "pickaxe_delver": {
+      "guid": "aebb283714049db4f8fbcf4c7d34f273",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Ironvein Expedition",
+      "role": "Attacker",
+      "flood": 0,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Drill feed",
+          "Outer patrol",
+          "Quiet patrol",
+          "Learn stonewright",
+          "Learn ore_hauler"
+        ],
+        [
+          "Drill feed",
+          "Outer patrol",
+          "Quiet patrol",
+          "Learn stonewright",
+          "Patrol stonewright",
+          "Learn ore_hauler",
+          "Patrol ore_hauler",
+          "Learn vein_surveyor",
+          "Patrol vein_surveyor",
+          "Learn powder_sapper",
+          "Patrol powder_sapper",
+          "Learn rail_switcher",
+          "Patrol rail_switcher"
+        ],
+        [
+          "Drill feed",
+          "Brittle choice",
+          "Outer patrol",
+          "Quiet patrol",
+          "Learn stonewright",
+          "Patrol stonewright",
+          "Learn ore_hauler",
+          "Patrol ore_hauler",
+          "Learn vein_surveyor",
+          "Patrol vein_surveyor",
+          "Learn powder_sapper",
+          "Patrol powder_sapper",
+          "Learn rail_switcher",
+          "Patrol rail_switcher",
+          "Learn bore_engineer",
+          "Patrol bore_engineer",
+          "Learn seismic_smith",
+          "Patrol seismic_smith",
+          "Combined stonewright",
+          "Combined bore_engineer"
+        ],
+        [
+          "Drill feed",
+          "Brittle choice",
+          "Quiet patrol",
+          "Learn stonewright",
+          "Patrol stonewright",
+          "Learn ore_hauler",
+          "Patrol ore_hauler",
+          "Learn vein_surveyor",
+          "Patrol vein_surveyor",
+          "Learn powder_sapper",
+          "Patrol powder_sapper",
+          "Learn rail_switcher",
+          "Patrol rail_switcher",
+          "Learn bore_engineer",
+          "Patrol bore_engineer",
+          "Learn seismic_smith",
+          "Patrol seismic_smith",
+          "Combined stonewright",
+          "Combined bore_engineer"
+        ],
+        [
+          "Drill feed",
+          "Brittle choice",
+          "Quiet patrol",
+          "Learn stonewright",
+          "Patrol stonewright",
+          "Learn ore_hauler",
+          "Patrol ore_hauler",
+          "Learn vein_surveyor",
+          "Patrol vein_surveyor",
+          "Learn powder_sapper",
+          "Patrol powder_sapper",
+          "Learn rail_switcher",
+          "Patrol rail_switcher",
+          "Learn bore_engineer",
+          "Patrol bore_engineer",
+          "Learn seismic_smith",
+          "Patrol seismic_smith",
+          "Combined stonewright",
+          "Combined bore_engineer"
+        ]
+      ]
+    },
+    "rivet_gunner": {
+      "guid": "3b88a1a681dda93478542ddb26faf2c8",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Ironvein Expedition",
+      "role": "Attacker",
+      "flood": 0,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Ore scout",
+          "Outer patrol"
+        ],
+        [
+          "Ore scout",
+          "Outer patrol",
+          "Patrol stonewright",
+          "Patrol ore_hauler",
+          "Patrol vein_surveyor",
+          "Patrol powder_sapper",
+          "Patrol rail_switcher"
+        ],
+        [
+          "Ore scout",
+          "Outer patrol",
+          "Patrol stonewright",
+          "Patrol ore_hauler",
+          "Patrol vein_surveyor",
+          "Patrol powder_sapper",
+          "Patrol rail_switcher",
+          "Patrol bore_engineer",
+          "Patrol seismic_smith"
+        ],
+        [
+          "Ore scout",
+          "Patrol stonewright",
+          "Patrol ore_hauler",
+          "Patrol vein_surveyor",
+          "Patrol powder_sapper",
+          "Patrol rail_switcher",
+          "Patrol bore_engineer",
+          "Patrol seismic_smith"
+        ],
+        [
+          "Ore scout",
+          "Patrol stonewright",
+          "Patrol ore_hauler",
+          "Patrol vein_surveyor",
+          "Patrol powder_sapper",
+          "Patrol rail_switcher",
+          "Patrol bore_engineer",
+          "Patrol seismic_smith"
+        ]
+      ]
+    },
+    "packbeetle": {
+      "guid": "511dccc88691e2545bdbd797b89149d9",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Ironvein Expedition",
+      "role": "Death support",
+      "flood": 0,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Ore scout",
+          "Drill feed"
+        ],
+        [
+          "Ore scout",
+          "Drill feed"
+        ],
+        [
+          "Ore scout",
+          "Drill feed",
+          "Brittle choice"
+        ],
+        [
+          "Ore scout",
+          "Drill feed",
+          "Brittle choice"
+        ],
+        [
+          "Ore scout",
+          "Drill feed",
+          "Brittle choice"
+        ]
+      ]
+    },
+    "ore_hauler": {
+      "guid": "9ca017fd708b95c4d84ab90b64039c25",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Ironvein Expedition",
+      "role": "Support",
+      "flood": 0,
+      "tierWeights": [
+        10,
+        7,
+        4,
+        1,
+        1
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Learn ore_hauler"
+        ],
+        [
+          "Learn ore_hauler",
+          "Patrol ore_hauler"
+        ],
+        [
+          "Learn ore_hauler",
+          "Patrol ore_hauler",
+          "Combined stonewright"
+        ],
+        [
+          "Learn ore_hauler",
+          "Patrol ore_hauler",
+          "Combined stonewright"
+        ],
+        [
+          "Learn ore_hauler",
+          "Patrol ore_hauler",
+          "Combined stonewright"
+        ]
+      ]
+    },
+    "stonewright": {
+      "guid": "2451913749aeb6d47ae58adc4d26c939",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Ironvein Expedition",
+      "role": "Board disruptor",
+      "flood": 0,
+      "tierWeights": [
+        10,
+        7,
+        4,
+        1,
+        1
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Learn stonewright"
+        ],
+        [
+          "Learn stonewright",
+          "Patrol stonewright"
+        ],
+        [
+          "Brittle choice",
+          "Learn stonewright",
+          "Patrol stonewright",
+          "Combined stonewright"
+        ],
+        [
+          "Brittle choice",
+          "Learn stonewright",
+          "Patrol stonewright",
+          "Combined stonewright"
+        ],
+        [
+          "Brittle choice",
+          "Learn stonewright",
+          "Patrol stonewright",
+          "Combined stonewright"
+        ]
+      ]
+    },
+    "bore_engineer": {
+      "guid": "34e0b83bcd48dc84dbf55c002d2b0dfd",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Ironvein Expedition",
+      "role": "Board disruptor",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [
+          "Learn bore_engineer",
+          "Patrol bore_engineer",
+          "Combined bore_engineer"
+        ],
+        [
+          "Learn bore_engineer",
+          "Patrol bore_engineer",
+          "Combined bore_engineer"
+        ],
+        [
+          "Learn bore_engineer",
+          "Patrol bore_engineer",
+          "Combined bore_engineer"
+        ]
+      ]
+    },
+    "vein_surveyor": {
+      "guid": "543e32007362cb04d97caff1a34bfffb",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Ironvein Expedition",
+      "role": "Board disruptor",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn vein_surveyor",
+          "Patrol vein_surveyor"
+        ],
+        [
+          "Learn vein_surveyor",
+          "Patrol vein_surveyor"
+        ],
+        [
+          "Learn vein_surveyor",
+          "Patrol vein_surveyor"
+        ],
+        [
+          "Learn vein_surveyor",
+          "Patrol vein_surveyor"
+        ]
+      ]
+    },
+    "powder_sapper": {
+      "guid": "7bc66dfc84ac9374aa017d016ab9c57b",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Ironvein Expedition",
+      "role": "Board disruptor",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn powder_sapper",
+          "Patrol powder_sapper"
+        ],
+        [
+          "Learn powder_sapper",
+          "Patrol powder_sapper"
+        ],
+        [
+          "Learn powder_sapper",
+          "Patrol powder_sapper"
+        ],
+        [
+          "Learn powder_sapper",
+          "Patrol powder_sapper"
+        ]
+      ]
+    },
+    "rail_switcher": {
+      "guid": "708eee1ec48fd034aa70fb047f8879a8",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Ironvein Expedition",
+      "role": "Board disruptor",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn rail_switcher",
+          "Patrol rail_switcher"
+        ],
+        [
+          "Learn rail_switcher",
+          "Patrol rail_switcher"
+        ],
+        [
+          "Learn rail_switcher",
+          "Patrol rail_switcher"
+        ],
+        [
+          "Learn rail_switcher",
+          "Patrol rail_switcher"
+        ]
+      ]
+    },
+    "seismic_smith": {
+      "guid": "f6cd9d6772391b343b84743d40a40d7d",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Ironvein Expedition",
+      "role": "Combat pressure",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [
+          "Learn seismic_smith",
+          "Patrol seismic_smith",
+          "Combined bore_engineer"
+        ],
+        [
+          "Learn seismic_smith",
+          "Patrol seismic_smith",
+          "Combined bore_engineer"
+        ],
+        [
+          "Learn seismic_smith",
+          "Patrol seismic_smith",
+          "Combined bore_engineer"
+        ]
+      ]
+    },
+    "siege_machinist": {
+      "guid": "e0ad085783f67b844a442f569d16494c",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": "Ironvein Expedition",
+      "role": "Summoner",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "obsidian_sentinel": {
+      "guid": "b77fa3147cfcc804b969aac69139bd05",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": "Ironvein Expedition",
+      "role": "Defender",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "rivet_turret": {
+      "guid": "73f2aac8e2c553142a3869d151ebb53d",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Ironvein Expedition",
+      "role": "Summon",
+      "flood": 0,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": true,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "grand_delver": {
+      "guid": "f4aa7301bdafa28439ffca8b8615a80a",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 3,
+      "faction": "Ironvein Expedition",
+      "role": "Boss",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        0,
+        10,
+        7
+      ],
+      "minTier": 3,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    }
+  },
+  "magical-forest": {
+    "elven_scout": {
+      "guid": "397742fb5f932d54daf4f79bb9899529",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Path Wardens",
+      "role": "Ranged attacker",
+      "flood": 0,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Outer patrol",
+          "Quiet patrol",
+          "Learn elven_mender"
+        ],
+        [
+          "Outer patrol",
+          "Quiet patrol",
+          "Learn elven_mender",
+          "Patrol elven_mender",
+          "Learn orc_rootbinder",
+          "Learn elven_thornkeeper",
+          "Patrol elven_thornkeeper",
+          "Learn orc_berserker",
+          "Patrol orc_berserker",
+          "Learn orc_bloomcaller",
+          "Patrol orc_bloomcaller",
+          "Learn orc_drummer",
+          "Patrol orc_drummer"
+        ],
+        [
+          "Outer patrol",
+          "Quiet patrol",
+          "Learn elven_mender",
+          "Patrol elven_mender",
+          "Learn orc_rootbinder",
+          "Patrol orc_rootbinder",
+          "Learn elven_thornkeeper",
+          "Patrol elven_thornkeeper",
+          "Learn orc_berserker",
+          "Patrol orc_berserker",
+          "Learn orc_bloomcaller",
+          "Patrol orc_bloomcaller",
+          "Learn orc_drummer",
+          "Patrol orc_drummer",
+          "Learn briar_archer",
+          "Patrol briar_archer",
+          "Combined orc_rootbinder",
+          "Combined briar_archer"
+        ],
+        [
+          "Quiet patrol",
+          "Learn elven_mender",
+          "Patrol elven_mender",
+          "Learn orc_rootbinder",
+          "Patrol orc_rootbinder",
+          "Learn elven_thornkeeper",
+          "Patrol elven_thornkeeper",
+          "Learn orc_berserker",
+          "Patrol orc_berserker",
+          "Learn orc_bloomcaller",
+          "Patrol orc_bloomcaller",
+          "Learn orc_drummer",
+          "Patrol orc_drummer",
+          "Learn briar_archer",
+          "Patrol briar_archer",
+          "Combined orc_rootbinder",
+          "Combined briar_archer"
+        ],
+        [
+          "Quiet patrol",
+          "Learn elven_mender",
+          "Patrol elven_mender",
+          "Learn orc_rootbinder",
+          "Patrol orc_rootbinder",
+          "Learn elven_thornkeeper",
+          "Patrol elven_thornkeeper",
+          "Learn orc_berserker",
+          "Patrol orc_berserker",
+          "Learn orc_bloomcaller",
+          "Patrol orc_bloomcaller",
+          "Learn orc_drummer",
+          "Patrol orc_drummer",
+          "Learn briar_archer",
+          "Patrol briar_archer",
+          "Combined orc_rootbinder",
+          "Combined briar_archer"
+        ]
+      ]
+    },
+    "orc_trailguard": {
+      "guid": "1be30e44fa1050b479d5670f9878f6ef",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Woodland Clans",
+      "role": "Heavy attacker",
+      "flood": 0,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Outer patrol"
+        ],
+        [
+          "Outer patrol",
+          "Patrol elven_mender",
+          "Patrol elven_thornkeeper",
+          "Patrol orc_berserker",
+          "Patrol orc_bloomcaller",
+          "Patrol orc_drummer"
+        ],
+        [
+          "Outer patrol",
+          "Patrol elven_mender",
+          "Patrol orc_rootbinder",
+          "Patrol elven_thornkeeper",
+          "Patrol orc_berserker",
+          "Patrol orc_bloomcaller",
+          "Patrol orc_drummer",
+          "Patrol briar_archer"
+        ],
+        [
+          "Patrol elven_mender",
+          "Patrol orc_rootbinder",
+          "Patrol elven_thornkeeper",
+          "Patrol orc_berserker",
+          "Patrol orc_bloomcaller",
+          "Patrol orc_drummer",
+          "Patrol briar_archer"
+        ],
+        [
+          "Patrol elven_mender",
+          "Patrol orc_rootbinder",
+          "Patrol elven_thornkeeper",
+          "Patrol orc_berserker",
+          "Patrol orc_bloomcaller",
+          "Patrol orc_drummer",
+          "Patrol briar_archer"
+        ]
+      ]
+    },
+    "elven_mender": {
+      "guid": "9ee8c6f8b351dfd4d8da36a0df7de64e",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Grove Wardens",
+      "role": "Ally healer",
+      "flood": 0,
+      "tierWeights": [
+        10,
+        7,
+        4,
+        1,
+        1
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Learn elven_mender"
+        ],
+        [
+          "Learn elven_mender",
+          "Patrol elven_mender"
+        ],
+        [
+          "Learn elven_mender",
+          "Patrol elven_mender",
+          "Combined orc_rootbinder"
+        ],
+        [
+          "Learn elven_mender",
+          "Patrol elven_mender",
+          "Combined orc_rootbinder"
+        ],
+        [
+          "Learn elven_mender",
+          "Patrol elven_mender",
+          "Combined orc_rootbinder"
+        ]
+      ]
+    },
+    "orc_rootbinder": {
+      "guid": "ff471e943dad85049bab63740ac18167",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Woodland Clans",
+      "role": "Disruptor",
+      "flood": 0,
+      "tierWeights": [
+        10,
+        7,
+        4,
+        1,
+        1
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [
+          "Lone rootbinder"
+        ],
+        [
+          "Learn orc_rootbinder"
+        ],
+        [
+          "Learn orc_rootbinder",
+          "Patrol orc_rootbinder",
+          "Combined orc_rootbinder"
+        ],
+        [
+          "Learn orc_rootbinder",
+          "Patrol orc_rootbinder",
+          "Combined orc_rootbinder"
+        ],
+        [
+          "Learn orc_rootbinder",
+          "Patrol orc_rootbinder",
+          "Combined orc_rootbinder"
+        ]
+      ]
+    },
+    "barkhide_warden": {
+      "guid": "81497ef54b105da46833096cd595ca1c",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": "Grove Sentinels",
+      "role": "Root protector",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "briar_matriarch": {
+      "guid": "5b895d5d4461cbd468f6e26ad6d769e3",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 3,
+      "faction": "Deep-Grove Court",
+      "role": "Ritual leader",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        0,
+        10,
+        7
+      ],
+      "minTier": 3,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "elven_thornkeeper": {
+      "guid": "b166b659b9320094f96e1e34c7bae8ff",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Briar Wardens",
+      "role": "Disruptor",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn elven_thornkeeper",
+          "Patrol elven_thornkeeper"
+        ],
+        [
+          "Learn elven_thornkeeper",
+          "Patrol elven_thornkeeper"
+        ],
+        [
+          "Learn elven_thornkeeper",
+          "Patrol elven_thornkeeper"
+        ],
+        [
+          "Learn elven_thornkeeper",
+          "Patrol elven_thornkeeper"
+        ]
+      ]
+    },
+    "orc_berserker": {
+      "guid": "43fd10754c7d2854ea7d4dadafd5ff2f",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Woodland Clans",
+      "role": "Berserker",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn orc_berserker",
+          "Patrol orc_berserker"
+        ],
+        [
+          "Learn orc_berserker",
+          "Patrol orc_berserker",
+          "Combined briar_archer"
+        ],
+        [
+          "Learn orc_berserker",
+          "Patrol orc_berserker",
+          "Combined briar_archer"
+        ],
+        [
+          "Learn orc_berserker",
+          "Patrol orc_berserker",
+          "Combined briar_archer"
+        ]
+      ]
+    },
+    "orc_bloomcaller": {
+      "guid": "971fa3191157e494ba63eb4d5d30708d",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Woodland Clans",
+      "role": "Summoner",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn orc_bloomcaller",
+          "Patrol orc_bloomcaller"
+        ],
+        [
+          "Learn orc_bloomcaller",
+          "Patrol orc_bloomcaller"
+        ],
+        [
+          "Learn orc_bloomcaller",
+          "Patrol orc_bloomcaller"
+        ],
+        [
+          "Learn orc_bloomcaller",
+          "Patrol orc_bloomcaller"
+        ]
+      ]
+    },
+    "snapvine": {
+      "guid": "b8875454b0603324fac0e6eb1f54dc0a",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 0,
+      "faction": "Woodland Clans",
+      "role": "Summon attacker",
+      "flood": 0,
+      "tierWeights": [
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "minTier": 0,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": true,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "orc_drummer": {
+      "guid": "02fc1c169367a7947b48495b664c906a",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Woodland Clans",
+      "role": "Support",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        10,
+        7,
+        4,
+        1
+      ],
+      "minTier": 1,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [
+          "Learn orc_drummer",
+          "Patrol orc_drummer"
+        ],
+        [
+          "Learn orc_drummer",
+          "Patrol orc_drummer"
+        ],
+        [
+          "Learn orc_drummer",
+          "Patrol orc_drummer"
+        ],
+        [
+          "Learn orc_drummer",
+          "Patrol orc_drummer"
+        ]
+      ]
+    },
+    "briar_archer": {
+      "guid": "14217e8ae2fd5a741968a9f8dd53023a",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 1,
+      "faction": "Briar Wardens",
+      "role": "Counterplay archer",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [
+          "Learn briar_archer",
+          "Patrol briar_archer",
+          "Combined briar_archer"
+        ],
+        [
+          "Learn briar_archer",
+          "Patrol briar_archer",
+          "Combined briar_archer"
+        ],
+        [
+          "Learn briar_archer",
+          "Patrol briar_archer",
+          "Combined briar_archer"
+        ]
+      ]
+    },
+    "ancient_treant": {
+      "guid": "4fa36e8f23aa3874f985d12c52f63be7",
+      "prefab": {
+        "fileID": 4037879479080773031,
+        "guid": "88a55141912b8ea40a4e2d964db4696a",
+        "type": 3
+      },
+      "rank": 2,
+      "faction": "Woodland Clans",
+      "role": "Miniboss",
+      "flood": 0,
+      "tierWeights": [
+        0,
+        0,
+        10,
+        7,
+        4
+      ],
+      "minTier": 2,
+      "maxTier": 4,
+      "family": 0,
+      "summonOnly": false,
+      "ordinaryRecipesByTier": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    }
+  }
+}

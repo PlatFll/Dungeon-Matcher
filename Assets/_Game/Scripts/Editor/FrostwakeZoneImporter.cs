@@ -91,7 +91,7 @@ public static class FrostwakeZoneImporter
             EditorUtility.SetDirty(def);
         }
         var zone=Load<ZoneDefinition>(ZonePath);zone.zoneId="frostwake-peaks";zone.displayName="Frostwake Peaks";
-        zone.enemies=defs;zone.affiliatedGem=GemType.Sapphire;zone.frostwakeRules=rules;
+        zone.enemies=SelectionExpansionRosterImport.Rebuild(zone, defs);zone.affiliatedGem=GemType.Sapphire;zone.frostwakeRules=rules;
         zone.eligibleForTesting=true;zone.apexEnemy=defs[10];zone.apexLocalWave=28;
         zone.developmentEncounters=defs.Select(d=>new ZoneTestEncounter{label=d.DisplayName+" fixture",members=d.IsSupport?new[]{d,defs[0]}:new[]{d}}).ToArray();
         BuildEncounters(zone);EditorUtility.SetDirty(rules);EditorUtility.SetDirty(zone);AssetDatabase.SaveAssets();

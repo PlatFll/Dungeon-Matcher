@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 0d94f06320d4503cbb9a73bc593880c1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5072605962931436220
+    second: ElvenPathblade_Idle_00
+  - first:
+      213: -1390003134830213611
+    second: ElvenPathblade_Idle_01
+  - first:
+      213: 4830097077173895054
+    second: ElvenPathblade_Idle_02
+  - first:
+      213: 2120777559940194297
+    second: ElvenPathblade_Idle_03
+  - first:
+      213: -3136455431000879336
+    second: ElvenPathblade_Idle_04
+  - first:
+      213: 8850276746896436273
+    second: ElvenPathblade_Idle_05
+  - first:
+      213: -3623630067253052596
+    second: ElvenPathblade_Idle_06
+  - first:
+      213: 5397037094908514853
+    second: ElvenPathblade_Idle_07
+  - first:
+      213: -936739267838958435
+    second: ElvenPathblade_Idle_08
+  - first:
+      213: -2645761134754706570
+    second: ElvenPathblade_Idle_09
+  - first:
+      213: 3354103953311814086
+    second: ElvenPathblade_Idle_10
+  - first:
+      213: -1790333460525413294
+    second: ElvenPathblade_Idle_11
+  - first:
+      213: 7461288784538538227
+    second: ElvenPathblade_Idle_12
+  - first:
+      213: 6112955937448456128
+    second: ElvenPathblade_Idle_13
+  - first:
+      213: 2694062701921715271
+    second: ElvenPathblade_Idle_14
+  - first:
+      213: -1057213427460351436
+    second: ElvenPathblade_Idle_15
+  - first:
+      213: -1185641322810021524
+    second: ElvenPathblade_Idle_16
+  - first:
+      213: -6342220809646504220
+    second: ElvenPathblade_Idle_17
+  - first:
+      213: 1955093786598988369
+    second: ElvenPathblade_Idle_18
+  - first:
+      213: 5367893832731143344
+    second: ElvenPathblade_Idle_19
+  - first:
+      213: -3759322065552874826
+    second: ElvenPathblade_Idle_20
+  - first:
+      213: -771549868403355499
+    second: ElvenPathblade_Idle_21
+  - first:
+      213: 4430454261123161435
+    second: ElvenPathblade_Idle_22
+  - first:
+      213: 2489449823116114505
+    second: ElvenPathblade_Idle_23
+  - first:
+      213: -8715730580353422828
+    second: ElvenPathblade_Idle_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 4096
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.0384615385}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44581f5a0cb7a99b0800000000000000
+      internalID: -5072605962931436220
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51604cf6387b5bce0800000000000000
+      internalID: -1390003134830213611
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8f3a9363b3f70340800000000000000
+      internalID: 4830097077173895054
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ffdad354f38e6d10800000000000000
+      internalID: 2120777559940194297
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81f095537621974d0800000000000000
+      internalID: -3136455431000879336
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c69ae7fcf72da70800000000000000
+      internalID: 8850276746896436273
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_06
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4bf4f317a746bdc0800000000000000
+      internalID: -3623630067253052596
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_07
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 522d0a1a4a026ea40800000000000000
+      internalID: 5397037094908514853
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94ac4559980003f0800000000000000
+      internalID: -936739267838958435
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_09
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b496a044e584bd0800000000000000
+      internalID: -2645761134754706570
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c152e456cb2c8e20800000000000000
+      internalID: 3354103953311814086
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25c03e704357727e0800000000000000
+      internalID: -1790333460525413294
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f096013e92db8760800000000000000
+      internalID: 7461288784538538227
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cfea3b890595d450800000000000000
+      internalID: 6112955937448456128
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7444caee0cb336520800000000000000
+      internalID: 2694062701921715271
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ad3743df50451f0800000000000000
+      internalID: -1057213427460351436
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6962eaaf71cb8fe0800000000000000
+      internalID: -1185641322810021524
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e60ee1b6c7ebf7a0800000000000000
+      internalID: -6342220809646504220
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a5eccb073e12b10800000000000000
+      internalID: 1955093786598988369
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc23f320079e7a40800000000000000
+      internalID: 5367893832731143344
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b2ee66cf7434dbc0800000000000000
+      internalID: -3759322065552874826
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_21
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59091578b77ea45f0800000000000000
+      internalID: -771549868403355499
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_22
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d9cdb4da22c7d30800000000000000
+      internalID: 4430454261123161435
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_23
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94abef8ac6d4c8220800000000000000
+      internalID: 2489449823116114505
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElvenPathblade_Idle_24
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a660017318b0780800000000000000
+      internalID: -8715730580353422828
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ElvenPathblade_Idle_00: -5072605962931436220
+      ElvenPathblade_Idle_01: -1390003134830213611
+      ElvenPathblade_Idle_02: 4830097077173895054
+      ElvenPathblade_Idle_03: 2120777559940194297
+      ElvenPathblade_Idle_04: -3136455431000879336
+      ElvenPathblade_Idle_05: 8850276746896436273
+      ElvenPathblade_Idle_06: -3623630067253052596
+      ElvenPathblade_Idle_07: 5397037094908514853
+      ElvenPathblade_Idle_08: -936739267838958435
+      ElvenPathblade_Idle_09: -2645761134754706570
+      ElvenPathblade_Idle_10: 3354103953311814086
+      ElvenPathblade_Idle_11: -1790333460525413294
+      ElvenPathblade_Idle_12: 7461288784538538227
+      ElvenPathblade_Idle_13: 6112955937448456128
+      ElvenPathblade_Idle_14: 2694062701921715271
+      ElvenPathblade_Idle_15: -1057213427460351436
+      ElvenPathblade_Idle_16: -1185641322810021524
+      ElvenPathblade_Idle_17: -6342220809646504220
+      ElvenPathblade_Idle_18: 1955093786598988369
+      ElvenPathblade_Idle_19: 5367893832731143344
+      ElvenPathblade_Idle_20: -3759322065552874826
+      ElvenPathblade_Idle_21: -771549868403355499
+      ElvenPathblade_Idle_22: 4430454261123161435
+      ElvenPathblade_Idle_23: 2489449823116114505
+      ElvenPathblade_Idle_24: -8715730580353422828
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

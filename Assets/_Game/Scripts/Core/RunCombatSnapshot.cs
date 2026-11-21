@@ -93,6 +93,7 @@ public sealed class RunCombatSnapshot
 }
 [Serializable] public sealed class EnemyCombatSnapshot
 {
+    public int guildTauntRemaining, guildTauntLastMove;
     public GlacierCleaveSnapshot glacierCleave;
     public FrostwakeEnemySnapshot frostwakeEnemy;
     public ShieldbreakerSnapshot shieldbreaker;

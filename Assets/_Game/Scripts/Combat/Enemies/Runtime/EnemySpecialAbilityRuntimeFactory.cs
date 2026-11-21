@@ -62,6 +62,10 @@ public static class EnemySpecialAbilityRuntimeFactory
                 var mine = enemyObject.GetComponent<MineEnemyAbility>() ?? enemyObject.AddComponent<MineEnemyAbility>();
                 mine.ConfigureSummonService(summonService); runtime = mine;
                 break;
+            case EnemySpecialAbilityKind.GuildTaunt:
+            case EnemySpecialAbilityKind.GuildInstantHeal:
+                runtime = enemyObject.GetComponent<GuildSupportAbility>() ?? enemyObject.AddComponent<GuildSupportAbility>();
+                break;
             case EnemySpecialAbilityKind.ApplyPlayerStatus:
                 runtime = enemyObject.GetComponent<ApplyPlayerStatusEnemyAbility>() ?? enemyObject.AddComponent<ApplyPlayerStatusEnemyAbility>();
                 break;

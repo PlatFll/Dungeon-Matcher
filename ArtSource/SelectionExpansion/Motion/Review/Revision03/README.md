@@ -1,0 +1,13 @@
+# Expansion character animation polish
+
+[Open the comparison player](Review.html). Choose one of ten enemies and an action. Both panes use the same elapsed time. Pause, step a cel or switch backdrops to inspect the outline. The single-pane view identifies a current clip whose drawing already met the requested change.
+
+The comparison baseline is the production art on selection-expansion commit `8d06a814bda900d325a98ef463001f3b9339718c`. It includes the prior approved motions. This review contains **17 revised clips and 281 native cels**, with the full **22-state** expansion inventory in [clips.json](clips.json). Open a state’s `source.aseprite` in LibreSprite for its complete editable timeline. The matching `sheet.png`, `preview.gif` and `timing.json` sit in the same directory. The two ore-ram states, Pathblade basic, Bulwark Taunt and Slinghunter basic use their existing production sources.
+
+- **Idle acting.** The old head-turn recipe changed sign on a later breath. On all seven affected idles, the tracked face now stays at its neutral x or one pixel to its left. Hair, ear, beard or crest settle in their own phase. The eye closures and total loop times retain their individual timings.
+- **Guild identities.** The Swordsman has charcoal-black hair and a reduced head anchored at the jaw. Compare his face between the upright and raised-sword cels. The Ranger’s blond stops at the headband. The Bulwark retains his brown hair. The [human lineup](human-lineup.png) shows Farmer, Miner, Bulwark and both versions of the Swordsman at one scale.
+- **Eyes.** Orbital edits cover the Swordsman, Ranger, Chirurgeon, Axeman, Nacre Duelist and Nacre Halberdier. The other four have dark eyes or an amber mineral eye. The Ram’s flank core, Orc’s tusks, Axeman’s teeth, pearl armor and the healer’s staff retain their highlights.
+- **Contacts.** The Bulwark’s mace and Axeman’s axe each keep the grip, shaft and head connected through all 11 strike drawings. Both contacts occur at 320 ms. The Chirurgeon leans toward the staff, raises the casting shoulder and turns her head as the crystal brightens at 360 ms.
+- **Checks.** Exported RGBA pixels and exposure lengths match all 281 native LibreSprite cels. All three action sequences were inspected as numbered drawings and checked for grip continuity. The minimum outer clearance on a revised cel is four native pixels. [Export and idle checks](QA.json) · [Per-cel weapon, hand and staff coordinates](ActionGeometry.json)
+
+These files are staged for art review. Unity’s current controllers still use the baseline sheets. The [production audit](../../../../../Docs/ArtDirection/CastMotionAudit/Review.html) documents the broader roster separately.
