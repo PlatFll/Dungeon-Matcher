@@ -4,6 +4,8 @@
 
 Rattlebones is explicitly primary by the current user instruction. Farmer and Pan Villager retain their existing supporting status. Four additional memberships below are proposals for review. Approval of an existing artwork, implementation or merge is not approval of new golden-reference membership.
 
+The current Farmer and Pan Villager stills include Ali's November 23 hand edits. The earlier [Farmer](EnemyCohesion2026-10/farmer-still.png) and [Pan Villager](EnemyCohesion2026-10/pan_villager-still.png) stills remain available for tracing earlier art jobs.
+
 ## Exact current images
 
 Each convenience PNG is a lossless extraction of the currently bound fallback/ready sprite, using its Unity GUID/fileID and imported rectangle. It is not a regenerated interpretation or a new approved replacement. Current motion sources are the linked controller and `ArtSource/EnemyArtCohesion/jobs.json` / `unity-import-manifest.json`. `Audit2026-10/bindings.json` remains the immutable pre-edit ledger, with old rectangles and hashes. Recheck hashes before a future art task; if production/reference authority changes, update this register rather than relying on a dated gallery.
@@ -33,9 +35,9 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 
 **Do not copy:** Do not copy the same hat/face/pose to all locals or force all cloth brown.
 
-- Current native image: [farmer-still.png](EnemyCohesion2026-10/farmer-still.png) (112×88).
-- Extracted PNG SHA-256: `6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d`.
-- Production source: `Assets/_Game/Art/CombatIdles/Farmer_Idle.png`; SHA-256 `f1ee772c518c6106617dcf782de95c431e6d90dd6d079a6a5d1d097ce1f10164`.
+- Current native image: [farmer-still.png](DungeonHandEdits2026-11/farmer-still.png) (112×88).
+- Extracted PNG SHA-256: `f8dc60ea0fc46b2ed9e1ff9fbd2da9360ec2591f63908351b35e0dd9ed3a983b`.
+- Production source: `Assets/_Game/Art/CombatIdles/Farmer_Idle.png`; SHA-256 `849e3d1116370c543cefec6b691e12af3bb2996d34e911ea6f0123b53ca7647c`.
 - Unity GUID `f9bceeac2ee99d542bf3ca0aa1583b2f`, fileID `99358554080292503`, sprite `Farmer_Idle_00`.
 - Extraction rectangle in PNG top-left coordinates: `[0, 0, 112, 88]` (right/bottom exclusive). Full expanded canvas; no scaling/trimming. Unity source-floor pivot: (56, 4).
 - Current controller: `Assets/_Game/Animations/CombatIdles/Farmer_Idle.controller`.
@@ -48,9 +50,9 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 
 **Do not copy:** The pan remains cookware, not a heraldic shield; do not normalize her face/gender presentation.
 
-- Current native image: [pan_villager-still.png](EnemyCohesion2026-10/pan_villager-still.png) (112×88).
-- Extracted PNG SHA-256: `e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca`.
-- Production source: `Assets/_Game/Art/CombatIdles/PanVillager_Idle.png`; SHA-256 `cf2f8bcb3d7066e5837e933e105ed9ff70cd50780bf48d26cb8df9185833e51d`.
+- Current native image: [pan_villager-still.png](DungeonHandEdits2026-11/pan_villager-still.png) (112×88).
+- Extracted PNG SHA-256: `9d2964ac6a489072cc562bbc62516710b64fb89ed2f98d5d29e926280037b1a8`.
+- Production source: `Assets/_Game/Art/CombatIdles/PanVillager_Idle.png`; SHA-256 `7afd00d1b2001a703c8dd7085b2253182ac314f28b21481da9cacc1e38b7e6d6`.
 - Unity GUID `3c27279675a73fa4483e90748a589ab2`, fileID `2638720417487856195`, sprite `PanVillager_Idle_00`.
 - Extraction rectangle in PNG top-left coordinates: `[0, 0, 112, 88]` (right/bottom exclusive). Full expanded canvas; no scaling/trimming. Unity source-floor pivot: (56, 4).
 - Current controller: `Assets/_Game/Animations/CombatIdles/PanVillager_Idle.controller`.
