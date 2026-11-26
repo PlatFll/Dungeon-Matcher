@@ -1,24 +1,7 @@
-# Crystal Resonance final Court escort pass — no merge
+# Crystal Resonance release integration
 
-PR234/branch codex/crystal-resonance-zone-director. User requires complete supervision,
-final report/updatePR; do not finish while ownedUnity processes run; do not merge.
-All original overnight62refinement runs and50older results/two partials preserved.
-Source90bc batch20261118-193833-880306 completed13cases,25visits,12deaths,onealive
-45minlimit;3270nativecommands auditpassed. Validator/56focused/272balance and both
-builds passed. No ownedUnity/test processes remained after pipelinecompletion.
-Source90bc archives/provenance now in CrystalResonanceRecoveryEvidence/batch13-*.
+The user authorized merging the latest recovered balance and the ten-enemy expansion with the merchant build on 2026-11-27. The validated runtime, content and player build source is `bf73a090`. The final verification commit changes documentation only. [Integrated Game, build and regression evidence](../Docs/Validation/CRYSTAL_RESONANCE_MAIN_INTEGRATION.md).
 
-Confirmed after raw review: every early known Moray/Conch three-actor patrol used
-Spearman+Hammerhead. Added first-flood pair-diversity regression; olddata failed0/1
-asexpected(e749d33b). MorayPatrol now replacesHammerhead withNeedlefin, oneGUIDonly.
-Stats/oxygen/rewards/otherformationsunchanged. Nine affected natural cases predeclared
-in escort-protocol.json; otherfour90bc routesneverCourt andneednotduplicate.
-Three deep attempts alreadyobserved90bc; affectedBardL10deep willrerun, twootherdeep
-routesneverCourt retainedwiththeiractualsource. Decision/retentioncriteria recorded.
+The original nine-case Court retest on `313c7722` was stopped in November. Its earlier validator completed, its focused suite had no final XML and its nine natural cases had not begun. The completed 13-run recovery study on `90bc53b9` remains separate from the two integrated Game runs. The preserved local stop archive has SHA-256 `5776d5a56880d1638f1ab187b38705eab6a0a6cc8652ffbc55a75eabbe81c857`.
 
-Next: clean onlyknownUnityimportnoise, reviewfullnewdiff, commit source/protocol,
-then requiredvalidator, affected57checks, relevantbalance/builds and9naturalcases.
-Newpipeline not yetlaunched. Originalpipeline completed, monitor60330closed.
-Use scratchcr_recovery_* scripts; noqueue notifier. Collectallnewresults, compare,
-finishcuration/reports/state/handoff, commit/push andupdateexistingdraftPR234.
-Allshellcommandsrtk. Worktreewrites/gitescalated. Noartchanges/subagents.
+Remaining human checks include low-level Court pressure, late-visit pacing and the HUD and shop on a physical phone.

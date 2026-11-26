@@ -127,3 +127,7 @@ Recorded damage is cumulative reported HP damage (including possible overkill),
 not net HP loss; some environmental hits still use the generic label `Damage`.
 No policy models full ordinary-attack countdown planning or invalid-swap discovery.
 These are explicit limits on claims of unfairness and human enjoyment.
+
+## November 27 integration
+
+The user stopped the original escort pass after its compiler validator had completed. Its focused tests yielded no completion XML, and the nine planned natural runs had not started. The source and the completed 13-case balance pass both entered the later expansion integration. For the separate final-source tests, builds and Game runs, see the [integration report](CRYSTAL_RESONANCE_MAIN_INTEGRATION.md).
