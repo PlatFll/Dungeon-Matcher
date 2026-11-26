@@ -1303,7 +1303,7 @@ Exact formula and level costs: `Docs/BALANCE_V1.md`.
 
 # 14. Consumables and Shop
 
-The mouse merchant sells five supplies from a fixed counter above a scrolling catalogue.
+The mouse merchant sells five supplies from a fixed counter above a scrolling catalogue. The shopkeeper hums while browsing, comments on the purchased item and waves before ducking out when the player leaves.
 
 | Potion slot | Gold | Effect |
 | --- | ---: | --- |

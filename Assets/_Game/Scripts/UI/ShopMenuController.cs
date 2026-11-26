@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public sealed class ShopMenuController : MonoBehaviour
+public sealed partial class ShopMenuController : MonoBehaviour
 {
     private const string Folder = "UI/MerchantStall/";
     private const float Width = 480, HeaderHeight = 246, FooterHeight = 26;
@@ -29,7 +29,7 @@ public sealed class ShopMenuController : MonoBehaviour
     private TMP_Text wallet, comment;
     private RectTransform walletCoin;
     private ConsumableKind featured = ConsumableKind.ShieldPotion;
-    private int commentIndex;
+
     private bool initialized;
     private Vector2 lastSize;
     private AccountProgression account;
@@ -47,7 +47,8 @@ public sealed class ShopMenuController : MonoBehaviour
         page = Box("ShopPage", safe, 0, 0, Width, 854);
         // The page is measured in one common portrait width; only the list changes height.
         BuildList();
-        BuildHeader(back);
+        BuildHeader();
+        PrepareMerchant(back);
         footer = Picture("BottomTrim", page, "Footer", 0, 0, Width, FooterHeight, sliced: true).rectTransform;
         footer.GetComponent<Image>().type = Image.Type.Tiled;
         footer.GetComponent<Image>().pixelsPerUnitMultiplier = .58f;
@@ -60,17 +61,24 @@ public sealed class ShopMenuController : MonoBehaviour
     private void OnEnable()
     {
         AccountProgression.Current.Changed += Refresh;
+        AudioPreferences.Changed += ApplySoundSettings;
+        if (initialized) Greet();
         Refresh();
     }
 
-    private void OnDisable() => AccountProgression.Current.Changed -= Refresh;
+    private void OnDisable()
+    {
+        AccountProgression.Current.Changed -= Refresh;
+        AudioPreferences.Changed -= ApplySoundSettings;
+        if (hum != null) hum.Stop();
+    }
 
     private void LateUpdate()
     {
         if (initialized && (safe.rect.size - lastSize).sqrMagnitude > .01f) Layout();
     }
 
-    private void BuildHeader(Action back)
+    private void BuildHeader()
     {
         var header = Box("Merchant", page, 0, 0, Width, HeaderHeight);
         Picture("StoneAlcove", header, "Alcove", 0, 0, Width, 219);
@@ -79,14 +87,14 @@ public sealed class ShopMenuController : MonoBehaviour
         var title = Picture("TitlePlaque", header, "Title", 134, 1, 212, 90, preserve: true);
         // The crest rises above the lettering face. Center SHOP between the two laurels.
         Label("Title", title.transform, "SHOP", 36, 27, 140, 44, 32, TextAlignmentOptions.Midline, true);
-        var exit = Control("Back", header, "Wallet", 8, 19, 61, 50, () => back?.Invoke());
+        var exit = Control("Back", header, "Wallet", 8, 19, 61, 50, LeaveShop);
         Picture("Arrow", exit.transform, "Arrow", 16, 12.5f, 29, 25, preserve: true);
         var purse = Picture("CurrencyPlaque", header, "Wallet", 352, 21, 118, 43, sliced: true);
         wallet = MakeAmount(purse.rectTransform, "Gold", 24, 21, out walletCoin);
         wallet.fontSizeMin = 10;
         var bubble = Picture("SpeechBubble", header, "Speech", 244, 98, 172, 75, sliced: true);
         // The tail sits below the speech face.
-        comment = Label("MerchantComment", bubble.transform, "Great for tricky situations!", 9, 5, 154, 59, 17, TextAlignmentOptions.Midline, true);
+        comment = Label("MerchantComment", bubble.transform, "Have a look around!", 9, 5, 154, 59, 17, TextAlignmentOptions.Midline, true);
         comment.color = Ink;
     }
 
@@ -209,27 +217,29 @@ public sealed class ShopMenuController : MonoBehaviour
 
     private void Purchase(Row row)
     {
+        if (merchantState == MerchantState.Leaving) return;
         if (!account.TryPurchase(row.kind)) { Refresh(); return; }
         featured = row.kind;
         string line = row.kind switch {
-            ConsumableKind.HealthPotion => "For a rainy dungeon day!",
-            ConsumableKind.ShieldPotion => "Great for tricky situations!",
+            ConsumableKind.HealthPotion => "A sip for those scrapes!",
+            ConsumableKind.ShieldPotion => "Let the shield take the hit!",
             ConsumableKind.Bomb => "Mind that little fuse!",
-            ConsumableKind.MegaPotion => "That's my finest bottle!",
-            _ => "Pick a color. Any color!"
+            ConsumableKind.MegaPotion => "Full health in one gulp!",
+            ConsumableKind.ColorBomb => "Pick a color. Poof!",
+            _ => throw new ArgumentOutOfRangeException()
         };
-        comment.text = commentIndex++ % 3 == 2 ? "I'll wrap that for you!" : line;
-        mouse.sprite = Art("MouseHappy");
+        Speak(line);
         Refresh();
     }
 
     private void Equip(Row row)
     {
+        if (merchantState == MerchantState.Leaving) return;
         bool equip = !account.Equipped(row.kind);
         if (!account.SetEquipped(row.kind, equip)) { Refresh(); return; }
         featured = row.kind;
-        comment.text = equip ? (SupplyCatalog.IsPotion(row.kind) ? "Within paw's reach!" : "Packed for a big entrance!") : "Back on the shelf!";
-        mouse.sprite = Art(equip ? "MouseHelpful" : "MousePlayful");
+        Speak(equip ? (SupplyCatalog.IsPotion(row.kind) ? "Within paw's reach!" : "Packed for a big entrance!") : "Back on the shelf!",
+            Art(equip ? "MouseHelpful" : "MousePlayful"));
         Refresh();
     }
 
@@ -238,6 +248,7 @@ public sealed class ShopMenuController : MonoBehaviour
         if (!initialized) return;
         CenterAmount(walletCoin, wallet, account.Gold.ToString("N0"));
         bool locked = account.ActiveRun != null;
+        if (merchantState == MerchantState.Leaving) return;
         if (locked) comment.text = "Finish your run to change supplies.";
         else if (account.LastError != null) comment.text = "Couldn't save. Try again?";
         foreach (var row in rows)

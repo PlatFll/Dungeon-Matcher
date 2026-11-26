@@ -23,6 +23,10 @@ public sealed class MouseMerchantTests
         while (!ready()) { Assert.Less(Time.realtimeSinceStartup,deadline); yield return null; }
     }
 
+    // Capture the scene object after EnterPlayMode has reloaded the editor domain.
+    private static IEnumerator WaitForShopToClose(ShopMenuController shop) =>
+        Until(() => !shop.gameObject.activeInHierarchy);
+
     private static IEnumerator Capture(string path)
     {
         var previous = File.Exists(path) ? File.GetLastWriteTimeUtc(path) : DateTime.MinValue;
@@ -95,13 +99,16 @@ public sealed class MouseMerchantTests
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
         yield return new EnterPlayMode();
         profile=AccountProgression.UseDisposableProfile(Seed(new AccountSave {gold=2480,potions=12,bombs=3,shieldPotions=4,megaPotions=1}));
-        SceneManager.LoadScene("MainMenu");yield return null;yield return null;
+        SceneManager.LoadScene("MainMenu");
+        yield return Until(() => SceneManager.GetActiveScene().name == "MainMenu" && Object.FindFirstObjectByType<MainMenuController>() != null);
         var menu=Object.FindFirstObjectByType<MainMenuController>();
         var shopButton=menu.GetComponentsInChildren<Button>(true).First(b=>b.name=="ShopButton");
-        shopButton.onClick.Invoke();yield return null;yield return null;
+        shopButton.onClick.Invoke();
+        yield return Until(() => Object.FindFirstObjectByType<ShopMenuController>() != null);
         var shop=Object.FindFirstObjectByType<ShopMenuController>();
         Assert.IsNotNull(shop);
         var scroll=shop.GetComponentInChildren<ScrollRect>();
+        Assert.IsNotNull(scroll, "Shop list should be available after opening the shop.");
         var merchant=(RectTransform)scroll.transform.parent.Find("Merchant");
         var coin=merchant.Find("CurrencyPlaque/Gold").GetComponent<TMP_Text>();
         foreach(var resolution in new[]{new Vector2Int(720,1280),new Vector2Int(1080,2340),new Vector2Int(540,960)})
@@ -170,9 +177,126 @@ public sealed class MouseMerchantTests
         last.Find("Equip").GetComponent<Button>().onClick.Invoke();
         Assert.IsTrue(AccountProgression.Current.Equipped(ConsumableKind.ColorBomb));
         Assert.AreEqual("MouseHelpful",merchant.Find("Shopkeeper").GetComponent<Image>().sprite.name);
-        merchant.Find("Back").GetComponent<Button>().onClick.Invoke();yield return null;
+        merchant.Find("Back").GetComponent<Button>().onClick.Invoke();
+        yield return WaitForShopToClose(shop);
         Assert.IsFalse(shop.gameObject.activeInHierarchy);
     }
+
+    [UnityTest] public IEnumerator MerchantHumsReactsAndWavesBackToHome()
+    {
+        Size(720,1280);
+        EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+        yield return new EnterPlayMode();
+        string motionKey = PresentationPreferences.ReducedMotionKey;
+        bool hadMotion = PlayerPrefs.HasKey(motionKey);
+        int previousMotion = PlayerPrefs.GetInt(motionKey);
+        const string sfxKey = "DungeonMatcher.Audio.SfxMuted";
+        bool hadSfx = PlayerPrefs.HasKey(sfxKey);
+        bool oldSfx = AudioPreferences.SfxMuted;
+        int previousRate = Time.captureFramerate;
+        string output = Path.Combine(Output, "Reactions", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(output);
+        try
+        {
+            Time.captureFramerate = 40;
+            PlayerPrefs.SetInt(motionKey, 0);
+            AudioPreferences.SetSfxMuted(false);
+            profile = AccountProgression.UseDisposableProfile(Seed(new AccountSave { gold = 600 }));
+            SceneManager.LoadScene("MainMenu");
+            yield return null;
+            var menu = Object.FindFirstObjectByType<MainMenuController>();
+            menu.ShowShop();
+            var shop = Object.FindFirstObjectByType<ShopMenuController>();
+            var list = shop.GetComponentInChildren<ScrollRect>();
+            var header = list.transform.parent.Find("Merchant");
+            var mouse = header.Find("Shopkeeper").GetComponent<Image>();
+            var speech = header.Find("SpeechBubble/MerchantComment").GetComponent<TMP_Text>();
+            var hum = mouse.GetComponent<AudioSource>();
+            Assert.That(hum.clip.length, Is.InRange(1.7f, 2f));
+            foreach (var clip in new[] { ("Humming",16), ("Talking",6), ("Goodbye",20) })
+            {
+                var poses = Resources.LoadAll<Sprite>("UI/MerchantMotion/" + clip.Item1);
+                Assert.AreEqual(clip.Item2, poses.Length);
+                Assert.IsTrue(poses.All(s => s.rect.size == new Vector2(63,62) && s.texture.filterMode == FilterMode.Point));
+            }
+            bool heardHum = false;
+            string lastPose = "";
+            float start = Time.unscaledTime;
+            while (Time.unscaledTime - start < 2.75f)
+            {
+                heardHum |= hum.isPlaying && hum.timeSamples > 0;
+                if (mouse.sprite.name.StartsWith("Humming_") && lastPose != mouse.sprite.name)
+                {
+                    lastPose = mouse.sprite.name;
+                    ScreenCapture.CaptureScreenshot(Path.GetFullPath(Path.Combine(output, lastPose+".png")));
+                }
+                yield return null;
+            }
+            Assert.IsTrue(lastPose.StartsWith("Humming_"));
+            Assert.IsTrue(heardHum, "The shop should start the audible humming phrase while browsing.");
+            Assert.IsTrue(Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None).Any(listener => listener.isActiveAndEnabled));
+            yield return Until(() => hum.isPlaying);
+            AudioPreferences.SetSfxMuted(true);
+            Assert.IsFalse(hum.isPlaying, "Muting effects stops the active hum.");
+            AudioPreferences.SetSfxMuted(false);
+            list.verticalNormalizedPosition = 0;
+            yield return Until(() => speech.text.StartsWith("Well..."));
+            speech.ForceMeshUpdate();
+            Assert.IsFalse(speech.isTextOverflowing);
+            yield return Capture(Path.Combine(output,"Browsing-remark.png"));
+
+            string[] keywords = {"scrapes","shield","fuse","health","color"};
+            for (int i = 0; i < list.content.childCount; i++)
+            {
+                var buy = list.content.GetChild(i).Find("Contents/Buy").GetComponent<Button>();
+                buy.onClick.Invoke();
+                StringAssert.Contains(keywords[i], speech.text.ToLowerInvariant());
+                yield return null;
+                StringAssert.StartsWith("Talking_", mouse.sprite.name);
+                Assert.IsFalse(hum.isPlaying);
+            }
+            yield return Capture(Path.Combine(output, "Purchase.png"));
+            var back = header.Find("Back").GetComponent<Button>();
+            back.onClick.Invoke();
+            back.onClick.Invoke();
+            int gold = AccountProgression.Current.Gold;
+            list.content.GetChild(0).Find("Contents/Buy").GetComponent<Button>().onClick.Invoke();
+            Assert.AreEqual(gold, AccountProgression.Current.Gold);
+            Assert.AreEqual("See you 'round!", speech.text);
+            start = Time.unscaledTime;
+            lastPose = "";
+            while (shop.gameObject.activeInHierarchy && Time.unscaledTime - start < 1.5f)
+            {
+                if (lastPose != mouse.sprite.name)
+                {
+                    lastPose = mouse.sprite.name;
+                    ScreenCapture.CaptureScreenshot(Path.GetFullPath(Path.Combine(output,lastPose+".png")));
+                }
+                yield return null;
+            }
+            Assert.IsFalse(shop.gameObject.activeInHierarchy);
+            Assert.That(Time.unscaledTime-start, Is.InRange(.95f,1.4f));
+            Assert.IsTrue(menu.GetComponentsInChildren<Button>().Any(b => b.name == "ShopButton"));
+            yield return Capture(Path.Combine(output,"Home.png"));
+            PlayerPrefs.SetInt(motionKey,1);
+            menu.ShowShop(); yield return null;
+            Assert.AreEqual("MouseHappy", mouse.sprite.name);
+            Assert.AreEqual("Have a look around!", speech.text);
+            back.onClick.Invoke(); yield return null;
+            Assert.AreEqual("Goodbye_04", mouse.sprite.name);
+            yield return WaitForShopToClose(shop);
+            File.WriteAllText(Path.Combine(Output, "last-reaction-capture.txt"), Path.GetFullPath(output));
+        }
+        finally
+        {
+            Time.captureFramerate = previousRate;
+            AudioPreferences.SetSfxMuted(oldSfx);
+            if (!hadSfx) PlayerPrefs.DeleteKey(sfxKey);
+            if (hadMotion) PlayerPrefs.SetInt(motionKey,previousMotion);
+            else PlayerPrefs.DeleteKey(motionKey);
+        }
+    }
+
 
     [UnityTest] public IEnumerator SelectedVariantsWorkInTheGameScene()
     {
