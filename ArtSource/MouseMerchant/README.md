@@ -27,3 +27,17 @@ The board and equipped bomb slot use a 60 × 60 rainbow gem on a 64 × 64 canvas
 The revision passed the repository validator and 13 affected Unity tests on 6000.3.19f1. Those tests cover all five item sockets, prices aligned above their buttons at three portrait sizes, scroll and purchase behavior, the equipped Color Bomb icon, idle and reduced-motion behavior, and an actual board Color Crystal swap. All 32 native cels also passed the LibreSprite round-trip and glint coverage checks.
 
 All five items have a shared inset inside the shop socket. At 720 × 1280, each silhouette has at least eight rendered pixels of clear space before the inner bevel. The previous layout left zero at the closest point. The shop tests passed at 540 × 960, 720 × 1280 and 1080 × 2340. [Compare all five items in Unity](Shop-item-padding.png).
+
+## Merchant reactions
+
+![Shopkeeper reactions in the Main Menu scene](Merchant-in-Unity.gif)
+
+The mouse tilts his head on a 2.56-second loop with both paws resting on the counter. A soft [three-note hum](../../Assets/_Game/Resources/UI/MerchantMotion/MerchantHum.wav) plays intermittently and follows the sound-effects setting. Dialogue uses the speech bubble. Every successful purchase gets a line about that item. After 20 seconds of browsing he makes an impatient remark, then waits 30 seconds between further remarks. Buying or equipping resets that wait.
+
+Back starts a one-second farewell. He waves one paw, ducks behind the counter and leaves a dissolving puff before Home appears. Reduced motion holds a single wave pose for 0.28 seconds. Reopening the shop starts a fresh greeting.
+
+The approved mouse still is the drawing source. [Humming](Native/Humming.aseprite), [talking](Native/Talking.aseprite) and [goodbye](Native/Goodbye.aseprite) are editable native animations. [The production script](author_merchant.py) rebuilds the cels and original hum. The runtime exports use 63 × 62 cells and retain the existing counter registration.
+
+The Unity 6000.3.19f1 repository validator and 14 affected tests passed. Main Menu coverage includes the first patient wait, purchase dialogue for all five items, audible-source playback and mute, exit input locking, reopening and reduced motion. The board suite also exercised an actual Color Crystal swap. The preview combines real Game-view captures and shortens the long wait before the impatient remark.
+
+[Watch the Unity preview with the merchant hum](Merchant-in-Unity.mp4).
