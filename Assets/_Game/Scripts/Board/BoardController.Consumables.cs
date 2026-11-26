@@ -16,7 +16,15 @@ public partial class BoardController
         targetSelection = accept;
     }
 
-    public bool TryClearPlayerArea(Gem center, int radius, Func<bool> commitUse)
+    public bool IsSupplyTarget(Gem center, Gem gem, int radius, bool matchColor)
+    {
+        if (center == null || gem == null || !IsCellPlayable(gem.Column, gem.Row)) return false;
+        if (matchColor) return center.SpecialType != GemSpecialType.ColorCrystal &&
+            gem.SpecialType != GemSpecialType.ColorCrystal && gem.Type == center.Type;
+        return Mathf.Abs(gem.Column - center.Column) <= radius && Mathf.Abs(gem.Row - center.Row) <= radius;
+    }
+
+    public bool TryClearPlayerArea(Gem center, int radius, Func<bool> commitUse, bool matchColor = false)
     {
         if (IsBusy || IsExternalInputBlocked || center == null || !IsGemStillOnBoard(center) ||
             combatController == null || combatController.PlayerActor == null ||
@@ -24,11 +32,11 @@ public partial class BoardController
             Time.timeScale <= 0 || commitUse == null) return false;
         var targets = new HashSet<Gem>();
         radius = Mathf.Clamp(radius, 0, 2);
-        for (int x = center.Column - radius; x <= center.Column + radius; x++)
-            for (int y = center.Row - radius; y <= center.Row + radius; y++)
+        for (int x = 0; x < Width; x++)
+            for (int y = 0; y < Height; y++)
             {
                 var gem = GetGem(x, y);
-                if (gem != null && IsCellPlayable(x, y)) targets.Add(gem);
+                if (IsSupplyTarget(center, gem, radius, matchColor)) targets.Add(gem);
             }
         if (targets.Count == 0) return false;
         isBusy = true;
@@ -39,16 +47,16 @@ public partial class BoardController
         finally { if (!committed) isBusy = false; }
         if (!committed) return false;
         targetSelection = null;
-        StartCoroutine(ResolvePlayerAreaClear(targets));
+        StartCoroutine(ResolvePlayerAreaClear(targets, matchColor));
         return true;
     }
 
-    private IEnumerator ResolvePlayerAreaClear(HashSet<Gem> targets)
+    private IEnumerator ResolvePlayerAreaClear(HashSet<Gem> targets, bool matchColor)
     {
         try
         {
             var expanded = BuildBombExpandedClearSet(targets, true, out var crystals);
-            ReportBombClearsToCombat(null, expanded, 0, BoardClearSource.Bomb);
+            ReportBombClearsToCombat(null, expanded, 0, matchColor ? BoardClearSource.ColorCrystal : BoardClearSource.Bomb);
             yield return ClearMatchesWithBurstTargets(expanded, null, activateSpecials: true, genericBurstTargets: targets);
             yield return ResolveBombTriggeredCrystalRequests(crystals);
             yield return CollapseAndRefillBoard();

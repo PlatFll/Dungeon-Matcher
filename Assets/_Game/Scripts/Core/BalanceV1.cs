@@ -12,6 +12,11 @@ public sealed class BalanceV1
     public int poisonLevel = 3;
     public int healingLevel = 5;
     public int shieldLevel = 7;
+    public int shieldPotionPrice = 22;
+    public int megaPotionPrice = 42;
+    public int colorBombPrice = 48;
+    public int shieldPotionAmount = 25;
+    public int shieldPotionMoves = 3;
     public int potionPrice = 18;
     public int bombPrice = 24;
     public float potionHealthFraction = 0.35f;

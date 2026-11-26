@@ -30,6 +30,10 @@ public sealed class BalanceRuntimeBootstrap : MonoBehaviour
         foreach (var label in FindObjectsByType<Text>(FindObjectsInactive.Include, FindObjectsSortMode.None))
             if (label.font != GameUi.Font) label.font = GameUi.Font;
         foreach (var label in FindObjectsByType<TMP_Text>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            // The merchant catalogue owns its proportional font and responsive type sizes.
+            if (gameObject.scene.name == "MainMenu" && label.GetComponentInParent<ShopMenuController>(true)) continue;
             PixelTextFitter.Apply(label);
+        }
     }
 }

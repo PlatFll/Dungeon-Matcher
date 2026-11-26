@@ -4,6 +4,7 @@ public sealed partial class PlayerActor
 {
     public PlayerCombatSnapshot CaptureContinuation() => new PlayerCombatSnapshot
     {
+        potionShield=this.potionShield, potionShieldMoves=this.potionShieldMoves,
         statuses=Statuses.Capture(),
         health=currentHealth, maximumHealth=maximumHealth, shield=currentShield,
         maximumShield=maximumShield, revivalCount=revivalCount, lastDamage=LastDamageSummary,
@@ -16,6 +17,8 @@ public sealed partial class PlayerActor
         maximumShield=CombatAmounts.Round(saved.maximumShield);
         currentHealth=Mathf.Min(CombatAmounts.Health(saved.health),maximumHealth);
         currentShield=Mathf.Min(CombatAmounts.Round(saved.shield),maximumShield);
+        potionShield=Mathf.Clamp(saved.potionShield,0,currentShield);
+        potionShieldMoves=Mathf.Max(0,saved.potionShieldMoves);
         revivalCount=Mathf.Max(0,saved.revivalCount);
         LastDamageSummary=saved.lastDamage ?? "";
         isDefeated=false;
