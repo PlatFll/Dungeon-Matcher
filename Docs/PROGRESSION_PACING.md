@@ -82,16 +82,14 @@ depth. Early visits introduce unfamiliar mechanics in small groups. The previous
 two actual member multisets are avoided when another legal choice exists.
 Repeated escort pairs and pressure families lose weight. A fresh arrival resets
 the local formation history and preserves which zones and mechanics the run has
-taught. Capstones retain their separate four-formation history. Major bosses have a two-visit separation. Provisional kind
+taught. When a legal alternative exists, successive ordinary encounters avoid
+sharing a special enemy even if the recipe names differ. If a defeated capstone
+leaves charge to earn, the next encounter uses one or two eligible normal enemies
+when available. The saved capstone and banked encounter identify that single
+relief draw. A full crystal opens travel as soon as its rewards settle.
 
-Recent ordinary recipes (three) and capstone formations (four) are avoided when
-alternatives exist. Ordinary selection also prefers not to repeat the immediately
-previous special enemy through a differently named recipe. This is a preference,
-never a relaxed legality check or an exhausted-pool error. If charge remains after
-a capstone, the first following ordinary encounter uses an eligible normal-only
-one/two-actor relief formation where available. Its saved capstone/bank identity
-limits relief to one encounter; an already-earned portal is never delayed. Major bosses have a two-visit separation. Provisional kind
-weights are elite 6, miniboss 4, major 2 (3 at the deepest tier), rolled before
+Capstones have their own four-formation history. Major bosses have a two-visit
+separation. Provisional kind weights are elite 6, miniboss 4, major 2 (3 at the deepest tier), rolled before
 escort variants. Repeatable same-zone elite reserves remain when unique leaders
 are exhausted. New mechanics get at most two actors and one unseen special;
 existing threat response/placement constraints still own fairness.

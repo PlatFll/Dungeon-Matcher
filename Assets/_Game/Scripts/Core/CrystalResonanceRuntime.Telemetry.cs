@@ -56,7 +56,8 @@ public sealed partial class CrystalResonanceRuntime
     {
         if (!Enabled) return;
         State.damageThisVisit += health;
-        Record("player_damage", reason, health, source, shield);
+        string detail = source?.Definition != null ? source.Definition.DisplayName + ": " + reason : reason;
+        Record("player_damage", detail, health, source, shield);
     }
     private void TelemetryAir(int before, int spent, int[] collected)
     {
