@@ -26,6 +26,7 @@ public sealed class RunControlsUI : MonoBehaviour
     private float priorTimeScale;
     private static Sprite cooldownSprite;
     private Image resonance;
+    private Sprite colorBombStill;
     public bool IsModalOpen => overlay!=null;
     public Canvas GameplayCanvas => canvas;
     public Button SettingsButton { get; private set; }
@@ -68,7 +69,17 @@ public sealed class RunControlsUI : MonoBehaviour
             }
             var rect=GameUi.Rect("Icon",slots[i].transform,new Vector2(48,48),Vector2.zero);
             icons[i]=rect.gameObject.AddComponent<Image>();
-            icons[i].sprite=Resources.Load<Sprite>(kind == ConsumableKind.HealthPotion ? "UI/Consumables/Potion" : kind == ConsumableKind.Bomb ? "UI/Consumables/Bomb" : "UI/MerchantStall/" + kind);
+            if (kind == ConsumableKind.ColorBomb)
+            {
+                colorBombStill = Resources.Load<Sprite>("VFX/BombRefinement/Idles/Star/Star_00");
+                icons[i].sprite = colorBombStill;
+            }
+            else
+            {
+                string path = kind == ConsumableKind.HealthPotion ? "UI/Consumables/Potion" :
+                    kind == ConsumableKind.Bomb ? "UI/Consumables/Bomb" : "UI/MerchantStall/" + kind;
+                icons[i].sprite = Resources.Load<Sprite>(path);
+            }
             icons[i].preserveAspect=true;icons[i].raycastTarget=false;
             if(BattlePresentationSkin.Folder!=null && BattlePresentationSkin.Reference("SharedPotionHolder")!=null)rect.gameObject.AddComponent<NativePixelUiSurface>();
             var shade=GameUi.Rect("Cooldown",slots[i].transform,new Vector2(52,52),Vector2.zero);
@@ -154,6 +165,8 @@ public sealed class RunControlsUI : MonoBehaviour
     private void Update()
     {
         if(session==null || slots[0]==null)return;
+        if (colorBombStill != null)
+            icons[1].sprite = BombIdleArt.Frame(GemSpecialType.ColorCrystal, Time.timeSinceLevelLoad, colorBombStill);
         if(session.Continuation!=null && session.Continuation.IsRestoring && overlay==null)
         {
             BuildOverlay("Continuing your run..."); restoringOverlay=true;

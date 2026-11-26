@@ -9,7 +9,7 @@ LIBRE=r'C:/Users/USER/Downloads/libresprite-development-windows-x86_64/librespri
 for d in [OUT/'Editable',OUT/'Sheets',OUT/'Preview',RES]:d.mkdir(parents=True,exist_ok=True)
 def canonical(im):
     im=im.convert('RGBA'); im.putdata([p if p[3] else (0,0,0,0) for p in im.getdata()]); return im
-base={n:canonical(Image.open(SRC/(n+'.png'))) for n in ['PoisonA','HealingC','DirectionalD','DirectionalD-Column','StarA']}
+base={n:canonical(Image.open(SRC/(n+'.png'))) for n in ['PoisonA','HealingC','DirectionalD','DirectionalD-Column']}
 green=[(70,101,68,255),(98,156,84,255),(140,206,99,255),(186,237,164,255)]
 def poison(i):
     im=base['PoisonA'].copy(); d=ImageDraw.Draw(im)
@@ -47,22 +47,23 @@ def healing(i):
             d.line((x-r,y,x+r,y),fill=color);d.line((x,y-r,x,y+r),fill=color)
             if 2<=age<6:d.point((x,y),fill='#FFF7C0')
     return im
-# Use the complete reflective footprint, including the farthest star tip.
-star_facets=[(x,y) for y in range(64) for x in range(64)
-             if base['StarA'].getpixel((x,y))[3] and min(base['StarA'].getpixel((x,y))[:3])>75]
-star_sweep_start=min(x+y for x,y in star_facets)-4
-star_sweep_end=max(x+y for x,y in star_facets)+4
+# The board gem carries the merchant orb's facets. Only its white reflection moves.
+orb = canonical(Image.open(ROOT/'ArtSource/MouseMerchant/BoardColorBomb.png'))
+ink = (4, 2, 12, 255)
+facets = [(x, y) for y in range(64) for x in range(64)
+          if orb.getpixel((x, y))[3] and orb.getpixel((x, y)) != ink]
+sweep_start = min(x + y for x, y in facets) - 4
+sweep_end = max(x + y for x, y in facets) + 4
 def star(i):
-    im=base['StarA'].copy()
-    # Enter before the first tip and leave beyond the opposite tip within the same exposures.
-    if 7<=i<=22:
-        beam=round(star_sweep_start+(star_sweep_end-star_sweep_start)*(i-7)/15)
-        for y in range(64):
-            for x in range(64):
-                p=im.getpixel((x,y));dist=abs(x+y-beam)
-                if p[3] and min(p[:3])>75 and dist<4:
-                    im.putpixel((x,y),(255,255,255,255) if dist<2 else (243,250,255,255))
-    # Keep every contour pixel anchored; only the facet colors glint.
+    im = orb.copy()
+    if 7 <= i <= 22:
+        beam = round(sweep_start + (sweep_end - sweep_start) * (i - 7) / 15)
+        for x, y in facets:
+            distance = abs(x + y - beam)
+            if distance < 4:
+                color = orb.getpixel((x, y))
+                edge = tuple(round(channel * .45 + 255 * .55) for channel in color[:3]) + (255,)
+                im.putpixel((x, y), (255, 255, 255, 255) if distance < 2 else edge)
     return im
 families={'Poison':([poison(i) for i in range(24)],100,[32,38]),'Healing':([healing(i) for i in range(32)],100,[32,36]),'Star':([star(i) for i in range(32)],80,None)}
 manifest=[]
@@ -137,10 +138,11 @@ for name,src,socket in [('Row','DirectionalD',[32,32]),('Column','DirectionalD-C
     manifest.append({'family':name,'resourceFolder':name+'Idle','frames':8,'milliseconds':80,'canvas':[64,64],'socket':socket,'binaryAlpha':True,'fixedSocket':True,'anglesDegrees':angles,'runtime':'whole rigid bomb rocks around fixed socket; baked nearest-pixel cels, no root translation'})
     p=RES/f'{name}.png';base[src].save(p);meta(p)
 # Preserve existing Unity GUIDs for approved replacements; static fallbacks use exact chosen sources.
-for src,dst in [('PoisonA','Assets/_Game/Art/Board/Bombs/PoisonBomb.png'),('HealingC','Assets/_Game/Art/Board/Bombs/HealingBomb.png'),('StarA','Assets/_Game/Art/Gems/Special Overlays/StarColorBomb.png')]:shutil.copyfile(SRC/(src+'.png'),ROOT/dst)
+for src,dst in [('PoisonA','Assets/_Game/Art/Board/Bombs/PoisonBomb.png'),('HealingC','Assets/_Game/Art/Board/Bombs/HealingBomb.png')]:shutil.copyfile(SRC/(src+'.png'),ROOT/dst)
+orb.save(ROOT/'Assets/_Game/Art/Gems/Special Overlays/StarColorBomb.png')
 for name,ims,ms in [('Poison',families['Poison'][0],100),('Healing',families['Healing'][0],100),('Star',families['Star'][0],80)]:
     board=Image.new('RGBA',(64*8,64*4),'#202837')
     for i,im in enumerate(ims):board.alpha_composite(im,(i%8*64,i//8*64))
     board.resize((1024,512),Image.Resampling.NEAREST).save(OUT/'Preview'/f'{name}-frames.png')
-(OUT/'Manifest.json').write_text(json.dumps({'selected':['Poison A','Healing C','Directional D','Star A'],'sequences':manifest,'generationSpending':0,'method':'Direct native cel editing; LibreSprite import/export with exact RGBA round-trip check'},indent=2)+'\n')
+(OUT/'Manifest.json').write_text(json.dumps({'selected':['Poison A','Healing C','Directional D','Merchant rainbow gem'],'sequences':manifest,'generationSpending':0,'method':'Direct native cel editing; LibreSprite import/export with exact RGBA round-trip check'},indent=2)+'\n')
 print('Selected idles exported and exact LibreSprite round trips verified.')

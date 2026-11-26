@@ -27,6 +27,7 @@ public sealed class ShopMenuController : MonoBehaviour
     private Image mouse;
     private TMP_FontAsset font;
     private TMP_Text wallet, comment;
+    private RectTransform walletCoin;
     private ConsumableKind featured = ConsumableKind.ShieldPotion;
     private int commentIndex;
     private bool initialized;
@@ -75,17 +76,17 @@ public sealed class ShopMenuController : MonoBehaviour
         Picture("StoneAlcove", header, "Alcove", 0, 0, Width, 219);
         mouse = Picture("Shopkeeper", header, "MouseHappy", 101, 88, 143, 137, preserve: true);
         Picture("CounterEdge", header, "Counter", 0, 219, Width, 27);
-        Picture("TitlePlaque", header, "Title", 123, 2, 223, 84, preserve: true);
-        Label("Title", header, "SHOP", 148, 24, 173, 45, 32, TextAlignmentOptions.Center, true);
+        var title = Picture("TitlePlaque", header, "Title", 134, 1, 212, 90, preserve: true);
+        // The crest rises above the lettering face. Center SHOP between the two laurels.
+        Label("Title", title.transform, "SHOP", 36, 27, 140, 44, 32, TextAlignmentOptions.Midline, true);
         var exit = Control("Back", header, "Wallet", 8, 19, 61, 50, () => back?.Invoke());
-        Picture("Arrow", exit.transform, "Arrow", 16, 12, 29, 25, preserve: true);
-        Picture("CurrencyPlaque", header, "Wallet", 352, 21, 118, 43, sliced: true);
-        Picture("GoldCoin", header, "Coin", 361, 30, 24, 24, preserve: true);
-        wallet = Label("Gold", header, "", 386, 25, 76, 33, 21, TextAlignmentOptions.Center, true);
+        Picture("Arrow", exit.transform, "Arrow", 16, 12.5f, 29, 25, preserve: true);
+        var purse = Picture("CurrencyPlaque", header, "Wallet", 352, 21, 118, 43, sliced: true);
+        wallet = MakeAmount(purse.rectTransform, "Gold", 24, 21, out walletCoin);
         wallet.fontSizeMin = 10;
-        wallet.textWrappingMode = TextWrappingModes.NoWrap;
-        Picture("SpeechBubble", header, "Speech", 244, 98, 172, 75, sliced: true);
-        comment = Label("MerchantComment", header, "Great for tricky situations!", 255, 102, 150, 52, 17, TextAlignmentOptions.Center, true);
+        var bubble = Picture("SpeechBubble", header, "Speech", 244, 98, 172, 75, sliced: true);
+        // The tail sits below the speech face.
+        comment = Label("MerchantComment", bubble.transform, "Great for tricky situations!", 9, 5, 154, 59, 17, TextAlignmentOptions.Midline, true);
         comment.color = Ink;
     }
 
@@ -125,18 +126,57 @@ public sealed class ShopMenuController : MonoBehaviour
         var row = new Row {kind = kind, card = card, root = card.rectTransform};
         rows.Add(row);
         var parent = row.body = Box("Contents", row.root, 0, 0, 449, 116);
-        Picture("ItemSocket", parent, "Socket", 12, 14, 83, 88, sliced: true);
-        Picture("ItemIcon", parent, kind.ToString(), 22, 23, 63, 68, preserve: true);
-        Label("ItemName", parent, SupplyCatalog.Name(kind), 106, 12, 207, 32, 22, TextAlignmentOptions.MidlineLeft, true);
-        Label("Description", parent, SupplyCatalog.Description(kind), 107, 44, 185, 43, 16, TextAlignmentOptions.TopLeft);
-        row.owned = Label("Owned", parent, "", 107, 85, 190, 25, 14, TextAlignmentOptions.MidlineLeft);
-        Picture("Coin", parent, "Coin", 331, 10, 20, 20, preserve: true);
-        Label("Price", parent, SupplyCatalog.Price(kind).ToString("N0"), 357, 7, 63, 26, 19, TextAlignmentOptions.MidlineLeft, true);
+        var well = Picture("ItemSocket", parent, "Socket", 12, 14, 83, 88, sliced: true);
+        Picture("ItemIcon", well.transform, kind.ToString(), 10.5f, 12, 62, 64, preserve: true);
+
+        var details = Box("Details", parent, 106, 8, 191, 100);
+        var stack = details.gameObject.AddComponent<VerticalLayoutGroup>();
+        stack.childAlignment = TextAnchor.MiddleLeft;
+        stack.spacing = 4;
+        stack.childForceExpandHeight = false;
+        stack.childForceExpandWidth = true;
+        stack.childControlWidth = stack.childControlHeight = true;
+        Label("ItemName", details, SupplyCatalog.Name(kind), 0, 0, 191, 32, 22, TextAlignmentOptions.MidlineLeft, true);
+        Label("Description", details, SupplyCatalog.Description(kind), 0, 0, 191, 42, 16, TextAlignmentOptions.Left);
+        row.owned = Label("Owned", details, "", 0, 0, 191, 24, 14, TextAlignmentOptions.MidlineLeft);
+
+        var priceArea = Box("PriceGroup", parent, 306, 7, 126, 26);
+        var price = MakeAmount(priceArea, "Price", 20, 19, out var coin);
+        CenterAmount(coin, price, SupplyCatalog.Price(kind).ToString("N0"));
         row.buy = Control("Buy", parent, "Buy", 306, 35, 126, 39, () => Purchase(row));
-        Label("Label", row.buy.transform, "Buy", 5, 2, 116, 32, 19, TextAlignmentOptions.Center, true).color = Ink;
+        ButtonLabel(row.buy, "Buy", 19).color = Ink;
         row.equip = Control("Equip", parent, "Equip", 312, 78, 114, 29, () => Equip(row));
-        row.equipCaption = Label("Label", row.equip.transform, "Equip", 4, 1, 106, 24, 14, TextAlignmentOptions.Center, true);
+        row.equipCaption = ButtonLabel(row.equip, "Equip", 14);
         row.equipCaption.color = Ink;
+    }
+
+    private TMP_Text MakeAmount(RectTransform region, string name, float iconSize, float fontSize, out RectTransform coin)
+    {
+        float height = region.rect.height;
+        coin = Picture("Coin", region, "Coin", 0, (height - iconSize) / 2, iconSize, iconSize, preserve: true).rectTransform;
+        var amount = Label(name, region, "", 0, 0, region.rect.width, height, fontSize, TextAlignmentOptions.Midline, true);
+        amount.textWrappingMode = TextWrappingModes.NoWrap;
+        return amount;
+    }
+
+    private static void CenterAmount(RectTransform coin, TMP_Text label, string value)
+    {
+        label.text = value;
+        var region = (RectTransform)coin.parent;
+        const float gap = 5;
+        float iconSize = coin.rect.width;
+        float textWidth = Mathf.Min(Mathf.Ceil(label.GetPreferredValues(value).x) + 2, region.rect.width - iconSize - gap - 12);
+        float left = (region.rect.width - iconSize - gap - textWidth) / 2;
+        coin.anchoredPosition = new Vector2(left + iconSize / 2, -region.rect.height / 2);
+        label.rectTransform.sizeDelta = new Vector2(textWidth, region.rect.height);
+        label.rectTransform.anchoredPosition = new Vector2(left + iconSize + gap, 0);
+    }
+
+    private TMP_Text ButtonLabel(Button button, string caption, float size)
+    {
+        var rect = (RectTransform)button.transform;
+        return Label("Label", rect, caption, 5, 2, rect.rect.width - 10, rect.rect.height - 6,
+            size, TextAlignmentOptions.Midline, true);
     }
 
     private void Layout()
@@ -191,7 +231,7 @@ public sealed class ShopMenuController : MonoBehaviour
     private void Refresh()
     {
         if (!initialized) return;
-        wallet.text = account.Gold.ToString("N0");
+        CenterAmount(walletCoin, wallet, account.Gold.ToString("N0"));
         bool locked = account.ActiveRun != null;
         if (locked) comment.text = "Finish your run to change supplies.";
         else if (account.LastError != null) comment.text = "Couldn't save. Try again?";
@@ -239,6 +279,12 @@ public sealed class ShopMenuController : MonoBehaviour
         image.type = sliced ? Image.Type.Sliced : Image.Type.Simple;
         if (sliced) image.pixelsPerUnitMultiplier = .7f;
         image.preserveAspect = preserve;
+        if (preserve)
+        {
+            // Unity fits a Simple Image around its pivot, including any letterboxing.
+            image.rectTransform.pivot = new Vector2(.5f, .5f);
+            image.rectTransform.anchoredPosition = new Vector2(x + w / 2, -y - h / 2);
+        }
         image.raycastTarget = false;
         return image;
     }

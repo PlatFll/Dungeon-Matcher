@@ -103,7 +103,7 @@ public sealed class MouseMerchantTests
         Assert.IsNotNull(shop);
         var scroll=shop.GetComponentInChildren<ScrollRect>();
         var merchant=(RectTransform)scroll.transform.parent.Find("Merchant");
-        var coin=merchant.Find("Gold").GetComponent<TMP_Text>();
+        var coin=merchant.Find("CurrencyPlaque/Gold").GetComponent<TMP_Text>();
         foreach(var resolution in new[]{new Vector2Int(720,1280),new Vector2Int(1080,2340),new Vector2Int(540,960)})
         {
             Size(resolution.x,resolution.y);
@@ -116,6 +116,20 @@ public sealed class MouseMerchantTests
                 Assert.AreEqual("LiberationSans SDF",label.font.name);
                 label.ForceMeshUpdate();
                 Assert.IsFalse(label.isTextOverflowing,label.name+": "+label.text);
+            }
+            foreach (Transform row in scroll.content)
+            {
+                var body = row.Find("Contents");
+                var well = (RectTransform)body.Find("ItemSocket");
+                var icon = (RectTransform)well.Find("ItemIcon");
+                Assert.That(icon.pivot, Is.EqualTo(new Vector2(.5f, .5f)));
+                Assert.That(Vector3.Distance(well.TransformPoint(well.rect.center), icon.TransformPoint(icon.rect.center)), Is.LessThan(.1f));
+                var group = (RectTransform)body.Find("PriceGroup");
+                var price = (RectTransform)group.Find("Price");
+                var priceCoin = (RectTransform)group.Find("Coin");
+                float left = GameplayPixelLayoutController.ScreenRect(priceCoin).xMin;
+                float right = GameplayPixelLayoutController.ScreenRect(price).xMax;
+                Assert.That((left + right) / 2, Is.EqualTo(GameplayPixelLayoutController.ScreenRect((RectTransform)body.Find("Buy")).center.x).Within(1));
             }
             string stem=Output+"/Shop-"+resolution.x+"x"+resolution.y;
             yield return Capture(stem+".png");
@@ -134,7 +148,7 @@ public sealed class MouseMerchantTests
         holder.offsetMin = holder.offsetMax = Vector2.zero;
         yield return null; yield return null;
         var insetBounds = GameplayPixelLayoutController.ScreenRect(holder);
-        foreach (var control in new[] {merchant.Find("Back"), merchant.Find("Gold"), scroll.viewport})
+        foreach (var control in new[] {merchant.Find("Back"), merchant.Find("CurrencyPlaque/Gold"), scroll.viewport})
         {
             Rect bounds = GameplayPixelLayoutController.ScreenRect((RectTransform)control);
             Assert.That(bounds.xMin, Is.GreaterThanOrEqualTo(insetBounds.xMin - 1));
@@ -168,6 +182,10 @@ public sealed class MouseMerchantTests
             Assert.AreEqual(kind,run.PotionKind); Assert.AreEqual(ConsumableKind.ColorBomb,run.BombKind);
             var button=run.GetComponent<RunControlsUI>().GameplayCanvas.GetComponentsInChildren<Button>().First(b=>b.name==kind.ToString());
             Assert.AreEqual(kind.ToString(),button.transform.Find("Icon").GetComponent<Image>().sprite.name);
+            var colorSlot = run.GetComponent<RunControlsUI>().GameplayCanvas.GetComponentsInChildren<Button>().First(b => b.name == "ColorBomb");
+            var colorIcon = colorSlot.transform.Find("Icon").GetComponent<Image>();
+            CollectionAssert.Contains(Resources.LoadAll<Sprite>("VFX/BombRefinement/Idles/Star"), colorIcon.sprite);
+
             if(kind==ConsumableKind.MegaPotion) {
                 Assert.IsFalse(run.TryUsePotion());run.Player.TryTakeDamage(25);
                 Assert.Less(run.Player.CurrentHealth,run.Player.MaximumHealth);

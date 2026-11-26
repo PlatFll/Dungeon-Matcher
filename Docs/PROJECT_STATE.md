@@ -1196,7 +1196,7 @@ Gem Mastery is an account-wide progression layer, not a per-character grind.
 
 Fresh-profile state:
 
-- Color Crystal / classic star crystal is available from the start.
+- Color Crystal is available from the start. Its board and equipment art shows the free-standing merchant rainbow gem with a diagonal white glint.
 - It has no separate levels.
 
 Current Balance v1 first-time account unlocks use the **highest individual character level** (levels are never summed):
