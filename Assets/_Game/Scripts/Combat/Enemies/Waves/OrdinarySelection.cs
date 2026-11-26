@@ -57,6 +57,15 @@ public static class OrdinarySelection
         bool relief = state.capstonePhase == ResonanceCapstonePhase.Defeated &&
             state.capstoneWave > 0 && state.lastBankedWave == state.capstoneWave;
         if (relief) choices = Prefer(choices, r => r.members.Length <= 2 && r.members.All(e => e.Category == EnemyCategory.Normal));
+        // Member history also covers fallback patrols. Older saves only recorded recipe labels.
+        var previousMembers = newest.FirstOrDefault()?.members;
+        var previousIds = previousMembers != null
+            ? previousMembers.Split('+')
+            : Array.Find(zone.resonanceEncounters, r => r.label == state.recentRecipes?.LastOrDefault())
+                ?.members.Select(e => e.EnemyId).ToArray();
+        if (previousIds != null)
+            choices = Prefer(choices, r => !r.members.Any(e =>
+                e.Category != EnemyCategory.Normal && previousIds.Contains(e.EnemyId)));
         if (newest.Count >= 2 && newest.Take(2).All(h => h.role == "Pressure"))
             choices = Prefer(choices, r => Role(r) != OrdinaryRole.Pressure);
         choices = Prefer(choices, r => !newest.Take(2).Any(h => h.members == MemberKey(r.members)));

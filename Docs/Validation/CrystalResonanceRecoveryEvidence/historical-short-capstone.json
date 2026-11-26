@@ -1,0 +1,104 @@
+{
+  "path": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261117-062332\\depth-skilled-skeleton-L10-100719",
+  "zone": "dungeon",
+  "visit": 3,
+  "depth": 59,
+  "seconds": 3.693115234375,
+  "formation": "Royal elite:court_mage/Special/3+royal_lancer/Normal/2.5+royal_swordsman/Normal/2.5",
+  "sourceManifestSha256": "70b9a16eaa7db7501fef8ae467d1122fc1e90cb429362a397f557a901ccfc05c",
+  "acceptedSwaps": 1,
+  "damage": 0,
+  "specialCasts": [],
+  "relevantCells": [
+    {
+      "x": 0,
+      "y": 2,
+      "type": 3,
+      "special": 2
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "type": 0,
+      "special": 3
+    }
+  ],
+  "cards": [
+    {
+      "id": "bombsmith",
+      "stacks": 1
+    },
+    {
+      "id": "prototype_strong_remedy",
+      "stacks": 1
+    },
+    {
+      "id": "executioner",
+      "stacks": 1
+    },
+    {
+      "id": "prototype_gem_grinder",
+      "stacks": 2
+    },
+    {
+      "id": "cascade_catalyst",
+      "stacks": 1
+    },
+    {
+      "id": "glass_cannon",
+      "stacks": 1
+    },
+    {
+      "id": "opening_volley",
+      "stacks": 1
+    },
+    {
+      "id": "longer_reign",
+      "stacks": 1
+    },
+    {
+      "id": "prepared_casting",
+      "stacks": 1
+    },
+    {
+      "id": "prototype_siegebreaker",
+      "stacks": 1
+    },
+    {
+      "id": "boss_hunter",
+      "stacks": 1
+    }
+  ],
+  "player": {
+    "statuses": {
+      "currentMove": 243,
+      "completedMove": 243,
+      "effects": []
+    },
+    "health": 95,
+    "maximumHealth": 160,
+    "shield": 0,
+    "maximumShield": 70,
+    "revivalCount": 0,
+    "energy": 44,
+    "lastDamage": "Last hit: Spear Knight\n10 HP lost \u00b7 0 shield absorbed"
+  },
+  "nativeActions": [
+    {
+      "kind": 0,
+      "x": 1,
+      "y": 2,
+      "targetX": 0,
+      "targetY": 2,
+      "card": "",
+      "theme": 0
+    }
+  ],
+  "interpretation": "ColumnBomb=2 at (0,2) and ColorCrystal=3 at (1,2); one accepted swap combines them. Developed level-10 build. Historical diagnostic source, not final-source natural coverage. Preserve earned power.",
+  "provenance": {
+    "checkpoint-59.json": "6c32fe748624d859f74775f1cb92cbb9baa69778254c4ccc52597b1a08bd675e",
+    "native-journal.jsonl.gz": "1a5298fb6f83ec3d5f54c131618d42010f04585e737b8b491070b0ca6c3d100b",
+    "events.jsonl": "eb3cca5f6c71a6426964e991b9edec426941357dc9b0898d9a5c8e6982ca3163",
+    "actions.jsonl": "5875c62ec4f5be858858d21c62ae405e0b9533da145385efe241529a54b93877"
+  }
+}

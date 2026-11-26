@@ -1,0 +1,155 @@
+{
+  "capture": false,
+  "cases": [
+    {
+      "label": "recovery-court-p0-skeleton-L1-762463853",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 1,
+      "policy": 0,
+      "seed": 762463853,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-court-p1-skeleton-L1-762463853",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "seed": 762463853,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-court-p2-skeleton-L1-762463853",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 1,
+      "policy": 2,
+      "seed": 762463853,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-court-p3-skeleton-L1-762463853",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 1,
+      "policy": 3,
+      "seed": 762463853,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-court-p4-skeleton-L1-762463853",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 1,
+      "policy": 4,
+      "seed": 762463853,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-spread-p0-bardley-L1-1293181219",
+      "zone": "dungeon",
+      "character": "bardley",
+      "level": 1,
+      "policy": 0,
+      "seed": 1293181219,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-spread-p1-kobold_gunner-L5-916216052",
+      "zone": "dungeon",
+      "character": "kobold_gunner",
+      "level": 5,
+      "policy": 1,
+      "seed": 916216052,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-spread-p2-dungeon_attender-L5-619260983",
+      "zone": "dungeon",
+      "character": "dungeon_attender",
+      "level": 5,
+      "policy": 2,
+      "seed": 619260983,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-spread-p3-skeleton-L5-2119068497",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 5,
+      "policy": 3,
+      "seed": 2119068497,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-spread-p4-kobold_gunner-L1-853450337",
+      "zone": "dungeon",
+      "character": "kobold_gunner",
+      "level": 1,
+      "policy": 4,
+      "seed": 853450337,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-refine-deep-p2-skeleton-L10-1076357966",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 2,
+      "seed": 1076357966,
+      "level": 10,
+      "maxVisits": 7,
+      "maxSeconds": 2700,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-refine-deep-p3-bardley-L10-1012792767",
+      "zone": "dungeon",
+      "character": "bardley",
+      "policy": 3,
+      "seed": 1012792767,
+      "level": 10,
+      "maxVisits": 7,
+      "maxSeconds": 2700,
+      "diagnosticStart": false
+    },
+    {
+      "label": "recovery-refine-deep-p1-dungeon_attender-L10-1339892460",
+      "zone": "dungeon",
+      "character": "dungeon_attender",
+      "policy": 1,
+      "seed": 1339892460,
+      "level": 10,
+      "maxVisits": 7,
+      "maxSeconds": 2700,
+      "diagnosticStart": false
+    }
+  ],
+  "notes": [
+    "Five targeted Court-entry named seeds are natural Dungeon-first attempts, reused for affected coverage; routes are not forced.",
+    "Five independent spread seeds were derived before inspecting destinations; all five policies and multiple characters/levels.",
+    "Three deep level-10 attempts retain prior named seeds; max 45 minutes or seven completed visits; natural deaths count.",
+    "Production run IDs independently seed capstones, so reused named seeds do not provide fully paired outcomes.",
+    "No old results overwritten; source manifest and commit recorded by runner; x1 actual Game scene; no in-run grants."
+  ]
+}

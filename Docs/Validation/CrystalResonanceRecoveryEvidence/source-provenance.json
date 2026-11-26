@@ -1,0 +1,300 @@
+{
+  "batches": [
+    {
+      "batch": "20261117-014621",
+      "status": "failed",
+      "cases": 1,
+      "caseDurationSeconds": 191.70278930664062,
+      "sourceManifestSha256": null,
+      "sourceFileCount": 0,
+      "recordedSource": [
+        null,
+        "Exact commit not independently recorded here; retained full file hashes are source authority, not a guessed historical HEAD."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261117-014621",
+      "marker": "FAILED \u2014 inspect errors"
+    },
+    {
+      "batch": "20261117-015703",
+      "status": "complete",
+      "cases": 6,
+      "caseDurationSeconds": 1451.6018371582031,
+      "sourceManifestSha256": "271f673f695d0622f29103ad198368363f9c969fd656fb3b714aa5e87654a78d",
+      "sourceFileCount": 665,
+      "recordedSource": [
+        null,
+        "Exact commit not independently recorded here; retained full file hashes are source authority, not a guessed historical HEAD."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261117-015703",
+      "marker": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment."
+    },
+    {
+      "batch": "20261117-030133",
+      "status": "complete",
+      "cases": 15,
+      "caseDurationSeconds": 10775.263977050781,
+      "sourceManifestSha256": "611003b9a863d1bd359d1259340a15bcac5d04356c673530c573d28aef986948",
+      "sourceFileCount": 695,
+      "recordedSource": [
+        null,
+        "Exact commit not independently recorded here; retained full file hashes are source authority, not a guessed historical HEAD."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261117-030133",
+      "marker": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment."
+    },
+    {
+      "batch": "20261117-062332",
+      "status": "complete",
+      "cases": 11,
+      "caseDurationSeconds": 3588.7557220458984,
+      "sourceManifestSha256": "70b9a16eaa7db7501fef8ae467d1122fc1e90cb429362a397f557a901ccfc05c",
+      "sourceFileCount": 698,
+      "recordedSource": [
+        null,
+        "Exact commit not independently recorded here; retained full file hashes are source authority, not a guessed historical HEAD."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261117-062332",
+      "marker": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment."
+    },
+    {
+      "batch": "20261117-073354",
+      "status": "complete",
+      "cases": 13,
+      "caseDurationSeconds": 3955.3733520507812,
+      "sourceManifestSha256": "438b34323835e18f824bedb8fa7bcc10400073430383e2469d46e078ce87305a",
+      "sourceFileCount": 698,
+      "recordedSource": [
+        null,
+        "Exact commit not independently recorded here; retained full file hashes are source authority, not a guessed historical HEAD."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261117-073354",
+      "marker": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment."
+    },
+    {
+      "batch": "20261117-084917",
+      "status": "complete",
+      "cases": 4,
+      "caseDurationSeconds": 1072.6144714355469,
+      "sourceManifestSha256": "dd64a7f6d54aa949d6f226e249c9e8bfe4ab0fff38a27e19b26606c614a56034",
+      "sourceFileCount": 698,
+      "recordedSource": [
+        null,
+        "Exact commit not independently recorded here; retained full file hashes are source authority, not a guessed historical HEAD."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261117-084917",
+      "marker": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment."
+    },
+    {
+      "batch": "20261118-010917",
+      "status": "complete",
+      "cases": 5,
+      "caseDurationSeconds": 2890.186767578125,
+      "sourceManifestSha256": "f52c1be7d595b3dc3a38143065d9fd9c2934e609e59781af00d4af7e044591d0",
+      "sourceFileCount": 9663,
+      "recordedSource": [
+        "b6891878",
+        "Pilot launch recorded in refinement report; full runtime manifest retained."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261118-010917",
+      "marker": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment.",
+      "job": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\jobs\\pilot-20261118-010828\\job.json",
+      "jobStatus": "failed",
+      "startedUtc": "2026-11-18T01:08:28.9152969Z",
+      "finishedUtc": "2026-11-18T01:57:34.3990449Z",
+      "runnerExit": null
+    },
+    {
+      "batch": "20261118-020131",
+      "status": "complete",
+      "cases": 20,
+      "caseDurationSeconds": 15875.695617675781,
+      "sourceManifestSha256": "eff3d1205d8989731eceb6845275e78e20e085ba44fae024f506c9b3024fd2cd",
+      "sourceFileCount": 9663,
+      "recordedSource": [
+        "cdfae325",
+        "Main launch after offline analyzer correction; runtime byte-identical to pilot."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261118-020131",
+      "marker": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment.",
+      "job": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\jobs\\main-20261118-020113\\job.json",
+      "jobStatus": "completed",
+      "startedUtc": "2026-11-18T02:01:13.1621845Z",
+      "finishedUtc": "2026-11-18T06:26:25.0248292Z",
+      "runnerExit": 0
+    },
+    {
+      "batch": "20261118-063014",
+      "status": "complete",
+      "cases": 4,
+      "caseDurationSeconds": 5181.4869384765625,
+      "sourceManifestSha256": "eff3d1205d8989731eceb6845275e78e20e085ba44fae024f506c9b3024fd2cd",
+      "sourceFileCount": 9663,
+      "recordedSource": [
+        null,
+        "Exact commit not independently recorded here; retained full file hashes are source authority, not a guessed historical HEAD."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261118-063014",
+      "marker": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment.",
+      "job": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\jobs\\deep-20261118-062955\\job.json",
+      "jobStatus": "completed",
+      "startedUtc": "2026-11-18T06:29:55.5485362Z",
+      "finishedUtc": "2026-11-18T07:56:44.3186720Z",
+      "runnerExit": 0
+    },
+    {
+      "batch": "20261118-080102",
+      "status": "complete",
+      "cases": 25,
+      "caseDurationSeconds": 19770.97637939453,
+      "sourceManifestSha256": "65e3f335c99c158d889d2ba2ffad5be19c3963086ff8eaceb35eaccdb491ea90",
+      "sourceFileCount": 9663,
+      "recordedSource": [
+        null,
+        "Exact commit not independently recorded here; retained full file hashes are source authority, not a guessed historical HEAD."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261118-080102",
+      "marker": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment.",
+      "job": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\jobs\\wide-20261118-080039\\job.json",
+      "jobStatus": "completed",
+      "startedUtc": "2026-11-18T08:00:39.5323804Z",
+      "finishedUtc": "2026-11-18T13:30:57.8950131Z",
+      "runnerExit": 0
+    },
+    {
+      "batch": "20261118-135947",
+      "status": "complete",
+      "cases": 8,
+      "caseDurationSeconds": 5128.873718261719,
+      "sourceManifestSha256": "1ada90ee90557682d9dc7ab7c0dc4b64178d843a31af900f1ca48b5b8421d58a",
+      "sourceFileCount": 9663,
+      "recordedSource": [
+        "e12d9a2015ba4beba01c21e89abdff9ba2e64cf3",
+        "court-launch-check.json records exact source HEAD and prepared-manifest match."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261118-135947",
+      "marker": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment.",
+      "job": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\jobs\\court-20261118-135845\\job.json",
+      "jobStatus": "completed",
+      "startedUtc": "2026-11-18T13:58:45.7026675Z",
+      "finishedUtc": "2026-11-18T15:25:25.8772239Z",
+      "runnerExit": 0
+    },
+    {
+      "batch": "pass1-novice-dungeon-L1-8201",
+      "status": "incomplete",
+      "cases": 1,
+      "caseDurationSeconds": 0,
+      "sourceManifestSha256": null,
+      "sourceFileCount": 0,
+      "recordedSource": [
+        null,
+        "Exact commit not independently recorded here; retained full file hashes are source authority, not a guessed historical HEAD."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\pass1-novice-dungeon-L1-8201",
+      "marker": null
+    },
+    {
+      "batch": "probe1-novice-dungeon-L1-8201",
+      "status": "incomplete",
+      "cases": 1,
+      "caseDurationSeconds": 0,
+      "sourceManifestSha256": null,
+      "sourceFileCount": 0,
+      "recordedSource": [
+        null,
+        "Exact commit not independently recorded here; retained full file hashes are source authority, not a guessed historical HEAD."
+      ],
+      "output": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\probe1-novice-dungeon-L1-8201",
+      "marker": null
+    }
+  ],
+  "manifestRelationships": [
+    {
+      "before": "20261118-010917",
+      "after": "20261118-020131",
+      "changedFiles": {
+        "Tools/Analyze-CrystalResonance.py": {
+          "before": "1547a4e641af8cad0ee6c559088021e2c0dbffcb99bd6178038adc506f0cab4e",
+          "after": "abc8cc4b65b86392d34665248bd38ab52676d4c60e1ab7ded186e33a2d338ee5"
+        }
+      }
+    },
+    {
+      "before": "20261118-020131",
+      "after": "20261118-063014",
+      "changedFiles": {}
+    },
+    {
+      "before": "20261118-063014",
+      "after": "20261118-080102",
+      "changedFiles": {
+        "Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta": {
+          "before": "56423d68cadb6f95d0b919888e9ea7262218110c345c9149adad6c3310669822",
+          "after": "0f7e12e81377e9d521a4d132a17a3b3bfcf575daac8434f77bf20849575f5518"
+        },
+        "Assets/_Game/Resources/UI/Consumables/SlotHighlighted.png.meta": {
+          "before": "8ef4597db9de09375a1dd1c648a65c83cebe6f96bb8c876957ac2c34b3cd957d",
+          "after": "3a32303ab05166168f39ca8f6f06367234df30cb46393acb6fa5fde7331762f7"
+        },
+        "Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta": {
+          "before": "8e66aa6a5fc0fd8c160edd686d655420a79ad1e69ac4cb9b0400f6e11d141fcd",
+          "after": "0443273d14468ccb1584abcf6ab204674debcae15cda563f6aba543e6dc7e88f"
+        }
+      }
+    },
+    {
+      "before": "20261118-080102",
+      "after": "20261118-135947",
+      "changedFiles": {
+        "Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta": {
+          "before": "0f7e12e81377e9d521a4d132a17a3b3bfcf575daac8434f77bf20849575f5518",
+          "after": "56423d68cadb6f95d0b919888e9ea7262218110c345c9149adad6c3310669822"
+        },
+        "Assets/_Game/Resources/UI/Consumables/SlotHighlighted.png.meta": {
+          "before": "3a32303ab05166168f39ca8f6f06367234df30cb46393acb6fa5fde7331762f7",
+          "after": "8ef4597db9de09375a1dd1c648a65c83cebe6f96bb8c876957ac2c34b3cd957d"
+        },
+        "Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta": {
+          "before": "0443273d14468ccb1584abcf6ab204674debcae15cda563f6aba543e6dc7e88f",
+          "after": "8e66aa6a5fc0fd8c160edd686d655420a79ad1e69ac4cb9b0400f6e11d141fcd"
+        },
+        "Assets/_Game/Resources/Zones/drowned-court.asset": {
+          "before": "090f19c0339e87eafd912d6007ffb2facbb6316243ca37d99c75a410602ea310",
+          "after": "f3529c5092d0bac12cb749676873d17161c72d898b7cbaa01b7a14684a877ecc"
+        },
+        "Assets/_Game/Scripts/Editor/BalanceDisruptionPlayTests.cs": {
+          "before": "0ceecb9483cef47a22d3579c828c1dad501c560ddbdfbd721cada9c692caa313",
+          "after": "a37d1419ee5007e7fd59fc7fdc8de3a42ed3cb6fe62c844fb48d19e34b2daf31"
+        },
+        "Assets/_Game/Scripts/Editor/BalanceFreshShapesPlayTests.cs": {
+          "before": "f61b7e9bee7fac029ceed0a132348148f96f89bf043986751e7b587b7fd564e5",
+          "after": "f2965c3d1a729c19bd3d9359804f472242995109530ae1f6462c72b664493135"
+        },
+        "Assets/_Game/Scripts/Editor/BalanceLifecyclePlayTests.cs": {
+          "before": "57ef09ba75c5aac3080de80091bcbfaaf28287a49ae878a5b03ed39d56217495",
+          "after": "6e80c8b1d2ae7a109941d1e291704894c865485d37862beb85e87ae16092ad3a"
+        },
+        "Assets/_Game/Scripts/Editor/CrystalResonanceBuild.cs": {
+          "before": "7cf44d7519f09157d558bcb857603d5b3509e0d5b51e9c834c485adc43e78243",
+          "after": "30ee59aa64a7235db173783c38620b853340f72f6177808c9965dcc638d30294"
+        },
+        "Assets/_Game/Scripts/Editor/CrystalResonanceSelectionTests.cs": {
+          "before": "e8d8221783f7ca55efc838738ad72d54c5ab20694eb79cb42ba101eab06ffbc9",
+          "after": "11d8a0f5b4fee743a702580ce34f76b576cbc32f8bec525004d79c0212b20c6f"
+        },
+        "Assets/_Game/Scripts/Editor/DrownedCourtPlayTests.cs": {
+          "before": "f44ff71383e5e713c99c7ee7eb9b0a904d58b3e07ab8a25ec4dcefd6bcc589fe",
+          "after": "cdbe851a5c193b26a3c80b0dcb733b26553d8fefdc408d66545b3c367f325bd0"
+        },
+        "Assets/_Game/Scripts/Editor/TributeRevisionTests.cs": {
+          "before": "27cb8a503b6f5b6ca102236285feb93bb22e6f25af17443fd66a0d6572a72fc7",
+          "after": "e06c3ad31b1b14750e294ec027b737295bcf0af93e468c21ce063c63f693cc80"
+        },
+        "Tools/Test-Balance.ps1": {
+          "before": "0ec7d21b5690bb7b58d1a377581915b5d529d50f0e630b67b2a01c233e288331",
+          "after": "ead98c7a9e6d86189817431267e71ef43ed04a567a7d9de648a972046d37ed65"
+        }
+      }
+    }
+  ]
+}

@@ -69,7 +69,10 @@ Court, Forest, Frostwake and Ironvein draw their own expanded rosters.
 Court ordinary formations include the existing Needlefin and Shellback roster,
 with Reef scout/salvage pairs and varied patrol escorts. This corrects their
 omission from authored live recipes and reduces reliance on one heavy escort
-pair. Queen Nacre retains the approved Nacre Court escort identity (Conch
+pair. Moray's routine patrol uses a Needlefin escort beside its Spearman, so
+first-flood Moray and Conch patrols do not both reuse the same heavy pair. The
+Conch heavy patrol and capstone escorts remain available. Queen Nacre retains
+the approved Nacre Court escort identity (Conch
 Marshal); her formation budget includes both actors. Enemy stats, oxygen rules
 and other capstone formations are unchanged.
 
@@ -80,6 +83,14 @@ two actual member multisets are avoided when another legal choice exists.
 Repeated escort pairs and pressure families lose weight. A fresh arrival resets
 the local formation history and preserves which zones and mechanics the run has
 taught. Capstones retain their separate four-formation history. Major bosses have a two-visit separation. Provisional kind
+
+Recent ordinary recipes (three) and capstone formations (four) are avoided when
+alternatives exist. Ordinary selection also prefers not to repeat the immediately
+previous special enemy through a differently named recipe. This is a preference,
+never a relaxed legality check or an exhausted-pool error. If charge remains after
+a capstone, the first following ordinary encounter uses an eligible normal-only
+one/two-actor relief formation where available. Its saved capstone/bank identity
+limits relief to one encounter; an already-earned portal is never delayed. Major bosses have a two-visit separation. Provisional kind
 weights are elite 6, miniboss 4, major 2 (3 at the deepest tier), rolled before
 escort variants. Repeatable same-zone elite reserves remain when unique leaders
 are exhausted. New mechanics get at most two actors and one unseen special;

@@ -76,4 +76,46 @@ public sealed partial class ForestFoundationPlayTests
         Color(0,3,3);Color(1,0,4);Color(2,0,5);
         Assert.That(HumanLikePlaytestDriver.VisibleFollowups(board,option),Is.Zero,"unknown refill cannot supply predicted gems");
     }
+
+    [UnityTest] public IEnumerator CrystalResonanceSlidingFollowupDoesNotInventAnAdjacentSwapCascade()
+    {
+        SceneManager.LoadScene("Game");yield return Stable();
+        var board=Run.Board;var sprites=(Sprite[])Get(board,"gemSprites");
+        int[,] colors={ {3,2,2,5,4,5,0,1}, {5,4,2,0,0,1,2,3}, {2,5,1,4,2,3,4,5}, {1,4,5,4,4,5,0,1},
+            {2,3,4,5,0,1,2,3}, {4,5,0,1,2,3,4,5}, {0,1,2,3,4,5,0,1}, {2,3,4,5,0,1,2,3} };
+        for(int x=0;x<board.Width;x++)for(int y=0;y<board.Height;y++)
+        {var gem=board.GetGem(x,y);gem.SetSpecialType(GemSpecialType.None);gem.SetType((GemType)colors[y,x],sprites[colors[y,x]]);}
+        var previous=board.ExtraManualSwapStep;board.ExtraManualSwapStep=()=>true;
+        try
+        {
+            yield return Stable(); // Let the existing rule-change legality check settle.
+            var option=board.GetImmediateResponses().Single(o=>o.Source==board.GetGem(0,2)&&o.Target==board.GetGem(1,2));
+            Assert.AreEqual(3,option.FinalCells.Count);Assert.AreEqual(3,option.Clears.Count);
+            Assert.IsFalse(option.CreatesSpecial||option.UsesSpecial);
+            string before=JsonUtility.ToJson(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot));
+            Assert.AreEqual(0,HumanLikePlaytestDriver.VisibleFollowups(board,option),"The three-piece slide clears column 2; no visible follow-up exists. A two-piece swap falsely predicts three.");
+            Assert.AreEqual(before,JsonUtility.ToJson(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot)),"No state or RNG mutation");
+        }
+        finally {board.ExtraManualSwapStep=previous;}
+    }
+
+    [UnityTest] public IEnumerator CrystalResonanceDamageTelemetryKeepsActualSources()
+    {
+        SceneManager.LoadScene("Game");yield return Stable();
+        var records=new List<ResonanceTelemetryEvent>();Run.Resonance.Telemetry+=records.Add;
+        Assert.AreEqual(0,Run.Player.CurrentShield);
+        int health=Run.Player.CurrentHealth;uint refill=Run.Board.RefillRandomState;
+        var source=Run.Board.gameObject.AddComponent<SuffocationDamageSource>();
+        Assert.IsTrue(Run.Player.TryTakeDamage(5,source));
+        var first=records.Single(e=>e.kind=="player_damage");
+        Assert.AreEqual(5,first.value);Assert.That(first.detail,Does.Contain("Suffocation"));Assert.AreEqual(-1,first.air);
+        Assert.AreEqual(health-5,first.health);
+        var enemy=Run.Waves.ActiveEnemies.First(e=>e!=null&&!e.IsDefeated);
+        Assert.IsTrue(Run.Player.TryTakeDamage(5,enemy));
+        var second=records.Last(e=>e.kind=="player_damage");
+        Assert.That(second.detail,Does.Contain(enemy.Definition.DisplayName));Assert.AreEqual(5,second.value);
+        Assert.AreEqual(health-10,Run.Player.CurrentHealth);Assert.AreEqual(refill,Run.Board.RefillRandomState);
+        Assert.AreEqual(2,records.Count(e=>e.kind=="player_damage"));
+        Run.Resonance.Telemetry-=records.Add;
+    }
 }

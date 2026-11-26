@@ -348,7 +348,7 @@ The established battle loop is:
 4. Once the accepted move has completely settled, enemies advance turn-counted pressure and may queue board interference. Enemy auto-attacks provide separate real-time pressure.
 5. Defeating the active enemies completes the wave; the next wave begins only after the old board resolution has finished.
 
-Live travel-enabled runs use cumulative score plus a separate 100-point per-zone Resonance meter. Full safe victories bank provisional base charge 5/6/10/14 plus up to three intentional mastery points. Cards queue at 12/40/70, one-of-three after safe combat settlement. A saved 78–88 threshold schedules a same-zone elite/miniboss/occasional major capstone. Travel requires 100 and its complete defeat, then all cards/rewards settle. No fixed King wave or forced Dungeon visit remains. Existing Gold settlement, levels and consumables are unchanged. See [PROGRESSION_PACING.md](PROGRESSION_PACING.md) and [implementation status](CrystalResonance/IMPLEMENTATION.md).
+Live travel-enabled runs use cumulative score plus a separate 100-point per-zone Resonance meter. Full safe victories bank provisional base charge 4/5/10/14 (Court ordinary/pressure overrides 5/6) plus up to three intentional mastery points. Cards queue at 12/40/70, one-of-three after safe combat settlement. A saved 78–88 threshold schedules a same-zone elite/miniboss/occasional major capstone. Travel requires 100 and its complete defeat, then all cards/rewards settle. No fixed King wave or forced Dungeon visit remains. Existing Gold settlement, levels and consumables are unchanged. See [PROGRESSION_PACING.md](PROGRESSION_PACING.md) and [implementation status](CrystalResonance/IMPLEMENTATION.md).
 
 ## Core match-3 design philosophy
 

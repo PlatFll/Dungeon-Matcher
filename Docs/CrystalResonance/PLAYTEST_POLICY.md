@@ -1,4 +1,4 @@
-# Crystal Resonance playtest policy — attention-v2
+# Crystal Resonance playtest policy — attention-v3-slide
 
 Editor-only HumanLikePlaytestDriver plays the real Game scene at x1 through normal
 journaled input. It never alters HP, energy, cards, charge, enemies or travel.
@@ -29,6 +29,8 @@ All use only current weaknesses, HP, visible channels/marks and offered cards.
 Skilled/typical/defensive/aggressive can recognize one gravity step involving
 already-visible ordinary pieces. Unknown refill slots remain empty. This narrow
 heuristic deliberately declines special/obstacle/ice states it cannot model.
+The gravity heuristic uses each piece's visible final position, including three-piece
+underwater/Slippery rotation; the prior two-piece assumption could invent cascades.
 It does not read board RNG, simulate random cascades, inspect future formations
 or inspect unseen offers. Near-special setup is a proximity heuristic rather
 than a multi-turn solver. Decisions wait until the next board is settled;
@@ -52,6 +54,9 @@ indirectly, and spending a cast to preserve health may be sensible.
 
 The native durable journal independently verifies acceptance. Compare swaps,
 casts, supplies, health loss, mastery, counters and encounters alongside time.
+All profiles receive legal candidates and therefore omit invalid-swap discovery costs.
+They do not fully plan around ordinary enemy attack countdowns or long-horizon
+resource use; this limits conclusions about unavoidable damage and optimal play.
 No policy models touch slips, actual reading/comprehension, fatigue, long-term
 learning or enjoyment. It cannot certify human fun or device performance.
 

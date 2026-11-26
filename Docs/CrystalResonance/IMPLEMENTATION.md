@@ -66,6 +66,11 @@ records actual member IDs, escort pairs, roles and pressure families. The next
 ordinary draw uses global depth to weight Early, Mid and Late, then draws a role,
 a family and an authored variant. A new visit clears the local history and
 preserves the run's mechanic and teaching history. Bounded
+
+and role budgets, tide compatibility and recent-recipe exclusions. Saved recent recipe identities also avoid adjacent
+special-enemy variants when alternatives exist. The saved defeated capstone wave
+and last banked wave identify the single post-capstone relief choice, without new
+save fields or extra encounters. Bounded
 procedural fallback uses weighted members/adjacent families. Capstones select a
 legal kind then an authored whole formation. Repeatable same-zone elite reserves
 remain after unique leaders are spent. Missing legal data raises an explicit

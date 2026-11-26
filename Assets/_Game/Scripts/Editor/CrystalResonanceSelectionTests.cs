@@ -183,6 +183,26 @@ public sealed class CrystalResonanceSelectionTests
         }
     }
 
+    [Test] public void FirstFloodKnownMechanicPatrolsHaveDifferentEscortPairs()
+    {
+        var zone=Resources.Load<ZoneDefinition>("Zones/drowned-court");
+        var state=new CrystalResonanceSnapshot();
+        state.seenMechanics.AddRange(new[]{"moray_siphoner","conch_marshal"});
+        // Actual first-visit histories can know only these two flood-safe kits.
+        // All-roster/dry selection statistics hid their identical heavy escorts.
+        var patrols=zone.resonanceEncounters.Where(r=>r.resonanceKind==ZoneEncounterKind.Ordinary &&
+            r.members.Length==3 && r.members.All(e=>e.canFightFlooded &&
+                (e.Category==EnemyCategory.Normal || state.seenMechanics.Contains(e.EnemyId))) &&
+            BoardController.FirstFloodLessonSafe(r.members) &&
+            WaveController.ResonanceFormationLegal(zone,r,2,state,false)).ToArray();
+        var pairs=patrols.Select(r=>string.Join("+",r.members.Where(e=>e.Category==EnemyCategory.Normal)
+            .Select(e=>e.EnemyId).OrderBy(id=>id))).Distinct().ToArray();
+        Assert.GreaterOrEqual(patrols.Length,2,"Keep distinct taught pressure mechanics available.");
+        Assert.GreaterOrEqual(pairs.Length,2,"Changing the caster must not always retain the same heavy escort pair.");
+        Assert.IsTrue(patrols.Any(r=>r.members.Any(e=>e.EnemyId=="hammerhead_bruiser")),
+            "Retain a heavy patrol; this is variety, not removal of Court pressure.");
+    }
+
     [Test] public void QueenCapstoneKeepsApprovedCourtCultureAndCompleteEscortBudget()
     {
         var zone=Resources.Load<ZoneDefinition>("Zones/drowned-court");
@@ -248,5 +268,66 @@ public sealed class CrystalResonanceSelectionTests
             WaveController.ResonanceRecipeWeight(zone,3,knights)/WaveController.ResonanceRecipeWeight(zone,3,royals));
         Assert.AreEqual(0,WaveController.ResonanceRecipeWeight(zone,4,zone.resonanceEncounters.Single(r=>r.label=="Local search")));
     }
+    [Test] public void ConsecutiveRecipeVariantsDoNotRepeatTheSameSpecialWhenAlternativesExist()
+    {
+        var zone=Resources.Load<ZoneDefinition>("Zones/drowned-court");
+        var state=new CrystalResonanceSnapshot();state.seenMechanics.AddRange(zone.enemies.Select(e=>e.EnemyId));
+        state.recentRecipes.Add("Learn moray_siphoner");
+        for(int seed=1;seed<=200;seed++)
+        {
+            var recipe=WaveController.SelectResonanceOrdinary(zone,25,state,new SavedRandom(unchecked((uint)seed*2654435761u)));
+            Assert.IsFalse(recipe.members.Any(e=>e.EnemyId=="moray_siphoner"),"Different labels are still the same pressure mechanic: "+recipe.label);
+            Assert.IsTrue(WaveController.ResonanceFormationLegal(zone,recipe,3,state,false));
+            var resumed=JsonUtility.FromJson<CrystalResonanceSnapshot>(JsonUtility.ToJson(state));
+            Assert.AreEqual(recipe.label,WaveController.SelectResonanceOrdinary(zone,25,resumed,new SavedRandom(unchecked((uint)seed*2654435761u))).label);
+        }
+    }
+
+    [Test] public void PostCapstoneReliefUsesCurrentDepthAndEndsAfterOneEncounter()
+    {
+        foreach(var zone in Resources.LoadAll<ZoneDefinition>("Zones").Where(z=>z.eligibleForLiveTravel))
+        {
+            var state=new CrystalResonanceSnapshot {version=1,zoneId=zone.zoneId,charge=90,capstoneWave=45,
+                lastBankedWave=45,capstonePhase=ResonanceCapstonePhase.Defeated};
+            state.seenMechanics.AddRange(zone.enemies.Select(e=>e.EnemyId));
+            for(int seed=1;seed<=100;seed++)
+            {
+                var recipe=WaveController.SelectResonanceOrdinary(zone,46,state,new SavedRandom(unchecked((uint)seed*2654435761u)));
+                Assert.IsTrue(recipe.members.Length<=2 && recipe.members.All(e=>e.Category==EnemyCategory.Normal),zone.zoneId+"/"+recipe.label);
+                Assert.IsTrue(WaveController.ResonanceFormationLegal(zone,recipe,4,state,false));
+            }
+            state.lastBankedWave=46;
+            Assert.IsTrue(Enumerable.Range(1,100).Any(seed=>WaveController.SelectResonanceOrdinary(zone,47,state,new SavedRandom(unchecked((uint)seed*2654435761u)))
+                .members.Any(e=>e.Category==EnemyCategory.Special)),"Relief must not suppress all later pressure: "+zone.zoneId);
+        }
+    }
+
+    [Test] public void ARecentReliefRecipeCanPreventAnAdjacentSpecialVariant()
+    {
+        var zone=UnityEngine.Object.Instantiate(Resources.Load<ZoneDefinition>("Zones/drowned-court"));
+        try
+        {
+            zone.resonanceEncounters=zone.resonanceEncounters.Where(r=>new[]{"Learn moray_siphoner","Patrol moray_siphoner","Quiet patrol"}.Contains(r.label)).ToArray();
+            var state=new CrystalResonanceSnapshot();state.seenMechanics.AddRange(zone.enemies.Select(e=>e.EnemyId));
+            state.recentRecipes.AddRange(new[]{"Quiet patrol","Learn moray_siphoner"});
+            Assert.AreEqual("Quiet patrol",WaveController.SelectResonanceOrdinary(zone,25,state,new SavedRandom(12)).label,
+                "A fresh label must not defeat mechanic variety when the legal alternative is recent");
+        }
+        finally {UnityEngine.Object.DestroyImmediate(zone);}
+    }
+
+    [Test] public void RepetitionPreferenceNeverExhaustsTheOnlyLegalFormation()
+    {
+        var zone=UnityEngine.Object.Instantiate(Resources.Load<ZoneDefinition>("Zones/drowned-court"));
+        try
+        {
+            var only=zone.resonanceEncounters.Single(r=>r.label=="Learn moray_siphoner");
+            zone.resonanceEncounters=new[]{only};
+            var state=new CrystalResonanceSnapshot();state.seenMechanics.AddRange(zone.enemies.Select(e=>e.EnemyId));state.recentRecipes.Add(only.label);
+            Assert.AreEqual(only.label,WaveController.SelectResonanceOrdinary(zone,25,state,new SavedRandom(12)).label);
+        }
+        finally { UnityEngine.Object.DestroyImmediate(zone); }
+    }
+
 }
 #endif

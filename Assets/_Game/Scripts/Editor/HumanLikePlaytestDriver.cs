@@ -9,7 +9,7 @@ public enum ResonancePlaystyle { Novice, Typical, Skilled, Defensive, Aggressive
 /// <summary>Editor-only visible-state policy, with bounded attention. Never reads refill/encounter RNG.</summary>
 public sealed class HumanLikePlaytestDriver
 {
-    public const string PolicyVersion = "attention-v2";
+    public const string PolicyVersion = "attention-v3-slide";
     public readonly ResonancePlaystyle Style;
     private readonly System.Random decisions;
     private float nextAction, cardReady = -1;
@@ -194,15 +194,23 @@ public sealed class HumanLikePlaytestDriver
     {
         if (option.UsesSpecial || option.CreatesSpecial) return 0;
         int[,] types = new int[board.Width, board.Height];
-        for (int x = 0; x < board.Width; x++) for (int y = 0; y < board.Height; y++) types[x, y] = -1;
+        var moved = new Gem[board.Width, board.Height];
+        for (int x = 0; x < board.Width; x++) for (int y = 0; y < board.Height; y++)
+        {
+            types[x, y] = -1;
+            var gem = board.GetGem(x, y);
+            if (gem == null || board.IsGemPinned(gem) || board.IceStage(gem) != FrostStage.None) return 0;
+            // The visible preview can rotate three pieces underwater/while Slippery.
+            // Treating it as an adjacent swap invented or missed follow-up matches.
+            var cell = option.FinalCell(gem);
+            moved[cell.x, cell.y] = gem;
+        }
         for (int x = 0; x < board.Width; x++)
         {
             int destination = 0;
             for (int y = 0; y < board.Height; y++)
             {
-                var original = board.GetGem(x, y);
-                if (original == null || board.IsGemPinned(original) || board.IceStage(original) != FrostStage.None) return 0;
-                var gem = original == option.Source ? option.Target : original == option.Target ? option.Source : original;
+                var gem = moved[x, y];
                 if (option.Clears.Contains(gem)) continue;
                 if (gem.SpecialType != GemSpecialType.None) return 0;
                 types[x, destination++] = (int)gem.Type;
