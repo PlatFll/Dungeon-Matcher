@@ -1303,32 +1303,20 @@ Exact formula and level costs: `Docs/BALANCE_V1.md`.
 
 # 14. Consumables and Shop
 
-Balance v1 Shop sells only:
+The mouse merchant sells five supplies from a fixed counter above a scrolling catalogue.
 
-1. **Health Potion**
-2. **Bomb**
+| Potion slot | Gold | Effect |
+| --- | ---: | --- |
+| Health Potion | 18 | Restores 35% of maximum HP |
+| Shield Potion | 22 | Grants up to 25 shield for three completed moves |
+| Mega Potion | 42 | Restores full HP |
 
-Current prices:
+| Bomb slot | Gold | Effect |
+| --- | ---: | --- |
+| Bomb | 24 | Clears the confirmed 3×3 area |
+| Color Bomb | 48 | Clears playable gems of the confirmed color |
 
-- Potion: **18 Gold**
-- Bomb: **24 Gold**
-
-Rules:
-
-- Inventory is persistent account state.
-- Each item type has its own Equip/Unequip state.
-- Both may be equipped simultaneously.
-- At run start, each equipped item receives `min(3, owned quantity)` usable run charges.
-- The rest of the persistent inventory does **not** refill the slot mid-run.
-- Inventory is deducted only when an item use is actually accepted.
-- Rejected/cancelled uses spend nothing.
-- Each slot has an independent **5-second game-time cooldown**.
-- Cooldowns pause with gameplay.
-- Running out of run charges disables further use even if persistent inventory still exists.
-
-Current Potion effect: heal **35% maximum HP**.
-
-The Bomb consumable uses board-owned targeting/resolution and must not create a parallel clear/damage pipeline.
+Each slot holds one equipped item. Buying adds to persistent stock. Starting a standard run loads up to three uses of each equipped item. Accepted uses spend a charge and one owned item atomically. The two slots retain independent cooldowns and their selected items through Continue. Legacy loadouts default to Health Potion and Bomb.
 
 ---
 
@@ -1510,7 +1498,7 @@ Current connected UI flow includes:
 
 ## Shop
 
-- Potion and Bomb only for now;
+- five supplies across the potion and bomb equipment slots;
 - purchase quantities;
 - owned stock;
 - Equip/Unequip state.
