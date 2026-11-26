@@ -59,6 +59,9 @@ for fam,source,cy in [('Poison','PoisonA',38),('Healing','HealingC',36),('Star',
                     if (x-32)**2+(y-cy)**2<=100:checks['poisonHealingSocketsUnchanged'] &= im.getpixel((x,y))==still.getpixel((x,y))
     checks['animatedFamilies'][fam]=len(unique);assert len(unique)>1,(fam,'idle lost its animation')
 star_base=Image.open(root/'ArtSource/MouseMerchant/BoardColorBomb.png').convert('RGBA')
+mask = star_base.getchannel('A')
+checks['colorBombRoundSilhouette'] = mask.tobytes() == mask.transpose(Image.Transpose.ROTATE_90).tobytes()
+assert checks['colorBombRoundSilhouette'], 'Color Bomb outline differs after a quarter turn'
 # Every nonwhite reflective pixel must visibly catch the light at least once,
 # including the farthest facet. Dark outline and alpha must never be altered.
 reflective={(x,y) for y in range(64) for x in range(64)

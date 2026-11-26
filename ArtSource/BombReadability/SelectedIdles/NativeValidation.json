@@ -2,7 +2,7 @@
   "shieldUnchanged": true,
   "rattlebonesUnchanged": true,
   "frameCount": 104,
-  "minimumEdgeClearance": 2,
+  "minimumEdgeClearance": 3,
   "binaryAlpha": true,
   "poisonHealingSocketsUnchanged": true,
   "starSilhouetteAnchored": true,
@@ -15,10 +15,11 @@
     "RowIdle": 3,
     "ColumnIdle": 3
   },
+  "colorBombRoundSilhouette": true,
   "starGlintFullCoverage": true,
   "starGlintOnlyReflectivePixels": true,
   "starGlintDiagonalRange": [
-    22,
-    104
+    24,
+    102
   ]
 }
