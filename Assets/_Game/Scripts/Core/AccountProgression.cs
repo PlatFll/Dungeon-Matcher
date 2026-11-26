@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public enum ConsumableKind { HealthPotion, Bomb }
+public enum ConsumableKind { HealthPotion = 0, Bomb = 1, ShieldPotion = 2, MegaPotion = 3, ColorBomb = 4 }
 public enum RunChallenge { Standard, NoSupplies, BoardOnly }
 
 [Serializable]
@@ -53,6 +53,8 @@ public sealed class AccountRunJournal
     public bool kingCleared;
     public int potionCharges;
     public int bombCharges;
+    public ConsumableKind potionKind;
+    public ConsumableKind bombKind = ConsumableKind.Bomb;
     public int initialPotionCharges;
     public int initialBombCharges;
     public int draftWave;
@@ -70,6 +72,9 @@ public sealed class AccountSave
     public List<GemSpecialType> unlocked = new List<GemSpecialType> { GemSpecialType.ColorCrystal };
     public int potions;
     public int bombs;
+    public int shieldPotions, megaPotions, colorBombs;
+    public ConsumableKind potionKind;
+    public ConsumableKind bombKind = ConsumableKind.Bomb;
     public bool equipPotions;
     public bool equipBombs;
     public int bestWave;
@@ -152,6 +157,7 @@ public sealed class AccountProgression
         state = Clone(practiceState);
         state.run = null; state.lastReward = null;
         state.potions = state.bombs = 3; state.equipPotions = state.equipBombs = true;
+        Stock(state, state.potionKind) = Stock(state, state.bombKind) = 3;
         IsPractice = true;
     }
 
@@ -161,13 +167,32 @@ public sealed class AccountProgression
         current = new AccountProgression(prior.state);
         return new RestoreProfile(() => current = prior);
     }
-    public int Owned(ConsumableKind kind) => kind == ConsumableKind.HealthPotion ? state.potions : state.bombs;
-    public bool Equipped(ConsumableKind kind) => kind == ConsumableKind.HealthPotion ? state.equipPotions : state.equipBombs;
+    private static ref int Stock(AccountSave save, ConsumableKind kind)
+    {
+        switch (kind)
+        {
+            case ConsumableKind.HealthPotion: return ref save.potions;
+            case ConsumableKind.ShieldPotion: return ref save.shieldPotions;
+            case ConsumableKind.MegaPotion: return ref save.megaPotions;
+            case ConsumableKind.Bomb: return ref save.bombs;
+            case ConsumableKind.ColorBomb: return ref save.colorBombs;
+            default: throw new ArgumentOutOfRangeException(nameof(kind));
+        }
+    }
+
+    public int Owned(ConsumableKind kind) => Stock(state, kind);
+    public bool Equipped(ConsumableKind kind) => SupplyCatalog.IsPotion(kind)
+        ? state.equipPotions && state.potionKind == kind
+        : state.equipBombs && state.bombKind == kind;
+    public ConsumableKind SelectedPotion => state.potionKind;
+    public ConsumableKind SelectedBomb => state.bombKind;
+    public ConsumableKind RunPotion => state.run?.potionKind ?? ConsumableKind.HealthPotion;
+    public ConsumableKind RunBomb => state.run?.bombKind ?? ConsumableKind.Bomb;
     public bool IsUnlocked(GemSpecialType type) => type == GemSpecialType.ColorCrystal ||
         type == GemSpecialType.RowBomb || type == GemSpecialType.ColumnBomb || state.unlocked.Contains(type);
     public bool IsUnlocked(GemMasteryReward reward) => GemMasteryRuntimeResolver.TryGetSpecialType(reward, out var type) && IsUnlocked(type);
     public int Charges(string runId, ConsumableKind kind) => state.run == null || state.run.id != runId ? 0 :
-        kind == ConsumableKind.HealthPotion ? state.run.potionCharges : state.run.bombCharges;
+        kind == RunPotion ? state.run.potionCharges : kind == RunBomb ? state.run.bombCharges : 0;
 
     public bool TryLevelUp(string id)
     {
@@ -198,16 +223,29 @@ public sealed class AccountProgression
     public bool TryPurchase(ConsumableKind kind)
     {
         if (!Enum.IsDefined(typeof(ConsumableKind), kind)) return false;
-        int price = kind == ConsumableKind.HealthPotion ? BalanceV1.Current.potionPrice : BalanceV1.Current.bombPrice;
+        int price = SupplyCatalog.Price(kind);
         if (state.run != null || price < 1 || Gold < price || Owned(kind) >= 9999) return false;
-        return Commit(next => { next.gold -= price; if (kind == ConsumableKind.HealthPotion) next.potions++; else next.bombs++; });
+        return Commit(next => { next.gold -= price; Stock(next, kind)++; });
     }
 
     public bool SetEquipped(ConsumableKind kind, bool equipped)
     {
         if (!Enum.IsDefined(typeof(ConsumableKind), kind)) return false;
         if (state.run != null || (equipped && Owned(kind) < 1)) return false;
-        return Commit(next => { if (kind == ConsumableKind.HealthPotion) next.equipPotions = equipped; else next.equipBombs = equipped; });
+        if (!equipped && !Equipped(kind)) return true;
+        return Commit(next =>
+        {
+            if (SupplyCatalog.IsPotion(kind))
+            {
+                next.potionKind = kind;
+                next.equipPotions = equipped;
+            }
+            else
+            {
+                next.bombKind = kind;
+                next.equipBombs = equipped;
+            }
+        });
     }
 
     public string BeginRun(string playerId, RunChallenge challenge = RunChallenge.Standard)
@@ -216,16 +254,17 @@ public sealed class AccountProgression
             (challenge != RunChallenge.Standard && !HasClearedKing)) return null;
         string id = Guid.NewGuid().ToString("N");
         int cap = Math.Min(3, Math.Max(0, BalanceV1.Current.maximumRunCharges));
+        int potions = challenge == RunChallenge.Standard && state.equipPotions ? Math.Min(cap, Owned(state.potionKind)) : 0;
+        int bombs = challenge == RunChallenge.Standard && state.equipBombs ? Math.Min(cap, Owned(state.bombKind)) : 0;
         return Commit(next => next.run = new AccountRunJournal
         {
             id = id, playerId = playerId, level = Level(playerId), challenge = challenge,
             supportsContinuation=true,
             mastery=new List<GemMasteryReward> { GemMasterySettings.Current.StraightFive,GemMasterySettings.Current.LShape,
                 GemMasterySettings.Current.TShape,GemMasterySettings.Current.CrossShape },
-            potionCharges = challenge == RunChallenge.Standard && next.equipPotions ? Math.Min(cap, next.potions) : 0,
-            bombCharges = challenge == RunChallenge.Standard && next.equipBombs ? Math.Min(cap, next.bombs) : 0,
-            initialPotionCharges = challenge == RunChallenge.Standard && next.equipPotions ? Math.Min(cap, next.potions) : 0,
-            initialBombCharges = challenge == RunChallenge.Standard && next.equipBombs ? Math.Min(cap, next.bombs) : 0
+            potionKind = next.potionKind, bombKind = next.bombKind,
+            potionCharges = potions, initialPotionCharges = potions,
+            bombCharges = bombs, initialBombCharges = bombs
         }) ? id : null;
     }
 
@@ -264,10 +303,7 @@ public sealed class AccountProgression
         return Commit(next=>
         {
             next.run.tape=Clone(tape);
-            if(supply==ConsumableKind.HealthPotion)
-            { next.potions--; next.run.potionCharges--; if(next.potions==0) next.equipPotions=false; }
-            else if(supply==ConsumableKind.Bomb)
-            { next.bombs--; next.run.bombCharges--; if(next.bombs==0) next.equipBombs=false; }
+            if (supply.HasValue) Spend(next, supply.Value);
         });
     }
     public void BeginContinuationReplay(RunCombatSnapshot saved)
@@ -276,8 +312,8 @@ public sealed class AccountProgression
         beforeReplay=state; state=Clone(state);
         // Rebuild pre-action stock in memory. Durable inventory is replaced only
         // after the same accepted actions run through their gameplay owners.
-        state.potions+=saved.potionCharges-state.run.potionCharges;
-        state.bombs+=saved.bombCharges-state.run.bombCharges;
+        Stock(state, RunPotion)+=saved.potionCharges-state.run.potionCharges;
+        Stock(state, RunBomb)+=saved.bombCharges-state.run.bombCharges;
         state.run.potionCharges=saved.potionCharges; state.run.bombCharges=saved.bombCharges;
         state.run.completedWaves=saved.completedWaves; state.run.milestoneCount=saved.milestones;
         state.run.kingCleared=saved.kingCleared; state.run.draftWave=saved.draftWave;
@@ -306,11 +342,22 @@ public sealed class AccountProgression
     {
         if (!Enum.IsDefined(typeof(ConsumableKind), kind)) return false;
         if (Charges(runId, kind) <= 0 || Owned(kind) <= 0) return false;
-        return Commit(next =>
+        return Commit(next => Spend(next, kind));
+    }
+
+    private static void Spend(AccountSave next, ConsumableKind kind)
+    {
+        int remaining = --Stock(next, kind);
+        if (SupplyCatalog.IsPotion(kind))
         {
-            if (kind == ConsumableKind.HealthPotion) { next.potions--; next.run.potionCharges--; if (next.potions == 0) next.equipPotions = false; }
-            else { next.bombs--; next.run.bombCharges--; if (next.bombs == 0) next.equipBombs = false; }
-        });
+            next.run.potionCharges--;
+            if (remaining == 0) next.equipPotions = false;
+        }
+        else
+        {
+            next.run.bombCharges--;
+            if (remaining == 0) next.equipBombs = false;
+        }
     }
 
     public RunRewardSummary PreviewReward(string reason)
@@ -324,8 +371,8 @@ public sealed class AccountProgression
         summary.milestoneGold = r.milestoneCount * balance.milestoneGold + (r.kingCleared ? balance.kingGold : 0);
         summary.bestGold = Math.Max(0, r.completedWaves - state.bestWave) * balance.bestWaveGold;
         summary.firstClearGold = r.kingCleared && !state.firstKingClaimed ? balance.firstKingGold : 0;
-        summary.supplyValue = Math.Max(0,r.initialPotionCharges-r.potionCharges)*balance.potionPrice +
-            Math.Max(0,r.initialBombCharges-r.bombCharges)*balance.bombPrice;
+        summary.supplyValue = Math.Max(0,r.initialPotionCharges-r.potionCharges)*SupplyCatalog.Price(r.potionKind) +
+            Math.Max(0,r.initialBombCharges-r.bombCharges)*SupplyCatalog.Price(r.bombKind);
         return summary;
     }
 
@@ -441,14 +488,21 @@ public sealed class AccountProgression
         save.bestWave = Math.Max(0, save.bestWave);
         if (save.run != null && string.IsNullOrEmpty(save.run.id)) save.run = null;
         if (save.lastReward != null && string.IsNullOrEmpty(save.lastReward.runId)) save.lastReward = null;
-        if (save.potions == 0) save.equipPotions = false;
-        if (save.bombs == 0) save.equipBombs = false;
+        save.potionKind = SupplyCatalog.PotionOrDefault(save.potionKind);
+        save.bombKind = SupplyCatalog.BombOrDefault(save.bombKind);
+        save.shieldPotions = Mathf.Clamp(save.shieldPotions, 0, 9999);
+        save.megaPotions = Mathf.Clamp(save.megaPotions, 0, 9999);
+        save.colorBombs = Mathf.Clamp(save.colorBombs, 0, 9999);
+        if (Stock(save, save.potionKind) == 0) save.equipPotions = false;
+        if (Stock(save, save.bombKind) == 0) save.equipBombs = false;
         if (save.run != null)
         {
+            save.run.potionKind = SupplyCatalog.PotionOrDefault(save.run.potionKind);
+            save.run.bombKind = SupplyCatalog.BombOrDefault(save.run.bombKind);
             save.run.completedWaves = Mathf.Clamp(save.run.completedWaves, 0, 10000);
             save.run.milestoneCount = Mathf.Clamp(save.run.milestoneCount, 0, 4);
-            save.run.potionCharges = Mathf.Clamp(save.run.potionCharges, 0, Math.Min(3, save.potions));
-            save.run.bombCharges = Mathf.Clamp(save.run.bombCharges, 0, Math.Min(3, save.bombs));
+            save.run.potionCharges = Mathf.Clamp(save.run.potionCharges, 0, Math.Min(3, Stock(save, save.run.potionKind)));
+            save.run.bombCharges = Mathf.Clamp(save.run.bombCharges, 0, Math.Min(3, Stock(save, save.run.bombKind)));
         }
         foreach (var p in save.characters) p.level = Mathf.Clamp(p.level, 1, BalanceV1.Current.levelCap);
         UnlockMilestones(save);

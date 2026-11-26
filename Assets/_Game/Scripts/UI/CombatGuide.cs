@@ -96,7 +96,7 @@ public static class CombatGuide
     public static string Continue(RunSession run)
     {
         var text=new StringBuilder($"Continue wave {run.Waves.CurrentWave}\n{run.Player.Definition.DisplayName}: {run.Player.CurrentHealth} HP / {run.Player.CurrentShield} shield\n");
-        text.AppendLine($"Supplies: {run.Charges(ConsumableKind.HealthPotion)} Potions / {run.Charges(ConsumableKind.Bomb)} Bombs\n");
+        text.AppendLine($"Supplies: {run.Charges(run.PotionKind)} {SupplyCatalog.Name(run.PotionKind)} / {run.Charges(run.BombKind)} {SupplyCatalog.Name(run.BombKind)}\n");
         foreach(var enemy in run.Waves.ActiveEnemies)
             text.AppendLine($"{enemy.Definition.DisplayName}: next attack in {enemy.GetComponent<EnemyAutoAttack>()?.RemainingAttackTime:0.#} {(CombatMoveClock.MoveBasics ? "moves" : "seconds")}");
         text.AppendLine("\nNo combat time passed while you were away. Resume when ready.\n");

@@ -182,8 +182,8 @@ public sealed class RunContinuation : MonoBehaviour
         if(checkpoint==null) return false;
         if(tape.frames.Count==0) tape.frames.Add(new RunReplayFrame {delta=newBoundary?0:Time.deltaTime});
         var actions=tape.frames[tape.frames.Count-1].actions; actions.Add(action);
-        ConsumableKind? supply=action.kind==RunActionKind.Potion?ConsumableKind.HealthPotion:
-            action.kind==RunActionKind.Bomb?ConsumableKind.Bomb:(ConsumableKind?)null;
+        ConsumableKind? supply=action.kind==RunActionKind.Potion?session.PotionKind:
+            action.kind==RunActionKind.Bomb?session.BombKind:(ConsumableKind?)null;
         if(account.AcceptRecordedAction(session.RunId,tape,supply)) return true;
         actions.RemoveAt(actions.Count-1); Error=account.LastError; return false;
     }

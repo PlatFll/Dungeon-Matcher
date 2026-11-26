@@ -87,7 +87,7 @@ public static class BalancePlayValidation
         menu.ShowHome();menu.ShowShop();yield return Capture("05-shop");
         var shop=UnityEngine.Object.FindFirstObjectByType<ShopMenuController>();
         var buys=shop.GetComponentsInChildren<Button>().Where(b=>b.name=="Buy").ToArray();
-        Check(buys.Length==2,"shop contains only the two authorized items");buys[0].onClick.Invoke();
+        Check(buys.Length==5,"shop contains five supply entries");buys[0].onClick.Invoke();
         foreach(var equip in shop.GetComponentsInChildren<Button>().Where(b=>b.name=="Equip"))equip.onClick.Invoke();
         Check(AccountProgression.Current.Equipped(ConsumableKind.HealthPotion)&&AccountProgression.Current.Equipped(ConsumableKind.Bomb),"both item types equip together");
         yield return Capture("06-shop-equipped");menu.ShowHome();menu.PlayGame();
