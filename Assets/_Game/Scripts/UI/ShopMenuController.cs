@@ -127,7 +127,12 @@ public sealed class ShopMenuController : MonoBehaviour
         rows.Add(row);
         var parent = row.body = Box("Contents", row.root, 0, 0, 449, 116);
         var well = Picture("ItemSocket", parent, "Socket", 12, 14, 83, 88, sliced: true);
-        Picture("ItemIcon", well.transform, kind.ToString(), 10.5f, 12, 62, 64, preserve: true);
+        var icon = Picture("ItemIcon", well.transform, kind.ToString(), 0, 0, 0, 0, preserve: true);
+        Stretch(icon.rectTransform);
+        // The nine-sliced stone rim uses part of the inset. Leave empty face around the silhouette.
+        const float itemInset = 22;
+        icon.rectTransform.offsetMin = new Vector2(itemInset, itemInset);
+        icon.rectTransform.offsetMax = -icon.rectTransform.offsetMin;
 
         var details = Box("Details", parent, 106, 8, 191, 100);
         var stack = details.gameObject.AddComponent<VerticalLayoutGroup>();

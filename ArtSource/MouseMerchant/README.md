@@ -25,3 +25,5 @@ The board and equipped bomb slot use a 60 × 60 rainbow gem on a 64 × 64 canvas
 [Editable animation](../BombReadability/SelectedIdles/Editable/Star.aseprite) · [Board master](BoardColorBomb.png) · [Before and after in the shop](Shop-alignment-comparison.png)
 
 The revision passed the repository validator and 13 affected Unity tests on 6000.3.19f1. Those tests cover all five item sockets, prices aligned above their buttons at three portrait sizes, scroll and purchase behavior, the equipped Color Bomb icon, idle and reduced-motion behavior, and an actual board Color Crystal swap. All 32 native cels also passed the LibreSprite round-trip and glint coverage checks.
+
+All five items have a shared inset inside the shop socket. At 720 × 1280, each silhouette has at least eight rendered pixels of clear space before the inner bevel. The previous layout left zero at the closest point. The shop tests passed at 540 × 960, 720 × 1280 and 1080 × 2340. [Compare all five items in Unity](Shop-item-padding.png).

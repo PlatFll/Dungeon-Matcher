@@ -124,6 +124,14 @@ public sealed class MouseMerchantTests
                 var icon = (RectTransform)well.Find("ItemIcon");
                 Assert.That(icon.pivot, Is.EqualTo(new Vector2(.5f, .5f)));
                 Assert.That(Vector3.Distance(well.TransformPoint(well.rect.center), icon.TransformPoint(icon.rect.center)), Is.LessThan(.1f));
+                var socket = well.GetComponent<Image>();
+                Vector4 rim = socket.sprite.border / (socket.pixelsPerUnit * socket.pixelsPerUnitMultiplier);
+                // Measure empty space inside the stone on all four sides, in shop layout units.
+                Bounds itemBounds = RectTransformUtility.CalculateRelativeRectTransformBounds(well, icon);
+                Assert.That(itemBounds.min.x - (well.rect.xMin + rim.x), Is.GreaterThanOrEqualTo(8f), row.name + " left");
+                Assert.That(itemBounds.min.y - (well.rect.yMin + rim.y), Is.GreaterThanOrEqualTo(8f), row.name + " bottom");
+                Assert.That(well.rect.xMax - rim.z - itemBounds.max.x, Is.GreaterThanOrEqualTo(8f), row.name + " right");
+                Assert.That(well.rect.yMax - rim.w - itemBounds.max.y, Is.GreaterThanOrEqualTo(8f), row.name + " top");
                 var group = (RectTransform)body.Find("PriceGroup");
                 var price = (RectTransform)group.Find("Price");
                 var priceCoin = (RectTransform)group.Find("Coin");
