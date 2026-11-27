@@ -1549,13 +1549,14 @@ Current connected UI flow includes:
 
 ## Characters
 
-- choose character;
+- four roster cards use the same player sprites that appear in battle; selecting a card chooses the character for a new run;
 - independent level display;
-- current stats;
+- level, HP, base damage per gem, direct ability damage, energy cost and shield cap use production character data;
 - next-level improvements;
 - level-up Gold price;
 - affordability/max-level handling;
 - confirmed reset to level 1 for the selected character, disabled during a saved run;
+- the Cards tab browses the run-upgrade catalog for this character; Special Gems opens the existing mastery editor and Back returns to the roster;
 - small level-up feedback/VFX.
 
 ## Shop
