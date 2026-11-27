@@ -209,8 +209,8 @@ public sealed partial class CharacterSelectMenuController
     private Button Tab(string name,string label,int x,int width,Sprite icon,Action action)
     {
         var button = Control(name+"Tab",footer,Art("Stats"),x,0,width,42,action);
-        Picture("Symbol",button.transform,icon,(width-17)/2f,1,17,17,true);
-        Text("Title",button.transform,label,4,18,width-8,20,20);
+        Picture("Symbol",button.transform,icon,(width-14)/2f,5,14,14,true);
+        Text("Title",button.transform,label,8,21,width-16,15,18);
         return button;
     }
 

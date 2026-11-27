@@ -100,10 +100,21 @@ public sealed partial class CharacterSelectMenuController
         cardPage.gameObject.SetActive(target == MenuPage.Cards);
         masteryPage.gameObject.SetActive(target == MenuPage.Gems);
         titleLabel.text = rosterOpen ? "CHARACTERS" : target == MenuPage.Cards ? "CARDS" : "SPECIAL GEMS";
-        header.sprite = rosterOpen ? Art("Plaque") : ShopArt("Title");
-        header.rectTransform.anchoredPosition = rosterOpen ? new Vector2(52,-6) : new Vector2(72,-27);
-        header.rectTransform.sizeDelta = rosterOpen ? new Vector2(184,47) : new Vector2(216,50);
-        titleLabel.rectTransform.anchoredPosition = rosterOpen ? new Vector2(11,-10) : new Vector2(27,-14);
+        if (target == MenuPage.Gems)
+        {
+            // The wallet and back button occupy the first line. Center the title on the line below.
+            header.sprite = Art("Plaque");
+            header.rectTransform.anchoredPosition = new Vector2(78, -46);
+            header.rectTransform.sizeDelta = new Vector2(204, 34);
+            titleLabel.rectTransform.anchoredPosition = new Vector2(21, -4);
+        }
+        else
+        {
+            header.sprite = rosterOpen ? Art("Plaque") : ShopArt("Title");
+            header.rectTransform.anchoredPosition = rosterOpen ? new Vector2(52,-6) : new Vector2(72,-27);
+            header.rectTransform.sizeDelta = rosterOpen ? new Vector2(184,47) : new Vector2(216,50);
+            titleLabel.rectTransform.anchoredPosition = rosterOpen ? new Vector2(11,-10) : new Vector2(27,-14);
+        }
         cardsTab.image.sprite = Art(target == MenuPage.Cards ? "RosterSelected" : "Stats");
         charactersTab.image.sprite = Art(rosterOpen ? "RosterSelected" : "Stats");
         gemsTab.image.sprite = Art(target == MenuPage.Gems ? "RosterSelected" : "Stats");
@@ -209,7 +220,7 @@ public sealed partial class CharacterSelectMenuController
     {
         viewport.sizeDelta = new Vector2(330, 383 + extra);
         ((RectTransform)scrollBar.transform).sizeDelta = new Vector2(10, 381 + extra);
-        masteryPage.anchoredPosition = new Vector2(0, -84 - extra * .35f);
+        LayoutMastery(extra);
         UpdateRail();
     }
 

@@ -289,10 +289,76 @@ public sealed class CharacterChamberPlayTests
         finally { animator.speed = 1; }
     }
 
+    private static Rect BoundsIn(RectTransform parent, RectTransform child)
+    {
+        var corners = new Vector3[4];
+        child.GetWorldCorners(corners);
+        Vector2 a = parent.InverseTransformPoint(corners[0]);
+        Vector2 b = parent.InverseTransformPoint(corners[2]);
+        return Rect.MinMaxRect(Mathf.Min(a.x,b.x), Mathf.Min(a.y,b.y), Mathf.Max(a.x,b.x), Mathf.Max(a.y,b.y));
+    }
+
+    private static void CheckMasteryAlignment(RectTransform page)
+    {
+        foreach (var button in Find<RectTransform>(page,"Shapes").GetComponentsInChildren<Button>())
+        {
+            var tile = (RectTransform)button.transform;
+            var grid = BoundsIn(tile, Find<RectTransform>(tile,"MatchDiagram"));
+            var label = BoundsIn(tile, Find<TMP_Text>(tile,"ShapeName").rectTransform);
+            Assert.That(grid.center.x, Is.EqualTo(tile.rect.center.x).Within(.1f), tile.name);
+            Assert.GreaterOrEqual(tile.rect.yMax - grid.yMax, 8f, tile.name + " top inset");
+            Assert.GreaterOrEqual(grid.yMin - label.yMax, 1f, tile.name + " caption gap");
+            Assert.GreaterOrEqual(label.yMin - tile.rect.yMin, 7f, tile.name + " bottom inset");
+        }
+        foreach (var reward in Find<RectTransform>(page,"Results").GetComponentsInChildren<Button>())
+        {
+            var row = (RectTransform)reward.transform;
+            var shell = Find<Image>(row,"RewardIcon");
+            var badge = Find<Image>(row,"Selection").rectTransform;
+            var icon = BoundsIn(row,shell.rectTransform);
+            var title = BoundsIn(row,Find<TMP_Text>(row,"RewardName").rectTransform);
+            var effect = BoundsIn(row,Find<TMP_Text>(row,"Effect").rectTransform);
+            var action = BoundsIn(row,badge);
+            Assert.That(icon.center.y,Is.EqualTo(row.rect.center.y).Within(.1f));
+            Assert.That(action.center.y,Is.EqualTo(row.rect.center.y).Within(.1f));
+            Assert.GreaterOrEqual(icon.xMin - row.rect.xMin, 9f);
+            Assert.GreaterOrEqual(title.xMin - icon.xMax, 6f);
+            Assert.GreaterOrEqual(action.xMin - effect.xMax, 8f);
+            Assert.GreaterOrEqual(row.rect.xMax - action.xMax, 9f);
+            var caption = BoundsIn(badge,Find<TMP_Text>(badge,"Action").rectTransform);
+            Assert.Less(Vector2.Distance(caption.center,badge.rect.center),.1f);
+            Assert.GreaterOrEqual(caption.xMin - badge.rect.xMin, 7f);
+        }
+        foreach (var stone in page.GetComponentsInChildren<Image>().Where(i => i.name == "SourceAmethyst"))
+        {
+            var shell = stone.transform.parent.GetComponent<Image>();
+            var frame = shell.rectTransform;
+            var sprite = shell.sprite;
+            var nativeSize = sprite.rect.size;
+            float scale = Mathf.Min(frame.rect.width/nativeSize.x,frame.rect.height/nativeSize.y);
+            // UI.Image applies aspect padding on the side determined by the RectTransform pivot.
+            var origin = frame.rect.min + Vector2.Scale(frame.pivot,frame.rect.size - nativeSize*scale);
+            var type = shell.sprite.name.Contains("Poison") ? GemSpecialType.PoisonBomb :
+                shell.sprite.name.Contains("Heal") ? GemSpecialType.HealingBomb : GemSpecialType.ShieldBomb;
+            var socket = sprite.pivot + (Vector2)BombIdleArt.SocketOffset(type)*sprite.pixelsPerUnit;
+            var expected = origin + socket*scale;
+            var actual = BoundsIn(frame,stone.rectTransform).center;
+            Assert.Less(Vector2.Distance(expected,actual),.5f,sprite.name + " inset gem must sit in the painted socket");
+        }
+        var setup = Find<RectTransform>(page,"CurrentSetup");
+        var left = BoundsIn(setup,Find<RectTransform>(setup,"MatchDiagram"));
+        var right = BoundsIn(setup,Find<Image>(setup,"EquippedGem").rectTransform);
+        var arrow = BoundsIn(setup,Find<Image>(setup,"ResultArrow").rectTransform);
+        Assert.That(arrow.center.x,Is.EqualTo(setup.rect.center.x).Within(.1f));
+        Assert.That((left.center.x + right.center.x)*.5f,Is.EqualTo(arrow.center.x).Within(.1f));
+    }
+
     private static IEnumerator Shot(Component panel,string name)
     {
         yield return null; yield return null;
         Canvas.ForceUpdateCanvases();
+        var mastery = panel.GetComponentsInChildren<RectTransform>().FirstOrDefault(r => r.name == "SpecialGemBuild");
+        if (mastery != null) CheckMasteryAlignment(mastery);
         var hero = panel.GetComponentsInChildren<Image>().FirstOrDefault(i => i.name=="CharacterPreview");
         if (hero != null) CheckFooting(panel,hero);
         foreach(var label in panel.GetComponentsInChildren<TMP_Text>())
