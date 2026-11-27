@@ -1,5 +1,10 @@
 ## Current production integration, 2026-11-27
 
+### Cards journal and Special Gems
+
+The Characters menu links to a scrollable account journal of run cards seen and a per-character Special Gems page. Four independent five-gem shape assignments inherit the previous shared setup. Bomb unlocks remain account-wide, and Continue retains the run’s original loadout.
+
+
 The production Game scene uses Crystal Resonance with the latest recovered balance tuning and Early/Mid/Late encounter selection in all five zones. The ten expansion enemies, merchant shop, five two-slot supplies and rounded board Color Bomb are included together. Fresh runs start in Dungeon. Continue resumes the saved zone, crystal, encounter and equipped supplies. The saved-run menu shows Resonance progress. See the [integration evidence and remaining device checks](Validation/CRYSTAL_RESONANCE_MAIN_INTEGRATION.md). The dated candidate and testing checkpoints below record the development history.
 
 ## Selection repair and non-boss expansion — stacked review candidate, 2026-11-19

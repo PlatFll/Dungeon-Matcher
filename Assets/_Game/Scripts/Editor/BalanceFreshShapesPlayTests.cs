@@ -24,7 +24,6 @@ public sealed class BalanceFreshShapesPlayTests
         File.WriteAllText(path,JsonUtility.ToJson(new AccountSave{gold=10000}));
         using(AccountProgression.UseDisposableProfile(path))
         using(CharacterSelectionSettings.UseTemporarySelection("skeleton"))
-        using(GemMasterySettings.UseTemporaryLoadout(GemMasteryLoadout.Default))
         {
             SceneManager.LoadScene("MainMenu");yield return null;yield return null;
             var menu=UnityEngine.Object.FindFirstObjectByType<MainMenuController>();
@@ -39,8 +38,8 @@ public sealed class BalanceFreshShapesPlayTests
                 Assert.That(AccountProgression.Current.Level("skeleton"),Is.EqualTo(level));
                 Assert.That(AccountProgression.Current.Level("bardley"),Is.EqualTo(1));
                 menu.ShowHome();menu.ShowGemMastery();yield return null;
-                var rewards=(Button[])typeof(GemMasteryMenuController).GetField("rewardButtons",Flags)
-                    .GetValue(UnityEngine.Object.FindFirstObjectByType<GemMasteryMenuController>());
+                var rewards = new[] { "AssignColorCrystal", "AssignPoisonBomb", "AssignShieldBomb", "AssignHealBomb" }
+                    .Select(name => Button(characters,name)).ToArray();
                 Assert.That(rewards[0].interactable,Is.True);
                 Assert.That(rewards[1].interactable,Is.EqualTo(level>=3));
                 Assert.That(rewards[2].interactable,Is.EqualTo(level>=7));
@@ -70,7 +69,7 @@ public sealed class BalanceFreshShapesPlayTests
             Button(characters,"ResetLevel").onClick.Invoke();Button(characters,"ConfirmResetLevel").onClick.Invoke();
             Assert.That(AccountProgression.Current.Level("bardley"),Is.EqualTo(1));
             Assert.That(AccountProgression.Current.Level("skeleton"),Is.EqualTo(3),"Bardley reset leaves Rattlebones intact");
-            Assert.That(GemMasterySettings.GetReward(GemMasteryShape.StraightFive),Is.EqualTo(GemMasteryReward.ShieldBomb));
+            Assert.That(GemMasterySettings.GetReward(GemMasteryShape.StraightFive),Is.EqualTo(GemMasteryReward.ColorCrystal));
             menu.ShowHome();
         }
         yield return new ExitPlayMode();
@@ -87,16 +86,17 @@ public sealed class BalanceFreshShapesPlayTests
     [UnityTest] public IEnumerator FreshRowColumnAndCrystalShapesResolveThroughRealSwaps()
     {
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);yield return new EnterPlayMode();
-        for(int scenario=0;scenario<3;scenario++)
+        for(int scenario=0;scenario<4;scenario++)
         {
-            int length=scenario==1?5:4;
+            bool individual = scenario == 3;
+            int length=scenario==1 || individual ? 5 : 4;
             bool column=scenario==2;
             string path=Path.GetFullPath(".utmp/ShapeProfiles/"+Guid.NewGuid().ToString("N")+".json");Directory.CreateDirectory(Path.GetDirectoryName(path));
-            var save=new AccountSave();save.characters.Add(new CharacterProgress{id="skeleton",level=1});File.WriteAllText(path,JsonUtility.ToJson(save));
+            var save=new AccountSave();save.characters.Add(new CharacterProgress{id="skeleton",level=individual ? 3 : 1});File.WriteAllText(path,JsonUtility.ToJson(save));
             using(AccountProgression.UseDisposableProfile(path))
             using(CharacterSelectionSettings.UseTemporarySelection("skeleton"))
-            using(GemMasterySettings.UseTemporaryLoadout(GemMasteryLoadout.Default))
             {
+                if (individual) Assert.True(GemMasterySettings.SetReward(GemMasteryShape.StraightFive, GemMasteryReward.PoisonBomb));
                 SceneManager.LoadScene("Game");yield return Until(()=>RunSession.Current!=null&&RunSession.Current.Waves.IsWaveActive,"scene starts");
                 var board=RunSession.Current.Board;yield return Until(()=>!board.IsBusy&&!board.HasPendingBoardMutation,"initial board settles");
                 var grid=(Gem[,])typeof(BoardController).GetField("gems",Flags).GetValue(board);
@@ -108,7 +108,7 @@ public sealed class BalanceFreshShapesPlayTests
                 Color(to,3,sprites);Color(from,0,sprites);Color(column?grid[7,length]:grid[length,7],4,sprites);
                 int rewarded=0;board.BoardClearResolved+=clear=>{if(clear.Source==BoardClearSource.Match&&clear.CascadeDepth==0)rewarded+=clear.GemCount;};
                 int moves=board.CompletedValidPlayerMoves;
-                var expected=scenario==1?GemSpecialType.ColorCrystal:column?GemSpecialType.ColumnBomb:GemSpecialType.RowBomb;
+                var expected=individual ? GemSpecialType.PoisonBomb : scenario==1?GemSpecialType.ColorCrystal:column?GemSpecialType.ColumnBomb:GemSpecialType.RowBomb;
                 bool created=false;
                 board.StartCoroutine((IEnumerator)typeof(BoardController).GetMethod("TrySwap",Flags).Invoke(board,new object[]{from,to}));
                 yield return Until(()=>

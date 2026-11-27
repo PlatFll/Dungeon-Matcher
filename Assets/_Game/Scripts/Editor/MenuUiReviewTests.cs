@@ -36,6 +36,7 @@ public sealed class MenuUiReviewTests
     [UnityTearDown] public IEnumerator TearDown()
     {
         GlobalMenuPixelRoot.ValidationSafeArea=null;
+        GameplayPixelLayoutController.ValidationSafeArea=null;
         Time.timeScale=1; SceneManager.LoadScene("MainMenu"); yield return null;
         profile?.Dispose(); selection?.Dispose();
         RunLaunchOptions.StartingZone=null; RunLaunchOptions.Practice=false;
@@ -47,7 +48,7 @@ public sealed class MenuUiReviewTests
         var menu=Object.FindFirstObjectByType<MainMenuController>();
         Click("CharactersButton");yield return null;Assert.That(Object.FindFirstObjectByType<CharacterSelectMenuController>(),Is.Not.Null);menu.ShowHome();yield return null;
         Click("ShopButton");yield return null;Assert.That(Object.FindFirstObjectByType<ShopMenuController>(),Is.Not.Null);menu.ShowHome();yield return null;
-        menu.ShowGemMastery();yield return null;Assert.That(Object.FindFirstObjectByType<GemMasteryMenuController>(),Is.Not.Null);menu.ShowHome();yield return null;
+        menu.ShowGemMastery();yield return null;Assert.That(GameObject.Find("SpecialGemBuild"),Is.Not.Null);menu.ShowHome();yield return null;
         bool music=AudioPreferences.MusicMuted,sfx=AudioPreferences.SfxMuted,vibration=AudioPreferences.VibrationMuted,motion=PresentationPreferences.ReducedMotion;
         try
         {
@@ -223,7 +224,7 @@ public sealed class MenuUiReviewTests
         var panel=(RectTransform)stage.Find("Panel");
         Assert.That(panel.rect.size,Is.EqualTo(new Vector2(304,battle?532:348)));
         Assert.That(panel.Find("CrownedCrest"),Is.Not.Null);
-        foreach(var action in panel.GetComponentsInChildren<SettingsActionContent>())
+        foreach(var action in panel.GetComponentsInChildren<FramedActionContent>())
         {
             var button=action.GetComponent<Button>();var rect=(RectTransform)button.transform;
             var label=action.GetComponentInChildren<TMP_Text>();label.ForceMeshUpdate();
@@ -307,6 +308,143 @@ public sealed class MenuUiReviewTests
         return string.Join("\n",stage.GetComponentsInChildren<RectTransform>(true).Select(t=>
             t.name+"|"+t.anchoredPosition+"|"+t.sizeDelta+"|"+t.localScale+"|"+t.pivot));
     }
+    [UnityTest] public IEnumerator InspectProductionMenuAndCombatSurfaces()
+    {
+        string directory = Path.GetFullPath(".utmp/GameUiAlignment/" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(directory);
+        var size = new Vector2Int(360, 640);
+        typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize", BindingFlags.Static | BindingFlags.NonPublic)
+            .Invoke(null, new object[] { size });
+        yield return Until(() => Screen.width == size.x && Screen.height == size.y);
+        IEnumerator Capture(string name) => ControlledShot(Path.Combine(directory, name + ".png"));
+
+        SceneManager.LoadScene("Startup");
+        yield return new WaitForSecondsRealtime(2.5f);
+        yield return Capture("Startup");
+        yield return Until(() => SceneManager.GetActiveScene().name == "MainMenu");
+        yield return new WaitForSecondsRealtime(.7f);
+        var menu = Object.FindFirstObjectByType<MainMenuController>();
+        yield return Capture("Home");
+        AssertHomeButtonGroups();
+        Click("MenuSettings"); yield return Capture("HomeSettings"); Click("CloseMenuSettings");
+        yield return null;
+        menu.ShowChallenges(); yield return Capture("Challenges"); Click("Back");
+        yield return null;
+        menu.ShowShop(); yield return Capture("Shop"); menu.ShowHome();
+        menu.ShowCharacterSelect(); yield return Capture("Characters");
+        var title = GameObject.Find("ScreenTitle").GetComponent<TMP_Text>();
+        title.ForceMeshUpdate();
+        float inkCenter = title.rectTransform.TransformPoint(title.textBounds.center).x;
+        Assert.That(inkCenter, Is.EqualTo(Screen.width * .5f).Within(1), "Character title centered on the phone");
+        Click("CardsTab"); yield return Capture("Cards");
+        menu.ShowGemMastery(); yield return Capture("Gems"); menu.ShowHome();
+        menu.PlayGame();
+        yield return Until(() => RunSession.Current?.Continuation?.CanCapture == true && RunSession.Current.Waves.IsWaveActive);
+        yield return new WaitForSecondsRealtime(.8f);
+        var controls = Object.FindFirstObjectByType<RunControlsUI>();
+        yield return Capture("Combat");
+        var hud = Object.FindFirstObjectByType<CrystalResonanceHud>();
+        var scoreLabel = hud.GetComponentsInChildren<TMP_Text>().First(t => t.text.Contains("SCORE"));
+        var saved = RunSession.Current.Resonance.State.Copy();
+        var charged = saved.Copy();
+        charged.score = 999999;
+        charged.charge = 100;
+        RunSession.Current.Resonance.Restore(charged);
+        yield return Capture("CombatFull");
+        var crystal = (RectTransform)hud.transform.Find("ResonanceStoryCrystal");
+        var crystalCorners = new Vector3[4];
+        crystal.GetWorldCorners(crystalCorners);
+        foreach (var label in new[] { scoreLabel, hud.transform.Find("ResonanceCaption").GetComponent<TMP_Text>() })
+        {
+            label.ForceMeshUpdate();
+            Assert.That(label.rectTransform.TransformPoint(label.textBounds.min).x,
+                Is.GreaterThanOrEqualTo(crystalCorners[3].x + 1), label.text);
+        }
+        RunSession.Current.Resonance.Restore(saved);
+        controls.OpenGuide(CombatGuide.Ability(RunSession.Current.Player));
+        yield return Capture("Inspect");
+        controls.Close(); yield return null;
+        controls.OpenSettings(); yield return Capture("Paused");
+        Click("Quit"); yield return Capture("EndConfirmation");
+        Click("Cancel"); yield return null; controls.Close(); yield return null;
+
+        var offer = AssetDatabase.FindAssets("t:RunUpgradeDefinition").Select(AssetDatabase.GUIDToAssetPath)
+            .Select(AssetDatabase.LoadAssetAtPath<RunUpgradeDefinition>).Take(3).ToArray();
+        var draft = Object.FindFirstObjectByType<UpgradeChoiceUI>(FindObjectsInactive.Include);
+        Assert.That(draft.Show(offer, _ => true), Is.True);
+        yield return Capture("Draft");
+        Click("Settings"); yield return null;
+        Assert.That(controls.IsModalOpen, Is.True);
+        Click("Resume"); yield return null;
+        Assert.That(draft.IsOpen, Is.True, "Resuming preserves the pending offer");
+        foreach (var phone in new[] { new Vector2Int(340,680), new Vector2Int(1080,2340), size })
+        {
+            GameplayPixelLayoutController.ValidationSafeArea = null;
+            GlobalMenuPixelRoot.ValidationSafeArea = null;
+            typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize", BindingFlags.Static | BindingFlags.NonPublic)
+                .Invoke(null, new object[] { phone });
+            yield return Until(() => Screen.width == phone.x && Screen.height == phone.y);
+            // Compact battle content needs a usable 328 x 628, including its outer gutters.
+            var safe = phone == size ? new Rect(0,4,360,632) : new Rect(6, 18, phone.x - 12, phone.y - 42);
+            GameplayPixelLayoutController.ValidationSafeArea = safe;
+            GlobalMenuPixelRoot.ValidationSafeArea = safe;
+            yield return Capture("Offer-" + phone.x);
+            var offerPanel = GameObject.Find("OfferPanel").GetComponent<RectTransform>();
+            AssertOnScreen(offerPanel, safe);
+            foreach (var button in offerPanel.parent.GetComponentsInChildren<Button>())
+                AssertOnScreen((RectTransform)button.transform, safe);
+        }
+        GlobalMenuPixelRoot.ValidationSafeArea = null;
+        GameplayPixelLayoutController.ValidationSafeArea = null;
+        draft.Hide();
+        var player = RunSession.Current.Player;
+        if (player.HasShield) player.TryTakeDamage(1000000);
+        player.TryTakeDamage(1000000);
+        yield return new WaitForSecondsRealtime(3);
+        yield return Capture("Defeat");
+        AssertOnScreen(GameObject.Find("GameOverPanel").GetComponent<RectTransform>(), Screen.safeArea);
+    }
+
+    private static void AssertOnScreen(RectTransform rect, Rect safe)
+    {
+        var canvas = rect.GetComponentInParent<Canvas>().rootCanvas;
+        var camera = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera;
+        var corners = new Vector3[4];
+        rect.GetWorldCorners(corners);
+        var left = RectTransformUtility.WorldToScreenPoint(camera, corners[0]);
+        var right = RectTransformUtility.WorldToScreenPoint(camera, corners[2]);
+        Assert.That(left.x, Is.GreaterThanOrEqualTo(safe.xMin + 3), rect.name);
+        Assert.That(left.y, Is.GreaterThanOrEqualTo(safe.yMin + 3), rect.name);
+        Assert.That(right.x, Is.LessThanOrEqualTo(safe.xMax - 3), rect.name);
+        Assert.That(right.y, Is.LessThanOrEqualTo(safe.yMax - 3), rect.name);
+    }
+
+    private static void AssertHomeButtonGroups()
+    {
+        var stage = GameObject.Find("NativeMenuStage");
+        foreach (var group in stage.GetComponentsInChildren<FramedActionContent>())
+        {
+            var art = (group.transform.Find("IconPlate") ?? group.transform.Find("ActionIcon")).GetComponent<Image>();
+            var pixels = new Texture2D(2, 2);
+            pixels.LoadImage(File.ReadAllBytes(AssetDatabase.GetAssetPath(art.sprite)));
+            int first = pixels.width, last = -1;
+            for (int y = 0; y < pixels.height; y++)
+            for (int x = 0; x < pixels.width; x++)
+                if (pixels.GetPixel(x,y).a > .5f) { first = Mathf.Min(first,x); last = Mathf.Max(last,x); }
+            Object.Destroy(pixels);
+            float iconStart = art.rectTransform.anchoredPosition.x + art.rectTransform.rect.xMin;
+            var label = group.GetComponentInChildren<TMP_Text>();
+            label.ForceMeshUpdate();
+            var bounds = label.textBounds;
+            float textStart = label.rectTransform.anchoredPosition.x;
+            float left = iconStart + first;
+            float right = textStart + bounds.max.x;
+            Assert.That(textStart + bounds.min.x - (iconStart + last + 1), Is.GreaterThanOrEqualTo(6), group.name);
+            Assert.That((left + right) * .5f, Is.EqualTo(0).Within(1), group.name);
+            Assert.That(left - ((RectTransform)group.transform).rect.xMin, Is.GreaterThanOrEqualTo(7), group.name);
+        }
+    }
+
     private static IEnumerator ControlledShot(string path)
     {
         Canvas.ForceUpdateCanvases();yield return new WaitForSecondsRealtime(.15f);

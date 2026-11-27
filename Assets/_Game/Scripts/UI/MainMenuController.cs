@@ -25,14 +25,10 @@ public sealed class MainMenuController : MonoBehaviour
     [SerializeField]
     private Button gemMasteryButton;
 
-    [SerializeField]
-    private Button gemMasteryBackButton;
-
     private CharacterSelectMenuController
         characterSelectScreen;
 
     private bool isLoadingGame;
-    private bool masteryFromCharacters;
     private ShopMenuController shopScreen;
     private TMP_Text accountLabel;
     private RectTransform challengePanel;
@@ -59,10 +55,6 @@ public sealed class MainMenuController : MonoBehaviour
             ShowGemMastery
         );
 
-        gemMasteryBackButton.onClick.AddListener(
-            BackFromMastery
-        );
-
         ConfigureHome();
         ShowHome();
     }
@@ -82,13 +74,6 @@ public sealed class MainMenuController : MonoBehaviour
         {
             gemMasteryButton.onClick.RemoveListener(
                 ShowGemMastery
-            );
-        }
-
-        if (gemMasteryBackButton != null)
-        {
-            gemMasteryBackButton.onClick.RemoveListener(
-                BackFromMastery
             );
         }
     }
@@ -114,36 +99,10 @@ public sealed class MainMenuController : MonoBehaviour
         }
     }
 
-    private void BackFromMastery()
-    {
-        if (masteryFromCharacters) ShowCharacterSelect();
-        else ShowHome();
-    }
-
-    private void ShowCharacterMastery()
-    {
-        ShowGemMastery();
-        masteryFromCharacters = true;
-    }
-
     public void ShowGemMastery()
     {
-        masteryFromCharacters = false;
-        if (homeScreen == null ||
-            gemMasteryScreen == null)
-        {
-            return;
-        }
-
-        homeScreen.SetActive(false);
-        gemMasteryScreen.SetActive(true);
-
-        if (characterSelectScreen != null)
-        {
-            characterSelectScreen.gameObject.SetActive(
-                false
-            );
-        }
+        ShowCharacterSelect();
+        if (characterSelectScreen != null) characterSelectScreen.OpenMasteryFromHome();
     }
 
     public void ShowCharacterSelect()
@@ -241,7 +200,6 @@ public sealed class MainMenuController : MonoBehaviour
             FinalizedUiSkin.Button(playButton);
             FinalizedUiSkin.Button(gemMasteryButton);
         }
-        FinalizedUiSkin.Button(gemMasteryBackButton);
         AccountProgression.Current.Changed += RefreshAccount;
         CharacterSelectionSettings.Changed += RefreshAccount;
     }
@@ -274,6 +232,7 @@ public sealed class MainMenuController : MonoBehaviour
         if(run==null || challengePanel!=null) return;
         homeScreen.SetActive(false);
         challengePanel=GameUi.Panel("EndRunConfirmation",homeScreen.transform.parent,new Vector2(440,460));
+        challengePanel.gameObject.AddComponent<GlobalMenuPixelRoot>().Initialize(challengePanel.sizeDelta, true);
         GameUi.Label("Title",challengePanel,"End this attempt?",new Vector2(400,55),new Vector2(0,175),28);
         GameUi.Label("Reward",challengePanel,account.PreviewReward("End Run")+"\n\nYour saved board and build will end.\nUnused items stay owned.",new Vector2(390,225),new Vector2(0,25),19);
         GameUi.Button("End",challengePanel,"End run and collect gold",new Vector2(350,46),new Vector2(0,-125),()=>
@@ -289,6 +248,7 @@ public sealed class MainMenuController : MonoBehaviour
         if (challengePanel != null) return;
         homeScreen.SetActive(false);
         challengePanel=GameUi.Panel("Challenges",homeScreen.transform.parent,new Vector2(480,580));
+        challengePanel.gameObject.AddComponent<GlobalMenuPixelRoot>().Initialize(challengePanel.sizeDelta, true);
         GameUi.Label("Title",challengePanel,"Personal challenges",new Vector2(440,55),new Vector2(0,230),28);
         bool unlocked=AccountProgression.Current.HasClearedKing;
         GameUi.Label("Rules",challengePanel,unlocked ? "Always available. No expiry or attendance rewards.\nNormal rewards; personal records stay separate." : "Defeat the King to unlock optional challenge runs.\nFree practice is already available from Home.",new Vector2(430,90),new Vector2(0,150),20);
@@ -320,7 +280,7 @@ public sealed class MainMenuController : MonoBehaviour
         {
             characterSelectScreen.Initialize(
                 PlayGame,
-                ShowHome, ShowCharacterMastery
+                ShowHome
             );
 
             return true;
@@ -370,7 +330,7 @@ public sealed class MainMenuController : MonoBehaviour
 
         characterSelectScreen.Initialize(
             PlayGame,
-            ShowHome, ShowCharacterMastery
+            ShowHome
         );
 
         return true;
@@ -382,8 +342,7 @@ public sealed class MainMenuController : MonoBehaviour
             homeScreen != null &&
             gemMasteryScreen != null &&
             playButton != null &&
-            gemMasteryButton != null &&
-            gemMasteryBackButton != null;
+            gemMasteryButton != null;
 
         if (hasAllReferences)
         {
@@ -392,7 +351,7 @@ public sealed class MainMenuController : MonoBehaviour
 
         Debug.LogError(
             "MainMenuController requires Home/Gem Mastery screen " +
-            "references plus Play, Gem Mastery, and Back buttons.",
+            "references plus Play and Gem Mastery buttons.",
             this
         );
 

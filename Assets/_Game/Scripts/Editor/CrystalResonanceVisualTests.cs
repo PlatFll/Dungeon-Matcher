@@ -43,6 +43,10 @@ public sealed partial class ForestFoundationPlayTests
                     var root=(RectTransform)hud.transform;
                     float right=root.TransformPoint(new Vector3(root.rect.xMax-28*root.rect.height/66f,0,0)).x;
                     Assert.That(score.rectTransform.TransformPoint(score.textBounds.max).x,Is.LessThanOrEqualTo(right),"score leaves room for the right ornament");
+                    var caption=hud.transform.Find("ResonanceCaption").GetComponent<TMPro.TMP_Text>();
+                    caption.ForceMeshUpdate();
+                    Assert.That(caption.rectTransform.TransformPoint(caption.textBounds.min).x,Is.GreaterThanOrEqualTo(corners[3].x),"charge clears the crystal");
+                    Assert.That(caption.rectTransform.TransformPoint(caption.textBounds.max).x,Is.LessThanOrEqualTo(right + .5f),"charge clears the frame ornament");
                     ScreenCapture.CaptureScreenshot(Path.Combine(dir,zone+"-"+size.x+"x"+size.y+"-70.png"));yield return null;yield return null;
                 }
                 state.score=999999;Run.Resonance.Restore(state);yield return null;yield return null;

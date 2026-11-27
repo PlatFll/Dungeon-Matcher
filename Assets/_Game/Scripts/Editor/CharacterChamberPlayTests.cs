@@ -34,6 +34,9 @@ public sealed class CharacterChamberPlayTests
         Directory.CreateDirectory(Output);
         string savePath = Path.GetFullPath(Path.Combine(Output,Guid.NewGuid()+".json"));
         var save = new AccountSave { gold = 2450 };
+        save.discoveredCards = new List<string>(new[] { "prototype_gem_grinder", "prototype_thicker_hide", "glass_cannon",
+            "aegis_reservoir", "cascade_catalyst", "boss_hunter", "opening_volley", "chromatic_conductor",
+            "chain_reaction", "emergency_plating", "longer_reign", "final_word" });
         string[] ids = {"skeleton","bardley","kobold_gunner","dungeon_attender"};
         string[] buttons = {"RattlebonesButton","BardleyButton","KoboldButton","MinotaurButton"};
         for(int i=0;i<ids.Length;i++) save.characters.Add(new CharacterProgress {id=ids[i],level=8+i});
@@ -68,16 +71,46 @@ public sealed class CharacterChamberPlayTests
             Assert.AreEqual("CARDS",Find<TMP_Text>(panel,"ScreenTitle").text);
             Assert.IsNull(GameObject.Find("CharacterPreview"),"Stats preview should be hidden in the library");
             Assert.NotNull(Find<Image>(panel,"Artwork").sprite);
-            string first=Find<TMP_Text>(panel,"CardTitle").text;
-            Click("NextCards");yield return null;
-            Assert.AreNotEqual(first,Find<TMP_Text>(panel,"CardTitle").text);
+            var seen = Resources.Load<RunUpgradeCatalog>("RunUpgrades/PrototypeRunUpgradeCatalog").Upgrades
+                .Where(card => AccountProgression.Current.HasDiscoveredCard(card.UpgradeId)).ToArray();
+            string[] RowNames() => panel.GetComponentsInChildren<TMP_Text>().Where(label=>label.name=="CardTitle")
+                .Select(label=>label.text).ToArray();
+            CollectionAssert.AreEqual(seen.OrderBy(card=>card.Rarity).Select(card=>card.DisplayTitle.ToUpperInvariant()), RowNames());
+            var scroll = Find<ScrollRect>(panel,"JournalViewport");
+            Assert.Greater(scroll.content.rect.height,scroll.viewport.rect.height);
+            scroll.verticalNormalizedPosition = 0; yield return null;
+            Assert.Less(scroll.verticalNormalizedPosition,.01f);
+            Click("SortCards"); yield return null;
+            CollectionAssert.AreEqual(seen.OrderBy(card=>card.DisplayTitle,StringComparer.Ordinal)
+                .Select(card=>card.DisplayTitle.ToUpperInvariant()), RowNames());
+            Click("SortCards"); yield return null;
             if(rendered) yield return Shot(panel,"cards-720x1280");
-            Click("CharactersTab");Click("SpecialGemsTab");yield return null;
-            Assert.IsNotNull(Object.FindFirstObjectByType<GemMasteryMenuController>());
-            var main=Object.FindFirstObjectByType<MainMenuController>();
-            var back=(Button)typeof(MainMenuController).GetField("gemMasteryBackButton",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(main);
-            back.onClick.Invoke();yield return null;
-            Assert.True(panel.gameObject.activeInHierarchy);
+            Click("SpecialGemsTab"); yield return null;
+            Assert.AreEqual("SPECIAL GEMS",Find<TMP_Text>(panel,"ScreenTitle").text);
+            foreach (string shape in new[] {"StraightFive","TShape","LShape","CrossShape"})
+            {
+                // The summary diagram is decorative and shares the shape name.
+                Find<Button>(panel,shape).onClick.Invoke();
+                Assert.AreEqual(5,Find<Button>(panel,shape).GetComponentsInChildren<Image>().Count(i=>i.name=="Gem"));
+            }
+            Find<Button>(panel,"TShape").onClick.Invoke();
+            Click("AssignPoisonBomb");
+            Assert.AreEqual(GemMasteryReward.PoisonBomb,GemMasterySettings.GetReward(GemMasteryShape.TShape));
+            Assert.AreEqual(GemMasteryReward.ColorCrystal,GemMasterySettings.GetReward(GemMasteryShape.CrossShape));
+            if(rendered) yield return Shot(panel,"gems-720x1280");
+            Click("CharactersTab"); Click("BardleyButton"); Click("SpecialGemsTab");
+            Assert.AreEqual(GemMasteryReward.ColorCrystal,GemMasterySettings.GetReward(GemMasteryShape.TShape));
+            Click("AssignShieldBomb");
+            Click("BackButton"); Click("RattlebonesButton"); Click("SpecialGemsTab");
+            Assert.AreEqual(GemMasteryReward.PoisonBomb,GemMasterySettings.GetReward(GemMasteryShape.TShape));
+            Click("CardsTab");
+            if (rendered)
+            {
+                Size(1080,2340); yield return null; yield return Shot(panel,"cards-tall");
+                Click("SpecialGemsTab"); yield return Shot(panel,"gems-tall");
+                Size(360,640); yield return null; yield return Shot(panel,"gems-compact");
+            }
+            Click("CharactersTab");
             if(rendered)
             {
                 Size(1080,2340); yield return null; yield return null;
@@ -89,6 +122,9 @@ public sealed class CharacterChamberPlayTests
                 safe.anchorMin=new Vector2(.035f,.045f);safe.anchorMax=new Vector2(.965f,.95f);
                 yield return null; yield return null;
                 yield return Shot(panel,"skeleton-safe-insets");
+                Click("CardsTab"); yield return Shot(panel,"cards-safe-insets");
+                Click("SpecialGemsTab"); yield return Shot(panel,"gems-safe-insets");
+                Click("CharactersTab");
             }
             var account = AccountProgression.Current;
             int savedLevel = account.Level("skeleton");
@@ -102,6 +138,58 @@ public sealed class CharacterChamberPlayTests
             Assert.True(GameObject.Find("CharactersButton").activeInHierarchy);
         }
         yield return new ExitPlayMode();
+    }
+
+    private static GemMasteryLoadout BuildFor(string id)
+    {
+        using (CharacterSelectionSettings.UseTemporarySelection(id)) return GemMasterySettings.Current;
+    }
+
+    [Test]
+    public void IndependentBuildsAndVisibleCardsSurviveReload()
+    {
+        Directory.CreateDirectory(Output);
+        string path = Path.GetFullPath(Path.Combine(Output, Guid.NewGuid() + ".json"));
+        var inherited = new List<GemMasteryReward> { GemMasteryReward.PoisonBomb, GemMasteryReward.ColorCrystal,
+            GemMasteryReward.ColorCrystal, GemMasteryReward.ColorCrystal };
+        var save = new AccountSave { inheritedMastery = inherited };
+        save.characters.Add(new CharacterProgress {id="skeleton", level=7});
+        File.WriteAllText(path, JsonUtility.ToJson(save));
+        var cards = Resources.Load<RunUpgradeCatalog>("RunUpgrades/PrototypeRunUpgradeCatalog").Upgrades.Take(3).ToArray();
+        using (CharacterSelectionSettings.UseTemporarySelection("skeleton"))
+        {
+            using (AccountProgression.UseDisposableProfile(path))
+            {
+                var profile = AccountProgression.Current;
+                foreach (string id in new[] {"skeleton","bardley","kobold_gunner","dungeon_attender"})
+                    Assert.AreEqual(GemMasteryReward.PoisonBomb,BuildFor(id).StraightFive);
+                Assert.True(GemMasterySettings.SetReward(GemMasteryShape.StraightFive,GemMasteryReward.ColorCrystal));
+                CharacterSelectionSettings.SetSelectedPlayerId("bardley");
+                Assert.True(GemMasterySettings.SetReward(GemMasteryShape.CrossShape,GemMasteryReward.ShieldBomb));
+                // Journal the specified owner even while another character is being browsed.
+                Assert.NotNull(profile.BeginRun("skeleton"));
+                Assert.AreEqual(GemMasteryReward.ColorCrystal,profile.ActiveRun.mastery[0]);
+                Assert.True(profile.RememberCardOffer(cards,2));
+                Assert.True(profile.RememberCardOffer(cards,2));
+                using (AccountProgression.UsePracticeProfile())
+                {
+                    var practice = AccountProgression.Current;
+                    practice.BeginRun("bardley");
+                    practice.RememberCardOffer(cards,3);
+                }
+            }
+            using (AccountProgression.UseDisposableProfile(path))
+            {
+                var profile = AccountProgression.Current;
+                Assert.True(profile.HasDiscoveredCard(cards[0].UpgradeId));
+                Assert.True(profile.HasDiscoveredCard(cards[1].UpgradeId));
+                Assert.False(profile.HasDiscoveredCard(cards[2].UpgradeId));
+                Assert.AreEqual(GemMasteryReward.PoisonBomb,BuildFor("bardley").StraightFive);
+                Assert.AreEqual(GemMasteryReward.ShieldBomb,BuildFor("bardley").CrossShape);
+                Assert.AreEqual(GemMasteryReward.ColorCrystal,BuildFor("skeleton").StraightFive);
+                Assert.AreEqual(GemMasteryReward.ColorCrystal,profile.ActiveRun.mastery[3]);
+            }
+        }
     }
 
     [UnityTest]
@@ -127,6 +215,9 @@ public sealed class CharacterChamberPlayTests
             Assert.AreEqual("MAX LEVEL",Find<TMP_Text>(menu,"GoldCost").text);
             Assert.AreEqual("",Find<TMP_Text>(menu,"Next0").text);
             Assert.AreEqual(0,AccountProgression.Current.Gold);
+            Click("CardsTab");
+            Assert.True(Find<RectTransform>(menu,"EmptyJournal").gameObject.activeInHierarchy);
+            Assert.False(menu.GetComponentsInChildren<TMP_Text>().Any(label=>label.name=="CardTitle"));
         }
         yield return new ExitPlayMode();
     }
@@ -198,10 +289,76 @@ public sealed class CharacterChamberPlayTests
         finally { animator.speed = 1; }
     }
 
+    private static Rect BoundsIn(RectTransform parent, RectTransform child)
+    {
+        var corners = new Vector3[4];
+        child.GetWorldCorners(corners);
+        Vector2 a = parent.InverseTransformPoint(corners[0]);
+        Vector2 b = parent.InverseTransformPoint(corners[2]);
+        return Rect.MinMaxRect(Mathf.Min(a.x,b.x), Mathf.Min(a.y,b.y), Mathf.Max(a.x,b.x), Mathf.Max(a.y,b.y));
+    }
+
+    private static void CheckMasteryAlignment(RectTransform page)
+    {
+        foreach (var button in Find<RectTransform>(page,"Shapes").GetComponentsInChildren<Button>())
+        {
+            var tile = (RectTransform)button.transform;
+            var grid = BoundsIn(tile, Find<RectTransform>(tile,"MatchDiagram"));
+            var label = BoundsIn(tile, Find<TMP_Text>(tile,"ShapeName").rectTransform);
+            Assert.That(grid.center.x, Is.EqualTo(tile.rect.center.x).Within(.1f), tile.name);
+            Assert.GreaterOrEqual(tile.rect.yMax - grid.yMax, 8f, tile.name + " top inset");
+            Assert.GreaterOrEqual(grid.yMin - label.yMax, 1f, tile.name + " caption gap");
+            Assert.GreaterOrEqual(label.yMin - tile.rect.yMin, 7f, tile.name + " bottom inset");
+        }
+        foreach (var reward in Find<RectTransform>(page,"Results").GetComponentsInChildren<Button>())
+        {
+            var row = (RectTransform)reward.transform;
+            var shell = Find<Image>(row,"RewardIcon");
+            var badge = Find<Image>(row,"Selection").rectTransform;
+            var icon = BoundsIn(row,shell.rectTransform);
+            var title = BoundsIn(row,Find<TMP_Text>(row,"RewardName").rectTransform);
+            var effect = BoundsIn(row,Find<TMP_Text>(row,"Effect").rectTransform);
+            var action = BoundsIn(row,badge);
+            Assert.That(icon.center.y,Is.EqualTo(row.rect.center.y).Within(.1f));
+            Assert.That(action.center.y,Is.EqualTo(row.rect.center.y).Within(.1f));
+            Assert.GreaterOrEqual(icon.xMin - row.rect.xMin, 9f);
+            Assert.GreaterOrEqual(title.xMin - icon.xMax, 6f);
+            Assert.GreaterOrEqual(action.xMin - effect.xMax, 8f);
+            Assert.GreaterOrEqual(row.rect.xMax - action.xMax, 9f);
+            var caption = BoundsIn(badge,Find<TMP_Text>(badge,"Action").rectTransform);
+            Assert.Less(Vector2.Distance(caption.center,badge.rect.center),.1f);
+            Assert.GreaterOrEqual(caption.xMin - badge.rect.xMin, 7f);
+        }
+        foreach (var stone in page.GetComponentsInChildren<Image>().Where(i => i.name == "SourceAmethyst"))
+        {
+            var shell = stone.transform.parent.GetComponent<Image>();
+            var frame = shell.rectTransform;
+            var sprite = shell.sprite;
+            var nativeSize = sprite.rect.size;
+            float scale = Mathf.Min(frame.rect.width/nativeSize.x,frame.rect.height/nativeSize.y);
+            // UI.Image applies aspect padding on the side determined by the RectTransform pivot.
+            var origin = frame.rect.min + Vector2.Scale(frame.pivot,frame.rect.size - nativeSize*scale);
+            var type = shell.sprite.name.Contains("Poison") ? GemSpecialType.PoisonBomb :
+                shell.sprite.name.Contains("Heal") ? GemSpecialType.HealingBomb : GemSpecialType.ShieldBomb;
+            var socket = sprite.pivot + (Vector2)BombIdleArt.SocketOffset(type)*sprite.pixelsPerUnit;
+            var expected = origin + socket*scale;
+            var actual = BoundsIn(frame,stone.rectTransform).center;
+            Assert.Less(Vector2.Distance(expected,actual),.5f,sprite.name + " inset gem must sit in the painted socket");
+        }
+        var setup = Find<RectTransform>(page,"CurrentSetup");
+        var left = BoundsIn(setup,Find<RectTransform>(setup,"MatchDiagram"));
+        var right = BoundsIn(setup,Find<Image>(setup,"EquippedGem").rectTransform);
+        var arrow = BoundsIn(setup,Find<Image>(setup,"ResultArrow").rectTransform);
+        Assert.That(arrow.center.x,Is.EqualTo(setup.rect.center.x).Within(.1f));
+        Assert.That((left.center.x + right.center.x)*.5f,Is.EqualTo(arrow.center.x).Within(.1f));
+    }
+
     private static IEnumerator Shot(Component panel,string name)
     {
         yield return null; yield return null;
         Canvas.ForceUpdateCanvases();
+        var mastery = panel.GetComponentsInChildren<RectTransform>().FirstOrDefault(r => r.name == "SpecialGemBuild");
+        if (mastery != null) CheckMasteryAlignment(mastery);
         var hero = panel.GetComponentsInChildren<Image>().FirstOrDefault(i => i.name=="CharacterPreview");
         if (hero != null) CheckFooting(panel,hero);
         foreach(var label in panel.GetComponentsInChildren<TMP_Text>())

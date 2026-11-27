@@ -97,7 +97,7 @@ Gideon's initial tuning uses 100 energy and five accepted manual moves per Chron
 
 Upgrade from level L costs `25 + 15*(L-1) + 5*(L-1)^2` shared gold. No XP. Stats are recomputed from immutable definitions, a run-start permanent level snapshot, then temporary card modifiers. No multiplication of already modified values.
 
-Row and Column bombs are always available from level 1; straight-four matches create them on fresh accounts. Fresh five-gem shapes create Color Crystals, also available from the start. Shared mastery unlocks use the highest individual character level, never summed levels: Poison 3, Healing 5, Shield 7. Color Crystals have no levels. Previously earned unlocks and valid explicit legacy selections are grandfathered account-wide.
+Row and Column bombs are always available from level 1; straight-four matches create them on fresh accounts. Fresh five-gem shapes create Color Crystals, also available from the start. Shape assignments are saved separately for each character. Shared mastery unlocks use the highest individual character level, never summed levels: Poison 3, Healing 5, Shield 7. Color Crystals have no levels. Previously earned unlocks and valid explicit legacy selections are grandfathered account-wide.
 
 Characters offers a confirmed **Reset to Lv 1** action for the selected character between runs. It resets only that character's permanent level; gold, inventory, equipment, records, mastery selections and earned account unlocks stay. Upgrade gold is not refunded. Reset is unavailable at level 1 and while a run is saved, preserving the run's level snapshot.
 

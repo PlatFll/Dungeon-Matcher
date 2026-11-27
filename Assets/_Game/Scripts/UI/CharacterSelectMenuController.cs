@@ -22,16 +22,14 @@ public sealed partial class CharacterSelectMenuController : MonoBehaviour
     private RosterEntry selected;
     private AccountProgression account;
     private EnemyWeaknessIndicatorConfig gemIcons;
-    private Action startRequested, backRequested, masteryRequested;
+    private Action startRequested, backRequested;
     private Coroutine flash;
-    private bool showingCards;
     private string resetId;
 
-    public void Initialize(Action start, Action back, Action mastery)
+    public void Initialize(Action start, Action back)
     {
         startRequested = start;
         backRequested = back;
-        masteryRequested = mastery;
         if (page == null)
         {
             account = AccountProgression.Current;
@@ -62,7 +60,7 @@ public sealed partial class CharacterSelectMenuController : MonoBehaviour
     {
         selected = Array.Find(roster, e => e.definition.PlayerId == CharacterSelectionSettings.SelectedPlayerId) ??
             roster.FirstOrDefault();
-        ShowCards(false);
+        ShowPage(MenuPage.Characters);
         feedback.text = "";
         Refresh();
         Layout();
@@ -106,7 +104,6 @@ public sealed partial class CharacterSelectMenuController : MonoBehaviour
         progress.text = capped ? $"LEVEL {level}  /  MAX" : $"LEVEL {level}  >  <color=#B6E889>LEVEL {next}</color>";
         costLabel.text = capped ? "MAX LEVEL" : cost.ToString("N0");
         costCoin.enabled = !capped;
-        costLabel.rectTransform.anchoredPosition = new Vector2(capped ? 0 : 8, -22);
         levelUp.interactable = !savedRun && !capped && account.Gold >= cost;
         levelUp.image.sprite = levelUp.interactable ? Art("LevelUp") : ShopArt("Disabled");
         reset.interactable = !savedRun && level > 1;
