@@ -69,7 +69,9 @@ public sealed partial class CharacterSelectMenuController : MonoBehaviour
     private void Select(RosterEntry entry)
     {
         CloseReset();
+        bool changed = selected != entry;
         CharacterSelectionSettings.SetSelectedPlayerId(entry.definition.PlayerId);
+        if (changed) MenuSoundPlayer.Play(MenuCue.Socket);
         selected = entry;
         feedback.text = "";
         Refresh();
@@ -158,16 +160,19 @@ public sealed partial class CharacterSelectMenuController : MonoBehaviour
     private void LevelUp()
     {
         string id = selected.definition.PlayerId;
+        int goldBefore = account.Gold;
         var locked = Enum.GetValues(typeof(GemSpecialType)).Cast<GemSpecialType>()
             .Where(type => !account.IsUnlocked(type)).ToArray();
         if (!account.TryLevelUp(id))
         {
+            MenuSoundPlayer.Play(MenuCue.Denied);
             if (account.LastError != null) feedback.text = "Save failed. Check storage and try again.";
             return;
         }
         var unlocks = locked.Where(account.IsUnlocked).Select(type => type.ToString().Replace("Bomb", " Bomb"));
         string names = string.Join(", ", unlocks);
-        feedback.text = names.Length > 0 ? $"Unlocked for every character: {names}" : $"Level {account.Level(id)} reached!";
+        feedback.text = names.Length > 0 ? $"Unlocked for every character: {names}" : $"Level {account.Level(id)} reached!   -{goldBefore - account.Gold:N0} gold";
+        MenuSoundPlayer.Play(MenuCue.Level);
         Refresh();
         if (flash != null) StopCoroutine(flash);
         if (!PresentationPreferences.ReducedMotion) flash = StartCoroutine(UpgradeFlash());
@@ -203,7 +208,9 @@ public sealed partial class CharacterSelectMenuController : MonoBehaviour
         string id = resetId;
         CloseReset();
         if (id == null) return;
-        feedback.text = account.TryResetLevel(id) ? "Level reset. Earned bomb unlocks kept." : "Level could not be reset.";
+        bool resetSaved = account.TryResetLevel(id);
+        MenuSoundPlayer.Play(resetSaved ? MenuCue.Release : MenuCue.Denied);
+        feedback.text = resetSaved ? "Level reset. Earned bomb unlocks kept." : "Level could not be reset.";
         Refresh();
     }
 }

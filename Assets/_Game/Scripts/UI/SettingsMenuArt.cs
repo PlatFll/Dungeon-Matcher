@@ -80,7 +80,14 @@ public static class SettingsMenuArt
             // Text occupies the exposed half, opposite the physical slider thumb.
             word.rectTransform.anchoredPosition = new Vector2(on ? -15 : 15, 0);
         }
-        Refresh(); button.onClick.AddListener(() => { toggle(); Refresh(); });
+        MenuButtonFeedback.Attach(button, MenuCue.None);
+        Refresh();
+        button.onClick.AddListener(() =>
+        {
+            toggle();
+            Refresh();
+            if (button.gameObject.scene.name == "MainMenu") MenuSoundPlayer.Play(MenuCue.Press);
+        });
     }
 
     public static Button Action(RectTransform panel, string name, string text, string kind, float top, UnityAction action)

@@ -1,5 +1,9 @@
 ## Current production integration, 2026-11-27
 
+### Menu and shop feedback
+
+Home buttons have a short stone click and a painted press state. Shop purchases show the saved gold cost and stock gain. Equipment changes, level-ups, journal browsing and saved mastery assignments use distinct sounds. Tapping a discovered journal card shows its build theme and stack limit. Run card picks and successful refinements also have a confirmation cue. All menu cues follow the SFX preference. Reduced Motion keeps the pressed tint and removes the compression.
+
 ### Cards journal and Special Gems
 
 The Characters menu links to a scrollable account journal of run cards seen and a per-character Special Gems page. Four independent five-gem shape assignments inherit the previous shared setup. Bomb unlocks remain account-wide, and Continue retains the run’s original loadout.

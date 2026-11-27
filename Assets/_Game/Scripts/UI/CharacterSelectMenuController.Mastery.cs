@@ -78,9 +78,10 @@ public sealed partial class CharacterSelectMenuController
             int index = i;
             var tile = Control(Shapes[i].ToString(), shapePanel, Art("Roster"), 11 + i * 82, 20, 76, 68, () =>
             {
+                if (shape != Shapes[index]) MenuSoundPlayer.Play(MenuCue.Press);
                 shape = Shapes[index];
                 RefreshMastery();
-            });
+            }, MenuCue.None);
             shapeTiles[i] = tile;
             Diagram(tile.transform, i, 38, 26, 11);
             Text("ShapeName", tile.transform, ShapeNames[i].ToUpperInvariant(), 8, 44, 60, 16, 16);
@@ -93,13 +94,16 @@ public sealed partial class CharacterSelectMenuController
             int index = i;
             var row = Control("Assign" + Rewards[i], resultPanel, ShopArt("Card"), 10, 21 + i * 49, 324, 44, () =>
             {
-                if (!GemMasterySettings.SetReward(shape, Rewards[index]) && account.LastError != null)
+                if (GemMasterySettings.GetReward(shape) == Rewards[index]) return;
+                if (!GemMasterySettings.SetReward(shape, Rewards[index]))
                 {
-                    setupName.text = "Couldn’t save. Try again.";
+                    if (account.LastError != null) setupName.text = "Couldn’t save. Try again.";
+                    MenuSoundPlayer.Play(MenuCue.Denied);
                     return;
                 }
                 RefreshMastery();
-            });
+                MenuSoundPlayer.Play(MenuCue.Socket);
+            }, MenuCue.None);
             rewardRows[i] = row;
             var shell = Picture("RewardIcon", row.transform, RewardSprite(Rewards[i]), 15, 5, 34, 34, true);
             GemMasteryRuntimeResolver.TryGetSpecialType(Rewards[i], out var type);

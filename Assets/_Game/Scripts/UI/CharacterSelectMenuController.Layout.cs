@@ -92,7 +92,7 @@ public sealed partial class CharacterSelectMenuController
         return label;
     }
 
-    private static Button Control(string name, Transform parent, Sprite sprite, float x, float y, float w, float h, Action action)
+    private static Button Control(string name, Transform parent, Sprite sprite, float x, float y, float w, float h, Action action, MenuCue sound = MenuCue.Press)
     {
         var img = Picture(name,parent,sprite,x,y,w,h);
         img.raycastTarget = true;
@@ -102,6 +102,7 @@ public sealed partial class CharacterSelectMenuController
         var colors = button.colors;
         colors.disabledColor = new Color(.72f,.68f,.75f);
         button.colors = colors;
+        MenuButtonFeedback.Attach(button, sound);
         button.onClick.AddListener(() => action());
         return button;
     }
@@ -163,7 +164,7 @@ public sealed partial class CharacterSelectMenuController
         abilityBody.color = abilityName.color = Ink;
         var levelPlate = Picture("Progression",details,Art("Stats"),10,106,196,45);
         progress = Text("LevelProgress",levelPlate.transform,"",7,4,182,37,25);
-        levelUp = Control("LevelUp",details,Art("LevelUp"),211,102,138,53,LevelUp);
+        levelUp = Control("LevelUp",details,Art("LevelUp"),211,102,138,53,LevelUp, MenuCue.None);
         Text("Action",levelUp.transform,"LEVEL UP",8,4,122,24,29);
         var price = Box("UpgradePrice", levelUp.transform, 8, 25, 122, 23);
         costCoin = Picture("GoldCoin", price, ShopArt("Coin"), 0, 0, 13, 13, true);
@@ -179,7 +180,7 @@ public sealed partial class CharacterSelectMenuController
         for (int i=0;i<roster.Length;i++)
         {
             var entry = roster[i];
-            var button = Control(entry.cardName+"Button",collection,Art("Roster"),10+i*(cardWidth+4),10,cardWidth,92,() => Select(entry));
+            var button = Control(entry.cardName+"Button",collection,Art("Roster"),10+i*(cardWidth+4),10,cardWidth,92,() => Select(entry), MenuCue.None);
             entry.frame = button.image;
             var portrait = Picture("Portrait",button.transform,null,0,0,0,0,true);
             Ground(portrait,entry.definition.BattleCharacterSprite,cardWidth / 2,55,.74f);
@@ -212,7 +213,7 @@ public sealed partial class CharacterSelectMenuController
 
     private Button Tab(string name,string label,int x,int width,Sprite icon,Action action)
     {
-        var button = Control(name+"Tab",footer,Art("Stats"),x,0,width,42,action);
+        var button = Control(name+"Tab",footer,Art("Stats"),x,0,width,42,action,MenuCue.Page);
         Picture("Symbol",button.transform,icon,(width-14)/2f,5,14,14,true);
         Text("Title",button.transform,label,8,21,width-16,15,18);
         return button;
@@ -228,7 +229,7 @@ public sealed partial class CharacterSelectMenuController
         resetMessage = Text("Message",panel.transform,"",18,52,264,82,22,TextAlignmentOptions.Midline,true);
         var cancel = Control("CancelResetLevel",panel.transform,Art("Plaque"),17,145,128,36,CloseReset);
         Text("Label",cancel.transform,"CANCEL",6,5,116,25,23);
-        var confirm = Control("ConfirmResetLevel",panel.transform,Art("Plaque"),155,145,128,36,ConfirmReset);
+        var confirm = Control("ConfirmResetLevel",panel.transform,Art("Plaque"),155,145,128,36,ConfirmReset,MenuCue.None);
         Text("Label",confirm.transform,"RESET LEVEL",6,5,116,25,23);
         modal.gameObject.SetActive(false);
     }
