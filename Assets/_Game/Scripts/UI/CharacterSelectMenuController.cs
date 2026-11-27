@@ -1,463 +1,212 @@
-using TMPro;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 [DisallowMultipleComponent]
-public sealed class CharacterSelectMenuController : MonoBehaviour
+public sealed partial class CharacterSelectMenuController : MonoBehaviour
 {
-    private static readonly Color SelectedColor =
-        new Color32(151, 91, 170, 255);
-
-    private static readonly Color UnselectedColor =
-        new Color32(91, 46, 105, 255);
-
-    private static readonly Color UnavailableColor =
-        new Color32(55, 39, 63, 255);
-
-    [Header("Character Options")]
-    [SerializeField]
-    private Button rattlebonesButton;
-
-    [SerializeField]
-    private Button bardleyButton;
-
-    [Header("Selection Presentation")]
-    [SerializeField]
-    private Image characterPreview;
-
-    [SerializeField]
-    private TMP_Text statusText;
-
-    [Header("Navigation")]
-    [SerializeField]
-    private Button startButton;
-
-    [SerializeField]
-    private Button backButton;
-
-    private Action startRequested;
-    private Action backRequested;
-    private string selectedPlayerId;
-    private bool initialized;
-    private Button levelUpButton;
-    private Button resetLevelButton;
-    private Button minotaurButton,koboldButton;
-    private GameObject resetConfirmation;
-    private TMP_Text resetConfirmationText;
-    private string resetPlayerId;
-    private TMP_Text progressionFeedback;
-    private Coroutine levelFlash;
-    private Color previewColor = Color.white;
-
-    public void Initialize(
-        Action onStartRequested,
-        Action onBackRequested)
+    [Serializable]
+    private sealed class RosterEntry
     {
-        startRequested = onStartRequested;
-        backRequested = onBackRequested;
-        FinalizedUiSkin.ApplyScreen(gameObject);
+        public PlayerDefinition definition;
+        public string title, cardName;
+        [NonSerialized] public Image frame;
+        [NonSerialized] public TMP_Text levelLabel;
+    }
 
-        if (!HasRequiredReferences())
+    [SerializeField] private RosterEntry[] roster;
+    private RosterEntry selected;
+    private AccountProgression account;
+    private EnemyWeaknessIndicatorConfig gemIcons;
+    private Action startRequested, backRequested, masteryRequested;
+    private Coroutine flash;
+    private bool showingCards;
+    private string resetId;
+
+    public void Initialize(Action start, Action back, Action mastery)
+    {
+        startRequested = start;
+        backRequested = back;
+        masteryRequested = mastery;
+        if (page == null)
         {
-            enabled = false;
-            return;
+            account = AccountProgression.Current;
+            gemIcons = Resources.Load<EnemyWeaknessIndicatorConfig>("UI/EnemyWeaknessIndicatorConfig");
+            roster = roster.Where(e => e.definition != null &&
+                CharacterSelectionSettings.IsSelectableCharacter(e.definition.PlayerId)).ToArray();
+            BuildScreen();
         }
-
-        if (!initialized)
-        {
-            rattlebonesButton.onClick.AddListener(
-                SelectRattlebones
-            );
-
-            bardleyButton.onClick.AddListener(
-                SelectBardley
-            );
-
-            startButton.onClick.AddListener(
-                HandleStartRequested
-            );
-
-            backButton.onClick.AddListener(
-                HandleBackRequested
-            );
-
-            initialized = true;
-            ConfigureProgression();
-        }
-
-        selectedPlayerId =
-            CharacterSelectionSettings.SelectedPlayerId;
-
-        Refresh();
+        OpenCharacters();
     }
 
     private void OnEnable()
     {
-        if (!initialized)
-        {
-            return;
-        }
-
-        selectedPlayerId =
-            CharacterSelectionSettings.SelectedPlayerId;
-
-        Refresh();
+        AccountProgression.Current.Changed += Refresh;
+        if (page != null) OpenCharacters();
     }
 
     private void OnDisable()
     {
-        CloseResetConfirmation();
-        if(levelFlash!=null)StopCoroutine(levelFlash);
-        levelFlash=null;
-        if(characterPreview!=null)characterPreview.color=previewColor;
+        AccountProgression.Current.Changed -= Refresh;
+        CloseReset();
+        if (flash != null) StopCoroutine(flash);
+        flash = null;
+        if (hero != null) hero.color = Color.white;
     }
 
-    private void OnDestroy()
+    private void OpenCharacters()
     {
-        if (!initialized)
-        {
-            return;
-        }
-
-        rattlebonesButton.onClick.RemoveListener(
-            SelectRattlebones
-        );
-
-        bardleyButton.onClick.RemoveListener(
-            SelectBardley
-        );
-
-        startButton.onClick.RemoveListener(
-            HandleStartRequested
-        );
-
-        backButton.onClick.RemoveListener(
-            HandleBackRequested
-        );
-    }
-
-    private void SelectRattlebones()
-    {
-        SelectCharacter(
-            CharacterSelectionSettings.RattlebonesPlayerId
-        );
-    }
-
-    private void SelectBardley()
-    {
-        SelectCharacter(
-            CharacterSelectionSettings.BardleyPlayerId
-        );
-    }
-
-    private void SelectCharacter(
-        string playerId)
-    {
-        if(!CharacterSelectionSettings.IsSelectableCharacter(playerId))return;
-        CloseResetConfirmation();
-        selectedPlayerId = playerId;
-
-        CharacterSelectionSettings.SetSelectedPlayerId(
-            playerId
-        );
-
+        selected = Array.Find(roster, e => e.definition.PlayerId == CharacterSelectionSettings.SelectedPlayerId) ??
+            roster.FirstOrDefault();
+        ShowCards(false);
+        feedback.text = "";
         Refresh();
+        Layout();
     }
 
-    private void HandleStartRequested()
+    private void Select(RosterEntry entry)
     {
-        if (!PlayerDefinitionRegistry.IsAvailable(
-                selectedPlayerId
-            ))
-        {
-            Refresh();
-            return;
-        }
-
-        startRequested?.Invoke();
-    }
-
-    private void HandleBackRequested()
-    {
-        backRequested?.Invoke();
+        CloseReset();
+        CharacterSelectionSettings.SetSelectedPlayerId(entry.definition.PlayerId);
+        selected = entry;
+        feedback.text = "";
+        Refresh();
     }
 
     private void Refresh()
     {
-        SetButtonColor(minotaurButton,CharacterSelectionSettings.MinotaurPlayerId,
-            PlayerDefinitionRegistry.IsAvailable(CharacterSelectionSettings.MinotaurPlayerId));
-        SetButtonColor(koboldButton,CharacterSelectionSettings.KoboldPlayerId,
-            PlayerDefinitionRegistry.IsAvailable(CharacterSelectionSettings.KoboldPlayerId));
-        bool rattlebonesAvailable =
-            PlayerDefinitionRegistry.IsAvailable(
-                CharacterSelectionSettings.RattlebonesPlayerId
-            );
-
-        bool bardleyAvailable =
-            PlayerDefinitionRegistry.IsAvailable(
-                CharacterSelectionSettings.BardleyPlayerId
-            );
-
-        bool selectedAvailable =
-            PlayerDefinitionRegistry.TryGetDefinition(
-                selectedPlayerId,
-                out PlayerDefinition selectedDefinition
-            );
-
-        SetButtonColor(
-            rattlebonesButton,
-            CharacterSelectionSettings.RattlebonesPlayerId,
-            rattlebonesAvailable
-        );
-
-        SetButtonColor(
-            bardleyButton,
-            CharacterSelectionSettings.BardleyPlayerId,
-            bardleyAvailable
-        );
-
-        if (startButton != null)
+        if (selected == null) return;
+        var definition = selected.definition;
+        var ability = definition.ActiveAbility;
+        int level = account.Level(definition.PlayerId);
+        bool capped = level >= BalanceV1.Current.levelCap;
+        int next = capped ? level : level + 1;
+        int cost = BalanceV1.Current.UpgradeCost(level);
+        bool savedRun = account.ActiveRun != null;
+        wallet.text = account.Gold.ToString("N0");
+        SetPreview(definition);
+        nameLabel.text = selected.title.ToUpperInvariant();
+        affinity.sprite = gemIcons.GetSprite(definition.AffinityGemType);
+        var engraving = ability.ReadyStoneEngraving != null ? ability.ReadyStoneEngraving : ability.Icon;
+        abilityIcon.sprite = engraving;
+        statIcons[3].sprite = engraving;
+        Stat(0, level, next, capped);
+        Stat(1, CombatAmounts.Health(definition.HealthAtLevel(level)), CombatAmounts.Health(definition.HealthAtLevel(next)), capped);
+        Stat(2, definition.GemDamageAtLevel(level), definition.GemDamageAtLevel(next), capped);
+        int damage = AbilityHit(definition, level);
+        Stat(3, damage, AbilityHit(definition, next), capped);
+        Stat(4, ability.EnergyCost, ability.EnergyCost, capped);
+        Stat(5, CombatAmounts.Round(definition.ShieldCapAtLevel(level)), CombatAmounts.Round(definition.ShieldCapAtLevel(next)), capped);
+        abilityName.text = ability is RoyalDecreeAbilityDefinition ? "ROYAL DECREE" : ability.DisplayName.ToUpperInvariant();
+        abilityBody.text = Describe(ability, damage);
+        progress.text = capped ? $"LEVEL {level}  /  MAX" : $"LEVEL {level}  >  <color=#B6E889>LEVEL {next}</color>";
+        costLabel.text = capped ? "MAX LEVEL" : cost.ToString("N0");
+        costCoin.enabled = !capped;
+        costLabel.rectTransform.anchoredPosition = new Vector2(capped ? 0 : 8, -22);
+        levelUp.interactable = !savedRun && !capped && account.Gold >= cost;
+        levelUp.image.sprite = levelUp.interactable ? Art("LevelUp") : ShopArt("Disabled");
+        reset.interactable = !savedRun && level > 1;
+        startLabel.text = savedRun ? "CONTINUE" : "PLAY";
+        if (savedRun) feedback.text = "Finish your saved run to change levels.";
+        else if (!capped && account.Gold < cost && string.IsNullOrEmpty(feedback.text))
+            feedback.text = $"Need {(cost-account.Gold):N0} more gold to level up.";
+        foreach (var entry in roster)
         {
-            startButton.interactable =
-                selectedAvailable;
+            entry.frame.sprite = Art(entry == selected ? "RosterSelected" : "Roster");
+            entry.levelLabel.text = $"LV. {account.Level(entry.definition.PlayerId)}";
         }
-
-        RefreshCharacterPreview(
-            selectedDefinition
-        );
-
-        if (statusText == null)
-        {
-            return;
-        }
-
-        if (!selectedAvailable)
-        {
-            statusText.text =
-                "CHARACTER DATA UNAVAILABLE";
-            return;
-        }
-
-        string activeAbilityName =
-            selectedDefinition.ActiveAbility != null
-                ? selectedDefinition.ActiveAbility.DisplayName
-                : "NONE";
-
-        string passiveAbilityName =
-            selectedDefinition.PassiveAbility != null
-                ? selectedDefinition.PassiveAbility.DisplayName
-                : "NONE";
-
-        int level=AccountProgression.Current.Level(selectedPlayerId);
-        int next=Mathf.Min(BalanceV1.Current.levelCap,level+1);
-        int cost=BalanceV1.Current.UpgradeCost(level);
-        int baseAbility=selectedDefinition.ActiveAbility is CrackedGemsAbilityDefinition cracks?cracks.CrackedGemDamage:
-            selectedDefinition.ActiveAbility is RoyalDecreeAbilityDefinition decree?decree.DamagePerGem:
-            selectedDefinition.ActiveAbility is RicochetAbilityDefinition ricochet?ricochet.BaseEnemyDamage:0;
-        statusText.text=$"{GetMenuDisplayName(selectedPlayerId)} - Level {level}\n"+
-            $"HP  {CombatAmounts.Health(selectedDefinition.HealthAtLevel(level))}  >  {CombatAmounts.Health(selectedDefinition.HealthAtLevel(next))}\n"+
-            $"3-gem hit  {CombatAmounts.Round(selectedDefinition.GemDamageAtLevel(level)*3)}  >  {CombatAmounts.Round(selectedDefinition.GemDamageAtLevel(next)*3)}\n"+
-            (baseAbility > 0 ? $"Ability damage  {CombatAmounts.Round(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(level))}  >  {CombatAmounts.Round(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(next))}\n" : $"Ability: {activeAbilityName}\n")+
-            $"Shield cap  {CombatAmounts.Round(selectedDefinition.ShieldCapAtLevel(level))}  >  {CombatAmounts.Round(selectedDefinition.ShieldCapAtLevel(next))}\n"+
-            $"Gold Coins: {AccountProgression.Current.Gold}";
-        if(levelUpButton!=null)
-        {
-            levelUpButton.GetComponentInChildren<TMP_Text>().text=level>=BalanceV1.Current.levelCap?"Maximum Level":$"Level Up - {cost} gold";
-            levelUpButton.interactable=AccountProgression.Current.ActiveRun==null&&level<BalanceV1.Current.levelCap&&AccountProgression.Current.Gold>=cost;
-        }
-        if(resetLevelButton!=null)
-            resetLevelButton.interactable=AccountProgression.Current.ActiveRun==null&&level>1;
     }
 
-    private void RefreshCharacterPreview(
-        PlayerDefinition definition)
+    private static int AbilityHit(PlayerDefinition def, int level)
     {
-        if (characterPreview == null)
+        int hit = def.ActiveAbility switch
         {
-            return;
-        }
+            RoyalDecreeAbilityDefinition mark => mark.DamagePerGem,
+            CrackedGemsAbilityDefinition cracks => cracks.CrackedGemDamage,
+            RicochetAbilityDefinition shots => shots.BaseEnemyDamage,
+            _ => 0
+        };
+        return CombatAmounts.Round(Mathf.RoundToInt(hit * def.AbilityMultiplierAtLevel(level)));
+    }
 
-        Sprite previewSprite = null;
-
-        if (definition != null)
+    private static string Describe(CharacterAbilityDefinition ability, int hit)
+    {
+        switch (ability)
         {
-            previewSprite =
-                definition.MenuPortrait != null
-                    ? definition.MenuPortrait
-                    : definition.BattleCharacterSprite;
+            case RoyalDecreeAbilityDefinition mark:
+                return $"Mark a foe for <b>{mark.UnifiedDurationMoves} moves</b>. Each gem cleared deals <b>{hit} bonus damage</b> to it, whatever its color.";
+            case CrackedGemsAbilityDefinition cracks:
+                return $"Crack up to <b>{cracks.TargetGemCount} gems</b>. Each bursts and deals <b>{hit} damage</b> to foes weak to its color.";
+            case RicochetAbilityDefinition shots:
+                return $"Fire <b>{shots.Shots} quick shots</b> at the board. Ricochets hit for <b>{hit} damage</b> and grow stronger on repeat hits.";
+            case DungeonAttenderAbilityDefinition charge:
+                return $"Charge up to <b>{charge.MovementBudget} spaces</b>, smashing obstructions and clearing gems along the way.";
+            default:
+                return ability.Description;
         }
-
-        characterPreview.sprite =
-            previewSprite;
-
-        characterPreview.enabled =
-            previewSprite != null;
-        GameplayPixelGrid.FitImage(characterPreview,new Vector2(112,112));
     }
 
-    private void ConfigureProgression()
+    private void Stat(int index, float current, float next, bool capped)
     {
-        previewColor=characterPreview.color;
-        Place(rattlebonesButton.transform,new Vector2(-107,220),new Vector2(210,42));
-        Place(bardleyButton.transform,new Vector2(107,220),new Vector2(210,42));
-        rattlebonesButton.GetComponentInChildren<TMP_Text>().fontSize=16;
-        bardleyButton.GetComponentInChildren<TMP_Text>().fontSize=16;
-        minotaurButton=GameUi.Button("MinotaurButton",transform,"MINOTAUR",new Vector2(210,42),new Vector2(-107,170),
-            ()=>SelectCharacter(CharacterSelectionSettings.MinotaurPlayerId));
-        koboldButton=GameUi.Button("KoboldButton",transform,"KOBOLD",new Vector2(210,42),new Vector2(107,170),
-            ()=>SelectCharacter(CharacterSelectionSettings.KoboldPlayerId));
-        foreach(var button in new[]{minotaurButton,koboldButton})
-        {var label=button.GetComponentInChildren<TMP_Text>();label.fontSize=16;label.fontStyle=rattlebonesButton.GetComponentInChildren<TMP_Text>().fontStyle;}
-        Place(characterPreview.transform,new Vector2(0,87),new Vector2(112,112));characterPreview.preserveAspect=true;
-        Place(statusText.transform,new Vector2(0,-58),new Vector2(430,160));statusText.fontSize=20;statusText.font=GameUi.TmpFont;
-        Place(startButton.transform,new Vector2(-110,-245),new Vector2(200,48));
-        Place(backButton.transform,new Vector2(110,-245),new Vector2(200,48));
-        levelUpButton=GameUi.Button("LevelUp",transform,"",new Vector2(240,48),new Vector2(-95,-150),LevelUp);
-        resetLevelButton=GameUi.Button("ResetLevel",transform,"Reset to Lv 1",new Vector2(180,48),new Vector2(125,-150),OpenResetConfirmation);
-        var balance=BalanceV1.Current;
-        progressionFeedback=GameUi.Label("UnlockFeedback",transform,
-            $"Shared mastery: Poison Lv {balance.poisonLevel}, Heal Lv {balance.healingLevel}, Shield Lv {balance.shieldLevel}.\nRow, column and color bombs available from Lv 1.",
-            new Vector2(440,55),new Vector2(0,-200),17);
-        var overlay=GameUi.Rect("ResetLevelConfirmation",transform,Vector2.zero,Vector2.zero);
-        overlay.anchorMin=Vector2.zero;overlay.anchorMax=Vector2.one;
-        overlay.gameObject.AddComponent<Image>().color=new Color(0,0,0,.85f);
-        resetConfirmation=overlay.gameObject;
-        var panel=GameUi.Panel("ResetLevelPanel",overlay,new Vector2(440,300));
-        resetConfirmationText=GameUi.Label("Message",panel,"",new Vector2(400,180),new Vector2(0,40),21);
-        GameUi.Button("CancelResetLevel",panel,"Cancel",new Vector2(180,48),new Vector2(-100,-105),CloseResetConfirmation);
-        GameUi.Button("ConfirmResetLevel",panel,"Reset level",new Vector2(180,48),new Vector2(100,-105),ResetLevel);
-        resetConfirmation.SetActive(false);
+        currents[index].text = current.ToString("0.##");
+        nexts[index].text = capped ? "" : next.ToString("0.##");
+        nexts[index].color = (index == 4 ? next < current : next > current) ? Growth : Cream;
+        arrows[index].enabled = !capped;
     }
-    private static void Place(Transform target,Vector2 position,Vector2 size)
-    {
-        var rect=target as RectTransform;if(rect==null)return;
-        rect.anchorMin=rect.anchorMax=rect.pivot=new Vector2(0.5f,0.5f);rect.anchoredPosition=position;rect.sizeDelta=size;
-    }
+
     private void LevelUp()
     {
-        var previous=new HashSet<GemSpecialType>();
-        foreach(GemSpecialType type in Enum.GetValues(typeof(GemSpecialType)))
-            if(AccountProgression.Current.IsUnlocked(type))previous.Add(type);
-        if(!AccountProgression.Current.TryLevelUp(selectedPlayerId))
-        {if(AccountProgression.Current.LastError!=null)progressionFeedback.text="Save failed. Check storage, then try again.";return;}
-        Refresh();
-        string unlocked="";
-        foreach(GemSpecialType type in Enum.GetValues(typeof(GemSpecialType)))
-            if(!previous.Contains(type)&&AccountProgression.Current.IsUnlocked(type))
-            {
-                if(type==GemSpecialType.ColumnBomb)continue;
-                unlocked+=type==GemSpecialType.RowBomb?"Directional Bombs":type==GemSpecialType.PoisonBomb?"Poison Bomb":type==GemSpecialType.HealingBomb?"Healing Bomb":"Shield Bomb";
-            }
-        progressionFeedback.text=unlocked.Length>0?$"Unlocked for every character: {unlocked}":"Level up! Permanent stats increased.";
-        if(levelFlash!=null)StopCoroutine(levelFlash);
-        levelFlash=StartCoroutine(LevelFlash());
-    }
-    private void OpenResetConfirmation()
-    {
-        if(AccountProgression.Current.ActiveRun!=null||AccountProgression.Current.Level(selectedPlayerId)<=1)return;
-        resetPlayerId=selectedPlayerId;
-        resetConfirmationText.text=$"Reset {GetMenuDisplayName(resetPlayerId)} to Level 1?\n\n"+
-            "Earned bomb unlocks and inventory stay.\nUpgrade gold is not refunded.";
-        resetConfirmation.SetActive(true);
-    }
-    private void CloseResetConfirmation()
-    {
-        resetPlayerId=null;
-        if(resetConfirmation!=null)resetConfirmation.SetActive(false);
-    }
-    private void ResetLevel()
-    {
-        string id=resetPlayerId;
-        CloseResetConfirmation();
-        if(!AccountProgression.Current.TryResetLevel(id))
+        string id = selected.definition.PlayerId;
+        var locked = Enum.GetValues(typeof(GemSpecialType)).Cast<GemSpecialType>()
+            .Where(type => !account.IsUnlocked(type)).ToArray();
+        if (!account.TryLevelUp(id))
         {
-            progressionFeedback.text=AccountProgression.Current.LastError!=null?
-                "Save failed. Level unchanged. Check storage, then try again.":"Level could not be reset.";
-            Refresh();return;
+            if (account.LastError != null) feedback.text = "Save failed. Check storage and try again.";
+            return;
         }
+        var unlocks = locked.Where(account.IsUnlocked).Select(type => type.ToString().Replace("Bomb", " Bomb"));
+        string names = string.Join(", ", unlocks);
+        feedback.text = names.Length > 0 ? $"Unlocked for every character: {names}" : $"Level {account.Level(id)} reached!";
         Refresh();
-        progressionFeedback.text=$"{GetMenuDisplayName(id)} reset to Level 1.\nEarned bomb unlocks kept.";
+        if (flash != null) StopCoroutine(flash);
+        if (!PresentationPreferences.ReducedMotion) flash = StartCoroutine(UpgradeFlash());
     }
-    private IEnumerator LevelFlash()
+
+    private IEnumerator UpgradeFlash()
     {
-        var original=previewColor;
-        for(float time=0;time<0.3f;time+=Time.unscaledDeltaTime)
+        for (float t = 0; t < .32f; t += Time.unscaledDeltaTime)
         {
-            characterPreview.color=Color.Lerp(new Color(1.8f,1.8f,1.8f),original,time/0.3f);
+            hero.color = Color.Lerp(new Color(1f,.82f,.45f), Color.white, t / .32f);
             yield return null;
         }
-        characterPreview.color=original;
-        levelFlash=null;
+        hero.color = Color.white;
+        flash = null;
     }
 
-    private void SetButtonColor(
-        Button button,
-        string playerId,
-        bool available)
+    private void OpenReset()
     {
-        if (button == null ||
-            button.targetGraphic == null)
-        {
-            return;
-        }
-
-        if (string.Equals(
-                selectedPlayerId,
-                playerId,
-                StringComparison.Ordinal
-            ))
-        {
-            button.targetGraphic.color =
-                SelectedColor;
-            FinalizedUiSkin.Button(button, true, true);
-            return;
-        }
-
-        button.targetGraphic.color =
-            available
-                ? UnselectedColor
-                : UnavailableColor;
-        FinalizedUiSkin.Button(button, true);
+        if (!reset.interactable) return;
+        resetId = selected.definition.PlayerId;
+        resetMessage.text = $"Reset {selected.title} to level 1?\n\nEarned bomb unlocks and inventory stay. Upgrade gold is not refunded.";
+        modal.gameObject.SetActive(true);
     }
 
-    private bool HasRequiredReferences()
+    private void CloseReset()
     {
-        bool hasAllReferences =
-            rattlebonesButton != null &&
-            bardleyButton != null &&
-            characterPreview != null &&
-            statusText != null &&
-            startButton != null &&
-            backButton != null;
-
-        if (hasAllReferences)
-        {
-            return true;
-        }
-
-        Debug.LogError(
-            "CharacterSelectMenuController requires both character buttons, " +
-            "preview/status presentation, and Start/Back buttons.",
-            this
-        );
-
-        return false;
+        resetId = null;
+        if (modal != null) modal.gameObject.SetActive(false);
     }
 
-    private static string GetMenuDisplayName(
-        string playerId)
+    private void ConfirmReset()
     {
-        if (PlayerDefinitionRegistry.TryGetDefinition(playerId, out var definition))
-            return definition.DisplayName.ToUpperInvariant();
-        return string.Equals(
-                playerId,
-                CharacterSelectionSettings.BardleyPlayerId,
-                StringComparison.Ordinal
-            )
-            ? "BARDLEY"
-            : "RATTLEBONES";
+        string id = resetId;
+        CloseReset();
+        if (id == null) return;
+        feedback.text = account.TryResetLevel(id) ? "Level reset. Earned bomb unlocks kept." : "Level could not be reset.";
+        Refresh();
     }
 }

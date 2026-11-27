@@ -64,8 +64,8 @@ public sealed class BalanceFreshShapesPlayTests
             Assert.That(Button(characters,"ResetLevel").interactable,Is.False);
             yield return CaptureMenu("05-reset-complete");
             Button(characters,"LevelUp").onClick.Invoke();Button(characters,"LevelUp").onClick.Invoke();
-            Assert.That(characters.transform.Find("UnlockFeedback").GetComponent<TMPro.TMP_Text>().text,Does.Not.Contain("Unlocked for"));
-            ((Button)typeof(CharacterSelectMenuController).GetField("bardleyButton",Flags).GetValue(characters)).onClick.Invoke();
+            Assert.That(characters.GetComponentsInChildren<TMPro.TMP_Text>(true).Single(label=>label.name=="UnlockFeedback").text,Does.Not.Contain("Unlocked for"));
+            Button(characters,"BardleyButton").onClick.Invoke();
             Button(characters,"LevelUp").onClick.Invoke();
             Button(characters,"ResetLevel").onClick.Invoke();Button(characters,"ConfirmResetLevel").onClick.Invoke();
             Assert.That(AccountProgression.Current.Level("bardley"),Is.EqualTo(1));

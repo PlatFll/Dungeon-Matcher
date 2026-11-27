@@ -32,6 +32,7 @@ public sealed class MainMenuController : MonoBehaviour
         characterSelectScreen;
 
     private bool isLoadingGame;
+    private bool masteryFromCharacters;
     private ShopMenuController shopScreen;
     private TMP_Text accountLabel;
     private RectTransform challengePanel;
@@ -59,7 +60,7 @@ public sealed class MainMenuController : MonoBehaviour
         );
 
         gemMasteryBackButton.onClick.AddListener(
-            ShowHome
+            BackFromMastery
         );
 
         ConfigureHome();
@@ -87,7 +88,7 @@ public sealed class MainMenuController : MonoBehaviour
         if (gemMasteryBackButton != null)
         {
             gemMasteryBackButton.onClick.RemoveListener(
-                ShowHome
+                BackFromMastery
             );
         }
     }
@@ -113,8 +114,21 @@ public sealed class MainMenuController : MonoBehaviour
         }
     }
 
+    private void BackFromMastery()
+    {
+        if (masteryFromCharacters) ShowCharacterSelect();
+        else ShowHome();
+    }
+
+    private void ShowCharacterMastery()
+    {
+        ShowGemMastery();
+        masteryFromCharacters = true;
+    }
+
     public void ShowGemMastery()
     {
+        masteryFromCharacters = false;
         if (homeScreen == null ||
             gemMasteryScreen == null)
         {
@@ -306,7 +320,7 @@ public sealed class MainMenuController : MonoBehaviour
         {
             characterSelectScreen.Initialize(
                 PlayGame,
-                ShowHome
+                ShowHome, ShowCharacterMastery
             );
 
             return true;
@@ -356,7 +370,7 @@ public sealed class MainMenuController : MonoBehaviour
 
         characterSelectScreen.Initialize(
             PlayGame,
-            ShowHome
+            ShowHome, ShowCharacterMastery
         );
 
         return true;
