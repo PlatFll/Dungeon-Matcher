@@ -16,7 +16,7 @@ public sealed partial class ShopMenuController : MonoBehaviour
         public ConsumableKind kind;
         public RectTransform root, body;
         public Image card;
-        public TMP_Text owned, equipCaption;
+        public TMP_Text owned, buyCaption, equipCaption;
         public Button buy, equip;
     }
 
@@ -26,7 +26,9 @@ public sealed partial class ShopMenuController : MonoBehaviour
     private ScrollRect scroll;
     private Image mouse;
     private TMP_FontAsset font;
-    private TMP_Text wallet, comment;
+    private TMP_Text wallet, comment, spendReceipt;
+    private Row purchasedRow;
+    private float receiptUntil;
     private RectTransform walletCoin;
     private ConsumableKind featured = ConsumableKind.ShieldPotion;
 
@@ -71,11 +73,13 @@ public sealed partial class ShopMenuController : MonoBehaviour
         AccountProgression.Current.Changed -= Refresh;
         AudioPreferences.Changed -= ApplySoundSettings;
         if (hum != null) hum.Stop();
+        ClearReceipt();
     }
 
     private void LateUpdate()
     {
         if (initialized && (safe.rect.size - lastSize).sqrMagnitude > .01f) Layout();
+        if (purchasedRow != null && Time.unscaledTime >= receiptUntil) ClearReceipt();
     }
 
     private void BuildHeader()
@@ -92,6 +96,8 @@ public sealed partial class ShopMenuController : MonoBehaviour
         var purse = Picture("CurrencyPlaque", header, "Wallet", 352, 21, 118, 43, sliced: true);
         wallet = MakeAmount(purse.rectTransform, "Gold", 24, 21, out walletCoin);
         wallet.fontSizeMin = 10;
+        spendReceipt = Label("GoldSpent", header, "", 344, 65, 126, 23, 16, TextAlignmentOptions.Midline, true);
+        spendReceipt.color = new Color32(255, 222, 136, 255);
         var bubble = Picture("SpeechBubble", header, "Speech", 244, 98, 172, 75, sliced: true);
         // The tail sits below the speech face.
         comment = Label("MerchantComment", bubble.transform, "Have a look around!", 9, 5, 154, 59, 17, TextAlignmentOptions.Midline, true);
@@ -156,9 +162,10 @@ public sealed partial class ShopMenuController : MonoBehaviour
         var priceArea = Box("PriceGroup", parent, 306, 7, 126, 26);
         var price = MakeAmount(priceArea, "Price", 20, 19, out var coin);
         CenterAmount(coin, price, SupplyCatalog.Price(kind).ToString("N0"));
-        row.buy = Control("Buy", parent, "Buy", 306, 35, 126, 39, () => Purchase(row));
-        ButtonLabel(row.buy, "Buy", 19).color = Ink;
-        row.equip = Control("Equip", parent, "Equip", 312, 78, 114, 29, () => Equip(row));
+        row.buy = Control("Buy", parent, "Buy", 306, 35, 126, 39, () => Purchase(row), MenuCue.None);
+        row.buyCaption = ButtonLabel(row.buy, "Buy", 19);
+        row.buyCaption.color = Ink;
+        row.equip = Control("Equip", parent, "Equip", 312, 78, 114, 29, () => Equip(row), MenuCue.None);
         row.equipCaption = ButtonLabel(row.equip, "Equip", 14);
         row.equipCaption.color = Ink;
     }
@@ -218,7 +225,9 @@ public sealed partial class ShopMenuController : MonoBehaviour
     private void Purchase(Row row)
     {
         if (merchantState == MerchantState.Leaving) return;
-        if (!account.TryPurchase(row.kind)) { Refresh(); return; }
+        int previousGold = account.Gold;
+        int previousStock = account.Owned(row.kind);
+        if (!account.TryPurchase(row.kind)) { MenuSoundPlayer.Play(MenuCue.Denied); Refresh(); return; }
         featured = row.kind;
         string line = row.kind switch {
             ConsumableKind.HealthPotion => "A sip for those scrapes!",
@@ -230,13 +239,28 @@ public sealed partial class ShopMenuController : MonoBehaviour
         };
         Speak(line);
         Refresh();
+        ClearReceipt();
+        purchasedRow = row;
+        receiptUntil = Time.unscaledTime + 0.85f;
+        spendReceipt.text = $"-{previousGold - account.Gold:N0} GOLD";
+        row.owned.text = $"Owned: {account.Owned(row.kind):N0}   <color=#FFDE88>+{account.Owned(row.kind) - previousStock}</color>";
+        MenuSoundPlayer.Play(MenuCue.Coin);
+    }
+
+    private void ClearReceipt()
+    {
+        if (purchasedRow == null) return;
+        purchasedRow.owned.text = $"Owned: {account.Owned(purchasedRow.kind):N0}";
+        spendReceipt.text = "";
+        purchasedRow = null;
     }
 
     private void Equip(Row row)
     {
         if (merchantState == MerchantState.Leaving) return;
         bool equip = !account.Equipped(row.kind);
-        if (!account.SetEquipped(row.kind, equip)) { Refresh(); return; }
+        if (!account.SetEquipped(row.kind, equip)) { MenuSoundPlayer.Play(MenuCue.Denied); Refresh(); return; }
+        MenuSoundPlayer.Play(equip ? MenuCue.Socket : MenuCue.Release);
         featured = row.kind;
         Speak(equip ? (SupplyCatalog.IsPotion(row.kind) ? "Within paw's reach!" : "Packed for a big entrance!") : "Back on the shelf!",
             Art(equip ? "MouseHelpful" : "MousePlayful"));
@@ -258,6 +282,8 @@ public sealed partial class ShopMenuController : MonoBehaviour
             row.owned.text = $"Owned: {count:N0}";
             row.card.sprite = Art(row.kind == featured ? "SelectedCard" : "Card");
             row.buy.interactable = !locked && count < 9999 && account.Gold >= SupplyCatalog.Price(row.kind);
+            int shortfall = SupplyCatalog.Price(row.kind) - account.Gold;
+            row.buyCaption.text = locked ? "Run active" : count >= 9999 ? "Full" : shortfall > 0 ? $"Need {shortfall:N0}" : "Buy";
             row.equip.interactable = !locked && (count > 0 || equipped);
             row.equipCaption.text = equipped ? "Unequip" : "Equip";
             row.buy.image.sprite = Art(row.buy.interactable ? "Buy" : "Disabled");
@@ -305,7 +331,7 @@ public sealed partial class ShopMenuController : MonoBehaviour
         return image;
     }
 
-    private Button Control(string name, Transform parent, string sprite, float x, float y, float w, float h, UnityEngine.Events.UnityAction action)
+    private Button Control(string name, Transform parent, string sprite, float x, float y, float w, float h, UnityEngine.Events.UnityAction action, MenuCue sound = MenuCue.Press)
     {
         var image = Picture(name,parent,sprite,x,y,w,h,sliced:true);
         image.raycastTarget = true;
@@ -316,6 +342,7 @@ public sealed partial class ShopMenuController : MonoBehaviour
         colors.pressedColor = new Color(.78f,.72f,.8f);
         colors.disabledColor = new Color(.9f,.87f,.92f);
         button.colors = colors;
+        MenuButtonFeedback.Attach(button, sound);
         button.onClick.AddListener(action);
         return button;
     }

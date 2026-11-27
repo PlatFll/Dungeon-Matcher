@@ -12,7 +12,10 @@ public sealed partial class CharacterSelectMenuController
     private RectTransform libraryScenery, viewport, entries, emptyJournal;
     private ScrollRect journalScroll;
     private Scrollbar scrollBar;
-    private TMP_Text discovery, sortLabel;
+    private const string JournalIntro = "Upgrades you’ve seen on your runs. Their bonuses last until the run ends.";
+    private TMP_Text discovery, sortLabel, journalNote;
+    private RunUpgradeDefinition inspectedCard;
+    private Image inspectedRow;
     private bool alphabetical, masteryBackToRoster;
 
     private void BuildLibrary()
@@ -35,12 +38,13 @@ public sealed partial class CharacterSelectMenuController
         {
             alphabetical = !alphabetical;
             RefreshJournal();
-        });
+        }, MenuCue.Page);
         sortLabel = Text("Sort", sort.transform, "", 5, 4, 154, 22, 21);
         var paper = Picture("JournalIntroduction", cardPage, Art("Parchment"), 9, 45, 342, 65);
         Heading(paper.transform, "RUN UPGRADE CARDS", 74, -10, 194);
-        Text("HowCardsWork", paper.transform, "Upgrades you’ve seen on your runs. Their bonuses last until the run ends.",
-            19, 17, 304, 40, 22, TextAlignmentOptions.Midline, true).color = Ink;
+        journalNote = Text("HowCardsWork", paper.transform, JournalIntro,
+            19, 17, 304, 40, 22, TextAlignmentOptions.Midline, true);
+        journalNote.color = Ink;
 
         viewport = Box("JournalViewport", cardPage, 9, 119, 330, 383);
         var touch = viewport.gameObject.AddComponent<Image>();
@@ -126,6 +130,7 @@ public sealed partial class CharacterSelectMenuController
 
     private void RefreshJournal()
     {
+        inspectedRow = null;
         foreach (Transform row in entries)
         {
             row.gameObject.SetActive(false);
@@ -150,6 +155,17 @@ public sealed partial class CharacterSelectMenuController
     private void BuildEntry(RunUpgradeDefinition card, int index)
     {
         var row = Picture(card.UpgradeId, entries, ShopArt("Card"), 0, index * 68, 330, 64);
+        row.raycastTarget = true;
+        var inspect = row.gameObject.AddComponent<Button>();
+        inspect.targetGraphic = row;
+        inspect.navigation = new Navigation { mode = Navigation.Mode.None };
+        MenuButtonFeedback.Attach(inspect, MenuCue.Page);
+        inspect.onClick.AddListener(() => InspectJournalCard(card, row));
+        if (inspectedCard == card)
+        {
+            row.sprite = ShopArt("SelectedCard");
+            inspectedRow = row;
+        }
         Color accent = card.Rarity switch
         {
             RunUpgradeRarity.Uncommon => new Color32(177, 232, 169, 255),
@@ -177,6 +193,17 @@ public sealed partial class CharacterSelectMenuController
         var badge = Picture("RarityBadge", row.transform, Art("Stats"), 240, 6, 82, 22);
         badge.color = accent;
         Text("Rarity", badge.transform, card.Rarity.ToString().ToUpperInvariant(), 4, 2, 74, 18, 16).color = accent;
+    }
+
+    private void InspectJournalCard(RunUpgradeDefinition card, Image row)
+    {
+        if (inspectedRow != null) inspectedRow.sprite = ShopArt("Card");
+        bool close = inspectedCard == card;
+        inspectedCard = close ? null : card;
+        inspectedRow = close ? null : row;
+        if (!close) row.sprite = ShopArt("SelectedCard");
+        journalNote.text = close ? JournalIntro :
+            $"{card.DisplayTitle} · {card.Theme}\n{(card.MaxStacks == 1 ? "One copy per run" : $"Stacks up to {card.MaxStacks} times per run")}";
     }
 
     private Sprite CardArt(RunUpgradeDefinition card)

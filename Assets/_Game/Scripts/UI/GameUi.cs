@@ -40,6 +40,7 @@ public static class GameUi
         var button = rect.gameObject.AddComponent<Button>(); button.targetGraphic = image;
         var colors = button.colors; colors.highlightedColor = new Color(1.2f,1.2f,1.2f); colors.disabledColor = new Color(0.45f,0.45f,0.45f); button.colors = colors;
         button.navigation = new Navigation { mode = Navigation.Mode.None };
+        MenuButtonFeedback.Attach(button);
         button.onClick.AddListener(action);
         // Reserve the bevel and corner ornaments before the font chooses its largest fitting size.
         Vector2 inset = new Vector2(Mathf.Min(36, size.x * .22f), Mathf.Min(16, size.y * .30f));

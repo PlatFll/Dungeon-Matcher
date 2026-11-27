@@ -42,6 +42,83 @@ public sealed class MenuUiReviewTests
         RunLaunchOptions.StartingZone=null; RunLaunchOptions.Practice=false;
         yield return new ExitPlayMode();
     }
+    [UnityTest] public IEnumerator MenuSoundAndReceiptsFollowProductionControls()
+    {
+        bool muted = AudioPreferences.SfxMuted;
+        try
+        {
+            AudioPreferences.SetSfxMuted(false);
+            SceneManager.LoadScene("MainMenu");
+            yield return null;
+            yield return null;
+            var account = AccountProgression.Current;
+            var card = Resources.Load<RunUpgradeCatalog>("RunUpgrades/PrototypeRunUpgradeCatalog").Upgrades.First(c => c != null);
+            string priorRun = account.BeginRun("skeleton");
+            Assert.True(account.RememberCardOffer(new[] { card }, 1));
+            Assert.True(account.FinalizeRun(priorRun, "Defeat"));
+            Assert.True(account.HasDiscoveredCard(card.UpgradeId));
+            Click("ShopButton");
+            var player = Object.FindFirstObjectByType<MenuSoundPlayer>();
+            Assert.NotNull(player);
+            var voices = player.GetComponents<AudioSource>();
+            Assert.True(voices.Any(v => v.clip != null && v.clip.name.StartsWith("Press")));
+            var shop = Object.FindFirstObjectByType<ShopMenuController>();
+            var first = shop.GetComponentInChildren<ScrollRect>().content.GetChild(0).Find("Contents");
+            var buy = first.Find("Buy").GetComponent<Button>();
+            var equip = first.Find("Equip").GetComponent<Button>();
+            int price = SupplyCatalog.Price(ConsumableKind.HealthPotion);
+            int oldStock = account.Owned(ConsumableKind.HealthPotion);
+            int oldGold = account.Gold;
+            var pointer = new PointerEventData(EventSystem.current) { button = PointerEventData.InputButton.Left };
+            ExecuteEvents.Execute(buy.gameObject, pointer, ExecuteEvents.pointerDownHandler);
+            Assert.AreEqual(oldGold, account.Gold);
+            ExecuteEvents.Execute(buy.gameObject, pointer, ExecuteEvents.pointerUpHandler);
+            ExecuteEvents.Execute(buy.gameObject, pointer, ExecuteEvents.pointerClickHandler);
+            Assert.AreEqual(oldGold - price, account.Gold);
+            Assert.AreEqual(oldStock + 1, account.Owned(ConsumableKind.HealthPotion));
+            Assert.AreEqual($"-{price} GOLD", shop.GetComponentsInChildren<TMP_Text>().Single(t=>t.name=="GoldSpent").text);
+            Assert.True(first.Find("Details/Owned").GetComponent<TMP_Text>().text.Contains("+1"));
+            var coinVoice = voices.Single(v => v.clip != null && v.clip.name == "Coin");
+            yield return Until(() => coinVoice.timeSamples > 0);
+            AudioPreferences.SetSfxMuted(true);
+            Assert.True(voices.All(v => !v.isPlaying));
+            equip.OnPointerClick(pointer);
+            Assert.False(account.Equipped(ConsumableKind.HealthPotion));
+            Assert.True(voices.All(v => !v.isPlaying));
+            AudioPreferences.SetSfxMuted(false);
+            equip.OnPointerClick(pointer);
+            Assert.True(account.Equipped(ConsumableKind.HealthPotion));
+            Assert.True(voices.Any(v => v.clip != null && v.clip.name == "Socket"));
+            for (int i = 0; i < oldGold / price && buy.interactable; i++) buy.OnPointerClick(pointer);
+            Assert.False(buy.interactable);
+            int remaining = account.Gold;
+            int remainingStock = account.Owned(ConsumableKind.HealthPotion);
+            buy.OnPointerClick(pointer);
+            Assert.AreEqual(remaining, account.Gold);
+            Assert.AreEqual(remainingStock, account.Owned(ConsumableKind.HealthPotion));
+            Assert.That(buy.GetComponentInChildren<TMP_Text>().text, Does.StartWith("Need"));
+            shop.GetComponentsInChildren<Button>().Single(b => b.name == "Back").OnPointerClick(pointer);
+            yield return Until(() => !shop.gameObject.activeInHierarchy);
+            Click("CharactersButton");
+            yield return null; // Let the newly opened chamber place its roster before the next touch.
+            Click("BardleyButton");
+            Click("CardsTab");
+            yield return null;
+            Click(card.UpgradeId);
+            Assert.That(GameObject.Find("HowCardsWork").GetComponent<TMP_Text>().text, Does.Contain(card.DisplayTitle));
+            Click("SortCards");
+            yield return null;
+            Click(card.UpgradeId);
+            Assert.That(GameObject.Find("HowCardsWork").GetComponent<TMP_Text>().text, Does.Contain("Upgrades"));
+            Click("SpecialGemsTab");
+            var shape = Object.FindObjectsByType<Button>(FindObjectsSortMode.None).First(b => b.name == "LShape");
+            shape.OnPointerClick(pointer);
+            Assert.AreEqual("L", GameObject.Find("SetupShape").GetComponent<TMP_Text>().text);
+            Assert.True(voices.Any(v => v.clip != null && v.clip.name == "Page"));
+        }
+        finally { AudioPreferences.SetSfxMuted(muted); }
+    }
+
     [UnityTest] public IEnumerator HomeNavigationPreferencesAndSavedRunContinue()
     {
         SceneManager.LoadScene("MainMenu");yield return new WaitForSecondsRealtime(.6f);

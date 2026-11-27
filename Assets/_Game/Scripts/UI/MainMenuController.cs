@@ -47,6 +47,8 @@ public sealed class MainMenuController : MonoBehaviour
             return;
         }
 
+        MenuButtonFeedback.Attach(playButton);
+        MenuButtonFeedback.Attach(gemMasteryButton);
         playButton.onClick.AddListener(
             PlayGame
         );

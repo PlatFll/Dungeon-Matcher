@@ -169,13 +169,19 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         }
 
         object session = choiceSession;
-        if (unsavedOffer != null && !AccountProgression.Current.RememberCardOffer(unsavedOffer, visibleOfferCount)) return;
+        if (unsavedOffer != null && !AccountProgression.Current.RememberCardOffer(unsavedOffer, visibleOfferCount))
+        {
+            refineHelp.text = "Couldn’t save the offer. Tap your card to retry.";
+            MenuSoundPlayer.Play(MenuCue.Denied);
+            return;
+        }
         unsavedOffer = null;
         Func<RunUpgradeDefinition, bool> handler = trySelect;
         selectionPending = true;
         SetCardsInteractable(false);
 
         bool accepted = handler(definition);
+        MenuSoundPlayer.Play(accepted ? MenuCue.Socket : MenuCue.Denied);
         // Applying a card can synchronously hide/reset/rebind the UI. An old
         // callback must never hide or re-enable a replacement choice.
         if (!ReferenceEquals(choiceSession, session)) return;
@@ -187,6 +193,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         }
 
         selectionPending = false;
+        if (AccountProgression.Current.LastError != null) refineHelp.text = "Couldn’t save. Tap your card to retry.";
         SetCardsInteractable(true);
     }
 
@@ -282,7 +289,10 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
             var selectedTheme = theme;
             refineButtons.Add(GameUi.Button("Refine" + theme, offerLayout, "Refine\n" + theme,
                 new Vector2(102,44), new Vector2(((int)theme-1)*112,-228),
-                () => { if (refinement != null) refinement.TryRefine(selectedTheme); }));
+                () =>
+                {
+                    if (refinement != null && refinement.TryRefine(selectedTheme)) MenuSoundPlayer.Play(MenuCue.Page);
+                }));
             GameplayThemeSkin.Button(refineButtons[refineButtons.Count-1]);
         }
         overlayRect.gameObject.SetActive(false);
