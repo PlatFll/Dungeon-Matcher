@@ -14,7 +14,7 @@ public sealed partial class ForestFoundationPlayTests
 {
     [UnityTest] public IEnumerator UnifiedCommandConsumesWholeLancerSequenceOnceAndStaggerCancels()
     {
-        yield return LaunchUnified();
+        yield return LaunchWithTwoFreeSlots();
         var kingData=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_King.asset");
         var lancerData=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_RoyalLancer.asset");
         Assert.That(Run.Waves.TrySummonEnemy(kingData,out var king),Is.True);
@@ -60,7 +60,7 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator UnifiedEveryRankPriorityAndDeathAreRechecked()
     {
-        yield return LaunchUnified();
+        yield return LaunchWithTwoFreeSlots();
         var data=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_ShieldKnight.asset");
         Assert.That(Run.Waves.TrySummonEnemy(data,out var left),Is.True);
         Assert.That(Run.Waves.TrySummonEnemy(data,out var right),Is.True);

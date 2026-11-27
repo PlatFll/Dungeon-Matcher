@@ -1,0 +1,806 @@
+fileFormatVersion: 2
+guid: 80223b3976bd5051ac3926edb0603019
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5153509163430004693
+    second: GuildChirurgeon_Idle_00
+  - first:
+      213: 2583484186188629673
+    second: GuildChirurgeon_Idle_01
+  - first:
+      213: 2441308243727515828
+    second: GuildChirurgeon_Idle_02
+  - first:
+      213: -2746337537490641365
+    second: GuildChirurgeon_Idle_03
+  - first:
+      213: -5587410606967449068
+    second: GuildChirurgeon_Idle_04
+  - first:
+      213: -5872301464605446263
+    second: GuildChirurgeon_Idle_05
+  - first:
+      213: -2172553984610796959
+    second: GuildChirurgeon_Idle_06
+  - first:
+      213: -4005167087214989597
+    second: GuildChirurgeon_Idle_07
+  - first:
+      213: 1354993297828485674
+    second: GuildChirurgeon_Idle_08
+  - first:
+      213: -7037677487563122054
+    second: GuildChirurgeon_Idle_09
+  - first:
+      213: 9214135593138103202
+    second: GuildChirurgeon_Idle_10
+  - first:
+      213: 2756451508269619822
+    second: GuildChirurgeon_Idle_11
+  - first:
+      213: 7059162840196805903
+    second: GuildChirurgeon_Idle_12
+  - first:
+      213: 151209836351814805
+    second: GuildChirurgeon_Idle_13
+  - first:
+      213: 1738562158152942965
+    second: GuildChirurgeon_Idle_14
+  - first:
+      213: 9171560623785210505
+    second: GuildChirurgeon_Idle_15
+  - first:
+      213: 2424968229025232838
+    second: GuildChirurgeon_Idle_16
+  - first:
+      213: -2415182760794310398
+    second: GuildChirurgeon_Idle_17
+  - first:
+      213: 1897832051797899992
+    second: GuildChirurgeon_Idle_18
+  - first:
+      213: -6150479244249730944
+    second: GuildChirurgeon_Idle_19
+  - first:
+      213: 1845033048795998317
+    second: GuildChirurgeon_Idle_20
+  - first:
+      213: 7571315538860990318
+    second: GuildChirurgeon_Idle_21
+  - first:
+      213: 5081783704937623455
+    second: GuildChirurgeon_Idle_22
+  - first:
+      213: -5606368117599865458
+    second: GuildChirurgeon_Idle_23
+  - first:
+      213: -3404425311204140206
+    second: GuildChirurgeon_Idle_24
+  - first:
+      213: 2434802753275974767
+    second: GuildChirurgeon_Idle_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 4096
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.0384615385}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d747f89741f48740800000000000000
+      internalID: 5153509163430004693
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a6cc90fd216ad320800000000000000
+      internalID: 2583484186188629673
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b08c9eb9e441e120800000000000000
+      internalID: 2441308243727515828
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2e9c847f8c03e9d0800000000000000
+      internalID: -2746337537490641365
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a947508a78572b0800000000000000
+      internalID: -5587410606967449068
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98faf244ee4618ea0800000000000000
+      internalID: -5872301464605446263
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_06
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16af9e369a989d1e0800000000000000
+      internalID: -2172553984610796959
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_07
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eee67421c9ca68c0800000000000000
+      internalID: -4005167087214989597
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2a1a1ea937edc210800000000000000
+      internalID: 1354993297828485674
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_09
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a590ebc95255e90800000000000000
+      internalID: -7037677487563122054
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a3a74dd08f2fdf70800000000000000
+      internalID: 9214135593138103202
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6a100fda02e04620800000000000000
+      internalID: 2756451508269619822
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f05719db33f27f160800000000000000
+      internalID: 7059162840196805903
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c7b468b84391200800000000000000
+      internalID: 151209836351814805
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57584a0521d902810800000000000000
+      internalID: 1738562158152942965
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9827da85bcde74f70800000000000000
+      internalID: 9171560623785210505
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c738aa91c737a120800000000000000
+      internalID: 2424968229025232838
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2093533431c8b7ed0800000000000000
+      internalID: -2415182760794310398
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dab3ca2234765a10800000000000000
+      internalID: 1897832051797899992
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 080f418c6bb15aaa0800000000000000
+      internalID: -6150479244249730944
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68675058cfda9910800000000000000
+      internalID: 1845033048795998317
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_21
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6f54383e57b21960800000000000000
+      internalID: 7571315538860990318
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_22
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9fec2eea5f168640800000000000000
+      internalID: 5081783704937623455
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_23
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e85726e96ed2232b0800000000000000
+      internalID: -5606368117599865458
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_24
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b1455873d01c0d0800000000000000
+      internalID: -3404425311204140206
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuildChirurgeon_Idle_25
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f64582734382ac120800000000000000
+      internalID: 2434802753275974767
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GuildChirurgeon_Idle_00: 5153509163430004693
+      GuildChirurgeon_Idle_01: 2583484186188629673
+      GuildChirurgeon_Idle_02: 2441308243727515828
+      GuildChirurgeon_Idle_03: -2746337537490641365
+      GuildChirurgeon_Idle_04: -5587410606967449068
+      GuildChirurgeon_Idle_05: -5872301464605446263
+      GuildChirurgeon_Idle_06: -2172553984610796959
+      GuildChirurgeon_Idle_07: -4005167087214989597
+      GuildChirurgeon_Idle_08: 1354993297828485674
+      GuildChirurgeon_Idle_09: -7037677487563122054
+      GuildChirurgeon_Idle_10: 9214135593138103202
+      GuildChirurgeon_Idle_11: 2756451508269619822
+      GuildChirurgeon_Idle_12: 7059162840196805903
+      GuildChirurgeon_Idle_13: 151209836351814805
+      GuildChirurgeon_Idle_14: 1738562158152942965
+      GuildChirurgeon_Idle_15: 9171560623785210505
+      GuildChirurgeon_Idle_16: 2424968229025232838
+      GuildChirurgeon_Idle_17: -2415182760794310398
+      GuildChirurgeon_Idle_18: 1897832051797899992
+      GuildChirurgeon_Idle_19: -6150479244249730944
+      GuildChirurgeon_Idle_20: 1845033048795998317
+      GuildChirurgeon_Idle_21: 7571315538860990318
+      GuildChirurgeon_Idle_22: 5081783704937623455
+      GuildChirurgeon_Idle_23: -5606368117599865458
+      GuildChirurgeon_Idle_24: -3404425311204140206
+      GuildChirurgeon_Idle_25: 2434802753275974767
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

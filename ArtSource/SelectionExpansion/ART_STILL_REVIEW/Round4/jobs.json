@@ -1,0 +1,170 @@
+[
+  {
+    "enemy": "guild_ranger",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "ae47432c-75ad-4421-98f2-75b055151440",
+    "galleryId": "e1b6d51d-579e-5a61-862f-b251e92ab4c9",
+    "status": "completed",
+    "cost": 10,
+    "seed": 875420,
+    "canvas": [
+      64,
+      64
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "usage": "Primary rendering style"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/elven_pathblade.png",
+        "sha256": "17488569d807d02bbc6fb73f587a12ffc01630b57c4c608733ed80c666a9b7bf",
+        "usage": "Elf head size, pointed ear, slender limbs and adult proportions only."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/Equipment/guild_ranger.png",
+        "sha256": "62aba3ce1db2d75197b276ba33a981dc1abfacad29b7d6c39339d2a12fba0ae3",
+        "usage": "Bespoke equipment design: mount the amber lantern on the recurved bow, wear the folded map as a shoulder cape. Integrate both into one full character."
+      }
+    ],
+    "description": "ONE complete combat character sprite, full body, 3/4 WEST facing screen-left, on transparent background. At native small size give the signature equipment ample space, compact crisp grouped pixels, upper-left light, dark thin contour. Feet grounded, whole weapon visible; no floor, text, cards or detached equipment. Elven lantern-cartographer, a dungeon-survey archer who wears his chart. Short triangular buff parchment half-cloak with folded corners, visible dark blue cave route and a small X sweeping sideways over an indigo Guild coat. One exposed long elf ear, russet braided hair pulled back, quiet angular face and slim booted legs. He halts mid-stride to peer into the dark; holds a real upright short RECURVE BOW at arm\u2019s length on his forward left side; a little brass shuttered amber lantern is visibly bolted inside its upper curve, separated from his face. Visible string, arrow fletchings in back quiver. Use the independent design drawing for both the bow and map fabric. Distinct silhouette of lamp against darkness and wind-caught triangular map wing.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round4/guild_ranger",
+    "sourceHashes": {
+      "01.png": "e9fefbdbf8763e3e938058bbf18577f6d494c28dfd38c7a31a24e6761e8546b5",
+      "02.png": "41cded137264c7581a3c69f04d1672680aa77208e340a7eb82daa0c692b8e274",
+      "03.png": "071bb690197a4e9b99414694f5fd93d1c7d5c88a1cac55f8b6358b8fa0b17dca",
+      "04.png": "654a920dc4c6ace6fec3d97dc2a9fcde0f536e3dbfae1f52acc59ea30fee4c7e",
+      "05.png": "4ac06d9a11aa2dd3abae84652465c8fddda36c9f52959749ee9fbea0059069e9",
+      "06.png": "aa903c14ae61dcb0e07ed3f074fb16ff98fb624ae06971758a7553bc957f557a",
+      "07.png": "581730fabd5807f4ac1d88f84ce2e8934c788fe54ec3e3dd893f3a2d684cc600",
+      "08.png": "773c654d2f82f0a0b1f9925de72d4ac43279792cb09f3c47b65b19f602eb9ff7",
+      "09.png": "9036700188a59f1ffc293eb103b824de39e459755a52eb72c1000b389d76a4e1",
+      "10.png": "795e01d05f0ff6dead68a03ebdf7e811044084cbcb0dfb1d12b3e440721cde62",
+      "11.png": "ef799d4c2448372efcca92cedb7d6ce741bbde7391a3ddbb0cd6e199e7d5e9ee",
+      "12.png": "c950046efebb09e562cfcc338e27c377e0acdbea632adff06c518bdf0527241b",
+      "13.png": "a0030ae120974d552c056ee671c6863437a089f37ae99449a4eaddf44189ad38",
+      "14.png": "376559a3ab863ed72adb4eb5d7d7a0842734eae286cd6f94befca9cde3bec375",
+      "15.png": "cdb43a91741cb851a8371838ab28b2bac3d51fe16485358a3df61a0267a37adc",
+      "16.png": "7e7842e21b2709d8eaba1e46beab7e4122ceff4e81e6676ac130dc26053e4d8a"
+    }
+  },
+  {
+    "enemy": "guild_bulwark",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "30dcaceb-3423-4668-b6ee-c5096f5e15b0",
+    "galleryId": "421b913e-288e-5881-bc16-fc08eedddf25",
+    "status": "completed",
+    "cost": 10,
+    "seed": 875421,
+    "canvas": [
+      64,
+      64
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "usage": "Primary rendering style"
+    },
+    "reference_images": [
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+        "sha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+        "usage": "Guild human proportions and skin/armor rendering only. This is a much stockier adult veteran."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/Equipment/guild_bulwark.png",
+        "sha256": "fe783d108ad0c0de3edb69faaa571878fe1725b253eed82e38119f4770875a27",
+        "usage": "The actual shield and key-mace design. Keep the piercings in the door grille, planks, hinge and lock. These are handheld equipment."
+      }
+    ],
+    "description": "ONE complete combat character sprite, full body, 3/4 WEST facing screen-left, on transparent background. At native small size give the signature equipment ample space, compact crisp grouped pixels, upper-left light, dark thin contour. Feet grounded, whole weapon visible; no floor, text, cards or detached equipment. Guild breach warden who tore a cell door from its hinges and carries it as a shield. A square-jawed broad stocky middle-aged human veteran side-on, facing left, wide bracing step with a shoulder pressed into his waist-to-brow-height dungeon DOOR. Make door shape immediately recognizable: arch of four iron bars across its upper third, visible open spaces between bars, dark oak planks, black hinge pins, large brass keyhole. Face visible beside the top corner. Opposite hand raises a short enormous blunt iron skeleton KEY as his mace to strike the door for Taunt; open-loop key bow and square bit clearly silhouetted. Indigo tabard and plain dull mail, ochre shoulder cord, little Guild badge. Make an active asymmetrical silhouette with the door out front and key behind, two boot soles and uncovered human head.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round4/guild_bulwark",
+    "sourceHashes": {
+      "01.png": "3050989bf7d199ae189828b07cf998f2f8e146c254cc7a1ee74107877af82538",
+      "02.png": "597d3977f312d1d02c0dc5b08c10ea00beec1d44b3d26a3d0233c9a02385ca85",
+      "03.png": "3c1d3a6c7726abf2ee05539727a5335cc562a22a99d2c25e681ddda5e70e947c",
+      "04.png": "2473d00e7ee637215641ce816355f91480109f682a1e69e954e5e5db8e3942ee",
+      "05.png": "38129d4a31c7ae5f22cdf9e85d8728c4e4ff7822447aced9d3e6ed68bf3b371a",
+      "06.png": "d9b10dd62e4102d3c30c53ba1c2370517a242b2afa1f784fe22272968c737f4a",
+      "07.png": "69b7c8bbeb66f6fe160c3238f6bc597e8973d5248636397e8805baf516a6eae5",
+      "08.png": "4226e42c363b10cd99aa6de4fe5b3e9684388d52892df2b6593c45aa72b6f337",
+      "09.png": "2943ef5db8e70db67941e76535d9554b40815e9f66bc15ac0334b41a607f98c3",
+      "10.png": "8f4b12e4da608875824cb3cdc70085d7ddd42ce228dd620cdd14dfdd6693c3ad",
+      "11.png": "999ace1501cca718f5150dd9b8b895b5f3688ddd0fa28991cd577aa3ea59ffcf",
+      "12.png": "7cca89d047d00af2e2aa31e2d97b71bbf4ad03040470ddfc462f886a142d8a0f",
+      "13.png": "f44da81d6d426112cc94f4b436964ecac27579cc1f795a0f4543bf55448349ef",
+      "14.png": "f1e9d71b1a037ce7f1f3de6f0494234b3da0ec49694bb4b220de8e9adb58c038",
+      "15.png": "3fac3eeefddbffa3dc0cb689bf0e64520fc2026a14bf4cb8fbc4f4100dab325c",
+      "16.png": "a268fd94b4e34d30db65d460ac6804eab8a76484a45280eec4756b1c2ed85e58"
+    }
+  },
+  {
+    "enemy": "orc_slinghunter",
+    "tool": "PixelLab create_image_pro",
+    "jobId": "7564130b-587d-4d9d-bbcb-57afcb285281",
+    "galleryId": "e976163a-28b5-5273-a3e9-591192723348",
+    "status": "completed",
+    "cost": 10,
+    "seed": 875422,
+    "canvas": [
+      64,
+      64
+    ],
+    "no_background": true,
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "usage": "Primary rendering style"
+    },
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/orc_trailguard-still.png",
+        "sha256": "e8621e70149e13c19c1db958c6a190fa40cf76b6b9e2f69ad4dcba56f02e295d",
+        "usage": "Olive orc proportions, jaw, ears and heavy forearms only."
+      },
+      {
+        "path": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round4/Equipment/orc_slinghunter.png",
+        "sha256": "a61234c32196bd26394958ade46e238dbb10090bab792505acb5e2db89b86e2d",
+        "usage": "Animal skull on the rear shoulder and a curved jaw holding round sling ammunition at the belt. Attach both to the orc. Avoid a skull helmet or a second living animal."
+      }
+    ],
+    "description": "ONE complete combat character sprite, full body, 3/4 WEST facing screen-left, on transparent background. At native small size give the signature equipment ample space, compact crisp grouped pixels, upper-left light, dark thin contour. Feet grounded, whole weapon visible; no floor, text, cards or detached equipment. Orc boar-tracker who turns his quarry\u2019s tusks into kit. A squat olive forest orc with unmistakable strong brow, green face, lower tusks, thick forearms and planted bent legs. His REAR SHOULDER wears a huge bone-white long-snouted tusked BOAR SKULL trophy as a pauldron tied over a dark coarse umber pelt, both green orc head and shoulder trophy separately legible. One curved ivory tusk breaks the outline by the shoulder. The boar jawbone straps across his hips and cups three smooth slate river stones. Front hand on the left grips a long double-strand reddish leather shepherd SLING with a stone seated in its cradle, the free hand reaching for the next stone in the jaw. Trackers crouch, wary squint looking to left. Single rust-red braid at belt, patched dark plum leather. Equipment matches the illustrated trophy and shot rack; feet, sling and green face unobstructed.",
+    "originalDirectory": "ArtSource/SelectionExpansion/Originals/Round4/orc_slinghunter",
+    "sourceHashes": {
+      "01.png": "40cfd98dbd432af5503cd3c050f916a6ab4037b541e4b94f182b82d15af0c543",
+      "02.png": "15f37cef911c3e8aa3d946e0054c1b8ef0a20d33f0d92a9b8e9291c1d3b92842",
+      "03.png": "91ec9695889bc9d12a0ef853d7ce0656b7cc233c5eab869027e5cbb27e460781",
+      "04.png": "df4d054ff35e20df4970523541e9b8dc0798368b99c927f0671923c8723ae538",
+      "05.png": "18512a85678edaa59391907654561e076fc530ce3a62d1cd2c26f1233a516a4d",
+      "06.png": "66838e2bb65a00a517041d1b0d9f77c428556410fa4a04b224717c95919c6f3d",
+      "07.png": "43c6fa897a734a3ce5c8689d9540ff8d17ab17c52f77b438ee7643619ab66bf7",
+      "08.png": "0d7b4801aff9aa2ed4248dfed0763b387aa9d1c651ffda606ff36f91800927d7",
+      "09.png": "bbf874c547dc4c87ecb1e8490bee0537093fa2b4823360e97ea048f948acd375",
+      "10.png": "81fde7dae512771e023e067e895c58ecc3ff6bc413db10ad86469f383c973599",
+      "11.png": "957af00ceae86d8308b3536217dfb5c99346c8fa3f464c635fa4a85eef72ea33",
+      "12.png": "552344ea2707aac45b4154c7765c2a579f9b5978170d1a92eca90c6f3fd45c4e",
+      "13.png": "718be8f7143c42cecea196e4f4b4c984086223c22b6d50b63dfbdd64ea70e525",
+      "14.png": "11230eeec640eb5c0401bcf1a94f7eb61b3102d73d81315e9325bdbf6c554e54",
+      "15.png": "d37b529ad64d4b14afdbcc02b65e7396622db3636f2a99603cd4f0e56d3dd9e5",
+      "16.png": "30f86e6927f52d03bcb06ba7d8cedf2e7b293aac4e704779f21b8f75108ea412"
+    }
+  }
+]

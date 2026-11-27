@@ -1,0 +1,53 @@
+{
+  "enemy": "guild_ranger",
+  "state": "basic",
+  "jobId": "bc499b5f-0743-4903-8ee0-b4506a729d82",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/R2.png",
+  "identitySHA256": "3e7fb908dbc705637cab341ab810164f641ebb55fd325662984ba3385c6ed92b",
+  "sourceIndices": [
+    0,
+    2,
+    1,
+    2,
+    4,
+    2,
+    4,
+    7
+  ],
+  "frameSize": [
+    128,
+    104
+  ],
+  "durationsMs": [
+    80,
+    80,
+    120,
+    40,
+    120,
+    60,
+    100,
+    80
+  ],
+  "totalMs": 680,
+  "impactMs": 320,
+  "sourcePaletteSize": 72,
+  "floor": 4,
+  "cellSHA256": [
+    "c811f20a148393d1a36faec8bff1663c4aaa01530385a65494fa64b8ab2ed272",
+    "9f8299c3bd71b8ef8d04e96692229b56802c2af6cc7cf79f80cf7d06cf48b819",
+    "75378bef615e460c4576b2137cbaaee98b4feb630f44fbafd459f836d925a4d9",
+    "9f8299c3bd71b8ef8d04e96692229b56802c2af6cc7cf79f80cf7d06cf48b819",
+    "17588951ebe63156c033b8644a74281ae36c96c59444355d365ffffebcbed317",
+    "9f8299c3bd71b8ef8d04e96692229b56802c2af6cc7cf79f80cf7d06cf48b819",
+    "17588951ebe63156c033b8644a74281ae36c96c59444355d365ffffebcbed317",
+    "64e94b758e7da649a6dda5f51bd3b26dc5f0d09254840fbb8c2dc596bd1c387d"
+  ],
+  "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_ranger/basic/sheet.png",
+  "sheetSHA256": "97d5ed2f750195ff3fdb6368c90540eb25b6c43a26096914279386807bd41080",
+  "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_ranger/basic/source.aseprite",
+  "editableSHA256": "607fae5fb6753123a50a1ad92479c03445e6200d257012f3eb7e827c2fec1c27",
+  "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_ranger/basic/preview.gif",
+  "approvedRevision": "Revision03",
+  "approvalSource": "ArtSource/SelectionExpansion/Motion/Review/Revision03/Clips/guild_ranger_basic",
+  "productionAmendment": "Docs/ArtDirection/AnimationSweep/GripAndDrape/Review.html"
+}

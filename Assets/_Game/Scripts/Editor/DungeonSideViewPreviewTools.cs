@@ -48,6 +48,7 @@ public static class DungeonSideViewPreviewTools
         preview.modules = Directory.GetFiles(AssetsRoot, "*.png", SearchOption.AllDirectories).OrderBy(x=>x)
             .Select(p => AssetDatabase.LoadAssetAtPath<Sprite>(p.Replace('\\','/'))).ToArray();
         if (preview.modules.Any(s=>!s)) throw new InvalidOperationException("A native sprite failed to import.");
+        preview.fixedReferenceCanvas = true;
         preview.placementManifest = AssetDatabase.LoadAssetAtPath<TextAsset>(AssetsRoot + "/PlacementManifest.json");
         preview.Rebuild();
         Directory.CreateDirectory(Path.GetDirectoryName(PrefabPath)); AssetDatabase.Refresh();

@@ -35,9 +35,8 @@ public sealed partial class WaveController
         foreach (var recipe in zone.resonanceEncounters)
             if (recipe.resonanceKind == ZoneEncounterKind.Ordinary &&
                 ResonanceFormationLegal(zone, recipe, tier, state, false) && IntroductionSafe(recipe, state)) choices.Add(recipe);
-        var fresh = choices.FindAll(r => !state.recentRecipes.Contains(r.label));
-        if (fresh.Count > 0) choices = fresh;
-        if (choices.Count > 0) return PickDepthRecipe(zone, tier, choices, random);
+        if (choices.Count > 0)
+            return OrdinarySelection.Choose(zone, tier, state, choices, random);
         return BuildDepthWeightedEncounter(zone, tier, state, random);
     }
     public static ZoneTestEncounter ChooseResonanceCapstone(ZoneDefinition zone, int depth,
@@ -87,12 +86,17 @@ public sealed partial class WaveController
             if (member.RequiredBossEscort != null && Array.IndexOf(recipe.members, member.RequiredBossEscort) < 0) return false;
             threat += member.ThreatCost; if (member.IsBoardDisruptor) disruptors++; if (member.IsSupport) supports++;
         }
+        if (!capstone && recipe.members.Any(e => e.Category == EnemyCategory.Boss || e.Category == EnemyCategory.Miniboss)) return false;
+        if (!capstone && recipe.members.Any(e => e.SpecialAbilityKind == EnemySpecialAbilityKind.GuildTaunt) &&
+            recipe.members.Count(e => e.SpecialAbilityKind == EnemySpecialAbilityKind.GuildTaunt ||
+                e.SpecialAbilityKind == EnemySpecialAbilityKind.GuildInstantHeal) > 1) return false;
         if (recipe.prerequisites != null && Array.Exists(recipe.prerequisites, id => !state.seenMechanics.Contains(id))) return false;
         float budget = zone.resonanceThreatBudgets[Mathf.Min(tier, zone.resonanceThreatBudgets.Length - 1)];
         // An authored capstone budget includes every escort; it is not a stat multiplier.
         if (capstone) budget = Mathf.Max(budget, recipe.resonanceThreatBudget);
         if (threat > Mathf.Min(budget, recipe.resonanceThreatBudget) || disruptors > 2 || supports > 1) return false;
         var board = RunSession.Current?.Board;
+        if (!capstone && zone.periodicallyFloods && board?.IsFlooded == true && disruptors > 1) return false;
         if (zone.periodicallyFloods && board != null)
         {
             bool wet = board.IsFlooded, pending = board.Aquatic?.phase == TidePhase.Pending;
@@ -164,6 +168,9 @@ public sealed partial class WaveController
         if (resonance?.Enabled != true || recipe == null) return;
         resonance.Record("formation", recipe.label + ":" + string.Join("+", originalEncounterDefinitions.Select(e => e.EnemyId + "/" + e.Category + "/" + e.ThreatCost)));
         var state = resonance.State;
+        OrdinarySelection.Remember(state, recipe, originalEncounterDefinitions);
+        var selection = state.formationHistory.Last();
+        resonance.Record("selection", $"{selection.phase}/{selection.role}/{selection.family}: {selection.members}");
         state.recentRecipes.Add(recipe.label); while (state.recentRecipes.Count > 3) state.recentRecipes.RemoveAt(0);
         foreach (var member in originalEncounterDefinitions)
         {

@@ -604,7 +604,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
             new Vector2(0,85),new Vector2(400,110));
         CreateLabel("FailureCause",faceRect,$"Ended at wave {RunSession.Current?.Waves.CurrentWave}\n{playerActor.LastDamageSummary}",GameUi.TmpFont,19,new Vector2(0,198),new Vector2(400,64));
         var account=AccountProgression.Current;
-        CreateLabel("SupplyRecap",faceRect,(reward?.SupplyComparison??"")+$"\nStill owned: {account.Owned(ConsumableKind.HealthPotion)} Potions / {account.Owned(ConsumableKind.Bomb)} Bombs",GameUi.TmpFont,16,new Vector2(0,-12),new Vector2(400,66));
+        CreateLabel("SupplyRecap",faceRect,(reward?.SupplyComparison??"")+$"\nStill owned: {account.Owned(account.SelectedPotion)} {SupplyCatalog.Name(account.SelectedPotion)} / {account.Owned(account.SelectedBomb)} {SupplyCatalog.Name(account.SelectedBomb)}",GameUi.TmpFont,16,new Vector2(0,-12),new Vector2(400,66));
         var viewport=GameUi.Rect("BuildViewport",faceRect,new Vector2(400,90),new Vector2(0,-110));
         viewport.gameObject.AddComponent<Image>().color=Color.clear;
         viewport.gameObject.AddComponent<RectMask2D>();

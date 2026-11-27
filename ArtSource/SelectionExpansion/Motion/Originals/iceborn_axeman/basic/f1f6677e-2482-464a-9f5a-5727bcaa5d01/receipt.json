@@ -1,0 +1,49 @@
+{
+  "enemy": "iceborn_axeman",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/iceborn_axeman.png",
+  "firstFrameSHA256": "a221bb0f20214e3ff88a510432084c121cc3ea1dfd52850cb0b4aa57cd38ab37",
+  "seed": 385113,
+  "count": 8,
+  "prompt": "Lift the axe, step into one weighty overhead chop left. Catch the axe low and return to the ready position. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "f1f6677e-2482-464a-9f5a-5727bcaa5d01",
+  "receipt": "id: f1f6677e-2482-464a-9f5a-5727bcaa5d01\njob_id: f1f6677e-2482-464a-9f5a-5727bcaa5d01\naction: Lift the axe, step into one weighty overhead chop left. Catch the axe low and return to the ready position. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385113\nasset_id: 4de57dd1-7c7c-5a42-997b-d450fa2b3fcf\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f1f6677e-2482-464a-9f5a-5727bcaa5d01\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/f1f6677e-2482-464a-9f5a-5727bcaa5d01/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/basic/f1f6677e-2482-464a-9f5a-5727bcaa5d01/00.png",
+      "sha256": "a221bb0f20214e3ff88a510432084c121cc3ea1dfd52850cb0b4aa57cd38ab37"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/basic/f1f6677e-2482-464a-9f5a-5727bcaa5d01/01.png",
+      "sha256": "2ac9e3279418eb9da61bd23f005ae06a482fcef67b8d0cacfea8aec98e4cfb97"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/basic/f1f6677e-2482-464a-9f5a-5727bcaa5d01/02.png",
+      "sha256": "d5e092789304682251d9972ca7723d267e98a4cb7fef17d7f7b655a5a98cfe27"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/basic/f1f6677e-2482-464a-9f5a-5727bcaa5d01/03.png",
+      "sha256": "ff357e077f724391b0dca6efd5dec4ab50a31d391802dcaf383bcfd9ce41aa17"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/basic/f1f6677e-2482-464a-9f5a-5727bcaa5d01/04.png",
+      "sha256": "9e4947fdf11112e635d053c2c5ecf7de65257dbffdee58f442aff8354722f0a7"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/basic/f1f6677e-2482-464a-9f5a-5727bcaa5d01/05.png",
+      "sha256": "80deca674d894d12965b72bb519dc1261be1746b8948f3eafaeffed2692db193"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/basic/f1f6677e-2482-464a-9f5a-5727bcaa5d01/06.png",
+      "sha256": "78536017716b66af39fbb440f254dc84e9a64a76891f524e588dec54e9dddb1b"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/basic/f1f6677e-2482-464a-9f5a-5727bcaa5d01/07.png",
+      "sha256": "a2e3b6d4e2480eafe7a1f572bd5c2bc41f0fd9b073f7b39e1c3865a7d9a893d3"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/basic/f1f6677e-2482-464a-9f5a-5727bcaa5d01/08.png",
+      "sha256": "49edea1c89ae92aad488517d1ff6e8393b4a86bd66b506dd000e01fb3d74f0c9"
+    }
+  ]
+}

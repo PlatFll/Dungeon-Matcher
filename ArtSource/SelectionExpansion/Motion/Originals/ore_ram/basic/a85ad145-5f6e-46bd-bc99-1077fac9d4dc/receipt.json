@@ -1,0 +1,49 @@
+{
+  "enemy": "ore_ram",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/ore_ram-A.png",
+  "firstFrameSHA256": "34bf80499e0547162f86997c78c8b6bc9caae89a3822fcdc8c98b65161562909",
+  "seed": 385116,
+  "count": 8,
+  "prompt": "Brace on four feet, draw back then shoulder-ram left in one strong thrust. Return to the same footprint. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "a85ad145-5f6e-46bd-bc99-1077fac9d4dc",
+  "receipt": "id: a85ad145-5f6e-46bd-bc99-1077fac9d4dc\njob_id: a85ad145-5f6e-46bd-bc99-1077fac9d4dc\naction: Brace on four feet, draw back then shoulder-ram left in one strong thrust. Return to the same footprint. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385116\nasset_id: c58c8344-9b6d-5a08-be1a-e3720e31cc76\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"a85ad145-5f6e-46bd-bc99-1077fac9d4dc\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/a85ad145-5f6e-46bd-bc99-1077fac9d4dc/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/a85ad145-5f6e-46bd-bc99-1077fac9d4dc/00.png",
+      "sha256": "8101c4ad073549f975061b231137afbb575a5a49f23ff0a2fa3b0ba52c627f8e"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/a85ad145-5f6e-46bd-bc99-1077fac9d4dc/01.png",
+      "sha256": "69c8ac8ed35ef0aacc69d1b0847550ff40a7b81f2c42aa7dc664d0b348d80f58"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/a85ad145-5f6e-46bd-bc99-1077fac9d4dc/02.png",
+      "sha256": "b636f44c8cfe67ee50e168de60b32e2b7a0d0d0de3b661875dc5b917f4c78e50"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/a85ad145-5f6e-46bd-bc99-1077fac9d4dc/03.png",
+      "sha256": "bd564e8e85e6c8f56343fcb5dde573485bf8e44f9e48325bf0be4ef6e55a652a"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/a85ad145-5f6e-46bd-bc99-1077fac9d4dc/04.png",
+      "sha256": "be0552d7d714b5e9b1a7941526025ccd82a52df26766db8646a7a993cae8a35b"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/a85ad145-5f6e-46bd-bc99-1077fac9d4dc/05.png",
+      "sha256": "2d6b8561fbc7362599356af2734cf55bf22f72630bc0aed4d10b9e16628b92a8"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/a85ad145-5f6e-46bd-bc99-1077fac9d4dc/06.png",
+      "sha256": "9bad4b0a77e2a55765305c85dfbd0fdcdf9b628a70211053085444953bd52f6d"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/a85ad145-5f6e-46bd-bc99-1077fac9d4dc/07.png",
+      "sha256": "5dad4c07278a7a8fb37e382038991810da05bd42716e681bb355b29b2219506b"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/ore_ram/basic/a85ad145-5f6e-46bd-bc99-1077fac9d4dc/08.png",
+      "sha256": "77937fdc1d86e829256d9869e787190c2a33152c20c4ffe5611bbf59692bc298"
+    }
+  ]
+}

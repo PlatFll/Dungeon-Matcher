@@ -33,5 +33,7 @@ public enum EnemySpecialAbilityKind
     MountainStrike = 42,
     AvalancheFrost = 43,
     ShieldbreakerCharge = 44,
-    HearthEmber = 45
+    HearthEmber = 45,
+    GuildTaunt = 46,
+    GuildInstantHeal = 47
 }

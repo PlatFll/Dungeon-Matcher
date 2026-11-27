@@ -43,6 +43,7 @@ public sealed class RunCombatSnapshot
 {
     public PlayerStatusSnapshot statuses;
     public int health, maximumHealth, shield, maximumShield, revivalCount, energy;
+    public int potionShield, potionShieldMoves;
     public string lastDamage;
 }
 [Serializable] public sealed class BoardCombatSnapshot
@@ -93,6 +94,7 @@ public sealed class RunCombatSnapshot
 }
 [Serializable] public sealed class EnemyCombatSnapshot
 {
+    public int guildTauntRemaining, guildTauntLastMove;
     public GlacierCleaveSnapshot glacierCleave;
     public FrostwakeEnemySnapshot frostwakeEnemy;
     public ShieldbreakerSnapshot shieldbreaker;

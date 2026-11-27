@@ -1,0 +1,907 @@
+{
+  "artCommit": "191c473a867bd459049a2364bc0a5dc63c5c66bb",
+  "baseline": "045936ea62cb5e9477659d6d656fd6a66b15f357",
+  "unity": "6000.3.19f1",
+  "validators": {
+    "assets.txt": "PASS: 395 textures; 2951 preserved sprite IDs; 353 verified clip sources; 64 forms. 17494 assertions.",
+    "presentation.txt": "PASS: 5902 pose/portrait cases in the production Game scene; fixed source floor and center; integer texel scale; horizontal/vertical screen and parent-mask containment. Transparent overhang accepted and actual artwork escape rejected by the layout validator. No physical-device claim."
+  },
+  "cases": [
+    "ForestFoundationPlayTests.CourtPufferHoldsInflationThroughBasicsThenDeflatesWithoutStalling",
+    "ForestFoundationPlayTests.ExpansionGalleryForest",
+    "ForestFoundationPlayTests.ExpansionGalleryFrostwake",
+    "ForestFoundationPlayTests.ExpansionGalleryGuildFrontLine",
+    "ForestFoundationPlayTests.ExpansionGalleryGuildHealer",
+    "ForestFoundationPlayTests.ExpansionSlinghunterSingleHitToHealth",
+    "ForestFoundationPlayTests.IronveinDelverPilotContinueAndOneWeakerReserveSuit",
+    "ForestFoundationPlayTests.IronveinWholeRosterContactsAndPauseUseTheirNativeFrames"
+  ],
+  "testResultSHA256": "ccd590e1c2953f3d8c89e0792f8273ce959e060b565272200bd20e9b65807eeb",
+  "screenshots": 212,
+  "screen": [
+    1080,
+    1920
+  ],
+  "captureTracks": [
+    {
+      "group": "ExpansionGalleryForest",
+      "actor": "elven_pathblade",
+      "state": "AutoAttack",
+      "count": 11,
+      "minCorrespondence": 1.0,
+      "matchedWithinOneRGB": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "group": "ExpansionGalleryForest",
+      "actor": "elven_pathblade",
+      "state": "Idle",
+      "count": 26,
+      "minCorrespondence": 1.0,
+      "matchedWithinOneRGB": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "group": "ExpansionGalleryForest",
+      "actor": "orc_slinghunter",
+      "state": "AutoAttack",
+      "count": 10,
+      "minCorrespondence": 1.0,
+      "matchedWithinOneRGB": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "group": "ExpansionGalleryForest",
+      "actor": "orc_slinghunter",
+      "state": "Idle",
+      "count": 24,
+      "minCorrespondence": 1.0,
+      "matchedWithinOneRGB": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "group": "ExpansionGalleryFrostwake",
+      "actor": "iceborn_axeman",
+      "state": "AutoAttack",
+      "count": 12,
+      "minCorrespondence": 0.9241176470588235,
+      "matchedWithinOneRGB": [
+        0.99986,
+        0.99926,
+        0.99473,
+        0.92412,
+        0.99449,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.99986,
+        0.99986
+      ]
+    },
+    {
+      "group": "ExpansionGalleryFrostwake",
+      "actor": "iceborn_axeman",
+      "state": "Idle",
+      "count": 26,
+      "minCorrespondence": 0.9985102925243771,
+      "matchedWithinOneRGB": [
+        0.99986,
+        0.9993,
+        0.99986,
+        0.99851,
+        0.99851,
+        0.99986,
+        0.9993,
+        0.99986,
+        0.9993,
+        0.9993,
+        0.99986,
+        0.99986,
+        0.99986,
+        0.99851,
+        0.99851,
+        0.99986,
+        0.9993,
+        0.99986,
+        0.9993,
+        0.99986,
+        0.99851,
+        0.99851,
+        0.99986,
+        0.9993,
+        0.99986,
+        0.99986
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildFrontLine",
+      "actor": "guild_bulwark",
+      "state": "Ability",
+      "count": 11,
+      "minCorrespondence": 0.9989109390125847,
+      "matchedWithinOneRGB": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.99962,
+        0.99891,
+        0.99952,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildFrontLine",
+      "actor": "guild_bulwark",
+      "state": "AutoAttack",
+      "count": 12,
+      "minCorrespondence": 0.9996648793565683,
+      "matchedWithinOneRGB": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.99966,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildFrontLine",
+      "actor": "guild_bulwark",
+      "state": "Idle",
+      "count": 34,
+      "minCorrespondence": 1.0,
+      "matchedWithinOneRGB": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildFrontLine",
+      "actor": "guild_ranger",
+      "state": "AutoAttack",
+      "count": 9,
+      "minCorrespondence": 0.9880327868852459,
+      "matchedWithinOneRGB": [
+        0.99403,
+        0.98803,
+        0.99597,
+        0.98803,
+        0.9922,
+        0.98803,
+        0.9922,
+        0.994,
+        0.994
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildFrontLine",
+      "actor": "guild_ranger",
+      "state": "Idle",
+      "count": 5,
+      "minCorrespondence": 0.9940284054228534,
+      "matchedWithinOneRGB": [
+        0.99403,
+        0.99789,
+        0.99918,
+        0.99789,
+        0.99789
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildFrontLine",
+      "actor": "guild_swordsman",
+      "state": "AutoAttack",
+      "count": 9,
+      "minCorrespondence": 0.9592330603127327,
+      "matchedWithinOneRGB": [
+        1.0,
+        0.99979,
+        0.95923,
+        0.99759,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildFrontLine",
+      "actor": "guild_swordsman",
+      "state": "Idle",
+      "count": 27,
+      "minCorrespondence": 0.9996813256851498,
+      "matchedWithinOneRGB": [
+        1.0,
+        1.0,
+        1.0,
+        0.99968,
+        0.99968,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.99968,
+        0.99968,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.99968,
+        0.99968,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildHealer",
+      "actor": "guild_chirurgeon",
+      "state": "Ability",
+      "count": 14,
+      "minCorrespondence": 0.980625717566016,
+      "matchedWithinOneRGB": [
+        0.98063,
+        0.98567,
+        0.98691,
+        0.98512,
+        0.98491,
+        0.98259,
+        0.98619,
+        0.98254,
+        0.98489,
+        0.98509,
+        0.9826,
+        0.98068,
+        0.98063,
+        0.98063
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildHealer",
+      "actor": "guild_chirurgeon",
+      "state": "AutoAttack",
+      "count": 9,
+      "minCorrespondence": 0.9803779069767442,
+      "matchedWithinOneRGB": [
+        0.98063,
+        0.98038,
+        0.9829,
+        0.9881,
+        0.99167,
+        0.99176,
+        0.98114,
+        0.98174,
+        0.98174
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildHealer",
+      "actor": "guild_chirurgeon",
+      "state": "Idle",
+      "count": 27,
+      "minCorrespondence": 0.9694854953475643,
+      "matchedWithinOneRGB": [
+        0.98063,
+        0.97572,
+        0.97849,
+        0.97181,
+        0.96975,
+        0.9764,
+        0.97357,
+        0.98063,
+        0.97572,
+        0.97849,
+        0.97181,
+        0.97181,
+        0.97174,
+        0.96949,
+        0.96949,
+        0.96959,
+        0.9764,
+        0.97357,
+        0.98063,
+        0.97572,
+        0.97849,
+        0.97181,
+        0.96975,
+        0.9764,
+        0.97357,
+        0.98063,
+        0.98063
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildHealer",
+      "actor": "guild_swordsman",
+      "state": "AutoAttack",
+      "count": 9,
+      "minCorrespondence": 0.9592330603127327,
+      "matchedWithinOneRGB": [
+        1.0,
+        0.99958,
+        0.95923,
+        0.99604,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildHealer",
+      "actor": "guild_swordsman",
+      "state": "Idle",
+      "count": 27,
+      "minCorrespondence": 0.9982472912683238,
+      "matchedWithinOneRGB": [
+        1.0,
+        0.99983,
+        1.0,
+        0.99825,
+        0.99825,
+        1.0,
+        0.99983,
+        1.0,
+        0.99983,
+        1.0,
+        0.99825,
+        0.99825,
+        1.0,
+        0.99983,
+        1.0,
+        1.0,
+        1.0,
+        0.99983,
+        0.99983,
+        0.99983,
+        1.0,
+        0.99825,
+        0.99825,
+        1.0,
+        0.99983,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "publishedCrops": {
+    "guild-heal.webp": {
+      "group": "ExpansionGalleryGuildHealer",
+      "state": "Ability",
+      "crop": [
+        415,
+        369,
+        525,
+        525
+      ],
+      "files": [
+        {
+          "name": "Ability-0000.png",
+          "sha256": "03d27ee8ab96e11b1dee12e480e430a1a93f88f36ff32269b2433e0578be1ae0"
+        },
+        {
+          "name": "Ability-0070.png",
+          "sha256": "0074cbcb5dbdf50bfe3aed9984441da10bb27fd8b4047731768aa9eb0c9a32ab"
+        },
+        {
+          "name": "Ability-0130.png",
+          "sha256": "bcb626df7b6aaa01a1c9fd3a32b4af4d6e867a2b3934991df889eaf4a202347a"
+        },
+        {
+          "name": "Ability-0190.png",
+          "sha256": "810dd496208a25bb13939479df714d6e6982b1059ef3ca8b3ee0fc59ab170c94"
+        },
+        {
+          "name": "Ability-0250.png",
+          "sha256": "9ca2e1edcd1ca6db06191091ffd5a8a54ed8abbb95c045b1e4bcfe3b687abc51"
+        },
+        {
+          "name": "Ability-0310.png",
+          "sha256": "a0a7f0b87bd87179849aa20e87f9669d38d9132ab5e9428e54ebc941ffb36811"
+        },
+        {
+          "name": "Ability-0360.png",
+          "sha256": "555d372999496d059cb6f505f1312ed420a442ed4fe0ba1941cc24e3f9b704da"
+        },
+        {
+          "name": "Ability-0460.png",
+          "sha256": "1d892b5f2785188d03d01634ae3eb83daadb7811be2e9ec1892bc4b280cbe59c"
+        },
+        {
+          "name": "Ability-0520.png",
+          "sha256": "77eac35e55364d9be40a718cf74599c8da2aa3ea5f94cfaf12573b7972be773d"
+        },
+        {
+          "name": "Ability-0560.png",
+          "sha256": "1bc921d5aa76c087b2e90e88a75b591cf6af158c88d664d4f0c1855c15ca0147"
+        },
+        {
+          "name": "Ability-0620.png",
+          "sha256": "d2dfbf3da3be81227eecf376607475acdfb306da523c8f441a153d437f4c0469"
+        },
+        {
+          "name": "Ability-0670.png",
+          "sha256": "51ea01ee5a3743467c3bd6072a71636d1fab2b48ff6f1e80cdc41759feb16c5e"
+        },
+        {
+          "name": "Ability-0720.png",
+          "sha256": "4d041ceb801e616ad9cb33de251dd16ed20ef99251cac27e1c3e471e9f185b62"
+        },
+        {
+          "name": "Ability-0770.png",
+          "sha256": "4d041ceb801e616ad9cb33de251dd16ed20ef99251cac27e1c3e471e9f185b62"
+        }
+      ]
+    }
+  },
+  "screenRepairEvidence": [
+    {
+      "group": "ExpansionGalleryGuildHealer",
+      "actor": "guild_chirurgeon",
+      "state": "Ability",
+      "exposures": [
+        {
+          "exposure": 3,
+          "opaqueChanged": 24,
+          "confirmed": 24,
+          "capture": "Ability-0130.png"
+        },
+        {
+          "exposure": 4,
+          "opaqueChanged": 44,
+          "confirmed": 44,
+          "capture": "Ability-0190.png"
+        },
+        {
+          "exposure": 5,
+          "opaqueChanged": 58,
+          "confirmed": 58,
+          "capture": "Ability-0250.png"
+        },
+        {
+          "exposure": 6,
+          "opaqueChanged": 73,
+          "confirmed": 73,
+          "capture": "Ability-0310.png"
+        },
+        {
+          "exposure": 7,
+          "opaqueChanged": 73,
+          "confirmed": 73,
+          "capture": "Ability-0360.png"
+        },
+        {
+          "exposure": 8,
+          "opaqueChanged": 65,
+          "confirmed": 65,
+          "capture": "Ability-0460.png"
+        },
+        {
+          "exposure": 9,
+          "opaqueChanged": 51,
+          "confirmed": 51,
+          "capture": "Ability-0520.png"
+        },
+        {
+          "exposure": 10,
+          "opaqueChanged": 34,
+          "confirmed": 34,
+          "capture": "Ability-0560.png"
+        },
+        {
+          "exposure": 11,
+          "opaqueChanged": 26,
+          "confirmed": 26,
+          "capture": "Ability-0620.png"
+        },
+        {
+          "exposure": 12,
+          "opaqueChanged": 16,
+          "confirmed": 16,
+          "capture": "Ability-0670.png"
+        }
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildHealer",
+      "actor": "guild_chirurgeon",
+      "state": "Idle",
+      "exposures": [
+        {
+          "exposure": 3,
+          "opaqueChanged": 24,
+          "confirmed": 24,
+          "capture": "Idle-2600.png"
+        },
+        {
+          "exposure": 4,
+          "opaqueChanged": 44,
+          "confirmed": 44,
+          "capture": "Idle-2730.png"
+        },
+        {
+          "exposure": 5,
+          "opaqueChanged": 44,
+          "confirmed": 44,
+          "capture": "Idle-2860.png"
+        },
+        {
+          "exposure": 6,
+          "opaqueChanged": 34,
+          "confirmed": 34,
+          "capture": "Idle-2990.png"
+        },
+        {
+          "exposure": 10,
+          "opaqueChanged": 24,
+          "confirmed": 24,
+          "capture": "Idle-2600.png"
+        },
+        {
+          "exposure": 11,
+          "opaqueChanged": 44,
+          "confirmed": 44,
+          "capture": "Idle-2730.png"
+        },
+        {
+          "exposure": 12,
+          "opaqueChanged": 44,
+          "confirmed": 44,
+          "capture": "Idle-1600.png"
+        },
+        {
+          "exposure": 13,
+          "opaqueChanged": 34,
+          "confirmed": 34,
+          "capture": "Idle-1640.png"
+        },
+        {
+          "exposure": 16,
+          "opaqueChanged": 24,
+          "confirmed": 24,
+          "capture": "Idle-1760.png"
+        },
+        {
+          "exposure": 17,
+          "opaqueChanged": 34,
+          "confirmed": 34,
+          "capture": "Idle-2990.png"
+        },
+        {
+          "exposure": 21,
+          "opaqueChanged": 24,
+          "confirmed": 24,
+          "capture": "Idle-2600.png"
+        },
+        {
+          "exposure": 22,
+          "opaqueChanged": 44,
+          "confirmed": 44,
+          "capture": "Idle-2730.png"
+        },
+        {
+          "exposure": 23,
+          "opaqueChanged": 44,
+          "confirmed": 44,
+          "capture": "Idle-2860.png"
+        },
+        {
+          "exposure": 24,
+          "opaqueChanged": 34,
+          "confirmed": 34,
+          "capture": "Idle-2990.png"
+        }
+      ]
+    },
+    {
+      "group": "ExpansionGalleryForest",
+      "actor": "elven_pathblade",
+      "state": "Idle",
+      "exposures": [
+        {
+          "exposure": 3,
+          "opaqueChanged": 30,
+          "confirmed": 30,
+          "capture": "Idle-2600.png"
+        },
+        {
+          "exposure": 4,
+          "opaqueChanged": 59,
+          "confirmed": 59,
+          "capture": "Idle-2730.png"
+        },
+        {
+          "exposure": 5,
+          "opaqueChanged": 59,
+          "confirmed": 59,
+          "capture": "Idle-2860.png"
+        },
+        {
+          "exposure": 6,
+          "opaqueChanged": 30,
+          "confirmed": 30,
+          "capture": "Idle-2990.png"
+        },
+        {
+          "exposure": 10,
+          "opaqueChanged": 30,
+          "confirmed": 30,
+          "capture": "Idle-2600.png"
+        },
+        {
+          "exposure": 11,
+          "opaqueChanged": 59,
+          "confirmed": 59,
+          "capture": "Idle-2730.png"
+        },
+        {
+          "exposure": 12,
+          "opaqueChanged": 59,
+          "confirmed": 59,
+          "capture": "Idle-2860.png"
+        },
+        {
+          "exposure": 13,
+          "opaqueChanged": 30,
+          "confirmed": 30,
+          "capture": "Idle-2990.png"
+        },
+        {
+          "exposure": 16,
+          "opaqueChanged": 30,
+          "confirmed": 30,
+          "capture": "Idle-2000.png"
+        },
+        {
+          "exposure": 17,
+          "opaqueChanged": 30,
+          "confirmed": 30,
+          "capture": "Idle-2080.png"
+        },
+        {
+          "exposure": 20,
+          "opaqueChanged": 30,
+          "confirmed": 30,
+          "capture": "Idle-2600.png"
+        },
+        {
+          "exposure": 21,
+          "opaqueChanged": 59,
+          "confirmed": 59,
+          "capture": "Idle-2730.png"
+        },
+        {
+          "exposure": 22,
+          "opaqueChanged": 59,
+          "confirmed": 59,
+          "capture": "Idle-2860.png"
+        },
+        {
+          "exposure": 23,
+          "opaqueChanged": 30,
+          "confirmed": 30,
+          "capture": "Idle-2990.png"
+        }
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildFrontLine",
+      "actor": "guild_ranger",
+      "state": "AutoAttack",
+      "exposures": [
+        {
+          "exposure": 3,
+          "opaqueChanged": 2,
+          "confirmed": 2,
+          "capture": "AutoAttack-0250.png"
+        }
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildFrontLine",
+      "actor": "guild_ranger",
+      "state": "Idle",
+      "exposures": [
+        {
+          "exposure": 3,
+          "opaqueChanged": 2,
+          "confirmed": 2,
+          "capture": "Idle-0780.png"
+        }
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildFrontLine",
+      "actor": "guild_swordsman",
+      "state": "AutoAttack",
+      "exposures": [
+        {
+          "exposure": 7,
+          "opaqueChanged": 13,
+          "confirmed": 13,
+          "capture": "AutoAttack-0580.png"
+        }
+      ]
+    },
+    {
+      "group": "ExpansionGalleryGuildHealer",
+      "actor": "guild_swordsman",
+      "state": "AutoAttack",
+      "exposures": [
+        {
+          "exposure": 7,
+          "opaqueChanged": 13,
+          "confirmed": 13,
+          "capture": "AutoAttack-0500.png"
+        }
+      ]
+    },
+    {
+      "group": "ExpansionGalleryFrostwake",
+      "actor": "iceborn_axeman",
+      "state": "AutoAttack",
+      "exposures": [
+        {
+          "exposure": 6,
+          "opaqueChanged": 2,
+          "confirmed": 2,
+          "capture": "AutoAttack-0300.png"
+        }
+      ]
+    }
+  ],
+  "screenImageSHA256": {
+    "ExpansionGalleryGuildHealer/Ability-0130.png": "bcb626df7b6aaa01a1c9fd3a32b4af4d6e867a2b3934991df889eaf4a202347a",
+    "ExpansionGalleryGuildHealer/Ability-0190.png": "810dd496208a25bb13939479df714d6e6982b1059ef3ca8b3ee0fc59ab170c94",
+    "ExpansionGalleryGuildHealer/Ability-0250.png": "9ca2e1edcd1ca6db06191091ffd5a8a54ed8abbb95c045b1e4bcfe3b687abc51",
+    "ExpansionGalleryGuildHealer/Ability-0310.png": "a0a7f0b87bd87179849aa20e87f9669d38d9132ab5e9428e54ebc941ffb36811",
+    "ExpansionGalleryGuildHealer/Ability-0360.png": "555d372999496d059cb6f505f1312ed420a442ed4fe0ba1941cc24e3f9b704da",
+    "ExpansionGalleryGuildHealer/Ability-0460.png": "1d892b5f2785188d03d01634ae3eb83daadb7811be2e9ec1892bc4b280cbe59c",
+    "ExpansionGalleryGuildHealer/Ability-0520.png": "77eac35e55364d9be40a718cf74599c8da2aa3ea5f94cfaf12573b7972be773d",
+    "ExpansionGalleryGuildHealer/Ability-0560.png": "1bc921d5aa76c087b2e90e88a75b591cf6af158c88d664d4f0c1855c15ca0147",
+    "ExpansionGalleryGuildHealer/Ability-0620.png": "d2dfbf3da3be81227eecf376607475acdfb306da523c8f441a153d437f4c0469",
+    "ExpansionGalleryGuildHealer/Ability-0670.png": "51ea01ee5a3743467c3bd6072a71636d1fab2b48ff6f1e80cdc41759feb16c5e",
+    "ExpansionGalleryGuildHealer/Idle-2600.png": "baf7aff8fc53d53234552d956302b7e87e64ffe8674f0e8f7275f948f6f5a122",
+    "ExpansionGalleryGuildHealer/Idle-2730.png": "38bdaa111f6d6008705df07fd2d771e7cdda27ae3241bbcdd22e0611d7f0f44d",
+    "ExpansionGalleryGuildHealer/Idle-2860.png": "391dbb4864cd6c6e80ba3bd9dc3cdafbe03088684658c96ce23fcae5d93cb46b",
+    "ExpansionGalleryGuildHealer/Idle-2990.png": "4d7bf0d23a7554d9a251d0f4217fbebe7df9f0147ea57701bd94c3947479c220",
+    "ExpansionGalleryGuildHealer/Idle-1600.png": "c849adfbb27fa32ea7ab16e2c05e8643650236253aa543785829b0c05c2a7d1e",
+    "ExpansionGalleryGuildHealer/Idle-1640.png": "4d759621b6fbda575aaebc95f00aa4ce83576503a61ddb9ce72874e6a27ee934",
+    "ExpansionGalleryGuildHealer/Idle-1760.png": "0f1c9ab3ac80627cb11c494904d90c7347a7c9096983722dab4c30bed8d14e6c",
+    "ExpansionGalleryForest/Idle-2600.png": "9fc34b51248fd86ca7131780f42745d124c1ab17a963a55b09472a8035e84c8f",
+    "ExpansionGalleryForest/Idle-2730.png": "a51df6bf666f8fa5c6d720cb61bb3593bc8e80e37f44f205afc9701f4690a8ba",
+    "ExpansionGalleryForest/Idle-2860.png": "2dc41e230c96c7843d227022d7824c52e1becb7cc1695f3ad62567d8045f6da6",
+    "ExpansionGalleryForest/Idle-2990.png": "b440b8ffe7bd5a178dcc761b7dab52cd34ea7940d1a319e0507179bbbda715d2",
+    "ExpansionGalleryForest/Idle-2000.png": "58991a90586c9c2125c5b0a550741ede06a99aa765fc99c793a310f43ab5f1ac",
+    "ExpansionGalleryForest/Idle-2080.png": "d47c9403bad8870cb8edb3845920435e83ba32f2f06b71f3cf781a02f4edc228",
+    "ExpansionGalleryGuildFrontLine/AutoAttack-0250.png": "0998b63e7affaae6fe95691864fe518a013b69d4c5cda1049bcb3031616afe6a",
+    "ExpansionGalleryGuildFrontLine/Idle-0780.png": "31daf7458805bd8c7a6bae690526732dee2caf18e974e5e90e471920d688f4b9",
+    "ExpansionGalleryGuildFrontLine/AutoAttack-0580.png": "efc38408c0ab5eee83ca21177a193ebdbcf1c936512a6cf5603fe60ed26d6b30",
+    "ExpansionGalleryGuildHealer/AutoAttack-0500.png": "99e8b8b00849ff806d34f5de26e698b0ed3c43141c26718762fd39d324430f5f",
+    "ExpansionGalleryFrostwake/AutoAttack-0300.png": "685e582278b4fa89ac44814b4395c63d74435b1680f10dab78c4874499a631ce"
+  }
+}

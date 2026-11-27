@@ -18,6 +18,7 @@ MonoBehaviour:
   eligibleForTesting: 1
   affiliatedGem: 4
   enemies:
+  - {fileID: 11400000, guid: 1d79103fd9a2515f8a2a3901f06e62b6, type: 2}
   - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
   - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
   - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
@@ -652,6 +653,17 @@ MonoBehaviour:
   - 11
   - 12
   resonancePool:
+  - enemy: {fileID: 11400000, guid: 1d79103fd9a2515f8a2a3901f06e62b6, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 4
+    - 4
+    - 4
+    - 4
+    summonOnly: 0
   - enemy: {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
     minimumTier: 0
     maximumTier: 4
@@ -774,7 +786,37 @@ MonoBehaviour:
     - 7
     summonOnly: 0
   resonanceEncounters:
+  - label: Hall hearthguard
+    members:
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    - {fileID: 11400000, guid: 1d79103fd9a2515f8a2a3901f06e62b6, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Hall guard
+    familyWeight: 2
+  - label: Hall patrol
+    members:
+    - {fileID: 11400000, guid: 1d79103fd9a2515f8a2a3901f06e62b6, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 3.5
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Hall guard
+    familyWeight: 2
   - label: Outer patrol
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Mountain hunters
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
     - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
@@ -787,6 +829,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Quiet patrol
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Mountain hunters
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
     weight: 1
@@ -798,6 +844,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn harpoon_hunter
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Mountain hunters
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -810,6 +860,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol harpoon_hunter
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Mountain hunters
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -823,6 +877,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn rimecarver
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Mountain hunters
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -835,6 +893,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol rimecarver
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Mountain hunters
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -848,6 +910,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn shieldmaiden
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Hall guard
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -860,6 +926,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol shieldmaiden
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Hall guard
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -873,6 +943,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn rime_skald
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Hall guard
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -885,6 +959,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol rime_skald
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Hall guard
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -898,6 +976,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn hearthkeeper
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Hall guard
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -910,6 +992,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol hearthkeeper
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Hall guard
+    familyWeight: 2
     members:
     - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -923,6 +1009,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Learn frostblade_reaver
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Mountain hunters
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -935,6 +1025,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Patrol frostblade_reaver
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Mountain hunters
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
     - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
@@ -948,6 +1042,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Combined rimecarver
+    phaseMask: 6
+    ordinaryRole: 2
+    formationFamily: Mountain hunters
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
     - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
@@ -974,6 +1072,10 @@ MonoBehaviour:
     allowRepeatedRequiredEscort: 0
     prerequisites: []
   - label: Combined frostblade_reaver
+    phaseMask: 6
+    ordinaryRole: 2
+    formationFamily: Mountain hunters
+    familyWeight: 3
     members:
     - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
     - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}

@@ -1,0 +1,49 @@
+{
+  "enemy": "nacre_halberdier",
+  "state": "idle",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/nacre_halberdier.png",
+  "firstFrameSHA256": "674d1c1620f22a018258e9a456363a3bf791df3aba128e629292dd9ba17a6e92",
+  "seed": 385106,
+  "count": 8,
+  "prompt": "Brace both hands on the halberd. Small breath and settling coral crest, feet anchored. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "75eb66d6-f910-4750-a562-e91d910b4ce5",
+  "receipt": "id: 75eb66d6-f910-4750-a562-e91d910b4ce5\njob_id: 75eb66d6-f910-4750-a562-e91d910b4ce5\naction: Brace both hands on the halberd. Small breath and settling coral crest, feet anchored. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385106\nasset_id: 22364b77-ee0e-5fe7-8fd0-8151d23f0334\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"75eb66d6-f910-4750-a562-e91d910b4ce5\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/75eb66d6-f910-4750-a562-e91d910b4ce5/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_halberdier/idle/75eb66d6-f910-4750-a562-e91d910b4ce5/00.png",
+      "sha256": "674d1c1620f22a018258e9a456363a3bf791df3aba128e629292dd9ba17a6e92"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_halberdier/idle/75eb66d6-f910-4750-a562-e91d910b4ce5/01.png",
+      "sha256": "d166a20335b58ba5c248a25fedefc1290850b74c44baa5180a6104e842a19bf7"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_halberdier/idle/75eb66d6-f910-4750-a562-e91d910b4ce5/02.png",
+      "sha256": "4821220bf91bee5170b74641ca9f4e1961619a196c7aa4c541471d6237de74b5"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_halberdier/idle/75eb66d6-f910-4750-a562-e91d910b4ce5/03.png",
+      "sha256": "7c0d5f87ae57b13242b5c11afb339621112e4521e8fe8617ed653339d0b599ee"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_halberdier/idle/75eb66d6-f910-4750-a562-e91d910b4ce5/04.png",
+      "sha256": "65073ed2d8e6f2f0bef6568e623789414905bddc25360599cf17b2d29f5d1c0f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_halberdier/idle/75eb66d6-f910-4750-a562-e91d910b4ce5/05.png",
+      "sha256": "66346bcc2b47fc31eef93744d128e4890732d72488d853b114921466b969d196"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_halberdier/idle/75eb66d6-f910-4750-a562-e91d910b4ce5/06.png",
+      "sha256": "a011ac2684cbfc6be940967954853a74dbc2ed86878901f63ec488d024a6d63d"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_halberdier/idle/75eb66d6-f910-4750-a562-e91d910b4ce5/07.png",
+      "sha256": "98bb6f51a0ebad6267fa6f243e1d14513119f8969d1ed898046316f35b7c2eae"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_halberdier/idle/75eb66d6-f910-4750-a562-e91d910b4ce5/08.png",
+      "sha256": "65783c7f392de2915dc0660a903d248cb32cdd97e344f060d7cd3931984496ca"
+    }
+  ]
+}

@@ -81,7 +81,7 @@ public static class EnemyArtCohesionValidation
         Check(count == 2951, "all imported sprite IDs accounted for");
         foreach (var row in manifest.clips)
         {
-            Check(Hash(row.path) == row.sha256, row.path + " unchanged timings/events/curves");
+            Check(MatchesClipReceipt(File.ReadAllBytes(row.path), row.sha256), row.path + " unchanged timings/events/curves");
             var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(row.path);
             Check(clip != null, row.path + " imported clip");
             foreach (var binding in AnimationUtility.GetObjectReferenceCurveBindings(clip))
@@ -93,7 +93,7 @@ public static class EnemyArtCohesionValidation
             Check(AssetDatabase.LoadAssetAtPath<EnemyDefinition>(row.definition) != null, row.id + " definition");
             Check(AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(row.controller) != null, row.id + " controller");
         }
-        File.WriteAllText(Path.Combine(Output, "assets.txt"), $"PASS: 395 textures; {count} preserved sprite IDs; 353 byte-identical clips; 64 forms. {assertions} assertions.\n");
+        File.WriteAllText(Path.Combine(Output, "assets.txt"), $"PASS: 395 textures; {count} preserved sprite IDs; 353 verified clip sources; 64 forms. {assertions} assertions.\n");
         Debug.Log("ENEMY_ART_ASSETS_PASS " + assertions);
     }
 
@@ -181,7 +181,23 @@ public static class EnemyArtCohesionValidation
         selection.Dispose(); selection = null; profile.Dispose(); profile = null;
     }
 
-    private static string Hash(string path) { using var hash = SHA256.Create(); return BitConverter.ToString(hash.ComputeHash(File.ReadAllBytes(path))).Replace("-", "").ToLowerInvariant(); }
+    private static string Hash(string path) => HashBytes(File.ReadAllBytes(path));
+    private static string HashBytes(byte[] bytes)
+    {
+        using var hash = SHA256.Create();
+        return BitConverter.ToString(hash.ComputeHash(bytes)).Replace("-", "").ToLowerInvariant();
+    }
+
+    internal static bool MatchesClipReceipt(byte[] bytes, string expected)
+    {
+        if (HashBytes(bytes) == expected) return true;
+        // Git normalizes text. Historical receipts were recorded from both LF and CRLF
+        // checkouts. Preserve their original digests and vary line endings only.
+        var utf8 = new System.Text.UTF8Encoding(false, true);
+        string lf = utf8.GetString(bytes).Replace("\r\n", "\n");
+        return HashBytes(utf8.GetBytes(lf)) == expected ||
+               HashBytes(utf8.GetBytes(lf.Replace("\n", "\r\n"))) == expected;
+    }
     private static void CheckCanvasClearance(Image image)
     {
         var layout = Object.FindFirstObjectByType<GameplayPixelLayoutController>();

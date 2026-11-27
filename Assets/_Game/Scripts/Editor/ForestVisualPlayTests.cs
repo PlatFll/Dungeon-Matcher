@@ -28,7 +28,9 @@ public sealed class ForestVisualPlayTests
                 RunSession.Current.Waves.ActiveEnemies.All(e=>e.GetComponent<EnemyLifecycleVFX>()?.IsSpawning!=true),"forest ready");
             yield return new WaitForSeconds(.5f);
             var run=RunSession.Current;Assert.That(run.Zone,Is.Not.Null);
-            Assert.That(UnityEngine.Object.FindFirstObjectByType<BattleBackgroundTilemapController>().ActiveEnvironment.EnvironmentId,Is.EqualTo("forest-woodland"));
+            Assert.That(run.Zone.Definition.zoneId,Is.EqualTo("magical-forest"));
+            Assert.That(BattlePresentationSkin.Folder,Is.EqualTo("Forest"));
+            Assert.That(DungeonPixelLabBattleArt.Current,Is.Not.Null,"the approved Forest scene owns the background");
             CheckLayout(output,"720x1280");
             yield return Capture(output,"01-forest-idle");
             var caster=run.Waves.ActiveEnemies.First(e=>e.Definition.EnemyId=="elven_mender");
@@ -100,10 +102,10 @@ public sealed class ForestVisualPlayTests
             foreach(var enemy in run.Waves.ActiveEnemies) enemy.GetComponent<EnemyAutoAttack>().SetActionPaused(typeof(ForestVisualPlayTests),true);
             var target=run.Waves.ActiveEnemies.First(e=>e!=caster);
             target.ResolveDamageWithoutFeedback(25);
-            if(offset==9) run.Board.TryQueueRootWarning(caster,1,2,false,true,null);
+            if(offset==9) run.Board.TryQueuePlantRoots(caster,1,2,false,true,null,true);
             else run.Board.TryQueuePlantRoots(caster,2,2,true,true,null);
             yield return Until(()=>run.Continuation.CanCapture,"anchor art settles");
-            caster.GetComponent<ForestMilestoneEnemyAbility>().RestoreContinuation(new EnemyCombatSnapshot{
+            if(offset!=9) caster.GetComponent<ForestMilestoneEnemyAbility>().RestoreContinuation(new EnemyCombatSnapshot{
                 forestMilestone=new ForestMilestoneSnapshot{version=2,state=1,sequence=1,deadline=offset==9?1:2,heartrootsArmed=offset!=9}},_=>target);
             float began=Time.time;yield return Until(()=>Time.time>=began+1,"channel reaches hold pose");
             CheckLayout(output,file);yield return Capture(output,file);

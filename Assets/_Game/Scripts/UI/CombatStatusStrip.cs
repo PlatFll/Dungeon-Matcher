@@ -18,7 +18,7 @@ public sealed class CombatStatusStrip : MonoBehaviour
             icons[id]=sprite=Resources.Load<Sprite>("UI/CombatStatuses/"+id);
         return sprite;
     }
-    public void Show(IReadOnlyList<CombatStatusDisplay> values, int columns, Action<string> inspect)
+    public void Show(IReadOnlyList<CombatStatusDisplay> values, int columns, Action<string> inspect, int rowStep = 28)
     {
         VisibleCount=values.Count; columns=Mathf.Max(1,columns);
         while(cells.Count<values.Count)
@@ -33,7 +33,7 @@ public sealed class CombatStatusStrip : MonoBehaviour
             cells.Add(cell);
         }
         int rows=Mathf.CeilToInt(values.Count/(float)columns);
-        Rect.sizeDelta=new Vector2(Mathf.Min(columns,values.Count)*28,rows*28);
+        Rect.sizeDelta=new Vector2(Mathf.Min(columns,values.Count)*28,rows*rowStep);
         for(int i=0;i<cells.Count;i++)
         {
             var cell=cells[i];bool visible=i<values.Count;cell.rect.gameObject.SetActive(visible);
@@ -41,7 +41,7 @@ public sealed class CombatStatusStrip : MonoBehaviour
             var value=values[i];cell.image.sprite=Icon(value.Icon);cell.count.Set(value.Counter,new Color32(253,245,229,255));
             cell.description=value.Name+"\n\n"+value.Description+"\n"+(value.Counter=="·"?"Active while its condition holds.":"Remaining: "+value.Counter);
             int row=i/columns,count=Mathf.Min(columns,values.Count-row*columns);
-            cell.rect.anchoredPosition=new Vector2((i%columns-(count-1)*.5f)*28,((rows-1)*.5f-row)*28);
+            cell.rect.anchoredPosition=new Vector2((i%columns-(count-1)*.5f)*28,((rows-1)*.5f-row)*rowStep);
             GameplayPixelGrid.Snap(cell.rect);
         }
         gameObject.SetActive(values.Count>0);

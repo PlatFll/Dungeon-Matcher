@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 9075f6fd091a5bc4bfbb0a67dba76886
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4118737122942687939
+    second: OrcSlinghunter_Idle_00
+  - first:
+      213: -3935347863429767194
+    second: OrcSlinghunter_Idle_01
+  - first:
+      213: -2948039404403222530
+    second: OrcSlinghunter_Idle_02
+  - first:
+      213: -7264732813690575626
+    second: OrcSlinghunter_Idle_03
+  - first:
+      213: 4820032778593942687
+    second: OrcSlinghunter_Idle_04
+  - first:
+      213: -3798167954839392831
+    second: OrcSlinghunter_Idle_05
+  - first:
+      213: 6463505756159011945
+    second: OrcSlinghunter_Idle_06
+  - first:
+      213: -2475919130232639817
+    second: OrcSlinghunter_Idle_07
+  - first:
+      213: 1534953200207196166
+    second: OrcSlinghunter_Idle_08
+  - first:
+      213: -586456269475464385
+    second: OrcSlinghunter_Idle_09
+  - first:
+      213: 1305202999016519095
+    second: OrcSlinghunter_Idle_10
+  - first:
+      213: -978617825777846745
+    second: OrcSlinghunter_Idle_11
+  - first:
+      213: 6075443239034847857
+    second: OrcSlinghunter_Idle_12
+  - first:
+      213: 6011163405181798564
+    second: OrcSlinghunter_Idle_13
+  - first:
+      213: -4944035323095870440
+    second: OrcSlinghunter_Idle_14
+  - first:
+      213: 9152877611744216160
+    second: OrcSlinghunter_Idle_15
+  - first:
+      213: 2961924265112772745
+    second: OrcSlinghunter_Idle_16
+  - first:
+      213: 3512319171303589146
+    second: OrcSlinghunter_Idle_17
+  - first:
+      213: -8405376338863883576
+    second: OrcSlinghunter_Idle_18
+  - first:
+      213: 9128555223391437030
+    second: OrcSlinghunter_Idle_19
+  - first:
+      213: 5630656059806774727
+    second: OrcSlinghunter_Idle_20
+  - first:
+      213: -3093800106279781726
+    second: OrcSlinghunter_Idle_21
+  - first:
+      213: -5775463460600363710
+    second: OrcSlinghunter_Idle_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 4096
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.0384615385}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3569cf986e47d6c0800000000000000
+      internalID: -4118737122942687939
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef1da4f7f5d269c0800000000000000
+      internalID: -3935347863429767194
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef711b4f7c57617d0800000000000000
+      internalID: -2948039404403222530
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f469d30ffb7e2b90800000000000000
+      internalID: -7264732813690575626
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cb4d5464234e240800000000000000
+      internalID: 4820032778593942687
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cda68e5e523a4bc0800000000000000
+      internalID: -3798167954839392831
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_06
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96cec877d3cf2b950800000000000000
+      internalID: 6463505756159011945
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_07
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bea3e54ba4c3add0800000000000000
+      internalID: -2475919130232639817
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600f2359dcf3d4510800000000000000
+      internalID: 1534953200207196166
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_09
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3b3d9d412d7cd7f0800000000000000
+      internalID: -586456269475464385
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5772c56330d1210800000000000000
+      internalID: 1305202999016519095
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72675abb5404b62f0800000000000000
+      internalID: -978617825777846745
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17288b3df6f405450800000000000000
+      internalID: 6075443239034847857
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a840bcb441fb6350800000000000000
+      internalID: 6011163405181798564
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81413e97112436bb0800000000000000
+      internalID: -4944035323095870440
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 104
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 064c3a0a1bd850f70800000000000000
+      internalID: 9152877611744216160
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98028a91d6eda1920800000000000000
+      internalID: 2961924265112772745
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a15485f5da34eb030800000000000000
+      internalID: 3512319171303589146
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ca7b8ed0ca1a5b80800000000000000
+      internalID: -8405376338863883576
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e088ca4c942fae70800000000000000
+      internalID: 9128555223391437030
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5fe299adb142e40800000000000000
+      internalID: 5630656059806774727
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_21
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aab02be13d9015d0800000000000000
+      internalID: -3093800106279781726
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrcSlinghunter_Idle_22
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0384615385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 245caa1159e69dfa0800000000000000
+      internalID: -5775463460600363710
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      OrcSlinghunter_Idle_00: -4118737122942687939
+      OrcSlinghunter_Idle_01: -3935347863429767194
+      OrcSlinghunter_Idle_02: -2948039404403222530
+      OrcSlinghunter_Idle_03: -7264732813690575626
+      OrcSlinghunter_Idle_04: 4820032778593942687
+      OrcSlinghunter_Idle_05: -3798167954839392831
+      OrcSlinghunter_Idle_06: 6463505756159011945
+      OrcSlinghunter_Idle_07: -2475919130232639817
+      OrcSlinghunter_Idle_08: 1534953200207196166
+      OrcSlinghunter_Idle_09: -586456269475464385
+      OrcSlinghunter_Idle_10: 1305202999016519095
+      OrcSlinghunter_Idle_11: -978617825777846745
+      OrcSlinghunter_Idle_12: 6075443239034847857
+      OrcSlinghunter_Idle_13: 6011163405181798564
+      OrcSlinghunter_Idle_14: -4944035323095870440
+      OrcSlinghunter_Idle_15: 9152877611744216160
+      OrcSlinghunter_Idle_16: 2961924265112772745
+      OrcSlinghunter_Idle_17: 3512319171303589146
+      OrcSlinghunter_Idle_18: -8405376338863883576
+      OrcSlinghunter_Idle_19: 9128555223391437030
+      OrcSlinghunter_Idle_20: 5630656059806774727
+      OrcSlinghunter_Idle_21: -3093800106279781726
+      OrcSlinghunter_Idle_22: -5775463460600363710
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

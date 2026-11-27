@@ -1,0 +1,402 @@
+[
+  {
+    "enemy": "guild_swordsman",
+    "candidate": 3,
+    "status": "user-approved identity",
+    "sourceSha256": "9f875f86fc1c0d46d769c59f2be8c6a706ee5c21d8eccc34a4665bb017535a1c",
+    "nativeSha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+    "editableSha256": "44646c107a67797adcb748bfb1847f99b7a137d741b5f16e5e4ab517a6672e98",
+    "nativeBounds": [
+      31,
+      26,
+      81,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "palette": 31,
+    "edgeFlecksRemoved": 0,
+    "mirrored": true,
+    "landmark": "Short sword and visible backpack",
+    "allOriginalHashes": {
+      "01.png": "3e23b07822c2f43e846d7a073471432c8641881cd491874d6c7e6b820b2e9b6d",
+      "02.png": "5cd8008369f3a492f2869e492a10fe4d0a77287845c9f102019fe8ebb21ce610",
+      "03.png": "9f875f86fc1c0d46d769c59f2be8c6a706ee5c21d8eccc34a4665bb017535a1c",
+      "04.png": "a289dcc0c9d3bc73a03a672ac69ed9f7d582053821e492a169e10289d33d3002",
+      "05.png": "ff4dadd772dbf48205d858de14b236381c2f79ce92c6e7d56d5db7024900d9dd",
+      "06.png": "8407eca7e2fc8a31f3e7e3c8503bfabcd61bc62e30bc6e54aaa546b390260d8a",
+      "07.png": "3a399b396d805a6e12f7d4cd2e1bc7a7b5f0f7fec9c3f48bdebd9b4360efa491",
+      "08.png": "e1a39b59b09e49e111e37933d7b4cb7429b5bbe230e0ff6d89162125789535ca",
+      "09.png": "423951eb73e3009494b64d3016cac8b296bdfa743cb20a41a35b5be11c78bbc6",
+      "10.png": "84307ab7323e43c672e1e89929ef0ecb3b62a4621ab9e47e321d1ce9eedb4be9",
+      "11.png": "1866c4691f5d23d8ca013d4c8da4a6868d702dc418e00658f3f470e0c8ae4cc4",
+      "12.png": "18986ecc5b4518cae0c7a00529d6b60999677215d46ed412a0b2ea9ff91b075b",
+      "13.png": "1fb28097b9e65f3ba61e4a2c38a64055b2332a3f68a50b81e2a91683b322e67b",
+      "14.png": "ee3f6bb753f5b17c6474a1faa10240ae107eaf722dd4dffa21085d25ab071a2c",
+      "15.png": "de48d9df0e06f12d7020084b342a1a63b473d38bd1a335db7aeffac1e803f6a6",
+      "16.png": "ef33934c804e46d7538d5201b000c2db09cf1fa6d4e7f2de98a6930461ff2849"
+    }
+  },
+  {
+    "enemy": "guild_ranger",
+    "candidate": 2,
+    "status": "superseded after marked review",
+    "sourceSha256": "8224d0509bb923622ab6d306a7c878de1513a9e0105e2d1d585c17e8b338a6bf",
+    "nativeSha256": "6855d0791e46b9ed2964e590e81425fda489a752ac96cbb74b356270ada6b0c1",
+    "editableSha256": "06d2c46751f57f54b314a04a3f3421ade2fd86bc47e6399f078b69acd3e3f9d0",
+    "nativeBounds": [
+      30,
+      27,
+      81,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "palette": 39,
+    "edgeFlecksRemoved": 0,
+    "mirrored": false,
+    "landmark": "Drawn recurved bow and weathered hood",
+    "allOriginalHashes": {
+      "01.png": "4a16fa42d186008543a065bfcb527844df4b6feb73da2e48ef4905502b83e2dd",
+      "02.png": "8224d0509bb923622ab6d306a7c878de1513a9e0105e2d1d585c17e8b338a6bf",
+      "03.png": "a241c271e9deb33ea3db5a87c2cc2f2d36e488fd2f91310a50887090aa419216",
+      "04.png": "91f1ff073be88b612ad8f3df978992394c582359ad8325a2910e84e946a650db",
+      "05.png": "7522e6336e7716a1cf472807a358206af5efe2c7aec2ae97b4537e0c9437ec0b",
+      "06.png": "4ebbe58a66d2a073d793539d5fab22aebdcac30a5821d26c49e405c37b59216b",
+      "07.png": "62a9c9406879162639565cc90a3a135c50131f9ad73f3ee009b29684f09815b8",
+      "08.png": "3df4f7242fcbf1617f33de92cd21653aed483a107d83d993f1d9c5e5a499aa8c",
+      "09.png": "378d29bd2f2362d35d48c27423deb4df41a6de609fed2cd8d0acff692d380745",
+      "10.png": "797070d73ac33faae5bd7d5754b1ec33e9d80500ddf5e2b2ec04c541e5ea3eda",
+      "11.png": "bdd6ac0e41c8a1f4f96080cf2ea7da5e8b23309ddbe195a6c67a2b9bf8cf7113",
+      "12.png": "f844adae22122fd928582bfff59cbdcfe9999db81590be9495cbbab750db8478",
+      "13.png": "002aff9b20091ac56f13bc489f9ae7f9bd5d1b0c5d5659a29413b52706c9aa6e",
+      "14.png": "9f1fb0de722db3170167d966782995566a56dc690c9a1da3a3ef978b0fcffd04",
+      "15.png": "e813d463892eddeb17e81328e7dfc8c27bf1f7c66bd5b93eb6a8e6ffd4c9ff29",
+      "16.png": "11e2b33c4580c4bf9140bbd2239331d959128badf3ef8078af9adb47bdea9539"
+    }
+  },
+  {
+    "enemy": "guild_bulwark",
+    "candidate": 5,
+    "status": "superseded after marked review",
+    "sourceSha256": "54fcf6cc1cac91c7a03b7fd1893d67f381c271dd136e440dac9b394def3f8bbe",
+    "nativeSha256": "31a26395d8865b2f60b5c7bf186f49fb15b08986f421b6ef170dc52ff67e27fa",
+    "editableSha256": "49566e04125af10d9c6ac13132d5dde4814f0193735dac3c5fca802498f33d88",
+    "nativeBounds": [
+      30,
+      27,
+      82,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "palette": 44,
+    "edgeFlecksRemoved": 0,
+    "mirrored": true,
+    "landmark": "Broad shield and open face",
+    "allOriginalHashes": {
+      "01.png": "23c818b45f00e87f991b38ff58b3a7a47c2339a61fc8597fcb8e8864487e94a4",
+      "02.png": "0714fbb3937c5f5bd6d2e599758300849932e3b4197a15e5841afd95602e0c53",
+      "03.png": "4233f3da6de3a670c518306df60b4f0930e227c14cef1ee64d40546e8cfa5422",
+      "04.png": "99485bfdcc338ca6cd2fe054b323e8991e4de2292a6f7ee4086aa85aea6191c5",
+      "05.png": "54fcf6cc1cac91c7a03b7fd1893d67f381c271dd136e440dac9b394def3f8bbe",
+      "06.png": "1a025c03d267764c653cd7e249d86018d8874f5b485a9aef76eb555640265eb7",
+      "07.png": "34d0d5bbf5b5e8924e22fe72b55c4fbfc2351da9fbef9ede1d188db2ebcb40ce",
+      "08.png": "2434b22aeada09770b987443145a8b12991182f77a2259bd24ebb5ab230cf62c",
+      "09.png": "354de3fa9401a13dfbcb64946bc612107324be87b78472eaf7c9e93dba847403",
+      "10.png": "6d810d0be386a11c1af7f4261e1dbdca05ab0c4976047a009f3b1ab43f620d1a",
+      "11.png": "b411578f29fca1a1296243b0f902fbf6493fff987619bea30bb5c6e45dfb7250",
+      "12.png": "f48d10216e9e41b47298dcb7b64df6b7aa57df9b065616e58c25056de92a08f7",
+      "13.png": "24266ff225f330533aeabbf3e51a63b46aba0075c93f9b84a02f48c0bf88e329",
+      "14.png": "90cbb084fe5adedc00d7f1b800514bb618163f86ccd197cbf5999eb7ab81e369",
+      "15.png": "faea09a9a1b4c907703c508a50cdb3a4e2b8a1549f868196ca794301c62db6ed",
+      "16.png": "72d6539c02339a0ccb06e416e36cb2a7263aea78817611ac412cde544e7eec08"
+    }
+  },
+  {
+    "enemy": "guild_chirurgeon",
+    "candidate": 8,
+    "status": "user-approved identity",
+    "sourceSha256": "beec62d5d662cdf87b73d44deb04503b4db83f819969bb4627cc44b7ca35fb62",
+    "nativeSha256": "97501e38ed69b1cb6c1919a229f71f0c3c7d87f26491ec5365cbbb2d5cc1c613",
+    "editableSha256": "dc09cc366d5a2ff73fdd4c496b8c42cc9dd281ffd24b0f0af7fbe945158f2bda",
+    "nativeBounds": [
+      34,
+      26,
+      77,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "palette": 33,
+    "edgeFlecksRemoved": 0,
+    "mirrored": false,
+    "landmark": "Pointed ears, satchel and green-tipped staff",
+    "allOriginalHashes": {
+      "01.png": "7ff5f4b64307c64f7dbd92a655e3c7dd88421fa8b11cad5c188944006db32894",
+      "02.png": "cf6007a4f50404c5280e9326ef13a12b00e34766fe7648a64422b6e45481e610",
+      "03.png": "0f517fd6a649016103a005c5ca00be356ed9ab5844a41a4ca23322155fab2e0c",
+      "04.png": "c952f52bad6e52b980831009842aa11d29dd5e4e8cfc52ba7935d187654dd138",
+      "05.png": "0935f597cd3b5bbdc8360597fed8b9509d2b561da7f29c0888fc39e6e6227c5d",
+      "06.png": "34c43ff61d4c016123f262453e9d6bcfc05d4c9c6a742208ee280c3bbb3f2c0e",
+      "07.png": "c0ed6db907dd45e412f54bcf5f5c385483479e745d9a760bc99844407af5691e",
+      "08.png": "beec62d5d662cdf87b73d44deb04503b4db83f819969bb4627cc44b7ca35fb62",
+      "09.png": "3276d638c5ac62ea60a83c8b44f6957d5693d0d642ae7fc7cdd3231431a10c58",
+      "10.png": "f43d5d1f7d0c9d3c70dbb82c594a6c15ca99d66afcb0bfd06b57a2b0c424f0b5",
+      "11.png": "7ed793184951f9514c710bd44724c3419d4f6bcefd84b8c84d0756413e5a9834",
+      "12.png": "54c05ab442435befc0ca8ce4427ce07cc996dded504eca632a09597e619a53cd",
+      "13.png": "10f6e39c601dfb9b9e21eef3fb0db03b4ec15a3275f3f6a1602943e2c862bcbb",
+      "14.png": "7fd08d3a5bc742f65d35fa192469294c226d2850a71a655caed082ce5dbaf2fd",
+      "15.png": "7178365720c410b72564f28cea1ac970710435d4a2bd7e473cef1a33525aef3e",
+      "16.png": "9539281802537b089b8e4bcd72ba6b323a43f7c41fdef631ed28e79919999a41"
+    }
+  },
+  {
+    "enemy": "nacre_duelist",
+    "candidate": 2,
+    "status": "superseded after marked review",
+    "sourceSha256": "10b38396097184e714b18713c69598e808c19f68ffc72219e149f9c35fc59d46",
+    "nativeSha256": "97347d6ff3677f956391462d80bcc530aa10fcc423fcf32bce6b2d055a922fee",
+    "editableSha256": "2bead8b2c30615e6a59f57d36e63daf67a1ce2dee70d8df8f14a5df1b22ef2bd",
+    "nativeBounds": [
+      28,
+      24,
+      84,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "palette": 34,
+    "edgeFlecksRemoved": 0,
+    "mirrored": false,
+    "landmark": "Shell rapier and pearl crest",
+    "allOriginalHashes": {
+      "01.png": "9da469532335282ea034d9e2b4bc4ddc9fbd7c9f2b35805430813be03912279c",
+      "02.png": "10b38396097184e714b18713c69598e808c19f68ffc72219e149f9c35fc59d46",
+      "03.png": "5298f56e697f01eb78954f643c5ce2d8db4bcd84a40c37fec2a6bc574b3b5174",
+      "04.png": "6bec47836c7acce5f2a404546b2cadcaeedca5b6647b98d0b2dca420cfdc620c",
+      "05.png": "f089ec2b70b3ee6c212d67a237bd95d2acbf9f336ffae7bb82818fae0ce77277",
+      "06.png": "8023d9183ae2a8369a850c568417c70a93924a33ccf99fcb84a70d59eae06b97",
+      "07.png": "a1491127f24d1fa7f3553fdd673979c8b7b4e17607746ea18c65c68d1b721a2d",
+      "08.png": "e1a23e949f7559cb9dbc74fa9ccc05698881b61ad62d73176de315da38406165",
+      "09.png": "3911b95a128c7ea6c4de5eb61d69cda287a684004120a6d5946bc33ac48de981",
+      "10.png": "5bd87973166b8618c7aa3251a407e3853a21b7831490b39664a554d2f624f0ce",
+      "11.png": "1fead56fec3b8f1a7e15d9226558beb28acc0a56dad91a4a1edc57cf11662ccb",
+      "12.png": "7b47a1017e92c02bb8e02382b95b91ced13e41bec537c66ebfcefbc7f3d595ce",
+      "13.png": "3912463fa9f4dcc2a621cb6eb1069942cdf4f02f0521fd2da0acba086e20f2bd",
+      "14.png": "fa1ad2724466bdf22ed77796727837313208ba6e576eb6ec2958a1d1985b9aac",
+      "15.png": "6da85f9c311edcb692b8c0f17700a8e088af7dcb4bc9b5f726f9654c97c25fe4",
+      "16.png": "5776bbd2ee8e6b7ebe30e4c33d17d1010ebf98de356c55b20fed2249c8c3d07b"
+    }
+  },
+  {
+    "enemy": "nacre_halberdier",
+    "candidate": 1,
+    "status": "user-approved identity",
+    "sourceSha256": "d5601196cffcd2790caa4119631432db0c777e5fc751d11af8d47824693d26a5",
+    "nativeSha256": "674d1c1620f22a018258e9a456363a3bf791df3aba128e629292dd9ba17a6e92",
+    "editableSha256": "face9663384b6719fb0c18ac51269b8002bce9bfb92c06b31051da5b9675ce04",
+    "nativeBounds": [
+      28,
+      22,
+      83,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "palette": 33,
+    "edgeFlecksRemoved": 0,
+    "mirrored": false,
+    "landmark": "Shell plate and tall coral-edged polearm",
+    "allOriginalHashes": {
+      "01.png": "d5601196cffcd2790caa4119631432db0c777e5fc751d11af8d47824693d26a5",
+      "02.png": "2164875445759a7675800d467c1594ccb12d08f96b204c9b2923f35846271d94",
+      "03.png": "6eeb07599c44e4d6d49ce38dfe76ae0d4ce5cfdfd2532d5332bf2792280094ef",
+      "04.png": "f35695da8a31a1255aa560318929d8ac1a4e8d96f5591ee63d35a81e114168f8",
+      "05.png": "3fcee128426bf7b34adc33c21e65ade5c89b18c361b2338358119c544103c822",
+      "06.png": "23c6dd3a0b93ad679e0308c17df9f5cf8b2f6b7acaabcda895fa6930f5de5d46",
+      "07.png": "c8e09bed1b3b0c8a8fe98f5235d20a28cbcbd63498221a3bf7d15ec45859ddca",
+      "08.png": "fa097c904e1d05259ba1c3fb7fafa28a9caefb697e2b3886f6b02c4003132b02",
+      "09.png": "7bc99cdb065291423add749c2107a1b98310507d191ada080e75e85926f5a526",
+      "10.png": "b77c4a4668e1e1decd83446808dae6d1e9e13fe3e11fe5f212ecef20e0d5fcbe",
+      "11.png": "1fbd1423e014a7b88f7a72974e1cc0503adc74119f7f4366a569124d218b64ce",
+      "12.png": "05619b12673db7a1ea0ca6e97fc57167a4f78b2529d4f8d037a352a64244367d",
+      "13.png": "fee361945ee3c1b7d3f9828e4e03ced0ddc5fda583833974de3ae369bc78ddce",
+      "14.png": "c293bcacdc7e399134553a24354047f4f1732e8d0cef8bcedeb23fb9afafff9e",
+      "15.png": "9ba6c70f0d205b80d3e05baeb2980a5ede361eb1040eeffbf6f75d60d33152f9",
+      "16.png": "5f167270ef603d2bcafcc524bcf8a66389ec8138fd9f3ab4dbeeb31b20013085"
+    }
+  },
+  {
+    "enemy": "elven_pathblade",
+    "candidate": 11,
+    "status": "user-approved identity",
+    "sourceSha256": "cc1bfa3daa849c91f3358bb067f35dc46c89785baccb4df4b4f6afac910af05c",
+    "nativeSha256": "17488569d807d02bbc6fb73f587a12ffc01630b57c4c608733ed80c666a9b7bf",
+    "editableSha256": "5dc2ebedee947b73d2b76cc61222b33f2fd569ae3bfe73770044e739b7ca34d3",
+    "nativeBounds": [
+      29,
+      33,
+      82,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "palette": 31,
+    "edgeFlecksRemoved": 0,
+    "mirrored": true,
+    "landmark": "Leaf cloak and low curved blade",
+    "allOriginalHashes": {
+      "01.png": "fba4a0d064c4d96ba117dfe469565857a9d015150f12b1ce11c882013818ead4",
+      "02.png": "aeeb63c0fd86b269d8d0c72de8aa4e4eb4cd0aeae1be44207528ad3c7fb9c89e",
+      "03.png": "c1409809ece06a5bd2374867bd29cbe899730dd5941f929f52f9fbace112c264",
+      "04.png": "810dab10b88ab8d87b89a9f133f0eb4f4d16f2825a6af55550e63d2ccd635e26",
+      "05.png": "2f3130651a9a696891a17301d74a95ec8126ae0a102370c29f116fb858b8f70b",
+      "06.png": "d09c18843e38835fefee3dbba21ad0251e31f67bed643ac381d288830b6f015c",
+      "07.png": "ebe6100f52ee3b30ca78ad1b78af10cd6737ab745b01e57c7347b0f46c828302",
+      "08.png": "1a920b2679aba8d257331c99b56e60284eeece4bbc9991c3647368358ec1d263",
+      "09.png": "4a8ed514655fe64f4631e4611b2f3de4ea6831620efb03b4ef2cd7355aa810a1",
+      "10.png": "4dbde79b03ec49c3f0a4b260a84d4e6479eb2acbdac6bdac07009cdcd9957852",
+      "11.png": "cc1bfa3daa849c91f3358bb067f35dc46c89785baccb4df4b4f6afac910af05c",
+      "12.png": "55e2a76f02d39635aa2813b42556d65d856463899b3225905513463a9d16bd5e",
+      "13.png": "a09728bc7c45f250213a83bceb35f4c7e04139ab96c1db052d36e58ea502292d",
+      "14.png": "33f85e9219c51128e9c8b5b7e34c63c13e13c4ec03afa7917734c8af1f195352",
+      "15.png": "928e11232bd02d2ce5169692eac5005ab0f0a4f9eceb89b7551c4208774362c8",
+      "16.png": "e23fc2cafade2f5bfedde736078f0af54f9e275d17e3319b8cdb56a911b655bd"
+    }
+  },
+  {
+    "enemy": "orc_slinghunter",
+    "candidate": 1,
+    "status": "superseded after marked review",
+    "sourceSha256": "47af83b518d892fd4273a3e5a51e34ac6a437c544deef5caec57e23af8f25851",
+    "nativeSha256": "854bef5238985d6ebe5c176a686f6de4e7b55a887478285f33c12e5c7f9fac45",
+    "editableSha256": "0269ee3bcea19d536aaae42b217f91e5c9648e51ab61434e9161b79e63340697",
+    "nativeBounds": [
+      32,
+      27,
+      79,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "palette": 40,
+    "edgeFlecksRemoved": 0,
+    "mirrored": false,
+    "landmark": "Looped sling and stitched vest",
+    "allOriginalHashes": {
+      "01.png": "47af83b518d892fd4273a3e5a51e34ac6a437c544deef5caec57e23af8f25851",
+      "02.png": "6c9b808688c0e85235d79f6d1f62888a552ec65fa54b850de8ee7971be400375",
+      "03.png": "53b43e173c84115cebdf73e147ab664fad5bd1de35afa8354ecce2afe7e7fce9",
+      "04.png": "cff3057459e379c42cf966cf1eba9cee32eab61603f00623958d80db79bb1a96",
+      "05.png": "c1a2c07fa8c9658a236a6ae45d408340100db5c82d486ced16c244a4b6955f5f",
+      "06.png": "a3b7ddaac7f419271da1d829b4b39f4da077a176d7a6ec90b2e9ccdb5892a844",
+      "07.png": "a9395b24338c8d351f324e8663315eb1b50a2e856ff4dea834e5a56b940126da",
+      "08.png": "cc26798b79c32acf0d34f95cfd8e3a890873c48f63a123cc861728eb2c1303a8",
+      "09.png": "437f9750a29f644d735c347a76dde3b9d37577d22d37f298dfd77fe685def4e6",
+      "10.png": "ae6b6e515c397f8fd0f30ec88b86d7a3a4a1ddaadb89376a53196bc431f9848c",
+      "11.png": "67d248ccbbc1ff5f14ba323fe4157c7e75c0ca29b9ce77eb129948a85151f950",
+      "12.png": "abffd5259c45f36fa2ae59c6ee46b5e91744ddd7f5806621896184f938c32819",
+      "13.png": "50489b28770f1274f0eef2bd9b93b9311057bc547b0ae7855c9b76bb30de0c3e",
+      "14.png": "8d9037141751dd89c08b562c4328686bd9b37d66b534b8788ce949174b6abb5b",
+      "15.png": "d4081d38d703ed8b0440dd8e951c34cef68617e8455c1b333c32c7f8c1676225",
+      "16.png": "d776c78d4d2dec978b2b5b35bfeb83f0ae3cbd6b9bd01c8ea025485abe507efa"
+    }
+  },
+  {
+    "enemy": "iceborn_axeman",
+    "candidate": 6,
+    "status": "user-approved identity",
+    "sourceSha256": "593de02b43809688ee30e64c9ed8c9746cfd5e8e8d7e78a02407049824ef2549",
+    "nativeSha256": "a221bb0f20214e3ff88a510432084c121cc3ea1dfd52850cb0b4aa57cd38ab37",
+    "editableSha256": "e894fed74ae06580083d848ee3ed6eb1e5414e88259ac8cce6d8f22d3ae0a9c5",
+    "nativeBounds": [
+      31,
+      27,
+      81,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "palette": 44,
+    "edgeFlecksRemoved": 0,
+    "mirrored": true,
+    "landmark": "Two-handed axe and fur shoulders",
+    "allOriginalHashes": {
+      "01.png": "d218320e4b91096aa79e0706933fc3a0ebc0f9816c99fbe222d416ee23647b54",
+      "02.png": "dc95b265fd7120cede40169cc27a9e1e6a608a15477be24b74a826bf4a231be1",
+      "03.png": "892536ebae2704832becc53146d43be697e64a9c6b8c4db45d657404ccc305d6",
+      "04.png": "7897c01183eabc8b62f8403b9231ca01760610cdef0b0f1e62002a2255231642",
+      "05.png": "b1a774b64888775eae8f49afb70dad4ba0e352854d01022a1aab75705b6cbcfa",
+      "06.png": "593de02b43809688ee30e64c9ed8c9746cfd5e8e8d7e78a02407049824ef2549",
+      "07.png": "3d0550fda3fc0e07adf999e8b6386ac7c556d9bf4476d118b54cb3116855b55e",
+      "08.png": "7f30de13557c81717001762493f3cd4bc79ee6cb0276e2ad5141391abd268248",
+      "09.png": "73cd260df5dc292d321508840bb025acd68ed050826f50d2e9ce971464b3a942",
+      "10.png": "a964473a92c43e4f3c0c65e323ce8875e9dc438b03c027b372bed737c38064bc",
+      "11.png": "e2b4793a5e6da2d638cf094bd0b8d2a34e5cb1313651530f57555547b03c58ff",
+      "12.png": "b0f16f1b93a9edfc597d3a10be9bbcc46911c5f04b4456266cdb5de937927426",
+      "13.png": "81aa25c75e54cb39c5fdfcae604f024662a88719cd1dbe7e39f3fdd4a06a5ff1",
+      "14.png": "bc3562e0dbd39ecfcec53a0b0434015eae74513a24403289bcd13434aae996f0",
+      "15.png": "e0f93f694611328249ae60fe78edf3588f106767846af75f446de798a1d593e3",
+      "16.png": "1c92df2f34652a63b7d64f77c71ee6bf36b1f113793aca20c8b82e3dda0fa036"
+    }
+  },
+  {
+    "enemy": "ore_ram",
+    "candidate": 7,
+    "status": "superseded after marked review",
+    "sourceSha256": "ed9fe578dd6db0e8cb261b10e308e57863163dc2a000ad062ad2e4a7e947fb69",
+    "nativeSha256": "4ec4397e14bb775180790a755a18140e2764228b03bdb3ebc185211b922c971a",
+    "editableSha256": "2806679dd01f305adc89a9571b659850445e42c6d183eed4e11788207ea5d249",
+    "nativeBounds": [
+      27,
+      33,
+      84,
+      84
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "palette": 48,
+    "edgeFlecksRemoved": 0,
+    "mirrored": false,
+    "landmark": "Ram horns around a riveted iron nose",
+    "allOriginalHashes": {
+      "01.png": "574eb62b6e853190484baf76cda7c66b663c76b9fbab1a6703b322819d8e9d2e",
+      "02.png": "f714fcacb5527b5163c9d9a8c306c4e117e2484d39866e65bc98ac6cf88f027e",
+      "03.png": "8417cdb77563213f5f0a086501d32129c845256cd00a794fb80f0aae9653ed19",
+      "04.png": "5dd17a8772830f9727819ba91da4e263eb27a61d60b2e1dab12bc7fc86521c62",
+      "05.png": "23bf5e0a3d4a6905903864e0d7253899dfc68302b648b84ab1a8f7fd781ecf20",
+      "06.png": "193fb219114f54916c5cdedc11239df71488861b384f561b99bafd235d9d6329",
+      "07.png": "ed9fe578dd6db0e8cb261b10e308e57863163dc2a000ad062ad2e4a7e947fb69",
+      "08.png": "dc3b7285ce145a177cc5a010a45c412ecc9c2f7816e66d805da53f4ebe9e504d",
+      "09.png": "d9d76be244b7ceea6f396cccd9f2f865faca3b03c7e589df05f722c2791ee051",
+      "10.png": "d1572d17f8e162acdf475f0366a84cc970ec6f19736ae6a143ab7ec1572324ed",
+      "11.png": "60419349e4866ae6d0f486a7c59e1b01e96b81f44fc95ee3b44da0948cb7eda6",
+      "12.png": "5a0a7d5954154815b34251933f2920139bac01b8302a4fe4581001f9aff51201",
+      "13.png": "56d2fbb9e1d66ccc2bae713568b765d0f1767702a0eac5bd751386f678b211eb",
+      "14.png": "164b3329b9373c15689367f4f1add987625a20891342fea2b9dc5cbc7d08982b",
+      "15.png": "958166dd95b6a42eef3ed3a7a3bc1bd62f157e0d0d2d9ea262aeefbeb3bcf4a5",
+      "16.png": "bd0e04f398ed3e2b0ed9025c1ac8a86095f0fe328f5f76f64dc34d4f69c199cc"
+    }
+  }
+]

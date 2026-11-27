@@ -168,7 +168,7 @@ public sealed class CrackedGemsRuntime :
 
             if (enemy == null ||
                 !enemy.IsInitialized ||
-                !enemy.CanReceiveDamage)
+                !enemy.CanReceivePlayerAttack)
             {
                 continue;
             }
@@ -200,7 +200,7 @@ public sealed class CrackedGemsRuntime :
 
             if (enemy != null &&
                 enemy.IsInitialized &&
-                enemy.CanReceiveDamage)
+                enemy.CanReceivePlayerAttack)
             {
                 return true;
             }

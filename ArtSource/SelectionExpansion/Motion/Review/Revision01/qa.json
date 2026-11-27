@@ -1,0 +1,349 @@
+{
+  "source": "07f066b9821579e15381542dd001362bc663ee88",
+  "status": "motion candidates",
+  "clips": [
+    {
+      "clip": "elven_pathblade_basic",
+      "cels": 10,
+      "minimumTransparentMargin": 14,
+      "durationMs": 680,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "contactBoundariesMs": [
+        320
+      ]
+    },
+    {
+      "clip": "guild_bulwark_basic",
+      "cels": 10,
+      "minimumTransparentMargin": 14,
+      "durationMs": 680,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "contactBoundariesMs": [
+        320
+      ]
+    },
+    {
+      "clip": "guild_chirurgeon_special",
+      "cels": 11,
+      "minimumTransparentMargin": 14,
+      "durationMs": 780,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "contactBoundariesMs": [
+        360
+      ]
+    },
+    {
+      "clip": "iceborn_axeman_basic",
+      "cels": 11,
+      "minimumTransparentMargin": 14,
+      "durationMs": 680,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "contactBoundariesMs": [
+        320
+      ]
+    },
+    {
+      "clip": "nacre_halberdier_basic",
+      "cels": 11,
+      "minimumTransparentMargin": 14,
+      "durationMs": 680,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "contactBoundariesMs": [
+        320
+      ]
+    },
+    {
+      "clip": "orc_slinghunter_basic",
+      "cels": 10,
+      "minimumTransparentMargin": 14,
+      "durationMs": 680,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "contactBoundariesMs": [
+        320,
+        500
+      ]
+    },
+    {
+      "clip": "elven_pathblade_idle",
+      "cels": 9,
+      "minimumTransparentMargin": 14,
+      "durationMs": 1170,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "soleContactsFixed": true
+    },
+    {
+      "clip": "guild_bulwark_idle",
+      "cels": 9,
+      "minimumTransparentMargin": 14,
+      "durationMs": 1170,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "soleContactsFixed": true
+    },
+    {
+      "clip": "guild_chirurgeon_idle",
+      "cels": 9,
+      "minimumTransparentMargin": 14,
+      "durationMs": 1170,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "soleContactsFixed": true
+    },
+    {
+      "clip": "guild_swordsman_idle",
+      "cels": 9,
+      "minimumTransparentMargin": 14,
+      "durationMs": 1170,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "soleContactsFixed": true
+    },
+    {
+      "clip": "iceborn_axeman_idle",
+      "cels": 9,
+      "minimumTransparentMargin": 14,
+      "durationMs": 1170,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "soleContactsFixed": true
+    },
+    {
+      "clip": "nacre_halberdier_idle",
+      "cels": 9,
+      "minimumTransparentMargin": 14,
+      "durationMs": 1170,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "soleContactsFixed": true
+    },
+    {
+      "clip": "orc_slinghunter_idle",
+      "cels": 9,
+      "minimumTransparentMargin": 14,
+      "durationMs": 1170,
+      "approvedFirstAndLast": true,
+      "sheetAndNativeVerified": true,
+      "soleContactsFixed": true
+    }
+  ],
+  "protected": [
+    {
+      "enemy": "guild_bulwark",
+      "state": "special",
+      "assets": {
+        "sheet": "d4855d62d147c80724bbf4d2c1d9aea3239dd573c12e32d2fd78cd863d0f50b1",
+        "editable": "21da03be70bdec96797a99dedc295de03451fa214c1686552e34b821b183f476",
+        "preview": "4d37094b7536500eecad4b219963027ea67897f31965c11ff79104c709d849b7"
+      }
+    },
+    {
+      "enemy": "guild_chirurgeon",
+      "state": "basic",
+      "assets": {
+        "sheet": "c4d64897bfc0925216b962709bcfdf70717f3f28d6b41b2b06c74d80502ef515",
+        "editable": "c7dd14ec483f3c083bb3d99a15395184d5cc51a1e3dd987b272117bf5ed0b2db",
+        "preview": "193966eaafad99eec52591360ec15afc9b70c7d78990a4a8b2c5e98ba7247ee9"
+      }
+    },
+    {
+      "enemy": "guild_ranger",
+      "state": "basic",
+      "assets": {
+        "sheet": "922f7a99b6eee8419a249d82e44a9c153a4e638fb8c795f59455352b6071f33d",
+        "editable": "67954c7982eda8d4c41869293eee15f0241f56e9a7160d0f2e276053e8b8a98f",
+        "preview": "927caf9de1a7da114d24e127cecf5ddfc9f2c48ac249a9dbfc8c8f3c8ced5511"
+      }
+    },
+    {
+      "enemy": "guild_ranger",
+      "state": "idle",
+      "assets": {
+        "sheet": "888259f5fe557ced7aa6e96dfe81bb301cf1034455ed1ebdc3542d5dbc968160",
+        "editable": "072b9166dda139d2659ce4bb50e6b25eb8762a54642413e471947f856b79474c",
+        "preview": "52f86911f2214e88cd857ed5e5ce8dc3c5a812adb0a820ac66c123edd159cf42"
+      }
+    },
+    {
+      "enemy": "guild_swordsman",
+      "state": "basic",
+      "assets": {
+        "sheet": "ac9577110dd7148507ff61807efaa6769475ebd0b396dd31bba2db48901d2503",
+        "editable": "f4997743861748622fadf64e0f78cf4e74d445e5ce4f633bf38bbf600b92f607",
+        "preview": "21372b86d415bf32e127b9b0afdc7fa4cabe9481eccfe1b21319fd3c0a36e696"
+      }
+    },
+    {
+      "enemy": "nacre_duelist",
+      "state": "basic",
+      "assets": {
+        "sheet": "fef997b4cfe916e3df39b025042482a0cb9b46222339fdd68e693f0a60e3d23f",
+        "editable": "e24e152a8edd421c4ab16d05efb69d25574665b637af0f4a7f4eb9797a72f91c",
+        "preview": "de5cab9baf1bdfc4d66397efd63ab851823de183ce6f6a9b25e747331c2060e6"
+      }
+    },
+    {
+      "enemy": "nacre_duelist",
+      "state": "idle",
+      "assets": {
+        "sheet": "f85277387359a540a142a2c26774dbf7964f505a05f3c42d152232036c68d529",
+        "editable": "49ad0155dc30e6be92279870b36cc54c812f3855f42090f5a013072e94d8d5a0",
+        "preview": "e409a0571ae5a3b98b01c4255d49f9ca53be8b7a8cdc1c637eaadc550a160cad"
+      }
+    },
+    {
+      "enemy": "ore_ram",
+      "state": "basic",
+      "assets": {
+        "sheet": "42a0d794c7d570e084a4628ea640064a75a6e65431c9c661bfd26be305711497",
+        "editable": "b9492c7dc04bc6b2bbe32641896c7af936f282951676855643452ed6d3d9938a",
+        "preview": "c058a3f94e738b2939061ddb69627a1ab5507360bf63162b2186ab15a40e011d"
+      }
+    },
+    {
+      "enemy": "ore_ram",
+      "state": "idle",
+      "assets": {
+        "sheet": "20c13913044d56a9b6cbd91b394b465f8722269c36c45f6c8fc8741117de7492",
+        "editable": "2051546adf6120de11eeeb5cbc4b6dc908f4616256614b45c0869fd2ae1bc2fe",
+        "preview": "e8bb9e1cf4f51aa6328f2a5865edff54605b1563314879c14b0a4c08df95c017"
+      }
+    }
+  ],
+  "pixelLabJobs": {
+    "guild_bulwark_basic": {
+      "job_id": "f9b1c95c-1504-4ce1-b43e-879667ef0398",
+      "asset_id": "79a7a32f-808a-534e-bd38-328669b16f9a",
+      "action": "One compact west-facing shield bash with his large existing gold-rimmed shield. Crook the shield elbow, compress rear knee, drive shoulder and whole shield forward toward screen left as a single solid panel. Brief squared contact, recoil and return to exact starting guard. His tiny mace remains low, quiet and gripped throughout. Brown-haired face stays visible at the same scale. Both boots grounded. Keep original equipment, no light streaks or effects.",
+      "frames": "8",
+      "size": "128x112px",
+      "seed": "6418",
+      "cost": "2 generations",
+      "sha256Input": "de290b854c28d6b8f4a6e28bba92ec2986e6f7c56e95b91cc856fff6e1825cb4",
+      "sha256Raw": [
+        "de290b854c28d6b8f4a6e28bba92ec2986e6f7c56e95b91cc856fff6e1825cb4",
+        "651a22b314658ffb2af9fa9bf08ecadc99ff89862ed705c3072b3b7bb045fa80",
+        "700943df0177146763ee08d119353972033299f86701b506493d7da75e45962b",
+        "a8eafee31f460a9f9b1d4625524007f8bd2449012ac5b6039192056482561f22",
+        "f1c62eef790db11e8a8f9f0479978d6031f000bc5bb4d9a01b40b560908e34b4",
+        "495d39cc569a563675e0123dd71ac2509e3ad24c6c6e16690b879e50d93c7464",
+        "25e9b1dc4606ed9694db70df2b3a4ba5a1e635b2eaa03961698984c367d01b83",
+        "d91e36d712cb7812f51b88595567c65939198ee5ca73abc1f1e9ae993d57af20",
+        "b98514065daeec184a65a30d4342cb62156f3d74387fe8fa29fba07f19f93fe2"
+      ]
+    },
+    "nacre_halberdier_basic": {
+      "job_id": "00e17eab-37a6-47ef-b553-1e37f53d8a67",
+      "asset_id": "56137e02-3fc4-53f8-a67d-fbccec5559b6",
+      "action": "One deliberate short halberd jab west. Both clawed hands grip the original long shaft. Lower the polearm as one rigid object from upright guard into a diagonal forward point, thrust its complete crescent head toward screen left at chest height, hold the extension, pull back and raise it to guard. Keep the crescent blade attached to the shaft, whole weapon visible all the time. Pearl armor and crest stay recognizable; same camera, no spin, no white arc or afterimage.",
+      "frames": "8",
+      "size": "160x144px",
+      "seed": "6419",
+      "cost": "3 generations",
+      "sha256Input": "b377cfa963f580014dae71c5557db19281d6482ca16bffb28382678ff1b79f0a",
+      "sha256Raw": [
+        "b377cfa963f580014dae71c5557db19281d6482ca16bffb28382678ff1b79f0a",
+        "c32f0f8b036076345ddef281cf69515604b51cadd086d351bf4de25ada5a4144",
+        "798b4a55e3a387c447c03ff722404c0aa38b93f2698dfe4f2d7ec6e9533391e7",
+        "d49bc5aeb3a184b8e99abce9ce3201d2990fc920d7eb69f201886c31c79553de",
+        "691a6b9cab99d316e2246db0415a83a1cd8508460ee7e69498b7ada2eda82847",
+        "169d5b5b17f280db655d6a857d235eb84d90220d6d99a6c1463dbef7d746e5a3",
+        "2799886fad4160394d81b3d7d83aaf12c51ee158dcc39124d819be10f7898220",
+        "1398a35d34180f434211f262b1efc1f8449eb94c6a7c9c39df6e8fd0f145ef5d",
+        "04197ee0498f08be7d20bdc19e6dad80c2dce809402c87d95d43b974a5522c0d"
+      ]
+    },
+    "iceborn_axeman_basic": {
+      "job_id": "d0c28713-b548-4d37-98dd-0a47ca3caf7c",
+      "asset_id": "77792e32-4bb0-5631-9ff0-c9ed48b7ea57",
+      "action": "One heavy two-handed axe chop toward screen left. Pull hands and the same squat iron axe head up beside the rear shoulder, hold the loaded silhouette, turn shoulders and bend front knee into one diagonally downward left strike. Show the complete thick axe head at the extended contact, then pull the weight back to its original waist guard. Both boots stay down. Blade and wooden handle travel as one rigid tool. No swing trails or white marks, no particles, full weapon visible.",
+      "frames": "8",
+      "size": "160x144px",
+      "seed": "6420",
+      "cost": "3 generations",
+      "sha256Input": "68e8d9c196de2e0f5be45fc8884f4ec46eae1ae56b7716ac687daf4e6fcab305",
+      "sha256Raw": [
+        "68e8d9c196de2e0f5be45fc8884f4ec46eae1ae56b7716ac687daf4e6fcab305",
+        "83b987939c91760e2ebebd9ffce1f4af46b873beba67bf1139a52d921a6b19e3",
+        "df29e7d9aa5b551a32820413e095d2848efcc2b6c1fdb826cc56b2d827b28c36",
+        "5a91ffe2c467dc2e254d21ac692b0aa5f2d8239139bb8d197aba547b965ac782",
+        "91be5dd65f8a97321803f7099acbc4b20df4c125ac04362fe3f15c8e91769cd6",
+        "d89c274e1da4148bf9e99f3bfc7a1b6b086d9da3fc054067e01693fcfe235e7b",
+        "cb865d039867f694777ee07d2e5c513fabe281450ff4284b4774080a686229f8",
+        "1e5fb6b8b5e7d557c40d940a512890967c25eaaae063b81432c3a5ece2ff000c",
+        "b600187089b8f3f9d8253ac7d06874fddcb9ae8acaeebe4acb767f5bdcb51424"
+      ]
+    },
+    "elven_pathblade_basic": {
+      "job_id": "167e9520-4904-4e24-8f02-9c8df442b996",
+      "asset_id": "625d127f-882a-5a84-a008-83c4ef46f8c2",
+      "action": "A short compact forward fencing lunge to screen left from the low ready sword. Flex rear knee, draw the elbow and blade back slightly, extend one low straight blade to screen left, hold the point at contact, retract the sword and settle into the original crouch. Blade stays the same length and stays in his gripping hand. Olive cloak follows behind with a slight delay, face and boots retain their size. No spin, magic or slash arcs.",
+      "frames": "8",
+      "size": "128x112px",
+      "seed": "6421",
+      "cost": "2 generations",
+      "sha256Input": "0bb32502546376c40b4941302a1219ff24ad811c82e2567c4467aa1c4d2bb2ff",
+      "sha256Raw": [
+        "0bb32502546376c40b4941302a1219ff24ad811c82e2567c4467aa1c4d2bb2ff",
+        "c567526144c5e9211d2b43e81da0c94bd5dbe962430d8420fe76c5de4e690f9e",
+        "a9d07a8b9c3c6b86933a53d318b229b3384f78845e52c296cae0b4f0f6fae11d",
+        "7a4a35716a01fa37f0a7f8c7a45e88b09eb3e59309c1ef84fff28ac3fdeb8c5a",
+        "4dad4404bf1b5727f44370420f2b0770b26ae2f4db7a940eb44f6a5aa6615873",
+        "10760d6ec7416cb5f994365bf45205704a9fb110969a95254f5b584251caa6fb",
+        "2df75febbb5745cdcf79d85b62ee7a37c999a376d58857037ba0a85c58f97f97",
+        "e6417f79f35902054429cf3d2988cc028723ecf959357dcbd6ad4ae6f378a584",
+        "6b34dcc271368a7db8845f41c9e78b3724b6cc12f29245222d94df5793d2a992"
+      ]
+    },
+    "orc_slinghunter_basic": {
+      "job_id": "7e9defa4-c2da-46c2-8453-c3bc9fff6e72",
+      "asset_id": "edc56a55-e873-54e7-bedb-00d41f36d3d6",
+      "action": "Tiny green orc firing his Y-shaped slingshot toward screen left. Keep the whole body same small scale and boots planted. Extend the fork forward in one hand, draw back the elastic with his other hand to his cheek, release with a small wrist recoil, then repeat one shorter snap in the same line and lower to the starting posture. Same Y-fork, red scarf and face all the way. Barely visible stone, no glow, trails, long projectile line or cape.",
+      "frames": "8",
+      "size": "128x112px",
+      "seed": "6422",
+      "cost": "2 generations",
+      "sha256Input": "ce35dc1b123bc16c4b104ae92faacbba515e5d5c4c783a26a66665a932f0fee5",
+      "sha256Raw": [
+        "ce35dc1b123bc16c4b104ae92faacbba515e5d5c4c783a26a66665a932f0fee5",
+        "53b77bb6bd079bed3065c2100ec42ea85c247b9afe535dda9a70ddbd3ce2dec4",
+        "2fe8f18e679f5badbb1cfdbd49e5dd4b3a31e9ccfe6ccac5a593c7dad5d6ffb8",
+        "47dee3f32f7ef20a90c067741cfbc91033e810a0c92186d889e73bcd7409b0d3",
+        "1dd2bac1186c6e5a79937e6b15cb7bbfbe22435e4b5dd84545c506d49fd3553a",
+        "cbf2a384b592363fe5d95b6e9c425e49be0f6b002e6431502102b385de813b79",
+        "8c3164b8e42b1e6dd3b57a8507d36efbb30a6c3dc31257fd7ad1466b818ae59b",
+        "b9b0c7407abe847b0b537e12de5adbeb975861e36fd4a3105b795235e3326b71",
+        "c6f3d53fc2db35d9b051d5f9b6c1d6d3e22a1de5f8d42c6ce63f4c1a36f68aa9"
+      ]
+    },
+    "guild_chirurgeon_special": {
+      "job_id": "f656221f-dbda-41d4-b3a7-5e8e72be368c",
+      "asset_id": "2e76ba95-417e-519c-9c94-2cdb1abe5660",
+      "action": "The blonde elf medic casts a quiet single healing cue. Feet planted, staff remains tall and complete with its original turquoise jewel on the tip. Raise the staff only a few pixels, tip it gently forward to screen left with a small opening of her free hand; one clear held blessing gesture, then return smoothly to the ready position. Full face visible in same three-quarter view throughout. No overhead flourish, no white crescent, no beam, no particles.",
+      "frames": "10",
+      "size": "128x112px",
+      "seed": "6423",
+      "cost": "3 generations",
+      "sha256Input": "e6ec01ccca41ed82fe330a7ca3229873002083c93740f8b55156335dbf0bfb31",
+      "sha256Raw": [
+        "e6ec01ccca41ed82fe330a7ca3229873002083c93740f8b55156335dbf0bfb31",
+        "1e8d5ecd7cc2abc61ae4adcef36242e91615d5c3e13de2a07192e16cd3579ad5",
+        "165816c967a3a823b13bfec58ccbfd21ea389db07f68fbb260a68c9b2c115c2c",
+        "37fe9ff8519fac661629c0531297122776bfe2c19516f9e1dfebf5b89eb17e4d",
+        "d4ffdf093ba68ce0e2643557e055808bc2a9688349dbbbfca23e4fc300060645",
+        "3bd7e9a6a6975aeb0c9e8604ec6cf7ae2810c8dd5c26a0af20a6aa590f4caa61",
+        "d045231d9e792db525dffac752ac4dffe501db6253536be9b5c2df414627b110",
+        "04b16f8c43d9b775fabf90bf77516a202207ca54f7a13248adb2a427dc3ab0ae",
+        "a5dc3cbf2dbff284673e4bb955f0112e5c2fbb5a933f96ae6649717ebe2cbb6a",
+        "3921cc50772403ebee0789572e416c52160d25e409c6f1469bab7492ad48979a",
+        "2ceb67124490e59927a574242b88d56cf8ee8b74ad8887223204b50ce21af166"
+      ]
+    }
+  }
+}

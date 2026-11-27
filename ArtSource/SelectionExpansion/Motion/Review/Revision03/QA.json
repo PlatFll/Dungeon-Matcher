@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "baselineStates": 22,
+    "revised": 17,
+    "verifiedCels": 281,
+    "timing": "Native LibreSprite document exposure table and exact decoded RGBA for every edited cel.",
+    "weaponProof": "Connected alpha, unchanged from the repaired native drawing, in every revised action cel. Source-stage hand-to-socket geometry is recorded in ActionGeometry.json.",
+    "idleLeft": {
+      "elven_pathblade_idle": {
+        "headAlignmentX": [
+          36,
+          37
+        ],
+        "neutral": 37,
+        "maxRightOfNeutralPx": 0
+      },
+      "guild_bulwark_idle": {
+        "headAlignmentX": [
+          32,
+          33
+        ],
+        "neutral": 33,
+        "maxRightOfNeutralPx": 0
+      },
+      "guild_chirurgeon_idle": {
+        "headAlignmentX": [
+          41,
+          42
+        ],
+        "neutral": 42,
+        "maxRightOfNeutralPx": 0
+      },
+      "guild_swordsman_idle": {
+        "headAlignmentX": [
+          38,
+          39
+        ],
+        "neutral": 39,
+        "maxRightOfNeutralPx": 0
+      },
+      "iceborn_axeman_idle": {
+        "headAlignmentX": [
+          28,
+          29
+        ],
+        "neutral": 29,
+        "maxRightOfNeutralPx": 0
+      },
+      "nacre_halberdier_idle": {
+        "headAlignmentX": [
+          35,
+          36
+        ],
+        "neutral": 36,
+        "maxRightOfNeutralPx": 0
+      },
+      "orc_slinghunter_idle": {
+        "headAlignmentX": [
+          44,
+          45
+        ],
+        "neutral": 45,
+        "maxRightOfNeutralPx": 0
+      }
+    },
+    "minTransparentMargin": 4,
+    "scope": "Source review on the unmerged selection expansion branch. Production playback is represented by the registered baseline sheets. Candidate ArtSource files are not imported into Unity."
+  }
+}

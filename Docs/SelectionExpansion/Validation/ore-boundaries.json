@@ -1,0 +1,134 @@
+[
+  {
+    "case": "defensive-121909",
+    "fromDepth": 23,
+    "toDepth": 23,
+    "fromMove": 85,
+    "toMove": 86,
+    "oldDrills": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "newDrills": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "survivingActorNewPower": []
+  },
+  {
+    "case": "defensive-121909",
+    "fromDepth": 33,
+    "toDepth": 33,
+    "fromMove": 149,
+    "toMove": 150,
+    "oldDrills": [
+      0,
+      2,
+      0,
+      1,
+      3,
+      1
+    ],
+    "newDrills": [
+      1,
+      3,
+      1,
+      2,
+      0,
+      2
+    ],
+    "survivingActorNewPower": [
+      {
+        "id": "rivet_gunner",
+        "before": 0.0,
+        "after": 1.2999999523162842
+      }
+    ]
+  },
+  {
+    "case": "skilled-14281",
+    "fromDepth": 36,
+    "toDepth": 36,
+    "fromMove": 187,
+    "toMove": 187,
+    "oldDrills": [
+      1,
+      1,
+      2,
+      0,
+      1,
+      0
+    ],
+    "newDrills": [
+      2,
+      2,
+      3,
+      1,
+      2,
+      1
+    ],
+    "survivingActorNewPower": [
+      {
+        "id": "pickaxe_delver",
+        "before": 0.0,
+        "after": 1.2999999523162842
+      }
+    ]
+  },
+  {
+    "case": "skilled-14281",
+    "fromDepth": 39,
+    "toDepth": 40,
+    "fromMove": 200,
+    "toMove": 201,
+    "oldDrills": [
+      3,
+      3,
+      0,
+      1,
+      3,
+      1
+    ],
+    "newDrills": [
+      0,
+      0,
+      1,
+      2,
+      0,
+      2
+    ],
+    "survivingActorNewPower": []
+  },
+  {
+    "case": "skilled-14281",
+    "fromDepth": 48,
+    "toDepth": 49,
+    "fromMove": 244,
+    "toMove": 245,
+    "oldDrills": [
+      2,
+      0,
+      1,
+      3,
+      1,
+      3
+    ],
+    "newDrills": [
+      3,
+      1,
+      2,
+      0,
+      2,
+      0
+    ],
+    "survivingActorNewPower": []
+  }
+]

@@ -36,7 +36,7 @@ public static class CrystalResonancePlaytest
         {
             if(state==PlayModeStateChange.EnteredPlayMode && SessionState.GetBool(Pending,false))
             {
-                output=Path.GetFullPath(".utmp/CrystalResonance/Playtest/"+System.DateTime.UtcNow.ToString("yyyyMMdd-HHmmss"));Directory.CreateDirectory(output);
+                output=Path.GetFullPath(".utmp/CrystalResonance/Playtest/"+System.DateTime.UtcNow.ToString("yyyyMMdd-HHmmss")+"-"+Guid.NewGuid().ToString("N").Substring(0,6));Directory.CreateDirectory(output);
                 Application.logMessageReceived+=Log;steps.Clear();steps.Push(Runs());EditorApplication.update+=Tick;
             }
             if(state==PlayModeStateChange.ExitingPlayMode && SessionState.GetBool(Pending,false)) Finish();
@@ -72,10 +72,10 @@ public static class CrystalResonancePlaytest
     }
     private static IEnumerator Runs()
     {
-        var path=Path.GetFullPath(".utmp/CrystalResonance/playtest-config.json");
+        var path=Path.GetFullPath(Environment.GetEnvironmentVariable("DM_CR_PLAYTEST_CONFIG") ?? ".utmp/CrystalResonance/playtest-config.json");
         var config=JsonUtility.FromJson<ResonancePlaytestConfig>(File.ReadAllText(path));
         File.Copy(path,Path.Combine(output,"config.json"),true);
-        string manifest=Path.GetFullPath(".utmp/CrystalResonance/prepared-source-manifest.json");
+        string manifest=Path.GetFullPath(Environment.GetEnvironmentVariable("DM_CR_SOURCE_MANIFEST") ?? ".utmp/CrystalResonance/prepared-source-manifest.json");
         if(File.Exists(manifest))File.Copy(manifest,Path.Combine(output,"source-manifest.json"),true);
         foreach(var sample in config.cases) yield return Play(sample,config.capture);
     }

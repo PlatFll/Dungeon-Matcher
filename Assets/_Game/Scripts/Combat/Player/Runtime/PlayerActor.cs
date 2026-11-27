@@ -59,6 +59,8 @@ public sealed partial class PlayerActor : MonoBehaviour
 
     [SerializeField]
     private int currentShield;
+    private int potionShield;
+    private int potionShieldMoves;
 
     [SerializeField]
     private int revivalCount;
@@ -72,6 +74,7 @@ public sealed partial class PlayerActor : MonoBehaviour
     public event Action<PlayerActor> Initialized;
     public event Action<PlayerActor, PlayerDamageContext> BeforeDamage;
     public event Action<PlayerActor, int> DamageTaken;
+    public event Action<EnemyActor, string, int, int> DamageResolved;
     public event Action<PlayerActor, int> ShieldDamaged;
     public event Action<PlayerActor, int, int> ShieldChanged;
     public event Action<PlayerActor, int> Healed;
@@ -172,7 +175,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         BaseShieldCap = definition.ShieldCapAtLevel(PermanentLevel);
         maximumShield = CombatAmounts.Round(BaseShieldCap);
         currentHealth = maximumHealth;
-        currentShield = 0;
+        currentShield = potionShield = potionShieldMoves = 0;
         revivalCount = 0;
         isDefeated = false;
         isInitialized = true;
@@ -191,9 +194,11 @@ public sealed partial class PlayerActor : MonoBehaviour
         );
     }
 
-    public bool TryTakeDamage(
-        int amount,
-        UnityEngine.Object source = null)
+    public bool TryTakeDamage(int amount, UnityEngine.Object source = null) =>
+        TryTakeAttributedDamage(amount, source, null);
+
+    public bool TryTakeAttributedDamage(
+        int amount, UnityEngine.Object source, string damageReason)
     {
         if (!CanReceiveDamage || amount <= 0)
         {
@@ -230,6 +235,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         if (shieldDamage > 0)
         {
             currentShield -= shieldDamage;
+            potionShield = Mathf.Max(0, potionShield - shieldDamage);
             ShieldDamaged?.Invoke(this, shieldDamage);
             ShieldChanged?.Invoke(this, currentShield, maximumShield);
         }
@@ -257,6 +263,10 @@ public sealed partial class PlayerActor : MonoBehaviour
                 HealthChanged?.Invoke(this, currentHealth, maximumHealth);
             }
         }
+
+        if (actualHealthDamage > 0 || shieldDamage > 0)
+            DamageResolved?.Invoke(attacker, damageReason ?? (attacker?.Definition != null ? attacker.Definition.SpecialAbilityKind.ToString() : cause),
+                actualHealthDamage, shieldDamage);
 
         if (currentHealth == 0)
         {
@@ -287,10 +297,27 @@ public sealed partial class PlayerActor : MonoBehaviour
         return actualShieldGranted;
     }
 
+    public void GrantPotionShield(int amount, int moves)
+    {
+        int granted = GrantShield(amount);
+        if (granted <= 0) return;
+        potionShield = Mathf.Min(currentShield, potionShield + granted);
+        potionShieldMoves = moves;
+    }
+
+    public void AdvancePotionShield()
+    {
+        if (potionShieldMoves <= 0 || --potionShieldMoves > 0 || potionShield <= 0) return;
+        currentShield = Mathf.Max(0, currentShield - potionShield);
+        potionShield = 0;
+        ShieldChanged?.Invoke(this, currentShield, maximumShield);
+    }
+
     public void RefreshShieldCap(RunUpgradeRuntime runtime = null)
     {
         if (!isInitialized) return;
         maximumShield = CombatAmounts.Round(RunUpgradeResolver.ResolveMaximumShield(BaseShieldCap, runtime));
+        potionShield = Mathf.Max(0, potionShield - Mathf.Max(0, currentShield - maximumShield));
         currentShield = Mathf.Min(currentShield, maximumShield);
         ShieldChanged?.Invoke(this, currentShield, maximumShield);
     }
@@ -335,7 +362,7 @@ public sealed partial class PlayerActor : MonoBehaviour
 
         isDefeated = false;
         currentHealth = Mathf.Min(CombatAmounts.Health(restoredHealth), maximumHealth);
-        currentShield = 0;
+        currentShield = potionShield = potionShieldMoves = 0;
         revivalCount++;
 
         Revived?.Invoke(this, revivalCount);
@@ -412,7 +439,7 @@ public sealed partial class PlayerActor : MonoBehaviour
 
         if (currentShield > 0)
         {
-            currentShield = 0;
+            currentShield = potionShield = potionShieldMoves = 0;
             ShieldChanged?.Invoke(this, currentShield, maximumShield);
         }
 

@@ -1,0 +1,770 @@
+{
+  "guild_bulwark_basic": {
+    "durationsMs": [
+      70,
+      60,
+      60,
+      60,
+      50,
+      20,
+      90,
+      40,
+      70,
+      60,
+      100
+    ],
+    "impactMs": 320,
+    "frameSize": [
+      128,
+      112
+    ],
+    "frames": [
+      {
+        "frame": 0,
+        "durationMs": 70,
+        "hand": [
+          46,
+          83
+        ],
+        "headOrGem": [
+          37,
+          90
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          33,
+          39,
+          94,
+          98
+        ],
+        "rgbaSHA256": "e7e122f7303ec452fb3f3a4374671a4bafe95d1ca7af4454b97e51c437bcfdb3"
+      },
+      {
+        "frame": 1,
+        "durationMs": 60,
+        "hand": [
+          44,
+          80
+        ],
+        "headOrGem": [
+          31,
+          83
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          26,
+          39,
+          94,
+          98
+        ],
+        "rgbaSHA256": "a7900ad7e6258cbfb920ed89f4f00a5e44847f6aa26df6b8a457243478cae0bc"
+      },
+      {
+        "frame": 2,
+        "durationMs": 60,
+        "hand": [
+          40,
+          75
+        ],
+        "headOrGem": [
+          29,
+          66
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          24,
+          38,
+          93,
+          98
+        ],
+        "rgbaSHA256": "b72e29a7228116390ff3a02ff4713000b5126bbe1770e55f8dc334bbad71f0f0"
+      },
+      {
+        "frame": 3,
+        "durationMs": 60,
+        "hand": [
+          40,
+          64
+        ],
+        "headOrGem": [
+          39,
+          49
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          34,
+          37,
+          94,
+          98
+        ],
+        "rgbaSHA256": "c189cd4b7e9da8f3c0971f1bbc78b2fdc99aba06b0ac6c6fe398a17ce3c5d451"
+      },
+      {
+        "frame": 4,
+        "durationMs": 50,
+        "hand": [
+          41,
+          63
+        ],
+        "headOrGem": [
+          40,
+          48
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          35,
+          36,
+          95,
+          98
+        ],
+        "rgbaSHA256": "58c18bb9e8f51b37a649115f88ca1fc9658ceb92b081b383ee0434724e995329"
+      },
+      {
+        "frame": 5,
+        "durationMs": 20,
+        "hand": [
+          39,
+          75
+        ],
+        "headOrGem": [
+          28,
+          66
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          23,
+          38,
+          92,
+          98
+        ],
+        "rgbaSHA256": "377f0d1f95d83dd472e08e246190613b22a2aa4aae5790487b9666564a945837"
+      },
+      {
+        "frame": 6,
+        "durationMs": 90,
+        "hand": [
+          37,
+          76
+        ],
+        "headOrGem": [
+          23,
+          79
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          18,
+          39,
+          90,
+          98
+        ],
+        "rgbaSHA256": "2b4c2565ffa2e007d74620da27e548f66bc41b7c404859b2f829553ecf9c1788"
+      },
+      {
+        "frame": 7,
+        "durationMs": 40,
+        "hand": [
+          37,
+          76
+        ],
+        "headOrGem": [
+          23,
+          82
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          18,
+          39,
+          90,
+          98
+        ],
+        "rgbaSHA256": "e86c5cd287cc9edcec1dc6bae68a14243d553635911ca2b24d15fe6d60c92e97"
+      },
+      {
+        "frame": 8,
+        "durationMs": 70,
+        "hand": [
+          43,
+          81
+        ],
+        "headOrGem": [
+          30,
+          84
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          25,
+          40,
+          93,
+          98
+        ],
+        "rgbaSHA256": "ff4b6b5295f37639780a216f8091295df984620068839ce214c4f29e1b1a1276"
+      },
+      {
+        "frame": 9,
+        "durationMs": 60,
+        "hand": [
+          44,
+          80
+        ],
+        "headOrGem": [
+          31,
+          83
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          26,
+          39,
+          94,
+          98
+        ],
+        "rgbaSHA256": "a7900ad7e6258cbfb920ed89f4f00a5e44847f6aa26df6b8a457243478cae0bc"
+      },
+      {
+        "frame": 10,
+        "durationMs": 100,
+        "hand": [
+          46,
+          83
+        ],
+        "headOrGem": [
+          37,
+          90
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          33,
+          39,
+          94,
+          98
+        ],
+        "rgbaSHA256": "e7e122f7303ec452fb3f3a4374671a4bafe95d1ca7af4454b97e51c437bcfdb3"
+      }
+    ]
+  },
+  "iceborn_axeman_basic": {
+    "durationsMs": [
+      70,
+      60,
+      60,
+      80,
+      30,
+      20,
+      90,
+      50,
+      60,
+      60,
+      100
+    ],
+    "impactMs": 320,
+    "frameSize": [
+      160,
+      144
+    ],
+    "frames": [
+      {
+        "frame": 0,
+        "durationMs": 70,
+        "hand": [
+          68,
+          105
+        ],
+        "headOrGem": [
+          60,
+          100
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          45,
+          73,
+          105,
+          130
+        ],
+        "rgbaSHA256": "ee6f3f80a4fcd73e4b44890b1399af5e58c0b1d15e5f2133d25df1474f0b26b4"
+      },
+      {
+        "frame": 1,
+        "durationMs": 60,
+        "hand": [
+          69,
+          98
+        ],
+        "headOrGem": [
+          59,
+          89
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          43,
+          72,
+          105,
+          130
+        ],
+        "rgbaSHA256": "06f3437649ef13e465682288cf863273913477128d9104cc3bd62d8a87f38239"
+      },
+      {
+        "frame": 2,
+        "durationMs": 60,
+        "hand": [
+          79,
+          75
+        ],
+        "headOrGem": [
+          81,
+          54
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          67,
+          40,
+          105,
+          130
+        ],
+        "rgbaSHA256": "44ad0127bfaf654aa98aefedaa39c4f488ce061c83c198d7e9e551a7b66ac654"
+      },
+      {
+        "frame": 3,
+        "durationMs": 80,
+        "hand": [
+          78,
+          73
+        ],
+        "headOrGem": [
+          97,
+          61
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          67,
+          44,
+          106,
+          130
+        ],
+        "rgbaSHA256": "75c630b10e5ebef7ec8aada5df522640ae3f0dfeb219b5d7b2bf9174321c4616"
+      },
+      {
+        "frame": 4,
+        "durationMs": 30,
+        "hand": [
+          79,
+          75
+        ],
+        "headOrGem": [
+          83,
+          54
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          69,
+          40,
+          105,
+          130
+        ],
+        "rgbaSHA256": "3c299f6b90cca141b9b10bedad5455447ac3207775131a388f82d23338cf13ca"
+      },
+      {
+        "frame": 5,
+        "durationMs": 20,
+        "hand": [
+          69,
+          98
+        ],
+        "headOrGem": [
+          61,
+          87
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          45,
+          72,
+          105,
+          130
+        ],
+        "rgbaSHA256": "17609758777e7337ae49bccd7c4f603dc1a684d4da0c96f84d7fd549b3a91881"
+      },
+      {
+        "frame": 6,
+        "durationMs": 90,
+        "hand": [
+          69,
+          112
+        ],
+        "headOrGem": [
+          44,
+          108
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          30,
+          74,
+          102,
+          130
+        ],
+        "rgbaSHA256": "dfee76817fdaba7b030a1bcb17fb0f39dea8d1b23fbf6e8c3a445a73ff3d9405"
+      },
+      {
+        "frame": 7,
+        "durationMs": 50,
+        "hand": [
+          69,
+          112
+        ],
+        "headOrGem": [
+          44,
+          113
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          31,
+          74,
+          102,
+          130
+        ],
+        "rgbaSHA256": "a00f55dac3d6736f28a01982ef43eab8b0c91db31ac8314609fe45f1446908f4"
+      },
+      {
+        "frame": 8,
+        "durationMs": 60,
+        "hand": [
+          69,
+          112
+        ],
+        "headOrGem": [
+          52,
+          108
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          37,
+          74,
+          104,
+          130
+        ],
+        "rgbaSHA256": "a05d35e171b87a494da0eec3daf10b785c81dc727032f432984f32550f40e970"
+      },
+      {
+        "frame": 9,
+        "durationMs": 60,
+        "hand": [
+          69,
+          98
+        ],
+        "headOrGem": [
+          58,
+          90
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          42,
+          72,
+          105,
+          130
+        ],
+        "rgbaSHA256": "92d42f4975e2baf86828a8d184dadb75d31a3eb8ca3ea903cd7ae10976a9f0fc"
+      },
+      {
+        "frame": 10,
+        "durationMs": 100,
+        "hand": [
+          68,
+          105
+        ],
+        "headOrGem": [
+          60,
+          100
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          45,
+          73,
+          105,
+          130
+        ],
+        "rgbaSHA256": "ee6f3f80a4fcd73e4b44890b1399af5e58c0b1d15e5f2133d25df1474f0b26b4"
+      }
+    ]
+  },
+  "guild_chirurgeon_special": {
+    "durationsMs": [
+      70,
+      60,
+      60,
+      60,
+      60,
+      50,
+      100,
+      60,
+      40,
+      60,
+      50,
+      50,
+      60
+    ],
+    "impactMs": 360,
+    "frameSize": [
+      128,
+      112
+    ],
+    "frames": [
+      {
+        "frame": 0,
+        "durationMs": 70,
+        "hand": [
+          51,
+          73
+        ],
+        "headOrGem": [
+          46,
+          49
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          42,
+          40,
+          85,
+          98
+        ],
+        "rgbaSHA256": "93d9f17e4c674bd7bdfd976fbf9a722d89c76a813441b9bc1f4980ff05226913"
+      },
+      {
+        "frame": 1,
+        "durationMs": 60,
+        "hand": [
+          51,
+          71
+        ],
+        "headOrGem": [
+          46,
+          47
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          42,
+          41,
+          85,
+          98
+        ],
+        "rgbaSHA256": "103437cb11d85843492932f4ef78b61492318659a8eaab97de5eed48116fb368"
+      },
+      {
+        "frame": 2,
+        "durationMs": 60,
+        "hand": [
+          51,
+          68
+        ],
+        "headOrGem": [
+          46,
+          44
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          42,
+          39,
+          85,
+          98
+        ],
+        "rgbaSHA256": "14ee236d11c434ec5ed444be15dff433583a31e09a1ed6395f9461bad45403e3"
+      },
+      {
+        "frame": 3,
+        "durationMs": 60,
+        "hand": [
+          51,
+          64
+        ],
+        "headOrGem": [
+          46,
+          40
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          42,
+          35,
+          85,
+          98
+        ],
+        "rgbaSHA256": "f928ab435013879ad8d03e1ca55c453ac7710571845ebe46d722afea2f13bb8e"
+      },
+      {
+        "frame": 4,
+        "durationMs": 60,
+        "hand": [
+          51,
+          61
+        ],
+        "headOrGem": [
+          46,
+          37
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          41,
+          31,
+          85,
+          98
+        ],
+        "rgbaSHA256": "1f6770d3719863770dcf2366ef40dbfbb660afd863024bf68b0e9e077ac078f9"
+      },
+      {
+        "frame": 5,
+        "durationMs": 50,
+        "hand": [
+          51,
+          60
+        ],
+        "headOrGem": [
+          46,
+          36
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          40,
+          29,
+          85,
+          98
+        ],
+        "rgbaSHA256": "cc6922c2bab45c1909af0615d1e9d3e20eab37647141e0f9e6a41fc3276cc852"
+      },
+      {
+        "frame": 6,
+        "durationMs": 100,
+        "hand": [
+          51,
+          60
+        ],
+        "headOrGem": [
+          46,
+          36
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          39,
+          28,
+          86,
+          98
+        ],
+        "rgbaSHA256": "aebc27a30a343edb71276538d606c0c28d3e24d03d2e68a1a0bd0b008a50982f"
+      },
+      {
+        "frame": 7,
+        "durationMs": 60,
+        "hand": [
+          51,
+          60
+        ],
+        "headOrGem": [
+          46,
+          36
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          40,
+          29,
+          85,
+          98
+        ],
+        "rgbaSHA256": "cc6922c2bab45c1909af0615d1e9d3e20eab37647141e0f9e6a41fc3276cc852"
+      },
+      {
+        "frame": 8,
+        "durationMs": 40,
+        "hand": [
+          51,
+          61
+        ],
+        "headOrGem": [
+          46,
+          37
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          41,
+          31,
+          85,
+          98
+        ],
+        "rgbaSHA256": "1f6770d3719863770dcf2366ef40dbfbb660afd863024bf68b0e9e077ac078f9"
+      },
+      {
+        "frame": 9,
+        "durationMs": 60,
+        "hand": [
+          51,
+          65
+        ],
+        "headOrGem": [
+          46,
+          41
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          42,
+          36,
+          85,
+          98
+        ],
+        "rgbaSHA256": "bf4c421af85c0d7f38fe8e0537de5053668b234966864d5e39a8749ac41b6bc3"
+      },
+      {
+        "frame": 10,
+        "durationMs": 50,
+        "hand": [
+          51,
+          69
+        ],
+        "headOrGem": [
+          46,
+          45
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          42,
+          40,
+          85,
+          98
+        ],
+        "rgbaSHA256": "6c7ce4619e1e33db934d82ffe579bc352f0716e001a23953bfed126bef662a93"
+      },
+      {
+        "frame": 11,
+        "durationMs": 50,
+        "hand": [
+          51,
+          72
+        ],
+        "headOrGem": [
+          46,
+          48
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          42,
+          40,
+          85,
+          98
+        ],
+        "rgbaSHA256": "7883edb5d6d368acaa2c53b9c5d48664c6d5c925ca6d7f1ceae29609decaa76b"
+      },
+      {
+        "frame": 12,
+        "durationMs": 60,
+        "hand": [
+          51,
+          73
+        ],
+        "headOrGem": [
+          46,
+          49
+        ],
+        "sameConnectedSilhouette": true,
+        "bounds": [
+          42,
+          40,
+          85,
+          98
+        ],
+        "rgbaSHA256": "93d9f17e4c674bd7bdfd976fbf9a722d89c76a813441b9bc1f4980ff05226913"
+      }
+    ]
+  }
+}

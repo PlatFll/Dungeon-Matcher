@@ -1011,6 +1011,8 @@ Only explicit legacy mastery selections are grandfathered. Existing selection/pr
 
 `RunSession` begins one journal before player initialization, snapshots permanent level/charges/mastery, records sequential completed waves, and gates progression if a journal write fails. `OriginalEncounterDefinitions` captures initial successfully spawned members, including actors defeated during entrance; summons never add income. Rewards are previewed separately and credited once on death, victory or explicit End Run/Retry. Suspend, application quit and current-version interruption preserve the attempt. Only legacy journals lacking continuation state settle on load. Partial waves pay nothing. The UI exposes save retry without inventing a second reward calculation.
 
+The merchant routes purchases and loadout changes through `AccountProgression`. The journal stores one potion and one bomb identity alongside legacy per-slot counters. The saved identities select inventory, icon and effect for new uses and replay. Shield Potion records its expiring portion inside the player shield snapshot. Bomb previews and accepted clears share the board target predicate.
+
 Potion healing uses `PlayerActor.Heal` plus the established healing resolver. Bomb acceptance locks the board before committing inventory, then uses existing bomb expansion, clear reporting, shatter activation, crystal chains, collapse/cascade and emergency reshuffle. Invalid targets/cancellation never spend. Consumable clears do not count as accepted matching moves. Board ownership continues through settlement; VFX and settings never own resolution.
 
 Permanent HP/gem/ability/shield values derive from immutable `PlayerDefinition` data at the journal's run-start level, then `RunUpgradeResolver` applies temporary modifiers. Bardley's serialized cost is now 80. `AbilityRefundBudget`, owned by `PlayerAbilityMatchEnergyGain`, caps generated energy from the complete accepted cast at half the effective cost. The runtime and board must both finish before the budget ends. `PlayerAbilityController` still spends only after acceptance. Wave-start energy remains separate from cast refunds.
@@ -1140,3 +1142,18 @@ and energy/gameplay authority are unchanged.
 ## Crystal Resonance (2026-11-17)
 
 Live progression now follows [the authoritative ownership record](CrystalResonance/IMPLEMENTATION.md). WaveController remains the sole spawn owner; BoardController remains the sole resolver. RunSession owns score/local Resonance and receipt persistence; RunUpgradeCoordinator consumes sequential safe notches; existing atomic travel resets only the committed destination copy. Stage 10 compilation, affected regressions and real Game input samples have executed; see [the evidence and acceptance limits](Validation/CRYSTAL_RESONANCE_V1_FINAL.md).
+
+
+### Ordinary encounter selection and Guild support
+
+WaveController filters the zone's serialized roster, prerequisites, threat budget
+and live tide state. OrdinarySelection draws from those legal recipes using the
+encounter RNG. CrystalResonanceSnapshot stores the last four actual formations
+and the run's zone teaching history. Old saved runs initialize absent lists on
+use. A scheduled capstone restores its saved member IDs.
+
+GuildSupportAbility runs through CombatMoveClock's normal action opportunity and
+the actor's special-motion contact. EnemyActor owns Taunt lifetime and damage
+eligibility. The weakness UI reads protection while retaining the original gem
+type. Field Medicine uses EnemyActor.RestoreHealth. See the
+[ability specification and implementation notes](SelectionExpansion/STAGE04.md).

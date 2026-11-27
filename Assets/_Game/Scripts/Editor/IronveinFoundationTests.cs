@@ -1,3 +1,4 @@
+using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -59,7 +60,11 @@ public sealed class IronveinFoundationTests
         Assert.That(ZoneTravelController.DestinationReady(zone), Is.True);
         Assert.That(zone.encounterBudget,Is.Not.Null);
         Assert.That(zone.liveEncounters.Length,Is.EqualTo(41));
-        Assert.That(zone.enemies.Length,Is.EqualTo(14));
+        CollectionAssert.AreEquivalent(IronveinArtImporter.Ids.Concat(new[] { "ore_ram" }),
+            zone.enemies.Select(e => e.EnemyId));
+        var oreRam = zone.enemies.Single(e => e.EnemyId == "ore_ram");
+        Assert.That(zone.resonanceEncounters.Any(r => r.resonanceKind == ZoneEncounterKind.Ordinary &&
+            r.members.Contains(oreRam)), Is.True);
         Assert.That(zone.apexEnemy.EnemyId,Is.EqualTo("grand_delver"));
         Assert.That(zone.theme.battleEnvironmentVariants.Length,Is.EqualTo(3));
     }

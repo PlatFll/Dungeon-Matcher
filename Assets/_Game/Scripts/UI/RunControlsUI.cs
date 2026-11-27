@@ -26,6 +26,7 @@ public sealed class RunControlsUI : MonoBehaviour
     private float priorTimeScale;
     private static Sprite cooldownSprite;
     private Image resonance;
+    private Sprite colorBombStill;
     public bool IsModalOpen => overlay!=null;
     public Canvas GameplayCanvas => canvas;
     public Button SettingsButton { get; private set; }
@@ -43,9 +44,9 @@ public sealed class RunControlsUI : MonoBehaviour
         if(safeRoot==null) safeRoot=ability.transform.parent.parent as RectTransform;
         for(int i=0;i<2;i++)
         {
-            var kind=(ConsumableKind)i;
+            var kind = i == 0 ? session.PotionKind : session.BombKind;
             slots[i]=GameUi.Button(kind.ToString(),ability.transform.parent,"",new Vector2(64,64),new Vector2(i==0?-136:136,-17),()=>
-            { if(kind==ConsumableKind.HealthPotion) session.TryUsePotion();else session.ToggleBombTargeting(); });
+            { if(SupplyCatalog.IsPotion(kind)) session.TryUsePotion();else session.ToggleBombTargeting(); });
             slots[i].image.sprite=Resources.Load<Sprite>("UI/Consumables/Slot");
             slots[i].image.color=Color.white;
             slots[i].image.type=Image.Type.Simple;
@@ -68,7 +69,17 @@ public sealed class RunControlsUI : MonoBehaviour
             }
             var rect=GameUi.Rect("Icon",slots[i].transform,new Vector2(48,48),Vector2.zero);
             icons[i]=rect.gameObject.AddComponent<Image>();
-            icons[i].sprite=Resources.Load<Sprite>(i==0?"UI/Consumables/Potion":"UI/Consumables/Bomb");
+            if (kind == ConsumableKind.ColorBomb)
+            {
+                colorBombStill = Resources.Load<Sprite>("VFX/BombRefinement/Idles/Star/Star_00");
+                icons[i].sprite = colorBombStill;
+            }
+            else
+            {
+                string path = kind == ConsumableKind.HealthPotion ? "UI/Consumables/Potion" :
+                    kind == ConsumableKind.Bomb ? "UI/Consumables/Bomb" : "UI/MerchantStall/" + kind;
+                icons[i].sprite = Resources.Load<Sprite>(path);
+            }
             icons[i].preserveAspect=true;icons[i].raycastTarget=false;
             if(BattlePresentationSkin.Folder!=null && BattlePresentationSkin.Reference("SharedPotionHolder")!=null)rect.gameObject.AddComponent<NativePixelUiSurface>();
             var shade=GameUi.Rect("Cooldown",slots[i].transform,new Vector2(52,52),Vector2.zero);
@@ -154,6 +165,8 @@ public sealed class RunControlsUI : MonoBehaviour
     private void Update()
     {
         if(session==null || slots[0]==null)return;
+        if (colorBombStill != null)
+            icons[1].sprite = BombIdleArt.Frame(GemSpecialType.ColorCrystal, Time.timeSinceLevelLoad, colorBombStill);
         if(session.Continuation!=null && session.Continuation.IsRestoring && overlay==null)
         {
             BuildOverlay("Continuing your run..."); restoringOverlay=true;
@@ -173,7 +186,7 @@ public sealed class RunControlsUI : MonoBehaviour
             }
         for(int i=0;i<2;i++)
         {
-            var kind=(ConsumableKind)i;int count=session.Charges(kind);float cooldown=session.Cooldown(kind);
+            var kind = i == 0 ? session.PotionKind : session.BombKind;int count=session.Charges(kind);float cooldown=session.Cooldown(kind);
             if(BattlePresentationSkin.HasUnifiedControls)BattlePresentationSkin.PlaceSupply(slots[i],icons[i],i);
             else if(DungeonPixelLabBattleArt.Controls is DungeonPixelLabBattleArt nativeArt)
             {
@@ -216,7 +229,7 @@ public sealed class RunControlsUI : MonoBehaviour
         // The compact strip has room for native controls and their energy bar,
         // but not the optional lesson caption over the buttons. Enemy inspection stays available.
         hint.gameObject.SetActive(BattlePresentationSkin.HasUnifiedControls ? ((RectTransform)hint.transform.parent).rect.height>110 : DungeonPixelLabBattleArt.Controls != null || ((RectTransform)hint.transform.parent).rect.height > 80);
-        hint.text=session.Board.IsSelectingTarget?"Preview, then confirm. Tap Bomb to cancel.\nBarricades take 1 hit; specials can extend the blast.":lesson ?? (session.IsPractice?"Practice: no stock spent or progression earned.":"");
+        hint.text=session.Board.IsSelectingTarget?(session.BombKind == ConsumableKind.ColorBomb ? "Choose a color, then confirm. Tap the bomb to cancel." : "Preview, then confirm. Tap Bomb to cancel.\nBarricades take 1 hit; specials can extend the blast."):lesson ?? (session.IsPractice?"Practice: no stock spent or progression earned.":"");
         if(resonance!=null)
         {
             bool show=hint.gameObject.activeSelf && !session.Board.IsSelectingTarget && lesson==null;
@@ -228,7 +241,7 @@ public sealed class RunControlsUI : MonoBehaviour
         if (confirmBomb.gameObject.activeSelf)
         {
             confirmBomb.transform.position = abilityRect.position;
-            confirmBomb.interactable=session.CanUse(ConsumableKind.Bomb);
+            confirmBomb.interactable=session.CanUse(session.BombKind);
         }
         if(BattlePresentationSkin.HasUnifiedControls)
         {

@@ -115,12 +115,18 @@ public sealed partial class ForestFoundationPlayTests
             a.SetSpecialType(firstKind); b.SetSpecialType(secondKind);
             Vector3 aWorld = a.transform.position, bWorld = b.transform.position;
             var presented = new List<(TileBurstKind kind, Vector3 position)>();
-            int accepted = 0, rewarded = 0; bool landed = false;
+            var lines = new List<BombVFXContext>();
+            int accepted = 0, rewarded = 0, detonated = 0; bool landed = false;
+            Action<BombVFXContext> line = context =>
+            { if (!landed && context.IsDirectionalBomb) lines.Add(context); };
+            Action<RunUpgradeSpecialClearContext> detonation = context =>
+            { if (!landed) detonated += context.SpecialCount; };
             Action<TileBurstVFXContext> bomb = context =>
             { if (!landed) foreach (var position in context.WorldPositions) presented.Add((context.Kind, position)); };
             Action<int> accept = _ => accepted++;
             Action<int> landing = _ => landed = true;
             Action<BoardClearContext> clear = context => { if (!landed) rewarded += context.GemCount; };
+            board.BombVFXRequested += line; board.RunUpgradeSpecialClearPrepared += detonation;
             board.TileBurstVFXRequested += bomb; board.ValidPlayerMoveAccepted += accept;
             board.GemsLanded += landing; board.BoardClearResolved += clear;
             int before = Run.MoveClock.Tick;
@@ -130,24 +136,50 @@ public sealed partial class ForestFoundationPlayTests
                 board.StartCoroutine((IEnumerator)Call(board, "TrySwap", a, b));
                 yield return Until(() => Run.MoveClock.Tick == before + 1 && Run.Continuation.CanCapture, "bomb pair " + firstKind + "/" + secondKind);
                 Assert.That(accepted, Is.EqualTo(1));
-                Func<GemSpecialType, TileBurstKind> material = kind => kind == GemSpecialType.PoisonBomb ? TileBurstKind.Poison :
-                    kind == GemSpecialType.HealingBomb ? TileBurstKind.Healing : kind == GemSpecialType.ShieldBomb ? TileBurstKind.Shield : TileBurstKind.Explosion;
-                Assert.That(presented.Count(c => c.kind == material(firstKind) && Vector3.Distance(c.position, bWorld) < .0001f), Is.EqualTo(1), firstKind + " new origin");
-                Assert.That(presented.Count(c => c.kind == material(secondKind) && Vector3.Distance(c.position, aWorld) < .0001f), Is.EqualTo(1), secondKind + " new origin");
+                Assert.That(detonated, Is.EqualTo(2), "two specials in the initial gameplay clear");
+                bool Directional(GemSpecialType kind) => kind == GemSpecialType.RowBomb || kind == GemSpecialType.ColumnBomb;
+                void AssertOrigin(GemSpecialType kind, Vector2Int cell, Vector3 position)
+                {
+                    if (Directional(kind))
+                    {
+                        Assert.That(lines.Count(c => c.SpecialType == kind && c.HasGridPosition && c.Column == cell.x && c.Row == cell.y
+                            && Vector3.Distance(c.WorldPosition, position) < .0001f), Is.EqualTo(1), kind + " travelling blast origin");
+                        return;
+                    }
+                    var material = kind == GemSpecialType.PoisonBomb ? TileBurstKind.Poison :
+                        kind == GemSpecialType.HealingBomb ? TileBurstKind.Healing : TileBurstKind.Shield;
+                    Assert.That(presented.Count(c => c.kind == material && Vector3.Distance(c.position, position) < .0001f),
+                        Is.EqualTo(1), kind + " material at new origin");
+                }
+                AssertOrigin(firstKind, bOrigin, bWorld); AssertOrigin(secondKind, aOrigin, aWorld);
+                Assert.That(lines.Count, Is.EqualTo((Directional(firstKind) ? 1 : 0) + (Directional(secondKind) ? 1 : 0)));
+                var utilityCells = new HashSet<Vector2Int>();
                 var cells = new HashSet<Vector2Int>();
                 Action<GemSpecialType, Vector2Int> footprint = (kind, origin) =>
                 {
                     for (int x = 0; x < board.Width; x++) for (int y = 0; y < board.Height; y++)
                         if (kind == GemSpecialType.RowBomb ? y == origin.y : kind == GemSpecialType.ColumnBomb ? x == origin.x :
-                            Math.Abs(x - origin.x) <= 1 && Math.Abs(y - origin.y) <= 1) cells.Add(new Vector2Int(x, y));
+                            Math.Abs(x - origin.x) <= 1 && Math.Abs(y - origin.y) <= 1)
+                        {
+                            var cell = new Vector2Int(x, y);
+                            cells.Add(cell);
+                            if (!Directional(kind)) utilityCells.Add(cell);
+                        }
                 };
                 footprint(firstKind, bOrigin); footprint(secondKind, aOrigin);
                 Assert.That(rewarded, Is.EqualTo(cells.Count), "overlap rewards exactly once, without a synthetic match");
-                Assert.That(presented.Count, Is.EqualTo(cells.Count), "one tile burst per cleared cell");
+                Assert.That(presented.Any(c => c.kind == TileBurstKind.Explosion), Is.False, "directional bombs use their travelling fire");
+                Assert.That(presented.Count, Is.EqualTo(utilityCells.Count), "one material burst per utility cell");
+                foreach (var cell in utilityCells)
+                {
+                    Vector3 position = board.transform.TransformPoint(board.GetCellLocalPosition(cell.x, cell.y));
+                    Assert.That(presented.Count(c => Vector3.Distance(c.position, position) < .0001f), Is.EqualTo(1), cell.ToString());
+                }
                 Assert.That(board.IsBusy, Is.False); Assert.That(Run.MoveClock.IsResolving, Is.False);
             }
             finally
             {
+                board.BombVFXRequested -= line; board.RunUpgradeSpecialClearPrepared -= detonation;
                 board.TileBurstVFXRequested -= bomb; board.ValidPlayerMoveAccepted -= accept;
                 board.GemsLanded -= landing; board.BoardClearResolved -= clear;
             }

@@ -1,0 +1,53 @@
+{
+  "enemy": "orc_slinghunter",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/O5.png",
+  "firstFrameSHA256": "253a3af9f47ee95ac04a1187efdb4d5fda1da455fc4cda36b2b626e94274a91d",
+  "seed": 585125,
+  "count": 8,
+  "prompt": "Keep the small green body, face, olive clothing and red scarf intact. Draw back the elastic pouch of the same wooden Y-shaped slingshot and release it to the left twice, with an arm recoil between shots. Feet stay grounded. Slingshot held in front throughout. Finish in the original pose.",
+  "id": "f1f1fa7b-1912-4f80-80c6-ea2a23fea743",
+  "receipt": "id: f1f1fa7b-1912-4f80-80c6-ea2a23fea743\njob_id: f1f1fa7b-1912-4f80-80c6-ea2a23fea743\ndescription: Keep the small green body, face, olive clothing and red scarf intact. Draw back the elastic pouch of the same wooden Y-shaped slingshot and release it to the left twice, with an arm recoil between shots. Feet stay grounded. Slingshot held in front throughout. Finish in the original pose.\nframes: 8\nsize: 112x88px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 585125\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f1f1fa7b-1912-4f80-80c6-ea2a23fea743\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/f1f1fa7b-1912-4f80-80c6-ea2a23fea743/download (423 + Retry-After until ready; ?index=N for the Nth of several images)\nasset_id: 701e484e-535e-5be9-8172-9f808e4b014e\nasset_status: pending (saved to your gallery when generation completes)",
+  "subject": "A short green orc in a red scarf aiming a forked wooden slingshot.",
+  "tool": "animate_image_pixminimax",
+  "correctionOf": "748a8485-a7af-44fb-a855-4e4178c493bd",
+  "lastFrameSHA256": "253a3af9f47ee95ac04a1187efdb4d5fda1da455fc4cda36b2b626e94274a91d",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/f1f1fa7b-1912-4f80-80c6-ea2a23fea743/00.png",
+      "sha256": "b8b40926888e022a9427bc07fb35a73b82ed08b48553749f983ad9e807992037"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/f1f1fa7b-1912-4f80-80c6-ea2a23fea743/01.png",
+      "sha256": "124234521b7a504a1b937ba49bf6ff9b79c917d573e400d8efb66d4b75c27c7d"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/f1f1fa7b-1912-4f80-80c6-ea2a23fea743/02.png",
+      "sha256": "39c6a8490e1702b37765ea2f6d87e338db91985497005113e29cfff807385a20"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/f1f1fa7b-1912-4f80-80c6-ea2a23fea743/03.png",
+      "sha256": "9f3f304d5fa40d9657dd856e4692d7cf46da43780b73b188a5346c510811d227"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/f1f1fa7b-1912-4f80-80c6-ea2a23fea743/04.png",
+      "sha256": "99f9dfb58ea56652d6e1415b71a917fc30e2d68a0fa11ec154f9038d9cbf6a1e"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/f1f1fa7b-1912-4f80-80c6-ea2a23fea743/05.png",
+      "sha256": "97700c4679ebb25037a5717978e958d915395b81e9ba7f5dd32602b3f0b0426b"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/f1f1fa7b-1912-4f80-80c6-ea2a23fea743/06.png",
+      "sha256": "cb6d23cb7f22221827b577a5eaff9891f8534af32e1d80f4303674d80e35b142"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/f1f1fa7b-1912-4f80-80c6-ea2a23fea743/07.png",
+      "sha256": "6fe2af2c1a2628ca5492f5b6d9efe67f3109c79d53907fa15c11ad63f929c459"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/f1f1fa7b-1912-4f80-80c6-ea2a23fea743/08.png",
+      "sha256": "95a4139aa9daec47a6a062d9dd2064d77c5c50c5093c2a3c4de9d1fbcd87961e"
+    }
+  ]
+}

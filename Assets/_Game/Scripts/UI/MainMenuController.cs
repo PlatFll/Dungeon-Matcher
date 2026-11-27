@@ -238,12 +238,16 @@ public sealed class MainMenuController : MonoBehaviour
         string id=run?.playerId ?? CharacterSelectionSettings.SelectedPlayerId;
         PlayerDefinitionRegistry.TryGetDefinition(id,out var definition);
         accountLabel.text=$"{(run!=null?"Saved: ":"")}{(definition != null ? definition.DisplayName : id)} - Level {run?.level ?? AccountProgression.Current.Level(id)}\nGold Coins: {AccountProgression.Current.Gold}";
-        playButton.GetComponentInChildren<TMP_Text>().text=run==null?"Play":"Continue wave "+(run.checkpoint?.wave>0?run.checkpoint.wave:1);
+        var resonance = run?.checkpoint?.resonance;
+        string savedProgress = resonance != null && resonance.version > 0
+            ? $"RESONANCE {resonance.charge}%" : "SAVED RUN";
+        if (run != null) accountLabel.text += "  /  " + savedProgress;
+        playButton.GetComponentInChildren<TMP_Text>().text=run==null?"Play":"Continue";
         if(endSavedRun!=null) endSavedRun.gameObject.SetActive(run!=null);
         if(menuArtwork!=null)
         {
             accountLabel.text=$"{(definition!=null?definition.DisplayName:id)}  ·  LV {run?.level??AccountProgression.Current.Level(id)}  ·  GOLD {AccountProgression.Current.Gold}";
-            if(run!=null)accountLabel.text += "  /  WAVE "+(run.checkpoint?.wave>0?run.checkpoint.wave:1);
+            if(run!=null)accountLabel.text += "  /  " + savedProgress;
             var label=playButton.GetComponentInChildren<TMP_Text>();
             label.text=run==null?"PLAY":"CONTINUE";
             GlobalMenuSkin.StyleText(label,run==null?64:40,true);

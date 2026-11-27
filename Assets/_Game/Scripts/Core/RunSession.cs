@@ -136,7 +136,9 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         for (int i=0; i<cooldowns.Length; i++) cooldowns[i]=Mathf.Max(0,cooldowns[i]-1);
     }
     public int Charges(ConsumableKind kind) => IsFinished ? 0 : account.Charges(RunId, kind);
-    public float Cooldown(ConsumableKind kind) => cooldowns[(int)kind];
+    public ConsumableKind PotionKind => account.RunPotion;
+    public ConsumableKind BombKind => account.RunBomb;
+    public float Cooldown(ConsumableKind kind) => cooldowns[SupplyCatalog.IsPotion(kind) ? 0 : 1];
     public bool CanUse(ConsumableKind kind) => !IsFinished && !transitioning && !journalWriteFailed &&
         Player != null && Player.IsInitialized && !Player.IsDefeated && Waves != null && Waves.IsWaveActive &&
         Board != null && !Board.IsBusy && !Board.IsExternalInputBlocked && Time.timeScale > 0 &&
@@ -144,23 +146,29 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
 
     public bool TryUsePotion()
     {
-        if (!CanUse(ConsumableKind.HealthPotion) || Player.CurrentHealth >= Player.MaximumHealth) return false;
-        if (!CommitUse(ConsumableKind.HealthPotion,new RunRecordedAction {kind=RunActionKind.Potion})) return false;
-        Player.Heal(RunUpgradeResolver.ResolveHealing(Mathf.CeilToInt(Player.MaximumHealth * BalanceV1.Current.potionHealthFraction)));
+        var kind = PotionKind;
+        bool shield = kind == ConsumableKind.ShieldPotion;
+        if (!CanUse(kind) || (shield ? Player.CurrentShield >= Player.MaximumShield : Player.CurrentHealth >= Player.MaximumHealth))
+            return false;
+        if (!CommitUse(kind, new RunRecordedAction { kind = RunActionKind.Potion })) return false;
+        if (shield) Player.GrantPotionShield(BalanceV1.Current.shieldPotionAmount, BalanceV1.Current.shieldPotionMoves);
+        else if (kind == ConsumableKind.MegaPotion) Player.Heal(Player.MaximumHealth);
+        else Player.Heal(RunUpgradeResolver.ResolveHealing(Mathf.CeilToInt(Player.MaximumHealth * BalanceV1.Current.potionHealthFraction)));
         return true;
     }
 
     public bool ToggleBombTargeting()
     {
         if (Board != null && Board.IsSelectingTarget) { CancelTargeting(); return true; }
-        if (!CanUse(ConsumableKind.Bomb)) return false;
+        if (!CanUse(BombKind)) return false;
         Board.SetTargetSelection(PreviewBomb);
         return true;
     }
 
     private bool PreviewBomb(Gem gem)
     {
-        if (!CanUse(ConsumableKind.Bomb) || gem == null || Board.GetGem(gem.Column, gem.Row) != gem) return false;
+        if (!CanUse(BombKind) || gem == null || Board.GetGem(gem.Column, gem.Row) != gem) return false;
+        if (BombKind == ConsumableKind.ColorBomb && gem.SpecialType == GemSpecialType.ColorCrystal) return false;
         BombPreviewCell = new Vector2Int(gem.Column, gem.Row);
         HasBombPreview = true;
         return true;
@@ -176,9 +184,9 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
 
     public bool TryUseBomb(Gem gem)
     {
-        if(!CanUse(ConsumableKind.Bomb) || gem==null || Board.GetGem(gem.Column,gem.Row)!=gem) return false;
+        if(!CanUse(BombKind) || gem==null || Board.GetGem(gem.Column,gem.Row)!=gem) return false;
         var action=new RunRecordedAction {kind=RunActionKind.Bomb,x=gem.Column,y=gem.Row};
-        return Board.TryClearPlayerArea(gem, BalanceV1.Current.consumableBombRadius, () => CommitUse(ConsumableKind.Bomb,action));
+        return Board.TryClearPlayerArea(gem, BalanceV1.Current.consumableBombRadius, () => CommitUse(BombKind, action), BombKind == ConsumableKind.ColorBomb);
     }
     public void CancelTargeting() { HasBombPreview = false; if (Board != null) Board.SetTargetSelection(null); }
     private bool CommitUse(ConsumableKind kind,RunRecordedAction action)
@@ -186,7 +194,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         bool committed=Continuation==null || Continuation.ExecutingReplayAction
             ? account.TrySpendCharge(RunId,kind) : Continuation.RecordAction(action);
         if(!committed) return false;
-        cooldowns[(int)kind] = CombatMoveClock.MoveEffects ? 2 : BalanceV1.Current.consumableCooldown;
+        cooldowns[SupplyCatalog.IsPotion(kind) ? 0 : 1] = CombatMoveClock.MoveEffects ? 2 : BalanceV1.Current.consumableCooldown;
         return true;
     }
     private void OnWaveStarted(int wave)
@@ -291,5 +299,9 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
     }
     private void StatusMoveAccepted(int move) => Player?.Statuses.BeginMove(move);
     private void StatusMoveCompleted(int move) { if (MoveClock == null) StatusActionSettled(move); }
-    private void StatusActionSettled(int move) => Player?.Statuses.CompleteMove(move);
+    private void StatusActionSettled(int move)
+    {
+        Player?.Statuses.CompleteMove(move);
+        Player?.AdvancePotionShield();
+    }
 }

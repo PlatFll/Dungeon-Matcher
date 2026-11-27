@@ -1,0 +1,53 @@
+{
+  "enemy": "guild_chirurgeon",
+  "state": "basic",
+  "jobId": "32e145a3-2202-46a8-b1d9-92702ce18262",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_chirurgeon.png",
+  "identitySHA256": "97501e38ed69b1cb6c1919a229f71f0c3c7d87f26491ec5365cbbb2d5cc1c613",
+  "sourceIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8
+  ],
+  "frameSize": [
+    128,
+    104
+  ],
+  "durationsMs": [
+    80,
+    80,
+    120,
+    40,
+    120,
+    60,
+    100,
+    80
+  ],
+  "totalMs": 680,
+  "impactMs": 320,
+  "sourcePaletteSize": 34,
+  "floor": 4,
+  "cellSHA256": [
+    "a519e892cb6a0ba0aacdf40ac3689bae92b84f101cdb77ad476eba308ee316da",
+    "e4f8b691f8944870b63ce151f7457b820fdd8230839e717dc91c4db9103b859e",
+    "6b7f6760bc0dae99f62f5f78ea1cb7bd3304e43712dd5f6a49e20996a7886267",
+    "87f228575fb67e66b6e3acadd594941badb2511ab057fdbcecc6b1517c80651e",
+    "ff3f2ae3073ab220cc0a7205e541e7234fe2f72747aa7702e0aabd81cc1b1fa9",
+    "796b84903b362b13f7a24624d5ee71e1a014db90bcf3339c40f325671abd1117",
+    "0a2bd68a297c543867115f8bbc6b515ae5810e23714d1e8062b7acb3eb368c71",
+    "cc7f34ee605408c6ef6ffd866bfc9257b39dead6bf2c4ac0dbe535c4bee56414"
+  ],
+  "sheet": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/basic/sheet.png",
+  "sheetSHA256": "c9765a5aba59990111f4ed23c7275ec97fa86bdf8d2b693d1c93429da2a8687a",
+  "editable": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/basic/source.aseprite",
+  "editableSHA256": "e4e2afc46f6db1a9127a9d41eda8e60d2b634069f7cc4cf2006be14c1f150671",
+  "preview": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/basic/preview.gif",
+  "approvedRevision": "Revision03",
+  "approvalSource": "ArtSource/SelectionExpansion/Motion/Review/Revision03/Clips/guild_chirurgeon_basic",
+  "productionAmendment": "Docs/ArtDirection/AnimationSweep/MaterialContinuity/Review.html"
+}

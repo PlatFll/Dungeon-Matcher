@@ -202,6 +202,31 @@ public sealed partial class EnemyActor : MonoBehaviour
     public bool IsDefeated =>
         isDefeated;
 
+    public int GuildTauntMoves { get; private set; }
+    private int lastGuildTauntMove;
+    public void StartGuildTaunt(int move) { GuildTauntMoves = 3; lastGuildTauntMove = move; }
+    public void ClearGuildTaunt() => GuildTauntMoves = 0;
+    public void SettleGuildTaunt(int move)
+    {
+        if (GuildTauntMoves <= 0 || move <= lastGuildTauntMove) return;
+        lastGuildTauntMove = move;
+        GuildTauntMoves--;
+    }
+
+    public bool IsProtectedByTaunt
+    {
+        get
+        {
+            var active = RunSession.Current?.Waves?.ActiveEnemies;
+            if (active == null) return false;
+            foreach (var other in active)
+                if (other != null && other != this && !other.IsDefeated && other.GuildTauntMoves > 0) return true;
+            return false;
+        }
+    }
+
+    public bool CanReceivePlayerAttack => CanReceiveDamage && !IsProtectedByTaunt;
+
     public bool CanReceiveDamage =>
         isInitialized &&
         !isDefeated && (PhaseAcceptsDamage == null || PhaseAcceptsDamage());
@@ -436,13 +461,13 @@ public sealed partial class EnemyActor : MonoBehaviour
         bool allowDamageRedirect,
         bool fortifiedEligible)
     {
-        if (!CanReceiveDamage ||
+        if (!CanReceiveDamage || (notifyDamageReceived && IsProtectedByTaunt) ||
             amount <= 0)
         {
             return default;
         }
 
-        if (allowDamageRedirect &&
+        if (allowDamageRedirect && GuildTauntMoves == 0 &&
             damageRedirectTarget != null)
         {
             if (IsValidDamageRedirectTarget(

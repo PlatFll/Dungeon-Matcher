@@ -317,7 +317,7 @@ public static class GameplayPixelLayoutTests
             UnityEngine.Rendering.Universal.AntialiasingMode.None, "No camera anti-aliasing");
     }
 
-    private static void SetGameViewSize(Vector2Int size)
+    internal static void SetGameViewSize(Vector2Int size)
     {
         Assembly assembly = typeof(Editor).Assembly;
         Type sizesType = assembly.GetType("UnityEditor.GameViewSizes");

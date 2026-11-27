@@ -105,19 +105,25 @@ public sealed class PixelLabAttackPlayTests
                 {
                     typeof(CombatActionValidation).GetMethod("SetSize",BindingFlags.NonPublic|BindingFlags.Static).Invoke(null,new object[]{1080,height});
                     yield return new WaitForSeconds(.3f);Time.timeScale=0;
-                    animator.fireEvents=false;animator.Play("Idle",0,0);animator.Update(0);yield return null;
+                    animator.fireEvents=false;animator.Play("Idle",0,0);animator.Update(0);yield return null;yield return null;Canvas.ForceUpdateCanvases();
                     Rect baseline=ScreenRect(image);float idleScale=baseline.height/image.sprite.rect.height;
+                    var slot=enemy.GetComponentInParent<EnemySlotUI>();
+                    float standingFloor=baseline.yMin+image.sprite.pivot.y*idleScale;
+                    float idlePlatform=BattleFloorAnchor.EnemyFeetScreenY(slot);
                     int elapsed=0;
                     for(int f=0;f<frames.Length;f++)
                     {
                         animator.Play("AutoAttack",0,(elapsed+entry.durations[f]*.5f)/680f);animator.Update(0);elapsed+=entry.durations[f];
-                        yield return null;Canvas.ForceUpdateCanvases();
+                        yield return null;yield return null;Canvas.ForceUpdateCanvases();
                         Rect rect=ScreenRect(image);float scale=rect.height/frames[f].rect.height;
                         Assert.That(image.sprite,Is.SameAs(frames[f]));
                         Assert.That(scale,Is.EqualTo(idleScale).Within(.01f),entry.name+" native body scale");
                         Assert.That(scale,Is.EqualTo(Mathf.Round(scale)).Within(.01f),entry.name+" integer texels");
                         Assert.That(rect.center.x,Is.EqualTo(baseline.center.x).Within(.1f));
-                        Assert.That(rect.yMin,Is.EqualTo(baseline.yMin).Within(.1f),entry.name+" floor");
+                        float floor=rect.yMin+frames[f].pivot.y*scale;
+                        float platform=BattleFloorAnchor.EnemyFeetScreenY(slot);
+                        Assert.That(floor-platform,Is.EqualTo(standingFloor-idlePlatform).Within(.1f),
+                            $"{entry.name} frame {f}: foot {floor} vs idle {standingFloor}, floor {platform} vs idle {idlePlatform}");
                         // Expanded canvases deliberately contain empty side margins.
                         // Check every visible texel, rather than the transparent rectangle.
                         Rect ink=VisibleBounds(frames[f],pixels,sourceWidth,rect);

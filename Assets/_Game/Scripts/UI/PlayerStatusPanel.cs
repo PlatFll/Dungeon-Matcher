@@ -15,12 +15,15 @@ public sealed class PlayerStatusPanel : MonoBehaviour
     private readonly Dictionary<PlayerStatusKind, PlayerStatusDefinition> definitions = new Dictionary<PlayerStatusKind, PlayerStatusDefinition>();
     private readonly List<RectTransform> cells = new List<RectTransform>();
     private CombatStatusStrip strip;
+    private readonly List<Image> legacyIcons = new List<Image>();
+    private Canvas ownerCanvas;
     private readonly List<CombatStatusDisplay> displayed = new List<CombatStatusDisplay>();
     public RectTransform StatusRoot => root;
 
     private void Awake()
     {
         panel = GetComponent<PlayerPanelUI>();
+        ownerCanvas = GetComponentInParent<Canvas>();
         foreach (var data in Resources.LoadAll<PlayerStatusDefinition>("PlayerStatuses")) definitions[data.kind] = data;
         root = GameUi.Rect("PlayerStatuses", transform, Vector2.zero, Vector2.zero);
         strip = root.gameObject.AddComponent<CombatStatusStrip>();
@@ -43,6 +46,7 @@ public sealed class PlayerStatusPanel : MonoBehaviour
         if (CombatMoveClock.Unified) { RefreshUnified(); return; }
         foreach (var cell in cells) Destroy(cell.gameObject);
         cells.Clear();
+        legacyIcons.Clear();
         if (player != null)
             foreach (var kind in player.Statuses.Effects.Select(e => e.kind).Distinct().OrderBy(k => k))
             {
@@ -56,6 +60,7 @@ public sealed class PlayerStatusPanel : MonoBehaviour
                 var label = GameUi.Label("Moves", cell, player.Statuses.Remaining(kind).ToString(), new Vector2(10, 10), new Vector2(6, -5), 10);
                 label.color = new Color32(242, 233, 208, 255); label.fontStyle = FontStyles.Normal;
                 cells.Add(cell);
+                legacyIcons.Add(icon);
             }
         root.gameObject.SetActive(cells.Count > 0);
         Layout();
@@ -65,20 +70,35 @@ public sealed class PlayerStatusPanel : MonoBehaviour
         if (CombatMoveClock.Unified) { RefreshUnified(); return; }
         if (root == null || cells.Count == 0) return;
         var rect = (RectTransform)transform;
-        int columns = Mathf.Clamp(Mathf.FloorToInt((rect.rect.width - 8) / 22), 1, 7);
+        float scale = ownerCanvas != null ? Mathf.Max(0.01f, ownerCanvas.rootCanvas.scaleFactor) : 1f;
+        float iconSize = 16;
+        foreach (var icon in legacyIcons)
+            if (icon.sprite != null) iconSize = Mathf.Max(iconSize, icon.sprite.rect.height / scale);
+        float stepX = iconSize + 6, stepY = iconSize + 2;
+        int columns = Mathf.Clamp(Mathf.FloorToInt((rect.rect.width - 8) / stepX), 1, 7);
         int rows = Mathf.CeilToInt(cells.Count / (float)columns);
-        root.sizeDelta = new Vector2(Mathf.Min(columns, cells.Count) * 22, rows * 18);
+        root.sizeDelta = new Vector2(Mathf.Min(columns, cells.Count) * stepX, rows * stepY);
         for (int i = 0; i < cells.Count; i++)
         {
             int row = i / columns, count = Mathf.Min(columns, cells.Count - row * columns);
-            cells[i].anchoredPosition = new Vector2((i % columns - (count - 1) * .5f) * 22, ((rows - 1) * .5f - row) * 18);
+            cells[i].anchoredPosition = new Vector2((i % columns - (count - 1) * .5f) * stepX, ((rows - 1) * .5f - row) * stepY);
+            var icon = legacyIcons[i];
+            if (icon.sprite != null)
+            {
+                // Keep each native sheet on whole physical texels, including the 32px Rattled sign.
+                float ratio = Mathf.Max(1, Mathf.Floor(16 * scale / icon.sprite.rect.height));
+                icon.rectTransform.sizeDelta = icon.sprite.rect.size * (ratio / scale);
+            }
         }
     }
     private void RefreshUnified()
     {
         CombatStatusDisplay.Player(player, displayed);
         int columns = Mathf.Clamp(Mathf.FloorToInt((((RectTransform)transform).rect.width-8)/28),1,8);
-        strip.Show(displayed, columns, _ => RunSession.Current?.GetComponent<RunControlsUI>()?.OpenGuide(Describe()));
+        // Three rows can use the badges' own transparent padding on short phone viewports.
+        // Keep every 24px icon and its full button intact.
+        int rowStep = displayed.Count > 2 * columns ? 24 : 28;
+        strip.Show(displayed, columns, _ => RunSession.Current?.GetComponent<RunControlsUI>()?.OpenGuide(Describe()), rowStep);
     }
     public string Describe()
     {

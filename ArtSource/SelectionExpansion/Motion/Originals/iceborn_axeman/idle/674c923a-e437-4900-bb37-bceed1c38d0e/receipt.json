@@ -1,0 +1,49 @@
+{
+  "enemy": "iceborn_axeman",
+  "state": "idle",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/iceborn_axeman.png",
+  "firstFrameSHA256": "a221bb0f20214e3ff88a510432084c121cc3ea1dfd52850cb0b4aa57cd38ab37",
+  "seed": 385112,
+  "count": 8,
+  "prompt": "Hold the axe in both hands. One slow breath under the fur mantle, stable boots. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "674c923a-e437-4900-bb37-bceed1c38d0e",
+  "receipt": "id: 674c923a-e437-4900-bb37-bceed1c38d0e\njob_id: 674c923a-e437-4900-bb37-bceed1c38d0e\naction: Hold the axe in both hands. One slow breath under the fur mantle, stable boots. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385112\nasset_id: fe5bc26a-0eae-5ddf-85d2-4534840eb4a3\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"674c923a-e437-4900-bb37-bceed1c38d0e\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/674c923a-e437-4900-bb37-bceed1c38d0e/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/idle/674c923a-e437-4900-bb37-bceed1c38d0e/00.png",
+      "sha256": "a221bb0f20214e3ff88a510432084c121cc3ea1dfd52850cb0b4aa57cd38ab37"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/idle/674c923a-e437-4900-bb37-bceed1c38d0e/01.png",
+      "sha256": "5721a9902a2c3dad9aa1d68efcc0539409c056baa325bebb087420eb37dc5b2c"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/idle/674c923a-e437-4900-bb37-bceed1c38d0e/02.png",
+      "sha256": "4dd8de56126b89a747fdd83d3561caf8a3ccb0b6499c873a6eeafb0a0c132915"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/idle/674c923a-e437-4900-bb37-bceed1c38d0e/03.png",
+      "sha256": "361797307df1081850a517faedcfdc609a64f1eb59ff3e7d8a235f514d6c9a01"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/idle/674c923a-e437-4900-bb37-bceed1c38d0e/04.png",
+      "sha256": "3497fe0f044bc0f32a4517b09cf8fa58a2732a7550a299e2828212bcf63e320a"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/idle/674c923a-e437-4900-bb37-bceed1c38d0e/05.png",
+      "sha256": "801ab3935e9ae45dd6b7f122f64d3f6fdf199b38194e3c81b8417fe8d80a56f8"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/idle/674c923a-e437-4900-bb37-bceed1c38d0e/06.png",
+      "sha256": "58562ce700af2cde60d8170032d704b1beaefa11505d166e81520158690bcb3c"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/idle/674c923a-e437-4900-bb37-bceed1c38d0e/07.png",
+      "sha256": "0bdf1a14191375f5e1c7aa47fd0a434c24414533c9877a78ccf9238a89fcc1f8"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/iceborn_axeman/idle/674c923a-e437-4900-bb37-bceed1c38d0e/08.png",
+      "sha256": "8574029a24cf34dae2685046e32c7560ead4ad047e28e45eb8cf6d4995a04586"
+    }
+  ]
+}

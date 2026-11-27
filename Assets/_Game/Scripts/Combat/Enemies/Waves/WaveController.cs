@@ -759,6 +759,7 @@ public sealed partial class WaveController :
         // An old slot notification or duplicate delivery cannot count a death
         // twice, or complete a wave to which the enemy never belonged.
         if (enemy == null || !activeEnemies.Remove(enemy)) return;
+        if (activeEnemies.Count == 1) activeEnemies[0]?.ClearGuildTaunt();
         object identity = encounterIdentity;
 
         EnemyLifecycleVFX lifecycleVFX =

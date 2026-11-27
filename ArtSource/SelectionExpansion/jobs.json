@@ -1,0 +1,262 @@
+[
+  {
+    "enemy": "guild_swordsman",
+    "name": "Guild Swordsman",
+    "job": "ecfa3c10-6b30-48bf-9293-d67f366c835e",
+    "asset": "536ad251-2435-5e31-ac0a-44f7c26dc14b",
+    "cost": 10,
+    "seed": 436100,
+    "prompt": "A single original full-body Dungeon Matcher battle enemy, Guild Swordsman. Young human traveling adventurer in modest deep-blue/ochre Guild tabard over practical steel brigandine, one-handed short sword and compact leather backpack, simple identifiable Guild crest. Sturdy but not a Royal Swordsman clone: less formal armor, lively slightly unsure stance. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.",
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/royal_swordsman-still.png",
+        "sha256": "f7d4896847862dd507afefcf3853854b5115d5578d4235012564cc0e05f46b77",
+        "usage": "Supporting context for material planes, pixel scale and proportions only; draw the new identity in the description."
+      }
+    ],
+    "receipt": "id: ecfa3c10-6b30-48bf-9293-d67f366c835e\njob_id: ecfa3c10-6b30-48bf-9293-d67f366c835e\nmodel: pro\ndescription: A single original full-body Dungeon Matcher battle enemy, Guild Swordsman. Young human traveling adventurer in modest deep-blue/ochre Guild tabard over practical steel brigandine, one-handed short sword and compact leather backpack, simple identifiable Guild crest. Sturdy but not a Royal Swordsman clone: less formal armor, lively slightly unsure stance. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nseed: 436100\nasset_id: 536ad251-2435-5e31-ac0a-44f7c26dc14b\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"ecfa3c10-6b30-48bf-9293-d67f366c835e\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/ecfa3c10-6b30-48bf-9293-d67f366c835e/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "enemy": "guild_ranger",
+    "name": "Guild Ranger",
+    "job": "2588dc28-e3be-40b5-b585-015d0b10df13",
+    "asset": "edbbba44-be6d-512d-ab01-0cdb5403a2ac",
+    "cost": 10,
+    "seed": 436101,
+    "prompt": "A single original full-body Dungeon Matcher battle enemy, Guild Ranger. Elven or human scout archer in weathered olive and blue Guild travel leathers, slim silhouette, short recurved bow and half-visible quiver; no Forest Thornkeeper decorations; readable pointed bow without a huge weapon. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.",
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/elven_scout-still.png",
+        "sha256": "0ef5ab68f5f455c6b4ccee46bda19cc7be5b35d84a389930f26ae5980b8098ac",
+        "usage": "Supporting context for material planes, pixel scale and proportions only; draw the new identity in the description."
+      }
+    ],
+    "receipt": "id: 2588dc28-e3be-40b5-b585-015d0b10df13\njob_id: 2588dc28-e3be-40b5-b585-015d0b10df13\nmodel: pro\ndescription: A single original full-body Dungeon Matcher battle enemy, Guild Ranger. Elven or human scout archer in weathered olive and blue Guild travel leathers, slim silhouette, short recurved bow and half-visible quiver; no Forest Thornkeeper decorations; readable pointed bow without a huge weapon. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nseed: 436101\nasset_id: edbbba44-be6d-512d-ab01-0cdb5403a2ac\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"2588dc28-e3be-40b5-b585-015d0b10df13\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/2588dc28-e3be-40b5-b585-015d0b10df13/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "enemy": "guild_bulwark",
+    "name": "Guild Bulwark",
+    "job": "bc3b504b-2e24-42f7-84eb-5c8ee9a8202f",
+    "asset": "da17d3f7-1e60-5efd-9fca-46bc38a1e698",
+    "cost": 10,
+    "seed": 436102,
+    "prompt": "A single original full-body Dungeon Matcher battle enemy, Guild Bulwark. Broad-shouldered human dwarf-sized heavy Guild warrior, dark dull-iron plated cuirass, large battered rectangular shield with small Guild crest and one short mace. Use sober slate iron, worn gold trim and distinct Guild blue, not royal crimson/white, not a sci-fi riot-shield or face-obscuring tower. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.",
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png",
+        "sha256": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca",
+        "usage": "Supporting context for material planes, pixel scale and proportions only; draw the new identity in the description."
+      }
+    ],
+    "receipt": "id: bc3b504b-2e24-42f7-84eb-5c8ee9a8202f\njob_id: bc3b504b-2e24-42f7-84eb-5c8ee9a8202f\nmodel: pro\ndescription: A single original full-body Dungeon Matcher battle enemy, Guild Bulwark. Broad-shouldered human dwarf-sized heavy Guild warrior, dark dull-iron plated cuirass, large battered rectangular shield with small Guild crest and one short mace. Use sober slate iron, worn gold trim and distinct Guild blue, not royal crimson/white, not a sci-fi riot-shield or face-obscuring tower. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nseed: 436102\nasset_id: da17d3f7-1e60-5efd-9fca-46bc38a1e698\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"bc3b504b-2e24-42f7-84eb-5c8ee9a8202f\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/bc3b504b-2e24-42f7-84eb-5c8ee9a8202f/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "enemy": "guild_chirurgeon",
+    "name": "Elven Guild Chirurgeon",
+    "job": "81b0ba9f-950a-4c07-a949-0f5f8d96180d",
+    "asset": "ed48f347-6013-5523-a10f-ff4d3e136508",
+    "cost": 10,
+    "seed": 436103,
+    "prompt": "A single original full-body Dungeon Matcher battle enemy, Elven Guild Chirurgeon. Female ELF healer, clean pointed ears and calm focused face, short practical cream/blue travel robes with leather satchel, visible Guild brooch and a human-sized polished wood healing STAFF with small cool-green crystal. Outfit clearly Guild, not Forest Mender roots or a witch, priestess train, or armored knight. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.",
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/elven_mender-still.png",
+        "sha256": "f5b3d67796b1b65fdbf4d0d8043cfbeaa08371c2cd1b03fcf58f9b82d46348fa",
+        "usage": "Supporting context for material planes, pixel scale and proportions only; draw the new identity in the description."
+      }
+    ],
+    "receipt": "id: 81b0ba9f-950a-4c07-a949-0f5f8d96180d\njob_id: 81b0ba9f-950a-4c07-a949-0f5f8d96180d\nmodel: pro\ndescription: A single original full-body Dungeon Matcher battle enemy, Elven Guild Chirurgeon. Female ELF healer, clean pointed ears and calm focused face, short practical cream/blue travel robes with leather satchel, visible Guild brooch and a human-sized polished wood healing STAFF with small cool-green crystal. Outfit clearly Guild, not Forest Mender roots or a witch, priestess train, or armored knight. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nseed: 436103\nasset_id: ed48f347-6013-5523-a10f-ff4d3e136508\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"81b0ba9f-950a-4c07-a949-0f5f8d96180d\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/81b0ba9f-950a-4c07-a949-0f5f8d96180d/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "enemy": "nacre_duelist",
+    "name": "Nacre Duelist",
+    "job": "b7980f13-416d-4859-9f03-d47e0957a3b2",
+    "asset": "d057c239-6d41-541c-a3d6-b3d4eb241d79",
+    "cost": 10,
+    "seed": 436104,
+    "prompt": "A single original full-body Dungeon Matcher battle enemy, Nacre Duelist. Small slim pearl-white / sea-violet courtier sea-folk with a thin shell rapier and formal-but-worn nacre sash. Distinct from Reef Spearman: pearl armor, ornamental narrow helm crest, no human court gown; readable oceanic silhouette. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.",
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/pearl_thief-still.png",
+        "sha256": "0ef10c489e66d242d5d2e083bf1ae9adb1d84fd25f053e0cea79aef7e0701d5c",
+        "usage": "Supporting context for material planes, pixel scale and proportions only; draw the new identity in the description."
+      }
+    ],
+    "receipt": "id: b7980f13-416d-4859-9f03-d47e0957a3b2\njob_id: b7980f13-416d-4859-9f03-d47e0957a3b2\nmodel: pro\ndescription: A single original full-body Dungeon Matcher battle enemy, Nacre Duelist. Small slim pearl-white / sea-violet courtier sea-folk with a thin shell rapier and formal-but-worn nacre sash. Distinct from Reef Spearman: pearl armor, ornamental narrow helm crest, no human court gown; readable oceanic silhouette. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nseed: 436104\nasset_id: d057c239-6d41-541c-a3d6-b3d4eb241d79\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"b7980f13-416d-4859-9f03-d47e0957a3b2\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/b7980f13-416d-4859-9f03-d47e0957a3b2/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "enemy": "nacre_halberdier",
+    "name": "Nacre Halberdier",
+    "job": "b37df4bd-1be7-4e10-9c66-fbe350eaf1bc",
+    "asset": "adf70861-32b2-5531-95e3-5f1e4adca458",
+    "cost": 10,
+    "seed": 436105,
+    "prompt": "A single original full-body Dungeon Matcher battle enemy, Nacre Halberdier. Broad shell-plated court guard, pale iridescent nacre armor with coral-violet textile and angular polearm with a shell-edged blade; shape larger than Duelist but consistent native pixel density. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.",
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/pearl_thief-still.png",
+        "sha256": "0ef10c489e66d242d5d2e083bf1ae9adb1d84fd25f053e0cea79aef7e0701d5c",
+        "usage": "Supporting context for material planes, pixel scale and proportions only; draw the new identity in the description."
+      }
+    ],
+    "receipt": "id: b37df4bd-1be7-4e10-9c66-fbe350eaf1bc\njob_id: b37df4bd-1be7-4e10-9c66-fbe350eaf1bc\nmodel: pro\ndescription: A single original full-body Dungeon Matcher battle enemy, Nacre Halberdier. Broad shell-plated court guard, pale iridescent nacre armor with coral-violet textile and angular polearm with a shell-edged blade; shape larger than Duelist but consistent native pixel density. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nseed: 436105\nasset_id: adf70861-32b2-5531-95e3-5f1e4adca458\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"b37df4bd-1be7-4e10-9c66-fbe350eaf1bc\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/b37df4bd-1be7-4e10-9c66-fbe350eaf1bc/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "enemy": "elven_pathblade",
+    "name": "Elven Pathblade",
+    "job": "1714abb2-9298-4087-9222-a8bbeae9dec6",
+    "asset": "a0cdf1aa-6bb8-5fa0-8da8-43700d6d7d15",
+    "cost": 10,
+    "seed": 436106,
+    "prompt": "A single original full-body Dungeon Matcher battle enemy, Elven Pathblade. Lean woodland elf with pale ear tips, short mossy travel cloak over antique tan tunic, curved short sword and leaf-shaped belt clasp. Handsome/charming but not noble; not another Elven Scout with a recolor. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.",
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/elven_mender-still.png",
+        "sha256": "f5b3d67796b1b65fdbf4d0d8043cfbeaa08371c2cd1b03fcf58f9b82d46348fa",
+        "usage": "Supporting context for material planes, pixel scale and proportions only; draw the new identity in the description."
+      }
+    ],
+    "receipt": "id: 1714abb2-9298-4087-9222-a8bbeae9dec6\njob_id: 1714abb2-9298-4087-9222-a8bbeae9dec6\nmodel: pro\ndescription: A single original full-body Dungeon Matcher battle enemy, Elven Pathblade. Lean woodland elf with pale ear tips, short mossy travel cloak over antique tan tunic, curved short sword and leaf-shaped belt clasp. Handsome/charming but not noble; not another Elven Scout with a recolor. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nseed: 436106\nasset_id: a0cdf1aa-6bb8-5fa0-8da8-43700d6d7d15\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"1714abb2-9298-4087-9222-a8bbeae9dec6\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/1714abb2-9298-4087-9222-a8bbeae9dec6/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "enemy": "orc_slinghunter",
+    "name": "Orc Slinghunter",
+    "job": "4f3afdf7-8863-428b-a613-656ec93f2439",
+    "asset": "1bf6843a-3dbf-5c2b-bc85-04e64b6f6cc2",
+    "cost": 10,
+    "seed": 436107,
+    "prompt": "A single original full-body Dungeon Matcher battle enemy, Orc Slinghunter. Compact green/olive-skinned orc with big expressive ears, stitched plum-brown vest, long sling and pebble pouch; nimble and cheeky, different from broad Trailguard and large Berserker. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.",
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "Docs/ArtDirection/EnemyCohesion2026-10/orc_trailguard-still.png",
+        "sha256": "e8621e70149e13c19c1db958c6a190fa40cf76b6b9e2f69ad4dcba56f02e295d",
+        "usage": "Supporting context for material planes, pixel scale and proportions only; draw the new identity in the description."
+      }
+    ],
+    "receipt": "id: 4f3afdf7-8863-428b-a613-656ec93f2439\njob_id: 4f3afdf7-8863-428b-a613-656ec93f2439\nmodel: pro\ndescription: A single original full-body Dungeon Matcher battle enemy, Orc Slinghunter. Compact green/olive-skinned orc with big expressive ears, stitched plum-brown vest, long sling and pebble pouch; nimble and cheeky, different from broad Trailguard and large Berserker. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nseed: 436107\nasset_id: 1bf6843a-3dbf-5c2b-bc85-04e64b6f6cc2\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"4f3afdf7-8863-428b-a613-656ec93f2439\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/4f3afdf7-8863-428b-a613-656ec93f2439/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "enemy": "iceborn_axeman",
+    "name": "Iceborn Axeman",
+    "job": "adc9f0b2-1690-4928-9e16-222b77aaff0f",
+    "asset": "69ea0be1-b4ad-5e16-a086-3377e974c6c3",
+    "cost": 10,
+    "seed": 436108,
+    "prompt": "A single original full-body Dungeon Matcher battle enemy, Iceborn Axeman. Stocky mountain human in thick blue-gray furs, sleeveless quilted vest, simple iron-and-wood two-handed axe, warm sash and heavy boots. Strong silhouette and warm face, no white-hair cliché or bright blue magical ice on every piece. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.",
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "Assets/_Game/Art/Frostwake/iceborn_raider.png",
+        "sha256": "bd35c36be0aea959616f792e43ac2de483808ad8bbf77e934874dd18a992cef3",
+        "usage": "Supporting context for material planes, pixel scale and proportions only; draw the new identity in the description."
+      }
+    ],
+    "receipt": "id: adc9f0b2-1690-4928-9e16-222b77aaff0f\njob_id: adc9f0b2-1690-4928-9e16-222b77aaff0f\nmodel: pro\ndescription: A single original full-body Dungeon Matcher battle enemy, Iceborn Axeman. Stocky mountain human in thick blue-gray furs, sleeveless quilted vest, simple iron-and-wood two-handed axe, warm sash and heavy boots. Strong silhouette and warm face, no white-hair cliché or bright blue magical ice on every piece. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nseed: 436108\nasset_id: 69ea0be1-b4ad-5e16-a086-3377e974c6c3\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"adc9f0b2-1690-4928-9e16-222b77aaff0f\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/adc9f0b2-1690-4928-9e16-222b77aaff0f/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "enemy": "ore_ram",
+    "name": "Ore Ram",
+    "job": "bfa2663c-a97c-49ed-bae9-7e062e2b822b",
+    "asset": "ec283e85-cb4b-598e-9028-66e41c21453b",
+    "cost": 10,
+    "seed": 436109,
+    "prompt": "A single original full-body Dungeon Matcher battle enemy, Ore Ram. Compact stout riveted mining automaton / horned ram-shaped ore hauler with curved front ram plate, warm rusty iron, muted slate stone and tiny amber core; industrial but charming, not steampunk gear rotation or a huge boss machine. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.",
+    "style_image_base64": {
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "path": "Assets/_Game/Art/Ironvein/pickaxe_delver.png",
+        "sha256": "52d449e5a8051e5c0bf0ee481518373a7066a7149eb3f36b809b5c595d70dcd1",
+        "usage": "Supporting context for material planes, pixel scale and proportions only; draw the new identity in the description."
+      }
+    ],
+    "receipt": "id: bfa2663c-a97c-49ed-bae9-7e062e2b822b\njob_id: bfa2663c-a97c-49ed-bae9-7e062e2b822b\nmodel: pro\ndescription: A single original full-body Dungeon Matcher battle enemy, Ore Ram. Compact stout riveted mining automaton / horned ram-shaped ore hauler with curved front ram plate, warm rusty iron, muted slate stone and tiny amber core; industrial but charming, not steampunk gear rotation or a huge boss machine. Three-quarter WEST, face and weapon point screen-left. Battle-ready planted feet at same baseline. Compact body about 43 pixels tall inside a 64x64 transparent sprite, entire equipment and feet visible. Crisp dark one-pixel outer contour #0A0D11, warm top-left light, broad connected two- or three-tone material clusters, restrained highlights, expressive readable face. Prop and hands visibly meet. No shadows on a floor, text, outlines around the canvas, portrait cropping, smoothing or dithering. Keep the new species and identity. Style reference provides only rendering, supplemental reference only material grouping.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nstyle_image: yes (outline, detail, shading)\nseed: 436109\nasset_id: ec283e85-cb4b-598e-9028-66e41c21453b\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"bfa2663c-a97c-49ed-bae9-7e062e2b822b\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/bfa2663c-a97c-49ed-bae9-7e062e2b822b/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  }
+]

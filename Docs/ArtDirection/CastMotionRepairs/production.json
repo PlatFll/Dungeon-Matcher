@@ -1,0 +1,1071 @@
+[
+  {
+    "actor": "elven_pathblade",
+    "state": "Idle",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/ElvenPathblade_Idle.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/ElvenPathblade_Idle.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/idle/source.aseprite",
+    "beforeSHA256": "5bc067fcfab4a110ae7bd615af3bf7b5e676903379a1b483ec61ff6295d22850",
+    "afterSHA256": "9b98b276329454a2ddba49af6871d47619d47fd8707dfcdc4fe98ac22a3a39eb",
+    "clipSHA256": "828fe31072aa05022f5e0e2a642f4d6fc2f56345aefbb371c752234ea97a482e",
+    "metaSHA256": "43400ed66cb06257d6e4a6fd7dd454760235ec33a9114ee0ae54d88e3544348d",
+    "changedUnityKeys": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "contact": [],
+    "keyCount": 26
+  },
+  {
+    "actor": "guild_bulwark",
+    "state": "AutoAttack",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/GuildBulwark_AutoAttack.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/GuildBulwark_AutoAttack.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/basic/source.aseprite",
+    "beforeSHA256": "3f3b4bd672fc3e23d2de91aa78cd38254cf7ea3c1467bf96a2d7c80b8cdf75ba",
+    "afterSHA256": "3a0dc7dd0c6686a192004b4d805288b932569626e2264772abb670ca24a6f27c",
+    "clipSHA256": "3e42c12bfa1e58decaca7ba25f45d5683a5b450e8dfedc3b88158c02f135ace8",
+    "metaSHA256": "b2bfb375185e7b5f653d7e342244ab001fe5524d93b862dba8656d4b7e3f6d39",
+    "changedUnityKeys": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "contact": [
+      [
+        320,
+        "AutoAttackImpact"
+      ],
+      [
+        670,
+        "AutoAttackComplete"
+      ]
+    ],
+    "keyCount": 12
+  },
+  {
+    "actor": "guild_bulwark",
+    "state": "Idle",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/GuildBulwark_Idle.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/GuildBulwark_Idle.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/idle/source.aseprite",
+    "beforeSHA256": "753c7ac2da3893e28bf85eb5808a1fa79380b681b74afff25a02d78441496b4b",
+    "afterSHA256": "51d720453b724a72e5afaf1e9064dd91177d574b358d436bf0a716ce34a596bd",
+    "clipSHA256": "37bb6177cdd7d150f74ea7489feec549fa1cd3f3d59f0b48e7911b14e630faca",
+    "metaSHA256": "efa5eed9344cc65bfb8c3ecfa2b7b03768e69d560d47c4a01dcf1edcd2c69c0f",
+    "changedUnityKeys": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "contact": [],
+    "keyCount": 34
+  },
+  {
+    "actor": "guild_chirurgeon",
+    "state": "AutoAttack",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_AutoAttack.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/GuildChirurgeon_AutoAttack.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/basic/source.aseprite",
+    "beforeSHA256": "c4d64897bfc0925216b962709bcfdf70717f3f28d6b41b2b06c74d80502ef515",
+    "afterSHA256": "66ad9d5d5bc4b3c12edab3558a9ec1cce71ed0accb53642c21edbafcf03c7bc6",
+    "clipSHA256": "70f0e78df28a8e3a44b5be2fd7e714f365c8fbf816b99d6ac9ba1cfa86d0c138",
+    "metaSHA256": "c25c843961124e99b745d25153bd4c3851e8b1b01e9144dcc4d558d1d4233eea",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "contact": [
+      [
+        320,
+        "AutoAttackImpact"
+      ],
+      [
+        670,
+        "AutoAttackComplete"
+      ]
+    ],
+    "keyCount": 9
+  },
+  {
+    "actor": "guild_chirurgeon",
+    "state": "Idle",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_Idle.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/GuildChirurgeon_Idle.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/idle/source.aseprite",
+    "beforeSHA256": "18dac970fa8c514c5d4847bdedbe1ed4b1c42290fc0f0577edf9aadfce5fb014",
+    "afterSHA256": "a60dc28803ae459261bbf585f1e10ab462863b7c27f5d3e398e4c1d6c018aba2",
+    "clipSHA256": "8c75b443be6e267aac77cd6858e1aae92ddbdf4df5375ce8b7ae5ba5d7377d28",
+    "metaSHA256": "5eaa8e3ec5b97424058160927e4461a21dc6b10126fb48c9a65b5037841d482e",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "contact": [],
+    "keyCount": 27
+  },
+  {
+    "actor": "guild_chirurgeon",
+    "state": "Ability",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_Ability.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/GuildChirurgeon_Ability.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/special/source.aseprite",
+    "beforeSHA256": "ed8f92f7840d5e682c5a700206064f419ea57c324571fd3a751254aa20e5f51f",
+    "afterSHA256": "c6dfc8ac4434a895e5a405628008525253ad1fa8221b636d26acd958c0061ce5",
+    "clipSHA256": "eab4fe4c6d22ff8ce717091aa15bcae323eb72adea8965d3fb48686b0dc252b7",
+    "metaSHA256": "825e867810945e3f27a5c526d3c49fec745f68ffbe509e1a803d593517cb17b4",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "contact": [
+      [
+        360,
+        "AbilityBeat"
+      ],
+      [
+        770,
+        "AbilityComplete"
+      ]
+    ],
+    "keyCount": 14
+  },
+  {
+    "actor": "guild_ranger",
+    "state": "AutoAttack",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/GuildRanger_AutoAttack.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/GuildRanger_AutoAttack.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/guild_ranger/basic/source.aseprite",
+    "beforeSHA256": "922f7a99b6eee8419a249d82e44a9c153a4e638fb8c795f59455352b6071f33d",
+    "afterSHA256": "ba2eaac979fdd4fc6190af359fe385d536654a2b0619ad9d707befcde04ee7fd",
+    "clipSHA256": "79a65b8febfbc9a17644037f3ff724904334781183d2fde4ce0fa2113ab56a98",
+    "metaSHA256": "69a2217ca0b33a8fbae69b2f51c9d376b68d2707b5ca39e82f993cff7e2db7b7",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "contact": [
+      [
+        320,
+        "AutoAttackImpact"
+      ],
+      [
+        670,
+        "AutoAttackComplete"
+      ]
+    ],
+    "keyCount": 9
+  },
+  {
+    "actor": "guild_ranger",
+    "state": "Idle",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/GuildRanger_Idle.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/GuildRanger_Idle.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/guild_ranger/idle/source.aseprite",
+    "beforeSHA256": "888259f5fe557ced7aa6e96dfe81bb301cf1034455ed1ebdc3542d5dbc968160",
+    "afterSHA256": "dcf6e2ea6761c068e473efd15569e7a6cf91cb63aa8d5a5e267524e39995b4b6",
+    "clipSHA256": "c91bdcf5349801f22388faaa92cab87f7ed9b634d5a65ca5d700335227870e79",
+    "metaSHA256": "664402960578f72e677792833663e533a53815d8207c70a4b18afbb46fe6411e",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "contact": [],
+    "keyCount": 5
+  },
+  {
+    "actor": "guild_swordsman",
+    "state": "AutoAttack",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/GuildSwordsman_AutoAttack.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/GuildSwordsman_AutoAttack.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/guild_swordsman/basic/source.aseprite",
+    "beforeSHA256": "ac9577110dd7148507ff61807efaa6769475ebd0b396dd31bba2db48901d2503",
+    "afterSHA256": "4c0fd232c9dbcc859a9b7c3bb2f5b4368a920230631faa9086aad95802a8d846",
+    "clipSHA256": "0bf75b9060677f9dc9a7970565eacb62aeb0dbdeab16640b1ae33819037fa570",
+    "metaSHA256": "57d57fc730a8c36aa81ee7f4499840221dddafeb620429dc782271e9817e787e",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "contact": [
+      [
+        320,
+        "AutoAttackImpact"
+      ],
+      [
+        670,
+        "AutoAttackComplete"
+      ]
+    ],
+    "keyCount": 9
+  },
+  {
+    "actor": "guild_swordsman",
+    "state": "Idle",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/GuildSwordsman_Idle.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/GuildSwordsman_Idle.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/guild_swordsman/idle/source.aseprite",
+    "beforeSHA256": "f029618153f5bc6d4771d98f815e949b24ff7df2fb40aad9c735854aecb2129f",
+    "afterSHA256": "3dcfdc8da44464f05920e10a4044b287168052d80000d73255fcb9808d70897d",
+    "clipSHA256": "a6b716151c5dd94edffa17e1ce1ecb8ccbfea416304400ccf4946249f721cc74",
+    "metaSHA256": "cc43d8ec7c3f38a43c1216450bbd192bed769aaa80c02879c1e4a5cbb3880d08",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "contact": [],
+    "keyCount": 27
+  },
+  {
+    "actor": "iceborn_axeman",
+    "state": "AutoAttack",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/IcebornAxeman_AutoAttack.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/IcebornAxeman_AutoAttack.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/iceborn_axeman/basic/source.aseprite",
+    "beforeSHA256": "00ed8b713f8a9e09a7d472783b8da89ab57cdaa28dda779c21fe567f34f7564f",
+    "afterSHA256": "ef69ce4e08fc327bd0438a32f657674b26d5b338846fa41ede7909d7468695c8",
+    "clipSHA256": "3f889ad57513e8a60cf808bd391f60df345e4aebd9c696f43f9b3d1f7b84be4f",
+    "metaSHA256": "cbb5e6e74f298bd7f11053c075d52f997d4122e63d49c32bed33fada34bb44e0",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "contact": [
+      [
+        320,
+        "AutoAttackImpact"
+      ],
+      [
+        670,
+        "AutoAttackComplete"
+      ]
+    ],
+    "keyCount": 12
+  },
+  {
+    "actor": "iceborn_axeman",
+    "state": "Idle",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/IcebornAxeman_Idle.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/IcebornAxeman_Idle.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/iceborn_axeman/idle/source.aseprite",
+    "beforeSHA256": "542b15963304624c907353a91bc63b73ea9b4b69babed6ee61ee12be0b339e78",
+    "afterSHA256": "976173a9e57750066666068083f4df1678cf3ca7ee31b0d8d76c3bda5abe9f36",
+    "clipSHA256": "9e7d8d26abdaa8642bdb201a4652365c401f2d6f19a2a4569814457c38e330a4",
+    "metaSHA256": "4e832bdf3d1d2140e1cc2e658f299e66bd12b3187028169cd79cc5f10558dca5",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "contact": [],
+    "keyCount": 26
+  },
+  {
+    "actor": "nacre_duelist",
+    "state": "AutoAttack",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/NacreDuelist_AutoAttack.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/NacreDuelist_AutoAttack.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/nacre_duelist/basic/source.aseprite",
+    "beforeSHA256": "fef997b4cfe916e3df39b025042482a0cb9b46222339fdd68e693f0a60e3d23f",
+    "afterSHA256": "c264b8564bac294e8b8538c9f5d52bd23c400714e1398e7568be2402e927af27",
+    "clipSHA256": "6ab9576014ae84272462bb1491853cf6d61ab8cde17c7926a0db06e0028cf59f",
+    "metaSHA256": "484867e92281d120b00b566f1881eb44532e9cc40a43433267235f3055db4132",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "contact": [
+      [
+        320,
+        "AutoAttackImpact"
+      ],
+      [
+        670,
+        "AutoAttackComplete"
+      ]
+    ],
+    "keyCount": 9
+  },
+  {
+    "actor": "nacre_duelist",
+    "state": "Idle",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/NacreDuelist_Idle.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/NacreDuelist_Idle.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/nacre_duelist/idle/source.aseprite",
+    "beforeSHA256": "f85277387359a540a142a2c26774dbf7964f505a05f3c42d152232036c68d529",
+    "afterSHA256": "e2825423ea6639c17174f440821620cd0cc365fcefef64605589c1211d98a9b7",
+    "clipSHA256": "ca9e074439e6dd6c288c5e11b99a8cfd1706357647a4ec56bb011d0e69393b72",
+    "metaSHA256": "0a4d6bba91537e6dfacab57ea14c4681a08612013373a333ec7497b50ebc041d",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "contact": [],
+    "keyCount": 9
+  },
+  {
+    "actor": "nacre_halberdier",
+    "state": "AutoAttack",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/NacreHalberdier_AutoAttack.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/NacreHalberdier_AutoAttack.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/nacre_halberdier/basic/source.aseprite",
+    "beforeSHA256": "b8008b0c13f4a94aa0cbaee8ef9f022c0ef81af33491d94689c1bc14048ed3c9",
+    "afterSHA256": "9f7a57d5cde268e5b3812331a3fd215986940005a25121a787f15880cd98e5a5",
+    "clipSHA256": "0f52dd07a60b510963e6954a945dc41394cc4c981eb38086c652b9c0147a4cb8",
+    "metaSHA256": "2760676a0cf7c05a4b6eea114954fb6949a91c5eb68f494c017e45758195de99",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "contact": [
+      [
+        320,
+        "AutoAttackImpact"
+      ],
+      [
+        670,
+        "AutoAttackComplete"
+      ]
+    ],
+    "keyCount": 13
+  },
+  {
+    "actor": "nacre_halberdier",
+    "state": "Idle",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/NacreHalberdier_Idle.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/NacreHalberdier_Idle.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/nacre_halberdier/idle/source.aseprite",
+    "beforeSHA256": "6502458f61b6e9c7910841824d173a2e9451a27d6e13ccdbc0e8bcfe286c79aa",
+    "afterSHA256": "1f730735f43e29624e76f68f99b670c3afc1b262b274aa3046532b079f11a33c",
+    "clipSHA256": "cef3ed2e7470d7edd124dc4c7ee787416b602fa8977f9c918fa17f41043ecf16",
+    "metaSHA256": "f8afc1be88f8a8911524cf1e7172a43555e77335de6dd75020cd40902fae0be5",
+    "changedUnityKeys": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "contact": [],
+    "keyCount": 33
+  },
+  {
+    "actor": "orc_slinghunter",
+    "state": "Idle",
+    "category": "Expansion",
+    "clip": "Assets/_Game/Animations/SelectionExpansion/OrcSlinghunter_Idle.anim",
+    "texture": "Assets/_Game/Art/SelectionExpansion/OrcSlinghunter_Idle.png",
+    "native": "ArtSource/SelectionExpansion/Motion/Production/orc_slinghunter/idle/source.aseprite",
+    "beforeSHA256": "24d70a4d60c060964d76a0feac6a2269f77ff3dbafb495c3e4fcefc7c8b06b6d",
+    "afterSHA256": "a286922ab99a5a20876d219da6cae49c772e426e8a74142df58856d1d20a669b",
+    "clipSHA256": "7c60516be13139fd5c23ac766c0e8621f26431a6dd9ce1ae66b3ca9c6e6a144a",
+    "metaSHA256": "a24cabd2c1b1d8148a588a14bc6d6e5f29ed97ff5208c83de60246cb22a2039b",
+    "changedUnityKeys": [
+      18,
+      19,
+      20,
+      21
+    ],
+    "contact": [],
+    "keyCount": 24
+  },
+  {
+    "actor": "miner",
+    "state": "Idle",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/CombatIdles/Miner_Idle.anim",
+    "texture": "Assets/_Game/Art/CombatIdles/Miner_Idle.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/Miner_Idle-9cf4c96f86.aseprite",
+    "beforeSHA256": "259ad759116d8eb0a8badf495b8993ec91745413bdcda0dd4f247b10e70666de",
+    "afterSHA256": "5a454542fd5cded350c6f10d59556ed35cdc974ec9024c2470a40ac5dc94030b",
+    "clipSHA256": "ba329cc6beec23ab3e647f9734d7e0aa1a1f2d08147663b35dbc265cee097794",
+    "metaSHA256": "4c499e902395010798f2d4f97b3581dbf542d7ca71f86e16d1a7299e421d76c5",
+    "changedUnityKeys": [
+      5,
+      6
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "royal_standard_bearer",
+    "state": "Idle",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/CombatIdles/RoyalStandardBearer_Idle.anim",
+    "texture": "Assets/_Game/Art/CombatIdles/RoyalStandardBearer_Idle.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/RoyalStandardBearer_Idle-2643d0037a.aseprite",
+    "beforeSHA256": "e469d4ae15e953b0f4c218c4e1db51b05bf4e8907d0784235f1c04d81eac59a6",
+    "afterSHA256": "81812f28837ea4c49e146b0ddaa1533524e5d0d65b3c715b0db6ad43a70ca5d2",
+    "clipSHA256": "f741daca32d2b4973324f554603bb287d215c2e976141306189092c2324cca4f",
+    "metaSHA256": "d472ef2ff11c823e0b1352899ba71512bd323e545effebcf7574eb58ae63a83f",
+    "changedUnityKeys": [
+      4,
+      5,
+      7,
+      8
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "knight",
+    "state": "Idle",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/CombatIdles/SwordKnight_Idle.anim",
+    "texture": "Assets/_Game/Art/CombatIdles/SwordKnight_Idle.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/SwordKnight_Idle-c1a727bee4.aseprite",
+    "beforeSHA256": "1ead7c55c974a8ca1e5b1f3f98d461e240863203952dde0ef5fa9c826a100e91",
+    "afterSHA256": "140d9f4bb39c35ee049bcfa032fee8f22e2f07f8bc64337bbe1fe9ff632b65bc",
+    "clipSHA256": "00923f2058b06df5ab99f812d7593ab3ea522448d338dedaa22fa2a66808debd",
+    "metaSHA256": "3c7cf7ff64f648882cf40b760c2f7d0d61ea03105188ece6e7ae72442617a5c7",
+    "changedUnityKeys": [
+      3,
+      4
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "royal_swordsman",
+    "state": "Idle",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/CombatIdles/RoyalSwordsman_Idle.anim",
+    "texture": "Assets/_Game/Art/CombatIdles/RoyalSwordsman_Idle.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/RoyalSwordsman_Idle-ecfdf6325d.aseprite",
+    "beforeSHA256": "c9bfa06b8a06eb4bb1348e4b6d0bd8e47112db7c2abc29e170816f8838495ae9",
+    "afterSHA256": "0225066790edbb4613f63449f09c5132b49c32b6faf924c1409b7738a955a62b",
+    "clipSHA256": "669d741664ba0b6fa854fe920e09f70fd803e161f6bf872093c5721ece750ea9",
+    "metaSHA256": "48a92e9745da38b725fc5d9326d065c6075eab9b4e6afed00cf5bf8a76801d53",
+    "changedUnityKeys": [
+      3,
+      4
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "crossbow_guard",
+    "state": "Idle",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/CombatIdles/CrossbowGuard_Idle.anim",
+    "texture": "Assets/_Game/Art/CombatIdles/CrossbowGuard_Idle.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/CrossbowGuard_Idle-7d13816986.aseprite",
+    "beforeSHA256": "124626f455a1d3194abdf2a34f7478faf76a6de9b870b537f5121fb52c97d1fc",
+    "afterSHA256": "79bfc9f624759963c80b0f60f6355e996608f4d4d6885a44847c075a4ed73e20",
+    "clipSHA256": "cf912f7b77d220eecc28358a3fe0d8d7f5581e820b1a90c6436583b896e9219b",
+    "metaSHA256": "dbf51a03cee1d80008a83e8e8fb8531524b7bf0da2af655b02548306898420e4",
+    "changedUnityKeys": [
+      2,
+      4,
+      5,
+      6,
+      7
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "spear_guard",
+    "state": "Idle",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/CombatIdles/SpearGuard_Idle.anim",
+    "texture": "Assets/_Game/Art/CombatIdles/SpearGuard_Idle.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/SpearGuard_Idle-0f848a9fbc.aseprite",
+    "beforeSHA256": "a48b3dde59c67734720fce07faed99aaf28d0423f13cdfa5e3b85ca70f8ea4ab",
+    "afterSHA256": "c3f3e338246b7c4a48d1374566e9a9ee65dc4ee43701f9aa60f981f741e628a4",
+    "clipSHA256": "f7a5fabab1ff36165e32622eb8eaaa53914bc31568c6836374226acebb60c811",
+    "metaSHA256": "e28f39a9a71b66a34aa25ea6b61f07a3a1605008c7803fb93bff5545d3f7e5dd",
+    "changedUnityKeys": [
+      2
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "court_mage",
+    "state": "Idle",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/CombatIdles/RoyalMage_Idle.anim",
+    "texture": "Assets/_Game/Art/CombatIdles/RoyalMage_Idle.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/RoyalMage_Idle-789d3d3080.aseprite",
+    "beforeSHA256": "fca2d6702f3224af9ae833595ca3b987d56ca59c4df68cd95d849e9807151b8d",
+    "afterSHA256": "64024a45ee1699a2d1a4289f02d40362d840c3084af6b1fb7676c1ca276133d8",
+    "clipSHA256": "d8dce752e4644c736683abc0e1e053fed524b4f7671d4b12cdfc5002ac17fc31",
+    "metaSHA256": "b5e025fcbbf7211531f81451ff3f9e4343dac77ef74614894dd1009592bc4f61",
+    "changedUnityKeys": [
+      3,
+      4
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "royal_lancer",
+    "state": "Idle",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/CombatIdles/RoyalLancer_Idle.anim",
+    "texture": "Assets/_Game/Art/CombatIdles/RoyalLancer_Idle.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/RoyalLancer_Idle-f4ca919db7.aseprite",
+    "beforeSHA256": "06e7d38d67b4e8f3e38959030c951250efd1c1d65080ad8c930eb68be16366da",
+    "afterSHA256": "7af638efa02d23613422a690c277dd361a90ee5bb9bc9f2274b978fceff7bd49",
+    "clipSHA256": "5443e2850b593207da2b8a4cbd119a323cd976c6ea144aa012dcd3369e5500b6",
+    "metaSHA256": "ebc654ea355c8a8ea81a9dd43b8e7e6f652bc0f473f164dcb5974caeb25f5a22",
+    "changedUnityKeys": [
+      3,
+      4
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "siege_sergeant",
+    "state": "Idle",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/CombatIdles/SiegeSergeant_Idle.anim",
+    "texture": "Assets/_Game/Art/CombatIdles/SiegeSergeant_Idle.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/SiegeSergeant_Idle-26b5e87f88.aseprite",
+    "beforeSHA256": "f109783c0a2b6ebe2cb36b75f0468a91ce87dc5b1da4e73bf054659cae6be042",
+    "afterSHA256": "ffd7676fed22b97993fac008201da262c4e7f7101da9f09221613d70a2c295d1",
+    "clipSHA256": "f01f1dbf89679682f0071319ae2498265687c4de088b3bfa207d7f58b93c8817",
+    "metaSHA256": "0ccec072d2c81ecc1f39f4dcde69c58572b6726bd56d96eb42f58b9b3ebb6bc2",
+    "changedUnityKeys": [
+      2
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "royal_arbalist",
+    "state": "Idle",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/CombatIdles/RoyalArbalist_Idle.anim",
+    "texture": "Assets/_Game/Art/CombatIdles/RoyalArbalist_Idle.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/RoyalArbalist_Idle-d4d325856b.aseprite",
+    "beforeSHA256": "f2fab9f405536e6fbfb08f1409f53cfb49423516d2c67918fd0ddf486d86cd23",
+    "afterSHA256": "dcfb1e3abbec4c0cd26bd9175f626183ec8f4402438a11bde38ca37a75e128cd",
+    "clipSHA256": "695c8f90a8add184624222e4311da7728f342eebaa5df55e81ac6590e8c8e772",
+    "metaSHA256": "4c40e1ba32b3e42d6cc8ae056a6aa08184dc54c44ac4b45378795b4fd89c1711",
+    "changedUnityKeys": [
+      2,
+      4,
+      5,
+      6,
+      7
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "dungeon_attender",
+    "state": "Death",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/FrostwakePlayables/Minotaur_Death.anim",
+    "texture": "Assets/_Game/Art/FrostwakePlayables/Minotaur_Death.png",
+    "native": "ArtSource/FrostwakePlayables/production/Minotaur_Death.aseprite",
+    "beforeSHA256": "000d2df16f9bad316c01f0876bf3f85bf2a487129adf06ffc3ca817a4c224274",
+    "afterSHA256": "1f515ccb976dac8bcb79055df27b04e995072efb331f660aeadfe80c72c4d221",
+    "clipSHA256": "28e7b50c013ed7d63582d8975900d976e23190b7d1612ae42096dcf9993bd9fc",
+    "metaSHA256": "f046b30e166f88cf56e88b671fac5560e760a7b29de1a03057752b75c941942e",
+    "changedUnityKeys": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "kobold_gunner",
+    "state": "Death",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/FrostwakePlayables/Kobold_Death.anim",
+    "texture": "Assets/_Game/Art/FrostwakePlayables/Kobold_Death.png",
+    "native": "ArtSource/FrostwakePlayables/production/Kobold_Death.aseprite",
+    "beforeSHA256": "54aa3fb5e0ee46ebf48583e678d19ff34366a1770bc566b80bbe8160e438b80e",
+    "afterSHA256": "30bac4fa0abfc4fc90d6d93ab01e90fe4e97debbc6cda24e0147dd05159b6a62",
+    "clipSHA256": "7a41f105d795fcad80e89fec316d9dfe999483433bf4a706c9755481751d4342",
+    "metaSHA256": "7ac5739a6763d4f270ab1f53457da952d30c3fbca42ffbeea1477daadd52169f",
+    "changedUnityKeys": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "bore_engineer",
+    "state": "AutoAttack",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/Ironvein/bore_engineer_AutoAttack.anim",
+    "texture": "Assets/_Game/Art/Ironvein/bore_engineer_AutoAttack.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/bore_engineer_AutoAttack-8a8cbb2df6.aseprite",
+    "beforeSHA256": "78517bef5a34740e56020b14a0930ec6f7a45f2ac4089b47165c9ce62fb51797",
+    "afterSHA256": "27fc5121bbec2a2bca3484bd58fa544cc5a900a8d64513070c373dc0ed3ec439",
+    "clipSHA256": "b45590b9d3511c823ba4c5e08a462c6d0892f65e517121c124e04d05a0b93166",
+    "metaSHA256": "1d4baeffac5413b16ca26886aff20f897f4c8980e61e0dcfe762d2374bc91f2e",
+    "changedUnityKeys": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "contact": [
+      [
+        280,
+        "AutoAttackImpact"
+      ],
+      [
+        550,
+        "AutoAttackComplete"
+      ]
+    ],
+    "keyCount": 9
+  },
+  {
+    "actor": "frostblade_reaver",
+    "state": "Idle",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/Frostwake/frostblade_reaver_Idle.anim",
+    "texture": "Assets/_Game/Art/Frostwake/Motion/frostblade_reaver_Idle.png",
+    "native": "ArtSource/Frostwake/production/frostblade_reaver/Idle.aseprite",
+    "beforeSHA256": "33ce7f9ebcde53bc7dc5da3bf75e5ce26aaa839e325e76c3c305823191bd83c7",
+    "afterSHA256": "c061e832cb14b1801edbe95daa61fac1c20bbead6c83cfe2cd398c2f6fd06fa2",
+    "clipSHA256": "3e58b7742ba7d7c1e6c492c958fee845aaa804a8bce498b7ea5446ed117fbc7b",
+    "metaSHA256": "faa4fad49635d197a88f2fe5db198154696ed37c234a636c2519d5df711f0cfd",
+    "changedUnityKeys": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "harpoon_hunter",
+    "state": "Release",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/Frostwake/harpoon_hunter_Release.anim",
+    "texture": "Assets/_Game/Art/Frostwake/Motion/harpoon_hunter_Release.png",
+    "native": "ArtSource/Frostwake/production/harpoon_hunter/Release.aseprite",
+    "beforeSHA256": "6e27fcd85fa9b54fe1bed1e0cac00a8e35d63843720feafd5f63e88722efd1d3",
+    "afterSHA256": "6b0a25d98391e27ae1fa1a4432a08b06b79a12841819fc6f1b685350b4be66e1",
+    "clipSHA256": "63722c627168f4ce37bd3510ed049e04d33a328ddc65f02c3337884e755b4bd8",
+    "metaSHA256": "fb5a32cffc4451bbc33f1a5f9c41b7b7b0c2d5050c487e93d53415411f94bc48",
+    "changedUnityKeys": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "contact": [
+      [
+        360,
+        "AbilityImpact"
+      ],
+      [
+        360,
+        "AbilityBeat"
+      ],
+      [
+        870,
+        "AbilityComplete"
+      ]
+    ],
+    "keyCount": 10
+  },
+  {
+    "actor": "rimecarver",
+    "state": "AutoAttack",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/Frostwake/rimecarver_AutoAttack.anim",
+    "texture": "Assets/_Game/Art/Frostwake/Motion/rimecarver_AutoAttack.png",
+    "native": "ArtSource/Frostwake/production/rimecarver/AutoAttack.aseprite",
+    "beforeSHA256": "d551d7ca514cebbc3d175ec9913f0595119aa53f6389efd92225d192171f2965",
+    "afterSHA256": "485d73cf798f5958c5c92842bdd58d13009cb9a7c09d6817de30778c9c4c5cb3",
+    "clipSHA256": "e1251b12f451958a07fd106f008f6adcdc0139bf389e0259b04abf50999e3d76",
+    "metaSHA256": "aa5921be656b21b504797f3c53c8d0fa406fcda61fcc4b94dbf4370e8f3fc679",
+    "changedUnityKeys": [
+      3,
+      4,
+      5,
+      7
+    ],
+    "contact": [
+      [
+        320,
+        "AutoAttackImpact"
+      ],
+      [
+        670,
+        "AutoAttackComplete"
+      ]
+    ],
+    "keyCount": 10
+  },
+  {
+    "actor": "ancient_treant",
+    "state": "Hit",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/Forest/Roster/Ancient_Treant_Hit.anim",
+    "texture": "Assets/_Game/Art/Forest/Roster/Ancient_Treant_Hit.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/Ancient_Treant_Hit-dd15a8e231.aseprite",
+    "beforeSHA256": "51bf8f2a647cb6d705fb3b0e4406717fe75765e018e38088a4b3b6752109b242",
+    "afterSHA256": "dd5e5f94ee0aa257d2a15bc1ae87d132290cd0f7dbd76e1adb73ae67cc27e3f7",
+    "clipSHA256": "11d402a2dc6e36c3e531cd6b5ac129818c2c9d13303647de3c30cfb1dd124266",
+    "metaSHA256": "77c0a4573ef0512c467520d11befd103699619d259933e5abff9cb75eaadf3a0",
+    "changedUnityKeys": [
+      2,
+      3,
+      4
+    ],
+    "contact": [],
+    "keyCount": 6
+  },
+  {
+    "actor": "briar_matriarch",
+    "state": "Interrupt",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/Forest/Briar_Matriarch_Interrupt.anim",
+    "texture": "Assets/_Game/Art/Forest/Production/Briar_Matriarch_Interrupt.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/Briar_Matriarch_Interrupt-879865debf.aseprite",
+    "beforeSHA256": "4cc597780c34f86bc97ed2a35d7ebfe80f4883703b7049f9ef76666946e77104",
+    "afterSHA256": "6ea2d3fccc8deb9f5c10c4accfc1a237c868e2df89b776a311467ec156af7b5f",
+    "clipSHA256": "0bb99b3fe4a9c3f12f5232c7ca7ef4177eceaf12ea76e1f9c4ef251b584189b5",
+    "metaSHA256": "80669f9d79760736f313c488e15b9e881c093d7965c2531025a688344ba5032e",
+    "changedUnityKeys": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "barkhide_warden",
+    "state": "Interrupt",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/Forest/Barkhide_Warden_Interrupt.anim",
+    "texture": "Assets/_Game/Art/Forest/Production/Barkhide_Warden_Interrupt.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/Barkhide_Warden_Interrupt-9f18f0e6ff.aseprite",
+    "beforeSHA256": "51770d3d64f0cb95ef585562e93f7c0752f6015dd7cfae46d13a5e02fbf613ff",
+    "afterSHA256": "bc95177adeedd78e04e5511b148fcf055f521229097db91f0531f3ea58376bab",
+    "clipSHA256": "3d028d105b21b9ec112f0f39e3e3b8c1b2d0de9c3f62d048faac5c9d4c8dc560",
+    "metaSHA256": "7cdc0a40568f82004348596ce3573981622c83da4033b6a796cdccc68f31d5a0",
+    "changedUnityKeys": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "orc_rootbinder",
+    "state": "Interrupt",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/Forest/Orc_Rootbinder_Interrupt.anim",
+    "texture": "Assets/_Game/Art/Forest/Production/Orc_Rootbinder_Interrupt.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/Orc_Rootbinder_Interrupt-fd92c65965.aseprite",
+    "beforeSHA256": "a589b56e9ee4911b763d05787568aa97e3f40f1b6d9a92884e398c71a3dcfbec",
+    "afterSHA256": "6e94a36d70d1df3b36b31a7d2f28d7a4fd80b6ca39047e0485a06cab1751df8a",
+    "clipSHA256": "109bd387817452e3015363cb83cc82a339c0496ba46f1bf0abaefd3817137e9c",
+    "metaSHA256": "717c71515cffa6d2595b2c8eadadee0809579ab11ec0514223ad366cb1993539",
+    "changedUnityKeys": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "elven_mender",
+    "state": "Interrupt",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/Forest/Elven_Mender_Interrupt.anim",
+    "texture": "Assets/_Game/Art/Forest/Production/Elven_Mender_Interrupt.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/Elven_Mender_Interrupt-d529ea4684.aseprite",
+    "beforeSHA256": "d2506fb4f84c59fbf842163781aeb6e9aca302c589583b8b2fb085c528e3db37",
+    "afterSHA256": "2c4f5868d2d50cbe8dfeabba7c9295f7db4b32162b91a22a479351665847b87e",
+    "clipSHA256": "54d040ff9a625f5c345d2091214703e65d07bfe963171036d1b134b29ca6c26e",
+    "metaSHA256": "7e6e9d96cf7744592b8f9564ac37bdd4d297544abcc41f91bbcc43a2859a2bdb",
+    "changedUnityKeys": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "contact": [],
+    "keyCount": 10
+  },
+  {
+    "actor": "shellback_porter",
+    "state": "AutoAttack",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/DrownedCourt/shellback_porter_AutoAttack.anim",
+    "texture": "Assets/_Game/Art/DrownedCourt/shellback_porter_AutoAttack.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/shellback_porter_AutoAttack-504eb19f2a.aseprite",
+    "beforeSHA256": "cd9e00e5843b7e66def763e7a5bf2027e51e2b64e6d65683cbe94fc56840387b",
+    "afterSHA256": "7edadf315ed3b122f7c76f04debb63b0d4215e4cdd99fbebee061ee743e8be8c",
+    "clipSHA256": "15b58c24149b91a99d428706450f988999057b3482c343229cd125aa5b896fae",
+    "metaSHA256": "6bb3620fbbf58e2f826c25eaf7cae27a5f87bdf5d765febeac6079cbdccde4fa",
+    "changedUnityKeys": [
+      7,
+      8,
+      9
+    ],
+    "contact": [
+      [
+        315,
+        "AutoAttackImpact"
+      ],
+      [
+        495,
+        "AutoAttackComplete"
+      ]
+    ],
+    "keyCount": 11
+  },
+  {
+    "actor": "orc_drummer",
+    "state": "Death",
+    "category": "Audit",
+    "clip": "Assets/_Game/Animations/Forest/Roster/Orc_Drummer_Death.anim",
+    "texture": "Assets/_Game/Art/Forest/Roster/Orc_Drummer_Death.png",
+    "native": "ArtSource/EnemyArtCohesion/Native/Orc_Drummer_Death-09aa72e383.aseprite",
+    "beforeSHA256": "8276c0a8db37da1c8262d9d40e970b50836e782d43fb9e7d022892d86ac08cb8",
+    "afterSHA256": "5f5fb5c8cedce4d63f9bd506ff77cb0678b93c8e12dd6ccd996552b63f45e636",
+    "clipSHA256": "ad35a232d190b987ffe5843340eb2cd45e099554c18b1c8e6fa59cfd20ea915d",
+    "metaSHA256": "19928507f08be1ff1b306cccffac06bf8be123a520bea684dbaaf81246b69a50",
+    "changedUnityKeys": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "contact": [],
+    "keyCount": 10
+  }
+]

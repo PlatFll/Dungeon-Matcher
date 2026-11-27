@@ -20,12 +20,15 @@ public sealed class CourtFloodGraphic : MaskableGraphic
 
     public void Present(bool flooded, float deltaTime, bool reduced)
     {
+        float previousAmount = amount, previousElapsed = elapsed;
+        bool previousReduced = reducedMotion;
         reducedMotion = reduced;
         // The existing .35-second board transition is unchanged. This slower
         // cosmetic rise never holds a move, modifies AIR or delays resolution.
         amount = reduced ? (flooded ? 1 : 0) : Mathf.MoveTowards(amount, flooded ? 1 : 0, deltaTime / 1.8f);
         if (!reduced && amount > 0) elapsed += deltaTime;
-        SetVerticesDirty();
+        if (amount != previousAmount || elapsed != previousElapsed || (amount > 0f && reduced != previousReduced))
+            SetVerticesDirty();
     }
 
     protected override void OnPopulateMesh(VertexHelper mesh)

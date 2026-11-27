@@ -94,19 +94,31 @@ public sealed partial class ForestFoundationPlayTests
         yield return LaunchCourt("moray_siphoner","shellback_porter");
         var moray=Enemy("moray_siphoner");moray.ResolveDamageWithoutFeedback(25);
         int before=moray.CurrentHealth;Run.Player.GrantShield(5);int hp=Run.Player.CurrentHealth;
-        for(int i=0;i<4;i++)yield return Move();
+        for(int i=0;i<moray.SpecialTurnRequirement;i++)yield return Move();
         var ability=moray.GetComponent<AquaticEnemyAbility>();
         Assert.That(ability.IsPreparing,Is.True);Assert.That(ability.ResponseMoves,Is.EqualTo(2));
         yield return Move();Assert.That(ability.ResponseMoves,Is.EqualTo(1));
         yield return Move();Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp));
         Assert.That(moray.CurrentHealth,Is.EqualTo(before));Assert.That(ability.BlocksBasic,Is.False);
         Assert.That(ability.IsPreparing,Is.False);Assert.That(moray.CurrentSpecialTurnCount,Is.Zero);
+        Assert.That(Run.Player.CurrentShield,Is.Zero,"the shield absorbed the first Siphon");
+
+        for(int i=0;i<moray.SpecialTurnRequirement;i++)yield return Move();
+        Assert.That(ability.IsPreparing,Is.True);Assert.That(ability.ResponseMoves,Is.EqualTo(2));
+        yield return Move();
+        int wounded=moray.CurrentHealth;hp=Run.Player.CurrentHealth;
+        yield return Move();
+        int hpLost=hp-Run.Player.CurrentHealth;
+        Assert.That(hpLost,Is.GreaterThan(0),"the second Siphon hits unshielded health");
+        Assert.That(moray.CurrentHealth,Is.EqualTo(Math.Min(moray.MaxHealth,wounded+hpLost)));
+        Assert.That(ability.IsPreparing,Is.False);Assert.That(moray.CurrentSpecialTurnCount,Is.Zero);
     }
 
     [UnityTest] public IEnumerator CourtMaterialAndRosterImportsAreNativeAndComplete()
     {
         yield return LaunchCourt("queen_nacre","reef_spearman","hammerhead_bruiser");
-        Assert.That(Run.Zone.Definition.enemies.Length,Is.EqualTo(14));
+        CollectionAssert.AreEquivalent(DrownedCourtImporter.Ids.Concat(new[] { "nacre_duelist", "nacre_halberdier" }),
+            Run.Zone.Definition.enemies.Select(e => e.EnemyId));
         Assert.That(Run.Zone.Definition.liveEncounters.Length,Is.EqualTo(32));
         foreach(var definition in Run.Zone.Definition.enemies)
         {
@@ -128,9 +140,9 @@ public sealed partial class ForestFoundationPlayTests
             Assert.That(portrait.color.a,Is.GreaterThan(.99f),actor.name+" visible alpha");
             Assert.That(portrait.enabled,Is.True,actor.name+" visible image");
         }
-        string output=System.IO.Path.GetFullPath(".utmp/DrownedCourtValidation/DryCourt.png");
+        string output=NewCourtEvidencePath("DryCourt.png");
         ScreenCapture.CaptureScreenshot(output);
-        yield return null;
+        yield return Until(()=>System.IO.File.Exists(output),"dry Court screenshot saved");
     }
 
     [UnityTest] public IEnumerator CourtCofferCaptureOwnerDeathDoesNotPayAndDrainDiscards()
@@ -283,17 +295,24 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator CourtMotionControllersResolveEveryBasicWithOneOwnedSequence()
     {
-        foreach(string id in DrownedCourtImporter.Ids)
+        var roster=Resources.Load<ZoneDefinition>("Zones/drowned-court").enemies;
+        foreach(string id in roster.Select(definition=>definition.EnemyId))
         {
             if(Run!=null){Assert.That(Run.ExitTo("MainMenu"),Is.True);yield return null;yield return null;}
             yield return LaunchCourt(id);
             var actor=Enemy(id);var attack=actor.GetComponent<EnemyAutoAttack>();
             Assert.That(actor.Definition.UseAuthoredAutoAttackMotion,Is.True,id);
-            int hits=0;attack.AttackResolved+=(_,damage,finishes)=>hits++;
+            int countdown=Mathf.CeilToInt(attack.RemainingAttackTime);
+            Assert.That(countdown,Is.GreaterThan(0),id);
+            actor.SetSpecialTurnRequirement(countdown+1); // Isolate the first basic from its competing special.
+            int hits=0;bool allOwned=true;
+            attack.AttackResolved+=(_,__,___)=>{ hits++;allOwned&=attack.IsAttackSequenceInProgress; };
             attack.SetActionPaused(this,false);
-            Assert.That(attack.PerformAttackImmediately(),Is.True,id);
-            yield return Until(()=>!attack.IsAttackSequenceInProgress,"owned basic completes: "+id);
-            attack.SetActionPaused(this,true);
+            for(int i=1;i<countdown;i++)
+            {yield return Move();Assert.That(hits,Is.Zero,id+" waits for its basic deadline");}
+            yield return Move();
+            Assert.That(allOwned,Is.True,id+" owns every contact until the sequence completes");
+            Assert.That(attack.IsAttackSequenceInProgress,Is.False,id+" releases ownership by settlement");
             Assert.That(hits,Is.EqualTo(id=="needlefin_skirmisher"?2:1),id);
         }
     }
@@ -303,13 +322,16 @@ public sealed partial class ForestFoundationPlayTests
         using var destinations=new TravelDestinationFixture("dungeon","magical-forest","drowned-court");
         yield return LaunchCourt("shellback_porter");
         yield return Move();
-        string id=Run.RunId;long largest=0;int initialObjects=0;
+        string id=Run.RunId;long largest=0;
+        var baselineByZone=new Dictionary<string,int>();
         string[] route={"dungeon","drowned-court","magical-forest","drowned-court","dungeon","magical-forest"};
         for(int hop=0;hop<18;hop++)
         {
+            var sourceObjects=SceneManager.GetActiveScene().GetRootGameObjects();
             Run.Travel.enabled=false;Set(Run.Waves,"advanceWavesAutomatically",false);
             foreach(var enemy in Run.Waves.ActiveEnemies)enemy.GetComponent<EnemyAutoAttack>().SetActionPaused(this,true);
             KillEncounter();yield return Until(()=>!Run.Waves.IsWaveActive && Run.Continuation.CanCapture,"source encounter finishes");
+            yield return Until(()=>Run.Resonance.State.pendingWave==0 && !Run.Resonance.IsSavePending,"source Resonance bank settles");
             var draft=Run.Waves.GetComponent<RunUpgradeCoordinator>();
             var snapshot=Run.Continuation.Capture();
             if(snapshot.draft.Count>0){Assert.That(draft.SelectRecordedCard(snapshot.draft[0]),Is.True);yield return StableAfterCourtWave();}
@@ -324,6 +346,8 @@ public sealed partial class ForestFoundationPlayTests
             int expectedEnergy=Mathf.Min(Run.Player.GetComponent<PlayerAbilityEnergy>().MaximumEnergy,
                 before.player.energy+(RunUpgradeResolver.HasMechanic(RunUpgradeMechanic.PreparedCasting,RunUpgradeRuntime.Current)?15:0));
             Assert.That(destination,Is.Not.EqualTo(Run.Zone.Definition.zoneId));
+            ResonanceEncounterFixture.EarnedExit(Run);
+            Assert.That(Run.Resonance.PortalReady,Is.True,"the cleanup fixture starts at an earned exit");
             Run.Travel.State.stage=1;Run.Travel.State.destination=destination;
             Assert.That(Run.Continuation.TryCommitZoneTravel(destination),Is.True);
             SceneManager.LoadScene("Game");yield return null;yield return null;
@@ -341,11 +365,15 @@ public sealed partial class ForestFoundationPlayTests
             Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
             largest=Math.Max(largest,new System.IO.FileInfo(path).Length);
             int count=UnityEngine.Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None).Length;
-            if(hop==5)initialObjects=count;
-            if(hop>=6)Assert.That(count,Is.LessThan(initialObjects+250),"scene objects do not accumulate across trips");
+            Assert.That(sourceObjects.All(root=>root==null),Is.True,"departing Game scene roots have been destroyed");
+            Assert.That(UnityEngine.Object.FindObjectsByType<DungeonPresentationArt>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length,
+                Is.EqualTo(1),"only the new scene owns battle presentation");
+            if(baselineByZone.TryGetValue(destination,out var initialObjects))
+                Assert.That(count,Is.LessThan(initialObjects+250),destination+" objects do not accumulate on repeat visits");
+            else baselineByZone.Add(destination,count);
         }
         Assert.That(largest,Is.LessThan(500000),"eighteen handoffs keep this fixture's durable account below 500 KB");
-        System.IO.File.WriteAllText(".utmp/DrownedCourtValidation/TravelSoak.txt","18 handoffs; 6 route repeats; largest account bytes="+largest+"; final visit="+Run.Travel.State.visit);
+        System.IO.File.WriteAllText(NewCourtEvidencePath("TravelSoak.txt"),"18 handoffs; 6 route repeats; largest account bytes="+largest+"; final visit="+Run.Travel.State.visit);
     }
 
     private IEnumerator StableAfterCourtWave()=>Until(()=>Run.Continuation.CanCapture,"completed wave board settles");
@@ -354,14 +382,18 @@ public sealed partial class ForestFoundationPlayTests
     {
         yield return LaunchCourt("breakwater_captain","needlefin_skirmisher");
         var captain=Enemy("breakwater_captain");var ally=Enemy("needlefin_skirmisher");
-        var attack=ally.GetComponent<EnemyAutoAttack>();attack.SetActionPaused(this,false);Set(attack,"remainingAttackTime",999f);
+        var attack=ally.GetComponent<EnemyAutoAttack>();attack.SetActionPaused(this,false);
+        Set(attack,"unifiedRemaining",999); // Isolate commanded contacts from the ally's ordinary basic.
         int hits=0;attack.AttackResolved+=(_,__,___)=>hits++;
-        for(int i=0;i<3;i++)yield return Move();
+        for(int i=0;i<captain.SpecialTurnRequirement;i++)yield return Move();
         Assert.That(ally.CurrentShield,Is.EqualTo(25));
-        for(int i=0;i<3;i++)yield return Move();
+        for(int i=0;i<captain.SpecialTurnRequirement;i++)yield return Move();
         var ability=captain.GetComponent<AquaticEnemyAbility>();Assert.That(ability.CastName,Is.EqualTo("BOARDING"));
         Assert.That(ability.Target,Is.SameAs(ally));Assert.That(ability.ResponseMoves,Is.EqualTo(2));
-        yield return Move();yield return Move();
+        yield return Move();
+        Assert.That(ability.Target,Is.SameAs(ally));Assert.That(ability.ResponseMoves,Is.EqualTo(1));
+        Assert.That(hits,Is.Zero,"the fixed ally waits until the announced deadline");
+        yield return Move();
         Assert.That(hits,Is.EqualTo(2),"the two-dart basic sequence is commanded exactly once");
         Assert.That(attack.HasCommandReservation,Is.False);Assert.That(ability.BlocksBasic,Is.False);
         Assert.That(captain.CurrentSpecialTurnCount,Is.Zero);
@@ -387,7 +419,7 @@ public sealed partial class ForestFoundationPlayTests
         yield return LaunchCourt("queen_nacre","reef_spearman","hammerhead_bruiser");yield return Move();
         var layout=UnityEngine.Object.FindFirstObjectByType<GameplayPixelLayoutController>();
         var backdrop=UnityEngine.Object.FindFirstObjectByType<BattleBackgroundTilemapController>();
-        string folder=System.IO.Path.GetFullPath(".utmp/DrownedCourtValidation");
+        string folder=System.IO.Path.GetDirectoryName(NewCourtEvidencePath("Layout-720x1280.txt"));
         try
         {
             int variant=0;
@@ -425,6 +457,8 @@ public sealed partial class ForestFoundationPlayTests
             ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(frames,frame.ToString("D3")+".png"));
             float next=began+(frame+1)/12f;yield return Until(()=>Time.time>=next,"flood presentation recording frame");
         }
-        yield return null;yield return null;
+        yield return Until(()=>System.IO.Directory.GetFiles(folder,"*.png").Length==7 &&
+            System.IO.Directory.GetFiles(frames,"*.png").Length==24,
+            "three dry, three wet, one safe-area and 24 numbered flood screenshots saved");
     }
 }

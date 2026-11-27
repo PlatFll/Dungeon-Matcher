@@ -16,11 +16,13 @@ public sealed partial class ForestFoundationPlayTests
     private IDisposable profile, character, mastery;
     private string path;
     private bool preserveCounterplayCrystal;
+    private bool avoidMineIntakes;
     private Vector2Int safeMoveFrom,safeMoveTo;
     private RunSession Run=>RunSession.Current;
     [UnitySetUp] public IEnumerator SetUp()
     {
         preserveCounterplayCrystal=false;
+        avoidMineIntakes=false;
         typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.Static|BindingFlags.NonPublic)
             .Invoke(null,new object[]{new Vector2Int(1080,1920)});
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
@@ -71,7 +73,7 @@ public sealed partial class ForestFoundationPlayTests
         int top=-1,left=0;
         // A ritual may pin the old fixed swap. Find an actual unrestrained
         // response region instead of waiting forever on an invalid fixture.
-        for(int y=board.Height-1;y>=1&&top<0;y--)for(int x=0;x<=board.Width-4&&top<0;x++)
+        for(int y=board.Height-1;y>=1&&top<0;y--)for(int x=avoidMineIntakes?2:0;x<=board.Width-(avoidMineIntakes?5:4)&&top<0;x++)
         {
             bool clear=true;
             for(int px=x;px<x+4;px++)for(int py=Mathf.Max(0,y-2);py<=Mathf.Min(board.Height-1,y+1);py++)

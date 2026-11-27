@@ -1,26 +1,55 @@
-## Crystal Resonance refinement — 2026-11-18, unmerged acceptance candidate
+## Current production integration, 2026-11-27
 
-Fresh standard, Retry, Practice and challenge runs permanently start in Dungeon;
-Continue restores the exact saved zone. Explicit Editor diagnostics remain.
-The five-profile visible-state policy completed 62 natural runs across five
-source-separated batches: 56 defeats, six living observation-limit endpoints,
-99 completed visits and 14,180 durable accepted inputs. Every failure is retained.
-These are actual-Game automated results, not human enjoyment or device acceptance.
+The production Game scene uses Crystal Resonance with the latest recovered balance tuning and Early/Mid/Late encounter selection in all five zones. The ten expansion enemies, merchant shop, five two-slot supplies and rounded board Color Bomb are included together. Fresh runs start in Dungeon. Continue resumes the saved zone, crystal, encounter and equipped supplies. The saved-run menu shows Resonance progress. See the [integration evidence and remaining device checks](Validation/CRYSTAL_RESONANCE_MAIN_INTEGRATION.md). The dated candidate and testing checkpoints below record the development history.
 
-Court formation data now exposes the previously omitted Needlefin/Shellback,
-varies three heavy patrol escorts and restores Queen + Conch Marshal's approved
-Court identity/full threat budget. Stats, oxygen and charge rewards are unchanged.
-Six played affected Court visits exposed the missing enemies; two completed and
-four failed. Both planned L5 Kobold attempts died in Forest before Court.
-Low-level attrition, heavy escort concentration, Forest first-card outliers and
-long late-Dungeon returns remain precise human balance review concerns.
+## Selection repair and non-boss expansion — stacked review candidate, 2026-11-19
 
-Required Unity validation, 272 balance checks and all 47 latest affected checks
-passed (initial failures and fixture corrections are preserved). Prior launch/
-save/HUD/phone-layout checks still cover unchanged code. Android and Windows
-development builds passed; no physical phone test. All owned processes exited.
-PR #234 is technically ready for human acceptance testing, but remains draft
-and unmerged. See [the complete A–F report](Validation/CRYSTAL_RESONANCE_REFINEMENT.md).
+Five travel zones now use authored Early, Mid and Late ordinary formations with
+member-based recurrence. Ironvein can roll its Packbeetle from authored ordinary
+recipes. Ten new enemies use the approved character stills and production motion.
+The Guild Bulwark uses K06 Road Escort. The Bulwark's three-move Taunt and the
+Chirurgeon's single-target field heal share the existing enemy action pipeline.
+The Orc Slinghunter now has one damaging stone per basic attack. Its approved stumble, the revised attacks and heal, and the seven living idles are bound to the production enemy controllers.
+The production cast pass repaired 48 animation clips, including a frame-2 pixel correction to the Dungeon Miner’s original idle. The review opens on synchronized before-and-after Game captures. [Animation review](ArtDirection/AnimationSweep/Review.html)
+
+The follow-up fixed 59 pixels in nine Dungeon idles and simplified five enemy material palettes, including the Grand Delver pilot across ejection and remount. [Motion and shading review](ArtDirection/AnimationSweep/MaterialContinuity/Review.html)
+
+The enemy grip and cloth pass repaired 13 production clips across 11 enemies, including both free panels of the Guild Chirurgeon’s cape, the Swordsman’s steel shoulder, and the Ranger’s musket contacts. [Before and after](ArtDirection/AnimationSweep/GripAndDrape/Review.html) · [Frame-by-frame enemy roster](ArtDirection/AnimationSweep/GripAndDrape/Roster.html)
+
+The gameplay sweep corrected milestone retention and wallet recovery, board input release, flood rendering, roster reimports, idle-channel replay and small-screen combat layout. The case ledger records affected reruns and the source used for each. [Gameplay validation and Android build results](Validation/AnimationSweep/README.md)
+The feature branch is based on the Crystal Resonance review candidate.
+Both development players built. Ten natural Dungeon-first runs completed 21
+visits, and all 2,442 recorded inputs matched their durable journals. Stage 08
+also exercised both Guild specials inside the production Game scene.
+[Expansion handoff](../HANDOFF/SELECTION_EXPANSION.md)
+
+## Crystal Resonance recovery — targeted tuning in validation (2026-11-18)
+
+PR #234 remains draft and unmerged. All 62 prior refinement runs were recovered;
+no previous Unity/test process remains, and original failures/partials are intact.
+Fresh starts are Dungeon-first; Continue restores the exact saved zone.
+
+The recovery pass corrects adjacent special-enemy repetition hidden by different
+recipe labels, restores one eligible normal-only post-capstone relief encounter
+when charge remains, and fixes the Editor policy's three-piece slide prediction.
+Damage telemetry now retains the actual source and AIR context. No enemy stat,
+oxygen, charge reward, shield, ability, economy or approved art value changed.
+The 3.693-second historical capstone was Dungeon's Royal elite; its earned fast
+clear remains valid power expression. Earlier wording naming Court was corrected.
+
+Source `90bc53b` passed the required validator, 56 focused checks and 272 balance
+checks, plus Android/Windows builds. Its 13 natural runs completed 25 visits:
+12 defeats and one 45-minute living limit (six visits). All 3,270 durable inputs
+passed the audit. Incoming ordinary encounters repeated the previous special
+zero times in 485 pairs; all 22 post-capstone follow-ups were normal-only.
+
+The new Court evidence still showed one heavy pair in every three-actor patrol
+available with only Moray/Conch taught. Moray's patrol now substitutes Needlefin
+for Hammerhead; Conch's heavy formation and all caps remain intact. A first-flood
+escort-diversity regression reproduced the problem. Nine affected natural cases
+are predeclared for final-source retesting; this checkpoint is not final acceptance.
+See [recovery report](Validation/CRYSTAL_RESONANCE_RECOVERY.md) and the preserved
+[previous refinement](Validation/CRYSTAL_RESONANCE_REFINEMENT.md).
 
 ## Crystal Resonance redesign — 2026-11-17, unmerged review candidate
 
@@ -722,6 +751,12 @@ need human play/listening feedback. No device performance claim is made.
 See [scope, decisions and validation](FrostwakePlayables/IMPLEMENTATION.md)
 and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_DESIGNS.json).
 
+## Character animation workflow and audit
+
+The [production repair comparison](ArtDirection/CastMotionRepairs/Review.html) covers 17 expansion animations and the 23 clips behind the 20 cast-audit findings. The comparison includes the previous game drawings and the later Swordsman, Halberdier and Axeman review versions. The actual game resolves the repaired sheets through the existing controllers and sprite IDs.
+
+The [character animation SOP](ArtDirection/Character_Animation_SOP.md) and [per-character source index](ArtDirection/Character_Animation_Sources.md) trace the current cast back to its production drawings. The [cast audit](ArtDirection/CastMotionAudit/Review.html) includes timed playback, finding-specific frames and repair proposals. The [expansion polish review](../ArtSource/SelectionExpansion/Motion/Review/Revision03/Review.html) compares the revised native artwork with the current Unity sources.
+
 ## Global art-direction audit (2026-10-11)
 
 The canonical art guide is now v1.17.2, including the global menu and three-zone battle direction. Rattlebones is the explicitly designated
@@ -1249,7 +1284,7 @@ Gem Mastery is an account-wide progression layer, not a per-character grind.
 
 Fresh-profile state:
 
-- Color Crystal / classic star crystal is available from the start.
+- Color Crystal is available from the start. Its board and equipment art shows the free-standing merchant rainbow gem with a diagonal white glint.
 - It has no separate levels.
 
 Current Balance v1 first-time account unlocks use the **highest individual character level** (levels are never summed):
@@ -1354,32 +1389,20 @@ Exact formula and level costs: `Docs/BALANCE_V1.md`.
 
 # 14. Consumables and Shop
 
-Balance v1 Shop sells only:
+The mouse merchant sells five supplies from a fixed counter above a scrolling catalogue. The shopkeeper hums while browsing, comments on the purchased item and waves before ducking out when the player leaves.
 
-1. **Health Potion**
-2. **Bomb**
+| Potion slot | Gold | Effect |
+| --- | ---: | --- |
+| Health Potion | 18 | Restores 35% of maximum HP |
+| Shield Potion | 22 | Grants up to 25 shield for three completed moves |
+| Mega Potion | 42 | Restores full HP |
 
-Current prices:
+| Bomb slot | Gold | Effect |
+| --- | ---: | --- |
+| Bomb | 24 | Clears the confirmed 3×3 area |
+| Color Bomb | 48 | Clears playable gems of the confirmed color |
 
-- Potion: **18 Gold**
-- Bomb: **24 Gold**
-
-Rules:
-
-- Inventory is persistent account state.
-- Each item type has its own Equip/Unequip state.
-- Both may be equipped simultaneously.
-- At run start, each equipped item receives `min(3, owned quantity)` usable run charges.
-- The rest of the persistent inventory does **not** refill the slot mid-run.
-- Inventory is deducted only when an item use is actually accepted.
-- Rejected/cancelled uses spend nothing.
-- Each slot has an independent **5-second game-time cooldown**.
-- Cooldowns pause with gameplay.
-- Running out of run charges disables further use even if persistent inventory still exists.
-
-Current Potion effect: heal **35% maximum HP**.
-
-The Bomb consumable uses board-owned targeting/resolution and must not create a parallel clear/damage pipeline.
+Each slot holds one equipped item. Buying adds to persistent stock. Starting a standard run loads up to three uses of each equipped item. Accepted uses spend a charge and one owned item atomically. The two slots retain independent cooldowns and their selected items through Continue. Legacy loadouts default to Health Potion and Bomb.
 
 ---
 
@@ -1537,7 +1560,7 @@ Current connected UI flow includes:
 
 ## Shop
 
-- Potion and Bomb only for now;
+- five supplies across the potion and bomb equipment slots;
 - purchase quantities;
 - owned stock;
 - Equip/Unequip state.

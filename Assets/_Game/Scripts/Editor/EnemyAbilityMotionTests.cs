@@ -20,6 +20,20 @@ public sealed class EnemyAbilityMotionTests
     public static Entry[] ReadEntries() => JsonUtility.FromJson<Entries>("{\"entries\":" +
         File.ReadAllText("ArtSource/EnemyAttacks/abilities.json") + "}").entries;
 
+    [Test] public void ClipReceiptsAllowGitLineEndingsAndRejectAnAlteredContact()
+    {
+        var utf8=System.Text.Encoding.UTF8;
+        const string lf="%YAML 1.1\n  time: 0.25\n  functionName: AutoAttackImpact\n";
+        byte[] original=utf8.GetBytes(lf), windows=utf8.GetBytes(lf.Replace("\n","\r\n"));
+        using var sha=System.Security.Cryptography.SHA256.Create();
+        foreach(var source in new[]{original,windows})
+        {
+            string receipt=System.BitConverter.ToString(sha.ComputeHash(source)).Replace("-","").ToLowerInvariant();
+            Assert.That(EnemyArtCohesionValidation.MatchesClipReceipt(original,receipt),Is.True);
+            Assert.That(EnemyArtCohesionValidation.MatchesClipReceipt(windows,receipt),Is.True);
+            Assert.That(EnemyArtCohesionValidation.MatchesClipReceipt(utf8.GetBytes(lf.Replace("0.25","0.26")),receipt),Is.False);
+        }
+    }
     [Test] public void AllApprovedStatesHaveNativeFramesAndExactlyTheAuthoredCues()
     {
         foreach (var entry in ReadEntries())

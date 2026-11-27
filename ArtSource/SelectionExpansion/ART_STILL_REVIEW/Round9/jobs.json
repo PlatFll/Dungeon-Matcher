@@ -1,0 +1,137 @@
+[
+  {
+    "jobId": "1d385755-b88e-49df-b960-6d99872d18b2",
+    "assetId": "eeca382a-174e-5fef-92e6-73770ef1d872",
+    "tool": "PixelLab create_image_pro",
+    "status": "completed",
+    "generationCost": 10,
+    "requestedSize": [
+      64,
+      64
+    ],
+    "seed": 921153,
+    "description": "Redesign the attached SHIELD KNIGHT game sprite into his Adventurer Guild counterpart. Keep that specific knight's squat silhouette and grounded pose: upright blocky head above wide projecting shoulders, short bent legs, tiny separated boots, the near elbow tucked behind the tall heraldic shield. This shield carries the silhouette: broad at the shoulders, stepped raised corners and scalloped top around a central point, bows outward, tapering to a single foot-level tip. Keep its near edge riding against the body from armpit to ankle and its face toward the viewer. Give the shield the weight, clean dark-blue face, broad aged-brass rim and an unmistakable single ochre Guild emblem that the reference treatment suggests. Show a small mace low in his free hand with head down. Directly transpose the human under the armour: bare uncovered head, expressive dark eyes, chunky brows, very compact warm human face, blue Guild tabard split over short boots, brown leather belt and shoulder straps, just a small shoulder cap. A different human from the swordsman. Lose the helmet and royal cape. Native battle size 56\u201359 pixels high. Read clearly at 1x. Crisp game pixel clusters, no poster, dots, type, or scene. Full sprite with clear margin on transparent background, one guard per candidate. Explore faces and 2\u20133 coherent liveries: swept black hair with a stern moustache, crop-haired young guard with a neck scarf, older close-bearded patrol veteran with a silver streak, a wiry redheaded guard with thick brows. Keep the knight's authoritative stance and shoulder-high shield on every option.",
+    "guideSHA256": "4122181015ec3442b830e846c605de94d54374f1cde44af893d07b0f5528cce7",
+    "registerSHA256": "e95eae0c386ba33f573bd0d70749e74076360021aeab95e53d3ab0a54b279958",
+    "styleImage": {
+      "name": "RattleBones",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "prod": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "prodSHA256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306",
+      "usage": "Primary rendering only: outlines, cluster size, shadows and highlights.",
+      "styleCopy": [
+        "outline",
+        "shading",
+        "detail"
+      ]
+    },
+    "referenceImages": [
+      {
+        "source": "Assets/_Game/Art/CombatIdles/ShieldKnight_Idle.png",
+        "sheetSHA256": "565acf02e1a668c96ff1be29248ac5f2e78ff018781c879d98b0c3e5ecd34648",
+        "binding": "Assets/_Game/Data/Enemies/Enemy_ShieldKnight.asset",
+        "guid": "ec4064b78a341f24095dfb21beff0d5b",
+        "fileID": "8398212291481329675",
+        "sprite": "ShieldKnight_Idle_00",
+        "rect": [
+          0,
+          0,
+          112,
+          88
+        ],
+        "sha256": "fbaf3959fe52cef5565b3b9b7cab7a6db1c6d0f7afa8e3b4290f6e21a5660955",
+        "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/References/ShieldKnight_Idle_00.png",
+        "usage": "THE principal shape and pose model. Copy this live Shield Knight silhouette, shoulder width, feet, low center of gravity, the shield-to-body ratio, three-quarter angle, stepped top rim and secure shield-arm overlap. Make the exposed human Guild equivalent of THIS exact figure."
+      },
+      {
+        "file": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+        "sha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+        "usage": "The human head, face, travel clothes and palette of his own Guild. Use these for a different, stocky Guild veteran, keep the Shield Knight pose and tall broad shield."
+      }
+    ],
+    "originals": [
+      {
+        "index": 1,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/01.png",
+        "sha256": "3fb87e56ddbf15c7af768bcddc5490ce1840dd6ff81b06e22ae41f93dac5ef2d"
+      },
+      {
+        "index": 2,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/02.png",
+        "sha256": "24288033c2742e8611ab944347bbad92a721c1e7931b7df2c4df6c0f62d30764"
+      },
+      {
+        "index": 3,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/03.png",
+        "sha256": "207527d4c0006eeb4227c5b13f4381e8c5e8b9dcf042523060f650c140e1df5c"
+      },
+      {
+        "index": 4,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/04.png",
+        "sha256": "c3085ab9a32f5ed875c1ed72f48c3fcda10270093d6731a6b197689fdabf814c"
+      },
+      {
+        "index": 5,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/05.png",
+        "sha256": "29e6919224e82c10a482ad7e716ecdd877a502d0806d06d70ad0e49ca6f838bd"
+      },
+      {
+        "index": 6,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/06.png",
+        "sha256": "2ff6dc89da539577b6f56769a0ec57c2cceb954840ca7d5a5774cdc11ab4d39a"
+      },
+      {
+        "index": 7,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/07.png",
+        "sha256": "1d7e28d240364de8fc2dce132d5fd421a64cdd0dbb4556795b8fac3e64409d46"
+      },
+      {
+        "index": 8,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/08.png",
+        "sha256": "3d80a644da725147546bc3d7825f999b6286badc23bf1e3c0f1f1f2f72730db3"
+      },
+      {
+        "index": 9,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/09.png",
+        "sha256": "6bbe29fbd35694e850897e7065d0219ddcebe2c5a84fedf0e0c3ab8029861e44"
+      },
+      {
+        "index": 10,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/10.png",
+        "sha256": "c5229080ac54d7526729a76302ab977ba279c6bf8410bac977be92dda26b2ced"
+      },
+      {
+        "index": 11,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/11.png",
+        "sha256": "037f751c4619416fc436ab599cf2615a82636c8404662e1eb3e33c2bf628e4be"
+      },
+      {
+        "index": 12,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/12.png",
+        "sha256": "8cddc18909afece17fa8ddaa437867068850588f9cd581974e19f1b587defcfc"
+      },
+      {
+        "index": 13,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/13.png",
+        "sha256": "bfd392130a0f4bda616a5267d50de024db095b0a19bc801b8b8f41379f24ec91"
+      },
+      {
+        "index": 14,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/14.png",
+        "sha256": "42cb0fc656d15d8089fa225f5f200494c73c06dd6deed3aa320fdcb35f64248b"
+      },
+      {
+        "index": 15,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/15.png",
+        "sha256": "23371b5207a286b454ec681bff9f05436374ad159ceddac86fe6b71e131c8169"
+      },
+      {
+        "index": 16,
+        "file": "ArtSource/SelectionExpansion/Originals/Round9/bulwark/16.png",
+        "sha256": "1c841cd15cf709f180a3b71d4554031f67fa9308fc115ae2c33e9014ddc3ad60"
+      }
+    ],
+    "receipt": "id: 1d385755-b88e-49df-b960-6d99872d18b2\njob_id: 1d385755-b88e-49df-b960-6d99872d18b2\nmodel: pro\ndescription: Redesign the attached SHIELD KNIGHT game sprite into his Adventurer Guild counterpart. Keep that specific knight's squat silhouette and grounded pose: upright blocky head above wide projecting shoulders, short bent legs, tiny separated boots, the near elbow tucked behind the tall heraldic shield. This shield carries the silhouette: broad at the shoulders, stepped raised corners and scalloped top around a central point, bows outward, tapering to a single foot-level tip. Keep its near edge riding against the body from armpit to ankle and its face toward the viewer. Give the shield the weight, clean dark-blue face, broad aged-brass rim and an unmistakable single ochre Guild emblem that the reference treatment suggests. Show a small mace low in his free hand with head down. Directly transpose the human under the armour: bare uncovered head, expressive dark eyes, chunky brows, very compact warm human face, blue Guild tabard split over short boots, brown leather belt and shoulder straps, just a small shoulder cap. A different human from the swordsman. Lose the helmet and royal cape. Native battle size 56\u201359 pixels high. Read clearly at 1x. Crisp game pixel clusters, no poster, dots, type, or scene. Full sprite with clear margin on transparent background, one guard per candidate. Explore faces and 2\u20133 coherent liveries: swept black hair with a stern moustache, crop-haired young guard with a neck scarf, older close-bearded patrol veteran with a silver streak, a wiry redheaded guard with thick brows. Keep the knight's authoritative stance and shoulder-high shield on every option.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 2\nstyle_image: yes (outline, detail, shading)\nseed: 921153\nasset_id: eeca382a-174e-5fef-92e6-73770ef1d872\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"1d385755-b88e-49df-b960-6d99872d18b2\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/1d385755-b88e-49df-b960-6d99872d18b2/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  }
+]

@@ -70,6 +70,14 @@ public sealed partial class ForestFoundationPlayTests
         RunLaunchOptions.ForestPrototype=false;RunLaunchOptions.StartingZone=zone;
         SceneManager.LoadScene("Game");yield return Stable();
         Assert.That(EditorUtility.audioMasterMute,Is.True);
+        Assert.That(Run.Resonance.Enabled, Is.True, "exercise the live travel and score profile");
+        Run.Travel.enabled = false;
+        Set(Run.Waves, "advanceWavesAutomatically", false);
+        var swap = Run.Board.GetImmediateResponses().First();
+        long initialScore = Run.Resonance.RunScore;
+        Run.Board.ReplayPlayerSwap(swap.Source.Column, swap.Source.Row, swap.Target.Column, swap.Target.Row);
+        yield return Until(() => Run.Continuation.CanCapture && Run.Resonance.RunScore > initialScore,
+            "a legal board swap earns persistent score");
         string folder=Path.GetFullPath(".utmp/RosterEndless");Directory.CreateDirectory(folder);
         var rows=new List<string>{"Zone\tGlobalWave\tEnemy\tHP\tDamage\tIntervalSeconds\tSpecialMoves"};
         foreach(int wave in EndlessDifficultyRevisionTests.Waves)
@@ -77,8 +85,25 @@ public sealed partial class ForestFoundationPlayTests
             Run.Travel.enabled=false;Set(Run.Waves,"advanceWavesAutomatically",false);
             Run.Waves.EnemySpawned+=PauseScalingActor;
             // Advance only the disposable journal; actual spawning and stats use production owners.
-            while(AccountProgression.Current.ActiveRun.completedWaves<wave-1)
+            bool finalSample = wave == EndlessDifficultyRevisionTests.Waves.Last();
+            int firstFixtureWave = finalSample ? wave - 1 : wave;
+            while(AccountProgression.Current.ActiveRun.completedWaves<firstFixtureWave-1)
                 Assert.That(AccountProgression.Current.RecordWave(Run.RunId,AccountProgression.Current.ActiveRun.completedWaves+1,false,false),Is.True);
+            if (finalSample)
+            {
+                // Model a late-visit checkpoint; the current encounter must still bank its own
+                // victory, schedule a real capstone and defeat it before the travel gate opens.
+                var state = Run.Resonance.State;
+                state.charge = Run.Resonance.Tuning.capacity - 1;
+                state.triggeredMask = state.claimedMask = 7;
+                Set(Run.Waves, "currentWave", firstFixtureWave);
+                Run.Waves.SpawnCurrentWave();
+                yield return Stable();
+                KillEncounter();
+                yield return Until(() => Run.Continuation.CanCapture && !Run.Resonance.IsSavePending &&
+                    state.capstonePhase == ResonanceCapstonePhase.Scheduled, "bank predecessor and schedule capstone");
+                Assert.That(state.capstoneWave, Is.EqualTo(wave));
+            }
             Set(Run.Waves,"currentWave",wave);Run.Waves.SpawnCurrentWave();yield return Stable();
             Assert.That(Run.Waves.ActiveEnemies,Is.Not.Empty);
             foreach(var actor in Run.Waves.ActiveEnemies)
@@ -90,11 +115,16 @@ public sealed partial class ForestFoundationPlayTests
             }
             var before=Run.Continuation.Capture();
             yield return ResumeCourtCheckpoint();
-            Assert.That(Run.Waves.CurrentWave,Is.EqualTo(wave));Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo(zone));
+            Assert.That(before.wave, Is.EqualTo(wave));
+            Assert.That(Run.Waves.CurrentWave,Is.EqualTo(before.wave));Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo(zone));
+            Assert.That(Run.Resonance.RunScore, Is.EqualTo(before.resonance.score));
+            Assert.That(Run.Resonance.Committed, Is.EqualTo(before.resonance.charge));
             var tracker=UnityEngine.Object.FindFirstObjectByType<WaveTrackerUI>();
             var label=(TMPro.TMP_Text)Get(tracker,"waveText");
             yield return null;label.ForceMeshUpdate();
-            Assert.That(label.text,Is.EqualTo($"WAVE {wave}"),"Continue displays the restored global depth");
+            Assert.That(tracker.GetComponent<CrystalResonanceHud>(), Is.Not.Null);
+            Assert.That(label.GetParsedText(), Is.EqualTo("SCORE " + before.resonance.score.ToString("N0")),
+                "Continue displays the cumulative score from the saved run");
             Assert.That(label.isTextOverflowing,Is.False);
             foreach(var saved in before.enemies)
             {
@@ -107,15 +137,30 @@ public sealed partial class ForestFoundationPlayTests
         yield return Until(()=>Run.Waves.ActiveEnemies.All(e=>e.GetComponent<EnemyLifecycleVFX>()?.IsSpawning!=true),"scaling portraits finish spawning");
         float feedbackEnd=Time.time+1f;yield return Until(()=>Time.time>=feedbackEnd,"scaling damage feedback settles");
         yield return CaptureScalingPortraits(folder,zone);
-        Run.Travel.enabled=false;Set(Run.Waves,"advanceWavesAutomatically",false);KillEncounter();
-        yield return Until(()=>!Run.Waves.IsWaveActive && Run.Continuation.CanCapture,"scaling source completes");
-        var draft=Run.Continuation.Capture().draft;
-        if(draft.Count>0) {Assert.That(Run.Waves.GetComponent<RunUpgradeCoordinator>().SelectRecordedCard(draft[0]),Is.True);yield return StableAfterCourtWave();}
-        Run.Travel.State.stage=1;Run.Travel.State.destination=destination;
-        Assert.That(Run.Continuation.TryCommitZoneTravel(destination),Is.True);
-        SceneManager.LoadScene("Game");yield return null;yield return null;
-        yield return Until(()=>Run?.InitialStateReady==true && !Run.Continuation.IsRestoring,"scaling destination restores");
-        Run.GetComponent<RunControlsUI>().Close();yield return Stable();
+        Run.Travel.enabled = false;
+        Set(Run.Waves, "advanceWavesAutomatically", false);
+        Assert.That(Run.Resonance.State.capstonePhase, Is.EqualTo(ResonanceCapstonePhase.InProgress));
+        CollectionAssert.AreEquivalent(Run.Resonance.State.capstoneMembers,
+            Run.Waves.OriginalEncounterDefinitions.Select(e => e.EnemyId));
+        Assert.That(Run.Resonance.PortalReady, Is.False);
+        string runId = Run.RunId;
+        long savedScore = Run.Resonance.RunScore;
+        KillEncounter();
+        yield return Until(() => !Run.Waves.IsWaveActive && Run.Continuation.CanCapture &&
+            Run.Resonance.PortalReady, "complete the entire assigned capstone and settle its rewards");
+        Assert.That(Run.Resonance.State.capstonePhase, Is.EqualTo(ResonanceCapstonePhase.Defeated));
+        Assert.That(Run.Travel.State.stage, Is.Zero);
+        var candidates = Resources.LoadAll<ZoneDefinition>("Zones");
+        uint travelSeed = Enumerable.Range(1, 128).Select(i => unchecked((uint)i * 2654435761u))
+            .First(s => ZoneTravelController.ChooseDestination(zone, candidates, new SavedRandom(s)) == destination);
+        Run.Travel.State.random = travelSeed;
+        Run.Travel.enabled = true;
+        yield return Until(() => Run?.InitialStateReady == true && Run.Zone.Definition.zoneId == destination &&
+            !Run.Continuation.IsRestoring && Run.Travel.State.stage == 0 && Run.Continuation.CanCapture &&
+            Run.Waves.IsWaveActive, "production travel commits, reloads and reveals the selected zone");
+        Assert.That(Run.RunId, Is.EqualTo(runId));
+        Assert.That(Run.Resonance.Committed, Is.Zero);
+        Assert.That(Run.Resonance.RunScore, Is.GreaterThanOrEqualTo(savedScore));
         Assert.That(Run.Waves.CurrentWave,Is.EqualTo(151));Assert.That(Run.Travel.LocalWave,Is.EqualTo(1));
         Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo(destination));
         foreach(var actor in Run.Waves.ActiveEnemies)AssertScalingActor(actor,151);

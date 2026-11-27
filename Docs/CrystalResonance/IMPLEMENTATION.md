@@ -60,13 +60,23 @@ reroll. Depth is global and never resets on travel. Seen mechanics/leaders and
 recent capstones carry across visits. Major cooldown is two visits.
 
 Ordinary recipes use current-zone eligibility, introduction safety, whole threat
-and role budgets, tide compatibility and recent-recipe exclusions. Bounded
-procedural fallback uses weighted members/adjacent families. Capstones select a
+and role budgets, and tide compatibility. The selection-repair expansion replaces
+the original recent-label preference with a four-entry formation history. It
+records actual member IDs, escort pairs, roles and pressure families. The next
+ordinary draw uses global depth to weight Early, Mid and Late, then draws a role,
+a family and an authored variant. A new visit clears the local history and
+preserves the run's mechanic and teaching history. The selector prefers a different
+special from the previous encounter when a legal alternative exists. Legacy saves
+use the previous recipe label until member history is available. The defeated
+capstone and last banked encounter identify one normal-only relief draw if more
+charge is needed. The bounded procedural fallback uses weighted members/adjacent families. Capstones select a
 legal kind then an authored whole formation. Repeatable same-zone elite reserves
 remain after unique leaders are spent. Missing legal data raises an explicit
 error instead of silently spawning foreign enemies or skipping a capstone.
 
 ## Adding content
+
+The Drowned Court and Frostwake kit importers rebuild the identities in their own authored kit lists. The two Nacre warriors and the Iceborn Axeman have separate Selection Expansion registrations. Reimporting base kits retains those local entries in their existing relative order ahead of the authored base list. Removing an expansion entry from the zone keeps it removed on reimport. If a kit source later owns an identity itself, its authored definition and order take precedence. Changes to membership, depth eligibility and formation recipes belong together in the zone definition.
 
 Add approved EnemyDefinition references to the zone roster and depth pool;
 declare min/max tiers, per-tier weights, family and summon-only status. Add
@@ -77,7 +87,7 @@ leaders are seen; test dry/wet Court contexts. Preserve response placement caps.
 Do not force a named leader every visit or invent content to fill absent tiers.
 Update the encounter matrix, design status and affected validation evidence.
 
-## Source review and limits
+## November 17 source review and limits
 
 No scene, prefab, enemy sprite, player definition, shop, wallet, health-bar or
 shield asset is changed. New scripts have .meta files; runtime services attach

@@ -348,7 +348,7 @@ The established battle loop is:
 4. Once the accepted move has completely settled, enemies advance turn-counted pressure and may queue board interference. Enemy auto-attacks provide separate real-time pressure.
 5. Defeating the active enemies completes the wave; the next wave begins only after the old board resolution has finished.
 
-Live travel-enabled runs use cumulative score plus a separate 100-point per-zone Resonance meter. Full safe victories bank provisional base charge 5/6/10/14 plus up to three intentional mastery points. Cards queue at 12/40/70, one-of-three after safe combat settlement. A saved 78–88 threshold schedules a same-zone elite/miniboss/occasional major capstone. Travel requires 100 and its complete defeat, then all cards/rewards settle. No fixed King wave or forced Dungeon visit remains. Existing Gold settlement, levels and consumables are unchanged. See [PROGRESSION_PACING.md](PROGRESSION_PACING.md) and [implementation status](CrystalResonance/IMPLEMENTATION.md).
+Live travel-enabled runs use cumulative score plus a separate 100-point per-zone Resonance meter. Full safe victories bank provisional base charge 4/5/10/14 (Court ordinary/pressure overrides 5/6) plus up to three intentional mastery points. Cards queue at 12/40/70, one-of-three after safe combat settlement. A saved 78–88 threshold schedules a same-zone elite/miniboss/occasional major capstone. Travel requires 100 and its complete defeat, then all cards/rewards settle. No fixed King wave or forced Dungeon visit remains. Existing Gold settlement, levels and consumables are unchanged. See [PROGRESSION_PACING.md](PROGRESSION_PACING.md) and [implementation status](CrystalResonance/IMPLEMENTATION.md).
 
 ## Core match-3 design philosophy
 
@@ -650,6 +650,16 @@ Chapters are weighted enemy spawn eras, not fixed wave-by-wave encounter scripts
 
 Crystal Resonance uses depth tiers 1/6/13/25/45 with zone-specific pools, coherent recipes and complete formation budgets. Dungeon locals expire after tier 1; later visits use guards/knights/royals as eligible. Named leaders remain once per run except the required Minister escort. No named leader must appear in every run. Existing enemy identities/kits and summon ownership are preserved. See [encounter matrix](CrystalResonance/ENCOUNTER_MATRIX.md).
 
+Deep Dungeon visits can also encounter the Adventurer Guild. A Bulwark's shield
+call conceals its allies' weakness facets and protects them against new player
+attacks for three subsequent accepted moves. Its own weakness remains playable.
+Defeating or staggering the Bulwark releases protection. Existing poison continues.
+The Guild Chirurgeon restores up to 10 HP to one wounded ally at staff contact.
+The Orc Slinghunter fires one stone per basic attack. Its recovery carries no damage.
+It chooses the lowest remaining health fraction and skips full-health parties.
+The [expansion roster](SelectionExpansion/roster.json) lists all ten enemies.
+
+
 Sword Knight reuses `Enemy_Knight` and its stable ID. He is the Normal Crown melee baseline, with no signature ability. Spear Knight remains Normal with his existing two-hit normal attack. Shield Knight is Special. Knight Captain is a Mini-boss who owns professional formation coordination, distinct from Marshal summoning/interception and Sergeant fortification/siege pressure.
 
 ### Knight Captain
@@ -666,7 +676,7 @@ Sword Knight reuses `Enemy_Knight` and its stable ID. He is the Normal Crown mel
 
 Characters includes a confirmed **Reset to Lv 1** action for the selected character. It resets only that character's permanent level between runs, retaining other characters, wallet, inventory, equipment, records and earned account-wide bomb unlocks. Upgrade gold is not refunded. Reset is disabled at level 1 and while a saved run exists.
 
-Gold is shared; each character level is independent. Shop purchases and equip state persist. Each equipped potion/Bomb loads `min(3, owned)` charges at run start, independently. Inventory is spent exactly once only on accepted use; unused stock remains owned and the same run never reloads charges. Potion heals 35% max HP and cannot be used at full HP. Bomb targets a gem and clears a 3×3 footprint through existing bomb chains, obstacle damage and cascades. Cancellation/invalid use spends nothing. Each slot has its own five-second paused-game-time cooldown.
+Gold is shared and each character levels independently. The merchant sells Health, Shield and Mega Potions for the left slot, and Bombs and Color Bombs for the right. Equipping one replaces the previous item in that slot. Standard runs start with up to three charges per equipped supply. A successful use spends persistent stock once. Full-HP healing, full-shield protection and invalid or cancelled bomb targets cost nothing. Shield Potion protection is consumed before ordinary shield and any remaining potion grant expires after three completed moves. Color Bomb previews all eligible gems of the tapped color before confirmation. Continued runs retain their original selections and slot cooldowns.
 
 The main menu provides Play/Continue, Characters, Shop, Gem Mastery, free practice and post-King challenges. Its gear exposes the same persistent Music, SFX, Vibration and Reduced Motion preferences as in-run settings. Settings provides Resume, Suspend to Menu, confirmed End Run/Retry, independent persistent music/SFX/vibration controls and reduced motion. Suspend preserves this attempt without offline combat time. End Run pays completed waves once; unfinished waves pay nothing. Continued attempts retain their original character, level, mastery, build, charges, board, enemies and pending accepted actions. Account upgrades and supply changes are unavailable during an active run. Legacy journals without combat snapshots settle once on load.
 

@@ -120,6 +120,7 @@ public sealed class EnemySlotUI : MonoBehaviour
 
     private void LateUpdate()
     {
+        weaknessIndicator?.SyncTaunt(CurrentEnemy);
         ApplyHealthBarPosition();
     }
 

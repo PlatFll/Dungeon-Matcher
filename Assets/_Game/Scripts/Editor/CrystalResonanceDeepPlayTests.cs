@@ -74,7 +74,7 @@ public sealed partial class ForestFoundationPlayTests
                     foreach(var phase in new[]{TidePhase.Dry,TidePhase.Pending,TidePhase.Flooded})
                     {
                         water.phase=phase;
-                        for(int tier=0;tier<5;tier++)for(int seed=1;seed<=100;seed++)
+                        for(int tier=0;tier<5;tier++)for(int seed=1;seed<=10000;seed++)
                         {
                             int depth=Run.Zone.Definition.resonanceTierStarts[tier];
                             var random=new SavedRandom(unchecked((uint)seed*2654435761u));

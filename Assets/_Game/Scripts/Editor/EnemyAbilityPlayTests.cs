@@ -58,7 +58,7 @@ public sealed class EnemyAbilityPlayTests
                 Action<EnemyActor,int> shield=(a,n)=>{signal=true;contact=image.sprite;};
                 if(name=="ShieldKnight")ally.ShieldGranted+=shield;
                 if(name=="RoyalArchbishop")board.GemSetMarked+=Mark;
-                Func<bool> effect=()=> name=="CourtMage"?((HashSet<Gem>)Get(board,"frozenPinnedGems")).Count>0:
+                Func<bool> effect=()=> name=="CourtMage"?board.CountOwnedIce(owner.PersistentId)>0:
                     name=="CrossbowGuard"||name=="KnightCaptain"?board.GetPinnedGemCountForOwner(ownerId)>0:
                     name=="RoyalStandardBearer"?board.GetRoyalBannerCountForOwner(ownerId)>0:
                     name=="ShieldKnight"||name=="RoyalArchbishop"?signal:
@@ -71,6 +71,7 @@ public sealed class EnemyAbilityPlayTests
                     yield return new WaitForSecondsRealtime(.4f);Assert.That(effect(),Is.False);Assert.That(image.sprite,Is.SameAs(frozen));Time.timeScale=1;
                 }
                 yield return Until(effect,name+" effect");Assert.That(Time.time-started,Is.GreaterThan(.08f),name+" contact delay");
+                if(name=="CourtMage")Assert.That(board.CountOwnedIce(owner.PersistentId),Is.EqualTo(1),"one owned Frost gem per contact");
                 if(name=="ShieldKnight")
                 {
                     var selection=EnemyAbilityMotionTests.ReadEntries().Single(e=>e.name=="ShieldKnight_Ability");
@@ -85,9 +86,14 @@ public sealed class EnemyAbilityPlayTests
                 foreach(var enemy in run.Waves.ActiveEnemies)enemy.GetComponent<EnemyAutoAttack>().StopAttacking();
                 if(name=="KnightCaptain")
                 {
-                    int hits=0;owner.GetComponent<EnemyAutoAttack>().AttackResolved+=(a,d,applied)=>hits++;
+                    int hits=0;
+                    foreach(var actor in run.Waves.ActiveEnemies)actor.GetComponent<EnemyAutoAttack>().AttackStarted+=a=>hits++;
+                    int allyReadiness=ally.CurrentSpecialTurnCount;
                     Set(owner.GetComponent<KnightCaptainEnemyAbility>(),"preferChains",false);Prime(owner);
-                    yield return Until(()=>hits>0&&!owner.HasAnimationActionInProgress,"Captain commanded attack");
+                    yield return Until(()=>castNames.Count==2&&!owner.HasAnimationActionInProgress,"Captain advances allies");
+                    Assert.That(castNames[1],Is.EqualTo("Advance the Ranks"));
+                    Assert.That(ally.CurrentSpecialTurnCount,Is.EqualTo(allyReadiness+1),"command advances another ally once");
+                    Assert.That(ally.IsSpecialReady,Is.False);Assert.That(hits,Is.Zero,"readiness cannot trigger a free basic");
                 }
                 if(name=="RoyalArchbishop")
                 {
@@ -132,9 +138,10 @@ public sealed class EnemyAbilityPlayTests
             Assert.That(cancelledAnnouncements,Is.Zero,"cancelled shield pre-cast stays silent");
             yield return Spawn("CourtMage");owner.AbilityCastCommitted+=(a,n)=>cancelledAnnouncements++;
             Prime(owner);yield return new WaitForSeconds(.1f);
+            Assert.That(owner.HasAnimationActionInProgress,Is.True,"cancel an active freeze windup");
             owner.GetComponent<CourtMageEnemyAbility>().enabled=false;
             yield return Until(()=>!board.IsBusy&&!board.HasPendingBoardMutation,"disabled freeze cleanup");
-            Assert.That(board.GetFrozenGemCountForOwner(owner.GetInstanceID()),Is.Zero,"cancelled freeze releases target reservation");
+            Assert.That(board.CountOwnedIce(owner.PersistentId),Is.Zero,"cancelled freeze leaves no owned ice");
             Assert.That(owner.HasAnimationActionInProgress,Is.False);
             Assert.That(cancelledAnnouncements,Is.Zero,"cancelled freeze pre-cast stays silent");
 
@@ -228,7 +235,7 @@ public sealed class EnemyAbilityPlayTests
         yield return Until(()=>!board.IsBusy&&!board.HasPendingBoardMutation,"old owner cleanup");
         SetProperty(run.Waves,"IsWaveActive",true); // isolated encounter, with automatic wave advancement disabled
         Assert.That(run.Waves.TrySummonEnemy(Data(name),out owner),Is.True,name);
-        Assert.That(run.Waves.TrySummonEnemy(Data("Farmer"),out ally),Is.True);
+        Assert.That(run.Waves.TrySummonEnemy(Data(name=="KnightCaptain"?"CrossbowGuard":"Farmer"),out ally),Is.True);
         foreach(var actor in run.Waves.ActiveEnemies)
         {
             var attack=actor.GetComponent<EnemyAutoAttack>();Set(attack,"attackAutomatically",false);attack.StopAttacking();
@@ -286,18 +293,25 @@ public sealed class EnemyAbilityPlayTests
         foreach(int height in new[]{1920,2400})
         {
             Resize(height);yield return new WaitForSeconds(.25f);Time.timeScale=0;animator.fireEvents=false;
-            animator.Play("Idle",0,0);animator.Update(0);yield return null;Rect baseline=RectOf(image);float scale=baseline.height/image.sprite.rect.height;
+            animator.Play("Idle",0,0);animator.Update(0);yield return null;yield return null;Canvas.ForceUpdateCanvases();
+            Rect baseline=RectOf(image);float scale=baseline.height/image.sprite.rect.height;
+            var slot=owner.GetComponentInParent<EnemySlotUI>();
+            float floor=baseline.yMin+image.sprite.pivot.y*scale;
+            float ground=BattleFloorAnchor.EnemyFeetScreenY(slot);
             foreach(var entry in EnemyAbilityMotionTests.ReadEntries().Where(e=>e.character==character))
             {
                 int elapsed=0;var frames=CombatActionImporter.LoadFrames(entry.name);
                 for(int i=0;i<frames.Length;i++)
                 {
                     animator.Play(entry.state,0,(elapsed+entry.durations[i]*.5f)/entry.durations.Sum());animator.Update(0);elapsed+=entry.durations[i];
-                    yield return null;Canvas.ForceUpdateCanvases();Rect rect=RectOf(image);
+                    yield return null;yield return null;Canvas.ForceUpdateCanvases();Rect rect=RectOf(image);
                     Assert.That(image.sprite,Is.SameAs(frames[i]),entry.name+" pose "+i);
                     Assert.That(rect.height/frames[i].rect.height,Is.EqualTo(scale).Within(.01f),entry.name+" native scale");
                     Assert.That(scale,Is.EqualTo(Mathf.Round(scale)).Within(.01f));
-                    Assert.That(rect.yMin,Is.EqualTo(baseline.yMin).Within(.1f),entry.name+" fixed floor");
+                    float currentFoot=rect.yMin+image.sprite.pivot.y*scale;
+                    float currentGround=BattleFloorAnchor.EnemyFeetScreenY(slot);
+                    Assert.That(currentFoot-currentGround,Is.EqualTo(floor-ground).Within(.1f),
+                        $"{entry.name} frame {i}: foot {currentFoot} vs idle {floor}, floor {currentGround} vs idle {ground}");
                     Assert.That(rect.center.x,Is.EqualTo(baseline.center.x).Within(.1f),entry.name+" fixed center");
                     if(entry.impactFrames.Contains(i)||entry.loop&&i==0){ScreenCapture.CaptureScreenshot(Path.Combine(output,entry.name+"-"+i+"-"+height+".png"));yield return new WaitForSecondsRealtime(.08f);}
                 }

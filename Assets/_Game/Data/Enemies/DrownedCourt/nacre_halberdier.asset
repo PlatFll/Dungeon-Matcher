@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
+  m_Name: nacre_halberdier
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
+  enemyId: nacre_halberdier
+  displayName: Nacre Halberdier
+  race: Nacre merfolk
+  faction: Nacre Court
+  combatRole: slower heavy Nacre Court escort
+  category: 0
+  eligibleZones:
+  - drowned-court
+  threatCost: 2
+  isBoardDisruptor: 0
+  isSupport: 0
+  useDescriptionForInspection: 1
+  description: The Halberdier takes a slower swing with a harder hit. Its attack counter gives you time to strike first.
+  baseMaxHealth: 90
+  baseDamage: 15
+  baseFollowUpDamage: 0
+  followUpAttackDelay: 0
+  baseAttackInterval: 4
+  firstAttackMoves: 4
+  attackMoves: 4
+  unifiedFirstAttackMoves: 4
+  unifiedAttackMoves: 4
+  pressureFirstAttackMoves: 4
+  pressureAttackMoves: 4
+  pressureSpecialTurns: 5
+  baseSpecialTurnRequirement: 5
+  lockSpecialTurnRequirement: 0
+  hasSpecialAbility: 0
+  specialAbilityKind: 0
+  canFightFlooded: 1
+  oreWeaponEligible: 0
+  minimumWave: 1
+  enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
+  fallbackVisualSprite: {fileID: 1583170791656930038, guid: 76b8dd435e7e51daab98574fe62b3ad0, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: 485f465e1af9518b952f63073938ffdb, type: 2}
+  visualSize: {x: 128, y: 128}
+  timeAutoAttackFromAnimation: 1
+  useAuthoredAutoAttackMotion: 1

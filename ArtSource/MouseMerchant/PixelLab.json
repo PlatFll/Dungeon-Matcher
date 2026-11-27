@@ -1,0 +1,132 @@
+{
+  "model": "create_image_pro",
+  "seeds": [
+    112601,
+    112602,
+    112603,
+    112604
+  ],
+  "jobs": {
+    "mouse": "190411a1-f7d8-4911-87c8-5e505d5c2b82",
+    "stall": "e6c7519b-d0ac-4a06-a914-c2b7ce657a08",
+    "frames": "24f0bb7b-a914-45d3-b952-a510dce52499",
+    "icons": "006115fb-03b7-47f7-80fd-0b7f8da01b76"
+  },
+  "generations": 40,
+  "mouseCandidate": 0,
+  "golden": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+  "mockup": "8ff410c9c1558b8fb9fdb950bcc7a094e46ade8d85fc2ed53c623eada35b5550",
+  "guide": "4122181015ec3442b830e846c605de94d54374f1cde44af893d07b0f5528cce7",
+  "nativePixels": {
+    "Title": [
+      106,
+      45
+    ],
+    "Wallet": [
+      64,
+      28
+    ],
+    "Card": [
+      117,
+      48
+    ],
+    "SelectedCard": [
+      121,
+      46
+    ],
+    "Buy": [
+      87,
+      29
+    ],
+    "Equip": [
+      86,
+      29
+    ],
+    "Socket": [
+      54,
+      53
+    ],
+    "Disabled": [
+      86,
+      28
+    ],
+    "HealthPotion": [
+      39,
+      50
+    ],
+    "ShieldPotion": [
+      40,
+      50
+    ],
+    "Bomb": [
+      44,
+      50
+    ],
+    "MegaPotion": [
+      45,
+      53
+    ],
+    "ColorBomb": [
+      42,
+      47
+    ],
+    "Alcove": [
+      320,
+      146
+    ],
+    "Counter": [
+      320,
+      18
+    ],
+    "MouseHappy": [
+      63,
+      62
+    ],
+    "MouseHelpful": [
+      63,
+      62
+    ],
+    "MousePlayful": [
+      63,
+      62
+    ],
+    "Speech": [
+      38,
+      23
+    ],
+    "Arrow": [
+      18,
+      16
+    ],
+    "Coin": [
+      18,
+      18
+    ],
+    "Rail": [
+      9,
+      19
+    ],
+    "Thumb": [
+      9,
+      19
+    ],
+    "Footer": [
+      32,
+      15
+    ],
+    "FooterJewel": [
+      15,
+      15
+    ]
+  },
+  "styleReference": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+  "artGuide": "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt",
+  "identityReference": "codex-clipboard-359abee6-ed05-4192-97d8-ecc6d4882bf6.png",
+  "selection": "User selected the cream mouse with a feathered plum hat. The banded prism orb is the shop Color Bomb.",
+  "roles": {
+    "mouse": "Reference image supplies identity. Rattlebones supplies outlines, shading and detail.",
+    "stall": "Mockup supplies architecture and composition. Rattlebones supplies pixel rendering.",
+    "frames": "Mockup supplies frame shapes and colors.",
+    "icons": "Mockup supplies item identity. Rattlebones supplies pixel rendering."
+  }
+}

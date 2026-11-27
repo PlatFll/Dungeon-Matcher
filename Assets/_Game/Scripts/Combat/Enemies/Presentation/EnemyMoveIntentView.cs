@@ -12,6 +12,9 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
     private EnemyChannelRuntime channel;
     private TMP_Text text;
     private TMP_Text buffs;
+    private RectTransform specialCounter;
+    private RectTransform wave;
+    private float restingCounterX;
     private RectTransform bar;
     private Image fill;
     private RectTransform link;
@@ -39,6 +42,10 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         if(slot==null) return;
         text=GameUi.Label("MoveIntent",slot.transform,"",new Vector2(108,16),Vector2.zero,12);
         text.textWrappingMode=TextWrappingModes.NoWrap;
+        text.rectTransform.pivot=new Vector2(.5f,0f);
+        wave=GetComponentInParent<GameplayPixelLayoutController>()?.TopHud?.Find("WaveTracker") as RectTransform;
+        foreach(var label in GetComponentsInChildren<TMP_Text>(true))
+            if(label.name=="SpecialAbilityCounter") {specialCounter=label.rectTransform;restingCounterX=specialCounter.localPosition.x;break;}
         weaknessView=slot.GetComponentInChildren<EnemyWeaknessIndicatorUI>(true);
         weakness=weaknessView?.transform as RectTransform;
         buffs=GameUi.Label("EnemyBuffs",slot.transform,"",new Vector2(80,20),Vector2.zero,8);
@@ -124,10 +131,33 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
     private void PositionIntent()
     {
         if(text==null || visual==null) return;
-        text.rectTransform.position=visual.TransformPoint(new Vector3(visual.rect.center.x,visual.rect.yMax,0));
-        // Keep the legacy countdown below the separate, enlarged ability number.
-        // Its old offset let two-digit counters touch longer attack countdowns.
+        text.rectTransform.position=visual.TransformPoint(new Vector3(visual.rect.center.x,visual.rect.yMax+2,0));
         GameplayPixelGrid.Snap(text.rectTransform);
+        if(specialCounter!=null && wave!=null)
+        {
+            // Both counters also appear in older saved clock profiles. Keep the
+            // second line below the fixed header on short portrait screens.
+            var parent=(RectTransform)specialCounter.parent;
+            float top=parent.InverseTransformPoint(wave.TransformPoint(new Vector3(0,wave.rect.yMin))).y;
+            float above=parent.InverseTransformPoint(text.rectTransform.TransformPoint(new Vector3(0,text.rectTransform.rect.yMax))).y+2;
+            var position=specialCounter.localPosition;
+            position.x=restingCounterX;
+            position.y=Mathf.Min(above-specialCounter.rect.yMin,top-specialCounter.rect.yMax-2);
+            if(position.y+specialCounter.rect.yMin<above)
+            {
+                // There is only one line of headroom. Place the rows side by side
+                // using the measured countdown width and the enclosing HUD edges.
+                var hud=(RectTransform)wave.parent;
+                float half=text.preferredWidth*.5f;
+                float right=parent.InverseTransformPoint(text.rectTransform.TransformPoint(Vector3.right*half)).x;
+                float left=parent.InverseTransformPoint(text.rectTransform.TransformPoint(Vector3.left*half)).x;
+                float edge=parent.InverseTransformPoint(hud.TransformPoint(Vector3.right*hud.rect.xMax)).x;
+                float after=right+3-specialCounter.rect.xMin;
+                position.x=after+specialCounter.rect.xMax<=edge?after:left-3-specialCounter.rect.xMax;
+            }
+            specialCounter.localPosition=position;
+            GameplayPixelGrid.Snap(specialCounter);
+        }
         if(buffs!=null && weakness!=null)
         {
             // Share the weakness lane. Below it is the battle frame's mask;

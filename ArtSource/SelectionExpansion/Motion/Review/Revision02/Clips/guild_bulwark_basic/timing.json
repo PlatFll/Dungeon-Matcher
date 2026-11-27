@@ -1,0 +1,62 @@
+{
+  "enemy": "guild_bulwark",
+  "state": "basic",
+  "frameSize": [
+    128,
+    112
+  ],
+  "durationsMs": [
+    70,
+    60,
+    60,
+    60,
+    50,
+    20,
+    90,
+    40,
+    70,
+    60,
+    100
+  ],
+  "oldDurations": [
+    80,
+    70,
+    80,
+    90,
+    100,
+    40,
+    70,
+    50,
+    50,
+    50
+  ],
+  "oldSize": [
+    128,
+    112
+  ],
+  "floorMargin": 14,
+  "oldFloor": 14,
+  "minimumMargin": 14,
+  "totalMs": 680,
+  "impactMs": 320,
+  "identity": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
+  "notes": "The shield covers his flank while the mace rises and lands a short downward strike.",
+  "frameHashes": [
+    "e7e122f7303ec452fb3f3a4374671a4bafe95d1ca7af4454b97e51c437bcfdb3",
+    "fbb4954a60844be281a0c2d9f2a86ab2faf0c239d3c3557a10c8be310bea31d7",
+    "ddb9ff2ff7fb8bce6745bb661afbf1543f50ed765dae1967c8e391ca1a894e4a",
+    "00518349047897c9daa91c9801fd9edd67883789a940e40e47e20d1488315389",
+    "2ced60f0e817af6ab85393892de6e5bca388eb3c89755923bd493650df2575fe",
+    "0b0362ddc8d7678a4568aeed9da5d1a4de304b2da3d45b1d1df47561dcb8c2df",
+    "2bf56ff549f962769a8c3b3add73f8b9ac82fff21fa55a57f2a06fad8e48de82",
+    "132037b7e926de3bf414f8f93a3447a48dd59c074ff4e91fef6cff833f14fce7",
+    "9bfb54d8aba3a30b7d0ffec0e3f702eaac6baaaf6735479759df2bf7e0c08ea0",
+    "fbb4954a60844be281a0c2d9f2a86ab2faf0c239d3c3557a10c8be310bea31d7",
+    "e7e122f7303ec452fb3f3a4374671a4bafe95d1ca7af4454b97e51c437bcfdb3"
+  ],
+  "sheetSHA256": "73fe945a1588a5e7f6f6a507dfcd213d4f2fd0833b06cecbc834f1232e2f9561",
+  "editableSHA256": "ac8e14b8c778a8880bf07c9955500adad690099ef379ecd1af73622140870b81",
+  "events": {
+    "impactMs": 320
+  }
+}

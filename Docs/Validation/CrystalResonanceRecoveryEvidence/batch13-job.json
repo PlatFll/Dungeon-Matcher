@@ -1,0 +1,184 @@
+{
+  "status": "completed",
+  "wrapperPid": 33840,
+  "startedUtc": "2026-11-18T19:23:55.196911+00:00",
+  "sourceCommit": "90bc53b9a872c3cd895ed4e4fdc3ee71f277ba60",
+  "jobDirectory": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb",
+  "stages": [
+    {
+      "name": "validator",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "Tools/Validate-Unity.ps1"
+      ],
+      "startedUtc": "2026-11-18T19:23:55.717532+00:00",
+      "exitCode": 0,
+      "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\validator.log",
+      "pid": 31564,
+      "finishedUtc": "2026-11-18T19:24:11.738218+00:00"
+    },
+    {
+      "name": "focused-regressions",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "Tools/Test-ForestFoundation.ps1",
+        "-Graphics",
+        "-Filter",
+        "CrystalResonanceSelectionTests;CrystalResonanceDirectorTests;CrystalResonanceStateTests;CrystalResonanceContinuationTests;ForestFoundationPlayTests.CrystalResonancePolicy;ForestFoundationPlayTests.CrystalResonanceVisibleFollowup;ForestFoundationPlayTests.CrystalResonanceSlidingFollowup;ForestFoundationPlayTests.CrystalResonanceDamageTelemetry;ForestFoundationPlayTests.DungeonFirst;ForestFoundationPlayTests.CrystalResonanceRecordedCourtCoffer;ForestFoundationPlayTests.CrystalResonanceCards;ForestFoundationPlayTests.CrystalResonanceTravel;ForestFoundationPlayTests.EnvironmentTravelSnapshot;ForestFoundationPlayTests.CourtRevision;ForestFoundationPlayTests.Conch;ForestFoundationPlayTests.Puffer;ForestFoundationPlayTests.Queen"
+      ],
+      "startedUtc": "2026-11-18T19:24:11.738736+00:00",
+      "exitCode": 0,
+      "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\focused-regressions.log",
+      "pid": 35700,
+      "finishedUtc": "2026-11-18T19:29:33.796966+00:00"
+    },
+    {
+      "name": "balance",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "Tools/Test-Balance.ps1",
+        "-OutputDirectory",
+        "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\balance"
+      ],
+      "startedUtc": "2026-11-18T19:29:33.797726+00:00",
+      "exitCode": 0,
+      "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\balance.log",
+      "pid": 35360,
+      "finishedUtc": "2026-11-18T19:33:17.851663+00:00"
+    },
+    {
+      "name": "build-Android",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\cr_refine_build_unique.ps1",
+        "-Target",
+        "Android"
+      ],
+      "startedUtc": "2026-11-18T19:33:17.852211+00:00",
+      "exitCode": 0,
+      "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\build-Android.log",
+      "pid": 25508,
+      "finishedUtc": "2026-11-18T19:36:58.548156+00:00"
+    },
+    {
+      "name": "build-Windows",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\cr_refine_build_unique.ps1",
+        "-Target",
+        "Windows"
+      ],
+      "startedUtc": "2026-11-18T19:36:58.548156+00:00",
+      "exitCode": 0,
+      "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\build-Windows.log",
+      "pid": 29156,
+      "finishedUtc": "2026-11-18T19:37:40.565680+00:00"
+    },
+    {
+      "name": "clean-imports-before-runs",
+      "command": [
+        "C:\\Users\\USER\\DungeonMatcherSpriteFoundry\\venvs\\art\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\cr_stage10_clean_editor_noise.py"
+      ],
+      "startedUtc": "2026-11-18T19:37:40.565680+00:00",
+      "exitCode": 0,
+      "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\clean-imports-before-runs.log",
+      "pid": 17504,
+      "finishedUtc": "2026-11-18T19:37:42.573223+00:00"
+    },
+    {
+      "name": "natural-game-runs",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "Tools/Run-UnityScenario.ps1",
+        "-Method",
+        "CrystalResonancePlaytest.Run",
+        "-Name",
+        "final-20261118-192355-8dcabb"
+      ],
+      "startedUtc": "2026-11-18T19:38:17.348065+00:00",
+      "exitCode": 0,
+      "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\natural-game-runs.log",
+      "pid": 8800,
+      "finishedUtc": "2026-11-18T22:49:12.459677+00:00"
+    },
+    {
+      "name": "analysis",
+      "command": [
+        "C:\\Users\\USER\\DungeonMatcherSpriteFoundry\\venvs\\art\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "Tools/Analyze-CrystalResonance.py",
+        "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261118-193833-880306",
+        "--output",
+        "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\analysis"
+      ],
+      "startedUtc": "2026-11-18T22:49:12.464231+00:00",
+      "exitCode": 0,
+      "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\analysis.log",
+      "pid": 24848,
+      "finishedUtc": "2026-11-18T22:49:14.470915+00:00"
+    },
+    {
+      "name": "native-audit",
+      "command": [
+        "C:\\Users\\USER\\DungeonMatcherSpriteFoundry\\venvs\\art\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "Tools/Audit-CrystalResonanceEvidence.py",
+        "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261118-193833-880306",
+        "--output",
+        "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\audit.json"
+      ],
+      "startedUtc": "2026-11-18T22:49:14.471673+00:00",
+      "exitCode": 0,
+      "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\native-audit.log",
+      "pid": 1728,
+      "finishedUtc": "2026-11-18T22:49:16.480800+00:00"
+    },
+    {
+      "name": "clean-imports-after-runs",
+      "command": [
+        "C:\\Users\\USER\\DungeonMatcherSpriteFoundry\\venvs\\art\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\USER\\.codex\\visualizations\\2026\\10\\10\\01a127fb-8a65-7d73-9061-df9dc2d9843a\\cr_stage10_clean_editor_noise.py"
+      ],
+      "startedUtc": "2026-11-18T22:49:16.481308+00:00",
+      "exitCode": 0,
+      "log": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Recovery\\final-20261118-192355-8dcabb\\clean-imports-after-runs.log",
+      "pid": 6192,
+      "finishedUtc": "2026-11-18T22:49:18.487088+00:00"
+    }
+  ],
+  "batch": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261118-193833-880306",
+  "notification": "No detached notification; foreground session supervised to completion.",
+  "sourceManifestSha256": "d4dbe9bb37d2fc4b93ed397ca1e6dfd539323ce36c37ba9fbe45a8e2f187eaaf",
+  "finishedUtc": "2026-11-18T22:49:19.363067+00:00"
+}

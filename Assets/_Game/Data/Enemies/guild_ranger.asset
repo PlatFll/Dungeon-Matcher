@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
+  m_Name: guild_ranger
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
+  enemyId: guild_ranger
+  displayName: Guild Ranger
+  race: Human
+  faction: Adventurer Guild
+  combatRole: ranged fast-attack contrast
+  category: 0
+  eligibleZones:
+  - dungeon
+  threatCost: 2
+  isBoardDisruptor: 0
+  isSupport: 0
+  useDescriptionForInspection: 1
+  description: Fires two musket shots in quick succession. Each shot lands separately.
+  baseMaxHealth: 80
+  baseDamage: 5
+  baseFollowUpDamage: 5
+  followUpAttackDelay: 0.18
+  baseAttackInterval: 4
+  firstAttackMoves: 3
+  attackMoves: 3
+  unifiedFirstAttackMoves: 3
+  unifiedAttackMoves: 3
+  pressureFirstAttackMoves: 3
+  pressureAttackMoves: 3
+  pressureSpecialTurns: 5
+  baseSpecialTurnRequirement: 5
+  lockSpecialTurnRequirement: 0
+  hasSpecialAbility: 0
+  specialAbilityKind: 0
+  canFightFlooded: 0
+  oreWeaponEligible: 0
+  minimumWave: 25
+  enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
+  fallbackVisualSprite: {fileID: 5032473303024786656, guid: 1f40a43c731253fe8116d616489090d4, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: 90cb6d3284ca5a4ab0f806480560815c, type: 2}
+  visualSize: {x: 128, y: 128}
+  timeAutoAttackFromAnimation: 1
+  useAuthoredAutoAttackMotion: 1

@@ -23,6 +23,7 @@ public sealed partial class ForestFoundationPlayTests
     { yield return MineBossCoreImpact(); }
     private IEnumerator MineBossCoreImpact()
     {
+        avoidMineIntakes=true; // Isolate the boss cast from manual drill fuel and its legitimate interrupt.
         yield return LaunchDelver();var actor=Enemy("grand_delver");var board=Run.Board;
         yield return ReadyMine(actor);Assert.That(board.MineStoneCount,Is.EqualTo(2));
         Assert.That(board.MineStoneTargets().All(t=>t.State.stage==MineStoneStage.Brittle),Is.True);
