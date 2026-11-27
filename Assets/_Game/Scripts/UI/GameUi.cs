@@ -41,10 +41,22 @@ public static class GameUi
         var colors = button.colors; colors.highlightedColor = new Color(1.2f,1.2f,1.2f); colors.disabledColor = new Color(0.45f,0.45f,0.45f); button.colors = colors;
         button.navigation = new Navigation { mode = Navigation.Mode.None };
         button.onClick.AddListener(action);
-        Label("Label", rect, text, size - new Vector2(12, 4), Vector2.zero);
+        // Reserve the bevel and corner ornaments before the font chooses its largest fitting size.
+        Vector2 inset = new Vector2(Mathf.Min(36, size.x * .22f), Mathf.Min(16, size.y * .30f));
+        Label("Label", rect, text, size - inset, Vector2.zero);
         FinalizedUiSkin.Button(button, size.x < 180);
         return button;
     }
+    // The HUD settings gear has its own sorting canvas; a blocking modal owns both drawing and input above it.
+    public static void SortCombatModal(RectTransform overlay, Canvas owner)
+    {
+        var layer = overlay.gameObject.AddComponent<Canvas>();
+        layer.overrideSorting = true;
+        layer.sortingLayerID = owner.sortingLayerID;
+        layer.sortingOrder = owner.sortingOrder + 220;
+        overlay.gameObject.AddComponent<GraphicRaycaster>();
+    }
+
     public static RectTransform Panel(string name, Transform parent, Vector2 size)
     {
         var rect = Rect(name, parent, size, Vector2.zero);

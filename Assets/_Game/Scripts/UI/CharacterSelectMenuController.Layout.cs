@@ -133,7 +133,7 @@ public sealed partial class CharacterSelectMenuController
         heroIdle.updateMode = AnimatorUpdateMode.UnscaledTime;
         figures = Box("CharacterAndStats",page,0,0,360,286);
         var nameplate = Picture("NamePlaque",figures,Art("Plaque"),133,63,222,45);
-        nameLabel = Text("CharacterName",nameplate.transform,"",8,8,206,29,29);
+        nameLabel = Text("CharacterName",nameplate.transform,"",8,11,206,29,29);
         var panel = Picture("StatsPanel",figures,Art("Stats"),136,109,216,151);
         string[] stats = {"Level","HP","Gem Damage","Ability Damage","Energy Cost","Shield Cap"};
         Sprite[] icons = {Art("LevelStar"),Art("Heart"),null,null,Art("Energy"),Art("Shield")};
@@ -154,8 +154,8 @@ public sealed partial class CharacterSelectMenuController
         affinity = statIcons[2];
         details = Box("AbilityAndUpgrade",page,0,278,360,161);
         var parchment = Picture("AbilityParchment",details,Art("Parchment"),9,0,342,94);
-        var badge = Picture("AbilityHeading",parchment.transform,Art("Plaque"),100,-11,142,28);
-        Text("Caption",badge.transform,"ACTIVE ABILITY",5,3,132,21,22);
+        var badge = Picture("AbilityHeading",parchment.transform,Art("Plaque"),100,-14,142,34);
+        Text("Caption",badge.transform,"ACTIVE ABILITY",5,8,132,21,22);
         var socket = Picture("AbilitySocket",parchment.transform,Art("Roster"),12,24,51,52);
         abilityIcon = Picture("AbilityIcon",socket.transform,null,9,9,33,34,true);
         abilityName = Text("AbilityName",parchment.transform,"",73,17,253,23,28,TextAlignmentOptions.MidlineLeft);
@@ -165,8 +165,12 @@ public sealed partial class CharacterSelectMenuController
         progress = Text("LevelProgress",levelPlate.transform,"",7,4,182,37,25);
         levelUp = Control("LevelUp",details,Art("LevelUp"),211,102,138,53,LevelUp);
         Text("Action",levelUp.transform,"LEVEL UP",8,4,122,24,29);
-        costCoin = Picture("GoldCoin",levelUp.transform,ShopArt("Coin"),41,30,13,13,true);
-        costLabel = Text("GoldCost",levelUp.transform,"",8,22,138,29,20);
+        var price = Box("UpgradePrice", levelUp.transform, 8, 25, 122, 23);
+        costCoin = Picture("GoldCoin", price, ShopArt("Coin"), 0, 0, 13, 13, true);
+        costLabel = Text("GoldCost", price, "", 0, 0, 100, 23, 20);
+        GlobalMenuSkin.Place(costCoin.rectTransform, price, new Vector2(13,13), Vector2.zero);
+        GlobalMenuSkin.Place(costLabel.rectTransform, price, new Vector2(100,23), Vector2.zero);
+        price.gameObject.AddComponent<FramedActionContent>().Initialize(costLabel, costCoin, new Rect(0,0,13,13), 5);
 
         collection = Box("RosterSection",page,0,442,360,143);
         var shelf = Picture("Shelf",collection,ShopArt("Footer"),0,-3,360,10);
@@ -198,8 +202,8 @@ public sealed partial class CharacterSelectMenuController
 
         var back = Control("BackButton",page,ShopArt("Wallet"),7,11,41,34,GoBack);
         Picture("Arrow",back.transform,ShopArt("Arrow"),11,8,19,17,true);
-        header = Picture("TitlePlaque",page,Art("Plaque"),52,6,184,47);
-        titleLabel = Text("ScreenTitle",header.transform,"CHARACTERS",11,10,162,28,31);
+        header = Picture("TitlePlaque",page,Art("Plaque"),118,6,124,47);
+        titleLabel = Text("ScreenTitle",header.transform,"CHARACTERS",6,13,112,28,31);
         var purse = Picture("Wallet",page,ShopArt("Wallet"),249,12,103,31);
         Picture("Coin",purse.transform,ShopArt("Coin"),8,6,18,18,true);
         wallet = Text("Gold",purse.transform,"",30,2,63,26,23,TextAlignmentOptions.MidlineRight);

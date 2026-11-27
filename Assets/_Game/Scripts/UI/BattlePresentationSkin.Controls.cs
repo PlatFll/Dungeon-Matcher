@@ -121,7 +121,9 @@ public static partial class BattlePresentationSkin
         // Keep the original nine-pixel gap to the unchanged ability frame and
         // bottom edge above the caption; expand outwards and upwards. Reserve
         // six logical pixels above the visible 28px caption where it is shown.
-        float x=97+r.sizeDelta.x*.5f;
+        // On the narrowest compact layout, use the HUD's outer gutter before sacrificing either button's hit area.
+        float halfWidth = r.sizeDelta.x * .5f;
+        float x = Mathf.Min(97 + halfWidth, hud.rect.width * .5f - halfWidth);
         float y=BottomControlY(hud)+(r.sizeDelta.y-70)*.5f;
         if(displayScale>1)y=Mathf.Max(y,-hud.rect.height*.5f+51+r.sizeDelta.y*.5f);
         r.anchoredPosition=new Vector2(index==0?-x:x,y);GameplayPixelGrid.Snap(r);

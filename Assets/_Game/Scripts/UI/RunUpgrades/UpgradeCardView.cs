@@ -6,8 +6,8 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class UpgradeCardView : MonoBehaviour
 {
-    public const float CardWidth = 152f;
-    public const float CardHeight = 280f;
+    public const float CardWidth = 332f;
+    public const float CardHeight = 100f;
 
     private static readonly Color32 CommonColor =
         new Color32(245, 245, 250, 255);

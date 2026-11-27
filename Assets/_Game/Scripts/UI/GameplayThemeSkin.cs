@@ -14,7 +14,7 @@ public static class GameplayThemeSkin
         Sprite normal=settings?theme.settingsNormal:theme.buttonNormal;
         if(normal==null) return;
         image.sprite=normal;image.color=Color.white;
-        image.type=settings?Image.Type.Simple:Image.Type.Tiled;
+        image.type=settings?Image.Type.Simple:Image.Type.Sliced;
         if(!image.TryGetComponent<NativePixelUiSurface>(out _)) image.gameObject.AddComponent<NativePixelUiSurface>();
         button.transition=Selectable.Transition.SpriteSwap;
         button.spriteState=new SpriteState {

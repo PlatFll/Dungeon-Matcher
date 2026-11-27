@@ -153,7 +153,11 @@ public sealed class ZoneTransitionView : MonoBehaviour
             sparks[i].anchoredPosition=new Vector2(Mathf.Round(Mathf.Cos(angle)*radius),Mathf.Round(Mathf.Sin(angle)*radius));
             sparks[i].GetComponent<Image>().color=new Color(1,.4f,.7f,reduced?0:gem*.8f);
         }
-        title.rectTransform.anchoredPosition=new Vector2(0,-extent.y*.12f);title.color=new Color(1,.86f,.94f,label);
+        Rect safe = UnityEngine.Device.Screen.safeArea;
+        title.rectTransform.sizeDelta = new Vector2(Mathf.Min(430, Mathf.Max(1, safe.width/scale - 24)), 95);
+        title.rectTransform.anchoredPosition = (safe.center - new Vector2(Screen.width,Screen.height)*.5f)/scale
+            + Vector2.down * (safe.height/scale * .12f);
+        title.color=new Color(1,.86f,.94f,label);
     }
     private void Release()
     {

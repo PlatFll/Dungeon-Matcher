@@ -232,6 +232,7 @@ public sealed class MainMenuController : MonoBehaviour
         if(run==null || challengePanel!=null) return;
         homeScreen.SetActive(false);
         challengePanel=GameUi.Panel("EndRunConfirmation",homeScreen.transform.parent,new Vector2(440,460));
+        challengePanel.gameObject.AddComponent<GlobalMenuPixelRoot>().Initialize(challengePanel.sizeDelta, true);
         GameUi.Label("Title",challengePanel,"End this attempt?",new Vector2(400,55),new Vector2(0,175),28);
         GameUi.Label("Reward",challengePanel,account.PreviewReward("End Run")+"\n\nYour saved board and build will end.\nUnused items stay owned.",new Vector2(390,225),new Vector2(0,25),19);
         GameUi.Button("End",challengePanel,"End run and collect gold",new Vector2(350,46),new Vector2(0,-125),()=>
@@ -247,6 +248,7 @@ public sealed class MainMenuController : MonoBehaviour
         if (challengePanel != null) return;
         homeScreen.SetActive(false);
         challengePanel=GameUi.Panel("Challenges",homeScreen.transform.parent,new Vector2(480,580));
+        challengePanel.gameObject.AddComponent<GlobalMenuPixelRoot>().Initialize(challengePanel.sizeDelta, true);
         GameUi.Label("Title",challengePanel,"Personal challenges",new Vector2(440,55),new Vector2(0,230),28);
         bool unlocked=AccountProgression.Current.HasClearedKing;
         GameUi.Label("Rules",challengePanel,unlocked ? "Always available. No expiry or attendance rewards.\nNormal rewards; personal records stay separate." : "Defeat the King to unlock optional challenge runs.\nFree practice is already available from Home.",new Vector2(430,90),new Vector2(0,150),20);

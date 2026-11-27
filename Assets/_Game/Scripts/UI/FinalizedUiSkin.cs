@@ -21,7 +21,7 @@ public static class FinalizedUiSkin
         var normal = Load(family + (selected ? "Highlighted" : "Normal"));
         if (normal == null) normal = Load("ButtonLargeNormal");
         if (normal == null) return;
-        image.sprite = normal; image.color = Color.white; image.type = gear ? Image.Type.Simple : Image.Type.Tiled;
+        image.sprite = normal; image.color = Color.white; image.type = gear ? Image.Type.Simple : Image.Type.Sliced;
         if (!image.TryGetComponent<NativePixelUiSurface>(out _)) image.gameObject.AddComponent<NativePixelUiSurface>();
         button.transition = Selectable.Transition.SpriteSwap;
         image.CrossFadeColor(Color.white, 0f, true, true);

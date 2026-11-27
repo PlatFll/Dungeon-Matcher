@@ -9,7 +9,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
 {
     private const string OverlayName = "RuntimeUpgradeChoiceOverlay";
     private const float CardGap = 12f;
-    private const float CardStep = UpgradeCardView.CardWidth + CardGap;
+    private const float CardStep = UpgradeCardView.CardHeight + CardGap;
 
     private static readonly Color32 BorderColor =
         new Color32(154, 70, 190, 255);
@@ -28,6 +28,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
 
     private Canvas rootCanvas;
     private RectTransform overlayRect;
+    private RectTransform offerLayout;
     private readonly UpgradeCardView[] cardViews =
         new UpgradeCardView[UpgradeDraftGenerator.DefaultChoiceCount];
     private Func<RunUpgradeDefinition, bool> trySelect;
@@ -107,8 +108,8 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
             {
                 RectTransform cardRect = card.transform as RectTransform;
                 cardRect.anchoredPosition = new Vector2(
-                    (index - (count - 1) * 0.5f) * CardStep,
-                    -24f
+                    0f,
+                    ((count - 1) * 0.5f - index) * CardStep
                 );
                 card.Bind(choices[index], definition =>
                 {
@@ -244,27 +245,30 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         overlayRect = overlayObject.GetComponent<RectTransform>();
         StretchToParent(overlayRect, 0f);
 
+        offerLayout = GlobalMenuSkin.Root(overlayRect, "OfferLayout", new Vector2(348, 520), true);
+        GameUi.Panel("OfferPanel", offerLayout, offerLayout.sizeDelta);
+
         Image dimmer = overlayObject.GetComponent<Image>();
         dimmer.color = new Color32(12, 5, 18, 181);
         dimmer.raycastTarget = true;
 
         CreateLabel(
             "UpgradeHeading",
-            overlayRect,
+            offerLayout,
             "CHOOSE AN UPGRADE",
             28f,
             FontStyles.Bold,
-            new Vector2(0f, 190f),
-            new Vector2(420f, 52f)
+            new Vector2(0f, 223f),
+            new Vector2(320f, 46f)
         );
 
         CreateLabel(
             "PickOneLabel",
-            overlayRect,
+            offerLayout,
             "PICK 1",
             13f,
             FontStyles.Bold,
-            new Vector2(0f, 153f),
+            new Vector2(0f, 187f),
             new Vector2(160f, 24f)
         );
 
@@ -272,12 +276,12 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         {
             cardViews[index] = CreateCard(index);
         }
-        refineHelp=GameUi.Label("RefineHelp", overlayRect, "Free, once per run: redraw toward a theme", new Vector2(500,26), new Vector2(0,-206), 16);
+        refineHelp=GameUi.Label("RefineHelp", offerLayout, "Free, once per run: redraw toward a theme", new Vector2(318,32), new Vector2(0,-188), 16);
         foreach (RunUpgradeTheme theme in Enum.GetValues(typeof(RunUpgradeTheme)))
         {
             var selectedTheme = theme;
-            refineButtons.Add(GameUi.Button("Refine" + theme, overlayRect, "Refine " + theme,
-                new Vector2(170,38), new Vector2(((int)theme-1)*180,-240),
+            refineButtons.Add(GameUi.Button("Refine" + theme, offerLayout, "Refine\n" + theme,
+                new Vector2(102,44), new Vector2(((int)theme-1)*112,-228),
                 () => { if (refinement != null) refinement.TryRefine(selectedTheme); }));
             GameplayThemeSkin.Button(refineButtons[refineButtons.Count-1]);
         }
@@ -288,7 +292,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
     {
         GameObject cardObject = CreateUiObject(
             $"UpgradeCard_{index + 1}",
-            overlayRect,
+            offerLayout,
             typeof(RectTransform),
             typeof(CanvasRenderer),
             typeof(Image),
@@ -346,16 +350,16 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
             string.Empty,
             17f,
             FontStyles.Bold,
-            new Vector2(0f, 113f),
-            new Vector2(136f, 38f)
+            new Vector2(43f, 24f),
+            new Vector2(210f, 27f)
         );
 
         RectTransform artworkSection = CreateFixedPanel(
             "ArtworkSection",
             body,
             SectionColor,
-            new Vector2(0f, 40f),
-            new Vector2(136f, 92f)
+            new Vector2(-113f, 0f),
+            new Vector2(76f, 72f)
         );
 
         GameObject artObject = CreateUiObject(
@@ -366,7 +370,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
             typeof(Image)
         );
         RectTransform artRect = artObject.GetComponent<RectTransform>();
-        AnchorAtCenter(artRect, Vector2.zero, new Vector2(64f, 64f));
+        AnchorAtCenter(artRect, Vector2.zero, new Vector2(48f, 48f));
         Image art = artObject.GetComponent<Image>();
         art.sprite = fallbackArtwork;
         art.preserveAspect = true;
@@ -379,9 +383,11 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
             string.Empty,
             14f,
             FontStyles.Normal,
-            new Vector2(0f, -70f),
-            new Vector2(136f, 96f)
+            new Vector2(43f, -12f),
+            new Vector2(210f, 43f)
         );
+        title.alignment = TextAlignmentOptions.MidlineLeft;
+        description.alignment = TextAlignmentOptions.MidlineLeft;
         description.textWrappingMode = TextWrappingModes.Normal;
         description.overflowMode = TextOverflowModes.Ellipsis;
 

@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public static class GlobalMenuSkin
 {
     public static Sprite Load(string name) => Resources.Load<Sprite>("UI/GlobalMenu/" + name);
-    public static RectTransform Root(Transform parent, string name, Vector2 size)
+    public static RectTransform Root(Transform parent, string name, Vector2 size, bool fitModal = false)
     {
         var root=GameUi.Rect(name,parent,size,Vector2.zero);
-        root.gameObject.AddComponent<GlobalMenuPixelRoot>().Initialize(size);
+        root.gameObject.AddComponent<GlobalMenuPixelRoot>().Initialize(size, fitModal);
         return root;
     }
     public static void Place(RectTransform rect, Transform parent, Vector2 size, Vector2 position)
@@ -77,12 +77,20 @@ public static class GlobalMenuSkin
         StyleText(label,em,light);
         if(icon!=null)
         {
-            float iconX=-size.x/2+(family=="Play"?32:shortAction?52:26);
-            // Only these reference icons have a dark inset. The helmet, potion
-            // and purple gem sit directly on the pale stone face.
-            if(family=="Play"||family=="Challenge"||icon=="Practice")
-                Art("IconPlate",button.transform,"IconPlate",new Vector2(32,32),new Vector2(iconX,0));
-            Art("ActionIcon",button.transform,icon,Load(icon).rect.size,new Vector2(iconX,0));
+            Image plate = null;
+            if (family == "Play" || family == "Challenge" || icon == "Practice")
+                plate = Art("IconPlate", button.transform, "IconPlate", new Vector2(32,32), Vector2.zero);
+            var glyph = Art("ActionIcon", plate != null ? plate.transform : button.transform, icon, Load(icon).rect.size, Vector2.zero);
+            // Top-left alpha bounds of the unplated native glyphs. The plate itself fills 32 x 32.
+            Rect bounds = plate != null ? new Rect(0,0,32,32) : icon switch
+            {
+                "Characters" => new Rect(2,3,23,26),
+                "Shop" => new Rect(3,2,17,20),
+                "Mastery" => new Rect(2,2,24,23),
+                "Suspend" => new Rect(1,0,21,21),
+                _ => new Rect(Vector2.zero, glyph.rectTransform.rect.size)
+            };
+            button.gameObject.AddComponent<FramedActionContent>().Initialize(label, plate != null ? plate : glyph, bounds, family == "Play" ? 10 : 7);
         }
     }
     public static void Panel(RectTransform panel,Vector2 size,string title)
@@ -127,10 +135,17 @@ public sealed class GlobalMenuPixelRoot : MonoBehaviour
 {
     private Vector2 nativeSize;
     private RectTransform rect;
+    private bool fitModal;
     public static Rect? ValidationSafeArea;
     public bool AlignTop { get; set; }
     public float AvailableHeight { get; private set; } = 640;
-    public void Initialize(Vector2 size){nativeSize=size;rect=(RectTransform)transform;Refresh();}
+    public void Initialize(Vector2 size, bool constrainModal = false)
+    {
+        nativeSize = size;
+        fitModal = constrainModal;
+        rect = (RectTransform)transform;
+        Refresh();
+    }
     private void LateUpdate()=>Refresh();
     private void Refresh()
     {
@@ -140,7 +155,10 @@ public sealed class GlobalMenuPixelRoot : MonoBehaviour
         // Decorative hall pixels can extend beneath phone cutouts; interactive
         // home content fits the 600px minimum, with edge labels clamped below.
         float minimumHeight=nativeSize.y==640?600:nativeSize.y;
-        int zoom=Mathf.Max(1,Mathf.FloorToInt(Mathf.Min(safe.width/nativeSize.x,safe.height/minimumHeight)));
+        float fit = fitModal
+            ? Mathf.Min(safe.width / (nativeSize.x + 16), safe.height / (nativeSize.y + 16))
+            : Mathf.Min(safe.width / nativeSize.x, safe.height / minimumHeight);
+        float zoom = fitModal && fit < 1 ? Mathf.Max(.01f, fit) : Mathf.Max(1, Mathf.FloorToInt(fit));
         AvailableHeight=safe.height/zoom;
         float parentScale=Mathf.Max(.001f,canvas.scaleFactor);
         rect.localScale=Vector3.one*(zoom/parentScale);

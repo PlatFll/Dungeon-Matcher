@@ -30,8 +30,8 @@ public sealed class GameOverPresentationController : MonoBehaviour
     private const float MenuDropDuration = 0.48f;
     private const float DimTargetAlpha = 0.72f;
 
-    private const float PanelWidth = 440f;
-    private const float PanelHeight = 640f;
+    private const float PanelWidth = 336f;
+    private const float PanelHeight = 560f;
     private const float PanelTopClearance = 24f;
 
     private const float ParticleMinimumSpeed = 72f;
@@ -472,6 +472,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
         );
 
         overlayRect.SetAsLastSibling();
+        GameUi.SortCombatModal(overlayRect, rootCanvas);
 
         GameObject dimmerObject =
             CreateUiObject(
@@ -527,10 +528,11 @@ public sealed class GameOverPresentationController : MonoBehaviour
 
     private void CreateGameOverPanel()
     {
+        var stage = GlobalMenuSkin.Root(overlayRect, "DefeatLayout", new Vector2(PanelWidth, PanelHeight), true);
         GameObject panelObject =
             CreateUiObject(
                 "GameOverPanel",
-                overlayRect,
+                stage,
                 typeof(RectTransform),
                 typeof(CanvasRenderer),
                 typeof(Image)
@@ -587,7 +589,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
             "GAME OVER",
             font,
             34f,
-            new Vector2(0f, 265f),
+            new Vector2(0f, 232f),
             new Vector2(250f, 54f)
         );
 
@@ -598,23 +600,23 @@ public sealed class GameOverPresentationController : MonoBehaviour
             );
 
         retryButton.interactable = false;
-        ((RectTransform)retryButton.transform).anchoredPosition=new Vector2(0,-200);
+        ((RectTransform)retryButton.transform).anchoredPosition=new Vector2(0,-164);
         var reward=AccountProgression.Current.PreviewReward("Defeat");
         CreateLabel("RunReward",faceRect,reward != null ? reward.ToString() : "No completed-wave reward",GameUi.TmpFont,18,
-            new Vector2(0,85),new Vector2(400,110));
-        CreateLabel("FailureCause",faceRect,$"Ended at wave {RunSession.Current?.Waves.CurrentWave}\n{playerActor.LastDamageSummary}",GameUi.TmpFont,19,new Vector2(0,198),new Vector2(400,64));
+            new Vector2(0,77),new Vector2(296,96));
+        CreateLabel("FailureCause",faceRect,$"Ended at wave {RunSession.Current?.Waves.CurrentWave}\n{playerActor.LastDamageSummary}",GameUi.TmpFont,19,new Vector2(0,166),new Vector2(296,70));
         var account=AccountProgression.Current;
-        CreateLabel("SupplyRecap",faceRect,(reward?.SupplyComparison??"")+$"\nStill owned: {account.Owned(account.SelectedPotion)} {SupplyCatalog.Name(account.SelectedPotion)} / {account.Owned(account.SelectedBomb)} {SupplyCatalog.Name(account.SelectedBomb)}",GameUi.TmpFont,16,new Vector2(0,-12),new Vector2(400,66));
-        var viewport=GameUi.Rect("BuildViewport",faceRect,new Vector2(400,90),new Vector2(0,-110));
+        CreateLabel("SupplyRecap",faceRect,(reward?.SupplyComparison??"")+$"\nStill owned: {account.Owned(account.SelectedPotion)} {SupplyCatalog.Name(account.SelectedPotion)} / {account.Owned(account.SelectedBomb)} {SupplyCatalog.Name(account.SelectedBomb)}",GameUi.TmpFont,16,new Vector2(0,-14),new Vector2(296,72));
+        var viewport=GameUi.Rect("BuildViewport",faceRect,new Vector2(296,68),new Vector2(0,-93));
         viewport.gameObject.AddComponent<Image>().color=Color.clear;
         viewport.gameObject.AddComponent<RectMask2D>();
-        var recap=GameUi.Label("BuildRecap",viewport,"Your build: "+BuildNames(),new Vector2(390,90),Vector2.zero,17);
+        var recap=GameUi.Label("BuildRecap",viewport,"Your build: "+BuildNames(),new Vector2(284,68),Vector2.zero,17);
         recap.alignment=TextAlignmentOptions.TopLeft;
         recap.rectTransform.anchorMin=recap.rectTransform.anchorMax=recap.rectTransform.pivot=new Vector2(.5f,1);
         recap.rectTransform.anchoredPosition=Vector2.zero;
-        recap.rectTransform.sizeDelta=new Vector2(390,Mathf.Max(90,recap.preferredHeight));
+        recap.rectTransform.sizeDelta=new Vector2(284,Mathf.Max(68,recap.preferredHeight));
         var scroll=viewport.gameObject.AddComponent<ScrollRect>();scroll.viewport=viewport;scroll.content=recap.rectTransform;scroll.horizontal=false;
-        var changeBuild=GameUi.Button("QuitToMenu",faceRect,"Change build",new Vector2(230,44),new Vector2(0,-265),()=>
+        var changeBuild=GameUi.Button("QuitToMenu",faceRect,"Change build",new Vector2(218,46),new Vector2(0,-226),()=>
         {
             if (!IsRetryAvailable()) return;
             RunLaunchOptions.ChangeBuild=true;
@@ -628,9 +630,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
         GameplayThemeSkin.Button(changeBuild);
 
         float canvasHeight =
-            rootCanvas.transform is RectTransform canvasRect
-                ? canvasRect.rect.height
-                : 960f;
+            overlayRect.rect.height / Mathf.Max(.01f, stage.localScale.y);
 
         float startY =
             Mathf.Max(
