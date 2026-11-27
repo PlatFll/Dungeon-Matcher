@@ -106,7 +106,8 @@ public sealed partial class CharacterSelectMenuController
             header.sprite = Art("Plaque");
             header.rectTransform.anchoredPosition = new Vector2(78, -46);
             header.rectTransform.sizeDelta = new Vector2(204, 34);
-            titleLabel.rectTransform.anchoredPosition = new Vector2(21, -4);
+            // The raised crest leaves less space above the lettering than below it.
+            titleLabel.rectTransform.anchoredPosition = new Vector2(21, -6.5f);
         }
         else
         {
