@@ -47,7 +47,7 @@ public sealed class MenuUiReviewTests
         var menu=Object.FindFirstObjectByType<MainMenuController>();
         Click("CharactersButton");yield return null;Assert.That(Object.FindFirstObjectByType<CharacterSelectMenuController>(),Is.Not.Null);menu.ShowHome();yield return null;
         Click("ShopButton");yield return null;Assert.That(Object.FindFirstObjectByType<ShopMenuController>(),Is.Not.Null);menu.ShowHome();yield return null;
-        menu.ShowGemMastery();yield return null;Assert.That(Object.FindFirstObjectByType<GemMasteryMenuController>(),Is.Not.Null);menu.ShowHome();yield return null;
+        menu.ShowGemMastery();yield return null;Assert.That(GameObject.Find("SpecialGemBuild"),Is.Not.Null);menu.ShowHome();yield return null;
         bool music=AudioPreferences.MusicMuted,sfx=AudioPreferences.SfxMuted,vibration=AudioPreferences.VibrationMuted,motion=PresentationPreferences.ReducedMotion;
         try
         {

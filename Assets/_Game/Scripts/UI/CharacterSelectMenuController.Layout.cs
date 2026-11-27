@@ -16,7 +16,8 @@ public sealed partial class CharacterSelectMenuController
     private TMP_Text nameLabel, abilityName, abilityBody, wallet, costLabel, progress, feedback, startLabel, resetMessage, titleLabel;
     private readonly TMP_Text[] currents = new TMP_Text[6], nexts = new TMP_Text[6], arrows = new TMP_Text[6];
     private readonly Image[] statIcons = new Image[6];
-    private Button levelUp, reset, cardsTab, charactersTab;
+    private Button levelUp, reset, cardsTab, charactersTab, gemsTab;
+    private Image header;
     private Vector2 lastSize;
 
     private static Sprite Art(string name) => Resources.Load<Sprite>("UI/CharacterChamber/" + name);
@@ -188,15 +189,16 @@ public sealed partial class CharacterSelectMenuController
         var play = Control("StartButton",collection,Art("Stats"),278,108,71,27,() => startRequested?.Invoke());
         startLabel = Text("PlayLabel",play.transform,"PLAY",3,2,65,22,19);
 
-        BuildCodex();
+        BuildLibrary();
+        BuildMastery();
         footer = Box("Navigation",page,0,593,360,46);
-        cardsTab = Tab("Cards","CARDS",6,104,GlobalMenuSkin.Load("Challenges"),() => ShowCards(true));
-        charactersTab = Tab("Characters","CHARACTERS",113,126,GlobalMenuSkin.Load("Characters"),() => ShowCards(false));
-        Tab("SpecialGems","SPECIAL GEMS",242,112,GlobalMenuSkin.Load("Mastery"),() => masteryRequested?.Invoke());
+        cardsTab = Tab("Cards","CARDS",6,104,GlobalMenuSkin.Load("Challenges"),() => ShowPage(MenuPage.Cards));
+        charactersTab = Tab("Characters","CHARACTERS",113,126,GlobalMenuSkin.Load("Characters"),() => ShowPage(MenuPage.Characters));
+        gemsTab = Tab("SpecialGems","SPECIAL GEMS",242,112,GlobalMenuSkin.Load("Mastery"),() => { masteryBackToRoster = true; ShowPage(MenuPage.Gems); });
 
-        var back = Control("BackButton",page,ShopArt("Wallet"),7,11,41,34,() => backRequested?.Invoke());
+        var back = Control("BackButton",page,ShopArt("Wallet"),7,11,41,34,GoBack);
         Picture("Arrow",back.transform,ShopArt("Arrow"),11,8,19,17,true);
-        var header = Picture("TitlePlaque",page,Art("Plaque"),52,6,184,47);
+        header = Picture("TitlePlaque",page,Art("Plaque"),52,6,184,47);
         titleLabel = Text("ScreenTitle",header.transform,"CHARACTERS",11,10,162,28,31);
         var purse = Picture("Wallet",page,ShopArt("Wallet"),249,12,103,31);
         Picture("Coin",purse.transform,ShopArt("Coin"),8,6,18,18,true);
@@ -246,7 +248,7 @@ public sealed partial class CharacterSelectMenuController
         details.anchoredPosition = new Vector2(0,-278-extra*.45f);
         collection.anchoredPosition = new Vector2(0,-442-extra*.74f);
         footer.anchoredPosition = new Vector2(0,-593-extra);
-        cardPage.anchoredPosition = new Vector2(0,-69-extra*.38f);
+        LayoutLibrary(extra);
         modal.sizeDelta = new Vector2(360,height);
         modal.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(30,-217-extra*.5f);
     }

@@ -39,6 +39,8 @@ public sealed partial class ForestFoundationPlayTests
             Assert.AreEqual(depth,Run.Waves.CurrentWave);Assert.AreEqual(0,Run.Travel.State.stage);
             var coordinator=Run.Waves.GetComponent<RunUpgradeCoordinator>();
             string choice=Run.Continuation.Capture().draft[0];
+            foreach (string offered in Run.Continuation.Capture().draft)
+                Assert.True(AccountProgression.Current.HasDiscoveredCard(offered), "Visible offer: " + offered);
             Assert.IsTrue(coordinator.SelectRecordedCard(choice));
             Assert.IsFalse(coordinator.SelectRecordedCard(choice),"duplicate callback cannot apply twice");
         }

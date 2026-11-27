@@ -75,9 +75,17 @@ public sealed class RunUpgradeDefinition : ScriptableObject
 
     public string UpgradeId => upgradeId;
     public string DisplayTitle => displayTitle;
-    public string Description => CombatMoveClock.Unified && upgradeId == "longer_reign"
-        ? "Royal Decree lasts +1 accepted move per stack (base 5 moves)."
-        : !CombatMoveClock.MoveEffects ? description : upgradeId == "longer_reign" ? "Royal Decree lasts one extra accepted move (4 total)." : upgradeId == "slow_venom" ? "Poison lasts one extra accepted move (4 ticks total)." : description;
+    public string Description => DescribeEffects(CombatMoveClock.Unified, CombatMoveClock.MoveEffects);
+    // A new run uses the unified move clock even when there is no live combat clock in MainMenu.
+    public string JournalDescription => DescribeEffects(true, true);
+
+    private string DescribeEffects(bool unified, bool moveEffects)
+    {
+        if (unified && upgradeId == "longer_reign") return "Royal Decree lasts +1 accepted move per stack (base 5 moves).";
+        if (moveEffects && upgradeId == "longer_reign") return "Royal Decree lasts one extra accepted move (4 total).";
+        if (moveEffects && upgradeId == "slow_venom") return "Poison lasts one extra accepted move (4 ticks total).";
+        return description;
+    }
     public Sprite Artwork => artwork;
     public RunUpgradeRarity Rarity => rarity;
     public float Weight => weight;

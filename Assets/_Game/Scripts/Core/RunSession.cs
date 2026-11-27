@@ -63,12 +63,10 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         {
             Challenge=continued.challenge;
             resumedCharacter=CharacterSelectionSettings.UseTemporarySelection(continued.playerId);
-            if(continued.mastery!=null && continued.mastery.Count==4)
-                resumedMastery=GemMasterySettings.UseTemporaryLoadout(new GemMasteryLoadout(
-                    continued.mastery[0],continued.mastery[1],continued.mastery[2],continued.mastery[3]));
             RunId=continued.id;
         }
         else RunId = account.BeginRun(CharacterSelectionSettings.SelectedPlayerId, Challenge);
+        ApplyRunMastery(continued ?? account.ActiveRun);
         journalWriteFailed = string.IsNullOrEmpty(RunId);
         if (Waves != null)
         {
@@ -235,12 +233,20 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         journalWriteFailed = !RetrySave();
         Finished?.Invoke();
     }
+    private void ApplyRunMastery(AccountRunJournal journal)
+    {
+        var build = journal?.mastery;
+        if (build?.Count == 4)
+            resumedMastery = GemMasterySettings.UseTemporaryLoadout(new GemMasteryLoadout(build[0], build[1], build[2], build[3]));
+    }
+
     public bool RetrySave()
     {
         if (string.IsNullOrEmpty(RunId))
         {
             if (account.ActiveRun != null) return false;
             RunId = account.BeginRun(CharacterSelectionSettings.SelectedPlayerId,Challenge);
+            ApplyRunMastery(account.ActiveRun);
             journalWriteFailed = string.IsNullOrEmpty(RunId);
             return !journalWriteFailed;
         }

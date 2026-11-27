@@ -22,16 +22,14 @@ public sealed partial class CharacterSelectMenuController : MonoBehaviour
     private RosterEntry selected;
     private AccountProgression account;
     private EnemyWeaknessIndicatorConfig gemIcons;
-    private Action startRequested, backRequested, masteryRequested;
+    private Action startRequested, backRequested;
     private Coroutine flash;
-    private bool showingCards;
     private string resetId;
 
-    public void Initialize(Action start, Action back, Action mastery)
+    public void Initialize(Action start, Action back)
     {
         startRequested = start;
         backRequested = back;
-        masteryRequested = mastery;
         if (page == null)
         {
             account = AccountProgression.Current;
@@ -62,7 +60,7 @@ public sealed partial class CharacterSelectMenuController : MonoBehaviour
     {
         selected = Array.Find(roster, e => e.definition.PlayerId == CharacterSelectionSettings.SelectedPlayerId) ??
             roster.FirstOrDefault();
-        ShowCards(false);
+        ShowPage(MenuPage.Characters);
         feedback.text = "";
         Refresh();
         Layout();

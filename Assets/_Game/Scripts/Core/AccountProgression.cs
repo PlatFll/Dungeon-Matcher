@@ -19,6 +19,7 @@ public sealed class CharacterProgress
 {
     public string id;
     public int level = 1;
+    public List<GemMasteryReward> mastery;
 }
 
 [Serializable]
@@ -82,6 +83,8 @@ public sealed class AccountSave
     public AccountRunJournal run;
     public RunRewardSummary lastReward;
     public List<ChallengeRecord> challengeRecords = new List<ChallengeRecord>();
+    public List<string> discoveredCards;
+    public List<GemMasteryReward> inheritedMastery;
     public List<string> seenLessons = new List<string>();
 }
 
@@ -129,9 +132,20 @@ public sealed class AccountProgression
             if (File.Exists(saveFile) || File.Exists(saveFile + ".bak"))
                 throw new IOException("Account save and backup could not be read; originals were preserved.");
             state = new AccountSave();
-            if (migrateLegacy) MigrateLegacySelections(state,PlayerPrefs.HasKey,key=>PlayerPrefs.GetInt(key));
+
         }
         if (state.version != 1) throw new IOException("This account was saved by an unsupported game version.");
+        if (migrateLegacy && state.inheritedMastery?.Count != 4)
+        {
+            state.unlocked ??= new List<GemSpecialType>();
+            MigrateLegacySelections(state, PlayerPrefs.HasKey, key => PlayerPrefs.GetInt(key));
+            state.inheritedMastery = new List<GemMasteryReward>();
+            foreach (GemMasteryShape shape in Enum.GetValues(typeof(GemMasteryShape)))
+            {
+                var reward = (GemMasteryReward)PlayerPrefs.GetInt("DungeonMatcher.GemMastery.v1." + shape, 0);
+                state.inheritedMastery.Add(GemMasteryRuntimeResolver.IsRewardImplemented(reward) ? reward : GemMasteryReward.ColorCrystal);
+            }
+        }
         Normalize(state);
         // Older saves have rewards/charges but no combat state. Settle that
         // legacy journal once; current runs survive process interruption.
@@ -150,6 +164,40 @@ public sealed class AccountProgression
         private Action restore;
         public RestoreProfile(Action restore) { this.restore = restore; }
         public void Dispose() { restore?.Invoke(); restore = null; }
+    }
+
+    public bool HasDiscoveredCard(string id) => state.discoveredCards.Contains(id);
+
+    public bool RememberCardOffer(IReadOnlyList<RunUpgradeDefinition> offers, int count)
+    {
+        if (IsPractice || state.run == null) return true;
+        var additions = new List<string>();
+        for (int i = 0; i < count; i++)
+        {
+            string id = offers[i].UpgradeId;
+            if (!string.IsNullOrEmpty(id) && !HasDiscoveredCard(id) && !additions.Contains(id)) additions.Add(id);
+        }
+        return additions.Count == 0 || Commit(next => next.discoveredCards.AddRange(additions));
+    }
+
+    internal GemMasteryLoadout CharacterMastery(string id)
+    {
+        var values = state.characters.Find(character => character.id == id)?.mastery;
+        if (values?.Count != 4) values = state.inheritedMastery;
+        if (values?.Count != 4) return GemMasteryLoadout.Default;
+        GemMasteryReward Valid(int index) => IsUnlocked(values[index]) ? values[index] : GemMasteryReward.ColorCrystal;
+        return new GemMasteryLoadout(Valid(0), Valid(1), Valid(2), Valid(3));
+    }
+
+    internal bool SaveMastery(string id, GemMasteryLoadout build)
+    {
+        if (!CharacterSelectionSettings.IsSelectableCharacter(id)) return false;
+        return Commit(next =>
+        {
+            var entry = next.characters.Find(character => character.id == id);
+            if (entry == null) { entry = new CharacterProgress { id = id }; next.characters.Add(entry); }
+            entry.mastery = new List<GemMasteryReward> { build.StraightFive, build.LShape, build.TShape, build.CrossShape };
+        });
     }
 
     public int Level(string id)
@@ -262,12 +310,12 @@ public sealed class AccountProgression
         int cap = Math.Min(3, Math.Max(0, BalanceV1.Current.maximumRunCharges));
         int potions = challenge == RunChallenge.Standard && state.equipPotions ? Math.Min(cap, Owned(state.potionKind)) : 0;
         int bombs = challenge == RunChallenge.Standard && state.equipBombs ? Math.Min(cap, Owned(state.bombKind)) : 0;
+        var build = GemMasterySettings.ForCharacter(this, playerId);
         return Commit(next => next.run = new AccountRunJournal
         {
             id = id, playerId = playerId, level = Level(playerId), challenge = challenge,
             supportsContinuation=true,
-            mastery=new List<GemMasteryReward> { GemMasterySettings.Current.StraightFive,GemMasterySettings.Current.LShape,
-                GemMasterySettings.Current.TShape,GemMasterySettings.Current.CrossShape },
+            mastery=new List<GemMasteryReward> { build.StraightFive, build.LShape, build.TShape, build.CrossShape },
             potionKind = next.potionKind, bombKind = next.bombKind,
             potionCharges = potions, initialPotionCharges = potions,
             bombCharges = bombs, initialBombCharges = bombs
@@ -532,6 +580,15 @@ public sealed class AccountProgression
     }
     private static void Normalize(AccountSave save)
     {
+        if (save.discoveredCards == null)
+        {
+            save.discoveredCards = new List<string>();
+            // Older accounts have no offer history. Applied cards in a surviving run are verifiable discoveries.
+            if (save.run?.checkpoint?.cards != null)
+                foreach (var owned in save.run.checkpoint.cards)
+                    if (owned != null && !string.IsNullOrEmpty(owned.id) && !save.discoveredCards.Contains(owned.id))
+                        save.discoveredCards.Add(owned.id);
+        }
         save.characters ??= new List<CharacterProgress>();
         save.unlocked ??= new List<GemSpecialType>();
         save.challengeRecords ??= new List<ChallengeRecord>();

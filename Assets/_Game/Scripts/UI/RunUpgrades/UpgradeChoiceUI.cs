@@ -32,6 +32,8 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         new UpgradeCardView[UpgradeDraftGenerator.DefaultChoiceCount];
     private Func<RunUpgradeDefinition, bool> trySelect;
     private bool selectionPending;
+    private IReadOnlyList<RunUpgradeDefinition> unsavedOffer;
+    private int visibleOfferCount;
     private object choiceSession;
     private TMP_FontAsset uiFont;
     private Sprite fallbackArtwork;
@@ -124,6 +126,8 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         for(int i=0;i<refineButtons.Count;i++) refineButtons[i].interactable = refinement != null && refinement.CanRefineTheme((RunUpgradeTheme)i);
         if(refineHelp!=null) refineHelp.text=refinement!=null && refinement.CanRefine ? "Free, once per run: redraw toward a theme" : "Refine used this run";
         overlayRect.SetAsLastSibling();
+        visibleOfferCount = count;
+        unsavedOffer = RunSession.Current != null && !AccountProgression.Current.RememberCardOffer(choices, count) ? choices : null;
         return true;
     }
 
@@ -132,6 +136,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         bool hadChoice = choiceSession != null;
         choiceSession = null;
         trySelect = null;
+        unsavedOffer = null;
         selectionPending = false;
 
         if (overlayRect != null)
@@ -163,6 +168,8 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         }
 
         object session = choiceSession;
+        if (unsavedOffer != null && !AccountProgression.Current.RememberCardOffer(unsavedOffer, visibleOfferCount)) return;
+        unsavedOffer = null;
         Func<RunUpgradeDefinition, bool> handler = trySelect;
         selectionPending = true;
         SetCardsInteractable(false);
