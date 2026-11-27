@@ -100,6 +100,7 @@ public sealed partial class CharacterSelectMenuController
         cardPage.gameObject.SetActive(target == MenuPage.Cards);
         masteryPage.gameObject.SetActive(target == MenuPage.Gems);
         titleLabel.text = rosterOpen ? "CHARACTERS" : target == MenuPage.Cards ? "CARDS" : "SPECIAL GEMS";
+        titleLabel.rectTransform.sizeDelta = new Vector2(rosterOpen ? 112 : 162, 28);
         if (target == MenuPage.Gems)
         {
             // The wallet and back button occupy the first line. Center the title on the line below.
@@ -112,9 +113,9 @@ public sealed partial class CharacterSelectMenuController
         else
         {
             header.sprite = rosterOpen ? Art("Plaque") : ShopArt("Title");
-            header.rectTransform.anchoredPosition = rosterOpen ? new Vector2(52,-6) : new Vector2(72,-27);
-            header.rectTransform.sizeDelta = rosterOpen ? new Vector2(184,47) : new Vector2(216,50);
-            titleLabel.rectTransform.anchoredPosition = rosterOpen ? new Vector2(11,-10) : new Vector2(27,-14);
+            header.rectTransform.anchoredPosition = rosterOpen ? new Vector2(118,-6) : new Vector2(72,-27);
+            header.rectTransform.sizeDelta = rosterOpen ? new Vector2(124,47) : new Vector2(216,50);
+            titleLabel.rectTransform.anchoredPosition = rosterOpen ? new Vector2(6,-13) : new Vector2(27,-14);
         }
         cardsTab.image.sprite = Art(target == MenuPage.Cards ? "RosterSelected" : "Stats");
         charactersTab.image.sprite = Art(rosterOpen ? "RosterSelected" : "Stats");

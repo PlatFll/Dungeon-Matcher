@@ -133,15 +133,20 @@ public sealed class SilverRoyalRelicProductionTests
         label.ForceMeshUpdate();
         string score=RunSession.Current.Resonance.RunScore.ToString("N0");
         Assert.That(label.GetParsedText(),Is.EqualTo("SCORE "+score));
-        string saved=label.text;
+        var resonance = RunSession.Current.Resonance;
+        var saved = resonance.State.Copy();
         try
         {
-            label.text=saved.Substring(0,saved.LastIndexOf(' ')+1)+"99,999";
+            var fiveDigits = saved.Copy();
+            fiveDigits.score = 99999;
+            resonance.Restore(fiveDigits);
             label.ForceMeshUpdate();
-            Assert.That(label.textBounds.size.x,Is.LessThanOrEqualTo(label.rectTransform.rect.width+.1f),
+            Assert.That(label.GetParsedText(), Is.EqualTo("SCORE 99,999").Or.EqualTo("99,999 PTS"), "display the exact score and its unit");
+            Assert.That(label.textBounds.min.x, Is.GreaterThanOrEqualTo(label.rectTransform.rect.xMin - .1f));
+            Assert.That(label.textBounds.max.x, Is.LessThanOrEqualTo(label.rectTransform.rect.xMax + .1f),
                 "five score digits fit the native plaque");
         }
-        finally {label.text=saved;}
+        finally { resonance.Restore(saved); }
         Assert.That(wave.transform.Find("ResonanceTrack"),Is.Not.Null);
         // Requested large-phone sizes, fixed compact fallback, and precise rail
         // joins are independent of the production helper's implementation.

@@ -332,10 +332,13 @@ public sealed class RunControlsUI : MonoBehaviour
             text+="\n\nDROWNED COURT\nFlooding lasts 10-12 accepted moves. AIR starts at five; each move spends one. Pop a bubbled gem to restore two. At zero AIR take 5 damage after enemy actions, except the final move drains first. Break Air Coffers or defeat their owners to recover captured bubbles. Sapphire gem damage gains 15%.";
         if (session == null || session.IsFinished || overlay != null) return;
         session.CancelTargeting(); BuildOverlay("Combat guide · paused"); Pause();
-        float pw=DungeonPixelLabBattleArt.Controls?Mathf.Min(500,safeRoot.rect.width-16):500;
-        float ph=DungeonPixelLabBattleArt.Controls?Mathf.Min(660,safeRoot.rect.height-20):660;
-        panel.sizeDelta=new Vector2(pw,ph);
-        panel.Find("Title").GetComponent<RectTransform>().anchoredPosition=new Vector2(0,ph/2-50);
+        float pw = Mathf.Min(500, safeRoot.rect.width - 16);
+        float ph = Mathf.Min(660, safeRoot.rect.height - 20);
+        panel.sizeDelta = new Vector2(pw,ph);
+        panel.position = safeRoot.TransformPoint(safeRoot.rect.center);
+        var heading = (RectTransform)panel.Find("Title");
+        heading.sizeDelta = new Vector2(pw - 32, 54);
+        heading.anchoredPosition = new Vector2(0, ph/2 - 50);
         var viewport=GameUi.Rect("GuideViewport",panel,new Vector2(pw-50,ph-250),new Vector2(0,25));
         // Text-only scrolling uses rect clipping, avoiding an unnecessary
         // stencil-write material over the native pixel font.
@@ -356,9 +359,7 @@ public sealed class RunControlsUI : MonoBehaviour
     {
         overlay=GameUi.Rect("RunSettingsOverlay",canvas.transform,Vector2.zero,Vector2.zero);
         overlay.anchorMin=Vector2.zero;overlay.anchorMax=Vector2.one;overlay.offsetMin=overlay.offsetMax=Vector2.zero;
-        var modalCanvas=overlay.gameObject.AddComponent<Canvas>();
-        modalCanvas.overrideSorting=true;modalCanvas.sortingOrder=canvas.sortingOrder+220;
-        overlay.gameObject.AddComponent<GraphicRaycaster>();
+        GameUi.SortCombatModal(overlay, canvas);
         var dim=overlay.gameObject.AddComponent<Image>();dim.color=new Color(0,0,0,0.8f);
         panel=GameUi.Panel("Panel",overlay,new Vector2(380,420));
         GameUi.Label("Title",panel,title,new Vector2(340,54),new Vector2(0,163),28);
@@ -379,6 +380,7 @@ public sealed class RunControlsUI : MonoBehaviour
     {
         if(overlay!=null){Destroy(overlay.gameObject);overlay=null;}
         BuildOverlay(scene=="Game"?"Retry this run?":"Leave this run?");
+        panel.gameObject.AddComponent<GlobalMenuPixelRoot>().Initialize(panel.sizeDelta, true);
         GameUi.Label("Policy",panel,"Completed waves earn gold.\nThe current partial wave earns none.\nUnused consumables stay owned.",new Vector2(330,110),new Vector2(0,60),20);
         GameUi.Button("Confirm",panel,"Confirm",new Vector2(280,48),new Vector2(0,-45),()=>Exit(scene));
         GameUi.Button("Cancel",panel,"Back",new Vector2(280,48),new Vector2(0,-110),()=>{Close();OpenSettings();});
@@ -386,6 +388,7 @@ public sealed class RunControlsUI : MonoBehaviour
     private void OpenVictory()
     {
         Close();BuildOverlay("Artifact defended!");Pause();
+        panel.gameObject.AddComponent<GlobalMenuPixelRoot>().Initialize(panel.sizeDelta, true);
         GameUi.Label("Reward",panel,(session.RewardFinalized?AccountProgression.Current.LastReward:AccountProgression.Current.PreviewReward("Victory"))?.ToString()??"Saving reward...",new Vector2(330,150),new Vector2(0,25),21);
         GameUi.Button("Retry",panel,"Retry",new Vector2(280,44),new Vector2(0,-85),()=>Exit("Game"));
         GameUi.Button("Menu",panel,"Quit to Menu",new Vector2(280,44),new Vector2(0,-140),()=>Exit("MainMenu"));

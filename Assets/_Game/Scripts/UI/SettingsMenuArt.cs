@@ -98,29 +98,37 @@ public static class SettingsMenuArt
         Rect bounds = kind == "Resume" || kind == "Back" ? new Rect(5, 3, 14, 18) :
             kind == "Suspend" ? new Rect(1, 0, 21, 21) :
             kind == "Retry" ? new Rect(3, 2, 18, 19) : new Rect(2, 3, 18, 19);
-        button.gameObject.AddComponent<SettingsActionContent>().Initialize(label, icon, bounds);
+        button.gameObject.AddComponent<FramedActionContent>().Initialize(label, icon, bounds);
         return button;
     }
 }
 
 /// <summary>Centers painted icon/text bounds together, including font-size changes at integer screen scales.</summary>
-public sealed class SettingsActionContent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
+public sealed class FramedActionContent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
     private TMP_Text label;
     private Image icon;
     private Rect iconBounds;
+    private float gap;
     private bool pressed;
-    public void Initialize(TMP_Text text, Image glyph, Rect bounds) { label = text; icon = glyph; iconBounds = bounds; }
+    public void Initialize(TMP_Text text, Image glyph, Rect bounds, float spacing = 12)
+    {
+        label = text;
+        icon = glyph;
+        iconBounds = bounds;
+        gap = spacing;
+    }
     private void LateUpdate()
     {
         if (label == null) return;
-        label.ForceMeshUpdate();
+        if (label.havePropertiesChanged) label.ForceMeshUpdate();
         var bounds = label.textBounds;
-        float width = iconBounds.width + 12 + bounds.size.x;
-        float left = -width / 2;
+        float leading = icon.enabled ? iconBounds.width + gap : 0;
+        float left = -(leading + bounds.size.x) * .5f;
         float dy = pressed ? -1 : 0;
-        icon.rectTransform.anchoredPosition = new Vector2(Mathf.Round(left + 12 - iconBounds.x), Mathf.Round(iconBounds.center.y - 12) + dy);
-        label.rectTransform.anchoredPosition = new Vector2(Mathf.Round(left + iconBounds.width + 12 - bounds.min.x), Mathf.Round(-bounds.center.y) + dy);
+        var half = icon.rectTransform.rect.size * .5f;
+        icon.rectTransform.anchoredPosition = new Vector2(Mathf.Round(left + half.x - iconBounds.x), Mathf.Round(iconBounds.center.y - half.y) + dy);
+        label.rectTransform.anchoredPosition = new Vector2(Mathf.Round(left + leading - bounds.min.x), Mathf.Round(-bounds.center.y) + dy);
     }
     public void OnPointerDown(PointerEventData data) { if (data.button == PointerEventData.InputButton.Left) pressed = true; }
     public void OnPointerUp(PointerEventData data) => pressed = false;
