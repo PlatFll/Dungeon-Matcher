@@ -1,0 +1,49 @@
+{
+  "enemy": "nacre_duelist",
+  "state": "idle",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round3/nacre_duelist.png",
+  "firstFrameSHA256": "354ff348ce40a1610bfccb475047b862725b2fa1fad3d5f93463ea41204a82a5",
+  "seed": 385118,
+  "count": 8,
+  "prompt": "A balanced fencing guard. A restrained breath shifts the rapier tip, fins settle. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "4c54d5a3-c522-4c0c-aabe-64e4df4b43f9",
+  "receipt": "id: 4c54d5a3-c522-4c0c-aabe-64e4df4b43f9\njob_id: 4c54d5a3-c522-4c0c-aabe-64e4df4b43f9\naction: A balanced fencing guard. A restrained breath shifts the rapier tip, fins settle. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385118\nasset_id: 20491655-4c10-5ff1-9dd8-28f2fbbce4bc\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"4c54d5a3-c522-4c0c-aabe-64e4df4b43f9\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/4c54d5a3-c522-4c0c-aabe-64e4df4b43f9/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/idle/4c54d5a3-c522-4c0c-aabe-64e4df4b43f9/00.png",
+      "sha256": "beb55f7fad2679db554cc4f9adab2f06df3139bf709c48a41cb6aff8b49b19f8"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/idle/4c54d5a3-c522-4c0c-aabe-64e4df4b43f9/01.png",
+      "sha256": "2b4eae5540237076a48134aa27348c53859afde52a34119fb5ddacbd6cb86ef7"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/idle/4c54d5a3-c522-4c0c-aabe-64e4df4b43f9/02.png",
+      "sha256": "59fffdb31867c7f9655355f7629f7ed60b08d9ca65b8a664b468c2f396d9b756"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/idle/4c54d5a3-c522-4c0c-aabe-64e4df4b43f9/03.png",
+      "sha256": "349cf7608772ce0c7837901e040cd7651504b7fdae1279d50a315daf55f2dc7e"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/idle/4c54d5a3-c522-4c0c-aabe-64e4df4b43f9/04.png",
+      "sha256": "de211078837fb4271f1ef6fe36bb93a308863c656e5c86879404ede47a4f6219"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/idle/4c54d5a3-c522-4c0c-aabe-64e4df4b43f9/05.png",
+      "sha256": "665cd4d6451a96aff1a8ab66c05ff3e909a3d2f910c3c051ebfa9c79bd3e64bd"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/idle/4c54d5a3-c522-4c0c-aabe-64e4df4b43f9/06.png",
+      "sha256": "d0f8670597a55e2af80857e1870facb238c048f92345dc5c7e6c764834ebc904"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/idle/4c54d5a3-c522-4c0c-aabe-64e4df4b43f9/07.png",
+      "sha256": "8f702585263476b20db73d1b49de638f7341444203cb37ebabaf702c087148dc"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/nacre_duelist/idle/4c54d5a3-c522-4c0c-aabe-64e4df4b43f9/08.png",
+      "sha256": "4f20bb471b4b3430fe88c4543f717cde538ac00cfd6a046593e0ad9383db1a19"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "enemy": "guild_swordsman",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_swordsman.png",
+  "firstFrameSHA256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+  "seed": 585101,
+  "count": 8,
+  "prompt": "Lift his steel sword above his leftward face, step onto the leading boot and sweep the solid blade through a single descending diagonal cut to the left. Recover and return to the original pose. Keep the blade in his grasp, silvery steel with no glow, flash or trails.",
+  "id": "111b0342-4255-41ee-9153-a48df6c91e27",
+  "receipt": "id: 111b0342-4255-41ee-9153-a48df6c91e27\njob_id: 111b0342-4255-41ee-9153-a48df6c91e27\ndescription: Lift his steel sword above his leftward face, step onto the leading boot and sweep the solid blade through a single descending diagonal cut to the left. Recover and return to the original pose. Keep the blade in his grasp, silvery steel with no glow, flash or trails.\nframes: 8\nsize: 112x88px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 585101\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"111b0342-4255-41ee-9153-a48df6c91e27\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/111b0342-4255-41ee-9153-a48df6c91e27/download (423 + Retry-After until ready; ?index=N for the Nth of several images)\nasset_id: 8aabd8a6-cb27-5368-ad14-5f12e9400231\nasset_status: pending (saved to your gallery when generation completes)",
+  "subject": "A compact human guild swordsman with a short steel sword, travel pack and indigo tunic.",
+  "tool": "animate_image_pixminimax",
+  "correctionOf": "8678e78f-c85e-4bf3-a23d-1129d6ac7f4c",
+  "lastFrameSHA256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/111b0342-4255-41ee-9153-a48df6c91e27/00.png",
+      "sha256": "1c9855b71b0b87ddc81a8ae1ad4a105a346eabee8bcf17ef89068cc442608bd2"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/111b0342-4255-41ee-9153-a48df6c91e27/01.png",
+      "sha256": "282bac36c8d0dfb785a59a7b2e3614d153ba82530734f5a9879aeb28d3c07fcc"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/111b0342-4255-41ee-9153-a48df6c91e27/02.png",
+      "sha256": "124010f57f47fa73fe021eab7755e5a81d2b54e6c4a5d1371ee276d4fee15f4d"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/111b0342-4255-41ee-9153-a48df6c91e27/03.png",
+      "sha256": "3b19f22b6a7a16e608399bbf47147af297545a0e9f9d4a1b7d5f8cae58aa9096"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/111b0342-4255-41ee-9153-a48df6c91e27/04.png",
+      "sha256": "71bf242d29cc35c5ddf9a6fd21f826b056e1cd87dae7929623457b447a243b0d"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/111b0342-4255-41ee-9153-a48df6c91e27/05.png",
+      "sha256": "0bd47bc5208a0e812ef487f00c8597972e4a367f6d50a4a44fc09c5304a3af7b"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/111b0342-4255-41ee-9153-a48df6c91e27/06.png",
+      "sha256": "a14931148d362628dd6d44ae40dca09b5ffe79d369a36333b4fdc8f51c0470bb"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/111b0342-4255-41ee-9153-a48df6c91e27/07.png",
+      "sha256": "cf4d3497e3978f847eaad35b1560be8c2a2e2bffb0876592e8b256c05e100c7a"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_swordsman/basic/111b0342-4255-41ee-9153-a48df6c91e27/08.png",
+      "sha256": "b4e18bbcc244c8616aa30dc873f3eb9aee13835382ab625ff816d4e6fddd24ee"
+    }
+  ]
+}

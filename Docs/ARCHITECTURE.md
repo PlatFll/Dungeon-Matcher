@@ -324,25 +324,24 @@ width through `EnemyWeaknessIndicatorUI`; the weakness gem and active status are
 centered together beneath HP. Disabling/removing the intent view releases that
 width. These layout rules do not resize character art or affect combat state.
 
-`MainMenuController` temporarily offers ready `ZoneDefinition` entries before a
-fresh launch. `RunLaunchOptions.StartingZone` is a one-use handoff, consumed and
-validated by `RunSession`; an existing checkpoint always wins. A fresh start in any ready zone
-installs `unified-accepted-moves-v3` before actors initialize and
-enables the normal travel controller. It never uses the isolated fixture flag.
-`RunLaunchOptions.TestingZonePickerEnabled` controls this temporary menu and
-same-zone Retry behavior; disable it for release. No zone preference or new
-account/save schema is introduced.
+`MainMenuController` starts the Game directly and clears stale development
+requests. Fresh standard/Practice/challenge runs and Retry always begin in Dungeon;
+Continue restores its checkpoint zone/state. `RunLaunchOptions.StartingZone` exists
+only under UNITY_EDITOR, is consumed once by RunSession, and is ignored whenever
+a saved run exists. Explicit Editor diagnostics retain live travel and the unified
+move profile; the older Forest fixture remains isolated. Both menu entry and Retry
+clear development flags. No player-facing zone picker, saved zone preference or
+new persistence schema is introduced. Random eligible travel is unchanged.
 
 `ForestDevelopmentEntry` selects a disposable account and an Editor-only launch
 flag. `RunSession` installs `ZoneRuntimeContext` for every run, and
 `CombatMoveClock` for recorded profiles or the isolated test before actors
 initialize. `ZoneDefinition` supplies the affiliated gem, formations, apex and
-theme. Dungeon, forest and Drowned Court are eligible for live travel; isolated fixtures retain
+theme. All five implemented zones are eligible for live travel; isolated fixtures retain
 their own loop. `GameplayThemeDefinition` supplies
 additive artwork to existing layout owners. No second UI geometry owner exists.
 
-`ZoneTravelController` holds the existing wave gate after an entire apex
-formation dies. A dedicated saved random stream selects the destination. Pending
+`ZoneTravelController` holds the existing wave gate after 100 Resonance, the entire selected capstone, victory persistence and all queued drafts settle. A dedicated saved random stream selects the destination. Pending
 and committed stages are durable; `RunContinuation.TryCommitZoneTravel` atomically
 stores the destination checkpoint before reloading Game. `ZoneTransitionView` is
 a persistent presentation canvas and input/time hold; it never selects a region
@@ -1000,9 +999,7 @@ counter and advanced cycle together.
 - `EnemyAutoAttack` owns source-keyed persistent normal-damage/speed modifiers and next-sequence damage modifiers. Accepted attacks capture one product for primary/follow-up damage and consume next-sequence modifiers once. Optional `PerformCommandStrike` scaling is scoped to the King's command. Enrage multiplies the existing timer countdown independently of the legacy banner/rally speed channel. Removing one source cannot erase another source's modifier.
 - `BoardController.TelegraphedClears` extends `pendingBoardMutations` with mark-set and lane requests. Gem sets track owner, identities, deadline and one-shot state. `Gem.SetSpecialType` cancels marks on replacement. Marking changes metadata only, preserving legal moves. Environmental clearability includes frozen ordinary gems but excludes specials and all non-playable structural cells. Clear requests use `ClearMatches(..., null)` without reward reporting and settle once via `ResolveEnvironmentalBoardChange`; no alternate resolver or special chain path exists. Due requests recheck stagger at execution and release their queued flag if deferred.
 - `BoardTelegraphVFX`, `EnemyBlessingView` and `EnemyRoyalPhaseView` only observe state/events. Board art slots serialize on the existing `Game.unity` BoardController; missing assets use procedural/presentation fallbacks. Per-lane gameplay pacing is independent of VFX availability and uses the existing clear timings.
-- `WaveSpawnProfile.SelectMilestone` draws from serialized rising-probability opportunities using the existing encounter RNG. `WaveController` records successfully spawned definitions as seen, preventing repeat milestone injection. `BuildEncounter` supports Boss leaders and their required escort while preserving the existing normal spawning path. First-pass King milestones request two slots and open with King + Archbishop. Threshold summons use the existing free-slot service; no separate summon ownership or targeting system is introduced.
-- The menu/batch editor suite `RoyalMilestoneValidation.Run` covers production data and core invariants. It does not stand in for required Unity compilation or Play Mode VFX/timing/composition checks.
-- `RoyalMilestonePlayValidation` is an opt-in editor test driver. Its Play Mode fixtures use real scene services and production coroutines, with temporary HP/counter arrangements and real hint-validated swaps. It exits Play Mode after success or failure and never saves fixture changes to the scene or definitions.
+- `WaveSpawnProfile.SelectMilestone` retains historical fixture behavior only. Live Resonance selection occurs in `WaveController.ResonanceEncounters`, using ZoneDefinition depth profiles and the saved same-zone capstone. Actual actors still spawn through the single existing wave pipeline. Required escorts, stat curves and free-slot summons remain owned by their original systems. See [Resonance ownership](CrystalResonance/IMPLEMENTATION.md).
 
 ## Balance v1 account and run boundary
 
@@ -1140,3 +1137,23 @@ logical pixels above the optional caption, raising within the HUD when necessary
 Potion/bomb icons use the established integer pixel fitter, and quantity labels
 stay inside their holder. Board dimensions, shared section mapping, hit callbacks,
 and energy/gameplay authority are unchanged.
+
+
+## Crystal Resonance (2026-11-17)
+
+Live progression now follows [the authoritative ownership record](CrystalResonance/IMPLEMENTATION.md). WaveController remains the sole spawn owner; BoardController remains the sole resolver. RunSession owns score/local Resonance and receipt persistence; RunUpgradeCoordinator consumes sequential safe notches; existing atomic travel resets only the committed destination copy. Stage 10 compilation, affected regressions and real Game input samples have executed; see [the evidence and acceptance limits](Validation/CRYSTAL_RESONANCE_V1_FINAL.md).
+
+
+### Ordinary encounter selection and Guild support
+
+WaveController filters the zone's serialized roster, prerequisites, threat budget
+and live tide state. OrdinarySelection draws from those legal recipes using the
+encounter RNG. CrystalResonanceSnapshot stores the last four actual formations
+and the run's zone teaching history. Old saved runs initialize absent lists on
+use. A scheduled capstone restores its saved member IDs.
+
+GuildSupportAbility runs through CombatMoveClock's normal action opportunity and
+the actor's special-motion contact. EnemyActor owns Taunt lifetime and damage
+eligibility. The weakness UI reads protection while retaining the original gem
+type. Field Medicine uses EnemyActor.RestoreHealth. See the
+[ability specification and implementation notes](SelectionExpansion/STAGE04.md).

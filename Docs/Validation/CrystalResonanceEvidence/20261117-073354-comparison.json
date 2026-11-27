@@ -1,0 +1,435 @@
+{
+  "method": "First visits matched by exact zone/seed/character/level/policy; deaths separate; only completed pairs receive a duration delta.",
+  "baselineSummaries": [
+    ".utmp\\CrystalResonance\\Analysis\\20261117-030133\\summary.json",
+    ".utmp\\CrystalResonance\\Analysis\\20261117-062332\\summary.json"
+  ],
+  "candidateSummary": ".utmp\\CrystalResonance\\Analysis\\20261117-073354\\summary.json",
+  "cases": [
+    {
+      "label": "charge45-defensive-forest-L5-9402",
+      "zone": "magical-forest",
+      "seed": 9402,
+      "character": "bardley",
+      "level": 5,
+      "policy": 3,
+      "baselineBatch": "20261117-030133",
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "completed",
+      "candidateOutcome": "completed",
+      "baselineSeconds": 420.302,
+      "candidateSeconds": 451.826,
+      "completedTimeDelta": 31.524,
+      "baselineEncounters": 15,
+      "candidateEncounters": 17,
+      "baselineFirstCard": 103.474,
+      "candidateFirstCard": 116.281,
+      "baselineHealth": 125,
+      "candidateHealth": 150,
+      "baselineCapstones": [
+        {
+          "id": "Guardian barkhide_warden",
+          "kind": 2,
+          "scheduledAfterDepth": 13,
+          "encounterDepth": 14
+        }
+      ],
+      "candidateCapstones": [
+        {
+          "id": "Guardian barkhide_warden",
+          "kind": 2,
+          "scheduledAfterDepth": 15,
+          "encounterDepth": 16
+        }
+      ]
+    },
+    {
+      "label": "charge45-matched-novice-L1-8201",
+      "zone": "dungeon",
+      "seed": 8201,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 0,
+      "baselineBatch": "20261117-030133",
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "completed",
+      "candidateOutcome": "completed",
+      "baselineSeconds": 351.713,
+      "candidateSeconds": 433.064,
+      "completedTimeDelta": 81.351,
+      "baselineEncounters": 17,
+      "candidateEncounters": 18,
+      "baselineFirstCard": 24.439,
+      "candidateFirstCard": 43.447,
+      "baselineHealth": 95,
+      "candidateHealth": 80,
+      "baselineCapstones": [
+        {
+          "id": "Knight elite",
+          "kind": 1,
+          "scheduledAfterDepth": 14,
+          "encounterDepth": 15
+        }
+      ],
+      "candidateCapstones": [
+        {
+          "id": "Knight elite",
+          "kind": 1,
+          "scheduledAfterDepth": 16,
+          "encounterDepth": 17
+        }
+      ]
+    },
+    {
+      "label": "charge45-matched-skilled-L1-8201",
+      "zone": "dungeon",
+      "seed": 8201,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 2,
+      "baselineBatch": "20261117-062332",
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "completed",
+      "candidateOutcome": "completed",
+      "baselineSeconds": 252.802,
+      "candidateSeconds": 269.337,
+      "completedTimeDelta": 16.535,
+      "baselineEncounters": 16,
+      "candidateEncounters": 18,
+      "baselineFirstCard": 17.477,
+      "candidateFirstCard": 27.45,
+      "baselineHealth": 80,
+      "candidateHealth": 55,
+      "baselineCapstones": [
+        {
+          "id": "Knight elite",
+          "kind": 1,
+          "scheduledAfterDepth": 14,
+          "encounterDepth": 15
+        }
+      ],
+      "candidateCapstones": [
+        {
+          "id": "Knight elite",
+          "kind": 1,
+          "scheduledAfterDepth": 16,
+          "encounterDepth": 17
+        }
+      ]
+    },
+    {
+      "label": "charge45-new-novice-court-L1-71875",
+      "zone": "drowned-court",
+      "seed": 71875,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 0,
+      "baselineBatch": null,
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "new seed/profile",
+      "candidateOutcome": "defeat",
+      "baselineSeconds": null,
+      "candidateSeconds": 241.682,
+      "completedTimeDelta": null,
+      "baselineEncounters": null,
+      "candidateEncounters": 8,
+      "baselineFirstCard": null,
+      "candidateFirstCard": 67.803,
+      "baselineHealth": null,
+      "candidateHealth": 0,
+      "baselineCapstones": [],
+      "candidateCapstones": []
+    },
+    {
+      "label": "charge45-new-typical-court-L1-71874",
+      "zone": "drowned-court",
+      "seed": 71874,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "baselineBatch": null,
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "new seed/profile",
+      "candidateOutcome": "defeat",
+      "baselineSeconds": null,
+      "candidateSeconds": 274.515,
+      "completedTimeDelta": null,
+      "baselineEncounters": null,
+      "candidateEncounters": 13,
+      "baselineFirstCard": null,
+      "candidateFirstCard": 30.459,
+      "baselineHealth": null,
+      "candidateHealth": 0,
+      "baselineCapstones": [],
+      "candidateCapstones": []
+    },
+    {
+      "label": "charge45-new-typical-dungeon-L1-71872",
+      "zone": "dungeon",
+      "seed": 71872,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "baselineBatch": null,
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "new seed/profile",
+      "candidateOutcome": "completed",
+      "baselineSeconds": null,
+      "candidateSeconds": 243.68,
+      "completedTimeDelta": null,
+      "baselineEncounters": null,
+      "candidateEncounters": 17,
+      "baselineFirstCard": null,
+      "candidateFirstCard": 42.227,
+      "baselineHealth": null,
+      "candidateHealth": 95,
+      "baselineCapstones": [],
+      "candidateCapstones": [
+        {
+          "id": "Captain escort",
+          "kind": 2,
+          "scheduledAfterDepth": 15,
+          "encounterDepth": 16
+        }
+      ]
+    },
+    {
+      "label": "charge45-new-typical-frost-L1-71873",
+      "zone": "frostwake-peaks",
+      "seed": 71873,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "baselineBatch": null,
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "new seed/profile",
+      "candidateOutcome": "completed",
+      "baselineSeconds": null,
+      "candidateSeconds": 252.505,
+      "completedTimeDelta": null,
+      "baselineEncounters": null,
+      "candidateEncounters": 17,
+      "baselineFirstCard": null,
+      "candidateFirstCard": 28.646,
+      "baselineHealth": null,
+      "candidateHealth": 75,
+      "baselineCapstones": [],
+      "candidateCapstones": [
+        {
+          "id": "Veteran patrol",
+          "kind": 1,
+          "scheduledAfterDepth": 14,
+          "encounterDepth": 15
+        }
+      ]
+    },
+    {
+      "label": "charge45-typical-court-L5-8303",
+      "zone": "drowned-court",
+      "seed": 8303,
+      "character": "skeleton",
+      "level": 5,
+      "policy": 1,
+      "baselineBatch": "20261117-062332",
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "completed",
+      "candidateOutcome": "defeat",
+      "baselineSeconds": 268.499,
+      "candidateSeconds": 295.466,
+      "completedTimeDelta": null,
+      "baselineEncounters": 15,
+      "candidateEncounters": 16,
+      "baselineFirstCard": 33.919,
+      "candidateFirstCard": 33.772,
+      "baselineHealth": 50,
+      "candidateHealth": 0,
+      "baselineCapstones": [
+        {
+          "id": "Elite pearl_thief",
+          "kind": 1,
+          "scheduledAfterDepth": 13,
+          "encounterDepth": 14
+        }
+      ],
+      "candidateCapstones": [
+        {
+          "id": "Elite pearl_thief",
+          "kind": 1,
+          "scheduledAfterDepth": 15,
+          "encounterDepth": 16
+        }
+      ]
+    },
+    {
+      "label": "charge45-typical-drowned-court-L1-9203",
+      "zone": "drowned-court",
+      "seed": 9203,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "baselineBatch": "20261117-062332",
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "defeat",
+      "candidateOutcome": "defeat",
+      "baselineSeconds": 233.103,
+      "candidateSeconds": 262.934,
+      "completedTimeDelta": null,
+      "baselineEncounters": 10,
+      "candidateEncounters": 14,
+      "baselineFirstCard": 45.493,
+      "candidateFirstCard": 56.247,
+      "baselineHealth": 0,
+      "candidateHealth": 0,
+      "baselineCapstones": [],
+      "candidateCapstones": []
+    },
+    {
+      "label": "charge45-typical-dungeon-L1-9201",
+      "zone": "dungeon",
+      "seed": 9201,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "baselineBatch": "20261117-030133",
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "completed",
+      "candidateOutcome": "completed",
+      "baselineSeconds": 183.312,
+      "candidateSeconds": 353.976,
+      "completedTimeDelta": 170.664,
+      "baselineEncounters": 15,
+      "candidateEncounters": 17,
+      "baselineFirstCard": 24.745,
+      "candidateFirstCard": 31.26,
+      "baselineHealth": 95,
+      "candidateHealth": 65,
+      "baselineCapstones": [
+        {
+          "id": "Captain escort",
+          "kind": 2,
+          "scheduledAfterDepth": 13,
+          "encounterDepth": 14
+        }
+      ],
+      "candidateCapstones": [
+        {
+          "id": "Captain escort",
+          "kind": 2,
+          "scheduledAfterDepth": 15,
+          "encounterDepth": 16
+        }
+      ]
+    },
+    {
+      "label": "charge45-typical-frostwake-peaks-L1-9205",
+      "zone": "frostwake-peaks",
+      "seed": 9205,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "baselineBatch": "20261117-030133",
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "completed",
+      "candidateOutcome": "completed",
+      "baselineSeconds": 275.882,
+      "candidateSeconds": 333.469,
+      "completedTimeDelta": 57.587,
+      "baselineEncounters": 14,
+      "candidateEncounters": 17,
+      "baselineFirstCard": 58.262,
+      "candidateFirstCard": 58.437,
+      "baselineHealth": 45,
+      "candidateHealth": 85,
+      "baselineCapstones": [
+        {
+          "id": "Guardian glacier_troll",
+          "kind": 2,
+          "scheduledAfterDepth": 12,
+          "encounterDepth": 13
+        }
+      ],
+      "candidateCapstones": [
+        {
+          "id": "Guardian glacier_troll",
+          "kind": 2,
+          "scheduledAfterDepth": 14,
+          "encounterDepth": 15
+        }
+      ]
+    },
+    {
+      "label": "charge45-typical-ironvein-excavation-L1-9204",
+      "zone": "ironvein-excavation",
+      "seed": 9204,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "baselineBatch": "20261117-030133",
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "completed",
+      "candidateOutcome": "completed",
+      "baselineSeconds": 316.284,
+      "candidateSeconds": 313.211,
+      "completedTimeDelta": -3.073,
+      "baselineEncounters": 17,
+      "candidateEncounters": 19,
+      "baselineFirstCard": 29.395,
+      "candidateFirstCard": 29.332,
+      "baselineHealth": 30,
+      "candidateHealth": 55,
+      "baselineCapstones": [
+        {
+          "id": "Elite stonewright",
+          "kind": 1,
+          "scheduledAfterDepth": 14,
+          "encounterDepth": 15
+        }
+      ],
+      "candidateCapstones": [
+        {
+          "id": "Elite stonewright",
+          "kind": 1,
+          "scheduledAfterDepth": 16,
+          "encounterDepth": 17
+        }
+      ]
+    },
+    {
+      "label": "charge45-typical-magical-forest-L1-9202",
+      "zone": "magical-forest",
+      "seed": 9202,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "baselineBatch": "20261117-030133",
+      "candidateBatch": "20261117-073354",
+      "baselineOutcome": "completed",
+      "candidateOutcome": "completed",
+      "baselineSeconds": 289.615,
+      "candidateSeconds": 229.676,
+      "completedTimeDelta": -59.939,
+      "baselineEncounters": 16,
+      "candidateEncounters": 17,
+      "baselineFirstCard": 33.719,
+      "candidateFirstCard": 33.716,
+      "baselineHealth": 30,
+      "candidateHealth": 85,
+      "baselineCapstones": [
+        {
+          "id": "Veteran patrol",
+          "kind": 1,
+          "scheduledAfterDepth": 13,
+          "encounterDepth": 14
+        }
+      ],
+      "candidateCapstones": [
+        {
+          "id": "Veteran patrol",
+          "kind": 1,
+          "scheduledAfterDepth": 14,
+          "encounterDepth": 15
+        }
+      ]
+    }
+  ]
+}

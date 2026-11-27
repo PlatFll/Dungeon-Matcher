@@ -19,6 +19,8 @@ public static class EnemyAbilityNames
     {
         switch(kind)
         {
+            case EnemySpecialAbilityKind.GuildTaunt:return "Taunt";
+            case EnemySpecialAbilityKind.GuildInstantHeal:return "Field Medicine";
             case EnemySpecialAbilityKind.Miner:return "Mine";
             case EnemySpecialAbilityKind.CrossbowGuardBolt:return "Chain Shot";
             case EnemySpecialAbilityKind.Barricade:return "Barricade";

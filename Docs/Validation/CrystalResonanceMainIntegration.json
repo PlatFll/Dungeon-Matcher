@@ -1,0 +1,1568 @@
+{
+  "unity": "6000.3.19f1",
+  "codeCommit": "bf73a090",
+  "balanceCommits": [
+    "90bc53b9",
+    "313c7722"
+  ],
+  "expansionCommit": "83608d43",
+  "mainBeforeIntegration": "f63433ef",
+  "tests": {
+    "integration": {
+      "xmlSha256": "fd47fbff84f4b8f031677ed4e25256239b3662e36214aca1ceec3391b478f665",
+      "passed": 81,
+      "failed": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "BombRefinementPlayTests.ColorStarActualSwap",
+          "result": "Passed"
+        },
+        {
+          "name": "BombRefinementPlayTests.ColumnBombActualSwap",
+          "result": "Passed"
+        },
+        {
+          "name": "BombRefinementPlayTests.RowBombActualSwap",
+          "result": "Passed"
+        },
+        {
+          "name": "BombRefinementPlayTests.SelectedIdlesInActualGameAndLifecycleChecks",
+          "result": "Passed"
+        },
+        {
+          "name": "BombRefinementTests.FireTravelsBothWaysAtNativeScaleAndRespectsTheBoardMask(RowBomb,0)",
+          "result": "Passed"
+        },
+        {
+          "name": "BombRefinementTests.FireTravelsBothWaysAtNativeScaleAndRespectsTheBoardMask(ColumnBomb,90)",
+          "result": "Passed"
+        },
+        {
+          "name": "BombRefinementTests.IdleFramesKeepNativeScaleAndDirectionalSocketsStayAnchored",
+          "result": "Passed"
+        },
+        {
+          "name": "BombRefinementTests.NativeSequencesArePointFilteredFullRectAndComplete",
+          "result": "Passed"
+        },
+        {
+          "name": "BombRefinementTests.StarStartsAtSourceArrivesBeforeFlashAndDoesNotFollowMovedTargets",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceContinuationTests.DetachedArrivalResetCannotEraseSourceOnFailedCommit",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceContinuationTests.FutureSchemaAndNonFiniteTelemetryFailClosed",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceContinuationTests.LegacyAbsentResonanceAndRoundTripRetainClockUnits",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceContinuationTests.PendingMasteryAndReceiptCursorSurviveWithoutDoubleCredit",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceContinuationTests.QueuedNotchesMustBeOrderedUniqueAndUnclaimed",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceContinuationTests.SelectedCapstoneRoundTripPreservesIdentityAndSeed",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceDirectorTests.EveryZoneAndTierHasLegalRepeatableCapstonesAfterUniquePoolExhaustion",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceDirectorTests.KingRequiresRoyalExposureAndHasNoFixedDepthAppointment",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceDirectorTests.ProductionChargeCadenceUsesExplicitCourtOverrideAndUnchangedBossAwards",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.ARecentReliefRecipeCanPreventAnAdjacentSpecialVariant",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.AuthoredRecipeWeightsFadeWithTheirActualMembers",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.ConsecutiveRecipeVariantsDoNotRepeatTheSameSpecialWhenAlternativesExist",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.CourtOrdinaryRosterAndEscortPairsRemainReachableAtEveryTier",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.EmptyAuthoredOrdinaryLibraryHasBoundedSameZoneFallbackAtEveryTier",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.EveryWeightedOrdinaryMemberHasAuthoredExposure",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.FirstFloodKnownMechanicPatrolsHaveDifferentEscortPairs",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.FortifiedRosterAndLegacyRostersHaveLegalFirstVisitsReliefAndReserveCapstones",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.IndependentSelectionsExposeWeightedOrdinaryMembersAtEveryDepth",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.OrdinaryAndCapstoneSelectionsRespectAllFiveDepthPools",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.PostCapstoneReliefUsesCurrentDepthAndEndsAfterOneEncounter",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.QueenCapstoneKeepsApprovedCourtCultureAndCompleteEscortBudget",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.RecordedMultisetSurvivesContinueAndDifferentLabels",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.RepetitionPreferenceNeverExhaustsTheOnlyLegalFormation",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceSelectionTests.SequentialDeepCapstonesPreserveUniqueLeadersAndMajorSpacing",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceStateTests.AllMasteryCapsAtThreeAndLossDoesNotBank",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceStateTests.DuplicateReceiptsAndVictoriesCannotMultiplyRewards",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceStateTests.LongCascadeCannotFarmMasteryOrUnlimitedScore",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalResonanceStateTests.OverflowQueuesOnlyThreeNotchesAndTravelPreservesScore",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.ChirurgeonSelectsOneMostWoundedOtherAndClampsHealing",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.TauntPreservesWeaknessAndRemainingFutureMovesOnContinue(1)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.TauntPreservesWeaknessAndRemainingFutureMovesOnContinue(2)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.TauntPreservesWeaknessAndRemainingFutureMovesOnContinue(3)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.TauntUsesOriginalWeaknessAndBlocksOnlyNewAttacks(Ruby,80)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.TauntUsesOriginalWeaknessAndBlocksOnlyNewAttacks(Sapphire,100)",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceAutomaticFourCascadeIsNotDeliberateMastery",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceDamageTelemetryKeepsActualSources",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceDeepDiagnosticFormationsSpawnAndAcceptInputInEveryZone",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceDeliberateFourAndBombPairProduceBoundedReceipts",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceExhaustedCatalogConsumesNotchWithoutInvisibleGate",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceFeedbackShowsNormalExcellentAndPendingInAllZones",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceFullMeterWaitsForEscortThenTravelsWithScore",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceHudFiveZonesFivePhoneLayoutsAndMotionModes",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonancePendingSwapReplayKeepsScoreAndMasteryExactlyOnce",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonancePolicyAttentionCannotAlwaysInspectEveryAlternative",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonancePolicyUsesJournaledLegalInputForEveryStyle",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceRealTelegraphCounterAwardsOncePerEncounter",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceRecordedCourtCofferHasARealAcceptedAnswer",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceSlidingFollowupDoesNotInventAnAdjacentSwapCascade",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceThreeQueuedDraftsResumeExactOffersAfterSettlement",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.CrystalResonanceVisibleFollowupUsesOnlyAlreadyVisiblePieces",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.DungeonFirstChallengesKeepRulesAcrossRetry",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.DungeonFirstEditorZonesContinueExactlyAndRetryDungeon",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.DungeonFirstInvalidDeveloperZoneIsConsumed",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.DungeonFirstMenuStartsImmediatelyWithoutPicker",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.DungeonFirstPracticePreservesSavedOtherZoneAndRetriesDungeon",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.ExpansionGalleryCourt",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.ExpansionGalleryForest",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.ExpansionGalleryFrostwake",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.ExpansionGalleryGuildFrontLine",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.ExpansionGalleryGuildHealer",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.ExpansionGalleryIronvein",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.ExpansionSlinghunterSingleHitBreaksShield",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.ExpansionSlinghunterSingleHitToHealth",
+          "result": "Passed"
+        },
+        {
+          "name": "ForestFoundationPlayTests.MinerRendersAllThreeProductionClips",
+          "result": "Passed"
+        },
+        {
+          "name": "MouseMerchantTests.FiveInventoriesShareTwoSlotsAndKeepTheirIdentityOnReload",
+          "result": "Passed"
+        },
+        {
+          "name": "MouseMerchantTests.MerchantHumsReactsAndWavesBackToHome",
+          "result": "Passed"
+        },
+        {
+          "name": "MouseMerchantTests.PortraitShopScrollPurchaseEquipAndBack",
+          "result": "Passed"
+        },
+        {
+          "name": "MouseMerchantTests.SelectedVariantsWorkInTheGameScene",
+          "result": "Passed"
+        },
+        {
+          "name": "MouseMerchantTests.ShopArtLoadsAsPointFilteredSprites",
+          "result": "Passed"
+        },
+        {
+          "name": "SelectionExpansionRosterImportTests.ReimportRebuildsAuthoredKitsAndPreservesOnlyRegisteredLocalAdditions(\"drowned-court\",\"nacre_duelist\",\"iceborn_axeman\")",
+          "result": "Passed"
+        },
+        {
+          "name": "SelectionExpansionRosterImportTests.ReimportRebuildsAuthoredKitsAndPreservesOnlyRegisteredLocalAdditions(\"drowned-court\",\"nacre_halberdier\",\"iceborn_axeman\")",
+          "result": "Passed"
+        },
+        {
+          "name": "SelectionExpansionRosterImportTests.ReimportRebuildsAuthoredKitsAndPreservesOnlyRegisteredLocalAdditions(\"frostwake-peaks\",\"iceborn_axeman\",\"nacre_duelist\")",
+          "result": "Passed"
+        }
+      ]
+    },
+    "balance": {
+      "xmlSha256": "a54b9c0b6ddb4ebe02ac150a994c367e41b147b44aef703051e23c9e1bbf4502",
+      "passed": 280,
+      "failed": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "BalanceDisruptionPlayTests.ConcurrentOwnersRespectCapsResponsesAndDeathCleanup",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceDisruptionPlayTests.RoyalMechanicsResolveWithEscortsInActualPlayMode",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceFreshShapesPlayTests.CharacterResetAndSharedMasteryWorkThroughRealMenus",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceFreshShapesPlayTests.FreshRowColumnAndCrystalShapesResolveThroughRealSwaps",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceLifecyclePlayTests.ExistingLifecycleAssertionsWithActualUnityCallbacks",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.BackupRecoveryPreservesWholeTransactionsAndCorruptOriginals",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.BriefSaveReplacementLockStillSettlesRewardExactlyOnce",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.CardTradeoffsStackCapsAndEligibilityRespectActualMechanics",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.CharacterLevelsAreIndependentAndSharedUnlocksUseHighestLevel",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.ConstrainedRandomFormationsAndUniqueEscortedMilestonesStayInBudget",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.EitherCharacterUnlocksMasteryForTheOtherAtThreeFiveAndSeven(\"bardley\",\"skeleton\")",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.EitherCharacterUnlocksMasteryForTheOtherAtThreeFiveAndSeven(\"skeleton\",\"bardley\")",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.EveryRecipeHasValidMembersAndFitsBudgetAndSlots",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.ExistingRoyalDataAndMechanicAssertionsMatchBalanceV1",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.FailedDiskWriteDoesNotSpendWalletOrInventory",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.FailedPurchaseAndLevelUpLeaveWalletAndStatsUnchanged",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.FailedResetDoesNotPublishOrChangeDiskOrMemory",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.FreshProfileHasDirectionalBombsAndCrystalButMasteryBombsStayLocked",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.InterruptedRunSurvivesUntilExplicitSettlementAndKingFirstClearCannotRepeat",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.LegacySelectionsMigrateWithoutWritingOrSummingProgress",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",1,80,10.0f,40)",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",5,110,12.6f,50)",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",20,230,22.35f,95)",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",1,100,11.0f,45)",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",5,140,13.2f,55)",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",20,290,21.45f,100)",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.PersistentSaveReplacementLockPreservesWalletAndJournal",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.PreviouslyEarnedLowerThresholdUnlocksRemainOwnedOnLoad",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.PurchasesEquipmentAndTenOwnedThreeUsesAreAtomicAndIndependent",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.ResetPersistsOnlySelectedLevelAndKeepsEarnedUnlocksAndInventory(\"bardley\",\"skeleton\")",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.ResetPersistsOnlySelectedLevelAndKeepsEarnedUnlocksAndInventory(\"skeleton\",\"bardley\")",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.ResetRejectsInvalidCharactersLevelOneAndActiveRuns",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Defeat\")",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Retry\")",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Quit to Menu\")",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Victory\")",
+          "result": "Passed"
+        },
+        {
+          "name": "BalanceV1Tests.ShieldGateAndAegisCapDeliverUsefulValueAndReset",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.BarricadeBreakWithoutStandardsKeepsOrdinaryRemovalBehavior",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.BarricadesAndDestroyedGemJoinSameBatchBeforeAnyBannerMoves",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.OneOpeningIsCountedForEachStandardAboveIt",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(2,6)",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(4,3)",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.OrphaningEitherObstaclePreservesGravityInteraction(True,False)",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.OrphaningEitherObstaclePreservesGravityInteraction(False,True)",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.RemovedBarricadeCannotQueueItsOpeningAgain",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.SecondDistinctHitCreatesExactlyOneStoneOpening",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.SeveralAdjacentGemsCountOneOpeningAndIgnoredSeedsCountNone",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.SideClearBreakingBarricadeQueuesOpeningWithoutMovingDuringFlash",
+          "result": "Passed"
+        },
+        {
+          "name": "BarricadeBannerGravityTests.SurvivingStoneBarricadeDoesNotCreateAnOpening",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.BusyRejectedDownDoesNotStealExistingPointerIdentity",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.DragAndUpWithoutAnAcceptedDownCannotSelectOrResolve",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.EnteringOrCancellingTargetModeReleasesHeldGemAppearance(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.EnteringOrCancellingTargetModeReleasesHeldGemAppearance(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.ExistingDirectInputHelpersRemainAvailableForSinglePointerFixtures",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.ExternalBlockInvalidatesGestureWithoutReplayingItAfterRelease",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.FiveReplacementsDoNotLetOldUpsChangeTheCurrentSelection",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.OwningOutwardDragConsumesOnceAndUpDoesNotBecomeATap",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.PinnedRejectedDownDoesNotReplaceAnotherGemsOwner",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(-1)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(31)",
+          "result": "Passed"
+        },
+        {
+          "name": "BoardPointerIdentityTests.SubthresholdOwningDragRetainsTheGesture",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.ACrystalOnlyReshuffleMoveKeepsExistingIdentitiesAndColors",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.AHiddenCrystalTripleIsNotAnExistingMatch",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.ARealOrdinaryTripleStillRejectsTheReshuffleCandidate",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"minedCellOwners\")",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"barricadeCells\")",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"royalBannerCells\")",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.CandidateCrystalMaskUsesDestinationPositionsAndSkipsBlockedCells",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(None)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(RowBomb)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(ColorCrystal)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.EverySpecialPairIsLegalWithoutMatchingColorsAndPinsStillBlockIt(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.EverySpecialPairIsLegalWithoutMatchingColorsAndPinsStillBlockIt(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.LiveMoveQueryAgreesWithActualCollectionAndHintsAcrossSeededFixtures",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.PinnedCrystalDoesNotManufactureAnOrdinaryMove",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(0)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(1)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(2)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.PinSafetyCannotSealTheLastCrystalExitUsingAPhantomMatch",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.ReadOnlyInspectionDoesNotEmitClearRewards",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.RecolorFallbackCanValidateACrystalOnlyMove",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalBoardValidityTests.SpecialPairOnlyReshufflePreservesBothIdentities",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(RowBomb)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ColumnBomb)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(PoisonBomb)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(HealingBomb)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ShieldBomb)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(RowBomb)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ColumnBomb)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(PoisonBomb)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(HealingBomb)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ShieldBomb)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.NonPreservingExpansionAndNullSeedsRetainTheirExistingSemantics",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.OverlappingCollateralQueuesOneCrystalRequestAndPlanningChangesNoState",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.PendingConvertedBombRemainsProtectedUntilItsOwnTurn",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2ContinuationTests.AcceptedBombAndBardleyCastSurviveRestartExactlyOnce",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2ContinuationTests.AcceptedItemJournalIsAtomicAndFailedRecoveryPreservesTheOriginal",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2ContinuationTests.ContinuePreservesCombatAndDoesNotPayOrRefill",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2ContinuationTests.DraftRefinementAndSelectedBuildSurviveRepeatedContinue",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2ContinuationTests.OwnedObstaclesWarningsAndDecreeRestoreThroughTheirRealOwners",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2ContinuationTests.RaisedKingSwordRestoresItsAttackPauseAndDisableReleasesOnlyItsOwnHold",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2Tests.AcceptedBardleyCastKeepsRefundCapAfterCancellationAndBombPreviewDoesNotSpend",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2Tests.ChainedClearsAndCardRefundsShareEffectiveCostBudget",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2Tests.ChallengesRequireKingAndTrackSeparateDurableRecords",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2Tests.InitialDraftDirectionsAndRefinementRemainEligibleAndDistinct",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2Tests.PracticeUsesOwnedProgressionButNeverWritesInventoryOrRewards",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2Tests.RefundNeverPaysMoreThanRoundedBudgetAndRejectedCastReleasesIt",
+          "result": "Passed"
+        },
+        {
+          "name": "DesignV2Tests.TeachingDeadlinesPrecedeTheirMilestoneExamsAcrossSeeds",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.BreakingShieldDoesNotReduceTheFollowingHit",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.ChirurgeonSelectsOneMostWoundedOtherAndClampsHealing",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(0,20)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(10,0)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(30,0)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.CombatReportsHitRatherThanNetHealthChangeAfterCallbacks",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.CombatStillRejectsUnmatchedAndInactiveWaveDamage",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.ConditionalDefencePrecedesShieldExactlyOnce",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(0,20,20,0)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,8,0,5)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(10,20,0,10)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,40,0,30)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.InterceptionReportsProtectorAndStopsAfterOneHop",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.LegacyBoolWrappersApplyOneHitAndRetainDotBypass",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.LethalInterceptionRetainsRecipientAfterRetreatCleanup",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(0)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(-1)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.PoisonReportsItsOwnHpLossAndKeepsInterceptionBypass",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(0,20,1)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(30,0,0)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.ShieldOnlyPoisonKeepsHpOnlyFeedbackContract",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.SnapshotDoesNotIncludeASeparateSynchronousHit",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.SnapshotDoesNotSubtractSynchronousHealing",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.SuppressedDamageBypassesProtectorAndDoesNotEmitStaggerInputs",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.TauntPreservesWeaknessAndRemainingFutureMovesOnContinue(1)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.TauntPreservesWeaknessAndRemainingFutureMovesOnContinue(2)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.TauntPreservesWeaknessAndRemainingFutureMovesOnContinue(3)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.TauntUsesOriginalWeaknessAndBlocksOnlyNewAttacks(Ruby,80)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.TauntUsesOriginalWeaknessAndBlocksOnlyNewAttacks(Sapphire,100)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemyDamageResultTests.UninitializedAndDefeatedActorsRejectDamage",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.AlreadyCreatedDeferredPollDoesNotExecuteAfterHostDisable",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.AnotherActorsImpactDoesNotReleaseTheWaitingMine",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"disposed\")",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"defeated\")",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"destroyedHost\")",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"uninitialized\")",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"notReady\")",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,False)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,True)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,False)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,True)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(1)",
+          "result": "Passed"
+        },
+        {
+          "name": "EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(5)",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.AStaleDefeatNotificationCannotStartGameOverForALivingPlayer",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.CleanupDoesNotOverwriteANewerNonzeroTimeScale",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.CleanupDoesNotReleaseBoardOwnershipOrOtherInputTokens",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(0.0f)",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(0.5f)",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(1.0f)",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.DeathVisualExitDoesNotSnapBackToAnOldLayoutPosition",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.DestroyedVisualReferencesCannotStrandTheTimeFreeze",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.DestroyingTheComponentDoesNotOrphanItsCanvasOverlay",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.DisabledComponentCannotResubscribeThroughRefresh",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(0.0f,0.0f)",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(0.5f,1.087698f)",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(1.0f,1.0f)",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.FiveEnableDisableMessagesAndRepeatedSubscribeKeepOneHandler",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.LifecycleCleanupReleasesOnlyItsPresentation(\"OnDisable\")",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.LifecycleCleanupReleasesOnlyItsPresentation(\"OnDestroy\")",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.PlayerReinitializationKeepsTheNewHealthOverride",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.RealReviveEventClearsOverlayWithoutChangingRestoredHealth",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.RecoveryOfAnotherPlayerDoesNotClearThisDeath",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.RecoveryRestoresTheImageEnabledStateItChanged(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.RecoveryRestoresTheImageEnabledStateItChanged(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.ReenableReconciliationDoesNotReopenAMissedRevival",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.RejectedReviveDoesNotRemoveGameOver",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.RepeatedCleanupDoesNotOwnTheClockAgain",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.RetryGuardRequiresADeadReadyUncommittedSession",
+          "result": "Passed"
+        },
+        {
+          "name": "GameOverRecoveryTests.StaleRetryAfterRecoveryCannotRequestASceneLoad",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.AcceptedCastSpendsOnceAndRejectsRepeatedAttempt",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.DestroyedInterfaceRuntimeCannotRemainCastable",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.DisableCancelsOnceWithoutRefundingAcceptedCast",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.DisabledControllerRejectsWithoutSideEffects",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.DisabledRuntimeRejectsWithoutSideEffects",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.InactivePlayerRootRejectsWithoutSideEffects",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.InsufficientEnergyRejectsBeforeRuntimeAttempt",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.PlayerDefeatCancelsAndRejectsFurtherActivation",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.ReenabledRuntimeBecomesUsableWithoutReplacingIt",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.ReenablingControllerRestoresOneRuntimeSubscription",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.RefreshRebindsAfterRuntimeComponentReplacement",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.RefreshWhileDisabledDoesNotRestoreCallbacks",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.ReinitializationCancelsAndRetainsSameRuntimeNotifications",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.RepeatedRefreshDoesNotDuplicateRuntimeSubscription",
+          "result": "Passed"
+        },
+        {
+          "name": "PlayerAbilityLifecycleTests.RuntimeRejectionDoesNotSpendEnergy",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.BothOwnersAreCancelledEvenWhenNoPinHasMaterializedYet",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.ExecutionTimeTopUpAndOtherQueuedMutationsAreNotCancelled",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(0)",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(1)",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(2)",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.ReleasedReservationCannotExecuteOrChangeItsOldTarget(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.ReleasedReservationCannotExecuteOrChangeItsOldTarget(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "ReshufflePinReservationTests.RepeatedEmptyReleaseDoesNotMutateGemsOrGrantRewards",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.AlreadyDefeatedParticipantIsStillSkippedBeforeAnyWait",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.AlreadyDestroyedParticipantIsStillSkippedBeforeAnyWait",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.DestroyedAttackComponentAfterEnteringStaggerWaitIsSkipped",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.LaterLivingParticipantIsReachedButMustStillWaitAfterEarlierDeath",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(True,False)",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(False,True)",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(True,True)",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.MissingActorReferenceAfterEnteringStaggerWaitIsSkipped",
+          "result": "Passed"
+        },
+        {
+          "name": "RoyalAssaultParticipantLifetimeTests.OwnerCleanupDuringWaitDoesNotCompleteOrAdvanceOldCommand",
+          "result": "Passed"
+        },
+        {
+          "name": "RunUpgradeSystemTests.AbilityEligibilityUsesStablePlayerAndAbilityIds",
+          "result": "Passed"
+        },
+        {
+          "name": "RunUpgradeSystemTests.DraftProducesThreeUniqueLegalChoicesWithoutEncounterRng",
+          "result": "Passed"
+        },
+        {
+          "name": "RunUpgradeSystemTests.ExternalInputBlockUsesDisposableTokens",
+          "result": "Passed"
+        },
+        {
+          "name": "RunUpgradeSystemTests.MaxedUpgradeIsExcludedAndMissingRuntimePreservesBaseValues",
+          "result": "Passed"
+        },
+        {
+          "name": "RunUpgradeSystemTests.StackCountModifiersAndMaximumHealthApplyAuthoritatively",
+          "result": "Passed"
+        },
+        {
+          "name": "RunUpgradeSystemTests.UpgradeCadenceGivesAnEarlyChoiceThenUninterruptedPlay",
+          "result": "Passed"
+        },
+        {
+          "name": "TownMarshalStaggerTests.AutoAttackReleaseCannotBypassStagger",
+          "result": "Passed"
+        },
+        {
+          "name": "TownMarshalStaggerTests.BuildupOrPostStaggerImmunityDoesNotBlockSpecial(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "TownMarshalStaggerTests.BuildupOrPostStaggerImmunityDoesNotBlockSpecial(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "TownMarshalStaggerTests.MarshalDeathEndsDeferredPollAndRetreatWithoutRemovingLocal",
+          "result": "Passed"
+        },
+        {
+          "name": "TownMarshalStaggerTests.ProtectorDeathStillClearsRetreatAndHeldChargeDuringStagger",
+          "result": "Passed"
+        },
+        {
+          "name": "TownMarshalStaggerTests.RallyExpiryRemovesItsBuffButCannotStartAnotherCastDuringStagger",
+          "result": "Passed"
+        },
+        {
+          "name": "TownMarshalStaggerTests.ReadinessReachedDuringStaggerDoesNotSummonOrConsumeCharge",
+          "result": "Passed"
+        },
+        {
+          "name": "TownMarshalStaggerTests.ReadyPollWaitsForStaggerBoardAndActionThenSummonsOnce",
+          "result": "Passed"
+        },
+        {
+          "name": "TownMarshalStaggerTests.ReadyRallyCannotStartWhileStaggered",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.ClearingSameWaveNumberStillInvalidatesOldCompletion",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.CompletionListenerClearPreventsSchedulingOldAutomaticAdvance",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.DeathCompletionAcknowledgesExactlyOnce",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.DeathCoroutineToleratesVisualsRemovedAfterAcceptance",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.DisabledWaveControllerDoesNotAdvertiseSummonAvailability",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.DyingObjectUnderAnchorStillBlocksSummonSlotReuse",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.ForeignOrNullDefeatCannotAddDeathDebtOrCompleteWave",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation(False)",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation(True)",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.LastCurrentDeathCompletesWaveExactlyOnce",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.LivingRosterMemberPreventsDeathCompletionFromEndingWave",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(False,False)",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(True,False)",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(False,True)",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.NormalDeathFinishesPresentationAndAcknowledgesOnce",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.OldCompletionDoesNotConsumeNewEncounterDeath",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.OldTransitionCannotAdvanceReplacedEncounterWithSameWaveNumber",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.PlannedSpawnsPreventPrematureCompletion",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.PublicClearRevokesSpawnOwnershipAndPendingDeathState",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.ReentrantDisableDuringDeathFinishedCannotLoseCallback",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.SpawnGuardRejectsOldIdentityAndDifferentWaveNumber",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.SpawnRequestCannotDiscardAnAcceptedDeath",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.StagedSpawnDoesNotAdvertiseItsEmptySlotsAsFreeForSummons",
+          "result": "Passed"
+        },
+        {
+          "name": "WaveDeathLifecycleTests.ThrowingPresentationObserverStillAcknowledgesGameplay",
+          "result": "Passed"
+        }
+      ]
+    }
+  },
+  "gameBatch": "20261126-234729-a2fe34",
+  "cases": [
+    {
+      "case": {
+        "label": "diagnostic-court-skilled",
+        "zone": "drowned-court",
+        "character": "bardley",
+        "policy": 2,
+        "seed": 1293181219,
+        "level": 5,
+        "maxVisits": 1,
+        "maxSeconds": 600.0,
+        "diagnosticStart": true
+      },
+      "result": {
+        "outcome": "visit limit",
+        "policyVersion": "attention-v3-slide",
+        "diagnosticStart": true,
+        "wallSeconds": 243.6515350341797,
+        "completedVisits": 1,
+        "swaps": 71,
+        "abilities": 10,
+        "cards": 3
+      },
+      "sha256": {
+        "actions.jsonl": "bd0c7e64a54080adf7b647de9c5428c3656a11d3d35e3396c12de104ff1bcceb",
+        "events.jsonl": "43f18f52a395ca6ffe555a0419f28dc8f0fe027b5bc3161e15091230b35614ac",
+        "native-journal.jsonl.gz": "2ee9692a7cda5e47c31da8235a5724480e3735055b171219b72db2833c5333a8",
+        "visits.csv": "a4a919ce5bbf8b834bf28c960baef4d2b9383e0de83e7886c1fbb4245909a48d",
+        "result.json": "31adaa018e6ff1a36549016f5a39ae8268a5b598324bb739a29718e3887700cc"
+      }
+    },
+    {
+      "case": {
+        "label": "natural-dungeon-typical",
+        "zone": "dungeon",
+        "character": "skeleton",
+        "policy": 1,
+        "seed": 762463853,
+        "level": 5,
+        "maxVisits": 1,
+        "maxSeconds": 720.0,
+        "diagnosticStart": false
+      },
+      "result": {
+        "outcome": "visit limit",
+        "policyVersion": "attention-v3-slide",
+        "diagnosticStart": false,
+        "wallSeconds": 206.03982543945312,
+        "completedVisits": 1,
+        "swaps": 58,
+        "abilities": 3,
+        "cards": 3
+      },
+      "sha256": {
+        "actions.jsonl": "8949f5d0dc071922e5e3b133cd0d4b4394a651cf3f25fdf753614e98c6084519",
+        "events.jsonl": "13214159c3f14a0291a9507e14713911feeed9515a7b361f4ec54b0475696bf9",
+        "native-journal.jsonl.gz": "141457a9b80d4869afb06a50bb65358e75e7b63c59da403186420ccfeb9df807",
+        "visits.csv": "99579b3252860369bcceba9a3516a827bd92b2f10e787ce74079dabefadbd253",
+        "result.json": "58425ebf90170ca409fdabe408b46238968b6265796d58b1f68ea84028c3962d"
+      }
+    }
+  ],
+  "journalAudit": {
+    "batch": "C:\\Users\\USER\\.codex\\worktrees\\selection-nonboss\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261126-234729-a2fe34",
+    "kind": "offline recorded-evidence audit; NOT replay execution",
+    "finishedCases": 2,
+    "incompleteCases": [],
+    "failures": [],
+    "cases": [
+      {
+        "case": "diagnostic-court-skilled",
+        "nativeBoundaries": 87,
+        "nativeActions": {
+          "swap": 71,
+          "card": 3,
+          "ability": 10,
+          "potion": 3
+        },
+        "journalSha256": "2ee9692a7cda5e47c31da8235a5724480e3735055b171219b72db2833c5333a8",
+        "failures": []
+      },
+      {
+        "case": "natural-dungeon-typical",
+        "nativeBoundaries": 64,
+        "nativeActions": {
+          "swap": 58,
+          "card": 3,
+          "ability": 3
+        },
+        "journalSha256": "141457a9b80d4869afb06a50bb65358e75e7b63c59da403186420ccfeb9df807",
+        "failures": []
+      }
+    ]
+  },
+  "androidApkSha256": "9c097ea5e2ea11e947a1e1ec92e33af9c3296475d40610193a987c2c4b2dc531"
+}

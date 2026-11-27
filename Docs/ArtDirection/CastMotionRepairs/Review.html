@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Animation repair review · Dungeon Matcher</title>
+<style>
+:root {
+  color-scheme: dark;
+  --background: #10151d;
+  --panel: #18212e;
+  --line: #354353;
+  --text: #f2f0e9;
+  --muted: #b7c3cf;
+  --accent: #ffd180;
+  --subtle: #8d9caa;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+  font: 16px/1.45 Inter, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--text); }
+h1,h2,h3,p { margin: 0; }
+a { color: var(--accent); text-underline-offset: .22em; }
+button,input,select { font: inherit; color: inherit; }
+button,select,input[type="search"] { background: #212d3a; border: 1px solid #506070; border-radius: 4px; }
+button,select { cursor: pointer; }
+button:hover,select:hover { background: #2b3947; }
+button { padding: .36rem .64rem; }
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+[hidden] { display: none !important; }
+header { border-bottom: 1px solid var(--line); }
+header > div,main { max-width: 1490px; margin: auto; padding-inline: clamp(14px,3.7vw,54px); }
+header > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 20px; padding-block: 13px; }
+header strong { letter-spacing: -.035em; }
+header nav { display: flex; gap: 20px; font-size: .84rem; }
+main { padding-block: clamp(20px,3vw,40px) 40px; }
+h1 { font-size: clamp(1.95rem,4vw,3.65rem); line-height: 1; letter-spacing: -.06em; font-weight: 720; margin-bottom: 22px; }
+.workspace { display: grid; grid-template-columns: minmax(224px, .9fr) minmax(0,3.6fr); align-items: start; gap: clamp(14px,2.2vw,28px); }
+.rail,.viewer { background: var(--panel); border: 1px solid var(--line); border-radius: 7px; }
+.rail-top { padding: 14px; display: grid; gap: 10px; }
+.field { font-size: .78rem; color: var(--muted); display: grid; gap: 4px; }
+.field input,.field select { padding: .36rem .5rem; min-width: 0; width: 100%; color: var(--text); font-size: .86rem; }
+.scope { display: flex; flex-wrap: wrap; gap: 5px; }
+.scope button { flex: 1 1 auto; white-space: nowrap; padding: .3rem .43rem; font-size: .78rem; }
+button[aria-pressed="true"] { color: #231a0c; background: var(--accent); border-color: var(--accent); }
+.scope-summary { color: var(--subtle); font-size: .78rem; font-variant-numeric: tabular-nums; }
+.results { border-top: 1px solid var(--line); max-height: min(58vh,650px); overflow-y: auto; }
+.results button { display: flex; width: 100%; align-items: start; justify-content: space-between; text-align: left; gap: 8px; border: 0; border-radius: 0; border-bottom: 1px solid #2c3744; border-left: 3px solid transparent; padding: 9px 11px; background: transparent; }
+.results button:hover { background: #263442; }
+.results button[aria-current="true"] { border-left-color: var(--accent); background: #30404f; }
+.results .actor { font-size: .86rem; font-weight: 580; }
+.results .action { font-size: .75rem; color: var(--muted); text-align: right; }
+.mobile-choice { display: none; }
+.viewer { padding: clamp(13px,1.9vw,24px); }
+.case-head { margin-bottom: 14px; }
+.family { color: var(--muted); font-size: .79rem; margin-bottom: 3px; }
+h2 { letter-spacing: -.038em; font-size: clamp(1.4rem,2.6vw,2.4rem); line-height: 1.12; }
+.state { color: var(--muted); font-weight: 460; }
+.stages { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; }
+figure { margin: 0; min-width: 0; }
+figcaption { display:flex; align-items:center; min-height:29px; margin-bottom:4px; color:var(--muted); font-size:.78rem; font-weight:600; }
+.comparison-source { max-width:100%; font:inherit; color:var(--text); padding:.19rem .35rem; }
+.stage { height: clamp(166px,22.5vw,292px); min-width: 0; background: #333d4b; border: 1px solid #4c5969; border-radius: 3px; overflow: hidden; }
+.light .stage { background: #d4cec1; border-color: #ded8cb; }
+canvas { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+.transport { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; padding-top: 10px; }
+.transport button,.transport select,.matte button { font-size: .81rem; min-height: 33px; }
+.transport .play { min-width: 65px; font-weight: 650; }
+.transport .step { width: 38px; }
+.transport select { padding: .25rem; }
+.matte { margin-left: auto; display: flex; gap: 3px; align-items: center; }
+.matte span { font-size: .75rem; color: var(--muted); margin-right: 4px; }
+.timeline { display: grid; grid-template-columns: minmax(64px,1fr) auto; gap: 13px; align-items: center; margin: 10px 0; }
+input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0; }
+output { font: .77rem var(--mono); color: var(--muted); }
+.cited { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+.cited span { font-size: .77rem; color: var(--muted); margin-right: 3px; }
+.cited button { padding: .14rem .4rem; font: .75rem var(--mono); min-width: 30px; }
+.notes { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 14px; }
+h3 { font-size: 1.07rem; letter-spacing: -.025em; margin-bottom: 8px; }
+.notes dl { display: grid; grid-template-columns: max-content minmax(0,1fr); gap: 7px 13px; line-height: 1.48; font-size: .88rem; margin: 0; }
+.notes dt { color: var(--muted); font-weight: 600; }
+.notes dd { margin: 0; }
+.sources { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 13px; font-size: .8rem; }
+.scene-box { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 9px; }
+summary { color: var(--accent); font-size: .86rem; cursor: pointer; }
+.scene-box img { margin-top: 10px; max-width: 100%; max-height: 70vh; image-rendering: pixelated; }
+.empty,.problem { color: var(--muted); padding: 18px; border: 1px solid var(--line); border-radius: 4px; }
+.problem { margin-top: 8px; font-size: .84rem; }
+.empty button { margin-top: 10px; }
+@media (max-width: 800px) {
+  header > div { padding-block: 10px; }
+  .workspace { grid-template-columns: 1fr; gap: 10px; }
+  .rail-top { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 8px; padding: 10px; }
+  .scope { align-items: center; }
+  .scope-summary { align-self: center; text-align: right; }
+  .mobile-choice { display: grid; grid-column: 1 / -1; }
+  .results { display: none; }
+  .stage { height: clamp(155px,30vw,235px); }
+}
+@media (max-width: 480px) {
+  :root { font-size: 15px; }
+  header nav { gap: 12px; } h1 { margin-bottom: 13px; }
+  .rail-top { gap: 7px; }
+  .scope { grid-column: 1 / -1; }
+  .scope-summary { grid-row: 4; grid-column: 1 / -1; text-align: left; }
+  .stage { height: clamp(125px,36vw,180px); }
+  .viewer { padding: 10px; }
+  .transport { gap: 4px; }
+  .matte { margin-left: 0; }
+  .matte span { display: none; }
+  .timeline { gap: 6px; }
+  .notes dl { display: block; }
+  .notes dd + dt { margin-top: 6px; }
+}
+</style>
+</head>
+<body>
+<header><div><strong>Dungeon Matcher</strong><nav aria-label="Project references">
+  <a href="../CastMotionAudit/Review.html">Original audit</a>
+  <a href="../Character_Animation_SOP.md">Animation SOP</a>
+</nav></div></header>
+<main>
+<h1>Animation repair review</h1>
+<div class="workspace">
+<aside class="rail" aria-label="Choose an animation">
+  <div class="rail-top">
+    <div class="scope" id="scope" role="group" aria-label="Repair group"></div>
+    <div class="scope-summary" id="count" role="status"></div>
+    <label class="field">Search repairs<input id="search" type="search" placeholder="Character, action or issue"></label>
+    <label class="field">Character<select id="actor"></select></label>
+    <label class="field mobile-choice">Animation<select id="mobileClip"></select></label>
+  </div>
+  <div class="results" id="list" aria-label="Matching animations"></div>
+</aside>
+<section id="viewer" class="viewer" aria-labelledby="caseTitle">
+  <div class="case-head">
+    <p id="family" class="family"></p>
+    <h2 id="caseTitle"><span id="name"></span> <span class="state" id="state"></span></h2>
+  </div>
+  <div class="stages" id="stages">
+    <figure><figcaption><span id="leftFixed">Previous game</span><select id="leftVersion" class="comparison-source" aria-label="Left comparison source" hidden><option value="reviewed">Last review</option><option value="before">Previous game</option></select></figcaption><div class="stage"><canvas id="before" aria-label="Previous game animation"></canvas></div></figure>
+    <figure><figcaption>Updated animation</figcaption><div class="stage"><canvas id="after" aria-label="Updated animation"></canvas></div></figure>
+  </div>
+  <div id="problem" class="problem" role="alert" hidden></div>
+  <div class="transport" role="group" aria-label="Playback controls">
+    <button id="play" type="button" class="play">Play</button>
+    <button id="replay" type="button">Replay</button>
+    <button id="prev" type="button" class="step" title="Previous frame" aria-label="Previous frame">◀</button>
+    <button id="next" type="button" class="step" title="Next frame" aria-label="Next frame">▶</button>
+    <select id="speed" aria-label="Playback speed"><option value="1">1×</option><option value=".5">½×</option><option value=".25">¼×</option></select>
+    <div class="matte" role="group" aria-label="Preview matte"><span>Matte</span><button id="dark" type="button" aria-pressed="true">Dark</button><button id="light" type="button" aria-pressed="false">Light</button></div>
+  </div>
+  <div class="timeline"><input id="time" aria-label="Animation time" type="range" min="0" value="0" step="1"><output id="readout" for="time"></output></div>
+  <div class="cited" id="cited"></div>
+  <div class="notes">
+    <h3 id="title"></h3>
+    <dl><dt>Issue</dt><dd id="issue"></dd><dt>Repair</dt><dd id="fix"></dd></dl>
+    <div class="sources"><a id="native">Editable sprite</a><a id="clip">Unity clip</a></div>
+  </div>
+  <details id="scene" class="scene-box" hidden><summary>Unity Game scene capture</summary><img id="capture" alt=""></details>
+</section>
+<section class="empty" id="empty" hidden><p>No animations match these filters.</p><button id="clear" type="button">Clear filters</button></section>
+</div>
+</main>
+<script type="application/json" id="records">[{"actor":"elven_pathblade","state":"Idle","group":"Expansion","times":[130,130,130,130,130,130,130,390,130,130,130,130,130,10,40,80,40,350,130,130,130,130,130,130,250,10],"title":"Elven Pathblade","name":"Elven Pathblade","before":"media/elven_pathblade-Idle-before.png","after":"media/elven_pathblade-Idle-after.png","size":[59,60],"issue":"A later breath sent the head briefly to the right.","fix":"The head leans left, hair follows and the pose settles back over the planted boots.","family":"elven_pathblade","cited":[3,4,5],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/elven_pathblade/idle/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/ElvenPathblade_Idle.anim","scene":"scene/elven_pathblade-Idle.webp"},{"actor":"guild_bulwark","state":"AutoAttack","group":"Expansion","times":[70,60,60,60,50,20,90,40,70,60,90,10],"title":"Guild Bulwark","name":"Guild Bulwark","before":"media/guild_bulwark-AutoAttack-before.png","after":"media/guild_bulwark-AutoAttack-after.png","size":[83,68],"issue":"The haft kinked near the glove during the strike.","fix":"The mace rotates from the glove as one connected head and haft. His shield remains braced and his hair stays brown.","family":"guild_bulwark","cited":[2,3,4],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/basic/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/GuildBulwark_AutoAttack.anim","scene":"scene/guild_bulwark-AutoAttack.webp"},{"actor":"guild_bulwark","state":"Idle","group":"Expansion","times":[130,130,130,130,130,130,130,390,130,130,130,130,130,130,190,40,80,40,40,130,130,130,130,130,130,390,130,130,130,130,130,130,250,10],"title":"Guild Bulwark","name":"Guild Bulwark","before":"media/guild_bulwark-Idle-before.png","after":"media/guild_bulwark-Idle-after.png","size":[67,68],"issue":"The head flicked right during one of the breathing cycles.","fix":"The head leans left and returns to neutral with the blink and secondary motion.","family":"guild_bulwark","cited":[21,22,23],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/guild_bulwark/idle/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/GuildBulwark_Idle.anim","scene":"scene/guild_bulwark-Idle.webp"},{"actor":"guild_chirurgeon","state":"AutoAttack","group":"Expansion","times":[80,80,120,40,120,60,100,70,10],"title":"Guild Chirurgeon","name":"Elven Guild Chirurgeon","before":"media/guild_chirurgeon-AutoAttack-before.png","after":"media/guild_chirurgeon-AutoAttack-after.png","size":[69,64],"issue":"Pale sclera competed with the dark pupils in the staff-strike poses.","fix":"The visible eye pixels follow the face through the jab. The staff and its crystal retain their own colors.","family":"guild_chirurgeon","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/basic/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_AutoAttack.anim","scene":"scene/guild_chirurgeon-AutoAttack.webp"},{"actor":"guild_chirurgeon","state":"Idle","group":"Expansion","times":[130,130,130,130,130,130,130,390,130,130,40,40,50,30,40,60,130,130,390,130,130,130,130,130,130,250,10],"title":"Guild Chirurgeon","name":"Elven Guild Chirurgeon","before":"media/guild_chirurgeon-Idle-before.png","after":"media/guild_chirurgeon-Idle-after.png","size":[50,67],"issue":"The head flicked right during one of the breathing cycles.","fix":"The head leans left and returns to neutral with the blink and secondary motion. The pupils read black.","family":"guild_chirurgeon","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/idle/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_Idle.anim","scene":"scene/guild_chirurgeon-Idle.webp"},{"actor":"guild_chirurgeon","state":"Ability","group":"Expansion","times":[70,60,60,60,60,50,100,60,40,60,50,50,50,10],"title":"Guild Chirurgeon","name":"Elven Guild Chirurgeon","before":"media/guild_chirurgeon-Ability-before.png","after":"media/guild_chirurgeon-Ability-after.png","size":[53,76],"issue":"The raised staff moved while the healer remained upright. Her eyes also carried pale sclera.","fix":"The casting shoulder and head rise with the staff. The hand stays on the shaft and the eye whites are inked.","family":"guild_chirurgeon","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/guild_chirurgeon/special/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_Ability.anim","scene":"scene/guild_chirurgeon-Ability.webp"},{"actor":"guild_ranger","state":"AutoAttack","group":"Expansion","times":[80,80,120,40,120,60,100,70,10],"title":"Guild Ranger","name":"Guild Ranger","before":"media/guild_ranger-AutoAttack-before.png","after":"media/guild_ranger-AutoAttack-after.png","size":[90,64],"issue":"The gunner shared the brown Guild hair and had light pixels beside his pupils.","fix":"The blond hair ends at the dark headband. Black eyes stay clear throughout recoil and both muzzle flashes.","family":"guild_ranger","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/guild_ranger/basic/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/GuildRanger_AutoAttack.anim","scene":"scene/guild_ranger-AutoAttack.webp"},{"actor":"guild_ranger","state":"Idle","group":"Expansion","times":[300,290,290,280,10],"title":"Guild Ranger","name":"Guild Ranger","before":"media/guild_ranger-Idle-before.png","after":"media/guild_ranger-Idle-after.png","size":[65,63],"issue":"The gunner shared the brown Guild hair and had light pixels beside his pupils.","fix":"The blond hair ends at the dark headband. Black eyes stay clear throughout recoil and both muzzle flashes.","family":"guild_ranger","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/guild_ranger/idle/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/GuildRanger_Idle.anim","scene":"scene/guild_ranger-Idle.webp"},{"actor":"guild_swordsman","state":"AutoAttack","group":"Expansion","times":[80,80,120,40,120,60,100,70,10],"title":"Guild Swordsman","name":"Guild Swordsman","before":"media/guild_swordsman-AutoAttack-before.png","after":"media/guild_swordsman-AutoAttack-after.png","reviewed":"media/guild_swordsman-AutoAttack-reviewed.png","size":[77,74],"issue":"The original head was large for the Guild lineup. The first reduced version had a straight cheek and square chin.","fix":"A stepped cheek narrows into the chin. His black hair, brow, eye spacing and mouth carry through every sword pose.","family":"guild_swordsman","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/guild_swordsman/basic/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/GuildSwordsman_AutoAttack.anim","scene":"scene/guild_swordsman-AutoAttack.webp"},{"actor":"guild_swordsman","state":"Idle","group":"Expansion","times":[130,130,130,130,130,130,130,390,130,130,130,130,130,130,280,40,70,10,40,80,130,130,130,130,130,250,10],"title":"Guild Swordsman","name":"Guild Swordsman","before":"media/guild_swordsman-Idle-before.png","after":"media/guild_swordsman-Idle-after.png","reviewed":"media/guild_swordsman-Idle-reviewed.png","size":[56,67],"issue":"The head flicked right during one of the breathing cycles. The first reduced face also looked square.","fix":"The head leans left and returns to neutral with the blink and secondary motion. A tapered cheek and chin soften the smaller face.","family":"guild_swordsman","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/guild_swordsman/idle/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/GuildSwordsman_Idle.anim","scene":"scene/guild_swordsman-Idle.webp"},{"actor":"iceborn_axeman","state":"AutoAttack","group":"Expansion","times":[70,60,60,80,30,20,90,50,60,60,90,10],"title":"Iceborn Axeman","name":"Iceborn Axeman","before":"media/iceborn_axeman-AutoAttack-before.png","after":"media/iceborn_axeman-AutoAttack-after.png","reviewed":"media/iceborn_axeman-AutoAttack-reviewed.png","size":[85,96],"issue":"The axe appeared to change length as it came down.","fix":"Both hands keep their positions on one rigid haft. Two descending poses connect the high guard to the 320 ms strike, followed by a low braking pose.","family":"iceborn_axeman","cited":[4,5,6,7,8],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/iceborn_axeman/basic/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/IcebornAxeman_AutoAttack.anim","scene":"scene/iceborn_axeman-AutoAttack.webp"},{"actor":"iceborn_axeman","state":"Idle","group":"Expansion","times":[130,130,130,130,130,130,130,390,100,30,10,80,40,130,130,130,130,390,130,130,130,130,130,130,250,10],"title":"Iceborn Axeman","name":"Iceborn Axeman","before":"media/iceborn_axeman-Idle-before.png","after":"media/iceborn_axeman-Idle-after.png","size":[66,66],"issue":"The head flicked right during one of the breathing cycles.","fix":"The head leans left and returns to neutral with the blink and secondary motion. Black eyes stay distinct from his teeth.","family":"iceborn_axeman","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/iceborn_axeman/idle/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/IcebornAxeman_Idle.anim","scene":"scene/iceborn_axeman-Idle.webp"},{"actor":"nacre_duelist","state":"AutoAttack","group":"Expansion","times":[80,80,120,40,120,60,100,70,10],"title":"Nacre Duelist","name":"Nacre Duelist","before":"media/nacre_duelist-AutoAttack-before.png","after":"media/nacre_duelist-AutoAttack-after.png","size":[88,79],"issue":"The eye highlight blended into the pearl face.","fix":"The eye is a small dark shape inside the pearl head. The scallop guard and rapier retain their own highlights.","family":"nacre_duelist","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/nacre_duelist/basic/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/NacreDuelist_AutoAttack.anim","scene":"scene/nacre_duelist-AutoAttack.webp"},{"actor":"nacre_duelist","state":"Idle","group":"Expansion","times":[150,150,150,150,150,140,140,130,10],"title":"Nacre Duelist","name":"Nacre Duelist","before":"media/nacre_duelist-Idle-before.png","after":"media/nacre_duelist-Idle-after.png","size":[75,74],"issue":"The eye highlight blended into the pearl face.","fix":"The eye is a small dark shape inside the pearl head. The scallop guard and rapier retain their own highlights.","family":"nacre_duelist","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/nacre_duelist/idle/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/NacreDuelist_Idle.anim","scene":"scene/nacre_duelist-Idle.webp"},{"actor":"nacre_halberdier","state":"AutoAttack","group":"Expansion","times":[60,50,70,70,30,40,90,60,50,50,50,50,10],"title":"Nacre Halberdier","name":"Nacre Halberdier","before":"media/nacre_halberdier-AutoAttack-before.png","after":"media/nacre_halberdier-AutoAttack-after.png","reviewed":"media/nacre_halberdier-AutoAttack-reviewed.png","size":[95,86],"issue":"The reviewed dark eye disappeared into the visor.","fix":"The exposed eye is a flat pearl-white shape. The helmet keeps its original colors and the lids still close.","family":"nacre_halberdier","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/nacre_halberdier/basic/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/NacreHalberdier_AutoAttack.anim","scene":"scene/nacre_halberdier-AutoAttack.webp"},{"actor":"nacre_halberdier","state":"Idle","group":"Expansion","times":[130,130,130,130,130,130,130,390,130,130,130,130,130,130,390,130,100,30,10,80,40,130,130,130,390,130,130,130,130,130,130,250,10],"title":"Nacre Halberdier","name":"Nacre Halberdier","before":"media/nacre_halberdier-Idle-before.png","after":"media/nacre_halberdier-Idle-after.png","reviewed":"media/nacre_halberdier-Idle-reviewed.png","size":[61,71],"issue":"The head flicked right during one of the breathing cycles. The dark eye in the review was hard to read inside the visor.","fix":"The head leans left and returns to neutral with the blink and secondary motion. A flat pearl-white eye shows through the visor.","family":"nacre_halberdier","cited":[1,2,3],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/nacre_halberdier/idle/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/NacreHalberdier_Idle.anim","scene":"scene/nacre_halberdier-Idle.webp"},{"actor":"orc_slinghunter","state":"Idle","group":"Expansion","times":[260,130,130,130,130,130,520,130,130,130,130,130,120,40,80,40,240,130,130,130,130,130,250,10],"title":"Orc Slinghunter","name":"Orc Slinghunter","before":"media/orc_slinghunter-Idle-before.png","after":"media/orc_slinghunter-Idle-after.png","size":[37,43],"issue":"The head changed direction for a single beat during the longer idle.","fix":"The head and ear lean left over the red scarf and settle around the blink.","family":"orc_slinghunter","cited":[18,19,20],"native":"../../../ArtSource/SelectionExpansion/Motion/Production/orc_slinghunter/idle/source.aseprite","clip":"../../../Assets/_Game/Animations/SelectionExpansion/OrcSlinghunter_Idle.anim","scene":"scene/orc_slinghunter-Idle.webp"},{"actor":"miner","state":"Idle","group":"Audit","times":[130,130,130,130,130,130,130,130,120,10],"title":"Pick and hand open on the blink","name":"Miner","before":"media/miner-Idle-before.png","after":"media/miner-Idle-after.png","size":[58,71],"issue":"At the deepest blink, a one-pixel-high transparent slit begins at native x49, y83 in the pick. It cuts towards the grip on both 130 ms poses. The metal and glove reconnect as he rises.","fix":"The pick head, haft and glove meet on both deep breathing poses. The eyes still blink and the soles stay planted.","family":"miner","cited":[5,6],"native":"../../../ArtSource/EnemyArtCohesion/Native/Miner_Idle-9cf4c96f86.aseprite","clip":"../../../Assets/_Game/Animations/CombatIdles/Miner_Idle.anim"},{"actor":"royal_standard_bearer","state":"Idle","group":"Audit","times":[130,130,130,130,130,130,130,130,120,10],"title":"A slit opens in the crimson banner","name":"Royal Standard Bearer","before":"media/royal_standard_bearer-Idle-before.png","after":"media/royal_standard_bearer-Idle-after.png","size":[61,69],"issue":"The field of the flag over the skull opens along y32. The exposure at 910 ms leaves a ten-pixel transparent slit with intact cloth directly above and below.","fix":"The flag keeps its crimson fold where the helmet crosses it during the dip.","family":"royal_standard_bearer","cited":[4,5,7,8],"native":"../../../ArtSource/EnemyArtCohesion/Native/RoyalStandardBearer_Idle-2643d0037a.aseprite","clip":"../../../Assets/_Game/Animations/CombatIdles/RoyalStandardBearer_Idle.anim"},{"actor":"knight","state":"Idle","group":"Audit","times":[130,130,130,130,130,130,130,130,120,10],"title":"Shoulder plate splits horizontally","name":"Sword Knight","before":"media/knight-Idle-before.png","after":"media/knight-Idle-after.png","size":[56,65],"issue":"The raised-side silver pauldron acquires a six-pixel transparent seam on frames 3 and 4. The gap follows the downward head bob for two exposures.","fix":"The shoulder plate carries its complete outer edge into the sleeve on the two lowered poses.","family":"knight","cited":[3,4],"native":"../../../ArtSource/EnemyArtCohesion/Native/SwordKnight_Idle-c1a727bee4.aseprite","clip":"../../../Assets/_Game/Animations/CombatIdles/SwordKnight_Idle.anim"},{"actor":"royal_swordsman","state":"Idle","group":"Audit","times":[130,130,130,130,130,130,130,130,120,10],"title":"The white pauldron blinks open","name":"Royal Swordsman","before":"media/royal_swordsman-Idle-before.png","after":"media/royal_swordsman-Idle-after.png","size":[68,63],"issue":"The screen-right pauldron opens across its white and gold bands. Eight contiguous pixels disappear from its interior on frame 3; the surviving gap moves down on frame 4.","fix":"The white pauldron keeps its dark lower edge and overlap with the cloak as the shoulder drops.","family":"royal_swordsman","cited":[3,4],"native":"../../../ArtSource/EnemyArtCohesion/Native/RoyalSwordsman_Idle-ecfdf6325d.aseprite","clip":"../../../Assets/_Game/Animations/CombatIdles/RoyalSwordsman_Idle.anim"},{"actor":"crossbow_guard","state":"Idle","group":"Audit","times":[130,130,130,130,130,130,130,130,120,10],"title":"Crossbow and jacket shear on the dip","name":"Crossbow Guard","before":"media/crossbow_guard-Idle-before.png","after":"media/crossbow_guard-Idle-after.png","size":[56,64],"issue":"The crossbow/jacket area acquires a one-row opening eight pixels wide on frame 2. Another six-pixel run of background shows through the bow-side upper jacket on the two low poses. The central bow stock and grip appear sliced.","fix":"The crossbow, glove and jacket now overlap throughout the dip and the matching recovery cels.","family":"crossbow_guard","cited":[2,5,6],"native":"../../../ArtSource/EnemyArtCohesion/Native/CrossbowGuard_Idle-7d13816986.aseprite","clip":"../../../Assets/_Game/Animations/CombatIdles/CrossbowGuard_Idle.anim"},{"actor":"spear_guard","state":"Idle","group":"Audit","times":[130,130,130,130,130,130,130,130,120,10],"title":"The shield shoulder opens for one exposure","name":"Spear Guard","before":"media/spear_guard-Idle-before.png","after":"media/spear_guard-Idle-after.png","size":[57,67],"issue":"Two offset transparent strips open through the collar and top of the shield-side pauldron for 130 ms. Both joins close on the next drawing.","fix":"The links and ridge under the pauldron remain visible as the guard takes up the weight of the shield.","family":"spear_guard","cited":[2],"native":"../../../ArtSource/EnemyArtCohesion/Native/SpearGuard_Idle-0f848a9fbc.aseprite","clip":"../../../Assets/_Game/Animations/CombatIdles/SpearGuard_Idle.anim"},{"actor":"court_mage","state":"Idle","group":"Audit","times":[130,130,130,130,130,130,130,130,120,10],"title":"Mage shoulder plate has a pinhole seam","name":"Court Mage","before":"media/court_mage-Idle-before.png","after":"media/court_mage-Idle-after.png","size":[54,62],"issue":"Two short transparent runs cut across the silver shoulder cap on the third and fourth exposures. They are most visible against a bright combat background.","fix":"The shoulder cap covers the fabric under the hood on both compressed poses.","family":"court_mage","cited":[3,4],"native":"../../../ArtSource/EnemyArtCohesion/Native/RoyalMage_Idle-789d3d3080.aseprite","clip":"../../../Assets/_Game/Animations/CombatIdles/RoyalMage_Idle.anim"},{"actor":"royal_lancer","state":"Idle","group":"Audit","times":[130,130,130,130,130,130,130,130,120,10],"title":"The lancer’s shoulder fastening drops out","name":"Royal Lancer","before":"media/royal_lancer-Idle-before.png","after":"media/royal_lancer-Idle-after.png","size":[52,67],"issue":"A three-pixel transparent gap in the helmet-side edge of the white pauldron opens on the third and fourth keys, stepping down with the rest of the upper body.","fix":"The collar and pauldron meet under the visor through the dip.","family":"royal_lancer","cited":[3,4],"native":"../../../ArtSource/EnemyArtCohesion/Native/RoyalLancer_Idle-f4ca919db7.aseprite","clip":"../../../Assets/_Game/Animations/CombatIdles/RoyalLancer_Idle.anim"},{"actor":"siege_sergeant","state":"Idle","group":"Audit","times":[130,130,130,130,130,130,130,130,120,10],"title":"Hammer/pole junction flashes through","name":"Siege Sergeant","before":"media/siege_sergeant-Idle-before.png","after":"media/siege_sergeant-Idle-after.png","size":[54,69],"issue":"At the junction of the long wooden shaft and the grounded hammer, a four-pixel break shows the background for one exposure. The head and boots otherwise stay anchored.","fix":"The fingers close around the hammer haft where it meets the head.","family":"siege_sergeant","cited":[2],"native":"../../../ArtSource/EnemyArtCohesion/Native/SiegeSergeant_Idle-26b5e87f88.aseprite","clip":"../../../Assets/_Game/Animations/CombatIdles/SiegeSergeant_Idle.anim"},{"actor":"royal_arbalist","state":"Idle","group":"Audit","times":[130,130,130,130,130,130,130,130,120,10],"title":"Crossbow-side gauntlet join flickers","name":"Royal Arbalist","before":"media/royal_arbalist-Idle-before.png","after":"media/royal_arbalist-Idle-after.png","size":[57,69],"issue":"The steel edge below the crossbow opens across the glove/forearm during two 130 ms exposures. The same three-pixel slit moves down one row on the fourth drawing.","fix":"The forearm and glove keep an unbroken outline behind the crossbow on both sides of the breath.","family":"royal_arbalist","cited":[2,4],"native":"../../../ArtSource/EnemyArtCohesion/Native/RoyalArbalist_Idle-d4d325856b.aseprite","clip":"../../../Assets/_Game/Animations/CombatIdles/RoyalArbalist_Idle.anim"},{"actor":"dungeon_attender","state":"Death","group":"Audit","times":[60,70,80,90,90,90,90,90,130,10],"title":"Minotaur loses the lower half of his kneel","name":"Dungeon Attender","before":"media/dungeon_attender-Death-before.png","after":"media/dungeon_attender-Death-after.png","size":[73,71],"issue":"Both feet disappear behind a straight line at y79 as the body lowers. The last occupied row grows from 18 pixels in the standing drawing to 42 on frame 6. Sixteen transparent rows remain underneath within the imported sprite.","fix":"Folded knees, separate hooves and an overlapping hand complete the kneeling silhouette on the original floor.","family":"dungeon_attender","cited":[5,6,7,8,9],"native":"../../../ArtSource/FrostwakePlayables/production/Minotaur_Death.aseprite","clip":"../../../Assets/_Game/Animations/FrostwakePlayables/Minotaur_Death.anim"},{"actor":"kobold_gunner","state":"Death","group":"Audit","times":[60,70,80,90,90,90,90,90,130,10],"title":"Kobold’s settled pose has a flat cutoff","name":"Kobold Gunner","before":"media/kobold_gunner-Death-before.png","after":"media/kobold_gunner-Death-after.png","size":[64,65],"issue":"During the fall, feet and trouser contours end on a single horizontal line at y75. The last two poses leave 36 occupied pixels along that line and four transparent rows below it.","fix":"The crouch settles onto drawn boots. His tail, hand and revolver have separate silhouettes above the floor.","family":"kobold_gunner","cited":[5,6,7,8,9],"native":"../../../ArtSource/FrostwakePlayables/production/Kobold_Death.aseprite","clip":"../../../Assets/_Game/Animations/FrostwakePlayables/Kobold_Death.anim"},{"actor":"bore_engineer","state":"AutoAttack","group":"Audit","times":[80,70,70,60,60,60,70,80,10],"title":"Drill snaps back on contact","name":"Bore Engineer","before":"media/bore_engineer-AutoAttack-before.png","after":"media/bore_engineer-AutoAttack-after.png","size":[99,62],"issue":"The drill nose reaches native x=3 on cel 4, jumps back to x=31 on the impact at 280 ms, then jumps forward to x=3 again. The grip and torso also briefly return to the ready pose. The extra thrust reads like a second hit.","fix":"Kept the drill extended across its sole 280 ms impact, advanced the bit highlights, then recovered once. Removed the hovering patch of drill pixels from the five extended poses.","family":"bore_engineer","cited":[3,4,5,6,7],"native":"../../../ArtSource/EnemyArtCohesion/Native/bore_engineer_AutoAttack-8a8cbb2df6.aseprite","clip":"../../../Assets/_Game/Animations/Ironvein/bore_engineer_AutoAttack.anim"},{"actor":"frostblade_reaver","state":"Idle","group":"Audit","times":[130,130,130,130,130,130,130,130,120,10],"title":"Loose blade and skin pixels in the idle","name":"Frostblade Reaver","before":"media/frostblade_reaver-Idle-before.png","after":"media/frostblade_reaver-Idle-after.png","size":[98,71],"issue":"On cels 3 and 7 the steel pixel at (12,66), skin at (36,60), two pixels near the hilt and a boot-colored pixel at (90,99) are separate alpha islands. Flecks appear in the repeated rising and falling poses with stationary feet; the ready cel has none. Coordinates start at the top left of the imported cel.","fix":"Removed the one- and two-pixel blade, hilt, skin and boot islands from the six affected idle exposures while preserving attached highlights and footing.","family":"frostblade_reaver","cited":[1,2,3,4,7,8],"native":"../../../ArtSource/Frostwake/production/frostblade_reaver/Idle.aseprite","clip":"../../../Assets/_Game/Animations/Frostwake/frostblade_reaver_Idle.anim"},{"actor":"harpoon_hunter","state":"Release","group":"Audit","times":[180,180,60,60,60,60,80,100,90,10],"title":"Harpoon loses its point","name":"Harpoon Hunter","before":"media/harpoon_hunter-Release-before.png","after":"media/harpoon_hunter-Release-after.png","size":[103,69],"issue":"On the release cel at 360 ms and the next at 420 ms the left boundary cuts the barb. It reaches the edge again at 480 and 540 ms. The full pointed head returns as the arm pulls back.","fix":"Rebuilt the two barbs and the short adjacent shaft in cels 3–6 from the existing sharp profile within the original cell. The hands, rope, rest of the shaft and feet keep their registration.","family":"harpoon_hunter","cited":[2,3,4,5,6,7],"native":"../../../ArtSource/Frostwake/production/harpoon_hunter/Release.aseprite","clip":"../../../Assets/_Game/Animations/Frostwake/harpoon_hunter_Release.anim"},{"actor":"rimecarver","state":"AutoAttack","group":"Audit","times":[160,160,51,51,51,51,51,51,44,10],"title":"Frost impact has a cut edge","name":"Rimecarver","before":"media/rimecarver-AutoAttack-before.png","after":"media/rimecarver-AutoAttack-after.png","size":[128,70],"issue":"The pale ice burst has a straight vertical cut at x=0 on the contact at 320 ms. The spray also meets that edge on the 371 and 422 ms cels. The abrupt cut sits directly ahead of the staff tip.","fix":"Reconstructed the ice head from the intact recovery drawing and replaced the hard-edged burst with three tapered pale splinters which disperse over the original contact and recovery. Cleared the clipped final dust fringe.","family":"rimecarver","cited":[2,3,4,5,6],"native":"../../../ArtSource/Frostwake/production/rimecarver/AutoAttack.aseprite","clip":"../../../Assets/_Game/Animations/Frostwake/rimecarver_AutoAttack.anim"},{"actor":"ancient_treant","state":"Hit","group":"Audit","times":[45,65,85,65,70,10],"title":"Flat disk obscures the stump crown","name":"Ancient Treant","before":"media/ancient_treant-Hit-before.png","after":"media/ancient_treant-Hit-after.png","size":[97,94],"issue":"A flat opaque tan patch expands from the twig into a near-circle behind and across the crown. At 195 ms it also replaces the upper-face shading and a patch of the chest, then all those patches vanish together at 260 ms.","fix":"Kept the approved stump crown and face visible during a compact grounded recoil. Added three small bark chips that rise, separate and disappear before the ready pose.","family":"ancient_treant","cited":[1,2,3,4,5],"native":"../../../ArtSource/EnemyArtCohesion/Native/Ancient_Treant_Hit-dd15a8e231.aseprite","clip":"../../../Assets/_Game/Animations/Forest/Roster/Ancient_Treant_Hit.anim"},{"actor":"briar_matriarch","state":"Interrupt","group":"Audit","times":[55,60,65,65,65,65,70,75,70,10],"title":"Successful casting art repeats on interruption","name":"Briar Matriarch","before":"media/briar_matriarch-Interrupt-before.png","after":"media/briar_matriarch-Interrupt-after.png","size":[67,85],"issue":"Interrupt has the same nine RGBA drawings as Release, including the white cast arc around the raised hand on cels 2–4. The presenter does add a separate interruption effect. The Matriarch herself still appears to complete the spell.","fix":"Dropped the casting hand from the held pose, used her own recoil and restored neutral without the success arc. The successful Release artwork stays independent.","family":"briar_matriarch","cited":[1,2,3,4,5,6],"native":"../../../ArtSource/EnemyArtCohesion/Native/Briar_Matriarch_Interrupt-879865debf.aseprite","clip":"../../../Assets/_Game/Animations/Forest/Briar_Matriarch_Interrupt.anim"},{"actor":"barkhide_warden","state":"Interrupt","group":"Audit","times":[55,60,65,65,65,65,70,75,70,10],"title":"Successful casting art repeats on interruption","name":"Barkhide Warden","before":"media/barkhide_warden-Interrupt-before.png","after":"media/barkhide_warden-Interrupt-after.png","size":[68,69],"issue":"Interrupt has the same nine RGBA drawings as Release, including the white cast arc around the raised hand on cels 2–4. The presenter does add a separate interruption effect. The Matriarch herself still appears to complete the spell.","fix":"Folded the extended arm toward his shield, tucked the upper body briefly behind it and settled to guard. The knees and planted shield reinforce the cancellation.","family":"briar_matriarch","cited":[2,3,4,5,6],"native":"../../../ArtSource/EnemyArtCohesion/Native/Barkhide_Warden_Interrupt-9f18f0e6ff.aseprite","clip":"../../../Assets/_Game/Animations/Forest/Barkhide_Warden_Interrupt.anim"},{"actor":"orc_rootbinder","state":"Interrupt","group":"Audit","times":[55,60,65,65,65,65,70,75,70,10],"title":"Successful casting art repeats on interruption","name":"Orc Rootbinder","before":"media/orc_rootbinder-Interrupt-before.png","after":"media/orc_rootbinder-Interrupt-after.png","size":[67,70],"issue":"Interrupt has the same nine RGBA drawings as Release, including the white cast arc around the raised hand on cels 2–4. The presenter does add a separate interruption effect. The Matriarch herself still appears to complete the spell.","fix":"Collapsed the casting palm, lowered the forked staff through his own channel poses and let the torso flinch into recovery.","family":"briar_matriarch","cited":[2,3,4,5,6],"native":"../../../ArtSource/EnemyArtCohesion/Native/Orc_Rootbinder_Interrupt-fd92c65965.aseprite","clip":"../../../Assets/_Game/Animations/Forest/Orc_Rootbinder_Interrupt.anim"},{"actor":"elven_mender","state":"Interrupt","group":"Audit","times":[60,60,80,60,60,80,60,80,60,10],"title":"Successful casting art repeats on interruption","name":"Elven Mender","before":"media/elven_mender-Interrupt-before.png","after":"media/elven_mender-Interrupt-after.png","size":[58,64],"issue":"Interrupt has the same nine RGBA drawings as Release, including the white cast arc around the raised hand on cels 2–4. The presenter does add a separate interruption effect. The Matriarch herself still appears to complete the spell.","fix":"Lowered the open hand and let the shoulder, hair and head dip through the healer’s recoil. The staff remains a stable support.","family":"briar_matriarch","cited":[2,3,4,5,6],"native":"../../../ArtSource/EnemyArtCohesion/Native/Elven_Mender_Interrupt-d529ea4684.aseprite","clip":"../../../Assets/_Game/Animations/Forest/Elven_Mender_Interrupt.anim"},{"actor":"shellback_porter","state":"AutoAttack","group":"Audit","times":[45,45,45,45,45,45,45,65,45,70,10],"title":"Hammer lands against its owner’s chest","name":"Shellback Porter","before":"media/shellback_porter-AutoAttack-before.png","after":"media/shellback_porter-AutoAttack-after.png","size":[79,85],"issue":"The hammer is overhead on cel 7; the 315 ms impact immediately folds its head against the forward chest. On cel 9 it already looks like the resting hand tool. The readiness of the windup is clear, but there is little outward or downward contact silhouette.","fix":"Tilted the raised mallet into a forward arc, punched the head down and out from the body on the registered 315 ms contact, then drew it back through the next pose. Both grips and the metal head remain joined.","family":"shellback_porter","cited":[2,4,7,8,9,10],"native":"../../../ArtSource/EnemyArtCohesion/Native/shellback_porter_AutoAttack-504eb19f2a.aseprite","clip":"../../../Assets/_Game/Animations/DrownedCourt/shellback_porter_AutoAttack.anim"},{"actor":"orc_drummer","state":"Death","group":"Audit","times":[90,90,90,90,90,90,90,90,230,10],"title":"Defeat still reads like a drum accent","name":"Orc Drummer","before":"media/orc_drummer-Death-before.png","after":"media/orc_drummer-Death-after.png","size":[96,67],"issue":"The drummer lowers his hands onto the drumhead and holds the pose. The top of the body ends at roughly its starting height and the right boot stays braced. At phone scale the final drawing can read as another downbeat.","fix":"Let the knees buckle, the torso roll back with the strapped drum, and a loose mallet leave the hand and settle on the floor. Held the final side-fallen silhouette.","family":"orc_drummer","cited":[1,4,6,8,9,10],"native":"../../../ArtSource/EnemyArtCohesion/Native/Orc_Drummer_Death-09aa72e383.aseprite","clip":"../../../Assets/_Game/Animations/Forest/Roster/Orc_Drummer_Death.anim"}]</script>
+<script>
+"use strict";
+const data = JSON.parse(document.getElementById("records").textContent);
+const $ = id => document.getElementById(id);
+const stages = [$("before"), $("after")];
+const pretty = value => String(value || "").replace(/([a-z])([A-Z])/g,"$1 $2").replace(/[_-]+/g," ");
+const stateName = record => pretty(record.state);
+const groupName = key => key === "Audit" ? "Audit clips" : key === "Expansion" ? "Expansion" : "All";
+const make = (tag,text) => { const node = document.createElement(tag); node.textContent = text; return node; };
+const byName = (a,b) => a.name.localeCompare(b.name) || stateName(a).localeCompare(stateName(b)) || a.title.localeCompare(b.title);
+const ordered = data.slice().sort(byName);
+const defaultCase = data.find(r => r.actor === "iceborn_axeman" && r.state.toLowerCase().replace(/[^a-z]/g,"") === "autoattack") || data[0];
+let group = "All";
+let selected = null;
+let pictures = [];
+let alternatives = {};
+let starts = [];
+let duration = 0;
+let cursor = 0;
+let clock = 0;
+let play = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let request = 0;
+let generation = 0;
+let priorFrame = -1;
+const buttons = new Map();
+
+function populateGroups() {
+  for (const key of ["All","Expansion","Audit"]) {
+    const total = key === "All" ? data.length : data.filter(record => record.group === key).length;
+    const button = make("button", groupName(key) + " " + total);
+    button.type = "button";
+    button.addEventListener("click", () => { group = key; populateActors(); filter(); });
+    $("scope").append(button);
+    buttons.set(key,button);
+  }
+}
+function groupRecords() {
+  return ordered.filter(record => group === "All" || record.group === group);
+}
+function populateActors() {
+  const select = $("actor");
+  const old = select.value;
+  select.replaceChildren(new Option("All characters",""));
+  const seen = new Set();
+  for (const record of groupRecords()) {
+    if (seen.has(record.actor)) continue;
+    select.append(new Option(record.name,record.actor));
+    seen.add(record.actor);
+  }
+  select.value = seen.has(old) ? old : "";
+}
+function choose(record) {
+  if (!record) return;
+  document.querySelectorAll("#list button").forEach(button => {
+    button.setAttribute("aria-current", String(data[Number(button.value)] === record));
+  });
+  $("mobileClip").value = String(data.indexOf(record));
+  if (selected === record) return;
+  selected = record;
+  pictures = [];
+  alternatives = {};
+  $("leftFixed").hidden = !!record.reviewed;
+  $("leftVersion").hidden = !record.reviewed;
+  $("leftVersion").value = record.reviewed ? "reviewed" : "before";
+  $("before").setAttribute("aria-label",record.reviewed ? "Last review animation" : "Previous game animation");
+  priorFrame = -1;
+  starts = [];
+  duration = 0;
+  for (const ms of record.times) { starts.push(duration); duration += ms; }
+  cursor = 0;
+  clock = performance.now();
+  $("time").max = String(Math.max(0,duration - 1));
+  $("name").textContent = record.name;
+  $("state").textContent = "· " + stateName(record);
+  $("family").textContent = [record.group === "Audit" ? "Cast audit" : "Expansion", pretty(record.family)].filter(Boolean).join(" / ");
+  for (const id of ["title","issue","fix"]) $(id).textContent = record[id];
+  for (const id of ["native","clip"]) {
+    $(id).hidden = !record[id];
+    if (record[id]) $(id).setAttribute("href",record[id]);
+    else $(id).removeAttribute("href");
+  }
+  $("scene").open = false;
+  $("scene").hidden = !record.scene;
+  $("capture").removeAttribute("src");
+  $("capture").alt = record.name + " " + stateName(record) + " in the Unity Game scene";
+  $("cited").replaceChildren();
+  const cited = [...new Set(record.cited || [])].filter(n => Number.isInteger(n) && n > 0 && n <= starts.length);
+  if (cited.length) $("cited").append(make("span","Cited frames"));
+  for (const n of cited) {
+    const button = make("button",String(n));
+    button.type = "button";
+    button.setAttribute("aria-label","Go to cited frame " + n);
+    button.addEventListener("click",() => seek(starts[n - 1]));
+    $("cited").append(button);
+  }
+  $("problem").hidden = true;
+  render(true);
+  endLoop();
+  const sequence = ++generation;
+  const variants = record.reviewed ? ["before","after","reviewed"] : ["before","after"];
+  Promise.all(variants.map(key => loadImage(record[key]))).then(images => {
+    if (sequence !== generation) return;
+    if (images.some(image => image.naturalWidth !== record.size[0] * starts.length || image.naturalHeight !== record.size[1])) {
+      throw Error("The frame strip dimensions do not match this clip.");
+    }
+    alternatives = Object.fromEntries(variants.map((key,index) => [key,images[index]]));
+    pictures = [alternatives[$("leftVersion").value],alternatives.after];
+    clock = performance.now(); render(true); beginLoop();
+  }).catch(error => {
+    if (sequence !== generation) return;
+    $("problem").textContent = error.message;
+    $("problem").hidden = false;
+  });
+}
+function filter(preferred) {
+  const words = $("search").value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const actor = $("actor").value;
+  const visible = groupRecords().filter(record => {
+    const text = [record.name,record.actor,record.state,stateName(record),record.title,record.family,record.issue,record.fix,record.group].join(" ").toLowerCase();
+    return (!actor || record.actor === actor) && words.every(word => text.includes(word));
+  });
+  for (const [key,button] of buttons) button.setAttribute("aria-pressed",String(key === group));
+  $("list").replaceChildren();
+  $("mobileClip").replaceChildren();
+  for (const record of visible) {
+    const id = String(data.indexOf(record));
+    const button = make("button","");
+    button.type = "button"; button.value = id;
+    const name = make("span",record.name); name.className = "actor";
+    const state = make("span",stateName(record)); state.className = "action";
+    button.append(name,state); button.title = record.title;
+    button.addEventListener("click",() => choose(record));
+    $("list").append(button);
+    $("mobileClip").append(new Option(record.name + " · " + stateName(record),id));
+  }
+  $("count").textContent = visible.length + " of " + data.length + " animations";
+  $("empty").hidden = !!visible.length;
+  $("viewer").hidden = !visible.length;
+  if (visible.length) {
+    const next = visible.includes(preferred) ? preferred : visible.includes(selected) ? selected : visible[0];
+    choose(next);
+    render(true);
+    beginLoop();
+  } else {
+    generation++; selected = null; pictures = []; endLoop();
+  }
+}
+function loadImage(url) {
+  return new Promise((resolve,reject) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(Error("Could not open " + url + ". Keep the media folder beside this page."));
+    image.src = url;
+  });
+}
+function currentFrame() {
+  let frame = 0;
+  while (frame + 1 < starts.length && starts[frame + 1] <= cursor) frame++;
+  return frame;
+}
+function render(force = false) {
+  if (!selected || !starts.length) return;
+  const index = currentFrame();
+  const ms = Math.floor(cursor);
+  $("play").textContent = play ? "Pause" : "Play";
+  $("time").value = String(ms);
+  $("readout").textContent = "F" + (index + 1) + " / " + starts.length + " · " + ms + " / " + duration + " ms";
+  if (index === priorFrame && !force) return;
+  priorFrame = index;
+  for (let i = 0; i < stages.length; i++) {
+    const canvas = stages[i];
+    const dpr = Math.min(window.devicePixelRatio || 1, 4);
+    const width = Math.max(1,Math.round(canvas.clientWidth * dpr));
+    const height = Math.max(1,Math.round(canvas.clientHeight * dpr));
+    if (width !== canvas.width) canvas.width = width;
+    if (height !== canvas.height) canvas.height = height;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0,0,width,height);
+    if (!pictures[i]) continue;
+    ctx.imageSmoothingEnabled = false;
+    const [w,h] = selected.size;
+    const available = Math.min(width * .92 / w,height * .87 / h);
+    const scale = available >= 1 ? Math.floor(available) : available;
+    const dw = Math.round(w*scale), dh = Math.round(h*scale);
+    ctx.drawImage(pictures[i],index*w,0,w,h,Math.round((width-dw)/2),Math.round((height-dh)/2),dw,dh);
+  }
+}
+function endLoop() { if (request) cancelAnimationFrame(request); request = 0; }
+function beginLoop() {
+  if (request || !play || !pictures.length || !selected || document.hidden) return;
+  clock = performance.now();
+  request = requestAnimationFrame(tick);
+}
+function tick(now) {
+  request = 0;
+  if (!selected || !play || document.hidden) return;
+  cursor = (cursor + Math.max(0,now-clock) * Number($("speed").value)) % duration;
+  clock = now;
+  render();
+  request = requestAnimationFrame(tick);
+}
+function seek(ms) { endLoop(); play = false; cursor = Math.max(0,Math.min(ms,duration-1)); render(true); }
+function step(delta) { if (selected) seek(starts[(currentFrame()+delta+starts.length) % starts.length]); }
+function togglePlay() {
+  play = !play;
+  if (play) beginLoop(); else endLoop();
+  render();
+}
+$("actor").addEventListener("change",() => filter());
+$("search").addEventListener("input",() => filter());
+$("mobileClip").addEventListener("change",event => choose(data[Number(event.target.value)]));
+$("clear").addEventListener("click",() => { group="All"; $("search").value=""; populateActors(); $("actor").value=""; filter(defaultCase); });
+$("play").addEventListener("click",togglePlay);
+$("prev").addEventListener("click",() => step(-1));
+$("next").addEventListener("click",() => step(1));
+$("replay").addEventListener("click",() => { cursor=0; play=true; clock=performance.now(); render(true); beginLoop(); });
+$("time").addEventListener("input",event => seek(Number(event.target.value)));
+$("leftVersion").addEventListener("change",event => {
+  const key = event.target.value;
+  $("before").setAttribute("aria-label",key === "reviewed" ? "Last review animation" : "Previous game animation");
+  if (alternatives[key]) { pictures[0] = alternatives[key]; render(true); }
+});
+$("speed").addEventListener("change",() => { clock=performance.now(); });
+for (const id of ["light","dark"]) $(id).addEventListener("click",() => {
+  $("stages").classList.toggle("light",id === "light");
+  $("light").setAttribute("aria-pressed",String(id === "light"));
+  $("dark").setAttribute("aria-pressed",String(id === "dark"));
+});
+$("scene").addEventListener("toggle",() => {
+  if ($("scene").open && selected && selected.scene) $("capture").src = selected.scene;
+  else $("capture").removeAttribute("src");
+});
+document.addEventListener("visibilitychange",() => { if (document.hidden) endLoop(); else beginLoop(); });
+window.addEventListener("resize",() => render(true));
+if (window.ResizeObserver) new ResizeObserver(() => render(true)).observe($("stages"));
+populateGroups(); populateActors(); filter(defaultCase);
+</script>
+</body>
+</html>

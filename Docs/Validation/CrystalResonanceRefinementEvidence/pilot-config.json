@@ -1,0 +1,60 @@
+{
+  "cases": [
+    {
+      "label": "refine-p0-skeleton-L1-19001",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 0,
+      "seed": 19001,
+      "level": 1,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "refine-p1-skeleton-L1-19001",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 19001,
+      "level": 1,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "refine-p2-skeleton-L1-19001",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 2,
+      "seed": 19001,
+      "level": 1,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "refine-p3-skeleton-L1-19001",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 3,
+      "seed": 19001,
+      "level": 1,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "refine-p4-skeleton-L1-19001",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "policy": 4,
+      "seed": 19001,
+      "level": 1,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    }
+  ],
+  "capture": true
+}

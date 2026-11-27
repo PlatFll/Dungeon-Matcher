@@ -1,0 +1,122 @@
+{
+  "executions": [
+    {
+      "path": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\Regression\\court-correction-20261118\\balance-editmode.xml",
+      "sha256": "e796af2a0ba910c1e7ee656de0e271a2c672669ce632daf33ebeb9d9e73d5b72",
+      "result": {
+        "id": "2",
+        "testcasecount": "272",
+        "result": "Passed",
+        "total": "272",
+        "passed": "272",
+        "failed": "0",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-11-18 13:45:47Z",
+        "end-time": "2026-11-18 13:45:48Z",
+        "duration": "0.8977663"
+      },
+      "failures": []
+    },
+    {
+      "path": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\ForestValidation\\2b474288-5c70-45b0-b013-45c86a5d0b62.xml",
+      "sha256": "cee12985a217fd7b8e2b2f7b5613d7892494822adab1f09a8db38080f52798a6",
+      "result": {
+        "id": "2",
+        "testcasecount": "47",
+        "result": "Failed(Child)",
+        "total": "47",
+        "passed": "45",
+        "failed": "2",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-11-18 13:51:02Z",
+        "end-time": "2026-11-18 13:51:07Z",
+        "duration": "4.4863434"
+      },
+      "failures": [
+        {
+          "test": "ForestFoundationPlayTests.CourtPufferHoldsInflationThroughBasicsThenDeflatesWithoutStalling",
+          "message": "  Expected: True\n  But was:  False\n",
+          "stack": "at ForestFoundationPlayTests+<CourtPufferHoldsInflationThroughBasicsThenDeflatesWithoutStalling>d__110.MoveNext () [0x0013f] in C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\Assets\\_Game\\Scripts\\Editor\\DrownedCourtPlayTests.cs:241\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@bd7f943e9647\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\n"
+        },
+        {
+          "test": "ForestFoundationPlayTests.CourtRevisionTributeRealClearAndStaggerLeaveRemainingOxygen",
+          "message": "  Expected: False\n  But was:  True\n",
+          "stack": "at ForestFoundationPlayTests+<TributeInterrupted>d__512.MoveNext () [0x0026f] in C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\Assets\\_Game\\Scripts\\Editor\\TributeRevisionTests.cs:78\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@bd7f943e9647\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\n"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\ForestValidation\\8a5bac0e-6542-4c8a-b451-b95eb7b76b28.xml",
+      "sha256": "70c47d1fc851cca82a1ed6ccdaefeee2b65044c69362315139d84c25d5855cb1",
+      "result": {
+        "id": "2",
+        "testcasecount": "2",
+        "result": "Failed(Child)",
+        "total": "2",
+        "passed": "1",
+        "failed": "1",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-11-18 13:54:01Z",
+        "end-time": "2026-11-18 13:54:08Z",
+        "duration": "7.0843994"
+      },
+      "failures": [
+        {
+          "test": "ForestFoundationPlayTests.CourtPufferHoldsInflationThroughBasicsThenDeflatesWithoutStalling",
+          "message": "  Expected: \"InflatedAttack\"\n  But was:  null\n",
+          "stack": "at ForestFoundationPlayTests+<CourtPufferHoldsInflationThroughBasicsThenDeflatesWithoutStalling>d__110.MoveNext () [0x00201] in C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\Assets\\_Game\\Scripts\\Editor\\DrownedCourtPlayTests.cs:252\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@bd7f943e9647\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\n"
+        }
+      ]
+    },
+    {
+      "path": ".utmp\\ForestValidation\\13f262bb-7db3-4c15-82a7-5939a6acc7b3.xml",
+      "sha256": "24ba9a59f977fa571dfff477afd975caf66420bdffdfff9abbb6cbb489f59f6d",
+      "result": {
+        "id": "2",
+        "testcasecount": "1",
+        "result": "Passed",
+        "total": "1",
+        "passed": "1",
+        "failed": "0",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-11-18 13:55:50Z",
+        "end-time": "2026-11-18 13:55:57Z",
+        "duration": "6.972317"
+      },
+      "failures": []
+    }
+  ],
+  "latestAffected": {
+    "total": 47,
+    "passed": 47,
+    "note": "Latest results across 45/47, then 1/2, then 1/1; not a single clean 47-test run."
+  },
+  "balance": "272/272",
+  "validator": {
+    "path": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-37d7d691-92cb-4dc6-83d9-022236a0fe81.log",
+    "sha256": "df92e748e9dcc95da8387725a867110a05d4f1005351357552dadcab5c5cfa40",
+    "result": "Tools/Validate-Unity.ps1 returned exit 0"
+  },
+  "fixtureCorrections": [
+    "Old Puffer check bypassed move-phase attack gate; now verifies one due attack after a legal accepted swap and no out-of-phase attack.",
+    "Old Tribute check expired Stagger by waiting; now verifies thinking preserves it and one full future move suppresses readiness before expiry.",
+    "Puffer setup waited four legacy moves instead of its existing v3 SpecialTurnRequirement=3; now asserts both full future responses before the attack."
+  ],
+  "runtimeChangesForFailures": false
+}

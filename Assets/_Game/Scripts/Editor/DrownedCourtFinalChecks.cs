@@ -13,12 +13,25 @@ using UnityEngine.TestTools;
 
 public sealed partial class ForestFoundationPlayTests
 {
+    private static string NewCourtEvidencePath(string filename)
+    {
+        string runId = DateTime.UtcNow.ToString("yyyyMMdd-HHmmss-fff", CultureInfo.InvariantCulture)
+            + "-" + Guid.NewGuid().ToString("N");
+        string directory = Path.GetFullPath(Path.Combine(".utmp", "DrownedCourtValidation", runId));
+        Directory.CreateDirectory(directory);
+        string output = Path.Combine(directory, filename);
+        TestContext.Out.WriteLine("Drowned Court evidence: " + output);
+        return output;
+    }
+
     [UnityTest] public IEnumerator CourtLayoutMathAcrossSafeAreas()
     {GameplayPixelLayoutTests.MathTests();yield return null;}
 
     [UnityTest] public IEnumerator CourtQueenTelegraphAndNormalCadenceResumeWithoutNewTargets()
     {
         yield return TributeFixture("queen_nacre","shellback_porter");
+        Assert.That(Run?.Zone?.Definition?.zoneId, Is.EqualTo("drowned-court"),
+            "The Queen tribute fixture must enter its Game scene before the first checkpoint.");
         var queen=Enemy("queen_nacre");var ability=queen.GetComponent<AquaticEnemyAbility>();
         Assert.That(ability.CastName,Is.EqualTo("TRIBUTE"));
         var marks=ability.MarkedBubbles.ToArray();int tick=Run.MoveClock.Tick;
@@ -69,7 +82,7 @@ public sealed partial class ForestFoundationPlayTests
         var clock=Stopwatch.StartNew();for(int i=0;i<120;i++)update();clock.Stop();
         allocated=GC.GetAllocatedBytesForCurrentThread()-allocated;
         Assert.That(view.transform.childCount,Is.EqualTo(objects),"stable water does not create a new object per frame or gem");
-        File.WriteAllText(".utmp/DrownedCourtValidation/PresentationProfile.json",
+        File.WriteAllText(NewCourtEvidencePath("PresentationProfile.json"),
             "{\"scope\":\"120 warmed AquaticEnvironmentView.LateUpdate calls in Windows Editor; CPU and managed allocations only, not device/GPU performance\","+
             "\"calls\":120,\"total_ms\":"+clock.Elapsed.TotalMilliseconds.ToString("F4",CultureInfo.InvariantCulture)+
             ",\"allocated_bytes\":"+(allocationCounter?allocated.ToString():"null")+",\"allocation_counter_available\":"+allocationCounter.ToString().ToLowerInvariant()+
@@ -82,7 +95,7 @@ public sealed partial class ForestFoundationPlayTests
 
     private IEnumerator PlayerControlRuns(string zone)
     {
-        string output=".utmp/DrownedCourtValidation/ControlRuns-"+zone+".csv";
+        string output=NewCourtEvidencePath("ControlRuns-"+zone+".csv");
         File.WriteAllText(output,"zone,player,level,seed,outcome,game_seconds,waves,moves,abilities,floods,low_air_observations,suspends\n");
         var pacing=typeof(BalancePacingValidation);
         var move=pacing.GetMethod("Move",BindingFlags.NonPublic|BindingFlags.Static);

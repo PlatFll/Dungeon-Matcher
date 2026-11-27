@@ -236,6 +236,28 @@ public sealed class BoardPointerIdentityTests
         AssertNoResolution();
     }
 
+    [TestCase(true)]
+    [TestCase(false)]
+    public void EnteringOrCancellingTargetModeReleasesHeldGemAppearance(bool enter)
+    {
+        first.OnPointerDown(Event(11, Origin));
+        Assert.That(Get<bool>(first, "pointerPressed"), Is.True);
+        int callbacks = 0;
+        Func<Gem, bool> target = gem => { callbacks++; return gem == other; };
+
+        board.SetTargetSelection(enter ? target : null);
+        Assert.That(Get<bool>(first, "pointerPressed"), Is.False);
+        Assert.That(Get<Gem>(board, "pointerStartGem"), Is.Null);
+        first.OnPointerUp(Event(11, Origin));
+        Assert.That(Get<Gem>(board, "selectedGem"), Is.Null);
+
+        other.OnPointerDown(Event(22, Origin));
+        other.OnPointerUp(Event(22, Origin));
+        Assert.That(callbacks, Is.EqualTo(enter ? 1 : 0));
+        Assert.That(Get<Gem>(board, "selectedGem"), Is.EqualTo(enter ? null : other));
+        AssertNoResolution();
+    }
+
     private void AssertNoResolution()
     {
         Assert.That(board.IsBusy, Is.False);

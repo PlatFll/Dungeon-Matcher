@@ -1,0 +1,49 @@
+{
+  "enemy": "guild_ranger",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/R2.png",
+  "firstFrameSHA256": "3e7fb908dbc705637cab341ab810164f641ebb55fd325662984ba3385c6ed92b",
+  "seed": 385122,
+  "count": 8,
+  "prompt": "Fire the shouldered musket left twice with two quick kickback and recovery beats. Elbows absorb recoil. Restore the starting aim. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "d4cddb56-9c7c-4148-a63b-d43881cd9bca",
+  "receipt": "id: d4cddb56-9c7c-4148-a63b-d43881cd9bca\njob_id: d4cddb56-9c7c-4148-a63b-d43881cd9bca\naction: Fire the shouldered musket left twice with two quick kickback and recovery beats. Elbows absorb recoil. Restore the starting aim. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385122\nasset_id: 73b611d0-6cc1-5f7f-b2b3-6dc7fb578936\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d4cddb56-9c7c-4148-a63b-d43881cd9bca\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/d4cddb56-9c7c-4148-a63b-d43881cd9bca/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/d4cddb56-9c7c-4148-a63b-d43881cd9bca/00.png",
+      "sha256": "ff2367bd24f3f6255d8f4d306bb4dea652e8b6555ade440c39931c95fd56b558"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/d4cddb56-9c7c-4148-a63b-d43881cd9bca/01.png",
+      "sha256": "208d37e5bf2b04fd069945c4cf470de2f42f7e672752c41f63cd3322991f895f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/d4cddb56-9c7c-4148-a63b-d43881cd9bca/02.png",
+      "sha256": "225ff4ef41f23cccac6b8e065534dd66e025349b2df94d867435dbdb983d01e8"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/d4cddb56-9c7c-4148-a63b-d43881cd9bca/03.png",
+      "sha256": "bafdfc5ad6bcad92d7ca76ebb82e5703feaf0196abe9c510b88fe2ad3f7ee118"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/d4cddb56-9c7c-4148-a63b-d43881cd9bca/04.png",
+      "sha256": "86ab588e1ec5d157d94fc2c447b477fa228bb0aea44ce1582423700fad608c8a"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/d4cddb56-9c7c-4148-a63b-d43881cd9bca/05.png",
+      "sha256": "540c394de641ed2ba2e182c89e516928414f11d2f4b1af68e061ad4463784599"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/d4cddb56-9c7c-4148-a63b-d43881cd9bca/06.png",
+      "sha256": "a086c296637367c07047230b89647dbb5ccbe42783517da1726f8dd629e6f80d"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/d4cddb56-9c7c-4148-a63b-d43881cd9bca/07.png",
+      "sha256": "8449a06f171d24371dfee53a5e2393237184b99bb3a3c62e426e6eb8557d1784"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_ranger/basic/d4cddb56-9c7c-4148-a63b-d43881cd9bca/08.png",
+      "sha256": "f2a2839bc57344fea729d17331f1f8f9914bbb6b81555dd37031167cd34a03bd"
+    }
+  ]
+}

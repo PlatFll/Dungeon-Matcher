@@ -1,0 +1,49 @@
+{
+  "enemy": "guild_bulwark",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round9/K06.png",
+  "firstFrameSHA256": "c1d53c7e573ecd0c0d8e56c18b888bf73967c45fe88407a819aa7fa1c5be40f8",
+  "seed": 385128,
+  "count": 8,
+  "prompt": "A compact one-handed mace strike to screen-left. Draw the mace back briefly, twist and swing the mace head forward with crisp contact, recoil and settle in the starting guard. Shield stays fixed to its hand. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "1fedd6c5-3360-4163-a459-c667615b44d8",
+  "receipt": "id: 1fedd6c5-3360-4163-a459-c667615b44d8\njob_id: 1fedd6c5-3360-4163-a459-c667615b44d8\naction: A compact one-handed mace strike to screen-left. Draw the mace back briefly, twist and swing the mace head forward with crisp contact, recoil and settle in the starting guard. Shield stays fixed to its hand. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385128\nasset_id: 1bd32c42-adc4-5097-a332-b925da5a7b3a\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1fedd6c5-3360-4163-a459-c667615b44d8\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/1fedd6c5-3360-4163-a459-c667615b44d8/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/1fedd6c5-3360-4163-a459-c667615b44d8/00.png",
+      "sha256": "d7a74404acb3d75ac72c6acc24c60c6ceb7e5c8b38c4095c126d2584ea60138f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/1fedd6c5-3360-4163-a459-c667615b44d8/01.png",
+      "sha256": "2fa6792c08dc3781af9b7b519d357801ff9dbf84eaaa9427acffe9f9103c97a1"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/1fedd6c5-3360-4163-a459-c667615b44d8/02.png",
+      "sha256": "404892ab09ed813cc880545063037de3f75561e7a15d1ba3bcc8b99ede628b60"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/1fedd6c5-3360-4163-a459-c667615b44d8/03.png",
+      "sha256": "f5cffd1b2d1f5c4055bb12705aa3f23bdb8c8496cf83e3a3465e8e53ddadd891"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/1fedd6c5-3360-4163-a459-c667615b44d8/04.png",
+      "sha256": "569cb984d7d589d47d55d73b3f83d3258433b73d42ef317e93f8801634576316"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/1fedd6c5-3360-4163-a459-c667615b44d8/05.png",
+      "sha256": "a450b21cdb89cb1db0459f729845e82b103e175fdc9c037d48047e2c2ced0588"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/1fedd6c5-3360-4163-a459-c667615b44d8/06.png",
+      "sha256": "d3bab911f3c4a955a299a0e3e907f460b43ae5520c4dbb59fe47e667c7fc9062"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/1fedd6c5-3360-4163-a459-c667615b44d8/07.png",
+      "sha256": "fde08322f4831e61a19978ef38d4ca33610273eb75cc0e101e97cac94c10d899"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_bulwark/basic/1fedd6c5-3360-4163-a459-c667615b44d8/08.png",
+      "sha256": "2216e4ac9ace04610f9b75bbeb8e6e330eb4ee34d66d5273e5068186c845ba08"
+    }
+  ]
+}

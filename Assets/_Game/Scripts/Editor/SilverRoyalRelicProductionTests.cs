@@ -127,12 +127,22 @@ public sealed class SilverRoyalRelicProductionTests
         Assert.That(wave.sprite.rect.size,Is.EqualTo(new Vector2(264,99)));
         Assert.That(wave.transform.Find("SharedWavePendant")?.gameObject.activeSelf??false,Is.False,"No duplicate skull");
         Assert.That(Bounds(wave).Overlaps(Bounds(controls.SettingsButton.image)),Is.False);
-        var label=wave.GetComponentInChildren<TMP_Text>();Assert.That(label.text,Is.EqualTo("WAVE "+RunSession.Current.Waves.CurrentWave));
+        var hud=wave.GetComponent<CrystalResonanceHud>();
+        Assert.That(hud,Is.Not.Null);
+        var label=wave.GetComponentsInChildren<TMP_Text>().Single(t=>t.text.Contains("SCORE"));
+        label.ForceMeshUpdate();
+        string score=RunSession.Current.Resonance.RunScore.ToString("N0");
+        Assert.That(label.GetParsedText(),Is.EqualTo("SCORE "+score));
         string saved=label.text;
-        foreach(string value in new[]{"WAVE 1","WAVE 99999"})
-        {label.text=value;PixelTextFitter.ApplyNativeMenu(label,48*BattlePresentationSkin.TopControlScale(layout.TopHud));label.ForceMeshUpdate();Assert.That(label.textBounds.size.x,Is.LessThanOrEqualTo(label.rectTransform.rect.width+.1f));
-         if(value=="WAVE 1")Assert.That(label.fontSize,Is.GreaterThanOrEqualTo(32),"Readable capitals within the new plaque");}
-        label.text=saved;PixelTextFitter.ApplyNativeMenu(label,48*BattlePresentationSkin.TopControlScale(layout.TopHud));
+        try
+        {
+            label.text=saved.Substring(0,saved.LastIndexOf(' ')+1)+"99,999";
+            label.ForceMeshUpdate();
+            Assert.That(label.textBounds.size.x,Is.LessThanOrEqualTo(label.rectTransform.rect.width+.1f),
+                "five score digits fit the native plaque");
+        }
+        finally {label.text=saved;}
+        Assert.That(wave.transform.Find("ResonanceTrack"),Is.Not.Null);
         // Requested large-phone sizes, fixed compact fallback, and precise rail
         // joins are independent of the production helper's implementation.
         float expected = Screen.width>=720 ? 1.5f : 1;

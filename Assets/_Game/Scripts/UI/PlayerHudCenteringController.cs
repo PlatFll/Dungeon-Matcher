@@ -49,13 +49,28 @@ public sealed class PlayerHudCenteringController : MonoBehaviour
 
         // Fixed animation canvases include the full feet/base. Keep them above
         // the health bar before centering the stack; never fit individual poses.
-        if (IsVisible(statuses)) KeepAbove(healthBar, statuses, StackGap + ShieldBarUI.ReservedSpaceBelowHealthBar);
+        if (IsVisible(statuses))
+        {
+            GameplayPixelGrid.Snap(statuses);
+            KeepAbove(healthBar, statuses, StackGap + ShieldBarUI.ReservedSpaceBelowHealthBar);
+        }
         KeepAbove(character, healthBar);
         KeepAbove(affinityGem, character);
 
         if (!TryGetStackLocalBounds(out Rect bounds))
         {
             return;
+        }
+
+        if (IsVisible(statuses) && bounds.height > panel.rect.height - 2)
+        {
+            // The notched viewport can be a few pixels shorter with every status active.
+            // Preserve icon scale and the shield track by tightening only the three gaps.
+            float gap = Mathf.Max(0, StackGap - Mathf.Ceil((bounds.height - panel.rect.height + 2) / 3));
+            KeepAbove(healthBar, statuses, gap + ShieldBarUI.ReservedSpaceBelowHealthBar);
+            KeepAbove(character, healthBar, gap);
+            KeepAbove(affinityGem, character, gap);
+            TryGetStackLocalBounds(out bounds);
         }
 
         float logicalShift = Mathf.Round(

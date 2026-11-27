@@ -14,7 +14,7 @@ public sealed class ZoneTravelTests
     [Test] public void DestinationPolicyExcludesCurrentAndUnreadyAndKeepsDeterministicState()
     {
         var zones=new[]{"dungeon","magical-forest","fixture-aquatic","unfinished"}.Select(id=>{
-            var z=ScriptableObject.CreateInstance<ZoneDefinition>();z.zoneId=id;z.eligibleForLiveTravel=id!="unfinished";return z;}).ToArray();
+            var z=UnityEngine.Object.Instantiate(Resources.Load<ZoneDefinition>("Zones/magical-forest"));z.zoneId=id;z.eligibleForLiveTravel=id!="unfinished";return z;}).ToArray();
         try
         {
             var random=new SavedRandom(98231);var seen=new HashSet<string>();
@@ -59,6 +59,17 @@ public sealed partial class ForestFoundationPlayTests
             yield return Until(()=>RunSession.Current.Waves.ActiveEnemies.All(e=>e.GetComponent<EnemyLifecycleVFX>()?.IsSpawning!=true),"arrival sprites settle");
         yield return null;ScreenCapture.CaptureScreenshot(Path.Combine(dir,name+".png"));yield return null;yield return null;
     }
+    private void SetTravelCapstoneFixture(int wave, string leader, bool cardDue=false)
+    {
+        var state=Run.Resonance.State;
+        var recipe=Run.Zone.Definition.resonanceEncounters.First(r=>r.members.Any(e=>e.EnemyId==leader));
+        state.charge=100;state.triggeredMask=state.claimedMask=cardDue?3:7;
+        state.pendingNotches.Clear();state.activeNotch=0;state.pendingWave=0;
+        state.capstoneId=recipe.label;state.capstoneKind=(int)recipe.resonanceKind;
+        state.capstoneMembers=recipe.members.Select(e=>e.EnemyId).ToList();state.formationSeed=91;
+        state.capstoneWave=wave;state.capstoneEncounterId=Run.RunId+":"+state.visit+":"+wave;
+        state.capstonePhase=ResonanceCapstonePhase.Scheduled;
+    }
     private void KillEncounter()
     { foreach(var enemy in Run.Waves.ActiveEnemies.ToArray()) {enemy.ResolveDamageWithoutFeedback(999999);if(!enemy.IsDefeated)enemy.ResolveDamageWithoutFeedback(999999);} }
     private static void AssertBoardCarryover(BoardCombatSnapshot before,BoardCombatSnapshot after)
@@ -102,7 +113,7 @@ public sealed partial class ForestFoundationPlayTests
         var seen=(HashSet<EnemyDefinition>)Get(Run.Waves,"seenMilestoneLeaders");
         foreach(var enemy in Run.Zone.Definition.enemies) if(enemy.Category==EnemyCategory.Miniboss) seen.Add(enemy);
         for(int wave=1;wave<30;wave++) Assert.That(AccountProgression.Current.RecordWave(Run.RunId,wave,false,false),Is.True);
-        Set(Run.Waves,"currentWave",30);Run.Waves.SpawnCurrentWave();yield return Stable();QuietKitFixture();
+        SetTravelCapstoneFixture(30,"king");Set(Run.Waves,"currentWave",30);Run.Waves.SpawnCurrentWave();yield return Stable();QuietKitFixture();
         var king=Enemy("king");Assert.That(Run.Waves.ActiveEnemies.Count,Is.GreaterThan(1));
         Run.Player.TryTakeDamage(25);Run.Player.GrantShield(15);Run.Player.GetComponent<PlayerAbilityEnergy>().AddEnergy(25);
         Run.Board.GetGem(0,0).SetSpecialType(GemSpecialType.RowBomb);
@@ -118,7 +129,7 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(forest.player.energy,Is.EqualTo(before.player.energy));AssertBoardCarryover(before.board,forest.board);
         yield return CaptureTravel("02-dungeon-to-forest");
         for(int wave=31;wave<48;wave++) Assert.That(AccountProgression.Current.RecordWave(Run.RunId,wave,false,false),Is.True);
-        Set(Run.Waves,"currentWave",48);Run.Waves.SpawnCurrentWave();yield return Stable();QuietKitFixture();
+        SetTravelCapstoneFixture(48,"briar_matriarch",true);Set(Run.Waves,"currentWave",48);Run.Waves.SpawnCurrentWave();yield return Stable();QuietKitFixture();
         Assert.That(Run.Waves.ActiveEnemies.Any(e=>e.Definition.EnemyId=="briar_matriarch"),Is.True);
         KillEncounter();
         yield return Until(()=>Run.Continuation.CanCapture && Run.Waves.GetComponent<RunUpgradeCoordinator>().IsBlockingWaveProgression &&

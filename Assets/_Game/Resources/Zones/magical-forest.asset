@@ -17,6 +17,8 @@ MonoBehaviour:
   eligibleForLiveTravel: 1
   affiliatedGem: 3
   enemies:
+  - {fileID: 11400000, guid: 60de8c925c985c5ab912d7a5d0d790bd, type: 2}
+  - {fileID: 11400000, guid: 2532f87afcdc548285eda0ccf6c2cb6e, type: 2}
   - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
   - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
   - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
@@ -304,3 +306,626 @@ MonoBehaviour:
   vineCadenceMoves: 2
   maximumVineSpreadPerPulse: 2
   maximumVineOverlays: 12
+  resonanceTierStarts: 01000000060000000d000000190000002d000000
+  resonanceThreatBudgets:
+  - 4
+  - 6
+  - 8
+  - 11
+  - 12
+  resonancePool:
+  - enemy: {fileID: 11400000, guid: 60de8c925c985c5ab912d7a5d0d790bd, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 4
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 2532f87afcdc548285eda0ccf6c2cb6e, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 4
+    - 4
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 10
+    - 7
+    - 4
+    - 1
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 10
+    - 7
+    - 4
+    - 1
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 81497ef54b105da46833096cd595ca1c, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 10
+    - 7
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: b166b659b9320094f96e1e34c7bae8ff, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 971fa3191157e494ba63eb4d5d30708d, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: b8875454b0603324fac0e6eb1f54dc0a, type: 2}
+    minimumTier: 0
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    summonOnly: 1
+  - enemy: {fileID: 11400000, guid: 02fc1c169367a7947b48495b664c906a, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 4fa36e8f23aa3874f985d12c52f63be7, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 0
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  resonanceEncounters:
+  - label: Drumline
+    members:
+    - {fileID: 11400000, guid: 02fc1c169367a7947b48495b664c906a, type: 2}
+    - {fileID: 11400000, guid: 60de8c925c985c5ab912d7a5d0d790bd, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.5
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Woodland clans
+    familyWeight: 3
+  - label: Sling patrol
+    members:
+    - {fileID: 11400000, guid: 60de8c925c985c5ab912d7a5d0d790bd, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Woodland clans
+    familyWeight: 3
+  - label: Field escort
+    members:
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 2532f87afcdc548285eda0ccf6c2cb6e, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Grove defenders
+    familyWeight: 3
+  - label: Pathblade scouts
+    members:
+    - {fileID: 11400000, guid: 2532f87afcdc548285eda0ccf6c2cb6e, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 3
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Grove defenders
+    familyWeight: 3
+  - label: Lone rootbinder
+    phaseMask: 1
+    ordinaryRole: 3
+    formationFamily: Woodland clans
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    weight: 2
+    minimumDepthTier: 0
+    maximumDepthTier: 0
+    resonanceKind: 0
+    resonanceThreatBudget: 3
+  - label: Outer patrol
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Grove defenders
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 4
+    minimumDepthTier: 0
+    maximumDepthTier: 2
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Quiet patrol
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Grove defenders
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 1
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn elven_mender
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Grove defenders
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 3
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol elven_mender
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Grove defenders
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn orc_rootbinder
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Woodland clans
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 3
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol orc_rootbinder
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Woodland clans
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn elven_thornkeeper
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Grove defenders
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: b166b659b9320094f96e1e34c7bae8ff, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol elven_thornkeeper
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Grove defenders
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: b166b659b9320094f96e1e34c7bae8ff, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn orc_berserker
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Woodland clans
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol orc_berserker
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Woodland clans
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn orc_bloomcaller
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Woodland clans
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 971fa3191157e494ba63eb4d5d30708d, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol orc_bloomcaller
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Woodland clans
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 971fa3191157e494ba63eb4d5d30708d, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn orc_drummer
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Woodland clans
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 02fc1c169367a7947b48495b664c906a, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol orc_drummer
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Woodland clans
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 02fc1c169367a7947b48495b664c906a, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Learn briar_archer
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Grove defenders
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Patrol briar_archer
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Grove defenders
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 4
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Combined orc_rootbinder
+    phaseMask: 6
+    ordinaryRole: 2
+    formationFamily: Woodland clans
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 7.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Elite orc_rootbinder
+    members:
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 5
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 7.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Combined briar_archer
+    phaseMask: 6
+    ordinaryRole: 2
+    formationFamily: Grove defenders
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
+    - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Elite briar_archer
+    members:
+    - {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
+    - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 5
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 7.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Veteran patrol
+    members:
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 4
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Guardian barkhide_warden
+    members:
+    - {fileID: 11400000, guid: 81497ef54b105da46833096cd595ca1c, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 4
+    minimumDepthTier: 1
+    maximumDepthTier: 4
+    resonanceKind: 2
+    resonanceThreatBudget: 6.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Guardian ancient_treant
+    members:
+    - {fileID: 11400000, guid: 4fa36e8f23aa3874f985d12c52f63be7, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    weight: 4
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 2
+    resonanceThreatBudget: 6.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Capstone briar_matriarch
+    members:
+    - {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 2
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 3
+    resonanceThreatBudget: 9.0
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites:
+    - elven_mender
+  - label: Reserve Outer patrol
+    members:
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    weight: 1
+    minimumDepthTier: 0
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []

@@ -1,0 +1,139 @@
+{
+  "method": "Observed failures; no unavoidable-damage inference",
+  "cases": [
+    {
+      "case": "depth-skilled-skeleton-L10-100719",
+      "zone": "frostwake-peaks",
+      "visit": 4,
+      "depth": 63,
+      "charge": 6,
+      "pending": 0,
+      "lastDamage": "Last hit: Iceborn Raider\n15 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Learn hearthkeeper:hearthkeeper/Special/2.5+iceborn_raider/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 63,
+          "amount": 10,
+          "healthAfter": 80,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 63,
+          "amount": 15,
+          "healthAfter": 65,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 63,
+          "amount": 10,
+          "healthAfter": 60,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 63,
+          "amount": 15,
+          "healthAfter": 45,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 63,
+          "amount": 10,
+          "healthAfter": 35,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 63,
+          "amount": 15,
+          "healthAfter": 20,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 63,
+          "amount": 10,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 63,
+          "amount": 15,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=8;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=7;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=3;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=1;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0"
+      ],
+      "capstonePhase": 0
+    },
+    {
+      "case": "response-typical-court-L1-9203",
+      "zone": "drowned-court",
+      "visit": 0,
+      "depth": 11,
+      "charge": 64,
+      "pending": 1,
+      "lastDamage": "Last hit: Puffer Sentinel\n10 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Learn puffer_sentinel:puffer_sentinel/Special/2.5+reef_spearman/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 10,
+          "amount": 10,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 11,
+          "amount": 10,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 11,
+          "amount": 10,
+          "healthAfter": 20,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 11,
+          "amount": 10,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 11,
+          "amount": 10,
+          "healthAfter": 5,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 11,
+          "amount": 10,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 11,
+          "amount": 5,
+          "healthAfter": 5,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 11,
+          "amount": 10,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=16;warnings=0;counterAvailable=False;counterChosen=False;air=1;bubbleAvailable=True;bubbleChosen=True;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=15;warnings=0;counterAvailable=False;counterChosen=False;air=2;bubbleAvailable=True;bubbleChosen=True;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=11;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0",
+        "legal=10;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False;cofferAvailable=False;cofferChosen=False;cofferCharges=0"
+      ],
+      "capstonePhase": 0
+    }
+  ]
+}

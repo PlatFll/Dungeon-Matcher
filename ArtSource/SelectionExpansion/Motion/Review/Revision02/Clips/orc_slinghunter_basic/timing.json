@@ -1,0 +1,62 @@
+{
+  "enemy": "orc_slinghunter",
+  "state": "basic",
+  "frameSize": [
+    128,
+    112
+  ],
+  "durationsMs": [
+    80,
+    100,
+    140,
+    30,
+    30,
+    30,
+    80,
+    90,
+    100
+  ],
+  "oldDurations": [
+    80,
+    80,
+    90,
+    70,
+    60,
+    70,
+    50,
+    60,
+    60,
+    60
+  ],
+  "oldSize": [
+    128,
+    112
+  ],
+  "floorMargin": 14,
+  "oldFloor": 14,
+  "minimumMargin": 14,
+  "totalMs": 680,
+  "impactMs": 320,
+  "identity": "253a3af9f47ee95ac04a1187efdb4d5fda1da455fc4cda36b2b626e94274a91d",
+  "notes": "One pebble leaves the fork. The orc rocks back, lifts a foot and catches his balance.",
+  "frameHashes": [
+    "e561ec710a8dd7f9f5d69557a3fc5705e412f558cd4884373be967e025ee928c",
+    "af4fd5de9be585f5f10a4f8df864f51024a5e6ec72324f0fe5feeb8b319a03c6",
+    "80b81de97dd55f607ce873122c5acdb2bcbf79ee3622a2e03595280e6232fa55",
+    "8cfcd614f23d2200c4f66a1ee3247017dcaa1768f05abe46c1bdcd6cc7250fe1",
+    "62fcb6b85eb1b2395089e220954ac08aada138186a800c47a1e329f3bbbf1c27",
+    "7bad10fb344a8c44d56ad2f0392e0b2a4a43c9ecfe19fd66b6be4fa789ea12e5",
+    "b9877a3ac2f254b2c4751eb9305fccfabe6e08d18a3e5c377d76081f71a877a6",
+    "df29dd2f1e262f98cdfd22ed919487e81145632c130afefa116f57af9e7b3eeb",
+    "e561ec710a8dd7f9f5d69557a3fc5705e412f558cd4884373be967e025ee928c"
+  ],
+  "sheetSHA256": "142f268fb8acb34b826229de6bcf1e568de39c2891afec5efba494fc5d278093",
+  "editableSHA256": "b1d2db3bbb1b3bbc540a4b39f8e5f421c49022448ac215bfb1cda23e81af0111",
+  "events": {
+    "impactMs": 320,
+    "projectiles": 1,
+    "releaseMs": [
+      320
+    ]
+  }
+}

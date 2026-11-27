@@ -1,5 +1,9 @@
 # Balance v1 implementation record
 
+## Crystal Resonance replacement — 2026-11-17
+
+New live progression is implemented and has Stage 10 objective and Game-scene evidence; final human/device and pacing acceptance remain open. `Resources/Balance/CrystalResonance.json` owns capacity 100, notches 12/40/70, shared base charge 4/5/10/14 (Court explicitly overrides ordinary/pressure to 5/6), approach 78–88, mastery cap three and score coefficients. ZoneDefinition owns tier starts, member weights, whole-formation budgets and recipes. These remain provisional inputs. Actual completed-visit timing varies by zone, level and policy. The November 18 direction treats 5–7 minutes as a soft reference: skilled 3–4, typical 4–7 and longer defensive visits can all be valid. Duration alone does not justify numerical changes. See [the measured distributions](Validation/CRYSTAL_RESONANCE_V1_FINAL.md). Existing economy/player/enemy stat tables remain unchanged. Historical King-wave payout examples below are conditional examples, not scheduling guarantees. See [current design](PROGRESSION_PACING.md) and [validation plan](CrystalResonance/VALIDATION_PLAN.md).
+
 Status: connected Balance v1 implemented. The 2026-10-01 clean-combat revision rounds final HP, damage, healing and shield to nearest five (positive minimum five), gates shield-breaking hits, and continues runs beyond the King. Tables below are base tuning inputs; fractional scaling coefficients remain internal until final resolution. Numerical targets remain design hypotheses; executed tests, final engine measurements and remaining tuning limits are recorded in [the validation record](Validation/BALANCE_V1_VALIDATION.md).
 
 ## Plan and authority
@@ -23,7 +27,7 @@ base 5 plus 5 per prior hit on that recipient during this cast, capped at +15,
 before existing player/run modifiers and shield gating. These are first-pass
 inputs, not human-validated pacing targets. Existing characters are unchanged.
 
-Implement account persistence and independent character stats, shared mastery, cards and shield balance, hybrid encounters and bounded interference, then consumables and the connected menu/HUD loop. Compile at each stage. Finish with disposable-save regression tests, real Play Mode checks, portrait screenshots, local pacing measurements and a reviewed PR.
+Implement account persistence and independent character stats, shared mastery, cards and shield balance, hybrid encounters and bounded interference, then consumables and the connected menu/HUD loop. The original rollout compiled each stage; the Crystal Resonance rollout defers all validation to Stage 10 by explicit user instruction. Finish with disposable-save regression tests, real Play Mode checks, portrait screenshots, local pacing measurements and a reviewed PR.
 
 The approved September 14 brief supersedes older every-fifth-wave rewards, solo milestone defaults, wave-25 King tuning, and prototype enemy numbers. Weighted overlapping eras and all existing board/damage/lifecycle invariants remain authoritative. The separate pacing attachment referenced by the brief was unavailable; `PROGRESSION_PACING.md` supplies the durable philosophy.
 
@@ -158,9 +162,9 @@ historical Balance v1 pacing measurements used the earlier HP curve.
 | RoyalArchbishop | 210 | 5 | 12s | 24 | 4 |
 | King | 480 | 9 | 11s | 29 | 7 |
 
-Normal pools overlap; a declining weight tail retains older enemies. Milestone windows: Marshal 7–8 with one local escort; Sergeant 12–14 with one guard; Captain 18–20 with two knights; Minister 24–26 with one royal; King 29–30 with required Minister. King completion records its existing one-time run reward and continues into weighted Normal/Special formations. The attempt ends on death or explicit End Run; named leaders retain their existing once-per-run rule. The Minister escort is an explicit narrative exception to leader repeat exclusion.
+Historical Balance v1 windows (Marshal 7–8, Sergeant 12–14, Captain 18–20, Minister 24–26, King 29–30) are superseded for live runs by the 2026-11-17 Crystal Resonance director. Base enemy stats and account rewards remain. The King/Minister escort exception remains; no King visit is guaranteed. See [current progression](PROGRESSION_PACING.md).
 
-## Authored library
+## Historical Balance v1 authored library (superseded for live Resonance runs)
 
 45% authored opportunity, otherwise constrained existing weighted selection. No immediate recipe repeat. Global random cap: two disruptors and one support; a named recipe may explicitly allow three light disruptors within its whole-formation budget.
 

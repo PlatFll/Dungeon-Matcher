@@ -18,7 +18,7 @@ public sealed class ZoneTravelSnapshot
     public MineEncounterProgress mineEncounters = new MineEncounterProgress();
 }
 
-/// <summary>Owns apex travel and its durable selection; never edits the gem grid.</summary>
+/// <summary>Owns durable travel selection/commit/reveal; Resonance owns live eligibility.</summary>
 public sealed class ZoneTravelController : MonoBehaviour,IWaveProgressionGate
 {
     public ZoneTravelSnapshot State { get; private set; }
@@ -36,12 +36,13 @@ public sealed class ZoneTravelController : MonoBehaviour,IWaveProgressionGate
     public ZoneTravelSnapshot Capture() => JsonUtility.FromJson<ZoneTravelSnapshot>(JsonUtility.ToJson(State));
     public static string ChooseDestination(string current,IEnumerable<ZoneDefinition> zones,SavedRandom random)
     {
-        var eligible=zones.Where(z=>z!=null && z.eligibleForLiveTravel && z.zoneId!=current)
+        var eligible=zones.Where(z=>DestinationReady(z) && z.zoneId!=current)
             .OrderBy(z=>z.zoneId,StringComparer.Ordinal).ToArray();
         return eligible.Length==0 ? null : eligible[random.Next(eligible.Length)].zoneId;
     }
     private void WaveEnded(int wave)
     {
+        if(run.Resonance?.Enabled == true) return; // Live progression banks only after the safe settlement barrier.
         if(!State.enabled || State.stage!=0 || run.IsFinished || run.Zone?.Definition?.apexEnemy==null ||
             !run.Waves.OriginalEncounterDefinitions.Contains(run.Zone.Definition.apexEnemy)) return;
         var random=State.random==0 ? new SavedRandom(run.Waves.EncounterSeed^0x36741) : new SavedRandom(State.random);
@@ -51,6 +52,17 @@ public sealed class ZoneTravelController : MonoBehaviour,IWaveProgressionGate
     }
     private void Update()
     {
+        if (run?.Resonance?.PortalReady == true && State.enabled && State.stage == 0 &&
+            !run.IsFinished && !run.Player.IsDefeated && !run.Waves.IsWaveActive &&
+            run.Continuation?.CanCapture == true && !run.NeedsSaveRetry &&
+            run.MoveClock?.IsBlockingWaveProgression != true && !run.Board.IsExternalInputBlocked &&
+            run.Waves.GetComponent<RunUpgradeCoordinator>()?.IsBlockingWaveProgression != true &&
+            run.GetComponent<RunControlsUI>()?.IsModalOpen != true && Time.timeScale > 0)
+        {
+            var random = State.random == 0 ? new SavedRandom(run.Waves.EncounterSeed ^ 0x36741) : new SavedRandom(State.random);
+            string next = ChooseDestination(State.zoneId, Resources.LoadAll<ZoneDefinition>("Zones"), random);
+            if (next != null) { State.random = random.State; State.destination = next; State.stage = 1; run.Resonance.Record("travel_pending", next); }
+        }
         if(!IsBlockingWaveProgression || processing || run.Continuation==null || run.Continuation.IsRestoring ||
             !run.Continuation.CanCapture || run.NeedsSaveRetry || run.GetComponent<RunControlsUI>()?.IsModalOpen==true) return;
         if(run.Waves.GetComponent<RunUpgradeCoordinator>()?.IsBlockingWaveProgression==true) return;
@@ -85,11 +97,13 @@ public sealed class ZoneTravelController : MonoBehaviour,IWaveProgressionGate
         finally { if(this!=null) processing=false; }
     }
     public static bool TestingReady(ZoneDefinition zone) => DestinationReady(zone) ||
-        (RunLaunchOptions.TestingZonePickerEnabled && zone != null && zone.eligibleForTesting &&
+        (Application.isEditor && zone != null && zone.eligibleForTesting &&
          zone.developmentEncounters?.Length > 0 && zone.enemies?.Length > 0);
     public static bool DestinationReady(ZoneDefinition zone) => zone!=null && zone.eligibleForLiveTravel &&
-        zone.apexEnemy!=null && zone.enemies!=null && zone.enemies.Length>0 &&
-        (zone.zoneId=="dungeon" || (zone.theme?.battleEnvironment!=null && zone.liveEncounters?.Length>0));
+        zone.enemies?.Length>0 && zone.resonancePool?.Length>0 && zone.resonanceEncounters?.Length>0 &&
+        zone.resonanceEncounters.Any(r => r != null && r.resonanceKind == ZoneEncounterKind.Elite &&
+            r.members?.Length > 0 && r.members.All(e => e != null && e.EnemyPrefab != null && zone.enemies.Contains(e))) &&
+        (zone.zoneId=="dungeon" || zone.theme?.battleEnvironment!=null);
     private bool Commit(ZoneDefinition destination)
     {
         if(!DestinationReady(destination) || !run.Continuation.TryCommitZoneTravel(destination.zoneId)) return false;

@@ -15,9 +15,12 @@ three compositions of the same native modular art. Main menu and opened options
 retain their existing presentation. Original music is temporary pending listening
 review. Flooding changes its mix without restarting the track.
 
-Basic attacks count seconds. Abilities count accepted manual moves. Failed swaps,
-cascades and free abilities/supplies do not spend response moves. Travelling runs
-retain their recorded units for buffs, poison, stagger and supply cooldowns.
+New runs use the unified accepted-move clock described in GAME_DESIGN.md:
+basics, abilities and timed effects advance after accepted manual actions;
+thinking never expires Stagger or grants an out-of-phase basic. The original
+Court profile counted basic attacks in seconds and abilities in moves. Continue
+preserves each saved profile's recorded units. Failed swaps, cascades and free
+abilities/supplies do not spend response moves.
 
 The first complete formation is dry. Six accepted dry moves request flooding;
 the request waits until the entire current formation, including living summons,
@@ -73,7 +76,7 @@ These numbers are starting values for human tuning, not pacing guarantees.
 | Conch Marshal | 90 | 10 / 6 | Ready in four moves; other living allies gain 30% basic damage for five seconds; refreshes, strongest lease only, no speed buff |
 | Moray Siphoner | 80 | 5 / 6 | Ready in four moves; two-move 20-damage siphon; heals actual HP lost only |
 | Reef Netweaver | 85 | 5 / 6 | Ready in four moves; up to two thorny snares, shrink and expire after three future accepted moves |
-| Puffer Sentinel | 100 | 10 / 5.8 | Ready in four moves; inflated for two moves, keeps timed basics; opening manual-match damage retaliates for five once per action |
+| Puffer Sentinel | 100 | 10 / 5.8 | Ready in four moves; inflated for two moves, keeps normal basics; opening manual-match damage retaliates for five once per action |
 | Breakwater Captain | 180 | 20 / 7 | Alternates 25-shield Shellguard and a two-move command for one fixed ally's complete basic sequence |
 | Lantern Warden | 210 | 15 / 6.5 | Alternates instant exact-three Air Levy into a two-hit coffer (dry: 25 shield) and two-move Pressure Lance marking two bubbled physical gems; either answer cancels wholly; unanswered base 25 damage |
 | Queen Nacre | 320 | 15 / 6.5 | Royal Seizure, Nacre Tribute, Court Muster; details below |

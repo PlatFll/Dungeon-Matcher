@@ -1,0 +1,321 @@
+{
+  "batch": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261118-080102",
+  "kind": "offline recorded-evidence audit; NOT replay execution",
+  "finishedCases": 25,
+  "incompleteCases": [],
+  "failures": [],
+  "cases": [
+    {
+      "case": "refine-wide-p0-bardley-L1-2082779316",
+      "nativeBoundaries": 256,
+      "nativeActions": {
+        "swap": 215,
+        "ability": 31,
+        "card": 6,
+        "potion": 3,
+        "bomb": 1
+      },
+      "journalSha256": "c220b9d6e36521b99d252c59b9fabbd0dbfda5e4285d026884a7beb3d8d2cf5f",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p0-dungeon_attender-L5-1744289676",
+      "nativeBoundaries": 358,
+      "nativeActions": {
+        "swap": 322,
+        "card": 7,
+        "ability": 24,
+        "potion": 3,
+        "bomb": 2
+      },
+      "journalSha256": "a1afabf2943695434bdae9502397d7a3061813191c7018afff7a8ad2bac85688",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p0-kobold_gunner-L5-1215592394",
+      "nativeBoundaries": 275,
+      "nativeActions": {
+        "swap": 249,
+        "card": 5,
+        "ability": 16,
+        "potion": 3,
+        "bomb": 2
+      },
+      "journalSha256": "1770adb068aafc92b4af4884dfbd4f7c6a524cd47fc032c32d007a9e09bde86a",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p0-skeleton-L1-762463853",
+      "nativeBoundaries": 157,
+      "nativeActions": {
+        "swap": 143,
+        "card": 4,
+        "ability": 7,
+        "potion": 3
+      },
+      "journalSha256": "40343763d0fdaa1f9658e00179c1015a171f0fed0e360f6766a0506b85f6d4ef",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p0-skeleton-L1-795264865",
+      "nativeBoundaries": 130,
+      "nativeActions": {
+        "swap": 118,
+        "card": 3,
+        "ability": 5,
+        "potion": 3,
+        "bomb": 1
+      },
+      "journalSha256": "1b48094f4101c18fa219e9ecb577ff018ae565210db5ab0ea974aaf7e2bb6041",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p1-bardley-L1-2082779316",
+      "nativeBoundaries": 204,
+      "nativeActions": {
+        "swap": 164,
+        "card": 6,
+        "ability": 30,
+        "potion": 3,
+        "bomb": 1
+      },
+      "journalSha256": "3fa68aa1d57ff056a6e1f8aa200c0752d6b146847b994054c79ebd5c08217841",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p1-dungeon_attender-L5-1744289676",
+      "nativeBoundaries": 334,
+      "nativeActions": {
+        "swap": 293,
+        "card": 9,
+        "ability": 27,
+        "potion": 3,
+        "bomb": 2
+      },
+      "journalSha256": "36910cf2f532eb6cc7a6181e25741b176e306fbd16ce39246283eb6613c46ebf",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p1-kobold_gunner-L5-1215592394",
+      "nativeBoundaries": 238,
+      "nativeActions": {
+        "swap": 211,
+        "ability": 18,
+        "card": 6,
+        "potion": 3
+      },
+      "journalSha256": "852696e6b46086cc2440e9216d133e76ca5fcb7db2f64a303214bdad3cedaf93",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p1-skeleton-L1-762463853",
+      "nativeBoundaries": 158,
+      "nativeActions": {
+        "swap": 139,
+        "card": 6,
+        "ability": 10,
+        "potion": 3
+      },
+      "journalSha256": "242e790d42b96f14725905a25458ac9f40ce0969265201f7c423108292a06d7c",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p1-skeleton-L1-795264865",
+      "nativeBoundaries": 185,
+      "nativeActions": {
+        "swap": 165,
+        "ability": 11,
+        "card": 6,
+        "potion": 3
+      },
+      "journalSha256": "d9c5485ed3d64a8695af185a2eaf1146c8406b4637415f273d391ce0c37623d4",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p2-bardley-L1-2082779316",
+      "nativeBoundaries": 205,
+      "nativeActions": {
+        "swap": 162,
+        "card": 7,
+        "ability": 33,
+        "potion": 3
+      },
+      "journalSha256": "c0f4a8ab0591be7ef9cc2d9f9459e5afc8c6daabab5aec3960b5e6111ca2428c",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p2-dungeon_attender-L5-1744289676",
+      "nativeBoundaries": 331,
+      "nativeActions": {
+        "swap": 290,
+        "card": 9,
+        "ability": 30,
+        "potion": 2
+      },
+      "journalSha256": "2e71c260c6f09f131fcaa2e5ff82331ee49011e5c93ec6e4636718f37d0dc09c",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p2-kobold_gunner-L5-1215592394",
+      "nativeBoundaries": 226,
+      "nativeActions": {
+        "swap": 194,
+        "card": 7,
+        "ability": 20,
+        "potion": 3,
+        "bomb": 2
+      },
+      "journalSha256": "3ac5dc3a9ee90d18f65b221a0860939f5d6d212f145656b2eb57b7ab452b392a",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p2-skeleton-L1-762463853",
+      "nativeBoundaries": 157,
+      "nativeActions": {
+        "swap": 138,
+        "card": 6,
+        "ability": 10,
+        "potion": 3
+      },
+      "journalSha256": "d7f3e56dc3f9daefb0315aa0bbe79f073cdd860ccaa8d5b46fde0b46fa98653e",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p2-skeleton-L1-795264865",
+      "nativeBoundaries": 128,
+      "nativeActions": {
+        "swap": 111,
+        "card": 5,
+        "ability": 9,
+        "potion": 3
+      },
+      "journalSha256": "50fc1153ae46b6f25df4c2ea0d23780bc13c955f5a4a11a6f183dd54421b4c24",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p3-bardley-L1-2082779316",
+      "nativeBoundaries": 246,
+      "nativeActions": {
+        "swap": 194,
+        "card": 8,
+        "ability": 41,
+        "potion": 3
+      },
+      "journalSha256": "1d34b5cca2724116af1358fa50c721e74298d848741cc937191009ccd6514074",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p3-dungeon_attender-L5-1744289676",
+      "nativeBoundaries": 360,
+      "nativeActions": {
+        "swap": 319,
+        "card": 9,
+        "ability": 29,
+        "potion": 3
+      },
+      "journalSha256": "9c8b477a9eee991955992e871a214afca846180c7a9fd36b73b2d6e250e8c188",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p3-kobold_gunner-L5-1215592394",
+      "nativeBoundaries": 206,
+      "nativeActions": {
+        "swap": 184,
+        "ability": 14,
+        "card": 5,
+        "potion": 3
+      },
+      "journalSha256": "56ec7b38acb6bab203f15feb2dc21cd490c15ce338c4e81a9c397bac97149cfb",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p3-skeleton-L1-762463853",
+      "nativeBoundaries": 156,
+      "nativeActions": {
+        "swap": 139,
+        "card": 5,
+        "ability": 9,
+        "potion": 3
+      },
+      "journalSha256": "77a3ee150097b5d3a1bc19a4ace85acea746fca88120ab42036ec1e1255fedcf",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p3-skeleton-L1-795264865",
+      "nativeBoundaries": 175,
+      "nativeActions": {
+        "swap": 155,
+        "ability": 11,
+        "card": 6,
+        "potion": 3
+      },
+      "journalSha256": "e2ce82859da2731ebb9386b5e303ed27c0acb73d1eab51403860af65086046eb",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p4-bardley-L1-2082779316",
+      "nativeBoundaries": 315,
+      "nativeActions": {
+        "swap": 232,
+        "bomb": 3,
+        "ability": 68,
+        "card": 9,
+        "potion": 3
+      },
+      "journalSha256": "b05ed695a76c9edca398e7f4746434ed8f6bf035561c3c6df24dd18eff036dca",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p4-dungeon_attender-L5-1744289676",
+      "nativeBoundaries": 414,
+      "nativeActions": {
+        "swap": 357,
+        "card": 7,
+        "ability": 44,
+        "bomb": 3,
+        "potion": 3
+      },
+      "journalSha256": "29770b44a32d59ffeb2830b1c5c31fc3616c54e41d577492756f5dbf6ad768f8",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p4-kobold_gunner-L5-1215592394",
+      "nativeBoundaries": 140,
+      "nativeActions": {
+        "swap": 120,
+        "bomb": 3,
+        "card": 3,
+        "ability": 11,
+        "potion": 3
+      },
+      "journalSha256": "190fbb5218d1b6dcba5a7a1873301eff5649e3d7e8e0e165a20633e4857f9a5b",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p4-skeleton-L1-762463853",
+      "nativeBoundaries": 140,
+      "nativeActions": {
+        "swap": 122,
+        "card": 4,
+        "ability": 8,
+        "bomb": 3,
+        "potion": 3
+      },
+      "journalSha256": "d4f5f6ef54e10868b593605ee54e011c1c0b4cbf17db456e0e7472d2cb0a6c11",
+      "failures": []
+    },
+    {
+      "case": "refine-wide-p4-skeleton-L1-795264865",
+      "nativeBoundaries": 237,
+      "nativeActions": {
+        "bomb": 3,
+        "swap": 208,
+        "card": 6,
+        "ability": 17,
+        "potion": 3
+      },
+      "journalSha256": "a0eb5c41d1c36a289348d9806d3ebbdc2fc9e570bc1aaaef2fa4fece5192f2c3",
+      "failures": []
+    }
+  ]
+}

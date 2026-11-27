@@ -41,6 +41,11 @@ public sealed class CombatPolishPlayTests
                 if(definition.Category!=EnemyCategory.Boss) seen.Add(definition);
             }
             typeof(WaveController).GetField("currentWave",Flags).SetValue(waves,30);
+            var king=run.Zone.Definition.resonanceEncounters.First(r=>r.members.Any(e=>e.EnemyId=="king"));
+            ResonanceEncounterFixture.Lock(run,king.members,"Explicit King settlement diagnostic");
+            var resonance=run.Resonance.State;resonance.charge=100;resonance.triggeredMask=resonance.claimedMask=7;
+            resonance.pendingNotches.Clear();resonance.activeNotch=0;resonance.lastBankedWave=29;
+            resonance.capstoneKind=(int)ZoneEncounterKind.MajorBoss;
             waves.SpawnCurrentWave(); yield return Until(()=>waves.IsWaveActive && waves.CurrentWave==30 && waves.ActiveEnemies.Count==2 && run.Continuation.CanCapture);
             Assert.That(waves.OriginalEncounterDefinitions.Any(e=>e.Category==EnemyCategory.Boss),Is.True);
             string id=run.RunId; int gold=AccountProgression.Current.Gold;

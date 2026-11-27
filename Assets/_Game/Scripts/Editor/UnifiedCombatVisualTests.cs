@@ -24,7 +24,18 @@ public sealed class UnifiedCombatAssetTests
         }
         var defs=AssetDatabase.FindAssets("t:EnemyDefinition",new[]{"Assets/_Game"})
             .Select(g=>AssetDatabase.LoadAssetAtPath<EnemyDefinition>(AssetDatabase.GUIDToAssetPath(g))).ToArray();
-        Assert.That(defs.Length,Is.EqualTo(73));
+        string[] expansionIds = {
+            "guild_swordsman", "guild_ranger", "guild_bulwark", "guild_chirurgeon",
+            "nacre_duelist", "nacre_halberdier", "elven_pathblade", "orc_slinghunter",
+            "iceborn_axeman", "ore_ram"
+        };
+        string[] ids = defs.Select(enemy => enemy.EnemyId).ToArray();
+        Assert.That(defs.Length, Is.EqualTo(73 + expansionIds.Length));
+        Assert.That(ids, Is.Unique);
+        CollectionAssert.IsSubsetOf(expansionIds, ids);
+        var zoneRoster = Resources.LoadAll<ZoneDefinition>("Zones")
+            .SelectMany(zone => zone.enemies).Distinct().ToArray();
+        CollectionAssert.AreEquivalent(zoneRoster, defs);
         Assert.That(defs.Select(d=>d.UnifiedAttackMoves).Distinct().Count(),Is.GreaterThanOrEqualTo(5));
         foreach(var def in defs) Assert.That(def.UnifiedAttackMoves,Is.InRange(2,6),def.name);
     }
@@ -34,7 +45,7 @@ public sealed partial class ForestFoundationPlayTests
 {
     [UnityTest] public IEnumerator UnifiedTwoChannelsResumeIndependentlyAndKeepTargetLinks()
     {
-        yield return LaunchUnified();
+        yield return LaunchWithTwoFreeSlots();
         var data=Resources.Load<ZoneDefinition>("Zones/magical-forest").enemies.First(d=>d.EnemyId=="elven_mender");
         Assert.That(Run.Waves.TrySummonEnemy(data,out var first),Is.True);
         Assert.That(Run.Waves.TrySummonEnemy(data,out var second),Is.True);
@@ -70,6 +81,7 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator UnifiedLeaderHudAndAnnouncementStayInsidePortrait()
     {
+        Directory.CreateDirectory(".utmp/UnifiedCombat/Visual");
         yield return LaunchMineKit("grand_delver","bore_engineer","powder_sapper");DurableUnifiedFixture();
         var boss=Enemy("grand_delver");
         yield return Until(()=>boss.GetComponent<EnemyUnifiedIntentView>()?.ActionRoot!=null,"leader intent initialized");

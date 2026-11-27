@@ -1,0 +1,675 @@
+{
+  "method": "Observed failures; no unavoidable-damage inference",
+  "cases": [
+    {
+      "case": "pass2-novice-dungeon-L1-8201",
+      "zone": "frostwake-peaks",
+      "visit": 1,
+      "depth": 25,
+      "charge": 50,
+      "pending": 0,
+      "lastDamage": "Last hit: Iceborn Raider\n15 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Learn frostblade_reaver:frostblade_reaver/Special/2+iceborn_raider/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 24,
+          "amount": 10,
+          "healthAfter": 60,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 24,
+          "amount": 10,
+          "healthAfter": 50,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 24,
+          "amount": 10,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 24,
+          "amount": 10,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 24,
+          "amount": 10,
+          "healthAfter": 20,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 25,
+          "amount": 5,
+          "healthAfter": 20,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 25,
+          "amount": 5,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 25,
+          "amount": 15,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=2;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=7;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=11;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=3;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False"
+      ],
+      "capstonePhase": 0
+    },
+    {
+      "case": "pass2-novice-frostwake-L1-9404",
+      "zone": "dungeon",
+      "visit": 1,
+      "depth": 29,
+      "charge": 78,
+      "pending": 1,
+      "lastDamage": "Last hit: Royal Lancer\n5 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Royal vanguard:royal_swordsman/Normal/2.5+royal_lancer/Normal/2.5",
+      "recentDamage": [
+        {
+          "depth": 29,
+          "amount": 5,
+          "healthAfter": 45,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 29,
+          "amount": 5,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 29,
+          "amount": 10,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 29,
+          "amount": 5,
+          "healthAfter": 25,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 29,
+          "amount": 10,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 29,
+          "amount": 5,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 29,
+          "amount": 5,
+          "healthAfter": 5,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 29,
+          "amount": 5,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=4;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=4;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=8;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=6;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False"
+      ],
+      "capstonePhase": 0
+    },
+    {
+      "case": "pass2-policy2-dungeon_attender-L5-9401",
+      "zone": "drowned-court",
+      "visit": 3,
+      "depth": 49,
+      "charge": 13,
+      "pending": 1,
+      "lastDamage": "Last hit: Hammerhead Bruiser\n15 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Patrol conch_marshal:conch_marshal/Special/2.5+reef_spearman/Normal/1.5+hammerhead_bruiser/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 49,
+          "amount": 15,
+          "healthAfter": 95,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 49,
+          "amount": 30,
+          "healthAfter": 65,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 49,
+          "amount": 15,
+          "healthAfter": 50,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 49,
+          "amount": 40,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 49,
+          "amount": 20,
+          "healthAfter": 45,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 49,
+          "amount": 15,
+          "healthAfter": 35,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 49,
+          "amount": 20,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 49,
+          "amount": 15,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=7;warnings=0;counterAvailable=False;counterChosen=False;air=2;bubbleAvailable=True;bubbleChosen=True",
+        "legal=8;warnings=0;counterAvailable=False;counterChosen=False;air=3;bubbleAvailable=False;bubbleChosen=False",
+        "legal=6;warnings=0;counterAvailable=False;counterChosen=False;air=2;bubbleAvailable=True;bubbleChosen=True",
+        "legal=7;warnings=0;counterAvailable=False;counterChosen=False;air=3;bubbleAvailable=False;bubbleChosen=False"
+      ],
+      "capstonePhase": 0
+    },
+    {
+      "case": "pass2-policy3-bardley-L5-9402",
+      "zone": "frostwake-peaks",
+      "visit": 3,
+      "depth": 58,
+      "charge": 82,
+      "pending": 0,
+      "lastDamage": "Last hit: Frostblade Reaver\n15 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Elite frostblade_reaver:frostblade_reaver/Special/2+rime_skald/Special/2.5+frostfang_wolf/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 57,
+          "amount": 10,
+          "healthAfter": 55,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 57,
+          "amount": 15,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 57,
+          "amount": 15,
+          "healthAfter": 25,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 58,
+          "amount": 10,
+          "healthAfter": 45,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 58,
+          "amount": 10,
+          "healthAfter": 35,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 58,
+          "amount": 10,
+          "healthAfter": 25,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 58,
+          "amount": 10,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 58,
+          "amount": 15,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=7;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=5;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=10;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=14;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False"
+      ],
+      "capstonePhase": 2
+    },
+    {
+      "case": "pass2-policy4-kobold_gunner-L5-9403",
+      "zone": "magical-forest",
+      "visit": 2,
+      "depth": 44,
+      "charge": 90,
+      "pending": 1,
+      "lastDamage": "Last hit: Orc Trailguard\n15 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Patrol elven_thornkeeper:elven_thornkeeper/Special/2.5+elven_scout/Normal/1.5+orc_trailguard/Normal/2",
+      "recentDamage": [
+        {
+          "depth": 43,
+          "amount": 5,
+          "healthAfter": 70,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 43,
+          "amount": 5,
+          "healthAfter": 70,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 44,
+          "amount": 15,
+          "healthAfter": 65,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 44,
+          "amount": 5,
+          "healthAfter": 60,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 44,
+          "amount": 20,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 44,
+          "amount": 15,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 44,
+          "amount": 15,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 44,
+          "amount": 15,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=16;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=18;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=19;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=14;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False"
+      ],
+      "capstonePhase": 3
+    },
+    {
+      "case": "pass2-typical-drowned-court-L1-9203",
+      "zone": "drowned-court",
+      "visit": 0,
+      "depth": 10,
+      "charge": 57,
+      "pending": 0,
+      "lastDamage": "Last hit: Suffocation\n5 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Learn pearl_thief:pearl_thief/Special/2.5+reef_spearman/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 10,
+          "amount": 5,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 10,
+          "amount": 10,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 10,
+          "amount": 5,
+          "healthAfter": 25,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 10,
+          "amount": 10,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 10,
+          "amount": 5,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 10,
+          "amount": 5,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 10,
+          "amount": 10,
+          "healthAfter": 5,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 10,
+          "amount": 5,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=6;warnings=0;counterAvailable=False;counterChosen=False;air=2;bubbleAvailable=False;bubbleChosen=False",
+        "legal=6;warnings=0;counterAvailable=False;counterChosen=False;air=1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=7;warnings=0;counterAvailable=False;counterChosen=False;air=0;bubbleAvailable=False;bubbleChosen=False",
+        "legal=6;warnings=0;counterAvailable=False;counterChosen=False;air=0;bubbleAvailable=False;bubbleChosen=False"
+      ],
+      "capstonePhase": 0
+    },
+    {
+      "case": "pass2-typical-ironvein-excavation-L1-9204",
+      "zone": "dungeon",
+      "visit": 1,
+      "depth": 27,
+      "charge": 60,
+      "pending": 1,
+      "lastDamage": "Last hit: Royal Arbalist\n5 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Royal chain lesson:royal_arbalist/Special/2.5+royal_swordsman/Normal/2.5",
+      "recentDamage": [
+        {
+          "depth": 27,
+          "amount": 5,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 27,
+          "amount": 5,
+          "healthAfter": 25,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 27,
+          "amount": 5,
+          "healthAfter": 20,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 27,
+          "amount": 5,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 27,
+          "amount": 5,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 27,
+          "amount": 5,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 27,
+          "amount": 5,
+          "healthAfter": 5,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 27,
+          "amount": 5,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=7;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=7;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=2;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=4;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False"
+      ],
+      "capstonePhase": 0
+    },
+    {
+      "case": "pass2-typical-ironvein-excavation-L5-8304",
+      "zone": "magical-forest",
+      "visit": 2,
+      "depth": 38,
+      "charge": 45,
+      "pending": 1,
+      "lastDamage": "Last hit: Orc Berserker\n15 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Patrol orc_berserker:orc_berserker/Special/2.5+elven_scout/Normal/1.5+orc_trailguard/Normal/2",
+      "recentDamage": [
+        {
+          "depth": 37,
+          "amount": 15,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 37,
+          "amount": 5,
+          "healthAfter": 35,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 37,
+          "amount": 5,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 37,
+          "amount": 5,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 37,
+          "amount": 5,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 38,
+          "amount": 20,
+          "healthAfter": 20,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 38,
+          "amount": 20,
+          "healthAfter": 5,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 38,
+          "amount": 15,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=15;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=7;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=6;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=8;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False"
+      ],
+      "capstonePhase": 0
+    },
+    {
+      "case": "pass2-typical-magical-forest-L1-9202",
+      "zone": "dungeon",
+      "visit": 1,
+      "depth": 22,
+      "charge": 33,
+      "pending": 1,
+      "lastDamage": "Last hit: Spear Knight\n5 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Knight advance:crossbow_guard/Special/2+knight/Normal/2+spear_knight/Normal/2",
+      "recentDamage": [
+        {
+          "depth": 22,
+          "amount": 5,
+          "healthAfter": 20,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 22,
+          "amount": 5,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 22,
+          "amount": 5,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 22,
+          "amount": 5,
+          "healthAfter": 15,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 22,
+          "amount": 5,
+          "healthAfter": 10,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 22,
+          "amount": 5,
+          "healthAfter": 5,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 22,
+          "amount": 5,
+          "healthAfter": 5,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 22,
+          "amount": 5,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=13;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=15;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=9;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=13;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False"
+      ],
+      "capstonePhase": 0
+    },
+    {
+      "case": "pass2-typical-magical-forest-L5-8302",
+      "zone": "ironvein-excavation",
+      "visit": 2,
+      "depth": 44,
+      "charge": 91,
+      "pending": 1,
+      "lastDamage": "Last hit: Bore Engineer\n20 HP lost \u00b7 0 shield absorbed",
+      "lastFormation": "Elite bore_engineer:bore_engineer/Special/3+seismic_smith/Special/3+rivet_gunner/Normal/1.5",
+      "recentDamage": [
+        {
+          "depth": 41,
+          "amount": 10,
+          "healthAfter": 65,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 41,
+          "amount": 15,
+          "healthAfter": 50,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 41,
+          "amount": 10,
+          "healthAfter": 45,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 41,
+          "amount": 15,
+          "healthAfter": 30,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 41,
+          "amount": 10,
+          "healthAfter": 25,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 44,
+          "amount": 10,
+          "healthAfter": 40,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 44,
+          "amount": 20,
+          "healthAfter": 20,
+          "shieldAfter": 0
+        },
+        {
+          "depth": 44,
+          "amount": 20,
+          "healthAfter": 0,
+          "shieldAfter": 0
+        }
+      ],
+      "lastVisibleDecisions": [
+        "legal=8;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=5;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=12;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False",
+        "legal=8;warnings=0;counterAvailable=False;counterChosen=False;air=-1;bubbleAvailable=False;bubbleChosen=False"
+      ],
+      "capstonePhase": 2
+    }
+  ]
+}

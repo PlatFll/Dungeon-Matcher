@@ -1,0 +1,907 @@
+{
+  "sources": [
+    {
+      "batch": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Playtest\\20261117-084917",
+      "manifestSha256": "dd64a7f6d54aa949d6f226e249c9e8bfe4ab0fff38a27e19b26606c614a56034",
+      "runnerErrors": false,
+      "completion": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment."
+    }
+  ],
+  "cases": [
+    {
+      "batch": "20261117-084917",
+      "label": "final-aggressive-court-L5-90347",
+      "zone": "drowned-court",
+      "character": "kobold_gunner",
+      "policy": 4,
+      "seed": 90347,
+      "level": 5,
+      "maxVisits": 1,
+      "maxSeconds": 900.0,
+      "outcome": "visit limit",
+      "wallSeconds": 272.86199951171875,
+      "completedVisits": 1,
+      "swaps": 71,
+      "abilities": 10,
+      "cards": 3
+    },
+    {
+      "batch": "20261117-084917",
+      "label": "final-new-typical-forest-L1-71876",
+      "zone": "magical-forest",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 71876,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900.0,
+      "outcome": "visit limit",
+      "wallSeconds": 269.11724853515625,
+      "completedVisits": 1,
+      "swaps": 77,
+      "abilities": 6,
+      "cards": 3
+    },
+    {
+      "batch": "20261117-084917",
+      "label": "final-novice-court-L1-71875",
+      "zone": "drowned-court",
+      "character": "skeleton",
+      "policy": 0,
+      "seed": 71875,
+      "level": 1,
+      "maxVisits": 1,
+      "maxSeconds": 900.0,
+      "outcome": "defeat",
+      "wallSeconds": 261.8326416015625,
+      "completedVisits": 0,
+      "swaps": 69,
+      "abilities": 3,
+      "cards": 2
+    },
+    {
+      "batch": "20261117-084917",
+      "label": "final-typical-court-L5-8303",
+      "zone": "drowned-court",
+      "character": "skeleton",
+      "policy": 1,
+      "seed": 8303,
+      "level": 5,
+      "maxVisits": 1,
+      "maxSeconds": 900.0,
+      "outcome": "visit limit",
+      "wallSeconds": 268.8025817871094,
+      "completedVisits": 1,
+      "swaps": 83,
+      "abilities": 4,
+      "cards": 3
+    }
+  ],
+  "visits": [
+    {
+      "batch": "20261117-084917",
+      "label": "final-aggressive-court-L5-90347",
+      "seed": 90347,
+      "character": "kobold_gunner",
+      "level": 5,
+      "policy": 4,
+      "zone": "drowned-court",
+      "visit": 0,
+      "completed": true,
+      "wallSeconds": 272.858,
+      "outcome": "completed",
+      "startDepth": 1,
+      "endDepth": 15,
+      "health": 115,
+      "score": 8550,
+      "bankedEncounters": 15,
+      "acceptedSwaps": 71,
+      "acceptedAbilities": 10,
+      "acceptedPotions": 2,
+      "acceptedBombs": 3,
+      "baseCharge": 88,
+      "masteryCharge": 15,
+      "overflow": 3,
+      "firstCardSeconds": 28.755,
+      "combatSeconds": 238.2925567626953,
+      "draftSeconds": 26.696796417236328,
+      "travelSeconds": 0.9568807482719421,
+      "playerDamage": 310,
+      "enemySpecials": 6,
+      "specialEnemies": [
+        "conch_marshal",
+        "pearl_cantor",
+        "pearl_thief",
+        "puffer_sentinel",
+        "reef_netweaver"
+      ],
+      "uniqueEnemies": [
+        "conch_marshal",
+        "hammerhead_bruiser",
+        "pearl_cantor",
+        "pearl_thief",
+        "puffer_sentinel",
+        "reef_netweaver",
+        "reef_spearman"
+      ],
+      "recipes": [
+        "Learn pearl_thief",
+        "Outer patrol",
+        "Learn reef_netweaver",
+        "Quiet patrol",
+        "Learn pearl_thief",
+        "Learn conch_marshal",
+        "Learn puffer_sentinel",
+        "Patrol puffer_sentinel",
+        "Learn pearl_thief",
+        "Patrol pearl_thief",
+        "Patrol conch_marshal",
+        "Learn conch_marshal",
+        "Learn pearl_cantor",
+        "Elite reef_netweaver",
+        "Patrol pearl_cantor"
+      ],
+      "distinctRecipes": 12,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "arcane_efficiency",
+        "arcane_efficiency",
+        "chromatic_conductor"
+      ],
+      "capstones": [
+        {
+          "id": "Elite reef_netweaver",
+          "kind": 1,
+          "scheduledAfterDepth": 13,
+          "encounterDepth": 14
+        }
+      ],
+      "capstoneSeconds": [
+        20.475
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 11,
+      "lowAirResponses": 11,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "startTier": 0,
+      "endTier": 2
+    },
+    {
+      "batch": "20261117-084917",
+      "label": "final-aggressive-court-L5-90347",
+      "seed": 90347,
+      "character": "kobold_gunner",
+      "level": 5,
+      "policy": 4,
+      "zone": "frostwake-peaks",
+      "visit": 1,
+      "completed": false,
+      "wallSeconds": 0.004,
+      "outcome": "arrival only; next visit not attempted",
+      "startDepth": 1,
+      "endDepth": 1,
+      "health": 115,
+      "score": 8550,
+      "bankedEncounters": 0,
+      "acceptedSwaps": 0,
+      "acceptedAbilities": 0,
+      "acceptedPotions": 0,
+      "acceptedBombs": 0,
+      "baseCharge": 0,
+      "masteryCharge": 0,
+      "overflow": 0,
+      "firstCardSeconds": null,
+      "combatSeconds": 0.0,
+      "draftSeconds": 0.0,
+      "travelSeconds": 0.0,
+      "playerDamage": 0,
+      "enemySpecials": 0,
+      "specialEnemies": [],
+      "uniqueEnemies": [],
+      "recipes": [],
+      "distinctRecipes": 0,
+      "immediateRecipeRepeats": 0,
+      "cards": [],
+      "capstones": [],
+      "capstoneSeconds": [],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": false,
+      "startTier": 0,
+      "endTier": 0
+    },
+    {
+      "batch": "20261117-084917",
+      "label": "final-new-typical-forest-L1-71876",
+      "seed": 71876,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "zone": "magical-forest",
+      "visit": 0,
+      "completed": true,
+      "wallSeconds": 269.114,
+      "outcome": "completed",
+      "startDepth": 1,
+      "endDepth": 18,
+      "health": 60,
+      "score": 10320,
+      "bankedEncounters": 18,
+      "acceptedSwaps": 77,
+      "acceptedAbilities": 6,
+      "acceptedPotions": 0,
+      "acceptedBombs": 0,
+      "baseCharge": 91,
+      "masteryCharge": 12,
+      "overflow": 3,
+      "firstCardSeconds": 23.913,
+      "combatSeconds": 236.4845733642578,
+      "draftSeconds": 23.309419631958008,
+      "travelSeconds": 0.9548776149749756,
+      "playerDamage": 195,
+      "enemySpecials": 2,
+      "specialEnemies": [
+        "ancient_treant"
+      ],
+      "uniqueEnemies": [
+        "ancient_treant",
+        "briar_archer",
+        "elven_mender",
+        "elven_scout",
+        "orc_berserker",
+        "orc_bloomcaller",
+        "orc_drummer",
+        "orc_trailguard"
+      ],
+      "recipes": [
+        "Outer patrol",
+        "Quiet patrol",
+        "Learn elven_mender",
+        "Learn elven_mender",
+        "Outer patrol",
+        "Learn orc_berserker",
+        "Patrol orc_berserker",
+        "Learn orc_bloomcaller",
+        "Patrol orc_bloomcaller",
+        "Learn orc_drummer",
+        "Patrol orc_drummer",
+        "Patrol orc_berserker",
+        "Outer patrol",
+        "Learn orc_bloomcaller",
+        "Patrol elven_mender",
+        "Guardian ancient_treant",
+        "Patrol orc_bloomcaller",
+        "Learn briar_archer"
+      ],
+      "distinctRecipes": 12,
+      "immediateRecipeRepeats": 1,
+      "cards": [
+        "prototype_gem_grinder",
+        "bombsmith",
+        "prepared_casting"
+      ],
+      "capstones": [
+        {
+          "id": "Guardian ancient_treant",
+          "kind": 2,
+          "scheduledAfterDepth": 15,
+          "encounterDepth": 16
+        }
+      ],
+      "capstoneSeconds": [
+        31.152
+      ],
+      "telegraphDecisionPoints": 1,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 1,
+      "visibleCountersChosen": 1,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "startTier": 0,
+      "endTier": 2
+    },
+    {
+      "batch": "20261117-084917",
+      "label": "final-new-typical-forest-L1-71876",
+      "seed": 71876,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "zone": "frostwake-peaks",
+      "visit": 1,
+      "completed": false,
+      "wallSeconds": 0.004,
+      "outcome": "arrival only; next visit not attempted",
+      "startDepth": 1,
+      "endDepth": 1,
+      "health": 60,
+      "score": 10320,
+      "bankedEncounters": 0,
+      "acceptedSwaps": 0,
+      "acceptedAbilities": 0,
+      "acceptedPotions": 0,
+      "acceptedBombs": 0,
+      "baseCharge": 0,
+      "masteryCharge": 0,
+      "overflow": 0,
+      "firstCardSeconds": null,
+      "combatSeconds": 0.0,
+      "draftSeconds": 0.0,
+      "travelSeconds": 0.0,
+      "playerDamage": 0,
+      "enemySpecials": 0,
+      "specialEnemies": [],
+      "uniqueEnemies": [],
+      "recipes": [],
+      "distinctRecipes": 0,
+      "immediateRecipeRepeats": 0,
+      "cards": [],
+      "capstones": [],
+      "capstoneSeconds": [],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": false,
+      "startTier": 0,
+      "endTier": 0
+    },
+    {
+      "batch": "20261117-084917",
+      "label": "final-novice-court-L1-71875",
+      "seed": 71875,
+      "character": "skeleton",
+      "level": 1,
+      "policy": 0,
+      "zone": "drowned-court",
+      "visit": 0,
+      "completed": false,
+      "wallSeconds": 261.833,
+      "outcome": "defeat",
+      "startDepth": 1,
+      "endDepth": 11,
+      "health": 0,
+      "score": 5865,
+      "bankedEncounters": 10,
+      "acceptedSwaps": 69,
+      "acceptedAbilities": 3,
+      "acceptedPotions": 3,
+      "acceptedBombs": 0,
+      "baseCharge": 56,
+      "masteryCharge": 8,
+      "overflow": 0,
+      "firstCardSeconds": 56.049,
+      "combatSeconds": 242.32815551757812,
+      "draftSeconds": 15.519771575927734,
+      "travelSeconds": 0.0,
+      "playerDamage": 360,
+      "enemySpecials": 4,
+      "specialEnemies": [
+        "pearl_cantor",
+        "reef_netweaver"
+      ],
+      "uniqueEnemies": [
+        "hammerhead_bruiser",
+        "pearl_cantor",
+        "pearl_thief",
+        "reef_netweaver",
+        "reef_spearman"
+      ],
+      "recipes": [
+        "Outer patrol",
+        "Learn pearl_thief",
+        "Quiet patrol",
+        "Learn reef_netweaver",
+        "Outer patrol",
+        "Learn pearl_cantor",
+        "Patrol reef_netweaver",
+        "Learn reef_netweaver",
+        "Patrol pearl_cantor",
+        "Outer patrol",
+        "Patrol pearl_thief"
+      ],
+      "distinctRecipes": 8,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "prototype_thicker_hide",
+        "executioner"
+      ],
+      "capstones": [],
+      "capstoneSeconds": [],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 14,
+      "lowAirResponses": 3,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "startTier": 0,
+      "endTier": 1
+    },
+    {
+      "batch": "20261117-084917",
+      "label": "final-typical-court-L5-8303",
+      "seed": 8303,
+      "character": "skeleton",
+      "level": 5,
+      "policy": 1,
+      "zone": "drowned-court",
+      "visit": 0,
+      "completed": true,
+      "wallSeconds": 268.797,
+      "outcome": "completed",
+      "startDepth": 1,
+      "endDepth": 15,
+      "health": 50,
+      "score": 7985,
+      "bankedEncounters": 15,
+      "acceptedSwaps": 83,
+      "acceptedAbilities": 4,
+      "acceptedPotions": 3,
+      "acceptedBombs": 0,
+      "baseCharge": 87,
+      "masteryCharge": 14,
+      "overflow": 1,
+      "firstCardSeconds": 33.678,
+      "combatSeconds": 234.1568145751953,
+      "draftSeconds": 26.796649932861328,
+      "travelSeconds": 0.9541183114051819,
+      "playerDamage": 390,
+      "enemySpecials": 4,
+      "specialEnemies": [
+        "moray_siphoner",
+        "pearl_cantor",
+        "puffer_sentinel",
+        "reef_netweaver"
+      ],
+      "uniqueEnemies": [
+        "hammerhead_bruiser",
+        "moray_siphoner",
+        "pearl_cantor",
+        "pearl_thief",
+        "puffer_sentinel",
+        "reef_netweaver",
+        "reef_spearman"
+      ],
+      "recipes": [
+        "Learn pearl_thief",
+        "Outer patrol",
+        "Learn reef_netweaver",
+        "Quiet patrol",
+        "Learn pearl_thief",
+        "Learn pearl_cantor",
+        "Learn puffer_sentinel",
+        "Patrol pearl_thief",
+        "Patrol reef_netweaver",
+        "Patrol pearl_cantor",
+        "Learn puffer_sentinel",
+        "Outer patrol",
+        "Patrol pearl_thief",
+        "Elite pearl_thief",
+        "Patrol puffer_sentinel"
+      ],
+      "distinctRecipes": 11,
+      "immediateRecipeRepeats": 0,
+      "cards": [
+        "prototype_gem_grinder",
+        "boss_hunter",
+        "cascade_catalyst"
+      ],
+      "capstones": [
+        {
+          "id": "Elite pearl_thief",
+          "kind": 1,
+          "scheduledAfterDepth": 13,
+          "encounterDepth": 14
+        }
+      ],
+      "capstoneSeconds": [
+        27.515
+      ],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 17,
+      "lowAirResponses": 15,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": true,
+      "startTier": 0,
+      "endTier": 2
+    },
+    {
+      "batch": "20261117-084917",
+      "label": "final-typical-court-L5-8303",
+      "seed": 8303,
+      "character": "skeleton",
+      "level": 5,
+      "policy": 1,
+      "zone": "frostwake-peaks",
+      "visit": 1,
+      "completed": false,
+      "wallSeconds": 0.004,
+      "outcome": "arrival only; next visit not attempted",
+      "startDepth": 1,
+      "endDepth": 1,
+      "health": 50,
+      "score": 7985,
+      "bankedEncounters": 0,
+      "acceptedSwaps": 0,
+      "acceptedAbilities": 0,
+      "acceptedPotions": 0,
+      "acceptedBombs": 0,
+      "baseCharge": 0,
+      "masteryCharge": 0,
+      "overflow": 0,
+      "firstCardSeconds": null,
+      "combatSeconds": 0.0,
+      "draftSeconds": 0.0,
+      "travelSeconds": 0.0,
+      "playerDamage": 0,
+      "enemySpecials": 0,
+      "specialEnemies": [],
+      "uniqueEnemies": [],
+      "recipes": [],
+      "distinctRecipes": 0,
+      "immediateRecipeRepeats": 0,
+      "cards": [],
+      "capstones": [],
+      "capstoneSeconds": [],
+      "telegraphDecisionPoints": 0,
+      "warningWithoutImmediateMarkedMatch": 0,
+      "visibleCounterOpportunities": 0,
+      "visibleCountersChosen": 0,
+      "lowAirOpportunities": 0,
+      "lowAirResponses": 0,
+      "lowAirCofferOpportunities": 0,
+      "lowAirCofferResponses": 0,
+      "cofferObservationRecorded": false,
+      "startTier": 0,
+      "endTier": 0
+    }
+  ],
+  "distributions": [
+    {
+      "zone": "drowned-court",
+      "policy": "1",
+      "level": "5",
+      "timing": {
+        "n": 1,
+        "median": 268.797,
+        "p25": 268.797,
+        "p75": 268.797,
+        "minimum": 268.797,
+        "maximum": 268.797
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 33.678,
+        "p25": 33.678,
+        "p75": 33.678,
+        "minimum": 33.678,
+        "maximum": 33.678
+      },
+      "encounters": {
+        "n": 1,
+        "median": 15,
+        "p25": 15.0,
+        "p75": 15.0,
+        "minimum": 15,
+        "maximum": 15
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 83,
+        "p25": 83.0,
+        "p75": 83.0,
+        "minimum": 83,
+        "maximum": 83
+      },
+      "levels": [
+        5
+      ],
+      "characters": [
+        "skeleton"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "drowned-court",
+      "policy": "4",
+      "level": "5",
+      "timing": {
+        "n": 1,
+        "median": 272.858,
+        "p25": 272.858,
+        "p75": 272.858,
+        "minimum": 272.858,
+        "maximum": 272.858
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 28.755,
+        "p25": 28.755,
+        "p75": 28.755,
+        "minimum": 28.755,
+        "maximum": 28.755
+      },
+      "encounters": {
+        "n": 1,
+        "median": 15,
+        "p25": 15.0,
+        "p75": 15.0,
+        "minimum": 15,
+        "maximum": 15
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 71,
+        "p25": 71.0,
+        "p75": 71.0,
+        "minimum": 71,
+        "maximum": 71
+      },
+      "levels": [
+        5
+      ],
+      "characters": [
+        "kobold_gunner"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "drowned-court",
+      "policy": "all",
+      "level": "all",
+      "timing": {
+        "n": 2,
+        "median": 270.827,
+        "p25": 269.812,
+        "p75": 271.843,
+        "minimum": 268.797,
+        "maximum": 272.858
+      },
+      "firstCard": {
+        "n": 2,
+        "median": 31.216,
+        "p25": 29.986,
+        "p75": 32.447,
+        "minimum": 28.755,
+        "maximum": 33.678
+      },
+      "encounters": {
+        "n": 2,
+        "median": 15.0,
+        "p25": 15.0,
+        "p75": 15.0,
+        "minimum": 15,
+        "maximum": 15
+      },
+      "manualSwaps": {
+        "n": 2,
+        "median": 77.0,
+        "p25": 74.0,
+        "p75": 80.0,
+        "minimum": 71,
+        "maximum": 83
+      },
+      "levels": [
+        5
+      ],
+      "characters": [
+        "kobold_gunner",
+        "skeleton"
+      ],
+      "independentSeeds": 2
+    },
+    {
+      "zone": "magical-forest",
+      "policy": "1",
+      "level": "1",
+      "timing": {
+        "n": 1,
+        "median": 269.114,
+        "p25": 269.114,
+        "p75": 269.114,
+        "minimum": 269.114,
+        "maximum": 269.114
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 23.913,
+        "p25": 23.913,
+        "p75": 23.913,
+        "minimum": 23.913,
+        "maximum": 23.913
+      },
+      "encounters": {
+        "n": 1,
+        "median": 18,
+        "p25": 18.0,
+        "p75": 18.0,
+        "minimum": 18,
+        "maximum": 18
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 77,
+        "p25": 77.0,
+        "p75": 77.0,
+        "minimum": 77,
+        "maximum": 77
+      },
+      "levels": [
+        1
+      ],
+      "characters": [
+        "skeleton"
+      ],
+      "independentSeeds": 1
+    },
+    {
+      "zone": "magical-forest",
+      "policy": "all",
+      "level": "all",
+      "timing": {
+        "n": 1,
+        "median": 269.114,
+        "p25": 269.114,
+        "p75": 269.114,
+        "minimum": 269.114,
+        "maximum": 269.114
+      },
+      "firstCard": {
+        "n": 1,
+        "median": 23.913,
+        "p25": 23.913,
+        "p75": 23.913,
+        "minimum": 23.913,
+        "maximum": 23.913
+      },
+      "encounters": {
+        "n": 1,
+        "median": 18,
+        "p25": 18.0,
+        "p75": 18.0,
+        "minimum": 18,
+        "maximum": 18
+      },
+      "manualSwaps": {
+        "n": 1,
+        "median": 77,
+        "p25": 77.0,
+        "p75": 77.0,
+        "minimum": 77,
+        "maximum": 77
+      },
+      "levels": [
+        1
+      ],
+      "characters": [
+        "skeleton"
+      ],
+      "independentSeeds": 1
+    }
+  ],
+  "depthDistributions": [
+    {
+      "zone": "drowned-court",
+      "policy": 1,
+      "level": 5,
+      "startTier": 0,
+      "timing": {
+        "n": 1,
+        "median": 268.797,
+        "p25": 268.797,
+        "p75": 268.797,
+        "minimum": 268.797,
+        "maximum": 268.797
+      }
+    },
+    {
+      "zone": "drowned-court",
+      "policy": 4,
+      "level": 5,
+      "startTier": 0,
+      "timing": {
+        "n": 1,
+        "median": 272.858,
+        "p25": 272.858,
+        "p75": 272.858,
+        "minimum": 272.858,
+        "maximum": 272.858
+      }
+    },
+    {
+      "zone": "magical-forest",
+      "policy": 1,
+      "level": 1,
+      "startTier": 0,
+      "timing": {
+        "n": 1,
+        "median": 269.114,
+        "p25": 269.114,
+        "p75": 269.114,
+        "minimum": 269.114,
+        "maximum": 269.114
+      }
+    }
+  ],
+  "coverage": {
+    "drowned-court": {
+      "completed": 2,
+      "defeats": 1,
+      "censored": 0,
+      "seeds": [
+        8303,
+        90347
+      ],
+      "policies": [
+        1,
+        4
+      ],
+      "tiers": [
+        0,
+        1,
+        2
+      ],
+      "naturalRevisits": 0
+    },
+    "frostwake-peaks": {
+      "completed": 0,
+      "defeats": 0,
+      "censored": 0,
+      "seeds": [],
+      "policies": [],
+      "tiers": [],
+      "naturalRevisits": 0
+    },
+    "magical-forest": {
+      "completed": 1,
+      "defeats": 0,
+      "censored": 0,
+      "seeds": [
+        71876
+      ],
+      "policies": [
+        1
+      ],
+      "tiers": [
+        0,
+        1,
+        2
+      ],
+      "naturalRevisits": 0
+    }
+  },
+  "limitations": [
+    "Actual Unity Game-scene legal-input proxy, not human enjoyment approval.",
+    "Completed wall time includes thinking, card reading and travel; incomplete visits are excluded from timing distributions.",
+    "First-card interval is measured from first observation of that visit; incoming reveal may overlap it.",
+    "Enemy telegraph response counters cover visible marked-gem responses; they do not certify every attack as fair.",
+    "Accepted swaps, abilities and consumables are separate; card picks do not consume a combat action.",
+    "Warning-without-immediate-marked-match counts include environmental/cell warnings and alternative counters; they are not proof of unavoidable damage.",
+    "Different levels/characters must be separated before interpreting skill effects."
+  ]
+}

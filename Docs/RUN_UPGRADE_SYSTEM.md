@@ -5,17 +5,23 @@
 `RunUpgradeBootstrap` installs one scene-scoped `RunUpgradeRuntime`, one
 `RunUpgradeCoordinator`, the gameplay upgrade hooks, and the reusable choice UI
 when the battle scene loads. Nothing is stored in `PlayerPrefs`, and a scene
-reload starts a fresh run.
+reload restores the same run when a continuation checkpoint exists.
 
-After completed waves 2, 5, 9, 13, 17, 21, 25 and 28 (editable in BalanceV1.json), the coordinator immediately holds the generic
-`IWaveProgressionGate`. It waits for `BoardController.IsBusy` to become false,
-acquires a disposable external input block, and opens the draft. Selecting one
-legal card applies it once, closes the modal, releases input, and releases the
-gate. `WaveController` then increments and spawns through its normal pipeline.
-The UI never changes the current wave or calls `SpawnCurrentWave`.
+Live travel-enabled runs draft at Resonance 12/40/70 per visit. The coordinator
+consumes the ordered queue only after complete combat/board/move settlement,
+holds the existing IWaveProgressionGate and disposable board input lease, and
+uses the established legal card generator and selection path. Multiple crossings
+produce sequential choices. Selecting one applies once, persists the consumed
+notch/build, then permits the next draft. Exact offers and refinement survive
+Continue. Empty legal pools consume their notch safely; missing saved definitions
+are reported as restoration errors instead of silently rerolling.
 
-If the player is defeated, required references are absent, or a draft has zero
-legal cards, the hold is safely released so the run cannot softlock.
+The first 12-point draft of the run introduces Board/Ability/Survival directions.
+Later drafts remain weighted and preserve existing eligibility/stack limits.
+The old wave schedule remains only for isolated non-Resonance fixtures. The UI
+never increments depth or calls SpawnCurrentWave. See
+[ownership and save ordering](CrystalResonance/IMPLEMENTATION.md).
+
 
 ## Architecture
 
@@ -35,7 +41,7 @@ legal cards, the hold is safely released so the run cannot softlock.
 - `UpgradeChoiceUI` and `UpgradeCardView` are presentation. They do not contain
   gameplay upgrade effects.
 
-Drafting uses a dedicated `System.Random` seeded by a stable mix of the encounter
+Drafting uses a dedicated saved `SavedRandom` stream seeded by a stable mix of the encounter
 seed. It never reads or advances `WaveController`'s encounter RNG.
 
 ## Rarity

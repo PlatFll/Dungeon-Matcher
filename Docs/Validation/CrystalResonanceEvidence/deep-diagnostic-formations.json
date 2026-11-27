@@ -1,0 +1,85 @@
+{
+    "diagnosticOnly": true,
+    "formations": [
+        {
+            "zone": "dungeon",
+            "recipe": "Court ice lesson",
+            "members": "court_mage+royal_lancer",
+            "depth": 45,
+            "kind": 0,
+            "acceptedMoves": 1
+        },
+        {
+            "zone": "dungeon",
+            "recipe": "The King and Minister",
+            "members": "king+royal_arcanist",
+            "depth": 45,
+            "kind": 3,
+            "acceptedMoves": 1
+        },
+        {
+            "zone": "magical-forest",
+            "recipe": "Patrol orc_drummer",
+            "members": "orc_drummer+elven_scout+orc_trailguard",
+            "depth": 45,
+            "kind": 0,
+            "acceptedMoves": 1
+        },
+        {
+            "zone": "magical-forest",
+            "recipe": "Capstone briar_matriarch",
+            "members": "briar_matriarch+orc_trailguard",
+            "depth": 45,
+            "kind": 3,
+            "acceptedMoves": 1
+        },
+        {
+            "zone": "drowned-court",
+            "recipe": "Learn moray_siphoner",
+            "members": "moray_siphoner+reef_spearman",
+            "depth": 45,
+            "kind": 0,
+            "acceptedMoves": 1
+        },
+        {
+            "zone": "drowned-court",
+            "recipe": "Capstone queen_nacre",
+            "members": "queen_nacre+hammerhead_bruiser",
+            "depth": 45,
+            "kind": 3,
+            "acceptedMoves": 1
+        },
+        {
+            "zone": "ironvein-excavation",
+            "recipe": "Learn powder_sapper",
+            "members": "powder_sapper+pickaxe_delver",
+            "depth": 45,
+            "kind": 0,
+            "acceptedMoves": 1
+        },
+        {
+            "zone": "ironvein-excavation",
+            "recipe": "Capstone grand_delver",
+            "members": "grand_delver+rivet_gunner",
+            "depth": 45,
+            "kind": 3,
+            "acceptedMoves": 1
+        },
+        {
+            "zone": "frostwake-peaks",
+            "recipe": "Patrol hearthkeeper",
+            "members": "hearthkeeper+iceborn_raider+frostfang_wolf",
+            "depth": 45,
+            "kind": 0,
+            "acceptedMoves": 1
+        },
+        {
+            "zone": "frostwake-peaks",
+            "recipe": "Capstone jarl_haldra",
+            "members": "jarl_haldra+frostfang_wolf",
+            "depth": 45,
+            "kind": 3,
+            "acceptedMoves": 1
+        }
+    ]
+}

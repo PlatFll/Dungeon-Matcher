@@ -1,0 +1,49 @@
+{
+  "enemy": "guild_chirurgeon",
+  "state": "idle",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/guild_chirurgeon.png",
+  "firstFrameSHA256": "97501e38ed69b1cb6c1919a229f71f0c3c7d87f26491ec5365cbbb2d5cc1c613",
+  "seed": 385103,
+  "count": 8,
+  "prompt": "Keep staff tip planted. Breathe and settle the sleeves; keep the quiet face and pointed ears visible. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "b78cebac-dcfb-448a-add9-ba5a9d0d39d2",
+  "receipt": "id: b78cebac-dcfb-448a-add9-ba5a9d0d39d2\njob_id: b78cebac-dcfb-448a-add9-ba5a9d0d39d2\naction: Keep staff tip planted. Breathe and settle the sleeves; keep the quiet face and pointed ears visible. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385103\nasset_id: 986ae196-9b59-5fb0-848e-8e9663050523\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b78cebac-dcfb-448a-add9-ba5a9d0d39d2\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/b78cebac-dcfb-448a-add9-ba5a9d0d39d2/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/idle/b78cebac-dcfb-448a-add9-ba5a9d0d39d2/00.png",
+      "sha256": "97501e38ed69b1cb6c1919a229f71f0c3c7d87f26491ec5365cbbb2d5cc1c613"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/idle/b78cebac-dcfb-448a-add9-ba5a9d0d39d2/01.png",
+      "sha256": "6f17f6401dc13c7a7871ebc8ea3753b5d0bbab65092a0557f95cec66d83af894"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/idle/b78cebac-dcfb-448a-add9-ba5a9d0d39d2/02.png",
+      "sha256": "313f69e6a10c804a5d6432113902a3ef6c43792c99c6109eedafed4742a3d962"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/idle/b78cebac-dcfb-448a-add9-ba5a9d0d39d2/03.png",
+      "sha256": "bf444b37ab307194c8ae00b2d2482a6ca5b96027d64277b384390e186cd71d3a"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/idle/b78cebac-dcfb-448a-add9-ba5a9d0d39d2/04.png",
+      "sha256": "4f6fee15038e3febfb122b34b48f9f3c8c86dd61b5eb8d70c4ca7aff07b9ff14"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/idle/b78cebac-dcfb-448a-add9-ba5a9d0d39d2/05.png",
+      "sha256": "5948637daf0f16f250ea7d668526bac3470af10fea005b6ced396a86f439ca97"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/idle/b78cebac-dcfb-448a-add9-ba5a9d0d39d2/06.png",
+      "sha256": "3e3219f3aa18aa9fab85b12c5204109634bed159f925cd9a1ff80f11d64ebc5b"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/idle/b78cebac-dcfb-448a-add9-ba5a9d0d39d2/07.png",
+      "sha256": "d457b2175fe7f85eabdb8df9780adcfeae0d9969373642b937f0d34cf0f288fd"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/guild_chirurgeon/idle/b78cebac-dcfb-448a-add9-ba5a9d0d39d2/08.png",
+      "sha256": "4853d0864091d6b6b27c9b126d4e931c7f3054eb3503734003e9f960eb81aecf"
+    }
+  ]
+}

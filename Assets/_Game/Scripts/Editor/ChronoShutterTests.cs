@@ -14,6 +14,12 @@ using UnityEngine.TestTools;
 
 public sealed class ChronoShutterTests
 {
+    [SetUp]
+    public void SetPortraitViewport()
+    {
+        GameplayPixelLayoutTests.SetGameViewSize(new Vector2Int(1080,1920));
+    }
+
     private const BindingFlags Fields = BindingFlags.Instance | BindingFlags.NonPublic;
 
     [Test] public void PlayableDefinitionUsesApprovedFramesAndDedicatedHold()
@@ -114,6 +120,7 @@ public sealed class ChronoShutterTests
             Assert.That(accepted, Is.Zero); Assert.That(ability.RemainingMoves, Is.EqualTo(5));
             for (int move=0; move<5; move++)
             {
+                yield return ReadyForPlayerSwap(board);
                 Assert.That(board.TryGetRandomHintMove(out var a,out var b), Is.True);
                 turns.Add(new Vector4Int(a.Column,a.Row,b.Column,b.Row));
                 board.ReplayPlayerSwap(a.Column,a.Row,b.Column,b.Row);
@@ -132,6 +139,7 @@ public sealed class ChronoShutterTests
             Assert.That(board.CompletedValidPlayerMoves, Is.EqualTo(5), "enemy time is not rewound");
             for (int move=0; move<5; move++)
             {
+                yield return ReadyForPlayerSwap(board);
                 var input = turns[move];
                 board.ReplayPlayerSwap(input.x,input.y,input.z,input.w);
                 int expected = move + 6;
@@ -164,6 +172,8 @@ public sealed class ChronoShutterTests
             yield return Until(()=>ability.Phase==BoardMemoryPhase.Holding,"hold begins");
             for(int i=0;i<2;i++)yield return HintTurn();
             Assert.That(ability.RemainingMoves,Is.EqualTo(3));
+            // This save tests a stable photographed hold. The fifth move below deliberately saves mid-action.
+            yield return Stable();
             Time.timeScale=0;Assert.That(run.Continuation.SaveNow(),Is.True);
             var saved=AccountProgression.Current.ActiveRun.checkpoint;
             string photo=JsonUtility.ToJson(saved.boardMemory.photograph);
@@ -462,11 +472,18 @@ public sealed class ChronoShutterTests
     }
     private static IEnumerator HintTurn()
     {
-        var board=RunSession.Current.Board;int before=board.CompletedValidPlayerMoves;
+        var board=RunSession.Current.Board;
+        yield return ReadyForPlayerSwap(board);
+        int before=board.CompletedValidPlayerMoves;
         Assert.That(board.TryGetRandomHintMove(out var a,out var b),Is.True);
         board.ReplayPlayerSwap(a.Column,a.Row,b.Column,b.Row);
         yield return Until(()=>board.CompletedValidPlayerMoves==before+1&&!board.IsBusy,"hint move completes");
     }
+    // A board-completed notification precedes the move clock's enemy work and release of its input token.
+    private static IEnumerator ReadyForPlayerSwap(BoardController board) => Until(() =>
+        Time.timeScale > 0 && board.CanCaptureContinuation && !board.IsExternalInputBlocked,
+        "settled board returns input to the player");
+
     private static IEnumerator Restored()=>Until(()=>RunSession.Current!=null&&!RunSession.Current.Continuation.IsRestoring,"run restore completes");
     private static string Colors(BoardController board) => Colors(board.CaptureBoardMemory(id=>id));
     private static string Colors(BoardCombatSnapshot snapshot) => string.Join(",", snapshot.cells.Select(c => c.hasGem ? $"{(int)c.type}:{(int)c.special}" : "-"));

@@ -24,10 +24,14 @@ public sealed partial class ForestFoundationPlayTests
         for(int slot=0;slot<3;slot++)
         {
             var actor=SlotActor(slot);if(actor==null || actor.IsDefeated)continue;
-            var view=actor.GetComponentInParent<EnemySlotUI>().GetComponent<EnemySlotSigilView>();
-            Assert.That(view.SlotIndex,Is.EqualTo(slot));
-            var icon=view.transform.Find("CasterSlotSigil").GetComponent<Image>();
-            Assert.That(icon.enabled,Is.True);Assert.That(icon.sprite,Is.SameAs(CasterSigilArt.ForSlot(slot)));
+            var intent = actor.GetComponent<EnemyUnifiedIntentView>();
+            Assert.That(intent, Is.Not.Null, actor.Definition.EnemyId);
+            Assert.That(intent.ActionRoot, Is.Not.Null, "Unified intent is attached to the current slot.");
+            var icon = intent.ActionRoot.Find("Slot")?.GetComponent<Image>();
+            Assert.That(icon, Is.Not.Null, "Unified intent has a slot glyph.");
+            Assert.That(icon.isActiveAndEnabled, Is.True);
+            Assert.That(icon.raycastTarget, Is.False);
+            Assert.That(icon.sprite, Is.SameAs(CasterSigilArt.ForSlot(slot)));
         }
     }
 

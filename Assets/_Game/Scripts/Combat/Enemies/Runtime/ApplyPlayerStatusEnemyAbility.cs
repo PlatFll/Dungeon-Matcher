@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>Optional data-selected cast. No production enemy is assigned this kind.</summary>
+/// <summary>Applies the definition's selected player status at accepted cast contact. Frostblade Reaver uses this for Frostbite.</summary>
 public sealed class ApplyPlayerStatusEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime
 {
     private EnemyActor actor;

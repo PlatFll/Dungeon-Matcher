@@ -208,6 +208,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
             }
             run.AdvanceSupplyCooldowns();
             run.Board.FinishAquaticMove(Tick);
+            foreach (var actor in acceptedActors) if (Living(actor)) actor.SettleGuildTaunt(Tick);
             ActionSettled?.Invoke(Tick);
         }
         finally
@@ -258,6 +259,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
         actor.GetComponent<GlacierCleaveRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<EnemyAutoAttack>()?.IsPausedByAction == true;
     public static bool BlocksSpecialCountdown(EnemyActor actor) =>
+        actor.GuildTauntMoves > 0 ||
         actor.GetComponent<ShieldbreakerChargeRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<HearthEmberRuntime>()?.HasEmber == true ||
         actor.GetComponent<FrostwakeEnemyAbility>()?.BlocksBasic == true ||

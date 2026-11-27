@@ -1,0 +1,804 @@
+{
+  "validation": {
+    "nativeCels": 495,
+    "unityKeys": 524,
+    "runtimeClips": 40,
+    "auditFindings": 20,
+    "auditClips": 23,
+    "expansionClips": 17,
+    "gameSourceCommit": "9ba420e884765b9e33bcebc734ba121dcb352b10"
+  },
+  "nativeVerification": [
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/ElvenPathblade_Idle.anim",
+      "atlasSHA256": "9b98b276329454a2ddba49af6871d47619d47fd8707dfcdc4fe98ac22a3a39eb",
+      "nativeSHA256": "c7432412c3adcfece7203dc10899eee7739d3fe0984cb7d33ccef8234a305fe2",
+      "timingMs": 3510,
+      "unityKeys": 26,
+      "nativeCels": 25
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildBulwark_AutoAttack.anim",
+      "atlasSHA256": "3a0dc7dd0c6686a192004b4d805288b932569626e2264772abb670ca24a6f27c",
+      "nativeSHA256": "b1e26d2e04a4df41a2f672ce6c42b523858effb1bee5ce1239c32a820172aef4",
+      "timingMs": 680,
+      "unityKeys": 12,
+      "nativeCels": 11
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildBulwark_Idle.anim",
+      "atlasSHA256": "51d720453b724a72e5afaf1e9064dd91177d574b358d436bf0a716ce34a596bd",
+      "nativeSHA256": "b6936b74fd615ecb6597799c58faa945940f275eadf7dadae49d9b51c797f050",
+      "timingMs": 4680,
+      "unityKeys": 34,
+      "nativeCels": 33
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_AutoAttack.anim",
+      "atlasSHA256": "66ad9d5d5bc4b3c12edab3558a9ec1cce71ed0accb53642c21edbafcf03c7bc6",
+      "nativeSHA256": "3afc1441c2957f54050ca6197e3980f5f75c9f8493c03f3c6a49ea4fdf6d965c",
+      "timingMs": 680,
+      "unityKeys": 9,
+      "nativeCels": 8
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_Idle.anim",
+      "atlasSHA256": "a60dc28803ae459261bbf585f1e10ab462863b7c27f5d3e398e4c1d6c018aba2",
+      "nativeSHA256": "6aec223999288c87c37e18eea3e99f278375b2de39b80f7410b0630b00e45290",
+      "timingMs": 3510,
+      "unityKeys": 27,
+      "nativeCels": 26
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_Ability.anim",
+      "atlasSHA256": "c6dfc8ac4434a895e5a405628008525253ad1fa8221b636d26acd958c0061ce5",
+      "nativeSHA256": "5e370286098e93b20890e25c698a8c18fa5845025a1d8df4063c7dbc5deb0881",
+      "timingMs": 780,
+      "unityKeys": 14,
+      "nativeCels": 13
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildRanger_AutoAttack.anim",
+      "atlasSHA256": "ba2eaac979fdd4fc6190af359fe385d536654a2b0619ad9d707befcde04ee7fd",
+      "nativeSHA256": "41f91ffc0917cfcbbb174c2a3909156267bbc95cc7ee13d5fad6f80fb4de9a86",
+      "timingMs": 680,
+      "unityKeys": 9,
+      "nativeCels": 8
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildRanger_Idle.anim",
+      "atlasSHA256": "dcf6e2ea6761c068e473efd15569e7a6cf91cb63aa8d5a5e267524e39995b4b6",
+      "nativeSHA256": "344a7bed82e5f6e549b3d6d8236f90516488f15af1ac88204edb987d7fab4f49",
+      "timingMs": 1170,
+      "unityKeys": 5,
+      "nativeCels": 4
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildSwordsman_AutoAttack.anim",
+      "atlasSHA256": "4c0fd232c9dbcc859a9b7c3bb2f5b4368a920230631faa9086aad95802a8d846",
+      "nativeSHA256": "3766b452215f73833699e2a9487adc6e85eda78c543687f66c570de1adb825b1",
+      "timingMs": 680,
+      "unityKeys": 9,
+      "nativeCels": 8
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildSwordsman_Idle.anim",
+      "atlasSHA256": "3dcfdc8da44464f05920e10a4044b287168052d80000d73255fcb9808d70897d",
+      "nativeSHA256": "b0c85f40effbf66f1dfb450267671eace62d42c070111926d76e7e4dc8ea27a6",
+      "timingMs": 3510,
+      "unityKeys": 27,
+      "nativeCels": 26
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/IcebornAxeman_AutoAttack.anim",
+      "atlasSHA256": "ef69ce4e08fc327bd0438a32f657674b26d5b338846fa41ede7909d7468695c8",
+      "nativeSHA256": "2295dfc275f778b6043a6f1529b128f7dda65930e8a4d95575980a10afac342f",
+      "timingMs": 680,
+      "unityKeys": 12,
+      "nativeCels": 11
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/IcebornAxeman_Idle.anim",
+      "atlasSHA256": "976173a9e57750066666068083f4df1678cf3ca7ee31b0d8d76c3bda5abe9f36",
+      "nativeSHA256": "c3e31a3f602ec43b92d47acecff2002a33cbaaa6df4e5ddcad6cd8d4d624fdbc",
+      "timingMs": 3510,
+      "unityKeys": 26,
+      "nativeCels": 25
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/NacreDuelist_AutoAttack.anim",
+      "atlasSHA256": "c264b8564bac294e8b8538c9f5d52bd23c400714e1398e7568be2402e927af27",
+      "nativeSHA256": "b25e2202a0f416a3f9901f28afdbbb5be9fa55dbd7293bc79a4e7135ce1d164d",
+      "timingMs": 680,
+      "unityKeys": 9,
+      "nativeCels": 8
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/NacreDuelist_Idle.anim",
+      "atlasSHA256": "e2825423ea6639c17174f440821620cd0cc365fcefef64605589c1211d98a9b7",
+      "nativeSHA256": "a4ec59cf07763608f9e8fc43d213f67857de33046d31494ee54386eb7bb94e30",
+      "timingMs": 1170,
+      "unityKeys": 9,
+      "nativeCels": 8
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/NacreHalberdier_AutoAttack.anim",
+      "atlasSHA256": "9f7a57d5cde268e5b3812331a3fd215986940005a25121a787f15880cd98e5a5",
+      "nativeSHA256": "2c8ab9d04076f582c92e498637d4e83e87569b691f31e19084dcf7afd9863c26",
+      "timingMs": 680,
+      "unityKeys": 13,
+      "nativeCels": 12
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/NacreHalberdier_Idle.anim",
+      "atlasSHA256": "1f730735f43e29624e76f68f99b670c3afc1b262b274aa3046532b079f11a33c",
+      "nativeSHA256": "a8047e138bced7889dc5207481b913688705957dd9e0bf7b0eaffe311d44b4dc",
+      "timingMs": 4680,
+      "unityKeys": 33,
+      "nativeCels": 32
+    },
+    {
+      "clip": "Assets/_Game/Animations/SelectionExpansion/OrcSlinghunter_Idle.anim",
+      "atlasSHA256": "a286922ab99a5a20876d219da6cae49c772e426e8a74142df58856d1d20a669b",
+      "nativeSHA256": "14b1a730454650708e17bf3dcb2ebff843ecdb77d69ca5ebdf5a5da758ee120d",
+      "timingMs": 3510,
+      "unityKeys": 24,
+      "nativeCels": 23
+    },
+    {
+      "clip": "Assets/_Game/Animations/CombatIdles/Miner_Idle.anim",
+      "atlasSHA256": "5a454542fd5cded350c6f10d59556ed35cdc974ec9024c2470a40ac5dc94030b",
+      "nativeSHA256": "55c20a69d7b0ec9d7360825ac96f6dac8e867e060ef1b231aa388e8378eefdb3",
+      "timingMs": 1170,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/CombatIdles/RoyalStandardBearer_Idle.anim",
+      "atlasSHA256": "81812f28837ea4c49e146b0ddaa1533524e5d0d65b3c715b0db6ad43a70ca5d2",
+      "nativeSHA256": "0a175b2cfc22f6151b93b8709d90df12beb96be73b6662a3a72768533df68409",
+      "timingMs": 1170,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/CombatIdles/SwordKnight_Idle.anim",
+      "atlasSHA256": "140d9f4bb39c35ee049bcfa032fee8f22e2f07f8bc64337bbe1fe9ff632b65bc",
+      "nativeSHA256": "4d5d5d1429e060577d37f6028d6e11887e437bf6dcff9f68c74e0777d0dfa104",
+      "timingMs": 1170,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/CombatIdles/RoyalSwordsman_Idle.anim",
+      "atlasSHA256": "0225066790edbb4613f63449f09c5132b49c32b6faf924c1409b7738a955a62b",
+      "nativeSHA256": "43cef0414127802c2f3c786bdeefc4e9502d6ec50a9e0306c136287e02f47c1b",
+      "timingMs": 1170,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/CombatIdles/CrossbowGuard_Idle.anim",
+      "atlasSHA256": "79bfc9f624759963c80b0f60f6355e996608f4d4d6885a44847c075a4ed73e20",
+      "nativeSHA256": "a276ba7328abb02bf4579580edf77526d54e3a97b58f3506520a3e72fc8aa9b9",
+      "timingMs": 1170,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/CombatIdles/SpearGuard_Idle.anim",
+      "atlasSHA256": "c3f3e338246b7c4a48d1374566e9a9ee65dc4ee43701f9aa60f981f741e628a4",
+      "nativeSHA256": "cca7c8f7de7c643359d31d1a22112661f7018a85475242eb8bbd26b7e6d9b336",
+      "timingMs": 1170,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/CombatIdles/RoyalMage_Idle.anim",
+      "atlasSHA256": "64024a45ee1699a2d1a4289f02d40362d840c3084af6b1fb7676c1ca276133d8",
+      "nativeSHA256": "5f497c48b4df46110bde9e8f50faaeae5708eb3fc4991035ab20a1bd0211e41c",
+      "timingMs": 1170,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/CombatIdles/RoyalLancer_Idle.anim",
+      "atlasSHA256": "7af638efa02d23613422a690c277dd361a90ee5bb9bc9f2274b978fceff7bd49",
+      "nativeSHA256": "a75b22969d8c064c050d709f9c10124e11c17e15113ddd3bc8f748a5ee05c2d5",
+      "timingMs": 1170,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/CombatIdles/SiegeSergeant_Idle.anim",
+      "atlasSHA256": "ffd7676fed22b97993fac008201da262c4e7f7101da9f09221613d70a2c295d1",
+      "nativeSHA256": "363e87699191679ea71b7de1db5eec91a577685c28dec76a817c96d76f2a7f2c",
+      "timingMs": 1170,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/CombatIdles/RoyalArbalist_Idle.anim",
+      "atlasSHA256": "dcfb1e3abbec4c0cd26bd9175f626183ec8f4402438a11bde38ca37a75e128cd",
+      "nativeSHA256": "ad9ab22a2559b72737e6546d6f7e087ae3a115c4b842c8803d1e6c17521d1364",
+      "timingMs": 1170,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/FrostwakePlayables/Minotaur_Death.anim",
+      "atlasSHA256": "1f515ccb976dac8bcb79055df27b04e995072efb331f660aeadfe80c72c4d221",
+      "nativeSHA256": "7b2f7c672e2073c88285f4b6c334784801d042d5ccf105ea957f18e35cce4fc6",
+      "timingMs": 800,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/FrostwakePlayables/Kobold_Death.anim",
+      "atlasSHA256": "30bac4fa0abfc4fc90d6d93ab01e90fe4e97debbc6cda24e0147dd05159b6a62",
+      "nativeSHA256": "b1671958f4cf2ae90768ab5a7934698ba5c4545d16b8316b7ecebeabae113042",
+      "timingMs": 800,
+      "unityKeys": 10,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/Ironvein/bore_engineer_AutoAttack.anim",
+      "atlasSHA256": "27fc5121bbec2a2bca3484bd58fa544cc5a900a8d64513070c373dc0ed3ec439",
+      "nativeSHA256": "f9fedf8ac638bd3c76719e932d70c17a3b84b4ae0ddfb0ff659b0d42002b66be",
+      "timingMs": 560,
+      "unityKeys": 9,
+      "nativeCels": 9
+    },
+    {
+      "clip": "Assets/_Game/Animations/Frostwake/frostblade_reaver_Idle.anim",
+      "atlasSHA256": "c061e832cb14b1801edbe95daa61fac1c20bbead6c83cfe2cd398c2f6fd06fa2",
+      "nativeSHA256": "7bbe5a52ebe2ee7ca51b1c8a65d51b3265c71005626fa242d5ba597c466c776c",
+      "timingMs": 1170,
+      "unityKeys": 10,
+      "nativeCels": 10
+    },
+    {
+      "clip": "Assets/_Game/Animations/Frostwake/harpoon_hunter_Release.anim",
+      "atlasSHA256": "6b0a25d98391e27ae1fa1a4432a08b06b79a12841819fc6f1b685350b4be66e1",
+      "nativeSHA256": "bdc7ae384c394d0e6713a49dbeb99fa5efde4953c6dce1bc5d02709ee17c47d6",
+      "timingMs": 880,
+      "unityKeys": 10,
+      "nativeCels": 10
+    },
+    {
+      "clip": "Assets/_Game/Animations/Frostwake/rimecarver_AutoAttack.anim",
+      "atlasSHA256": "485d73cf798f5958c5c92842bdd58d13009cb9a7c09d6817de30778c9c4c5cb3",
+      "nativeSHA256": "748b743c49d51b178c864f8d90f2febb0b10289f005a0405b9f56f5a274fb374",
+      "timingMs": 680,
+      "unityKeys": 10,
+      "nativeCels": 10
+    },
+    {
+      "clip": "Assets/_Game/Animations/Forest/Roster/Ancient_Treant_Hit.anim",
+      "atlasSHA256": "dd5e5f94ee0aa257d2a15bc1ae87d132290cd0f7dbd76e1adb73ae67cc27e3f7",
+      "nativeSHA256": "99638cf36436c3d829e56ad1bae7a44438f9abe284141247161b2342242bc66b",
+      "timingMs": 340,
+      "unityKeys": 6,
+      "nativeCels": 6
+    },
+    {
+      "clip": "Assets/_Game/Animations/Forest/Briar_Matriarch_Interrupt.anim",
+      "atlasSHA256": "6ea2d3fccc8deb9f5c10c4accfc1a237c868e2df89b776a311467ec156af7b5f",
+      "nativeSHA256": "f23c32b8fbdb93d28fcefddc724447c0eca19c81434fa710f20ec6b46ab7d2b1",
+      "timingMs": 600,
+      "unityKeys": 10,
+      "nativeCels": 10
+    },
+    {
+      "clip": "Assets/_Game/Animations/Forest/Barkhide_Warden_Interrupt.anim",
+      "atlasSHA256": "bc95177adeedd78e04e5511b148fcf055f521229097db91f0531f3ea58376bab",
+      "nativeSHA256": "23f5a3444b0e5bc43fa6642058c605105bb03c38cc187a9d953e663ad0f38a4e",
+      "timingMs": 600,
+      "unityKeys": 10,
+      "nativeCels": 10
+    },
+    {
+      "clip": "Assets/_Game/Animations/Forest/Orc_Rootbinder_Interrupt.anim",
+      "atlasSHA256": "6e94a36d70d1df3b36b31a7d2f28d7a4fd80b6ca39047e0485a06cab1751df8a",
+      "nativeSHA256": "b54a01221903e290e2fe3663daefd847e89f0b8b250447800168ec5d091c870c",
+      "timingMs": 600,
+      "unityKeys": 10,
+      "nativeCels": 10
+    },
+    {
+      "clip": "Assets/_Game/Animations/Forest/Elven_Mender_Interrupt.anim",
+      "atlasSHA256": "2c4f5868d2d50cbe8dfeabba7c9295f7db4b32162b91a22a479351665847b87e",
+      "nativeSHA256": "29bf71ea5a10d9a71c969002590deaadc60e2430a58fc4ca618e50f25f50bddb",
+      "timingMs": 610,
+      "unityKeys": 10,
+      "nativeCels": 10
+    },
+    {
+      "clip": "Assets/_Game/Animations/DrownedCourt/shellback_porter_AutoAttack.anim",
+      "atlasSHA256": "7edadf315ed3b122f7c76f04debb63b0d4215e4cdd99fbebee061ee743e8be8c",
+      "nativeSHA256": "5983e6d162f013248b081476ad76179be15f0acb14412c34e1e7a4efb38dbba4",
+      "timingMs": 505,
+      "unityKeys": 11,
+      "nativeCels": 11
+    },
+    {
+      "clip": "Assets/_Game/Animations/Forest/Roster/Orc_Drummer_Death.anim",
+      "atlasSHA256": "5f5fb5c8cedce4d63f9bd506ff77cb0678b93c8e12dd6ccd996552b63f45e636",
+      "nativeSHA256": "c69e3005363a62ae3547c241fa9280c0718804c86d23151754a23d7da3a5ca13",
+      "timingMs": 960,
+      "unityKeys": 10,
+      "nativeCels": 10
+    }
+  ],
+  "testRun": {
+    "editor": "6000.3.19f1",
+    "validator": "Tools/Validate-Unity.ps1",
+    "validatorPassed": true,
+    "sourceCommit": "9ba420e884765b9e33bcebc734ba121dcb352b10",
+    "result": "Passed",
+    "passed": 25,
+    "failed": 0,
+    "skipped": 0,
+    "testCases": [
+      {
+        "name": "CrystalResonanceSelectionTests.AuthoredRecipeWeightsFadeWithTheirActualMembers",
+        "result": "Passed"
+      },
+      {
+        "name": "CrystalResonanceSelectionTests.CourtOrdinaryRosterAndEscortPairsRemainReachableAtEveryTier",
+        "result": "Passed"
+      },
+      {
+        "name": "CrystalResonanceSelectionTests.EmptyAuthoredOrdinaryLibraryHasBoundedSameZoneFallbackAtEveryTier",
+        "result": "Passed"
+      },
+      {
+        "name": "CrystalResonanceSelectionTests.EveryWeightedOrdinaryMemberHasAuthoredExposure",
+        "result": "Passed"
+      },
+      {
+        "name": "CrystalResonanceSelectionTests.FortifiedRosterAndLegacyRostersHaveLegalFirstVisitsReliefAndReserveCapstones",
+        "result": "Passed"
+      },
+      {
+        "name": "CrystalResonanceSelectionTests.IndependentSelectionsExposeWeightedOrdinaryMembersAtEveryDepth",
+        "result": "Passed"
+      },
+      {
+        "name": "CrystalResonanceSelectionTests.OrdinaryAndCapstoneSelectionsRespectAllFiveDepthPools",
+        "result": "Passed"
+      },
+      {
+        "name": "CrystalResonanceSelectionTests.QueenCapstoneKeepsApprovedCourtCultureAndCompleteEscortBudget",
+        "result": "Passed"
+      },
+      {
+        "name": "CrystalResonanceSelectionTests.RecordedMultisetSurvivesContinueAndDifferentLabels",
+        "result": "Passed"
+      },
+      {
+        "name": "CrystalResonanceSelectionTests.SequentialDeepCapstonesPreserveUniqueLeadersAndMajorSpacing",
+        "result": "Passed"
+      },
+      {
+        "name": "EnemyAbilityMotionTests.AllApprovedStatesHaveNativeFramesAndExactlyTheAuthoredCues",
+        "result": "Passed"
+      },
+      {
+        "name": "EnemyAbilityMotionTests.CancelledActionCannotDonateBeatsToNextCastAndPauseRejectsCues",
+        "result": "Passed"
+      },
+      {
+        "name": "ForestFoundationPlayTests.ExpansionGalleryCourt",
+        "result": "Passed"
+      },
+      {
+        "name": "ForestFoundationPlayTests.ExpansionGalleryForest",
+        "result": "Passed"
+      },
+      {
+        "name": "ForestFoundationPlayTests.ExpansionGalleryFrostwake",
+        "result": "Passed"
+      },
+      {
+        "name": "ForestFoundationPlayTests.ExpansionGalleryGuildFrontLine",
+        "result": "Passed"
+      },
+      {
+        "name": "ForestFoundationPlayTests.ExpansionGalleryGuildHealer",
+        "result": "Passed"
+      },
+      {
+        "name": "ForestFoundationPlayTests.ExpansionGalleryIronvein",
+        "result": "Passed"
+      },
+      {
+        "name": "ForestFoundationPlayTests.ExpansionSlinghunterSingleHitBreaksShield",
+        "result": "Passed"
+      },
+      {
+        "name": "ForestFoundationPlayTests.ExpansionSlinghunterSingleHitToHealth",
+        "result": "Passed"
+      },
+      {
+        "name": "ForestFoundationPlayTests.NewPlayablesProductionPresentationPauseAndPortraitLayouts",
+        "result": "Passed"
+      },
+      {
+        "name": "ForestRosterMotionTests.EveryApprovedActorHasNativeMotionAndExactlyOneBasicContact",
+        "result": "Passed"
+      },
+      {
+        "name": "IronveinArtTests.IronveinEveryIdentityHasNativeIdleAttackHitAndDeath",
+        "result": "Passed"
+      },
+      {
+        "name": "IronveinArtTests.IronveinImportedAttackEventsUseTheReviewedContactFrames",
+        "result": "Passed"
+      },
+      {
+        "name": "IronveinArtTests.IronveinStillsHaveNativeCanvasesAndDedicatedPointFilteredAssets",
+        "result": "Passed"
+      }
+    ]
+  },
+  "scene": [
+    {
+      "actor": "elven_pathblade",
+      "state": "Idle",
+      "file": "elven_pathblade-Idle.webp",
+      "group": "Forest",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/ElvenPathblade_Idle.anim",
+      "gameTextureSHA256": "9b98b276329454a2ddba49af6871d47619d47fd8707dfcdc4fe98ac22a3a39eb",
+      "webpSHA256": "98f61227eb015eadb08ace5cba17260c9b3638eb909786fcab4d928247b30224",
+      "cropXYXY": [
+        371,
+        337,
+        572,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 1.0,
+      "visibleWithin3Median": 1.0
+    },
+    {
+      "actor": "guild_bulwark",
+      "state": "AutoAttack",
+      "file": "guild_bulwark-AutoAttack.webp",
+      "group": "GuildFrontLine",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildBulwark_AutoAttack.anim",
+      "gameTextureSHA256": "3a0dc7dd0c6686a192004b4d805288b932569626e2264772abb670ca24a6f27c",
+      "webpSHA256": "d471f76655506995b343f649c801e763615f4cc73ba6a97b8760ae77cf4e5a9e",
+      "cropXYXY": [
+        314,
+        313,
+        587,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9607,
+      "visibleWithin3Median": 0.9721
+    },
+    {
+      "actor": "guild_bulwark",
+      "state": "Idle",
+      "file": "guild_bulwark-Idle.webp",
+      "group": "GuildFrontLine",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildBulwark_Idle.anim",
+      "gameTextureSHA256": "51d720453b724a72e5afaf1e9064dd91177d574b358d436bf0a716ce34a596bd",
+      "webpSHA256": "15df5ee26d4acd3a0abc105a7590dbf8db3520840868930603d25a2a212f5477",
+      "cropXYXY": [
+        359,
+        313,
+        584,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9631,
+      "visibleWithin3Median": 0.9692
+    },
+    {
+      "actor": "guild_chirurgeon",
+      "state": "AutoAttack",
+      "file": "guild_chirurgeon-AutoAttack.webp",
+      "group": "GuildHealer",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_AutoAttack.anim",
+      "gameTextureSHA256": "66ad9d5d5bc4b3c12edab3558a9ec1cce71ed0accb53642c21edbafcf03c7bc6",
+      "webpSHA256": "b76f2c07d4003b40d3e13f7f42a08b69b3d8ca4ebbf0c7b1291fc6fd7c41836d",
+      "cropXYXY": [
+        326,
+        325,
+        557,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9443,
+      "visibleWithin3Median": 0.9475
+    },
+    {
+      "actor": "guild_chirurgeon",
+      "state": "Idle",
+      "file": "guild_chirurgeon-Idle.webp",
+      "group": "GuildHealer",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_Idle.anim",
+      "gameTextureSHA256": "a60dc28803ae459261bbf585f1e10ab462863b7c27f5d3e398e4c1d6c018aba2",
+      "webpSHA256": "aed2a90d93f03910a5f1580148f19c95f96eeb17ba37d93ee6d057a19664891f",
+      "cropXYXY": [
+        386,
+        316,
+        557,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9478,
+      "visibleWithin3Median": 0.9493
+    },
+    {
+      "actor": "guild_chirurgeon",
+      "state": "Ability",
+      "file": "guild_chirurgeon-Ability.webp",
+      "group": "GuildHealer",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildChirurgeon_Ability.anim",
+      "gameTextureSHA256": "c6dfc8ac4434a895e5a405628008525253ad1fa8221b636d26acd958c0061ce5",
+      "webpSHA256": "9f3a01b2f3599b1a38473339fbecd1a969e9a25c126c27fa6d1796033d9406cb",
+      "cropXYXY": [
+        377,
+        289,
+        560,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9478,
+      "visibleWithin3Median": 0.9491
+    },
+    {
+      "actor": "guild_ranger",
+      "state": "AutoAttack",
+      "file": "guild_ranger-AutoAttack.webp",
+      "group": "GuildFrontLine",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildRanger_AutoAttack.anim",
+      "gameTextureSHA256": "ba2eaac979fdd4fc6190af359fe385d536654a2b0619ad9d707befcde04ee7fd",
+      "webpSHA256": "ea5a7d085119cfa744f0d73b9ad853a8546c29841016ba3f97ace0f9f694defe",
+      "cropXYXY": [
+        513,
+        325,
+        807,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9423,
+      "visibleWithin3Median": 0.945
+    },
+    {
+      "actor": "guild_ranger",
+      "state": "Idle",
+      "file": "guild_ranger-Idle.webp",
+      "group": "GuildFrontLine",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildRanger_Idle.anim",
+      "gameTextureSHA256": "dcf6e2ea6761c068e473efd15569e7a6cf91cb63aa8d5a5e267524e39995b4b6",
+      "webpSHA256": "dbb3ffdad7ee88eb209d637c176f23c4c37cc115faf2eabf2a673874577042f6",
+      "cropXYXY": [
+        570,
+        328,
+        789,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9451,
+      "visibleWithin3Median": 0.9505
+    },
+    {
+      "actor": "guild_swordsman",
+      "state": "AutoAttack",
+      "file": "guild_swordsman-AutoAttack.webp",
+      "group": "GuildFrontLine",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildSwordsman_AutoAttack.anim",
+      "gameTextureSHA256": "4c0fd232c9dbcc859a9b7c3bb2f5b4368a920230631faa9086aad95802a8d846",
+      "webpSHA256": "0ff98c2a8d2843cceaf268867637839df2133d52606b5afecb8e5ef1f8a05bd5",
+      "cropXYXY": [
+        772,
+        295,
+        1027,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9125,
+      "visibleWithin3Median": 0.9574
+    },
+    {
+      "actor": "guild_swordsman",
+      "state": "Idle",
+      "file": "guild_swordsman-Idle.webp",
+      "group": "GuildFrontLine",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/GuildSwordsman_Idle.anim",
+      "gameTextureSHA256": "3dcfdc8da44464f05920e10a4044b287168052d80000d73255fcb9808d70897d",
+      "webpSHA256": "aa37ab8c14c1aad11423be5f8d3fd0c3e2e87c3f5f67aeeb129e409d1a95c29d",
+      "cropXYXY": [
+        817,
+        331,
+        1009,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.949,
+      "visibleWithin3Median": 0.9534
+    },
+    {
+      "actor": "iceborn_axeman",
+      "state": "AutoAttack",
+      "file": "iceborn_axeman-AutoAttack.webp",
+      "group": "Frostwake",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/IcebornAxeman_AutoAttack.anim",
+      "gameTextureSHA256": "ef69ce4e08fc327bd0438a32f657674b26d5b338846fa41ede7909d7468695c8",
+      "webpSHA256": "0e03c835d329066c11ea486bad9c62269c4a186710a98352aac1a132797fbb51",
+      "cropXYXY": [
+        320,
+        244,
+        581,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9124,
+      "visibleWithin3Median": 0.9584
+    },
+    {
+      "actor": "iceborn_axeman",
+      "state": "Idle",
+      "file": "iceborn_axeman-Idle.webp",
+      "group": "Frostwake",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/IcebornAxeman_Idle.anim",
+      "gameTextureSHA256": "976173a9e57750066666068083f4df1678cf3ca7ee31b0d8d76c3bda5abe9f36",
+      "webpSHA256": "129a74cd28ba9b74dd72739e9b55059f79b92b3202e0f07b9097c3d1d3224cd7",
+      "cropXYXY": [
+        347,
+        319,
+        569,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9577,
+      "visibleWithin3Median": 0.958
+    },
+    {
+      "actor": "nacre_duelist",
+      "state": "AutoAttack",
+      "file": "nacre_duelist-AutoAttack.webp",
+      "group": "Court",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/NacreDuelist_AutoAttack.anim",
+      "gameTextureSHA256": "c264b8564bac294e8b8538c9f5d52bd23c400714e1398e7568be2402e927af27",
+      "webpSHA256": "9aee90676f917e721436bbc76d0d363c5d3a6b4e835b8676bc832db0ad2ab739",
+      "cropXYXY": [
+        296,
+        280,
+        584,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9374,
+      "visibleWithin3Median": 0.9503
+    },
+    {
+      "actor": "nacre_duelist",
+      "state": "Idle",
+      "file": "nacre_duelist-Idle.webp",
+      "group": "Court",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/NacreDuelist_Idle.anim",
+      "gameTextureSHA256": "e2825423ea6639c17174f440821620cd0cc365fcefef64605589c1211d98a9b7",
+      "webpSHA256": "a9cda24d35ba954e8ac8081925d2c5274501f604b5fee474a0cf56f487fae345",
+      "cropXYXY": [
+        332,
+        295,
+        581,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9374,
+      "visibleWithin3Median": 0.9467
+    },
+    {
+      "actor": "nacre_halberdier",
+      "state": "AutoAttack",
+      "file": "nacre_halberdier-AutoAttack.webp",
+      "group": "Court",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/NacreHalberdier_AutoAttack.anim",
+      "gameTextureSHA256": "9f7a57d5cde268e5b3812331a3fd215986940005a25121a787f15880cd98e5a5",
+      "webpSHA256": "bf4825d64ed56b3fdeec2dd6aa061c57e4bfbb7d6400a6188d4b279ee3c3c5c4",
+      "cropXYXY": [
+        495,
+        259,
+        804,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9552,
+      "visibleWithin3Median": 0.9601
+    },
+    {
+      "actor": "nacre_halberdier",
+      "state": "Idle",
+      "file": "nacre_halberdier-Idle.webp",
+      "group": "Court",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/NacreHalberdier_Idle.anim",
+      "gameTextureSHA256": "1f730735f43e29624e76f68f99b670c3afc1b262b274aa3046532b079f11a33c",
+      "webpSHA256": "407fec364d08ebe36a2c4be0cc5b7769ba23cdae2aad88bf3a2fedb7f3af1c01",
+      "cropXYXY": [
+        588,
+        304,
+        795,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 0.9583,
+      "visibleWithin3Median": 0.9601
+    },
+    {
+      "actor": "orc_slinghunter",
+      "state": "Idle",
+      "file": "orc_slinghunter-Idle.webp",
+      "group": "Forest",
+      "clip": "Assets/_Game/Animations/SelectionExpansion/OrcSlinghunter_Idle.anim",
+      "gameTextureSHA256": "a286922ab99a5a20876d219da6cae49c772e426e8a74142df58856d1d20a669b",
+      "webpSHA256": "7f35a7bd7e59ffe42f18141e70ce3d50cf4f9002f0b3b20ee5e85402800e7aae",
+      "cropXYXY": [
+        615,
+        388,
+        750,
+        541
+      ],
+      "screenPixels": [
+        1080,
+        1920
+      ],
+      "visibleWithin3Minimum": 1.0,
+      "visibleWithin3Median": 1.0
+    }
+  ]
+}

@@ -60,48 +60,32 @@ public sealed class ThreeZonePresentationTests
                     Assert.That(BattlePresentationSkin.UsesReferenceKit,Is.True,zone+" must use its approved kit");
                     string referenceRoot="Assets/_Game/Resources/UI/BattlePresentation/Reference"+BattlePresentationSkin.Folder+"/";
                     Assert.That(AssetDatabase.GetAssetPath(BattlePresentationSkin.Reference("BattleFloor")),Is.EqualTo(referenceRoot+"BattleFloor.png"));
-                    Assert.That(AssetDatabase.GetAssetPath(BattlePresentationSkin.Shared("Ability")),Is.EqualTo("Assets/_Game/Resources/UI/BattlePresentation/ReferenceDungeon/SharedAbility.png"));
-                    if(zone!="dungeon")
-                    {
-                        var floor=GameObject.Find("ReferenceKitBattleFloor").GetComponent<Image>();
-                        Assert.That(floor.sprite.rect,Is.EqualTo(new Rect(0,10,470,77)),"Arena must exclude the ten source rows hidden by the board rim.");
-                        Assert.That(floor.GetComponent<ReferenceKitSurface>().Extent.y,Is.EqualTo(288));
-                    }
+                    Assert.That(AssetDatabase.GetAssetPath(BattlePresentationSkin.Shared("Ability")),Is.EqualTo("Assets/_Game/Resources/UI/BattlePresentation/Silver/AbilityButtonSilver.png"));
                     var nativeLayout=Object.FindFirstObjectByType<GameplayPixelLayoutController>();
                     Assert.That(nativeLayout.TopHud.Find("GeneratedTopBattleLayout/BattleArenaFrame"),Is.Null);
                     Assert.That(nativeLayout.BottomHud.Find("GeneratedBottomHudFrame"),Is.Null);
-                    var vista=Object.FindFirstObjectByType<BattleBackgroundTilemapController>().ActiveEnvironment;
-                    var map=vista.GetComponentInChildren<UnityEngine.Tilemaps.Tilemap>();
-                    var used=new System.Collections.Generic.List<Sprite>();
-                    foreach(var cell in map.cellBounds.allPositionsWithin)if(map.GetSprite(cell)!=null)used.Add(map.GetSprite(cell));
-                    Assert.That(used.Count,Is.EqualTo(96));
-                    Assert.That(used.Distinct().Count(),Is.EqualTo(96),"Scenery tiles must appear once; never clamp/repeat the last floor row.");
-                    var framePieces=RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>()
-                        .Where(s=>s.sprite!=null && AssetDatabase.GetAssetPath(s.sprite).EndsWith("/FrameAtlas.png")).ToArray();
-                    if(BattlePresentationSkin.UsesReferenceKit)
-                    {
-                        Assert.That(framePieces,Is.Empty,"The previous frame must not render behind the approved kit.");
-                        Assert.That(vista.GetComponentsInChildren<UnityEngine.Tilemaps.TilemapRenderer>().All(r=>r.forceRenderingOff),Is.True);
-                        if(zone=="dungeon")
-                        {
-                            DungeonApprovedBattleTests.AssertApprovedLayers(nativeLayout);
-                        }
-                        else
-                        {
-                            var approvedFrame=RunSession.Current.Board.transform.Find("BoardFrame/ReferenceKitBoardFrame");
-                            Assert.That(approvedFrame,Is.Not.Null);
-                            Assert.That(approvedFrame.GetComponent<SpriteRenderer>().sprite,Is.SameAs(BattlePresentationSkin.Reference("BoardFrame")));
-                            Assert.That(Object.FindObjectsByType<ReferenceKitSurface>(FindObjectsSortMode.None).Length,Is.EqualTo(10));
-                            Assert.That(GameObject.Find("ApprovedDungeonSurround"),Is.Null);
-                        }
-                        foreach(var surface in Object.FindObjectsByType<ReferenceKitSurface>(FindObjectsSortMode.None))
-                            Assert.That(surface.GetComponent<Image>().raycastTarget,Is.EqualTo(surface.TryGetComponent<Button>(out _)));
-                    }
+                    if(zone=="dungeon") DungeonApprovedBattleTests.AssertApprovedLayers(nativeLayout);
                     else
                     {
-                        Assert.That(framePieces.Length,Is.EqualTo(28));
-                        Assert.That(framePieces.Select(s=>s.sprite.name).Distinct().Count(),Is.EqualTo(28));
+                        var forest=zone=="magical-forest";
+                        var scenery=GameObject.Find(forest?"ApprovedForestEnvironment":"ApprovedDrownedCourtEnvironment");
+                        Assert.That(scenery,Is.Not.Null,zone+" production assembly");
+                        var surfaces=scenery.GetComponentsInChildren<Image>().Where(im=>im.enabled && im.sprite!=null).ToArray();
+                        Assert.That(surfaces.Length,Is.GreaterThan(0));
+                        Assert.That(surfaces.All(im=>!im.raycastTarget && im.sprite.texture.filterMode==FilterMode.Point),Is.True);
+                        Assert.That(nativeLayout.BoardArea.Find(forest?"ForestBoardFrame":"CourtBoardFrame"),Is.Not.Null);
                     }
+                    // The retained reference vista still contains each unique tile once. Verify its
+                    // source even though the approved live assemblies no longer instantiate that tilemap.
+                    var legacyMap=BattlePresentationSkin.Environment.GetComponentInChildren<UnityEngine.Tilemaps.Tilemap>(true);
+                    var used=new System.Collections.Generic.List<Sprite>();
+                    foreach(var cell in legacyMap.cellBounds.allPositionsWithin)
+                        if(legacyMap.GetSprite(cell) is Sprite sprite) used.Add(sprite);
+                    Assert.That(used.Count,Is.EqualTo(96));
+                    Assert.That(used.Distinct().Count(),Is.EqualTo(96));
+                    Assert.That(RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>()
+                        .Any(s=>s.sprite!=null && AssetDatabase.GetAssetPath(s.sprite).EndsWith("/FrameAtlas.png")),Is.False,
+                        "the retired frame stays out of the live composition");
                     var cells=RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>()
                         .Where(s=>s.name.StartsWith("CellTile_",StringComparison.Ordinal)).ToArray();
                     Assert.That(cells.Length,Is.EqualTo(64));
@@ -167,13 +151,19 @@ public sealed class ThreeZonePresentationTests
             yield return Until(()=>RunSession.Current?.Continuation?.CanCapture==true);
             yield return new WaitForSecondsRealtime(.5f);
             var ability=Object.FindFirstObjectByType<AbilityButtonUI>();
-            var icon=ability.transform.Find("AbilityIcon").GetComponent<Image>();
-            Assert.That(icon.sprite,Is.Not.Null);
+            var definition=RunSession.Current.Player.GetComponent<PlayerAbilityController>().ActiveAbility;
+            var slab=ability.GetComponent<StoneAbilityButtonView>();
+            var icon=definition.StoneEngraving!=null ? slab.Engraving : ability.transform.Find("AbilityIcon").GetComponent<Image>();
+            Assert.That(icon.isActiveAndEnabled,Is.True,id);
+            Assert.That(icon.sprite,Is.Not.Null,id);
             var bounds=GameplayPixelLayoutController.ScreenRect(icon.rectTransform);
             var button=GameplayPixelLayoutController.ScreenRect((RectTransform)ability.transform);
             Assert.That(button.Contains(bounds.min) && button.Contains(bounds.max),Is.True,id);
-            if(DungeonPixelLabBattleArt.Current)Assert.That(ability.transform.Find("PixelLabResonanceFrame"),Is.Not.Null);
-            else Assert.That(ability.GetComponent<Button>().image.sprite,Is.SameAs(BattlePresentationSkin.Shared("Ability")));
+            if(definition.StoneEngraving!=null)
+            {
+                Assert.That(icon.sprite,Is.SameAs(definition.StoneEngraving),id);
+                Assert.That(slab.Slab.GetComponent<Image>().sprite,Is.SameAs(BattlePresentationSkin.Shared("Ability")),id);
+            }
             var errors=GameplayPixelLayoutValidator.Validate(Object.FindFirstObjectByType<GameplayPixelLayoutController>(),out _);
             Assert.That(errors,Is.Empty,id);
             ScreenCapture.CaptureScreenshot(Path.Combine(output,id+".png"));yield return new WaitForSecondsRealtime(.2f);

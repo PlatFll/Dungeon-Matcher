@@ -83,7 +83,7 @@ public static class DrownedCourtImporter
         defs[12].aquaticSummon = defs[13]; EditorUtility.SetDirty(defs[12]);
         var zone = Load<ZoneDefinition>("Assets/_Game/Resources/Zones/drowned-court.asset");
         zone.zoneId = "drowned-court"; zone.displayName = "The Drowned Court"; zone.affiliatedGem = GemType.Sapphire;
-        zone.affiliatedDamageMultiplier = 1.15f; zone.periodicallyFloods = true; zone.enemies = defs; zone.apexEnemy = defs[12]; zone.apexLocalWave = 20;
+        zone.affiliatedDamageMultiplier = 1.15f; zone.periodicallyFloods = true; zone.enemies = SelectionExpansionRosterImport.Rebuild(zone, defs); zone.apexEnemy = defs[12]; zone.apexLocalWave = 20;
         zone.floodMinimumMoves=16;zone.floodMaximumMoves=18;zone.initialAirBubbles=5;
         zone.emergencyAirCadenceMoves=3;zone.emergencyAirSupply=1;zone.criticalAirSupply=2;zone.criticalAirThreshold=1;
         zone.developmentEncounters = defs.Select(d => new ZoneTestEncounter { label = "Court fixture: " + d.DisplayName,

@@ -1,0 +1,51 @@
+{
+  "enemy": "ore_ram",
+  "state": "basic",
+  "jobId": "7a22c776-096f-4858-b680-19248938f066",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round2/ore_ram-A.png",
+  "identitySHA256": "34bf80499e0547162f86997c78c8b6bc9caae89a3822fcdc8c98b65161562909",
+  "sourceIndices": [
+    0,
+    7,
+    1,
+    5,
+    4,
+    6,
+    7,
+    8
+  ],
+  "frameSize": [
+    128,
+    104
+  ],
+  "durationsMs": [
+    80,
+    80,
+    120,
+    40,
+    120,
+    60,
+    100,
+    80
+  ],
+  "totalMs": 680,
+  "impactMs": 320,
+  "sourcePaletteSize": 48,
+  "floor": 4,
+  "cellSHA256": [
+    "8dae39ccab21df70d81c0a1b27761770be0835f67bf51bf9e77d6f2fdc8f1e80",
+    "0de352b99e0524a0bfe541d37fa550a50490e52968c390ca3241eee616ed3ec4",
+    "4515819070d6574da8ba67184a7d3314e8baf6b38e550f1d35371eacfa513311",
+    "d62da869f3d82ab96b2d46abf13cec4513b4d3a83657832619c0dffb05cc1865",
+    "0a24ca90182827e668dd92c738e13c6eae98c1864b56b9eba8eea1fa0f81d99d",
+    "c7f5991e4e251b04a22830c93ee873a02b3c64e4ad5a659d8513127c973e7398",
+    "0de352b99e0524a0bfe541d37fa550a50490e52968c390ca3241eee616ed3ec4",
+    "a911559cda96cb18879650eafacf32ea8651b35bae2a6d48a2db1be5bf6e72b4"
+  ],
+  "sheet": "ArtSource/SelectionExpansion/Motion/Production/ore_ram/basic/sheet.png",
+  "sheetSHA256": "4dac666bd16cc50e25f11d9198e5ddd1d8cc781e2d6d53704285e978838551cf",
+  "editable": "ArtSource/SelectionExpansion/Motion/Production/ore_ram/basic/source.aseprite",
+  "editableSHA256": "fe18b1b96bc7576d74f0d564f02a06e9b37d9b2c3fb1403bb67db1549e07c80f",
+  "preview": "ArtSource/SelectionExpansion/Motion/Production/ore_ram/basic/preview.gif",
+  "productionAmendment": "Docs/ArtDirection/AnimationSweep/MaterialContinuity/Review.html"
+}

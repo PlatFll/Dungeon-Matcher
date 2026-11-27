@@ -1,0 +1,31 @@
+{
+  "beforeSource": "90bc53b9a872c3cd895ed4e4fdc3ee71f277ba60",
+  "beforeBatch": "20261118-193833-880306",
+  "classification": "Strongly supported composition-variety problem; not proof that all low-level defeats are unfair.",
+  "evidence": {
+    "targetedL1Cases": 5,
+    "courtDefeats": 5,
+    "courtEncounters": 49,
+    "threeActorOrdinaryPatrols": 12,
+    "heavyPairPatrols": 12,
+    "reportedEscortHpDamage": 1075,
+    "reportedTotalHpDamage": 1525,
+    "reportedSuffocationDamage": 5,
+    "independentReproduction": "Novice Bardley L1 seed1293181219 entered Moray patrol at85HP and died there. Aggressive Kobold L1 also diedCourt; two stronger defensive builds completedCourt.",
+    "regression": "FirstFloodKnownMechanicPatrolsHaveDifferentEscortPairs failed0/1 against unchanged production: expected>=2pairs,actual1."
+  },
+  "change": {
+    "recipe": "Patrol moray_siphoner",
+    "removed": "hammerhead_bruiser",
+    "added": "needlefin_skirmisher",
+    "unchanged": "Moray, Spearman, three actors, tier limits, weight4, budget5.5; Conch heavy patrol, elites/major bosses, stats, oxygen and rewards."
+  },
+  "rationale": "Known early flood-compatible Moray/Conch patrols always reused the same heavy pair despite the broader dry/all-seen roster test passing. Give Moray a fast two-hit Reef escort; retain the distinct heavy Conch patrol.",
+  "retentionCriteria": [
+    "At least two legal normal escort pairs with only Moray/Conch taught in the first flood context.",
+    "Observe the new pairing naturally across affected runs and verify reduced heavy-pair concentration.",
+    "No selection, capstone, journal, save/travel, cleanup or input regression.",
+    "Compare attrition and mechanics descriptively; no victory or duration quota. Revert if actual evidence exposes a harmful regression."
+  ],
+  "note": "Reported HP damage includes healed damage accumulated over time and can include overkill; it is not a single-hit or precise net-HP-loss metric."
+}

@@ -74,6 +74,7 @@ public sealed partial class PlayerActor : MonoBehaviour
     public event Action<PlayerActor> Initialized;
     public event Action<PlayerActor, PlayerDamageContext> BeforeDamage;
     public event Action<PlayerActor, int> DamageTaken;
+    public event Action<EnemyActor, string, int, int> DamageResolved;
     public event Action<PlayerActor, int> ShieldDamaged;
     public event Action<PlayerActor, int, int> ShieldChanged;
     public event Action<PlayerActor, int> Healed;
@@ -193,9 +194,11 @@ public sealed partial class PlayerActor : MonoBehaviour
         );
     }
 
-    public bool TryTakeDamage(
-        int amount,
-        UnityEngine.Object source = null)
+    public bool TryTakeDamage(int amount, UnityEngine.Object source = null) =>
+        TryTakeAttributedDamage(amount, source, null);
+
+    public bool TryTakeAttributedDamage(
+        int amount, UnityEngine.Object source, string damageReason)
     {
         if (!CanReceiveDamage || amount <= 0)
         {
@@ -260,6 +263,10 @@ public sealed partial class PlayerActor : MonoBehaviour
                 HealthChanged?.Invoke(this, currentHealth, maximumHealth);
             }
         }
+
+        if (actualHealthDamage > 0 || shieldDamage > 0)
+            DamageResolved?.Invoke(attacker, damageReason ?? (attacker?.Definition != null ? attacker.Definition.SpecialAbilityKind.ToString() : cause),
+                actualHealthDamage, shieldDamage);
 
         if (currentHealth == 0)
         {

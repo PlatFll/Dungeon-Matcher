@@ -19,6 +19,10 @@ MonoBehaviour:
   crumbleCadenceMoves: 4
   affiliatedGem: 5
   enemies:
+  - {fileID: 11400000, guid: e0e870cd969d50ccb29642de4688c56a, type: 2}
+  - {fileID: 11400000, guid: 9fa5fbe2a220532c9d9f63c66b2a7c8b, type: 2}
+  - {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+  - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
   - {fileID: 11400000, guid: 1b41367eaef540e7b4fbc553bf6d5a28, type: 2}
   - {fileID: 11400000, guid: cf3b9a8c35434f72afc9567d6c0835de, type: 2}
   - {fileID: 11400000, guid: 655f6b9c480740719f00f56e0169908d, type: 2}
@@ -68,3 +72,810 @@ MonoBehaviour:
   growsVines: 0
   vineCadenceMoves: 2
   maximumVineOverlays: 24
+  resonanceTierStarts: 01000000060000000d000000190000002d000000
+  resonanceThreatBudgets:
+  - 4
+  - 6
+  - 8
+  - 11
+  - 12
+  resonancePool:
+  - enemy: {fileID: 11400000, guid: e0e870cd969d50ccb29642de4688c56a, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 4
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 9fa5fbe2a220532c9d9f63c66b2a7c8b, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 4
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 4
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 4
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 4
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 1b41367eaef540e7b4fbc553bf6d5a28, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 1
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: cf3b9a8c35434f72afc9567d6c0835de, type: 2}
+    minimumTier: 0
+    maximumTier: 1
+    family: 0
+    tierWeights:
+    - 10
+    - 7
+    - 0
+    - 0
+    - 0
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 655f6b9c480740719f00f56e0169908d, type: 2}
+    minimumTier: 0
+    maximumTier: 1
+    family: 0
+    tierWeights:
+    - 10
+    - 7
+    - 0
+    - 0
+    - 0
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: b2a9fefd5490455182d2f6f2740862f2, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 3
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 10
+    - 7
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 1
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+    minimumTier: 0
+    maximumTier: 1
+    family: 0
+    tierWeights:
+    - 10
+    - 7
+    - 0
+    - 0
+    - 0
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: b9de130924cb44f3b77befc8fa1c0438, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 3
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 10
+    - 7
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 2
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: cb5b4ce0108940d788ee9a219b2fe946, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 2
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 84831a37e3ae4a6aa1147fb4b1f8e6b9, type: 2}
+    minimumTier: 0
+    maximumTier: 1
+    family: 0
+    tierWeights:
+    - 10
+    - 7
+    - 0
+    - 0
+    - 0
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 36c47a216df94b9fae10c869929010fa, type: 2}
+    minimumTier: 0
+    maximumTier: 1
+    family: 0
+    tierWeights:
+    - 10
+    - 7
+    - 0
+    - 0
+    - 0
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: e0401922f77142049ae15844298a5eb7, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 3
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 10
+    - 7
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 8d684cf2178442b8b6e3d160fb5fac79, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 3
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 10
+    - 7
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 3
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 10
+    - 7
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 39f0ae90d3b445afbf8f722502c90a05, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 3
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 10
+    - 7
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    minimumTier: 3
+    maximumTier: 4
+    family: 3
+    tierWeights:
+    - 0
+    - 0
+    - 0
+    - 10
+    - 7
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 7e5bdc7d5c3140a3a3fe37dc861dd4f0, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 2
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 9e704135ac48432c9bdb148a30da3e8a, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 2
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 1
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: 3446e21fb60447829950580946a51eff, type: 2}
+    minimumTier: 2
+    maximumTier: 4
+    family: 2
+    tierWeights:
+    - 0
+    - 0
+    - 10
+    - 7
+    - 4
+    summonOnly: 0
+  - enemy: {fileID: 11400000, guid: a8912c080c9d415082ff439864aefd06, type: 2}
+    minimumTier: 1
+    maximumTier: 4
+    family: 1
+    tierWeights:
+    - 0
+    - 10
+    - 7
+    - 4
+    - 1
+    summonOnly: 0
+  resonanceEncounters:
+  - label: Guild aid party
+    members:
+    - {fileID: 11400000, guid: e0e870cd969d50ccb29642de4688c56a, type: 2}
+    - {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+    - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 6.5
+    phaseMask: 4
+    ordinaryRole: 2
+    formationFamily: Guild expedition
+    familyWeight: 2
+    prerequisites:
+    - guild_swordsman
+  - label: Guild rearguard
+    members:
+    - {fileID: 11400000, guid: 9fa5fbe2a220532c9d9f63c66b2a7c8b, type: 2}
+    - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    - {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 7.5
+    phaseMask: 4
+    ordinaryRole: 2
+    formationFamily: Guild expedition
+    familyWeight: 2
+    prerequisites:
+    - guild_swordsman
+  - label: Guild field medicine
+    members:
+    - {fileID: 11400000, guid: e0e870cd969d50ccb29642de4688c56a, type: 2}
+    - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Guild expedition
+    familyWeight: 2
+    prerequisites:
+    - guild_swordsman
+  - label: Guild shield lesson
+    members:
+    - {fileID: 11400000, guid: 9fa5fbe2a220532c9d9f63c66b2a7c8b, type: 2}
+    - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Guild expedition
+    familyWeight: 2
+    prerequisites:
+    - guild_swordsman
+  - label: Guild trail party
+    members:
+    - {fileID: 11400000, guid: c9e8f656c29e5e6f97428f2e41c8528f, type: 2}
+    - {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Guild expedition
+    familyWeight: 2
+  - label: Guild outrider
+    members:
+    - {fileID: 11400000, guid: 5a5813e83bec588b8ec5239f67d23792, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 2
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Guild expedition
+    familyWeight: 2
+  - label: Royal gate detail
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Royal guard
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    weight: 2
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+  - label: Royal siege sappers
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Royal guard
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 1b41367eaef540e7b4fbc553bf6d5a28, type: 2}
+    - {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+    weight: 2
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+  - label: Royal crossbow detail
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Royal guard
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    weight: 2
+    minimumDepthTier: 4
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+  - label: Local search
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Village watch
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+    - {fileID: 11400000, guid: 655f6b9c480740719f00f56e0169908d, type: 2}
+    weight: 3
+    minimumDepthTier: 0
+    maximumDepthTier: 1
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Village watch
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Village watch
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 36c47a216df94b9fae10c869929010fa, type: 2}
+    - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+    weight: 3
+    minimumDepthTier: 0
+    maximumDepthTier: 1
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Excavation lesson
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Village watch
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 84831a37e3ae4a6aa1147fb4b1f8e6b9, type: 2}
+    - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+    weight: 3
+    minimumDepthTier: 0
+    maximumDepthTier: 1
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Timber lesson
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Village watch
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: cf3b9a8c35434f72afc9567d6c0835de, type: 2}
+    - {fileID: 11400000, guid: 655f6b9c480740719f00f56e0169908d, type: 2}
+    weight: 3
+    minimumDepthTier: 0
+    maximumDepthTier: 1
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Town boundary
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Town garrison
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    - {fileID: 11400000, guid: 36c47a216df94b9fae10c869929010fa, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 1
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Chain patrol
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Town garrison
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 2
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Guard fortification
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Town garrison
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 1b41367eaef540e7b4fbc553bf6d5a28, type: 2}
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 2
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Knight patrol
+    phaseMask: 7
+    ordinaryRole: 1
+    formationFamily: Knight company
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+    - {fileID: 11400000, guid: 3446e21fb60447829950580946a51eff, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Shield lesson
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Knight company
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 7e5bdc7d5c3140a3a3fe37dc861dd4f0, type: 2}
+    - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 4.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Knight advance
+    phaseMask: 6
+    ordinaryRole: 1
+    formationFamily: Knight company
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+    - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+    - {fileID: 11400000, guid: 3446e21fb60447829950580946a51eff, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 3
+    resonanceKind: 0
+    resonanceThreatBudget: 6.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Royal vanguard
+    phaseMask: 7
+    ordinaryRole: 0
+    formationFamily: Royal guard
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    - {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Royal chain lesson
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Royal guard
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: e0401922f77142049ae15844298a5eb7, type: 2}
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Court ice lesson
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Royal guard
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: b2a9fefd5490455182d2f6f2740862f2, type: 2}
+    - {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Standard guard
+    phaseMask: 7
+    ordinaryRole: 3
+    formationFamily: Royal guard
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: 39f0ae90d3b445afbf8f722502c90a05, type: 2}
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 5.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Court pressure
+    phaseMask: 4
+    ordinaryRole: 2
+    formationFamily: Royal guard
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: b2a9fefd5490455182d2f6f2740862f2, type: 2}
+    - {fileID: 11400000, guid: 39f0ae90d3b445afbf8f722502c90a05, type: 2}
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 8.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Royal fireline
+    phaseMask: 4
+    ordinaryRole: 2
+    formationFamily: Royal guard
+    familyWeight: 3
+    members:
+    - {fileID: 11400000, guid: e0401922f77142049ae15844298a5eb7, type: 2}
+    - {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 0
+    resonanceThreatBudget: 7.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Town elite
+    members:
+    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    - {fileID: 11400000, guid: 1b41367eaef540e7b4fbc553bf6d5a28, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 2
+    resonanceKind: 1
+    resonanceThreatBudget: 5.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Knight elite
+    members:
+    - {fileID: 11400000, guid: 7e5bdc7d5c3140a3a3fe37dc861dd4f0, type: 2}
+    - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+    - {fileID: 11400000, guid: 3446e21fb60447829950580946a51eff, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 6.5
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Royal elite
+    members:
+    - {fileID: 11400000, guid: b2a9fefd5490455182d2f6f2740862f2, type: 2}
+    - {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 8.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Marshal escort
+    members:
+    - {fileID: 11400000, guid: a8912c080c9d415082ff439864aefd06, type: 2}
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    weight: 3
+    minimumDepthTier: 1
+    maximumDepthTier: 2
+    resonanceKind: 2
+    resonanceThreatBudget: 5.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Siege escort
+    members:
+    - {fileID: 11400000, guid: 9e704135ac48432c9bdb148a30da3e8a, type: 2}
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 3
+    resonanceKind: 2
+    resonanceThreatBudget: 5.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Captain escort
+    members:
+    - {fileID: 11400000, guid: cb5b4ce0108940d788ee9a219b2fe946, type: 2}
+    - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+    - {fileID: 11400000, guid: 3446e21fb60447829950580946a51eff, type: 2}
+    weight: 3
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 2
+    resonanceThreatBudget: 8.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Minister escort
+    members:
+    - {fileID: 11400000, guid: 8d684cf2178442b8b6e3d160fb5fac79, type: 2}
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    weight: 3
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 2
+    resonanceThreatBudget: 6.5
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: The King and Minister
+    members:
+    - {fileID: 11400000, guid: b9de130924cb44f3b77befc8fa1c0438, type: 2}
+    - {fileID: 11400000, guid: 8d684cf2178442b8b6e3d160fb5fac79, type: 2}
+    weight: 2
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 3
+    resonanceThreatBudget: 11.0
+    oncePerRun: 1
+    allowRepeatedRequiredEscort: 1
+    prerequisites:
+    - royal_swordsman
+    - court_mage
+  - label: Reserve Local search
+    members:
+    - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+    - {fileID: 11400000, guid: 655f6b9c480740719f00f56e0169908d, type: 2}
+    weight: 1
+    minimumDepthTier: 0
+    maximumDepthTier: 1
+    resonanceKind: 1
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Reserve Knight patrol
+    members:
+    - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+    - {fileID: 11400000, guid: 3446e21fb60447829950580946a51eff, type: 2}
+    weight: 1
+    minimumDepthTier: 2
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 4
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []
+  - label: Reserve Royal vanguard
+    members:
+    - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+    - {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+    weight: 1
+    minimumDepthTier: 3
+    maximumDepthTier: 4
+    resonanceKind: 1
+    resonanceThreatBudget: 5.0
+    oncePerRun: 0
+    allowRepeatedRequiredEscort: 0
+    prerequisites: []

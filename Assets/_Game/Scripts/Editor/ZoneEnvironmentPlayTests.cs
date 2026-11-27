@@ -150,10 +150,17 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator EnvironmentTravelSnapshotRestoresZoneHolesWithoutChangingSourceOnWriteFailure()
     {
-        yield return LaunchDungeonHazards();var board=Run.Board;
+        // This fixture isolates zone-owned holes. A randomly chosen builder can
+        // leave a legitimate, enemy-owned barricade that travel must preserve.
+        var farmer=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_Farmer.asset");
+        using(ResonanceEncounterFixture.OnNextGame(new[]{farmer},"Zone-hole travel fixture"))
+            yield return LaunchDungeonHazards();
+        var board=Run.Board;
         for(int i=0;i<5;i++) yield return EnvironmentMove();
-        Run.Travel.enabled=false;Run.Travel.State.stage=1;Run.Travel.State.destination="magical-forest";
-        KillEncounter();yield return Until(()=>Run.Continuation.CanCapture,"source settles");
+        Run.Travel.enabled=false;Set(Run.Waves,"advanceWavesAutomatically",false);Run.Travel.State.stage=1;Run.Travel.State.destination="magical-forest";
+        KillEncounter();yield return Until(()=>!Run.Waves.IsWaveActive && Run.Continuation.CanCapture,"source settles");
+        yield return Until(()=>Run.Resonance.State.pendingWave==0,"source Resonance bank settles");
+        ResonanceEncounterFixture.EarnedExit(Run);
         var before=Run.Continuation.Capture().board;
         Assert.That(before.cells.Count(c=>c.crumbleRestoreMove>0),Is.InRange(1,2));
         var cleaned=JsonUtility.FromJson<BoardCombatSnapshot>(JsonUtility.ToJson(before));
@@ -161,7 +168,7 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(cleaned.cells.Any(c=>c.crumbleRestoreMove>0||c.mined),Is.False);
         Assert.That(cleaned.cells.All(c=>c.hasGem),Is.True);
         Assert.That(JsonUtility.ToJson(Run.Continuation.Capture().board),Is.EqualTo(JsonUtility.ToJson(before)));
-        Assert.That(Run.Continuation.SaveNow(),Is.True);byte[] durable=File.ReadAllBytes(path);
+        Assert.That(Run.Continuation.SaveNow(),Is.True,"source save: "+Run.Continuation.Error+"; finished="+Run.IsFinished+"; active="+Run.Waves.IsWaveActive);byte[] durable=File.ReadAllBytes(path);
         using(var locked=new FileStream(path+".tmp",FileMode.Create,FileAccess.ReadWrite,FileShare.None))
         {
             LogAssert.Expect(LogType.Error,new System.Text.RegularExpressions.Regex("Could not save account"));
@@ -202,7 +209,13 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest] public IEnumerator EnvironmentRoyalChainShotDeathBetweenContactsCancelsSecondBolt()
     {
         yield return SummonArbalist();var actor=Enemy("royal_arbalist");var board=Run.Board;
-        for(int i=0;i<3;i++) yield return EnvironmentMove();
+        int remaining=actor.SpecialTurnRequirement-actor.CurrentSpecialTurnCount;
+        Assert.That(remaining,Is.GreaterThan(0));
+        for(int i=1;i<remaining;i++)
+        {
+            yield return EnvironmentMove();
+            Assert.That(board.GetPinnedGemCountForOwner(actor.GetInstanceID()),Is.Zero);
+        }
         PrepareSafeMove();board.StartCoroutine((IEnumerator)Call(board,"TrySwap",board.GetGem(safeMoveFrom.x,safeMoveFrom.y),board.GetGem(safeMoveTo.x,safeMoveTo.y)));
         yield return Until(()=>board.GetPinnedGemCountForOwner(actor.GetInstanceID())==1,"first chain contact");
         Run.GetComponent<RunControlsUI>().OpenSettings();

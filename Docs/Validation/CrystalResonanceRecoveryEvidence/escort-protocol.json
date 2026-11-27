@@ -1,0 +1,112 @@
+{
+  "capture": false,
+  "cases": [
+    {
+      "label": "escort-court-p0-skeleton-L1-762463853",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 1,
+      "policy": 0,
+      "seed": 762463853,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "escort-court-p1-skeleton-L1-762463853",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 1,
+      "policy": 1,
+      "seed": 762463853,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "escort-court-p2-skeleton-L1-762463853",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 1,
+      "policy": 2,
+      "seed": 762463853,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "escort-court-p3-skeleton-L1-762463853",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 1,
+      "policy": 3,
+      "seed": 762463853,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "escort-court-p4-skeleton-L1-762463853",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 1,
+      "policy": 4,
+      "seed": 762463853,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "escort-spread-p0-bardley-L1-1293181219",
+      "zone": "dungeon",
+      "character": "bardley",
+      "level": 1,
+      "policy": 0,
+      "seed": 1293181219,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "escort-spread-p3-skeleton-L5-2119068497",
+      "zone": "dungeon",
+      "character": "skeleton",
+      "level": 5,
+      "policy": 3,
+      "seed": 2119068497,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "escort-spread-p4-kobold_gunner-L1-853450337",
+      "zone": "dungeon",
+      "character": "kobold_gunner",
+      "level": 1,
+      "policy": 4,
+      "seed": 853450337,
+      "maxVisits": 3,
+      "maxSeconds": 1800,
+      "diagnosticStart": false
+    },
+    {
+      "label": "escort-refine-deep-p3-bardley-L10-1012792767",
+      "zone": "dungeon",
+      "character": "bardley",
+      "policy": 3,
+      "seed": 1012792767,
+      "level": 10,
+      "maxVisits": 7,
+      "maxSeconds": 2700,
+      "diagnosticStart": false
+    }
+  ],
+  "notes": [
+    "Retest every Court-playing case from the completed 13-case batch; retain successes and defeats without selection by outcome.",
+    "Nine fresh natural Dungeon-first runs, all five styles, Rattlebones/Bardley/Kobold, levels 1/5/10, five distinct named seeds.",
+    "Same named initial seeds/limits; production run IDs and capstone streams are independently recorded, so outcomes are not fully paired.",
+    "Three deep attempts were completed on source90bc. The two that never visited Court use unchanged gameplay/zone data; only the affected Bardley deep case is rerun, to seven visits or45minutes.",
+    "The four unaffected cases are source-separated evidence, never relabeled as this new-source batch.",
+    "No old output overwritten, no direct-zone starts, no grants or forced travel."
+  ]
+}

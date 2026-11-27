@@ -1,0 +1,81 @@
+{
+  "originalJob": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\jobs\\pilot-20261118-010828\\job.json",
+  "runnerUnityExit": 0,
+  "runnerEvidence": "C:\\Users\\USER\\.codex\\worktrees\\crystal-resonance-redesign\\Dungeon Matcher\\.utmp\\CrystalResonance\\Refinement\\jobs\\pilot-20261118-010828\\runner.stdout.log",
+  "completion": "Runner completed; inspect outcomes and sample counts. Proxies do not certify human enjoyment.",
+  "unityErrorsPresent": false,
+  "issue": "Outer PowerShell Start-Process/Refresh exposed a null ExitCode despite the child reporting Unity exit 0. Preserved original failed wrapper record.",
+  "analyzerIssue": "Shared diagnosticStart metadata in both config/result raised a duplicate keyword TypeError. cdfae32 now accepts identical shared fields and rejects mismatches.",
+  "recovery": "Analyzed the original completed batch and independently audited all native accepted commands. No recorded playthrough was altered or rerun.",
+  "audit": {
+    "batch": ".utmp\\CrystalResonance\\Playtest\\20261118-010917",
+    "kind": "offline recorded-evidence audit; NOT replay execution",
+    "finishedCases": 5,
+    "incompleteCases": [],
+    "failures": [],
+    "cases": [
+      {
+        "case": "refine-p0-skeleton-L1-19001",
+        "nativeBoundaries": 194,
+        "nativeActions": {
+          "swap": 177,
+          "card": 4,
+          "ability": 10,
+          "potion": 3
+        },
+        "journalSha256": "e94396c86f73e579b1f5ec0d0814070a6f24629708c7ecc82babe0627a490b00",
+        "failures": []
+      },
+      {
+        "case": "refine-p1-skeleton-L1-19001",
+        "nativeBoundaries": 178,
+        "nativeActions": {
+          "swap": 157,
+          "card": 6,
+          "ability": 12,
+          "potion": 3
+        },
+        "journalSha256": "c4d467323b5353ed7907049c0c5a54ec8ebf79073486d230771dd17dfa7589de",
+        "failures": []
+      },
+      {
+        "case": "refine-p2-skeleton-L1-19001",
+        "nativeBoundaries": 155,
+        "nativeActions": {
+          "swap": 136,
+          "card": 6,
+          "ability": 10,
+          "potion": 3
+        },
+        "journalSha256": "85262c7b18d7ed9ec6129e15f591474e48ee9fc7e8c4c17ed0d61f031f48d460",
+        "failures": []
+      },
+      {
+        "case": "refine-p3-skeleton-L1-19001",
+        "nativeBoundaries": 162,
+        "nativeActions": {
+          "swap": 145,
+          "card": 5,
+          "ability": 8,
+          "potion": 3,
+          "bomb": 1
+        },
+        "journalSha256": "fb9ceee52988ad8984b4d82015fe1b57fcdb4ed67ce156c885f9ec9ec75c1590",
+        "failures": []
+      },
+      {
+        "case": "refine-p4-skeleton-L1-19001",
+        "nativeBoundaries": 187,
+        "nativeActions": {
+          "swap": 161,
+          "card": 5,
+          "ability": 15,
+          "bomb": 3,
+          "potion": 3
+        },
+        "journalSha256": "756901893204dc6fa3eb811cbc996ab9eab9d604fb828ca692cdbcd385a0effb",
+        "failures": []
+      }
+    ]
+  }
+}

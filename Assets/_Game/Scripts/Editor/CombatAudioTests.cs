@@ -23,7 +23,7 @@ public sealed class CombatAudioTests
     {
         foreach (CombatSoundCue cue in Enum.GetValues(typeof(CombatSoundCue)))
         {
-            var clip = Resources.Load<AudioClip>("Audio/Combat/" + cue);
+            var clip = Resources.Load<AudioClip>("Audio/Combat/" + CombatSoundMix.ResourceCue(cue));
             Assert.That(clip, Is.Not.Null, cue.ToString());
             Assert.That(clip.channels, Is.EqualTo(1));
             Assert.That(clip.length, Is.InRange(.05f, .6f));
@@ -100,15 +100,17 @@ public sealed class CombatAudioTests
         actor.ShieldGranted += (_, n) => shield += n;
         actor.RestoreHealth(12);
         actor.GrantShield(25); actor.GrantShield(25);
-        actor.TryTakeDamageWithoutFeedback(60);
-        actor.RestoreHealth(12);
-        Assert.That(heal, Is.EqualTo(12)); Assert.That(shield, Is.EqualTo(30));
+        actor.TryTakeDamageWithoutFeedback(60); // Shield absorbs this entire hit; no HP overflow.
+        actor.TryTakeDamageWithoutFeedback(20);
+        Assert.That(actor.CurrentHealth,Is.EqualTo(80));
+        actor.RestoreHealth(12); // Approved five-point rounding yields ten effective HP.
+        Assert.That(heal, Is.EqualTo(10)); Assert.That(shield, Is.EqualTo(30));
         actor.RestoreContinuation(new EnemyCombatSnapshot { health = 100, shield = 30 });
-        Assert.That(heal, Is.EqualTo(12)); Assert.That(shield, Is.EqualTo(30));
+        Assert.That(heal, Is.EqualTo(10)); Assert.That(shield, Is.EqualTo(30));
     }
 
-    [TestCase(0, 8)]
-    [TestCase(30, 6)]
+    [TestCase(0, 10)]
+    [TestCase(30, 5)]
     public void PoisonHasOneSoundCueIncludingShieldAbsorptionWithoutNormalHit(int shield, int total)
     {
         EnemyActor actor = Enemy();

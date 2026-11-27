@@ -120,7 +120,7 @@ public sealed class DungeonApprovedBattleTests
         yield return new EnterPlayMode();
         integrated=TestContext.CurrentContext.Test.Name.StartsWith("Approved");
         string phase=integrated?"After":"Before";
-        string output=Path.GetFullPath(integrated ? "ArtSource/DungeonPixelLab/Diagnostics/Stage16/Regression" : Evidence+"/"+phase);Directory.CreateDirectory(output);
+        string output=Path.GetFullPath(integrated ? ".utmp/DungeonApprovedBattle/Regression" : Evidence+"/"+phase);Directory.CreateDirectory(output);
         using(CharacterSelectionSettings.UseTemporarySelection("skeleton"))
         foreach(string zone in new[]{"dungeon","magical-forest","drowned-court"})
         {
@@ -144,19 +144,20 @@ public sealed class DungeonApprovedBattleTests
                     if(integrated)
                     {
                         var before=JsonUtility.FromJson<LayoutRecord>(File.ReadAllText(Evidence+"/Before/"+name+"-layout.json"));
-                        if(DungeonPixelLabBattleArt.Current)
-                        {
-                            // Native scenery/character pixels and UI skins are intentionally replaced.
-                            // The user's existing board footprint and major responsive sections are retained.
-                            foreach(string section in new[]{"TopHUD","GameArea","BottomHUD"})
-                            {
-                                var a=before.items.Single(i=>i.name.EndsWith("/"+section)).bounds;
-                                var b=geometry.items.Single(i=>i.name.EndsWith("/"+section)).bounds;
-                                Assert.That(Vector2.Distance(a.position,b.position),Is.LessThan(.1),name+section);
-                                Assert.That(Vector2.Distance(a.size,b.size),Is.LessThan(.1),name+section);
-                            }
-                        }
-                        else Compare(before,geometry,name);
+                        Rect Section(LayoutRecord record,string section)=>record.items.Single(i=>i.name.EndsWith("/"+section)).bounds;
+                        // The approved board grew symmetrically. Its bottom edge, the gap to the arena,
+                        // the top of the arena, and the resources HUD retain their physical anchors.
+                        var oldBoard=Section(before,"GameArea");var boardRect=Section(geometry,"GameArea");
+                        var oldTop=Section(before,"TopHUD");var top=Section(geometry,"TopHUD");
+                        Assert.That(Section(geometry,"BottomHUD"),Is.EqualTo(Section(before,"BottomHUD")),name+" resources HUD");
+                        Assert.That(boardRect.height,Is.EqualTo(boardRect.width).Within(.1f));
+                        Assert.That(boardRect.width,Is.GreaterThanOrEqualTo(oldBoard.width-.1f));
+                        Assert.That(boardRect.center.x,Is.EqualTo(oldBoard.center.x).Within(.1f));
+                        Assert.That(boardRect.yMin,Is.EqualTo(oldBoard.yMin).Within(.1f));
+                        Assert.That(top.yMin-boardRect.yMax,Is.EqualTo(oldTop.yMin-oldBoard.yMax).Within(.1f));
+                        Assert.That(top.yMax,Is.EqualTo(oldTop.yMax).Within(.1f));
+                        Assert.That(top.width,Is.EqualTo(oldTop.width).Within(.1f));
+                        Assert.That(top.center.x,Is.EqualTo(oldTop.center.x).Within(.1f));
                     }
                     ScreenCapture.CaptureScreenshot(output+"/"+name+".png");yield return new WaitForSecondsRealtime(.25f);
                     if(integrated&&zone=="dungeon")
@@ -170,7 +171,13 @@ public sealed class DungeonApprovedBattleTests
                     var response=board.GetImmediateResponses().First();board.ReplayPlayerSwap(response.Source.Column,response.Source.Row,response.Target.Column,response.Target.Row);
                     yield return Until(()=>RunSession.Current.Continuation.CanCapture);
                     Assert.That(board.CaptureContinuation(id=>id).moves,Is.EqualTo(moves+1));
-                    var controls=Object.FindFirstObjectByType<RunControlsUI>();controls.OpenSettings();yield return null;controls.Close();yield return null;
+                    var controls = Object.FindFirstObjectByType<RunControlsUI>();
+                    Assert.That(controls.SettingsButton.IsActive() && controls.SettingsButton.IsInteractable(), Is.True);
+                    controls.SettingsButton.OnSubmit(new UnityEngine.EventSystems.BaseEventData(UnityEngine.EventSystems.EventSystem.current));
+                    yield return null;
+                    Assert.That(controls.IsModalOpen, Is.True);
+                    controls.Close(); yield return null;
+                    Assert.That(controls.IsModalOpen, Is.False);
                 }
                 SceneManager.LoadScene("MainMenu");yield return null;yield return null;
                 GameplayPixelLayoutController.ValidationSafeArea=null;Size(new Vector2Int(1080,1920));

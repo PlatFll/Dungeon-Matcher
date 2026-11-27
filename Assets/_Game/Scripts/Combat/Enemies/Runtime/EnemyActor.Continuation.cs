@@ -8,12 +8,16 @@ public sealed partial class EnemyActor
     }
     public EnemyCombatSnapshot CaptureContinuation(int slot) => new EnemyCombatSnapshot
     {
+        guildTauntRemaining=GuildTauntMoves, guildTauntLastMove=lastGuildTauntMove,
         definition=definition.name, slot=slot, weakness=assignedGemType, persistentId=PersistentId,
         health=currentHealth, shield=currentShield, specialTurns=currentSpecialTurnCount,
         specialRequirement=specialTurnRequirementOverride,fortifiedStacks=FortifiedStacks
     };
     public void RestoreContinuation(EnemyCombatSnapshot saved)
     {
+        GuildTauntMoves = definition.SpecialAbilityKind == EnemySpecialAbilityKind.GuildTaunt ?
+            Mathf.Clamp(saved.guildTauntRemaining, 0, 3) : 0;
+        lastGuildTauntMove = saved.guildTauntLastMove;
         if (saved.persistentId > 0) PersistentId=saved.persistentId;
         currentHealth=Mathf.Min(CombatAmounts.Health(saved.health),MaxHealth);
         currentShield=Mathf.Min(CombatAmounts.Round(saved.shield),MaximumShield);

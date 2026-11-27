@@ -11,8 +11,11 @@ public partial class BoardController
     public event Action<int> ValidPlayerMoveAccepted;
     public event Action BoardStateRestored;
 
-    private void NotifyValidPlayerMoveAccepted() =>
+    private void NotifyValidPlayerMoveAccepted(Gem first = null, Gem second = null)
+    {
+        BeginProgressionMove(first, second);
         ValidPlayerMoveAccepted?.Invoke(completedValidPlayerMoves + 1);
+    }
 
     private SavedRandom RefillRandom => refillRandom ??=
         new SavedRandom(GameplayRandom.Range(1, int.MaxValue));

@@ -1,0 +1,49 @@
+{
+  "enemy": "orc_slinghunter",
+  "state": "basic",
+  "firstFrame": "ArtSource/SelectionExpansion/ART_STILL_REVIEW/Round6/O5.png",
+  "firstFrameSHA256": "253a3af9f47ee95ac04a1187efdb4d5fda1da455fc4cda36b2b626e94274a91d",
+  "seed": 385125,
+  "count": 8,
+  "prompt": "Draw and release a pebble left, reload and snap the elastic a second time. Preserve the fork and red neck scarf. Recover to guard. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.",
+  "id": "748a8485-a7af-44fb-a855-4e4178c493bd",
+  "receipt": "id: 748a8485-a7af-44fb-a855-4e4178c493bd\njob_id: 748a8485-a7af-44fb-a855-4e4178c493bd\naction: Draw and release a pebble left, reload and snap the elastic a second time. Preserve the fork and red neck scarf. Recover to guard. Preserve this exact character, proportions, face, equipment and colors. Fixed pixel camera, fixed floor, no mirroring, no scale change, no new props or background. Keep all equipment inside frame.\nframes: 8\nsize: 112x88px\ntransparent: True\nseed: 385125\nasset_id: c54f9674-6e50-5e22-95d0-f9464eef9caf\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"748a8485-a7af-44fb-a855-4e4178c493bd\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/748a8485-a7af-44fb-a855-4e4178c493bd/download (423 + Retry-After until ready; ?index=N for the Nth of several images)",
+  "frames": [
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/748a8485-a7af-44fb-a855-4e4178c493bd/00.png",
+      "sha256": "b8b40926888e022a9427bc07fb35a73b82ed08b48553749f983ad9e807992037"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/748a8485-a7af-44fb-a855-4e4178c493bd/01.png",
+      "sha256": "fc62ae9b7d59301bf8e8d12b55894727a1f3e3b185ee167630b6ceca1c66b6d2"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/748a8485-a7af-44fb-a855-4e4178c493bd/02.png",
+      "sha256": "8c15dcd2844ea5dc8daa96358b4b9ffa0009e1fc087e5d3b27979093ccbb3a78"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/748a8485-a7af-44fb-a855-4e4178c493bd/03.png",
+      "sha256": "17f8a3362338cce5ef4634fb896a71da18c076aef5b4f461621af5a7b302d056"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/748a8485-a7af-44fb-a855-4e4178c493bd/04.png",
+      "sha256": "c92c74eff3ed39fdb0d86a7ebfe454360fe36d256992e4841660436aee45c704"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/748a8485-a7af-44fb-a855-4e4178c493bd/05.png",
+      "sha256": "e94411513c437daeb4bc0c56db872be5d7ad89d9291d827797b8d09f5d6306e1"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/748a8485-a7af-44fb-a855-4e4178c493bd/06.png",
+      "sha256": "0831b27cbe748744ec0bcbe3e675b3881d81985ce9373b554373fd05e03ac71f"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/748a8485-a7af-44fb-a855-4e4178c493bd/07.png",
+      "sha256": "621ae511493ce454a547090bffff837c66e256561210d94a9124a0ef7f747efa"
+    },
+    {
+      "path": "ArtSource/SelectionExpansion/Motion/Originals/orc_slinghunter/basic/748a8485-a7af-44fb-a855-4e4178c493bd/08.png",
+      "sha256": "053cedfbc638c32a491f39bf07ebb0f34ba7f562e24105f48dc878e11320f1bb"
+    }
+  ]
+}
