@@ -10,6 +10,9 @@ public sealed partial class CharacterSelectMenuController
     private static readonly Color Ink = new Color32(55, 34, 51, 255);
     private RectTransform safe, page, chamber, figures, details, collection, footer, modal, cardPage;
     private Image hero, affinity, abilityIcon, costCoin;
+    private RectTransform footAnchor, contactShadow;
+    private Animator heroIdle;
+    private PlayerDefinition previewDefinition;
     private TMP_Text nameLabel, abilityName, abilityBody, wallet, costLabel, progress, feedback, startLabel, resetMessage, titleLabel;
     private readonly TMP_Text[] currents = new TMP_Text[6], nexts = new TMP_Text[6], arrows = new TMP_Text[6];
     private readonly Image[] statIcons = new Image[6];
@@ -47,6 +50,18 @@ public sealed partial class CharacterSelectMenuController
         rect.pivot = sprite.pivot / sprite.rect.size;
         rect.sizeDelta = sprite.rect.size * zoom;
         rect.anchoredPosition = new Vector2(x,-baseline);
+    }
+
+    private void SetPreview(PlayerDefinition definition)
+    {
+        // Refresh also runs on purchases and wallet changes. Only a new selection starts a new idle.
+        if (previewDefinition == definition) return;
+        previewDefinition = definition;
+        var sprite = definition.BattleCharacterSprite;
+        Ground(hero,sprite,0,0,2f);
+        contactShadow.gameObject.SetActive(sprite != null);
+        if (sprite != null) contactShadow.sizeDelta = new Vector2(sprite.rect.width * .75f,6);
+        heroIdle.runtimeAnimatorController = definition.BattleAnimatorController;
     }
 
     private TMP_FontAsset readingFont;
@@ -106,8 +121,16 @@ public sealed partial class CharacterSelectMenuController
         page.anchorMin = page.anchorMax = new Vector2(.5f,1);
         page.pivot = new Vector2(.5f,1);
         chamber = Picture("TorchlitChamber",page,Art("Chamber"),0,0,360,288).rectTransform;
+        // The walkable top of the dais spans rows 162–179 of the 240 × 192 source.
+        // Attach the feet to a point inside it so phone layout changes move the art and actor together.
+        footAnchor = Box("DaisFootAnchor",chamber,0,0,0,0);
+        footAnchor.anchorMin = footAnchor.anchorMax = new Vector2(48f/240f, 1f-173f/192f);
+        contactShadow = Picture("ContactShadow",footAnchor,Art("ContactShadow"),0,0,48,6).rectTransform;
+        contactShadow.pivot = new Vector2(.5f,.5f);
+        hero = Picture("CharacterPreview",footAnchor,null,0,0,0,0,true);
+        heroIdle = hero.gameObject.AddComponent<Animator>();
+        heroIdle.updateMode = AnimatorUpdateMode.UnscaledTime;
         figures = Box("CharacterAndStats",page,0,0,360,286);
-        hero = Picture("CharacterPreview",figures,null,1,101,142,147,true);
         var nameplate = Picture("NamePlaque",figures,Art("Plaque"),133,63,222,45);
         nameLabel = Text("CharacterName",nameplate.transform,"",8,8,206,29,29);
         var panel = Picture("StatsPanel",figures,Art("Stats"),136,109,216,151);

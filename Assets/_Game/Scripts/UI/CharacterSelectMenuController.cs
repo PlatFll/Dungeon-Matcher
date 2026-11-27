@@ -88,7 +88,7 @@ public sealed partial class CharacterSelectMenuController : MonoBehaviour
         int cost = BalanceV1.Current.UpgradeCost(level);
         bool savedRun = account.ActiveRun != null;
         wallet.text = account.Gold.ToString("N0");
-        Ground(hero,definition.BattleCharacterSprite,72,243,2f);
+        SetPreview(definition);
         nameLabel.text = selected.title.ToUpperInvariant();
         affinity.sprite = gemIcons.GetSprite(definition.AffinityGemType);
         var engraving = ability.ReadyStoneEngraving != null ? ability.ReadyStoneEngraving : ability.Icon;

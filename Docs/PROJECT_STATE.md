@@ -1549,7 +1549,7 @@ Current connected UI flow includes:
 
 ## Characters
 
-- four roster cards use the same player sprites that appear in battle; selecting a card chooses the character for a new run;
+- four roster cards choose the character for a new run. The stats preview plays the selected battle idle with the character standing on the chamber dais;
 - independent level display;
 - level, HP, base damage per gem, direct ability damage, energy cost and shield cap use production character data;
 - next-level improvements;

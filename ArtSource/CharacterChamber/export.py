@@ -68,3 +68,11 @@ for name,(points,fill,glint) in icons.items():
     elif name=="Shield": d.line([(3,3),(6,2),(6,10)],fill=glint)
     else: d.line([(3,5),(6,5),(7,2)],fill=glint)
     export(name,im)
+
+# A shallow, stepped contact mark lets the original stone remain visible under the feet.
+shadow = Image.new("RGBA", (32, 5))
+draw = ImageDraw.Draw(shadow)
+for y, inset in enumerate((8, 3, 0, 3, 9)):
+    draw.line((inset, y, 31-inset, y), fill=(34, 24, 43, 112))
+draw.line((7, 2, 24, 2), fill=(34, 24, 43, 150))
+export("ContactShadow", shadow)

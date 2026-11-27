@@ -38,6 +38,7 @@ public sealed partial class CharacterSelectMenuController
 
     private void ShowCards(bool show)
     {
+        footAnchor.gameObject.SetActive(!show);
         figures.gameObject.SetActive(!show);
         details.gameObject.SetActive(!show);
         collection.gameObject.SetActive(!show);

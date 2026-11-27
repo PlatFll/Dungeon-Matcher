@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
 using TMPro;
+using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -49,7 +51,8 @@ public sealed class CharacterChamberPlayTests
                 Click(buttons[i]); yield return null;
                 Assert.AreEqual(ids[i],CharacterSelectionSettings.SelectedPlayerId);
                 Assert.True(PlayerDefinitionRegistry.TryGetDefinition(ids[i],out var definition));
-                Assert.AreSame(definition.BattleCharacterSprite,Find<Image>(panel,"CharacterPreview").sprite);
+                Assert.AreSame(definition.BattleCharacterSprite,Find<Image>(Find<Button>(panel,buttons[i]),"Portrait").sprite);
+                yield return VerifyIdle(panel,definition,rendered);
                 Assert.AreSame(gems.GetSprite(definition.AffinityGemType),Find<Image>(panel,"Icon2").sprite);
                 Assert.AreEqual(definition.ActiveAbility.EnergyCost.ToString(),Find<TMP_Text>(panel,"Next4").text);
                 if(rendered) yield return Shot(panel,ids[i]+"-720x1280");
@@ -63,6 +66,7 @@ public sealed class CharacterChamberPlayTests
             Assert.AreEqual(AccountProgression.Current.Gold.ToString("N0"),Find<TMP_Text>(panel,"Gold").text);
             Click("CardsTab");yield return null;
             Assert.AreEqual("CARDS",Find<TMP_Text>(panel,"ScreenTitle").text);
+            Assert.IsNull(GameObject.Find("CharacterPreview"),"Stats preview should be hidden in the library");
             Assert.NotNull(Find<Image>(panel,"Artwork").sprite);
             string first=Find<TMP_Text>(panel,"CardTitle").text;
             Click("NextCards");yield return null;
@@ -137,10 +141,69 @@ public sealed class CharacterChamberPlayTests
         button.onClick.Invoke();
     }
 
+    private static void CheckFooting(Component panel, Image hero)
+    {
+        var chamber = Find<RectTransform>(panel,"TorchlitChamber");
+        var foot = chamber.InverseTransformPoint(hero.rectTransform.position);
+        float row = (chamber.rect.yMax-foot.y) / chamber.rect.height * 192;
+        Assert.That(row,Is.InRange(165f,177f),"Feet must be inside the top face of the painted dais");
+        Assert.AreEqual(hero.sprite.pivot / hero.sprite.rect.size,hero.rectTransform.pivot);
+        Assert.AreEqual(hero.sprite.rect.size*2,hero.rectTransform.sizeDelta);
+    }
+
+    private static IEnumerator VerifyIdle(Component panel, PlayerDefinition player, bool rendered)
+    {
+        var hero = Find<Image>(panel,"CharacterPreview");
+        var animator = hero.GetComponent<Animator>();
+        Assert.AreSame(player.BattleAnimatorController,animator.runtimeAnimatorController);
+        yield return null;
+        var clip = animator.GetCurrentAnimatorClipInfo(0).Single().clip;
+        Assert.True(clip.isLooping);
+        var binding = AnimationUtility.GetObjectReferenceCurveBindings(clip)
+            .Single(b => b.type == typeof(Image) && b.propertyName == "m_Sprite");
+        var keys = AnimationUtility.GetObjectReferenceCurve(clip,binding);
+        Assert.AreSame(player.BattleCharacterSprite,keys[0].value);
+        var authored = new HashSet<Sprite>(keys.Select(key => (Sprite)key.value));
+        var seen = new HashSet<Sprite>();
+        float start = animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        float deadline = Time.realtimeSinceStartup + 10;
+        while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime-start < 1)
+        {
+            Assert.Less(Time.realtimeSinceStartup,deadline,"Idle did not loop while browsing " + player.DisplayName);
+            Assert.True(authored.Contains(hero.sprite),"Unexpected frame for " + player.DisplayName);
+            seen.Add(hero.sprite);
+            CheckFooting(panel,hero);
+            yield return null;
+        }
+        Assert.Greater(seen.Count, 2, "The displayed sprite stayed on a single pose");
+        if (!rendered) yield break;
+
+        // Freeze the already verified live Animator at each authored key for visual review.
+        int state = animator.GetCurrentAnimatorStateInfo(0).fullPathHash;
+        string folder = Path.Combine("Idles",player.PlayerId);
+        Directory.CreateDirectory(Path.Combine(Output,folder));
+        animator.speed = 0;
+        try
+        {
+            for (int i=0;i<keys.Length;i++)
+            {
+                if (i>0 && keys[i].value==keys[i-1].value) continue;
+                float end = i+1<keys.Length ? keys[i+1].time : clip.length;
+                animator.Play(state,0,(keys[i].time+end)*.5f/clip.length);
+                animator.Update(0);
+                Assert.AreSame(keys[i].value,hero.sprite);
+                yield return Shot(panel,Path.Combine(folder,i.ToString("00")));
+            }
+        }
+        finally { animator.speed = 1; }
+    }
+
     private static IEnumerator Shot(Component panel,string name)
     {
         yield return null; yield return null;
         Canvas.ForceUpdateCanvases();
+        var hero = panel.GetComponentsInChildren<Image>().FirstOrDefault(i => i.name=="CharacterPreview");
+        if (hero != null) CheckFooting(panel,hero);
         foreach(var label in panel.GetComponentsInChildren<TMP_Text>())
         {
             label.ForceMeshUpdate();
